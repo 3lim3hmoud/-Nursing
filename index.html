@@ -4,22 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faculty of Nursing — Study Hub</title>
-<meta name="description" content="Faculty of Nursing — Al Ryada University Study Hub">
-<meta name="theme-color" content="#0a0f0d">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Nursing Hub">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPYJ7FB5T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PPYJ7FB5T3');
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,7 +42,7 @@
   }
 
   .hero-bg {
-    position: absolute;
+    position: fixed;
     inset: 0;
     background-image: var(--bg-img);
     background-size: cover;
@@ -68,9 +52,9 @@
   }
 
   .hero-overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(10,15,13,0.3) 0%, rgba(10,15,13,0.7) 60%, #0a0f0d 100%);
+    background: linear-gradient(to bottom, rgba(10,15,13,0.3) 0%, rgba(10,15,13,0.55) 60%, rgba(10,15,13,0.75) 100%);
     z-index: 1;
   }
 
@@ -81,20 +65,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 40vh;
     padding: 3rem 1.5rem 2rem;
     text-align: center;
   }
 
-  /* ─── PROFILE ─── */
+  /* ─── PROFILE (top-corner, collapsed) ─── */
+  .profile-corner {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .profile-ring {
-    width: 130px;
-    height: 130px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    padding: 3px;
+    padding: 2px;
     background: linear-gradient(135deg, #1D9E75, #378ADD);
-    margin-bottom: 1.5rem;
     flex-shrink: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+  }
+
+  .profile-ring:hover {
+    transform: scale(1.06);
   }
 
   .profile-img {
@@ -103,7 +103,29 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 3px solid #0a0f0d;
+    border: 2px solid #0a0f0d;
+  }
+
+  .profile-popover {
+    margin-top: 10px;
+    background: rgba(15, 20, 18, 0.96);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.1rem 1.3rem;
+    width: 230px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  .profile-popover.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
   }
 
   .founder-badge {
@@ -111,34 +133,35 @@
     background: rgba(29, 158, 117, 0.18);
     border: 1px solid rgba(29, 158, 117, 0.45);
     color: #5DCAA5;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 4px 14px;
+    padding: 3px 10px;
     border-radius: 100px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
   }
 
-  .hero h1 {
+  .profile-popover h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: #fff;
   }
 
-  .hero h1 span {
+  .profile-popover h1 span {
     color: #5DCAA5;
   }
 
   .hero-sub {
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(255,255,255,0.55);
     font-weight: 400;
     margin-bottom: 0.3rem;
     letter-spacing: 0.02em;
+    line-height: 1.5;
   }
 
   .hero-sub strong {
@@ -149,6 +172,19 @@
   .divider-dot {
     color: rgba(255,255,255,0.25);
     margin: 0 6px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  .hero h1 span {
+    color: #5DCAA5;
   }
 
   /* ─── SCROLL CUE ─── */
@@ -176,8 +212,10 @@
 
   /* ─── MAIN CONTENT ─── */
   .main {
-    background: #0a0f0d;
+    background: rgba(10,15,13,0.55);
     padding: 4rem 1.5rem 5rem;
+    position: relative;
+    z-index: 2;
   }
 
   .section-label {
@@ -258,6 +296,18 @@
     color: #fff;
     margin-bottom: 0.4rem;
     font-family: 'Playfair Display', serif;
+  }
+
+  .year-card-simple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    text-align: center;
+  }
+
+  .year-card-simple h2 {
+    margin-bottom: 0;
   }
 
   .year-card p {
@@ -506,26 +556,30 @@
 </head>
 <body>
 
+<!-- ══════════════════════ PROFILE CORNER ══════════════════════ -->
+<div class="profile-corner">
+  <div class="profile-ring" onclick="toggleProfile()">
+    <img class="profile-img" id="profileImg" src="" alt="Ali Mahmoud">
+  </div>
+  <div class="profile-popover" id="profilePopover">
+    <div class="founder-badge">Founder &amp; Creator</div>
+    <h1>Ali <span>Mahmoud</span></h1>
+    <p class="hero-sub">
+      <strong>3rd Year Student</strong>
+      <br>Faculty of Nursing
+      <br>Al-Riyadah University of Science and Technology
+    </p>
+    <p class="hero-sub" style="margin-top:0.6rem; font-size: 11px; color: rgba(255,255,255,0.35);">
+      A study hub built for nursing students — organized by year, subject, and resource type
+    </p>
+  </div>
+</div>
+
 <!-- ══════════════════════ HERO ══════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="profile-ring">
-      <img class="profile-img" id="profileImg" src="" alt="Ali Mahmoud">
-    </div>
-    <div class="founder-badge">Founder &amp; Creator</div>
-    <h1>Ali <span>Mahmoud</span></h1>
-    <p class="hero-sub">
-      <strong>3rd Year Student</strong>
-      <span class="divider-dot">·</span>
-      Faculty of Nursing
-      <span class="divider-dot">·</span>
-      Al-Riyadah University of Science and Technology
-    </p>
-    <p class="hero-sub" style="margin-top:0.6rem; font-size: 12px; color: rgba(255,255,255,0.3);">
-      A study hub built for nursing students — organized by year, subject, and resource type
-    </p>
   </div>
   <div class="scroll-cue">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -543,48 +597,18 @@
 
     <div class="years-grid">
       <!-- YEAR 1 -->
-      <div class="year-card y1" onclick="openYear('y1')">
-        <div class="year-badge">Year 01</div>
+      <div class="year-card y1 year-card-simple" onclick="openYear('y1')">
         <h2>First Year</h2>
-        <p>Foundations of nursing science, anatomy, and health basics</p>
-        <div class="year-subjects">
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 1</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 2</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 3</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 4</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>+ 3 more subjects</div>
-        </div>
-        <button class="enter-btn">Enter Year 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
 
       <!-- YEAR 2 -->
-      <div class="year-card y2" onclick="openYear('y2')">
-        <div class="year-badge">Year 02</div>
+      <div class="year-card y2 year-card-simple" onclick="openYear('y2')">
         <h2>Second Year</h2>
-        <p>Clinical nursing skills, pharmacology, and patient care</p>
-        <div class="year-subjects">
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 1</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 2</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 3</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 4</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>+ 3 more subjects</div>
-        </div>
-        <button class="enter-btn">Enter Year 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
 
       <!-- YEAR 3 -->
-      <div class="year-card y3" onclick="openYear('y3')">
-        <div class="year-badge">Year 03</div>
+      <div class="year-card y3 year-card-simple" onclick="openYear('y3')">
         <h2>Third Year</h2>
-        <p>Advanced clinical practice, specializations, and research</p>
-        <div class="year-subjects">
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 1</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 2</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 3</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Subject 4</div>
-          <div class="subject-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>+ 3 more subjects</div>
-        </div>
-        <button class="enter-btn">Enter Year 3 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
     </div>
   </div>
@@ -632,6 +656,17 @@ const BG_IMG = '/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAQw
 
 document.getElementById('profileImg').src = 'data:image/jpeg;base64,' + ALI_IMG;
 document.getElementById('heroBg').style.backgroundImage = 'url(data:image/jpeg;base64,' + BG_IMG + ')';
+
+function toggleProfile() {
+  document.getElementById('profilePopover').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var corner = document.querySelector('.profile-corner');
+  var pop = document.getElementById('profilePopover');
+  if (corner && !corner.contains(e.target)) {
+    pop.classList.remove('open');
+  }
+});
 
 const years = {
   y1: {
@@ -755,23 +790,6 @@ function goHome() {
   document.getElementById('subjectView').classList.remove('active');
   document.getElementById('homeSection').classList.remove('hidden');
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
-}
-
-/* PWA Service Worker */
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js').then(reg=>{
-    reg.addEventListener('updatefound',()=>{
-      const nw = reg.installing;
-      nw.addEventListener('statechange',()=>{
-        if(nw.state==='installed' && navigator.serviceWorker.controller){
-          const bar = document.createElement('div');
-          bar.style.cssText='position:fixed;bottom:0;left:0;right:0;background:#1D9E75;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;z-index:9999;font-family:inherit;font-size:14px;';
-          bar.innerHTML='<span>🔄 يوجد تحديث جديد</span><button onclick="window.location.reload()" style="background:#0F6E56;color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-size:13px;">تحديث الآن</button>';
-          document.body.appendChild(bar);
-        }
-      });
-    });
-  });
 }
 </script>
 </body>

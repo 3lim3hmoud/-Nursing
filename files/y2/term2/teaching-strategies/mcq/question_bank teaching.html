@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Bank — Teaching &amp; Learning Strategies</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1b2a; --deep: #1a2d42; --teal: #0a8f7c; --teal-light: #0fb89e;
+  --gold: #e8b84b; --gold-light: #f5d07a; --cream: #f9f5ec; --white: #ffffff;
+  --gray-light: #eef2f7; --gray-mid: #c5cdd8; --gray-text: #6b7a8d;
+  --correct: #1a9d5a; --correct-bg: #e6f7ef; --wrong: #d63b3b; --wrong-bg: #fdeaea;
+  --neutral-bg: #f0f4f9; --radius: 14px; --shadow: 0 4px 24px rgba(13,27,42,.10);
+  --shadow-lg: 0 8px 40px rgba(13,27,42,.16);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); min-height: 100vh; }
+.site-header { background: var(--navy); color: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-lg); }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; gap: 18px; }
+.header-logo { width: 46px; height: 46px; background: var(--teal); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.header-text h1 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
+.header-text p { font-size: .78rem; color: var(--gray-mid); margin-top: 2px; }
+.header-score { margin-left: auto; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13); border-radius: 10px; padding: 10px 20px; text-align: center; min-width: 100px; }
+.header-score .sv { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--gold); }
+.header-score .sl { font-size: .68rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1px; }
+.nav-tabs { background: var(--deep); border-bottom: 2px solid rgba(255,255,255,.07); }
+.nav-tabs-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; display: flex; gap: 4px; overflow-x: auto; }
+.nav-tab { padding: 13px 20px; font-size: .83rem; font-weight: 500; color: var(--gray-mid); cursor: pointer; border: none; background: none; border-bottom: 3px solid transparent; transition: all .2s; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+.nav-tab:hover { color: var(--white); }
+.nav-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+.section-panel { display: none; }
+.section-panel.active { display: block; }
+.section-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 100%); border-radius: 18px; padding: 34px 38px; color: var(--white); margin-bottom: 28px; position: relative; overflow: hidden; }
+.section-hero::after { content: ''; position: absolute; right: -30px; top: -30px; width: 180px; height: 180px; border-radius: 50%; background: rgba(10,143,124,.18); }
+.section-hero h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; position: relative; }
+.section-hero p { color: var(--gray-mid); margin-top: 7px; font-size: .88rem; position: relative; }
+.section-stats { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; position: relative; }
+.stat-pill { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 30px; padding: 5px 14px; font-size: .76rem; color: var(--gold-light); font-family: 'DM Mono', monospace; }
+.part-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal); margin: 30px 0 14px; padding-left: 2px; }
+.q-card { background: var(--white); border-radius: var(--radius); padding: 26px 30px; margin-bottom: 18px; box-shadow: var(--shadow); border: 1.5px solid transparent; transition: border .2s; animation: fadeUp .3s ease both; }
+.q-card.answered-correct { border-color: var(--correct); background: #f4fff9; }
+.q-card.answered-wrong { border-color: var(--wrong); background: #fff8f8; }
+.q-num { font-family: 'DM Mono', monospace; font-size: .7rem; font-weight: 500; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 9px; }
+.q-text { font-size: .97rem; font-weight: 500; line-height: 1.65; margin-bottom: 16px; }
+.options-grid { display: grid; gap: 9px; }
+.opt-btn { display: flex; align-items: flex-start; gap: 11px; background: var(--neutral-bg); border: 2px solid transparent; border-radius: 9px; padding: 12px 14px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: .88rem; color: var(--navy); text-align: left; transition: all .18s; line-height: 1.5; }
+.opt-btn:hover:not(:disabled) { background: #e4ecf7; border-color: var(--teal-light); }
+.opt-letter { width: 25px; height: 25px; background: var(--white); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: .78rem; font-weight: 600; color: var(--gray-text); flex-shrink: 0; border: 1.5px solid var(--gray-mid); }
+.opt-btn.correct { background: var(--correct-bg); border-color: var(--correct); color: var(--correct); }
+.opt-btn.correct .opt-letter { background: var(--correct); border-color: var(--correct); color: #fff; }
+.opt-btn.wrong { background: var(--wrong-bg); border-color: var(--wrong); color: var(--wrong); }
+.opt-btn.wrong .opt-letter { background: var(--wrong); border-color: var(--wrong); color: #fff; }
+.opt-btn:disabled { cursor: not-allowed; }
+.q-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 8px; font-size: .83rem; font-weight: 500; display: none; }
+.q-feedback.show { display: flex; align-items: center; gap: 8px; }
+.q-feedback.correct-fb { background: var(--correct-bg); color: var(--correct); }
+.q-feedback.wrong-fb { background: var(--wrong-bg); color: var(--wrong); }
+.tf-row { background: var(--white); border-radius: var(--radius); padding: 20px 26px; margin-bottom: 14px; box-shadow: var(--shadow); border: 1.5px solid transparent; transition: all .2s; animation: fadeUp .3s ease both; }
+.tf-row.answered-correct { border-color: var(--correct); }
+.tf-row.answered-wrong { border-color: var(--wrong); }
+.tf-statement { font-size: .93rem; font-weight: 500; color: var(--navy); margin-bottom: 13px; line-height: 1.6; }
+.tf-btns { display: flex; gap: 10px; }
+.tf-btn { flex: 1; padding: 10px 0; border-radius: 8px; border: 2px solid var(--gray-mid); background: var(--neutral-bg); font-family: 'DM Sans', sans-serif; font-size: .88rem; font-weight: 600; cursor: pointer; transition: all .18s; color: var(--navy); }
+.tf-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); background: #e6f5f3; }
+.tf-btn:disabled { cursor: not-allowed; }
+.tf-btn.correct { background: var(--correct-bg); border-color: var(--correct); color: var(--correct); }
+.tf-btn.wrong { background: var(--wrong-bg); border-color: var(--wrong); color: var(--wrong); }
+.tf-explanation { margin-top: 11px; padding: 9px 13px; background: var(--neutral-bg); border-radius: 8px; font-size: .82rem; color: var(--gray-text); display: none; line-height: 1.55; }
+.tf-explanation.show { display: block; }
+.match-set { background: var(--white); border-radius: var(--radius); padding: 26px 30px; margin-bottom: 22px; box-shadow: var(--shadow); animation: fadeUp .3s ease both; }
+.match-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1.5px solid var(--gray-light); }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.match-col-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-text); margin-bottom: 9px; }
+.match-item { display: flex; gap: 9px; align-items: flex-start; padding: 10px 13px; background: var(--neutral-bg); border-radius: 8px; margin-bottom: 7px; font-size: .86rem; line-height: 1.5; }
+.match-letter { font-family: 'DM Mono', monospace; font-size: .78rem; font-weight: 600; color: var(--teal); flex-shrink: 0; min-width: 18px; }
+.show-answer-btn { margin-top: 15px; padding: 9px 20px; background: var(--teal); color: #fff; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .83rem; font-weight: 600; cursor: pointer; transition: background .18s; }
+.show-answer-btn:hover { background: var(--teal-light); }
+.match-answers-reveal { display: none; margin-top: 14px; }
+.match-answers-reveal.show { display: flex; flex-wrap: wrap; gap: 8px; }
+.match-answer-item { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--navy); border-radius: 8px; color: #fff; font-size: .83rem; font-family: 'DM Mono', monospace; }
+.match-answer-badge { background: var(--gold); color: var(--navy); border-radius: 4px; padding: 2px 7px; font-weight: 700; font-size: .78rem; }
+.fitb-card { background: var(--white); border-radius: var(--radius); padding: 22px 26px; margin-bottom: 15px; box-shadow: var(--shadow); border: 1.5px solid transparent; transition: all .2s; animation: fadeUp .3s ease both; }
+.fitb-text { font-size: .93rem; line-height: 1.7; font-weight: 500; margin-bottom: 13px; }
+.fitb-input-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.fitb-input { flex: 1; min-width: 160px; padding: 10px 13px; border: 2px solid var(--gray-mid); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .88rem; color: var(--navy); background: var(--neutral-bg); outline: none; transition: border .18s; }
+.fitb-input:focus { border-color: var(--teal); }
+.fitb-input.correct-input { border-color: var(--correct); background: var(--correct-bg); }
+.fitb-input.wrong-input { border-color: var(--wrong); background: var(--wrong-bg); }
+.check-btn { padding: 10px 18px; background: var(--navy); color: #fff; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .83rem; font-weight: 600; cursor: pointer; transition: background .18s; white-space: nowrap; }
+.check-btn:hover { background: var(--deep); }
+.fitb-hint { margin-top: 9px; font-size: .81rem; display: none; }
+.fitb-hint.show { display: block; }
+.fitb-hint strong { color: var(--teal); }
+.essay-card { background: var(--white); border-radius: var(--radius); padding: 26px 30px; margin-bottom: 18px; box-shadow: var(--shadow); animation: fadeUp .3s ease both; }
+.essay-q { font-size: .97rem; font-weight: 600; line-height: 1.6; margin-bottom: 16px; }
+.essay-tag { display: inline-block; padding: 3px 9px; border-radius: 4px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-right: 7px; margin-bottom: 9px; }
+.tag-list{background:#e8f4e8;color:#2a7a2a} .tag-explain{background:#e8eef8;color:#2a4a8a} .tag-enumerate{background:#f8ece8;color:#8a3a2a} .tag-compare{background:#f8f4e8;color:#7a6a2a} .tag-illustrate{background:#f0e8f8;color:#6a2a8a} .tag-analyze{background:#e8f8f8;color:#2a7a7a} .tag-design{background:#f8e8f4;color:#8a2a6a} .tag-evaluate{background:#f8f0e8;color:#8a5a2a}
+.essay-answer { background: var(--neutral-bg); border-radius: 10px; padding: 18px 20px; display: none; }
+.essay-answer.show { display: block; }
+.essay-answer h4 { font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--teal); margin-bottom: 11px; }
+.essay-answer ul, .essay-answer ol { padding-left: 18px; font-size: .88rem; line-height: 1.75; }
+.essay-answer p { font-size: .88rem; line-height: 1.7; }
+.essay-toggle-btn { margin-top: 13px; padding: 9px 18px; background: transparent; color: var(--teal); border: 2px solid var(--teal); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .83rem; font-weight: 600; cursor: pointer; transition: all .18s; }
+.essay-toggle-btn:hover { background: var(--teal); color: #fff; }
+.progress-bar-wrap { background: var(--gray-light); border-radius: 999px; height: 5px; margin-bottom: 24px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 999px; transition: width .4s; }
+.reset-row { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.reset-btn { padding: 8px 18px; background: transparent; color: var(--gray-text); border: 1.5px solid var(--gray-mid); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .8rem; cursor: pointer; transition: all .18s; }
+.reset-btn:hover { border-color: var(--wrong); color: var(--wrong); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+@media(max-width:700px){.main{padding:14px}.header-inner{padding:12px 14px}.nav-tabs-inner{padding:0 6px}.section-hero{padding:22px 18px}.match-grid{grid-template-columns:1fr}.header-score{display:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-logo">&#128218;</div>
+    <div class="header-text">
+      <h1>Teaching &amp; Learning Strategies &mdash; Question Bank</h1>
+      <p>College of Nursing &middot; Al Ryada University &middot; Dr. Saeed Mohammed Abdelguid</p>
+    </div>
+    <div class="header-score">
+      <div class="sv" id="globalScore">0</div>
+      <div class="sl">Score</div>
+    </div>
+  </div>
+  <nav class="nav-tabs">
+    <div class="nav-tabs-inner">
+      <button class="nav-tab active" onclick="switchTab('mcq',this)">&#128273; MCQ (100)</button>
+      <button class="nav-tab" onclick="switchTab('tf',this)">&#10003; True / False (50)</button>
+      <button class="nav-tab" onclick="switchTab('matching',this)">&#128279; Matching (8 sets)</button>
+      <button class="nav-tab" onclick="switchTab('fitb',this)">&#9999; Fill in the Blank (35)</button>
+      <button class="nav-tab" onclick="switchTab('essay',this)">&#128221; Essay (35)</button>
+    </div>
+  </nav>
+</header>
+<main class="main">
+<section id="tab-mcq" class="section-panel active">
+  <div class="section-hero">
+    <h2>Section One: Multiple Choice Questions</h2>
+    <p>Choose the single best answer. Instant feedback after each selection.</p>
+    <div class="section-stats">
+      <span class="stat-pill">100 Questions</span>
+      <span class="stat-pill">6 Topic Areas</span>
+      <span class="stat-pill" id="mcq-stat">0 / 100 answered</span>
+    </div>
+  </div>
+  <div class="reset-row"><button class="reset-btn" onclick="resetSection('mcq')">&#8635; Reset MCQ</button></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="mcq-progress" style="width:0%"></div></div>
+  <div id="mcq-container"></div>
+</section>
+<section id="tab-tf" class="section-panel">
+  <div class="section-hero">
+    <h2>Section Two: True / False</h2>
+    <p>Determine if each statement is True or False. Explanation shown after answering.</p>
+    <div class="section-stats">
+      <span class="stat-pill">50 Questions</span>
+      <span class="stat-pill" id="tf-stat">0 / 50 answered</span>
+    </div>
+  </div>
+  <div class="reset-row"><button class="reset-btn" onclick="resetSection('tf')">&#8635; Reset T/F</button></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="tf-progress" style="width:0%"></div></div>
+  <div id="tf-container"></div>
+</section>
+<section id="tab-matching" class="section-panel">
+  <div class="section-hero">
+    <h2>Section Three: Matching Questions</h2>
+    <p>Match each term in Column A with its correct definition in Column B. Click Show Answer Key when ready.</p>
+    <div class="section-stats"><span class="stat-pill">8 Match Sets</span><span class="stat-pill">25+ Pairs</span></div>
+  </div>
+  <div id="matching-container"></div>
+</section>
+<section id="tab-fitb" class="section-panel">
+  <div class="section-hero">
+    <h2>Section Four: Fill in the Blank</h2>
+    <p>Type your answer and press Check. The correct answer appears if you are wrong.</p>
+    <div class="section-stats">
+      <span class="stat-pill">35 Questions</span>
+      <span class="stat-pill" id="fitb-stat">0 / 35 answered</span>
+    </div>
+  </div>
+  <div class="reset-row"><button class="reset-btn" onclick="resetSection('fitb')">&#8635; Reset FITB</button></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fitb-progress" style="width:0%"></div></div>
+  <div id="fitb-container"></div>
+</section>
+<section id="tab-essay" class="section-panel">
+  <div class="section-hero">
+    <h2>Section Five: Essay Questions</h2>
+    <p>Practice essay-type questions. Click Show Model Answer to reveal the expected answer.</p>
+    <div class="section-stats"><span class="stat-pill">35 Questions</span><span class="stat-pill">6 Question Types</span></div>
+  </div>
+  <div id="essay-container"></div>
+</section>
+</main>
+<script>
+
+var mcqData=[
+{num:"Q1",part:"Part A: Teaching & Learning Foundations (Q1–Q16)",text:"Teaching is best defined as:",opts:["A passive transfer of information from teacher to student","A deliberate process of facilitating learning involving planning, delivering, and evaluating instruction","A one-way communication process focused on lecturing","A curriculum-driven assessment system"],ans:1},
+{num:"Q2",text:"Learning is defined as:",opts:["A temporary change in behavior caused by fatigue","A process limited to formal school settings","A lifelong process of transforming information and experience into knowledge, skills, and attitudes","The memorization of facts for later recall"],ans:2},
+{num:"Q3",text:"Education is described as:",opts:["A static transmission of knowledge","A dynamic process involving the interplay of educator, educand, and social forces","A process confined to classroom settings only","Identical to teaching in all respects"],ans:1},
+{num:"Q4",text:"Which of the following is NOT one of the four components of the education process?",opts:["Learning Environment","Teacher","Examination Board","Curriculum"],ans:2},
+{num:"Q5",text:"The social process of teaching has how many focal points?",opts:["Two: Teacher and Student","Four: Teacher, Student, Subject Matter, Environment","Three: Teacher, Student, Subject Matter","Five: Teacher, Student, Subject, Method, Assessment"],ans:2},
+{num:"Q6",text:"Which type of change does genuine learning produce?",opts:["Temporary and situational","Reversible under stress","Permanent modification in thinking, feeling, and doing","Observable only in written exams"],ans:2},
+{num:"Q7",text:"An inclusive learning atmosphere in education primarily helps:",opts:["Reduce institutional costs","Everyone to grow simultaneously","Simplify the curriculum","Eliminate the need for teacher training"],ans:1},
+{num:"Q8",text:"Teacher competencies should include:",opts:["Only subject matter expertise","Training, good communication skills, appropriate teaching methods, and suitable materials","Strict adherence to a single teaching method","Exclusive use of lecture-based instruction"],ans:1},
+{num:"Q9",text:"The curriculum is best described as:",opts:["A fixed set of rules for classroom behavior","Guidelines of a discipline outlining what students must perform and experience","A list of textbooks students must purchase","A document created only by government bodies"],ans:1},
+{num:"Q10",text:"Creativity in education:",opts:["Should only be encouraged in arts subjects","Is irrelevant to nursing education","Can be developed and benefits both students and teachers","Is secondary to rote memorization"],ans:2},
+{num:"Q11",text:"Which statement about learning is FALSE?",opts:["Learning involves acquisition of knowledge, behaviors, skills, and values","Learning causes a change in knowledge, skills, and attitudes","Learning is restricted to young people in formal education","Learning produces observable changes in behavior or knowledge"],ans:2},
+{num:"Q12",text:"The purpose of education beyond literacy includes:",opts:["Creating dependence on teachers","Adding rational thinking, knowledgeability, and self-sufficiency","Limiting students to prescribed textbook content","Standardizing all students to the same level"],ans:1},
+{num:"Q13",text:"In a clinical scenario where an instructor demonstrates sterile technique and students practice, what element of teaching is most evident?",opts:["Curriculum design","Three focal points of teaching: teacher, student, subject matter","Administrative automation","Gamification strategy"],ans:1},
+{num:"Q14",text:"Learning standards for school locations are set by:",opts:["Individual teachers","Student councils","Government and authority","Private curriculum developers only"],ans:2},
+{num:"Q15",text:"Which best describes what learning acquires?",opts:["Only academic knowledge","Knowledge, behaviors, skills, and values","Memorized textbook content","Passing standardized examinations"],ans:1},
+{num:"Q16",text:"The relationship between teaching and learning is:",opts:["Independent — one can occur without the other","Oppositional — teaching decreases when learning increases","Interactive — education is the systematic interaction between learning and teaching","Sequential — teaching always precedes learning with no overlap"],ans:2},
+{num:"Q17",part:"Part B: Traditional Teaching Methods (Q17–Q32)",text:"Traditional teaching is also known as:",opts:["Constructivist approach","Lecture-based or didactic approach","Problem-based learning","Student-centered approach"],ans:1},
+{num:"Q18",text:"Which is a key characteristic of traditional teaching?",opts:["Student-centered instruction","Flexible assessment methods","Teacher-centered instruction","Technology-driven content delivery"],ans:2},
+{num:"Q19",text:"The lecture method is best suited for:",opts:["Developing critical thinking through debate","Delivering large volumes of information to many students efficiently","Collaborative group problem-solving","Individualized skill practice"],ans:1},
+{num:"Q20",text:"A limitation of the lecture method is:",opts:["It is too expensive for large classes","It promotes passive learning and poor information retention","It cannot cover systematic curriculum content","It requires advanced technology to implement"],ans:1},
+{num:"Q21",text:"Group discussion primarily develops:",opts:["Rote memorization skills","Critical thinking and communication skills","Individual test-taking ability","Passive observation skills"],ans:1},
+{num:"Q22",text:"A significant limitation of group discussion is:",opts:["It is too student-centered","It reduces classroom interaction","It may be dominated by a few students and requires skilled facilitation","It is incompatible with nursing education"],ans:2},
+{num:"Q23",text:"The demonstration method is especially effective for:",opts:["Large lecture halls with 200+ students","Delivering theoretical knowledge only","Teaching practical skills and making concepts concrete","Self-paced online learning"],ans:2},
+{num:"Q24",text:"Which limitation applies to the demonstration method?",opts:["It provides too much student engagement","Students remain passive observers and visibility can be problematic in large classes","It is only effective for abstract concepts","It eliminates the need for teacher expertise"],ans:1},
+{num:"Q25",text:"Recitation focuses on:",opts:["Student-led project presentations","Teacher questioning to prompt student recall of learned material","Online quiz platforms","Case-based clinical scenarios"],ans:1},
+{num:"Q26",text:"A limitation of recitation is that it:",opts:["Promotes too much critical thinking","Can create student anxiety and focuses on rote memorization","Is incompatible with assessment","Requires advanced digital tools"],ans:1},
+{num:"Q27",text:"Drill and practice is most useful for:",opts:["Developing higher-order thinking skills","Reinforcing procedures and memorization through repetition","Facilitating collaborative projects","Delivering complex clinical case studies"],ans:1},
+{num:"Q28",text:"How many traditional teaching methods are identified in the course material?",opts:["Four","Five","Six","Eight"],ans:2},
+{num:"Q29",text:"The textbook method mainly:",opts:["Emphasizes interactive digital content","Serves as a primary written knowledge resource guiding student study","Replaces the need for a qualified instructor","Is only used in elementary education"],ans:1},
+{num:"Q30",text:"Traditional teaching approaches are characterized by all EXCEPT:",opts:["Standardized assessment","Whole-class instruction","Personalized adaptive learning paths","Structured environment"],ans:2},
+{num:"Q31",text:"In nursing education, which traditional method most directly supports skill acquisition?",opts:["Recitation","Textbook reading","Demonstration","Group discussion only"],ans:2},
+{num:"Q32",text:"Compared to modern strategies, traditional teaching is primarily:",opts:["Student-centered and technology-integrated","Curriculum-driven and teacher-centered with passive student involvement","Problem-based and collaborative","Self-directed and personalized"],ans:1},
+{num:"Q33",part:"Part C: Modern Teaching Strategies (Q33–Q52)",text:"Modern teaching strategies differ from traditional ones primarily by:",opts:["Relying exclusively on textbooks","Placing the student at the center of the learning process","Eliminating technology from classrooms","Focusing solely on teacher-delivered content"],ans:1},
+{num:"Q34",text:"Modern teaching strategies aim to develop:",opts:["Memorization, obedience, recitation, and copying","Critical thinking, collaboration, creativity, and problem-solving","Passive listening, note-taking, and exam preparation","Teacher dependency and single-source learning"],ans:1},
+{num:"Q35",text:"Active/Interactive Learning is grounded in which learning theory?",opts:["Behaviorism","Cognitivism","Constructivism","Connectivism"],ans:2},
+{num:"Q36",text:"In Think-Pair-Share, the correct sequence is:",opts:["Share then Pair then Think","Pair then Think then Share","Think individually, Discuss with a partner, Share with class","Lecture, Practice, Test"],ans:2},
+{num:"Q37",text:"Peer Teaching reinforces the teacher's understanding while building:",opts:["Dependence on instructor feedback only","Communication and leadership competencies","Individual competitive exam scores","Rote memorization skills"],ans:1},
+{num:"Q38",text:"In Socratic Seminars, the instructor's primary role is to:",opts:["Deliver a detailed lecture","Administer standardized tests","Facilitate discussion, prompting students to analyze, question, and defend reasoning","Grade students on attendance"],ans:2},
+{num:"Q39",text:"In the Jigsaw Technique, each student:",opts:["Completes the entire project independently","Becomes an expert on a specific subtopic and teaches it to the group","Copies content from a primary textbook","Works only with the instructor one-on-one"],ans:1},
+{num:"Q40",text:"Learning Stations allow groups to:",opts:["Listen to a single extended lecture","Rotate through different task stations offering diverse experiences in one session","Study individually without peer interaction","Complete online quizzes from home"],ans:1},
+{num:"Q41",text:"The Flipped Classroom model primarily inverts:",opts:["The role of students and administrators","The traditional instructional sequence — pre-class content at home, application in class","The assessment and curriculum design","The relationship between theory and practice in simulation labs"],ans:1},
+{num:"Q42",text:"Which technology is used to deliver pre-class content in the Flipped Classroom?",opts:["Physical textbooks only","LMS, video platforms, and digital simulations","Traditional overhead projectors","Paper-based worksheets distributed in class"],ans:1},
+{num:"Q43",text:"Personalized Learning in ILPs involves:",opts:["One fixed curriculum for all students","Custom educational roadmaps developed collaboratively between instructor and student","Instructor-only decision making without student input","Standardized testing without adaptation"],ans:1},
+{num:"Q44",text:"Adaptive Learning Technology adjusts content based on:",opts:["Random rotation of difficulty levels","Instructor preference alone","Each student's ongoing responses and performance data","Fixed weekly schedules"],ans:2},
+{num:"Q45",text:"Problem-Based Learning (PBL) is best described as:",opts:["A teacher-centered lecture approach using case studies","An inquiry-driven strategy where students work on complex real-world problems","A repetitive drill technique for procedure mastery","A passive observation method in clinical labs"],ans:1},
+{num:"Q46",text:"PBL in nursing specifically develops:",opts:["Only administrative documentation skills","Diagnostic reasoning, ethical decision-making, and interprofessional communication","Memorization of pharmacological drug names","Individual competitive study habits"],ans:1},
+{num:"Q47",text:"Gamification applies:",opts:["Physical game equipment in classrooms","Game design elements — points, badges, leaderboards, levels — to educational contexts","Video games as the primary teaching tool","Board games for assessment purposes"],ans:1},
+{num:"Q48",text:"A 'flow state' in gamification refers to:",opts:["Students working underwater in simulation","Difficulty calibrated just above the student's comfort level for optimal engagement","Unrestricted free play without educational objectives","Students moving freely between classrooms"],ans:1},
+{num:"Q49",text:"Blended Learning combines:",opts:["Two different lecture methods","Traditional face-to-face instruction with online learning activities","Textbook reading with recitation only","Clinical practice with administrative tasks"],ans:1},
+{num:"Q50",text:"In the Flex Model of Blended Learning:",opts:["Students rotate between stations on a fixed schedule","Online instruction is the primary delivery mode with targeted face-to-face support","All learning occurs in a physical classroom without digital tools","Students are assigned learning pathways by the institution only"],ans:1},
+{num:"Q51",text:"The Self-Directed Blended Learning Model gives students:",opts:["A fixed schedule for both online and in-person sessions","Autonomy to choose their learning pathways and determine when and how they engage","Access to textbooks only","Mandatory group participation at all times"],ans:1},
+{num:"Q52",text:"How many modern teaching strategies?",opts:["Five","Six","Seven","Nine"],ans:2},
+{num:"Q53",part:"Part D: Technologies of Teaching (Q53–Q68)",text:"Educational technology is also known as:",opts:["Digital broadcasting","Instructional or learning technology","Hardware engineering","Curriculum theory"],ans:1},
+{num:"Q54",text:"E-Learning is defined as teaching using:",opts:["Traditional classroom methods with textbooks","Modern communication mechanisms — computers, networks, multimedia, and internet portals","Physical simulation labs exclusively","One-on-one tutoring sessions"],ans:1},
+{num:"Q55",text:"Which is NOT a modality of E-Learning?",opts:["Self-Paced Online","Group-Based Synchronous","Peer-Assessment Oral","Group-Based Asynchronous"],ans:2},
+{num:"Q56",text:"In Self-Paced Offline E-Learning, content is delivered via:",opts:["Live video conferencing","Hard drive, CD, or DVD without internet","LMS forums with instructor feedback","Real-time text chat platforms"],ans:1},
+{num:"Q57",text:"Group-Based Asynchronous E-Learning includes:",opts:["Live videoconferencing sessions","Real-time text chat","Email lists, threaded discussions, and LMS forums","Face-to-face classroom instruction"],ans:2},
+{num:"Q58",text:"Compared to traditional classrooms, E-Learning offers:",opts:["Fixed schedule and location","One learning path for all students","Unlimited anytime-anywhere access with personalized learning pace","Only synchronous communication"],ans:2},
+{num:"Q59",text:"What percentage of admin tasks can be automated by AI tools?",opts:["20%","40%","60%","80%"],ans:2},
+{num:"Q60",text:"An advantage of E-Learning is that it is repeatable, meaning:",opts:["Students must repeat failed modules indefinitely","Lessons can be accessed as many times as needed","Instructors repeat the same lecture annually","Assessments are reused without modification"],ans:1},
+{num:"Q61",text:"The Station Rotation Model requires students to:",opts:["Complete all tasks online independently","Rotate on a fixed schedule between face-to-face, group collaboration, and individual online tasks","Attend only virtual sessions","Study exclusively from printed materials"],ans:1},
+{num:"Q62",text:"E-Learning addresses different learning styles by:",opts:["Providing a single standard delivery format","Offering media-rich content that suits diverse cognitive styles","Restricting content to text-only formats","Eliminating instructor involvement"],ans:1},
+{num:"Q63",text:"Mobile Learning (M-Learning) in nursing uses:",opts:["Exclusively desktop computers","Mobile devices such as smartphones and tablets for clinical reference and learning","Paper-based workbooks distributed via mobile couriers","Fixed laboratory equipment only"],ans:1},
+{num:"Q64",text:"Technology is defined as:",opts:["Digital devices and internet access only","The systematic application of scientific or organized knowledge to practical tasks","A method of passive content delivery","Hardware and software used in hospitals"],ans:1},
+{num:"Q65",text:"E-Learning consistency refers to:",opts:["Repeating the same quiz format","Central content control ensuring the same quality for all learners","Uniform student performance outcomes","Fixed class schedules"],ans:1},
+{num:"Q66",text:"Interactive teaching involves:",opts:["Learners as passive recipients of information","Two-way communication, collaborative inquiry, and learner-centered activities","Teachers delivering content without student feedback","Content delivered exclusively through textbooks"],ans:1},
+{num:"Q67",text:"AI 24/7 Virtual Tutoring benefits nursing students by:",opts:["Replacing clinical instructors entirely","Providing round-the-clock support, reducing anxiety, and improving exam preparation","Grading students based on time spent online","Creating rigid study schedules"],ans:1},
+{num:"Q68",text:"Algorithmic Bias in AI education refers to:",opts:["AI systems that prioritize the highest-performing students","AI trained on non-diverse datasets that may disadvantage underrepresented groups","AI that requires manual algorithm updating","AI that only works on specific hardware"],ans:1},
+{num:"Q69",part:"Part E: AI in Nursing Education (Q69–Q80)",text:"AI Intelligent Scheduling in nursing education:",opts:["Automates attendance tracking only","Optimizes clinical placement scheduling by matching student competencies with appropriate ward experiences","Replaces the clinical supervisor","Schedules classroom lectures automatically"],ans:1},
+{num:"Q70",text:"Over-reliance on AI may weaken which core nursing competency?",opts:["Medication administration","Documentation speed","Independent clinical reasoning","Uniform assessment scores"],ans:2},
+{num:"Q71",text:"Vendor Dependence as an economic AI challenge means:",opts:["AI vendors provide unlimited free licenses","Reliance on commercial AI providers creates financial vulnerability if pricing changes or products are discontinued","Institutions must develop their own AI tools","AI vendors control all curriculum decisions"],ans:1},
+{num:"Q72",text:"AI Clinical Scenario Simulation is intended to:",opts:["Permanently replace real ward placements","Provide targeted realistic practice before real ward placements","Test students on written pharmacology knowledge","Automate clinical placement logistics only"],ans:1},
+{num:"Q73",text:"Academic Integrity concerns with AI tools arise because:",opts:["AI tools are too expensive for students","AI writing tools blur the boundaries of genuine student work, raising assessment validity questions","AI tools have no impact on student assignments","AI tools only assist with non-academic tasks"],ans:1},
+{num:"Q74",text:"The statistic '85% of students prefer AI tutoring for late-night study' indicates:",opts:["Students use AI as a replacement for attending classes","Strong student preference for round-the-clock AI-supported study","AI is primarily used in the morning","85% of students fail traditional exams"],ans:1},
+{num:"Q75",text:"Infrastructure Gaps as a technical AI challenge means:",opts:["AI is too simple to require infrastructure","Many nursing colleges lack hardware, internet bandwidth, and IT support to deploy AI effectively","AI infrastructure is universally available at no cost","Technical infrastructure only affects admin staff"],ans:1},
+{num:"Q76",text:"AI Personalized Feedback Loops provide:",opts:["Generic group feedback at semester end","Immediate, specific feedback on assessments that accelerates learning and builds clinical confidence","Feedback only from peer students","Annual performance reviews"],ans:1},
+{num:"Q77",text:"Which is an AI opportunity in nursing education?",opts:["Vendor Dependence","Algorithmic Bias","Evidence-Based Content Matching — AI curates research relevant to each student's learning objectives","Erosion of Critical Thinking"],ans:2},
+{num:"Q78",text:"Consent & Transparency in AI education requires that:",opts:["Students sign a waiver before using any digital tool","Students are informed when AI monitors their learning behaviors and clear data governance policies exist","AI operates silently without student awareness","Only faculty need to know about AI monitoring"],ans:1},
+{num:"Q79",text:"AI is described as especially critical in nursing education for developing:",opts:["Only administrative skills","Passive listening and rote memorization","Critical thinking, clinical reasoning, communication, and collaborative skills","Standardized single-format content delivery"],ans:2},
+{num:"Q80",text:"Faculty Retraining Costs as an economic AI challenge refers to:",opts:["Cost of purchasing student devices","Significant investment needed to train educators to effectively use and critically evaluate AI tools","Cost of AI grading software licenses","Expense of updating physical classroom infrastructure"],ans:1},
+{num:"Q81",part:"Part F: Bloom's Taxonomy (Q81–Q100)",text:"Bloom's original Taxonomy of Educational Objectives (Cognitive Domain) was published in:",opts:["1948","1956","1964","2001"],ans:1},
+{num:"Q82",text:"The 2001 revision of Bloom's Taxonomy was conducted by:",opts:["Bloom and Krathwohl","Simpson and Krathwohl","Anderson and Krathwohl","Bloom and Simpson"],ans:2},
+{num:"Q83",text:"What was the most significant structural change in the 2001 revised taxonomy?",opts:["Evaluation was removed entirely","Synthesis was renamed Create and moved to the top as the highest cognitive level","Knowledge was renamed Remember and moved to the bottom","Application and Analysis were merged into one level"],ans:1},
+{num:"Q84",text:"In the original 1956 taxonomy, the HIGHEST cognitive level was:",opts:["Synthesis","Analysis","Evaluation","Application"],ans:2},
+{num:"Q85",text:"In the revised 2001 taxonomy, the HIGHEST cognitive level is:",opts:["Evaluate","Analyze","Create","Apply"],ans:2},
+{num:"Q86",text:"The key difference between the original and revised taxonomy is that the 2001 version:",opts:["Added three new levels to the hierarchy","Replaced nouns with action verbs and swapped the order of Evaluate and Create","Eliminated the Psychomotor domain","Reduced the taxonomy to four levels"],ans:1},
+{num:"Q87",text:"Which three domains of learning does Bloom's framework identify?",opts:["Reading, Writing, and Arithmetic","Cognitive, Affective, and Psychomotor","Thinking, Communication, and Leadership","Knowledge, Skills, and Behavior"],ans:1},
+{num:"Q88",text:"The Affective Domain (feelings, attitudes, values) was published in:",opts:["1956 by Bloom","1972 by Simpson","1964 by Krathwohl, Bloom & Masia","2001 by Anderson & Krathwohl"],ans:2},
+{num:"Q89",text:"The Psychomotor Domain (physical skills) was developed by:",opts:["Bloom (1956)","Simpson (1972)","Krathwohl et al. (1964)","Anderson & Krathwohl (2001)"],ans:1},
+{num:"Q90",text:"Which cognitive level verb corresponds to Level 1 (Remember) in the revised taxonomy?",opts:["Design","Critique","Differentiate","Define"],ans:3},
+{num:"Q91",text:"The verb 'Construct' is associated with which cognitive level?",opts:["Remember (L1)","Apply (L3)","Evaluate (L5)","Create (L6)"],ans:3},
+{num:"Q92",text:"A nursing student who 'Calculates medication dosage for a patient' is demonstrating which cognitive level?",opts:["Remember","Understand","Apply","Analyze"],ans:2},
+{num:"Q93",text:"Which psychomotor level describes a student who 'Operates an ECG machine without supervision'?",opts:["Perception (L1)","Guided Response (L3)","Mechanism (L4)","Complex Response (L5)"],ans:2},
+{num:"Q94",text:"A student who 'Consistently embodies patient-centered care values' is at which affective level?",opts:["Receiving (L1)","Responding (L2)","Valuing (L3)","Characterization (L5)"],ans:3},
+{num:"Q95",text:"What is the critical distinction between a Goal and an Objective in education?",opts:["Goals are short-term and specific; objectives are long-term and broad","Goals are broad, non-measurable ideals; objectives are specific, observable, and measurable learner behaviors","Goals and objectives are interchangeable terms","Goals apply at lesson level; objectives apply at program level"],ans:1},
+{num:"Q96",text:"In the ABCD model of objective writing, what does 'C' stand for?",opts:["Content","Criterion","Condition","Competency"],ans:2},
+{num:"Q97",text:"Which of the following is a strong, well-written learning objective using the ABCD model?",opts:["Students will understand infection control","Learners will know cardiovascular disease","First-year nursing students will correctly measure and document vital signs, given a simulated patient scenario, with 90% accuracy across 5 consecutive assessments","Students will eventually be able to perform wound care"],ans:2},
+{num:"Q98",text:"In SMART objectives, what does 'M' stand for?",opts:["Motivating","Measurable","Modern","Meaningful"],ans:1},
+{num:"Q99",text:"The objective 'compare the pathophysiology of atherosclerosis vs. hypertension using a Venn diagram with at least 4 correct distinctions' aligns with which cognitive level?",opts:["Remember (L1)","Understand (L2)","Analyze (L4)","Create (L6)"],ans:2},
+{num:"Q100",text:"Which statement correctly applies BOTH the ABCD and SMART frameworks?",opts:["ABCD provides structure; SMART ensures quality — both should be applied together","SMART replaces the need for ABCD in modern curriculum design","ABCD is for nursing objectives only; SMART is for general education","SMART and ABCD are identical frameworks with different names"],ans:0}
+];
+
+var tfData=[
+{num:"Q1",part:"Part A: Teaching, Learning & Education (Q1–Q10)",text:"Teaching is defined as a passive transfer of information from educator to student.",ans:false,exp:"Teaching is a deliberate process of facilitating learning involving planning, delivering, and evaluating instruction."},
+{num:"Q2",text:"Learning produces a permanent modification in an individual's thinking, feeling, and doing.",ans:true,exp:"Correct — genuine learning results in lasting change in thinking, feeling, and doing."},
+{num:"Q3",text:"Education involves only the interplay of teacher and student, excluding social forces.",ans:false,exp:"Education involves the interplay of educator, educand, AND social forces."},
+{num:"Q4",text:"The four components of the education process include: Learning Environment, Teacher, Curriculum, and Learner.",ans:true,exp:"Correct — these are the four components of the education process."},
+{num:"Q5",text:"Teaching has two focal points: teacher and student.",ans:false,exp:"Teaching has three focal points: Teacher, Student, and Subject Matter."},
+{num:"Q6",text:"An inclusive learning atmosphere helps everyone to grow simultaneously.",ans:true,exp:"Correct — inclusion ensures all learners can develop together."},
+{num:"Q7",text:"The curriculum consists only of a list of textbooks students must buy.",ans:false,exp:"The curriculum consists of guidelines of a discipline including experiences students must perform and encounter."},
+{num:"Q8",text:"Learning is a lifelong process of transforming information and experience into knowledge, skills, and attitudes.",ans:true,exp:"Correct — learning is continuous and lifelong."},
+{num:"Q9",text:"Creativity in education only benefits students, not teachers.",ans:false,exp:"Creativity benefits both students and teachers."},
+{num:"Q10",text:"The purpose of education extends beyond literacy to include rational thinking, knowledgeability, and self-sufficiency.",ans:true,exp:"Correct — education's purpose goes far beyond basic literacy."},
+{num:"Q11",part:"Part B: Traditional & Modern Teaching Methods (Q11–Q24)",text:"Traditional teaching is teacher-centered with a passive learning approach.",ans:true,exp:"Correct — traditional methods center the teacher as primary knowledge deliverer."},
+{num:"Q12",text:"The lecture method promotes active learning and strong knowledge retention.",ans:false,exp:"The lecture method promotes passive learning and is associated with poor information retention."},
+{num:"Q13",text:"Group discussion may be dominated by a few students and requires skilled facilitation.",ans:true,exp:"Correct — this is a recognized limitation of group discussion."},
+{num:"Q14",text:"The demonstration method is particularly effective for teaching practical skills.",ans:true,exp:"Correct — demonstration makes abstract concepts concrete and teaches practical skills."},
+{num:"Q15",text:"Recitation focuses on higher-order critical thinking rather than rote memorization.",ans:false,exp:"Recitation focuses primarily on memorization and recall."},
+{num:"Q16",text:"Modern teaching strategies place the student at the center of the learning process.",ans:true,exp:"Correct — student-centeredness is the defining feature of modern strategies."},
+{num:"Q17",text:"Think-Pair-Share promotes individual accountability alongside collaborative reflection.",ans:true,exp:"Correct — it combines individual thinking with partner discussion and class sharing."},
+{num:"Q18",text:"In the Jigsaw Technique, the instructor provides all the content while students listen.",ans:false,exp:"Students become experts on subtopics and teach each other."},
+{num:"Q19",text:"The Flipped Classroom dedicates home time to interactive application activities.",ans:false,exp:"Home time is for reviewing foundational content; class time is for interactive application."},
+{num:"Q20",text:"Personalized Learning tailors instruction to individual needs, strengths, and learning preferences.",ans:true,exp:"Correct — personalized learning creates custom educational pathways."},
+{num:"Q21",text:"Problem-Based Learning (PBL) uses teacher-led lectures as the primary instructional tool.",ans:false,exp:"PBL is an inquiry-driven strategy where students work on complex real-world problems."},
+{num:"Q22",text:"Gamification uses game design elements like points, badges, and leaderboards to enhance motivation.",ans:true,exp:"Correct — this is the core definition of gamification."},
+{num:"Q23",text:"Blended Learning combines traditional face-to-face instruction with online learning activities.",ans:true,exp:"Correct — blended learning merges both modalities."},
+{num:"Q24",text:"In the Self-Directed Blended Learning Model, students must follow a fixed schedule determined by the instructor.",ans:false,exp:"Students autonomously choose their learning pathways."},
+{num:"Q25",part:"Part C: Technologies of Teaching & AI (Q25–Q40)",text:"E-Learning is limited to synchronous online communication only.",ans:false,exp:"E-Learning includes both synchronous and asynchronous modalities."},
+{num:"Q26",text:"Self-Paced Offline E-Learning requires an active internet connection.",ans:false,exp:"It uses hard drives, CDs, or DVDs without internet connection."},
+{num:"Q27",text:"E-Learning promotes self-pacing, which reduces stress and increases satisfaction for learners.",ans:true,exp:"Correct — self-paced learning reduces pressure and improves satisfaction."},
+{num:"Q28",text:"Mobile Learning (M-Learning) in nursing uses smartphones and tablets for clinical reference.",ans:true,exp:"Correct — M-Learning leverages mobile devices at point of care."},
+{num:"Q29",text:"The consistency advantage of E-Learning means all learners receive the same quality content through central control.",ans:true,exp:"Correct — central content control ensures consistent quality for all."},
+{num:"Q30",text:"AI can reduce grading time by up to 40% compared to traditional methods.",ans:true,exp:"Correct — AI assessment tools automate and speed up the grading process."},
+{num:"Q31",text:"AI clinical scenario simulation is designed to replace real ward placements entirely.",ans:false,exp:"AI simulation provides targeted practice before real ward placements, not a replacement."},
+{num:"Q32",text:"Algorithmic Bias can disadvantage students from underrepresented groups.",ans:true,exp:"Correct — AI trained on non-diverse data perpetuates existing inequalities."},
+{num:"Q33",text:"AI writing tools strengthen academic integrity by making student work more authentic.",ans:false,exp:"AI writing tools raise concerns about academic integrity and assessment validity."},
+{num:"Q34",text:"Over-reliance on AI answers may weaken independent clinical reasoning in nursing students.",ans:true,exp:"Correct — over-dependence on AI can erode critical thinking skills."},
+{num:"Q35",text:"AI Intelligent Scheduling matches student competencies with appropriate clinical ward experiences.",ans:true,exp:"Correct — intelligent scheduling optimizes clinical placement alignment."},
+{num:"Q36",text:"Data Security is not a concern in AI-enhanced nursing education because student data is never stored.",ans:false,exp:"Data security is a major concern as AI systems require large datasets including student records."},
+{num:"Q37",text:"Vendor Dependence means institutions are financially protected because AI providers never change pricing.",ans:false,exp:"Vendor Dependence creates financial vulnerability if pricing changes or products are discontinued."},
+{num:"Q38",text:"Interactive teaching involves two-way communication and learner-centered activities.",ans:true,exp:"Correct — interaction and learner-centeredness define interactive teaching."},
+{num:"Q39",text:"Case-Based Learning assesses students primarily on their ability to memorize facts.",ans:false,exp:"CBL assesses the quality of clinical thinking, not memorization."},
+{num:"Q40",text:"85% of students prefer AI tutoring for late-night study support.",ans:true,exp:"Correct — this statistic is cited in the course material."},
+{num:"Q41",part:"Part D: Bloom's Taxonomy (Q41–Q50)",text:"Bloom's original Taxonomy of Educational Objectives was published in 1956.",ans:true,exp:"Correct — published in 1956 by Benjamin Bloom."},
+{num:"Q42",text:"In the 2001 revised taxonomy, 'Synthesis' was renamed 'Create' and moved to the highest level.",ans:true,exp:"Correct — this was the most significant structural change in the 2001 revision."},
+{num:"Q43",text:"In the original 1956 taxonomy, 'Evaluation' was the highest cognitive level.",ans:true,exp:"Correct — Evaluation sat at the top of the original hierarchy."},
+{num:"Q44",text:"In the revised 2001 taxonomy, 'Evaluate' sits above 'Create' in the hierarchy.",ans:false,exp:"Create (L6) is the highest level; Evaluate is L5 in the revised taxonomy."},
+{num:"Q45",text:"The Psychomotor Domain was developed by Simpson in 1972 and covers physical skills.",ans:true,exp:"Correct — Simpson published the Psychomotor domain framework in 1972."},
+{num:"Q46",text:"The Affective Domain addresses attitudes, values, and emotions — from passive awareness to internalized belief.",ans:true,exp:"Correct — the affective domain spans from Receiving (L1) to Characterization (L5)."},
+{num:"Q47",text:"The verb 'Design' is associated with the Remember (L1) level of the revised cognitive taxonomy.",ans:false,exp:"'Design' is a Create (L6) verb. 'Define' and 'List' are Remember verbs."},
+{num:"Q48",text:"A well-written learning objective must be observable and measurable.",ans:true,exp:"Correct — observability and measurability are core requirements of good objectives."},
+{num:"Q49",text:"In the ABCD model, 'D' stands for Degree — the minimum acceptable standard of performance.",ans:true,exp:"Correct — Degree specifies the performance standard (e.g., 90% accuracy)."},
+{num:"Q50",text:"Goals and objectives are interchangeable terms in instructional design.",ans:false,exp:"Goals are broad, non-measurable ideals; objectives are specific, observable, measurable statements of learner behavior."}
+];
+
+var matchingData=[
+{title:"Match Set 1: Teaching & Learning Definitions",
+colA:[{n:1,t:"Teaching"},{n:2,t:"Learning"},{n:3,t:"Education"},{n:4,t:"Curriculum"},{n:5,t:"Learning Environment"}],
+colB:[{l:"A",t:"A dynamic process involving educator, educand, and social forces"},{l:"B",t:"Guidelines of a discipline outlining what students must perform and experience"},{l:"C",t:"A permanent change in knowledge, skills, and attitudes"},{l:"D",t:"A deliberate process of planning, delivering, and evaluating instruction"},{l:"E",t:"The physical and social space where students learn and create"}],
+answers:["1→D","2→C","3→A","4→B","5→E"]},
+{title:"Match Set 2: Traditional Teaching Methods",
+colA:[{n:1,t:"Lecture Method"},{n:2,t:"Group Discussion"},{n:3,t:"Demonstration"},{n:4,t:"Recitation"},{n:5,t:"Drill & Practice"}],
+colB:[{l:"A",t:"Teacher shows a skill for students to replicate"},{l:"B",t:"Reinforces procedures and memorization through repetition"},{l:"C",t:"Cooperative problem-solving with consensus-building"},{l:"D",t:"Teacher verbally delivers information to students"},{l:"E",t:"Teacher questions students to prompt recall of learned material"}],
+answers:["1→D","2→C","3→A","4→E","5→B"]},
+{title:"Match Set 3: Modern Teaching Strategies",
+colA:[{n:1,t:"Think-Pair-Share"},{n:2,t:"Jigsaw Technique"},{n:3,t:"Flipped Classroom"},{n:4,t:"Gamification"},{n:5,t:"Blended Learning"}],
+colB:[{l:"A",t:"Combines face-to-face instruction with online learning activities"},{l:"B",t:"Each student becomes an expert on a subtopic and teaches it to the group"},{l:"C",t:"Applies points, badges, and leaderboards to increase motivation"},{l:"D",t:"Think individually, discuss with partner, share with class"},{l:"E",t:"Students review foundational content at home; apply knowledge in class"}],
+answers:["1→D","2→B","3→E","4→C","5→A"]},
+{title:"Match Set 4: E-Learning Modalities",
+colA:[{n:1,t:"Self-Paced Online"},{n:2,t:"Self-Paced Offline"},{n:3,t:"Group-Based Synchronous"},{n:4,t:"Group-Based Asynchronous"},{n:5,t:"Blended Flex Model"}],
+colB:[{l:"A",t:"Groups work together in real time via videoconference"},{l:"B",t:"Learner accesses resources via internet at their own pace"},{l:"C",t:"Online is primary delivery; instructor provides targeted face-to-face support"},{l:"D",t:"Groups work over time with delayed exchanges — email, forums"},{l:"E",t:"Learner uses offline resources such as CD or DVD"}],
+answers:["1→B","2→E","3→A","4→D","5→C"]},
+{title:"Match Set 5: AI in Nursing Education",
+colA:[{n:1,t:"Adaptive Learning Paths"},{n:2,t:"Algorithmic Bias"},{n:3,t:"Vendor Dependence"},{n:4,t:"Intelligent Scheduling"},{n:5,t:"Academic Integrity"}],
+colB:[{l:"A",t:"AI adjusts content difficulty and pacing to match each student's performance"},{l:"B",t:"Reliance on commercial AI providers creates financial vulnerability"},{l:"C",t:"AI writing tools blur the line of genuine student work"},{l:"D",t:"AI trained on non-diverse datasets may disadvantage underrepresented groups"},{l:"E",t:"AI matches student competencies with appropriate clinical placements"}],
+answers:["1→A","2→D","3→B","4→E","5→C"]},
+{title:"Match Set 6: Bloom's Taxonomy — Cognitive Levels & Verbs",
+colA:[{n:1,t:"Remember (L1)"},{n:2,t:"Understand (L2)"},{n:3,t:"Apply (L3)"},{n:4,t:"Analyze (L4)"},{n:5,t:"Evaluate (L5)"},{n:6,t:"Create (L6)"}],
+colB:[{l:"A",t:"Justify / Critique / Defend"},{l:"B",t:"Design / Formulate / Construct"},{l:"C",t:"Define / List / Name"},{l:"D",t:"Summarize / Classify / Explain"},{l:"E",t:"Calculate / Demonstrate / Solve"},{l:"F",t:"Differentiate / Examine / Distinguish"}],
+answers:["1→C","2→D","3→E","4→F","5→A","6→B"]},
+{title:"Match Set 7: Bloom's Three Domains",
+colA:[{n:1,t:"Cognitive Domain"},{n:2,t:"Affective Domain"},{n:3,t:"Psychomotor Domain"},{n:4,t:"Characterization (Affective L5)"},{n:5,t:"Mechanism (Psychomotor L4)"}],
+colB:[{l:"A",t:"Operates ECG machine without supervision"},{l:"B",t:"Consistently embodies patient-centered care values as a life philosophy"},{l:"C",t:"Mental skills from recall to complex creation (Bloom/Anderson)"},{l:"D",t:"Physical skills from imitation to mastery (Simpson, 1972)"},{l:"E",t:"Attitudes, values, and emotions from awareness to internalized belief"}],
+answers:["1→C","2→E","3→D","4→B","5→A"]},
+{title:"Match Set 8: ABCD Model Components",
+colA:[{n:1,t:"Audience"},{n:2,t:"Behavior"},{n:3,t:"Condition"},{n:4,t:"Degree"},{n:5,t:"SMART — Measurable"}],
+colB:[{l:"A",t:"'...with 90% accuracy across 5 consecutive assessments'"},{l:"B",t:"'...given a standardized simulated patient scenario'"},{l:"C",t:"'First-year nursing students...'"},{l:"D",t:"'will correctly calculate drug dosage' — an observable action verb"},{l:"E",t:"'Score ≥85% on OSCE station' — can be quantified"}],
+answers:["1→C","2→D","3→B","4→A","5→E"]}
+];
+
+var fitbData=[
+{num:"Q1",part:"Part A: Teaching & Learning Foundations (Q1–Q10)",text:"Teaching is a __________ process of facilitating learning that involves planning, delivering, and evaluating instruction.",ans:"deliberate"},
+{num:"Q2",text:"Learning is a lifelong process of transforming information and experience into __________, __________, and __________.",ans:"knowledge, skills, and attitudes"},
+{num:"Q3",text:"Education is a __________ process involving the interplay of educator, educand, and social forces.",ans:"dynamic"},
+{num:"Q4",text:"The four components of the education process are: Learning Environment, Teacher, __________, and Learner.",ans:"Curriculum"},
+{num:"Q5",text:"Teaching as a social process has three focal points: Teacher, Student, and __________.",ans:"Subject Matter"},
+{num:"Q6",text:"An __________ learning atmosphere helps everyone to grow simultaneously.",ans:"inclusive"},
+{num:"Q7",text:"The teacher is the most important factor in assuring the __________ of education.",ans:"quality"},
+{num:"Q8",text:"Learning produces a __________ change in thinking, feeling, and doing.",ans:"permanent"},
+{num:"Q9",text:"Creativity can be developed and innovation benefits both __________ and __________.",ans:"students and teachers"},
+{num:"Q10",text:"The curriculum is a series of things a student must __________ and __________ to develop learning abilities.",ans:"perform and experience"},
+{num:"Q11",part:"Part B: Traditional & Modern Teaching Strategies (Q11–Q22)",text:"Traditional teaching is also known as lecture-based or __________ approach.",ans:"didactic"},
+{num:"Q12",text:"The lecture method is efficient but promotes __________ learning.",ans:"passive"},
+{num:"Q13",text:"Modern teaching strategies place the __________ at the center of the learning process.",ans:"student"},
+{num:"Q14",text:"Active/Interactive Learning is grounded in __________ learning theory.",ans:"constructivist"},
+{num:"Q15",text:"In the Think-Pair-Share strategy, students think individually, discuss with a __________, then share with the class.",ans:"partner"},
+{num:"Q16",text:"In the Jigsaw Technique, each student becomes an __________ on a specific subtopic and teaches it to the group.",ans:"expert"},
+{num:"Q17",text:"The Flipped Classroom inverts the traditional sequence — students review content at __________ and apply knowledge in __________.",ans:"home / class"},
+{num:"Q18",text:"Gamification applies game design elements — points, __________, leaderboards, levels — to educational contexts.",ans:"badges"},
+{num:"Q19",text:"Problem-Based Learning develops diagnostic reasoning, ethical decision-making, and __________ communication.",ans:"interprofessional"},
+{num:"Q20",text:"In the __________ Model of Blended Learning, students autonomously choose their learning pathways.",ans:"Self-Directed"},
+{num:"Q21",text:"Adaptive Learning Technology adjusts difficulty, format, and pacing based on each student's __________ and performance data.",ans:"ongoing responses"},
+{num:"Q22",text:"E-Learning uses modern __________ mechanisms — computers, networks, multimedia, and internet portals.",ans:"communication"},
+{num:"Q23",part:"Part C: AI in Nursing Education (Q23–Q28)",text:"AI assessment tools can reduce grading time by up to __________.",ans:"40%"},
+{num:"Q24",text:"AI provides __________ faster feedback cycles compared to traditional methods.",ans:"3x"},
+{num:"Q25",text:"Algorithmic Bias occurs when AI is trained on __________ datasets.",ans:"non-diverse"},
+{num:"Q26",text:"Over-reliance on AI may weaken independent __________ reasoning — a core nursing competency.",ans:"clinical"},
+{num:"Q27",text:"Students must be __________ when AI monitors their learning behaviours — reflecting Consent & Transparency.",ans:"informed"},
+{num:"Q28",text:"AI chatbots and virtual assistants provide __________ support, reducing student anxiety.",ans:"round-the-clock"},
+{num:"Q29",part:"Part D: Bloom's Taxonomy (Q29–Q35)",text:"Bloom's original Taxonomy of Educational Objectives was published in __________.",ans:"1956"},
+{num:"Q30",text:"The 2001 revision of Bloom's Taxonomy was conducted by __________ and __________.",ans:"Anderson and Krathwohl"},
+{num:"Q31",text:"In the revised 2001 taxonomy, the six levels from lowest to highest end with: ...Analyze, __________, and __________.",ans:"Evaluate, Create"},
+{num:"Q32",text:"The three domains of Bloom's framework are the Cognitive domain (________), the Affective domain (________), and the Psychomotor domain (________).",ans:"Thinking / Feeling / Doing"},
+{num:"Q33",text:"In the ABCD model, A = Audience, B = __________, C = Condition, D = __________.",ans:"Behavior / Degree"},
+{num:"Q34",text:"A learning Goal is __________, long-term, and NOT directly measurable, while a learning Objective is __________, observable, and measurable.",ans:"broad / specific"},
+{num:"Q35",text:"The verb '________' signals the Create (L6) cognitive level, while the verb '________' signals the Remember (L1) level.",ans:"Design / Define"}
+];
+
+var essayData=[
+{num:"Q1",type:"List",text:"List the four components of the education process.",ans:"<ul><li>Learning Environment</li><li>Teacher</li><li>Curriculum</li><li>Learner</li></ul>"},
+{num:"Q2",type:"List",text:"List the six traditional teaching methods with one key advantage and one limitation each.",ans:"<ul><li><strong>Lecture:</strong> Advantage — delivers large volume of content efficiently; Limitation — promotes passive learning</li><li><strong>Group Discussion:</strong> Advantage — develops critical thinking; Limitation — can be dominated by few students</li><li><strong>Demonstration:</strong> Advantage — makes skills concrete; Limitation — students are passive observers</li><li><strong>Recitation:</strong> Advantage — reinforces recall; Limitation — creates anxiety, focuses on memorization</li><li><strong>Drill & Practice:</strong> Advantage — reinforces procedures; Limitation — does not develop higher-order thinking</li><li><strong>Textbook Method:</strong> Advantage — primary systematic resource; Limitation — passive, no interactivity</li></ul>"},
+{num:"Q3",type:"List",text:"List the seven modern teaching strategies.",ans:"<ol><li>Active / Interactive Learning</li><li>Think-Pair-Share</li><li>Peer Teaching</li><li>Socratic Seminar</li><li>Jigsaw Technique</li><li>Learning Stations</li><li>Flipped Classroom</li></ol><p>Also: Personalized Learning (ILPs), PBL, Gamification, Blended Learning</p>"},
+{num:"Q4",type:"List",text:"List the four modalities of E-Learning.",ans:"<ol><li>Self-Paced Online</li><li>Self-Paced Offline (CD/DVD/Hard Drive)</li><li>Group-Based Synchronous (live video/chat)</li><li>Group-Based Asynchronous (email, forums, LMS)</li></ol>"},
+{num:"Q5",type:"List",text:"List the six cognitive levels of Bloom's Revised Taxonomy (2001) in order from lowest to highest.",ans:"<ol><li>Remember (L1)</li><li>Understand (L2)</li><li>Apply (L3)</li><li>Analyze (L4)</li><li>Evaluate (L5)</li><li>Create (L6)</li></ol>"},
+{num:"Q6",type:"List",text:"List the three domains of Bloom's Taxonomy.",ans:"<ul><li><strong>Cognitive Domain</strong> — Mental skills (Bloom 1956; revised Anderson & Krathwohl 2001)</li><li><strong>Affective Domain</strong> — Attitudes, values, emotions (Krathwohl, Bloom & Masia 1964)</li><li><strong>Psychomotor Domain</strong> — Physical/motor skills (Simpson 1972)</li></ul>"},
+{num:"Q7",type:"Explain",text:"Explain the differences between teaching, learning, and education, and how they interrelate in nursing education.",ans:"<ul><li><strong>Teaching:</strong> Deliberate, planned facilitation of learning; instructor acts intentionally</li><li><strong>Learning:</strong> The learner's permanent change through experience</li><li><strong>Education:</strong> The broader systematic dynamic process encompassing both, shaped by social forces</li><li>In nursing: all three are interdependent — quality nursing education requires skilled teaching, active learning, and a supportive environment</li></ul>"},
+{num:"Q8",type:"Explain",text:"Explain why modern teaching strategies are particularly important in nursing education, using at least three strategies as examples.",ans:"<ul><li>Healthcare demands critical thinking, clinical reasoning, communication, and collaboration</li><li><strong>PBL:</strong> Develops diagnostic reasoning through realistic clinical cases</li><li><strong>Simulation/Role-Play:</strong> Safe practice before real ward placements</li><li><strong>Flipped Classroom:</strong> Deeper in-class engagement with clinical application</li><li>Graduates need real-world competencies beyond textbook knowledge</li></ul>"},
+{num:"Q9",type:"Explain",text:"Explain how AI creates personalized, efficient learning in nursing education. Include at least four specific AI features.",ans:"<ul><li><strong>Adaptive Learning Paths:</strong> Adjusts difficulty and pacing per student</li><li><strong>Clinical Scenario Simulation:</strong> Tailored patient scenarios at student's skill level</li><li><strong>Personalized Feedback Loops:</strong> Immediate specific feedback on assessments</li><li><strong>Evidence-Based Content Matching:</strong> Curates research relevant to each student's objectives</li><li><strong>24/7 Virtual Tutoring:</strong> Round-the-clock support reducing anxiety</li><li><strong>Automated Assessment:</strong> Instant grading freeing instructor time</li></ul>"},
+{num:"Q10",type:"Explain",text:"Explain the critical difference between a learning Goal and a learning Objective. Provide one example of each from nursing education.",ans:"<ul><li><strong>Goal:</strong> Broad, long-term, general statement — NOT directly measurable</li><li>Goal example: 'Students will develop an appreciation for evidence-based nursing practice'</li><li><strong>Objective:</strong> Specific, observable, measurable statement of what the learner DOES</li><li>Objective example: 'First-year nursing students will correctly calculate IV drug dosage given a patient scenario with 90% accuracy across 5 consecutive problems'</li><li>Key: objectives must use action verbs from Bloom's Taxonomy; vague verbs make objectives unmeasurable</li></ul>"},
+{num:"Q11",type:"Explain",text:"Explain the ABCD model for writing learning objectives. Define each component.",ans:"<ul><li><strong>A — Audience:</strong> WHO the learner is</li><li><strong>B — Behavior:</strong> Observable ACTION VERB from Bloom's — what they will DO</li><li><strong>C — Condition:</strong> Context, tools, constraints</li><li><strong>D — Degree:</strong> Minimum acceptable standard</li><li>Complete example: 'Second-year nursing students (A) will demonstrate correct aseptic wound dressing technique (B) given a simulation mannequin and sterile dressing pack (C) with no protocol breaches across 3 consecutive observations (D)'</li></ul>"},
+{num:"Q12",type:"Enumerate",text:"Enumerate the key characteristics of traditional teaching methods and explain how each impacts nursing student learning outcomes.",ans:"<ol><li><strong>Teacher-centered:</strong> Controls all content; students are passive, limiting agency</li><li><strong>Curriculum-driven:</strong> Systematic coverage but limited flexibility</li><li><strong>Passive learning:</strong> Students listen; reduces skill development</li><li><strong>Standardized assessment:</strong> May not capture diverse competencies</li><li><strong>Whole-class instruction:</strong> One pace for all; disadvantages diverse learning styles</li><li><strong>Structured environment:</strong> Provides order but stifles critical inquiry</li></ol>"},
+{num:"Q13",type:"Enumerate",text:"Enumerate the advantages of E-Learning and explain how each applies to nursing education.",ans:"<ol><li><strong>Convenient:</strong> Self-service, on-demand — suits students with clinical shift schedules</li><li><strong>Cost-Effective:</strong> Reduced travel costs — accessible to resource-limited programs</li><li><strong>Consistent:</strong> Same content quality for all — standardized theoretical knowledge base</li><li><strong>Media-Rich:</strong> Multimedia aids understanding of complex clinical concepts</li><li><strong>Repeatable:</strong> Lessons accessed multiple times — valuable for reviewing procedures</li><li><strong>Easy Monitoring:</strong> Precise progress tracking helps identify struggling students early</li></ol>"},
+{num:"Q14",type:"Enumerate",text:"Enumerate the levels of the Psychomotor Domain (Simpson, 1972), provide a representative verb for each level, and give a nursing skill example.",ans:"<ol><li><strong>Perception (L1):</strong> Detect/Identify — Student notices incorrect grip on surgical tool</li><li><strong>Set (L2):</strong> Prepare/Position — Positions hands correctly before IV insertion</li><li><strong>Guided Response (L3):</strong> Copy/Imitate — Follows step-by-step guide to suture a wound</li><li><strong>Mechanism (L4):</strong> Operate/Calibrate — Operates ECG machine without supervision</li><li><strong>Complex Response (L5):</strong> Execute/Adapt/Automate — Performs central line dressing change with full fluency</li></ol>"},
+{num:"Q15",type:"Enumerate",text:"Enumerate the levels of the Affective Domain (Krathwohl et al., 1964), with representative verbs and nursing examples.",ans:"<ol><li><strong>Receiving (L1):</strong> Listen/Attend/Notice — Student listens attentively to patient's concerns</li><li><strong>Responding (L2):</strong> Participate/Contribute — Actively participates in ethics seminar</li><li><strong>Valuing (L3):</strong> Advocate/Justify/Support — Advocates for patient rights in MDT meetings</li><li><strong>Organization (L4):</strong> Organize/Prioritize/Balance — Reconciles personal beliefs with professional ethics</li><li><strong>Characterization (L5):</strong> Internalize/Embody — Consistently embodies patient-centered care in all interactions</li></ol>"},
+{num:"Q16",type:"Compare",text:"Compare traditional teaching methods and modern teaching strategies in terms of (a) teacher role, (b) student role, (c) assessment approach, and (d) suitability for nursing education.",ans:"<ul><li><strong>(a) Teacher Role:</strong> Traditional — primary knowledge transmitter; Modern — facilitator supporting student inquiry</li><li><strong>(b) Student Role:</strong> Traditional — passive recipient; Modern — active participant constructing knowledge</li><li><strong>(c) Assessment:</strong> Traditional — standardized exams measuring recall; Modern — formative, performance-based, reflective</li><li><strong>(d) Nursing Suitability:</strong> Traditional — useful for systematic content delivery; Modern — superior for clinical reasoning and real-world competencies</li></ul>"},
+{num:"Q17",type:"Compare",text:"Compare Bloom's original 1956 taxonomy and the revised 2001 taxonomy. Identify all six levels in both, explain the key changes, and discuss educational implications.",ans:"<ul><li><strong>Original (1956):</strong> Knowledge → Comprehension → Application → Analysis → Synthesis → Evaluation</li><li><strong>Revised (2001):</strong> Remember → Understand → Apply → Analyze → Evaluate → Create</li><li>Change 1: Nouns replaced with action verbs — shifts focus to observable behavior</li><li>Change 2: Synthesis renamed 'Create' and moved to the apex</li><li>Change 3: Evaluate (L5) and Create (L6) order swapped vs original</li><li>Implication: verb-based revision makes objectives more measurable; Create at apex encourages higher-order tasks</li></ul>"},
+{num:"Q18",type:"Compare",text:"Compare the opportunities and challenges of AI integration in nursing education covering personalization, efficiency, ethical concerns, and economic factors.",ans:"<ul><li><strong>Opportunities — Personalization:</strong> Adaptive paths, clinical simulations tailored per student</li><li><strong>Opportunities — Efficiency:</strong> 40% grading reduction; 3x faster feedback; 60% admin automation</li><li><strong>Opportunities — Access:</strong> 24/7 tutoring support</li><li><strong>Challenges — Ethical:</strong> Algorithmic bias, academic integrity, erosion of critical thinking, consent</li><li><strong>Challenges — Economic:</strong> High costs, unequal access, faculty retraining, vendor dependence</li><li><strong>Challenges — Technical:</strong> Infrastructure gaps, data security, AI hallucinations, digital literacy</li></ul>"},
+{num:"Q19",type:"Compare",text:"Compare the ABCD and SMART frameworks for writing learning objectives. Explain how they differ, overlap, and complement each other.",ans:"<ul><li><strong>ABCD — Structure:</strong> Audience, Behavior, Condition, Degree</li><li><strong>SMART — Quality:</strong> Specific, Measurable, Achievable, Relevant, Time-bound</li><li><strong>Overlap:</strong> Degree = Measurable; Behavior = Specific</li><li><strong>Difference:</strong> ABCD names audience and condition explicitly; SMART ensures achievability, relevance, time-bound nature</li><li>Combined example: 'Second-year pharmacy students will correctly calculate drug dosage given a practical exam with 10 patient scenarios, achieving 9 out of 10 correct'</li></ul>"},
+{num:"Q20",type:"Illustrate",text:"Illustrate with a clinical example how Think-Pair-Share can be applied in a nursing pharmacology class on opioid overdose management.",ans:"<ol><li><strong>Pose question:</strong> 'A patient on IV morphine has RR 8/min and is unresponsive. What is your first nursing intervention?'</li><li><strong>Think (2 min):</strong> Student writes: stop infusion → assess consciousness → airway → call physician</li><li><strong>Pair (3 min):</strong> Student A says 'naloxone first'; Student B says 'airway assessment first' — productive debate</li><li><strong>Share:</strong> Instructor consolidates: 'ABC protocol first, then naloxone per opioid overdose protocol'</li><li><strong>Outcome:</strong> Reinforces clinical priority-setting, ABCDE assessment, pharmacology, and peer learning</li></ol>"},
+{num:"Q21",type:"Illustrate",text:"Illustrate how Gamification can be implemented in a nursing anatomy and physiology course.",ans:"<ul><li><strong>Platform:</strong> Kahoot or Quizlet Live for cardiovascular system review</li><li><strong>Points:</strong> Earned for each correct answer on cardiac anatomy</li><li><strong>Badges:</strong> 'Cardiology Expert' badge for completing ECG interpretation module</li><li><strong>Leaderboards:</strong> Class ranking drives healthy competition</li><li><strong>Levels:</strong> Progress from basic anatomy to complex hemodynamics</li><li><strong>Flow State:</strong> Difficulty calibrated just above comfort level for optimal engagement</li></ul>"},
+{num:"Q22",type:"Illustrate",text:"Illustrate how the ABCD model is applied when writing a learning objective for a clinical skills lab on IV catheter insertion.",ans:"<ul><li><strong>Weak:</strong> 'Students will understand IV insertion' — vague, not measurable</li><li><strong>A (Audience):</strong> 'Second-year nursing students'</li><li><strong>B (Behavior):</strong> 'will correctly insert a peripheral IV catheter using aseptic technique'</li><li><strong>C (Condition):</strong> 'given a standardized simulation arm and a sterile IV insertion kit'</li><li><strong>D (Degree):</strong> 'with no protocol violations across 3 consecutive supervised attempts'</li><li><strong>SMART check:</strong> Specific ✓ Measurable ✓ Achievable ✓ Relevant ✓ Time-bound ✓</li></ul>"},
+{num:"Q23",type:"Illustrate",text:"Illustrate how Bloom's three domains can be integrated in a single nursing lesson on patient communication and cultural competence.",ans:"<ul><li><strong>Cognitive (Analyze L4):</strong> Students will differentiate culturally appropriate from inappropriate communication strategies across 4 patient scenarios</li><li><strong>Affective (Valuing L3):</strong> Students will advocate for a culturally sensitive care approach in a written reflection</li><li><strong>Psychomotor (Guided Response L3):</strong> Students will demonstrate active listening techniques in 4 out of 5 observed interactions</li><li><strong>Integration:</strong> Students KNOW (cognitive), VALUE (affective), and CAN DO (psychomotor) culturally competent communication</li></ul>"},
+{num:"Q24",type:"Illustrate",text:"Illustrate the full Flipped Classroom process for a nursing class on diabetic ketoacidosis (DKA).",ans:"<ol><li><strong>Pre-Class:</strong> Instructor uploads 15-min video on DKA pathophysiology to LMS</li><li><strong>Pre-Class Quiz:</strong> 5 online questions to confirm comprehension</li><li><strong>In-Class Opening (10 min):</strong> Q&A addressing gaps from quiz responses</li><li><strong>In-Class Application (30 min):</strong> Groups receive DKA case — glucose 480, Kussmaul breathing, altered consciousness — develop NANDA care plan</li><li><strong>Sharing & Debrief (15 min):</strong> Groups present reasoning; Socratic questioning by instructor</li></ol>"},
+{num:"Q25",type:"Illustrate",text:"Illustrate with a specific example how Collaborative Group Projects simulate multidisciplinary teamwork.",ans:"<ul><li><strong>Task:</strong> Groups of 5 research 'Prevention of Hospital-Acquired Pressure Injuries'</li><li><strong>Roles:</strong> Nursing lead, pharmacology resource, evidence researcher, patient educator, presenter</li><li><strong>Process:</strong> Collaborative research; discussion of conflicting evidence; consensus on best practice</li><li><strong>Presentation:</strong> 15-min presentation simulating a multidisciplinary quality improvement meeting</li><li><strong>Outcomes:</strong> Teamwork, communication, evidence-based practice, professional accountability</li></ul>"},
+{num:"Q26",type:"Analyze",text:"Analyze the importance of using action verbs from Bloom's Taxonomy when writing learning objectives. Provide three weak-to-strong rewrites.",ans:"<ul><li>Vague verbs (know, understand, appreciate) are unobservable and unmeasurable</li><li><strong>Rewrite 1:</strong> WEAK: 'Know about infection control' → STRONG: 'Demonstrate correct hand hygiene in 5/5 observations (Psychomotor L4)'</li><li><strong>Rewrite 2:</strong> WEAK: 'Understand cardiovascular disease' → STRONG: 'Compare atherosclerosis vs hypertension using Venn diagram with ≥4 distinctions (Analyze L4)'</li><li><strong>Rewrite 3:</strong> WEAK: 'Appreciate ethical practice' → STRONG: 'Defend ethical position in 300+ word reflection citing ≥2 ethical principles (Valuing L3)'</li></ul>"},
+{num:"Q27",type:"Compare",text:"Compare Cognitive Domain levels Apply (L3), Analyze (L4), Evaluate (L5), and Create (L6). Explain the cognitive demands of each.",ans:"<ul><li><strong>Apply (L3):</strong> Execute known knowledge in new context; Verbs: Calculate, Demonstrate, Solve; Assessment: dosage calculation exam</li><li><strong>Analyze (L4):</strong> Break material into parts, determine relationships; Verbs: Differentiate, Compare, Examine; Assessment: ECG rhythm analysis</li><li><strong>Evaluate (L5):</strong> Make judgments based on criteria; Verbs: Critique, Justify, Defend; Assessment: critique a clinical trial methodology</li><li><strong>Create (L6):</strong> Form a novel whole — highest level; Verbs: Design, Construct, Formulate; Assessment: design a new patient care protocol</li></ul>"},
+{num:"Q28",type:"Design",text:"Design a complete set of learning objectives for a one-hour nursing lecture on hypertension management — one objective from each domain.",ans:"<ul><li><strong>Cognitive (Analyze L4):</strong> After the lecture, students will compare the pathophysiology of primary vs. secondary hypertension, correctly identifying at least 4 distinguishing features</li><li><strong>Affective (Valuing L3):</strong> Students will advocate for a patient-centered management approach in a written reflection citing ≥2 evidence-based reasons supporting lifestyle modification</li><li><strong>Psychomotor (Mechanism L4):</strong> Students will correctly measure blood pressure using a manual sphygmomanometer, obtaining readings within ±4 mmHg across 3 consecutive measurements</li></ul>"},
+{num:"Q29",type:"Evaluate",text:"Evaluate the strengths and limitations of using Bloom's Taxonomy as a framework for designing nursing education curricula.",ans:"<ul><li><strong>Strengths:</strong> Clear hierarchy; verb lists standardize objective writing; three domains ensure holistic education; aligns assessment with objectives; widely validated</li><li><strong>Limitations — Cognitive:</strong> Hierarchy may be overly rigid; real clinical reasoning rarely follows linear progression</li><li><strong>Limitations — Affective:</strong> Difficult to assess objectively; Characterization (L5) takes years to develop</li><li><strong>Limitations — Psychomotor:</strong> Simpson's model not specifically designed for nursing; Miller's Pyramid may better represent clinical skill progression</li></ul>"},
+{num:"Q30",type:"Explain",text:"Explain the five levels of the Affective Domain and discuss why developing affective competencies is critical in nursing education.",ans:"<ul><li><strong>L1 Receiving:</strong> Aware and willing to listen — attends to patient's emotional distress</li><li><strong>L2 Responding:</strong> Actively participates — asks empathetic follow-up questions</li><li><strong>L3 Valuing:</strong> Assigns worth to belief — advocates for patient dignity</li><li><strong>L4 Organization:</strong> Integrates values into system — balances patient autonomy with duty of care</li><li><strong>L5 Characterization:</strong> Internalized behavior — always provides culturally sensitive care without being reminded</li><li><strong>Nursing importance:</strong> Technical skill alone is insufficient; compassion and ethical practice are daily requirements</li></ul>"},
+{num:"Q31",type:"Compare",text:"Compare weak and strong learning objectives. Provide three pairs of weak-to-strong rewrites across different domains and Bloom's levels.",ans:"<ul><li><strong>Pair 1 — Cognitive (Evaluate L5):</strong> WEAK: 'Know about research methodology' → STRONG: 'Critique methodology of an RCT using structured appraisal tool, identifying ≥3 validity threats'</li><li><strong>Pair 2 — Affective (Valuing L3):</strong> WEAK: 'Appreciate ethical practice' → STRONG: 'Defend ethical position on a patient autonomy case in 300+ word reflection citing ≥2 ethical principles'</li><li><strong>Pair 3 — Psychomotor (Complex Response L5):</strong> WEAK: 'Be able to perform wound care' → STRONG: 'Independently perform aseptic wound dressing change with full fluency in 3 consecutive unsupervised observations without protocol violations'</li></ul>"},
+{num:"Q32",type:"Enumerate",text:"Enumerate the characteristics of effective (SMART) learning objectives. For each, provide a weak and strong nursing objective example.",ans:"<ul><li><strong>S — Specific:</strong> WEAK: 'Understand anatomy' → STRONG: 'Label the 12 cranial nerves'</li><li><strong>M — Measurable:</strong> WEAK: 'Improve communication' → STRONG: 'Score ≥85% on OSCE communication station'</li><li><strong>A — Achievable:</strong> WEAK: 'Perform advanced cardiac surgery (day 1)' → STRONG: Objectives built on prior foundational skills appropriate to year level</li><li><strong>R — Relevant:</strong> WEAK: 'Memorize historical nursing trivia' → STRONG: 'Apply evidence-based pressure injury prevention protocol'</li><li><strong>T — Time-bound:</strong> WEAK: 'Eventually perform IV insertion' → STRONG: 'By end of Week 6 lab, perform IV insertion with no protocol breaches'</li></ul>"},
+{num:"Q33",type:"Explain",text:"Explain how Bloom's Taxonomy can be applied when planning a clinical nursing simulation session.",ans:"<ul><li>Define objectives across all three domains before the simulation</li><li>Cognitive: students analyze the patient scenario (Analyze L4)</li><li>Affective: students demonstrate empathy and therapeutic communication (Valuing L3)</li><li>Psychomotor: students perform correct clinical procedures (Mechanism L4)</li><li>Debrief session aligns with Evaluate (L5) — students critique their own performance</li><li>Ensures holistic learning: thinking + feeling + doing in one session</li></ul>"},
+{num:"Q34",type:"Explain",text:"Explain the concept of 'flow state' in gamification and its relevance to nursing education.",ans:"<ul><li>Flow state: difficulty calibrated just above the student's current comfort level for optimal engagement</li><li>Not too easy (boredom) and not too hard (frustration)</li><li>In nursing education: adaptive quiz platforms adjust difficulty after each answer</li><li>Maintains motivation through the entire content module</li><li>Immediate feedback keeps students in flow by correcting errors instantly</li><li>Results in deeper engagement with complex clinical content</li></ul>"},
+{num:"Q35",type:"Compare",text:"Compare synchronous and asynchronous E-Learning modalities. Give a nursing education example for each.",ans:"<ul><li><strong>Synchronous:</strong> Real-time participation — students interact simultaneously; Example: live Zoom pharmacology lecture with Q&A</li><li><strong>Asynchronous:</strong> Time-shifted participation — students work at own pace; Example: recorded pathophysiology video + LMS discussion forum</li><li><strong>Advantages Synchronous:</strong> Immediate interaction, real-time Q&A, replicates classroom dynamics</li><li><strong>Advantages Asynchronous:</strong> Flexible scheduling, self-paced, accessible 24/7 — ideal for students on clinical rotation</li><li>Best practice: combine both for maximum flexibility and engagement</li></ul>"}
+];
+
+var gScore=0, mcqState={a:0,c:0}, tfState={a:0,c:0}, fitbState={a:0,c:0};
+function updGS(d){gScore+=d;if(gScore<0)gScore=0;document.getElementById('globalScore').textContent=gScore;}
+function switchTab(id,btn){document.querySelectorAll('.section-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');}
+
+function renderMCQ(){
+  var c=document.getElementById('mcq-container');c.innerHTML='';var cp='';
+  mcqData.forEach(function(q,i){
+    if(q.part&&q.part!==cp){cp=q.part;var pl=document.createElement('div');pl.className='part-label';pl.textContent=q.part;c.appendChild(pl);}
+    var d=document.createElement('div');d.className='q-card';d.id='mc'+i;
+    var opts=q.opts.map(function(o,oi){return '<button class="opt-btn" onclick="ansMCQ('+i+','+oi+')" id="mco'+i+'_'+oi+'"><span class="opt-letter">'+['A','B','C','D'][oi]+'</span><span>'+o+'</span></button>';}).join('');
+    d.innerHTML='<div class="q-num">Question '+q.num+'</div><div class="q-text">'+q.text+'</div><div class="options-grid" id="mog'+i+'">'+opts+'</div><div class="q-feedback" id="mfb'+i+'"></div>';
+    c.appendChild(d);
+  });
+}
+function ansMCQ(qi,oi){
+  var q=mcqData[qi];
+  document.querySelectorAll('#mog'+qi+' .opt-btn').forEach(function(b){b.disabled=true;});
+  var fb=document.getElementById('mfb'+qi);var card=document.getElementById('mc'+qi);
+  if(oi===q.ans){document.getElementById('mco'+qi+'_'+oi).classList.add('correct');fb.className='q-feedback show correct-fb';fb.innerHTML='&#10003; Correct!';card.classList.add('answered-correct');mcqState.c++;updGS(1);}
+  else{document.getElementById('mco'+qi+'_'+oi).classList.add('wrong');document.getElementById('mco'+qi+'_'+q.ans).classList.add('correct');fb.className='q-feedback show wrong-fb';fb.innerHTML='&#10007; Incorrect. Correct answer: '+['A','B','C','D'][q.ans];card.classList.add('answered-wrong');}
+  mcqState.a++;document.getElementById('mcq-stat').textContent=mcqState.a+' / 100 answered';document.getElementById('mcq-progress').style.width=(mcqState.a/100*100)+'%';
+}
+
+function renderTF(){
+  var c=document.getElementById('tf-container');c.innerHTML='';var cp='';
+  tfData.forEach(function(q,i){
+    if(q.part&&q.part!==cp){cp=q.part;var pl=document.createElement('div');pl.className='part-label';pl.textContent=q.part;c.appendChild(pl);}
+    var d=document.createElement('div');d.className='tf-row';d.id='tf'+i;
+    d.innerHTML='<div class="q-num">Question '+q.num+'</div><div class="tf-statement">'+q.text+'</div><div class="tf-btns"><button class="tf-btn" onclick="ansTF('+i+',true)" id="tft'+i+'">&#10003; True</button><button class="tf-btn" onclick="ansTF('+i+',false)" id="tff'+i+'">&#10007; False</button></div><div class="tf-explanation" id="tfe'+i+'">'+q.exp+'</div>';
+    c.appendChild(d);
+  });
+}
+function ansTF(qi,chosen){
+  var q=tfData[qi];
+  var tBtn=document.getElementById('tft'+qi);var fBtn=document.getElementById('tff'+qi);
+  var exp=document.getElementById('tfe'+qi);var row=document.getElementById('tf'+qi);
+  tBtn.disabled=true;fBtn.disabled=true;
+  var ok=(chosen===q.ans);
+  if(chosen===true){tBtn.classList.add(ok?'correct':'wrong');}else{fBtn.classList.add(ok?'correct':'wrong');}
+  if(!ok){if(q.ans===true)tBtn.classList.add('correct');else fBtn.classList.add('correct');}
+  row.classList.add(ok?'answered-correct':'answered-wrong');
+  exp.classList.add('show');
+  if(ok){tfState.c++;updGS(1);}
+  tfState.a++;document.getElementById('tf-stat').textContent=tfState.a+' / 50 answered';document.getElementById('tf-progress').style.width=(tfState.a/50*100)+'%';
+}
+
+function renderMatching(){
+  var c=document.getElementById('matching-container');c.innerHTML='';
+  matchingData.forEach(function(set,si){
+    var d=document.createElement('div');d.className='match-set';
+    var colA=set.colA.map(function(a){return '<div class="match-item"><span class="match-letter">'+a.n+'</span><span>'+a.t+'</span></div>';}).join('');
+    var colB=set.colB.map(function(b){return '<div class="match-item"><span class="match-letter">'+b.l+'</span><span>'+b.t+'</span></div>';}).join('');
+    var ans=set.answers.map(function(a){return '<div class="match-answer-item"><span class="match-answer-badge">'+a.split('&rarr;')[0]+'</span><span>&#8594;</span><span class="match-answer-badge" style="background:var(--teal-light)">'+a.split('&rarr;')[1]+'</span></div>';}).join('');
+    var ansHTML=set.answers.map(function(a){var p=a.split('\u2192');return '<div class="match-answer-item"><span class="match-answer-badge">'+p[0]+'</span><span>&#8594;</span><span class="match-answer-badge" style="background:var(--teal-light)">'+p[1]+'</span></div>';}).join('');
+    d.innerHTML='<div class="match-title">'+set.title+'</div><div class="match-grid"><div><div class="match-col-label">Column A &mdash; Terms</div>'+colA+'</div><div><div class="match-col-label">Column B &mdash; Definitions</div>'+colB+'</div></div><button class="show-answer-btn" onclick="toggleMA('+si+',this)">Show Answer Key</button><div class="match-answers-reveal" id="mar'+si+'">'+ansHTML+'</div>';
+    c.appendChild(d);
+  });
+}
+function toggleMA(si,btn){var d=document.getElementById('mar'+si);if(d.classList.contains('show')){d.classList.remove('show');btn.textContent='Show Answer Key';}else{d.classList.add('show');btn.textContent='Hide Answer Key';}}
+
+function renderFITB(){
+  var c=document.getElementById('fitb-container');c.innerHTML='';var cp='';
+  fitbData.forEach(function(q,i){
+    if(q.part&&q.part!==cp){cp=q.part;var pl=document.createElement('div');pl.className='part-label';pl.textContent=q.part;c.appendChild(pl);}
+    var d=document.createElement('div');d.className='fitb-card';d.id='fitb'+i;
+    d.innerHTML='<div class="q-num">Question '+q.num+'</div><div class="fitb-text">'+q.text+'</div><div class="fitb-input-row"><input type="text" class="fitb-input" id="fii'+i+'" placeholder="Type your answer here..." onkeydown="if(event.key===\'Enter\')chkFITB('+i+')"><button class="check-btn" onclick="chkFITB('+i+')">Check &#10003;</button></div><div class="fitb-hint" id="fih'+i+'"></div>';
+    c.appendChild(d);
+  });
+}
+function chkFITB(i){
+  var q=fitbData[i];var inp=document.getElementById('fii'+i);var hint=document.getElementById('fih'+i);
+  if(inp.disabled)return;
+  var val=inp.value.trim().toLowerCase();var ans=q.ans.toLowerCase();
+  var kw=ans.split(/[\s,\/]+/).filter(function(w){return w.length>3;});
+  var uv=val.split(/[\s,\/]+/);
+  var matches=kw.filter(function(k){return uv.some(function(u){return u.includes(k)||k.includes(u);});});
+  var ok=(val===ans)||(kw.length>0&&matches.length>=Math.max(1,Math.floor(kw.length*0.5)));
+  inp.disabled=true;
+  if(ok){inp.classList.add('correct-input');hint.className='fitb-hint show';hint.innerHTML='&#10003; Correct! Answer: <strong>'+q.ans+'</strong>';hint.style.color='var(--correct)';fitbState.c++;updGS(1);}
+  else{inp.classList.add('wrong-input');hint.className='fitb-hint show';hint.innerHTML='&#10007; Incorrect. Correct answer: <strong>'+q.ans+'</strong>';hint.style.color='var(--wrong)';}
+  fitbState.a++;document.getElementById('fitb-stat').textContent=fitbState.a+' / 35 answered';document.getElementById('fitb-progress').style.width=(fitbState.a/35*100)+'%';
+}
+
+var tagCls={List:'tag-list',Explain:'tag-explain',Enumerate:'tag-enumerate',Compare:'tag-compare',Illustrate:'tag-illustrate',Analyze:'tag-analyze',Design:'tag-design',Evaluate:'tag-evaluate'};
+var partOf={List:'Part A: List Questions',Explain:'Part B: Explain Questions',Enumerate:'Part C: Enumerate Questions',Compare:'Part D: Compare Questions',Illustrate:'Part E: Illustrate Questions'};
+function renderEssay(){
+  var c=document.getElementById('essay-container');c.innerHTML='';var cp='';
+  essayData.forEach(function(q,i){
+    var pt=partOf[q.type]||'Part F: Bloom\'s Extended Analysis';
+    if(pt!==cp){cp=pt;var pl=document.createElement('div');pl.className='part-label';pl.textContent=pt;c.appendChild(pl);}
+    var d=document.createElement('div');d.className='essay-card';
+    d.innerHTML='<div class="q-num">Question '+q.num+'</div><span class="essay-tag '+(tagCls[q.type]||'tag-explain')+'">'+q.type+'</span><div class="essay-q">'+q.text+'</div><button class="essay-toggle-btn" onclick="togEssay('+i+',this)">Show Model Answer</button><div class="essay-answer" id="ea'+i+'"><h4>Model Answer</h4>'+q.ans+'</div>';
+    c.appendChild(d);
+  });
+}
+function togEssay(i,btn){var d=document.getElementById('ea'+i);if(d.classList.contains('show')){d.classList.remove('show');btn.textContent='Show Model Answer';}else{d.classList.add('show');btn.textContent='Hide Model Answer';}}
+
+function resetSection(s){
+  if(s==='mcq'){updGS(-mcqState.c);mcqState={a:0,c:0};renderMCQ();document.getElementById('mcq-stat').textContent='0 / 100 answered';document.getElementById('mcq-progress').style.width='0%';}
+  else if(s==='tf'){updGS(-tfState.c);tfState={a:0,c:0};renderTF();document.getElementById('tf-stat').textContent='0 / 50 answered';document.getElementById('tf-progress').style.width='0%';}
+  else if(s==='fitb'){updGS(-fitbState.c);fitbState={a:0,c:0};renderFITB();document.getElementById('fitb-stat').textContent='0 / 35 answered';document.getElementById('fitb-progress').style.width='0%';}
+}
+
+renderMCQ();renderTF();renderMatching();renderFITB();renderEssay();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acute Renal Failure – ARF Lecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:wght@300;400;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --surface: #ffffff;
+    --surface2: #eef2f7;
+    --primary: #2c5f8a;
+    --primary-light: #e8f0f8;
+    --accent: #c0392b;
+    --accent-light: #fdf0ef;
+    --gold: #b8860b;
+    --gold-light: #fdf8ee;
+    --green: #1a6b4a;
+    --green-light: #eaf5f0;
+    --text: #1a1a2e;
+    --text-muted: #5a6272;
+    --border: #d5dce8;
+    --shadow: 0 4px 20px rgba(44,95,138,0.10);
+    --radius: 14px;
+    --font-en: 'Source Serif 4', Georgia, serif;
+    --font-ar: 'Tajawal', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-en);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8a 60%, #1a6b4a 100%);
+    color: #fff;
+    padding: 48px 32px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  header h1 span { color: #90caf9; }
+  header .subtitle {
+    font-family: var(--font-ar);
+    font-size: 1.15rem;
+    margin-top: 8px;
+    opacity: 0.88;
+    position: relative;
+  }
+  header .badge-row {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    margin-top: 18px; position: relative;
+  }
+  header .badge {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 5px 18px;
+    font-size: 0.82rem;
+    backdrop-filter: blur(6px);
+  }
+  /* ===== TABS ===== */
+  .tab-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    display: flex; overflow-x: auto; gap: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .tab-nav::-webkit-scrollbar { height: 3px; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 14px 22px;
+    font-family: var(--font-en);
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .tab-btn:hover { color: var(--primary); background: var(--primary-light); }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background: var(--primary-light);
+  }
+  .tab-btn .ar { font-family: var(--font-ar); font-size: 0.78rem; display: block; opacity: 0.7; }
+  /* ===== CONTENT ===== */
+  .tab-content { display: none; padding: 36px 24px; max-width: 960px; margin: 0 auto; }
+  .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: none; } }
+  /* ===== BILINGUAL BLOCK ===== */
+  .bi-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .bi-en { background: var(--surface); padding: 22px 24px; border-right: 1px solid var(--border); }
+  .bi-ar { background: #fafbfd; padding: 22px 24px; direction: rtl; font-family: var(--font-ar); }
+  .bi-en p, .bi-ar p { font-size: 0.95rem; line-height: 1.8; }
+  @media(max-width:680px) {
+    .bi-block { grid-template-columns: 1fr; }
+    .bi-en { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+  /* ===== SECTION TITLE ===== */
+  .sec-title {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 20px; margin-top: 36px;
+  }
+  .sec-title:first-child { margin-top: 0; }
+  .sec-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .sec-title .ar-title {
+    font-family: var(--font-ar);
+    font-size: 1rem;
+    color: var(--text-muted);
+    direction: rtl;
+  }
+  .sec-divider {
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  /* ===== DEFINITION BOX ===== */
+  .def-box {
+    background: linear-gradient(135deg, var(--primary-light), #ddeeff);
+    border-left: 5px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .def-box .en { font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+  .def-box .ar { font-family: var(--font-ar); font-size: 1rem; color: var(--text); direction: rtl; }
+  /* ===== CATEGORY CARDS ===== */
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  @media(max-width:680px) { .cards-3 { grid-template-columns: 1fr; } }
+  .cat-card {
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+  .cat-card:hover { transform: translateY(-4px); }
+  .cat-card.pre { background: linear-gradient(135deg,#e8f4fd,#cce5f6); border-top: 4px solid #2980b9; }
+  .cat-card.intra { background: linear-gradient(135deg,#fdf0ef,#f9d3cf); border-top: 4px solid var(--accent); }
+  .cat-card.post { background: linear-gradient(135deg, var(--gold-light),#fde9a2); border-top: 4px solid var(--gold); }
+  .cat-card .pct { font-family:'Playfair Display',serif; font-size: 2rem; font-weight:700; }
+  .cat-card.pre .pct { color:#2980b9; }
+  .cat-card.intra .pct { color: var(--accent); }
+  .cat-card.post .pct { color: var(--gold); }
+  .cat-card h3 { font-size: 0.95rem; font-weight:700; margin: 6px 0 4px; }
+  .cat-card .ar { font-family:var(--font-ar); font-size:0.85rem; color:var(--text-muted); direction:rtl; }
+  /* ===== TABLE ===== */
+  .tbl-wrap { overflow-x:auto; margin-bottom:28px; border-radius: var(--radius); box-shadow: var(--shadow); }
+  table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+  thead tr { background: var(--primary); color:#fff; }
+  thead th { padding:13px 16px; text-align:left; font-weight:600; }
+  thead th.ar-col { text-align:right; font-family:var(--font-ar); direction:rtl; }
+  tbody tr:nth-child(even) { background: var(--surface2); }
+  tbody tr { background: var(--surface); border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: var(--primary-light); }
+  td { padding:12px 16px; vertical-align:top; }
+  td.ar-col { text-align:right; font-family:var(--font-ar); direction:rtl; color:var(--text-muted); font-size:0.88rem; }
+  td strong { color: var(--primary); }
+  /* ===== PHASES TIMELINE ===== */
+  .phases { display:flex; flex-direction:column; gap:0; margin-bottom:28px; }
+  .phase-item {
+    display:grid; grid-template-columns:80px 1fr;
+    border-radius: var(--radius);
+    margin-bottom:12px;
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+  .phase-num {
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700;
+    color:#fff;
+  }
+  .phase-item:nth-child(1) .phase-num { background:#2980b9; }
+  .phase-item:nth-child(2) .phase-num { background:var(--accent); }
+  .phase-item:nth-child(3) .phase-num { background:var(--green); }
+  .phase-item:nth-child(4) .phase-num { background:var(--gold); }
+  .phase-body { background:var(--surface); padding:16px 20px; }
+  .phase-body .en-h { font-weight:700; color:var(--text); margin-bottom:4px; }
+  .phase-body .ar-h { font-family:var(--font-ar); font-size:0.88rem; color:var(--text-muted); direction:rtl; margin-bottom:6px; }
+  .phase-body p { font-size:0.91rem; color:#444; }
+  .phase-body .ar-p { font-family:var(--font-ar); font-size:0.88rem; color:var(--text-muted); direction:rtl; margin-top:4px; }
+  /* ===== ALERT BOXES ===== */
+  .alert { border-radius:var(--radius); padding:18px 22px; margin-bottom:18px; display:flex; gap:14px; align-items:flex-start; }
+  .alert.danger { background:var(--accent-light); border-left:4px solid var(--accent); }
+  .alert.warn { background:var(--gold-light); border-left:4px solid var(--gold); }
+  .alert.info { background:var(--primary-light); border-left:4px solid var(--primary); }
+  .alert.success { background:var(--green-light); border-left:4px solid var(--green); }
+  .alert-icon { font-size:1.4rem; flex-shrink:0; }
+  .alert-body .en { font-size:0.93rem; font-weight:600; color:var(--text); }
+  .alert-body .ar { font-family:var(--font-ar); font-size:0.88rem; direction:rtl; margin-top:4px; color:var(--text-muted); }
+  /* ===== NURSING PROCESS ===== */
+  .np-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:28px; }
+  @media(max-width:700px){ .np-grid { grid-template-columns:1fr; } }
+  .np-card {
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .np-header {
+    padding:14px 18px;
+    color:#fff;
+    font-weight:700;
+    display:flex; align-items:center; gap:10px;
+  }
+  .np-header .ar { font-family:var(--font-ar); font-size:0.88rem; opacity:0.85; margin-right:auto; direction:rtl; }
+  .np-header .icon { font-size:1.3rem; }
+  .np-card:nth-child(1) .np-header { background:#2980b9; }
+  .np-card:nth-child(2) .np-header { background:#8e44ad; }
+  .np-card:nth-child(3) .np-header { background:var(--accent); }
+  .np-card:nth-child(4) .np-header { background:var(--green); }
+  .np-card:nth-child(5) .np-header { background:var(--gold); }
+  .np-body { background:var(--surface); padding:16px 18px; }
+  .np-body ul { padding-left:18px; }
+  .np-body li { font-size:0.9rem; margin-bottom:8px; color:var(--text); }
+  .np-body li .ar { font-family:var(--font-ar); font-size:0.83rem; direction:rtl; display:block; color:var(--text-muted); margin-top:2px; }
+  /* ===== PHARMACOLOGIC ===== */
+  .pharma-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px; }
+  @media(max-width:600px){ .pharma-grid { grid-template-columns:1fr; } }
+  .pharma-card {
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:18px;
+    box-shadow:var(--shadow);
+    border-top:3px solid var(--primary);
+  }
+  .pharma-card h4 { color:var(--primary); font-size:0.95rem; margin-bottom:6px; }
+  .pharma-card .ar { font-family:var(--font-ar); font-size:0.88rem; direction:rtl; color:var(--text-muted); margin-bottom:8px; }
+  .pharma-card p { font-size:0.88rem; color:#555; }
+  /* ===== QUIZ ===== */
+  .quiz-intro {
+    background: linear-gradient(135deg,var(--primary-light),#ddeeff);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .quiz-intro h2 { font-family:'Playfair Display',serif; color:var(--primary); font-size:1.5rem; }
+  .quiz-intro p { font-family:var(--font-ar); margin-top:6px; color:var(--text-muted); }
+  .quiz-score-bar {
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:18px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    box-shadow:var(--shadow);
+    margin-bottom:24px;
+    flex-wrap:wrap; gap:12px;
+  }
+  .score-display { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--primary); font-weight:700; }
+  .quiz-controls { display:flex; gap:10px; flex-wrap:wrap; }
+  .btn {
+    padding:10px 22px; border-radius:999px;
+    font-family:var(--font-en); font-size:0.88rem; font-weight:600;
+    border:none; cursor:pointer; transition:all 0.2s;
+  }
+  .btn-primary { background:var(--primary); color:#fff; }
+  .btn-primary:hover { background:#1a4a6e; transform:translateY(-1px); }
+  .btn-outline { background:transparent; color:var(--primary); border:2px solid var(--primary); }
+  .btn-outline:hover { background:var(--primary-light); }
+  .q-item {
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow);
+    border-left:4px solid var(--border);
+    transition:border-color 0.3s;
+  }
+  .q-item.answered-correct { border-left-color: var(--green); }
+  .q-item.answered-wrong { border-left-color: var(--accent); }
+  .q-num { font-size:0.75rem; color:var(--text-muted); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .q-text { font-size:0.97rem; font-weight:600; margin-bottom:14px; }
+  .q-opts { display:flex; flex-direction:column; gap:8px; }
+  .q-opt {
+    padding:10px 16px;
+    border-radius:10px;
+    border:1.5px solid var(--border);
+    cursor:pointer;
+    font-size:0.9rem;
+    transition:all 0.18s;
+    background:var(--surface);
+    display:flex; align-items:center; gap:10px;
+  }
+  .q-opt:hover:not(.disabled) { border-color:var(--primary); background:var(--primary-light); }
+  .q-opt.correct { border-color:var(--green); background:var(--green-light); color:var(--green); font-weight:600; }
+  .q-opt.wrong { border-color:var(--accent); background:var(--accent-light); color:var(--accent); }
+  .q-opt.disabled { cursor:default; }
+  .q-opt .opt-letter { font-weight:700; min-width:22px; }
+  .q-explain {
+    margin-top:12px;
+    padding:12px 16px;
+    background:var(--surface2);
+    border-radius:10px;
+    font-size:0.88rem;
+    color:var(--text-muted);
+    display:none;
+  }
+  .q-explain.show { display:block; }
+  .q-explain .ar { font-family:var(--font-ar); direction:rtl; display:block; margin-top:4px; }
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar { width:6px; height:6px; }
+  ::-webkit-scrollbar-track { background:#f0f0f0; }
+  ::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; }
+  /* ===== FOOTER ===== */
+  footer {
+    text-align:center; padding:28px; color:var(--text-muted); font-size:0.82rem;
+    border-top:1px solid var(--border); margin-top:40px;
+    font-family:var(--font-ar);
+  }
+  /* ===== HIGHLIGHT ===== */
+  .highlight-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+  @media(max-width:600px){ .highlight-row { grid-template-columns:1fr; } }
+  .hl-card { border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); }
+  .hl-card.blue { background:linear-gradient(135deg,#e8f4fd,#d0eaf9); border-left:4px solid #2980b9; }
+  .hl-card.red { background:var(--accent-light); border-left:4px solid var(--accent); }
+  .hl-card.gold { background:var(--gold-light); border-left:4px solid var(--gold); }
+  .hl-card.green { background:var(--green-light); border-left:4px solid var(--green); }
+  .hl-card h4 { font-weight:700; margin-bottom:4px; font-size:0.95rem; }
+  .hl-card .ar { font-family:var(--font-ar); font-size:0.88rem; direction:rtl; color:var(--text-muted); margin-bottom:8px; }
+  .hl-card p { font-size:0.88rem; color:#555; }
+  /* full np card */
+  .np-full { grid-column:1/-1; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Acute <span>Renal</span> Failure <span style="opacity:0.6;font-size:0.7em">(ARF)</span></h1>
+  <p class="subtitle">الفشل الكلوي الحاد — محاضرة شاملة</p>
+  <div class="badge-row">
+    <span class="badge">Urinary System Disorders</span>
+    <span class="badge">Nursing Management</span>
+    <span class="badge">اضطرابات الجهاز البولي</span>
+  </div>
+</header>
+
+<!-- TAB NAV -->
+<nav class="tab-nav" role="tablist">
+  <button class="tab-btn active" onclick="showTab('overview',this)">
+    Overview
+    <span class="ar">نظرة عامة</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('causes',this)">
+    Causes
+    <span class="ar">الأسباب</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('phases',this)">
+    Phases
+    <span class="ar">المراحل</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('assessment',this)">
+    Assessment
+    <span class="ar">التقييم</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('management',this)">
+    Management
+    <span class="ar">العلاج</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('nursing',this)">
+    Nursing Process
+    <span class="ar">العملية التمريضية</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('quiz',this)">
+    🧪 Quiz
+    <span class="ar">اختبر نفسك</span>
+  </button>
+</nav>
+
+<!-- ============================================================ -->
+<!-- TAB 1: OVERVIEW -->
+<!-- ============================================================ -->
+<div id="overview" class="tab-content active">
+
+  <div class="sec-title">
+    <h2>Definition</h2>
+    <span class="ar-title">التعريف</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="def-box">
+    <div class="en">Acute Renal Failure (ARF) is a sudden and almost complete loss of kidney function (decreased GFR) occurring over a period of hours to days.</div>
+    <div class="ar">الفشل الكلوي الحاد هو فقدان مفاجئ وشبه كامل لوظيفة الكلى (انخفاض معدل الترشيح الكبيبي GFR) يحدث خلال ساعات إلى أيام.</div>
+  </div>
+
+  <div class="sec-title" style="margin-top:28px;">
+    <h2>Categories</h2>
+    <span class="ar-title">التصنيفات</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="cards-3">
+    <div class="cat-card pre">
+      <div class="pct">55–60%</div>
+      <h3>Pre-Renal</h3>
+      <div class="ar">قبل كلوي</div>
+      <p style="font-size:0.82rem;margin-top:8px;color:#555;">Hypoperfusion of the kidney<br><span style="font-family:var(--font-ar);font-size:0.82rem;">نقص تروية الكلى</span></p>
+    </div>
+    <div class="cat-card intra">
+      <div class="pct">5%</div>
+      <h3>Intra-Renal</h3>
+      <div class="ar">داخل كلوي</div>
+      <p style="font-size:0.82rem;margin-top:8px;color:#555;">Actual damage to kidney tissue<br><span style="font-family:var(--font-ar);font-size:0.82rem;">تلف فعلي في نسيج الكلى</span></p>
+    </div>
+    <div class="cat-card post">
+      <div class="pct">35–40%</div>
+      <h3>Post-Renal</h3>
+      <div class="ar">بعد كلوي</div>
+      <p style="font-size:0.82rem;margin-top:8px;color:#555;">Obstruction to urine flow<br><span style="font-family:var(--font-ar);font-size:0.82rem;">انسداد تدفق البول</span></p>
+    </div>
+  </div>
+
+  <div class="alert info">
+    <div class="alert-icon">🔑</div>
+    <div class="alert-body">
+      <div class="en">Key Point: Pre-renal failure is the most common cause (55–60%), making it the leading category to identify and treat early.</div>
+      <div class="ar">نقطة أساسية: الفشل الكلوي قبل الكلوي هو الأكثر شيوعاً (55–60%)، مما يجعله الأولوية الأولى في التشخيص المبكر والعلاج.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 2: CAUSES -->
+<!-- ============================================================ -->
+<div id="causes" class="tab-content">
+
+  <!-- PRE-RENAL -->
+  <div class="sec-title">
+    <h2>Pre-Renal Causes</h2>
+    <span class="ar-title">أسباب ما قبل الكلى</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="bi-block">
+    <div class="bi-en">
+      <p>Pre-renal conditions result from <strong>impaired blood flow</strong> leading to hypoperfusion of the kidney and a drop in GFR. The kidney itself is not damaged — the problem is insufficient blood supply.</p>
+    </div>
+    <div class="bi-ar">
+      <p>تنتج الحالات قبل الكلوية عن <strong>ضعف تدفق الدم</strong> مما يؤدي إلى نقص تروية الكلى وانخفاض معدل الترشيح الكبيبي. الكلى نفسها غير تالفة — المشكلة في نقص الإمداد الدموي.</p>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Cause (EN)</th>
+          <th>Details</th>
+          <th class="ar-col">السبب (AR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hemorrhage</strong></td>
+          <td>Severe blood loss reduces renal perfusion</td>
+          <td class="ar-col">نزيف حاد يقلل التروية الكلوية</td>
+        </tr>
+        <tr>
+          <td><strong>GI Losses</strong></td>
+          <td>Vomiting and diarrhea cause hypovolemia</td>
+          <td class="ar-col">فقدان سوائل معدي معوي (قيء، إسهال)</td>
+        </tr>
+        <tr>
+          <td><strong>Renal Losses</strong></td>
+          <td>Excessive diuretic use → volume depletion</td>
+          <td class="ar-col">مدرات البول المفرطة تسبب نقص الحجم</td>
+        </tr>
+        <tr>
+          <td><strong>Myocardial Infarction</strong></td>
+          <td>Impaired cardiac performance reduces output</td>
+          <td class="ar-col">احتشاء عضلة القلب يقلل النتاج القلبي</td>
+        </tr>
+        <tr>
+          <td><strong>Heart Failure</strong></td>
+          <td>Reduced cardiac output → renal hypoperfusion</td>
+          <td class="ar-col">فشل القلب يقلل تروية الكلى</td>
+        </tr>
+        <tr>
+          <td><strong>Sepsis</strong></td>
+          <td>Vasodilation drops systemic blood pressure</td>
+          <td class="ar-col">الإنتان يسبب توسع الأوعية وانخفاض الضغط</td>
+        </tr>
+        <tr>
+          <td><strong>Anaphylaxis</strong></td>
+          <td>Sudden vasodilation → hypotension</td>
+          <td class="ar-col">الحساسية الشديدة تسبب انخفاض ضغط الدم</td>
+        </tr>
+        <tr>
+          <td><strong>Antihypertensive Medications</strong></td>
+          <td>Overtreatment can reduce renal perfusion</td>
+          <td class="ar-col">أدوية ضغط الدم قد تقلل التروية الكلوية</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- INTRA-RENAL -->
+  <div class="sec-title">
+    <h2>Intra-Renal Causes</h2>
+    <span class="ar-title">أسباب داخل الكلى</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="bi-block">
+    <div class="bi-en">
+      <p>Intra-renal causes involve <strong>actual parenchymal damage</strong> to the glomeruli or kidney tubules. These conditions may lead to <strong>Acute Tubular Necrosis (ATN)</strong> and cessation of renal function.</p>
+    </div>
+    <div class="bi-ar">
+      <p>تشمل الأسباب الداخلية الكلوية <strong>تلفاً حقيقياً في حمة الكلى</strong> — الكبيبات أو الأنابيب الكلوية. قد تؤدي إلى <strong>نخر حاد في الأنابيب الكلوية (ATN)</strong> وتوقف وظيفة الكلى.</p>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Cause (EN)</th>
+          <th>Details</th>
+          <th class="ar-col">السبب (AR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Burns / Crush Injuries</strong></td>
+          <td>Release myoglobin → tubular damage (Myoglobinuria)</td>
+          <td class="ar-col">الحروق/إصابات السحق → ميوجلوبين يتلف الأنابيب</td>
+        </tr>
+        <tr>
+          <td><strong>Hemoglobinuria</strong></td>
+          <td>Transfusion reaction releases hemoglobin</td>
+          <td class="ar-col">تفاعل نقل الدم يطلق الهيموجلوبين</td>
+        </tr>
+        <tr>
+          <td><strong>Antibiotics (Gentamycin)</strong></td>
+          <td>Nephrotoxic medications damage tubules</td>
+          <td class="ar-col">المضادات الحيوية السامة للكلى تتلف الأنابيب</td>
+        </tr>
+        <tr>
+          <td><strong>Heavy Metals</strong></td>
+          <td>Lead, Mercury → direct nephrotoxicity</td>
+          <td class="ar-col">الرصاص والزئبق → سمية كلوية مباشرة</td>
+        </tr>
+        <tr>
+          <td><strong>NSAIDs</strong></td>
+          <td>Reduce prostaglandins → decreased renal flow</td>
+          <td class="ar-col">مضادات الالتهاب تقلل البروستاجلاندين → ضعف التروية</td>
+        </tr>
+        <tr>
+          <td><strong>Acute Pyelonephritis</strong></td>
+          <td>Severe infection causes direct tubular damage</td>
+          <td class="ar-col">التهاب حاد في حوض الكلى يتلف الأنابيب</td>
+        </tr>
+        <tr>
+          <td><strong>Infections</strong></td>
+          <td>Sepsis-related direct renal parenchymal damage</td>
+          <td class="ar-col">الالتهابات تسبب تلفاً مباشراً في حمة الكلى</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- POST-RENAL -->
+  <div class="sec-title">
+    <h2>Post-Renal Causes</h2>
+    <span class="ar-title">أسباب ما بعد الكلى</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="bi-block">
+    <div class="bi-en">
+      <p>Post-renal causes result from <strong>obstruction distal to the kidney</strong>. Pressure rises in the kidney tubules and eventually the GFR decreases. The following conditions reduce blood flow to the kidney:</p>
+      <ul style="margin-top:8px;padding-left:18px;font-size:0.92rem;">
+        <li>Hypovolemia</li>
+        <li>Hypotension</li>
+        <li>Reduced cardiac output</li>
+        <li>Obstruction by tumor or kidney stone</li>
+        <li>Bilateral obstruction of renal arteries or veins</li>
+      </ul>
+    </div>
+    <div class="bi-ar">
+      <p>تنتج الأسباب ما بعد الكلوية من <strong>انسداد خلف الكلى</strong>. يرتفع الضغط في الأنابيب الكلوية وينخفض معدل الترشيح الكبيبي. الحالات التي تقلل تدفق الدم:</p>
+      <ul style="margin-top:8px;padding-right:18px;font-size:0.9rem;">
+        <li>نقص حجم الدم</li>
+        <li>انخفاض ضغط الدم</li>
+        <li>انخفاض النتاج القلبي</li>
+        <li>انسداد بورم أو حصوة كلوية</li>
+        <li>انسداد ثنائي في الشرايين أو الأوردة الكلوية</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Cause (EN)</th>
+          <th>Details</th>
+          <th class="ar-col">السبب (AR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Kidney Stones (Calculi)</strong></td>
+          <td>Block urinary outflow → elevated tubular pressure</td>
+          <td class="ar-col">حصوات الكلى تسد تدفق البول</td>
+        </tr>
+        <tr>
+          <td><strong>Tumors & Strictures</strong></td>
+          <td>Compress ureters or urethra → obstruction</td>
+          <td class="ar-col">الأورام تضغط على الحالب أو مجرى البول</td>
+        </tr>
+        <tr>
+          <td><strong>Antibiotics (Gentamycin)</strong></td>
+          <td>Crystals may precipitate in collecting system</td>
+          <td class="ar-col">ترسب البلورات في الجهاز التجميعي</td>
+        </tr>
+        <tr>
+          <td><strong>Heavy Metals</strong></td>
+          <td>Lead/mercury deposits can cause distal obstruction</td>
+          <td class="ar-col">ترسبات المعادن الثقيلة تسبب انسداداً بعيداً</td>
+        </tr>
+        <tr>
+          <td><strong>NSAIDs</strong></td>
+          <td>Can cause interstitial nephritis → obstruction</td>
+          <td class="ar-col">التهاب كلوي خلالي يؤدي إلى انسداد</td>
+        </tr>
+        <tr>
+          <td><strong>Acute Pyelonephritis</strong></td>
+          <td>Swelling and scarring impede urinary flow</td>
+          <td class="ar-col">التورم والتندب يعيق تدفق البول</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 3: PHASES -->
+<!-- ============================================================ -->
+<div id="phases" class="tab-content">
+
+  <div class="sec-title">
+    <h2>Phases of Acute Renal Failure</h2>
+    <span class="ar-title">مراحل الفشل الكلوي الحاد</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="phases">
+    <div class="phase-item">
+      <div class="phase-num">1</div>
+      <div class="phase-body">
+        <div class="en-h">Initiation Period — مرحلة البداية</div>
+        <p>Begins with the initial insult and ends when oliguria develops. The kidney is stressed but oliguria has not yet appeared.</p>
+        <div class="ar-p">تبدأ مع الإصابة الأولية وتنتهي عند ظهور قلة البول. الكلى تحت الضغط لكن قلة البول لم تظهر بعد.</div>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">2</div>
+      <div class="phase-body">
+        <div class="en-h">Oliguria Period — مرحلة قلة البول</div>
+        <p>Accompanied by a rise in serum concentrations of substances normally excreted by the kidneys: <strong>urea, creatinine, and uric acid</strong>. Urine output is markedly reduced (&lt;400 mL/day).</p>
+        <div class="ar-p">ترتفع تركيزات المواد التي تفرزها الكلى عادةً: اليوريا والكرياتينين وحمض اليوريك. إخراج البول يقل بشكل ملحوظ.</div>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">3</div>
+      <div class="phase-body">
+        <div class="en-h">Diuresis Period — مرحلة إدرار البول</div>
+        <p>The patient experiences <strong>gradually increasing urine output</strong>, signaling that glomerular filtration has started to recover. Electrolyte imbalances may still occur.</p>
+        <div class="ar-p">يشهد المريض <strong>زيادة تدريجية في إخراج البول</strong>، مما يشير إلى بدء تعافي الترشيح الكبيبي. قد تستمر اختلالات الشوارد.</div>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">4</div>
+      <div class="phase-body">
+        <div class="en-h">Recovery Period — مرحلة التعافي</div>
+        <p>Signals improvement of renal function and may take <strong>3 to 12 months</strong>. Laboratory values return to the patient's normal baseline levels.</p>
+        <div class="ar-p">تشير إلى تحسن وظيفة الكلى وقد تستغرق <strong>3 إلى 12 شهراً</strong>. تعود القيم المختبرية إلى مستوياتها الطبيعية.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert warn">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-body">
+      <div class="en">During the Diuresis Phase: Although urine output increases, the kidneys may still not be functioning at full capacity. Electrolytes must still be closely monitored.</div>
+      <div class="ar">خلال مرحلة إدرار البول: رغم زيادة إخراج البول، قد لا تعمل الكلى بكامل طاقتها. يجب الاستمرار في مراقبة الشوارد بدقة.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 4: ASSESSMENT -->
+<!-- ============================================================ -->
+<div id="assessment" class="tab-content">
+
+  <div class="sec-title">
+    <h2>Assessment & Diagnostic Findings</h2>
+    <span class="ar-title">التقييم والنتائج التشخيصية</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <!-- URINE -->
+  <div class="hl-card blue" style="margin-bottom:16px;">
+    <h4>🧪 Changes in Urine — تغيرات البول</h4>
+    <div class="ar">التغيرات في البول</div>
+    <p>Urine output varies (scanty to normal volume). Hematuria may be present. Urine has a <strong>low specific gravity (1.010 or less)</strong>, indicating the kidneys cannot concentrate urine properly.</p>
+    <p style="font-family:var(--font-ar);font-size:0.88rem;direction:rtl;margin-top:6px;color:#555;">يتفاوت حجم البول (شحيح إلى طبيعي). قد يكون هناك دم في البول. الكثافة النوعية منخفضة (1.010 أو أقل) مما يدل على فقدان قدرة الكلى على تركيز البول.</p>
+  </div>
+
+  <!-- KIDNEY CONTOUR -->
+  <div class="hl-card green" style="margin-bottom:16px;">
+    <h4>🔬 Change in Kidney Contour — تغير ملامح الكلى</h4>
+    <div class="ar">تقييم حجم وشكل الكلى</div>
+    <p><strong>Ultrasonography</strong> is a critical component of the evaluation of both acute and chronic renal failure. It helps identify obstruction, kidney size, and structural abnormalities.</p>
+    <p style="font-family:var(--font-ar);font-size:0.88rem;direction:rtl;margin-top:6px;color:#555;">الموجات فوق الصوتية هي عنصر أساسي في تقييم الفشل الكلوي الحاد والمزمن. تساعد في تحديد الانسداد وحجم الكلى والتشوهات الهيكلية.</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Finding</th>
+          <th>English Description</th>
+          <th class="ar-col">الوصف بالعربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>BUN (Blood Urea Nitrogen)</strong></td>
+          <td>Rises steadily; rate depends on degree of catabolism (protein breakdown) and protein intake</td>
+          <td class="ar-col">يرتفع بثبات؛ يعتمد المعدل على درجة التقويض وكمية البروتين</td>
+        </tr>
+        <tr>
+          <td><strong>Serum Creatinine</strong></td>
+          <td>Elevated due to decreased GFR and inability to excrete creatinine</td>
+          <td class="ar-col">مرتفع بسبب انخفاض معدل الترشيح الكبيبي</td>
+        </tr>
+        <tr>
+          <td><strong>Hyperkalemia</strong></td>
+          <td>Patient cannot excrete potassium normally with declining GFR. Risk is greater with oliguria/anuria</td>
+          <td class="ar-col">ارتفاع البوتاسيوم — المريض لا يستطيع إفرازه مع انخفاض الترشيح</td>
+        </tr>
+        <tr>
+          <td><strong>Metabolic Acidosis</strong></td>
+          <td>Patient cannot eliminate daily metabolic acid load; bicarbonate decreases</td>
+          <td class="ar-col">الحماض الاستقلابي — لا يمكن إفراز الحمل الحمضي اليومي</td>
+        </tr>
+        <tr>
+          <td><strong>Hyperphosphatemia</strong></td>
+          <td>Serum phosphate concentrations increase</td>
+          <td class="ar-col">ارتفاع الفوسفات في الدم</td>
+        </tr>
+        <tr>
+          <td><strong>Hypocalcemia</strong></td>
+          <td>Low calcium due to decreased GI absorption and as compensation for elevated phosphate</td>
+          <td class="ar-col">انخفاض الكالسيوم بسبب ضعف الامتصاص وتعويضاً عن ارتفاع الفوسفات</td>
+        </tr>
+        <tr>
+          <td><strong>Anemia</strong></td>
+          <td>Inevitable in ARF — caused by: ↓ erythropoietin, uremic GI lesions, ↓ RBC life span, GI blood loss</td>
+          <td class="ar-col">لا مفر منه في الفشل الكلوي — نقص إريثروبويتين، تقرحات معدية، قصر عمر كريات الدم الحمراء</td>
+        </tr>
+        <tr>
+          <td><strong>Ultrasonography</strong></td>
+          <td>Evaluates kidney size, structure, and detects obstruction</td>
+          <td class="ar-col">الموجات فوق الصوتية تقيم حجم وبنية الكلى وتكشف الانسداد</td>
+        </tr>
+        <tr>
+          <td><strong>Urine Specific Gravity</strong></td>
+          <td>≤ 1.010 (dilute, kidneys cannot concentrate)</td>
+          <td class="ar-col">الكثافة النوعية للبول ≤ 1.010 (مخفف، الكلى لا تستطيع التركيز)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert danger">
+    <div class="alert-icon">🚨</div>
+    <div class="alert-body">
+      <div class="en">Hyperkalemia is the most life-threatening complication of ARF. It can cause fatal cardiac arrhythmias and must be monitored and treated immediately.</div>
+      <div class="ar">ارتفاع البوتاسيوم هو المضاعفة الأكثر خطورة على الحياة في الفشل الكلوي الحاد. يمكن أن يسبب اضطرابات قلبية قاتلة ويجب مراقبته وعلاجه فوراً.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 5: MANAGEMENT -->
+<!-- ============================================================ -->
+<div id="management" class="tab-content">
+
+  <div class="sec-title">
+    <h2>Medical Management</h2>
+    <span class="ar-title">الإدارة الطبية</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <!-- PREVENTION -->
+  <div class="sec-title" style="margin-top:0;">
+    <h2>Prevention of ARF</h2>
+    <span class="ar-title">الوقاية من الفشل الكلوي الحاد</span>
+  </div>
+
+  <div class="pharma-grid">
+    <div class="pharma-card" style="border-top-color:#2980b9;">
+      <h4>💧 Hydration — الترطيب</h4>
+      <div class="ar">الحفاظ على ترطيب كافٍ</div>
+      <p>Maintain adequate fluid intake to ensure proper renal perfusion.</p>
+    </div>
+    <div class="pharma-card" style="border-top-color:var(--accent);">
+      <h4>🩸 Blood & Fluid Replacement</h4>
+      <div class="ar">تعويض الدم والسوائل</div>
+      <p>Replace blood and fluids promptly to prevent renal hypoperfusion.</p>
+    </div>
+    <div class="pharma-card" style="border-top-color:var(--green);">
+      <h4>📊 Vitals & Urine Output Monitoring</h4>
+      <div class="ar">مراقبة العلامات الحيوية وإخراج البول</div>
+      <p>Frequent monitoring of vital signs and strict urine output measurement.</p>
+    </div>
+    <div class="pharma-card" style="border-top-color:var(--gold);">
+      <h4>💊 Treat Hypotension</h4>
+      <div class="ar">علاج انخفاض ضغط الدم</div>
+      <p>Promptly address hypotension to restore renal blood flow.</p>
+    </div>
+    <div class="pharma-card" style="border-top-color:#8e44ad;">
+      <h4>🔬 Assess Renal Function</h4>
+      <div class="ar">تقييم وظيفة الكلى</div>
+      <p>Regular renal function tests (BUN, creatinine) and urine checks for early detection.</p>
+    </div>
+    <div class="pharma-card" style="border-top-color:#e67e22;">
+      <h4>🏥 Catheter Care — العناية بالقسطرة</h4>
+      <div class="ar">الوقاية من العدوى</div>
+      <p>Strict aseptic technique with catheters to prevent infections and increased metabolism.</p>
+    </div>
+  </div>
+
+  <!-- PHARMACOLOGIC -->
+  <div class="sec-title">
+    <h2>Pharmacologic Therapy</h2>
+    <span class="ar-title">العلاج الدوائي</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Therapy</th>
+          <th>Purpose / Goal</th>
+          <th class="ar-col">الهدف بالعربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Monitor for Hyperkalemia</strong></td>
+          <td>Diagnostic tests to detect dangerous potassium elevation early</td>
+          <td class="ar-col">مراقبة البوتاسيوم عبر الفحوصات التشخيصية</td>
+        </tr>
+        <tr>
+          <td><strong>Blood & Fluids (IV)</strong></td>
+          <td>Replace circulating volume to restore renal blood flow</td>
+          <td class="ar-col">تعويض السوائل والدم لاستعادة التروية الكلوية</td>
+        </tr>
+        <tr>
+          <td><strong>Dopamine</strong></td>
+          <td>Low-dose dopamine may improve renal blood flow (vasoactive agent)</td>
+          <td class="ar-col">الدوبامين بجرعات منخفضة قد يحسن التروية الكلوية</td>
+        </tr>
+        <tr>
+          <td><strong>Diuretics</strong></td>
+          <td>Reduce fluid overload; monitor vitals and urine output</td>
+          <td class="ar-col">مدرات البول لتقليل احتباس السوائل</td>
+        </tr>
+        <tr>
+          <td><strong>Treat Hypotension</strong></td>
+          <td>Vasopressors and fluids to restore blood pressure and renal perfusion</td>
+          <td class="ar-col">علاج انخفاض الضغط لاستعادة التروية</td>
+        </tr>
+        <tr>
+          <td><strong>Renal Function Tests</strong></td>
+          <td>BUN, creatinine monitoring to track progress of renal recovery</td>
+          <td class="ar-col">اختبارات وظيفة الكلى لمتابعة التعافي</td>
+        </tr>
+        <tr>
+          <td><strong>Catheter Care (Prevent Infections)</strong></td>
+          <td>Aseptic technique; monitor pH, pCO₂, HCO₃ — metabolic acidosis indicators</td>
+          <td class="ar-col">تقنية معقمة ومراقبة مؤشرات الحماض الاستقلابي</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NUTRITIONAL -->
+  <div class="sec-title">
+    <h2>Nutritional Therapy</h2>
+    <span class="ar-title">العلاج الغذائي</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nutritional Guideline</th>
+          <th>English Details</th>
+          <th class="ar-col">بالعربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Daily Weight</strong></td>
+          <td>Patient is weighed daily to monitor fluid retention</td>
+          <td class="ar-col">وزن المريض يومياً لمراقبة احتباس السوائل</td>
+        </tr>
+        <tr>
+          <td><strong>Protein Restriction</strong></td>
+          <td>Dietary proteins limited to ~1 g/kg during the oliguric phase to minimize protein breakdown</td>
+          <td class="ar-col">تقييد البروتين إلى ~1 جم/كجم خلال مرحلة قلة البول لتقليل التقويض</td>
+        </tr>
+        <tr>
+          <td><strong>High-Carbohydrate Meals</strong></td>
+          <td>Caloric requirements are met with high-carbohydrate meals to spare proteins</td>
+          <td class="ar-col">تلبية الاحتياجات الحرارية بالكربوهيدرات العالية للحفاظ على البروتين</td>
+        </tr>
+        <tr>
+          <td><strong>Potassium Restriction</strong></td>
+          <td>Foods and fluids containing potassium are restricted to prevent hyperkalemia</td>
+          <td class="ar-col">تقييد الأطعمة والسوائل التي تحتوي على البوتاسيوم لمنع ارتفاعه</td>
+        </tr>
+        <tr>
+          <td><strong>Phosphorus Restriction</strong></td>
+          <td>Phosphorus-containing foods are restricted due to elevated serum phosphate</td>
+          <td class="ar-col">تقييد الأطعمة المحتوية على الفوسفور بسبب ارتفاع مستواه في الدم</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 6: NURSING PROCESS -->
+<!-- ============================================================ -->
+<div id="nursing" class="tab-content">
+
+  <div class="sec-title">
+    <h2>Nursing Process in ARF</h2>
+    <span class="ar-title">العملية التمريضية في الفشل الكلوي الحاد</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="np-grid">
+
+    <!-- ASSESSMENT -->
+    <div class="np-card">
+      <div class="np-header">
+        <span class="icon">🔍</span>
+        <span>Assessment</span>
+        <span class="ar">التقييم التمريضي</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Monitor serum electrolyte levels continuously
+            <span class="ar">مراقبة مستويات الشوارد في الدم باستمرار</span>
+          </li>
+          <li>Assess cardiac function for signs of hyperkalemia (arrhythmias, ECG changes)
+            <span class="ar">تقييم وظيفة القلب للكشف عن علامات ارتفاع البوتاسيوم</span>
+          </li>
+          <li>Monitor musculoskeletal status (weakness, muscle cramps)
+            <span class="ar">مراقبة الحالة العضلية الهيكلية (ضعف، تشنجات)</span>
+          </li>
+          <li>Accurate daily weights (same time, same scale)
+            <span class="ar">قياس الوزن يومياً بدقة (نفس الوقت، نفس الميزان)</span>
+          </li>
+          <li>Strict intake and output records (I&O)
+            <span class="ar">سجلات دقيقة للسوائل الواردة والصادرة</span>
+          </li>
+          <li>Monitor fluid status — assess for edema, JVD, breath sounds
+            <span class="ar">مراقبة حالة السوائل — الوذمة، ضغط الوريد الوداجي، أصوات التنفس</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DIAGNOSIS -->
+    <div class="np-card">
+      <div class="np-header">
+        <span class="icon">📋</span>
+        <span>Nursing Diagnoses</span>
+        <span class="ar">التشخيصات التمريضية</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Excess fluid volume related to decreased renal function
+            <span class="ar">زيادة حجم السوائل المرتبطة بانخفاض وظيفة الكلى</span>
+          </li>
+          <li>Risk for electrolyte imbalance (hyperkalemia, hypocalcemia)
+            <span class="ar">خطر اختلال الشوارد (ارتفاع البوتاسيوم، انخفاض الكالسيوم)</span>
+          </li>
+          <li>Imbalanced nutrition: less than body requirements
+            <span class="ar">سوء التغذية: أقل من احتياجات الجسم</span>
+          </li>
+          <li>Risk for infection related to invasive catheters
+            <span class="ar">خطر العدوى المرتبطة بالقسطرة الوريدية</span>
+          </li>
+          <li>Activity intolerance related to fatigue and anemia
+            <span class="ar">عدم تحمل النشاط المرتبط بالتعب وفقر الدم</span>
+          </li>
+          <li>Impaired skin integrity related to edema
+            <span class="ar">ضعف سلامة الجلد المرتبط بالوذمة</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FLUID/ELECTROLYTE -->
+    <div class="np-card" style="grid-column:1/-1;">
+      <div class="np-header" style="background:var(--accent);">
+        <span class="icon">💧</span>
+        <span>Monitoring Fluid & Electrolyte Balance</span>
+        <span class="ar">مراقبة توازن السوائل والشوارد</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Monitor serum electrolyte levels and physical indicators during <strong>all phases</strong> of the disorder
+            <span class="ar">مراقبة مستويات الشوارد والمؤشرات الجسدية في <strong>جميع مراحل</strong> الاضطراب</span>
+          </li>
+          <li>Monitor cardiac function and musculoskeletal status closely for signs of hyperkalemia
+            <span class="ar">مراقبة وظيفة القلب والعضلات بدقة للكشف عن علامات ارتفاع البوتاسيوم</span>
+          </li>
+          <li>Pay careful attention to fluid intake — avoid overload and deficit
+            <span class="ar">الانتباه الدقيق لإدخال السوائل — تجنب الزيادة والنقص</span>
+          </li>
+          <li>Maintain accurate daily weight records and intake/output documentation
+            <span class="ar">الاحتفاظ بسجلات وزن دقيقة يومية وتوثيق الوارد والصادر</span>
+          </li>
+          <li>Report deteriorating fluid and electrolyte status <strong>immediately</strong> to the physician
+            <span class="ar">الإبلاغ الفوري للطبيب عن أي تدهور في حالة السوائل والشوارد</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- METABOLIC RATE -->
+    <div class="np-card">
+      <div class="np-header" style="background:var(--green);">
+        <span class="icon">🛌</span>
+        <span>Reducing Metabolic Rate</span>
+        <span class="ar">تقليل معدل الأيض</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Bed rest may be indicated to reduce exertion and metabolic rate during the most acute stage
+            <span class="ar">الراحة في الفراش مؤشر عليها في المرحلة الحادة لتقليل الجهد ومعدل الأيض</span>
+          </li>
+          <li>Prevent fever — fever increases metabolic rate and catabolism
+            <span class="ar">الوقاية من الحمى — ترفع معدل الأيض والتقويض</span>
+          </li>
+          <li>Prevent and treat infections promptly — infections also increase metabolic rate
+            <span class="ar">الوقاية من الالتهابات وعلاجها فوراً — تزيد أيضاً من معدل الأيض</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PULMONARY -->
+    <div class="np-card">
+      <div class="np-header" style="background:#2980b9;">
+        <span class="icon">🫁</span>
+        <span>Promoting Pulmonary Function</span>
+        <span class="ar">تعزيز وظيفة الرئة</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Assist the patient to turn, cough, and take deep breaths frequently
+            <span class="ar">مساعدة المريض على الالتفاف والسعال وأخذ أنفاس عميقة بانتظام</span>
+          </li>
+          <li>Pay careful attention to pulmonary function at all times
+            <span class="ar">الاهتمام الدائم بوظيفة الرئة في جميع الأوقات</span>
+          </li>
+          <li>Monitor for signs of pulmonary edema (fluid overload complication)
+            <span class="ar">مراقبة علامات الوذمة الرئوية (مضاعفة احتباس السوائل)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INFECTION -->
+    <div class="np-card">
+      <div class="np-header" style="background:#e74c3c;">
+        <span class="icon">🦠</span>
+        <span>Preventing Infection</span>
+        <span class="ar">الوقاية من العدوى</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Asepsis is essential with all invasive lines and catheters to minimize infection risk
+            <span class="ar">التعقيم ضروري مع جميع الخطوط الوريدية والقسطرات لتقليل خطر العدوى</span>
+          </li>
+          <li>Infection increases metabolism, which worsens ARF prognosis
+            <span class="ar">العدوى تزيد الأيض مما يزيد سوء التنبؤ في الفشل الكلوي الحاد</span>
+          </li>
+          <li>Monitor for signs of infection: fever, elevated WBC, wound changes
+            <span class="ar">مراقبة علامات العدوى: حمى، ارتفاع كريات الدم البيضاء، تغييرات الجرح</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKIN CARE -->
+    <div class="np-card">
+      <div class="np-header" style="background:#e67e22;">
+        <span class="icon">🧴</span>
+        <span>Providing Skin Care</span>
+        <span class="ar">العناية بالجلد</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Massage bony prominences regularly to prevent pressure ulcers
+            <span class="ar">تدليك النتوءات العظمية بانتظام للوقاية من قرح الضغط</span>
+          </li>
+          <li>Turn the patient frequently (every 2 hours)
+            <span class="ar">تقليب المريض بانتظام (كل ساعتين)</span>
+          </li>
+          <li>Bathe the patient with cool water — often comforting and prevents skin breakdown
+            <span class="ar">استحمام المريض بماء بارد — مريح وكثيراً ما يمنع تكسر الجلد</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="np-card">
+      <div class="np-header" style="background:#16a085;">
+        <span class="icon">🤝</span>
+        <span>Providing Support</span>
+        <span class="ar">تقديم الدعم النفسي</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Patient and family need assistance, explanation, and emotional support
+            <span class="ar">المريض والأسرة يحتاجون مساعدة وشرحاً ودعماً عاطفياً</span>
+          </li>
+          <li>Explain the purpose and rationale of all treatments to the patient
+            <span class="ar">شرح الهدف والمبرر من جميع العلاجات للمريض</span>
+          </li>
+          <li>Reduce anxiety through clear, compassionate communication
+            <span class="ar">تقليل القلق من خلال تواصل واضح وإنساني</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EVALUATION FULL WIDTH -->
+    <div class="np-card" style="grid-column:1/-1;">
+      <div class="np-header" style="background:#2c3e50;">
+        <span class="icon">✅</span>
+        <span>Evaluation (Expected Outcomes)</span>
+        <span class="ar">التقييم (النتائج المتوقعة)</span>
+      </div>
+      <div class="np-body">
+        <ul>
+          <li>Fluid balance maintained — no signs of overload or deficit
+            <span class="ar">توازن السوائل محافظ عليه — لا علامات زيادة أو نقص</span>
+          </li>
+          <li>Electrolyte levels within safe range (especially potassium and calcium)
+            <span class="ar">مستويات الشوارد ضمن النطاق الآمن (خاصة البوتاسيوم والكالسيوم)</span>
+          </li>
+          <li>No signs of respiratory complications or pulmonary edema
+            <span class="ar">لا علامات مضاعفات تنفسية أو وذمة رئوية</span>
+          </li>
+          <li>No signs of infection — afebrile, WBC within normal limits
+            <span class="ar">لا علامات عدوى — خالٍ من الحمى، كريات الدم البيضاء طبيعية</span>
+          </li>
+          <li>Skin integrity maintained — no pressure ulcers
+            <span class="ar">سلامة الجلد محافظ عليها — لا قرح ضغط</span>
+          </li>
+          <li>Patient and family verbalize understanding of the condition and treatments
+            <span class="ar">المريض والأسرة يعبران عن فهمهما للحالة والعلاجات</span>
+          </li>
+          <li>Gradual improvement in urine output indicating renal recovery
+            <span class="ar">تحسن تدريجي في إخراج البول مؤشراً على تعافي الكلى</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="sec-title">
+    <h2>Nursing Management Summary</h2>
+    <span class="ar-title">ملخص الإدارة التمريضية</span>
+  </div>
+  <div class="sec-divider"></div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nursing Action</th>
+          <th>Rationale (EN)</th>
+          <th class="ar-col">المبرر (AR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Daily Weights</strong></td>
+          <td>Detects fluid retention or deficit accurately</td>
+          <td class="ar-col">يكشف احتباس السوائل أو نقصها بدقة</td>
+        </tr>
+        <tr>
+          <td><strong>Strict I&O</strong></td>
+          <td>Essential for fluid balance management</td>
+          <td class="ar-col">ضروري لإدارة توازن السوائل</td>
+        </tr>
+        <tr>
+          <td><strong>Cardiac Monitoring</strong></td>
+          <td>Hyperkalemia causes fatal arrhythmias</td>
+          <td class="ar-col">ارتفاع البوتاسيوم يسبب اضطرابات قلبية قاتلة</td>
+        </tr>
+        <tr>
+          <td><strong>Bed Rest</strong></td>
+          <td>Reduces metabolic rate and catabolism</td>
+          <td class="ar-col">يقلل معدل الأيض والتقويض</td>
+        </tr>
+        <tr>
+          <td><strong>Turning q2h + Skin Care</strong></td>
+          <td>Prevents pressure ulcers in edematous tissue</td>
+          <td class="ar-col">يمنع قرح الضغط في الأنسجة المتوذمة</td>
+        </tr>
+        <tr>
+          <td><strong>Deep Breathing / Coughing</strong></td>
+          <td>Prevents atelectasis and pneumonia</td>
+          <td class="ar-col">يمنع انخماص الرئة والتهاب الرئة</td>
+        </tr>
+        <tr>
+          <td><strong>Aseptic Catheter Technique</strong></td>
+          <td>Prevents infection → prevents ↑ metabolism</td>
+          <td class="ar-col">يمنع العدوى → يمنع ارتفاع معدل الأيض</td>
+        </tr>
+        <tr>
+          <td><strong>Patient/Family Education</strong></td>
+          <td>Reduces anxiety; improves adherence to treatment</td>
+          <td class="ar-col">يقلل القلق ويحسن الالتزام بالعلاج</td>
+        </tr>
+        <tr>
+          <td><strong>Protein Restriction (1g/kg)</strong></td>
+          <td>Minimizes nitrogenous waste production during oliguria</td>
+          <td class="ar-col">يقلل النفايات النيتروجينية خلال مرحلة قلة البول</td>
+        </tr>
+        <tr>
+          <td><strong>Reporting Electrolyte Changes</strong></td>
+          <td>Early reporting prevents fatal complications</td>
+          <td class="ar-col">الإبلاغ المبكر يمنع المضاعفات القاتلة</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 7: QUIZ -->
+<!-- ============================================================ -->
+<div id="quiz" class="tab-content">
+
+  <div class="quiz-intro">
+    <h2>🧪 Self-Assessment Quiz</h2>
+    <p>اختبر معلوماتك في الفشل الكلوي الحاد — 20 سؤال اختيار من متعدد</p>
+    <p style="font-size:0.85rem;margin-top:4px;color:var(--text-muted);">Test your knowledge — 20 Multiple Choice Questions</p>
+  </div>
+
+  <div class="quiz-score-bar">
+    <div>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2px;">Score / الدرجة</div>
+      <div class="score-display" id="scoreDisplay">0 / 20</div>
+    </div>
+    <div style="font-family:var(--font-ar);font-size:0.88rem;color:var(--text-muted);text-align:center;">
+      <span id="answeredCount">0</span> answered · <span id="correctCount">0</span> correct
+    </div>
+    <div class="quiz-controls">
+      <button class="btn btn-outline" onclick="resetQuiz()">↺ Reset</button>
+      <button class="btn btn-primary" onclick="showAllAnswers()">Show All Answers</button>
+    </div>
+  </div>
+
+  <div id="quizContainer"></div>
+
+</div>
+
+<footer>
+  Acute Renal Failure — Urinary System Disorders Lecture &nbsp;|&nbsp; الفشل الكلوي الحاد — محاضرة اضطرابات الجهاز البولي
+</footer>
+
+<script>
+// ====== TAB SWITCHING ======
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ====== QUIZ DATA ======
+const questions = [
+  {
+    q: "Acute Renal Failure (ARF) is defined as:",
+    ar_q: "الفشل الكلوي الحاد يُعرَّف بأنه:",
+    opts: ["Gradual loss of kidney function over years","A sudden and almost complete loss of kidney function over hours to days","Chronic elevation of creatinine","Persistent proteinuria"],
+    ar_opts: ["فقدان تدريجي لوظيفة الكلى على مدى سنوات","فقدان مفاجئ وشبه كامل لوظيفة الكلى خلال ساعات إلى أيام","ارتفاع مزمن في الكرياتينين","بروتين مستمر في البول"],
+    correct: 1,
+    explain: "ARF is defined as a sudden and almost complete loss of kidney function (decreased GFR) over hours to days.",
+    ar_explain: "الفشل الكلوي الحاد هو فقدان مفاجئ وشبه كامل لوظيفة الكلى خلال ساعات إلى أيام."
+  },
+  {
+    q: "What percentage of ARF cases are caused by pre-renal conditions?",
+    ar_q: "كم نسبة حالات الفشل الكلوي الحاد الناجمة عن أسباب قبل كلوية؟",
+    opts: ["5%","35–40%","55–60%","80–90%"],
+    ar_opts: ["5%","35–40%","55–60%","80–90%"],
+    correct: 2,
+    explain: "Pre-renal conditions cause 55–60% of ARF cases, making them the most common cause.",
+    ar_explain: "تسبب الحالات قبل الكلوية 55–60% من حالات الفشل الكلوي الحاد وهي الأكثر شيوعاً."
+  },
+  {
+    q: "Which of the following is a pre-renal cause of ARF?",
+    ar_q: "أيٌّ مما يلي يُعدّ سبباً قبل كلوياً للفشل الكلوي الحاد؟",
+    opts: ["Kidney stones","Gentamycin toxicity","Myocardial infarction","Acute pyelonephritis"],
+    ar_opts: ["حصوات الكلى","سمية الجنتاميسين","احتشاء عضلة القلب","التهاب حاد في حوض الكلى"],
+    correct: 2,
+    explain: "Myocardial infarction impairs cardiac performance → reduced cardiac output → renal hypoperfusion (pre-renal cause).",
+    ar_explain: "احتشاء عضلة القلب يضعف الأداء القلبي → انخفاض النتاج القلبي → نقص تروية الكلى (سبب قبل كلوي)."
+  },
+  {
+    q: "Intra-renal causes of ARF primarily involve:",
+    ar_q: "تشمل أسباب الفشل الكلوي الداخلية أساساً:",
+    opts: ["Obstruction of urinary outflow","Impaired cardiac output","Actual parenchymal damage to glomeruli or kidney tubules","Decreased blood volume"],
+    ar_opts: ["انسداد تدفق البول","ضعف النتاج القلبي","تلف حقيقي في حمة الكلى (الكبيبات أو الأنابيب)","انخفاض حجم الدم"],
+    correct: 2,
+    explain: "Intra-renal causes involve actual parenchymal damage to the glomeruli or kidney tubules, potentially leading to Acute Tubular Necrosis (ATN).",
+    ar_explain: "تشمل الأسباب الداخلية تلفاً حقيقياً في حمة الكلى، مما قد يؤدي إلى نخر حاد في الأنابيب الكلوية."
+  },
+  {
+    q: "Which phase of ARF is accompanied by a rise in serum urea, creatinine, and uric acid?",
+    ar_q: "في أي مرحلة من مراحل الفشل الكلوي الحاد يرتفع اليوريا والكرياتينين وحمض اليوريك في الدم؟",
+    opts: ["Initiation period","Oliguria period","Diuresis period","Recovery period"],
+    ar_opts: ["مرحلة البداية","مرحلة قلة البول","مرحلة إدرار البول","مرحلة التعافي"],
+    correct: 1,
+    explain: "The oliguria period is accompanied by a rise in serum concentration of substances normally excreted by the kidneys: urea, creatinine, and uric acid.",
+    ar_explain: "مرحلة قلة البول مصحوبة بارتفاع تركيزات اليوريا والكرياتينين وحمض اليوريك في الدم."
+  },
+  {
+    q: "How long may the recovery period of ARF take?",
+    ar_q: "كم يستغرق عادةً مرحلة التعافي من الفشل الكلوي الحاد؟",
+    opts: ["1–2 weeks","1–3 months","3–12 months","1–2 years"],
+    ar_opts: ["1–2 أسبوع","1–3 أشهر","3–12 شهراً","1–2 سنة"],
+    correct: 2,
+    explain: "The recovery period signals improvement of renal function and may take 3 to 12 months. Laboratory values return to the patient's normal level.",
+    ar_explain: "تشير مرحلة التعافي إلى تحسن وظيفة الكلى وقد تستغرق 3 إلى 12 شهراً."
+  },
+  {
+    q: "What is the specific gravity of urine in ARF?",
+    ar_q: "ما هي الكثافة النوعية للبول في الفشل الكلوي الحاد؟",
+    opts: ["Greater than 1.030","1.020–1.025","1.010 or less","Between 1.015–1.020"],
+    ar_opts: ["أكبر من 1.030","1.020–1.025","1.010 أو أقل","بين 1.015–1.020"],
+    correct: 2,
+    explain: "Urine in ARF has a low specific gravity of 1.010 or less, indicating the kidneys cannot concentrate urine properly.",
+    ar_explain: "البول في الفشل الكلوي الحاد له كثافة نوعية منخفضة 1.010 أو أقل، مما يدل على فشل الكلى في تركيز البول."
+  },
+  {
+    q: "Why does anemia inevitably accompany ARF?",
+    ar_q: "لماذا يصاحب فقر الدم الفشل الكلوي الحاد حتماً؟",
+    opts: ["Due to excessive fluid intake","Because of decreased erythropoietin production, reduced RBC lifespan, and GI blood loss","Due to hyperkalemia causing RBC destruction","Because of metabolic alkalosis"],
+    ar_opts: ["بسبب الإفراط في تناول السوائل","بسبب انخفاض إنتاج الإريثروبويتين وقصر عمر كريات الدم الحمراء وفقدان الدم","بسبب ارتفاع البوتاسيوم الذي يدمر كريات الدم الحمراء","بسبب القلاء الاستقلابي"],
+    correct: 1,
+    explain: "Anemia in ARF is caused by: reduced erythropoietin production, uremic GI lesions, reduced RBC life span, and blood loss (usually from GI tract).",
+    ar_explain: "فقر الدم في الفشل الكلوي ناجم عن: نقص إريثروبويتين، تقرحات معدية، قصر عمر كريات الدم الحمراء، وفقدان الدم."
+  },
+  {
+    q: "During ARF, what happens to serum potassium levels?",
+    ar_q: "ماذا يحدث لمستويات البوتاسيوم في الدم خلال الفشل الكلوي الحاد؟",
+    opts: ["They decrease significantly","They remain normal","They increase (hyperkalemia)","They fluctuate unpredictably"],
+    ar_opts: ["تنخفض بشكل ملحوظ","تبقى طبيعية","ترتفع (فرط بوتاسيوم الدم)","تتذبذب بشكل غير متوقع"],
+    correct: 2,
+    explain: "With declining GFR, the patient cannot excrete potassium normally, leading to hyperkalemia. Patients with oliguria/anuria are at greater risk.",
+    ar_explain: "مع انخفاض معدل الترشيح الكبيبي، لا يستطيع المريض إفراز البوتاسيوم بشكل طبيعي مما يؤدي إلى ارتفاعه."
+  },
+  {
+    q: "Which diagnostic tool is described as 'critical' for evaluating both acute and chronic renal failure?",
+    ar_q: "أي أداة تشخيصية تُوصف بأنها 'أساسية' في تقييم الفشل الكلوي الحاد والمزمن؟",
+    opts: ["CT scan","MRI","Ultrasonography","Kidney biopsy"],
+    ar_opts: ["التصوير المقطعي","الرنين المغناطيسي","الموجات فوق الصوتية","خزعة الكلى"],
+    correct: 2,
+    explain: "Ultrasonography is described as a critical component of evaluation for both acute and chronic renal failure — it assesses kidney size, structure, and detects obstruction.",
+    ar_explain: "الموجات فوق الصوتية وُصفت بأنها مكوّن أساسي في تقييم الفشل الكلوي الحاد والمزمن."
+  },
+  {
+    q: "In the nutritional therapy for ARF, protein intake during the oliguric phase should be:",
+    ar_q: "في العلاج الغذائي للفشل الكلوي الحاد، يجب أن يكون تناول البروتين خلال مرحلة قلة البول:",
+    opts: ["Increased to 3 g/kg","Unrestricted","Limited to about 1 g/kg","Eliminated completely"],
+    ar_opts: ["زيادته إلى 3 جم/كجم","غير مقيد","تقييده إلى حوالي 1 جم/كجم","إلغاؤه كلياً"],
+    correct: 2,
+    explain: "Dietary proteins are limited to about 1 g/kg during the oliguric phase to minimize protein breakdown and reduce nitrogenous waste.",
+    ar_explain: "يُقيَّد البروتين إلى حوالي 1 جم/كجم خلال مرحلة قلة البول لتقليل تكسير البروتين والنفايات النيتروجينية."
+  },
+  {
+    q: "Why are high-carbohydrate meals recommended in ARF?",
+    ar_q: "لماذا تُوصى الوجبات الغنية بالكربوهيدرات في الفشل الكلوي الحاد؟",
+    opts: ["To increase potassium levels","To meet caloric requirements and spare proteins","To increase phosphate levels","To prevent metabolic alkalosis"],
+    ar_opts: ["لرفع مستويات البوتاسيوم","لتلبية الاحتياجات الحرارية والحفاظ على البروتين","لرفع مستويات الفوسفات","لمنع القلاء الاستقلابي"],
+    correct: 1,
+    explain: "High-carbohydrate meals meet caloric requirements while sparing protein from being used for energy, thus reducing nitrogenous waste production.",
+    ar_explain: "الوجبات الغنية بالكربوهيدرات تلبي الاحتياجات الحرارية وتحافظ على البروتين من الاستخدام كطاقة."
+  },
+  {
+    q: "Which nursing action is essential to detect fluid overload in ARF patients?",
+    ar_q: "أي إجراء تمريضي ضروري للكشف عن زيادة السوائل في مرضى الفشل الكلوي الحاد؟",
+    opts: ["Administering IV fluids freely","Performing daily accurate weights and strict intake/output records","Encouraging high fluid intake","Restricting all medications"],
+    ar_opts: ["إعطاء السوائل الوريدية بحرية","قياس الوزن اليومي الدقيق وسجلات الوارد والصادر","تشجيع تناول السوائل الكثيرة","تقييد جميع الأدوية"],
+    correct: 1,
+    explain: "Accurate daily weights and strict intake/output records are essential for monitoring fluid balance and detecting fluid overload or deficit.",
+    ar_explain: "الوزن اليومي الدقيق وسجلات الوارد والصادر ضرورية لمراقبة توازن السوائل."
+  },
+  {
+    q: "Why is bed rest recommended in the acute stage of ARF?",
+    ar_q: "لماذا يُوصى بالراحة في الفراش في المرحلة الحادة من الفشل الكلوي الحاد؟",
+    opts: ["To prevent deep vein thrombosis","To reduce exertion and decrease the metabolic rate","To increase urine output","To prevent skin breakdown"],
+    ar_opts: ["لمنع الجلطات الوريدية العميقة","لتقليل المجهود وخفض معدل الأيض","لزيادة إخراج البول","لمنع تكسر الجلد"],
+    correct: 1,
+    explain: "Bed rest may be indicated to reduce exertion and decrease the metabolic rate during the most acute stage of the disorder.",
+    ar_explain: "الراحة في الفراش مؤشر عليها لتقليل المجهود وخفض معدل الأيض في المرحلة الأشد حدة."
+  },
+  {
+    q: "What is the purpose of turning an ARF patient frequently and massaging bony prominences?",
+    ar_q: "ما هو الهدف من تقليب مريض الفشل الكلوي الحاد بانتظام وتدليك النتوءات العظمية؟",
+    opts: ["To improve renal blood flow","To stimulate diuresis","To prevent skin breakdown and pressure ulcers","To reduce potassium levels"],
+    ar_opts: ["لتحسين التروية الكلوية","لتحفيز إدرار البول","لمنع تكسر الجلد وقرح الضغط","لخفض مستويات البوتاسيوم"],
+    correct: 2,
+    explain: "Massaging bony prominences, turning the patient frequently, and bathing with cool water prevents skin breakdown and pressure ulcers.",
+    ar_explain: "تدليك النتوءات العظمية وتقليب المريض بانتظام يمنع تكسر الجلد وقرح الضغط."
+  },
+  {
+    q: "In ARF, metabolic acidosis occurs because:",
+    ar_q: "يحدث الحماض الاستقلابي في الفشل الكلوي الحاد لأن:",
+    opts: ["The patient over-breathes, causing respiratory alkalosis","The kidneys cannot eliminate the daily metabolic acid load","Too much bicarbonate is produced","Dietary acid intake is excessive"],
+    ar_opts: ["المريض يتنفس بسرعة مما يسبب قلاء تنفسياً","الكلى لا تستطيع التخلص من الحمل الحمضي الاستقلابي اليومي","يُنتج بيكربونات بكميات كبيرة","الحمل الحمضي الغذائي مفرط"],
+    correct: 1,
+    explain: "Patients with acute oliguria cannot eliminate the daily metabolic load of acid-type substances, leading to accumulation → metabolic acidosis.",
+    ar_explain: "مرضى قلة البول الحادة لا يستطيعون التخلص من الحمل الحمضي اليومي، مما يؤدي إلى تراكمه والحماض الاستقلابي."
+  },
+  {
+    q: "Which electrolyte abnormality is most immediately life-threatening in ARF?",
+    ar_q: "أي اضطراب في الشوارد هو الأكثر تهديداً للحياة في الفشل الكلوي الحاد؟",
+    opts: ["Hyponatremia","Hyperkalemia","Hypocalcemia","Hyperphosphatemia"],
+    ar_opts: ["نقص صوديوم الدم","فرط بوتاسيوم الدم","نقص كالسيوم الدم","فرط فوسفات الدم"],
+    correct: 1,
+    explain: "Hyperkalemia is the most life-threatening complication. It can cause fatal cardiac arrhythmias. The nurse monitors cardiac function closely for signs of hyperkalemia.",
+    ar_explain: "فرط بوتاسيوم الدم هو المضاعفة الأكثر تهديداً للحياة لأنه يسبب اضطرابات قلبية قاتلة."
+  },
+  {
+    q: "Aseptic technique with invasive lines and catheters in ARF is essential to:",
+    ar_q: "تقنية التعقيم مع الخطوط الوريدية والقسطرات في الفشل الكلوي الحاد ضرورية من أجل:",
+    opts: ["Increase urine output","Minimize infection risk and prevent increased metabolism","Reduce fluid overload","Improve cardiac output"],
+    ar_opts: ["زيادة إخراج البول","تقليل خطر العدوى ومنع زيادة معدل الأيض","تقليل احتباس السوائل","تحسين النتاج القلبي"],
+    correct: 1,
+    explain: "Asepsis is essential to minimize the risk of infection AND increased metabolism. Infections worsen ARF by raising the metabolic rate.",
+    ar_explain: "التعقيم ضروري لتقليل خطر العدوى ومنع ارتفاع معدل الأيض. الالتهابات تفاقم الفشل الكلوي."
+  },
+  {
+    q: "During the diuresis phase of ARF, the nurse should know that:",
+    ar_q: "خلال مرحلة إدرار البول في الفشل الكلوي الحاد، يجب أن يعرف الممرض أن:",
+    opts: ["The patient is fully recovered and monitoring can stop","Urine output is decreasing","Glomerular filtration has started to recover but electrolytes still need monitoring","The patient no longer needs dietary restrictions"],
+    ar_opts: ["المريض تعافى تماماً ويمكن إيقاف المراقبة","إخراج البول يتناقص","الترشيح الكبيبي بدأ يتعافى لكن الشوارد لا تزال تحتاج مراقبة","المريض لم يعد بحاجة إلى قيود غذائية"],
+    correct: 2,
+    explain: "In the diuresis phase, urine output gradually increases signaling GFR recovery. However, electrolyte imbalances can still occur and must be monitored.",
+    ar_explain: "في مرحلة إدرار البول، يزيد البول تدريجياً مشيراً إلى تعافي الترشيح الكبيبي. لكن اختلالات الشوارد لا تزال ممكنة وتستدعي المراقبة."
+  },
+  {
+    q: "The patient and family support in ARF nursing management includes:",
+    ar_q: "يشمل دعم المريض والأسرة في الإدارة التمريضية للفشل الكلوي الحاد:",
+    opts: ["Only administering medications as ordered","Providing assistance, clear explanation of treatments, and emotional support","Restricting all family visits","Focusing only on physical care"],
+    ar_opts: ["فقط إعطاء الأدوية كما هو مأمور","تقديم المساعدة والشرح الواضح للعلاجات والدعم العاطفي","تقييد جميع زيارات الأسرة","التركيز على الرعاية الجسدية فقط"],
+    correct: 1,
+    explain: "The patient and family need assistance, explanation, and support during this critical time. The purpose and rationale of all treatments must be explained.",
+    ar_explain: "يحتاج المريض والأسرة إلى المساعدة والشرح والدعم في هذا الوقت الحرج. يجب شرح الهدف والمبرر من جميع العلاجات."
+  }
+];
+
+// ====== QUIZ STATE ======
+let state = { answered: 0, correct: 0, results: new Array(20).fill(null) };
+
+function buildQuiz() {
+  const c = document.getElementById('quizContainer');
+  c.innerHTML = '';
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'q-item';
+    div.id = `q${i}`;
+    const opts = q.opts.map((o,j) => `
+      <div class="q-opt" id="q${i}o${j}" onclick="selectAnswer(${i},${j})">
+        <span class="opt-letter">${String.fromCharCode(65+j)}.</span>
+        <span>${o}</span>
+        <span style="font-family:var(--font-ar);font-size:0.82rem;color:var(--text-muted);margin-right:auto;direction:rtl;">${q.ar_opts[j]}</span>
+      </div>`).join('');
+    div.innerHTML = `
+      <div class="q-num">Question ${i+1} of 20</div>
+      <div class="q-text">${q.q}<br><span style="font-family:var(--font-ar);font-size:0.88rem;color:var(--text-muted);direction:rtl;">${q.ar_q}</span></div>
+      <div class="q-opts">${opts}</div>
+      <div class="q-explain" id="exp${i}">
+        <strong>✅ Explanation:</strong> ${q.explain}
+        <span class="ar">${q.ar_explain}</span>
+      </div>`;
+    c.appendChild(div);
+  });
+  updateScore();
+}
+
+function selectAnswer(qi, oi) {
+  if (state.results[qi] !== null) return;
+  const correct = questions[qi].correct;
+  state.results[qi] = oi === correct;
+  state.answered++;
+  if (oi === correct) state.correct++;
+
+  document.querySelectorAll(`#q${qi} .q-opt`).forEach((el,j) => {
+    el.classList.add('disabled');
+    if (j === correct) el.classList.add('correct');
+    else if (j === oi) el.classList.add('wrong');
+  });
+
+  const qItem = document.getElementById(`q${qi}`);
+  qItem.classList.add(state.results[qi] ? 'answered-correct' : 'answered-wrong');
+  document.getElementById(`exp${qi}`).classList.add('show');
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('scoreDisplay').textContent = `${state.correct} / 20`;
+  document.getElementById('answeredCount').textContent = state.answered;
+  document.getElementById('correctCount').textContent = state.correct;
+}
+
+function showAllAnswers() {
+  questions.forEach((_,i) => {
+    if (state.results[i] !== null) return;
+    const correct = questions[i].correct;
+    document.querySelectorAll(`#q${i} .q-opt`).forEach((el,j) => {
+      el.classList.add('disabled');
+      if (j === correct) el.classList.add('correct');
+    });
+    document.getElementById(`exp${i}`).classList.add('show');
+  });
+}
+
+function resetQuiz() {
+  state = { answered: 0, correct: 0, results: new Array(20).fill(null) };
+  buildQuiz();
+}
+
+// INIT
+buildQuiz();
+</script>
+</body>
+</html>

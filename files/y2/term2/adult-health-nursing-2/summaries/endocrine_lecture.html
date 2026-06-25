@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrine System Disorders – Thyroid | اضطرابات الجهاز الصماوي – الغدة الدرقية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:   #2c6e7f;
+  --primary-lt:#e8f4f7;
+  --accent:    #d97c3a;
+  --accent-lt: #fdf3ec;
+  --green:     #4a7c59;
+  --green-lt:  #eaf3ec;
+  --red:       #b34040;
+  --red-lt:    #fdf0f0;
+  --purple:    #6b4f8e;
+  --purple-lt: #f3eef9;
+  --bg:        #f8f9fb;
+  --card:      #ffffff;
+  --border:    #dde5ea;
+  --text:      #1e2d35;
+  --muted:     #6e8593;
+  --ar:        'Cairo', sans-serif;
+  --en:        'Source Sans 3', sans-serif;
+  --display:   'Playfair Display', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--en); background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* ── Header ── */
+.site-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #1a4f5e 100%);
+  color: #fff;
+  padding: 28px 40px 20px;
+  text-align: center;
+}
+.site-header h1 { font-family: var(--display); font-size: 2rem; letter-spacing: .5px; }
+.site-header h1 span { display: block; font-family: var(--ar); font-size: 1.35rem; font-weight: 600; margin-top: 6px; opacity: .9; }
+.site-header p { font-size: .9rem; opacity: .75; margin-top: 6px; }
+
+/* ── Tab bar ── */
+.tab-bar {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 6px; padding: 18px 20px 0; background: var(--card);
+  border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 99;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+.tab-btn {
+  border: none; background: none; cursor: pointer;
+  padding: 10px 20px; border-radius: 8px 8px 0 0;
+  font-family: var(--en); font-size: .88rem; font-weight: 600;
+  color: var(--muted); transition: all .2s; white-space: nowrap;
+}
+.tab-btn:hover { background: var(--primary-lt); color: var(--primary); }
+.tab-btn.active {
+  background: var(--primary); color: #fff;
+  box-shadow: 0 -2px 8px rgba(44,110,127,.3);
+}
+.tab-btn span.ar { display: block; font-family: var(--ar); font-size: .78rem; font-weight: 400; opacity: .85; }
+
+/* ── Panels ── */
+.panel { display: none; padding: 36px 28px; max-width: 1100px; margin: 0 auto; }
+.panel.active { display: block; animation: fadeIn .3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── Bilingual row ── */
+.bi { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+.bi .en-col { border-left: 4px solid var(--primary); }
+.bi .ar-col { border-right: 4px solid var(--accent); direction: rtl; text-align: right; }
+.bi .en-col, .bi .ar-col {
+  background: var(--card); border-radius: 10px; padding: 20px 22px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+.bi .ar-col p, .bi .ar-col li, .bi .ar-col h3, .bi .ar-col h4, .bi .ar-col td, .bi .ar-col th {
+  font-family: var(--ar); line-height: 1.9;
+}
+.bi .en-col h3, .bi .ar-col h3 {
+  font-size: 1.05rem; font-weight: 700; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.bi .en-col p, .bi .ar-col p { font-size: .93rem; line-height: 1.75; margin-bottom: 8px; }
+.bi ul { padding-left: 20px; }
+.bi .ar-col ul { padding-left: 0; padding-right: 20px; }
+.bi li { font-size: .91rem; line-height: 1.75; margin-bottom: 4px; }
+
+/* ── Section heading ── */
+.sec-title {
+  font-family: var(--display); font-size: 1.55rem; color: var(--primary);
+  border-bottom: 2px solid var(--primary-lt); padding-bottom: 10px;
+  margin-bottom: 22px; display: flex; align-items: center; gap: 12px;
+}
+.sec-title .ar { font-family: var(--ar); font-size: 1.1rem; color: var(--muted); font-weight: 600; }
+
+/* ── Card ── */
+.card {
+  background: var(--card); border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 24px;
+  margin-bottom: 22px;
+}
+.card-title {
+  font-size: 1rem; font-weight: 700; color: var(--primary);
+  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.card-title .ar { font-family: var(--ar); font-size: .9rem; color: var(--muted); }
+
+/* ── Badge tags ── */
+.badge {
+  display: inline-block; padding: 3px 11px; border-radius: 20px;
+  font-size: .76rem; font-weight: 700; letter-spacing: .4px; margin: 2px;
+}
+.badge-blue  { background: var(--primary-lt); color: var(--primary); }
+.badge-orange{ background: var(--accent-lt);  color: var(--accent); }
+.badge-green { background: var(--green-lt);   color: var(--green); }
+.badge-red   { background: var(--red-lt);     color: var(--red); }
+.badge-purple{ background: var(--purple-lt);  color: var(--purple); }
+
+/* ── Tables ── */
+table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+thead { background: var(--primary); color: #fff; }
+thead th { padding: 11px 14px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--primary-lt); }
+tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody td.ar-td { font-family: var(--ar); direction: rtl; text-align: right; }
+.table-wrap { overflow-x: auto; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,.07); margin-bottom: 24px; }
+
+/* ── Alert boxes ── */
+.alert {
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.alert-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.alert-body h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+.alert-body h4 .ar { font-family: var(--ar); font-size: .85rem; color: var(--muted); }
+.alert-body p, .alert-body li { font-size: .88rem; line-height: 1.7; }
+.alert-body .ar-p { font-family: var(--ar); direction: rtl; text-align: right; font-size: .88rem; line-height: 1.9; }
+.alert-red    { background: var(--red-lt);    border-left: 4px solid var(--red); }
+.alert-blue   { background: var(--primary-lt);border-left: 4px solid var(--primary); }
+.alert-green  { background: var(--green-lt);  border-left: 4px solid var(--green); }
+.alert-orange { background: var(--accent-lt); border-left: 4px solid var(--accent); }
+.alert-purple { background: var(--purple-lt); border-left: 4px solid var(--purple); }
+
+/* ── Nursing process flow ── */
+.np-flow {
+  display: flex; flex-direction: column; gap: 0; position: relative; margin: 10px 0 28px;
+}
+.np-step {
+  display: grid; grid-template-columns: 180px 1fr 1fr; gap: 0;
+  border-radius: 0; overflow: hidden; position: relative;
+}
+.np-step:first-child { border-radius: 12px 12px 0 0; }
+.np-step:last-child  { border-radius: 0 0 12px 12px; }
+.np-step + .np-step::before {
+  content: '▼'; position: absolute; left: 80px; top: -13px;
+  color: var(--primary); font-size: .85rem; z-index: 2;
+}
+.np-label {
+  background: var(--primary); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 18px 10px; text-align: center;
+}
+.np-label .num { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.np-label .name { font-size: .8rem; font-weight: 600; margin-top: 4px; letter-spacing: .5px; }
+.np-label .ar-name { font-family: var(--ar); font-size: .8rem; opacity: .85; }
+.np-en { background: var(--card); padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.np-ar { background: var(--primary-lt); padding: 16px 20px; border-bottom: 1px solid var(--border); direction: rtl; text-align: right; font-family: var(--ar); }
+.np-en p, .np-ar p { font-size: .88rem; line-height: 1.75; }
+.np-en ul, .np-ar ul { padding-left: 18px; }
+.np-ar ul { padding-left: 0; padding-right: 18px; }
+.np-en li, .np-ar li { font-size: .86rem; line-height: 1.7; margin-bottom: 3px; }
+.np-step:nth-child(2) .np-label { background: #3a8a9c; }
+.np-step:nth-child(3) .np-label { background: #4a7c59; }
+.np-step:nth-child(4) .np-label { background: #d97c3a; }
+.np-step:nth-child(5) .np-label { background: #6b4f8e; }
+
+/* ── Quiz ── */
+.quiz-header {
+  background: linear-gradient(135deg, #1a4f5e, var(--primary));
+  color: #fff; border-radius: 14px; padding: 28px 30px; margin-bottom: 28px; text-align: center;
+}
+.quiz-header h2 { font-family: var(--display); font-size: 1.6rem; }
+.quiz-header p { font-family: var(--ar); font-size: 1rem; margin-top: 6px; opacity: .85; }
+
+.q-card {
+  background: var(--card); border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 22px 24px;
+  margin-bottom: 20px; border-left: 5px solid var(--primary);
+  transition: box-shadow .2s;
+}
+.q-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.11); }
+.q-num { font-size: .75rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.q-text { font-size: .96rem; font-weight: 600; margin-bottom: 6px; line-height: 1.6; }
+.q-ar   { font-family: var(--ar); font-size: .88rem; color: var(--muted); direction: rtl; text-align: right; margin-bottom: 14px; line-height: 1.8; }
+.q-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.q-opt {
+  border: 2px solid var(--border); border-radius: 8px; padding: 9px 14px;
+  cursor: pointer; font-size: .88rem; transition: all .18s; background: var(--bg);
+  display: flex; align-items: center; gap: 8px; font-family: var(--en);
+}
+.q-opt:hover { border-color: var(--primary); background: var(--primary-lt); }
+.q-opt.correct { border-color: var(--green); background: var(--green-lt); color: var(--green); font-weight: 700; }
+.q-opt.wrong   { border-color: var(--red);   background: var(--red-lt);   color: var(--red); }
+.q-opt.reveal  { border-color: var(--green); background: var(--green-lt); color: var(--green); font-weight: 700; }
+.q-opt .letter { font-weight: 800; font-size: .85rem; min-width: 22px; }
+.explain {
+  display: none; background: var(--accent-lt); border-radius: 8px;
+  padding: 12px 16px; font-size: .87rem; line-height: 1.7; border-left: 3px solid var(--accent);
+  margin-top: 4px;
+}
+.explain.show { display: block; }
+.explain .ar-explain { font-family: var(--ar); direction: rtl; text-align: right; color: var(--muted); font-size: .85rem; margin-top: 6px; line-height: 1.9; }
+
+.quiz-score {
+  background: var(--card); border-radius: 14px; padding: 24px;
+  text-align: center; margin-top: 28px; display: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+.quiz-score.show { display: block; }
+.score-num { font-size: 3rem; font-weight: 800; color: var(--primary); }
+.score-label { font-size: 1rem; color: var(--muted); margin-top: 4px; }
+.score-label .ar { font-family: var(--ar); display: block; }
+.btn-reset {
+  margin-top: 18px; padding: 11px 32px; background: var(--primary); color: #fff;
+  border: none; border-radius: 8px; cursor: pointer; font-size: .95rem; font-weight: 600;
+  font-family: var(--en); transition: background .2s;
+}
+.btn-reset:hover { background: #1a4f5e; }
+.btn-submit-quiz {
+  display: block; margin: 28px auto 0; padding: 13px 44px;
+  background: var(--primary); color: #fff; border: none; border-radius: 10px;
+  cursor: pointer; font-size: 1rem; font-weight: 700; font-family: var(--en);
+  transition: background .2s; box-shadow: 0 4px 14px rgba(44,110,127,.3);
+}
+.btn-submit-quiz:hover { background: #1a4f5e; }
+
+/* ── Comparison table helper ── */
+.comp-label { font-weight: 700; color: var(--primary); }
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .bi { grid-template-columns: 1fr; }
+  .np-step { grid-template-columns: 100px 1fr; }
+  .np-ar { display: none; }
+  .q-options { grid-template-columns: 1fr; }
+  .site-header h1 { font-size: 1.4rem; }
+  .panel { padding: 20px 14px; }
+  .tab-btn { padding: 8px 12px; font-size: .8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header class="site-header">
+  <h1>Endocrine System Disorders — Thyroid
+    <span>اضطرابات الجهاز الصماوي — الغدة الدرقية</span>
+  </h1>
+  <p>Lecture Notes · Bilingual EN / AR · Nursing Science</p>
+</header>
+
+<!-- ════════════════ TAB BAR ════════════════ -->
+<nav class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview<span class="ar">نظرة عامة</span></button>
+  <button class="tab-btn" onclick="showTab('hypo',this)">Hypothyroidism<span class="ar">قصور الغدة الدرقية</span></button>
+  <button class="tab-btn" onclick="showTab('hyper',this)">Hyperthyroidism<span class="ar">فرط نشاط الغدة الدرقية</span></button>
+  <button class="tab-btn" onclick="showTab('nursing',this)">Nursing Process<span class="ar">العملية التمريضية</span></button>
+  <button class="tab-btn" onclick="showTab('compare',this)">Comparison<span class="ar">مقارنة</span></button>
+  <button class="tab-btn" onclick="showTab('quiz',this)">🧠 Self-Test<span class="ar">اختبر نفسك</span></button>
+</nav>
+
+<!-- ════════════════ PANEL 1 — OVERVIEW ════════════════ -->
+<div class="panel active" id="overview">
+  <div class="sec-title">Thyroid Disorders — Introduction <span class="ar">اضطرابات الغدة الدرقية — مقدمة</span></div>
+
+  <div class="bi">
+    <div class="en-col">
+      <h3>🦋 The Thyroid Gland</h3>
+      <p>The thyroid gland is a butterfly-shaped endocrine gland located in the neck. It produces hormones (T3 and T4) that regulate metabolism, energy, and many vital body functions.</p>
+      <p>Two major thyroid disorders are covered in this lecture:</p>
+      <ul>
+        <li><strong>Hypothyroidism</strong> — underactive thyroid (too little hormone)</li>
+        <li><strong>Hyperthyroidism</strong> — overactive thyroid (too much hormone)</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>🦋 الغدة الدرقية</h3>
+      <p>الغدة الدرقية غدة صماء على شكل فراشة تقع في الرقبة. تُنتج هرمونات (T3 و T4) تنظّم الأيض والطاقة والعديد من وظائف الجسم الحيوية.</p>
+      <p>يتناول هذا المحاضرة اضطرابَين رئيسيَّين:</p>
+      <ul>
+        <li><strong>قصور الغدة الدرقية</strong> — نشاط منخفض (هرمونات أقل من الطبيعي)</li>
+        <li><strong>فرط نشاط الغدة الدرقية</strong> — نشاط مفرط (هرمونات أكثر من الطبيعي)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Symptoms overview table -->
+  <div class="card">
+    <div class="card-title">Common Signs &amp; Symptoms at a Glance <span class="ar">الأعراض الشائعة بنظرة سريعة</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Symptom / العَرَض</th>
+            <th>Hypothyroidism / قصور الغدة</th>
+            <th>Hyperthyroidism / فرط النشاط</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weight / الوزن</td>
+            <td>⬆️ Weight gain / زيادة الوزن</td>
+            <td>⬇️ Weight loss / فقدان الوزن</td>
+          </tr>
+          <tr>
+            <td>Heart rate / معدل ضربات القلب</td>
+            <td>⬇️ Slow / بطيء</td>
+            <td>⬆️ Fast (90–160 bpm) / سريع</td>
+          </tr>
+          <tr>
+            <td>Temperature tolerance / تحمّل الحرارة</td>
+            <td>Cold intolerance / عدم تحمّل البرد</td>
+            <td>Heat intolerance / عدم تحمّل الحرارة</td>
+          </tr>
+          <tr>
+            <td>Metabolism / الأيض</td>
+            <td>⬇️ Slowed / بطيء</td>
+            <td>⬆️ Accelerated / متسارع</td>
+          </tr>
+          <tr>
+            <td>Energy / الطاقة</td>
+            <td>Fatigue, lethargy / تعب وخمول</td>
+            <td>Restlessness, nervousness / قلق وتوتر</td>
+          </tr>
+          <tr>
+            <td>Skin &amp; Hair / الجلد والشعر</td>
+            <td>Dry skin, hair loss / جلد جاف وتساقط شعر</td>
+            <td>Flushed skin, sweating / احمرار وتعرّق</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ PANEL 2 — HYPOTHYROIDISM ════════════════ -->
+<div class="panel" id="hypo">
+  <div class="sec-title">Hypothyroidism <span class="ar">قصور الغدة الدرقية</span></div>
+
+  <!-- Definition -->
+  <div class="bi">
+    <div class="en-col">
+      <h3>📌 Definition</h3>
+      <p>Hypothyroidism is a <strong>deficiency of thyroid hormone</strong> in the adult, resulting in:</p>
+      <ul>
+        <li>Slowed body metabolism</li>
+        <li>Decreased oxygen consumption by tissues</li>
+        <li>Pronounced personality changes</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>📌 التعريف</h3>
+      <p>قصور الغدة الدرقية هو <strong>نقص هرمون الغدة الدرقية</strong> لدى البالغين، مما يؤدي إلى:</p>
+      <ul>
+        <li>تباطؤ الأيض</li>
+        <li>انخفاض استهلاك الأنسجة للأكسجين</li>
+        <li>تغييرات شخصية واضحة</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Myxedema -->
+  <div class="alert alert-red">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-body">
+      <h4>Myxedema &amp; Myxedema Coma <span class="ar">الوذمة المخاطية وغيبوبة الوذمة المخاطية</span></h4>
+      <p><strong>Myxedema</strong>: A complication of hypothyroidism characterised by a generalised hypo-metabolic state.</p>
+      <p class="ar-p"><strong>الوذمة المخاطية:</strong> مضاعفة لقصور الغدة الدرقية تتميز بحالة من انخفاض الأيض الشامل في الجسم.</p>
+      <p style="margin-top:8px"><strong>Myxedema Coma</strong>: A <em>life-threatening</em> situation in which ALL body systems are severely compromised by the hypo-metabolic state.</p>
+      <p class="ar-p"><strong>غيبوبة الوذمة المخاطية:</strong> حالة <em>تهدد الحياة</em> يتأثر فيها كل أجهزة الجسم بشكل حاد بسبب انخفاض الأيض.</p>
+    </div>
+  </div>
+
+  <!-- Etiology -->
+  <div class="sec-title" style="font-size:1.2rem;margin-top:10px">Etiology / Types <span class="ar">المسببات / الأنواع</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Type / النوع</th>
+          <th>English Description</th>
+          <th class="ar-td">الوصف بالعربية</th>
+          <th>Causes / الأسباب</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Primary</span><br><span style="font-family:var(--ar);font-size:.82rem">أولي</span></td>
+          <td>Problem originates in the thyroid gland itself</td>
+          <td class="ar-td">المشكلة في الغدة الدرقية نفسها</td>
+          <td>
+            • Congenital defects<br>
+            • Defective hormone synthesis<br>
+            • Iodine deficiency<br>
+            • Surgery or radioactive therapy for hyperthyroidism<br>
+            • Antithyroid drugs<br>
+            • Chronic inflammatory diseases
+          </td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-orange">Secondary</span><br><span style="font-family:var(--ar);font-size:.82rem">ثانوي</span></td>
+          <td>Insufficient stimulation of the <strong>normal</strong> thyroid gland (pituitary problem)</td>
+          <td class="ar-td">ضعف تحفيز الغدة الدرقية السليمة (مشكلة في الغدة النخامية)</td>
+          <td>Pituitary gland dysfunction / خلل في الغدة النخامية</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">Tertiary</span><br><span style="font-family:var(--ar);font-size:.82rem">ثالثي</span></td>
+          <td>Hypothalamus fails to produce TRH (thyroid-releasing hormone)</td>
+          <td class="ar-td">فشل منطقة ما تحت المهاد في إنتاج هرمون TRH</td>
+          <td>Tumor or other destructive lesion in the hypothalamus / ورم أو آفة مدمّرة في منطقة ما تحت المهاد</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="sec-title" style="font-size:1.2rem">Clinical Manifestations <span class="ar">المظاهر السريرية</span></div>
+  <div class="bi">
+    <div class="en-col">
+      <h3>🩺 Signs &amp; Symptoms</h3>
+      <ul>
+        <li>Extreme <strong>fatigue</strong></li>
+        <li>Hair loss, brittle nails, and <strong>dry skin</strong></li>
+        <li>Husky voice / hoarseness</li>
+        <li>Affects women <strong>5× more</strong> than men; most common between ages 30–60</li>
+        <li>Severe cases: subnormal temperature &amp; pulse rate</li>
+        <li>Weight gain <em>without</em> increased food intake</li>
+        <li>Thinning and falling hair</li>
+        <li>Feeling cold <em>even in warm environments</em></li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>🩺 العلامات والأعراض</h3>
+      <ul>
+        <li>تعب شديد</li>
+        <li>تساقط الشعر، هشاشة الأظافر، <strong>جفاف الجلد</strong></li>
+        <li>بحّة في الصوت</li>
+        <li>يصيب النساء <strong>5 أضعاف</strong> الرجال؛ الأكثر شيوعًا بين 30–60 سنة</li>
+        <li>الحالات الشديدة: انخفاض درجة الحرارة وبطء النبض</li>
+        <li>زيادة الوزن <em>دون زيادة في الأكل</em></li>
+        <li>تساقط الشعر وخفته</li>
+        <li>الشعور بالبرد <em>حتى في البيئات الدافئة</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="sec-title" style="font-size:1.2rem;margin-top:10px">Medical Management <span class="ar">الإدارة الطبية</span></div>
+
+  <div class="card">
+    <div class="card-title">A. Pharmacologic Management <span class="ar">أ. الإدارة الدوائية</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <h3>🎯 Goals</h3>
+        <ul>
+          <li>Correct thyroid hormone deficiency</li>
+          <li>Reverse symptoms</li>
+          <li>Prevent further cardiac &amp; arterial damage</li>
+        </ul>
+        <h3 style="margin-top:12px">💊 Medications</h3>
+        <ul>
+          <li><strong>Sodium levothyroxine</strong> (synthetic T4)</li>
+          <li><strong>Desiccated thyroid</strong> – converted to both T4 and T3 in the body</li>
+          <li>Usually taken <strong>lifelong</strong> to permanently reverse hypothyroidism</li>
+        </ul>
+        <div class="alert alert-red" style="margin-top:12px;margin-bottom:0">
+          <span class="alert-icon">❤️</span>
+          <div class="alert-body">
+            <p>Clients with <strong>cardiac complications</strong> must start on <em>small doses</em>. Large doses could precipitate heart failure or myocardial infarction.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ar-col">
+        <h3>🎯 الأهداف</h3>
+        <ul>
+          <li>تصحيح نقص هرمون الغدة الدرقية</li>
+          <li>عكس الأعراض</li>
+          <li>منع المزيد من تلف القلب والشرايين</li>
+        </ul>
+        <h3 style="margin-top:12px">💊 الأدوية</h3>
+        <ul>
+          <li><strong>ليفوثيروكسين الصوديوم</strong> (T4 اصطناعي)</li>
+          <li><strong>الغدة الدرقية المجففة</strong> – يتحول في الجسم إلى T4 و T3</li>
+          <li>يُؤخذ عادةً <strong>مدى الحياة</strong> للعكس الدائم للقصور</li>
+        </ul>
+        <div class="alert alert-red" style="margin-top:12px;margin-bottom:0">
+          <span class="alert-icon">❤️</span>
+          <div class="alert-body">
+            <p>المرضى الذين يعانون من <strong>مضاعفات قلبية</strong> يجب أن يبدؤوا بـ<em>جرعات صغيرة</em>. الجرعات الكبيرة قد تُسبّب فشلًا في القلب أو احتشاء عضلة القلب.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">A. Myxedema Coma Treatment <span class="ar">علاج غيبوبة الوذمة المخاطية</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <p>Goal: Reverse the condition to <strong>save the client's life</strong>.</p>
+        <p>Immediate supportive measures:</p>
+        <ul>
+          <li>Maintain a patent airway</li>
+          <li>Give oxygen</li>
+          <li>Replace fluid intravenously</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <p>الهدف: عكس الحالة <strong>لإنقاذ حياة المريض</strong>.</p>
+        <p>التدابير الداعمة الفورية:</p>
+        <ul>
+          <li>الحفاظ على مجرى هوائي مفتوح</li>
+          <li>إعطاء الأكسجين</li>
+          <li>استبدال السوائل عن طريق الوريد</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">B. Dietary Management <span class="ar">ب. الإدارة الغذائية</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <p>If hypothyroidism/goiter is due to <strong>iodine deficiency</strong> → diet higher in iodine.</p>
+        <h3 style="margin-top:10px">🚫 Foods to limit (inhibit thyroid):</h3>
+        <ul>
+          <li>Cruciferous vegetables: broccoli, brussels sprouts, cabbage</li>
+          <li>Soybeans &amp; soy products</li>
+          <li>Spinach</li>
+          <li>Strawberries</li>
+        </ul>
+        <h3 style="margin-top:10px">📝 Important Notes:</h3>
+        <ul>
+          <li>Walnuts may <strong>decrease absorption</strong> of Synthroid</li>
+          <li>High-fiber diet can <strong>reduce absorption</strong> of thyroid replacement medication</li>
+          <li>Allow <strong>minimum 2 hours</strong> between thyroid medication and iron/calcium supplements</li>
+          <li>Take thyroid medication on an <strong>empty stomach</strong> for optimal utilisation</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <p>إذا كان القصور/الدُّراق بسبب <strong>نقص اليود</strong> → نظام غذائي أعلى في اليود.</p>
+        <h3 style="margin-top:10px">🚫 أطعمة يجب تقليلها (تُعيق الغدة الدرقية):</h3>
+        <ul>
+          <li>الخضروات الصليبية: البروكلي، كرنب بروكسل، الملفوف</li>
+          <li>فول الصويا ومنتجاته</li>
+          <li>السبانخ</li>
+          <li>الفراولة</li>
+        </ul>
+        <h3 style="margin-top:10px">📝 ملاحظات مهمة:</h3>
+        <ul>
+          <li>الجوز قد <strong>يُقلّل امتصاص</strong> سينثرويد</li>
+          <li>الغذاء الغني بالألياف يُقلّل <strong>امتصاص</strong> دواء الغدة</li>
+          <li>أترك <strong>فاصلًا لا يقل عن ساعتين</strong> بين دواء الغدة ومكملات الحديد/الكالسيوم</li>
+          <li>خذ دواء الغدة على <strong>معدة فارغة</strong> لأفضل امتصاص</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">C. Surgical Management <span class="ar">ج. الإدارة الجراحية</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <p>Surgery is indicated for goiter that is:</p>
+        <ul>
+          <li>Very large</li>
+          <li>Not responding to treatment</li>
+          <li>Putting too much pressure on other structures in the neck</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <p>تُجرى الجراحة إذا كان الدُّراق:</p>
+        <ul>
+          <li>كبيرًا جدًا</li>
+          <li>غير مستجيب للعلاج</li>
+          <li>يضغط بشكل مفرط على الهياكل الأخرى في الرقبة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nursing Management Hypothyroidism -->
+  <div class="sec-title" style="font-size:1.2rem;margin-top:10px">Nursing Management – Hypothyroidism <span class="ar">الإدارة التمريضية – القصور</span></div>
+
+  <div class="card">
+    <div class="card-title">Assessment <span class="ar">التقييم</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <p>The nurse should carefully assess for signs and symptoms of hypothyroidism:</p>
+        <ul>
+          <li>Take a <strong>diet history</strong></li>
+          <li>Ask about medical condition</li>
+          <li>Assess for <strong>weight gain</strong></li>
+          <li>Assess for <strong>generalised fatigue</strong></li>
+          <li>Instruct to take thyroid medication on an empty stomach</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <p>يجب على الممرض/ة تقييم علامات وأعراض قصور الغدة الدرقية بدقة:</p>
+        <ul>
+          <li>أخذ <strong>التاريخ الغذائي</strong></li>
+          <li>السؤال عن الحالة الطبية</li>
+          <li>تقييم <strong>زيادة الوزن</strong></li>
+          <li>تقييم <strong>التعب الشامل</strong></li>
+          <li>إرشاد المريض لأخذ الدواء على معدة فارغة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nursing Diagnosis / التشخيص التمريضي</th>
+          <th>Expected Outcomes / النتائج المتوقعة</th>
+          <th>Implementation / التنفيذ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Skin Integrity, High Risk for Impaired</strong><br>Related to: edema &amp; dryness secondary to fluid infiltration into interstitial spaces<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">تكامل الجلد، خطر الإخلال — بسبب الوذمة والجفاف</span></td>
+          <td>All skin remains intact; absence of injury; resolution of edema<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">بقاء الجلد سليمًا؛ غياب الإصابة؛ زوال الوذمة</span></td>
+          <td>• Monitor sacrum, coccyx, elbows, scapula for redness/breakdown<br>• Strict turning schedule<br>• Pressure-reduction mattress<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">• مراقبة العجز والكوع ولوح الكتف لاحمرار أو تقرح<br>• جدول دوري صارم للتقليب<br>• مرتبة مضادة للضغط</span></td>
+        </tr>
+        <tr>
+          <td><strong>Hypothermia</strong><br>Related to: slowed metabolic rate<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">انخفاض حرارة الجسم — بسبب تباطؤ الأيض</span></td>
+          <td>Normal body temperature<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">درجة حرارة الجسم طبيعية</span></td>
+          <td>• Provide comfortable warm environment<br>• Hypothyroidism sharply increases cold sensitivity<br>• Supply extra clothing &amp; warm blankets<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">• توفير بيئة دافئة ومريحة<br>• القصور يزيد الحساسية للبرد بشكل حاد<br>• توفير ملابس إضافية وبطانيات دافئة</span></td>
+        </tr>
+        <tr>
+          <td><strong>Social Isolation</strong><br>Related to: lethargy, weakness, apathy, changes in appearance<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">العزلة الاجتماعية — بسبب الخمول والضعف وتغيرات المظهر</span></td>
+          <td>Return to pre-illness level of social interaction<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">العودة للمستوى الاجتماعي قبل المرض</span></td>
+          <td>• Reassure client &amp; significant others that appearance &amp; energy will improve with thyroid hormone therapy<br><span style="font-family:var(--ar);font-size:.82rem;direction:rtl;display:block">• طمأنة المريض والمقربين بأن المظهر والطاقة ستتحسن مع العلاج الهرموني</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════ PANEL 3 — HYPERTHYROIDISM ════════════════ -->
+<div class="panel" id="hyper">
+  <div class="sec-title">Hyperthyroidism <span class="ar">فرط نشاط الغدة الدرقية</span></div>
+
+  <!-- Definition -->
+  <div class="bi">
+    <div class="en-col">
+      <h3>📌 Definition &amp; Prevalence</h3>
+      <p>Hyperthyroidism is the <strong>second most common endocrine disorder</strong>, after diabetes mellitus.</p>
+      <p><strong>Graves' disease</strong> is the most common type. It results from excessive output of thyroid hormones caused by abnormal stimulation of the thyroid gland by circulating immunoglobulin.</p>
+      <p>Affects women <strong>8× more</strong> than men. May appear after emotional shock, stress, or infection.</p>
+      <p>Other causes: <em>thyroiditis</em> and <em>excessive ingestion of thyroid hormone</em>.</p>
+    </div>
+    <div class="ar-col">
+      <h3>📌 التعريف والانتشار</h3>
+      <p>فرط نشاط الغدة الدرقية هو <strong>ثاني أكثر اضطرابات الغدد الصماء شيوعًا</strong> بعد السكري.</p>
+      <p><strong>مرض جريفز</strong> هو النوع الأكثر شيوعًا. ينتج عن إفراز مفرط للهرمونات بسبب تحفيز غير طبيعي من جلوبيولين مناعي متداول.</p>
+      <p>يصيب النساء <strong>8 أضعاف</strong> الرجال. قد يظهر بعد صدمة عاطفية أو ضغط نفسي أو عدوى.</p>
+      <p>أسباب أخرى: <em>التهاب الغدة الدرقية</em> و<em>الإفراط في تناول هرمون الغدة الدرقية</em>.</p>
+    </div>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="sec-title" style="font-size:1.2rem">Clinical Manifestations <span class="ar">المظاهر السريرية</span></div>
+  <div class="bi">
+    <div class="en-col">
+      <h3>🩺 Signs &amp; Symptoms</h3>
+      <ul>
+        <li>Nervousness &amp; irritability</li>
+        <li>Palpitations</li>
+        <li>Heat intolerance; skin is flushed</li>
+        <li><strong>Exophthalmos</strong> (bulging eyes)</li>
+        <li>Increased appetite &amp; dietary intake with <em>progressive weight loss</em></li>
+        <li>Abnormal muscular fatigability &amp; weakness</li>
+        <li>Amenorrhoea &amp; changes in bowel function</li>
+        <li>Osteoporosis &amp; fracture</li>
+        <li>Pulse rate: <strong>90–160 bpm</strong></li>
+        <li>Enlarged thyroid (goiter)</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>🩺 العلامات والأعراض</h3>
+      <ul>
+        <li>عصبية وتهيّج</li>
+        <li>خفقان القلب</li>
+        <li>عدم تحمّل الحرارة؛ احمرار الجلد</li>
+        <li><strong>جحوظ العيون</strong></li>
+        <li>زيادة الشهية مع <em>فقدان وزن تدريجي</em></li>
+        <li>ضعف وإرهاق عضلي غير طبيعي</li>
+        <li>انقطاع الطمث وتغيّرات في وظيفة الأمعاء</li>
+        <li>هشاشة العظام والكسور</li>
+        <li>معدل النبض: <strong>90–160 نبضة/دقيقة</strong></li>
+        <li>تضخّم الغدة الدرقية (دُراق)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Diagnostic Assessment -->
+  <div class="card">
+    <div class="card-title">Diagnostic Assessment <span class="ar">التقييم التشخيصي</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <ul>
+          <li>Physical appearance: enlarged neck, protruding eyes, agitated expression; agitation, restlessness, weight loss</li>
+          <li>Laboratory findings:
+            <ul>
+              <li>Serum thyroid hormone levels: usually <strong>elevated ⬆️</strong></li>
+              <li>Serum cholesterol levels: usually <strong>depressed ⬇️</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <ul>
+          <li>المظهر الجسدي: رقبة متضخمة، عيون بارزة، تعبير مضطرب؛ قلق وفقدان وزن</li>
+          <li>نتائج المختبر:
+            <ul>
+              <li>مستوى هرمونات الغدة الدرقية في الدم: عادةً <strong>مرتفع ⬆️</strong></li>
+              <li>مستوى الكوليسترول في الدم: عادةً <strong>منخفض ⬇️</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="sec-title" style="font-size:1.2rem">Complications of Graves' Disease <span class="ar">مضاعفات مرض جريفز</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Complication / المضاعفة</th><th>Description / الوصف</th><th class="ar-td">بالعربية</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><span class="badge badge-blue">Exophthalmos</span></td>
+          <td>Protrusion of the eyeballs due to orbital tissue swelling</td>
+          <td class="ar-td">بروز مقل العيون بسبب تورم نسيج المدار</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="badge badge-red">Heart Disease</span></td>
+          <td>Cardiac complications from chronically elevated thyroid hormone</td>
+          <td class="ar-td">مضاعفات قلبية من ارتفاع مزمن في الهرمون</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="badge badge-orange">Thyroid Storm</span> (thyroid crisis / thyrotoxicosis)</td>
+          <td>Life-threatening surge of thyroid hormone — emergency</td>
+          <td class="ar-td">ارتفاع حاد مهدد للحياة في الهرمون — طارئ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="sec-title" style="font-size:1.2rem">Medical Management <span class="ar">الإدارة الطبية</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Category / الفئة</th><th>English</th><th class="ar-td">العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">A. Pharmacologic</span></td>
+          <td>
+            1. <strong>Antithyroid medication</strong> – e.g. Propranolol (β-blocker)<br>
+            2. <strong>Radioiodine</strong> – capsule of radioactive iodine<br>
+            3. Management of <strong>thyroid storm</strong> (thyroid crisis/thyrotoxicosis)
+          </td>
+          <td class="ar-td">
+            1. <strong>أدوية مضادة للغدة الدرقية</strong> – مثل بروبرانولول (حاصر بيتا)<br>
+            2. <strong>اليود المشع</strong> – كبسولة يود مشع<br>
+            3. إدارة <strong>العاصفة الدرقية</strong>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">B. Dietary</span></td>
+          <td>A diet of <strong>4000 to 5000 calories</strong> with high protein levels</td>
+          <td class="ar-td">نظام غذائي بـ<strong>4000 إلى 5000 سعرة حرارية</strong> مع مستويات عالية من البروتين</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-red">C. Surgery</span></td>
+          <td><strong>Thyroidectomy</strong> — surgical removal of the thyroid gland</td>
+          <td class="ar-td"><strong>استئصال الغدة الدرقية</strong> — إزالة جراحية للغدة</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════ PANEL 4 — NURSING PROCESS ════════════════ -->
+<div class="panel" id="nursing">
+  <div class="sec-title">Nursing Process <span class="ar">العملية التمريضية</span></div>
+
+  <div class="alert alert-blue" style="margin-bottom:24px">
+    <span class="alert-icon">ℹ️</span>
+    <div class="alert-body">
+      <p>The nursing process is a systematic, cyclic framework of 5 steps used to plan and deliver patient-centered care.</p>
+      <p class="ar-p">العملية التمريضية هي إطار منهجي دوري من 5 خطوات لتخطيط وتقديم الرعاية المتمركزة حول المريض.</p>
+    </div>
+  </div>
+
+  <!-- NP Flow for HYPOTHYROIDISM -->
+  <h3 style="color:var(--primary);font-size:1.05rem;margin-bottom:16px;border-left:4px solid var(--primary);padding-left:10px">
+    Nursing Process — Hypothyroidism &nbsp;|&nbsp; <span style="font-family:var(--ar)">قصور الغدة الدرقية</span>
+  </h3>
+
+  <div class="np-flow">
+    <!-- Step 1 Assessment -->
+    <div class="np-step">
+      <div class="np-label">
+        <div class="num">1</div>
+        <div class="name">ASSESSMENT</div>
+        <div class="ar-name">التقييم</div>
+      </div>
+      <div class="np-en">
+        <p>• Take a complete history: diet history, iodine intake, medications</p>
+        <p>• Assess for weight gain, generalised fatigue, cold intolerance, dry skin, hair loss</p>
+        <p>• Ask about medical conditions and current drug use</p>
+        <p>• Note subnormal temperature and pulse in severe cases</p>
+      </div>
+      <div class="np-ar">
+        <p>• أخذ تاريخ كامل: تاريخ غذائي، تناول اليود، الأدوية</p>
+        <p>• تقييم زيادة الوزن، التعب الشامل، عدم تحمّل البرد، جفاف الجلد، تساقط الشعر</p>
+        <p>• السؤال عن الحالة الطبية والأدوية الحالية</p>
+        <p>• ملاحظة انخفاض الحرارة والنبض في الحالات الشديدة</p>
+      </div>
+    </div>
+    <!-- Step 2 Diagnosis -->
+    <div class="np-step">
+      <div class="np-label">
+        <div class="num">2</div>
+        <div class="name">DIAGNOSIS</div>
+        <div class="ar-name">التشخيص</div>
+      </div>
+      <div class="np-en">
+        <ul>
+          <li>Skin Integrity, High Risk for Impaired — r/t edema &amp; dryness</li>
+          <li>Hypothermia — r/t slowed metabolic rate</li>
+          <li>Social Isolation — r/t lethargy, weakness, appearance changes</li>
+          <li>Activity Intolerance — r/t fatigue</li>
+          <li>Constipation — r/t decreased GI motility</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>خطر الإخلال بتكامل الجلد — بسبب الوذمة والجفاف</li>
+          <li>انخفاض حرارة الجسم — بسبب تباطؤ الأيض</li>
+          <li>العزلة الاجتماعية — بسبب الخمول والضعف وتغيرات المظهر</li>
+          <li>عدم تحمّل النشاط — بسبب التعب</li>
+          <li>الإمساك — بسبب انخفاض حركة الأمعاء</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Step 3 Planning -->
+    <div class="np-step">
+      <div class="np-label">
+        <div class="num">3</div>
+        <div class="name">PLANNING</div>
+        <div class="ar-name">التخطيط</div>
+      </div>
+      <div class="np-en">
+        <ul>
+          <li>Skin will remain intact; no decubitus ulcers</li>
+          <li>Client will not develop hypothermia (normal temperature)</li>
+          <li>Client will return to pre-illness level of social interaction</li>
+          <li>Client will achieve normal activity level</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>يبقى الجلد سليمًا؛ لا تقرحات ضغط</li>
+          <li>لن يصاب المريض بانخفاض الحرارة (درجة حرارة طبيعية)</li>
+          <li>العودة لمستوى التفاعل الاجتماعي قبل المرض</li>
+          <li>الوصول لمستوى نشاط طبيعي</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Step 4 Implementation -->
+    <div class="np-step">
+      <div class="np-label">
+        <div class="num">4</div>
+        <div class="name">IMPLEMENTATION</div>
+        <div class="ar-name">التنفيذ</div>
+      </div>
+      <div class="np-en">
+        <ul>
+          <li>Monitor pressure points (sacrum, coccyx, elbows, scapula) for redness or breakdown</li>
+          <li>Place on strict turning schedule; use pressure-reduction mattress</li>
+          <li>Provide warm environment; extra clothing and warm blankets</li>
+          <li>Reassure client &amp; family that appearance/energy will improve with treatment</li>
+          <li>Administer levothyroxine as prescribed; monitor for cardiac effects</li>
+          <li>Educate on taking medication on empty stomach; avoid goitrogenic foods</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>مراقبة نقاط الضغط (العجز، عظمة العصعص، الكوع، لوح الكتف) للتحقق من الاحمرار أو التقرح</li>
+          <li>وضع جدول دوري صارم للتقليب؛ استخدام مرتبة مضادة للضغط</li>
+          <li>توفير بيئة دافئة؛ ملابس إضافية وبطانيات</li>
+          <li>طمأنة المريض والعائلة أن المظهر/الطاقة سيتحسنان بالعلاج</li>
+          <li>إعطاء ليفوثيروكسين حسب الوصفة؛ مراقبة التأثيرات القلبية</li>
+          <li>تثقيف حول أخذ الدواء على معدة فارغة؛ تجنب الأطعمة المسببة للدُّراق</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Step 5 Evaluation -->
+    <div class="np-step">
+      <div class="np-label">
+        <div class="num">5</div>
+        <div class="name">EVALUATION</div>
+        <div class="ar-name">التقييم النهائي</div>
+      </div>
+      <div class="np-en">
+        <ul>
+          <li>Is the skin intact without breakdown or ulceration?</li>
+          <li>Is body temperature within normal range?</li>
+          <li>Is the client resuming social activities?</li>
+          <li>Are thyroid hormone levels returning to normal?</li>
+          <li>Is the client adhering to medication and diet plan?</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>هل الجلد سليم دون تقرحات؟</li>
+          <li>هل درجة الحرارة ضمن النطاق الطبيعي؟</li>
+          <li>هل يعود المريض للأنشطة الاجتماعية؟</li>
+          <li>هل مستويات الهرمون تعود للطبيعي؟</li>
+          <li>هل المريض ملتزم بالدواء وخطة الغذاء؟</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- NP Flow for HYPERTHYROIDISM -->
+  <h3 style="color:var(--accent);font-size:1.05rem;margin-top:32px;margin-bottom:16px;border-left:4px solid var(--accent);padding-left:10px">
+    Nursing Process — Hyperthyroidism &nbsp;|&nbsp; <span style="font-family:var(--ar)">فرط نشاط الغدة الدرقية</span>
+  </h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Step / الخطوة</th>
+          <th>English</th>
+          <th class="ar-td">العربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Assessment</span></td>
+          <td>
+            Obtain complete client history; ask about weight, appetite, heat intolerance, bowel activity.<br>
+            Assess for all clinical manifestations of Graves' disease.<br>
+            Question for visual difficulties, fatigue, weakness, tremors, insomnia.<br>
+            Ask significant others about <em>mood alterations</em>.
+          </td>
+          <td class="ar-td">
+            أخذ تاريخ كامل: الوزن، الشهية، عدم تحمّل الحرارة، نشاط الأمعاء.<br>
+            تقييم كل المظاهر السريرية لمرض جريفز.<br>
+            السؤال عن صعوبات بصرية، تعب، ضعف، رعشة، أرق.<br>
+            سؤال المقربين عن <em>تغيّرات المزاج</em>.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-orange">Diagnosis 1</span></td>
+          <td>Nutrition, altered: Less than body requirements related to accelerated metabolic rate</td>
+          <td class="ar-td">التغذية، متغيّرة: أقل من متطلبات الجسم بسبب تسارع الأيض</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-orange">Planning 1</span></td>
+          <td>Client's weight loss will stop; ability to take sufficient calories to return to ideal body weight</td>
+          <td class="ar-td">يتوقف فقدان الوزن؛ القدرة على تناول سعرات كافية للعودة للوزن المثالي</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-orange">Implementation 1</span></td>
+          <td>
+            Provide well-balanced, high-calorie diet (4000–5000 kcal).<br>
+            Six full meals/day may be needed.<br>
+            Encourage nutritious foods: protein, carbohydrates, fats, minerals.<br>
+            Weigh client daily.
+          </td>
+          <td class="ar-td">
+            توفير غذاء متوازن وعالي السعرات (4000–5000 سعرة).<br>
+            قد يحتاج إلى 6 وجبات كاملة يوميًا.<br>
+            تشجيع على تناول أطعمة مغذية: بروتين، كربوهيدرات، دهون، معادن.<br>
+            وزن المريض يوميًا.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">Diagnosis 2</span></td>
+          <td>Activity intolerance related to exhaustion</td>
+          <td class="ar-td">عدم تحمّل النشاط بسبب الإرهاق</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">Planning 2</span></td>
+          <td>Client will be able to engage in normal level of activity</td>
+          <td class="ar-td">سيتمكن المريض من ممارسة نشاط طبيعي</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">Implementation 2</span></td>
+          <td>
+            Provide a restful environment — mentally and physically.<br>
+            Assign client to a <strong>private room</strong> to promote rest and prevent disturbing others through hyperactivity and restlessness.
+          </td>
+          <td class="ar-td">
+            توفير بيئة مريحة — عقليًا وجسديًا.<br>
+            تخصيص <strong>غرفة خاصة</strong> للمريض لتعزيز الراحة ومنع إزعاج الآخرين بسبب فرط النشاط.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-red">Collaborative Problem</span></td>
+          <td>
+            Injury, high risk for: corneal ulcerations, infection, and possible blindness — related to inability to close eyelids secondary to exophthalmos.<br>
+            <em>Expected outcome</em>: Prevent corneal ulceration, infection, or blindness.<br>
+            <em>Implementation</em>: Start treatment ASAP; use artificial tears &amp; eye patches as needed.
+          </td>
+          <td class="ar-td">
+            خطر إصابة: تقرحات قرنية، عدوى، وخسارة محتملة للبصر — بسبب عدم القدرة على إغلاق الجفون بسبب جحوظ العيون.<br>
+            <em>النتيجة المتوقعة</em>: منع تقرح القرنية والعدوى وفقدان البصر.<br>
+            <em>التنفيذ</em>: البدء بالعلاج فورًا؛ استخدام قطرات الدموع الاصطناعية وأغطية العيون عند الحاجة.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════ PANEL 5 — COMPARISON ════════════════ -->
+<div class="panel" id="compare">
+  <div class="sec-title">Hypothyroidism vs Hyperthyroidism <span class="ar">مقارنة شاملة بين القصور والفرط</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature / الخاصية</th>
+          <th>Hypothyroidism / قصور الغدة</th>
+          <th>Hyperthyroidism / فرط نشاط الغدة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Hormone level / مستوى الهرمون</strong></td><td>⬇️ Low / منخفض</td><td>⬆️ High / مرتفع</td></tr>
+        <tr><td><strong>Metabolism / الأيض</strong></td><td>⬇️ Slowed / بطيء</td><td>⬆️ Accelerated / متسارع</td></tr>
+        <tr><td><strong>Weight / الوزن</strong></td><td>⬆️ Gain / زيادة</td><td>⬇️ Loss / نقصان</td></tr>
+        <tr><td><strong>Heart rate / النبض</strong></td><td>⬇️ Bradycardia / بطيء</td><td>⬆️ Tachycardia 90–160 bpm / سريع</td></tr>
+        <tr><td><strong>Temperature / الحرارة</strong></td><td>⬇️ Subnormal / دون الطبيعي</td><td>⬆️ Heat intolerance / عدم تحمّل الحرارة</td></tr>
+        <tr><td><strong>Skin / الجلد</strong></td><td>Dry, puffy / جاف، منتفخ</td><td>Flushed, sweaty / محمرّ، متعرّق</td></tr>
+        <tr><td><strong>Hair / الشعر</strong></td><td>Thin, hair loss / رفيع، يتساقط</td><td>Fine, thin / ناعم ورفيع</td></tr>
+        <tr><td><strong>Eyes / العيون</strong></td><td>Periorbital oedema / وذمة حول العين</td><td>Exophthalmos (bulging) / جحوظ</td></tr>
+        <tr><td><strong>Energy / الطاقة</strong></td><td>Fatigue, lethargy / تعب وخمول</td><td>Nervousness, restlessness / عصبية وقلق</td></tr>
+        <tr><td><strong>Appetite / الشهية</strong></td><td>⬇️ Decreased / منخفضة</td><td>⬆️ Increased / مرتفعة</td></tr>
+        <tr><td><strong>Bowel / الأمعاء</strong></td><td>Constipation / إمساك</td><td>Diarrhoea / إسهال</td></tr>
+        <tr><td><strong>Menstruation / الدورة</strong></td><td>Irregular / غير منتظمة</td><td>Amenorrhoea / انقطاع</td></tr>
+        <tr><td><strong>Sex distribution / التوزيع الجنسي</strong></td><td>Women 5× more / نساء 5 أضعاف</td><td>Women 8× more / نساء 8 أضعاف</td></tr>
+        <tr><td><strong>Common type / النوع الشائع</strong></td><td>Hashimoto's thyroiditis</td><td>Graves' disease / مرض جريفز</td></tr>
+        <tr><td><strong>Cholesterol / الكوليسترول</strong></td><td>⬆️ Elevated / مرتفع</td><td>⬇️ Depressed / منخفض</td></tr>
+        <tr><td><strong>Medication / الدواء</strong></td><td>Levothyroxine (lifelong) / ليفوثيروكسين مدى الحياة</td><td>Propranolol, radioiodine, antithyroid drugs / بروبرانولول، يود مشع</td></tr>
+        <tr><td><strong>Diet / الغذاء</strong></td><td>High iodine; avoid goitrogens / يود عالي؛ تجنب مثبطات الغدة</td><td>4000–5000 kcal, high protein / 4000–5000 سعرة، بروتين مرتفع</td></tr>
+        <tr><td><strong>Surgery / الجراحة</strong></td><td>For large goiter / لدُّراق كبير</td><td>Thyroidectomy / استئصال الغدة</td></tr>
+        <tr><td><strong>Life-threatening complication</strong></td><td>Myxedema coma / غيبوبة الوذمة المخاطية</td><td>Thyroid storm / العاصفة الدرقية</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════ PANEL 6 — QUIZ ════════════════ -->
+<div class="panel" id="quiz">
+  <div class="quiz-header">
+    <h2>🧠 Self-Test — 20 Questions</h2>
+    <p>اختبر نفسك — 20 سؤال</p>
+    <p style="font-size:.85rem;margin-top:8px;opacity:.8">Click an option to reveal the answer and explanation / اضغط على خيار لرؤية الإجابة والشرح</p>
+  </div>
+
+  <div id="quizContainer"></div>
+  <button class="btn-submit-quiz" id="submitBtn" onclick="submitQuiz()">Submit &amp; See Score / أرسل واعرف نتيجتك</button>
+  <div class="quiz-score" id="scoreBox">
+    <div class="score-num" id="scoreNum">—</div>
+    <div class="score-label">out of 20 <span class="ar">من 20 سؤال</span></div>
+    <p id="scoreMsg" style="margin-top:10px;font-size:.9rem;color:var(--muted)"></p>
+    <button class="btn-reset" onclick="resetQuiz()">🔄 Retry / أعد المحاولة</button>
+  </div>
+</div>
+
+<script>
+// ── Tab switching ──
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ── Quiz data ──
+const questions = [
+  {
+    q: "Hypothyroidism results from a deficiency of thyroid hormone, leading to which of the following?",
+    qar: "يحدث قصور الغدة الدرقية نتيجة نقص هرمون الغدة الدرقية، مما يؤدي إلى:",
+    options: ["Accelerated metabolism and weight loss", "Slowed metabolism and decreased oxygen consumption", "Increased heart rate and nervousness", "Heat intolerance and sweating"],
+    optionsAr: ["تسارع الأيض وفقدان الوزن", "تباطؤ الأيض وانخفاض استهلاك الأكسجين", "زيادة معدل القلب والعصبية", "عدم تحمّل الحرارة والتعرّق"],
+    answer: 1,
+    explain: "Hypothyroidism causes a slowed metabolic rate and decreased oxygen consumption by tissues, along with pronounced personality changes.",
+    explainAr: "يُسبّب قصور الغدة الدرقية تباطؤ الأيض وانخفاض استهلاك الأنسجة للأكسجين إضافةً إلى تغيّرات شخصية واضحة."
+  },
+  {
+    q: "Myxedema coma is best described as:",
+    qar: "غيبوبة الوذمة المخاطية يُوصف على أنه:",
+    options: ["A mild skin condition causing dryness", "A life-threatening hypo-metabolic state affecting all body systems", "A complication of hyperthyroidism", "An allergic reaction to thyroid medication"],
+    optionsAr: ["حالة جلدية خفيفة تسبب الجفاف", "حالة تهدد الحياة بانخفاض الأيض تؤثر على كل أجهزة الجسم", "مضاعفة لفرط نشاط الغدة الدرقية", "رد فعل تحسسي لدواء الغدة الدرقية"],
+    answer: 1,
+    explain: "Myxedema coma is a life-threatening situation where ALL body systems are severely compromised by the hypo-metabolic state caused by untreated hypothyroidism.",
+    explainAr: "غيبوبة الوذمة المخاطية حالة تهدد الحياة حيث تتضرر جميع أجهزة الجسم بشكل حاد بسبب انخفاض الأيض الناتج عن قصور الغدة غير المعالج."
+  },
+  {
+    q: "Which type of hypothyroidism is caused by the hypothalamus failing to produce thyroid-releasing hormone (TRH)?",
+    qar: "أي نوع من قصور الغدة الدرقية يحدث بسبب فشل منطقة ما تحت المهاد في إنتاج هرمون TRH؟",
+    options: ["Primary hypothyroidism", "Secondary hypothyroidism", "Tertiary hypothyroidism", "Congenital hypothyroidism"],
+    optionsAr: ["قصور أولي", "قصور ثانوي", "قصور ثالثي", "قصور خلقي"],
+    answer: 2,
+    explain: "Tertiary hypothyroidism occurs when the hypothalamus fails to produce TRH, possibly due to a tumor or other destructive lesion.",
+    explainAr: "القصور الثالثي يحدث عندما يفشل ما تحت المهاد في إنتاج TRH، وقد يكون بسبب ورم أو آفة مدمّرة."
+  },
+  {
+    q: "Hypothyroidism affects women how many times more frequently than men?",
+    qar: "يصيب قصور الغدة الدرقية النساء كم مرة أكثر من الرجال؟",
+    options: ["2 times", "3 times", "5 times", "8 times"],
+    optionsAr: ["مرتين", "3 مرات", "5 مرات", "8 مرات"],
+    answer: 2,
+    explain: "Hypothyroidism affects women five times more frequently than men, most often occurring between ages 30 and 60.",
+    explainAr: "يصيب القصور النساء 5 أضعاف الرجال، وأكثر شيوعًا بين سن 30 و60 عامًا."
+  },
+  {
+    q: "What is the first-line pharmacologic treatment for hypothyroidism?",
+    qar: "ما هو العلاج الدوائي الأول لقصور الغدة الدرقية؟",
+    options: ["Propranolol", "Radioactive iodine", "Sodium levothyroxine", "Dexamethasone"],
+    optionsAr: ["بروبرانولول", "اليود المشع", "ليفوثيروكسين الصوديوم", "ديكساميثازون"],
+    answer: 2,
+    explain: "Sodium levothyroxine (synthetic T4) is the primary medication for hypothyroidism. It is usually taken lifelong and should be taken on an empty stomach.",
+    explainAr: "ليفوثيروكسين الصوديوم (T4 اصطناعي) هو العلاج الأساسي. يُؤخذ عادةً مدى الحياة وعلى معدة فارغة."
+  },
+  {
+    q: "Why must clients with cardiac complications start on small doses of thyroid hormone?",
+    qar: "لماذا يجب أن يبدأ مرضى القلب بجرعات صغيرة من هرمون الغدة الدرقية؟",
+    options: ["To avoid skin reactions", "Large doses could precipitate heart failure or myocardial infarction", "Small doses are cheaper", "To prevent hair loss"],
+    optionsAr: ["لتجنب تفاعلات جلدية", "الجرعات الكبيرة قد تُسبّب فشلًا في القلب أو احتشاء عضلة القلب", "الجرعات الصغيرة أرخص ثمنًا", "لمنع تساقط الشعر"],
+    answer: 1,
+    explain: "Large doses of thyroid hormone in cardiac patients could precipitate heart failure or myocardial infarction, so therapy must begin with small doses.",
+    explainAr: "الجرعات الكبيرة عند مرضى القلب قد تُسبّب فشل القلب أو احتشاء عضلة القلب، لذلك يجب البدء بجرعات صغيرة."
+  },
+  {
+    q: "Which food should hypothyroid clients limit because it inhibits thyroid hormone utilisation?",
+    qar: "أي طعام يجب على مرضى قصور الغدة الدرقية تقليله لأنه يُعيق استخدام هرمون الغدة الدرقية؟",
+    options: ["Chicken and fish", "Broccoli and cabbage", "Brown rice and oats", "Olive oil and avocado"],
+    optionsAr: ["الدجاج والسمك", "البروكلي والملفوف", "الأرز البني والشوفان", "زيت الزيتون والأفوكادو"],
+    answer: 1,
+    explain: "Cruciferous vegetables like broccoli, cabbage, and brussels sprouts can inhibit thyroid hormone utilisation and should be limited in hypothyroid clients.",
+    explainAr: "الخضروات الصليبية كالبروكلي والملفوف وكرنب بروكسل يمكنها تثبيط استخدام هرمون الغدة الدرقية ويجب تقليلها."
+  },
+  {
+    q: "When should thyroid medication ideally be taken for optimal utilisation?",
+    qar: "متى يجب تناول دواء الغدة الدرقية للحصول على أفضل امتصاص؟",
+    options: ["After a full meal", "With milk", "On an empty stomach", "At bedtime with a snack"],
+    optionsAr: ["بعد وجبة دسمة", "مع الحليب", "على معدة فارغة", "عند النوم مع وجبة خفيفة"],
+    answer: 2,
+    explain: "Thyroid medication should be taken on an empty stomach for optimal utilisation. Also, there should be a minimum 2-hour separation from iron or calcium supplements.",
+    explainAr: "يُؤخذ دواء الغدة الدرقية على معدة فارغة لأفضل امتصاص. أيضًا يجب فاصل لا يقل عن ساعتين عن مكملات الحديد أو الكالسيوم."
+  },
+  {
+    q: "Which nursing diagnosis is MOST appropriate for a hypothyroid patient with oedema and dry skin?",
+    qar: "أي تشخيص تمريضي هو الأنسب لمريض قصور الغدة الدرقية مع وذمة وجفاف جلد؟",
+    options: ["Hyperthermia", "Skin Integrity, High Risk for Impaired", "Fluid Volume Excess", "Knowledge Deficit"],
+    optionsAr: ["ارتفاع حرارة الجسم", "خطر الإخلال بتكامل الجلد", "زيادة حجم السوائل", "نقص المعرفة"],
+    answer: 1,
+    explain: "Skin Integrity, High Risk for Impaired is most appropriate because oedema and dryness increase the risk of pressure injury and tissue breakdown.",
+    explainAr: "خطر الإخلال بتكامل الجلد هو الأنسب لأن الوذمة والجفاف يزيدان خطر إصابات الضغط وانهيار الأنسجة."
+  },
+  {
+    q: "Immediate management of myxedema coma FIRST includes:",
+    qar: "تتضمن الإدارة الفورية لغيبوبة الوذمة المخاطية أولًا:",
+    options: ["Starting radioactive iodine therapy", "Maintaining patent airway, giving oxygen, and IV fluids", "Performing thyroidectomy", "Administering corticosteroids only"],
+    optionsAr: ["بدء العلاج باليود المشع", "الحفاظ على مجرى هوائي مفتوح وإعطاء الأكسجين والسوائل الوريدية", "إجراء استئصال الغدة الدرقية", "إعطاء الكورتيكوستيرويدات فقط"],
+    answer: 1,
+    explain: "Immediate supportive measures for myxedema coma include maintaining a patent airway, giving oxygen, and replacing fluid intravenously to support vital functions.",
+    explainAr: "التدابير الداعمة الفورية لغيبوبة الوذمة المخاطية تشمل الحفاظ على مجرى هوائي مفتوح وإعطاء الأكسجين واستبدال السوائل عن طريق الوريد."
+  },
+  {
+    q: "Graves' disease is the most common type of hyperthyroidism. What causes it?",
+    qar: "مرض جريفز هو أكثر أنواع فرط نشاط الغدة الدرقية شيوعًا. ما سببه؟",
+    options: ["Iodine deficiency", "Abnormal stimulation of the thyroid by circulating immunoglobulin", "Surgical removal of the pituitary", "Lack of exercise"],
+    optionsAr: ["نقص اليود", "تحفيز غير طبيعي للغدة الدرقية من جلوبيولين مناعي متداول", "الاستئصال الجراحي للغدة النخامية", "قلة التمرين"],
+    answer: 1,
+    explain: "Graves' disease results from excessive output of thyroid hormones caused by abnormal stimulation of the thyroid gland by circulating immunoglobulin.",
+    explainAr: "مرض جريفز ينتج عن إفراز مفرط للهرمونات بسبب تحفيز غير طبيعي للغدة من جلوبيولين مناعي متداول."
+  },
+  {
+    q: "Hyperthyroidism affects women how many times more than men?",
+    qar: "فرط نشاط الغدة الدرقية يصيب النساء كم مرة أكثر من الرجال؟",
+    options: ["2 times", "5 times", "8 times", "10 times"],
+    optionsAr: ["مرتين", "5 مرات", "8 مرات", "10 مرات"],
+    answer: 2,
+    explain: "Hyperthyroidism affects women eight times more frequently than men. It may appear after emotional shock, stress, or infection.",
+    explainAr: "فرط النشاط يصيب النساء 8 أضعاف الرجال. قد يظهر بعد صدمة عاطفية أو ضغط نفسي أو عدوى."
+  },
+  {
+    q: "Which clinical manifestation is UNIQUE to hyperthyroidism (not seen in hypothyroidism)?",
+    qar: "أي مظهر سريري فريد لفرط النشاط (لا يُرى في القصور)؟",
+    options: ["Hair loss", "Fatigue", "Exophthalmos (bulging eyes)", "Weight change"],
+    optionsAr: ["تساقط الشعر", "التعب", "جحوظ العيون", "تغيّر الوزن"],
+    answer: 2,
+    explain: "Exophthalmos (bulging eyes) is a classic sign of Graves' disease/hyperthyroidism caused by orbital tissue swelling. It does not occur in hypothyroidism.",
+    explainAr: "جحوظ العيون علامة كلاسيكية لمرض جريفز/فرط النشاط بسبب تورم نسيج المدار. لا يحدث في القصور."
+  },
+  {
+    q: "In hyperthyroidism, what is the expected pulse rate?",
+    qar: "في فرط نشاط الغدة الدرقية، ما هو معدل النبض المتوقع؟",
+    options: ["40–60 bpm", "60–80 bpm", "90–160 bpm", "Over 200 bpm"],
+    optionsAr: ["40–60 نبضة/دقيقة", "60–80 نبضة/دقيقة", "90–160 نبضة/دقيقة", "أكثر من 200 نبضة/دقيقة"],
+    answer: 2,
+    explain: "In hyperthyroidism, the pulse rate typically ranges between 90 and 160 beats per minute due to the hypermetabolic state.",
+    explainAr: "في فرط النشاط، معدل النبض يتراوح بين 90 و160 نبضة/دقيقة بسبب التسارع الأيضي."
+  },
+  {
+    q: "What laboratory finding supports a diagnosis of hyperthyroidism?",
+    qar: "ما النتيجة المخبرية التي تدعم تشخيص فرط نشاط الغدة الدرقية؟",
+    options: ["Elevated serum cholesterol and low thyroid hormone", "Elevated thyroid hormone and depressed serum cholesterol", "Low thyroid hormone and low cholesterol", "Normal thyroid hormone with elevated TSH"],
+    optionsAr: ["ارتفاع كوليسترول الدم وانخفاض هرمون الغدة", "ارتفاع هرمون الغدة وانخفاض كوليسترول الدم", "انخفاض هرمون الغدة والكوليسترول", "هرمون طبيعي مع ارتفاع TSH"],
+    answer: 1,
+    explain: "In hyperthyroidism, serum thyroid hormone levels are usually elevated while serum cholesterol levels are usually depressed.",
+    explainAr: "في فرط النشاط، هرمونات الغدة عادةً مرتفعة بينما الكوليسترول في الدم عادةً منخفض."
+  },
+  {
+    q: "Which pharmacologic agent is used as a beta-blocker in hyperthyroidism management?",
+    qar: "أي دواء يُستخدم كحاصر بيتا في إدارة فرط نشاط الغدة الدرقية؟",
+    options: ["Levothyroxine", "Propranolol", "Methimazole only", "Desiccated thyroid"],
+    optionsAr: ["ليفوثيروكسين", "بروبرانولول", "ميثيمازول فقط", "الغدة الدرقية المجففة"],
+    answer: 1,
+    explain: "Propranolol is a beta-blocker used in hyperthyroidism to control symptoms like tachycardia, tremors, and anxiety while awaiting the effects of antithyroid drugs.",
+    explainAr: "بروبرانولول هو حاصر بيتا يُستخدم في فرط النشاط للسيطرة على الأعراض كسرعة القلب والرعشة والقلق."
+  },
+  {
+    q: "The dietary plan for a hyperthyroid patient should include:",
+    qar: "خطة الغذاء لمريض فرط نشاط الغدة الدرقية يجب أن تتضمن:",
+    options: ["500–1000 calories low-fat diet", "4000–5000 calories with high protein", "Fasting days to reduce hormone", "Low carbohydrate ketogenic diet"],
+    optionsAr: ["500–1000 سعرة حرارية بدهون منخفضة", "4000–5000 سعرة حرارية مع بروتين مرتفع", "أيام صيام لخفض الهرمون", "نظام كيتوني قليل الكربوهيدرات"],
+    answer: 1,
+    explain: "Because of the accelerated metabolic rate, hyperthyroid patients need 4000–5000 calories per day with high protein levels. Up to six meals per day may be needed.",
+    explainAr: "بسبب تسارع الأيض، يحتاج مرضى فرط النشاط 4000–5000 سعرة يوميًا مع بروتين مرتفع. قد يحتاجون حتى 6 وجبات يوميًا."
+  },
+  {
+    q: "A patient with exophthalmos is at risk for which collaborative problem?",
+    qar: "مريض مصاب بجحوظ العيون معرّض لأي مشكلة تعاونية؟",
+    options: ["Hypothermia", "Corneal ulceration, infection, and possible blindness", "Deep vein thrombosis", "Peptic ulcer"],
+    optionsAr: ["انخفاض حرارة الجسم", "تقرحات قرنية وعدوى وخسارة محتملة للبصر", "تجلط الأوردة العميقة", "قرحة هضمية"],
+    answer: 1,
+    explain: "Exophthalmos prevents proper eyelid closure, leading to high risk for corneal ulceration, infection, and possible blindness. Artificial tears and eye patches are used.",
+    explainAr: "جحوظ العيون يمنع إغلاق الجفون بشكل صحيح، مما يُفضي لخطر تقرحات قرنية وعدوى وفقدان البصر. تُستخدم قطرات الدموع الاصطناعية وأغطية العيون."
+  },
+  {
+    q: "Surgery for goiter in hypothyroidism is indicated when the goiter is:",
+    qar: "تُجرى الجراحة للدُّراق في قصور الغدة الدرقية عندما يكون الدُّراق:",
+    options: ["Mildly enlarged and asymptomatic", "Very large, not responding to treatment, or compressing neck structures", "Causing mild voice changes only", "Discovered incidentally on ultrasound"],
+    optionsAr: ["متضخّمًا بشكل خفيف وبدون أعراض", "كبيرًا جدًا أو غير مستجيب للعلاج أو يضغط على هياكل الرقبة", "يُسبّب تغيّرات صوتية خفيفة فقط", "مكتشَف بالصدفة في الموجات فوق الصوتية"],
+    answer: 1,
+    explain: "Surgery is done for goiter that is very large, not responding to treatment, or putting too much pressure on other structures in the neck.",
+    explainAr: "تُجرى الجراحة للدُّراق الكبير جدًا أو غير المستجيب للعلاج أو الذي يضغط بشكل مفرط على الهياكل الأخرى في الرقبة."
+  },
+  {
+    q: "Which nursing intervention is MOST important for a hypothyroid patient who is socially isolated?",
+    qar: "أي تدخل تمريضي هو الأهم لمريض قصور الغدة الدرقية المعزول اجتماعيًا؟",
+    options: ["Restrict all visitors to reduce stimulation", "Reassure the client and family that appearance and energy will improve with thyroid hormone therapy", "Prescribe antidepressants immediately", "Encourage permanent lifestyle changes"],
+    optionsAr: ["تقييد جميع الزوار لتقليل التحفيز", "طمأنة المريض والعائلة بأن المظهر والطاقة سيتحسنان مع العلاج الهرموني", "وصف مضادات الاكتئاب فورًا", "تشجيع تغييرات نمط الحياة الدائمة"],
+    answer: 1,
+    explain: "The nurse must reassure the client and significant others that appearance and energy level will gradually improve with thyroid hormone therapy, addressing the root cause of isolation.",
+    explainAr: "يجب على الممرض طمأنة المريض والمقربين بأن المظهر ومستوى الطاقة سيتحسنان تدريجيًا مع العلاج الهرموني، معالجًا السبب الجذري للعزلة."
+  }
+];
+
+let answered = new Array(questions.length).fill(false);
+let userAnswers = new Array(questions.length).fill(-1);
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const letters = ['A','B','C','D'];
+    let optsHtml = q.options.map((opt, j) =>
+      `<div class="q-opt" id="opt-${i}-${j}" onclick="selectAnswer(${i},${j})">
+        <span class="letter">${letters[j]}.</span>
+        <span>${opt}<br><small style="color:var(--muted);font-family:var(--ar)">${q.optionsAr[j]}</small></span>
+      </div>`
+    ).join('');
+    container.innerHTML += `
+      <div class="q-card" id="q-${i}">
+        <div class="q-num">Question ${i+1} of ${questions.length}</div>
+        <div class="q-text">${q.q}</div>
+        <div class="q-ar">${q.qar}</div>
+        <div class="q-options">${optsHtml}</div>
+        <div class="explain" id="explain-${i}">
+          <strong>✅ Correct Answer: ${letters[q.answer]}. ${q.options[q.answer]}</strong><br>
+          ${q.explain}
+          <div class="ar-explain">الإجابة الصحيحة: ${q.optionsAr[q.answer]}<br>${q.explainAr}</div>
+        </div>
+      </div>`;
+  });
+}
+
+function selectAnswer(qi, oi) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+  userAnswers[qi] = oi;
+  const letters = ['A','B','C','D'];
+  questions[qi].options.forEach((_, j) => {
+    const el = document.getElementById(`opt-${qi}-${j}`);
+    if (j === questions[qi].answer) el.classList.add('correct');
+    else if (j === oi && oi !== questions[qi].answer) el.classList.add('wrong');
+    else el.style.opacity = '.5';
+    el.style.pointerEvents = 'none';
+  });
+  document.getElementById(`explain-${qi}`).classList.add('show');
+}
+
+function submitQuiz() {
+  // reveal unanswered
+  questions.forEach((q, i) => {
+    if (!answered[i]) {
+      answered[i] = true;
+      const corr = document.getElementById(`opt-${i}-${q.answer}`);
+      corr.classList.add('reveal');
+      document.getElementById(`explain-${i}`).classList.add('show');
+      q.options.forEach((_, j) => {
+        document.getElementById(`opt-${i}-${j}`).style.pointerEvents = 'none';
+      });
+    }
+  });
+  const score = userAnswers.filter((a, i) => a === questions[i].answer).length;
+  const box = document.getElementById('scoreBox');
+  document.getElementById('scoreNum').textContent = score;
+  const msgs = [
+    [0,10,"Keep studying! You can do it 💪 | واصل المذاكرة، تقدر! 💪"],
+    [11,15,"Good effort! Review the weak areas 📚 | جهد جيد! راجع النقاط الضعيفة 📚"],
+    [16,19,"Almost perfect! Great job 🌟 | شبه مثالي! عمل رائع 🌟"],
+    [20,20,"Perfect score! Excellent 🏆 | علامة كاملة! ممتاز 🏆"]
+  ];
+  const msg = msgs.find(m => score >= m[0] && score <= m[1]);
+  document.getElementById('scoreMsg').textContent = msg ? msg[2] : '';
+  box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz() {
+  answered.fill(false);
+  userAnswers.fill(-1);
+  document.getElementById('scoreBox').classList.remove('show');
+  buildQuiz();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

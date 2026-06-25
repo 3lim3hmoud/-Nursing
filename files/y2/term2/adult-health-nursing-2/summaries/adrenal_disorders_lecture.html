@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrenal Disorders — Addison's & Cushing's | اضطرابات الغدة الكظرية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#5a3e8c;--primary-lt:#f0eaf9;
+  --accent:#c96b2e;--accent-lt:#fdf2ea;
+  --green:#3d7a56;--green-lt:#e8f5ee;
+  --red:#b03535;--red-lt:#fdf0f0;
+  --blue:#2c6e7f;--blue-lt:#e8f4f7;
+  --bg:#f8f8fb;--card:#ffffff;--border:#ddd8ea;
+  --text:#1e1e2e;--muted:#72698a;
+  --ar:'Cairo',sans-serif;--en:'Source Sans 3',sans-serif;--display:'Playfair Display',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--en);background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── Header ── */
+.site-header{background:linear-gradient(135deg,#3b2669 0%,var(--primary) 100%);color:#fff;padding:28px 40px 20px;text-align:center}
+.site-header h1{font-family:var(--display);font-size:2rem;letter-spacing:.5px}
+.site-header h1 span{display:block;font-family:var(--ar);font-size:1.3rem;font-weight:600;margin-top:6px;opacity:.9}
+.site-header p{font-size:.9rem;opacity:.75;margin-top:6px}
+
+/* ── Tab bar ── */
+.tab-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:18px 20px 0;background:var(--card);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:99;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.tab-btn{border:none;background:none;cursor:pointer;padding:10px 20px;border-radius:8px 8px 0 0;font-family:var(--en);font-size:.88rem;font-weight:600;color:var(--muted);transition:all .2s;white-space:nowrap}
+.tab-btn:hover{background:var(--primary-lt);color:var(--primary)}
+.tab-btn.active{background:var(--primary);color:#fff;box-shadow:0 -2px 8px rgba(90,62,140,.3)}
+.tab-btn span.ar{display:block;font-family:var(--ar);font-size:.76rem;font-weight:400;opacity:.85}
+
+/* ── Panels ── */
+.panel{display:none;padding:36px 28px;max-width:1100px;margin:0 auto}
+.panel.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Bilingual row ── */
+.bi{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px}
+.bi .en-col{border-left:4px solid var(--primary)}
+.bi .ar-col{border-right:4px solid var(--accent);direction:rtl;text-align:right}
+.bi .en-col,.bi .ar-col{background:var(--card);border-radius:10px;padding:20px 22px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.bi .ar-col p,.bi .ar-col li,.bi .ar-col h3,.bi .ar-col h4,.bi .ar-col td,.bi .ar-col th{font-family:var(--ar);line-height:1.9}
+.bi .en-col h3,.bi .ar-col h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.bi .en-col p,.bi .ar-col p{font-size:.93rem;line-height:1.75;margin-bottom:8px}
+.bi ul{padding-left:20px}
+.bi .ar-col ul{padding-left:0;padding-right:20px}
+.bi li{font-size:.91rem;line-height:1.75;margin-bottom:4px}
+
+/* ── Section heading ── */
+.sec-title{font-family:var(--display);font-size:1.55rem;color:var(--primary);border-bottom:2px solid var(--primary-lt);padding-bottom:10px;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.sec-title .ar{font-family:var(--ar);font-size:1.05rem;color:var(--muted);font-weight:600}
+
+/* ── Card ── */
+.card{background:var(--card);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.07);padding:24px;margin-bottom:22px}
+.card-title{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.card-title .ar{font-family:var(--ar);font-size:.88rem;color:var(--muted)}
+
+/* ── Badge ── */
+.badge{display:inline-block;padding:3px 11px;border-radius:20px;font-size:.76rem;font-weight:700;letter-spacing:.4px;margin:2px}
+.badge-purple{background:var(--primary-lt);color:var(--primary)}
+.badge-orange{background:var(--accent-lt);color:var(--accent)}
+.badge-green{background:var(--green-lt);color:var(--green)}
+.badge-red{background:var(--red-lt);color:var(--red)}
+.badge-blue{background:var(--blue-lt);color:var(--blue)}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+thead{background:var(--primary);color:#fff}
+thead th{padding:11px 14px;text-align:left;font-weight:600}
+tbody tr:nth-child(even){background:var(--primary-lt)}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody td.ar-td{font-family:var(--ar);direction:rtl;text-align:right}
+.table-wrap{overflow-x:auto;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:24px}
+
+/* ── Alert ── */
+.alert{border-radius:10px;padding:16px 20px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+.alert-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.alert-body h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.alert-body h4 .ar{font-family:var(--ar);font-size:.85rem;color:var(--muted)}
+.alert-body p,.alert-body li{font-size:.88rem;line-height:1.7}
+.alert-body .ar-p{font-family:var(--ar);direction:rtl;text-align:right;font-size:.88rem;line-height:1.9}
+.alert-red{background:var(--red-lt);border-left:4px solid var(--red)}
+.alert-blue{background:var(--blue-lt);border-left:4px solid var(--blue)}
+.alert-green{background:var(--green-lt);border-left:4px solid var(--green)}
+.alert-orange{background:var(--accent-lt);border-left:4px solid var(--accent)}
+.alert-purple{background:var(--primary-lt);border-left:4px solid var(--primary)}
+
+/* ── NP Flow ── */
+.np-flow{display:flex;flex-direction:column;gap:0;margin:10px 0 28px}
+.np-step{display:grid;grid-template-columns:180px 1fr 1fr;overflow:hidden}
+.np-step:first-child{border-radius:12px 12px 0 0}
+.np-step:last-child{border-radius:0 0 12px 12px}
+.np-step+.np-step::before{content:'▼';position:relative;display:block;text-align:center;left:80px;color:var(--primary);font-size:.85rem;z-index:2;margin-top:-1px}
+.np-label{background:var(--primary);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 10px;text-align:center}
+.np-label .num{font-size:1.6rem;font-weight:700;line-height:1}
+.np-label .name{font-size:.78rem;font-weight:600;margin-top:4px;letter-spacing:.5px}
+.np-label .ar-name{font-family:var(--ar);font-size:.78rem;opacity:.85}
+.np-en{background:var(--card);padding:16px 20px;border-bottom:1px solid var(--border)}
+.np-ar{background:var(--primary-lt);padding:16px 20px;border-bottom:1px solid var(--border);direction:rtl;text-align:right;font-family:var(--ar)}
+.np-en p,.np-ar p{font-size:.88rem;line-height:1.75}
+.np-en ul,.np-ar ul{padding-left:18px}
+.np-ar ul{padding-left:0;padding-right:18px}
+.np-en li,.np-ar li{font-size:.86rem;line-height:1.7;margin-bottom:3px}
+.np-step:nth-child(2) .np-label{background:#6b4f9c}
+.np-step:nth-child(3) .np-label{background:#3d7a56}
+.np-step:nth-child(4) .np-label{background:#c96b2e}
+.np-step:nth-child(5) .np-label{background:#2c6e7f}
+
+/* ── Quiz ── */
+.quiz-header{background:linear-gradient(135deg,#3b2669,var(--primary));color:#fff;border-radius:14px;padding:28px 30px;margin-bottom:28px;text-align:center}
+.quiz-header h2{font-family:var(--display);font-size:1.6rem}
+.quiz-header p{font-family:var(--ar);font-size:1rem;margin-top:6px;opacity:.85}
+.q-card{background:var(--card);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.07);padding:22px 24px;margin-bottom:20px;border-left:5px solid var(--primary);transition:box-shadow .2s}
+.q-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.11)}
+.q-num{font-size:.75rem;font-weight:700;color:var(--primary);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.q-text{font-size:.96rem;font-weight:600;margin-bottom:6px;line-height:1.6}
+.q-ar{font-family:var(--ar);font-size:.88rem;color:var(--muted);direction:rtl;text-align:right;margin-bottom:14px;line-height:1.8}
+.q-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.q-opt{border:2px solid var(--border);border-radius:8px;padding:9px 14px;cursor:pointer;font-size:.88rem;transition:all .18s;background:var(--bg);display:flex;align-items:center;gap:8px;font-family:var(--en)}
+.q-opt:hover{border-color:var(--primary);background:var(--primary-lt)}
+.q-opt.correct{border-color:var(--green);background:var(--green-lt);color:var(--green);font-weight:700}
+.q-opt.wrong{border-color:var(--red);background:var(--red-lt);color:var(--red)}
+.q-opt.reveal{border-color:var(--green);background:var(--green-lt);color:var(--green);font-weight:700}
+.q-opt .letter{font-weight:800;font-size:.85rem;min-width:22px}
+.explain{display:none;background:var(--accent-lt);border-radius:8px;padding:12px 16px;font-size:.87rem;line-height:1.7;border-left:3px solid var(--accent);margin-top:4px}
+.explain.show{display:block}
+.explain .ar-explain{font-family:var(--ar);direction:rtl;text-align:right;color:var(--muted);font-size:.85rem;margin-top:6px;line-height:1.9}
+.quiz-score{background:var(--card);border-radius:14px;padding:24px;text-align:center;margin-top:28px;display:none;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.quiz-score.show{display:block}
+.score-num{font-size:3rem;font-weight:800;color:var(--primary)}
+.score-label{font-size:1rem;color:var(--muted);margin-top:4px}
+.score-label .ar{font-family:var(--ar);display:block}
+.btn-reset{margin-top:18px;padding:11px 32px;background:var(--primary);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:.95rem;font-weight:600;font-family:var(--en);transition:background .2s}
+.btn-reset:hover{background:#3b2669}
+.btn-submit-quiz{display:block;margin:28px auto 0;padding:13px 44px;background:var(--primary);color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:1rem;font-weight:700;font-family:var(--en);transition:background .2s;box-shadow:0 4px 14px rgba(90,62,140,.3)}
+.btn-submit-quiz:hover{background:#3b2669}
+
+@media(max-width:768px){
+  .bi{grid-template-columns:1fr}
+  .np-step{grid-template-columns:90px 1fr}
+  .np-ar{display:none}
+  .q-options{grid-template-columns:1fr}
+  .site-header h1{font-size:1.4rem}
+  .panel{padding:20px 14px}
+  .tab-btn{padding:8px 12px;font-size:.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header class="site-header">
+  <h1>Endocrine System Disorders — Adrenal Glands
+    <span>اضطرابات الجهاز الصماوي — الغدد الكظرية</span>
+  </h1>
+  <p>Lecture Notes · Bilingual EN / AR · Addison's Disease &amp; Cushing's Syndrome</p>
+</header>
+
+<!-- ════ TAB BAR ════ -->
+<nav class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="showTab('overview',this)">Overview<span class="ar">نظرة عامة</span></button>
+  <button class="tab-btn" onclick="showTab('addison',this)">Addison's Disease<span class="ar">مرض أديسون</span></button>
+  <button class="tab-btn" onclick="showTab('cushing',this)">Cushing's Syndrome<span class="ar">متلازمة كوشينج</span></button>
+  <button class="tab-btn" onclick="showTab('nursing',this)">Nursing Process<span class="ar">العملية التمريضية</span></button>
+  <button class="tab-btn" onclick="showTab('compare',this)">Comparison<span class="ar">مقارنة</span></button>
+  <button class="tab-btn" onclick="showTab('quiz',this)">🧠 Self-Test<span class="ar">اختبر نفسك</span></button>
+</nav>
+
+<!-- ════ PANEL 1 — OVERVIEW ════ -->
+<div class="panel active" id="overview">
+  <div class="sec-title">The Adrenal Glands — Introduction <span class="ar">الغدد الكظرية — مقدمة</span></div>
+
+  <div class="bi">
+    <div class="en-col">
+      <h3>🫀 Anatomy</h3>
+      <p>There are <strong>two adrenal glands</strong> in the human body, each attached to the upper portion of a kidney.</p>
+      <p>Each gland has two distinct parts:</p>
+      <ul>
+        <li><strong>Adrenal Medulla</strong> — the centre of the gland</li>
+        <li><strong>Adrenal Cortex</strong> — the outer portion of the gland</li>
+      </ul>
+      <p>Increased levels of adrenal hormones inhibit their own production/secretion (negative feedback).</p>
+    </div>
+    <div class="ar-col">
+      <h3>🫀 التشريح</h3>
+      <p>يوجد في جسم الإنسان <strong>غدتان كظريتان</strong>، كل منهما ملتصقة بالجزء العلوي من الكلية.</p>
+      <p>لكل غدة جزءان متميزان:</p>
+      <ul>
+        <li><strong>النخاع الكظري</strong> — مركز الغدة</li>
+        <li><strong>قشرة الغدة الكظرية</strong> — الجزء الخارجي</li>
+      </ul>
+      <p>ارتفاع مستويات هرمونات الغدة الكظرية يُثبّط إنتاجها/إفرازها (تغذية راجعة سلبية).</p>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Part / الجزء</th><th>Secretes / يُفرز</th><th>Function / الوظيفة</th><th class="ar-td">بالعربية</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Adrenal Medulla</strong><br><span style="font-family:var(--ar);font-size:.82rem">النخاع الكظري</span></td>
+          <td>Catecholamines (~90% epinephrine / adrenaline; also norepinephrine)</td>
+          <td>Regulate metabolic pathways; promote catabolism of stored fuels to meet caloric needs from endogenous sources</td>
+          <td class="ar-td">تنظيم المسارات الأيضية؛ تعزيز هدم الوقود المخزّن لتلبية الاحتياجات السعرية</td>
+        </tr>
+        <tr>
+          <td><strong>Adrenal Cortex</strong><br><span style="font-family:var(--ar);font-size:.82rem">قشرة الغدة الكظرية</span></td>
+          <td>
+            <span class="badge badge-purple">Glucocorticoids</span> (e.g. Hydrocortisone)<br>
+            <span class="badge badge-blue">Mineralocorticoids</span> (e.g. Aldosterone)<br>
+            <span class="badge badge-orange">Androgens</span> (male sex hormones)
+          </td>
+          <td>Makes it possible for the body to adapt to stress of all kinds. Without the adrenal cortex, severe stress would cause peripheral circulatory failure, circulatory shock, and prostration.</td>
+          <td class="ar-td">تمكّن الجسم من التكيّف مع الضغوط بجميع أنواعها. بدون القشرة، يؤدي الضغط الشديد إلى فشل الدورة الدموية الطرفية والصدمة والإنهاك.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Two Major Adrenal Disorders Covered <span class="ar">اضطراران رئيسيان في هذه المحاضرة</span></div>
+    <div class="table-wrap" style="margin-bottom:0">
+      <table>
+        <thead><tr><th>Disorder / الاضطراب</th><th>Problem / المشكلة</th><th class="ar-td">بالعربية</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-blue">Addison's Disease</span></td>
+            <td>⬇️ Adrenocortical <strong>insufficiency</strong> — too little cortical hormone</td>
+            <td class="ar-td">⬇️ قصور قشرة الغدة الكظرية — هرمونات قشرية أقل من الطبيعي</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">Cushing's Syndrome</span></td>
+            <td>⬆️ Excessive adrenocortical <strong>activity</strong> — too much cortical hormone</td>
+            <td class="ar-td">⬆️ فرط نشاط قشرة الغدة الكظرية — هرمونات قشرية أكثر من الطبيعي</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PANEL 2 — ADDISON'S ════ -->
+<div class="panel" id="addison">
+  <div class="sec-title">Addison's Disease <span class="ar">مرض أديسون</span></div>
+
+  <div class="bi">
+    <div class="en-col">
+      <h3>📌 Definition</h3>
+      <p>Addison's disease (adrenocortical insufficiency) results when <strong>adrenal cortex function is inadequate</strong> to meet the patient's need for cortical hormones.</p>
+    </div>
+    <div class="ar-col">
+      <h3>📌 التعريف</h3>
+      <p>مرض أديسون (قصور قشرة الغدة الكظرية) يحدث عندما <strong>تكون وظيفة قشرة الغدة الكظرية غير كافية</strong> لتلبية احتياج المريض من الهرمونات القشرية.</p>
+    </div>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="sec-title" style="font-size:1.2rem">Clinical Manifestations <span class="ar">المظاهر السريرية</span></div>
+  <div class="bi">
+    <div class="en-col">
+      <h3>🩺 Signs &amp; Symptoms</h3>
+      <ul>
+        <li>Muscle weakness</li>
+        <li>Anorexia &amp; fatigue</li>
+        <li>Dark pigmentation of the skin, knees, elbows, and mucous membranes</li>
+        <li>Hypotension</li>
+        <li>Low blood glucose levels (hypoglycaemia)</li>
+        <li>Low serum sodium (hyponatraemia)</li>
+        <li>High serum potassium (hyperkalaemia)</li>
+        <li>Depression and confusion</li>
+        <li>In severe cases: chronic dehydration</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>🩺 العلامات والأعراض</h3>
+      <ul>
+        <li>ضعف عضلي</li>
+        <li>فقدان الشهية والتعب</li>
+        <li>تصبّغ داكن للجلد، الركبتين، الكوعين، والأغشية المخاطية</li>
+        <li>انخفاض ضغط الدم</li>
+        <li>انخفاض سكر الدم (نقص سكر الدم)</li>
+        <li>انخفاض صوديوم الدم (نقص صوديوم الدم)</li>
+        <li>ارتفاع بوتاسيوم الدم (فرط بوتاسيوم الدم)</li>
+        <li>اكتئاب وارتباك</li>
+        <li>الحالات الشديدة: جفاف مزمن</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Addisonian Crisis -->
+  <div class="alert alert-red">
+    <span class="alert-icon">🚨</span>
+    <div class="alert-body">
+      <h4>Addisonian Crisis <span class="ar">أزمة أديسون</span></h4>
+      <p>With disease progression and acute hypotension, the patient develops Addisonian crisis, characterised by cyanosis and the classic signs of circulatory shock:</p>
+      <p><strong>Pallor · Apprehension · Rapid and weak pulse · Rapid respirations · Low blood pressure</strong></p>
+      <p>In addition: headache, nausea, abdominal pain, and diarrhoea.</p>
+      <p class="ar-p">مع تطور المرض وانخفاض ضغط الدم الحاد، يصاب المريض بأزمة أديسون التي تتميز بزرقة والعلامات الكلاسيكية لصدمة الدورة الدموية:<br>
+      <strong>شحوب · قلق · نبض سريع ضعيف · تنفس سريع · انخفاض ضغط الدم</strong><br>
+      بالإضافة إلى: صداع، غثيان، ألم بطني، وإسهال.</p>
+    </div>
+  </div>
+
+  <!-- Diagnostic Findings -->
+  <div class="sec-title" style="font-size:1.2rem">Assessment &amp; Diagnostic Findings <span class="ar">التقييم والنتائج التشخيصية</span></div>
+  <div class="bi">
+    <div class="en-col">
+      <h3>🔬 Laboratory Tests</h3>
+      <p>The onset occurs with nonspecific symptoms. Diagnosis confirmed by laboratory tests:</p>
+      <ul>
+        <li><strong>Hypoglycaemia</strong> — ⬇️ Glucose</li>
+        <li><strong>Hyponatraemia</strong> — ⬇️ Sodium</li>
+        <li><strong>Hyperkalaemia</strong> — ⬆️ Potassium</li>
+        <li><strong>Leukocytosis</strong> — ⬆️ White blood cells</li>
+        <li>Low levels of adrenocortical hormones in blood or urine</li>
+        <li>Decreased serum cortisol levels</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>🔬 الاختبارات المخبرية</h3>
+      <p>يبدأ المرض بأعراض غير محددة. يتأكد التشخيص بنتائج المختبر:</p>
+      <ul>
+        <li><strong>نقص سكر الدم</strong> — ⬇️ الجلوكوز</li>
+        <li><strong>نقص صوديوم الدم</strong> — ⬇️ الصوديوم</li>
+        <li><strong>فرط بوتاسيوم الدم</strong> — ⬆️ البوتاسيوم</li>
+        <li><strong>زيادة كريات الدم البيضاء</strong> — ⬆️ كريات الدم البيضاء</li>
+        <li>انخفاض مستويات هرمونات قشرة الغدة في الدم أو البول</li>
+        <li>انخفاض مستويات الكورتيزول في الدم</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="sec-title" style="font-size:1.2rem">Medical Management <span class="ar">الإدارة الطبية</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Intervention / التدخل</th><th class="ar-td">بالعربية</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Immediate treatment directed toward <strong>combatting circulatory shock</strong>: administer fluids and corticosteroids, monitor vital signs, place patient in <strong>recumbent position with legs elevated</strong></td><td class="ar-td">العلاج الفوري موجّه لمكافحة صدمة الدورة الدموية: إعطاء السوائل والكورتيكوستيرويدات، مراقبة العلامات الحيوية، وضع المريض في وضع استلقاء مع رفع الأرجل</td></tr>
+        <tr><td>2</td><td><strong>Hydrocortisone (Solu-Cortef)</strong> administered intravenously, followed with 5% dextrose in normal saline</td><td class="ar-td">إعطاء هيدروكورتيزون (سولو-كورتيف) عن طريق الوريد، يليه محلول دكستروز 5% في محلول ملحي طبيعي</td></tr>
+        <tr><td>3</td><td><strong>Vasopressor amines</strong> may be required if hypotension persists</td><td class="ar-td">قد تكون أمينات مضيّقة للأوعية مطلوبة إذا استمر انخفاض ضغط الدم</td></tr>
+        <tr><td>4</td><td><strong>Antibiotics</strong> may be administered if infection has precipitated the crisis</td><td class="ar-td">قد تُعطى مضادات حيوية إذا كانت عدوى قد أطلقت الأزمة</td></tr>
+        <tr><td>5</td><td><strong>Oral intake</strong> may be initiated as soon as tolerated, with gradual decrease of intravenous fluids</td><td class="ar-td">قد يبدأ الإدخال الفموي بمجرد تحمّل المريض، مع تقليل السوائل الوريدية تدريجيًا</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Nursing Management -->
+  <div class="sec-title" style="font-size:1.2rem">Nursing Management <span class="ar">الإدارة التمريضية</span></div>
+
+  <div class="card">
+    <div class="card-title">A. Restoring Fluid Balance <span class="ar">أ. استعادة توازن السوائل</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <ul>
+          <li>Assess skin turgor, mucous membranes, and weight</li>
+          <li>Instruct patient to report <strong>increased thirst</strong> (may indicate impending fluid imbalance)</li>
+          <li>A decrease in systolic pressure of <strong>20 mmHg or more</strong> may indicate depletion of fluid volume</li>
+          <li>Assist patient to select foods <strong>high in sodium</strong> during gastrointestinal disturbances</li>
+          <li>Instruct patient and family to administer <strong>hormone replacement as prescribed</strong> and to modify dosage as needed</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <ul>
+          <li>تقييم مرونة الجلد والأغشية المخاطية والوزن</li>
+          <li>إرشاد المريض للإبلاغ عن <strong>زيادة العطش</strong> (قد يشير إلى اختلال وشيك في السوائل)</li>
+          <li>انخفاض الضغط الانقباضي <strong>بمقدار 20 ملم زئبق أو أكثر</strong> قد يدل على نقص حجم السوائل</li>
+          <li>مساعدة المريض لاختيار أطعمة <strong>غنية بالصوديوم</strong> أثناء اضطرابات الجهاز الهضمي</li>
+          <li>إرشاد المريض والعائلة على إعطاء <strong>بدائل الهرمونات حسب الوصفة</strong> وتعديل الجرعة عند الحاجة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">B. Improving Activity Tolerance <span class="ar">ب. تحسين تحمّل النشاط</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <ul>
+          <li>Avoid unnecessary activity and stress</li>
+          <li>Maintain a <strong>quiet, non-stressful environment</strong></li>
+          <li>Perform activities for the patient when needed</li>
+          <li>Detect signs of infection or other stressors</li>
+          <li>Explain procedures to patient and family</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <ul>
+          <li>تجنّب النشاط غير الضروري والضغط</li>
+          <li>الحفاظ على <strong>بيئة هادئة وغير مجهدة</strong></li>
+          <li>أداء الأنشطة نيابةً عن المريض عند الحاجة</li>
+          <li>اكتشاف علامات العدوى أو الضغوط الأخرى</li>
+          <li>شرح الإجراءات للمريض والعائلة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PANEL 3 — CUSHING'S ════ -->
+<div class="panel" id="cushing">
+  <div class="sec-title">Cushing's Syndrome <span class="ar">متلازمة كوشينج</span></div>
+
+  <div class="bi">
+    <div class="en-col">
+      <h3>📌 Definition</h3>
+      <p>Cushing's syndrome results from <strong>excessive adrenocortical activity</strong>.</p>
+      <p>The syndrome may result from:</p>
+      <ul>
+        <li>Excessive administration of <strong>corticosteroids</strong></li>
+        <li>Excessive administration of <strong>ACTH</strong></li>
+        <li><strong>Hyperplasia</strong> of the adrenal cortex</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <h3>📌 التعريف</h3>
+      <p>متلازمة كوشينج ناتجة عن <strong>فرط نشاط قشرة الغدة الكظرية</strong>.</p>
+      <p>قد تنتج المتلازمة من:</p>
+      <ul>
+        <li>الإعطاء المفرط لـ<strong>الكورتيكوستيرويدات</strong></li>
+        <li>الإعطاء المفرط لـ<strong>ACTH</strong></li>
+        <li><strong>تضخّم</strong> قشرة الغدة الكظرية</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Causes -->
+  <div class="sec-title" style="font-size:1.2rem">Causes / Etiology <span class="ar">الأسباب / المسببات</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Cause / السبب</th><th>Description / الوصف</th><th class="ar-td">بالعربية</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-orange">Long-term steroid use</span></td><td>Excessive exogenous corticosteroid medications</td><td class="ar-td">استخدام الكورتيكوستيرويدات الخارجية بشكل مفرط</td></tr>
+        <tr><td><span class="badge badge-red">Adrenal hyperplasia</span></td><td>Primary adrenal enlargement producing excess cortisol</td><td class="ar-td">تضخّم الغدة الكظرية الأولي مع إنتاج كورتيزول زائد</td></tr>
+        <tr><td><span class="badge badge-purple">Ectopic ACTH production</span></td><td>Tumour producing ACTH outside pituitary (e.g. bronchogenic carcinoma — paraneoplastic syndrome)</td><td class="ar-td">ورم يُنتج ACTH خارج الغدة النخامية (مثل سرطان القصبات الهوائية)</td></tr>
+        <tr><td><span class="badge badge-blue">Malignancies</span></td><td>ACTH-secreting tumours / cancerous tumours</td><td class="ar-td">أورام مُفرزة لـACTH / أورام سرطانية</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="sec-title" style="font-size:1.2rem">Clinical Manifestations <span class="ar">المظاهر السريرية</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Manifestation / المظهر</th><th class="ar-td">بالعربية</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Growth arrest &amp; <strong>obesity</strong></td><td class="ar-td">توقف النمو و<strong>السمنة</strong></td></tr>
+        <tr><td>2</td><td><strong>Buffalo hump</strong> (fat deposit between shoulders) &amp; <strong>Moon face</strong> (round, puffy face)</td><td class="ar-td"><strong>سنام الجاموس</strong> (ترسّب دهون بين الكتفين) و<strong>الوجه القمري</strong> (وجه مستدير منتفخ)</td></tr>
+        <tr><td>3</td><td>Fragile skin &amp; <strong>bruises</strong> easily</td><td class="ar-td">جلد هشّ سريع <strong>التكدّم</strong></td></tr>
+        <tr><td>4</td><td>Weakness &amp; fatigue</td><td class="ar-td">ضعف وتعب</td></tr>
+        <tr><td>5</td><td>Sleep disturbances</td><td class="ar-td">اضطرابات النوم</td></tr>
+        <tr><td>6</td><td>Muscle loss &amp; <strong>osteoporosis</strong></td><td class="ar-td">فقدان العضلات و<strong>هشاشة العظام</strong></td></tr>
+        <tr><td>7</td><td>Fluid retention &amp; <strong>hypertension</strong></td><td class="ar-td">احتباس السوائل و<strong>ارتفاع ضغط الدم</strong></td></tr>
+        <tr><td>7b</td><td>High blood sugar / <strong>diabetes</strong></td><td class="ar-td">ارتفاع سكر الدم / <strong>السكري</strong></td></tr>
+        <tr><td>8</td><td>Mood changes &amp; <strong>depression</strong></td><td class="ar-td">تقلبات المزاج و<strong>الاكتئاب</strong></td></tr>
+        <tr><td>9</td><td>Increased <strong>infection risk</strong></td><td class="ar-td">زيادة <strong>خطر الإصابة بالعدوى</strong></td></tr>
+        <tr><td>10</td><td>Slow-healing wounds</td><td class="ar-td">جروح بطيئة الشفاء</td></tr>
+        <tr><td>11</td><td>Visual disturbances</td><td class="ar-td">اضطرابات بصرية</td></tr>
+        <tr><td>12</td><td>Pituitary tumour (possible cause)</td><td class="ar-td">ورم نخامي (سبب محتمل)</td></tr>
+        <tr><td>+</td><td><strong>Purple striae</strong> (stretch marks on abdomen), thin skin, abdominal fat, excessive hair growth</td><td class="ar-td"><strong>خطوط أرجوانية</strong> (علامات تمدّد على البطن)، جلد رفيع، دهون بطنية، نمو مفرط للشعر</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Diagnostic -->
+  <div class="sec-title" style="font-size:1.2rem">Assessment &amp; Diagnostic Findings <span class="ar">التقييم والنتائج التشخيصية</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Test / الاختبار</th><th>Findings / النتائج</th><th class="ar-td">بالعربية</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Lab Findings</strong></td><td>⬆️ Sodium, ⬆️ Glucose, ⬇️ Potassium, ⬇️ Eosinophils, ⬇️ Lymphocytes</td><td class="ar-td">⬆️ صوديوم، ⬆️ جلوكوز، ⬇️ بوتاسيوم، ⬇️ حمضات، ⬇️ لمفاويات</td></tr>
+        <tr><td><strong>Cortisol Testing</strong></td><td>Plasma cortisol (elevated) &amp; 24-hour urine cortisol (elevated)</td><td class="ar-td">كورتيزول البلازما (مرتفع) وكورتيزول البول لمدة 24 ساعة (مرتفع)</td></tr>
+        <tr><td><strong>Dexamethasone Suppression Tests</strong></td><td>Overnight test, low dose test, high dose test — cortisol NOT suppressed</td><td class="ar-td">اختبارات قمع الديكساميثازون — الكورتيزول لا يُقمع</td></tr>
+        <tr><td><strong>ACTH Levels</strong></td><td>Elevated (if pituitary or ectopic source)</td><td class="ar-td">مرتفع (إذا كان المصدر نخاميًا أو خارج الرحم)</td></tr>
+        <tr><td><strong>Adrenal Gland Imaging</strong></td><td>CT scan / MRI / Ultrasound of adrenal glands</td><td class="ar-td">CT / MRI / موجات فوق صوتية للغدد الكظرية</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="sec-title" style="font-size:1.2rem">Medical Management <span class="ar">الإدارة الطبية</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Treatment / العلاج</th><th>Description / الوصف</th><th class="ar-td">بالعربية</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-red">Adrenalectomy</span></td><td>Surgical removal — unilateral (one gland) or bilateral (both glands)</td><td class="ar-td">استئصال جراحي — أحادي (غدة واحدة) أو ثنائي (كلتا الغدتين)</td></tr>
+        <tr><td><span class="badge badge-purple">Pituitary Radiation Therapy</span></td><td>Radiation directed at pituitary gland to reduce ACTH production</td><td class="ar-td">إشعاع موجّه للغدة النخامية لتقليل إنتاج ACTH</td></tr>
+        <tr><td><span class="badge badge-blue">Hormone Replacement</span></td><td>Lifelong therapy after bilateral adrenalectomy</td><td class="ar-td">علاج مدى الحياة بعد الاستئصال الثنائي للغدة الكظرية</td></tr>
+        <tr><td><span class="badge badge-orange">Adrenal Inhibitors</span></td><td>Metyrapone — blocks cortisol synthesis</td><td class="ar-td">ميتيرابون — يوقف تخليق الكورتيزول</td></tr>
+        <tr><td><span class="badge badge-green">Steroid Dose Reduction</span></td><td>Tapering corticosteroids if cause is exogenous steroids</td><td class="ar-td">تخفيض الكورتيكوستيرويدات تدريجيًا إذا كان السبب هو الستيرويدات الخارجية</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════ PANEL 4 — NURSING PROCESS ════ -->
+<div class="panel" id="nursing">
+  <div class="sec-title">Nursing Process — Cushing's Syndrome <span class="ar">العملية التمريضية — متلازمة كوشينج</span></div>
+
+  <!-- Assessment -->
+  <div class="card">
+    <div class="card-title">Assessment <span class="ar">التقييم</span></div>
+    <div class="bi" style="margin-bottom:0">
+      <div class="en-col">
+        <ul>
+          <li>History: patient's level of activity and ability to carry out routine and self-care activities</li>
+          <li>Observe and assess skin for trauma, infection, breakdown, bruising, and oedema</li>
+          <li>Note changes in physical appearance (moon face, buffalo hump, striae, abdominal obesity)</li>
+          <li>Assess mental function: mood, responses, awareness of environment, level of depression</li>
+        </ul>
+      </div>
+      <div class="ar-col">
+        <ul>
+          <li>التاريخ: مستوى نشاط المريض وقدرته على الأنشطة الروتينية والعناية الذاتية</li>
+          <li>مراقبة وتقييم الجلد بحثًا عن صدمات، عدوى، تقرّح، كدمات ووذمة</li>
+          <li>ملاحظة التغيّرات في المظهر الجسدي (وجه قمري، سنام جاموس، خطوط، سمنة بطنية)</li>
+          <li>تقييم الوظيفة العقلية: المزاج، الاستجابات، الوعي بالبيئة، مستوى الاكتئاب</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- NP Steps -->
+  <div class="np-flow">
+    <div class="np-step">
+      <div class="np-label"><div class="num">1</div><div class="name">ASSESSMENT</div><div class="ar-name">التقييم</div></div>
+      <div class="np-en">
+        <p>Assess skin, activity level, mental status, and physical changes. Monitor for signs of infection, fluid imbalance, and mood disturbances.</p>
+      </div>
+      <div class="np-ar">
+        <p>تقييم الجلد، مستوى النشاط، الحالة العقلية، والتغيّرات الجسدية. مراقبة علامات العدوى، اختلال السوائل، واضطرابات المزاج.</p>
+      </div>
+    </div>
+    <div class="np-step">
+      <div class="np-label"><div class="num">2</div><div class="name">DIAGNOSIS</div><div class="ar-name">التشخيص</div></div>
+      <div class="np-en">
+        <ul>
+          <li>Risk for injury related to weakness</li>
+          <li>Risk for infection related to altered inflammatory response</li>
+          <li>Self-care deficit related to weakness, fatigue, and altered sleep patterns</li>
+          <li>Impaired skin integrity related to oedema and impaired healing</li>
+          <li>Disturbed body image related to altered physical appearance and decreased activity level</li>
+          <li>Disturbed thought processes related to mood swings and depression</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>خطر إصابة بسبب الضعف</li>
+          <li>خطر عدوى بسبب تغيّر الاستجابة الالتهابية</li>
+          <li>عجز في الرعاية الذاتية بسبب الضعف والتعب واضطراب النوم</li>
+          <li>إخلال بتكامل الجلد بسبب الوذمة وضعف الشفاء</li>
+          <li>اضطراب صورة الجسم بسبب تغيّر المظهر الجسدي وانخفاض مستوى النشاط</li>
+          <li>اضطراب في عمليات التفكير بسبب تقلبات المزاج والاكتئاب</li>
+        </ul>
+      </div>
+    </div>
+    <div class="np-step">
+      <div class="np-label"><div class="num">3</div><div class="name">PLANNING</div><div class="ar-name">التخطيط</div></div>
+      <div class="np-en">
+        <ul>
+          <li>Decreased risk for injury</li>
+          <li>Decreased risk for infection</li>
+          <li>Increased ability to carry out self-care activities</li>
+          <li>Improved skin integrity</li>
+          <li>Improved body image</li>
+          <li>Improved mental function</li>
+          <li>Absence of complications</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>انخفاض خطر الإصابة</li>
+          <li>انخفاض خطر العدوى</li>
+          <li>زيادة القدرة على أنشطة الرعاية الذاتية</li>
+          <li>تحسّن تكامل الجلد</li>
+          <li>تحسّن صورة الجسم</li>
+          <li>تحسّن الوظيفة العقلية</li>
+          <li>غياب المضاعفات</li>
+        </ul>
+      </div>
+    </div>
+    <div class="np-step">
+      <div class="np-label"><div class="num">4</div><div class="name">IMPLEMENTATION</div><div class="ar-name">التنفيذ</div></div>
+      <div class="np-en">
+        <p><strong>Decreasing Risk for Injury:</strong></p>
+        <ul>
+          <li>Fall prevention; use walking aids, safe shoes, cushioned chair</li>
+          <li>Bone protection — prevent falls &amp; fractures, gentle movement</li>
+          <li>Healthy diet: high protein, calcium &amp; vitamin D</li>
+          <li>Hormone replacement / adrenal inhibitors (metyrapone) / steroid dose reduction</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Decreasing Risk for Infection:</strong></p>
+        <ul>
+          <li>Avoid contact with sick people; practice good hygiene</li>
+          <li>Monitor for subtle signs of infection (corticosteroids can mask symptoms!)</li>
+          <li>Use walking aids; prevent falls &amp; fractures</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Promoting Skin Integrity:</strong></p>
+        <ul>
+          <li>Gentle skin care; avoid adhesive tape</li>
+          <li>Frequent repositioning</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Rest &amp; Activity:</strong></p>
+        <ul>
+          <li>Gentle exercise, moderate activity, boosting self-esteem</li>
+          <li>Scheduled rest periods, quiet &amp; dark room for sleep</li>
+          <li>Breathing exercises</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Body Image &amp; Emotional Support:</strong></p>
+        <ul>
+          <li>Address appearance changes; healthy diet (low carb, low sodium, high protein)</li>
+          <li>Build self-esteem; explain mood swings; share feelings &amp; concerns; family discussions</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Preparing for Surgery:</strong></p>
+        <ul>
+          <li>Diabetes management (insulin)</li>
+          <li>Peptic ulcer care (antacids, PPIs)</li>
+          <li>Thrombosis prevention</li>
+          <li>Breathing exercises; postoperative instructions</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <p><strong>تقليل خطر الإصابة:</strong></p>
+        <ul>
+          <li>الوقاية من السقوط؛ استخدام معينات المشي، الأحذية الآمنة، الكرسي المبطّن</li>
+          <li>حماية العظام — منع السقوط والكسور، الحركة اللطيفة</li>
+          <li>نظام غذائي صحي: بروتين مرتفع، كالسيوم وفيتامين D</li>
+          <li>بدائل الهرمونات / مثبطات الكظرية (ميتيرابون) / تخفيض جرعة الستيرويد</li>
+        </ul>
+        <p style="margin-top:10px"><strong>تقليل خطر العدوى:</strong></p>
+        <ul>
+          <li>تجنّب التواصل مع المرضى؛ ممارسة النظافة الجيدة</li>
+          <li>مراقبة العلامات الدقيقة للعدوى (الكورتيكوستيرويدات قد تُخفي الأعراض!)</li>
+          <li>استخدام معينات المشي؛ منع السقوط والكسور</li>
+        </ul>
+        <p style="margin-top:10px"><strong>تعزيز تكامل الجلد:</strong></p>
+        <ul>
+          <li>عناية لطيفة بالجلد؛ تجنّب الشريط اللاصق</li>
+          <li>إعادة التوضّع بشكل متكرر</li>
+        </ul>
+        <p style="margin-top:10px"><strong>الراحة والنشاط:</strong></p>
+        <ul>
+          <li>تمارين خفيفة، نشاط معتدل، تعزيز تقدير الذات</li>
+          <li>فترات راحة منتظمة، غرفة هادئة ومظلمة للنوم</li>
+          <li>تمارين التنفس</li>
+        </ul>
+        <p style="margin-top:10px"><strong>صورة الجسم والدعم العاطفي:</strong></p>
+        <ul>
+          <li>معالجة تغيّرات المظهر؛ نظام غذائي صحي (كربوهيدرات وصوديوم منخفضان، بروتين مرتفع)</li>
+          <li>بناء تقدير الذات؛ شرح تقلبات المزاج؛ مشاركة المشاعر والمخاوف؛ نقاشات عائلية</li>
+        </ul>
+        <p style="margin-top:10px"><strong>التحضير للجراحة:</strong></p>
+        <ul>
+          <li>إدارة السكري (الأنسولين)</li>
+          <li>رعاية القرحة الهضمية (مضادات الحموضة، مثبطات مضخة البروتون)</li>
+          <li>الوقاية من الجلطات</li>
+          <li>تمارين التنفس؛ تعليمات ما بعد الجراحة</li>
+        </ul>
+      </div>
+    </div>
+    <div class="np-step">
+      <div class="np-label"><div class="num">5</div><div class="name">EVALUATION</div><div class="ar-name">التقييم النهائي</div></div>
+      <div class="np-en">
+        <ul>
+          <li>Is the patient free from injury and falls?</li>
+          <li>Are there no signs of infection?</li>
+          <li>Can the patient perform self-care activities?</li>
+          <li>Is skin intact without breakdown?</li>
+          <li>Is the patient coping with body image changes?</li>
+          <li>Is mental function (mood) improving?</li>
+        </ul>
+      </div>
+      <div class="np-ar">
+        <ul>
+          <li>هل المريض بعيد عن الإصابات والسقوط؟</li>
+          <li>هل لا توجد علامات على عدوى؟</li>
+          <li>هل يستطيع المريض أداء أنشطة الرعاية الذاتية؟</li>
+          <li>هل الجلد سليم بلا تقرّح؟</li>
+          <li>هل يتأقلم المريض مع تغيّرات صورة الجسم؟</li>
+          <li>هل الوظيفة العقلية (المزاج) تتحسّن؟</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PANEL 5 — COMPARISON ════ -->
+<div class="panel" id="compare">
+  <div class="sec-title">Addison's vs Cushing's — Full Comparison <span class="ar">مقارنة شاملة: أديسون مقابل كوشينج</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature / الخاصية</th><th>Addison's Disease / مرض أديسون</th><th>Cushing's Syndrome / متلازمة كوشينج</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cortisol level / الكورتيزول</strong></td><td>⬇️ Low / منخفض</td><td>⬆️ High / مرتفع</td></tr>
+        <tr><td><strong>Problem / المشكلة</strong></td><td>Insufficiency / قصور</td><td>Excess / فرط</td></tr>
+        <tr><td><strong>Weight / الوزن</strong></td><td>⬇️ Loss / فقدان</td><td>⬆️ Gain (central obesity) / زيادة (سمنة مركزية)</td></tr>
+        <tr><td><strong>Blood pressure / ضغط الدم</strong></td><td>⬇️ Hypotension / انخفاض</td><td>⬆️ Hypertension / ارتفاع</td></tr>
+        <tr><td><strong>Blood glucose / سكر الدم</strong></td><td>⬇️ Hypoglycaemia / نقص</td><td>⬆️ Hyperglycaemia/diabetes / ارتفاع/سكري</td></tr>
+        <tr><td><strong>Sodium / الصوديوم</strong></td><td>⬇️ Low / منخفض</td><td>⬆️ High / مرتفع</td></tr>
+        <tr><td><strong>Potassium / البوتاسيوم</strong></td><td>⬆️ High / مرتفع</td><td>⬇️ Low / منخفض</td></tr>
+        <tr><td><strong>Skin / الجلد</strong></td><td>Hyperpigmentation (darkening) / تصبّغ داكن</td><td>Thin, fragile, purple striae, bruising / رفيع هشّ، خطوط أرجوانية، كدمات</td></tr>
+        <tr><td><strong>Characteristic features</strong></td><td>Muscle weakness, fatigue, hypotension, depression / ضعف عضلي، تعب، هبوط ضغط، اكتئاب</td><td>Moon face, buffalo hump, abdominal obesity / وجه قمري، سنام جاموس، سمنة بطنية</td></tr>
+        <tr><td><strong>Infection risk / خطر العدوى</strong></td><td>Moderate / متوسط</td><td>⬆️ Very high (cortisol suppresses immunity) / عالٍ جدًا</td></tr>
+        <tr><td><strong>Bone / العظام</strong></td><td>Weakness / ضعف</td><td>Osteoporosis &amp; fractures / هشاشة وكسور</td></tr>
+        <tr><td><strong>Mental / النفسي</strong></td><td>Depression, confusion / اكتئاب، ارتباك</td><td>Mood swings, depression / تقلبات المزاج، اكتئاب</td></tr>
+        <tr><td><strong>Crisis / الأزمة</strong></td><td>Addisonian crisis (shock) / أزمة أديسون (صدمة)</td><td>No acute crisis equivalent</td></tr>
+        <tr><td><strong>Key Lab / المختبر الرئيسي</strong></td><td>⬇️ Cortisol, ⬇️ Na, ⬆️ K, ⬇️ glucose / ⬇️ كورتيزول، ⬇️ صوديوم، ⬆️ بوتاسيوم، ⬇️ جلوكوز</td><td>⬆️ Cortisol, ⬆️ Na, ⬆️ glucose, ⬇️ K / ⬆️ كورتيزول، ⬆️ صوديوم، ⬆️ جلوكوز، ⬇️ بوتاسيوم</td></tr>
+        <tr><td><strong>Treatment / العلاج</strong></td><td>Hormone replacement (hydrocortisone), fluids, vasopressors in crisis / استبدال الهرمون، سوائل، ضاغطات الأوعية في الأزمة</td><td>Adrenalectomy, pituitary radiation, metyrapone, taper steroids / استئصال الكظرية، إشعاع النخامية، ميتيرابون، تقليل الستيرويد</td></tr>
+        <tr><td><strong>Main nursing concern</strong></td><td>Fluid balance, activity tolerance, avoid stressors / توازن السوائل، تحمّل النشاط، تجنّب الضغوط</td><td>Injury prevention, infection control, skin care, body image / منع الإصابات، ضبط العدوى، العناية بالجلد، صورة الجسم</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════ PANEL 6 — QUIZ ════ -->
+<div class="panel" id="quiz">
+  <div class="quiz-header">
+    <h2>🧠 Self-Test — 20 Questions</h2>
+    <p>اختبر نفسك — 20 سؤال</p>
+    <p style="font-size:.85rem;margin-top:8px;opacity:.8">Click an option to reveal the answer / اضغط على خيار لرؤية الإجابة والشرح</p>
+  </div>
+  <div id="quizContainer"></div>
+  <button class="btn-submit-quiz" onclick="submitQuiz()">Submit &amp; See Score / أرسل واعرف نتيجتك</button>
+  <div class="quiz-score" id="scoreBox">
+    <div class="score-num" id="scoreNum">—</div>
+    <div class="score-label">out of 20 <span class="ar">من 20 سؤال</span></div>
+    <p id="scoreMsg" style="margin-top:10px;font-size:.9rem;color:var(--muted)"></p>
+    <button class="btn-reset" onclick="resetQuiz()">🔄 Retry / أعد المحاولة</button>
+  </div>
+</div>
+
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const questions=[
+  {q:"What is Addison's disease?",qar:"ما هو مرض أديسون؟",options:["Excessive adrenocortical activity","Adrenocortical insufficiency — inadequate cortical hormone","Hyperplasia of the adrenal medulla","Excessive secretion of catecholamines"],optionsAr:["فرط نشاط قشرة الغدة الكظرية","قصور قشرة الغدة الكظرية — هرمونات قشرية غير كافية","فرط تنسّج النخاع الكظري","إفراز مفرط للكاتيكولامينات"],answer:1,explain:"Addison's disease (adrenocortical insufficiency) results when adrenal cortex function is inadequate to meet the patient's need for cortical hormones.",explainAr:"مرض أديسون (قصور قشرة الغدة الكظرية) يحدث عندما تكون وظيفة القشرة غير كافية لتلبية احتياج المريض من الهرمونات القشرية."},
+  {q:"Which electrolyte pattern is characteristic of Addison's disease?",qar:"أي نمط للشوارد مميّز لمرض أديسون؟",options:["High sodium, low potassium","Low sodium, high potassium","High sodium, high potassium","Low sodium, low potassium"],optionsAr:["صوديوم مرتفع، بوتاسيوم منخفض","صوديوم منخفض، بوتاسيوم مرتفع","صوديوم مرتفع، بوتاسيوم مرتفع","صوديوم منخفض، بوتاسيوم منخفض"],answer:1,explain:"Addison's disease causes hyponatraemia (low sodium) and hyperkalaemia (high potassium) due to insufficient mineralocorticoid (aldosterone) activity.",explainAr:"يُسبّب مرض أديسون انخفاض الصوديوم وارتفاع البوتاسيوم بسبب نقص نشاط الميناروكورتيكويد (الألدوستيرون)."},
+  {q:"Dark pigmentation of the skin, knees, elbows, and mucous membranes is a classic sign of:",qar:"التصبّغ الداكن للجلد والركبتين والكوعين والأغشية المخاطية علامة كلاسيكية لـ:",options:["Cushing's syndrome","Hyperthyroidism","Addison's disease","Diabetes mellitus"],optionsAr:["متلازمة كوشينج","فرط نشاط الغدة الدرقية","مرض أديسون","داء السكري"],answer:2,explain:"Hyperpigmentation (dark pigmentation) of skin, knees, elbows, and mucous membranes is a hallmark clinical manifestation of Addison's disease.",explainAr:"فرط التصبّغ (التصبّغ الداكن) للجلد والركبتين والكوعين والأغشية المخاطية علامة مميّزة لمرض أديسون."},
+  {q:"Addisonian crisis is characterised by which combination of signs?",qar:"تتميّز أزمة أديسون بأي مجموعة من العلامات؟",options:["High BP, bradycardia, flushed skin","Pallor, apprehension, rapid weak pulse, low blood pressure","Moon face, buffalo hump, purple striae","Exophthalmos, tachycardia, weight loss"],optionsAr:["ارتفاع ضغط الدم، بطء القلب، احمرار الجلد","شحوب، قلق، نبض سريع ضعيف، انخفاض ضغط الدم","وجه قمري، سنام جاموس، خطوط أرجوانية","جحوظ العيون، تسارع القلب، فقدان الوزن"],answer:1,explain:"Addisonian crisis features cyanosis and classic signs of circulatory shock: pallor, apprehension, rapid and weak pulse, rapid respirations, and low blood pressure.",explainAr:"تتميّز أزمة أديسون بالزرقة والعلامات الكلاسيكية لصدمة الدورة الدموية: شحوب، قلق، نبض سريع ضعيف، تنفس سريع، وانخفاض ضغط الدم."},
+  {q:"Which laboratory findings confirm a diagnosis of Addison's disease?",qar:"أي نتائج مخبرية تؤكد تشخيص مرض أديسون؟",options:["Elevated cortisol and elevated glucose","Low cortisol, hypoglycaemia, hyponatraemia, hyperkalaemia","Elevated ACTH with normal cortisol","High sodium, low potassium, elevated glucose"],optionsAr:["ارتفاع الكورتيزول والجلوكوز","انخفاض الكورتيزول، نقص سكر الدم، نقص صوديوم الدم، فرط بوتاسيوم الدم","ارتفاع ACTH مع كورتيزول طبيعي","ارتفاع الصوديوم، انخفاض البوتاسيوم، ارتفاع الجلوكوز"],answer:1,explain:"Addison's disease is confirmed by low cortisol levels, hypoglycaemia (⬇️glucose), hyponatraemia (⬇️Na), hyperkalaemia (⬆️K), and leukocytosis.",explainAr:"يتأكد تشخيص مرض أديسون بانخفاض الكورتيزول، نقص سكر الدم، انخفاض الصوديوم، ارتفاع البوتاسيوم، وزيادة كريات الدم البيضاء."},
+  {q:"In Addisonian crisis, what is the FIRST priority of medical management?",qar:"في أزمة أديسون، ما هي الأولوية الأولى في الإدارة الطبية؟",options:["Start oral hydrocortisone immediately","Combat circulatory shock with IV fluids and corticosteroids","Perform adrenalectomy","Begin dialysis for hyperkalaemia"],optionsAr:["البدء فورًا بهيدروكورتيزون فموي","مكافحة صدمة الدورة الدموية بسوائل وريدية وكورتيكوستيرويدات","إجراء استئصال الغدة الكظرية","البدء بغسيل الكلى لفرط البوتاسيوم"],answer:1,explain:"Immediate treatment is directed toward combatting circulatory shock: administering IV fluids and corticosteroids, monitoring vitals, and placing patient in recumbent position with legs elevated.",explainAr:"العلاج الفوري موجّه لمكافحة صدمة الدورة الدموية: إعطاء السوائل والكورتيكوستيرويدات وريديًا، مراقبة العلامات الحيوية، ووضع المريض مستلقيًا مع رفع الأرجل."},
+  {q:"Which drug is given IV first in Addisonian crisis, followed by dextrose in normal saline?",qar:"أي دواء يُعطى وريديًا أولًا في أزمة أديسون، يعقبه دكستروز في محلول ملحي طبيعي؟",options:["Propranolol","Metyrapone","Hydrocortisone (Solu-Cortef)","Levothyroxine"],optionsAr:["بروبرانولول","ميتيرابون","هيدروكورتيزون (سولو-كورتيف)","ليفوثيروكسين"],answer:2,explain:"Hydrocortisone (Solu-Cortef) is administered intravenously, followed with 5% dextrose in normal saline during Addisonian crisis treatment.",explainAr:"يُعطى هيدروكورتيزون (سولو-كورتيف) عن طريق الوريد، يليه محلول دكستروز 5% في محلول ملحي طبيعي في علاج أزمة أديسون."},
+  {q:"A decrease in systolic pressure of 20 mmHg or more in an Addison's patient indicates:",qar:"انخفاض الضغط الانقباضي بمقدار 20 ملم زئبق أو أكثر في مريض أديسون يشير إلى:",options:["Normal postural change","Depletion of fluid volume","Pain response","Infection onset"],optionsAr:["تغيّر وضعي طبيعي","نضوب حجم السوائل","استجابة الألم","بداية عدوى"],answer:1,explain:"A decrease in systolic pressure of 20 mmHg or more may indicate depletion of fluid volume in Addison's patients, requiring immediate nursing action.",explainAr:"انخفاض الضغط الانقباضي بمقدار 20 ملم زئبق أو أكثر قد يشير إلى نضوب حجم السوائل في مرضى أديسون، مما يتطلب تدخلًا تمريضيًا فوريًا."},
+  {q:"Cushing's syndrome results from:",qar:"تنتج متلازمة كوشينج من:",options:["Deficiency of adrenocortical hormones","Excessive adrenocortical activity","Insufficient secretion of ACTH","Autoimmune destruction of adrenal cortex"],optionsAr:["نقص هرمونات قشرة الغدة الكظرية","فرط نشاط قشرة الغدة الكظرية","إفراز غير كافٍ لـACTH","تدمير مناعي ذاتي لقشرة الغدة الكظرية"],answer:1,explain:"Cushing's syndrome results from excessive adrenocortical activity, which may result from excessive administration of corticosteroids, ACTH, or hyperplasia of the adrenal cortex.",explainAr:"تنتج متلازمة كوشينج من فرط نشاط قشرة الغدة الكظرية، وقد يكون سببها إعطاء مفرط للكورتيكوستيرويدات أو ACTH أو تضخّم قشرة الغدة الكظرية."},
+  {q:"Which is the MOST classic physical appearance of Cushing's syndrome?",qar:"أي من التالي هو المظهر الجسدي الأكثر كلاسيكية في متلازمة كوشينج؟",options:["Exophthalmos and goiter","Moon face and buffalo hump","Dark skin pigmentation and weight loss","Jaundice and ascites"],optionsAr:["جحوظ العيون ودُّراق","وجه قمري وسنام جاموس","تصبّغ داكن للجلد وفقدان وزن","يرقان وحبن"],answer:1,explain:"Moon face (round, puffy face) and buffalo hump (fat deposit between shoulders) are the classic physical signs of Cushing's syndrome due to abnormal fat redistribution.",explainAr:"الوجه القمري (مستدير منتفخ) وسنام الجاموس (ترسّب دهون بين الكتفين) هما العلامتان الجسديتان الكلاسيكيتان لمتلازمة كوشينج بسبب إعادة توزيع الدهون بشكل غير طبيعي."},
+  {q:"Purple striae in Cushing's syndrome appear on which body part?",qar:"أين تظهر الخطوط الأرجوانية في متلازمة كوشينج؟",options:["Face and neck","Back and shoulders","Abdomen","Lower legs"],optionsAr:["الوجه والرقبة","الظهر والكتفين","البطن","أسفل الساقين"],answer:2,explain:"Purple striae (stretch marks) appear on the abdomen in Cushing's syndrome due to cortisol-induced thinning of the skin and rapid weight gain.",explainAr:"تظهر الخطوط الأرجوانية (علامات التمدّد) على البطن في متلازمة كوشينج بسبب ترقّق الجلد الناتج عن الكورتيزول وزيادة الوزن السريعة."},
+  {q:"Which laboratory pattern is expected in Cushing's syndrome?",qar:"أي نمط مخبري متوقع في متلازمة كوشينج؟",options:["⬇️ Sodium, ⬆️ Potassium, ⬇️ Glucose","⬆️ Sodium, ⬇️ Potassium, ⬆️ Glucose, ⬇️ Eosinophils","⬇️ Cortisol, ⬇️ Sodium, ⬆️ Potassium","Normal electrolytes with elevated TSH"],optionsAr:["انخفاض الصوديوم، ارتفاع البوتاسيوم، انخفاض الجلوكوز","ارتفاع الصوديوم، انخفاض البوتاسيوم، ارتفاع الجلوكوز، انخفاض الحمضات","انخفاض الكورتيزول والصوديوم وارتفاع البوتاسيوم","شوارد طبيعية مع ارتفاع TSH"],answer:1,explain:"Cushing's syndrome shows: ⬆️Sodium, ⬆️Glucose, ⬇️Potassium, ⬇️Eosinophils, ⬇️Lymphocytes — opposite to Addison's disease.",explainAr:"تُظهر متلازمة كوشينج: ارتفاع الصوديوم والجلوكوز وانخفاض البوتاسيوم والحمضات واللمفاويات — عكس مرض أديسون تمامًا."},
+  {q:"Which drug is an adrenal inhibitor used in Cushing's syndrome management?",qar:"أي دواء هو مثبّط كظري يُستخدم في إدارة متلازمة كوشينج؟",options:["Levothyroxine","Hydrocortisone","Metyrapone","Propranolol"],optionsAr:["ليفوثيروكسين","هيدروكورتيزون","ميتيرابون","بروبرانولول"],answer:2,explain:"Metyrapone is an adrenal inhibitor used in Cushing's syndrome that blocks cortisol synthesis in the adrenal glands.",explainAr:"ميتيرابون هو مثبّط كظري يُستخدم في متلازمة كوشينج يوقف تخليق الكورتيزول في الغدد الكظرية."},
+  {q:"Why is the risk for infection very high in Cushing's syndrome?",qar:"لماذا يكون خطر العدوى مرتفعًا جدًا في متلازمة كوشينج؟",options:["Because patients have poor hygiene","Because corticosteroids suppress the immune response and can mask infection symptoms","Because the adrenal glands are removed","Because of low blood sugar levels"],optionsAr:["لأن المرضى لديهم نظافة سيئة","لأن الكورتيكوستيرويدات تُثبّط الاستجابة المناعية ويمكنها إخفاء أعراض العدوى","لأن الغدد الكظرية تم استئصالها","بسبب انخفاض مستوى سكر الدم"],answer:1,explain:"Elevated cortisol suppresses the immune (inflammatory) response and can mask typical signs of infection, making infection detection difficult and risk very high.",explainAr:"الكورتيزول المرتفع يُثبّط الاستجابة المناعية (الالتهابية) ويمكنه إخفاء العلامات النموذجية للعدوى، مما يجعل اكتشافها صعبًا وخطرها مرتفعًا جدًا."},
+  {q:"Which nursing diagnosis is related to the physical appearance changes in Cushing's syndrome?",qar:"أي تشخيص تمريضي يرتبط بتغيّرات المظهر الجسدي في متلازمة كوشينج؟",options:["Hypothermia","Disturbed body image","Fluid volume deficit","Impaired gas exchange"],optionsAr:["انخفاض حرارة الجسم","اضطراب صورة الجسم","عجز حجم السوائل","ضعف تبادل الغاز"],answer:1,explain:"Disturbed body image related to altered physical appearance (moon face, buffalo hump, obesity, striae) and decreased activity level is a key nursing diagnosis in Cushing's syndrome.",explainAr:"اضطراب صورة الجسم المرتبط بتغيّر المظهر الجسدي (الوجه القمري، سنام الجاموس، السمنة، الخطوط) وانخفاض مستوى النشاط هو تشخيص تمريضي رئيسي في متلازمة كوشينج."},
+  {q:"What percentage of adrenal medulla secretion is epinephrine (adrenaline)?",qar:"كم نسبة الأدرينالين (إبينفرين) من إفراز النخاع الكظري؟",options:["About 10%","About 50%","About 90%","100%"],optionsAr:["حوالي 10%","حوالي 50%","حوالي 90%","100%"],answer:2,explain:"About 90% of adrenal medulla secretion is epinephrine (also called adrenaline). The rest is primarily norepinephrine.",explainAr:"حوالي 90% من إفراز النخاع الكظري هو الإبينفرين (الأدرينالين). والباقي أساسًا نورإبينفرين."},
+  {q:"Without the adrenal cortex, severe stress would cause which consequence?",qar:"بدون قشرة الغدة الكظرية، يُسبّب الضغط الشديد ماذا؟",options:["Thyroid storm","Peripheral circulatory failure, circulatory shock, and prostration","Myxedema coma","Diabetic ketoacidosis"],optionsAr:["عاصفة درقية","فشل الدورة الدموية الطرفية، صدمة الدورة الدموية، والإنهاك","غيبوبة الوذمة المخاطية","الحماض الكيتوني السكري"],answer:1,explain:"Without the adrenal cortex, severe stress would cause peripheral circulatory failure, circulatory shock, and prostration — the cortex is essential for stress adaptation.",explainAr:"بدون قشرة الغدة الكظرية، يُسبّب الضغط الشديد فشل الدورة الدموية الطرفية والصدمة والإنهاك — القشرة أساسية للتكيّف مع الضغط."},
+  {q:"Which surgical procedure is used in Cushing's syndrome when both adrenal glands need to be removed?",qar:"أي إجراء جراحي يُستخدم في متلازمة كوشينج عندما تحتاج كلتا الغدتين للاستئصال؟",options:["Thyroidectomy","Unilateral adrenalectomy","Bilateral adrenalectomy","Hypophysectomy"],optionsAr:["استئصال الغدة الدرقية","استئصال الغدة الكظرية الأحادي","استئصال الغدتين الكظريتين الثنائي","استئصال الغدة النخامية"],answer:2,explain:"Bilateral adrenalectomy (removal of both adrenal glands) is a surgical option in Cushing's syndrome, after which lifelong hormone replacement therapy is required.",explainAr:"استئصال الغدتين الكظريتين الثنائي (إزالة كلتا الغدتين) خيار جراحي في متلازمة كوشينج، وبعده يُطلب علاج بدائل الهرمونات مدى الحياة."},
+  {q:"For a patient with Cushing's syndrome preparing for surgery, which complication requires thrombosis prevention?",qar:"لمريض متلازمة كوشينج يستعد للجراحة، أي مضاعفة تتطلب الوقاية من الجلطات؟",options:["Bleeding disorders","Venous thromboembolism due to obesity and immobility","Hypotension","Renal failure"],optionsAr:["اضطرابات النزيف","الجلطات الوريدية بسبب السمنة وقلة الحركة","انخفاض ضغط الدم","الفشل الكلوي"],answer:1,explain:"Preoperative considerations for Cushing's patients include thrombosis prevention due to the high risk of venous thromboembolism from obesity, fluid retention, and potential immobility.",explainAr:"يشمل التحضير قبل الجراحة لمرضى كوشينج الوقاية من الجلطات بسبب الخطر المرتفع للجلطات الوريدية من السمنة واحتباس السوائل وقلة الحركة."},
+  {q:"Which adrenal cortex hormone is responsible for sodium and water retention?",qar:"أي هرمون من قشرة الغدة الكظرية مسؤول عن احتباس الصوديوم والماء؟",options:["Cortisol (glucocorticoid)","Aldosterone (mineralocorticoid)","Androgen","Epinephrine"],optionsAr:["الكورتيزول (جلوكوكورتيكويد)","الألدوستيرون (مينيرالوكورتيكويد)","الأندروجين","الإبينفرين"],answer:1,explain:"Aldosterone is a mineralocorticoid secreted by the adrenal cortex that regulates sodium and water retention. Its deficiency in Addison's causes hyponatraemia and hyperkalaemia.",explainAr:"الألدوستيرون هو مينيرالوكورتيكويد تُفرزه قشرة الغدة الكظرية وينظّم احتباس الصوديوم والماء. نقصه في أديسون يُسبّب نقص الصوديوم وارتفاع البوتاسيوم."}
+];
+
+let answered=new Array(questions.length).fill(false);
+let userAnswers=new Array(questions.length).fill(-1);
+
+function buildQuiz(){
+  const c=document.getElementById('quizContainer');c.innerHTML='';
+  const L=['A','B','C','D'];
+  questions.forEach((q,i)=>{
+    const opts=q.options.map((o,j)=>`<div class="q-opt" id="opt-${i}-${j}" onclick="selectAnswer(${i},${j})"><span class="letter">${L[j]}.</span><span>${o}<br><small style="color:var(--muted);font-family:var(--ar)">${q.optionsAr[j]}</small></span></div>`).join('');
+    c.innerHTML+=`<div class="q-card" id="q-${i}"><div class="q-num">Question ${i+1} of ${questions.length}</div><div class="q-text">${q.q}</div><div class="q-ar">${q.qar}</div><div class="q-options">${opts}</div><div class="explain" id="explain-${i}"><strong>✅ Correct: ${L[q.answer]}. ${q.options[q.answer]}</strong><br>${q.explain}<div class="ar-explain">الإجابة الصحيحة: ${q.optionsAr[q.answer]}<br>${q.explainAr}</div></div></div>`;
+  });
+}
+
+function selectAnswer(qi,oi){
+  if(answered[qi])return;
+  answered[qi]=true;userAnswers[qi]=oi;
+  questions[qi].options.forEach((_,j)=>{
+    const el=document.getElementById(`opt-${qi}-${j}`);
+    if(j===questions[qi].answer)el.classList.add('correct');
+    else if(j===oi&&oi!==questions[qi].answer)el.classList.add('wrong');
+    else el.style.opacity='.5';
+    el.style.pointerEvents='none';
+  });
+  document.getElementById(`explain-${qi}`).classList.add('show');
+}
+
+function submitQuiz(){
+  questions.forEach((q,i)=>{
+    if(!answered[i]){answered[i]=true;document.getElementById(`opt-${i}-${q.answer}`).classList.add('reveal');document.getElementById(`explain-${i}`).classList.add('show');q.options.forEach((_,j)=>{document.getElementById(`opt-${i}-${j}`).style.pointerEvents='none';});}
+  });
+  const score=userAnswers.filter((a,i)=>a===questions[i].answer).length;
+  document.getElementById('scoreNum').textContent=score;
+  const msgs=[[0,10,"Keep studying! You can do it 💪 | واصل المذاكرة، تقدر! 💪"],[11,15,"Good effort! Review the weak areas 📚 | جهد جيد! راجع النقاط الضعيفة 📚"],[16,19,"Almost perfect! Great job 🌟 | شبه مثالي! عمل رائع 🌟"],[20,20,"Perfect score! Excellent 🏆 | علامة كاملة! ممتاز 🏆"]];
+  const msg=msgs.find(m=>score>=m[0]&&score<=m[1]);
+  document.getElementById('scoreMsg').textContent=msg?msg[2]:'';
+  document.getElementById('scoreBox').classList.add('show');
+  document.getElementById('scoreBox').scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz(){
+  answered.fill(false);userAnswers.fill(-1);
+  document.getElementById('scoreBox').classList.remove('show');
+  buildQuiz();window.scrollTo({top:0,behavior:'smooth'});
+}
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronic Kidney Disease & Dialysis — أمراض الكلى المزمنة والديلزة</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Cairo:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f7f9;
+    --surface: #ffffff;
+    --surface2: #eef3f8;
+    --primary: #1a5276;
+    --primary-light: #2980b9;
+    --accent: #1abc9c;
+    --accent2: #e67e22;
+    --danger: #c0392b;
+    --text: #1c2833;
+    --text-muted: #5d6d7e;
+    --border: #d5e1ea;
+    --en-bg: #eaf4fb;
+    --ar-bg: #fef9f0;
+    --tab-active: #1a5276;
+    --correct: #1e8449;
+    --wrong: #922b21;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(26,82,118,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a5276 0%, #1abc9c 100%);
+    color: #fff;
+    text-align: center;
+    padding: 32px 20px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.9rem;
+    letter-spacing: .5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  header h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    margin-top: 6px;
+    opacity: .9;
+  }
+  header .badge {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: .82rem;
+    letter-spacing: 1px;
+  }
+
+  /* ── TABS ── */
+  .tab-bar {
+    background: var(--primary);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.68);
+    padding: 14px 20px;
+    font-size: .82rem;
+    font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .tab-btn .ar { font-family: 'Cairo', sans-serif; font-size: .75rem; display: block; opacity: .8; }
+  .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .tab-btn.active { color: #fff; border-bottom-color: var(--accent); background: rgba(255,255,255,0.1); }
+
+  /* ── PANELS ── */
+  .tab-panel { display: none; padding: 28px 20px; max-width: 980px; margin: 0 auto; }
+  .tab-panel.active { display: block; }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .sec-title .icon { font-size: 1.5rem; }
+  .sec-title .en { font-family: 'Merriweather', serif; font-size: 1.2rem; color: var(--primary); }
+  .sec-title .ar { font-family: 'Cairo', sans-serif; font-size: 1rem; color: var(--text-muted); }
+
+  /* ── BILINGUAL CARD ── */
+  .bi-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .bi-card-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 18px;
+    font-family: 'Merriweather', serif;
+    font-size: .95rem;
+  }
+  .bi-card-header .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: .85rem;
+    opacity: .85;
+    display: block;
+    margin-top: 2px;
+  }
+  .bi-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  @media(max-width:620px){ .bi-body { grid-template-columns: 1fr; } }
+  .bi-col-en {
+    background: var(--en-bg);
+    padding: 16px 18px;
+    border-right: 1px solid var(--border);
+  }
+  .bi-col-ar {
+    background: var(--ar-bg);
+    padding: 16px 18px;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .bi-col-en p, .bi-col-ar p { line-height: 1.7; font-size: .92rem; margin-bottom: 8px; }
+  .bi-col-en ul, .bi-col-ar ul { padding-left: 20px; }
+  .bi-col-ar ul { padding-right: 20px; padding-left: 0; }
+  .bi-col-en li, .bi-col-ar li { margin-bottom: 5px; font-size: .9rem; line-height: 1.6; }
+  .lang-label {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .bi-col-ar .lang-label { letter-spacing: 0; font-size: .75rem; }
+
+  /* ── STAGES TABLE ── */
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  @media(max-width:600px){ .stages-grid { grid-template-columns: 1fr; } }
+  .stage-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .stage-card .stage-head {
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+  }
+  .stage-1 .stage-head { background: #2e86c1; }
+  .stage-2 .stage-head { background: #d68910; }
+  .stage-3 .stage-head { background: #c0392b; }
+  .stage-card .stage-body { padding: 14px; background: var(--surface); }
+  .stage-card .stage-body p { font-size: .85rem; line-height: 1.6; margin-bottom: 6px; }
+  .stage-card .stage-body .ar { font-family: 'Cairo', sans-serif; color: var(--text-muted); font-size: .82rem; margin-top: 4px; }
+  .tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: .75rem; font-weight: 700; margin-top: 4px; }
+  .tag-green { background: #d5f5e3; color: #1e8449; }
+  .tag-yellow { background: #fdebd0; color: #9a5a00; }
+  .tag-red { background: #fadbd8; color: #922b21; }
+
+  /* ── SYMPTOMS TABLE ── */
+  table.sym-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  table.sym-table thead tr { background: var(--primary); color: #fff; }
+  table.sym-table thead th { padding: 12px 14px; text-align: left; font-family: 'Source Sans 3', sans-serif; }
+  table.sym-table thead th.ar-th { text-align: right; font-family: 'Cairo', sans-serif; }
+  table.sym-table tbody tr:nth-child(even) { background: var(--surface2); }
+  table.sym-table tbody tr:nth-child(odd) { background: var(--surface); }
+  table.sym-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.sym-table td.ar-td { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; }
+  table.sym-table td ul { padding-left: 16px; }
+  table.sym-table td.ar-td ul { padding-right: 16px; padding-left: 0; }
+  table.sym-table td li { margin-bottom: 3px; }
+
+  /* ── NURSING PROCESS ── */
+  .np-step {
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .np-step-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+  }
+  .np-step-head .step-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+    flex-shrink: 0;
+  }
+  .np-step-head .titles { flex: 1; }
+  .np-step-head .titles .en-t { font-family: 'Merriweather', serif; font-size: .95rem; }
+  .np-step-head .titles .ar-t { font-family: 'Cairo', sans-serif; font-size: .82rem; opacity: .85; }
+  .np-step-head .arrow { font-size: .8rem; transition: transform .25s; }
+  .np-step-head.open .arrow { transform: rotate(90deg); }
+  .np-step-body { display: none; background: var(--surface); }
+  .np-step-body.open { display: block; }
+  .np-s1 .np-step-head { background: #1a5276; }
+  .np-s2 .np-step-head { background: #117864; }
+  .np-s3 .np-step-head { background: #9b59b6; }
+  .np-s4 .np-step-head { background: #d35400; }
+  .np-s5 .np-step-head { background: #1e8449; }
+
+  /* ── QUIZ ── */
+  .quiz-container { max-width: 860px; margin: 0 auto; }
+  .quiz-progress-wrap { background: var(--surface); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .quiz-progress-bar-bg { background: var(--surface2); border-radius: 10px; height: 8px; margin-top: 8px; overflow: hidden; }
+  .quiz-progress-bar { background: linear-gradient(90deg, var(--accent), var(--primary-light)); height: 100%; border-radius: 10px; transition: width .4s; }
+  .q-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .q-head {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .q-num { font-family: 'Merriweather', serif; font-size: 1rem; background: rgba(255,255,255,0.2); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .q-text { flex: 1; font-size: .93rem; line-height: 1.5; }
+  .q-text .ar-q { font-family: 'Cairo', sans-serif; font-size: .82rem; opacity: .85; display: block; margin-top: 3px; direction: rtl; }
+  .q-body { padding: 16px 18px; }
+  .option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-size: .88rem;
+    font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all .18s;
+    line-height: 1.5;
+  }
+  .option-btn:hover:not(:disabled) { background: #d6eaf8; border-color: var(--primary-light); }
+  .option-btn.correct { background: #d5f5e3; border-color: #1e8449; color: #1e8449; font-weight: 600; }
+  .option-btn.wrong { background: #fadbd8; border-color: #922b21; color: #922b21; }
+  .option-btn:disabled { cursor: default; }
+  .explanation {
+    display: none;
+    margin-top: 12px;
+    background: #eaf4fb;
+    border-left: 4px solid var(--primary-light);
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: .87rem;
+    line-height: 1.7;
+  }
+  .explanation.ar-exp { font-family: 'Cairo', sans-serif; direction: rtl; border-left: none; border-right: 4px solid var(--accent); background: #fef9f0; margin-top: 6px; }
+  .explanation.show { display: block; }
+  .quiz-score-box {
+    display: none;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: var(--shadow);
+  }
+  .quiz-score-box.show { display: block; }
+  .score-big { font-family: 'Merriweather', serif; font-size: 3rem; font-weight: 700; }
+  .score-label { font-size: 1.1rem; margin-top: 4px; font-family: 'Cairo', sans-serif; }
+  .retry-btn {
+    margin-top: 16px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    transition: background .2s;
+  }
+  .retry-btn:hover { background: #17a589; }
+
+  /* ── TREATMENT TABLE ── */
+  .tx-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  @media(max-width:560px){ .tx-grid { grid-template-columns: 1fr; } }
+  .tx-item {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 14px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .tx-item .tx-head { font-weight: 700; color: var(--primary); font-size: .9rem; margin-bottom: 4px; }
+  .tx-item .tx-ar { font-family: 'Cairo', sans-serif; color: var(--text-muted); font-size: .82rem; direction: rtl; text-align: right; margin-bottom: 6px; }
+  .tx-item p { font-size: .85rem; line-height: 1.6; color: var(--text); }
+
+  /* ── COMPLICATION BADGE ── */
+  .comp-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+  .comp-badge {
+    background: var(--surface);
+    border: 1.5px solid var(--danger);
+    color: var(--danger);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: .83rem;
+    font-weight: 600;
+  }
+  .comp-badge .ar { display: block; font-family: 'Cairo', sans-serif; font-size: .75rem; color: var(--text-muted); }
+
+  /* misc */
+  .info-box {
+    background: #eaf4fb;
+    border-left: 4px solid var(--primary-light);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: .88rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .info-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 8px; }
+  .warn-box {
+    background: #fdebd0;
+    border-left: 4px solid var(--accent2);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: .88rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .warn-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; margin-top: 8px; border-top: 1px dashed #f0d9b5; padding-top: 8px; }
+
+  footer {
+    text-align: center;
+    padding: 18px;
+    color: var(--text-muted);
+    font-size: .78rem;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+    font-family: 'Cairo', sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🫘 Chronic Kidney Disease &amp; Dialysis</html>
+  <h2>أمراض الكلى المزمنة والديلزة</h2>
+  <span class="badge">UROLOGY NURSING · علم التمريض البولي</span>
+</header>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="showTab('stages')">🏥 CKD Stages <span class="ar">مراحل الفشل الكلوي</span></button>
+  <button class="tab-btn" onclick="showTab('manifestations')">🩺 Manifestations <span class="ar">المظاهر السريرية</span></button>
+  <button class="tab-btn" onclick="showTab('assessment')">🔬 Assessment &amp; Complications <span class="ar">التقييم والمضاعفات</span></button>
+  <button class="tab-btn" onclick="showTab('treatment')">💊 Treatment <span class="ar">العلاج</span></button>
+  <button class="tab-btn" onclick="showTab('hemodialysis')">🔄 Hemodialysis <span class="ar">الديلزة الدموية</span></button>
+  <button class="tab-btn" onclick="showTab('peritoneal')">🫁 Peritoneal Dialysis <span class="ar">الديلزة البريتونية</span></button>
+  <button class="tab-btn" onclick="showTab('nursing')">👩‍⚕️ Nursing Process <span class="ar">العملية التمريضية</span></button>
+  <button class="tab-btn" onclick="showTab('quiz')">📝 Self-Test Quiz <span class="ar">اختبر نفسك</span></button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 1 — CKD STAGES
+══════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-stages">
+  <div class="sec-title">
+    <span class="icon">🫘</span>
+    <div>
+      <div class="en">Stages of Chronic Kidney Disease</div>
+      <div class="ar">مراحل الفشل الكلوي المزمن</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Definition:</strong> Chronic Kidney Disease (CKD) is the progressive and irreversible loss of kidney function. It is staged based on the percentage of nephron loss and clinical presentation.
+    <div class="ar">
+      <strong>التعريف:</strong> الفشل الكلوي المزمن هو فقدان تدريجي وغير عكسي لوظيفة الكلى، ويُصنَّف بناءً على نسبة فقدان النيفرونات والمظاهر السريرية.
+    </div>
+  </div>
+
+  <div class="stages-grid">
+    <!-- STAGE 1 -->
+    <div class="stage-card stage-1">
+      <div class="stage-head">
+        Stage 1<br><small>Reduced Renal Reserve</small><br>
+        <small style="font-family:'Cairo',sans-serif;font-weight:400">المرحلة الأولى — احتياطي كلوي مخفَّض</small>
+      </div>
+      <div class="stage-body">
+        <p><strong>Nephron Loss:</strong> 40–75%</p>
+        <p><strong>Key Feature:</strong> No symptoms — the remaining nephrons compensate.</p>
+        <p><strong>Lab:</strong> Normal creatinine &amp; BUN.</p>
+        <p class="ar">فقدان 40–75% من النيفرونات — لا أعراض ظاهرة لأن النيفرونات المتبقية تعوّض الوظيفة. مستوى الكرياتينين طبيعي.</p>
+        <span class="tag tag-green">No Symptoms / بدون أعراض</span>
+      </div>
+    </div>
+    <!-- STAGE 2 -->
+    <div class="stage-card stage-2">
+      <div class="stage-head">
+        Stage 2<br><small>Renal Insufficiency</small><br>
+        <small style="font-family:'Cairo',sans-serif;font-weight:400">المرحلة الثانية — قصور كلوي</small>
+      </div>
+      <div class="stage-body">
+        <p><strong>Nephron Loss:</strong> 75–90%</p>
+        <p><strong>Key Feature:</strong> High creatinine, high BUN, dilute urine.</p>
+        <p><strong>Symptoms:</strong> Bone loss &amp; fractures, muscle cramps &amp; weakness.</p>
+        <p class="ar">فقدان 75–90% من النيفرونات — ارتفاع الكرياتينين والبولينا، بول مخفف. يظهر هشاشة العظام وتشنجات عضلية.</p>
+        <span class="tag tag-yellow">Moderate Symptoms / أعراض متوسطة</span>
+      </div>
+    </div>
+    <!-- STAGE 3 -->
+    <div class="stage-card stage-3">
+      <div class="stage-head">
+        Stage 3<br><small>ESRD — End-Stage Renal Disease</small><br>
+        <small style="font-family:'Cairo',sans-serif;font-weight:400">المرحلة الثالثة — الفشل الكلوي النهائي</small>
+      </div>
+      <div class="stage-body">
+        <p><strong>Nephron Function:</strong> &lt; 10%</p>
+        <p><strong>Key Feature:</strong> Toxin build-up (uremia), shortness of breath, itching &amp; uremic frost.</p>
+        <p><strong>Requires:</strong> Dialysis or transplant.</p>
+        <p class="ar">وظيفة النيفرونات أقل من 10% — تراكم السموم (بولينا)، ضيق التنفس، حكة وصقيع بولي. يحتاج إلى غسيل الكلى أو زرع كلى.</p>
+        <span class="tag tag-red">Severe / حالة خطيرة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progression table -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      Progression of Kidney Damage
+      <span class="ar">تدرج تلف الكلى</span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="sym-table" style="margin-bottom:0;">
+        <thead>
+          <tr>
+            <th>Phase / المرحلة</th>
+            <th>Description</th>
+            <th class="ar-th">الوصف</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mild</strong></td>
+            <td>Kidney slightly damaged; functional reserve present.</td>
+            <td class="ar-td">ضرر بسيط في الكلى مع وجود احتياطي وظيفي.</td>
+          </tr>
+          <tr>
+            <td><strong>Moderate</strong></td>
+            <td>Significant loss of function; lab values start changing.</td>
+            <td class="ar-td">فقدان ملحوظ للوظيفة؛ تبدأ نتائج المختبر في التغير.</td>
+          </tr>
+          <tr>
+            <td><strong>Severe (ESRD)</strong></td>
+            <td>Near-total function loss; life-sustaining therapy needed.</td>
+            <td class="ar-td">فقدان شبه كامل للوظيفة؛ الحاجة لعلاج مداوم.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Toxin build-up key point -->
+  <div class="warn-box">
+    <strong>⚠️ Toxin Build-Up (Uremia):</strong> When the kidneys fail, metabolic waste products (creatinine, BUN, urea) accumulate in the blood causing systemic toxicity across all organ systems.
+    <div class="ar">
+      <strong>⚠️ تراكم السموم (البولينا):</strong> عند فشل الكلى، تتراكم نفايات التمثيل الغذائي (كرياتينين، بولينا، يوريا) في الدم مما يسبب تسمم جهازي يؤثر على جميع أجهزة الجسم.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 2 — CLINICAL MANIFESTATIONS
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-manifestations">
+  <div class="sec-title">
+    <span class="icon">🩺</span>
+    <div>
+      <div class="en">Clinical Manifestations of ESRD</div>
+      <div class="ar">المظاهر السريرية للفشل الكلوي النهائي</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>System / الجهاز</th>
+          <th>English Manifestations</th>
+          <th class="ar-th">الأعراض بالعربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>❤️ Cardiovascular</strong></td>
+          <td>
+            <ul>
+              <li>Hypertension (sodium &amp; water retention)</li>
+              <li>Pitting edema (feet, hands)</li>
+              <li>Peri-orbital edema</li>
+              <li>Pericarditis / pericardial friction rub</li>
+              <li>Engorged neck veins</li>
+              <li>Hyperkalemia</li>
+              <li>Hyperlipidemia</li>
+              <li>Heart failure &amp; pulmonary edema (fluid overload)</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>ارتفاع ضغط الدم (احتباس الصوديوم والماء)</li>
+              <li>وذمة نضحية (قدمان، يدان)</li>
+              <li>وذمة حول الحجاج</li>
+              <li>التهاب التامور / احتكاك التاموري</li>
+              <li>احتقان أوردة الرقبة</li>
+              <li>فرط بوتاسيوم الدم</li>
+              <li>فرط دهنيات الدم</li>
+              <li>قصور القلب وذمة رئوية</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🧠 Neurologic</strong></td>
+          <td>
+            <ul>
+              <li>Weakness &amp; fatigue</li>
+              <li>Inability to concentrate</li>
+              <li>Disorientation</li>
+              <li>Tremors &amp; seizures</li>
+              <li>Restlessness of legs</li>
+              <li>Burning of soles of feet</li>
+              <li>Behavior changes</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>ضعف وإرهاق</li>
+              <li>عدم القدرة على التركيز</li>
+              <li>ارتباك وتوهان</li>
+              <li>رعشة ونوبات تشنجية</li>
+              <li>تململ الساقين</li>
+              <li>حرقان في باطن القدمين</li>
+              <li>تغيرات سلوكية</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🫁 Pulmonary</strong></td>
+          <td>
+            <ul>
+              <li>Crackles (pulmonary edema)</li>
+              <li>Thick, tenacious sputum</li>
+              <li>Depressed cough reflex</li>
+              <li>Shortness of breath</li>
+              <li>Tachypnea</li>
+              <li>Uremic pneumonitis / "uremic lung"</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>خشخشة (وذمة رئوية)</li>
+              <li>بلغم سميك لزج</li>
+              <li>انعكاس سعال مثبط</li>
+              <li>ضيق في التنفس</li>
+              <li>تسرع التنفس</li>
+              <li>التهاب رئة بولي / "رئة بولية"</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🦷 Gastrointestinal</strong></td>
+          <td>
+            <ul>
+              <li>Ammonia odor to breath</li>
+              <li>Metallic taste</li>
+              <li>Mouth ulcerations &amp; bleeding</li>
+              <li>Anorexia, nausea &amp; vomiting</li>
+              <li>Constipation or diarrhea</li>
+              <li>GI tract bleeding</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>رائحة أمونيا من الفم</li>
+              <li>طعم معدني</li>
+              <li>قرح وتقرحات فموية ونزيف</li>
+              <li>فقدان الشهية، غثيان، قيء</li>
+              <li>إمساك أو إسهال</li>
+              <li>نزيف في الجهاز الهضمي</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🩸 Hematologic</strong></td>
+          <td>
+            <ul>
+              <li>Anemia (inadequate erythropoietin)</li>
+              <li>Thrombocytopenia</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>فقر الدم (نقص الإريثروبويتين)</li>
+              <li>نقص الصفائح الدموية</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🦴 Musculoskeletal</strong></td>
+          <td>
+            <ul>
+              <li>Muscle cramps</li>
+              <li>Loss of muscle strength</li>
+              <li>Bone pain</li>
+              <li>Bone fractures</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>تشنجات عضلية</li>
+              <li>فقدان القوة العضلية</li>
+              <li>آلام العظام</li>
+              <li>كسور في العظام</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🧴 Integumentary (Skin)</strong></td>
+          <td>
+            <ul>
+              <li>Gray-bronze skin color</li>
+              <li>Dry skin</li>
+              <li>Severe pruritus (itching)</li>
+              <li>Purpura</li>
+              <li>Thin, brittle nails</li>
+              <li>Thinning hair</li>
+              <li>Uremic frost (rare today)</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>لون جلد رمادي-برونزي</li>
+              <li>جلد جاف</li>
+              <li>حكة شديدة (حكاك)</li>
+              <li>فرفرية (بقع دموية)</li>
+              <li>أظافر هشة رفيعة</li>
+              <li>تساقط الشعر</li>
+              <li>صقيع بولي (نادر اليوم)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🔬 Reproductive</strong></td>
+          <td>
+            <ul>
+              <li>Amenorrhea (females)</li>
+              <li>Testicular atrophy (males)</li>
+              <li>Infertility</li>
+            </ul>
+          </td>
+          <td class="ar-td">
+            <ul>
+              <li>انقطاع الطمث (إناث)</li>
+              <li>ضمور الخصيتين (ذكور)</li>
+              <li>عقم</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <strong>📌 Note on Uremic Frost:</strong> The deposit of urea crystals on the skin (uremic frost) is uncommon today because of early and aggressive treatment of ESRD with dialysis.
+    <div class="ar">
+      <strong>📌 ملاحظة حول الصقيع البولي:</strong> ترسب بلورات اليوريا على الجلد (الصقيع البولي) نادر اليوم بسبب المعالجة المبكرة والمكثفة للفشل الكلوي النهائي بالديلزة.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 3 — ASSESSMENT & COMPLICATIONS
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assessment">
+  <div class="sec-title">
+    <span class="icon">🔬</span>
+    <div>
+      <div class="en">Assessment &amp; Diagnostic Findings</div>
+      <div class="ar">التقييم والنتائج التشخيصية</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>Finding / النتيجة</th>
+          <th>English Explanation</th>
+          <th class="ar-th">الشرح بالعربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>📉 Decreased GFR</strong></td>
+          <td>Detected by 24-hour urinalysis for creatinine clearance. Key indicator of kidney function.</td>
+          <td class="ar-td">يُكتشف بتحليل البول لمدة 24 ساعة لقياس تصفية الكرياتينين. مؤشر رئيسي لوظيفة الكلى.</td>
+        </tr>
+        <tr>
+          <td><strong>💧 Sodium &amp; Water Retention</strong></td>
+          <td>Some patients retain sodium and water, increasing the risk for edema, heart failure, and hypertension.</td>
+          <td class="ar-td">بعض المرضى يحتجزون الصوديوم والماء، مما يزيد من خطر الوذمة وقصور القلب وارتفاع ضغط الدم.</td>
+        </tr>
+        <tr>
+          <td><strong>⚗️ Metabolic Acidosis</strong></td>
+          <td>With advanced disease, the kidney cannot excrete increased acid loads, resulting in metabolic acidosis.</td>
+          <td class="ar-td">في المرض المتقدم، لا تستطيع الكلى إخراج الأحماض المتراكمة، مما يؤدي إلى الحماض الاستقلابي.</td>
+        </tr>
+        <tr>
+          <td><strong>🩸 Anemia</strong></td>
+          <td>Develops due to inadequate erythropoietin production and nutritional deficiencies.</td>
+          <td class="ar-td">ينشأ من نقص إنتاج الإريثروبويتين والنقص الغذائي.</td>
+        </tr>
+        <tr>
+          <td><strong>🦴 Ca²⁺ / Phosphorus Disorder</strong></td>
+          <td>A major abnormality: disorder in calcium and phosphorus metabolism leads to bone disease.</td>
+          <td class="ar-td">اضطراب رئيسي في استقلاب الكالسيوم والفوسفور يؤدي إلى مرض العظام.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-title" style="margin-top:28px;">
+    <span class="icon">⚠️</span>
+    <div>
+      <div class="en">Complications of CKD / ESRD</div>
+      <div class="ar">مضاعفات الفشل الكلوي المزمن</div>
+    </div>
+  </div>
+
+  <div class="comp-list">
+    <div class="comp-badge">Pericarditis <span class="ar">التهاب التامور</span></div>
+    <div class="comp-badge">Hyperkalemia <span class="ar">فرط بوتاسيوم الدم</span></div>
+    <div class="comp-badge">Anemia <span class="ar">فقر الدم</span></div>
+    <div class="comp-badge">Hypertension <span class="ar">ارتفاع ضغط الدم</span></div>
+    <div class="comp-badge">Bone Disease <span class="ar">مرض العظام</span></div>
+    <div class="comp-badge">Metastatic Calcifications <span class="ar">تكلسات نقيلية</span></div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>English Details</th>
+          <th class="ar-th">التفاصيل بالعربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pericarditis</strong></td>
+          <td>Inflammation of the pericardium due to uremic toxins. Signs: friction rub, chest pain, fever.</td>
+          <td class="ar-td">التهاب التامور بسبب السموم البولية. العلامات: احتكاك التاموري، ألم الصدر، حمى.</td>
+        </tr>
+        <tr>
+          <td><strong>Hyperkalemia</strong></td>
+          <td>Life-threatening elevation of serum potassium; can cause fatal arrhythmias.</td>
+          <td class="ar-td">ارتفاع مستوى البوتاسيوم في الدم يهدد الحياة؛ قد يسبب اضطرابات نظم قلبية مميتة.</td>
+        </tr>
+        <tr>
+          <td><strong>Anemia</strong></td>
+          <td>Due to decreased erythropoietin; causes fatigue, pallor, decreased exercise tolerance.</td>
+          <td class="ar-td">بسبب انخفاض الإريثروبويتين؛ يسبب إرهاقاً وشحوباً وانخفاض تحمل التمارين.</td>
+        </tr>
+        <tr>
+          <td><strong>Hypertension</strong></td>
+          <td>Usually due to fluid overload; can worsen kidney damage in a vicious cycle.</td>
+          <td class="ar-td">عادةً بسبب زيادة السوائل؛ يمكن أن يزيد من تلف الكلى في دوامة مفرغة.</td>
+        </tr>
+        <tr>
+          <td><strong>Bone Disease</strong></td>
+          <td>Renal osteodystrophy from calcium/phosphorus imbalance and Vit-D deficiency.</td>
+          <td class="ar-td">اعتلال العظام الكلوي من اختلال الكالسيوم/الفوسفور ونقص فيتامين د.</td>
+        </tr>
+        <tr>
+          <td><strong>Metastatic Calcifications</strong></td>
+          <td>Calcium deposits in soft tissues (blood vessels, joints, organs).</td>
+          <td class="ar-td">ترسب الكالسيوم في الأنسجة الرخوة (الأوعية الدموية، المفاصل، الأعضاء).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 4 — TREATMENT
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-treatment">
+  <div class="sec-title">
+    <span class="icon">💊</span>
+    <div>
+      <div class="en">Pharmacologic &amp; Non-Pharmacologic Therapy</div>
+      <div class="ar">العلاج الدوائي وغير الدوائي</div>
+    </div>
+  </div>
+
+  <div class="tx-grid">
+    <div class="tx-item">
+      <div class="tx-head">🩺 Antihypertensive &amp; Cardiovascular Agents</div>
+      <div class="tx-ar">أدوية ضغط الدم والقلب والأوعية</div>
+      <p>Used to control blood pressure and reduce cardiac complications from fluid overload.</p>
+    </div>
+    <div class="tx-item">
+      <div class="tx-head">🫧 Antacids</div>
+      <div class="tx-ar">مضادات الحموضة</div>
+      <p>Used to manage GI symptoms such as nausea and to bind phosphate in the gut.</p>
+    </div>
+    <div class="tx-item">
+      <div class="tx-head">🔄 Dialysis</div>
+      <div class="tx-ar">غسيل الكلى (الديلزة)</div>
+      <p>Removes uremic waste and fluid when kidneys can no longer do so. Can be acute or chronic.</p>
+    </div>
+    <div class="tx-item">
+      <div class="tx-head">🥗 Dietary Intervention</div>
+      <div class="tx-ar">التدخل الغذائي</div>
+      <p>Restricts protein, sodium, potassium, and fluid intake to reduce kidney load and symptoms.</p>
+    </div>
+    <div class="tx-item">
+      <div class="tx-head">💉 Erythropoietin</div>
+      <div class="tx-ar">الإريثروبويتين</div>
+      <p>Administered to treat anemia caused by insufficient endogenous erythropoietin production.</p>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:24px;">
+    <span class="icon">🥗</span>
+    <div>
+      <div class="en">Nutritional &amp; Fluid Therapy for Dialysis Patients</div>
+      <div class="ar">العلاج الغذائي والسوائل لمرضى الديلزة</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>Restriction Type</th>
+          <th>English Guidance</th>
+          <th class="ar-th">التوجيه بالعربي</th>
+          <th>Amount / الكمية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🥩 Protein</strong></td>
+          <td>Restrict protein to reduce uremic waste production.</td>
+          <td class="ar-td">تقليل البروتين للحد من إنتاج النفايات البولية.</td>
+          <td><strong>1 g/kg/day</strong></td>
+        </tr>
+        <tr>
+          <td><strong>🧂 Sodium</strong></td>
+          <td>Reduce to control blood pressure and edema.</td>
+          <td class="ar-td">التخفيض للسيطرة على ضغط الدم والوذمة.</td>
+          <td><strong>2–3 g/day</strong></td>
+        </tr>
+        <tr>
+          <td><strong>💧 Fluid</strong></td>
+          <td>Restricted to prevent fluid overload between dialysis sessions.</td>
+          <td class="ar-td">تقييد لمنع الإفراط في السوائل بين جلسات الديلزة.</td>
+          <td><strong>Urine output + 500 ml/day</strong></td>
+        </tr>
+        <tr>
+          <td><strong>🍌 Potassium</strong></td>
+          <td>Control to prevent life-threatening hyperkalemia.</td>
+          <td class="ar-td">التحكم لمنع فرط بوتاسيوم الدم المهدد للحياة.</td>
+          <td><strong>1.5–2.5 g/day</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Dialysis types -->
+  <div class="sec-title" style="margin-top:24px;">
+    <span class="icon">🔄</span>
+    <div>
+      <div class="en">Dialysis — Acute vs. Chronic</div>
+      <div class="ar">الديلزة — الحادة مقابل المزمنة</div>
+    </div>
+  </div>
+  <div class="bi-card">
+    <div class="bi-body">
+      <div class="bi-col-en">
+        <span class="lang-label">English</span>
+        <p><strong>Acute Dialysis</strong> is indicated when there is:</p>
+        <ul>
+          <li>High serum potassium (hyperkalemia)</li>
+          <li>Fluid overload</li>
+          <li>Increasing acidosis</li>
+          <li>Severe confusion (uremia)</li>
+          <li>Poisoning or medication overdose</li>
+        </ul>
+        <br>
+        <p><strong>Chronic / Maintenance Dialysis</strong> is indicated in ESRD (end-stage renal disease) for long-term therapy.</p>
+      </div>
+      <div class="bi-col-ar">
+        <span class="lang-label">العربي</span>
+        <p><strong>الديلزة الحادة</strong> تُشار إليها عند وجود:</p>
+        <ul>
+          <li>ارتفاع شديد في البوتاسيوم</li>
+          <li>زيادة السوائل</li>
+          <li>تزايد الحماض</li>
+          <li>ارتباك شديد (بولينا)</li>
+          <li>التسمم أو جرعة زائدة من الأدوية</li>
+        </ul>
+        <br>
+        <p><strong>الديلزة المزمنة (الصيانة)</strong> تُشار إليها في الفشل الكلوي النهائي للعلاج طويل الأمد.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 5 — HEMODIALYSIS
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-hemodialysis">
+  <div class="sec-title">
+    <span class="icon">🔄</span>
+    <div>
+      <div class="en">Hemodialysis</div>
+      <div class="ar">الديلزة الدموية (غسيل الكلى)</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">What is Hemodialysis? <span class="ar">ما هي الديلزة الدموية؟</span></div>
+    <div class="bi-body">
+      <div class="bi-col-en">
+        <span class="lang-label">English</span>
+        <p>Hemodialysis is the <strong>most commonly used method of dialysis</strong>. It is used for:</p>
+        <ul>
+          <li>Acutely ill patients requiring short-term dialysis (days to weeks)</li>
+          <li>ESRD patients requiring long-term or permanent therapy</li>
+        </ul>
+        <p style="margin-top:8px;">During hemodialysis, the patient's blood is circulated through a dialyzer (artificial kidney) which filters out waste products and excess fluid before returning it to the body.</p>
+      </div>
+      <div class="bi-col-ar">
+        <span class="lang-label">العربي</span>
+        <p>الديلزة الدموية هي <strong>الطريقة الأكثر استخدامًا</strong> للديلزة. تُستخدم لـ:</p>
+        <ul>
+          <li>المرضى الحادين الذين يحتاجون ديلزة قصيرة الأمد (أيام إلى أسابيع)</li>
+          <li>مرضى الفشل الكلوي النهائي الذين يحتاجون علاجًا طويل الأمد أو دائمًا</li>
+        </ul>
+        <p style="margin-top:8px;">خلال الديلزة الدموية، يُدار دم المريض من خلال مُرشِّح (كلية اصطناعية) يُزيل النفايات والسوائل الزائدة قبل إعادتها للجسم.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:24px;">
+    <span class="icon">⚠️</span>
+    <div>
+      <div class="en">Complications of Hemodialysis</div>
+      <div class="ar">مضاعفات الديلزة الدموية</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>English Complication</th>
+          <th class="ar-th">المضاعفة بالعربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Atherosclerotic cardiovascular disease</td><td class="ar-td">تصلب الشرايين والأمراض القلبية الوعائية</td></tr>
+        <tr><td>2</td><td>Disturbances of lipid metabolism</td><td class="ar-td">اضطرابات استقلاب الدهون</td></tr>
+        <tr><td>3</td><td>Heart failure and angina pain</td><td class="ar-td">قصور القلب وآلام الذبحة الصدرية</td></tr>
+        <tr><td>4</td><td>Anemia and fatigue</td><td class="ar-td">فقر الدم والإرهاق</td></tr>
+        <tr><td>5</td><td>Increased dialyzer clotting</td><td class="ar-td">زيادة خثرة المرشح</td></tr>
+        <tr><td>6</td><td>Gastric ulcers and GI problems</td><td class="ar-td">قرحة المعدة ومشاكل الجهاز الهضمي</td></tr>
+        <tr><td>7</td><td>Renal osteodystrophy (bone pain &amp; fractures)</td><td class="ar-td">اعتلال عظام كلوي (ألم وكسور)</td></tr>
+        <tr><td>8</td><td>Malnutrition, infection, neuropathy, pruritus</td><td class="ar-td">سوء التغذية، عدوى، اعتلال أعصاب، حكة</td></tr>
+        <tr><td>9</td><td>Major sleep problems (up to 85% of patients)</td><td class="ar-td">مشاكل نوم كبيرة (حتى 85% من المرضى)</td></tr>
+        <tr><td>10</td><td>Hypotension during treatment</td><td class="ar-td">انخفاض ضغط الدم أثناء العلاج</td></tr>
+        <tr><td>11</td><td>Painful muscle cramping</td><td class="ar-td">تشنجات عضلية مؤلمة</td></tr>
+        <tr><td>12</td><td>Dysrhythmia (irregular heartbeat)</td><td class="ar-td">اضطراب نظم القلب</td></tr>
+        <tr><td>13</td><td>Chest pain (in patients with anemia)</td><td class="ar-td">ألم الصدر (لدى مرضى فقر الدم)</td></tr>
+        <tr><td>14</td><td>Acute allergic reaction and uremic pruritus</td><td class="ar-td">تفاعل تحسسي حاد وحكاك بولي</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-title" style="margin-top:24px;">
+    <span class="icon">👩‍⚕️</span>
+    <div>
+      <div class="en">Long-Term Management During Hemodialysis</div>
+      <div class="ar">الإدارة طويلة الأمد أثناء الديلزة الدموية</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-body">
+      <div class="bi-col-en">
+        <span class="lang-label">English</span>
+        <p>During dialysis, the <strong>patient, the dialyzer, and the dialysate bath require constant monitoring</strong> because numerous complications are possible.</p>
+        <p style="margin-top:8px;">The nurse has an important role in: <strong>monitoring, supporting, assessing, and educating</strong> the patient.</p>
+        <p style="margin-top:8px;"><strong>Pharmacological Therapy:</strong> Patients requiring medications (antibiotics, antiarrhythmics, antihypertensives) are closely monitored to ensure adequate blood and tissue levels <em>without toxic accumulation</em>.</p>
+      </div>
+      <div class="bi-col-ar">
+        <span class="lang-label">العربي</span>
+        <p>أثناء الديلزة، <strong>يحتاج المريض والمرشح ومحلول الديلزة إلى مراقبة مستمرة</strong> لأن مضاعفات عديدة محتملة.</p>
+        <p style="margin-top:8px;">دور الممرضة: <strong>مراقبة، دعم، تقييم، وتعليم</strong> المريض.</p>
+        <p style="margin-top:8px;"><strong>العلاج الدوائي:</strong> مرضى الديلزة الذين يتناولون أدوية (مضادات حيوية، مضادات اضطراب النظم، خافضات ضغط) يُراقَبون عن كثب لضمان مستويات كافية دون تراكم سام.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 6 — PERITONEAL DIALYSIS
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-peritoneal">
+  <div class="sec-title">
+    <span class="icon">🫁</span>
+    <div>
+      <div class="en">Peritoneal Dialysis</div>
+      <div class="ar">الديلزة البريتونية (غسيل الكلى البريتوني)</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">How Peritoneal Dialysis Works <span class="ar">كيف تعمل الديلزة البريتونية</span></div>
+    <div class="bi-body">
+      <div class="bi-col-en">
+        <span class="lang-label">English</span>
+        <p>In peritoneal dialysis, the <strong>peritoneum</strong> (a serous membrane covering abdominal organs) serves as the <strong>semipermeable membrane</strong>.</p>
+        <p style="margin-top:8px;">Sterile dialysate fluid is introduced into the <strong>peritoneal cavity through an abdominal catheter</strong> at intervals. Waste and excess fluid move across the peritoneum into the dialysate, which is then drained out.</p>
+        <p style="margin-top:8px;"><strong>Goals:</strong> Remove toxic substances, metabolic wastes, and re-establish normal fluid and electrolyte balance.</p>
+        <p style="margin-top:8px;"><strong>Indication:</strong> Patients with renal failure who are unable or unwilling to undergo hemodialysis or renal transplantation.</p>
+      </div>
+      <div class="bi-col-ar">
+        <span class="lang-label">العربي</span>
+        <p>في الديلزة البريتونية، يعمل <strong>الغشاء البريتوني</strong> (الغشاء المصلي المبطن للبطن) كـ<strong>غشاء شبه منفذ</strong>.</p>
+        <p style="margin-top:8px;">يُدخَل محلول ديلزة معقم إلى <strong>التجويف البريتوني عبر قسطرة بطنية</strong>. تنتقل النفايات والسوائل الزائدة عبر الغشاء إلى المحلول الذي يُسحب بعد ذلك.</p>
+        <p style="margin-top:8px;"><strong>الأهداف:</strong> إزالة المواد السامة والنفايات الاستقلابية وإعادة التوازن الطبيعي للسوائل والكهارل.</p>
+        <p style="margin-top:8px;"><strong>الإشارة:</strong> للمرضى غير القادرين أو الرافضين للخضوع للديلزة الدموية أو زرع الكلى.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:24px;">
+    <span class="icon">⚠️</span>
+    <div>
+      <div class="en">Complications of Peritoneal Dialysis</div>
+      <div class="ar">مضاعفات الديلزة البريتونية</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sym-table">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>English Details</th>
+          <th class="ar-th">التفاصيل بالعربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🔴 Peritonitis</strong></td>
+          <td>Inflammation of the peritoneum — most serious complication. Signs: fever, abdominal pain, cloudy dialysate.</td>
+          <td class="ar-td">التهاب الغشاء البريتوني — أخطر مضاعفة. العلامات: حمى، ألم بطني، محلول عكر.</td>
+        </tr>
+        <tr>
+          <td><strong>💧 Catheter Leakage</strong></td>
+          <td>Fluid leaking at the catheter insertion site.</td>
+          <td class="ar-td">تسرب السائل عند موقع إدخال القسطرة.</td>
+        </tr>
+        <tr>
+          <td><strong>🩸 Bleeding</strong></td>
+          <td>Bloody effluent in the drainage bag.</td>
+          <td class="ar-td">إفرازات دموية في كيس الصرف.</td>
+        </tr>
+        <tr>
+          <td><strong>🫃 Abdominal Hernia</strong></td>
+          <td>Hernia formation due to increased intra-abdominal pressure from dialysate.</td>
+          <td class="ar-td">تشكل فتق بسبب ارتفاع الضغط البطني الداخلي من محلول الديلزة.</td>
+        </tr>
+        <tr>
+          <td><strong>🧬 Hypertriglyceridemia</strong></td>
+          <td>High blood lipids; cholesterol buildup due to glucose absorption from dialysate.</td>
+          <td class="ar-td">ارتفاع دهنيات الدم؛ تراكم الكوليسترول بسبب امتصاص الجلوكوز من المحلول.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <strong>🔄 Exchange Process:</strong> Dialysate In (fill) → Dwell time (exchange) → Dialysate Out (drain). This cycle is repeated multiple times per day.
+    <div class="ar">
+      <strong>🔄 عملية التبادل:</strong> إدخال المحلول → وقت المكوث (التبادل) → إخراج المحلول. يُكرر هذا الدور عدة مرات يوميًا.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 7 — NURSING PROCESS
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-nursing">
+  <div class="sec-title">
+    <span class="icon">👩‍⚕️</span>
+    <div>
+      <div class="en">The Nursing Process for CKD / ESRD</div>
+      <div class="ar">العملية التمريضية لمرضى الفشل الكلوي</div>
+    </div>
+  </div>
+
+  <!-- STEP 1: ASSESSMENT -->
+  <div class="np-step np-s1">
+    <div class="np-step-head" onclick="toggleNP(this)">
+      <div class="step-num">1</div>
+      <div class="titles">
+        <div class="en-t">📋 Assessment / التقييم</div>
+        <div class="ar-t">جمع البيانات وتحديد المشكلات</div>
+      </div>
+      <div class="arrow">▶</div>
+    </div>
+    <div class="np-step-body">
+      <div class="bi-body">
+        <div class="bi-col-en">
+          <span class="lang-label">English</span>
+          <ul>
+            <li><strong>Cardiovascular:</strong> Monitor BP, pulse, edema, JVD, heart sounds (friction rub), heart failure signs</li>
+            <li><strong>Neurologic:</strong> Level of consciousness, orientation, tremors, seizures, behavior changes</li>
+            <li><strong>Respiratory:</strong> Rate, breath sounds (crackles), shortness of breath, SpO₂</li>
+            <li><strong>GI:</strong> Appetite, nausea/vomiting, bowel habits, breath odor</li>
+            <li><strong>Skin:</strong> Color, turgor, pruritus, uremic frost, edema sites</li>
+            <li><strong>Labs:</strong> BUN, creatinine, GFR, electrolytes (K⁺, Na⁺, Ca²⁺, PO₄), CBC, ABG</li>
+            <li><strong>Fluid Balance:</strong> Strict I&amp;O, daily weight, urine output</li>
+            <li><strong>Vascular Access:</strong> Patency of AV fistula/graft (bruit &amp; thrill)</li>
+            <li><strong>Psychosocial:</strong> Coping ability, support system, knowledge level, self-esteem</li>
+          </ul>
+        </div>
+        <div class="bi-col-ar">
+          <span class="lang-label">العربي</span>
+          <ul>
+            <li><strong>قلبي وعائي:</strong> مراقبة ضغط الدم، النبض، الوذمة، احتقان أوردة الرقبة، أصوات القلب، علامات قصور القلب</li>
+            <li><strong>عصبي:</strong> مستوى الوعي، التوجه، الرعشة، التشنجات، تغيرات السلوك</li>
+            <li><strong>تنفسي:</strong> معدل التنفس، أصوات الرئة (خشخشة)، ضيق التنفس، تشبع الأكسجين</li>
+            <li><strong>هضمي:</strong> الشهية، الغثيان/القيء، عادات الأمعاء، رائحة النفس</li>
+            <li><strong>جلدي:</strong> اللون، المرونة، الحكاك، الصقيع البولي، مواقع الوذمة</li>
+            <li><strong>مختبر:</strong> بولينا، كرياتينين، معدل الترشيح، كهارل، صورة دم، غازات الدم</li>
+            <li><strong>توازن السوائل:</strong> قياس الوارد والصادر بدقة، الوزن اليومي، إدرار البول</li>
+            <li><strong>منفذ الوصول الوعائي:</strong> انسياب الفيستولا (نفخة وارتعاش)</li>
+            <li><strong>نفسي اجتماعي:</strong> القدرة على التأقلم، نظام الدعم، مستوى المعرفة، احترام الذات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: NURSING DIAGNOSES -->
+  <div class="np-step np-s2">
+    <div class="np-step-head" onclick="toggleNP(this)">
+      <div class="step-num">2</div>
+      <div class="titles">
+        <div class="en-t">🏥 Nursing Diagnoses / التشخيصات التمريضية</div>
+        <div class="ar-t">تحديد المشكلات التمريضية</div>
+      </div>
+      <div class="arrow">▶</div>
+    </div>
+    <div class="np-step-body">
+      <div style="overflow-x:auto;">
+        <table class="sym-table" style="margin-bottom:0">
+          <thead><tr><th>#</th><th>Nursing Diagnosis (English)</th><th class="ar-th">التشخيص التمريضي (عربي)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Excess fluid volume</strong> related to decreased urine output and retention of sodium and water</td><td class="ar-td">زيادة حجم السوائل المرتبطة بانخفاض إدرار البول واحتباس الصوديوم والماء</td></tr>
+            <tr><td>2</td><td><strong>Imbalanced nutrition: less than body requirements</strong> related to anorexia, nausea and vomiting</td><td class="ar-td">عدم توازن التغذية: أقل من متطلبات الجسم، مرتبط بفقدان الشهية والغثيان والقيء</td></tr>
+            <tr><td>3</td><td><strong>Deficient knowledge</strong> regarding condition and treatment regimen</td><td class="ar-td">نقص المعرفة بالحالة ونظام العلاج</td></tr>
+            <tr><td>4</td><td><strong>Activity intolerance</strong> related to fatigue, anemia, and dialysis procedure</td><td class="ar-td">عدم تحمل النشاط المرتبط بالإرهاق وفقر الدم وإجراء الديلزة</td></tr>
+            <tr><td>5</td><td><strong>Low self-esteem</strong> related to dependency</td><td class="ar-td">تدني احترام الذات المرتبط بالاعتمادية</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: PLANNING -->
+  <div class="np-step np-s3">
+    <div class="np-step-head" onclick="toggleNP(this)">
+      <div class="step-num">3</div>
+      <div class="titles">
+        <div class="en-t">🎯 Planning &amp; Goals / التخطيط والأهداف</div>
+        <div class="ar-t">تحديد النتائج المتوقعة</div>
+      </div>
+      <div class="arrow">▶</div>
+    </div>
+    <div class="np-step-body">
+      <div class="bi-body">
+        <div class="bi-col-en">
+          <span class="lang-label">English</span>
+          <p>The health care team's goal in treating patients with chronic renal failure is to <strong>maximize their vocational potential, functional status, and quality of life</strong>.</p>
+          <p style="margin-top:8px;"><strong>Expected outcomes include:</strong></p>
+          <ul>
+            <li>Fluid balance maintained (no signs of overload)</li>
+            <li>Adequate nutritional intake maintained</li>
+            <li>Patient demonstrates understanding of disease and treatment</li>
+            <li>Patient tolerates activities with minimal fatigue</li>
+            <li>Patient expresses improved self-esteem and coping</li>
+            <li>Complications detected early and managed promptly</li>
+          </ul>
+        </div>
+        <div class="bi-col-ar">
+          <span class="lang-label">العربي</span>
+          <p>هدف الفريق الصحي في علاج مرضى الفشل الكلوي المزمن هو <strong>تعظيم الإمكانات المهنية والحالة الوظيفية وجودة الحياة</strong>.</p>
+          <p style="margin-top:8px;"><strong>النتائج المتوقعة تشمل:</strong></p>
+          <ul>
+            <li>الحفاظ على توازن السوائل (لا علامات للزيادة)</li>
+            <li>الحفاظ على تغذية كافية</li>
+            <li>المريض يفهم المرض والعلاج</li>
+            <li>المريض يتحمل الأنشطة مع أدنى إرهاق</li>
+            <li>المريض يُعبر عن تحسين احترام الذات والتأقلم</li>
+            <li>الكشف المبكر عن المضاعفات وإدارتها فورًا</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: IMPLEMENTATION -->
+  <div class="np-step np-s4">
+    <div class="np-step-head" onclick="toggleNP(this)">
+      <div class="step-num">4</div>
+      <div class="titles">
+        <div class="en-t">🛠️ Implementation / التنفيذ التمريضي</div>
+        <div class="ar-t">التدخلات التمريضية</div>
+      </div>
+      <div class="arrow">▶</div>
+    </div>
+    <div class="np-step-body">
+      <div style="padding:16px 18px;">
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">🩺 Protecting the Vascular Access <span class="ar">حماية منفذ الوصول الوعائي</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Assess vascular access for patency regularly</li>
+                <li><strong>Do NOT</strong> use the access extremity for BP measurement or blood draws</li>
+                <li>Avoid tight dressings, restraints, or jewelry over the access site</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>تقييم منفذ الوصول الوعائي بانتظام للتحقق من انسيابه</li>
+                <li><strong>لا تستخدم</strong> الطرف الذي به المنفذ لقياس الضغط أو سحب الدم</li>
+                <li>تجنب الضمادات الضيقة أو القيود أو المجوهرات على موقع المنفذ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">💉 IV Therapy Precautions <span class="ar">احتياطات العلاج الوريدي</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Administer IV fluids as slowly as possible</li>
+                <li>Use a volumetric infusion pump for strict control</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>إعطاء السوائل الوريدية ببطء قدر الإمكان</li>
+                <li>استخدام مضخة ضخ حجمية للتحكم الدقيق</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">🧪 Monitoring Uremia Symptoms <span class="ar">مراقبة أعراض البولينا</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>As metabolic end-products accumulate, uremic symptoms worsen</li>
+                <li>Patients on corticosteroids, parenteral nutrition, or with infections accumulate waste faster → may need daily dialysis</li>
+                <li>These patients are at higher risk for complications</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>مع تراكم نواتج الاستقلاب، تتفاقم أعراض البولينا</li>
+                <li>مرضى الكورتيزون، التغذية الوريدية، أو العدوى يتراكم لديهم النفايات بشكل أسرع → قد يحتاجون ديلزة يومية</li>
+                <li>هؤلاء المرضى معرضون أكثر للمضاعفات</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">❤️ Detecting Cardiac &amp; Respiratory Complications <span class="ar">الكشف عن مضاعفات قلبية وتنفسية</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Conduct frequent cardiac and respiratory assessments</li>
+                <li>As fluid builds up → fluid overload → heart failure → pulmonary edema</li>
+                <li>Crackles at lung bases = pulmonary edema sign</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>إجراء تقييمات قلبية وتنفسية متكررة</li>
+                <li>مع تراكم السوائل → زيادة حجم السوائل → قصور قلب → وذمة رئوية</li>
+                <li>خشخشة في قاعدة الرئتين = علامة الوذمة الرئوية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">⚗️ Controlling Electrolyte Levels <span class="ar">التحكم في مستويات الكهارل</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Electrolyte alterations are common; potassium changes can be <strong>life-threatening</strong></li>
+                <li>Evaluate all IV solutions and medications for electrolyte content</li>
+                <li>Assess serum laboratory values <strong>daily</strong></li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>تغيرات الكهارل شائعة؛ تغيرات البوتاسيوم <strong>تهدد الحياة</strong></li>
+                <li>تقييم جميع المحاليل الوريدية والأدوية لمحتواها من الكهارل</li>
+                <li>قياس مستويات المختبر <strong>يوميًا</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">💊 Managing Discomfort &amp; Pain <span class="ar">إدارة عدم الراحة والألم</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Manage pruritus (itching) and neuropathic pain</li>
+                <li>Antihistamine agents commonly used for pruritus</li>
+                <li>Analgesic medications may be prescribed</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>إدارة الحكاك وألم الاعتلال العصبي</li>
+                <li>مضادات الهيستامين شائعة الاستخدام للحكاك</li>
+                <li>يمكن وصف مسكنات الألم</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:14px;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">🩺 Monitoring Blood Pressure <span class="ar">مراقبة ضغط الدم</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Hypertension in renal failure is common; usually due to fluid overload</li>
+                <li>Many dialysis patients receive antihypertensive therapy</li>
+                <li>Require intense teaching about purpose and adverse effects of medications</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>ارتفاع ضغط الدم شائع في الفشل الكلوي، عادةً بسبب زيادة السوائل</li>
+                <li>كثير من مرضى الديلزة يتلقون علاجًا خافضًا للضغط</li>
+                <li>يحتاجون تعليمًا مكثفًا عن الغرض والآثار الجانبية للأدوية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bi-card" style="margin-bottom:0;box-shadow:none;">
+          <div class="bi-card-header" style="background:#d35400;">🤝 Meeting Psychosocial Needs <span class="ar">تلبية الاحتياجات النفسية الاجتماعية</span></div>
+          <div class="bi-body">
+            <div class="bi-col-en">
+              <ul>
+                <li>Give patient and family the opportunity to express feelings of anger and concern</li>
+                <li>Address limitations imposed by disease, financial problems, and job insecurity</li>
+                <li>Counseling and psychotherapy may be necessary</li>
+                <li>Help patient identify safe, effective coping strategies</li>
+              </ul>
+            </div>
+            <div class="bi-col-ar">
+              <ul>
+                <li>إتاحة الفرصة للمريض وعائلته للتعبير عن مشاعر الغضب والقلق</li>
+                <li>معالجة القيود التي يفرضها المرض والمشاكل المالية وعدم الأمان الوظيفي</li>
+                <li>قد تكون الاستشارة والعلاج النفسي ضرورية</li>
+                <li>مساعدة المريض في تحديد استراتيجيات تأقلم آمنة وفعالة</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5: EVALUATION -->
+  <div class="np-step np-s5">
+    <div class="np-step-head" onclick="toggleNP(this)">
+      <div class="step-num">5</div>
+      <div class="titles">
+        <div class="en-t">✅ Evaluation / التقييم والمتابعة</div>
+        <div class="ar-t">تقييم النتائج ومتابعة المريض</div>
+      </div>
+      <div class="arrow">▶</div>
+    </div>
+    <div class="np-step-body">
+      <div class="bi-body">
+        <div class="bi-col-en">
+          <span class="lang-label">English</span>
+          <p><strong>Continuing Care Goal:</strong> Maximize the patient's vocational potential, functional status, and quality of life.</p>
+          <p style="margin-top:8px;"><strong>Evaluate that:</strong></p>
+          <ul>
+            <li>Fluid balance is maintained; no signs of overload or dehydration</li>
+            <li>Nutritional status is adequate; anorexia controlled</li>
+            <li>Patient demonstrates understanding of disease, dietary restrictions, medications, and access care</li>
+            <li>Activity tolerance has improved; fatigue is manageable</li>
+            <li>Patient demonstrates positive coping mechanisms and improved self-esteem</li>
+            <li>Complications (hyperkalemia, pericarditis, infection) are identified and managed promptly</li>
+            <li>BP is within acceptable range; antihypertensives are effective</li>
+            <li>Vascular access remains patent and complication-free</li>
+          </ul>
+        </div>
+        <div class="bi-col-ar">
+          <span class="lang-label">العربي</span>
+          <p><strong>هدف الرعاية المستمرة:</strong> تعظيم الإمكانات المهنية والحالة الوظيفية وجودة حياة المريض.</p>
+          <p style="margin-top:8px;"><strong>يتم تقييم:</strong></p>
+          <ul>
+            <li>الحفاظ على توازن السوائل؛ لا علامات لزيادتها أو جفاف</li>
+            <li>الحالة الغذائية كافية؛ فقدان الشهية مسيطر عليه</li>
+            <li>المريض يُظهر فهم المرض، القيود الغذائية، الأدوية، ورعاية المنفذ</li>
+            <li>تحسن في تحمل النشاط؛ الإرهاق قابل للإدارة</li>
+            <li>المريض يُظهر آليات تأقلم إيجابية وتحسن في احترام الذات</li>
+            <li>المضاعفات (فرط البوتاسيوم، التهاب التامور، العدوى) تُحدد وتُعالج فورًا</li>
+            <li>ضغط الدم ضمن النطاق المقبول؛ الخافضات فعّالة</li>
+            <li>منفذ الوصول الوعائي لا يزال سليمًا وخاليًا من المضاعفات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 8 — QUIZ
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="sec-title">
+    <span class="icon">📝</span>
+    <div>
+      <div class="en">Self-Test Quiz — 20 Questions</div>
+      <div class="ar">اختبر نفسك — ٢٠ سؤال</div>
+    </div>
+  </div>
+
+  <div class="quiz-container">
+    <div class="quiz-progress-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-weight:600;color:var(--primary);">Progress / التقدم</span>
+        <span id="progressText" style="font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--text-muted);">0 / 20 answered</span>
+      </div>
+      <div class="quiz-progress-bar-bg">
+        <div class="quiz-progress-bar" id="progressBar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div id="quizArea"></div>
+
+    <div class="quiz-score-box" id="scoreBox">
+      <div class="score-big" id="scoreBig">0/20</div>
+      <div class="score-label" id="scoreLabel">اكتملت!</div>
+      <button class="retry-btn" onclick="resetQuiz()">🔄 Try Again / حاول مرة أخرى</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  📚 Urology Nursing — Chronic Kidney Disease &amp; Dialysis | تمريض المسالك البولية — الفشل الكلوي المزمن والديلزة
+</footer>
+
+<script>
+// ── TAB SWITCHING ──
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── NURSING PROCESS ACCORDION ──
+function toggleNP(head) {
+  const body = head.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  head.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+// Open first NP step by default when tab shown
+document.querySelector('.np-step-head').click();
+
+// ── QUIZ DATA ──
+const questions = [
+  {
+    en: "In Stage 1 of CKD (Reduced Renal Reserve), what percentage of nephron loss has occurred?",
+    ar: "في المرحلة الأولى من الفشل الكلوي المزمن (احتياطي كلوي مخفَّض)، ما نسبة فقدان النيفرونات؟",
+    options: ["A) 10–30%", "B) 40–75%", "C) 75–90%", "D) More than 90%"],
+    answer: 1,
+    expEn: "Stage 1 (Reduced Renal Reserve) involves 40–75% nephron loss. Despite this significant loss, the remaining nephrons compensate and there are NO symptoms at this stage.",
+    expAr: "المرحلة الأولى تشمل فقدان 40–75% من النيفرونات. رغم هذا الفقدان، تعوّض النيفرونات المتبقية ولا توجد أعراض."
+  },
+  {
+    en: "Which stage of CKD requires dialysis or transplant?",
+    ar: "أي مرحلة من مراحل الفشل الكلوي تستلزم الديلزة أو زرع الكلى؟",
+    options: ["A) Stage 1", "B) Stage 2", "C) Stage 3 (ESRD)", "D) None of the above"],
+    answer: 2,
+    expEn: "Stage 3 is End-Stage Renal Disease (ESRD), where nephron function is less than 10%. Toxin build-up (uremia) occurs and life-sustaining therapy (dialysis or transplant) is required.",
+    expAr: "المرحلة الثالثة هي الفشل الكلوي النهائي حيث وظيفة النيفرونات أقل من 10%، ويتراكم السموم (بولينا). يتطلب علاجًا مداومًا (ديلزة أو زرع)."
+  },
+  {
+    en: "A patient with ESRD has gray-bronze skin, dry skin, and severe itching. Which system is affected?",
+    ar: "مريض فشل كلوي نهائي لديه جلد رمادي برونزي وجاف وحكة شديدة. أي جهاز متأثر؟",
+    options: ["A) Cardiovascular", "B) Neurologic", "C) Integumentary", "D) Pulmonary"],
+    answer: 2,
+    expEn: "The integumentary (skin) system manifestations of ESRD include gray-bronze skin color, dry skin, pruritus (itching), purpura, thin/brittle nails, thinning hair, and uremic frost.",
+    expAr: "مظاهر الجهاز الجلدي في الفشل الكلوي النهائي تشمل لون الجلد الرمادي البرونزي، الجلد الجاف، الحكاك، الفرفرية، الأظافر الهشة، تساقط الشعر، والصقيع البولي."
+  },
+  {
+    en: "Hypertension in renal failure is MOST commonly due to:",
+    ar: "ارتفاع ضغط الدم في الفشل الكلوي يرجع في المقام الأول إلى:",
+    options: ["A) Increased erythropoietin", "B) Sodium and water retention / fluid overload", "C) Hypocalcemia", "D) Decreased BUN"],
+    answer: 1,
+    expEn: "Hypertension in ESRD is usually the result of fluid overload (sodium and water retention). This increases cardiac preload and blood pressure. It can also worsen kidney damage.",
+    expAr: "ارتفاع ضغط الدم في الفشل الكلوي النهائي ناتج عادةً عن الزيادة في حجم السوائل (احتباس الصوديوم والماء)، مما يزيد الحِمل القلبي المسبق."
+  },
+  {
+    en: "Which finding would BEST detect a decreased GFR in CKD?",
+    ar: "أي إجراء تشخيصي يكتشف انخفاض معدل الترشيح الكبيبي (GFR)؟",
+    options: ["A) Chest X-ray", "B) 24-hour urinalysis for creatinine clearance", "C) ECG", "D) MRI of kidneys"],
+    answer: 1,
+    expEn: "A 24-hour urinalysis for creatinine clearance is the standard test to detect decreased GFR. It measures how much creatinine the kidneys filter from blood in 24 hours.",
+    expAr: "تحليل البول لمدة 24 ساعة لقياس تصفية الكرياتينين هو الاختبار المعياري لاكتشاف انخفاض معدل الترشيح الكبيبي."
+  },
+  {
+    en: "Anemia in ESRD develops primarily because of:",
+    ar: "ينشأ فقر الدم في الفشل الكلوي النهائي بشكل رئيسي بسبب:",
+    options: ["A) Excess erythropoietin production", "B) Inadequate erythropoietin production and nutritional deficiencies", "C) Increased platelet count", "D) Hypokalemia"],
+    answer: 1,
+    expEn: "Anemia in ESRD develops because of inadequate erythropoietin production (the kidneys produce erythropoietin which stimulates RBC production) and nutritional deficiencies. Treatment: exogenous erythropoietin.",
+    expAr: "فقر الدم ينشأ بسبب نقص إنتاج الإريثروبويتين (الكلى تنتجه لتحفيز إنتاج خلايا الدم الحمراء) والنقص الغذائي. العلاج: إعطاء إريثروبويتين خارجي."
+  },
+  {
+    en: "Which complication of ESRD is described as 'inflammation of the pericardium'?",
+    ar: "أي مضاعفة من مضاعفات الفشل الكلوي النهائي هي 'التهاب التامور'؟",
+    options: ["A) Pericarditis", "B) Pulmonary edema", "C) Peritonitis", "D) Osteodystrophy"],
+    answer: 0,
+    expEn: "Pericarditis is the inflammation of the pericardium (the sac around the heart) due to uremic toxin accumulation. It presents with chest pain, fever, and a pericardial friction rub.",
+    expAr: "التهاب التامور هو التهاب الكيس المحيط بالقلب بسبب تراكم السموم البولية. يظهر بألم صدري وحمى وصوت احتكاك تاموري."
+  },
+  {
+    en: "Hemodialysis is the MOST commonly used method of dialysis. It is used for patients:",
+    ar: "الديلزة الدموية هي الأكثر استخدامًا. تُستخدم للمرضى:",
+    options: [
+      "A) Who are stable and can do dialysis at home only",
+      "B) Who are acutely ill (short-term) OR have ESRD (long-term/permanent)",
+      "C) Only for chronic kidney disease Stage 1",
+      "D) Only for poisoning cases"
+    ],
+    answer: 1,
+    expEn: "Hemodialysis is used for acutely ill patients requiring short-term dialysis (days to weeks) AND for ESRD patients requiring long-term or permanent therapy. It is the most common dialysis method.",
+    expAr: "تُستخدم الديلزة الدموية للمرضى الحادين (ديلزة قصيرة الأمد) وللمرضى المصابين بالفشل الكلوي النهائي (ديلزة طويلة الأمد أو دائمة)."
+  },
+  {
+    en: "During hemodialysis, hypotension most commonly occurs because of:",
+    ar: "أثناء الديلزة الدموية، ينخفض ضغط الدم بشكل رئيسي بسبب:",
+    options: ["A) Excessive fluid gain between sessions", "B) Rapid fluid removal during the dialysis treatment", "C) Increased potassium levels", "D) High protein intake"],
+    answer: 1,
+    expEn: "Hypotension during hemodialysis occurs most commonly due to rapid fluid removal (ultrafiltration) during treatment. This reduces blood volume quickly, dropping blood pressure.",
+    expAr: "انخفاض ضغط الدم أثناء الديلزة الدموية يحدث بشكل رئيسي بسبب سحب السوائل السريع (الترشيح الفائق) أثناء الجلسة، مما يقلل حجم الدم بسرعة."
+  },
+  {
+    en: "In peritoneal dialysis, which structure serves as the semipermeable membrane?",
+    ar: "في الديلزة البريتونية، أي بنية تعمل كغشاء شبه منفذ؟",
+    options: ["A) The pleura", "B) The peritoneum", "C) The glomerulus", "D) The renal capsule"],
+    answer: 1,
+    expEn: "In peritoneal dialysis, the peritoneum (the serous membrane lining the abdominal cavity) serves as the semipermeable membrane. Sterile dialysate is introduced into the peritoneal cavity through an abdominal catheter.",
+    expAr: "في الديلزة البريتونية، يعمل الغشاء البريتوني (الغشاء المصلي المبطن للتجويف البطني) كغشاء شبه منفذ. يُدخَل محلول ديلزة معقم عبر قسطرة بطنية."
+  },
+  {
+    en: "The MOST serious complication of peritoneal dialysis is:",
+    ar: "أخطر مضاعفة في الديلزة البريتونية هي:",
+    options: ["A) Hypertriglyceridemia", "B) Abdominal hernia", "C) Peritonitis", "D) Catheter leakage"],
+    answer: 2,
+    expEn: "Peritonitis (inflammation of the peritoneum) is the most serious complication of peritoneal dialysis. It presents with fever, abdominal pain, and cloudy dialysate effluent. It requires immediate treatment with antibiotics.",
+    expAr: "التهاب الغشاء البريتوني هو أخطر مضاعفات الديلزة البريتونية. يظهر بحمى وألم بطني ومحلول عكر ويتطلب علاجًا فوريًا بالمضادات الحيوية."
+  },
+  {
+    en: "Which nursing action is ESSENTIAL for protecting a patient's vascular access (AV fistula)?",
+    ar: "أي إجراء تمريضي ضروري لحماية منفذ الوصول الوعائي (الفيستولا)؟",
+    options: [
+      "A) Use the access arm for all blood draws",
+      "B) Apply tight bandages to the access site",
+      "C) Avoid using the access extremity for BP measurement or blood draws",
+      "D) Keep the access site constantly covered with a warm compress"
+    ],
+    answer: 2,
+    expEn: "The nurse MUST avoid using the extremity with vascular access for BP measurement or blood draws. Tight dressings, restraints, or jewelry over the access site must also be avoided to maintain patency.",
+    expAr: "يجب على الممرضة تجنب استخدام الطرف الذي يحمل منفذ الوصول الوعائي لقياس الضغط أو سحب الدم. كما يجب تجنب الضمادات الضيقة أو القيود أو المجوهرات للحفاظ على انسيابه."
+  },
+  {
+    en: "Acute dialysis is indicated in all of the following EXCEPT:",
+    ar: "تُشار الديلزة الحادة في جميع الحالات التالية ما عدا:",
+    options: [
+      "A) High serum potassium (hyperkalemia)",
+      "B) Fluid overload",
+      "C) Stage 1 CKD with no symptoms",
+      "D) Severe confusion due to uremia"
+    ],
+    answer: 2,
+    expEn: "Acute dialysis is indicated for hyperkalemia, fluid overload, increasing acidosis, severe confusion (uremia), and poisoning/overdose. Stage 1 CKD has no symptoms and does NOT require dialysis.",
+    expAr: "تُشار الديلزة الحادة لفرط البوتاسيوم، زيادة السوائل، الحماض المتصاعد، الارتباك الشديد (البولينا)، والتسمم. المرحلة الأولى من الفشل الكلوي لا أعراض لها ولا تحتاج ديلزة."
+  },
+  {
+    en: "A CKD patient complains of burning in the soles of their feet and restlessness of legs. These symptoms indicate involvement of which system?",
+    ar: "مريض فشل كلوي يشكو من حرقان في باطن القدمين وتململ في الساقين. هذه الأعراض تدل على تأثر أي جهاز؟",
+    options: ["A) Integumentary", "B) Musculoskeletal", "C) Neurologic", "D) Cardiovascular"],
+    answer: 2,
+    expEn: "Burning of soles of feet, restlessness of legs, weakness, inability to concentrate, tremors, and seizures are all neurologic manifestations of ESRD caused by uremic toxin accumulation affecting the nervous system.",
+    expAr: "حرقان باطن القدمين، تململ الساقين، الضعف، عدم التركيز، الرعشة، والتشنجات كلها مظاهر عصبية للفشل الكلوي النهائي ناجمة عن تراكم السموم البولية."
+  },
+  {
+    en: "Which dietary restriction amount for POTASSIUM is correct for dialysis patients?",
+    ar: "ما الكمية الصحيحة لتقييد البوتاسيوم في المرضى الذين يخضعون للديلزة؟",
+    options: ["A) 0.5–1 g/day", "B) 1.5–2.5 g/day", "C) 3–4 g/day", "D) 5–6 g/day"],
+    answer: 1,
+    expEn: "Potassium is restricted to 1.5–2.5 g/day for dialysis patients to prevent life-threatening hyperkalemia. Hyperkalemia can cause fatal cardiac arrhythmias and dysrhythmias.",
+    expAr: "يُقيَّد البوتاسيوم إلى 1.5–2.5 غ/يوم لمرضى الديلزة لمنع فرط البوتاسيوم المهدد للحياة الذي قد يسبب اضطرابات نظم قلبية مميتة."
+  },
+  {
+    en: "The nursing diagnosis 'Excess fluid volume related to decreased urine output and sodium/water retention' — which intervention is MOST appropriate?",
+    ar: "التشخيص التمريضي 'زيادة حجم السوائل المرتبطة بانخفاض إدرار البول واحتباس الصوديوم والماء' — أي تدخل تمريضي هو الأنسب؟",
+    options: [
+      "A) Encourage high fluid intake",
+      "B) Monitor strict I&O, daily weight, restrict sodium and fluid intake",
+      "C) Administer high-sodium IV fluids",
+      "D) Increase protein diet"
+    ],
+    answer: 1,
+    expEn: "For excess fluid volume, the nurse should: monitor strict intake and output, weigh daily, restrict sodium (2–3 g/day) and fluid intake (urine output + 500 ml/day), and monitor for signs of edema and heart failure.",
+    expAr: "لزيادة حجم السوائل، يجب على الممرضة: مراقبة الوارد والصادر بدقة، الوزن اليومي، تقييد الصوديوم (2–3 غ/يوم) والسوائل (إدرار البول + 500 مل/يوم)، ومراقبة علامات الوذمة وقصور القلب."
+  },
+  {
+    en: "A patient on hemodialysis develops crackles at lung bases, dyspnea, and pitting edema. The nurse should suspect:",
+    ar: "مريض تحت الديلزة الدموية يطور خشخشة في قاعدة الرئتين وضيق تنفس ووذمة نضحية. ماذا تشك الممرضة؟",
+    options: ["A) Uremic pneumonitis only", "B) Pulmonary edema from fluid overload / heart failure", "C) Pneumonia from infection", "D) Acute allergic reaction"],
+    answer: 1,
+    expEn: "Crackles at lung bases, dyspnea, and pitting edema indicate pulmonary edema from fluid overload progressing to heart failure. Frequent cardiac and respiratory assessment is essential in dialysis patients.",
+    expAr: "خشخشة قاعدة الرئتين وضيق التنفس والوذمة النضحية تدل على وذمة رئوية من زيادة حجم السوائل مؤدية إلى قصور القلب. التقييم القلبي والتنفسي المتكرر ضروري في مرضى الديلزة."
+  },
+  {
+    en: "Why is erythropoietin administered to ESRD patients?",
+    ar: "لماذا يُعطى الإريثروبويتين لمرضى الفشل الكلوي النهائي؟",
+    options: [
+      "A) To treat hypertension",
+      "B) To treat anemia caused by insufficient erythropoietin production",
+      "C) To reduce uremic toxins",
+      "D) To prevent peritonitis"
+    ],
+    answer: 1,
+    expEn: "Erythropoietin is administered to treat anemia in ESRD patients. The failing kidneys cannot produce sufficient erythropoietin (needed to stimulate RBC production), leading to anemia. Exogenous erythropoietin replaces this deficit.",
+    expAr: "يُعطى الإريثروبويتين لعلاج فقر الدم في مرضى الفشل الكلوي النهائي. الكلى الفاشلة لا تنتج كميات كافية من الإريثروبويتين (اللازم لتحفيز إنتاج خلايا الدم الحمراء)، مما يسبب فقر الدم."
+  },
+  {
+    en: "Which of the following is a NEUROLOGIC manifestation of ESRD?",
+    ar: "أي مما يلي هو مظهر عصبي للفشل الكلوي النهائي؟",
+    options: ["A) Pitting edema", "B) Pruritus", "C) Seizures and altered level of consciousness", "D) Anorexia and nausea"],
+    answer: 2,
+    expEn: "Neurologic manifestations of ESRD include: weakness, fatigue, inability to concentrate, disorientation, tremors, seizures, restlessness of legs, burning of soles of feet, and behavior changes — all caused by uremic neurotoxicity.",
+    expAr: "المظاهر العصبية للفشل الكلوي النهائي تشمل: ضعف، إرهاق، عدم التركيز، توهان، رعشة، تشنجات، تململ الساقين، حرقان باطن القدمين، وتغيرات سلوكية — كلها ناجمة عن سمية البولينا العصبية."
+  },
+  {
+    en: "The MAIN goal of the healthcare team for a patient with chronic renal failure is:",
+    ar: "الهدف الرئيسي للفريق الصحي في علاج مريض الفشل الكلوي المزمن هو:",
+    options: [
+      "A) Complete cure of the kidney disease",
+      "B) Prevent all complications permanently",
+      "C) Maximize vocational potential, functional status, and quality of life",
+      "D) Achieve normal GFR through medication only"
+    ],
+    answer: 2,
+    expEn: "The healthcare team's goal is to maximize the patient's vocational potential, functional status, and quality of life. CKD is a chronic, progressive, and irreversible condition — the focus is on quality of life and minimizing complications.",
+    expAr: "هدف الفريق الصحي هو تعظيم الإمكانات المهنية والحالة الوظيفية وجودة حياة المريض. الفشل الكلوي المزمن حالة مزمنة تقدمية وغير عكسية — التركيز على جودة الحياة والتقليل من المضاعفات."
+  }
+];
+
+let answered = new Array(20).fill(false);
+let correctCount = 0;
+
+function buildQuiz() {
+  const area = document.getElementById('quizArea');
+  area.innerHTML = '';
+  questions.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-' + i;
+
+    const optionsHtml = q.options.map((opt, j) => `
+      <button class="option-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">${opt}</button>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-head">
+        <div class="q-num">${i + 1}</div>
+        <div class="q-text">
+          ${q.en}
+          <span class="ar-q">${q.ar}</span>
+        </div>
+      </div>
+      <div class="q-body">
+        ${optionsHtml}
+        <div class="explanation" id="exp-en-${i}">
+          <strong>✅ Explanation:</strong> ${q.expEn}
+        </div>
+        <div class="explanation ar-exp" id="exp-ar-${i}">
+          <strong>✅ الشرح:</strong> ${q.expAr}
+        </div>
+      </div>
+    `;
+    area.appendChild(card);
+  });
+}
+
+function selectAnswer(qi, chosen) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+
+  const q = questions[qi];
+  for (let j = 0; j < q.options.length; j++) {
+    const btn = document.getElementById(`opt-${qi}-${j}`);
+    btn.disabled = true;
+    if (j === q.answer) btn.classList.add('correct');
+    else if (j === chosen) btn.classList.add('wrong');
+  }
+
+  if (chosen === q.answer) correctCount++;
+
+  document.getElementById(`exp-en-${qi}`).classList.add('show');
+  document.getElementById(`exp-ar-${qi}`).classList.add('show');
+
+  const doneCount = answered.filter(Boolean).length;
+  document.getElementById('progressText').textContent = `${doneCount} / 20 answered`;
+  document.getElementById('progressBar').style.width = (doneCount / 20 * 100) + '%';
+
+  if (doneCount === 20) {
+    const score = document.getElementById('scoreBox');
+    score.classList.add('show');
+    document.getElementById('scoreBig').textContent = correctCount + '/20';
+    const pct = Math.round(correctCount / 20 * 100);
+    let grade = pct >= 90 ? '🏆 Excellent! ممتاز!' : pct >= 70 ? '👍 Good! جيد!' : pct >= 50 ? '📚 Keep studying! راجع المحتوى!' : '💪 Try again! حاول مرة أخرى!';
+    document.getElementById('scoreLabel').textContent = `${pct}% — ${grade}`;
+    score.scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz() {
+  answered = new Array(20).fill(false);
+  correctCount = 0;
+  document.getElementById('progressText').textContent = '0 / 20 answered';
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('scoreBox').classList.remove('show');
+  buildQuiz();
+  document.getElementById('quizArea').scrollIntoView({behavior:'smooth'});
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

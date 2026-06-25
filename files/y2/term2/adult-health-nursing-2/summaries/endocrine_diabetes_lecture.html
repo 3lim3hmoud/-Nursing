@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrine System Disorders – Diabetes Mellitus | Dr. Zinab</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #1a2c4e;
+  --teal:    #1e7b7e;
+  --teal-lt: #2fa8ac;
+  --gold:    #c9933a;
+  --cream:   #fdf6ec;
+  --sand:    #f0e6d2;
+  --white:   #ffffff;
+  --text:    #1e2b3a;
+  --muted:   #5a6a7a;
+  --border:  #d4c9b8;
+  --red:     #b83232;
+  --green:   #2d7a4f;
+  --en-font: 'Source Serif 4', Georgia, serif;
+  --ar-font: 'Amiri', serif;
+  --head-font: 'Playfair Display', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--en-font);
+  background: var(--cream);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* ─── HEADER ─── */
+.site-header {
+  background: linear-gradient(135deg, var(--navy) 0%, #0f4c6d 60%, var(--teal) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 52px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.07) 0%, transparent 65%),
+              radial-gradient(ellipse at 75% 70%, rgba(201,147,58,.12) 0%, transparent 55%);
+}
+.site-header h1 {
+  font-family: var(--head-font);
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  letter-spacing: .03em;
+  position:relative;
+}
+.site-header .subtitle {
+  font-family: var(--ar-font);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #c8e6e7;
+  margin-top: 6px;
+  position:relative;
+}
+.site-header .author {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: .06em;
+  font-weight: 600;
+  position:relative;
+}
+.badge-row {
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+  margin-top:18px; position:relative;
+}
+.badge {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #e8f4f5;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: .82rem;
+  letter-spacing: .04em;
+}
+
+/* ─── TAB NAV ─── */
+.tab-nav {
+  background: var(--navy);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 12px rgba(0,0,0,.25);
+}
+.tab-nav::-webkit-scrollbar { display:none; }
+.tab-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #a8c8cc;
+  padding: 14px 18px;
+  font-family: var(--en-font);
+  font-size: .84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s;
+  border-bottom: 3px solid transparent;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: #fff; background: rgba(255,255,255,.06); }
+.tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: rgba(255,255,255,.04); }
+
+/* ─── SECTIONS ─── */
+.tab-section { display:none; }
+.tab-section.active { display:block; }
+
+.section-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+
+/* ─── BI-LANG BLOCKS ─── */
+.bilang {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.bilang .en-side, .bilang .ar-side {
+  padding: 22px 24px;
+}
+.bilang .en-side {
+  background: var(--white);
+  border-right: 1px solid var(--border);
+}
+.bilang .ar-side {
+  background: #f7f0e5;
+  direction: rtl;
+  font-family: var(--ar-font);
+  font-size: 1.05rem;
+  text-align: right;
+}
+@media(max-width:640px) {
+  .bilang { grid-template-columns: 1fr; }
+  .bilang .en-side { border-right:none; border-bottom:1px solid var(--border); }
+}
+
+/* ─── SECTION TITLE ─── */
+.sec-title {
+  font-family: var(--head-font);
+  font-size: 1.75rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+.sec-title .ar { font-family: var(--ar-font); font-size: 1.2rem; color: var(--teal); display:block; margin-top:2px; }
+
+.sub-title {
+  font-family: var(--head-font);
+  font-size: 1.2rem;
+  color: var(--teal);
+  margin: 28px 0 10px;
+}
+.sub-title .ar { font-family: var(--ar-font); color: var(--gold); font-size:1rem; }
+
+/* ─── CARDS ─── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.card {
+  background: var(--white);
+  border-radius: 10px;
+  border-left: 5px solid var(--teal);
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.card.gold { border-left-color: var(--gold); }
+.card.navy { border-left-color: var(--navy); }
+.card.red  { border-left-color: var(--red);  }
+.card.green{ border-left-color: var(--green); }
+.card h4 {
+  font-family: var(--head-font);
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.card .ar-label {
+  font-family: var(--ar-font);
+  font-size: .95rem;
+  color: var(--gold);
+  direction: rtl;
+  text-align: right;
+  margin-bottom: 8px;
+}
+.card p { font-size: .92rem; color: var(--muted); }
+.card .ar-p { font-family: var(--ar-font); direction:rtl; text-align:right; font-size:.92rem; color:#6b5a3e; margin-top:4px; }
+
+/* ─── TABLES ─── */
+.tbl-wrap { overflow-x:auto; margin: 20px 0; border-radius:10px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+table { width:100%; border-collapse:collapse; background:var(--white); font-size:.9rem; }
+thead tr { background: var(--navy); color:var(--white); }
+thead th { padding:13px 14px; text-align:left; font-family:var(--en-font); font-weight:600; }
+thead th .ar { font-family:var(--ar-font); display:block; font-size:.88rem; color:#b8d4d6; margin-top:2px; }
+tbody tr:nth-child(even) { background: #f5eede; }
+tbody tr:hover { background: #e8f4f5; }
+td { padding:11px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+td .ar { font-family:var(--ar-font); direction:rtl; text-align:right; font-size:.88rem; color:#6b5a3e; display:block; margin-top:2px; }
+.tag-red   { background:#fde8e8; color:var(--red);   border-radius:4px; padding:2px 8px; font-size:.82rem; font-weight:600; }
+.tag-green { background:#e6f4ec; color:var(--green); border-radius:4px; padding:2px 8px; font-size:.82rem; font-weight:600; }
+.tag-gold  { background:#fdf0de; color:var(--gold);  border-radius:4px; padding:2px 8px; font-size:.82rem; font-weight:600; }
+.tag-navy  { background:#e6ecf5; color:var(--navy);  border-radius:4px; padding:2px 8px; font-size:.82rem; font-weight:600; }
+
+/* ─── INFO BOX ─── */
+.info-box {
+  background: #e8f4f5;
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 14px 0;
+}
+.info-box .ar { font-family:var(--ar-font); direction:rtl; text-align:right; margin-top:8px; color:#2e5e60; font-size:.98rem; }
+.warn-box {
+  background: #fdf0de;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 14px 0;
+}
+.warn-box .ar { font-family:var(--ar-font); direction:rtl; text-align:right; margin-top:8px; color:#7a4d1e; font-size:.98rem; }
+.danger-box {
+  background: #fde8e8;
+  border-left: 4px solid var(--red);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 14px 0;
+}
+.danger-box .ar { font-family:var(--ar-font); direction:rtl; text-align:right; margin-top:8px; color:#7a1a1a; font-size:.98rem; }
+
+/* ─── LIST STYLE ─── */
+.bi-list { margin: 10px 0; padding: 0; list-style: none; }
+.bi-list li {
+  padding: 8px 0 8px 18px;
+  border-bottom: 1px solid #ede5d6;
+  position: relative;
+  font-size: .94rem;
+}
+.bi-list li::before { content:'◆'; position:absolute; left:0; color:var(--teal); font-size:.6rem; top:13px; }
+.bi-list li .ar { font-family:var(--ar-font); direction:rtl; text-align:right; color:#5a4020; font-size:.92rem; display:block; margin-top:3px; }
+
+/* ─── NURSING PROCESS ─── */
+.np-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0;
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+.np-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--head-font);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  font-weight: 700;
+  padding: 10px 4px;
+}
+.np-body { padding: 18px 22px; background: var(--white); }
+.np-body h4 { font-family:var(--head-font); font-size:1.1rem; color:var(--navy); }
+.np-body .ar-h { font-family:var(--ar-font); color:var(--gold); direction:rtl; text-align:right; margin-bottom:10px; }
+
+.np-1 .np-icon { background: #1e7b7e; }
+.np-2 .np-icon { background: #c9933a; }
+.np-3 .np-icon { background: #1a2c4e; }
+.np-4 .np-icon { background: #2d7a4f; }
+.np-5 .np-icon { background: #b83232; }
+
+/* ─── QUIZ ─── */
+.quiz-header {
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: #fff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.quiz-header h2 { font-family: var(--head-font); font-size:1.6rem; }
+.quiz-header .ar { font-family: var(--ar-font); font-size:1.2rem; color:#c8e6e7; margin-top:6px; direction:rtl; }
+
+.q-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  border-top: 4px solid var(--teal);
+  transition: all .2s;
+}
+.q-card.answered { border-top-color: var(--gold); }
+.q-num {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.q-text { font-size:1rem; color:var(--navy); margin-bottom:14px; font-weight:600; }
+.q-text .ar { font-family:var(--ar-font); direction:rtl; text-align:right; color:#3a2a0e; font-size:.97rem; font-weight:400; display:block; margin-top:4px; }
+.q-opts { display:grid; gap:8px; }
+.q-opt {
+  background: var(--cream);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size:.92rem;
+  transition: all .2s;
+  text-align: left;
+  width: 100%;
+  font-family: var(--en-font);
+  color: var(--text);
+}
+.q-opt:hover:not(:disabled) { border-color: var(--teal); background: #e8f4f5; }
+.q-opt.correct   { background:#e6f4ec; border-color:var(--green); color:var(--green); font-weight:700; }
+.q-opt.wrong     { background:#fde8e8; border-color:var(--red);   color:var(--red);   }
+.q-opt.reveal    { background:#fdf0de; border-color:var(--gold);  color:var(--gold);  }
+.q-opt:disabled  { cursor: not-allowed; }
+.q-explain {
+  display:none;
+  margin-top:12px;
+  background: #e8f4f5;
+  border-left:4px solid var(--teal);
+  border-radius:6px;
+  padding:12px 16px;
+  font-size:.9rem;
+  color: #1e5052;
+}
+.q-explain .ar { font-family:var(--ar-font); direction:rtl; text-align:right; color:#1e5052; margin-top:6px; display:block; }
+.q-explain.show { display:block; }
+
+#quiz-result {
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color:#fff;
+  border-radius:12px;
+  padding:32px;
+  text-align:center;
+  margin-top:28px;
+  display:none;
+}
+#quiz-result h3 { font-family:var(--head-font); font-size:2rem; }
+#quiz-result .ar { font-family:var(--ar-font); font-size:1.2rem; margin-top:8px; color:#c8e6e7; direction:rtl; }
+#score-display { font-size:3.5rem; font-weight:800; color:var(--gold); margin:12px 0; }
+#quiz-controls { text-align:center; margin-top:24px; }
+.btn {
+  background: var(--teal);
+  color:#fff;
+  border:none;
+  padding:12px 28px;
+  border-radius:8px;
+  font-family:var(--en-font);
+  font-size:.95rem;
+  font-weight:600;
+  cursor:pointer;
+  transition: background .2s;
+  margin: 4px;
+}
+.btn:hover { background: var(--navy); }
+.btn.gold-btn { background: var(--gold); }
+.btn.gold-btn:hover { background: #a5762c; }
+
+/* progress bar */
+#progress-wrap { background:#ddd; border-radius:20px; height:8px; margin:16px 0; }
+#progress-bar  { background: linear-gradient(90deg, var(--teal), var(--gold)); height:8px; border-radius:20px; transition:width .4s; width:0%; }
+#score-live { text-align:right; font-size:.82rem; color:var(--muted); margin-top:4px; }
+
+/* pill tags */
+.pill { display:inline-block; border-radius:20px; padding:3px 11px; font-size:.8rem; margin:2px; }
+.pill-teal  { background:#d0eeef; color:#1a5e61; }
+.pill-gold  { background:#fde8c0; color:#7a4e10; }
+.pill-red   { background:#fdd8d8; color:#7a1010; }
+.pill-navy  { background:#dce4f0; color:#1a2c4e; }
+.pill-green { background:#d6efdf; color:#1e5e38; }
+
+/* comparison grid */
+.compare-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin:16px 0;
+}
+.compare-col {
+  border-radius:10px;
+  overflow:hidden;
+}
+.compare-col .col-head {
+  padding:14px 16px;
+  font-family:var(--head-font);
+  font-size:1rem;
+  color:#fff;
+}
+.compare-col .col-head .ar { font-family:var(--ar-font); font-size:.9rem; display:block; }
+.compare-col.hypo .col-head { background:var(--navy); }
+.compare-col.hyper .col-head { background:var(--red); }
+.compare-col .col-body { background:var(--white); padding:14px 16px; }
+@media(max-width:560px){ .compare-grid{grid-template-columns:1fr;} }
+
+/* footer */
+footer {
+  background: var(--navy);
+  color: #8aa4b8;
+  text-align: center;
+  padding: 24px;
+  font-size: .82rem;
+  margin-top: 40px;
+}
+footer .ar { font-family:var(--ar-font); direction:rtl; color:#6e90a4; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <h1>Endocrine System Disorders – Diabetes Mellitus</h1>
+  <div class="subtitle">اضطرابات الجهاز الصماوي – داء السكري</div>
+  <div class="author">Dr. Zinab &nbsp;|&nbsp; د. زينب</div>
+  <div class="badge-row">
+    <span class="badge">Pancreas 🫀</span>
+    <span class="badge">Insulin</span>
+    <span class="badge">Type 1 &amp; 2 DM</span>
+    <span class="badge">Gestational DM</span>
+    <span class="badge">Complications</span>
+    <span class="badge">Nursing Process</span>
+    <span class="badge">20 MCQs</span>
+  </div>
+</header>
+
+<!-- TAB NAV -->
+<nav class="tab-nav" role="tablist">
+  <button class="tab-btn active" onclick="switchTab('tab-intro',this)">1. Introduction</button>
+  <button class="tab-btn" onclick="switchTab('tab-types',this)">2. Types of DM</button>
+  <button class="tab-btn" onclick="switchTab('tab-patho',this)">3. Pathophysiology</button>
+  <button class="tab-btn" onclick="switchTab('tab-clinical',this)">4. Clinical Signs</button>
+  <button class="tab-btn" onclick="switchTab('tab-dx',this)">5. Diagnosis</button>
+  <button class="tab-btn" onclick="switchTab('tab-mgmt',this)">6. Management</button>
+  <button class="tab-btn" onclick="switchTab('tab-insulin',this)">7. Insulin</button>
+  <button class="tab-btn" onclick="switchTab('tab-comp',this)">8. Complications</button>
+  <button class="tab-btn" onclick="switchTab('tab-np',this)">9. Nursing Process</button>
+  <button class="tab-btn" onclick="switchTab('tab-quiz',this)">10. Self-Test ✏️</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 1. INTRODUCTION -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-intro" class="tab-section active">
+<div class="section-wrap">
+  <h2 class="sec-title">The Pancreas &amp; Insulin <span class="ar">البنكرياس والأنسولين</span></h2>
+
+  <h3 class="sub-title">Pancreas Structure <span class="ar">تركيب البنكرياس</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p>The pancreas consists of <strong>two types of tissue</strong>:</p>
+      <ul class="bi-list">
+        <li><strong>Acini (Exocrine part):</strong> secretes digestive juices into the duodenum.</li>
+        <li><strong>Islets of Langerhans (Endocrine part):</strong> secretes hormones directly into the bloodstream.</li>
+      </ul>
+    </div>
+    <div class="ar-side">
+      <p>يتكون البنكرياس من <strong>نوعين من الأنسجة</strong>:</p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li><strong>الأسيني (الجزء الخارجي الإفراز):</strong> يُفرز العصارات الهاضمة في الاثني عشر.</li>
+        <li><strong>جُزر لانغرهانز (الجزء الداخلي الإفراز):</strong> تُفرز الهرمونات مباشرةً في الدم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Islets of Langerhans – Cell Types <span class="ar">أنواع خلايا جُزر لانغرهانز</span></h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Cell Type <span class="ar">نوع الخلية</span></th>
+          <th>Percentage <span class="ar">النسبة</span></th>
+          <th>Hormone Secreted <span class="ar">الهرمون المُفرز</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Beta (B) Cells</strong><span class="ar">خلايا بيتا (ب)</span></td>
+          <td><span class="tag-gold">60%</span></td>
+          <td>Insulin<span class="ar">الأنسولين</span></td>
+        </tr>
+        <tr>
+          <td><strong>Alpha (A) Cells</strong><span class="ar">خلايا ألفا (أ)</span></td>
+          <td><span class="tag-teal">25%</span></td>
+          <td>Glucagon<span class="ar">الغلوكاغون</span></td>
+        </tr>
+        <tr>
+          <td><strong>Delta (D) Cells</strong><span class="ar">خلايا دلتا (د)</span></td>
+          <td><span class="tag-navy">10%</span></td>
+          <td>Somatostatin<span class="ar">السوماتوستاتين</span></td>
+        </tr>
+        <tr>
+          <td><strong>PP Cells</strong><span class="ar">الخلايا البنكرياسية PP</span></td>
+          <td><span class="tag-green">5%</span></td>
+          <td>Pancreatic Polypeptide<span class="ar">البولي ببتيد البنكرياسي</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">Insulin – Role &amp; Physiology <span class="ar">دور الأنسولين وفسيولوجيته</span></h3>
+  <div class="info-box">
+    <strong>Insulin</strong> is a hormone secreted from the <em>beta cells</em> of the pancreas. It controls blood glucose levels by regulating the <strong>production and storage of glucose</strong>.
+    <div class="ar">الأنسولين هرمون تُفرزه <em>خلايا بيتا</em> في البنكرياس، يتحكم في مستوى الجلوكوز بالدم عن طريق تنظيم <strong>إنتاج الجلوكوز وتخزينه</strong>.</div>
+  </div>
+
+  <div class="bilang">
+    <div class="en-side">
+      <p><strong>During fasting (between meals &amp; overnight):</strong> the pancreas continuously releases a small amount of insulin along with glucagon.</p>
+      <p style="margin-top:10px;"><strong>After eating a meal:</strong></p>
+      <ul class="bi-list">
+        <li>Insulin secretion increases.</li>
+        <li>Moves glucose from blood into <strong>muscle, liver, and fat cells</strong>.</li>
+        <li>Inhibits breakdown of stored glucose, protein, and fat.</li>
+      </ul>
+      <p style="margin-top:10px;">Initially the liver produces glucose through <strong>glycogenolysis</strong> (breakdown of glycogen).</p>
+    </div>
+    <div class="ar-side">
+      <p><strong>أثناء الصيام (بين الوجبات وأثناء الليل):</strong> يُفرز البنكرياس بصفة مستمرة كمية صغيرة من الأنسولين مع الغلوكاغون.</p>
+      <p style="margin-top:10px;"><strong>بعد تناول الوجبة:</strong></p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li>تزداد إفراز الأنسولين.</li>
+        <li>ينقل الجلوكوز من الدم إلى <strong>خلايا العضلات والكبد والدهون</strong>.</li>
+        <li>يُثبّط تحلّل الجلوكوز والبروتين والدهون المخزّنة.</li>
+      </ul>
+      <p style="margin-top:10px;">في البداية ينتج الكبد الجلوكوز عن طريق <strong>تحلّل الجليكوجين (Glycogenolysis)</strong>.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Diabetes Mellitus – Overview <span class="ar">نظرة عامة على داء السكري</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p>Diabetes mellitus is a group of <strong>metabolic disorders</strong> characterized by:</p>
+      <ul class="bi-list">
+        <li>Elevated blood glucose levels (hyperglycemia)</li>
+        <li>Defect in insulin secretion, action, or both</li>
+      </ul>
+      <p style="margin-top:10px;">All forms of diabetes have been treatable since insulin became available in <strong>1921</strong>, but a complete cure is difficult.</p>
+      <p style="margin-top:6px;">Pancreas transplants have been tried with limited success in type 1 DM; gastric bypass surgery has been successful in many with morbid obesity and type 2 DM; gestational diabetes usually resolves after delivery.</p>
+    </div>
+    <div class="ar-side">
+      <p>داء السكري مجموعة من <strong>الاضطرابات الأيضية</strong> تتميز بـ:</p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li>ارتفاع مستوى الجلوكوز في الدم (فرط سكر الدم)</li>
+        <li>خلل في إفراز الأنسولين أو عمله أو كليهما</li>
+      </ul>
+      <p style="margin-top:10px;">علاج السكري متاح منذ اكتشاف الأنسولين عام <strong>1921</strong>، غير أن الشفاء التام صعب.</p>
+      <p style="margin-top:6px;">جرّبت زراعة البنكرياس مع نجاح محدود في النوع الأول؛ وقد نجحت عمليات تحويل مسار المعدة في كثير من حالات السمنة مع النوع الثاني؛ وسكري الحمل يختفي عادةً بعد الولادة.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Risk Factors <span class="ar">عوامل الخطر</span></h3>
+  <div class="card-grid">
+    <div class="card"><h4>Family History</h4><div class="ar-label">التاريخ العائلي</div><p>Having a first-degree relative with diabetes increases risk.</p><p class="ar-p">وجود أقارب من الدرجة الأولى مصابين بالسكري يزيد الخطر.</p></div>
+    <div class="card gold"><h4>Obesity</h4><div class="ar-label">السمنة</div><p>Especially abdominal obesity strongly linked to type 2.</p><p class="ar-p">خاصةً السمنة البطنية، مرتبطة بشدة بالنوع الثاني.</p></div>
+    <div class="card navy"><h4>Race / Ethnicity</h4><div class="ar-label">العرق / الإثنية</div><p>Certain ethnic groups carry higher genetic risk.</p><p class="ar-p">بعض الأعراق تحمل خطراً وراثياً أعلى.</p></div>
+    <div class="card red"><h4>Hypertension</h4><div class="ar-label">ارتفاع ضغط الدم</div><p>Coexistent hypertension elevates metabolic syndrome risk.</p><p class="ar-p">ارتفاع ضغط الدم يرفع خطر متلازمة الأيض.</p></div>
+    <div class="card green"><h4>Impaired Fasting Glucose / IGT</h4><div class="ar-label">ضعف جلوكوز الصيام / تحمّل الجلوكوز</div><p>Pre-diabetes states that can progress to full DM.</p><p class="ar-p">حالات ما قبل السكري قابلة للتطور.</p></div>
+    <div class="card gold"><h4>Dyslipidemia</h4><div class="ar-label">اضطراب الدهون</div><p>HDL ≤ 35 mg/dL and/or triglycerides ≥ 250 mg/dL.</p><p class="ar-p">HDL ≤ 35 mg/dL و/أو ثلاثي الجليسيريد ≥ 250 mg/dL.</p></div>
+    <div class="card"><h4>Gestational DM History</h4><div class="ar-label">سكري الحمل السابق</div><p>Previous GDM or birth of a baby &gt;9 lb.</p><p class="ar-p">سكري حمل سابق أو ولادة طفل وزنه أكثر من 4 كجم.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 2. TYPES OF DM -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-types" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Types of Diabetes Mellitus <span class="ar">أنواع داء السكري</span></h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Type <span class="ar">النوع</span></th>
+          <th>Old Name <span class="ar">الاسم القديم</span></th>
+          <th>Prevalence <span class="ar">النسبة</span></th>
+          <th>Onset / Age <span class="ar">العمر عند الظهور</span></th>
+          <th>Cause <span class="ar">السبب</span></th>
+          <th>Key Features <span class="ar">السمات الرئيسية</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag-navy">Type 1</span><br>IDDM<span class="ar">سكري النوع الأول</span></td>
+          <td>Juvenile / Juvenile-onset diabetes<span class="ar">سكري الأحداث</span></td>
+          <td><span class="tag-gold">5–10%</span></td>
+          <td>Any age, usually &lt;30 yrs<span class="ar">أي سن، غالباً قبل 30</span></td>
+          <td>Destruction of beta cells → absolute insulin deficiency (genetic, immunologic, or environmental)<span class="ar">تدمير خلايا بيتا → نقص مطلق للأنسولين</span></td>
+          <td>
+            <ul style="margin:0;padding-left:16px;font-size:.88rem">
+              <li>Usually thin at diagnosis, recent weight loss</li>
+              <li>Antibodies to insulin (even before treatment)</li>
+              <li>Little or no endogenous insulin</li>
+              <li>Needs insulin to survive</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag-red">Type 2</span><br>NIDDM<span class="ar">سكري النوع الثاني</span></td>
+          <td>Adult-onset / Maturity-onset diabetes<span class="ar">سكري البالغين</span></td>
+          <td><span class="tag-gold">90–95%</span></td>
+          <td>Usually &gt;30 yrs<span class="ar">عادةً أكثر من 30 عاماً</span></td>
+          <td>Insulin resistance ± relative insulin deficiency (obesity, heredity, environment)<span class="ar">مقاومة للأنسولين مع نقص نسبي</span></td>
+          <td>
+            <ul style="margin:0;padding-left:16px;font-size:.88rem">
+              <li>Usually obese (80% obese; 20% non-obese)</li>
+              <li>No islet cell antibodies</li>
+              <li>May control with weight loss, diet, exercise</li>
+              <li>Oral anti-diabetics or insulin if needed</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag-green">Gestational DM (GDM)</span><span class="ar">سكري الحمل</span></td>
+          <td>Gestational diabetes<span class="ar">سكري الحمل</span></td>
+          <td><span class="tag-gold">2–5% of pregnancies</span></td>
+          <td>2nd or 3rd trimester<span class="ar">الثلث الثاني أو الثالث من الحمل</span></td>
+          <td>Hormones from placenta inhibit insulin action<span class="ar">هرمونات المشيمة تُثبّط عمل الأنسولين</span></td>
+          <td>
+            <ul style="margin:0;padding-left:16px;font-size:.88rem">
+              <li>Risk: macrosomia (large babies &gt;9 lb)</li>
+              <li>Treated with diet ± insulin</li>
+              <li>30–40% develop type 2 DM within 10 years</li>
+              <li>Screening: glucose challenge test at 24–28 weeks in ALL pregnant women</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="tag-teal">Secondary DM</span><span class="ar">السكري الثانوي</span></td>
+          <td>Secondary diabetes<span class="ar">السكري المصاحب</span></td>
+          <td>—</td>
+          <td>Any age<span class="ar">أي سن</span></td>
+          <td>Pancreatic disease, hormonal abnormalities, drugs (corticosteroids, estrogen)<span class="ar">أمراض البنكرياس، اضطرابات هرمونية، أدوية</span></td>
+          <td>Depends on pancreatic ability; may need oral agents or insulin<span class="ar">يعتمد على قدرة البنكرياس؛ قد يحتاج أدوية أو أنسولين</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box" style="margin-top:20px">
+    <strong>⚠️ GDM Risk Factors:</strong> Obesity, age &gt;30, family history of DM, previous large baby (&gt;9 lb), previous GDM.
+    <div class="ar">عوامل خطر سكري الحمل: السمنة، العمر أكثر من 30، تاريخ عائلي للسكري، ولادة طفل كبير سابق (&gt;4 كجم)، سكري حمل سابق.</div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 3. PATHOPHYSIOLOGY -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-patho" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Pathophysiology of Diabetes <span class="ar">فيزيولوجيا المرض</span></h2>
+
+  <div class="bilang">
+    <div class="en-side">
+      <p>When insulin is deficient or ineffective, the body cannot use glucose properly. This triggers a cascade:</p>
+      <ol style="padding-left:20px; margin-top:10px;">
+        <li><strong>Hyperglycemia</strong> – blood glucose rises.</li>
+        <li><strong>↑ Protein catabolism</strong> – body breaks down muscle protein for energy.</li>
+        <li><strong>↑ Lipolysis</strong> – fat is broken down, releasing free fatty acids.</li>
+        <li><strong>Metabolic acidosis</strong> – accumulation of ketone bodies (H⁺, CO₃⁻).</li>
+        <li><strong>If severe acidosis → Coma &amp; death</strong>.</li>
+      </ol>
+    </div>
+    <div class="ar-side">
+      <p>عندما ينقص الأنسولين أو يكون غير فعّال، لا يستطيع الجسم استخدام الجلوكوز بشكل سليم، مما يُطلق سلسلة من التفاعلات:</p>
+      <ol style="padding-right:20px; margin-top:10px;">
+        <li><strong>فرط سكر الدم</strong> – يرتفع مستوى الجلوكوز.</li>
+        <li><strong>↑ تقويض البروتين</strong> – يهدم الجسم بروتينات العضلات للحصول على طاقة.</li>
+        <li><strong>↑ تحلل الدهون</strong> – تتحلل الدهون مُطلِقةً أحماضاً دهنية حرة.</li>
+        <li><strong>الحماض الأيضي</strong> – تراكم أجسام الكيتون (H⁺, CO₃⁻).</li>
+        <li><strong>إذا اشتد الحماض → غيبوبة ووفاة</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="danger-box">
+    <strong>Key chain: Insulin deficiency → Hyperglycemia → ↑ Protein catabolism → ↑ Lipolysis → Ketone bodies → Metabolic acidosis → Coma &amp; Death</strong>
+    <div class="ar">السلسلة الرئيسية: نقص الأنسولين ← فرط سكر الدم ← تكسّر البروتين ← تحلّل الدهون ← أجسام الكيتون ← حماض أيضي ← غيبوبة ووفاة</div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 4. CLINICAL SIGNS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-clinical" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Clinical Manifestations &amp; Symptoms <span class="ar">المظاهر السريرية والأعراض</span></h2>
+
+  <div class="info-box">
+    Clinical manifestations depend on the patient's <strong>level of hyperglycemia</strong>. Classic clinical manifestations of <em>all types</em> of diabetes include the <strong>"Three Ps"</strong>.
+    <div class="ar">تعتمد المظاهر السريرية على <strong>درجة ارتفاع سكر الدم</strong>. تشمل المظاهر الكلاسيكية لجميع أنواع السكري <strong>«الثلاثة بولي»</strong>.</div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card navy">
+      <h4>🚽 Polyuria</h4><div class="ar-label">كثرة التبول – Polyuria</div>
+      <p>Increased and frequent urination due to glucose spilling into urine, pulling water with it.</p>
+      <p class="ar-p">تبوّل متكرر ومتزايد بسبب انتقال الجلوكوز إلى البول وجذبه للماء.</p>
+    </div>
+    <div class="card gold">
+      <h4>💧 Polydipsia</h4><div class="ar-label">كثرة العطش – Polydipsia</div>
+      <p>Excessive thirst resulting from dehydration caused by polyuria.</p>
+      <p class="ar-p">عطش مفرط نتيجة الجفاف الناجم عن كثرة التبول.</p>
+    </div>
+    <div class="card red">
+      <h4>🍽️ Polyphagia</h4><div class="ar-label">كثرة الأكل – Polyphagia</div>
+      <p>Excessive hunger because cells cannot use glucose; body signals starvation.</p>
+      <p class="ar-p">جوع مفرط لأن الخلايا لا تستطيع استخدام الجلوكوز؛ الجسم يُشير بالمجاعة.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Other Symptoms <span class="ar">أعراض أخرى</span></h3>
+  <ul class="bi-list">
+    <li>Fatigue and weakness <span class="ar">إرهاق وضعف</span></li>
+    <li>Sudden vision changes <span class="ar">تغيرات مفاجئة في الرؤية</span></li>
+    <li>Tingling or numbness in hands or feet <span class="ar">وخز أو خدر في اليدين أو القدمين</span></li>
+    <li>Dry skin, skin lesions <span class="ar">جفاف الجلد، آفات جلدية</span></li>
+    <li>Recurrent infections <span class="ar">التهابات متكررة</span></li>
+    <li>Sudden weight loss <span class="ar">فقدان مفاجئ للوزن</span></li>
+    <li>Nausea, vomiting, abdominal pain <span class="ar">غثيان، تقيؤ، آلام في البطن</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 5. DIAGNOSIS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-dx" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Diagnostic Evaluations <span class="ar">التقييمات التشخيصية</span></h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Test <span class="ar">الاختبار</span></th>
+          <th>Criteria / Procedure <span class="ar">المعيار / الإجراء</span></th>
+          <th>Notes <span class="ar">ملاحظات</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A. Fasting Blood Glucose (FBG)</strong><span class="ar">جلوكوز الدم الصائم</span></td>
+          <td>≥ <span class="tag-red">126 mg/dL</span><span class="ar">≥ 126 ملجم/ديسيلتر</span></td>
+          <td>Do not eat or drink (except water) after midnight.<span class="ar">لا أكل ولا شرب (إلا الماء) بعد منتصف الليل.</span></td>
+        </tr>
+        <tr>
+          <td><strong>B. 2-Hour Post-Prandial (2hpp)</strong><span class="ar">جلوكوز ما بعد الأكل</span></td>
+          <td>≥ <span class="tag-red">200 mg/dL</span> after 75 g oral glucose load<span class="ar">≥ 200 ملجم/ديسيلتر بعد 75 جرام جلوكوز فمياً</span></td>
+          <td>Eat a high-carbohydrate meal; blood drawn 2 hrs after.<span class="ar">تناول وجبة غنية بالكربوهيدرات؛ سحب الدم بعد ساعتين.</span></td>
+        </tr>
+        <tr>
+          <td><strong>C. Random Blood Glucose</strong><span class="ar">جلوكوز الدم العشوائي</span></td>
+          <td>≥ <span class="tag-red">200 mg/dL</span> + classic symptoms<span class="ar">≥ 200 ملجم/ديسيلتر مع الأعراض الكلاسيكية</span></td>
+          <td>Must be accompanied by classic signs of diabetes (3 Ps).<span class="ar">يجب مصاحبته لأعراض السكري الكلاسيكية (الثلاثة بولي).</span></td>
+        </tr>
+        <tr>
+          <td><strong>D. Oral Glucose Tolerance Test (OGTT)</strong><span class="ar">اختبار تحمّل الجلوكوز الفموي</span></td>
+          <td>Plasma glucose ≥ 200 mg/dL at 2 hrs<span class="ar">جلوكوز البلازما ≥ 200 ملجم/ديسيلتر بعد ساعتين</span></td>
+          <td>
+            <ul style="margin:0;padding-left:16px;font-size:.85rem">
+              <li>Eat balanced diet with ≥150 g carbs for ≥3 days</li>
+              <li>Performed in the morning after 10–12 hr fast</li>
+              <li>Drink 300 ml flavored glucose within 5 min</li>
+              <li>Blood samples every 30 min for 2 hrs</li>
+              <li>Rest, no smoking, no liquids during test</li>
+              <li>Report weakness, dizziness, nervousness</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>E. Glycated Hemoglobin (HbA1c)</strong><span class="ar">الهيموغلوبين السكري</span></td>
+          <td>Reflects average blood glucose over <span class="tag-gold">2–3 months</span><span class="ar">يعكس متوسط الجلوكوز على مدى 2–3 أشهر</span></td>
+          <td>Longer elevated glucose → more glucose binds to hemoglobin → higher HbA1c<span class="ar">كلما طالت فترة ارتفاع الجلوكوز، كلما ارتبط أكثر بالهيموغلوبين ← ارتفاع HbA1c.</span></td>
+        </tr>
+        <tr>
+          <td><strong>F. Urine Ketone Testing</strong><span class="ar">اختبار الكيتون في البول</span></td>
+          <td>Reagent strip turns <span class="tag-navy">purplish</span> when ketones present<span class="ar">تتحول قطعة الكاشف إلى اللون البنفسجي عند وجود الكيتون</span></td>
+          <td>Perform when type 1 patients have glycosuria, blood glucose &gt;250 mg/dL, illness, or pregnancy.<span class="ar">يُجرى عند وجود سكر في البول، أو جلوكوز دم &gt;250 ملجم/ديسيلتر، أو مرض، أو حمل.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    <strong>Factors interfering with OGTT:</strong> Carbohydrate restriction, bed rest, acute illness, certain drugs.
+    <div class="ar"><strong>عوامل تتداخل مع اختبار OGTT:</strong> تقييد الكربوهيدرات، الراحة في الفراش، المرض الحاد، بعض الأدوية.</div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 6. MANAGEMENT -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-mgmt" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Management of Diabetes <span class="ar">إدارة داء السكري</span></h2>
+
+  <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
+    <div class="card" style="text-align:center"><h4>🥗 Nutrition</h4><p>Nutritional Therapy</p><p class="ar-p">العلاج الغذائي</p></div>
+    <div class="card gold" style="text-align:center"><h4>🏃 Exercise</h4><p>Physical Activity</p><p class="ar-p">النشاط البدني</p></div>
+    <div class="card navy" style="text-align:center"><h4>📊 Monitoring</h4><p>Glucose &amp; Ketones</p><p class="ar-p">مراقبة الجلوكوز والكيتون</p></div>
+    <div class="card red" style="text-align:center"><h4>💊 Pharmacology</h4><p>Medications</p><p class="ar-p">العلاج الدوائي</p></div>
+    <div class="card green" style="text-align:center"><h4>📚 Education</h4><p>Patient Teaching</p><p class="ar-p">تثقيف المريض</p></div>
+  </div>
+
+  <h3 class="sub-title">1. Nutritional Therapy <span class="ar">العلاج الغذائي</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p>Diet is the <strong>cornerstone</strong> of diabetes management. The main objectives are:</p>
+      <ul class="bi-list">
+        <li>Provide all essential food constituents (vitamins, minerals) for optimal nutrition</li>
+        <li>Meet energy needs</li>
+        <li>Achieve and maintain a reasonable body weight</li>
+        <li>Decrease elevated serum lipid levels</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>Calorie Distribution (ADA 2009):</strong></p>
+      <ul class="bi-list">
+        <li><strong>50–60%</strong> from Carbohydrates</li>
+        <li><strong>20–30%</strong> from Fat</li>
+        <li><strong>~20%</strong> from Protein (50% of dietary protein converts to glucose)</li>
+      </ul>
+    </div>
+    <div class="ar-side">
+      <p>الغذاء هو <strong>حجر الأساس</strong> في علاج السكري. الأهداف الرئيسية:</p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li>توفير جميع العناصر الغذائية الأساسية (فيتامينات، معادن)</li>
+        <li>تلبية احتياجات الطاقة</li>
+        <li>تحقيق والحفاظ على وزن صحي مناسب</li>
+        <li>تخفيض مستويات الدهون المرتفعة في الدم</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>توزيع السعرات الحرارية (ADA 2009):</strong></p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li><strong>50–60%</strong> من الكربوهيدرات</li>
+        <li><strong>20–30%</strong> من الدهون</li>
+        <li><strong>~20%</strong> من البروتين (50% من بروتين الغذاء يتحول إلى جلوكوز)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-title">2. Exercise <span class="ar">التمرين الرياضي</span></h3>
+  <div class="info-box">
+    Exercise is <strong>extremely important</strong> in diabetes management because it:
+    <ul class="bi-list" style="margin-top:8px">
+      <li>Lowers blood glucose by increasing glucose uptake by body muscles <span class="ar">يخفض سكر الدم بزيادة امتصاص العضلات للجلوكوز</span></li>
+      <li>Improves insulin utilization <span class="ar">يحسّن استخدام الأنسولين</span></li>
+      <li>Reduces cardiovascular risk factors <span class="ar">يقلل عوامل خطر القلب والأوعية</span></li>
+    </ul>
+    <div class="ar" style="margin-top:10px">التمرين الرياضي بالغ الأهمية في إدارة السكري.</div>
+  </div>
+
+  <h3 class="sub-title">3. Monitoring – Glucose &amp; Ketones <span class="ar">مراقبة الجلوكوز والكيتون</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p><strong>Method:</strong></p>
+      <ul class="bi-list">
+        <li>Obtain a drop of blood</li>
+        <li>Apply to special reagent strip</li>
+        <li>Allow blood on strip for 5–30 seconds</li>
+        <li>Read result on glucometer</li>
+      </ul>
+      <p style="margin-top:10px;"><strong>Frequency:</strong> Most insulin-requiring patients test <strong>2–4 times/day</strong> (usually before meals).</p>
+    </div>
+    <div class="ar-side">
+      <p><strong>الطريقة:</strong></p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li>الحصول على قطرة دم</li>
+        <li>وضعها على شريط الكاشف الخاص</li>
+        <li>ترك الدم على الشريط 5–30 ثانية</li>
+        <li>قراءة النتيجة على الجهاز</li>
+      </ul>
+      <p style="margin-top:10px;"><strong>التكرار:</strong> معظم مرضى الأنسولين يقيسون <strong>2–4 مرات يومياً</strong> (عادةً قبل الوجبات).</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">4. Medications <span class="ar">الأدوية</span></h3>
+  <div class="card-grid">
+    <div class="card navy">
+      <h4>Oral Anti-Diabetic Agents</h4>
+      <div class="ar-label">مضادات السكر الفموية</div>
+      <p>Prescribed for NIDDM (Type 2) when diet and exercise alone don't control blood glucose. <strong>Cannot be used during pregnancy.</strong></p>
+      <p class="ar-p">تُوصف لسكري النوع الثاني عندما لا تكفي الحمية والرياضة. <strong>لا تُستخدم أثناء الحمل.</strong></p>
+    </div>
+    <div class="card red">
+      <h4>Insulin Therapy – Indications</h4>
+      <div class="ar-label">العلاج بالأنسولين – مؤشراته</div>
+      <ul class="bi-list">
+        <li>Type 1 DM (IDDM) <span class="ar">سكري النوع الأول</span></li>
+        <li>Diabetic ketoacidosis <span class="ar">الحماض الكيتوني السكري</span></li>
+        <li>Type 2: no response to diet &amp; oral agents <span class="ar">النوع الثاني: عدم الاستجابة للحمية والأقراص</span></li>
+        <li>Critical episodes (surgery, stress, infection, trauma, pregnancy) <span class="ar">حالات حرجة: جراحة، إجهاد، عدوى، صدمة، حمل</span></li>
+        <li>Emergency treatment of hyperkalemia <span class="ar">علاج طارئ لارتفاع بوتاسيوم الدم</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-title">5. Foot &amp; Personal Hygiene Care <span class="ar">العناية بالقدم والنظافة الشخصية</span></h3>
+  <ul class="bi-list">
+    <li>Daily washing with soap and water; dry thoroughly, especially between toes. <span class="ar">غسل يومي بالصابون والماء وتجفيف جيد خاصةً بين أصابع القدمين.</span></li>
+    <li>Keep skin soft using emollient or absorbing agent. <span class="ar">إبقاء الجلد ناعماً بمرطّب أو مادة ماصّة.</span></li>
+    <li>Cut toenails straight and not too short to avoid injury. <span class="ar">قصّ أظافر القدمين باستقامة وعدم القصر الشديد لتجنب الإصابة.</span></li>
+    <li>Regular eye care and general hygiene (oral hygiene). <span class="ar">العناية المنتظمة بالعيون والنظافة العامة (نظافة الفم).</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 7. INSULIN -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-insulin" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Insulin Therapy <span class="ar">العلاج بالأنسولين</span></h2>
+
+  <h3 class="sub-title">Categories of Insulin <span class="ar">تصنيفات الأنسولين</span></h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category <span class="ar">الفئة</span></th>
+          <th>Agent <span class="ar">الدواء</span></th>
+          <th>Onset <span class="ar">البداية</span></th>
+          <th>Peak <span class="ar">الذروة</span></th>
+          <th>Duration <span class="ar">المدة</span></th>
+          <th>Indications <span class="ar">المؤشرات</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag-teal">Rapid-Acting</span><span class="ar">سريع المفعول</span></td>
+          <td>Lispro (Humalog)<br>Aspart (Novolog)</td>
+          <td>10–15 min<br>5–15 min</td>
+          <td>1 h<br>40–50 min</td>
+          <td>2–4 h<br>2–4 h</td>
+          <td>Rapid glucose reduction, post-prandial hyperglycemia, prevent nocturnal hypoglycemia.<span class="ar">خفض سريع للجلوكوز، فرط سكر ما بعد الأكل، منع نقص السكر الليلي.</span></td>
+        </tr>
+        <tr>
+          <td><span class="tag-gold">Short-Acting</span><span class="ar">قصير المفعول</span></td>
+          <td>Regular (Humulin R, Novolin R)</td>
+          <td>½–1 h</td>
+          <td>2–3 h</td>
+          <td>4–6 h</td>
+          <td>Given 20–30 min before a meal; alone or combined with longer-acting.<span class="ar">يُعطى 20–30 دقيقة قبل الأكل؛ منفرداً أو مع أنسولين أطول مفعولاً.</span></td>
+        </tr>
+        <tr>
+          <td><span class="tag-navy">Intermediate-Acting</span><span class="ar">متوسط المفعول</span></td>
+          <td>NPH (Humulin N, Lente)</td>
+          <td>2–4 h</td>
+          <td>4–12 h</td>
+          <td>16–20 h</td>
+          <td>Usually taken after food.<span class="ar">يُؤخذ عادةً بعد الأكل.</span></td>
+        </tr>
+        <tr>
+          <td><span class="tag-red">Very Long-Acting</span><span class="ar">طويل المفعول جداً</span></td>
+          <td>Glargine (Lantus)<br>Detemir (Levemir)</td>
+          <td>1 h</td>
+          <td>Continuous (no peak)<span class="ar">مستمر بلا ذروة</span></td>
+          <td>24 h</td>
+          <td>Used for basal dose (background insulin).<span class="ar">يُستخدم للجرعة الأساسية (أنسولين خلفية).</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">Insulin Regimens &amp; Delivery <span class="ar">أنظمة وطرق إعطاء الأنسولين</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p><strong>Regimens:</strong> Vary from 1–4 injections per day. Usually a combination of short- and long-acting insulin.</p>
+      <p style="margin-top:10px;"><strong>Delivery Methods:</strong></p>
+      <ul class="bi-list">
+        <li><strong>Insulin Syringe</strong> – most common; match syringe to insulin concentration (e.g., U-100). Injected into <em>subcutaneous tissue</em>.</li>
+        <li><strong>Insulin Pen</strong> – convenient, portable device.</li>
+        <li><strong>Insulin Pump</strong> – provides continuous subcutaneous infusion via cannula; housed in a small cartridge ("reservoir").</li>
+      </ul>
+    </div>
+    <div class="ar-side">
+      <p><strong>الأنظمة:</strong> تتراوح بين 1–4 حقن يومياً، وعادةً ما تجمع بين أنسولين قصير وطويل المفعول.</p>
+      <p style="margin-top:10px;"><strong>طرق الإعطاء:</strong></p>
+      <ul class="bi-list" style="padding-right:16px">
+        <li><strong>المحقنة</strong> – الأكثر شيوعاً؛ يجب مطابقتها مع تركيز الأنسولين (مثلاً U-100). تُحقن في <em>الأنسجة تحت الجلد</em>.</li>
+        <li><strong>قلم الأنسولين</strong> – جهاز مريح ومحمول.</li>
+        <li><strong>مضخة الأنسولين</strong> – تُوفر حقناً مستمراً تحت الجلد عبر أنبوب قنّولة.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Injection Site Selection &amp; Rotation <span class="ar">اختيار موقع الحقن وتدويره</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p>The four main areas: <strong>Abdomen, Arms (posterior surface), Thighs (anterior surface), Hips</strong>.</p>
+      <p style="margin-top:8px;">Speed of absorption is <strong>greatest in the abdomen</strong> and decreases progressively: Abdomen &gt; Arms &gt; Thighs &gt; Hips.</p>
+      <p style="margin-top:8px;">Sites must be <strong>rotated</strong> to prevent lipodystrophy.</p>
+    </div>
+    <div class="ar-side">
+      <p>المناطق الأربع الرئيسية: <strong>البطن، الذراعان (السطح الخلفي)، الفخذان (السطح الأمامي)، الوركان</strong>.</p>
+      <p style="margin-top:8px;">سرعة الامتصاص <strong>أعلى في البطن</strong> وتتناقص تدريجياً: بطن &gt; ذراع &gt; فخذ &gt; ورك.</p>
+      <p style="margin-top:8px;">يجب <strong>تدوير</strong> مواقع الحقن لمنع تضخّم الدهون.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Complications of Insulin Therapy <span class="ar">مضاعفات العلاج بالأنسولين</span></h3>
+  <div class="card-grid">
+    <div class="card red">
+      <h4>1. Local Allergic Reaction</h4><div class="ar-label">التفاعل التحسسي الموضعي</div>
+      <p>Redness, swelling, tenderness, induration or 2–4 cm wheal at injection site; appears 1–2 hrs after administration.</p>
+      <p class="ar-p">احمرار، تورم، ألم أو نفطة 2–4 سم في موقع الحقن؛ تظهر خلال 1–2 ساعة.</p>
+    </div>
+    <div class="card gold">
+      <h4>2. Systemic Allergic Reaction</h4><div class="ar-label">التفاعل التحسسي الجهازي</div>
+      <p>Immediate local skin reaction that spreads to generalized urticaria (hives). Occasionally associated with edema or anaphylaxis. Treated by changing insulin source.</p>
+      <p class="ar-p">تفاعل جلدي موضعي فوري ينتشر إلى شرى عام، نادراً مع وذمة أو صدمة تحسسية. يُعالج بتغيير مصدر الأنسولين.</p>
+    </div>
+    <div class="card navy">
+      <h4>3. Insulin Lipodystrophy</h4><div class="ar-label">ضمور الشحم الأنسوليني</div>
+      <p>Localized reaction at injection site: <strong>Lipoatrophy</strong> (fat wasting) or <strong>Lipohypertrophy</strong> (fat excess). Prevented by site rotation.</p>
+      <p class="ar-p">تفاعل موضعي: <strong>ضمور الشحم</strong> أو <strong>فرط تكاثر الشحم</strong>. يُمنع بتدوير مواقع الحقن.</p>
+    </div>
+    <div class="card green">
+      <h4>4. Transient Generalized Edema</h4><div class="ar-label">وذمة عامة مؤقتة</div>
+      <p>May occur in early treatment of undernourished patients.</p>
+      <p class="ar-p">قد تحدث في بداية علاج المرضى سيئي التغذية.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 8. COMPLICATIONS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-comp" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Complications of Diabetes <span class="ar">مضاعفات السكري</span></h2>
+
+  <h3 class="sub-title">I – Acute Complications <span class="ar">المضاعفات الحادة</span></h3>
+  <p style="margin-bottom:16px">Three major acute complications related to short-term blood glucose imbalances: <span class="pill pill-red">Hypoglycemia</span> <span class="pill pill-gold">Diabetic Ketoacidosis (DKA)</span> <span class="pill pill-navy">HHNKC</span></p>
+
+  <!-- HYPOGLYCEMIA vs HYPERGLYCEMIA TABLE -->
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature <span class="ar">السمة</span></th>
+          <th><span class="tag-navy">Hypoglycemia</span><br><span class="ar">نقص السكر</span></th>
+          <th><span class="tag-red">Hyperglycemia</span><br><span class="ar">فرط السكر</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>History</strong><span class="ar">التاريخ</span></td>
+          <td>Too much insulin; little/no food; unexpected exercise; GI disorders<span class="ar">أنسولين زائد، قلة الأكل، رياضة غير متوقعة، اضطراب هضمي</span></td>
+          <td>Omitted/insufficient insulin; excess food; infection; digestive disturbance<span class="ar">إهمال أو نقص الأنسولين، أكل زائد، عدوى</span></td>
+        </tr>
+        <tr>
+          <td><strong>Onset</strong><span class="ar">البداية</span></td>
+          <td>Usually rapid (good health before)<span class="ar">سريعة عادةً (صحة جيدة قبلها)</span></td>
+          <td>Usually slow (ill health for few days)<span class="ar">بطيئة (تدهور صحي لأيام)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Blood Glucose</strong><span class="ar">سكر الدم</span></td>
+          <td><span class="tag-navy">&lt; 3 mmol/L</span></td>
+          <td><span class="tag-red">&gt; 20 mmol/L</span></td>
+        </tr>
+        <tr>
+          <td><strong>Skin</strong><span class="ar">الجلد</span></td>
+          <td>Pale, cold, clammy<span class="ar">شاحب، بارد، رطب</span></td>
+          <td>Flushed, hot, dry<span class="ar">محمر، حار، جاف</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tongue</strong><span class="ar">اللسان</span></td>
+          <td>Moist<span class="ar">رطب</span></td>
+          <td>Dry<span class="ar">جاف</span></td>
+        </tr>
+        <tr>
+          <td><strong>Eyes</strong><span class="ar">العيون</span></td>
+          <td>Normal<span class="ar">طبيعية</span></td>
+          <td>Sunken<span class="ar">غائرة</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pupils</strong><span class="ar">حدقتا العين</span></td>
+          <td>Dilated<span class="ar">متسعتان</span></td>
+          <td>Normal<span class="ar">طبيعيتان</span></td>
+        </tr>
+        <tr>
+          <td><strong>Respiration</strong><span class="ar">التنفس</span></td>
+          <td>Normal<span class="ar">طبيعي</span></td>
+          <td>Air hunger (Kussmaul)<span class="ar">جوع هوائي (كوسمول)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Breath</strong><span class="ar">رائحة الفم</span></td>
+          <td>Normal<span class="ar">طبيعية</span></td>
+          <td>Acetone odor (fruity)<span class="ar">رائحة الأسيتون (فاكهية)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pulse</strong><span class="ar">النبض</span></td>
+          <td>Strong<span class="ar">قوي</span></td>
+          <td>Weak &amp; rapid<span class="ar">ضعيف وسريع</span></td>
+        </tr>
+        <tr>
+          <td><strong>Blood Pressure</strong><span class="ar">ضغط الدم</span></td>
+          <td>↑↑ Systolic<span class="ar">مرتفع الانقباضي</span></td>
+          <td>Low (hypotension)<span class="ar">منخفض</span></td>
+        </tr>
+        <tr>
+          <td><strong>Urine</strong><span class="ar">البول</span></td>
+          <td>Normal<span class="ar">طبيعي</span></td>
+          <td>Sugar + Acetone<span class="ar">سكر + أسيتون</span></td>
+        </tr>
+        <tr>
+          <td><strong>Response to Oral Sugar</strong><span class="ar">استجابة للسكر الفموي</span></td>
+          <td>Rapid recovery, may be irritable<span class="ar">تعافٍ سريع، قد يكون متهيجاً</span></td>
+          <td>No effect<span class="ar">لا تأثير</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">Diabetic Ketoacidosis (DKA) <span class="ar">الحماض الكيتوني السكري</span></h3>
+  <div class="warn-box">
+    <strong>Causes:</strong> Severe DM (usually IDDM) | Interruption of insulin therapy | Stress (infection, trauma, operations, pregnancy, severe vomiting/diarrhea) | Excess fat intake | Undiagnosed/untreated DM
+    <div class="ar"><strong>الأسباب:</strong> سكري حاد (غالباً النوع الأول) | انقطاع علاج الأنسولين | إجهاد (عدوى، صدمة، جراحة، حمل، تقيؤ/إسهال شديد) | زيادة تناول الدهون | سكري غير مُشخَّص أو غير مُعالَج</div>
+  </div>
+  <h4 style="margin:12px 0 6px; color:var(--navy);">Signs &amp; Symptoms of DKA <span style="font-family:var(--ar-font);font-size:.95rem;color:var(--gold)"> علامات وأعراض الحماض الكيتوني</span></h4>
+  <ul class="bi-list">
+    <li>Dehydration: Polyuria, Polydipsia <span class="ar">جفاف: كثرة التبول والعطش</span></li>
+    <li>Blurred vision <span class="ar">ضبابية الرؤية</span></li>
+    <li>Weakness <span class="ar">ضعف</span></li>
+    <li>Flushed face, Dry skin <span class="ar">وجه محمر، جلد جاف</span></li>
+    <li>Anorexia, Nausea &amp; Vomiting <span class="ar">فقدان الشهية، غثيان وتقيؤ</span></li>
+    <li>Abdominal pain <span class="ar">آلام في البطن</span></li>
+    <li>Acetone breath (fruity odor) <span class="ar">رائحة أسيتون (فاكهية)</span></li>
+    <li>Electrolyte loss <span class="ar">فقدان الشوارد</span></li>
+    <li>Acidosis <span class="ar">الحماض</span></li>
+  </ul>
+
+  <h4 style="margin:12px 0 6px; color:var(--navy);">Management of DKA <span style="font-family:var(--ar-font);font-size:.95rem;color:var(--gold)"> علاج الحماض الكيتوني</span></h4>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Goal <span class="ar">الهدف</span></th><th>Treatment <span class="ar">العلاج</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A. Dehydration</strong><span class="ar">الجفاف</span></td>
+          <td>Up to 6–10 L IV fluid. Initially 0.9% NS at 0.5–1 L/hr for 2–3 hrs. Hypotonic NS (0.45%) for hypertensive patients.<span class="ar">حتى 6–10 لتر سوائل وريدية. في البداية محلول ملحي 0.9% بمعدل 0.5–1 لتر/ساعة لمدة 2–3 ساعات.</span></td>
+        </tr>
+        <tr>
+          <td><strong>B. Electrolyte Loss (K⁺)</strong><span class="ar">فقد الشوارد (البوتاسيوم)</span></td>
+          <td>Replace potassium (vital to prevent severe cardiac dysrhythmias from hypokalemia).<span class="ar">تعويض البوتاسيوم (ضروري لمنع اضطراب خطير في نظم القلب).</span></td>
+        </tr>
+        <tr>
+          <td><strong>C. Acidosis</strong><span class="ar">الحماض</span></td>
+          <td>Treated with insulin. Insulin stops the buildup of acids.<span class="ar">يُعالَج بالأنسولين الذي يوقف تراكم الأحماض.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title" style="margin-top:28px">Hyperglycemic Hyperosmolar Nonketotic Syndrome (HHNK) <span class="ar">متلازمة فرط السكر فرط الأسمولية بلا كيتون</span></h3>
+  <div class="bilang">
+    <div class="en-side">
+      <p>A serious condition in which <strong>hyperosmolarity and hyperglycemia predominate</strong>, with alterations of the sensorium (sense of awareness). Ketosis is usually minimal or absent.</p>
+      <p style="margin-top:8px;"><strong>Etiology:</strong> Newly diagnosed non-insulin-dependent elderly patients, major illnesses, stress, sepsis, gastrointestinal hemorrhage, high-calorie parenteral/enteral feedings, medications (thiazide diuretics, glucocorticoids), acute myocardial infarction, pancreatitis.</p>
+      <p style="margin-top:8px;"><strong>Clinical Features:</strong> Profound dehydration (dry mucous membranes), poor skin turgor, tachycardia, hypotension, shallow respirations, variable neurologic signs (e.g., seizures).</p>
+    </div>
+    <div class="ar-side">
+      <p>حالة خطيرة تسود فيها <strong>فرط الأسمولية وفرط سكر الدم</strong> مع اضطراب في مستوى الوعي. الكيتون عادةً ضئيل أو غائب.</p>
+      <p style="margin-top:8px;"><strong>الأسباب:</strong> مسنّون مصابون بسكري النوع الثاني حديثاً، أمراض خطيرة، إجهاد، إنتان، نزيف هضمي، تغذية عالية السعرات، أدوية (مدرات البول، الكورتيزون)، احتشاء حاد، التهاب بنكرياس.</p>
+      <p style="margin-top:8px;"><strong>المظاهر السريرية:</strong> جفاف شديد (أغشية مخاطية جافة)، رداءة مرونة الجلد، تسارع القلب، انخفاض ضغط الدم، تنفس سطحي، علامات عصبية متغيرة (مثل تشنجات).</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title" style="margin-top:28px">II – Long-Term (Chronic) Complications <span class="ar">المضاعفات المزمنة</span></h3>
+  <p style="margin-bottom:14px">Long-term complications can affect <strong>almost every organ system</strong>. <span style="font-family:var(--ar-font);color:#5a4020">المضاعفات طويلة المدى يمكن أن تؤثر في تقريباً كل أجهزة الجسم.</span></p>
+
+  <div class="card-grid">
+    <div class="card navy">
+      <h4>🫀 Macrovascular Complications</h4><div class="ar-label">مضاعفات الأوعية الكبيرة</div>
+      <ul class="bi-list">
+        <li>Cardiovascular Disease <span class="ar">أمراض القلب والأوعية</span></li>
+        <li>Peripheral Vascular Disease <span class="ar">مرض الأوعية المحيطية</span></li>
+        <li>Cerebrovascular Disease / Stroke <span class="ar">مرض الأوعية الدماغية / السكتة</span></li>
+      </ul>
+    </div>
+    <div class="card teal" style="border-left-color:var(--teal)">
+      <h4>👁️ Microvascular Complications</h4><div class="ar-label">مضاعفات الأوعية الصغيرة</div>
+      <ul class="bi-list">
+        <li>Ocular Complications (Retinopathy) <span class="ar">مضاعفات العيون (اعتلال الشبكية)</span></li>
+        <li>Diabetic Neuropathy <span class="ar">اعتلال الأعصاب السكري</span></li>
+        <li>Diabetic Nephropathy <span class="ar">اعتلال الكلى السكري</span></li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h4>⚡ Sexual Dysfunction</h4><div class="ar-label">الخلل الجنسي</div>
+      <p>Both males and females may be affected due to neuropathy and vascular changes.</p>
+      <p class="ar-p">يؤثر على الذكور والإناث بسبب اعتلال الأعصاب والتغيرات الوعائية.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 9. NURSING PROCESS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-np" class="tab-section">
+<div class="section-wrap">
+  <h2 class="sec-title">Nursing Process for Diabetic Patient <span class="ar">العملية التمريضية لمريض السكري</span></h2>
+
+  <!-- STEP 1: ASSESSMENT -->
+  <div class="np-step np-1">
+    <div class="np-icon">ASSESS</div>
+    <div class="np-body">
+      <h4>1. Assessment <span style="font-family:var(--ar-font);font-size:1rem;color:var(--gold)">التقييم</span></h4>
+      <div class="ar-h">جمع البيانات الشاملة عن المريض</div>
+      <div class="bilang" style="margin:0">
+        <div class="en-side">
+          <p><strong>Health History:</strong></p>
+          <ul class="bi-list">
+            <li>Type of diabetes, duration, current treatment (insulin/oral agents)</li>
+            <li>Family history of diabetes</li>
+            <li>Diet habits, exercise patterns</li>
+            <li>Previous complications (DKA, hypoglycemia episodes)</li>
+            <li>Medications (steroids, diuretics, contraceptives)</li>
+            <li>Pregnancy history (GDM)</li>
+            <li>Smoking, alcohol use</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>Physical Assessment:</strong></p>
+          <ul class="bi-list">
+            <li>Vital signs (BP, HR, RR, Temp, Weight)</li>
+            <li>Skin: color, turgor, dryness, lesions, injection sites (lipodystrophy)</li>
+            <li>Eyes: visual changes, blurred vision</li>
+            <li>Feet: pulses, sensation, wounds, nail condition</li>
+            <li>Neurological: tingling, numbness, reflexes</li>
+            <li>Oral cavity: hygiene, ulcers</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>Laboratory Data:</strong></p>
+          <ul class="bi-list">
+            <li>Fasting blood glucose, 2hpp, random glucose</li>
+            <li>HbA1c (glycated hemoglobin)</li>
+            <li>Urine: glucose, ketones, protein</li>
+            <li>Lipid profile, renal function (BUN, creatinine)</li>
+          </ul>
+        </div>
+        <div class="ar-side">
+          <p><strong>التاريخ الصحي:</strong></p>
+          <ul class="bi-list" style="padding-right:16px">
+            <li>نوع السكري، مدته، العلاج الحالي (أنسولين/أقراص)</li>
+            <li>التاريخ العائلي للسكري</li>
+            <li>عادات الغذاء وأنماط التمرين</li>
+            <li>مضاعفات سابقة (حماض كيتوني، نوبات نقص سكر)</li>
+            <li>الأدوية (كورتيزون، مدرات بول، موانع حمل)</li>
+            <li>تاريخ الحمل (سكري حمل)</li>
+            <li>التدخين، الكحول</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>التقييم الجسدي:</strong></p>
+          <ul class="bi-list" style="padding-right:16px">
+            <li>العلامات الحيوية (ضغط، نبض، تنفس، حرارة، وزن)</li>
+            <li>الجلد: اللون، المرونة، الجفاف، آفات، مواقع الحقن</li>
+            <li>العيون: تغيرات بصرية، ضبابية الرؤية</li>
+            <li>القدمان: النبض، الإحساس، الجروح، الأظافر</li>
+            <li>الجهاز العصبي: وخز، خدر، ردود الفعل</li>
+            <li>تجويف الفم: النظافة، القرح</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>البيانات المختبرية:</strong></p>
+          <ul class="bi-list" style="padding-right:16px">
+            <li>سكر الصيام، ما بعد الأكل، العشوائي</li>
+            <li>HbA1c (الهيموغلوبين السكري)</li>
+            <li>البول: جلوكوز، كيتون، بروتين</li>
+            <li>ملف الدهون، وظائف الكلى</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: NURSING DIAGNOSIS -->
+  <div class="np-step np-2" style="margin-top:16px">
+    <div class="np-icon">DIAG</div>
+    <div class="np-body">
+      <h4>2. Nursing Diagnoses <span style="font-family:var(--ar-font);font-size:1rem;color:var(--gold)">التشخيصات التمريضية</span></h4>
+      <div class="ar-h">المشاكل التمريضية المحتملة والفعلية</div>
+      <ul class="bi-list">
+        <li><strong>Risk for unstable blood glucose level</strong> related to inadequate diet, medication, or exercise. <span class="ar">خطر عدم استقرار مستوى جلوكوز الدم مرتبط بالحمية، الدواء، أو التمرين.</span></li>
+        <li><strong>Deficient knowledge</strong> regarding disease management, self-care, insulin administration. <span class="ar">نقص المعرفة بإدارة المرض، الرعاية الذاتية، حقن الأنسولين.</span></li>
+        <li><strong>Imbalanced nutrition: more than body requirements</strong> related to excessive food intake. <span class="ar">اختلال التغذية: أكثر من متطلبات الجسم.</span></li>
+        <li><strong>Risk for infection</strong> related to impaired immune function and poor wound healing. <span class="ar">خطر العدوى بسبب ضعف المناعة وضعف التئام الجروح.</span></li>
+        <li><strong>Risk for injury (hypoglycemia)</strong> related to insulin therapy. <span class="ar">خطر الإصابة (نقص السكر) مرتبط بالعلاج بالأنسولين.</span></li>
+        <li><strong>Ineffective coping</strong> related to chronic disease management stress. <span class="ar">عدم فعالية التكيّف مرتبط بضغط إدارة المرض المزمن.</span></li>
+        <li><strong>Impaired skin integrity</strong> related to peripheral neuropathy and poor circulation. <span class="ar">ضعف سلامة الجلد بسبب اعتلال الأعصاب المحيطي وضعف الدورة الدموية.</span></li>
+        <li><strong>Non-compliance</strong> with therapeutic regimen. <span class="ar">عدم الامتثال للنظام العلاجي.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STEP 3: PLANNING -->
+  <div class="np-step np-3" style="margin-top:16px">
+    <div class="np-icon">PLAN</div>
+    <div class="np-body">
+      <h4>3. Planning / Expected Outcomes <span style="font-family:var(--ar-font);font-size:1rem;color:var(--gold)">التخطيط / النتائج المتوقعة</span></h4>
+      <div class="ar-h">الأهداف قصيرة وطويلة المدى</div>
+      <ul class="bi-list">
+        <li>Patient will maintain blood glucose within target range (70–130 mg/dL fasting; &lt;180 mg/dL post-meal). <span class="ar">يحتفظ المريض بجلوكوز الدم ضمن النطاق المستهدف.</span></li>
+        <li>Patient will demonstrate correct self-monitoring of blood glucose. <span class="ar">يُظهر المريض صحة مراقبة سكر الدم الذاتية.</span></li>
+        <li>Patient will demonstrate correct insulin injection technique and site rotation. <span class="ar">يُظهر المريض تقنية حقن الأنسولين وتدوير المواقع بشكل صحيح.</span></li>
+        <li>Patient will follow prescribed dietary plan. <span class="ar">يتبع المريض الخطة الغذائية الموصوفة.</span></li>
+        <li>Patient will recognize and manage hypoglycemia/hyperglycemia signs early. <span class="ar">يتعرف المريض ويدير علامات نقص/فرط سكر الدم مبكراً.</span></li>
+        <li>Patient will demonstrate proper foot care. <span class="ar">يُظهر المريض العناية الصحيحة بالقدم.</span></li>
+        <li>Patient will remain free from infection and complications. <span class="ar">يظل المريض خالياً من العدوى والمضاعفات.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STEP 4: INTERVENTIONS -->
+  <div class="np-step np-4" style="margin-top:16px">
+    <div class="np-icon">IMPL</div>
+    <div class="np-body">
+      <h4>4. Nursing Interventions (Implementation) <span style="font-family:var(--ar-font);font-size:1rem;color:var(--gold)">التدخلات التمريضية</span></h4>
+      <div class="ar-h">الإجراءات التمريضية التي يقوم بها الممرض</div>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">A. Blood Glucose Monitoring <span style="font-family:var(--ar-font);color:var(--gold)">مراقبة سكر الدم</span></h5>
+      <ul class="bi-list">
+        <li>Monitor blood glucose 2–4 times/day (before meals and at bedtime). <span class="ar">مراقبة سكر الدم 2–4 مرات يومياً (قبل الوجبات وعند النوم).</span></li>
+        <li>Document and report abnormal values promptly. <span class="ar">توثيق القيم غير الطبيعية والإبلاغ عنها فوراً.</span></li>
+        <li>Teach patient self-monitoring technique. <span class="ar">تعليم المريض تقنية المراقبة الذاتية.</span></li>
+      </ul>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">B. Medication Administration <span style="font-family:var(--ar-font);color:var(--gold)">إدارة الدواء</span></h5>
+      <ul class="bi-list">
+        <li>Administer insulin or oral anti-diabetics as prescribed. <span class="ar">إعطاء الأنسولين أو مضادات السكر الفموية وفق الوصفة الطبية.</span></li>
+        <li>Rotate injection sites systematically; document sites used. <span class="ar">تدوير مواقع الحقن بشكل منهجي وتوثيق المواقع المستخدمة.</span></li>
+        <li>Teach correct insulin preparation and injection technique. <span class="ar">تعليم التحضير الصحيح للأنسولين وتقنية الحقن.</span></li>
+        <li>Monitor for insulin complications (local/systemic allergy, lipodystrophy). <span class="ar">مراقبة مضاعفات الأنسولين (حساسية موضعية/جهازية، ضمور دهني).</span></li>
+      </ul>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">C. Nutritional Management <span style="font-family:var(--ar-font);color:var(--gold)">الإدارة الغذائية</span></h5>
+      <ul class="bi-list">
+        <li>Collaborate with dietitian; ensure 50–60% carbs, 20–30% fat, ~20% protein. <span class="ar">التعاون مع أخصائي التغذية؛ 50–60% كربوهيدرات، 20–30% دهون، ~20% بروتين.</span></li>
+        <li>Encourage regular meal times; avoid skipping meals with insulin therapy. <span class="ar">تشجيع انتظام مواعيد الوجبات؛ تجنب تفويت الوجبات مع العلاج بالأنسولين.</span></li>
+        <li>Teach carbohydrate counting and food label reading. <span class="ar">تعليم حساب الكربوهيدرات وقراءة بطاقات الأغذية.</span></li>
+      </ul>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">D. Hypoglycemia Management <span style="font-family:var(--ar-font);color:var(--gold)">إدارة نقص سكر الدم</span></h5>
+      <ul class="bi-list">
+        <li>Recognize early signs: pallor, cold clammy skin, diaphoresis, tremors, confusion. <span class="ar">التعرف المبكر: شحوب، جلد بارد رطب، رعشة، ارتباك.</span></li>
+        <li>If conscious: give 15 g fast-acting carbohydrate (glucose tablets, juice, sugar). <span class="ar">إذا كان واعياً: أعطِ 15 جرام كربوهيدرات سريع المفعول.</span></li>
+        <li>If unconscious: IV dextrose 50% or IM/SC glucagon. <span class="ar">إذا كان فاقد الوعي: دكستروز 50% وريدياً أو غلوكاغون.</span></li>
+        <li>Recheck blood glucose in 15 minutes. <span class="ar">إعادة قياس السكر بعد 15 دقيقة.</span></li>
+      </ul>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">E. Foot &amp; Skin Care <span style="font-family:var(--ar-font);color:var(--gold)">العناية بالقدم والجلد</span></h5>
+      <ul class="bi-list">
+        <li>Inspect feet daily for cuts, blisters, redness, swelling. <span class="ar">فحص القدمين يومياً للكشف عن قطوع أو بثور أو احمرار.</span></li>
+        <li>Teach foot hygiene: daily washing, thorough drying, moisturizing, straight nail cutting. <span class="ar">تعليم نظافة القدم: غسيل يومي، تجفيف جيد، ترطيب، قص الأظافر باستقامة.</span></li>
+        <li>Advise well-fitting footwear; never go barefoot. <span class="ar">نصيحة بارتداء أحذية مناسبة؛ عدم المشي حافي القدمين.</span></li>
+      </ul>
+
+      <h5 style="color:var(--teal);margin:10px 0 6px">F. Patient Education <span style="font-family:var(--ar-font);color:var(--gold)">تثقيف المريض</span></h5>
+      <ul class="bi-list">
+        <li>Teach about the disease, medications, diet, exercise, self-monitoring. <span class="ar">التثقيف عن المرض، الأدوية، الحمية، التمرين، المراقبة الذاتية.</span></li>
+        <li>Teach signs and symptoms of hypoglycemia and hyperglycemia. <span class="ar">تعليم علامات نقص وفرط سكر الدم.</span></li>
+        <li>Emphasize regular follow-up appointments and laboratory tests. <span class="ar">التأكيد على مواعيد المتابعة المنتظمة والتحاليل.</span></li>
+        <li>Encourage wearing diabetic identification bracelet/card. <span class="ar">تشجيع ارتداء سوار/بطاقة هوية مريض السكري.</span></li>
+        <li>Advise to inform dentists and other providers of diabetes status. <span class="ar">نصح المريض بإبلاغ طبيب الأسنان وغيره عن الإصابة بالسكري.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STEP 5: EVALUATION -->
+  <div class="np-step np-5" style="margin-top:16px">
+    <div class="np-icon">EVAL</div>
+    <div class="np-body">
+      <h4>5. Evaluation <span style="font-family:var(--ar-font);font-size:1rem;color:var(--gold)">التقييم</span></h4>
+      <div class="ar-h">تقييم مدى تحقق الأهداف</div>
+      <ul class="bi-list">
+        <li>Blood glucose levels are within acceptable range (FBG 70–130 mg/dL; postprandial &lt;180 mg/dL; HbA1c &lt;7%). <span class="ar">مستويات سكر الدم ضمن النطاق المقبول.</span></li>
+        <li>Patient demonstrates correct blood glucose monitoring technique independently. <span class="ar">يُظهر المريض تقنية مراقبة سكر الدم بشكل مستقل وصحيح.</span></li>
+        <li>Patient correctly administers insulin and rotates sites without lipodystrophy. <span class="ar">يُعطي المريض الأنسولين ويدور المواقع بدون ضمور دهني.</span></li>
+        <li>Patient follows prescribed dietary plan; weight is stable/improving. <span class="ar">يتبع المريض الخطة الغذائية ووزنه مستقر/يتحسن.</span></li>
+        <li>Patient identifies early signs of hypoglycemia and takes appropriate action. <span class="ar">يتعرف المريض على علامات نقص السكر المبكرة ويتصرف بشكل مناسب.</span></li>
+        <li>No signs of foot lesions, infections, or skin breakdown. <span class="ar">لا توجد آفات قدم أو التهابات أو تكسر جلدي.</span></li>
+        <li>Patient verbalizes understanding of disease and management plan. <span class="ar">يعبّر المريض عن فهمه للمرض وخطة الإدارة.</span></li>
+        <li>No acute complications (DKA, HHNK, severe hypoglycemia). <span class="ar">لا مضاعفات حادة (حماض كيتوني، HHNK، نقص سكر شديد).</span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- 10. QUIZ -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tab-quiz" class="tab-section">
+<div class="section-wrap">
+
+  <div class="quiz-header">
+    <h2>Self-Test – 20 Questions</h2>
+    <div class="ar">اختبر نفسك – 20 سؤال</div>
+    <p style="margin-top:8px;opacity:.85;font-size:.92rem">Click an option to answer. The correct answer with explanation will appear immediately.</p>
+    <p style="font-family:var(--ar-font);direction:rtl;font-size:.92rem;color:#c8e6e7;margin-top:4px">اضغط على خيار للإجابة. ستظهر الإجابة الصحيحة مع الشرح فوراً.</p>
+  </div>
+
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+  <div id="score-live">Score: <span id="score-num">0</span> / <span id="total-num">20</span></div>
+
+  <div id="quiz-container"></div>
+
+  <div id="quiz-controls" style="display:none">
+    <button class="btn gold-btn" onclick="showResult()">See Final Score / رؤية النتيجة</button>
+  </div>
+  <div id="quiz-result">
+    <h3>Quiz Complete! اكتمل الاختبار</h3>
+    <div id="score-display"></div>
+    <p id="result-msg"></p>
+    <div class="ar" id="result-ar"></div>
+    <button class="btn" onclick="resetQuiz()" style="margin-top:16px">Retry / حاول مجدداً 🔄</button>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Endocrine System Disorders – Diabetes Mellitus &nbsp;|&nbsp; Dr. Zinab</p>
+  <p class="ar">اضطرابات الجهاز الصماوي – داء السكري | د. زينب</p>
+  <p style="margin-top:8px;font-size:.75rem;opacity:.6">Educational material for academic use only.</p>
+</footer>
+
+<script>
+// ── TAB SWITCHING ──────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── QUIZ DATA ──────────────────────────────────────────────
+const questions = [
+  {
+    en: "Which cells in the Islets of Langerhans secrete insulin?",
+    ar: "أي خلايا في جزر لانغرهانز تُفرز الأنسولين؟",
+    opts: ["Alpha (A) cells", "Beta (B) cells", "Delta (D) cells", "PP cells"],
+    correct: 1,
+    explain_en: "Beta (B) cells make up 60% of islet cells and are the sole source of insulin in the body.",
+    explain_ar: "خلايا بيتا تمثل 60% من خلايا الجزر وهي المصدر الوحيد للأنسولين في الجسم."
+  },
+  {
+    en: "Diabetes mellitus is primarily characterized by:",
+    ar: "يتميز داء السكري أساساً بـ:",
+    opts: ["Low blood glucose levels", "Elevated blood glucose levels (hyperglycemia)", "Low blood pressure", "Increased white blood cell count"],
+    correct: 1,
+    explain_en: "DM is defined by chronic hyperglycemia resulting from a defect in insulin secretion, action, or both.",
+    explain_ar: "يُعرَّف السكري بارتفاع مزمن في سكر الدم ناجم عن خلل في إفراز الأنسولين أو عمله أو كليهما."
+  },
+  {
+    en: "Type 1 Diabetes Mellitus accounts for approximately what percentage of all diabetes cases?",
+    ar: "يمثل سكري النوع الأول تقريباً كم بالمئة من جميع حالات السكري؟",
+    opts: ["5–10%", "50%", "90–95%", "30%"],
+    correct: 0,
+    explain_en: "Type 1 DM accounts for only 5–10% of all diabetes cases, while Type 2 accounts for 90–95%.",
+    explain_ar: "سكري النوع الأول يمثل 5–10% فقط، بينما يمثل النوع الثاني 90–95%."
+  },
+  {
+    en: "Which of the following is the 'classic triad' (Three Ps) of diabetes symptoms?",
+    ar: "أيٌّ مما يلي هو 'الثلاثية الكلاسيكية' لأعراض السكري؟",
+    opts: ["Pain, Pallor, Paralysis", "Polyuria, Polydipsia, Polyphagia", "Polycythemia, Polyuria, Pyrexia", "Polyuria, Polypnea, Pallor"],
+    correct: 1,
+    explain_en: "The classic 'Three Ps' are Polyuria (↑ urination), Polydipsia (↑ thirst), and Polyphagia (↑ hunger).",
+    explain_ar: "الثلاثة الكلاسيكية: كثرة التبول، كثرة العطش، كثرة الأكل."
+  },
+  {
+    en: "A fasting blood glucose level diagnostic for diabetes mellitus is:",
+    ar: "مستوى جلوكوز الدم الصائم الذي يُشخَّص به السكري هو:",
+    opts: ["≥ 100 mg/dL", "≥ 110 mg/dL", "≥ 126 mg/dL", "≥ 200 mg/dL"],
+    correct: 2,
+    explain_en: "A fasting blood glucose ≥ 126 mg/dL on two separate occasions confirms a diagnosis of diabetes mellitus.",
+    explain_ar: "جلوكوز الصيام ≥ 126 ملجم/ديسيلتر في مناسبتين منفصلتين يؤكد تشخيص السكري."
+  },
+  {
+    en: "Gestational diabetes mellitus (GDM) is usually diagnosed during which trimester?",
+    ar: "يُشخَّص سكري الحمل عادةً في أي ثلث من الحمل؟",
+    opts: ["First trimester", "Second or third trimester", "Only postpartum", "At conception"],
+    correct: 1,
+    explain_en: "GDM is typically detected in the 2nd or 3rd trimester due to increasing placental hormones that inhibit insulin action.",
+    explain_ar: "يُكتشف سكري الحمل عادةً في الثلث الثاني أو الثالث بسبب هرمونات المشيمة المتزايدة التي تُثبّط عمل الأنسولين."
+  },
+  {
+    en: "Which insulin type has NO peak (continuous action) and lasts approximately 24 hours?",
+    ar: "أي نوع من الأنسولين ليس له ذروة (تأثير مستمر) ويدوم حوالي 24 ساعة؟",
+    opts: ["Regular insulin (Humulin R)", "NPH insulin", "Lispro (Humalog)", "Glargine (Lantus)"],
+    correct: 3,
+    explain_en: "Glargine (Lantus) and Detemir (Levemir) are very long-acting insulins with no peak, used for basal dosing over 24 hours.",
+    explain_ar: "جلارجين (لانتوس) وديتيمير (ليفيمير) أنسولينات طويلة المفعول جداً بلا ذروة، تُستخدم للجرعة الأساسية على مدى 24 ساعة."
+  },
+  {
+    en: "The absorption of insulin is FASTEST from which injection site?",
+    ar: "امتصاص الأنسولين يكون الأسرع من أي موقع حقن؟",
+    opts: ["Thigh", "Hip", "Abdomen", "Arm"],
+    correct: 2,
+    explain_en: "Absorption is fastest from the abdomen, then decreases progressively in the arm, thigh, and hip.",
+    explain_ar: "الامتصاص أسرع ما يكون في البطن، ثم يتناقص تدريجياً في الذراع، الفخذ، الورك."
+  },
+  {
+    en: "A patient with DKA shows acetone-smelling breath. This is due to:",
+    ar: "يُظهر مريض الحماض الكيتوني رائحة أسيتون في أنفاسه. هذا يرجع إلى:",
+    opts: ["Increased glucose production", "Breakdown of fats leading to ketone body accumulation", "Increased protein intake", "Renal failure"],
+    correct: 1,
+    explain_en: "In DKA, insulin deficiency causes lipolysis (fat breakdown), releasing fatty acids that are converted to ketone bodies, producing a fruity/acetone breath odor.",
+    explain_ar: "في الحماض الكيتوني، نقص الأنسولين يُسبب تحلّل الدهون مُطلِقاً أحماضاً دهنية تتحول إلى أجسام كيتون، منتجةً رائحة الأسيتون."
+  },
+  {
+    en: "The major electrolyte of concern during treatment of DKA is:",
+    ar: "الشارد الرئيسي المثير للقلق أثناء علاج الحماض الكيتوني هو:",
+    opts: ["Sodium (Na⁺)", "Calcium (Ca²⁺)", "Potassium (K⁺)", "Magnesium (Mg²⁺)"],
+    correct: 2,
+    explain_en: "Potassium replacement is vital in DKA treatment to prevent severe cardiac dysrhythmias caused by hypokalemia.",
+    explain_ar: "تعويض البوتاسيوم حيوي في علاج الحماض الكيتوني لمنع اضطراب خطير في نظم القلب بسبب نقص البوتاسيوم."
+  },
+  {
+    en: "Which finding is characteristic of HYPOGLYCEMIA (not hyperglycemia)?",
+    ar: "أي إيجابية تكون مميزة لنقص سكر الدم (وليس فرطه)؟",
+    opts: ["Acetone breath", "Flushed hot dry skin", "Pale cold clammy skin", "Sunken eyes"],
+    correct: 2,
+    explain_en: "Hypoglycemia presents with pale, cold, clammy skin due to sympathetic stimulation (epinephrine release). Hyperglycemia causes flushed, hot, dry skin.",
+    explain_ar: "نقص السكر يُسبب جلداً شاحباً بارداً رطباً بسبب التحفيز الودّي. فرط السكر يُسبب جلداً محمراً حاراً جافاً."
+  },
+  {
+    en: "Testing for glycated hemoglobin (HbA1c) reflects average blood glucose over:",
+    ar: "يعكس اختبار الهيموغلوبين السكري (HbA1c) متوسط سكر الدم على مدى:",
+    opts: ["1 week", "1 month", "2–3 months", "6 months"],
+    correct: 2,
+    explain_en: "HbA1c reflects the average blood glucose level over the past 2–3 months, corresponding to the lifespan of red blood cells.",
+    explain_ar: "يعكس HbA1c متوسط سكر الدم خلال الـ2–3 أشهر الماضية، مطابقاً لعمر خلايا الدم الحمراء."
+  },
+  {
+    en: "According to ADA recommendations, what percentage of total daily calories should come from carbohydrates in a diabetic diet?",
+    ar: "وفق توصيات جمعية السكري الأمريكية، كم بالمئة من السعرات اليومية الكلية يجب أن تأتي من الكربوهيدرات؟",
+    opts: ["20–30%", "50–60%", "70–80%", "10–15%"],
+    correct: 1,
+    explain_en: "The ADA (2009) recommends 50–60% of calories from carbohydrates, 20–30% from fat, and ~20% from protein.",
+    explain_ar: "توصي جمعية السكري الأمريكية (2009) بـ50–60% من الكربوهيدرات، 20–30% من الدهون، ~20% من البروتين."
+  },
+  {
+    en: "Exercise benefits diabetic patients MAINLY because it:",
+    ar: "تُفيد الرياضة مرضى السكري أساساً لأنها:",
+    opts: ["Increases insulin secretion from the pancreas", "Lowers blood glucose by increasing muscle uptake of glucose and improving insulin utilization", "Reduces kidney workload", "Decreases glucagon secretion"],
+    correct: 1,
+    explain_en: "Exercise lowers blood glucose by increasing glucose uptake by body muscles and improving insulin utilization, and also reduces cardiovascular risk factors.",
+    explain_ar: "تخفض الرياضة سكر الدم بزيادة امتصاص العضلات للجلوكوز وتحسين استخدام الأنسولين، وتقلل عوامل خطر القلب."
+  },
+  {
+    en: "Lipodystrophy at insulin injection sites can be PREVENTED by:",
+    ar: "يمكن الوقاية من تضخم الدهون في مواقع حقن الأنسولين بـ:",
+    opts: ["Using only the abdomen for injections", "Rotating injection sites systematically", "Using only rapid-acting insulin", "Applying heat before injection"],
+    correct: 1,
+    explain_en: "Systematic rotation of injection sites prevents lipodystrophy (lipoatrophy or lipohypertrophy) at any single site.",
+    explain_ar: "تدوير مواقع الحقن بشكل منهجي يمنع ضمور الدهون أو تضخمها في أي موقع واحد."
+  },
+  {
+    en: "A pregnant woman should be screened for gestational diabetes between:",
+    ar: "يجب فحص المرأة الحامل للكشف عن سكري الحمل بين:",
+    opts: ["10–14 weeks", "16–20 weeks", "24–28 weeks", "32–36 weeks"],
+    correct: 2,
+    explain_en: "Screening glucose challenge test should be performed on ALL pregnant women between 24 and 28 weeks' gestation.",
+    explain_ar: "يجب إجراء اختبار فحص الجلوكوز لجميع الحوامل بين الأسبوعين 24 و28 من الحمل."
+  },
+  {
+    en: "Which microvascular complication of diabetes affects the kidneys?",
+    ar: "أي مضاعفات وعائية دقيقة للسكري تؤثر في الكلى؟",
+    opts: ["Diabetic retinopathy", "Diabetic neuropathy", "Diabetic nephropathy", "Cerebrovascular disease"],
+    correct: 2,
+    explain_en: "Diabetic nephropathy is the microvascular complication affecting the kidneys, and is a leading cause of end-stage renal disease.",
+    explain_ar: "اعتلال الكلى السكري هو المضاعفة الوعائية الدقيقة التي تؤثر في الكلى، وهو من الأسباب الرئيسية لالفشل الكلوي."
+  },
+  {
+    en: "In Hyperglycemic Hyperosmolar Nonketotic Syndrome (HHNK), which finding is typically ABSENT?",
+    ar: "في متلازمة فرط السكر فرط الأسمولية، أي إيجابية تكون غائبة عادةً؟",
+    opts: ["Hyperglycemia", "Hyperosmolarity", "Ketosis / Ketoacidosis", "Dehydration"],
+    correct: 2,
+    explain_en: "HHNK is characterized by extreme hyperglycemia and hyperosmolarity but ketosis is usually minimal or ABSENT, unlike DKA.",
+    explain_ar: "تتميز متلازمة HHNK بفرط شديد في سكر الدم والأسمولية، لكن الكيتون يكون غائباً أو ضئيلاً على عكس الحماض الكيتوني."
+  },
+  {
+    en: "The DKA treatment for dehydration initially includes IV infusion of:",
+    ar: "علاج الجفاف في الحماض الكيتوني يتضمن في البداية تسريب وريدي من:",
+    opts: ["Dextrose 5% in water", "0.9% Normal saline at high rate (0.5–1 L/hr)", "Potassium chloride alone", "Insulin drip only"],
+    correct: 1,
+    explain_en: "Initially, 0.9% NS is administered at 0.5–1 L/hr for 2–3 hrs. Patients may need up to 6–10 L total IV fluid.",
+    explain_ar: "في البداية يُعطى محلول ملحي 0.9% بمعدل 0.5–1 لتر/ساعة لمدة 2–3 ساعات. قد يحتاج المريض إلى 6–10 لتر إجمالاً."
+  },
+  {
+    en: "In proper foot care for a diabetic patient, toenails should be cut:",
+    ar: "في العناية بقدم مريض السكري، يجب قص أظافر القدمين:",
+    opts: ["Rounded and as short as possible", "Straight across and not too short", "At an angle pointing inward", "Only by a nurse, never independently"],
+    correct: 1,
+    explain_en: "Toenails should be cut straight across (not curved) and not too short to avoid injury or ingrown nails that can lead to infection.",
+    explain_ar: "يجب قص أظافر القدمين باستقامة وعدم القصر الشديد لتجنب الإصابة أو الأظافر المدفونة التي قد تؤدي إلى عدوى."
+  }
+];
+
+let answers = new Array(questions.length).fill(null);
+let answered = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `qcard-${i}`;
+    const optsHTML = q.opts.map((o, j) =>
+      `<button class="q-opt" onclick="answer(${i},${j})" id="opt-${i}-${j}">${String.fromCharCode(65+j)}. ${o}</button>`
+    ).join('');
+    card.innerHTML = `
+      <div class="q-num">Question ${i+1} of ${questions.length} &nbsp;|&nbsp; سؤال ${i+1}</div>
+      <div class="q-text">${q.en}<span class="ar">${q.ar}</span></div>
+      <div class="q-opts">${optsHTML}</div>
+      <div class="q-explain" id="exp-${i}">
+        ✅ <strong>Explanation:</strong> ${q.explain_en}
+        <span class="ar">${q.explain_ar}</span>
+      </div>`;
+    container.appendChild(card);
+  });
+  updateProgress();
+}
+
+function answer(qIdx, optIdx) {
+  if (answers[qIdx] !== null) return;
+  answers[qIdx] = optIdx;
+  answered++;
+
+  const correct = questions[qIdx].correct;
+  const opts = document.querySelectorAll(`#qcard-${qIdx} .q-opt`);
+  opts.forEach((btn, j) => {
+    btn.disabled = true;
+    if (j === correct)  btn.classList.add('correct');
+    else if (j === optIdx) btn.classList.add('wrong');
+  });
+  document.getElementById(`exp-${qIdx}`).classList.add('show');
+  document.getElementById(`qcard-${qIdx}`).classList.add('answered');
+  document.getElementById(`qcard-${qIdx}`).scrollIntoView({behavior:'smooth', block:'nearest'});
+  updateProgress();
+  if (answered === questions.length) {
+    document.getElementById('quiz-controls').style.display = 'block';
+  }
+}
+
+function updateProgress() {
+  const score = answers.filter((a,i) => a === questions[i].correct).length;
+  document.getElementById('progress-bar').style.width = (answered/questions.length*100)+'%';
+  document.getElementById('score-num').textContent = score;
+}
+
+function showResult() {
+  const score = answers.filter((a,i) => a === questions[i].correct).length;
+  const pct = Math.round(score/questions.length*100);
+  document.getElementById('score-display').textContent = `${score} / ${questions.length}  (${pct}%)`;
+  let msg = '', ar = '';
+  if (pct >= 90)      { msg = '🏆 Excellent! Outstanding performance!'; ar = 'ممتاز! أداء استثنائي!'; }
+  else if (pct >= 75) { msg = '👍 Very Good! Well done!'; ar = 'جيد جداً! أحسنت!'; }
+  else if (pct >= 60) { msg = '📘 Good. Review the missed topics.'; ar = 'جيد. راجع الموضوعات التي أخطأت فيها.'; }
+  else                { msg = '📖 Keep studying. Review the lecture carefully.'; ar = 'واصل الدراسة. راجع المحاضرة بعناية.'; }
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('result-ar').textContent = ar;
+  document.getElementById('quiz-result').style.display = 'block';
+  document.getElementById('quiz-result').scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz() {
+  answers = new Array(questions.length).fill(null);
+  answered = 0;
+  document.getElementById('quiz-controls').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'none';
+  buildQuiz();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// initialise
+buildQuiz();
+document.getElementById('total-num').textContent = questions.length;
+</script>
+</body>
+</html>

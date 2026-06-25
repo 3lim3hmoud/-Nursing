@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burn Nursing Lecture | Dr. Zinab Mohamed</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Tajawal:wght@300;400;500;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a5c72;
+    --primary-light: #2a7a96;
+    --primary-pale: #e6f3f7;
+    --accent: #c0392b;
+    --accent-light: #e74c3c;
+    --gold: #d4a017;
+    --gold-light: #f0c040;
+    --bg: #f5f7f9;
+    --surface: #ffffff;
+    --surface2: #f0f4f6;
+    --text: #1e2d3a;
+    --text-muted: #5a7080;
+    --text-arabic: #2c3e50;
+    --border: #d0dce3;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #c0392b;
+    --shadow: 0 2px 12px rgba(26,92,114,0.10);
+    --shadow-lg: 0 8px 32px rgba(26,92,114,0.15);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #0d3d50 100%);
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .header-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    padding: 0.3rem 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    color: #c8e8f0;
+  }
+  .header-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+  }
+  .header-sub {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.1rem;
+    color: #a8d8e8;
+    margin-top: 0.3rem;
+    text-align: right;
+    direction: rtl;
+  }
+
+  /* TABS */
+  .tabs-nav {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .tab-btn {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #c8e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: 'Source Sans 3', sans-serif;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+  .tab-btn.active {
+    background: white;
+    color: var(--primary);
+    font-weight: 600;
+    border-color: white;
+  }
+
+  /* MAIN */
+  .main-content {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+  }
+  .tab-panel { display: none; animation: fadeIn 0.3s ease; }
+  .tab-panel.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  /* SECTION */
+  .section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-pale);
+  }
+  .section-icon {
+    width: 40px; height: 40px;
+    background: var(--primary-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .section-titles { flex: 1; }
+  .section-title-en {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .section-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    direction: rtl;
+    margin-top: 0.1rem;
+  }
+
+  /* BILINGUAL ITEM */
+  .bi-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface2);
+    margin-bottom: 0.7rem;
+    border-left: 3px solid var(--primary-light);
+  }
+  .bi-en { font-size: 0.95rem; color: var(--text); }
+  .bi-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    color: var(--text-arabic);
+    text-align: right;
+    direction: rtl;
+  }
+
+  .bi-item.accent { border-left-color: var(--accent); background: #fdf5f5; }
+  .bi-item.gold { border-left-color: var(--gold); background: #fdf9ee; }
+  .bi-item.success { border-left-color: var(--success); background: #f0faf4; }
+
+  /* DEFINITION BOX */
+  .def-box {
+    background: linear-gradient(135deg, var(--primary-pale), #d0eaf5);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid #a8d8e8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .def-en {
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--primary);
+    font-style: italic;
+  }
+  .def-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.1rem;
+    direction: rtl;
+    text-align: right;
+    color: #1a4a5c;
+    font-weight: 500;
+    line-height: 1.9;
+  }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card {
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .card-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+  .card-title-en {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+  .card-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 0.5rem;
+  }
+  .card-desc { font-size: 0.85rem; color: var(--text-muted); }
+  .card-desc-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    margin-top: 0.2rem;
+  }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead th {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  thead th .th-ar {
+    display: block;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.8rem;
+    color: #a8d8e8;
+    font-weight: 400;
+    direction: rtl;
+    text-align: right;
+  }
+  tbody tr:nth-child(even) { background: var(--surface2); }
+  tbody tr:nth-child(odd) { background: var(--surface); }
+  tbody tr:hover { background: var(--primary-pale); }
+  td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  td .cell-en { font-weight: 500; margin-bottom: 0.2rem; }
+  td .cell-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .badge-blue { background: #dbeffe; color: #1a5c72; }
+  .badge-orange { background: #fde8d0; color: #c0530a; }
+  .badge-red { background: #fdd; color: #c0392b; }
+
+  /* FLOW CHART */
+  .flow-box {
+    background: var(--primary-pale);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #b8d8e0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .flow-arrow {
+    text-align: center;
+    color: var(--primary-light);
+    font-size: 1.4rem;
+    padding: 0.2rem 0;
+    grid-column: span 2;
+  }
+  .flow-box.red-box { background: #fdf0f0; border-color: #f5b8b8; }
+  .flow-box.orange-box { background: #fdf7ee; border-color: #f5d8b8; }
+
+  /* STAGE CARD */
+  .stage-card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+  }
+  .stage-header {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: var(--primary);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stage-header .ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    direction: rtl;
+  }
+  .stage-header.red { background: var(--accent); }
+  .stage-header.gold { background: #b8860b; }
+
+  /* NUMBERED LIST */
+  .num-list { list-style: none; counter-reset: num; }
+  .num-list li {
+    counter-increment: num;
+    display: grid;
+    grid-template-columns: 2rem 1fr 1fr;
+    gap: 0.8rem;
+    align-items: start;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .num-list li:last-child { border-bottom: none; }
+  .num-list li::before {
+    content: counter(num);
+    background: var(--primary);
+    color: white;
+    width: 1.8rem; height: 1.8rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .num-list li .li-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* INTERVENTION BLOCK */
+  .intervention {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .intervention-title {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .intervention-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .int-num {
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    width: 1.6rem; height: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .int-points { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+  .int-pt {
+    display: flex; gap: 0.5rem;
+    font-size: 0.88rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted var(--border);
+    align-items: start;
+  }
+  .int-pt::before {
+    content: '•';
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+  .int-pt .ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  /* SEVERITY BOX */
+  .severity-box {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid;
+  }
+  .severity-box.minor { background: #f0faf4; border-color: #a8dbb8; }
+  .severity-box.moderate { background: #fdf9ee; border-color: #e8cc80; }
+  .severity-box.major { background: #fdf0f0; border-color: #e8a8a8; }
+  .severity-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    display: flex; gap: 0.8rem; align-items: center;
+  }
+  .severity-title .ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+  .severity-box.minor .severity-title { color: var(--success); }
+  .severity-box.moderate .severity-title { color: var(--warning); }
+  .severity-box.major .severity-title { color: var(--danger); }
+
+  /* RULE OF NINES TABLE */
+  .nines-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .nines-table th {
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1rem;
+    text-align: center;
+  }
+  .nines-table td {
+    padding: 0.6rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .nines-table tr:nth-child(even) td { background: var(--surface2); }
+  .percent-badge {
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    padding: 0.2rem 0.8rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* PHASE CARD */
+  .phase-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .phase-header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .phase-header h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .phase-header .phase-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    direction: rtl;
+    opacity: 0.9;
+  }
+  .phase-header.intermediate { background: #1a7a50; }
+  .phase-header.rehab { background: #5a3a7a; }
+  .phase-body { padding: 1.5rem; }
+
+  /* QUIZ */
+  .quiz-section { max-width: 800px; margin: 0 auto; }
+  .quiz-header {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), #0d3d50);
+    color: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+  }
+  .quiz-header h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .quiz-header p { font-family: 'Tajawal', sans-serif; font-size: 1.1rem; opacity: 0.85; direction: rtl; }
+  .quiz-score-bar {
+    background: rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    display: none;
+  }
+  .quiz-score-bar.visible { display: block; }
+
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow);
+    transition: border-color 0.2s;
+  }
+  .q-card.correct { border-color: var(--success); }
+  .q-card.wrong { border-color: var(--danger); }
+  .q-num {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .q-text {
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+  .q-text-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  .q-options { display: flex; flex-direction: column; gap: 0.5rem; }
+  .q-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.18s;
+    background: var(--surface2);
+  }
+  .q-option:hover:not(.answered) { border-color: var(--primary-light); background: var(--primary-pale); }
+  .q-option.selected-correct { background: #edfaf3; border-color: var(--success); }
+  .q-option.selected-wrong { background: #fdf0f0; border-color: var(--danger); }
+  .q-option.show-correct { background: #edfaf3; border-color: var(--success); }
+  .q-option-letter {
+    width: 1.6rem; height: 1.6rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+  .q-option.selected-correct .q-option-letter { background: var(--success); }
+  .q-option.selected-wrong .q-option-letter { background: var(--danger); }
+  .q-option.show-correct .q-option-letter { background: var(--success); }
+  .q-option-text { font-size: 0.9rem; }
+  .q-option-text .ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    display: block;
+  }
+  .q-explanation {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .q-explanation.visible { display: block; }
+  .q-explanation.correct-exp { background: #edfaf3; border: 1px solid #a8dbb8; color: #1a5c30; }
+  .q-explanation.wrong-exp { background: #fdf0f0; border: 1px solid #f5b8b8; color: #8c1a1a; }
+  .q-explanation .exp-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    opacity: 0.9;
+  }
+
+  .quiz-controls {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary-pale); }
+
+  .final-score {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-pale), #d0eaf5);
+    border-radius: var(--radius);
+    margin-top: 2rem;
+    border: 2px solid var(--primary-light);
+  }
+  .final-score.visible { display: block; }
+  .score-number {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+  }
+  .score-label { font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; }
+  .score-msg {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0.8rem;
+    color: var(--primary);
+  }
+  .score-msg-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.2rem;
+    direction: rtl;
+    color: var(--text-muted);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .header-title { font-size: 1.3rem; }
+    .bi-item, .def-box, .int-points { grid-template-columns: 1fr; }
+    .bi-ar, .def-ar { text-align: left; direction: ltr; }
+    .num-list li { grid-template-columns: 2rem 1fr; }
+    .num-list li .li-ar { grid-column: span 2; margin-left: 2.6rem; }
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    .nines-table { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">🔥 Burns — Nursing Lecture</div>
+        <div class="header-sub">محاضرة الحروق — التمريض الجراحي | د. زينب محمد</div>
+      </div>
+      <span class="header-badge">Second Term</span>
+    </div>
+    <nav class="tabs-nav" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('intro', this)">🫁 Introduction</button>
+      <button class="tab-btn" onclick="switchTab('classification', this)">📊 Classification</button>
+      <button class="tab-btn" onclick="switchTab('extent', this)">📐 Extent & Severity</button>
+      <button class="tab-btn" onclick="switchTab('pathophys', this)">🔬 Pathophysiology</button>
+      <button class="tab-btn" onclick="switchTab('nursing', this)">🏥 Nursing Process</button>
+      <button class="tab-btn" onclick="switchTab('phases', this)">📅 Phases of Care</button>
+      <button class="tab-btn" onclick="switchTab('quiz', this)">📝 Self-Test Quiz</button>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+
+  <!-- ============ TAB 1: INTRODUCTION ============ -->
+  <div id="tab-intro" class="tab-panel active">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🧬</div>
+        <div class="section-titles">
+          <div class="section-title-en">Functions of the Skin</div>
+          <div class="section-title-ar">وظائف الجلد</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title-en">Protects Against Infection</div>
+          <div class="card-title-ar">تحمي من العدوى</div>
+          <div class="card-desc">Acts as a physical barrier preventing pathogens from entering the body.</div>
+          <div class="card-desc-ar">تعمل كحاجز مادي يمنع الميكروبات من دخول الجسم.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💧</div>
+          <div class="card-title-en">Prevents Loss of Body Fluids</div>
+          <div class="card-title-ar">يمنع فقدان سوائل الجسم</div>
+          <div class="card-desc">Maintains fluid balance by preventing excessive evaporation of water.</div>
+          <div class="card-desc-ar">يحافظ على توازن السوائل بمنع التبخر المفرط للماء.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌡️</div>
+          <div class="card-title-en">Regulates Body Temperature</div>
+          <div class="card-title-ar">يساعد في تنظيم حرارة الجسم</div>
+          <div class="card-desc">Controls heat via sweating and blood vessel dilation/constriction.</div>
+          <div class="card-desc-ar">يتحكم في الحرارة عبر التعرق وتوسع/انقباض الأوعية الدموية.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <div class="card-title-en">Contributes to Individual Identity</div>
+          <div class="card-title-ar">يساهم في الهوية الشخصية</div>
+          <div class="card-desc">Features like fingerprints and skin characteristics are unique to each person.</div>
+          <div class="card-desc-ar">تميّز كل شخص من خلال البصمات وخصائص الجلد الفريدة.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📖</div>
+        <div class="section-titles">
+          <div class="section-title-en">Definition of Burns</div>
+          <div class="section-title-ar">تعريف الحروق</div>
+        </div>
+      </div>
+      <div class="def-box">
+        <div class="def-en">Burns are <strong>tissue damage</strong> that results from heat, overexposure to the sun or other radiation, chemical or electrical contact.</div>
+        <div class="def-ar">الحروق هي <strong>تلف في الأنسجة</strong> ينتج عن الحرارة، أو التعرض المفرط للشمس أو الإشعاع، أو التلامس الكيميائي أو الكهربائي.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚡</div>
+        <div class="section-titles">
+          <div class="section-title-en">Etiology (Causes of Burns)</div>
+          <div class="section-title-ar">مسببات الحروق</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <div class="card-title-en">Thermal Burn</div>
+          <div class="card-title-ar">الحرق الحراري</div>
+          <div class="card-desc">Caused by exposure to or contact with flame, hot liquids, or steam.</div>
+          <div class="card-desc-ar">ناتج عن التعرض للهب أو السوائل الساخنة أو البخار.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧪</div>
+          <div class="card-title-en">Chemical Burn</div>
+          <div class="card-title-ar">الحرق الكيميائي</div>
+          <div class="card-desc">Caused by tissue contact with strong acids or alkalines.</div>
+          <div class="card-desc-ar">ناتج عن تلامس الأنسجة مع الأحماض القوية أو القلويات.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-title-en">Electrical Burn</div>
+          <div class="card-title-ar">الحرق الكهربائي</div>
+          <div class="card-desc">Caused by heat generated by electric energy as it passes through the body.</div>
+          <div class="card-desc-ar">ناتج عن الحرارة التي تولدها الطاقة الكهربائية أثناء مرورها عبر الجسم.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">☢️</div>
+          <div class="card-title-en">Radiation Burn</div>
+          <div class="card-title-ar">الحرق الإشعاعي</div>
+          <div class="card-desc">The least common type of burn injury, associated with nuclear sources.</div>
+          <div class="card-desc-ar">أقل أنواع الحروق شيوعًا، مرتبط بالمصادر النووية.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💨</div>
+          <div class="card-title-en">Gases (Inhalation)</div>
+          <div class="card-title-ar">استنشاق الغازات</div>
+          <div class="card-desc">Inhalation of hot gases, smoke or toxic fumes causing airway injury.</div>
+          <div class="card-desc-ar">استنشاق الغازات الساخنة أو الدخان أو الأبخرة السامة مما يتلف الأجهزة التنفسية.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 2: CLASSIFICATION ============ -->
+  <div id="tab-classification" class="tab-panel">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <div class="section-titles">
+          <div class="section-title-en">Classification of Burns</div>
+          <div class="section-title-ar">تصنيف الحروق</div>
+        </div>
+      </div>
+      <div class="bi-item">
+        <div class="bi-en">Burns are classified according to: <strong>(1) The depth of injury</strong> and <strong>(2) The extent of body surface area (BSA) injured</strong>.</div>
+        <div class="bi-ar">تُصنَّف الحروق وفقاً لـ: <strong>(١) عمق الإصابة</strong> و<strong>(٢) مدى مساحة سطح الجسم المصاب (BSA)</strong>.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📊</div>
+        <div class="section-titles">
+          <div class="section-title-en">Burn Depth Classification Table</div>
+          <div class="section-title-ar">جدول تصنيف الحروق حسب العمق</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Depth <span class="th-ar">العمق</span></th>
+              <th>Causes <span class="th-ar">الأسباب</span></th>
+              <th>Skin Layer <span class="th-ar">طبقة الجلد</span></th>
+              <th>Symptoms <span class="th-ar">الأعراض</span></th>
+              <th>Wound Appearance <span class="th-ar">مظهر الجرح</span></th>
+              <th>Healing <span class="th-ar">الشفاء</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="cell-en"><span class="badge badge-blue">1st Degree</span><br>Superficial Partial-Thickness</div>
+                <div class="cell-ar">درجة أولى — سطحي جزئي</div>
+              </td>
+              <td>
+                <div class="cell-en">Sunburn</div>
+                <div class="cell-ar">حروق الشمس</div>
+              </td>
+              <td>
+                <div class="cell-en">Epidermis; possibly a portion of dermis</div>
+                <div class="cell-ar">البشرة وربما جزء من الأدمة</div>
+              </td>
+              <td>
+                <div class="cell-en">Tingling, supersensitivity; Pain soothed by cooling</div>
+                <div class="cell-ar">وخز وفرط الحساسية؛ ألم يتحسن بالتبريد</div>
+              </td>
+              <td>
+                <div class="cell-en">Reddened; blanches with pressure; dry; minimal or no edema</div>
+                <div class="cell-ar">احمرار؛ يشحب بالضغط؛ جاف؛ وذمة طفيفة أو معدومة</div>
+              </td>
+              <td>
+                <div class="cell-en"><strong>Complete recovery within 1 week</strong>; no scarring</div>
+                <div class="cell-ar">شفاء تام خلال أسبوع؛ لا تندب</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="cell-en"><span class="badge badge-orange">2nd Degree</span><br>Deep Partial-Thickness</div>
+                <div class="cell-ar">درجة ثانية — عميق جزئي</div>
+              </td>
+              <td>
+                <div class="cell-en">Flame</div>
+                <div class="cell-ar">اللهب</div>
+              </td>
+              <td>
+                <div class="cell-en">Epidermis, upper dermis, portion of deeper dermis</div>
+                <div class="cell-ar">البشرة، الأدمة العليا، جزء من الأدمة الأعمق</div>
+              </td>
+              <td>
+                <div class="cell-en">Pain, sensitive to cold air</div>
+                <div class="cell-ar">ألم، حساسية للهواء البارد</div>
+              </td>
+              <td>
+                <div class="cell-en">Blistered, mottled red base; broken epidermis; edema</div>
+                <div class="cell-ar">فقاعات، قاعدة حمراء متلطخة؛ بشرة مكسورة؛ وذمة</div>
+              </td>
+              <td>
+                <div class="cell-en"><strong>Recovery 2–4 weeks</strong>; some scarring & depigmentation; risk of contractures & infection converting to full-thickness</div>
+                <div class="cell-ar">شفاء 2–4 أسابيع؛ تندب وتصبغ؛ خطر تحوله لحرق كامل السُّمك</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="cell-en"><span class="badge badge-red">3rd Degree</span><br>Full-Thickness</div>
+                <div class="cell-ar">درجة ثالثة — كامل السُّمك</div>
+              </td>
+              <td>
+                <div class="cell-en">Prolonged exposure to hot liquids, electric current, chemical contact</div>
+                <div class="cell-ar">تعرض مطول للسوائل الساخنة، التيار الكهربائي، التلامس الكيميائي</div>
+              </td>
+              <td>
+                <div class="cell-en">Epidermis, entire dermis, sometimes subcutaneous tissue</div>
+                <div class="cell-ar">البشرة، كل الأدمة، وأحيانًا النسيج تحت الجلدي</div>
+              </td>
+              <td>
+                <div class="cell-en"><strong>Pain free</strong>; shock; hematuria; hemolysis</div>
+                <div class="cell-ar"><strong>لا ألم</strong>؛ صدمة؛ بول دموي؛ انحلال دموي</div>
+              </td>
+              <td>
+                <div class="cell-en">Dry; pale white or charred; broken skin with white fat exposed; edema</div>
+                <div class="cell-ar">جاف؛ أبيض شاحب أو متفحم؛ جلد مكسور مع ظهور الدهن الأبيض؛ وذمة</div>
+              </td>
+              <td>
+                <div class="cell-en"><strong>Grafting necessary</strong>; eschar sloughs; scarring and loss of contour and function</div>
+                <div class="cell-ar">رأب جلدي ضروري؛ سقوط الكار؛ تندب وفقدان الشكل والوظيفة</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="cell-en"><span class="badge badge-red">4th Degree</span></div>
+                <div class="cell-ar">درجة رابعة</div>
+              </td>
+              <td>
+                <div class="cell-en">Extreme exposures</div>
+                <div class="cell-ar">تعرضات شديدة للغاية</div>
+              </td>
+              <td>
+                <div class="cell-en">Extends through the skin to underlying tissues (muscle, bone)</div>
+                <div class="cell-ar">يمتد عبر الجلد للأنسجة العميقة (العضلات، العظام)</div>
+              </td>
+              <td colspan="3">
+                <div class="cell-en">Deepest burn; involves all layers + underlying structures; requires extensive surgery.</div>
+                <div class="cell-ar">أعمق أنواع الحروق؛ يشمل كل الطبقات والهياكل العميقة؛ يتطلب جراحة واسعة.</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 3: EXTENT & SEVERITY ============ -->
+  <div id="tab-extent" class="tab-panel">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📐</div>
+        <div class="section-titles">
+          <div class="section-title-en">Methods to Estimate % of TBSA Burned</div>
+          <div class="section-title-ar">طرق تقدير نسبة مساحة سطح الجسم المحروقة</div>
+        </div>
+      </div>
+      <div class="bi-item gold">
+        <div class="bi-en">⚠️ <strong>Note:</strong> Superficial burns are NOT included in TBSA calculation.</div>
+        <div class="bi-ar">⚠️ <strong>ملاحظة:</strong> الحروق السطحية لا تُحتسب في تقدير نسبة مساحة الجسم المحروقة.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">9️⃣</div>
+        <div class="section-titles">
+          <div class="section-title-en">Rule of Nines</div>
+          <div class="section-title-ar">قاعدة التسعات</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="nines-table">
+          <thead>
+            <tr>
+              <th>Body Part <span style="display:block;font-family:'Tajawal',sans-serif;font-weight:400;color:#a8d8e8;font-size:0.8rem;direction:rtl">منطقة الجسم</span></th>
+              <th>BSA % <span style="display:block;font-family:'Tajawal',sans-serif;font-weight:400;color:#a8d8e8;font-size:0.8rem">نسبة مساحة الجسم</span></th>
+              <th>Notes <span style="display:block;font-family:'Tajawal',sans-serif;font-weight:400;color:#a8d8e8;font-size:0.8rem;direction:rtl">ملاحظات</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><div class="cell-en">Head & Neck (Entire)</div><div class="cell-ar">الرأس والرقبة (كاملاً)</div></td><td><span class="percent-badge">9%</span></td><td><div class="cell-en">4.5% anterior + 4.5% posterior</div><div class="cell-ar">4.5% أمامي + 4.5% خلفي</div></td></tr>
+            <tr><td><div class="cell-en">Right Arm (Entire)</div><div class="cell-ar">الذراع الأيمن (كاملاً)</div></td><td><span class="percent-badge">9%</span></td><td><div class="cell-en">4.5% anterior + 4.5% posterior</div><div class="cell-ar">4.5% أمامي + 4.5% خلفي</div></td></tr>
+            <tr><td><div class="cell-en">Left Arm (Entire)</div><div class="cell-ar">الذراع الأيسر (كاملاً)</div></td><td><span class="percent-badge">9%</span></td><td><div class="cell-en">4.5% anterior + 4.5% posterior</div><div class="cell-ar">4.5% أمامي + 4.5% خلفي</div></td></tr>
+            <tr><td><div class="cell-en">Anterior Trunk</div><div class="cell-ar">الجذع الأمامي</div></td><td><span class="percent-badge">18%</span></td><td><div class="cell-en">Chest + Abdomen (9% each)</div><div class="cell-ar">الصدر + البطن (9% لكل منهما)</div></td></tr>
+            <tr><td><div class="cell-en">Posterior Trunk</div><div class="cell-ar">الجذع الخلفي</div></td><td><span class="percent-badge">18%</span></td><td><div class="cell-en">Upper back + Lower back (9% each)</div><div class="cell-ar">الظهر العلوي + السفلي (9% لكل منهما)</div></td></tr>
+            <tr><td><div class="cell-en">Right Leg (Entire)</div><div class="cell-ar">الساق اليمنى (كاملاً)</div></td><td><span class="percent-badge">18%</span></td><td><div class="cell-en">9% anterior + 9% posterior</div><div class="cell-ar">9% أمامي + 9% خلفي</div></td></tr>
+            <tr><td><div class="cell-en">Left Leg (Entire)</div><div class="cell-ar">الساق اليسرى (كاملاً)</div></td><td><span class="percent-badge">18%</span></td><td><div class="cell-en">9% anterior + 9% posterior</div><div class="cell-ar">9% أمامي + 9% خلفي</div></td></tr>
+            <tr><td><div class="cell-en">Perineum / Groin</div><div class="cell-ar">العجان / الفخذ</div></td><td><span class="percent-badge">1%</span></td><td><div class="cell-en">—</div></td></tr>
+            <tr style="background:#e6f3f7;font-weight:bold;">
+              <td><div class="cell-en"><strong>TOTAL</strong></div><div class="cell-ar"><strong>المجموع</strong></div></td>
+              <td><span class="percent-badge" style="background:var(--accent)">100%</span></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="bi-item success" style="margin-top:1rem">
+        <div class="bi-en">🖐️ <strong>Palmar Surface Method:</strong> Patient's entire hand (including fingers) ≈ 1% TBSA. Useful for irregular burn areas.</div>
+        <div class="bi-ar">🖐️ <strong>طريقة سطح الكف:</strong> كف المريض كاملاً (مع الأصابع) ≈ 1% من مساحة الجسم. مفيدة للمناطق غير المنتظمة.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <div class="section-titles">
+          <div class="section-title-en">Severity of Burns</div>
+          <div class="section-title-ar">شدة الحروق</div>
+        </div>
+      </div>
+
+      <div class="severity-box minor">
+        <div class="severity-title">✅ Minor Burn Injury <span class="ar">حرق بسيط</span></div>
+        <div class="bi-item" style="margin-bottom:0.5rem;background:transparent;border-left-color:var(--success)">
+          <div class="bi-en">• 2nd degree burns: <strong>&lt;15% TBSA</strong> in adults OR <strong>&lt;10% TBSA</strong> in children<br>• 3rd degree burns: <strong>&lt;2% TBSA</strong> not involving special areas (eyes, ears, face, hands, feet, perineum, joints)</div>
+          <div class="bi-ar">• حروق الدرجة الثانية: أقل من 15% في البالغين أو أقل من 10% في الأطفال<br>• حروق الدرجة الثالثة: أقل من 2% ولا تشمل مناطق خاصة (عيون، آذان، وجه، يدين، قدمين، عجان، مفاصل)</div>
+        </div>
+        <div class="bi-item accent" style="background:transparent;border-left-color:#c0392b">
+          <div class="bi-en">❌ <strong>Excludes:</strong> Electrical injury, inhalation injury, concurrent trauma, poor-risk patients (extreme age, concurrent disease)</div>
+          <div class="bi-ar">❌ <strong>يستثنى:</strong> الإصابة الكهربائية، استنشاق دخان، صدمة متزامنة، مرضى ذوو خطورة عالية</div>
+        </div>
+      </div>
+
+      <div class="severity-box moderate">
+        <div class="severity-title">⚠️ Moderate Uncomplicated Burn <span class="ar">حرق متوسط غير معقد</span></div>
+        <div class="bi-item" style="margin-bottom:0.5rem;background:transparent;border-left-color:var(--warning)">
+          <div class="bi-en">• 2nd degree burns: <strong>15%–25% TBSA</strong> in adults OR <strong>10%–20% TBSA</strong> in children<br>• 3rd degree burns: <strong>&lt;10% TBSA</strong> not involving special care areas</div>
+          <div class="bi-ar">• حروق الدرجة الثانية: 15–25% في البالغين أو 10–20% في الأطفال<br>• حروق الدرجة الثالثة: أقل من 10% ولا تشمل مناطق الرعاية الخاصة</div>
+        </div>
+        <div class="bi-item accent" style="background:transparent;border-left-color:#c0392b">
+          <div class="bi-en">❌ <strong>Excludes:</strong> Electrical injury, inhalation injury, concurrent trauma, poor-risk patients</div>
+          <div class="bi-ar">❌ <strong>يستثنى:</strong> الإصابة الكهربائية، استنشاق دخان، صدمة متزامنة، مرضى خطرون</div>
+        </div>
+      </div>
+
+      <div class="severity-box major">
+        <div class="severity-title">🚨 Major (Critical) Burn <span class="ar">حرق رئيسي خطير</span></div>
+        <div class="bi-item" style="background:transparent;border-left-color:var(--danger)">
+          <div class="bi-en">
+            • 2nd degree burns: <strong>&gt;25% TBSA</strong> in adults OR <strong>&gt;20% TBSA</strong> in children<br>
+            • All 3rd degree burns: <strong>&gt;10% TBSA</strong><br>
+            • All burns involving: eyes, ears, face, hands, feet, perineum, joints<br>
+            • All inhalation injuries, electrical injuries, concurrent trauma
+          </div>
+          <div class="bi-ar">
+            • حروق الدرجة الثانية: أكثر من 25% في البالغين أو 20% في الأطفال<br>
+            • كل حروق الدرجة الثالثة: أكثر من 10%<br>
+            • الحروق التي تشمل: العيون، الآذان، الوجه، اليدين، القدمين، العجان، المفاصل<br>
+            • إصابات الاستنشاق، الكهربائية، الصدمات المصاحبة
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 4: PATHOPHYSIOLOGY ============ -->
+  <div id="tab-pathophys" class="tab-panel">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔬</div>
+        <div class="section-titles">
+          <div class="section-title-en">Pathophysiology of Burns</div>
+          <div class="section-title-ar">الفيزيولوجيا المرضية للحروق</div>
+        </div>
+      </div>
+      <div class="bi-item">
+        <div class="bi-en">Burn injury results from <strong>heat transfer</strong> from one site to another. Tissue destruction results from <strong>coagulation or protein denaturation</strong>.</div>
+        <div class="bi-ar">إصابة الحرق ناتجة عن <strong>انتقال الحرارة</strong> من موضع لآخر. تدمر الأنسجة يحدث بسبب <strong>التخثر أو تحلل البروتين</strong>.</div>
+      </div>
+      <div class="bi-item gold">
+        <div class="bi-en">• Burns <strong>&lt;20% TBSA</strong> → Primarily <strong>local response</strong><br>• Burns <strong>&gt;20% TBSA</strong> → Both <strong>local AND systemic response</strong></div>
+        <div class="bi-ar">• الحروق الأقل من 20% → استجابة <strong>محلية</strong> فقط<br>• الحروق الأكثر من 20% → استجابة <strong>محلية وجهازية</strong> معاً</div>
+      </div>
+
+      <div class="section-header" style="margin-top:1.5rem">
+        <div class="section-icon">⚠️</div>
+        <div class="section-titles">
+          <div class="section-title-en">What Burns Lead To</div>
+          <div class="section-title-ar">ماذا تُسبب الحروق</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-icon">🛡️❌</div><div class="card-title-en">Loss of Protective Barrier</div><div class="card-title-ar">فقدان الحاجز الواقي من العدوى</div></div>
+        <div class="card"><div class="card-icon">💧❌</div><div class="card-title-en">Escape of Body Fluids</div><div class="card-title-ar">تسرب سوائل الجسم</div></div>
+        <div class="card"><div class="card-icon">🌡️❌</div><div class="card-title-en">Lack of Temperature Control</div><div class="card-title-ar">فقدان التحكم في حرارة الجسم</div></div>
+        <div class="card"><div class="card-icon">👃❌</div><div class="card-title-en">Destruction of Sweat Glands & Sensory Receptors</div><div class="card-title-ar">تدمير الغدد العرقية ومستقبلات الإحساس</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📉</div>
+        <div class="section-titles">
+          <div class="section-title-en">Stage 1: Hypovolemic Stage</div>
+          <div class="section-title-ar">المرحلة الأولى: مرحلة نقص حجم الدم</div>
+        </div>
+      </div>
+      <div class="bi-item">
+        <div class="bi-en">This stage <strong>begins at the time of burn</strong>. Characterized by rapid shifting of fluid from the vascular compartments into the interstitial spaces.</div>
+        <div class="bi-ar">تبدأ هذه المرحلة <strong>وقت الحرق مباشرة</strong>. تتميز بانتقال سريع للسوائل من الأوعية الدموية إلى الفراغات النسيجية.</div>
+      </div>
+
+      <div style="margin:1rem 0">
+        <div class="flow-box">
+          <div class="bi-en">🔴 Vasoactive substances released (histamine & prostaglandin) → Increased capillary permeability</div>
+          <div class="bi-ar" style="font-family:'Tajawal',sans-serif;direction:rtl;text-align:right">إفراز مواد فاعلة في الأوعية (هستامين وبروستاجلاندين) → زيادة نفاذية الشعيرات</div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">
+          <div class="bi-en">⚡ Direct cell membrane injury → Sodium enters, Potassium exits → <strong>Hyperkalemia + Hyponatremia</strong></div>
+          <div class="bi-ar" style="font-family:'Tajawal',sans-serif;direction:rtl;text-align:right">إصابة غشاء الخلية → الصوديوم يدخل، البوتاسيوم يخرج → <strong>ارتفاع بوتاسيوم + انخفاض صوديوم</strong></div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box red-box">
+          <div class="bi-en">💔 Hemodynamic instability (Burn Shock) → Decreased cardiac output → Generalized body edema</div>
+          <div class="bi-ar" style="font-family:'Tajawal',sans-serif;direction:rtl;text-align:right">عدم استقرار ديناميكي دموي (صدمة الحرق) → انخفاض القلب الناتج → وذمة جهازية عامة</div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:1rem">
+        <div class="section-icon">🩺</div>
+        <div class="section-titles">
+          <div class="section-title-en">Signs of Hypovolemic Stage</div>
+          <div class="section-title-ar">علامات مرحلة نقص حجم الدم</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-title-en">↑ Increased Heart Rate</div><div class="card-title-ar">تسرع القلب</div></div>
+        <div class="card"><div class="card-title-en">Sluggish Blood Flow</div><div class="card-title-ar">بطء تدفق الدم</div></div>
+        <div class="card"><div class="card-title-en">Anemia</div><div class="card-title-ar">فقر الدم</div></div>
+        <div class="card"><div class="card-title-en">Renal Damage & Hematuria</div><div class="card-title-ar">تلف كلوي وبول دموي</div></div>
+        <div class="card"><div class="card-title-en">Dehydration of Tissue Cells</div><div class="card-title-ar">جفاف خلايا الأنسجة</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📈</div>
+        <div class="section-titles">
+          <div class="section-title-en">Stage 2: Diuretic Stage</div>
+          <div class="section-title-ar">المرحلة الثانية: مرحلة الإدرار</div>
+        </div>
+      </div>
+      <div class="bi-item gold">
+        <div class="bi-en">Begins <strong>18–72 hours</strong> after burn injury as capillary membrane integrity returns and edema fluid shifts back from interstitial spaces.</div>
+        <div class="bi-ar">تبدأ بعد <strong>18–72 ساعة</strong> من الإصابة مع عودة سلامة الغشاء الشعيري وعودة سائل الوذمة من الفراغات النسيجية.</div>
+      </div>
+      <div class="bi-item success">
+        <div class="bi-en">Blood volume increases → Increased renal blood flow → Cardiac output returns to normal</div>
+        <div class="bi-ar">زيادة حجم الدم → زيادة تدفق الدم للكلى → عودة القلب الناتج للطبيعي</div>
+      </div>
+      <div class="bi-item accent">
+        <div class="bi-en">⚠️ Risk: Dehydration if rapid urinary fluid losses deplete the intravascular reserve → Serum electrolytes fall</div>
+        <div class="bi-ar">⚠️ خطر: جفاف إذا فاقت خسائر البول الاحتياطي الوعائي → انخفاض الإلكتروليتات</div>
+      </div>
+
+      <div class="section-header" style="margin-top:1rem">
+        <div class="section-icon">⚡</div>
+        <div class="section-titles">
+          <div class="section-title-en">Complications in Diuretic Stage</div>
+          <div class="section-title-ar">مضاعفات مرحلة الإدرار</div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-title-en">Sodium Deficit</div><div class="card-title-ar">نقص الصوديوم</div></div>
+        <div class="card"><div class="card-title-en">Hypokalemia</div><div class="card-title-ar">نقص البوتاسيوم</div></div>
+        <div class="card"><div class="card-title-en">Protein Loss</div><div class="card-title-ar">فقدان البروتين</div></div>
+        <div class="card"><div class="card-title-en">Anemia & Malnutrition</div><div class="card-title-ar">فقر الدم وسوء التغذية</div></div>
+        <div class="card"><div class="card-title-en">Upper Airway Injury</div><div class="card-title-ar">إصابة المجرى الهوائي العلوي</div></div>
+        <div class="card"><div class="card-title-en">Smoke Inhalation Injury</div><div class="card-title-ar">إصابة استنشاق الدخان</div></div>
+        <div class="card"><div class="card-title-en">Carbon Monoxide</div><div class="card-title-ar">أول أكسيد الكربون</div></div>
+        <div class="card"><div class="card-title-en">Airway Obstruction</div><div class="card-title-ar">انسداد المجرى الهوائي</div></div>
+      </div>
+      <div class="bi-item accent" style="margin-top:1rem">
+        <div class="bi-en">📌 Following the period of fluid shifts, the patient remains <strong>acutely ill</strong>. This period is characterized by <strong>anemia and malnutrition</strong>.</div>
+        <div class="bi-ar">📌 بعد فترة انتقال السوائل، يبقى المريض <strong>مريضاً حاداً</strong>. هذه المرحلة تتميز بـ<strong>فقر الدم وسوء التغذية</strong>.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 5: NURSING PROCESS ============ -->
+  <div id="tab-nursing" class="tab-panel">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔎</div>
+        <div class="section-titles">
+          <div class="section-title-en">Assessment — Emergent Phase</div>
+          <div class="section-title-ar">التقييم التمريضي — المرحلة الطارئة</div>
+        </div>
+      </div>
+      <ul class="num-list">
+        <li><span>Signs of inhalation injury (hoarseness), abnormal respiratory rate, depth and breathing sounds</span><span class="li-ar">علامات إصابة الاستنشاق (بحة الصوت)، معدل التنفس الشاذ، عمقه وأصواته</span></li>
+        <li><span>Monitor apical, carotid and femoral pulses; vital signs checked hourly</span><span class="li-ar">مراقبة النبض القمي والسباتي والفخذي؛ قياس العلامات الحيوية كل ساعة</span></li>
+        <li><span>Level of consciousness</span><span class="li-ar">مستوى الوعي</span></li>
+        <li><span>Signs of hypovolemia</span><span class="li-ar">علامات نقص حجم الدم</span></li>
+        <li><span>Degree of edema</span><span class="li-ar">درجة الوذمة</span></li>
+        <li><span>Assessment of pain</span><span class="li-ar">تقييم الألم</span></li>
+        <li><span>Body weight</span><span class="li-ar">وزن الجسم</span></li>
+        <li><span>Monitor intake and output hourly</span><span class="li-ar">مراقبة الإدخال والإخراج كل ساعة</span></li>
+        <li><span>Urine color, pH, glucose, protein and hemoglobin</span><span class="li-ar">لون البول، pH، السكر، البروتين والهيموجلوبين</span></li>
+        <li><span>Serum electrolytes and hemoglobin</span><span class="li-ar">الإلكتروليتات في المصل والهيموجلوبين</span></li>
+        <li><span>Assess history of allergies</span><span class="li-ar">تقييم تاريخ الحساسية</span></li>
+        <li><span>Assess with physician the depth of the burn</span><span class="li-ar">تقييم عمق الحرق مع الطبيب</span></li>
+        <li><span>Assess psychological status</span><span class="li-ar">تقييم الحالة النفسية</span></li>
+        <li><span>After 48–72 hours post burn: Monitor for fluid overload</span><span class="li-ar">بعد 48–72 ساعة: مراقبة الإفراط في السوائل</span></li>
+        <li><span>Assessment of burn wound, infection, odor and color</span><span class="li-ar">تقييم جرح الحرق، العدوى، الرائحة واللون</span></li>
+        <li><span>Assess range of motion of affected joints and functional abilities</span><span class="li-ar">تقييم نطاق حركة المفاصل المتأثرة والقدرات الوظيفية</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🏷️</div>
+        <div class="section-titles">
+          <div class="section-title-en">Nursing Diagnoses</div>
+          <div class="section-title-ar">التشخيصات التمريضية</div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Nursing Diagnosis <span class="th-ar">التشخيص التمريضي</span></th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1</strong></td><td><div class="cell-en">Impaired gas exchange r/t smoke inhalation airway obstruction</div><div class="cell-ar">ضعف تبادل الغاز بسبب انسداد المجرى الهوائي من استنشاق الدخان</div></td></tr>
+            <tr><td><strong>2</strong></td><td><div class="cell-en">Ineffective airway clearance r/t edema and effect of smoke inhalation</div><div class="cell-ar">تصفية مجرى هوائي غير فعّالة بسبب الوذمة وتأثير استنشاق الدخان</div></td></tr>
+            <tr><td><strong>3</strong></td><td><div class="cell-en">Impaired ventilation r/t airway edema</div><div class="cell-ar">ضعف التهوية بسبب وذمة المجرى الهوائي</div></td></tr>
+            <tr><td><strong>4</strong></td><td><div class="cell-en">Fluid volume deficit r/t increased capillary permeability / fluid loss from wound in first 24–48 hours</div><div class="cell-ar">عجز حجم السوائل بسبب زيادة نفاذية الشعيرات وفقدان السوائل من الجرح في أول 24–48 ساعة</div></td></tr>
+            <tr><td><strong>5</strong></td><td><div class="cell-en">Decreased cardiac output r/t fluid shifts</div><div class="cell-ar">انخفاض القلب الناتج بسبب انتقال السوائل</div></td></tr>
+            <tr><td><strong>5b</strong></td><td><div class="cell-en">Decreased cardiac perfusion r/t peripheral fluid shifts</div><div class="cell-ar">انخفاض التروية القلبية بسبب انتقال السوائل الطرفية</div></td></tr>
+            <tr><td><strong>6</strong></td><td><div class="cell-en">Inadequate tissue perfusion r/t peripheral burn wound edema</div><div class="cell-ar">عدم كفاية تروية الأنسجة بسبب وذمة جرح الحرق الطرفي</div></td></tr>
+            <tr><td><strong>7</strong></td><td><div class="cell-en">Potential for altered body temperature r/t hypothermia and open wounds</div><div class="cell-ar">خطر اضطراب حرارة الجسم بسبب انخفاض حرارة الجسم والجروح المفتوحة</div></td></tr>
+            <tr><td><strong>8</strong></td><td><div class="cell-en">Potential for fluid volume excess r/t fluid overload 48–72 hours post burn</div><div class="cell-ar">خطر زيادة حجم السوائل بسبب الإفراط في السوائل بعد 48–72 ساعة</div></td></tr>
+            <tr><td><strong>9</strong></td><td><div class="cell-en">Altered gastric motility r/t burn shock</div><div class="cell-ar">اضطراب حركة المعدة بسبب صدمة الحرق</div></td></tr>
+            <tr><td><strong>10</strong></td><td><div class="cell-en">Impaired skin integrity r/t burn injury</div><div class="cell-ar">ضعف سلامة الجلد بسبب الإصابة بالحرق</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <div class="section-titles">
+          <div class="section-title-en">Planning / Expected Outcomes</div>
+          <div class="section-title-ar">التخطيط / النتائج المتوقعة</div>
+        </div>
+      </div>
+      <ul class="num-list">
+        <li><span>Client will have increased lung expansion and improved tissue oxygenation</span><span class="li-ar">توسع رئوي متزايد وتحسن في أكسجة الأنسجة</span></li>
+        <li><span>Maintain a patent airway as evidenced by normal respiratory rate and depth</span><span class="li-ar">الحفاظ على مجرى هوائي سالك يتجلى في معدل وعمق تنفس طبيعيين</span></li>
+        <li><span>Client will have clear breath sounds bilaterally; skin, nails, lips and earlobes of pink color</span><span class="li-ar">أصوات تنفس واضحة على الجانبين؛ جلد وأظافر وشفاه وفصوص أذن وردية اللون</span></li>
+        <li><span>Establishment of optimal fluid and electrolyte balance</span><span class="li-ar">تحقيق التوازن الأمثل للسوائل والإلكتروليتات</span></li>
+        <li><span>Pulse and heart rate are within normal range</span><span class="li-ar">النبض ومعدل القلب ضمن الحدود الطبيعية</span></li>
+        <li><span>Body temperature is within normal range</span><span class="li-ar">درجة حرارة الجسم ضمن الحدود الطبيعية</span></li>
+        <li><span>Gastrointestinal function is normal</span><span class="li-ar">وظيفة الجهاز الهضمي طبيعية</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">💉</div>
+        <div class="section-titles">
+          <div class="section-title-en">Nursing Interventions</div>
+          <div class="section-title-ar">التدخلات التمريضية</div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">1</span> Assure Patent Airway & Adequate Respiratory Function</div>
+        <div class="intervention-title-ar">ضمان سلامة المجرى الهوائي وكفاءة وظيفة التنفس</div>
+        <div class="int-points">
+          <div class="int-pt">Maintain patent airway through proper positioning<span class="ar">الحفاظ على مجرى هوائي سالك بالوضعية الصحيحة</span></div>
+          <div class="int-pt">Remove secretions; artificial airway if indicated<span class="ar">إزالة الإفرازات؛ مجرى هوائي صناعي إذا لزم</span></div>
+          <div class="int-pt">Provide humidified oxygen<span class="ar">توفير أكسجين رطب</span></div>
+          <div class="int-pt">Assess breath sounds, respiratory rate and rhythm<span class="ar">تقييم أصوات التنفس ومعدله وإيقاعه</span></div>
+          <div class="int-pt">Encourage patient to turn in bed, take deep breaths and cough<span class="ar">تشجيع المريض على التقلب والتنفس العميق والسعال</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">2</span> Maintenance of Fluid and Electrolyte Balance</div>
+        <div class="intervention-title-ar">الحفاظ على توازن السوائل والإلكتروليتات</div>
+        <div class="int-points">
+          <div class="int-pt">Assess fluid and electrolyte status<span class="ar">تقييم حالة السوائل والإلكتروليتات</span></div>
+          <div class="int-pt">Assess the burns area (TBSA)<span class="ar">تقييم مساحة الحرق</span></div>
+          <div class="int-pt">Monitor serum electrolyte levels<span class="ar">مراقبة مستويات الإلكتروليتات في المصل</span></div>
+          <div class="int-pt">Assess daily weight changes<span class="ar">تقييم التغيرات اليومية في الوزن</span></div>
+          <div class="int-pt">Monitor intake and output balance<span class="ar">مراقبة توازن الإدخال والإخراج</span></div>
+          <div class="int-pt">Check Blood Pressure, pulse rate and rhythm<span class="ar">قياس ضغط الدم، النبض وإيقاعه</span></div>
+          <div class="int-pt">Observe respiratory rate and effort<span class="ar">مراقبة معدل التنفس وجهوده</span></div>
+          <div class="int-pt">Observe for symptoms of fluid volume deficiency or excess<span class="ar">مراقبة أعراض نقص أو زيادة حجم السوائل</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">3</span> Reduce Risk of Burn Wound Sepsis</div>
+        <div class="intervention-title-ar">تقليل خطر تعفن جرح الحرق</div>
+        <div class="int-points">
+          <div class="int-pt">Wash hands prior to ALL patient contact<span class="ar">غسل اليدين قبل كل تعامل مع المريض</span></div>
+          <div class="int-pt">Use gowns, gloves, masks and hair covers when wounds are exposed<span class="ar">ارتداء روب، قفازات، كمامة وغطاء شعر عند كشف الجروح</span></div>
+          <div class="int-pt">Assess for early signs of sepsis<span class="ar">تقييم العلامات المبكرة للتعفن</span></div>
+          <div class="int-pt">Prevent pressure on wounds<span class="ar">منع الضغط على الجروح</span></div>
+          <div class="int-pt">Apply topical antibacterial as prescribed<span class="ar">تطبيق المضادات الحيوية الموضعية وفق الوصف الطبي</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">4</span> Improve Nutritional Status</div>
+        <div class="intervention-title-ar">تحسين الحالة الغذائية</div>
+        <div class="int-points">
+          <div class="int-pt">Provide <strong>high caloric, high protein diet</strong> by appropriate route<span class="ar">تقديم نظام غذائي عالي السعرات والبروتين بالطريق المناسب</span></div>
+          <div class="int-pt">Administer supplemental vitamins and minerals as prescribed<span class="ar">إعطاء فيتامينات ومعادن تكميلية وفق الوصف</span></div>
+          <div class="int-pt">Weigh patient daily<span class="ar">وزن المريض يومياً</span></div>
+          <div class="int-pt">Report any abdominal distention, diarrhea or dehydration<span class="ar">الإبلاغ عن أي انتفاخ بطني أو إسهال أو جفاف</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">5</span> Improve Skin Integrity and Wound Healing</div>
+        <div class="intervention-title-ar">تحسين سلامة الجلد والتئام الجروح</div>
+        <div class="int-points">
+          <div class="int-pt">Cleanse wound and body (including hair) daily<span class="ar">تنظيف الجرح وبقية الجسم (شامل الشعر) يومياً</span></div>
+          <div class="int-pt">Apply topical antibacterial agents and dressing as prescribed<span class="ar">تطبيق عوامل مضادة للبكتيريا وتضميد الجرح</span></div>
+          <div class="int-pt">Plan for grafting<span class="ar">التخطيط لرأب الجلد</span></div>
+          <div class="int-pt">Observe and report any signs of loss of skin integrity after healing<span class="ar">مراقبة والإبلاغ عن أي فقدان في سلامة الجلد بعد الشفاء</span></div>
+          <div class="int-pt">Provide adequate nutritional support<span class="ar">توفير دعم غذائي كافٍ</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">6</span> Relief of Pain and Anxiety</div>
+        <div class="intervention-title-ar">تخفيف الألم والقلق</div>
+        <div class="int-points">
+          <div class="int-pt">Assess patient's pain carefully<span class="ar">تقييم ألم المريض بعناية</span></div>
+          <div class="int-pt">Offer analgesics and relaxation techniques<span class="ar">تقديم مسكنات الألم وتقنيات الاسترخاء</span></div>
+          <div class="int-pt">Provide emotional support<span class="ar">تقديم الدعم العاطفي</span></div>
+          <div class="int-pt">Assist patient with appropriate means of expressing pain<span class="ar">مساعدة المريض على التعبير عن الألم</span></div>
+          <div class="int-pt">Administer analgesic as prescribed<span class="ar">إعطاء المسكنات حسب الوصف الطبي</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">7</span> Maintain Adequate Body Temperature</div>
+        <div class="intervention-title-ar">الحفاظ على حرارة جسم مناسبة</div>
+        <div class="int-points">
+          <div class="int-pt">Provide a warm environment<span class="ar">توفير بيئة دافئة</span></div>
+          <div class="int-pt">Monitor rectal temperature<span class="ar">قياس درجة الحرارة الشرجية</span></div>
+          <div class="int-pt">Administer antipyretics for elevated temperature as prescribed<span class="ar">إعطاء خافضات الحرارة عند الارتفاع</span></div>
+          <div class="int-pt">When wound is exposed for care — work quickly<span class="ar">عند كشف الجرح للعناية — العمل بسرعة</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">8</span> Relief of Gastrointestinal Dysfunction</div>
+        <div class="intervention-title-ar">تخفيف خلل وظيفة الجهاز الهضمي</div>
+        <div class="int-points">
+          <div class="int-pt">Auscultate for bowel sounds every 4 hours<span class="ar">الاستماع لأصوات الأمعاء كل 4 ساعات</span></div>
+          <div class="int-pt">Test stool and gastric content for occult bleeding<span class="ar">فحص البراز ومحتوى المعدة للدم الخفي</span></div>
+          <div class="int-pt">Administer antacids as prescribed to reduce risk of gastric ulceration<span class="ar">إعطاء مضادات الحموضة لتقليل خطر قرحة المعدة</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">9</span> Increase Mobility & Participation in Daily Activities</div>
+        <div class="intervention-title-ar">زيادة الحركة والمشاركة في أنشطة الحياة اليومية</div>
+        <div class="int-points">
+          <div class="int-pt">Position patient carefully<span class="ar">وضع المريض بعناية</span></div>
+          <div class="int-pt">Use splints<span class="ar">استخدام الجبائر</span></div>
+          <div class="int-pt">Perform range of motion exercises<span class="ar">تمارين نطاق الحركة</span></div>
+          <div class="int-pt">Encourage ambulation<span class="ar">تشجيع على المشي</span></div>
+          <div class="int-pt">Encourage self-feeding<span class="ar">تشجيع الإطعام الذاتي</span></div>
+        </div>
+      </div>
+
+      <div class="intervention">
+        <div class="intervention-title"><span class="int-num">10</span> Improvement in Body Image</div>
+        <div class="intervention-title-ar">تحسين صورة الجسم</div>
+        <div class="int-points">
+          <div class="int-pt">Allow patient to express feelings<span class="ar">السماح للمريض بالتعبير عن مشاعره</span></div>
+          <div class="int-pt">Provide information and support<span class="ar">توفير المعلومات والدعم</span></div>
+          <div class="int-pt">Maintain positive, honest approach<span class="ar">اتباع نهج إيجابي وصادق</span></div>
+          <div class="int-pt">Encourage coping mechanisms<span class="ar">تشجيع آليات التكيف</span></div>
+          <div class="int-pt">Plan with therapy for independence<span class="ar">التخطيط مع العلاج لتحقيق الاستقلالية</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✅</div>
+        <div class="section-titles">
+          <div class="section-title-en">Evaluation — Expected Outcomes</div>
+          <div class="section-title-ar">التقييم — النتائج المتوقعة</div>
+        </div>
+      </div>
+      <ul class="num-list">
+        <li><span>Patient breathes spontaneously; free of dyspnea; chest clear on auscultation</span><span class="li-ar">المريض يتنفس تلقائياً؛ خالٍ من ضيق التنفس؛ صدر واضح بالتسمع</span></li>
+        <li><span>ABG, BUN, Creatinine, hemoglobin and hematocrit within normal levels; stools negative for occult bleed</span><span class="li-ar">غازات الدم، اليوريا، الكرياتينين، الهيموجلوبين والهيماتوكريت ضمن الحدود الطبيعية</span></li>
+        <li><span>Coughs and breathes deeply hourly</span><span class="li-ar">يسعل ويتنفس بعمق كل ساعة</span></li>
+        <li><span>Urine output is normal</span><span class="li-ar">إخراج البول طبيعي</span></li>
+        <li><span>Vital signs and bowel sounds are normal</span><span class="li-ar">العلامات الحيوية وأصوات الأمعاء طبيعية</span></li>
+        <li><span>Reports absence of abdominal pain</span><span class="li-ar">لا يوجد ألم في البطن</span></li>
+        <li><span>Demonstrates no rapid weight increases</span><span class="li-ar">لا يوجد زيادة سريعة في الوزن</span></li>
+        <li><span>Majority of wounds are closed</span><span class="li-ar">معظم الجروح مغلقة</span></li>
+        <li><span>Demonstrates activity tolerance required for daily activities</span><span class="li-ar">يُظهر تحملاً للنشاط المطلوب للأنشطة اليومية</span></li>
+        <li><span>Uses appropriate coping strategies to deal with post-burn problems</span><span class="li-ar">يستخدم استراتيجيات تكيف مناسبة لمشاكل ما بعد الحرق</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 6: PHASES ============ -->
+  <div id="tab-phases" class="tab-panel">
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <h3>🚨 Phase 1: Emergent Phase</h3>
+        <span class="phase-ar">المرحلة الطارئة</span>
+      </div>
+      <div class="phase-body">
+        <div class="def-box">
+          <div class="def-en">The emergent phase begins at the time of injury. Priority is stabilizing the airway, breathing and circulation. Immediate assessment and resuscitation are critical.</div>
+          <div class="def-ar">تبدأ المرحلة الطارئة وقت الإصابة. الأولوية هي تثبيت المجرى الهوائي والتنفس والدورة الدموية. التقييم الفوري والإنعاش أمران بالغا الأهمية.</div>
+        </div>
+        <div class="bi-item accent">
+          <div class="bi-en">🔑 <strong>Key Actions:</strong> Secure airway, IV access, fluid resuscitation, pain control, wound assessment, psychological support.</div>
+          <div class="bi-ar">🔑 <strong>الإجراءات الرئيسية:</strong> تأمين المجرى الهوائي، وريد وصول، إنعاش بالسوائل، التحكم في الألم، تقييم الجرح، دعم نفسي.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header intermediate">
+        <h3>🏥 Phase 2: Acute / Intermediate Phase</h3>
+        <span class="phase-ar">المرحلة الحادة / المتوسطة</span>
+      </div>
+      <div class="phase-body">
+        <div class="bi-item gold">
+          <div class="bi-en">This phase begins <strong>48–72 hours</strong> after burn injury. Attention is directed toward continued assessment and maintenance of respiratory and circulatory status, fluid and electrolyte balance, and GI function. Also: infection control, burn wound care, pain management, and nutritional support.</div>
+          <div class="bi-ar">تبدأ هذه المرحلة <strong>48–72 ساعة</strong> بعد الإصابة. ينصب الاهتمام على استمرار تقييم وصون الحالة التنفسية والدورة الدموية، وتوازن السوائل والإلكتروليتات، ووظيفة الجهاز الهضمي، فضلاً عن مكافحة العدوى، العناية بجرح الحرق، إدارة الألم، والدعم الغذائي.</div>
+        </div>
+        <div class="cards-grid" style="margin-top:1rem">
+          <div class="card"><div class="card-icon">🫁</div><div class="card-title-en">Respiratory & Circulatory Status</div><div class="card-title-ar">الحالة التنفسية والدورانية</div></div>
+          <div class="card"><div class="card-icon">💊</div><div class="card-title-en">Infection Control</div><div class="card-title-ar">مكافحة العدوى</div></div>
+          <div class="card"><div class="card-icon">🩹</div><div class="card-title-en">Burn Wound Care</div><div class="card-title-ar">العناية بجرح الحرق</div></div>
+          <div class="card"><div class="card-icon">😮‍💨</div><div class="card-title-en">Pain Management</div><div class="card-title-ar">إدارة الألم</div></div>
+          <div class="card"><div class="card-icon">🥗</div><div class="card-title-en">Nutritional Support</div><div class="card-title-ar">الدعم الغذائي</div></div>
+          <div class="card"><div class="card-icon">⚗️</div><div class="card-title-en">Fluid & Electrolyte Balance</div><div class="card-title-ar">توازن السوائل والإلكتروليتات</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header rehab">
+        <h3>🏃 Phase 3: Rehabilitation Phase</h3>
+        <span class="phase-ar">مرحلة إعادة التأهيل</span>
+      </div>
+      <div class="phase-body">
+        <div class="bi-item success">
+          <div class="bi-en">Rehabilitation begins <strong>immediately after the burn</strong> (as early as the emergent period) and often extends for <strong>years after injury</strong>.</div>
+          <div class="bi-ar">يبدأ التأهيل <strong>فوراً بعد الحرق</strong> (منذ المرحلة الطارئة) وكثيراً ما يمتد لـ<strong>سنوات بعد الإصابة</strong>.</div>
+        </div>
+        <div class="bi-item gold" style="margin-bottom:1rem">
+          <div class="bi-en">🎯 <strong>Priorities:</strong> Wound healing — Psychosocial support — Restoring maximal functional activity</div>
+          <div class="bi-ar">🎯 <strong>الأولويات:</strong> شفاء الجروح — الدعم النفسي الاجتماعي — استعادة أقصى قدر من النشاط الوظيفي</div>
+        </div>
+        <div class="section-header" style="margin:1rem 0 0.8rem">
+          <div class="section-icon">📚</div>
+          <div class="section-titles">
+            <div class="section-title-en">Promoting Activity Tolerance</div>
+            <div class="section-title-ar">تعزيز تحمل النشاط</div>
+          </div>
+        </div>
+        <ul class="num-list">
+          <li><span>A good time for planned patient rest is after dressing and exercise</span><span class="li-ar">وقت مناسب للراحة المخططة بعد تضميد الجروح والتمارين</span></li>
+          <li><span>Relieve anxiety due to nightmares</span><span class="li-ar">تخفيف القلق الناتج عن الكوابيس</span></li>
+          <li><span>Reduce stress by: relieving pain, preventing chilling or fever</span><span class="li-ar">تقليل الإجهاد من خلال تخفيف الألم، منع الارتجاف أو الحمى</span></li>
+          <li><span>Encourage family visit and recreation</span><span class="li-ar">تشجيع الزيارات العائلية والترفيه</span></li>
+        </ul>
+        <div class="section-header" style="margin:1.5rem 0 0.8rem">
+          <div class="section-icon">🏠</div>
+          <div class="section-titles">
+            <div class="section-title-en">Promoting Home Care — Patient Teaching</div>
+            <div class="section-title-ar">تعزيز الرعاية المنزلية — تثقيف المريض</div>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <div class="card"><div class="card-icon">🩹</div><div class="card-title-en">Avoid further trauma; leave unbroken blisters intact</div><div class="card-title-ar">تجنب المزيد من الصدمات؛ ترك البثور السليمة دون مسها</div></div>
+          <div class="card"><div class="card-icon">🧴</div><div class="card-title-en">Lubricate healed skin with mild lotion; avoid scratching</div><div class="card-title-ar">ترطيب الجلد الشافي بلوسيون خفيف وتجنب الحك</div></div>
+          <div class="card"><div class="card-icon">💪</div><div class="card-title-en">Adhere to exercise regimen given by therapist</div><div class="card-title-ar">الالتزام بنظام التمارين الذي حدده المعالج</div></div>
+          <div class="card"><div class="card-icon">🏋️</div><div class="card-title-en">Exercise every day, several times daily</div><div class="card-title-ar">ممارسة التمارين يومياً عدة مرات</div></div>
+          <div class="card"><div class="card-icon">🏥</div><div class="card-title-en">Exercise under supervision of physiotherapy</div><div class="card-title-ar">التمارين تحت إشراف العلاج الطبيعي</div></div>
+          <div class="card"><div class="card-icon">🛡️</div><div class="card-title-en">Protect healing areas; apply pressure dressings</div><div class="card-title-ar">حماية مناطق الشفاء؛ تطبيق ضمادات ضاغطة</div></div>
+          <div class="card"><div class="card-icon">🍗</div><div class="card-title-en">Eat a diet high in calories and protein</div><div class="card-title-ar">تناول نظام غذائي غني بالسعرات والبروتين</div></div>
+          <div class="card"><div class="card-icon">📅</div><div class="card-title-en">Skin lubrication for at least 1 year after injury</div><div class="card-title-ar">ترطيب الجلد لمدة سنة على الأقل بعد الإصابة</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TAB 7: QUIZ ============ -->
+  <div id="tab-quiz" class="tab-panel">
+    <div class="quiz-section">
+      <div class="quiz-header">
+        <h2>📝 Self-Test Quiz — Burns</h2>
+        <p>اختبر نفسك — محاضرة الحروق | 20 سؤال</p>
+        <div class="quiz-score-bar" id="scoreBar">
+          Score: <span id="scoreDisplay">0</span>/20 correct
+        </div>
+      </div>
+
+      <div id="quizContainer"></div>
+
+      <div class="quiz-controls">
+        <button class="btn btn-primary" onclick="submitQuiz()">✅ Submit All Answers | تسليم الإجابات</button>
+        <button class="btn btn-outline" onclick="resetQuiz()">🔄 Reset Quiz | إعادة تعيين</button>
+      </div>
+
+      <div class="final-score" id="finalScore">
+        <div class="score-number" id="finalNum"></div>
+        <div class="score-label">out of 20 questions | من 20 سؤال</div>
+        <div class="score-msg" id="scoreMsg"></div>
+        <div class="score-msg-ar" id="scoreMsgAr"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ============ TAB SWITCHING ============
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ============ QUIZ DATA ============
+const questions = [
+  {
+    en: "What is the correct definition of burns?",
+    ar: "ما هو التعريف الصحيح للحروق؟",
+    options: [
+      { en: "Damage to skin only, caused by heat", ar: "تلف في الجلد فقط ناتج عن الحرارة" },
+      { en: "Tissue damage resulting from heat, radiation, chemical or electrical contact", ar: "تلف في الأنسجة ناتج عن الحرارة، الإشعاع، أو التلامس الكيميائي أو الكهربائي" },
+      { en: "Inflammation of the epidermis due to friction", ar: "التهاب البشرة ناتج عن الاحتكاك" },
+      { en: "Skin rash caused by allergic reactions", ar: "طفح جلدي ناتج عن التفاعلات التحسسية" }
+    ],
+    correct: 1,
+    expEn: "Burns are tissue damage resulting from heat, overexposure to the sun or other radiation, chemical or electrical contact — affecting multiple tissue layers, not just skin.",
+    expAr: "الحروق هي تلف في الأنسجة ناتج عن الحرارة أو التعرض المفرط للشمس أو الإشعاع أو التلامس الكيميائي أو الكهربائي."
+  },
+  {
+    en: "Which type of burn is caused by contact with strong acids or alkalines?",
+    ar: "أي نوع من الحروق يحدث بسبب التلامس مع الأحماض القوية أو القلويات؟",
+    options: [
+      { en: "Thermal burn", ar: "الحرق الحراري" },
+      { en: "Radiation burn", ar: "الحرق الإشعاعي" },
+      { en: "Chemical burn", ar: "الحرق الكيميائي" },
+      { en: "Electrical burn", ar: "الحرق الكهربائي" }
+    ],
+    correct: 2,
+    expEn: "Chemical burns are caused by tissue contact with strong acids or alkalines, leading to protein denaturation and tissue destruction.",
+    expAr: "الحرق الكيميائي ناتج عن تلامس الأنسجة مع الأحماض القوية أو القلويات مما يؤدي لتلف الأنسجة."
+  },
+  {
+    en: "What is the expected healing time for a superficial partial-thickness (1st degree) burn?",
+    ar: "ما هو الوقت المتوقع لشفاء الحرق السطحي الجزئي (الدرجة الأولى)؟",
+    options: [
+      { en: "2–4 weeks with scarring", ar: "2–4 أسابيع مع تندب" },
+      { en: "Complete recovery within 1 week; no scarring", ar: "شفاء تام خلال أسبوع؛ بدون تندب" },
+      { en: "Requires skin grafting", ar: "يتطلب رأب جلدي" },
+      { en: "6–8 weeks with depigmentation", ar: "6–8 أسابيع مع اضطراب التصبغ" }
+    ],
+    correct: 1,
+    expEn: "Superficial partial-thickness (1st degree) burns heal completely within 1 week with no scarring, as only the epidermis is affected.",
+    expAr: "حروق الدرجة الأولى تشفى بالكامل خلال أسبوع بدون تندب لأن البشرة فقط هي المتأثرة."
+  },
+  {
+    en: "Which sign is characteristic of full-thickness (3rd degree) burns?",
+    ar: "ما هي العلامة المميزة لحروق كامل السُّمك (الدرجة الثالثة)؟",
+    options: [
+      { en: "Severe pain", ar: "ألم شديد" },
+      { en: "Blistering with mottled red base", ar: "بثور مع قاعدة حمراء متلطخة" },
+      { en: "Pain-free with dry, pale white or charred appearance", ar: "بدون ألم مع مظهر جاف، أبيض شاحب، أو متفحم" },
+      { en: "Redness that blanches with pressure", ar: "احمرار يشحب بالضغط" }
+    ],
+    correct: 2,
+    expEn: "Full-thickness burns destroy all nerve endings, making them pain-free. They appear dry, pale white or charred, with exposed fat.",
+    expAr: "تدمر الحروق الكاملة السُّمك جميع النهايات العصبية لذا لا ألم فيها. تظهر جافة، بيضاء شاحبة أو متفحمة مع ظهور الدهن."
+  },
+  {
+    en: "According to the Rule of Nines, what percentage is assigned to each arm?",
+    ar: "وفقاً لقاعدة التسعات، ما هي النسبة المخصصة لكل ذراع؟",
+    options: [
+      { en: "4.5%", ar: "4.5%" },
+      { en: "9%", ar: "9%" },
+      { en: "18%", ar: "18%" },
+      { en: "1%", ar: "1%" }
+    ],
+    correct: 1,
+    expEn: "In the Rule of Nines, each entire arm = 9% TBSA (4.5% anterior + 4.5% posterior). Both arms together = 18%.",
+    expAr: "في قاعدة التسعات، كل ذراع كامل = 9% من مساحة الجسم (4.5% أمامي + 4.5% خلفي). الذراعان معاً = 18%."
+  },
+  {
+    en: "What is the TBSA threshold for a 2nd degree burn to be classified as 'Minor' in adults?",
+    ar: "ما هي عتبة مساحة الجسم لحرق الدرجة الثانية ليُصنف 'بسيطاً' في البالغين؟",
+    options: [
+      { en: "Less than 25% TBSA", ar: "أقل من 25%" },
+      { en: "Less than 20% TBSA", ar: "أقل من 20%" },
+      { en: "Less than 15% TBSA", ar: "أقل من 15%" },
+      { en: "Less than 10% TBSA", ar: "أقل من 10%" }
+    ],
+    correct: 2,
+    expEn: "A minor burn in adults = 2nd degree burns of less than 15% TBSA. In children, the threshold is less than 10% TBSA.",
+    expAr: "الحرق البسيط في البالغين = حروق درجة ثانية أقل من 15% من مساحة الجسم. في الأطفال العتبة هي أقل من 10%."
+  },
+  {
+    en: "The Hypovolemic Stage begins when, and what is its main characteristic?",
+    ar: "متى تبدأ مرحلة نقص حجم الدم وما هي خاصيتها الرئيسية؟",
+    options: [
+      { en: "18–72 hours after burn; fluid shifts from interstitial to vascular spaces", ar: "18–72 ساعة بعد الحرق؛ انتقال السوائل من النسيجية للأوعية" },
+      { en: "At the time of burn; rapid fluid shift from vascular to interstitial spaces", ar: "وقت الحرق مباشرة؛ انتقال سريع للسوائل من الأوعية للفراغات النسيجية" },
+      { en: "48 hours after burn; increased urine output", ar: "بعد 48 ساعة من الحرق؛ زيادة في إخراج البول" },
+      { en: "During rehabilitation; loss of body fluids", ar: "خلال التأهيل؛ فقدان سوائل الجسم" }
+    ],
+    correct: 1,
+    expEn: "The hypovolemic stage begins at the time of burn and is characterized by rapid shifting of fluid FROM the vascular compartments INTO the interstitial spaces, causing burn shock.",
+    expAr: "تبدأ مرحلة نقص حجم الدم وقت الحرق وتتميز بانتقال سريع للسوائل من الأوعية إلى الفراغات النسيجية مسببة صدمة الحرق."
+  },
+  {
+    en: "The Diuretic Stage begins approximately how many hours after burn injury?",
+    ar: "تبدأ مرحلة الإدرار تقريباً بعد كم ساعة من إصابة الحرق؟",
+    options: [
+      { en: "0–6 hours", ar: "0–6 ساعات" },
+      { en: "6–12 hours", ar: "6–12 ساعة" },
+      { en: "18–72 hours", ar: "18–72 ساعة" },
+      { en: "5–7 days", ar: "5–7 أيام" }
+    ],
+    correct: 2,
+    expEn: "The diuretic stage begins 18–72 hours after burn injury, when capillary membrane integrity returns and edema fluid shifts back into circulation.",
+    expAr: "تبدأ مرحلة الإدرار بعد 18–72 ساعة من الإصابة عندما تعود سلامة الغشاء الشعيري وتعود سوائل الوذمة للدورة الدموية."
+  },
+  {
+    en: "What is the first priority nursing intervention for a burn patient?",
+    ar: "ما هي أولى التدخلات التمريضية ذات الأولوية لمريض الحرق؟",
+    options: [
+      { en: "Pain assessment and analgesia", ar: "تقييم الألم وإعطاء المسكنات" },
+      { en: "Assure patent airway and adequate respiratory function", ar: "ضمان سلامة المجرى الهوائي وكفاءة التنفس" },
+      { en: "Nutritional assessment and feeding", ar: "التقييم الغذائي والتغذية" },
+      { en: "Skin graft planning", ar: "التخطيط لرأب الجلد" }
+    ],
+    correct: 1,
+    expEn: "The first nursing intervention is always to assure a patent airway and adequate respiratory function, following the ABCs of emergency care.",
+    expAr: "أول تدخل تمريضي هو دائماً ضمان سلامة المجرى الهوائي وكفاءة التنفس وفق مبدأ ABC في الطوارئ."
+  },
+  {
+    en: "How often should vital signs be checked in acute burn patients?",
+    ar: "كم مرة يجب قياس العلامات الحيوية لمرضى الحروق الحادة؟",
+    options: [
+      { en: "Every 8 hours", ar: "كل 8 ساعات" },
+      { en: "Every 4 hours", ar: "كل 4 ساعات" },
+      { en: "Once daily", ar: "مرة واحدة يومياً" },
+      { en: "Hourly", ar: "كل ساعة" }
+    ],
+    correct: 3,
+    expEn: "In burn patients, vital signs (including apical, carotid and femoral pulses) should be checked every hour due to rapid physiologic changes.",
+    expAr: "في مرضى الحروق، يجب قياس العلامات الحيوية كل ساعة نظراً للتغيرات الفسيولوجية السريعة."
+  },
+  {
+    en: "What type of diet is recommended for burn patients?",
+    ar: "ما نوع النظام الغذائي الموصى به لمرضى الحروق؟",
+    options: [
+      { en: "Low calorie, low fat diet", ar: "نظام منخفض السعرات والدهون" },
+      { en: "High calorie, high protein diet", ar: "نظام عالي السعرات والبروتين" },
+      { en: "High fiber, low protein diet", ar: "نظام عالي الألياف ومنخفض البروتين" },
+      { en: "Liquid diet only", ar: "سوائل فقط" }
+    ],
+    correct: 1,
+    expEn: "Burn patients require a HIGH calorie, HIGH protein diet to support wound healing, replace protein losses, and maintain tissue repair.",
+    expAr: "يحتاج مرضى الحروق نظاماً عالي السعرات والبروتين لدعم التئام الجروح وتعويض خسائر البروتين."
+  },
+  {
+    en: "Which electrolyte imbalance occurs due to direct cell membrane injury in the hypovolemic stage?",
+    ar: "ما هو الخلل في الإلكتروليتات الناتج عن تلف غشاء الخلية المباشر في مرحلة نقص حجم الدم؟",
+    options: [
+      { en: "Hypokalemia + Hypernatremia", ar: "نقص بوتاسيوم + ارتفاع صوديوم" },
+      { en: "Hyperkalemia + Hyponatremia", ar: "ارتفاع بوتاسيوم + نقص صوديوم" },
+      { en: "Normal electrolyte levels", ar: "مستويات إلكتروليتات طبيعية" },
+      { en: "Hypocalcemia + Hypermagnesemia", ar: "نقص كالسيوم + ارتفاع مغنيسيوم" }
+    ],
+    correct: 1,
+    expEn: "Direct cell membrane injury causes sodium to enter cells and potassium to exit, resulting in HYPERKALEMIA (high K+) and HYPONATREMIA (low Na+).",
+    expAr: "تلف غشاء الخلية المباشر يسبب دخول الصوديوم للخلايا وخروج البوتاسيوم، مما يؤدي لارتفاع البوتاسيوم ونقص الصوديوم."
+  },
+  {
+    en: "Burns exceeding what percentage of TBSA produce BOTH local AND systemic responses?",
+    ar: "الحروق التي تتجاوز أي نسبة من مساحة الجسم تُنتج استجابتين محلية وجهازية معاً؟",
+    options: [
+      { en: "10%", ar: "10%" },
+      { en: "15%", ar: "15%" },
+      { en: "20%", ar: "20%" },
+      { en: "25%", ar: "25%" }
+    ],
+    correct: 2,
+    expEn: "Burns that exceed 20% TBSA produce both a local and systemic response, affecting multiple organ systems including cardiovascular, renal, and immune systems.",
+    expAr: "الحروق التي تتجاوز 20% من مساحة الجسم تُنتج استجابة محلية وجهازية معاً تؤثر على أجهزة متعددة."
+  },
+  {
+    en: "Which nursing action is critical to prevent cross-infection in burn wound sepsis?",
+    ar: "ما هو الإجراء التمريضي الأساسي لمنع العدوى المتقاطعة في تعفن جروح الحرق؟",
+    options: [
+      { en: "Administering antibiotics prophylactically", ar: "إعطاء مضادات حيوية وقائية" },
+      { en: "Hand washing before ALL patient contact", ar: "غسل اليدين قبل كل تعامل مع المريض" },
+      { en: "Keeping windows open for ventilation", ar: "إبقاء النوافذ مفتوحة للتهوية" },
+      { en: "Applying antipyretics regularly", ar: "تطبيق خافضات حرارة بانتظام" }
+    ],
+    correct: 1,
+    expEn: "Hand washing BEFORE all patient contact is the most critical action to prevent cross-infection. Additional protective equipment (gowns, gloves, masks, hair covers) is used when wounds are exposed.",
+    expAr: "غسل اليدين قبل كل تعامل مع المريض هو الإجراء الأهم لمنع العدوى المتقاطعة."
+  },
+  {
+    en: "In the Rule of Nines, what percentage is assigned to the perineum?",
+    ar: "في قاعدة التسعات، ما هي النسبة المخصصة للعجان؟",
+    options: [
+      { en: "9%", ar: "9%" },
+      { en: "4.5%", ar: "4.5%" },
+      { en: "2%", ar: "2%" },
+      { en: "1%", ar: "1%" }
+    ],
+    correct: 3,
+    expEn: "The perineum/groin is assigned 1% of TBSA in the Rule of Nines. This is why burns involving the perineum are considered major regardless of TBSA.",
+    expAr: "العجان يُمثّل 1% من مساحة الجسم في قاعدة التسعات. لهذا تُعتبر الحروق التي تشمل العجان خطيرة بصرف النظر عن النسبة."
+  },
+  {
+    en: "When does the Acute/Intermediate Phase of burn care begin?",
+    ar: "متى تبدأ المرحلة الحادة/المتوسطة من رعاية الحروق؟",
+    options: [
+      { en: "Immediately at the time of injury", ar: "فور وقوع الإصابة" },
+      { en: "48–72 hours after burn injury", ar: "48–72 ساعة بعد إصابة الحرق" },
+      { en: "1 week after injury", ar: "أسبوع بعد الإصابة" },
+      { en: "After discharge from hospital", ar: "بعد الخروج من المستشفى" }
+    ],
+    correct: 1,
+    expEn: "The Acute/Intermediate Phase begins 48–72 hours after burn injury. Focus shifts to wound care, infection control, nutrition, and pain management.",
+    expAr: "تبدأ المرحلة الحادة/المتوسطة بعد 48–72 ساعة من الإصابة. ينتقل التركيز لرعاية الجروح ومكافحة العدوى والتغذية وإدارة الألم."
+  },
+  {
+    en: "Which symptom distinguishes 2nd degree (deep partial-thickness) burns from 1st degree burns?",
+    ar: "ما هي العلامة التي تميز حروق الدرجة الثانية (العميقة الجزئية) عن حروق الدرجة الأولى؟",
+    options: [
+      { en: "Redness that blanches with pressure", ar: "احمرار يشحب بالضغط" },
+      { en: "Pain-free wound", ar: "جرح بدون ألم" },
+      { en: "Presence of blisters", ar: "وجود فقاعات" },
+      { en: "Charred black appearance", ar: "مظهر أسود متفحم" }
+    ],
+    correct: 2,
+    expEn: "2nd degree burns are characterized by blistering (fluid-filled vesicles) due to separation of epidermal layers, unlike 1st degree which are dry and red only.",
+    expAr: "تتميز حروق الدرجة الثانية بوجود فقاعات (حويصلات مملوءة بالسائل) بسبب انفصال طبقات البشرة، على عكس الدرجة الأولى الجافة الحمراء فقط."
+  },
+  {
+    en: "What is the primary goal of the Rehabilitation Phase?",
+    ar: "ما هو الهدف الرئيسي لمرحلة إعادة التأهيل؟",
+    options: [
+      { en: "Fluid resuscitation and hemodynamic stabilization", ar: "الإنعاش بالسوائل والاستقرار الديناميكي الدموي" },
+      { en: "Wound healing, psychosocial support, and restoring maximal functional activity", ar: "التئام الجروح، الدعم النفسي الاجتماعي، واستعادة الوظيفة القصوى" },
+      { en: "Preventing infection in the first 24 hours", ar: "منع العدوى في أول 24 ساعة" },
+      { en: "Maintaining body temperature only", ar: "الحفاظ على حرارة الجسم فقط" }
+    ],
+    correct: 1,
+    expEn: "The rehabilitation phase priorities are: wound healing, psychosocial support, and restoring maximal functional activity. It can extend for years after injury.",
+    expAr: "أولويات مرحلة التأهيل: شفاء الجروح، الدعم النفسي الاجتماعي، واستعادة الوظيفة القصوى. قد تمتد لسنوات."
+  },
+  {
+    en: "How often should bowel sounds be auscultated in a burn patient?",
+    ar: "كم مرة يجب الاستماع لأصوات الأمعاء في مريض الحرق؟",
+    options: [
+      { en: "Once a day", ar: "مرة يومياً" },
+      { en: "Every 8 hours", ar: "كل 8 ساعات" },
+      { en: "Every 4 hours", ar: "كل 4 ساعات" },
+      { en: "Only when patient complains of pain", ar: "فقط عندما يشكو المريض من ألم" }
+    ],
+    correct: 2,
+    expEn: "Bowel sounds should be auscultated every 4 hours as part of GI function monitoring in burn patients, since burn shock can cause paralytic ileus.",
+    expAr: "يجب الاستماع لأصوات الأمعاء كل 4 ساعات لمراقبة وظيفة الجهاز الهضمي لأن صدمة الحرق قد تسبب شلل الأمعاء."
+  },
+  {
+    en: "Which of the following is a function of the skin that is LOST after a severe burn?",
+    ar: "أي من وظائف الجلد التالية يُفقد بعد الحرق الشديد؟",
+    options: [
+      { en: "Digesting food nutrients", ar: "هضم العناصر الغذائية" },
+      { en: "Producing red blood cells", ar: "إنتاج خلايا الدم الحمراء" },
+      { en: "Regulating body temperature and preventing fluid loss", ar: "تنظيم حرارة الجسم ومنع فقدان السوائل" },
+      { en: "Filtering blood toxins", ar: "تصفية سموم الدم" }
+    ],
+    correct: 2,
+    expEn: "After severe burns, the skin loses its ability to regulate body temperature and prevent fluid loss. These are key reasons burn patients develop hypothermia and severe dehydration.",
+    expAr: "بعد الحروق الشديدة، يفقد الجلد قدرته على تنظيم حرارة الجسم ومنع فقدان السوائل، مما يسبب انخفاض حرارة الجسم والجفاف الشديد."
+  }
+];
+
+// ============ RENDER QUIZ ============
+let answered = {};
+
+function renderQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  answered = {};
+  document.getElementById('finalScore').classList.remove('visible');
+  document.getElementById('scoreBar').classList.remove('visible');
+
+  questions.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-' + qi;
+
+    const letters = ['A','B','C','D'];
+    const optionsHTML = q.options.map((opt, oi) => `
+      <div class="q-option" id="qopt-${qi}-${oi}" onclick="selectOption(${qi}, ${oi})">
+        <span class="q-option-letter">${letters[oi]}</span>
+        <span class="q-option-text">${opt.en}<span class="ar">${opt.ar}</span></span>
+      </div>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-num">QUESTION ${qi + 1} / 20 | السؤال ${qi + 1}</div>
+      <div class="q-text">${q.en}</div>
+      <div class="q-text-ar">${q.ar}</div>
+      <div class="q-options">${optionsHTML}</div>
+      <div class="q-explanation" id="qexp-${qi}">
+        <strong>✅ Explanation | الشرح:</strong><br>${q.expEn}
+        <div class="exp-ar">${q.expAr}</div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function selectOption(qi, oi) {
+  if (answered[qi] !== undefined) return; // already answered
+  answered[qi] = oi;
+  const opts = document.querySelectorAll(`[id^="qopt-${qi}-"]`);
+  opts.forEach(o => o.classList.add('answered'));
+  
+  const selectedEl = document.getElementById(`qopt-${qi}-${oi}`);
+  const isCorrect = oi === questions[qi].correct;
+  
+  if (isCorrect) {
+    selectedEl.classList.add('selected-correct');
+  } else {
+    selectedEl.classList.add('selected-wrong');
+    // Show correct answer
+    document.getElementById(`qopt-${qi}-${questions[qi].correct}`).classList.add('show-correct');
+  }
+}
+
+function submitQuiz() {
+  let score = 0;
+  questions.forEach((q, qi) => {
+    const expEl = document.getElementById('qexp-' + qi);
+    const card = document.getElementById('qcard-' + qi);
+
+    if (answered[qi] !== undefined) {
+      const correct = answered[qi] === q.correct;
+      if (correct) {
+        score++;
+        card.classList.add('correct');
+        expEl.classList.add('visible', 'correct-exp');
+      } else {
+        card.classList.add('wrong');
+        expEl.classList.add('visible', 'wrong-exp');
+        // Highlight correct if not already answered
+        const opts = document.querySelectorAll(`[id^="qopt-${qi}-"]`);
+        opts.forEach(o => o.classList.add('answered'));
+        document.getElementById(`qopt-${qi}-${q.correct}`).classList.add('show-correct');
+        if (answered[qi] !== undefined) {
+          document.getElementById(`qopt-${qi}-${answered[qi]}`).classList.add('selected-wrong');
+        }
+      }
+    } else {
+      // Unanswered
+      expEl.classList.add('visible', 'wrong-exp');
+      document.getElementById(`qopt-${qi}-${q.correct}`).classList.add('show-correct');
+    }
+  });
+
+  // Show score
+  const scoreBar = document.getElementById('scoreBar');
+  document.getElementById('scoreDisplay').textContent = score;
+  scoreBar.classList.add('visible');
+
+  const finalDiv = document.getElementById('finalScore');
+  document.getElementById('finalNum').textContent = score;
+  finalDiv.classList.add('visible');
+
+  let msg = '', msgAr = '';
+  if (score >= 18) { msg = '🏆 Excellent! Outstanding performance!'; msgAr = 'ممتاز! أداء رائع جداً!'; }
+  else if (score >= 15) { msg = '🌟 Very Good! Keep it up!'; msgAr = 'جيد جداً! استمر!'; }
+  else if (score >= 12) { msg = '👍 Good! Review the highlighted topics.'; msgAr = 'جيد! راجع المواضيع المحددة.'; }
+  else if (score >= 8) { msg = '📚 Keep Studying! Review the lecture again.'; msgAr = 'واصل الدراسة! راجع المحاضرة مرة أخرى.'; }
+  else { msg = '💪 Don\'t give up! Re-read the full lecture.'; msgAr = 'لا تستسلم! اقرأ المحاضرة كاملة مرة أخرى.'; }
+
+  document.getElementById('scoreMsg').textContent = msg;
+  document.getElementById('scoreMsgAr').textContent = msgAr;
+
+  finalDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+  renderQuiz();
+  window.scrollTo({ top: document.querySelector('.quiz-section').offsetTop - 100, behavior: 'smooth' });
+}
+
+// Init
+renderQuiz();
+</script>
+</body>
+</html>

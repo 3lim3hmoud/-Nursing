@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Immune System Disorders – Dr. Zinab</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#f5f3ef;
+    --surface:#ffffff;
+    --surface2:#f0ede8;
+    --border:#ddd9d2;
+    --text:#1a1a2e;
+    --text-muted:#6b6575;
+    --accent1:#2c6b8a;   /* teal-navy */
+    --accent2:#b5451b;   /* terracotta */
+    --accent3:#4a7c59;   /* forest */
+    --accent4:#7b5ea7;   /* purple */
+    --accent5:#c07030;   /* amber */
+    --hiv:#1e5f8a;
+    --sle:#8a1e4a;
+    --ms:#3d6b2c;
+    --quiz:#4a3580;
+    --radius:12px;
+    --shadow:0 4px 20px rgba(0,0,0,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    font-family:'Source Sans 3',sans-serif;
+    color:var(--text);
+    min-height:100vh;
+  }
+  /* ── HEADER ── */
+  .site-header{
+    background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+    color:#fff;
+    padding:28px 40px 24px;
+    display:flex;align-items:center;gap:20px;
+    box-shadow:0 4px 24px rgba(0,0,0,0.3);
+  }
+  .header-icon{font-size:48px;line-height:1;}
+  .header-text h1{font-family:'Playfair Display',serif;font-size:2rem;letter-spacing:.5px;margin-bottom:4px;}
+  .header-text .sub{font-size:.95rem;opacity:.75;font-family:'Amiri',serif;direction:rtl;text-align:right;}
+  .header-text .sub2{font-size:.85rem;opacity:.6;margin-top:2px;}
+  /* ── NAV TABS ── */
+  .tab-nav{
+    display:flex;gap:0;
+    background:#16213e;
+    padding:0 40px;
+    overflow-x:auto;
+  }
+  .tab-btn{
+    padding:14px 26px;
+    border:none;background:transparent;
+    color:rgba(255,255,255,0.55);
+    font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:600;
+    cursor:pointer;position:relative;white-space:nowrap;
+    transition:color .25s;
+  }
+  .tab-btn::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+    background:transparent;transition:background .25s;border-radius:3px 3px 0 0;
+  }
+  .tab-btn.active{color:#fff;}
+  .tab-btn[data-tab="hiv"].active::after{background:var(--hiv);}
+  .tab-btn[data-tab="sle"].active::after{background:var(--sle);}
+  .tab-btn[data-tab="ms"].active::after{background:var(--ms);}
+  .tab-btn[data-tab="quiz"].active::after{background:var(--quiz);}
+  .tab-btn .ar{display:block;font-family:'Amiri',serif;font-size:.78rem;opacity:.8;margin-top:1px;}
+  /* ── CONTENT ── */
+  .tab-content{display:none;padding:40px;max-width:1100px;margin:0 auto;}
+  .tab-content.active{display:block;}
+  /* ── SECTION ── */
+  .section{
+    background:var(--surface);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:28px;overflow:hidden;
+  }
+  .section-header{
+    padding:16px 24px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .section-header.hiv{background:linear-gradient(135deg,var(--hiv),#3a8abf);}
+  .section-header.sle{background:linear-gradient(135deg,var(--sle),#bf3a6a);}
+  .section-header.ms{background:linear-gradient(135deg,var(--ms),#5a9c3e);}
+  .section-header.quiz-head{background:linear-gradient(135deg,var(--quiz),#7b60d0);}
+  .section-header h2{color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;flex:1;}
+  .section-header .ar-h{color:rgba(255,255,255,.8);font-family:'Amiri',serif;font-size:1.1rem;direction:rtl;}
+  .section-header .icon{font-size:1.5rem;color:rgba(255,255,255,.85);}
+  .section-body{padding:24px;}
+  /* ── BILINGUAL BLOCK ── */
+  .bi-row{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border:1px solid var(--border);border-radius:8px;overflow:hidden;
+    margin-bottom:14px;
+  }
+  .bi-en{padding:14px 16px;background:var(--surface);}
+  .bi-ar{padding:14px 16px;background:#fafaf7;border-left:1px solid var(--border);
+    direction:rtl;font-family:'Amiri',serif;font-size:1.05rem;line-height:1.7;}
+  .bi-en p,.bi-ar p{line-height:1.7;font-size:.95rem;margin-bottom:6px;}
+  .bi-en p:last-child,.bi-ar p:last-child{margin-bottom:0;}
+  .lang-badge{
+    display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.5px;
+    padding:2px 7px;border-radius:20px;margin-bottom:8px;
+  }
+  .lang-badge.en{background:#e8f0fe;color:#1a4ea6;}
+  .lang-badge.ar{background:#fef3e8;color:#c07030;}
+  /* ── TABLE ── */
+  .fancy-table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0;}
+  .fancy-table thead tr{background:var(--accent1);color:#fff;}
+  .fancy-table thead th{padding:12px 16px;text-align:left;font-weight:600;}
+  .fancy-table thead th.ar-th{text-align:right;font-family:'Amiri',serif;}
+  .fancy-table tbody tr{border-bottom:1px solid var(--border);}
+  .fancy-table tbody tr:nth-child(even){background:var(--surface2);}
+  .fancy-table tbody td{padding:11px 16px;vertical-align:top;line-height:1.6;}
+  .fancy-table tbody td.ar-td{text-align:right;font-family:'Amiri',serif;direction:rtl;}
+  /* ── CARDS GRID ── */
+  .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:12px;}
+  .card{
+    background:var(--surface2);border-radius:10px;padding:16px;
+    border-left:4px solid var(--accent1);
+  }
+  .card.hiv-card{border-color:var(--hiv);}
+  .card.sle-card{border-color:var(--sle);}
+  .card.ms-card{border-color:var(--ms);}
+  .card h4{font-size:.9rem;font-weight:700;margin-bottom:6px;color:var(--text);}
+  .card .ar-card{font-family:'Amiri',serif;font-size:.95rem;direction:rtl;color:var(--text-muted);margin-top:4px;display:block;}
+  .card p{font-size:.85rem;line-height:1.6;color:#333;}
+  /* ── ALERT BOX ── */
+  .alert{
+    border-radius:8px;padding:14px 18px;margin-bottom:14px;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .alert.info{background:#e8f4f8;border-left:4px solid var(--accent1);}
+  .alert.warning{background:#fef8e8;border-left:4px solid var(--accent5);}
+  .alert.danger{background:#fdecea;border-left:4px solid var(--accent2);}
+  .alert.success{background:#eaf5ee;border-left:4px solid var(--accent3);}
+  .alert-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px;}
+  .alert-body .en-text{font-size:.9rem;line-height:1.6;}
+  .alert-body .ar-text{font-family:'Amiri',serif;font-size:1rem;direction:rtl;color:var(--text-muted);margin-top:4px;display:block;line-height:1.7;}
+  /* ── STAGE STEPS ── */
+  .stages{display:flex;flex-direction:column;gap:0;}
+  .stage{
+    display:grid;grid-template-columns:48px 1fr;gap:16px;
+    padding:16px;border-bottom:1px solid var(--border);
+    align-items:start;
+  }
+  .stage:last-child{border-bottom:none;}
+  .stage-num{
+    width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:1rem;color:#fff;flex-shrink:0;
+  }
+  .stage-body h4{font-size:.95rem;font-weight:700;margin-bottom:4px;}
+  .stage-body .ar-stage{font-family:'Amiri',serif;font-size:1rem;direction:rtl;color:var(--text-muted);margin-top:5px;display:block;line-height:1.7;}
+  .stage-body p{font-size:.88rem;line-height:1.65;color:#444;}
+  /* ── NURSING PROCESS ── */
+  .np-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:8px;}
+  .np-card{
+    background:var(--surface);border-radius:10px;
+    border-top:4px solid var(--ms);
+    box-shadow:0 2px 12px rgba(0,0,0,0.07);
+    padding:18px;
+  }
+  .np-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ms);margin-bottom:4px;}
+  .np-card .np-ar{font-family:'Amiri',serif;font-size:.95rem;direction:rtl;color:var(--text-muted);margin-bottom:10px;display:block;}
+  .np-card ul{list-style:none;padding:0;}
+  .np-card ul li{font-size:.87rem;line-height:1.6;padding:5px 0;border-bottom:1px dashed #e8e4de;display:flex;gap:8px;}
+  .np-card ul li:last-child{border-bottom:none;}
+  .np-card ul li::before{content:'✦';color:var(--ms);flex-shrink:0;font-size:.7rem;margin-top:3px;}
+  .np-card ul li .li-ar{font-family:'Amiri',serif;font-size:.9rem;direction:rtl;color:var(--text-muted);display:block;}
+  /* ── QUIZ ── */
+  .quiz-intro{
+    background:linear-gradient(135deg,#f0ebff,#e8e0ff);
+    border-radius:var(--radius);padding:24px;margin-bottom:28px;
+    border:1px solid #c8b8f0;text-align:center;
+  }
+  .quiz-intro h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--quiz);margin-bottom:6px;}
+  .quiz-intro p{font-size:.9rem;color:#555;}
+  .quiz-intro .ar-intro{font-family:'Amiri',serif;font-size:1.05rem;direction:rtl;color:#777;margin-top:6px;}
+  .question-card{
+    background:var(--surface);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden;
+  }
+  .q-header{
+    background:linear-gradient(135deg,var(--quiz),#6b50b8);
+    color:#fff;padding:14px 20px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .q-num{
+    background:rgba(255,255,255,.25);
+    width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:.95rem;flex-shrink:0;
+  }
+  .q-text{font-size:.95rem;line-height:1.5;flex:1;}
+  .q-ar{font-family:'Amiri',serif;font-size:1rem;direction:rtl;opacity:.85;margin-top:4px;display:block;}
+  .q-body{padding:18px;}
+  .options{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+  .option{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:10px 14px;border-radius:8px;cursor:pointer;
+    border:1.5px solid var(--border);background:var(--surface2);
+    transition:all .2s;font-size:.9rem;line-height:1.5;
+  }
+  .option:hover{border-color:#a090e0;background:#f3efff;}
+  .option.correct{background:#e8f7ee;border-color:#3a9c5e;color:#1a5c33;}
+  .option.wrong{background:#fdecea;border-color:#d04040;color:#8a1010;}
+  .option.revealed{cursor:default;}
+  .opt-letter{
+    font-weight:700;color:var(--quiz);flex-shrink:0;
+    width:22px;text-align:center;
+  }
+  .show-ans-btn{
+    background:var(--quiz);color:#fff;border:none;
+    padding:9px 20px;border-radius:8px;cursor:pointer;
+    font-family:'Source Sans 3',sans-serif;font-size:.88rem;font-weight:600;
+    transition:background .2s;
+  }
+  .show-ans-btn:hover{background:#3a2570;}
+  .show-ans-btn:disabled{background:#aaa;cursor:default;}
+  .explanation{
+    display:none;margin-top:12px;
+    background:#f5f0ff;border-left:4px solid var(--quiz);
+    border-radius:0 8px 8px 0;padding:12px 16px;
+  }
+  .explanation.visible{display:block;}
+  .explanation p{font-size:.88rem;line-height:1.7;color:#333;}
+  .explanation .exp-ar{font-family:'Amiri',serif;font-size:.98rem;direction:rtl;color:#555;margin-top:6px;display:block;line-height:1.8;}
+  /* Score Bar */
+  .score-bar{
+    position:sticky;top:0;z-index:100;
+    background:#16213e;color:#fff;
+    padding:10px 40px;display:flex;align-items:center;gap:20px;
+    font-size:.88rem;
+  }
+  .score-num{font-weight:700;font-size:1.1rem;color:#a0d8f0;}
+  /* ── DIVIDER ── */
+  .divider{border:none;border-top:2px dashed var(--border);margin:20px 0;}
+  /* ── LIST STYLED ── */
+  .styled-list{list-style:none;padding:0;}
+  .styled-list li{
+    padding:7px 0;border-bottom:1px solid var(--border);
+    display:flex;gap:10px;font-size:.9rem;line-height:1.6;
+  }
+  .styled-list li:last-child{border-bottom:none;}
+  .styled-list li::before{content:'▸';color:var(--accent1);flex-shrink:0;font-size:.8rem;margin-top:3px;}
+  .styled-list.sle-list li::before{color:var(--sle);}
+  .styled-list.ms-list li::before{color:var(--ms);}
+  .li-ar-inline{font-family:'Amiri',serif;font-size:.92rem;direction:rtl;color:var(--text-muted);}
+  /* ── BADGE TAGS ── */
+  .tag{
+    display:inline-block;padding:3px 10px;border-radius:20px;
+    font-size:.75rem;font-weight:600;margin:2px;
+  }
+  .tag.hiv{background:#dbeeff;color:#1e5f8a;}
+  .tag.sle{background:#ffe0ee;color:#8a1e4a;}
+  .tag.ms{background:#e0f0e0;color:#3d6b2c;}
+  /* ── RESPONSIVE ── */
+  @media(max-width:700px){
+    .bi-row{grid-template-columns:1fr;}
+    .bi-ar{border-left:none;border-top:1px solid var(--border);}
+    .tab-content{padding:20px;}
+    .site-header{padding:18px 20px;}
+    .tab-nav{padding:0 10px;}
+    .tab-btn{padding:12px 14px;font-size:.82rem;}
+    .score-bar{padding:10px 20px;}
+  }
+  /* ── PRINT ── */
+  @media print{
+    .tab-nav,.score-bar{display:none;}
+    .tab-content{display:block!important;padding:20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-icon">🛡️</div>
+  <div class="header-text">
+    <h1>Immune System Disorders</h1>
+    <div class="sub">اضطرابات الجهاز المناعي — د. زينب</div>
+    <div class="sub2">HIV/AIDS · Systemic Lupus Erythematosus · Multiple Sclerosis</div>
+  </div>
+</header>
+
+<!-- SCORE BAR (quiz only) -->
+<div class="score-bar" id="scoreBar" style="display:none">
+  📝 Score: <span class="score-num" id="scoreNum">0 / 20</span>
+  <button onclick="resetQuiz()" style="margin-left:auto;background:#c07030;border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;">Reset / إعادة</button>
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="hiv" onclick="switchTab('hiv',this)">
+    🦠 HIV / AIDS
+    <span class="ar">فيروس نقص المناعة</span>
+  </button>
+  <button class="tab-btn" data-tab="sle" onclick="switchTab('sle',this)">
+    🔴 SLE / Lupus
+    <span class="ar">الذئبة الحمراء</span>
+  </button>
+  <button class="tab-btn" data-tab="ms" onclick="switchTab('ms',this)">
+    🧠 Multiple Sclerosis
+    <span class="ar">التصلب المتعدد</span>
+  </button>
+  <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz',this)">
+    📝 Self-Test
+    <span class="ar">اختبر نفسك</span>
+  </button>
+</nav>
+
+<!-- ══════════════════ TAB: HIV ══════════════════ -->
+<div class="tab-content active" id="tab-hiv">
+
+  <!-- Definition -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">🦠</span>
+      <h2>Human Immunodeficiency Virus (HIV) &amp; AIDS</h2>
+      <span class="ar-h">فيروس نقص المناعة البشرية والإيدز</span>
+    </div>
+    <div class="section-body">
+      <div class="bi-row">
+        <div class="bi-en">
+          <span class="lang-badge en">EN</span>
+          <p><strong>HIV</strong> is a <strong>retrovirus</strong> present in body fluids (blood, semen) that causes <strong>immune deficiency</strong>.</p>
+          <p>The CDC defines <strong>AIDS</strong> as a CD4+ cell count <strong>below 200 cells/μl</strong>, OR when a patient has an <strong>opportunistic infection</strong> in the setting of HIV infection.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge ar">عربي</span>
+          <p><strong>HIV</strong> هو <strong>فيروس رجعي (ريتروفيروس)</strong> موجود في سوائل الجسم (الدم، السائل المنوي) يسبب <strong>نقص المناعة</strong>.</p>
+          <p>تُعرّف مراكز السيطرة على الأمراض (CDC) <strong>الإيدز</strong> بأنه انخفاض عدد خلايا CD4+ إلى <strong>أقل من 200 خلية/ميكروليتر</strong>، أو عند إصابة المريض بـ<strong>عدوى انتهازية</strong> في سياق إصابته بـ HIV.</p>
+        </div>
+      </div>
+      <div class="alert info">
+        <span class="alert-icon">⏳</span>
+        <div class="alert-body">
+          <p class="en-text"><strong>Incubation Period:</strong> Averages <strong>8–10 years</strong> in adults. Patients may be HIV-positive and asymptomatic for varying periods. Worldwide, more than <strong>75% of AIDS patients die within 2 years</strong> of diagnosis.</p>
+          <span class="ar-text"><strong>فترة الحضانة:</strong> تتراوح بين <strong>8 إلى 10 سنوات</strong> في البالغين. يمكن أن يكون المريض مصاباً بـ HIV دون أعراض لفترات متفاوتة. أكثر من <strong>75% من مرضى الإيدز يتوفون خلال سنتين</strong> من التشخيص.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Causes & Transmission -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">⚡</span>
+      <h2>Causes &amp; Modes of Transmission</h2>
+      <span class="ar-h">الأسباب وطرق الانتقال</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Mode of Transmission / طريقة الانتقال</th>
+            <th>Details (English)</th>
+            <th class="ar-th">التفاصيل (عربي)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>🤝 Sexual Contact</td>
+            <td>Vaginal or anal intercourse with an infected person</td>
+            <td class="ar-td">الجماع المهبلي أو الشرجي مع شخص مصاب</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>🩸 Contaminated Blood</td>
+            <td>Transfusion of infected blood or blood products</td>
+            <td class="ar-td">نقل دم ملوث أو منتجات دم ملوثة</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>💉 Contaminated Needles</td>
+            <td>Sharing needles (common in IV drug users)</td>
+            <td class="ar-td">مشاركة الإبر (شائعة بين مدمني المخدرات)</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>🤰 Placental Transmission</td>
+            <td>From infected mother to fetus during pregnancy</td>
+            <td class="ar-td">من الأم المصابة إلى الجنين أثناء الحمل</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>🍼 Breast Milk</td>
+            <td>Transmission through breastfeeding</td>
+            <td class="ar-td">الانتقال عبر الرضاعة الطبيعية</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="divider"/>
+      <p style="font-weight:700;font-size:.95rem;margin-bottom:10px;">⚠️ Risk Factors / عوامل الخطر</p>
+      <ul class="styled-list">
+        <li><div><span>Sexual contact with someone who has AIDS</span><span class="li-ar-inline">— التواصل الجنسي مع مصاب بالإيدز</span></div></li>
+        <li><div><span>Present or past abuse of intravenous (IV) drugs</span><span class="li-ar-inline">— تعاطي المخدرات الوريدية حالياً أو في السابق</span></div></li>
+        <li><div><span>Transfusion of blood or blood products</span><span class="li-ar-inline">— تلقي نقل دم أو منتجات الدم</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pathophysiology -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">🔬</span>
+      <h2>Pathophysiology</h2>
+      <span class="ar-h">الفيزيولوجيا المرضية</span>
+    </div>
+    <div class="section-body">
+      <div class="bi-row">
+        <div class="bi-en">
+          <span class="lang-badge en">EN</span>
+          <p>HIV attaches to <strong>helper T cells (CD4+)</strong> — the antigen CD4+ acts as a receptor allowing the virus to enter the cell.</p>
+          <p>After invading the cell, HIV either <strong>replicates → cell death</strong>, or the virus becomes <strong>latent</strong> (dormant).</p>
+          <p>Progressive loss of CD4+ cells weakens the immune system, making the patient vulnerable to opportunistic infections.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge ar">عربي</span>
+          <p>يرتبط HIV بـ<strong>خلايا T المساعدة (CD4+)</strong> — يعمل مستضد CD4+ كمستقبل يسمح للفيروس بالدخول إلى الخلية.</p>
+          <p>بعد الغزو، إما أن يتضاعف الفيروس مما يؤدي إلى <strong>موت الخلية</strong>، أو يظل <strong>كامناً</strong>.</p>
+          <p>يُضعف الفقدان التدريجي لخلايا CD4+ الجهاز المناعي، مما يجعل المريض عرضة للعدوى الانتهازية.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">📋</span>
+      <h2>Clinical Manifestations — Stages</h2>
+      <span class="ar-h">المظاهر السريرية — مراحل المرض</span>
+    </div>
+    <div class="section-body">
+      <div class="stages">
+        <div class="stage">
+          <div class="stage-num" style="background:#1e5f8a;">1</div>
+          <div class="stage-body">
+            <h4>Primary Infection / Acute HIV — الإصابة الأولية</h4>
+            <p>Most people develop a <strong>flu-like illness</strong> within 1–2 months of infection. Characterized by <strong>dramatic drops in CD4 T-cell counts</strong>. CD4+ cells help coordinate the immune response by stimulating other immune cells.</p>
+            <span class="ar-stage">معظم المصابين يصابون بأعراض شبيهة بالإنفلونزا في غضون شهر أو شهرين. تتميز هذه المرحلة بـ<strong>انخفاض حاد في عدد خلايا CD4+</strong>.</span>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-num" style="background:#2e8a70;">2</div>
+          <div class="stage-body">
+            <h4>Clinical Latent Infection / Chronic HIV — الإصابة الكامنة</h4>
+            <p>HIV remains in the body and in infected white blood cells. In some people, <strong>persistent swelling of lymph nodes</strong> occurs during this stage. The patient may appear healthy but is still infectious.</p>
+            <span class="ar-stage">يظل الفيروس في الجسم داخل الكريات البيضاء المصابة. قد يعاني بعض المرضى من <strong>تورم مستمر في الغدد الليمفاوية</strong>. المريض لا يزال معدياً.</span>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-num" style="background:#c07030;">3</div>
+          <div class="stage-body">
+            <h4>Symptomatic HIV Infection — الإصابة العرضية</h4>
+            <p>As the virus multiplies and destroys immune cells, mild infections and chronic symptoms appear:</p>
+            <table class="fancy-table" style="margin-top:8px;">
+              <thead><tr><th>Symptom</th><th class="ar-th">العرض</th></tr></thead>
+              <tbody>
+                <tr><td>Fever</td><td class="ar-td">حمى</td></tr>
+                <tr><td>Fatigue</td><td class="ar-td">إرهاق</td></tr>
+                <tr><td>Swollen lymph nodes (often one of the first signs)</td><td class="ar-td">تضخم الغدد الليمفاوية (من أولى العلامات)</td></tr>
+                <tr><td>Diarrhea</td><td class="ar-td">إسهال</td></tr>
+                <tr><td>Weight loss</td><td class="ar-td">فقدان الوزن</td></tr>
+                <tr><td>Oral yeast infection (thrush)</td><td class="ar-td">فطريات الفم (مبيضات)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-num" style="background:#8a1e1e;">4</div>
+          <div class="stage-body">
+            <h4>AIDS — Opportunistic Infections Stage — مرحلة الإيدز</h4>
+            <p>CD4+ &lt; 200 cells/μl. Severe opportunistic infections develop:</p>
+            <div class="cards-grid" style="margin-top:10px;">
+              <div class="card hiv-card"><h4>Neurological / عصبي</h4><p>Coma, confusion, mental symptoms, seizures, lack of coordination</p><span class="ar-card">غيبوبة، ارتباك ذهني، نوبات صرع، عدم تناسق</span></div>
+              <div class="card hiv-card"><h4>Respiratory / تنفسي</h4><p>Coughing, shortness of breath</p><span class="ar-card">سعال، ضيق في التنفس</span></div>
+              <div class="card hiv-card"><h4>GI / هضمي</h4><p>Difficult/painful swallowing, nausea, vomiting, severe persistent diarrhea, abdominal cramps</p><span class="ar-card">صعوبة في البلع، غثيان، قيء، إسهال شديد</span></div>
+              <div class="card hiv-card"><h4>Systemic / جهازي</h4><p>Fever, extreme fatigue, severe headaches, weight loss, vision loss</p><span class="ar-card">حمى، إرهاق شديد، صداع شديد، فقدان الوزن، فقدان البصر</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnostic Tests -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">🔍</span>
+      <h2>Diagnostic Tests</h2>
+      <span class="ar-h">الاختبارات التشخيصية</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead>
+          <tr><th>Test</th><th>Purpose</th><th class="ar-th">الاختبار والغرض</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CD4+ Count</strong></td>
+            <td>Counts helper T-cells; &lt;200 = AIDS</td>
+            <td class="ar-td">عدد خلايا T المساعدة؛ أقل من 200 = إيدز</td>
+          </tr>
+          <tr>
+            <td><strong>EIA (Enzyme Immunoassay)</strong></td>
+            <td>Detects HIV antibodies — screening test</td>
+            <td class="ar-td">يكشف أجسام HIV المضادة — اختبار فرز</td>
+          </tr>
+          <tr>
+            <td><strong>Western Blot</strong></td>
+            <td>Confirmatory test for HIV antibodies</td>
+            <td class="ar-td">اختبار تأكيدي لأجسام HIV المضادة</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">💊</span>
+      <h2>Medical Management</h2>
+      <span class="ar-h">العلاج الطبي</span>
+    </div>
+    <div class="section-body">
+      <div class="alert warning">
+        <span class="alert-icon">⚠️</span>
+        <div class="alert-body">
+          <p class="en-text">Although <strong>no cure exists</strong> for AIDS, signs and symptoms can be managed with treatment.</p>
+          <span class="ar-text">لا يوجد علاج شافٍ للإيدز حتى الآن، لكن يمكن إدارة الأعراض بالعلاج.</span>
+        </div>
+      </div>
+      <ul class="styled-list">
+        <li><div><span><strong>Antiretroviral drugs (ARVs):</strong> Primary therapy for HIV infection</span><span class="li-ar-inline">— الأدوية المضادة للفيروسات العكوسة: العلاج الأساسي</span></div></li>
+        <li><div><span><strong>Zidovudine (Zidin/AZT):</strong> Antiviral that slows HIV progression, decreases opportunistic infections, prolongs survival</span><span class="li-ar-inline">— يبطئ تطور HIV، يقلل العدوى الانتهازية، يطيل البقاء</span></div></li>
+        <li><div><span><strong>Anti-infective agents:</strong> Combat opportunistic infections and associated cancers</span><span class="li-ar-inline">— مضادات العدوى لمكافحة الإصابات الانتهازية والسرطانات المرتبطة</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nutrition Therapy -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">🥗</span>
+      <h2>Nutrition Therapy</h2>
+      <span class="ar-h">العلاج الغذائي</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead><tr><th>Guideline</th><th class="ar-th">التوجيه</th></tr></thead>
+        <tbody>
+          <tr><td>A healthy diet tailored to meet the nutritional needs of the patient</td><td class="ar-td">نظام غذائي صحي يلبي الاحتياجات الغذائية للمريض</td></tr>
+          <tr><td>Monitor the patient for fever, noting its pattern</td><td class="ar-td">مراقبة المريض للحمى وتوثيق نمطها</td></tr>
+          <tr><td>Calorie counts to evaluate nutritional status and initiate appropriate therapy for patients with unexplained weight loss</td><td class="ar-td">حساب السعرات الحرارية لتقييم الحالة الغذائية وبدء العلاج للمرضى الذين يعانون من فقدان وزن غير مبرر</td></tr>
+          <tr><td>Patients with diarrhea: diet low in fat &amp; insoluble fiber, high in soluble fiber</td><td class="ar-td">مرضى الإسهال: نظام غذائي منخفض الدهون والألياف غير الذائبة، غني بالألياف الذائبة</td></tr>
+          <tr><td>Appetite stimulants for patients with AIDS-related anorexia</td><td class="ar-td">محفزات الشهية للمرضى المصابين بفقدان الشهية المرتبط بالإيدز</td></tr>
+          <tr><td>Assess for tender, swollen lymph nodes; check lab values regularly</td><td class="ar-td">تقييم الغدد الليمفاوية المتورمة والمؤلمة؛ متابعة القيم المخبرية بانتظام</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Nursing Management -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">👩‍⚕️</span>
+      <h2>Nursing Management</h2>
+      <span class="ar-h">الرعاية التمريضية</span>
+    </div>
+    <div class="section-body">
+      <ul class="styled-list">
+        <li><div><span>Watch for signs and symptoms of infection: skin breakdown, cough, sore throat, diarrhea</span><span class="li-ar-inline">— مراقبة علامات العدوى: تقرح الجلد، سعال، التهاب الحلق، إسهال</span></div></li>
+        <li><div><span>Follow <strong>standard precautions</strong></span><span class="li-ar-inline">— الالتزام بالاحتياطات القياسية</span></div></li>
+        <li><div><span>Watch for signs of <strong>oral candida infection (thrush)</strong></span><span class="li-ar-inline">— مراقبة علامات فطريات الفم (المبيضات)</span></div></li>
+        <li><div><span>Offer support in coping with the social impact of AIDS</span><span class="li-ar-inline">— تقديم الدعم النفسي والاجتماعي</span></div></li>
+        <li><div><span>Evaluate the patient after counseling and treatment</span><span class="li-ar-inline">— تقييم المريض بعد الإرشاد والعلاج</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Teaching Tips -->
+  <div class="section">
+    <div class="section-header hiv">
+      <span class="icon">📚</span>
+      <h2>AIDS Teaching Tips</h2>
+      <span class="ar-h">التعليم الصحي للمريض</span>
+    </div>
+    <div class="section-body">
+      <ul class="styled-list">
+        <li><div><span>Explain how AIDS affects the immune response</span><span class="li-ar-inline">— شرح كيف يؤثر الإيدز على الاستجابة المناعية</span></div></li>
+        <li><div><span>Discuss prevention measures: wearing a condom during vaginal/anal intercourse, not sharing needles or syringes, not donating blood, organs, or tissue</span><span class="li-ar-inline">— مناقشة التدابير الوقائية: استخدام الواقي، عدم مشاركة الإبر، عدم التبرع بالدم أو الأعضاء</span></div></li>
+        <li><div><span>Discuss contraceptive measures with female patients. Explain that a mother can transmit AIDS to her fetus during pregnancy and to an infant through breast milk</span><span class="li-ar-inline">— مناقشة وسائل منع الحمل مع المريضات. شرح أن الأم يمكن أن تنقل الإيدز للجنين والرضيع</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end HIV tab -->
+
+<!-- ══════════════════ TAB: SLE ══════════════════ -->
+<div class="tab-content" id="tab-sle">
+
+  <!-- Definition -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">🔴</span>
+      <h2>Systemic Lupus Erythematosus (SLE)</h2>
+      <span class="ar-h">الذئبة الحمراء الجهازية</span>
+    </div>
+    <div class="section-body">
+      <div class="bi-row">
+        <div class="bi-en">
+          <span class="lang-badge en">EN</span>
+          <p>A <strong>chronic inflammatory disorder</strong> of the connective tissue. SLE affects <strong>multiple organ systems</strong> (as well as the skin) and can be <strong>fatal</strong>.</p>
+          <p>It is marked by <strong>recurring remissions and exacerbations</strong>, which are especially common during <strong>spring and summer</strong>.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge ar">عربي</span>
+          <p>اضطراب <strong>التهابي مزمن</strong> في النسيج الضام. تؤثر الذئبة على <strong>أجهزة متعددة</strong> بالجسم (والجلد) وقد تكون <strong>مميتة</strong>.</p>
+          <p>تتميز بـ<strong>هدوء ونوبات متكررة</strong>، وهي أكثر شيوعاً في فصلي <strong>الربيع والصيف</strong>.</p>
+        </div>
+      </div>
+      <div class="alert warning">
+        <span class="alert-icon">📊</span>
+        <div class="alert-body">
+          <p class="en-text"><strong>Prognosis:</strong> Improves with early detection and treatment. Poor prognosis for patients who develop <strong>cardiovascular, renal, or neurologic complications</strong> or severe bacterial infections.</p>
+          <span class="ar-text"><strong>التشخيص:</strong> يتحسن مع الكشف والعلاج المبكر. يكون سيئاً عند حدوث مضاعفات <strong>قلبية وعائية أو كلوية أو عصبية</strong> أو عدوى بكتيرية شديدة.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Causes & Risk Factors -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">🧬</span>
+      <h2>Causes &amp; Exacerbation Risk Factors</h2>
+      <span class="ar-h">الأسباب وعوامل تفاقم المرض</span>
+    </div>
+    <div class="section-body">
+      <div class="alert info">
+        <span class="alert-icon">❓</span>
+        <div class="alert-body">
+          <p class="en-text">The cause of SLE remains a mystery. Evidence points to interrelated <strong>immunologic abnormalities</strong> and environmental, hormonal, and genetic factors.</p>
+          <span class="ar-text">سبب الذئبة لا يزال غامضاً. تشير الأدلة إلى شذوذات مناعية مترابطة مع عوامل بيئية وهرمونية وجينية.</span>
+        </div>
+      </div>
+      <p style="font-weight:700;margin:12px 0 8px;font-size:.95rem;">⚠️ Factors That Increase Risk of SLE Exacerbation / عوامل تزيد من خطر تفاقم الذئبة:</p>
+      <table class="fancy-table">
+        <thead><tr><th>Factor / العامل</th><th>Details</th><th class="ar-th">التفاصيل</th></tr></thead>
+        <tbody>
+          <tr><td>🧬 Genetic Predisposition</td><td>Family history of SLE</td><td class="ar-td">تاريخ عائلي بالإصابة بالذئبة</td></tr>
+          <tr><td>🦠 Viral Infections</td><td>Certain viral triggers</td><td class="ar-td">محفزات فيروسية معينة</td></tr>
+          <tr><td>☀️ Sunlight / UV Light</td><td>Exposure to sunlight or ultraviolet light</td><td class="ar-td">التعرض للشمس أو الأشعة فوق البنفسجية</td></tr>
+          <tr><td>💉 Immunization</td><td>Vaccines in susceptible individuals</td><td class="ar-td">التطعيمات في الأشخاص المعرضين للخطر</td></tr>
+          <tr><td>♀️ Abnormal Estrogen Metabolism</td><td>Hormonal imbalance</td><td class="ar-td">خلل في استقلاب الإستروجين</td></tr>
+          <tr><td>🤰 Pregnancy</td><td>Can trigger or worsen SLE</td><td class="ar-td">يمكن أن يؤدي إلى حدوث نوبة أو تفاقمها</td></tr>
+          <tr><td>💊 Medications</td><td>Drug-induced lupus</td><td class="ar-td">الذئبة الناجمة عن الأدوية</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Pathophysiology -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">🔬</span>
+      <h2>Pathophysiology</h2>
+      <span class="ar-h">الفيزيولوجيا المرضية</span>
+    </div>
+    <div class="section-body">
+      <div class="bi-row">
+        <div class="bi-en">
+          <span class="lang-badge en">EN</span>
+          <p><strong>Autoimmunity</strong> is the prime mechanism. The body produces <strong>antibodies against components of its own cells</strong>, resulting in immune complex disease.</p>
+          <p>Patients with SLE may produce antibodies against various tissue components such as <strong>RBCs, platelets</strong>, or virtually any organ or tissue in the body.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge ar">عربي</span>
+          <p><strong>المناعة الذاتية</strong> هي الآلية الأساسية. يُنتج الجسم <strong>أجساماً مضادة ضد مكونات خلاياه الخاصة</strong>، مما يؤدي إلى مرض المجمعات المناعية.</p>
+          <p>قد يُنتج مرضى الذئبة أجساماً مضادة ضد مكونات نسيجية متنوعة كـ<strong>كريات الدم الحمراء، الصفائح الدموية</strong>، أو أي عضو آخر.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinical Manifestations -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">📋</span>
+      <h2>Clinical Manifestations</h2>
+      <span class="ar-h">المظاهر السريرية</span>
+    </div>
+    <div class="section-body">
+      <div class="alert info">
+        <span class="alert-icon">💡</span>
+        <div class="alert-body">
+          <p class="en-text">Most people with lupus have mild disease characterized by episodes called <strong>flares</strong> — when signs and symptoms get worse for a while, then improve or even disappear completely for a time.</p>
+          <span class="ar-text">معظم مرضى الذئبة يعانون من مرض خفيف يتميز بنوبات تُسمى <strong>التفاقمات</strong> — حيث تسوء الأعراض ثم تتحسن أو تختفي تماماً لفترة.</span>
+        </div>
+      </div>
+      <table class="fancy-table">
+        <thead><tr><th>System / الجهاز</th><th>Manifestations</th><th class="ar-th">المظاهر</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>🦋 Skin / الجلد</strong></td>
+            <td>Butterfly rash (malar rash) across cheeks and nose; photosensitivity</td>
+            <td class="ar-td">طفح فراشي عبر الخدين والأنف؛ حساسية ضوئية</td>
+          </tr>
+          <tr>
+            <td><strong>🦴 Musculoskeletal / عضلي هيكلي</strong></td>
+            <td>Nonerosive arthritis (joint pain &amp; swelling without bone destruction)</td>
+            <td class="ar-td">التهاب مفاصل غير تآكلي (ألم وتورم بلا تدمير عظمي)</td>
+          </tr>
+          <tr>
+            <td><strong>🫁 Lungs / الرئتان</strong></td>
+            <td>Pleuritic pain; pulmonary hypertension; pulmonary hemorrhage</td>
+            <td class="ar-td">ألم جنبي؛ ارتفاع ضغط الرئة؛ نزيف رئوي</td>
+          </tr>
+          <tr>
+            <td><strong>👁️ Eyes / العيون</strong></td>
+            <td>Dry eye syndrome</td>
+            <td class="ar-td">متلازمة جفاف العين</td>
+          </tr>
+          <tr>
+            <td><strong>🩸 Renal / الكلى</strong></td>
+            <td>Painless blood/protein in urine; acute/chronic renal impairment → kidney failure</td>
+            <td class="ar-td">دم وبروتين في البول؛ قصور كلوي حاد/مزمن → فشل كلوي</td>
+          </tr>
+          <tr>
+            <td><strong>🧠 Neuropsychiatric / عصبي نفسي</strong></td>
+            <td>Headache, cognitive dysfunction, mood disorder, cerebrovascular disease, seizures, depression</td>
+            <td class="ar-td">صداع، اضطراب إدراكي، اضطراب مزاجي، مرض وعائي دماغي، صرع، اكتئاب</td>
+          </tr>
+          <tr>
+            <td><strong>⚡ Systemic / جهازي</strong></td>
+            <td>Fatigue, fever, weight loss</td>
+            <td class="ar-td">إرهاق، حمى، فقدان وزن</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Diagnosis -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">🔍</span>
+      <h2>Diagnosis</h2>
+      <span class="ar-h">التشخيص</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead><tr><th>#</th><th>Diagnostic Test</th><th class="ar-th">الاختبار التشخيصي</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Antinuclear antibody (ANA), Anti-DNA, Lupus erythematosus cell tests</td><td class="ar-td">الأجسام المضادة للنواة، ضد الحمض النووي، اختبار خلايا الذئبة</td></tr>
+          <tr><td>2</td><td>Complete Blood Count (CBC)</td><td class="ar-td">صورة دم كاملة</td></tr>
+          <tr><td>3</td><td>Erythrocyte Sedimentation Rate (ESR)</td><td class="ar-td">معدل ترسيب الكريات الحمراء</td></tr>
+          <tr><td>4</td><td>Urine studies</td><td class="ar-td">تحليل البول</td></tr>
+          <tr><td>5</td><td>Complement proteins C3 and C4 levels</td><td class="ar-td">مستويات البروتين التكميلي C3 وC4</td></tr>
+          <tr><td>6</td><td>Chest X-ray</td><td class="ar-td">أشعة صدر</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Medical Management -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">💊</span>
+      <h2>Medical Management</h2>
+      <span class="ar-h">العلاج الطبي</span>
+    </div>
+    <div class="section-body">
+      <ul class="styled-list sle-list">
+        <li><div><span><strong>Corticosteroids:</strong> Main anti-inflammatory therapy</span><span class="li-ar-inline">— الكورتيكوستيرويدات: العلاج المضاد للالتهاب الرئيسي</span></div></li>
+        <li><div><span>Patients with <strong>mild disease</strong> need little or no medication</span><span class="li-ar-inline">— مرضى المرض الخفيف يحتاجون أدوية قليلة أو معدومة</span></div></li>
+        <li><div><span><strong>Aspirin and other NSAIDs</strong> may control arthritis symptoms</span><span class="li-ar-inline">— الأسبرين ومضادات الالتهاب غير الستيرويدية لألم المفاصل</span></div></li>
+        <li><div><span><strong>Skin lesions</strong> require topical treatment</span><span class="li-ar-inline">— آفات الجلد تتطلب علاجاً موضعياً</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nursing Management -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">👩‍⚕️</span>
+      <h2>Nursing Management</h2>
+      <span class="ar-h">الرعاية التمريضية</span>
+    </div>
+    <div class="section-body">
+      <ul class="styled-list sle-list">
+        <li><div><span>Check the <strong>urine for blood</strong></span><span class="li-ar-inline">— فحص البول للكشف عن الدم</span></div></li>
+        <li><div><span>Inspect the <strong>scalp for hair loss</strong></span><span class="li-ar-inline">— فحص فروة الرأس لتساقط الشعر</span></div></li>
+        <li><div><span>Provide a <strong>balanced diet</strong></span><span class="li-ar-inline">— توفير نظام غذائي متوازن</span></div></li>
+        <li><div><span>Apply <strong>heat packs</strong> to relieve joint pain and stiffness</span><span class="li-ar-inline">— تطبيق كمادات حرارة لتخفيف ألم وتيبس المفاصل</span></div></li>
+        <li><div><span>Administer corticosteroids as ordered</span><span class="li-ar-inline">— إعطاء الكورتيكوستيرويدات حسب الوصف</span></div></li>
+        <li><div><span>Topical treatment for skin lesions</span><span class="li-ar-inline">— علاج موضعي لآفات الجلد</span></div></li>
+        <li><div><span>Aspirin/NSAIDs for arthritis symptoms</span><span class="li-ar-inline">— مضادات الالتهاب لأعراض التهاب المفاصل</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Teaching Tips -->
+  <div class="section">
+    <div class="section-header sle">
+      <span class="icon">📚</span>
+      <h2>SLE Teaching Tips</h2>
+      <span class="ar-h">التعليم الصحي لمريض الذئبة</span>
+    </div>
+    <div class="section-body">
+      <ul class="styled-list sle-list">
+        <li><div><span>Tell the patient to <strong>avoid crowds</strong></span><span class="li-ar-inline">— إخبار المريضة بتجنب الأماكن المزدحمة</span></div></li>
+        <li><div><span>Review <strong>range-of-motion exercises</strong> and body alignment techniques</span><span class="li-ar-inline">— مراجعة تمارين نطاق الحركة وتقنيات محاذاة الجسم</span></div></li>
+        <li><div><span>Call practitioner if she develops <strong>fever, cough, rash</strong> or worsening chest/abdominal/muscle/joint pain</span><span class="li-ar-inline">— الاتصال بالطبيب عند الحمى أو السعال أو الطفح أو تفاقم الألم</span></div></li>
+        <li><div><span>Stress the importance of <strong>eating a balanced diet</strong></span><span class="li-ar-inline">— التأكيد على أهمية النظام الغذائي المتوازن</span></div></li>
+        <li><div><span>Emphasize the importance of <strong>keeping follow-up appointments</strong></span><span class="li-ar-inline">— التأكيد على أهمية المواعيد المتابعة</span></div></li>
+        <li><div><span>Tell the patient to wear <strong>protective clothing</strong> (sun protection)</span><span class="li-ar-inline">— ارتداء ملابس واقية من الشمس</span></div></li>
+        <li><div><span><strong>Maintain medication regimen</strong></span><span class="li-ar-inline">— الالتزام بالنظام الدوائي</span></div></li>
+        <li><div><span>Talk with practitioner <strong>before trying to become pregnant</strong></span><span class="li-ar-inline">— استشارة الطبيب قبل محاولة الحمل</span></div></li>
+        <li><div><span>Evaluate the patient with successful therapy</span><span class="li-ar-inline">— تقييم المريضة مع العلاج الناجح</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end SLE tab -->
+
+<!-- ══════════════════ TAB: MS ══════════════════ -->
+<div class="tab-content" id="tab-ms">
+
+  <!-- Definition -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">🧠</span>
+      <h2>Multiple Sclerosis (MS)</h2>
+      <span class="ar-h">التصلب المتعدد</span>
+    </div>
+    <div class="section-body">
+      <div class="bi-row">
+        <div class="bi-en">
+          <span class="lang-badge en">EN</span>
+          <p>MS is a <strong>chronic, progressive, autoimmune disorder</strong> in which the immune system attacks the <strong>myelin sheath</strong> (the protective covering of nerves) in the <strong>central nervous system</strong> (brain and spinal cord), causing inflammation and nerve damage.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge ar">عربي</span>
+          <p>التصلب المتعدد هو اضطراب <strong>مزمن، تقدمي، مناعي ذاتي</strong>؛ يهاجم فيه جهاز المناعة <strong>غمد المايلين</strong> (الغطاء الواقي للأعصاب) في <strong>الجهاز العصبي المركزي</strong> (الدماغ والحبل الشوكي)، مسبباً التهاباً وتلفاً عصبياً.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Causes -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">🧬</span>
+      <h2>Causes &amp; Risk Factors</h2>
+      <span class="ar-h">الأسباب وعوامل الخطر</span>
+    </div>
+    <div class="section-body">
+      <div class="alert info">
+        <span class="alert-icon">❓</span>
+        <div class="alert-body">
+          <p class="en-text">The exact cause is unknown. Believed to be a combination of <strong>autoimmune reaction</strong>, <strong>environmental triggers</strong> (viruses, low vitamin D), and <strong>genetic predisposition</strong>.</p>
+          <span class="ar-text">السبب الدقيق غير معروف. يُعتقد أنه مزيج من <strong>تفاعل مناعي ذاتي</strong>، <strong>محفزات بيئية</strong> (فيروسات، نقص فيتامين D)، و<strong>استعداد جيني</strong>.</span>
+        </div>
+      </div>
+      <table class="fancy-table">
+        <thead><tr><th>Risk Factor / عامل الخطر</th><th>Details</th><th class="ar-th">التفاصيل</th></tr></thead>
+        <tbody>
+          <tr><td>📅 Age</td><td>Most diagnosed between 20–40 years</td><td class="ar-td">معظم الحالات تُشخَّص بين 20–40 سنة</td></tr>
+          <tr><td>♀️ Female Gender</td><td>2–3× more common than in males</td><td class="ar-td">أكثر شيوعاً عند الإناث 2-3 أضعاف</td></tr>
+          <tr><td>🧬 Family History</td><td>Genetic predisposition</td><td class="ar-td">استعداد وراثي</td></tr>
+          <tr><td>☀️ Vitamin D Deficiency</td><td>Low vitamin D levels increase risk</td><td class="ar-td">انخفاض فيتامين D يزيد الخطر</td></tr>
+          <tr><td>🦠 Previous Viral Infections</td><td>Certain viruses may trigger MS</td><td class="ar-td">بعض الفيروسات قد تُحفز التصلب المتعدد</td></tr>
+          <tr><td>🚬 Smoking</td><td>Increases risk and worsens disease</td><td class="ar-td">يزيد الخطر ويُفاقم المرض</td></tr>
+          <tr><td>🌍 Geographic/Ethnic</td><td>Northern European descent or temperate climates</td><td class="ar-td">أصول أوروبية شمالية أو المناخ المعتدل</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Types of MS -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">📊</span>
+      <h2>Types of Multiple Sclerosis</h2>
+      <span class="ar-h">أنواع التصلب المتعدد</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead>
+          <tr><th>#</th><th>Type / النوع</th><th>Description</th><th class="ar-th">الوصف</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>RRMS</strong><br/><small>Relapsing-Remitting</small></td>
+            <td><strong>Most common.</strong> Episodes of relapses followed by recovery periods</td>
+            <td class="ar-td"><strong>الأكثر شيوعاً.</strong> نوبات انتكاسات تتبعها فترات تعافٍ</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>SPMS</strong><br/><small>Secondary Progressive</small></td>
+            <td>RRMS that becomes steadily worse over time</td>
+            <td class="ar-td">RRMS الذي يسوء تدريجياً مع الوقت</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>PPMS</strong><br/><small>Primary Progressive</small></td>
+            <td>Gradual worsening from the very start, without relapses</td>
+            <td class="ar-td">تفاقم تدريجي منذ البداية بلا انتكاسات</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>PRMS</strong><br/><small>Progressive Relapsing</small></td>
+            <td><strong>Least common.</strong> Progressive with superimposed relapses</td>
+            <td class="ar-td"><strong>الأقل شيوعاً.</strong> تقدمي مع انتكاسات فوقية</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Symptoms -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">📋</span>
+      <h2>Common Symptoms</h2>
+      <span class="ar-h">الأعراض الشائعة</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead><tr><th>Symptom / العرض</th><th>Details</th><th class="ar-th">التفاصيل</th></tr></thead>
+        <tbody>
+          <tr><td>😴 Fatigue</td><td>Most common and disabling symptom</td><td class="ar-td">الأكثر شيوعاً وتقييداً</td></tr>
+          <tr><td>👁️ Visual Disturbances</td><td>Blurred vision, diplopia (double vision)</td><td class="ar-td">تشوش الرؤية، ازدواجية الرؤية</td></tr>
+          <tr><td>💪 Muscle Weakness / Spasms</td><td>Limb weakness; painful muscle spasms</td><td class="ar-td">ضعف الأطراف؛ تشنجات عضلية مؤلمة</td></tr>
+          <tr><td>🤌 Numbness / Tingling</td><td>Sensory disturbances in limbs</td><td class="ar-td">تنميل وخز في الأطراف</td></tr>
+          <tr><td>⚖️ Balance / Coordination (Ataxia)</td><td>Problems with balance and coordination</td><td class="ar-td">مشاكل في التوازن والتنسيق (رنح)</td></tr>
+          <tr><td>🚽 Bladder / Bowel Dysfunction</td><td>Urgency, incontinence, constipation</td><td class="ar-td">إلحاح، سلس، إمساك</td></tr>
+          <tr><td>🧠 Cognitive Impairment</td><td>Memory problems, attention difficulties</td><td class="ar-td">مشاكل الذاكرة وصعوبات الانتباه</td></tr>
+          <tr><td>😢 Depression / Mood Swings</td><td>Emotional and psychiatric symptoms</td><td class="ar-td">أعراض نفسية وعاطفية</td></tr>
+          <tr><td>🗣️ Speech / Swallowing Difficulties</td><td>Dysarthria, dysphagia</td><td class="ar-td">صعوبة الكلام والبلع</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">⚠️</span>
+      <h2>Complications</h2>
+      <span class="ar-h">المضاعفات</span>
+    </div>
+    <div class="section-body">
+      <div class="cards-grid">
+        <div class="card ms-card"><h4>Permanent Disability / عجز دائم</h4><p>Mobility loss</p><span class="ar-card">فقدان القدرة على الحركة</span></div>
+        <div class="card ms-card"><h4>Urinary Tract Infections / التهابات المسالك البولية</h4><p>Due to bladder dysfunction</p><span class="ar-card">بسبب خلل المثانة</span></div>
+        <div class="card ms-card"><h4>Pressure Ulcers / قرح الضغط</h4><p>In immobile patients</p><span class="ar-card">في المرضى غير المتحركين</span></div>
+        <div class="card ms-card"><h4>Osteoporosis / هشاشة العظام</h4><p>Due to immobility &amp; steroids</p><span class="ar-card">بسبب عدم الحركة والستيرويدات</span></div>
+        <div class="card ms-card"><h4>Emotional Issues / مشاكل نفسية</h4><p>Depression, anxiety</p><span class="ar-card">اكتئاب، قلق</span></div>
+        <div class="card ms-card"><h4>Increased Infection Risk / خطر متزايد للعدوى</h4><p>Due to immunosuppression</p><span class="ar-card">بسبب تثبيط المناعة</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnosis -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">🔍</span>
+      <h2>Diagnostic Tests</h2>
+      <span class="ar-h">الاختبارات التشخيصية</span>
+    </div>
+    <div class="section-body">
+      <table class="fancy-table">
+        <thead><tr><th>Test / الاختبار</th><th>Purpose</th><th class="ar-th">الغرض</th></tr></thead>
+        <tbody>
+          <tr><td>🧲 MRI of Brain &amp; Spinal Cord</td><td>Detects demyelination plaques — gold standard</td><td class="ar-td">يكشف لويحات إزالة المايلين — المعيار الذهبي</td></tr>
+          <tr><td>⚡ Evoked Potential Tests</td><td>Measures nerve conduction speed</td><td class="ar-td">يقيس سرعة توصيل الأعصاب</td></tr>
+          <tr><td>🧪 Lumbar Puncture (CSF)</td><td>Detects oligoclonal bands in CSF</td><td class="ar-td">يكشف العصابات قليلة النسيلة في السائل الدماغي الشوكي</td></tr>
+          <tr><td>🩸 Blood Tests</td><td>Excludes other conditions</td><td class="ar-td">استبعاد الحالات الأخرى</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Treatment -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">💊</span>
+      <h2>Treatment</h2>
+      <span class="ar-h">العلاج</span>
+    </div>
+    <div class="section-body">
+      <div class="alert warning">
+        <span class="alert-icon">ℹ️</span>
+        <div class="alert-body">
+          <p class="en-text"><strong>No cure for MS.</strong> Treatment helps control symptoms, shorten attacks, and slow progression.</p>
+          <span class="ar-text"><strong>لا يوجد علاج شافٍ.</strong> العلاج يساعد على السيطرة على الأعراض، تقصير النوبات، وإبطاء التقدم.</span>
+        </div>
+      </div>
+      <table class="fancy-table">
+        <thead><tr><th>Category / الفئة</th><th>Treatment</th><th class="ar-th">العلاج</th></tr></thead>
+        <tbody>
+          <tr>
+            <td rowspan="4"><strong>1. Medications / الأدوية</strong></td>
+            <td>Disease-Modifying Therapies (DMTs): Interferon beta (e.g., Avonex)</td>
+            <td class="ar-td">علاجات معدِّلة للمرض: إنترفيرون بيتا (مثل أفونكس)</td>
+          </tr>
+          <tr>
+            <td>Steroids: Methylprednisolone</td>
+            <td class="ar-td">ستيرويدات: ميثيل بريدنيزولون</td>
+          </tr>
+          <tr>
+            <td>Muscle Relaxants: Baclofen</td>
+            <td class="ar-td">مرخيات العضلات: باكلوفين</td>
+          </tr>
+          <tr>
+            <td>Medications for fatigue, depression, pain, bladder issues</td>
+            <td class="ar-td">أدوية للإرهاق، الاكتئاب، الألم، مشاكل المثانة</td>
+          </tr>
+          <tr>
+            <td rowspan="4"><strong>2. Other Therapies / علاجات أخرى</strong></td>
+            <td>Physical Therapy</td>
+            <td class="ar-td">العلاج الطبيعي</td>
+          </tr>
+          <tr>
+            <td>Occupational Therapy – adapt daily activities</td>
+            <td class="ar-td">العلاج الوظيفي – تكييف الأنشطة اليومية</td>
+          </tr>
+          <tr>
+            <td>Speech Therapy</td>
+            <td class="ar-td">علاج النطق</td>
+          </tr>
+          <tr>
+            <td>Cognitive Behavioral Therapy (CBT)</td>
+            <td class="ar-td">العلاج السلوكي المعرفي</td>
+          </tr>
+          <tr>
+            <td rowspan="4"><strong>3. Lifestyle Management / إدارة نمط الحياة</strong></td>
+            <td>Balanced diet</td>
+            <td class="ar-td">نظام غذائي متوازن</td>
+          </tr>
+          <tr>
+            <td>Regular, gentle exercise</td>
+            <td class="ar-td">تمرين منتظم وخفيف</td>
+          </tr>
+          <tr>
+            <td>Stress reduction</td>
+            <td class="ar-td">تقليل التوتر</td>
+          </tr>
+          <tr>
+            <td><strong>Avoid overheating</strong> (can worsen symptoms)</td>
+            <td class="ar-td"><strong>تجنب ارتفاع الحرارة</strong> (يُفاقم الأعراض)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- NURSING PROCESS -->
+  <div class="section">
+    <div class="section-header ms">
+      <span class="icon">🩺</span>
+      <h2>Nursing Process — Complete</h2>
+      <span class="ar-h">العملية التمريضية الكاملة</span>
+    </div>
+    <div class="section-body">
+      <div class="np-grid">
+
+        <!-- Assessment -->
+        <div class="np-card">
+          <h3>1. Assessment</h3>
+          <span class="np-ar">التقييم</span>
+          <ul>
+            <li><div>Neurological status: motor, sensory, vision, speech<span class="li-ar">الحالة العصبية: حركة، حس، رؤية، كلام</span></div></li>
+            <li><div>Mobility and balance<span class="li-ar">الحركة والتوازن</span></div></li>
+            <li><div>Fatigue levels<span class="li-ar">مستوى الإرهاق</span></div></li>
+            <li><div>Bladder and bowel function<span class="li-ar">وظيفة المثانة والأمعاء</span></div></li>
+            <li><div>Emotional state (anxiety, depression)<span class="li-ar">الحالة النفسية (قلق، اكتئاب)</span></div></li>
+            <li><div>Medication adherence and side effects<span class="li-ar">الالتزام الدوائي والآثار الجانبية</span></div></li>
+          </ul>
+        </div>
+
+        <!-- Nursing Diagnoses -->
+        <div class="np-card">
+          <h3>2. Nursing Diagnoses</h3>
+          <span class="np-ar">التشخيصات التمريضية</span>
+          <ul>
+            <li><div>Impaired physical mobility related to muscle weakness<span class="li-ar">ضعف الحركة المادية مرتبط بضعف العضلات</span></div></li>
+            <li><div>Fatigue related to disease process<span class="li-ar">الإرهاق المرتبط بعملية المرض</span></div></li>
+            <li><div>Self-care deficit related to physical limitations<span class="li-ar">عجز الرعاية الذاتية مرتبط بالقيود الجسدية</span></div></li>
+            <li><div>Risk for injury related to impaired coordination<span class="li-ar">خطر الإصابة مرتبط بضعف التنسيق</span></div></li>
+            <li><div>Impaired urinary elimination<span class="li-ar">ضعف التبول</span></div></li>
+            <li><div>Ineffective coping related to chronic illness<span class="li-ar">عدم فعالية التكيف مع المرض المزمن</span></div></li>
+          </ul>
+        </div>
+
+        <!-- Planning Goals -->
+        <div class="np-card">
+          <h3>3. Planning Goals</h3>
+          <span class="np-ar">أهداف التخطيط</span>
+          <ul>
+            <li><div>Maintain independence in ADLs<span class="li-ar">الحفاظ على الاستقلالية في أنشطة الحياة اليومية</span></div></li>
+            <li><div>Prevent complications (e.g., falls)<span class="li-ar">منع المضاعفات (مثل السقوط)</span></div></li>
+            <li><div>Support emotional well-being<span class="li-ar">دعم الصحة النفسية</span></div></li>
+            <li><div>Maintain bowel and bladder function<span class="li-ar">الحفاظ على وظيفة الأمعاء والمثانة</span></div></li>
+            <li><div>Improve energy levels and manage fatigue<span class="li-ar">تحسين مستوى الطاقة وإدارة الإرهاق</span></div></li>
+          </ul>
+        </div>
+
+        <!-- Implementation -->
+        <div class="np-card">
+          <h3>4. Implementation</h3>
+          <span class="np-ar">التنفيذ</span>
+          <ul>
+            <li><div>Assist with mobility aids and exercises<span class="li-ar">المساعدة بأدوات الحركة والتمارين</span></div></li>
+            <li><div>Encourage frequent rest periods<span class="li-ar">تشجيع فترات الراحة المتكررة</span></div></li>
+            <li><div>Promote use of assistive devices (e.g., grab bars)<span class="li-ar">تعزيز استخدام الأجهزة المساعدة</span></div></li>
+            <li><div>Teach bladder training or catheterization if needed<span class="li-ar">تعليم تدريب المثانة أو القسطرة عند الحاجة</span></div></li>
+            <li><div>Provide emotional support or referrals to support groups<span class="li-ar">الدعم النفسي أو الإحالة لمجموعات الدعم</span></div></li>
+            <li><div>Administer medications and monitor side effects<span class="li-ar">إعطاء الأدوية ومراقبة الآثار الجانبية</span></div></li>
+          </ul>
+        </div>
+
+        <!-- Evaluation -->
+        <div class="np-card" style="border-top-color:var(--accent5);">
+          <h3 style="color:var(--accent5);">5. Evaluation</h3>
+          <span class="np-ar">التقييم</span>
+          <ul>
+            <li><div>Improved or stable functional status<span class="li-ar">تحسن أو استقرار الحالة الوظيفية</span></div></li>
+            <li><div>Patient can perform self-care with/without assistance<span class="li-ar">المريض يستطيع رعاية نفسه بمساعدة أو بدونها</span></div></li>
+            <li><div>Reduction in fatigue<span class="li-ar">تقليل الإرهاق</span></div></li>
+            <li><div>Improved emotional state (anxiety, depression)<span class="li-ar">تحسن الحالة النفسية</span></div></li>
+            <li><div>Medication adherence and management of side effects<span class="li-ar">الالتزام الدوائي وإدارة الآثار الجانبية</span></div></li>
+            <li><div>Avoid overheating (can worsen symptoms)<span class="li-ar">تجنب ارتفاع الحرارة (يُفاقم الأعراض)</span></div></li>
+          </ul>
+        </div>
+
+      </div><!-- end np-grid -->
+    </div>
+  </div>
+
+</div><!-- end MS tab -->
+
+<!-- ══════════════════ TAB: QUIZ ══════════════════ -->
+<div class="tab-content" id="tab-quiz">
+  <div class="quiz-intro">
+    <h2>🎓 Self-Test — اختبر نفسك</h2>
+    <p>20 multiple-choice questions covering all three topics. Click "Show Answer" to reveal the correct answer and explanation.</p>
+    <span class="ar-intro">20 سؤال اختياري يغطي المواضيع الثلاثة. اضغط "أظهر الإجابة" لكشف الإجابة الصحيحة والشرح.</span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question-card" id="qcard1">
+    <div class="q-header">
+      <div class="q-num">1</div>
+      <div>
+        <div class="q-text">According to the CDC, AIDS is defined as a CD4+ cell count of:</div>
+        <span class="q-ar">وفقاً لمراكز مكافحة الأمراض، يُعرَّف الإيدز بأنه عندما يكون عدد خلايا CD4+ عند:</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts1">
+        <div class="option" onclick="selectOpt(1,'A',false)"><span class="opt-letter">A</span>Below 500 cells/μl — أقل من 500 خلية/ميكروليتر</div>
+        <div class="option" onclick="selectOpt(1,'B',true)"><span class="opt-letter">B</span>Below 200 cells/μl — أقل من 200 خلية/ميكروليتر</div>
+        <div class="option" onclick="selectOpt(1,'C',false)"><span class="opt-letter">C</span>Below 100 cells/μl — أقل من 100 خلية/ميكروليتر</div>
+        <div class="option" onclick="selectOpt(1,'D',false)"><span class="opt-letter">D</span>Below 350 cells/μl — أقل من 350 خلية/ميكروليتر</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(1)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp1">
+        <p>✅ <strong>Correct: B — Below 200 cells/μl.</strong> The CDC defines AIDS as a CD4+ count below 200 cells/μl OR when a patient has an opportunistic infection in the setting of HIV. CD4+ cells are helper T-cells crucial for immune coordination.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — أقل من 200 خلية/ميكروليتر.</strong> تُعرِّف مراكز مكافحة الأمراض الإيدز بانخفاض CD4+ عن 200 أو عند الإصابة بعدوى انتهازية مع HIV. خلايا CD4+ هي خلايا T المساعدة الضرورية للتنسيق المناعي.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" id="qcard2">
+    <div class="q-header">
+      <div class="q-num">2</div>
+      <div>
+        <div class="q-text">HIV is classified as which type of virus?</div>
+        <span class="q-ar">يُصنَّف HIV كأي نوع من الفيروسات؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts2">
+        <div class="option" onclick="selectOpt(2,'A',false)"><span class="opt-letter">A</span>Adenovirus — أدينوفيروس</div>
+        <div class="option" onclick="selectOpt(2,'B',false)"><span class="opt-letter">B</span>DNA virus — فيروس DNA</div>
+        <div class="option" onclick="selectOpt(2,'C',true)"><span class="opt-letter">C</span>Retrovirus — ريتروفيروس</div>
+        <div class="option" onclick="selectOpt(2,'D',false)"><span class="opt-letter">D</span>Prion — بريون</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(2)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp2">
+        <p>✅ <strong>Correct: C — Retrovirus.</strong> HIV is a retrovirus that uses reverse transcriptase to convert its RNA into DNA inside host cells, allowing it to integrate into the host genome.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — ريتروفيروس.</strong> يستخدم HIV إنزيم النسخ العكسي لتحويل الـ RNA إلى DNA داخل الخلايا المضيفة، مما يسمح له بالاندماج في جينوم المضيف.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" id="qcard3">
+    <div class="q-header">
+      <div class="q-num">3</div>
+      <div>
+        <div class="q-text">Which surface antigen on helper T-cells does HIV use to enter the cell?</div>
+        <span class="q-ar">ما المستضد السطحي على خلايا T المساعدة الذي يستخدمه HIV للدخول؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts3">
+        <div class="option" onclick="selectOpt(3,'A',false)"><span class="opt-letter">A</span>CD8+</div>
+        <div class="option" onclick="selectOpt(3,'B',true)"><span class="opt-letter">B</span>CD4+</div>
+        <div class="option" onclick="selectOpt(3,'C',false)"><span class="opt-letter">C</span>CD19+</div>
+        <div class="option" onclick="selectOpt(3,'D',false)"><span class="opt-letter">D</span>CD3+</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(3)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp3">
+        <p>✅ <strong>Correct: B — CD4+.</strong> HIV attaches to helper T-cells that carry the CD4+ antigen on their surface. CD4+ acts as a receptor, allowing the virus to enter and destroy these cells, progressively weakening immunity.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — CD4+.</strong> يرتبط HIV بخلايا T المساعدة التي تحمل المستضد CD4+ على سطحها، فيعمل CD4+ كمستقبل يسمح للفيروس بالدخول وتدمير هذه الخلايا تدريجياً.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" id="qcard4">
+    <div class="q-header">
+      <div class="q-num">4</div>
+      <div>
+        <div class="q-text">Which of the following is NOT a mode of HIV transmission?</div>
+        <span class="q-ar">أي من التالي ليس طريقة لانتقال HIV؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts4">
+        <div class="option" onclick="selectOpt(4,'A',false)"><span class="opt-letter">A</span>Sharing contaminated needles — مشاركة الإبر الملوثة</div>
+        <div class="option" onclick="selectOpt(4,'B',false)"><span class="opt-letter">B</span>Placental transmission — الانتقال عبر المشيمة</div>
+        <div class="option" onclick="selectOpt(4,'C',true)"><span class="opt-letter">C</span>Casual contact (handshakes, hugging) — التواصل العادي (مصافحة، احتضان)</div>
+        <div class="option" onclick="selectOpt(4,'D',false)"><span class="opt-letter">D</span>Breast milk — الرضاعة الطبيعية</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(4)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp4">
+        <p>✅ <strong>Correct: C — Casual contact.</strong> HIV is NOT transmitted through casual contact such as handshakes, hugging, sharing food, or mosquito bites. It requires contact with infected body fluids (blood, semen, breast milk, placental fluids).</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — التواصل العادي.</strong> لا ينتقل HIV عبر المصافحة أو الاحتضان أو مشاركة الطعام أو لسعات البعوض. يتطلب الانتقال اتصالاً بسوائل الجسم المصابة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" id="qcard5">
+    <div class="q-header">
+      <div class="q-num">5</div>
+      <div>
+        <div class="q-text">What is the average incubation period of HIV to AIDS in adults?</div>
+        <span class="q-ar">ما متوسط فترة الحضانة من HIV إلى الإيدز في البالغين؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts5">
+        <div class="option" onclick="selectOpt(5,'A',false)"><span class="opt-letter">A</span>2–3 years — 2-3 سنوات</div>
+        <div class="option" onclick="selectOpt(5,'B',false)"><span class="opt-letter">B</span>4–5 years — 4-5 سنوات</div>
+        <div class="option" onclick="selectOpt(5,'C',true)"><span class="opt-letter">C</span>8–10 years — 8-10 سنوات</div>
+        <div class="option" onclick="selectOpt(5,'D',false)"><span class="opt-letter">D</span>15–20 years — 15-20 سنة</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(5)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp5">
+        <p>✅ <strong>Correct: C — 8–10 years.</strong> The incubation period (from HIV infection to AIDS) averages 8–10 years in adults. During this time, patients may be HIV-positive but asymptomatic.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — 8-10 سنوات.</strong> يبلغ متوسط فترة الحضانة من عدوى HIV إلى الإيدز 8-10 سنوات في البالغين. خلال هذه الفترة قد يكون المريض حاملاً للفيروس بلا أعراض.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" id="qcard6">
+    <div class="q-header">
+      <div class="q-num">6</div>
+      <div>
+        <div class="q-text">Which diagnostic test is used as a CONFIRMATORY test for HIV antibodies?</div>
+        <span class="q-ar">أي اختبار تشخيصي يُستخدم كاختبار تأكيدي لأجسام HIV المضادة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts6">
+        <div class="option" onclick="selectOpt(6,'A',false)"><span class="opt-letter">A</span>CD4+ count — عدد خلايا CD4+</div>
+        <div class="option" onclick="selectOpt(6,'B',false)"><span class="opt-letter">B</span>Enzyme Immunoassay (EIA) — مقايسة إنزيمية مناعية</div>
+        <div class="option" onclick="selectOpt(6,'C',true)"><span class="opt-letter">C</span>Western Blot — ويسترن بلوت</div>
+        <div class="option" onclick="selectOpt(6,'D',false)"><span class="opt-letter">D</span>CBC — صورة دم كاملة</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(6)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp6">
+        <p>✅ <strong>Correct: C — Western Blot.</strong> The EIA (Enzyme Immunoassay) is the <em>screening</em> test. A positive EIA must be confirmed with the Western Blot assay before an HIV diagnosis is established.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — ويسترن بلوت.</strong> اختبار EIA هو اختبار <em>الفرز الأولي</em>. إذا جاء إيجابياً يجب تأكيده بـ Western Blot قبل تشخيص HIV.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" id="qcard7">
+    <div class="q-header">
+      <div class="q-num">7</div>
+      <div>
+        <div class="q-text">Which of the following best describes the characteristic skin finding in SLE?</div>
+        <span class="q-ar">أي من التالي يصف بشكل أفضل الإصابة الجلدية المميزة في الذئبة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts7">
+        <div class="option" onclick="selectOpt(7,'A',false)"><span class="opt-letter">A</span>Target lesion — آفة مستهدفة</div>
+        <div class="option" onclick="selectOpt(7,'B',true)"><span class="opt-letter">B</span>Butterfly (malar) rash across cheeks and nose — طفح فراشي عبر الخدين والأنف</div>
+        <div class="option" onclick="selectOpt(7,'C',false)"><span class="opt-letter">C</span>Vesicular rash on the trunk — طفح حويصلي على الجذع</div>
+        <div class="option" onclick="selectOpt(7,'D',false)"><span class="opt-letter">D</span>Petechiae on the legs — نمش دموي في الساقين</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(7)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp7">
+        <p>✅ <strong>Correct: B — Butterfly (malar) rash.</strong> The classic skin finding in SLE is the butterfly or malar rash — a redness that spreads across both cheeks and the bridge of the nose, resembling a butterfly shape. It is often triggered by sun exposure.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — الطفح الفراشي.</strong> العلامة الجلدية الكلاسيكية للذئبة هي الطفح الفراشي أو الوجني — احمرار ينتشر عبر الخدين وجسر الأنف بشكل فراشة. يُحفَّز غالباً بالتعرض للشمس.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" id="qcard8">
+    <div class="q-header">
+      <div class="q-num">8</div>
+      <div>
+        <div class="q-text">In SLE, autoimmunity is the prime mechanism. What does the body produce against its own cells?</div>
+        <span class="q-ar">في الذئبة، المناعة الذاتية هي الآلية الأساسية. ماذا يُنتج الجسم ضد خلاياه الخاصة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts8">
+        <div class="option" onclick="selectOpt(8,'A',false)"><span class="opt-letter">A</span>Antigens — مستضدات</div>
+        <div class="option" onclick="selectOpt(8,'B',true)"><span class="opt-letter">B</span>Antibodies — أجسام مضادة</div>
+        <div class="option" onclick="selectOpt(8,'C',false)"><span class="opt-letter">C</span>Cytokines only — سيتوكينات فقط</div>
+        <div class="option" onclick="selectOpt(8,'D',false)"><span class="opt-letter">D</span>Complement only — مكمل فقط</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(8)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp8">
+        <p>✅ <strong>Correct: B — Antibodies.</strong> In SLE, the body produces autoantibodies against components of its own cells (e.g., RBCs, platelets, DNA). These form immune complexes that deposit in tissues causing inflammation and organ damage.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — أجسام مضادة ذاتية.</strong> في الذئبة، ينتج الجسم أجساماً مضادة ذاتية ضد مكونات خلاياه (كريات الدم الحمراء، الصفائح، الحمض النووي). تُشكِّل هذه مجمعات مناعية تترسب في الأنسجة مسببة التهاباً وتلفاً.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card" id="qcard9">
+    <div class="q-header">
+      <div class="q-num">9</div>
+      <div>
+        <div class="q-text">Which factor is known to trigger SLE exacerbations, especially in spring and summer?</div>
+        <span class="q-ar">أي عامل معروف بتحفيز نوبات الذئبة خاصة في الربيع والصيف؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts9">
+        <div class="option" onclick="selectOpt(9,'A',false)"><span class="opt-letter">A</span>Cold weather — الطقس البارد</div>
+        <div class="option" onclick="selectOpt(9,'B',true)"><span class="opt-letter">B</span>Sunlight / Ultraviolet light — ضوء الشمس / الأشعة فوق البنفسجية</div>
+        <div class="option" onclick="selectOpt(9,'C',false)"><span class="opt-letter">C</span>High humidity — الرطوبة العالية</div>
+        <div class="option" onclick="selectOpt(9,'D',false)"><span class="opt-letter">D</span>Low temperature — درجة الحرارة المنخفضة</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(9)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp9">
+        <p>✅ <strong>Correct: B — Sunlight / UV light.</strong> Exposure to sunlight (ultraviolet radiation) is a well-known trigger for SLE flares. This is why exacerbations are especially common in spring and summer. Patients are advised to wear protective clothing and use sunscreen.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — ضوء الشمس / UV.</strong> التعرض للشمس محفز معروف لنوبات الذئبة. لذا تكون التفاقمات أكثر شيوعاً في الربيع والصيف. يُنصح المرضى بارتداء ملابس واقية واستخدام الواقي الشمسي.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card" id="qcard10">
+    <div class="q-header">
+      <div class="q-num">10</div>
+      <div>
+        <div class="q-text">Which test is the GOLD STANDARD for diagnosing SLE?</div>
+        <span class="q-ar">ما الاختبار المعيار الذهبي لتشخيص الذئبة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts10">
+        <div class="option" onclick="selectOpt(10,'A',true)"><span class="opt-letter">A</span>Antinuclear Antibody (ANA) test — اختبار الأجسام المضادة للنواة</div>
+        <div class="option" onclick="selectOpt(10,'B',false)"><span class="opt-letter">B</span>Western Blot — ويسترن بلوت</div>
+        <div class="option" onclick="selectOpt(10,'C',false)"><span class="opt-letter">C</span>MRI of the brain — رنين مغناطيسي للدماغ</div>
+        <div class="option" onclick="selectOpt(10,'D',false)"><span class="opt-letter">D</span>Lumbar puncture — البزل القطني</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(10)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp10">
+        <p>✅ <strong>Correct: A — Antinuclear Antibody (ANA) test.</strong> The ANA test is the key serological test for SLE. Combined with Anti-dsDNA and Anti-Smith antibodies, it helps establish the diagnosis. ANA is positive in over 95% of SLE patients.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: A — اختبار ANA.</strong> اختبار الأجسام المضادة للنواة هو الاختبار المصلي الرئيسي للذئبة. مع Anti-dsDNA وAnti-Smith يساعد على التشخيص. يكون ANA إيجابياً في أكثر من 95% من مرضى الذئبة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card" id="qcard11">
+    <div class="q-header">
+      <div class="q-num">11</div>
+      <div>
+        <div class="q-text">Multiple Sclerosis primarily affects which structure in the nervous system?</div>
+        <span class="q-ar">يؤثر التصلب المتعدد بشكل أساسي على أي بنية في الجهاز العصبي؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts11">
+        <div class="option" onclick="selectOpt(11,'A',false)"><span class="opt-letter">A</span>Neurotransmitters — الناقلات العصبية</div>
+        <div class="option" onclick="selectOpt(11,'B',false)"><span class="opt-letter">B</span>Neuronal cell bodies — أجسام الخلايا العصبية</div>
+        <div class="option" onclick="selectOpt(11,'C',true)"><span class="opt-letter">C</span>Myelin sheath — غمد المايلين</div>
+        <div class="option" onclick="selectOpt(11,'D',false)"><span class="opt-letter">D</span>Blood-brain barrier — الحاجز الدموي الدماغي</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(11)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp11">
+        <p>✅ <strong>Correct: C — Myelin sheath.</strong> In MS, the immune system attacks the myelin sheath — the protective insulating covering around nerve fibers in the CNS. Demyelination disrupts nerve signal conduction, causing the diverse neurological symptoms of MS.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — غمد المايلين.</strong> في التصلب المتعدد، يهاجم جهاز المناعة غمد المايلين — الغطاء العازل الواقي حول ألياف الأعصاب في الجهاز العصبي المركزي. يُعطِّل إزالة المايلين توصيل الإشارات العصبية.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card" id="qcard12">
+    <div class="q-header">
+      <div class="q-num">12</div>
+      <div>
+        <div class="q-text">Which type of MS is the MOST COMMON?</div>
+        <span class="q-ar">أي نوع من التصلب المتعدد هو الأكثر شيوعاً؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts12">
+        <div class="option" onclick="selectOpt(12,'A',true)"><span class="opt-letter">A</span>Relapsing-Remitting MS (RRMS) — التصلب المتعدد الانتكاسي الهادئ</div>
+        <div class="option" onclick="selectOpt(12,'B',false)"><span class="opt-letter">B</span>Secondary Progressive MS (SPMS) — التصلب المتعدد التقدمي الثانوي</div>
+        <div class="option" onclick="selectOpt(12,'C',false)"><span class="opt-letter">C</span>Primary Progressive MS (PPMS) — التصلب المتعدد التقدمي الأولي</div>
+        <div class="option" onclick="selectOpt(12,'D',false)"><span class="opt-letter">D</span>Progressive Relapsing MS (PRMS) — التصلب المتعدد التقدمي الانتكاسي</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(12)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp12">
+        <p>✅ <strong>Correct: A — RRMS.</strong> Relapsing-Remitting MS is the most common type, affecting about 85% of MS patients. It is characterized by clearly defined episodes of worsening (relapses) followed by partial or complete recovery (remissions). PRMS is the least common.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: A — RRMS.</strong> التصلب المتعدد الانتكاسي الهادئ هو الأكثر شيوعاً، ويُصيب حوالي 85% من مرضى التصلب المتعدد. يتميز بنوبات واضحة من التفاقم يتبعها تعافٍ جزئي أو كامل. PRMS هو الأقل شيوعاً.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="question-card" id="qcard13">
+    <div class="q-header">
+      <div class="q-num">13</div>
+      <div>
+        <div class="q-text">MS is most commonly diagnosed in which age group?</div>
+        <span class="q-ar">في أي فئة عمرية يُشخَّص التصلب المتعدد في الغالب؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts13">
+        <div class="option" onclick="selectOpt(13,'A',false)"><span class="opt-letter">A</span>5–15 years — 5-15 سنة</div>
+        <div class="option" onclick="selectOpt(13,'B',true)"><span class="opt-letter">B</span>20–40 years — 20-40 سنة</div>
+        <div class="option" onclick="selectOpt(13,'C',false)"><span class="opt-letter">C</span>50–60 years — 50-60 سنة</div>
+        <div class="option" onclick="selectOpt(13,'D',false)"><span class="opt-letter">D</span>Over 70 years — أكثر من 70 سنة</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(13)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp13">
+        <p>✅ <strong>Correct: B — 20–40 years.</strong> MS is most commonly diagnosed between the ages of 20 and 40. It is also 2–3 times more common in females than males, making young women the most affected demographic.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — 20-40 سنة.</strong> يُشخَّص التصلب المتعدد في الغالب بين سن 20-40. كما أنه أكثر شيوعاً عند النساء بمقدار 2-3 أضعاف، مما يجعل الشابات الفئة الأكثر تضرراً.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="question-card" id="qcard14">
+    <div class="q-header">
+      <div class="q-num">14</div>
+      <div>
+        <div class="q-text">Which is the GOLD STANDARD diagnostic test for Multiple Sclerosis?</div>
+        <span class="q-ar">ما المعيار الذهبي لتشخيص التصلب المتعدد؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts14">
+        <div class="option" onclick="selectOpt(14,'A',false)"><span class="opt-letter">A</span>Blood tests — تحاليل الدم</div>
+        <div class="option" onclick="selectOpt(14,'B',false)"><span class="opt-letter">B</span>Evoked potential tests — اختبارات الإمكانية المستحثة</div>
+        <div class="option" onclick="selectOpt(14,'C',true)"><span class="opt-letter">C</span>MRI of brain and spinal cord — رنين مغناطيسي للدماغ والحبل الشوكي</div>
+        <div class="option" onclick="selectOpt(14,'D',false)"><span class="opt-letter">D</span>Chest X-ray — أشعة الصدر</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(14)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp14">
+        <p>✅ <strong>Correct: C — MRI of brain and spinal cord.</strong> MRI is the gold standard for diagnosing MS. It can detect characteristic demyelination plaques (lesions) in the white matter of the brain and spinal cord, which are the hallmark of MS pathology.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — الرنين المغناطيسي.</strong> الرنين المغناطيسي هو المعيار الذهبي لتشخيص التصلب المتعدد. يمكنه كشف اللويحات المميزة (آفات إزالة المايلين) في المادة البيضاء للدماغ والحبل الشوكي.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="question-card" id="qcard15">
+    <div class="q-header">
+      <div class="q-num">15</div>
+      <div>
+        <div class="q-text">Which medication is a Disease-Modifying Therapy (DMT) for Multiple Sclerosis?</div>
+        <span class="q-ar">أي دواء يُعد علاجاً معدِّلاً للمرض (DMT) في التصلب المتعدد؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts15">
+        <div class="option" onclick="selectOpt(15,'A',false)"><span class="opt-letter">A</span>Zidovudine — زيدوفودين</div>
+        <div class="option" onclick="selectOpt(15,'B',true)"><span class="opt-letter">B</span>Interferon beta (Avonex) — إنترفيرون بيتا (أفونكس)</div>
+        <div class="option" onclick="selectOpt(15,'C',false)"><span class="opt-letter">C</span>Aspirin — أسبرين</div>
+        <div class="option" onclick="selectOpt(15,'D',false)"><span class="opt-letter">D</span>Methotrexate — ميثوتريكسات</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(15)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp15">
+        <p>✅ <strong>Correct: B — Interferon beta (Avonex).</strong> Interferon beta (e.g., Avonex) is a disease-modifying therapy that reduces the frequency of relapses in MS. Zidovudine is for HIV, aspirin is for SLE arthritis, and methotrexate is an immunosuppressant used in autoimmune conditions.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — إنترفيرون بيتا (أفونكس).</strong> إنترفيرون بيتا هو علاج معدِّل للمرض يُقلل تكرار الانتكاسات في التصلب المتعدد. زيدوفودين للـ HIV، الأسبرين للذئبة، ميثوتريكسات مثبط مناعي.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="question-card" id="qcard16">
+    <div class="q-header">
+      <div class="q-num">16</div>
+      <div>
+        <div class="q-text">A nurse caring for an MS patient should encourage which lifestyle modification to prevent symptom worsening?</div>
+        <span class="q-ar">يجب على ممرض يعتني بمريض تصلب متعدد تشجيع أي تعديل في نمط الحياة لمنع تفاقم الأعراض؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts16">
+        <div class="option" onclick="selectOpt(16,'A',false)"><span class="opt-letter">A</span>Hot baths and saunas — حمامات ساخنة وسونا</div>
+        <div class="option" onclick="selectOpt(16,'B',false)"><span class="opt-letter">B</span>Increased caffeine intake — زيادة استهلاك الكافيين</div>
+        <div class="option" onclick="selectOpt(16,'C',true)"><span class="opt-letter">C</span>Avoid overheating — تجنب ارتفاع الحرارة</div>
+        <div class="option" onclick="selectOpt(16,'D',false)"><span class="opt-letter">D</span>Bed rest for most of the day — الراحة في الفراش معظم اليوم</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(16)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp16">
+        <p>✅ <strong>Correct: C — Avoid overheating.</strong> Heat sensitivity (Uhthoff's phenomenon) is common in MS. Elevated body temperature can temporarily worsen neurological symptoms. Patients should avoid hot environments, hot baths, and excessive exercise that raises body temperature.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — تجنب ارتفاع الحرارة.</strong> الحساسية للحرارة (ظاهرة أوهتوف) شائعة في التصلب المتعدد. ارتفاع درجة حرارة الجسم قد يُفاقم مؤقتاً الأعراض العصبية. يجب تجنب البيئات الحارة والحمامات الساخنة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="question-card" id="qcard17">
+    <div class="q-header">
+      <div class="q-num">17</div>
+      <div>
+        <div class="q-text">Which nursing diagnosis is most appropriate for an MS patient experiencing weakness and difficulty walking?</div>
+        <span class="q-ar">أي تشخيص تمريضي هو الأنسب لمريض تصلب متعدد يعاني من ضعف وصعوبة في المشي؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts17">
+        <div class="option" onclick="selectOpt(17,'A',false)"><span class="opt-letter">A</span>Impaired urinary elimination — ضعف التبول</div>
+        <div class="option" onclick="selectOpt(17,'B',true)"><span class="opt-letter">B</span>Impaired physical mobility related to muscle weakness — ضعف الحركة الجسدية مرتبط بضعف العضلات</div>
+        <div class="option" onclick="selectOpt(17,'C',false)"><span class="opt-letter">C</span>Ineffective coping — عدم فعالية التكيف</div>
+        <div class="option" onclick="selectOpt(17,'D',false)"><span class="opt-letter">D</span>Fatigue related to disease — الإرهاق المرتبط بالمرض</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(17)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp17">
+        <p>✅ <strong>Correct: B — Impaired physical mobility related to muscle weakness.</strong> The patient's presenting problem is weakness and difficulty walking, which directly maps to impaired physical mobility. This is the most specific and priority nursing diagnosis for this scenario.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B — ضعف الحركة الجسدية.</strong> مشكلة المريض المقدَّمة هي الضعف وصعوبة المشي، وهذا يرتبط مباشرة بضعف الحركة الجسدية. هذا هو التشخيص التمريضي الأكثر تحديداً وأولوية في هذا السيناريو.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="question-card" id="qcard18">
+    <div class="q-header">
+      <div class="q-num">18</div>
+      <div>
+        <div class="q-text">Which statement about SLE is CORRECT?</div>
+        <span class="q-ar">أي من العبارات التالية عن الذئبة الحمراء صحيحة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts18">
+        <div class="option" onclick="selectOpt(18,'A',false)"><span class="opt-letter">A</span>SLE is caused by a virus — الذئبة تسببها فيروسات</div>
+        <div class="option" onclick="selectOpt(18,'B',false)"><span class="opt-letter">B</span>SLE is more common in men — الذئبة أكثر شيوعاً عند الرجال</div>
+        <div class="option" onclick="selectOpt(18,'C',true)"><span class="opt-letter">C</span>SLE involves antibodies produced against the body's own tissues — الذئبة تتضمن إنتاج أجسام مضادة ضد أنسجة الجسم نفسها</div>
+        <div class="option" onclick="selectOpt(18,'D',false)"><span class="opt-letter">D</span>SLE only affects the skin — الذئبة تؤثر على الجلد فقط</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(18)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp18">
+        <p>✅ <strong>Correct: C.</strong> SLE is an autoimmune disease where the body's immune system produces autoantibodies against its own cells and tissues (RBCs, platelets, DNA, etc.). It is NOT caused by a virus, is far more common in women, and affects multiple organ systems — not just the skin.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C.</strong> الذئبة مرض مناعي ذاتي ينتج فيه الجهاز المناعي أجساماً مضادة ذاتية ضد خلاياه وأنسجته (كريات الدم الحمراء، الصفائح، DNA). ليست بسبب فيروسات، وهي أكثر شيوعاً عند النساء بكثير، وتؤثر على أجهزة متعددة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="question-card" id="qcard19">
+    <div class="q-header">
+      <div class="q-num">19</div>
+      <div>
+        <div class="q-text">Which of the following is the primary antiretroviral drug treatment mentioned for HIV?</div>
+        <span class="q-ar">أي من التالي هو العلاج المضاد للفيروسات العكوسة الرئيسي المذكور لـ HIV؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts19">
+        <div class="option" onclick="selectOpt(19,'A',false)"><span class="opt-letter">A</span>Interferon beta — إنترفيرون بيتا</div>
+        <div class="option" onclick="selectOpt(19,'B',false)"><span class="opt-letter">B</span>Methylprednisolone — ميثيل بريدنيزولون</div>
+        <div class="option" onclick="selectOpt(19,'C',true)"><span class="opt-letter">C</span>Zidovudine (Zidin/AZT) — زيدوفودين</div>
+        <div class="option" onclick="selectOpt(19,'D',false)"><span class="opt-letter">D</span>Baclofen — باكلوفين</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(19)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp19">
+        <p>✅ <strong>Correct: C — Zidovudine (Zidin/AZT).</strong> Zidovudine is the primary antiviral drug used for HIV treatment. It slows HIV progression, decreases the number of opportunistic infections, and prolongs survival. The other options are used for MS (interferon beta, baclofen) or SLE/MS (methylprednisolone).</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: C — زيدوفودين.</strong> زيدوفودين هو الدواء المضاد للفيروسات الأساسي في علاج HIV. يبطئ تطور HIV، يُقلل العدوى الانتهازية، ويُطيل البقاء. الخيارات الأخرى تُستخدم للتصلب المتعدد أو الذئبة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="question-card" id="qcard20">
+    <div class="q-header">
+      <div class="q-num">20</div>
+      <div>
+        <div class="q-text">A patient with SLE asks why she should call her doctor immediately if she develops a fever. What is the BEST nurse's response?</div>
+        <span class="q-ar">مريضة ذئبة تسأل لماذا يجب أن تتصل بطبيبها فوراً عند إصابتها بحمى. ما أفضل رد للممرضة؟</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="options" id="opts20">
+        <div class="option" onclick="selectOpt(20,'A',false)"><span class="opt-letter">A</span>"Fever is normal in lupus and doesn't need attention." — "الحمى طبيعية في الذئبة ولا تحتاج اهتماماً."</div>
+        <div class="option" onclick="selectOpt(20,'B',true)"><span class="opt-letter">B</span>"Fever may indicate an infection or a disease flare, both of which require prompt medical evaluation." — "الحمى قد تدل على عدوى أو تفاقم المرض، وكلاهما يتطلب تقييماً طبياً فورياً."</div>
+        <div class="option" onclick="selectOpt(20,'C',false)"><span class="opt-letter">C</span>"Fever only means your medication is working." — "الحمى تعني فقط أن دوائك يعمل."</div>
+        <div class="option" onclick="selectOpt(20,'D',false)"><span class="opt-letter">D</span>"Take aspirin and monitor at home for 3 days." — "خذي أسبرين وراقبي في المنزل لمدة 3 أيام."</div>
+      </div>
+      <button class="show-ans-btn" onclick="showAns(20)">Show Answer / أظهر الإجابة</button>
+      <div class="explanation" id="exp20">
+        <p>✅ <strong>Correct: B.</strong> In SLE, fever is a serious warning sign that can indicate either an infection (SLE patients are immunocompromised from medications) or a disease exacerbation. Both situations require prompt medical evaluation. Patients should call their practitioner if they develop fever, cough, rash, or worsening pain.</p>
+        <span class="exp-ar">✅ <strong>الإجابة الصحيحة: B.</strong> في الذئبة، الحمى علامة تحذيرية جدية قد تدل على إما عدوى (مرضى الذئبة مثبطو المناعة بسبب الأدوية) أو تفاقم المرض. كلتا الحالتين تتطلب تقييماً طبياً فورياً. يجب على المريضة الاتصال عند الحمى أو السعال أو الطفح أو تفاقم الألم.</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end quiz tab -->
+
+<script>
+  // ── TAB SWITCHING ──
+  function switchTab(tabId, btn){
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('tab-'+tabId).classList.add('active');
+    btn.classList.add('active');
+    document.getElementById('scoreBar').style.display = (tabId==='quiz') ? 'flex' : 'none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // ── QUIZ LOGIC ──
+  let answered = {};
+  let score = 0;
+
+  function selectOpt(qNum, letter, isCorrect){
+    if(answered[qNum]) return;
+    answered[qNum] = true;
+
+    const opts = document.querySelectorAll('#opts'+qNum+' .option');
+    opts.forEach(o=>{
+      o.classList.add('revealed');
+      o.onclick = null;
+    });
+
+    // Mark selected
+    const selected = event.currentTarget;
+    selected.classList.add(isCorrect ? 'correct' : 'wrong');
+
+    // If wrong, highlight correct
+    if(!isCorrect){
+      opts.forEach(o=>{
+        const onclickStr = o.getAttribute('onclick')||'';
+        if(onclickStr.includes(',true)')){
+          o.classList.add('correct');
+        }
+      });
+    }
+
+    if(isCorrect){ score++; }
+    updateScore();
+    showAns(qNum);
+  }
+
+  function showAns(qNum){
+    const exp = document.getElementById('exp'+qNum);
+    const btn = document.querySelector('#qcard'+qNum+' .show-ans-btn');
+    if(exp) exp.classList.add('visible');
+    if(btn) btn.disabled = true;
+    answered[qNum] = true;
+    updateScore();
+  }
+
+  function updateScore(){
+    const total = Object.keys(answered).length;
+    document.getElementById('scoreNum').textContent = score + ' / 20 (' + total + ' answered)';
+  }
+
+  function resetQuiz(){
+    answered = {};
+    score = 0;
+    // Reset all options
+    for(let i=1;i<=20;i++){
+      const opts = document.querySelectorAll('#opts'+i+' .option');
+      opts.forEach(o=>{
+        o.classList.remove('correct','wrong','revealed');
+      });
+      const exp = document.getElementById('exp'+i);
+      if(exp) exp.classList.remove('visible');
+      const btn = document.querySelector('#qcard'+i+' .show-ans-btn');
+      if(btn) btn.disabled = false;
+    }
+    // Re-attach onclick — just reload options html approach: reload page
+    location.reload();
+  }
+</script>
+</body>
+</html>

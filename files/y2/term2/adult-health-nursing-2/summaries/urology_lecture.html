@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urology System Disorders — محاضرة أمراض الجهاز البولي</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f2ec;
+    --surface: #fffdf8;
+    --card: #ffffff;
+    --border: #d9d0be;
+    --accent: #3b6b8a;
+    --accent2: #5a8a6b;
+    --accent3: #8a5a3b;
+    --accent4: #7a4a7a;
+    --text: #2c2418;
+    --text-muted: #6b5f4e;
+    --text-light: #9a8d7a;
+    --highlight: #e8f0f5;
+    --highlight2: #e8f5ec;
+    --highlight3: #f5ede8;
+    --shadow: 0 2px 12px rgba(44,36,24,0.08);
+    --shadow-lg: 0 8px 32px rgba(44,36,24,0.12);
+    --radius: 12px;
+    --radius-lg: 18px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: linear-gradient(135deg, #2c4a5a 0%, #3b6b8a 50%, #2a5c4a 100%);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .header h1 .ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    display: block;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 600;
+    opacity: 0.88;
+    margin-top: 0.3rem;
+  }
+  .header p {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+
+  /* ─── NAV TABS ─── */
+  .tab-nav {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.95rem 1.4rem;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.22s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+  .tab-btn .ar-label {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+  .tab-btn:hover { color: var(--accent); background: var(--highlight); }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: var(--highlight);
+  }
+  .tab-btn.quiz-btn.active { color: var(--accent3); border-bottom-color: var(--accent3); }
+  .tab-btn.quiz-btn:hover { color: var(--accent3); background: var(--highlight3); }
+
+  /* ─── CONTENT ─── */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ─── SECTION TITLE ─── */
+  .section-header {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--accent);
+  }
+  .section-header .ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.3rem;
+    direction: rtl;
+  }
+  .section-header p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin-top: 0.4rem;
+  }
+
+  /* ─── BILINGUAL CARD ─── */
+  .bilingual-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .bilingual-block .en-col {
+    padding: 1.4rem 1.6rem;
+    border-right: 1px solid var(--border);
+  }
+  .bilingual-block .ar-col {
+    padding: 1.4rem 1.6rem;
+    direction: rtl;
+    font-family: 'Noto Naskh Arabic', serif;
+    background: #fdfbf8;
+  }
+  .col-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .col-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .ar-col .col-label { direction: rtl; }
+  .ar-col .col-label::before { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .ar-col .col-label::after { display: none; }
+
+  .bilingual-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .ar-col h3 {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.15rem;
+    color: var(--accent);
+  }
+  .bilingual-block p { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+  .ar-col p { font-size: 0.95rem; line-height: 1.9; }
+
+  /* ─── TOPIC CARD ─── */
+  .topic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+  }
+  .topic-card-header {
+    padding: 1.2rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .topic-card-header .icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .topic-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    flex: 1;
+  }
+  .topic-card-header h3 small {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: block;
+    color: var(--text-muted);
+  }
+  .topic-card-header .chevron {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    transition: transform 0.2s;
+  }
+  .topic-card.open .chevron { transform: rotate(180deg); }
+  .topic-card-body { display: none; padding: 0 1.6rem 1.6rem; }
+  .topic-card.open .topic-card-body { display: block; }
+
+  /* ─── LIST STYLES ─── */
+  .bi-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 1.5rem; }
+  .bi-list .en-col, .bi-list .ar-col {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem;
+  }
+  .bi-list .en-col { border-radius: var(--radius) 0 0 var(--radius); border-right: none; }
+  .bi-list .ar-col { border-radius: 0 var(--radius) var(--radius) 0; direction: rtl; font-family: 'Noto Naskh Arabic', serif; background: #fdfbf8; }
+
+  ul.styled, ol.styled {
+    margin: 0.5rem 0 0 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  ul.styled li, ol.styled li { margin-bottom: 0.35rem; }
+  .ar-col ul.styled, .ar-col ol.styled { margin: 0.5rem 1.2rem 0 0; font-size: 0.95rem; }
+
+  /* ─── TABLE ─── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    font-size: 0.85rem;
+  }
+  thead {
+    background: var(--accent);
+    color: white;
+  }
+  thead th {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+  tbody tr:nth-child(even) { background: #f9f7f2; }
+  tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .ar-th { font-family: 'Noto Naskh Arabic', serif; direction: rtl; }
+
+  /* ─── NURSING PROCESS ─── */
+  .np-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+  }
+  .np-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .np-card-header {
+    padding: 0.8rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: white;
+  }
+  .np-card-header .ar-sub {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    opacity: 0.88;
+    margin-top: 0.1rem;
+  }
+  .np-card-body {
+    background: var(--card);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+    border-top: none;
+    font-size: 0.85rem;
+  }
+  .np-card-body .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .np-card-body .ar-text {
+    font-family: 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    border-right: 2px solid var(--border);
+    padding-right: 0.7rem;
+  }
+  .np-card-body ul { margin: 0 0 0 1rem; }
+  .np-card-body ul li { margin-bottom: 0.3rem; color: var(--text); }
+  .np-card-body .ar-text ul { margin: 0 1rem 0 0; }
+
+  /* NP step colors */
+  .np-assess .np-card-header { background: linear-gradient(135deg, #3b6b8a, #2c5a7a); }
+  .np-diag .np-card-header { background: linear-gradient(135deg, #5a7a3b, #4a6a2b); }
+  .np-plan .np-card-header { background: linear-gradient(135deg, #8a5a3b, #7a4a2b); }
+  .np-impl .np-card-header { background: linear-gradient(135deg, #5a3b8a, #4a2b7a); }
+  .np-eval .np-card-header { background: linear-gradient(135deg, #3b8a7a, #2b7a6a); }
+
+  /* ─── BADGE / PILL ─── */
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .badge-blue { background: #dbeaf5; color: #2c5a7a; }
+  .badge-green { background: #daf0e3; color: #2a5c3a; }
+  .badge-orange { background: #f5e8db; color: #7a4a1a; }
+  .badge-red { background: #f5dbdb; color: #7a1a1a; }
+  .badge-purple { background: #ecdaf0; color: #5a1a7a; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ─── DEFINITION BOX ─── */
+  .def-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .def-box .ar {
+    direction: rtl;
+    font-family: 'Noto Naskh Arabic', serif;
+    border-right: 1px solid var(--border);
+    padding-right: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  .def-box .en { font-size: 0.9rem; color: var(--text); }
+  .def-box strong { color: var(--accent); }
+
+  /* ─── QUIZ ─── */
+  .quiz-wrapper { max-width: 900px; margin: 0 auto; }
+  .quiz-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #f5ede8, #ede8f5);
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+  }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; color: var(--accent3); font-size: 1.8rem; }
+  .quiz-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem; }
+  .quiz-header .score-box {
+    display: inline-block;
+    background: var(--card);
+    border: 2px solid var(--accent3);
+    border-radius: var(--radius);
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent3);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .q-card:hover { box-shadow: var(--shadow-lg); }
+  .q-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  .q-text { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; line-height: 1.6; }
+  .q-options { display: flex; flex-direction: column; gap: 0.5rem; }
+  .q-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    background: var(--bg);
+  }
+  .q-opt:hover { border-color: var(--accent); background: var(--highlight); }
+  .q-opt.correct { border-color: #2a7a4a; background: #e8f5ee; color: #1a5a3a; }
+  .q-opt.wrong { border-color: #c0392b; background: #fdecea; color: #8a2a22; }
+  .q-opt.reveal-correct { border-color: #2a7a4a; background: #e8f5ee; color: #1a5a3a; }
+  .q-opt input[type="radio"] { margin-top: 0.15rem; accent-color: var(--accent); flex-shrink: 0; }
+
+  .q-explanation {
+    display: none;
+    margin-top: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    background: linear-gradient(135deg, #f0f7ff, #f7f0ff);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    line-height: 1.65;
+  }
+  .q-explanation.show { display: block; }
+  .q-explanation strong { color: var(--accent); }
+
+  .quiz-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  .btn {
+    padding: 0.7rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: #2c5a7a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,107,138,0.3); }
+  .btn-secondary { background: var(--bg); color: var(--text); border: 1.5px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-danger { background: var(--accent3); color: white; }
+  .btn-danger:hover { background: #7a3a1a; }
+
+  /* ─── OVERVIEW CARDS ─── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .ov-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.22s;
+  }
+  .ov-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .ov-card .icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
+  .ov-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--accent); }
+  .ov-card .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.85rem; color: var(--text-muted); direction: rtl; }
+  .ov-card p { font-size: 0.82rem; color: var(--text-light); margin-top: 0.4rem; line-height: 1.5; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 700px) {
+    .bilingual-block, .bi-list, .def-box {
+      grid-template-columns: 1fr;
+    }
+    .bilingual-block .en-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .bi-list .en-col { border-radius: var(--radius) var(--radius) 0 0; border-right: 1px solid var(--border); border-bottom: none; }
+    .bi-list .ar-col { border-radius: 0 0 var(--radius) var(--radius); }
+    .def-box .ar { border-right: none; border-top: 1px solid var(--border); padding-right: 0; padding-top: 1rem; }
+    .np-card-body .row { grid-template-columns: 1fr; }
+    .np-card-body .ar-text { border-right: none; border-top: 1px solid var(--border); padding-right: 0; padding-top: 0.5rem; }
+  }
+
+  /* sub-section title */
+  .sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin: 1.4rem 0 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .sub-title .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
+
+  /* color strip on left of bilingual block */
+  .strip-blue .en-col { border-left: 4px solid var(--accent); }
+  .strip-green .en-col { border-left: 4px solid var(--accent2); }
+  .strip-orange .en-col { border-left: 4px solid var(--accent3); }
+  .strip-purple .en-col { border-left: 4px solid var(--accent4); }
+
+  /* inline bilingual note */
+  .note {
+    background: #fef9ec;
+    border: 1px solid #e8d88a;
+    border-radius: 8px;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.83rem;
+    color: #6b5a1a;
+    margin-bottom: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .note .ar { direction: rtl; font-family: 'Noto Naskh Arabic', serif; font-size: 0.85rem; }
+  @media(max-width:600px){ .note{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>
+    Urology System Disorders
+    <span class="ar">أمراض الجهاز البولي</span>
+  </h1>
+  <p>Nursing Lecture · محاضرة التمريض</p>
+</div>
+
+<!-- TAB NAVIGATION -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview')">
+    🏠 Overview
+    <span class="ar-label">نظرة عامة</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('crf')">
+    💔 Chronic Renal Failure
+    <span class="ar-label">الفشل الكلوي المزمن</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('stones')">
+    🪨 Renal Stones
+    <span class="ar-label">حصوات الكلى</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('gn')">
+    🔬 Glomerulonephritis
+    <span class="ar-label">التهاب الكبيبات</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('pyelo')">
+    🦠 Pyelonephritis
+    <span class="ar-label">التهاب الحويضة والكلية</span>
+  </button>
+  <button class="tab-btn quiz-btn" onclick="showTab('quiz')">
+    📝 Self-Test Quiz
+    <span class="ar-label">اختبر نفسك</span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 1: OVERVIEW -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-overview" class="tab-content active">
+<div class="page">
+  <div class="section-header">
+    <h2>Urology System Disorders</h2>
+    <span class="ar">أمراض الجهاز البولي</span>
+    <p>Click any card to navigate to that topic • اضغط على أي بطاقة للانتقال إلى الموضوع</p>
+  </div>
+
+  <div class="overview-grid">
+    <div class="ov-card" onclick="showTab('crf')">
+      <div class="icon">💔</div>
+      <h3>Chronic Renal Failure</h3>
+      <div class="ar">الفشل الكلوي المزمن (ESRD)</div>
+      <p>Progressive, irreversible deterioration of kidney function leading to uremia.</p>
+    </div>
+    <div class="ov-card" onclick="showTab('stones')">
+      <div class="icon">🪨</div>
+      <h3>Renal Stones</h3>
+      <div class="ar">حصوات الكلى (Nephrolithiasis)</div>
+      <p>Solid crystalline mineral materials forming within the kidneys.</p>
+    </div>
+    <div class="ov-card" onclick="showTab('gn')">
+      <div class="icon">🔬</div>
+      <h3>Glomerulonephritis</h3>
+      <div class="ar">التهاب كبيبات الكلى</div>
+      <p>Inflammation of the glomeruli, the tiny filters in the kidneys.</p>
+    </div>
+    <div class="ov-card" onclick="showTab('pyelo')">
+      <div class="icon">🦠</div>
+      <h3>Pyelonephritis</h3>
+      <div class="ar">التهاب الحويضة والكلية</div>
+      <p>Bacterial infection of the kidneys and renal pelvis.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <div>📚 This lecture covers four major urological disorders, their pathophysiology, nursing assessment, diagnoses, planning, implementation, and evaluation using the Nursing Process.</div>
+    <div class="ar">📚 تغطي هذه المحاضرة أربعة أمراض بولية رئيسية، وتشمل الفيزيولوجيا المرضية، وتقييم التمريض، والتشخيص، والتخطيط، والتنفيذ، والتقييم باستخدام العملية التمريضية.</div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 2: CHRONIC RENAL FAILURE -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-crf" class="tab-content">
+<div class="page">
+  <div class="section-header">
+    <h2>Chronic Renal Failure (ESRD)</h2>
+    <span class="ar">الفشل الكلوي المزمن (المرحلة النهائية من مرض الكلى)</span>
+  </div>
+
+  <!-- DEFINITION -->
+  <div class="sub-title">📖 Definition <span class="ar">التعريف</span></div>
+  <div class="def-box">
+    <div class="en">
+      Chronic renal failure, or <strong>End-Stage Renal Disease (ESRD)</strong>, is a <strong>progressive, irreversible deterioration</strong> in renal function in which the body's ability to maintain metabolic and fluid and electrolyte balance fails, resulting in <strong>uremia or azotemia</strong> (retention of urea and other nitrogenous wastes in the blood).
+    </div>
+    <div class="ar">
+      الفشل الكلوي المزمن، أو <strong>مرض الكلى في مرحلته النهائية (ESRD)</strong>، هو <strong>تدهور تدريجي وغير قابل للعكس</strong> في وظائف الكلى، حيث تفقد القدرة على الحفاظ على التوازن الأيضي وتوازن السوائل والكهارل، مما يؤدي إلى <strong>اليوريميا أو الآزوتيميا</strong> (تراكم اليوريا والنفايات النيتروجينية في الدم).
+    </div>
+  </div>
+
+  <!-- CAUSES -->
+  <div class="sub-title">⚠️ Causes of ESRD <span class="ar">أسباب الفشل الكلوي المزمن</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-size:0.82rem;font-weight:700;color:var(--accent);margin-bottom:0.4rem">Systemic Diseases</p>
+      <ul class="styled">
+        <li>Diabetes mellitus</li>
+        <li>Hypertension</li>
+        <li>Glomerulonephritis</li>
+        <li>Urinary obstruction</li>
+        <li>Vascular disorders</li>
+        <li>Genetic factors &amp; hereditary lesions</li>
+      </ul>
+      <p style="font-size:0.82rem;font-weight:700;color:var(--accent);margin:0.8rem 0 0.4rem">Toxins &amp; Drugs</p>
+      <ul class="styled">
+        <li>Nephrotoxic medications</li>
+        <li>Heavy metals (Lead, Mercury, Cadmium)</li>
+        <li>Occupational &amp; environmental exposure</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-size:0.88rem;font-weight:700;color:var(--accent);margin-bottom:0.4rem">الأمراض الجهازية</p>
+      <ul class="styled">
+        <li>داء السكري</li>
+        <li>ارتفاع ضغط الدم</li>
+        <li>التهاب كبيبات الكلى</li>
+        <li>انسداد المسالك البولية</li>
+        <li>اضطرابات الأوعية الدموية</li>
+        <li>العوامل الوراثية والآفات الوراثية</li>
+      </ul>
+      <p style="font-size:0.88rem;font-weight:700;color:var(--accent);margin:0.8rem 0 0.4rem">السموم والأدوية</p>
+      <ul class="styled">
+        <li>الأدوية السامة للكلى</li>
+        <li>المعادن الثقيلة (رصاص، زئبق، كادميوم)</li>
+        <li>التعرض المهني والبيئي</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PATHOPHYSIOLOGY -->
+  <div class="sub-title">🔬 Pathophysiology <span class="ar">الفيزيولوجيا المرضية</span></div>
+  <div class="bilingual-block strip-blue">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p>As renal function declines, the end products of protein metabolism (normally excreted in urine) <strong>accumulate in the blood</strong>. Uremia develops and adversely affects <strong>every system in the body</strong>. The greater the buildup of waste products, the more severe the symptoms.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p>مع تراجع وظائف الكلى، تتراكم نواتج استقلاب البروتين (التي تُطرح عادةً في البول) <strong>في الدم</strong>. تتطور اليوريميا وتؤثر سلبًا على <strong>كل أجهزة الجسم</strong>. كلما زاد تراكم نواتج الفضلات، كلما اشتدت الأعراض.</p>
+    </div>
+  </div>
+
+  <!-- MANIFESTATIONS -->
+  <div class="sub-title">🩺 Clinical Manifestations <span class="ar">المظاهر السريرية</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li><strong>Dialysis</strong> — required for waste removal</li>
+        <li><strong>Heart problems</strong> — cardiovascular complications</li>
+        <li><strong>High blood pressure</strong></li>
+        <li><strong>Fatigue &amp; weakness</strong></li>
+        <li><strong>Uremic toxins</strong> buildup</li>
+        <li><strong>Mental confusion</strong></li>
+        <li><strong>Anemia</strong></li>
+        <li><strong>Bone disease</strong> (renal osteodystrophy)</li>
+        <li><strong>Poor appetite &amp; nausea</strong></li>
+        <li>Damaged kidneys: shrunken, scarred, cysts, toxin build-up</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li><strong>الديلزة (غسيل الكلى)</strong> — ضرورية لإزالة الفضلات</li>
+        <li><strong>مشاكل القلب</strong> — مضاعفات قلبية وعائية</li>
+        <li><strong>ارتفاع ضغط الدم</strong></li>
+        <li><strong>الإجهاد والضعف</strong></li>
+        <li>تراكم <strong>السموم البولية</strong></li>
+        <li><strong>الارتباك الذهني</strong></li>
+        <li><strong>فقر الدم (الأنيميا)</strong></li>
+        <li><strong>مرض العظام</strong> (ضمور العظام الكلوي)</li>
+        <li><strong>فقدان الشهية والغثيان</strong></li>
+        <li>تلف الكلى: تقلص، تندب، أكياس، تراكم سموم</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NURSING MANAGEMENT -->
+  <div class="sub-title">👩‍⚕️ Nursing Management <span class="ar">الإدارة التمريضية</span></div>
+
+  <!-- Preventing Infection -->
+  <div class="bilingual-block strip-green" style="margin-bottom:1rem">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <h3>Preventing Infection</h3>
+      <p>Patients with ESRD commonly have <strong>low white blood cell counts</strong>, posing a high risk for infection. Preventing and controlling infection are essential because the incidence of infection is high. Infection of the <strong>vascular access site</strong> and <strong>pneumonia</strong> are common.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <h3>الوقاية من العدوى</h3>
+      <p>يعاني مرضى ESRD عادةً من <strong>انخفاض عدد كريات الدم البيضاء</strong>، مما يضعهم في خطر مرتفع للإصابة بالعدوى. الوقاية من العدوى والسيطرة عليها أمران أساسيان. <strong>عدوى موقع النفاذ الوعائي</strong> و<strong>الالتهاب الرئوي</strong> شائعان.</p>
+    </div>
+  </div>
+
+  <!-- Catheter Care -->
+  <div class="bilingual-block strip-green" style="margin-bottom:1rem">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <h3>Caring for the Catheter Site (CAPD)</h3>
+      <p>Patients receiving CAPD usually know how to care for the catheter site. A <strong>daily or 3–4 times weekly</strong> routine is recommended. Care is typically performed during showering/bathing. The <strong>exit site should NOT be submerged</strong> in bath water. The most common cleaning method is <strong>soap and water (liquid soap recommended)</strong>. The catheter must remain secure to avoid tension and trauma.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <h3>العناية بموقع القسطرة (CAPD)</h3>
+      <p>يعرف مرضى CAPD عادةً كيفية العناية بموقع القسطرة. يُوصى بروتين <strong>يومي أو 3–4 مرات أسبوعيًا</strong>. تُنجز العناية عادةً أثناء الاستحمام. <strong>يجب عدم غمر موقع الخروج</strong> في ماء الاستحمام. الطريقة الأكثر شيوعًا للتنظيف هي <strong>الماء والصابون (يُفضل السائل)</strong>. يجب أن تبقى القسطرة ثابتة لتجنب الشد والصدمة.</p>
+    </div>
+  </div>
+
+  <!-- Medications -->
+  <div class="bilingual-block strip-green" style="margin-bottom:1rem">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <h3>Administering Medications</h3>
+      <p>Medications prescribed for any dialysis patient must be <strong>closely monitored</strong> to avoid those that are <strong>toxic to the kidneys</strong> and may threaten remaining renal function.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <h3>إعطاء الأدوية</h3>
+      <p>يجب <strong>مراقبة الأدوية المصروفة لمرضى الديلزة عن كثب</strong> لتجنب الأدوية <strong>السامة للكلى</strong> والتي قد تهدد الوظيفة الكلوية المتبقية.</p>
+    </div>
+  </div>
+
+  <!-- Psychological Support -->
+  <div class="bilingual-block strip-green">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <h3>Providing Psychological Support</h3>
+      <p>Patients undergoing dialysis for a while may begin to <strong>re-evaluate their status</strong>, the treatment modality, and the impact on their families and support systems. Nurses must provide opportunities for these patients to <strong>express their feelings and reactions</strong> and to explore options.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <h3>تقديم الدعم النفسي</h3>
+      <p>قد يبدأ مرضى الديلزة بمرور الوقت في <strong>إعادة تقييم وضعهم</strong> وأسلوب العلاج وتأثيره على أسرتهم وأنظمة الدعم لديهم. يجب على الممرضين إتاحة الفرص لهم <strong>للتعبير عن مشاعرهم وردود أفعالهم</strong> واستكشاف الخيارات.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 3: RENAL STONES -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-stones" class="tab-content">
+<div class="page">
+  <div class="section-header">
+    <h2>Renal Stones (Nephrolithiasis / Urolithiasis)</h2>
+    <span class="ar">حصوات الكلى (تحصي الكلية / تحصي المسالك البولية)</span>
+  </div>
+
+  <!-- DEFINITION -->
+  <div class="sub-title">📖 Definition <span class="ar">التعريف</span></div>
+  <div class="def-box">
+    <div class="en">
+      Renal stones, also known as <strong>nephrolithiasis or urolithiasis</strong>, refer to the formation of <strong>solid crystalline mineral materials</strong> within the kidneys.
+    </div>
+    <div class="ar">
+      حصوات الكلى، المعروفة أيضًا بـ<strong>تحصي الكلية أو تحصي المسالك البولية</strong>، تشير إلى تكوُّن <strong>مواد معدنية بلورية صلبة</strong> داخل الكلى.
+    </div>
+  </div>
+
+  <!-- EPIDEMIOLOGY -->
+  <div class="sub-title">📊 Epidemiology <span class="ar">علم الوبائيات</span></div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th class="ar-th">الجانب</th>
+          <th>Data</th>
+          <th class="ar-th">البيانات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prevalence</td>
+          <td class="ar-th">الانتشار</td>
+          <td>Affects ~10–15% of population at some point</td>
+          <td class="ar-th">تصيب حوالي 10–15% من السكان في مرحلة ما</td>
+        </tr>
+        <tr>
+          <td>Sex</td>
+          <td class="ar-th">الجنس</td>
+          <td>More common in males (2–3× higher than females)</td>
+          <td class="ar-th">أكثر شيوعًا عند الذكور (2–3 أضعاف الإناث)</td>
+        </tr>
+        <tr>
+          <td>Peak Incidence</td>
+          <td class="ar-th">ذروة الإصابة</td>
+          <td>Ages 30–50 years</td>
+          <td class="ar-th">الفئة العمرية 30–50 سنة</td>
+        </tr>
+        <tr>
+          <td>Recurrence</td>
+          <td class="ar-th">التكرار</td>
+          <td>Up to 50% will have another stone within 5–10 years</td>
+          <td class="ar-th">حتى 50% سيُصابون بحصوة أخرى خلال 5–10 سنوات</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ETIOLOGY -->
+  <div class="sub-title">⚠️ Etiology &amp; Risk Factors <span class="ar">الأسباب وعوامل الخطر</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.4rem;color:var(--accent)">A. General Risk Factors</p>
+      <ul class="styled">
+        <li>Dehydration (low urine volume)</li>
+        <li>Dietary factors (high sodium, or animal protein)</li>
+        <li>Genetic predisposition</li>
+        <li>Urinary obstruction</li>
+        <li>Metabolic disorders</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.8rem 0 0.4rem;color:var(--accent)">B. Specific Conditions</p>
+      <ul class="styled">
+        <li>Hypercalciuria</li>
+        <li>Hyperoxaluria</li>
+        <li>Hyperuricosuria</li>
+        <li>Cystinuria (genetic)</li>
+        <li>Chronic urinary tract infections</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-weight:700;font-size:0.88rem;margin-bottom:0.4rem;color:var(--accent)">أ. عوامل الخطر العامة</p>
+      <ul class="styled">
+        <li>الجفاف (انخفاض حجم البول)</li>
+        <li>العوامل الغذائية (الصوديوم أو البروتين الحيواني الزائد)</li>
+        <li>الاستعداد الجيني</li>
+        <li>انسداد المسالك البولية</li>
+        <li>الاضطرابات الأيضية</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.8rem 0 0.4rem;color:var(--accent)">ب. حالات محددة</p>
+      <ul class="styled">
+        <li>فرط كالسيوم البول</li>
+        <li>فرط أوكسالات البول</li>
+        <li>فرط حمض البول في البول</li>
+        <li>سيستينيوريا (وراثي)</li>
+        <li>التهابات المسالك البولية المزمنة</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TYPES TABLE -->
+  <div class="sub-title">🔷 Types of Renal Stones <span class="ar">أنواع حصوات الكلى</span></div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Type / النوع</th>
+          <th>Composition / التركيب</th>
+          <th>Common Causes / الأسباب</th>
+          <th>Radiopacity / الكثافة الإشعاعية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Calcium Oxalate</strong><br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem;color:var(--text-muted)">أوكسالات الكالسيوم</span></td>
+          <td>Calcium + oxalate</td>
+          <td>Hypercalciuria, hyperoxaluria<br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem">فرط كالسيوم البول، فرط أوكسالات</span></td>
+          <td><span class="badge badge-green">Radiopaque</span></td>
+        </tr>
+        <tr>
+          <td><strong>Calcium Phosphate</strong><br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem;color:var(--text-muted)">فوسفات الكالسيوم</span></td>
+          <td>Calcium + phosphate</td>
+          <td>Alkaline urine<br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem">البول القلوي</span></td>
+          <td><span class="badge badge-green">Radiopaque</span></td>
+        </tr>
+        <tr>
+          <td><strong>Struvite</strong><br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem;color:var(--text-muted)">ستروفيت</span></td>
+          <td>Magnesium ammonium phosphate</td>
+          <td>Urease-producing bacteria<br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem">بكتيريا منتجة لليورياز</span></td>
+          <td><span class="badge badge-green">Radiopaque</span></td>
+        </tr>
+        <tr>
+          <td><strong>Uric Acid</strong><br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem;color:var(--text-muted)">حمض البول</span></td>
+          <td>Uric acid</td>
+          <td>Gout, acidic urine<br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem">النقرس، البول الحمضي</span></td>
+          <td><span class="badge badge-red">Radiolucent</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cystine</strong><br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem;color:var(--text-muted)">سيستين</span></td>
+          <td>Cystine</td>
+          <td>Cystinuria (genetic)<br><span style="font-family:'Noto Naskh Arabic',serif;font-size:0.82rem">سيستينيوريا (وراثي)</span></td>
+          <td><span class="badge badge-orange">Faintly Radiopaque</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PATHOPHYSIOLOGY -->
+  <div class="sub-title">🔬 Pathophysiology <span class="ar">الفيزيولوجيا المرضية</span></div>
+  <div class="bilingual-block strip-orange">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p>Stone formation occurs due to <strong>supersaturation of solutes in urine</strong>, leading to crystal growth and aggregation. Normally, urine contains <strong>inhibitors</strong> (like citrate, magnesium) that prevent stone formation, but when these are deficient, stones may form.</p>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p>يحدث تكوّن الحصوات بسبب <strong>تشبع المذابات في البول</strong>، مما يؤدي إلى نمو البلورات وتجمعها. يحتوي البول عادةً على <strong>مثبطات</strong> (مثل السيترات والمغنيسيوم) تمنع تكوّن الحصوات، لكن عند نقصها قد تتشكل الحصوات.</p>
+    </div>
+  </div>
+
+  <!-- SYMPTOMS -->
+  <div class="sub-title">🩺 Signs &amp; Symptoms <span class="ar">العلامات والأعراض</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Severe flank pain</li>
+        <li>Hematuria (blood in urine)</li>
+        <li>Frequent &amp; painful urination</li>
+        <li>Nausea &amp; vomiting</li>
+        <li>Restlessness &amp; agitation</li>
+        <li>Decreased urine output</li>
+        <li>Fever (if infected)</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>ألم حاد في الخاصرة</li>
+        <li>بيلة دموية (دم في البول)</li>
+        <li>تبول متكرر ومؤلم</li>
+        <li>غثيان وقيء</li>
+        <li>القلق والهياج</li>
+        <li>انخفاض إنتاج البول</li>
+        <li>الحمى (إذا كانت هناك عدوى)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIAGNOSIS -->
+  <div class="sub-title">🧪 Diagnosis <span class="ar">التشخيص</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;color:var(--accent)">A. Laboratory Tests</p>
+      <ul class="styled">
+        <li>Urinalysis</li>
+        <li>Urine culture</li>
+        <li>24-hour urine analysis</li>
+        <li>Serum studies: Calcium, Phosphate, Uric Acid, Creatinine</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.7rem 0 0.3rem;color:var(--accent)">B. Imaging</p>
+      <ul class="styled">
+        <li>Non-contrast CT (gold standard)</li>
+        <li>Ultrasound</li>
+        <li>Plain X-ray (KUB)</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;color:var(--accent)">أ. الفحوصات المخبرية</p>
+      <ul class="styled">
+        <li>تحليل البول</li>
+        <li>زراعة البول</li>
+        <li>تحليل بول 24 ساعة</li>
+        <li>دراسات مصلية: كالسيوم، فوسفات، حمض البول، كرياتينين</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.7rem 0 0.3rem;color:var(--accent)">ب. التصوير</p>
+      <ul class="styled">
+        <li>التصوير المقطعي بدون تباين (المعيار الذهبي)</li>
+        <li>الموجات فوق الصوتية</li>
+        <li>أشعة سينية (KUB)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIFFERENTIAL DIAGNOSIS -->
+  <div class="sub-title">🔄 Differential Diagnosis <span class="ar">التشخيص التفريقي</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Pyelonephritis</li>
+        <li>Appendicitis</li>
+        <li>Ectopic pregnancy</li>
+        <li>Musculoskeletal pain</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>التهاب الحويضة والكلية</li>
+        <li>التهاب الزائدة الدودية</li>
+        <li>الحمل خارج الرحم</li>
+        <li>ألم عضلي هيكلي</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPLICATIONS -->
+  <div class="sub-title">⚡ Complications <span class="ar">المضاعفات</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Obstructive uropathy</li>
+        <li>Pyelonephritis or urosepsis</li>
+        <li>Chronic kidney disease (CKD)</li>
+        <li>Recurrent stones</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>اعتلال المسالك البولية الانسدادي</li>
+        <li>التهاب الحويضة والكلية أو إنتان بولي</li>
+        <li>مرض الكلى المزمن (CKD)</li>
+        <li>تكرار الحصوات</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MANAGEMENT -->
+  <div class="sub-title">💊 Management <span class="ar">العلاج والإدارة</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;color:var(--accent)">A. General Principles</p>
+      <ul class="styled">
+        <li>Pain control: NSAIDs, opioids if severe</li>
+        <li>Hydration: 2–2.5 L urine/day</li>
+        <li>Medical expulsion therapy: Alpha-blockers</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.7rem 0 0.3rem;color:var(--accent)">B. Indications for Urologic Intervention</p>
+      <ul class="styled">
+        <li>Stone &gt; 6–7 mm</li>
+        <li>Intractable pain or vomiting</li>
+        <li>Obstruction with infection</li>
+        <li>Renal failure</li>
+        <li>Patient preference or occupational need</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.7rem 0 0.3rem;color:var(--accent)">C. Surgical Options</p>
+      <ul class="styled">
+        <li>ESWL — Shock Wave Lithotripsy</li>
+        <li>Ureteroscopy &amp; Laser Lithotripsy</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;color:var(--accent)">أ. المبادئ العامة</p>
+      <ul class="styled">
+        <li>مسكنات الألم: مضادات الالتهاب غير الستيرويدية، المواد الأفيونية عند الاشتداد</li>
+        <li>الترطيب: 2–2.5 لتر بول/يوم</li>
+        <li>العلاج الدوائي للطرد: حاصرات ألفا</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.7rem 0 0.3rem;color:var(--accent)">ب. مؤشرات التدخل البولي</p>
+      <ul class="styled">
+        <li>حجم الحصوة &gt; 6–7 مم</li>
+        <li>ألم أو قيء لا يستجيبان للعلاج</li>
+        <li>انسداد مع عدوى</li>
+        <li>فشل كلوي</li>
+        <li>تفضيل المريض أو متطلبات العمل</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.7rem 0 0.3rem;color:var(--accent)">ج. الخيارات الجراحية</p>
+      <ul class="styled">
+        <li>تفتيت الحصوات بموجات الصدمة (ESWL)</li>
+        <li>تنظير الحالب وتفتيت الليزر</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PREVENTION -->
+  <div class="sub-title">🛡️ Prevention &amp; Follow-Up <span class="ar">الوقاية والمتابعة</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;color:var(--accent)">A. Lifestyle Measures</p>
+      <ul class="styled">
+        <li>Increase fluid intake: 2.5–3 L/day</li>
+        <li>Reduce sodium &amp; oxalate-rich foods (e.g., spinach, nuts)</li>
+        <li>Moderate animal protein</li>
+        <li>Maintain healthy weight</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.7rem 0 0.3rem;color:var(--accent)">B. Pharmacologic Prevention</p>
+      <ul class="styled">
+        <li>Thiazide diuretics — for hypercalciuria</li>
+        <li>Allopurinol — for uric acid stones</li>
+        <li>Potassium citrate — for hypocitraturia</li>
+        <li>Pyridoxine — for primary hyperoxaluria</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;color:var(--accent)">أ. التدابير اليومية</p>
+      <ul class="styled">
+        <li>زيادة تناول السوائل: 2.5–3 لتر/يوم</li>
+        <li>تقليل الصوديوم والأطعمة الغنية بالأوكسالات (السبانخ، المكسرات)</li>
+        <li>تقليل البروتين الحيواني</li>
+        <li>الحفاظ على وزن صحي</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.7rem 0 0.3rem;color:var(--accent)">ب. الوقاية الدوائية</p>
+      <ul class="styled">
+        <li>مدرات الثيازيد — لفرط كالسيوم البول</li>
+        <li>الوبيورينول — لحصوات حمض البول</li>
+        <li>سيترات البوتاسيوم — لنقص سيترات البول</li>
+        <li>البيريدوكسين — لفرط أوكسالات البول الأولي</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NURSING PROCESS -->
+  <div class="divider">Nursing Process — العملية التمريضية</div>
+  <div class="np-grid">
+    <div class="np-card np-assess">
+      <div class="np-card-header">
+        🔍 Assessment
+        <div>
+          <div class="ar-sub">التقييم</div>
+        </div>
+      </div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Subjective</strong>
+            <ul><li>Severe flank pain radiating to groin</li><li>Nausea &amp; vomiting</li><li>History of kidney stones</li><li>Dysuria, urgency, frequency</li><li>PMH: gout, dehydration, family history</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات ذاتية</strong>
+            <ul><li>ألم خاصرة حاد يشع للأربية</li><li>غثيان وقيء</li><li>تاريخ حصوات كلوية</li><li>تبول مؤلم وإلحاح وتكرار</li><li>نقرس، جفاف، تاريخ عائلي</li></ul>
+          </div>
+        </div>
+        <div class="row" style="margin-top:0.8rem">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Objective</strong>
+            <ul><li>Restlessness &amp; agitation</li><li>Hematuria</li><li>Decreased urine output</li><li>Fever if infected</li><li>CT/US findings</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات موضوعية</strong>
+            <ul><li>قلق وهياج</li><li>بيلة دموية</li><li>انخفاض إنتاج البول</li><li>حمى عند وجود عدوى</li><li>نتائج CT/US</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-diag">
+      <div class="np-card-header">
+        📋 Nursing Diagnoses
+        <div>
+          <div class="ar-sub">التشخيصات التمريضية</div>
+        </div>
+      </div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Acute pain r/t obstruction of urinary tract</li>
+              <li>Impaired urinary elimination r/t obstruction</li>
+              <li>Risk for infection r/t urinary stasis</li>
+              <li>Deficient knowledge r/t prevention of recurrence</li>
+              <li>Risk for fluid volume deficit r/t nausea, vomiting</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>ألم حاد متعلق بانسداد المسالك البولية</li>
+              <li>إعاقة التبول متعلقة بالانسداد</li>
+              <li>خطر العدوى متعلق بركود البول</li>
+              <li>نقص المعرفة متعلق بالوقاية من التكرار</li>
+              <li>خطر نقص حجم السوائل متعلق بالغثيان والقيء</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-plan">
+      <div class="np-card-header">
+        🎯 Planning / Goals
+        <div><div class="ar-sub">التخطيط / الأهداف</div></div>
+      </div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Patient will report pain relief within 30 min of analgesic</li>
+              <li>Patient will maintain urine output ≥30 mL/hr</li>
+              <li>Patient will verbalize understanding of dietary/fluid changes before discharge</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>يُبلّغ المريض عن تحسن الألم خلال 30 دقيقة من المسكن</li>
+              <li>يحافظ على إنتاج بول ≥30 مل/ساعة</li>
+              <li>يُعبّر عن فهمه للتعديلات الغذائية والسوائل قبل الخروج</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-impl">
+      <div class="np-card-header">
+        ⚙️ Implementation
+        <div><div class="ar-sub">التنفيذ</div></div>
+      </div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Administer prescribed analgesics</li>
+              <li>Apply heat to flank area</li>
+              <li>Encourage oral fluid intake</li>
+              <li>Monitor I&amp;O</li>
+              <li>Monitor temperature</li>
+              <li>Administer antibiotics if prescribed</li>
+              <li>Encourage perineal hygiene</li>
+              <li>Diet modification (low oxalate, reduced sodium)</li>
+              <li>Importance of follow-up appointments</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>إعطاء المسكنات الموصوفة</li>
+              <li>تطبيق الحرارة على منطقة الخاصرة</li>
+              <li>تشجيع تناول السوائل الفموية</li>
+              <li>مراقبة الدخل والخرج</li>
+              <li>مراقبة درجة الحرارة</li>
+              <li>إعطاء المضادات الحيوية عند الحاجة</li>
+              <li>تشجيع النظافة الشخصية</li>
+              <li>تعديل النظام الغذائي (أوكسالات منخفضة، صوديوم مخفض)</li>
+              <li>أهمية مواعيد المتابعة</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-eval">
+      <div class="np-card-header">
+        ✅ Evaluation
+        <div><div class="ar-sub">التقييم</div></div>
+      </div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Was patient's pain relieved?</li>
+              <li>Is urinary output adequate?</li>
+              <li>Is patient free from infection signs?</li>
+              <li>Does patient understand preventive measures?</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>هل خُفِّف ألم المريض؟</li>
+              <li>هل إنتاج البول كافٍ؟</li>
+              <li>هل المريض خالٍ من علامات العدوى؟</li>
+              <li>هل يفهم المريض التدابير الوقائية؟</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 4: GLOMERULONEPHRITIS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-gn" class="tab-content">
+<div class="page">
+  <div class="section-header">
+    <h2>Glomerulonephritis</h2>
+    <span class="ar">التهاب كبيبات الكلى</span>
+  </div>
+
+  <!-- DEFINITION -->
+  <div class="sub-title">📖 Definition <span class="ar">التعريف</span></div>
+  <div class="def-box" style="border-left-color:var(--accent4)">
+    <div class="en">
+      Glomerulonephritis is an <strong>inflammation of the glomeruli</strong> — the tiny filters in the kidneys responsible for removing excess waste and fluids from the blood. It can be <strong>acute or chronic</strong>, and may lead to <strong>kidney failure</strong> if untreated.
+    </div>
+    <div class="ar">
+      التهاب كبيبات الكلى هو <strong>التهاب في الكبيبات</strong> — المرشحات الصغيرة في الكلى المسؤولة عن إزالة الفضلات الزائدة والسوائل من الدم. يمكن أن يكون <strong>حادًا أو مزمنًا</strong>، وقد يؤدي إلى <strong>فشل كلوي</strong> إذا لم يُعالج.
+    </div>
+  </div>
+
+  <!-- CAUSES -->
+  <div class="sub-title">⚠️ Causes <span class="ar">الأسباب</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Poststreptococcal infection</li>
+        <li>Autoimmune diseases (e.g., lupus)</li>
+        <li>Vasculitis</li>
+        <li>Diabetic nephropathy</li>
+        <li>Hepatitis B/C infections</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>العدوى التالية للمكورات العقدية</li>
+        <li>أمراض المناعة الذاتية (مثل الذئبة الحمراء)</li>
+        <li>التهاب الأوعية (الوعائي)</li>
+        <li>اعتلال الكلى السكري</li>
+        <li>عدوى التهاب الكبد B/C</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SIGNS & SYMPTOMS -->
+  <div class="sub-title">🩺 Signs &amp; Symptoms <span class="ar">العلامات والأعراض</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Hematuria (dark/cola-colored urine)</li>
+        <li>Proteinuria (foamy urine)</li>
+        <li>Hypertension</li>
+        <li>Edema (face, eyelids, ankles)</li>
+        <li>Fatigue &amp; weakness</li>
+        <li>Oliguria (low urine output)</li>
+        <li><em>Sometimes no symptoms in early stage</em></li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>بيلة دموية (بول داكن اللون)</li>
+        <li>بيلة بروتينية (بول رغوي)</li>
+        <li>ارتفاع ضغط الدم</li>
+        <li>وذمة (الوجه والجفنين والكاحلين)</li>
+        <li>إرهاق وضعف</li>
+        <li>قِلّة البول (أوليغوريا)</li>
+        <li><em>أحيانًا لا أعراض في المراحل المبكرة</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIAGNOSIS -->
+  <div class="sub-title">🧪 Diagnosis <span class="ar">التشخيص</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Urinalysis (dark urine, blood, protein)</li>
+        <li>Blood tests (CBC, BUN, creatinine)</li>
+        <li>Serum albumin (low)</li>
+        <li>Kidney biopsy (definitive)</li>
+        <li>Imaging: Ultrasound / CT</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>تحليل البول (داكن، دم، بروتين)</li>
+        <li>فحوصات الدم (CBC، BUN، كرياتينين)</li>
+        <li>الألبومين المصلي (منخفض)</li>
+        <li>خزعة الكلى (قاطعة)</li>
+        <li>التصوير: موجات فوق صوتية / CT</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TREATMENT -->
+  <div class="sub-title">💊 Treatment <span class="ar">العلاج</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Control BP: ACE inhibitors or ARBs</li>
+        <li>Diuretics: for edema</li>
+        <li>Corticosteroids: in autoimmune forms</li>
+        <li>Antibiotics: if caused by bacterial infection</li>
+        <li>Dialysis: in severe renal failure</li>
+        <li>Diet: low sodium, low protein, fluid restriction</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>التحكم بضغط الدم: مثبطات ACE أو ARBs</li>
+        <li>مدرات البول: لعلاج الوذمة</li>
+        <li>الكورتيكوستيرويدات: في أشكال المناعة الذاتية</li>
+        <li>المضادات الحيوية: عند سبب جرثومي</li>
+        <li>الديلزة: في حالات الفشل الكلوي الشديد</li>
+        <li>النظام الغذائي: صوديوم منخفض، بروتين منخفض، تقييد السوائل</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NURSING PROCESS -->
+  <div class="divider">Nursing Process — العملية التمريضية</div>
+  <div class="np-grid">
+    <div class="np-card np-assess">
+      <div class="np-card-header">🔍 Assessment <div><div class="ar-sub">التقييم</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Subjective Data</strong>
+            <ul><li>Fatigue &amp; weakness</li><li>Nausea &amp; loss of appetite</li><li>Headache</li><li>Recent strep infection</li><li>Decreased urine output</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات ذاتية</strong>
+            <ul><li>إرهاق وضعف</li><li>غثيان وفقدان شهية</li><li>صداع</li><li>تاريخ إصابة بالمكورات العقدية</li><li>انخفاض إنتاج البول</li></ul>
+          </div>
+        </div>
+        <div class="row" style="margin-top:0.8rem">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Objective Data</strong>
+            <ul><li>Edema (swelling)</li><li>High blood pressure</li><li>Hematuria, proteinuria</li><li>Elevated BUN &amp; creatinine</li><li>Electrolyte imbalance</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات موضوعية</strong>
+            <ul><li>وذمة (انتفاخ)</li><li>ارتفاع ضغط الدم</li><li>بيلة دموية وبروتينية</li><li>ارتفاع BUN والكرياتينين</li><li>اضطراب الكهارل</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-diag">
+      <div class="np-card-header">📋 Nursing Diagnoses <div><div class="ar-sub">التشخيصات التمريضية</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Excess fluid volume r/t decreased glomerular filtration</li>
+              <li>Impaired urinary elimination r/t inflammation of glomeruli</li>
+              <li>Risk for infection r/t immunosuppressive therapy</li>
+              <li>Fatigue r/t anemia</li>
+              <li>Knowledge deficit r/t disease management</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>زيادة حجم السوائل متعلقة بانخفاض الترشيح الكبيبي</li>
+              <li>إعاقة التبول متعلقة بالتهاب الكبيبات</li>
+              <li>خطر العدوى متعلق بالعلاج المثبط للمناعة</li>
+              <li>إجهاد متعلق بفقر الدم</li>
+              <li>نقص معرفة متعلق بإدارة المرض</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-plan">
+      <div class="np-card-header">🎯 Planning / Goals <div><div class="ar-sub">التخطيط / الأهداف</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Patient will maintain normal fluid balance</li>
+              <li>Patient will demonstrate controlled blood pressure</li>
+              <li>Patient will have adequate urine output (&gt;30 mL/hr)</li>
+              <li>Patient will verbalize understanding of disease and treatment</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>يحافظ المريض على توازن سوائل طبيعي</li>
+              <li>يُظهر ضغط دم منضبط</li>
+              <li>إنتاج بول كافٍ (&gt;30 مل/ساعة)</li>
+              <li>يُعبّر عن فهمه للمرض والعلاج</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-impl">
+      <div class="np-card-header">⚙️ Implementation <div><div class="ar-sub">التنفيذ</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Monitor &amp; Assess</strong>
+            <ul><li>Vital signs daily</li><li>Daily weight &amp; I&amp;O</li><li>Headache assessment</li><li>Recent strep infection history</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Diet &amp; Fluids</strong>
+            <ul><li>Fluid restriction</li><li>Low sodium &amp; low protein</li><li>Limit potassium</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Medications</strong>
+            <ul><li>Diuretics</li><li>Antihypertensives</li><li>Steroids/Immunosuppressants</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Patient Education</strong>
+            <ul><li>Follow-up care</li><li>Avoid nephrotoxic drugs</li><li>Home BP monitoring</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">المراقبة والتقييم</strong>
+            <ul><li>العلامات الحيوية يوميًا</li><li>الوزن اليومي والدخل والخرج</li><li>تقييم الصداع</li><li>تاريخ إصابة حديثة بالعقديات</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">النظام الغذائي والسوائل</strong>
+            <ul><li>تقييد السوائل</li><li>صوديوم منخفض وبروتين منخفض</li><li>تقليل البوتاسيوم</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">الأدوية</strong>
+            <ul><li>مدرات البول</li><li>خافضات ضغط الدم</li><li>الستيرويدات / مثبطات المناعة</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">تثقيف المريض</strong>
+            <ul><li>متابعة الرعاية</li><li>تجنب الأدوية السامة للكلى</li><li>قياس ضغط الدم في المنزل</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-eval">
+      <div class="np-card-header">✅ Evaluation <div><div class="ar-sub">التقييم النهائي</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Patient maintains normal urine output and fluid balance</li>
+              <li>BP within target range</li>
+              <li>Edema reduced</li>
+              <li>Patient understands and adheres to treatment plan</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>المريض يحافظ على إنتاج بول طبيعي وتوازن سوائل</li>
+              <li>ضغط الدم ضمن النطاق المستهدف</li>
+              <li>الوذمة تراجعت</li>
+              <li>المريض يفهم ويلتزم بخطة العلاج</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 5: PYELONEPHRITIS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-pyelo" class="tab-content">
+<div class="page">
+  <div class="section-header">
+    <h2>Pyelonephritis</h2>
+    <span class="ar">التهاب الحويضة والكلية</span>
+  </div>
+
+  <!-- DEFINITION -->
+  <div class="sub-title">📖 Definition <span class="ar">التعريف</span></div>
+  <div class="def-box" style="border-left-color:var(--accent2)">
+    <div class="en">
+      Pyelonephritis is a <strong>bacterial infection of the kidneys and renal pelvis</strong>, usually caused by <strong>ascending infection from the bladder</strong>. It can be <strong>acute or chronic</strong>, with the latter potentially leading to <strong>permanent kidney damage</strong>.
+    </div>
+    <div class="ar">
+      التهاب الحويضة والكلية هو <strong>عدوى جرثومية تصيب الكلى والحويضة الكلوية</strong>، وعادةً ما تنتج عن <strong>عدوى صاعدة من المثانة</strong>. يمكن أن يكون <strong>حادًا أو مزمنًا</strong>، إذ قد يؤدي الأخير إلى <strong>تلف دائم في الكلى</strong>.
+    </div>
+  </div>
+
+  <!-- CAUSES -->
+  <div class="sub-title">⚠️ Causes <span class="ar">الأسباب</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Urinary tract infection (most common: <em>E. coli</em>)</li>
+        <li>Urinary obstruction (renal stones, enlarged prostate)</li>
+        <li>Catheterization or urologic procedures</li>
+        <li>Pregnancy (increased risk of UTI)</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>عدوى المسالك البولية (الأكثر شيوعًا: <em>إيشيريشيا كولاي</em>)</li>
+        <li>انسداد المسالك البولية (حصوات، تضخم البروستاتا)</li>
+        <li>القسطرة أو الإجراءات البولية</li>
+        <li>الحمل (زيادة خطر التهاب المسالك البولية)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SIGNS & SYMPTOMS -->
+  <div class="sub-title">🩺 Signs &amp; Symptoms <span class="ar">العلامات والأعراض</span></div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Acute Pyelonephritis / الحاد</th>
+          <th colspan="2">Chronic Pyelonephritis / المزمن</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fever &amp; chills</td>
+          <td class="ar-th">حمى وقشعريرة</td>
+          <td>Mild or asymptomatic</td>
+          <td class="ar-th">خفيف أو بدون أعراض</td>
+        </tr>
+        <tr>
+          <td>Flank / back pain (one side)</td>
+          <td class="ar-th">ألم الخاصرة / الظهر (جانب واحد)</td>
+          <td>High blood pressure</td>
+          <td class="ar-th">ارتفاع ضغط الدم</td>
+        </tr>
+        <tr>
+          <td>Nausea &amp; vomiting</td>
+          <td class="ar-th">غثيان وقيء</td>
+          <td>Renal insufficiency (progressive)</td>
+          <td class="ar-th">قصور كلوي تدريجي</td>
+        </tr>
+        <tr>
+          <td>Dysuria, urgency, frequency</td>
+          <td class="ar-th">تبول مؤلم وإلحاح وتكرار</td>
+          <td>Fluid &amp; dietary management needed</td>
+          <td class="ar-th">يحتاج إدارة غذائية وسوائل</td>
+        </tr>
+        <tr>
+          <td>Cloudy, foul-smelling urine</td>
+          <td class="ar-th">بول عكر ذو رائحة كريهة</td>
+          <td>Patient education essential</td>
+          <td class="ar-th">التثقيف الصحي ضروري</td>
+        </tr>
+        <tr>
+          <td>Fatigue</td>
+          <td class="ar-th">إرهاق</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- DIAGNOSIS -->
+  <div class="sub-title">🧪 Diagnosis <span class="ar">التشخيص</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <ul class="styled">
+        <li>Urinalysis</li>
+        <li>Urine culture (identify organism)</li>
+        <li>CBC (elevated WBC)</li>
+        <li>Blood culture</li>
+        <li>Imaging: Renal ultrasound, CT scan</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <ul class="styled">
+        <li>تحليل البول</li>
+        <li>زراعة البول (تحديد الكائن الممرض)</li>
+        <li>CBC (ارتفاع كريات الدم البيضاء)</li>
+        <li>مزرعة الدم</li>
+        <li>التصوير: الموجات فوق الصوتية الكلوية، CT</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TREATMENT -->
+  <div class="sub-title">💊 Treatment <span class="ar">العلاج</span></div>
+  <div class="bi-list">
+    <div class="en-col">
+      <div class="col-label">English</div>
+      <p style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;color:var(--accent)">Acute Pyelonephritis</p>
+      <ul class="styled">
+        <li>Antibiotics: fluoroquinolones (e.g., ciprofloxacin)</li>
+        <li>IV fluids for hydration</li>
+        <li>Antipyretics</li>
+      </ul>
+      <p style="font-weight:600;font-size:0.85rem;margin:0.7rem 0 0.3rem;color:var(--accent)">Chronic Pyelonephritis</p>
+      <ul class="styled">
+        <li>Long-term low-dose antibiotics</li>
+        <li>Treat underlying cause (e.g., surgery to relieve obstruction)</li>
+        <li>Monitor for urosepsis</li>
+        <li>Assess complications: abscesses, renal scarring, CKD</li>
+      </ul>
+    </div>
+    <div class="ar-col">
+      <div class="col-label">العربية</div>
+      <p style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;color:var(--accent)">الحاد</p>
+      <ul class="styled">
+        <li>مضادات حيوية: فلوروكينولونات (مثل سيبروفلوكساسين)</li>
+        <li>سوائل وريدية للترطيب</li>
+        <li>خافضات الحرارة</li>
+      </ul>
+      <p style="font-weight:700;font-size:0.88rem;margin:0.7rem 0 0.3rem;color:var(--accent)">المزمن</p>
+      <ul class="styled">
+        <li>مضادات حيوية بجرعات منخفضة لفترة طويلة</li>
+        <li>علاج السبب الأساسي (مثل الجراحة لرفع الانسداد)</li>
+        <li>مراقبة إنتان الدم البولي</li>
+        <li>تقييم المضاعفات: خراجات، تندب كلوي، مرض كلى مزمن</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NURSING PROCESS -->
+  <div class="divider">Nursing Process — العملية التمريضية</div>
+  <div class="np-grid">
+    <div class="np-card np-assess">
+      <div class="np-card-header">🔍 Assessment <div><div class="ar-sub">التقييم</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Subjective Data</strong>
+            <ul><li>Flank or back pain (usually one side)</li><li>Burning during urination (dysuria)</li><li>Frequent urination and urgency</li><li>Nausea or vomiting</li><li>Chills and malaise</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات ذاتية</strong>
+            <ul><li>ألم الخاصرة أو الظهر (جانب واحد)</li><li>حرقة أثناء التبول</li><li>تبول متكرر وإلحاح</li><li>غثيان أو قيء</li><li>قشعريرة وتوعك</li></ul>
+          </div>
+        </div>
+        <div class="row" style="margin-top:0.8rem">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Objective Data</strong>
+            <ul><li>Fever, tachycardia</li><li>Cloudy, foul-smelling urine</li><li>Pyuria and bacteriuria on urinalysis</li><li>Positive urine culture</li><li>Possible elevated WBC count</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">بيانات موضوعية</strong>
+            <ul><li>حمى، تسرع القلب</li><li>بول عكر ذو رائحة كريهة</li><li>صديد وبكتيريا في البول</li><li>زراعة بول إيجابية</li><li>ارتفاع عدد كريات الدم البيضاء</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-diag">
+      <div class="np-card-header">📋 Nursing Diagnoses <div><div class="ar-sub">التشخيصات التمريضية</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Acute pain r/t inflammation of renal pelvis</li>
+              <li>Impaired urinary elimination r/t infection</li>
+              <li>Risk for sepsis r/t ascending infection</li>
+              <li>Deficient fluid volume r/t nausea, vomiting</li>
+              <li>Knowledge deficit r/t cause and treatment</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>ألم حاد متعلق بالتهاب الحويضة الكلوية</li>
+              <li>إعاقة التبول متعلقة بالعدوى</li>
+              <li>خطر الإنتان متعلق بالعدوى الصاعدة</li>
+              <li>نقص حجم السوائل متعلق بالغثيان والقيء</li>
+              <li>نقص معرفة متعلق بالسبب والعلاج</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-plan">
+      <div class="np-card-header">🎯 Planning / Goals <div><div class="ar-sub">التخطيط / الأهداف</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Patient will report pain relief within a few hours of treatment</li>
+              <li>Patient will have clear urine output &gt;30 mL/hr</li>
+              <li>No signs of systemic infection (normal temperature)</li>
+              <li>Patient will complete antibiotic therapy as prescribed</li>
+              <li>Patient will verbalize prevention strategies for UTIs</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>يُبلّغ المريض عن تحسن الألم خلال ساعات من العلاج</li>
+              <li>إنتاج بول صافٍ &gt;30 مل/ساعة</li>
+              <li>لا علامات عدوى جهازية (حرارة طبيعية)</li>
+              <li>إتمام المضادات الحيوية كما هو موصوف</li>
+              <li>يُعبّر عن استراتيجيات الوقاية من التهاب المسالك البولية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-impl">
+      <div class="np-card-header">⚙️ Implementation <div><div class="ar-sub">التنفيذ</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <strong style="font-size:0.78rem;color:var(--accent)">Monitoring</strong>
+            <ul><li>Vital signs &amp; pain assessment</li><li>I&amp;O, urine color and odor</li><li>Lab values: WBC, urinalysis, culture results</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Medication Administration</strong>
+            <ul><li>Administer antibiotics as prescribed</li><li>Antipyretics</li><li>Pain management (NSAIDs if not contraindicated)</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Hydration</strong>
+            <ul><li>Encourage oral fluids</li><li>Administer IV fluids</li></ul>
+            <strong style="font-size:0.78rem;color:var(--accent);display:block;margin-top:0.5rem">Education</strong>
+            <ul><li>Importance of completing antibiotics</li><li>Proper hygiene (wipe front to back)</li><li>Urinate after sex</li><li>Avoid delaying urination</li></ul>
+          </div>
+          <div class="ar-text">
+            <strong style="font-size:0.78rem">المراقبة</strong>
+            <ul><li>العلامات الحيوية وتقييم الألم</li><li>الدخل والخرج، لون ورائحة البول</li><li>قيم المختبر: كريات بيضاء، تحليل بول، نتائج الزراعة</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">إعطاء الأدوية</strong>
+            <ul><li>المضادات الحيوية كما هي موصوفة</li><li>خافضات الحرارة</li><li>مسكنات الألم (NSAIDs إن لم تكن ممنوعة)</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">الترطيب</strong>
+            <ul><li>تشجيع السوائل الفموية</li><li>إعطاء سوائل وريدية</li></ul>
+            <strong style="font-size:0.78rem;display:block;margin-top:0.5rem">التثقيف</strong>
+            <ul><li>أهمية إتمام المضادات الحيوية</li><li>النظافة الصحيحة (من الأمام للخلف)</li><li>التبول بعد الجماع</li><li>تجنب تأخير التبول</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="np-card np-eval">
+      <div class="np-card-header">✅ Evaluation <div><div class="ar-sub">التقييم النهائي</div></div></div>
+      <div class="np-card-body">
+        <div class="row">
+          <div>
+            <ul>
+              <li>Pain reduced or resolved</li>
+              <li>Afebrile and vital signs stable</li>
+              <li>Urine is clear and normal in appearance</li>
+              <li>Patient adheres to medication regimen</li>
+              <li>No signs of recurrence or complications</li>
+            </ul>
+          </div>
+          <div class="ar-text">
+            <ul>
+              <li>الألم تراجع أو زال</li>
+              <li>لا حمى والعلامات الحيوية مستقرة</li>
+              <li>البول صافٍ وطبيعي</li>
+              <li>المريض ملتزم بالنظام الدوائي</li>
+              <li>لا علامات تكرار أو مضاعفات</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 6: QUIZ -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-quiz" class="tab-content">
+<div class="page">
+<div class="quiz-wrapper">
+
+  <div class="quiz-header">
+    <h2>📝 Self-Test Quiz</h2>
+    <p>اختبر نفسك — 20 سؤال متعدد الاختيار | Test yourself — 20 Multiple Choice Questions</p>
+    <div class="score-box" id="scoreBox" style="display:none"></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q-card" id="q1">
+    <div class="q-num">Question 1 / سؤال ١</div>
+    <div class="q-text">Chronic renal failure is also known as End-Stage Renal Disease (ESRD). Which of the following BEST describes this condition?<br><small style="color:var(--text-muted)">يُعرف الفشل الكلوي المزمن أيضًا بالمرحلة النهائية من مرض الكلى. أيٌّ من التالي يصف هذه الحالة بشكل أفضل؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q1" value="a"> a) A temporary decrease in kidney function that resolves with treatment</label>
+      <label class="q-opt"><input type="radio" name="q1" value="b"> b) A progressive, irreversible deterioration in renal function leading to uremia</label>
+      <label class="q-opt"><input type="radio" name="q1" value="c"> c) An infection of the kidneys caused by bacteria</label>
+      <label class="q-opt"><input type="radio" name="q1" value="d"> d) Inflammation of the glomeruli only</label>
+    </div>
+    <div class="q-explanation" id="exp1">
+      <strong>✅ Correct Answer: B</strong><br>
+      ESRD is defined as a progressive and irreversible deterioration in renal function in which the body fails to maintain metabolic and fluid/electrolyte balance, resulting in uremia (retention of nitrogenous wastes in the blood).<br>
+      <em>الإجابة الصحيحة: ب — ESRD هو تدهور تدريجي وغير قابل للعكس في وظائف الكلى.</em>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="q2">
+    <div class="q-num">Question 2 / سؤال ٢</div>
+    <div class="q-text">A patient with ESRD has a low white blood cell count. What is the PRIORITY nursing concern?<br><small style="color:var(--text-muted)">مريض مصاب بـ ESRD لديه انخفاض في عدد كريات الدم البيضاء. ما هو أولوية الاهتمام التمريضي؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q2" value="a"> a) Managing pain</label>
+      <label class="q-opt"><input type="radio" name="q2" value="b"> b) Preventing and controlling infection</label>
+      <label class="q-opt"><input type="radio" name="q2" value="c"> c) Monitoring fluid intake only</label>
+      <label class="q-opt"><input type="radio" name="q2" value="d"> d) Psychological support</label>
+    </div>
+    <div class="q-explanation" id="exp2">
+      <strong>✅ Correct Answer: B</strong><br>
+      Because ESRD patients commonly have low WBC counts, they are at high risk for infection. The most common infections are at the vascular access site and pneumonia. Preventing and controlling infection is the priority.<br>
+      <em>الإجابة: ب — الوقاية من العدوى والسيطرة عليها هي الأولوية لأن المرضى في خطر عالٍ بسبب انخفاض كريات الدم البيضاء.</em>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="q3">
+    <div class="q-num">Question 3 / سؤال ٣</div>
+    <div class="q-text">When caring for a patient's CAPD catheter exit site, the nurse should:<br><small style="color:var(--text-muted)">عند العناية بموقع القسطرة لمريض CAPD، يجب على الممرض:</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q3" value="a"> a) Submerge the exit site in bath water for thorough cleaning</label>
+      <label class="q-opt"><input type="radio" name="q3" value="b"> b) Clean with alcohol only to avoid irritation</label>
+      <label class="q-opt"><input type="radio" name="q3" value="c"> c) Use soap and water (liquid soap recommended), NOT submerging exit site in bath water</label>
+      <label class="q-opt"><input type="radio" name="q3" value="d"> d) Clean only once a week</label>
+    </div>
+    <div class="q-explanation" id="exp3">
+      <strong>✅ Correct Answer: C</strong><br>
+      The exit site should NOT be submerged in bath water. The most common cleaning method is soap and water, with liquid soap recommended. The catheter must remain secure to avoid tension and trauma.<br>
+      <em>الإجابة: ج — لا يجب غمر موقع الخروج في الماء. يُستخدم الماء والصابون السائل للتنظيف.</em>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="q4">
+    <div class="q-num">Question 4 / سؤال ٤</div>
+    <div class="q-text">Which type of renal stone appears RADIOLUCENT on plain X-ray?<br><small style="color:var(--text-muted)">أي نوع من حصوات الكلى يظهر شفافًا للأشعة على الصورة البسيطة؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q4" value="a"> a) Calcium oxalate</label>
+      <label class="q-opt"><input type="radio" name="q4" value="b"> b) Struvite</label>
+      <label class="q-opt"><input type="radio" name="q4" value="c"> c) Uric acid</label>
+      <label class="q-opt"><input type="radio" name="q4" value="d"> d) Calcium phosphate</label>
+    </div>
+    <div class="q-explanation" id="exp4">
+      <strong>✅ Correct Answer: C</strong><br>
+      Uric acid stones are radiolucent — they do NOT show up on plain X-ray (KUB). Calcium oxalate, calcium phosphate, and struvite stones are radiopaque (visible on X-ray).<br>
+      <em>الإجابة: ج — حصوات حمض البول شفافة للأشعة (غير مرئية على الأشعة السينية البسيطة).</em>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="q5">
+    <div class="q-num">Question 5 / سؤال ٥</div>
+    <div class="q-text">Renal stone formation occurs due to supersaturation of solutes in urine. Which of the following NORMALLY prevents stone formation?<br><small style="color:var(--text-muted)">تتشكل حصوات الكلى بسبب تشبع المذابات في البول. أيٌّ من التالي يمنع تكونها عادةً؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q5" value="a"> a) High sodium in urine</label>
+      <label class="q-opt"><input type="radio" name="q5" value="b"> b) Inhibitors such as citrate and magnesium</label>
+      <label class="q-opt"><input type="radio" name="q5" value="c"> c) Alkaline urine pH</label>
+      <label class="q-opt"><input type="radio" name="q5" value="d"> d) High protein diet</label>
+    </div>
+    <div class="q-explanation" id="exp5">
+      <strong>✅ Correct Answer: B</strong><br>
+      Normally, urine contains inhibitors (like citrate and magnesium) that prevent crystal growth and stone formation. When these inhibitors are deficient, stones may form.<br>
+      <em>الإجابة: ب — السيترات والمغنيسيوم مثبطات طبيعية تمنع تكون الحصوات. عند نقصها تتشكل الحصوات.</em>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-card" id="q6">
+    <div class="q-num">Question 6 / سؤال ٦</div>
+    <div class="q-text">A patient with renal stones has severe flank pain. What is the FIRST nursing intervention?<br><small style="color:var(--text-muted)">مريض مصاب بحصوات كلوية لديه ألم حاد في الخاصرة. ما هو أول تدخل تمريضي؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q6" value="a"> a) Prepare patient for surgery immediately</label>
+      <label class="q-opt"><input type="radio" name="q6" value="b"> b) Administer prescribed analgesics and apply heat to flank area</label>
+      <label class="q-opt"><input type="radio" name="q6" value="c"> c) Restrict all fluid intake</label>
+      <label class="q-opt"><input type="radio" name="q6" value="d"> d) Perform urinalysis only</label>
+    </div>
+    <div class="q-explanation" id="exp6">
+      <strong>✅ Correct Answer: B</strong><br>
+      The priority nursing interventions for acute pain in renal stones include administering prescribed analgesics (NSAIDs/opioids if severe) and applying heat to the flank area for comfort.<br>
+      <em>الإجابة: ب — إعطاء المسكنات الموصوفة وتطبيق الحرارة على الخاصرة هو أولوية التدخل التمريضي للألم الحاد.</em>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card" id="q7">
+    <div class="q-num">Question 7 / سؤال ٧</div>
+    <div class="q-text">Which of the following dietary recommendations is MOST important for preventing recurrence of renal stones?<br><small style="color:var(--text-muted)">أيٌّ من التوصيات الغذائية التالية هو الأهم في الوقاية من تكرار حصوات الكلى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q7" value="a"> a) Increase protein intake</label>
+      <label class="q-opt"><input type="radio" name="q7" value="b"> b) Increase sodium consumption</label>
+      <label class="q-opt"><input type="radio" name="q7" value="c"> c) Increase fluid intake to 2.5–3 L/day</label>
+      <label class="q-opt"><input type="radio" name="q7" value="d"> d) Increase oxalate-rich foods</label>
+    </div>
+    <div class="q-explanation" id="exp7">
+      <strong>✅ Correct Answer: C</strong><br>
+      Increasing fluid intake to 2.5–3 L/day is the most important lifestyle measure to prevent stone recurrence as it dilutes urine and reduces the risk of crystallization.<br>
+      <em>الإجابة: ج — زيادة تناول السوائل 2.5–3 لتر/يوم هو أهم تدبير وقائي لتخفيف تركيز البول ومنع تكرار الحصوات.</em>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card" id="q8">
+    <div class="q-num">Question 8 / سؤال ٨</div>
+    <div class="q-text">Glomerulonephritis involves inflammation of which kidney structure?<br><small style="color:var(--text-muted)">التهاب كبيبات الكلى يتضمن التهاب أي بنية في الكلى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q8" value="a"> a) Renal tubules</label>
+      <label class="q-opt"><input type="radio" name="q8" value="b"> b) Glomeruli (tiny filters)</label>
+      <label class="q-opt"><input type="radio" name="q8" value="c"> c) Renal pelvis</label>
+      <label class="q-opt"><input type="radio" name="q8" value="d"> d) Ureter</label>
+    </div>
+    <div class="q-explanation" id="exp8">
+      <strong>✅ Correct Answer: B</strong><br>
+      Glomerulonephritis is an inflammation of the glomeruli — the tiny filters in the kidneys responsible for removing excess waste and fluids from the blood.<br>
+      <em>الإجابة: ب — التهاب كبيبات الكلى يؤثر على الكبيبات، وهي المرشحات الصغيرة في الكلى.</em>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-card" id="q9">
+    <div class="q-num">Question 9 / سؤال ٩</div>
+    <div class="q-text">Which urine finding is CHARACTERISTIC of glomerulonephritis?<br><small style="color:var(--text-muted)">أي نتيجة بولية مميزة لالتهاب كبيبات الكلى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q9" value="a"> a) Clear, colorless urine</label>
+      <label class="q-opt"><input type="radio" name="q9" value="b"> b) Cola-colored urine (hematuria) and foamy urine (proteinuria)</label>
+      <label class="q-opt"><input type="radio" name="q9" value="c"> c) Foul-smelling, cloudy urine</label>
+      <label class="q-opt"><input type="radio" name="q9" value="d"> d) Urine with visible kidney stones</label>
+    </div>
+    <div class="q-explanation" id="exp9">
+      <strong>✅ Correct Answer: B</strong><br>
+      Glomerulonephritis characteristically presents with hematuria (dark/cola-colored urine) due to red blood cells passing through damaged glomeruli, and proteinuria (foamy urine) due to protein leaking out.<br>
+      <em>الإجابة: ب — بيلة دموية (بول داكن كلون الكولا) وبيلة بروتينية (بول رغوي) هي السمة المميزة.</em>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card" id="q10">
+    <div class="q-num">Question 10 / سؤال ١٠</div>
+    <div class="q-text">The nursing diagnosis "Excess fluid volume related to decreased glomerular filtration" is most appropriate for which condition?<br><small style="color:var(--text-muted)">تشخيص "زيادة حجم السوائل المرتبطة بانخفاض الترشيح الكبيبي" الأنسب لأي حالة؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q10" value="a"> a) Pyelonephritis</label>
+      <label class="q-opt"><input type="radio" name="q10" value="b"> b) Renal stones</label>
+      <label class="q-opt"><input type="radio" name="q10" value="c"> c) Glomerulonephritis</label>
+      <label class="q-opt"><input type="radio" name="q10" value="d"> d) ESRD catheter management</label>
+    </div>
+    <div class="q-explanation" id="exp10">
+      <strong>✅ Correct Answer: C</strong><br>
+      In glomerulonephritis, the inflamed glomeruli have decreased filtration capacity, leading to fluid retention, edema, and hypertension. This nursing diagnosis is specific to this condition.<br>
+      <em>الإجابة: ج — في التهاب كبيبات الكلى تنخفض قدرة الترشيح مما يؤدي لاحتباس السوائل والوذمة.</em>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-card" id="q11">
+    <div class="q-num">Question 11 / سؤال ١١</div>
+    <div class="q-text">Which medication is used to control blood pressure in glomerulonephritis?<br><small style="color:var(--text-muted)">أي دواء يُستخدم للتحكم في ضغط الدم في التهاب كبيبات الكلى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q11" value="a"> a) Fluoroquinolones</label>
+      <label class="q-opt"><input type="radio" name="q11" value="b"> b) Alpha-blockers</label>
+      <label class="q-opt"><input type="radio" name="q11" value="c"> c) ACE inhibitors or ARBs</label>
+      <label class="q-opt"><input type="radio" name="q11" value="d"> d) Allopurinol</label>
+    </div>
+    <div class="q-explanation" id="exp11">
+      <strong>✅ Correct Answer: C</strong><br>
+      ACE inhibitors (e.g., enalapril) or ARBs (e.g., losartan) are the first-line medications to control blood pressure in glomerulonephritis. They also reduce proteinuria and protect kidney function.<br>
+      <em>الإجابة: ج — مثبطات ACE أو ARBs هي الخط الأول للتحكم في ضغط الدم وتقليل البيلة البروتينية.</em>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-card" id="q12">
+    <div class="q-num">Question 12 / سؤال ١٢</div>
+    <div class="q-text">Pyelonephritis is MOST commonly caused by:<br><small style="color:var(--text-muted)">التهاب الحويضة والكلية يحدث في الغالب بسبب:</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q12" value="a"> a) Autoimmune reaction</label>
+      <label class="q-opt"><input type="radio" name="q12" value="b"> b) Ascending bacterial infection from the bladder</label>
+      <label class="q-opt"><input type="radio" name="q12" value="c"> c) Viral infection</label>
+      <label class="q-opt"><input type="radio" name="q12" value="d"> d) Genetic mutation</label>
+    </div>
+    <div class="q-explanation" id="exp12">
+      <strong>✅ Correct Answer: B</strong><br>
+      Pyelonephritis is a bacterial infection most commonly caused by an ascending infection from the bladder (usually E. coli). Bacteria travel up the ureter to infect the kidneys and renal pelvis.<br>
+      <em>الإجابة: ب — التهاب الحويضة والكلية ناجم عادةً عن عدوى جرثومية صاعدة من المثانة (غالبًا E. coli).</em>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-card" id="q13">
+    <div class="q-num">Question 13 / سؤال ١٣</div>
+    <div class="q-text">A patient with acute pyelonephritis presents with fever, flank pain, and positive urine culture. The FIRST-LINE antibiotic treatment is:<br><small style="color:var(--text-muted)">مريض مصاب بالتهاب حويضة حاد لديه حمى وألم خاصرة وزراعة بول إيجابية. العلاج المضاد الحيوي خط أول هو:</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q13" value="a"> a) Corticosteroids</label>
+      <label class="q-opt"><input type="radio" name="q13" value="b"> b) Fluoroquinolones (e.g., ciprofloxacin)</label>
+      <label class="q-opt"><input type="radio" name="q13" value="c"> c) Diuretics</label>
+      <label class="q-opt"><input type="radio" name="q13" value="d"> d) Antivirals</label>
+    </div>
+    <div class="q-explanation" id="exp13">
+      <strong>✅ Correct Answer: B</strong><br>
+      Fluoroquinolones such as ciprofloxacin are the first-line treatment for acute pyelonephritis. IV fluids and antipyretics are also given as supportive care.<br>
+      <em>الإجابة: ب — الفلوروكينولونات مثل سيبروفلوكساسين هي الخط الأول لعلاج التهاب الحويضة الحاد.</em>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-card" id="q14">
+    <div class="q-num">Question 14 / سؤال ١٤</div>
+    <div class="q-text">Patient education for preventing urinary tract infections (UTI) in pyelonephritis includes which of the following?<br><small style="color:var(--text-muted)">تثقيف المريض للوقاية من التهاب المسالك البولية يشمل:</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q14" value="a"> a) Hold urine for as long as possible to strengthen bladder</label>
+      <label class="q-opt"><input type="radio" name="q14" value="b"> b) Wipe back to front after using toilet</label>
+      <label class="q-opt"><input type="radio" name="q14" value="c"> c) Urinate after sexual intercourse and wipe front to back</label>
+      <label class="q-opt"><input type="radio" name="q14" value="d"> d) Decrease fluid intake to reduce urinary frequency</label>
+    </div>
+    <div class="q-explanation" id="exp14">
+      <strong>✅ Correct Answer: C</strong><br>
+      Key UTI prevention education: urinate after sex (flushes bacteria), wipe from front to back (prevents fecal contamination of urethra), avoid delaying urination, and maintain adequate fluid intake.<br>
+      <em>الإجابة: ج — التبول بعد الجماع والمسح من الأمام للخلف أساسيان في الوقاية من التهابات المسالك البولية.</em>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-card" id="q15">
+    <div class="q-num">Question 15 / سؤال ١٥</div>
+    <div class="q-text">Which nursing diagnosis is MOST specific to pyelonephritis compared to other kidney disorders?<br><small style="color:var(--text-muted)">أي تشخيص تمريضي هو الأكثر تحديدًا للتهاب الحويضة والكلية مقارنةً بأمراض الكلى الأخرى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q15" value="a"> a) Excess fluid volume</label>
+      <label class="q-opt"><input type="radio" name="q15" value="b"> b) Risk for sepsis related to ascending infection</label>
+      <label class="q-opt"><input type="radio" name="q15" value="c"> c) Fatigue related to anemia</label>
+      <label class="q-opt"><input type="radio" name="q15" value="d"> d) Deficient knowledge related to prevention of stone recurrence</label>
+    </div>
+    <div class="q-explanation" id="exp15">
+      <strong>✅ Correct Answer: B</strong><br>
+      "Risk for sepsis related to ascending infection" is highly specific to pyelonephritis, where bacteria can spread from the kidneys into the bloodstream causing urosepsis — a life-threatening complication.<br>
+      <em>الإجابة: ب — خطر الإنتان الناجم عن العدوى الصاعدة خاص بالتهاب الحويضة والكلية.</em>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-card" id="q16">
+    <div class="q-num">Question 16 / سؤال ١٦</div>
+    <div class="q-text">Which of the following is the GOLD STANDARD imaging test for diagnosing renal stones?<br><small style="color:var(--text-muted)">أيٌّ من التصوير التالي هو المعيار الذهبي لتشخيص حصوات الكلى؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q16" value="a"> a) Plain X-ray (KUB)</label>
+      <label class="q-opt"><input type="radio" name="q16" value="b"> b) MRI</label>
+      <label class="q-opt"><input type="radio" name="q16" value="c"> c) Non-contrast CT scan</label>
+      <label class="q-opt"><input type="radio" name="q16" value="d"> d) Intravenous pyelogram (IVP)</label>
+    </div>
+    <div class="q-explanation" id="exp16">
+      <strong>✅ Correct Answer: C</strong><br>
+      Non-contrast CT scan is the gold standard for diagnosing renal stones as it can detect all types of stones (including radiolucent uric acid stones) with high sensitivity and specificity.<br>
+      <em>الإجابة: ج — التصوير المقطعي بدون تباين هو المعيار الذهبي لاكتشاف جميع أنواع الحصوات بما فيها الشفافة للأشعة.</em>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-card" id="q17">
+    <div class="q-num">Question 17 / سؤال ١٧</div>
+    <div class="q-text">A patient with glomerulonephritis is put on corticosteroids. Which nursing diagnosis becomes a concern due to this treatment?<br><small style="color:var(--text-muted)">مريض مصاب بالتهاب كبيبات الكلى يتلقى كورتيكوستيرويدات. أي تشخيص تمريضي يصبح مصدر قلق بسبب هذا العلاج؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q17" value="a"> a) Risk for infection related to immunosuppressive therapy</label>
+      <label class="q-opt"><input type="radio" name="q17" value="b"> b) Acute pain related to stone obstruction</label>
+      <label class="q-opt"><input type="radio" name="q17" value="c"> c) Risk for sepsis related to ascending infection</label>
+      <label class="q-opt"><input type="radio" name="q17" value="d"> d) Impaired urinary elimination related to catheter</label>
+    </div>
+    <div class="q-explanation" id="exp17">
+      <strong>✅ Correct Answer: A</strong><br>
+      Corticosteroids and immunosuppressants suppress the immune system, making patients more susceptible to infections. "Risk for infection related to immunosuppressive therapy" is a specific concern when patients receive these medications.<br>
+      <em>الإجابة: أ — الكورتيكوستيرويدات تثبط المناعة مما يزيد خطر العدوى.</em>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q-card" id="q18">
+    <div class="q-num">Question 18 / سؤال ١٨</div>
+    <div class="q-text">Which of the following BEST explains why uremia occurs in Chronic Renal Failure?<br><small style="color:var(--text-muted)">أيٌّ مما يلي يفسر حدوث اليوريميا في الفشل الكلوي المزمن؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q18" value="a"> a) Excessive secretion of urea and other nitrogenous wastes</label>
+      <label class="q-opt"><input type="radio" name="q18" value="b"> b) Failure to excrete urea and other nitrogenous wastes, leading to their accumulation in blood</label>
+      <label class="q-opt"><input type="radio" name="q18" value="c"> c) Overproduction of white blood cells</label>
+      <label class="q-opt"><input type="radio" name="q18" value="d"> d) Inability to produce urine at all</label>
+    </div>
+    <div class="q-explanation" id="exp18">
+      <strong>✅ Correct Answer: B</strong><br>
+      In ESRD, the kidneys fail to excrete end products of protein metabolism. This leads to retention (accumulation) of urea and other nitrogenous wastes in the blood — a condition called uremia/azotemia.<br>
+      <em>الإجابة: ب — في ESRD تعجز الكلى عن إطراح نواتج استقلاب البروتين فتتراكم في الدم مسببةً اليوريميا.</em>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q-card" id="q19">
+    <div class="q-num">Question 19 / سؤال ١٩</div>
+    <div class="q-text">A goal of nursing care for a patient with renal stones states: "Patient will maintain urine output ≥30 mL/hr." To which nursing diagnosis does this goal correspond?<br><small style="color:var(--text-muted)">هدف الرعاية التمريضية: "يحافظ المريض على إنتاج بول ≥30 مل/ساعة". يقابل أي تشخيص تمريضي؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q19" value="a"> a) Deficient knowledge related to prevention of recurrence</label>
+      <label class="q-opt"><input type="radio" name="q19" value="b"> b) Acute pain related to obstruction</label>
+      <label class="q-opt"><input type="radio" name="q19" value="c"> c) Impaired urinary elimination related to obstruction</label>
+      <label class="q-opt"><input type="radio" name="q19" value="d"> d) Risk for infection</label>
+    </div>
+    <div class="q-explanation" id="exp19">
+      <strong>✅ Correct Answer: C</strong><br>
+      Maintaining urine output ≥30 mL/hr is the goal for addressing impaired urinary elimination. The goal directly measures whether urinary flow is adequate despite the obstruction caused by the stone.<br>
+      <em>الإجابة: ج — الهدف يقيس مدى كفاءة التبول، وهو يتعلق بتشخيص إعاقة التبول المرتبطة بالانسداد.</em>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q-card" id="q20">
+    <div class="q-num">Question 20 / سؤال ٢٠</div>
+    <div class="q-text">Which of the following represents the CORRECT nursing evaluation criteria for a patient with pyelonephritis who has responded to treatment?<br><small style="color:var(--text-muted)">أي من المعايير التالية يمثل التقييم التمريضي الصحيح لمريض التهاب الحويضة الذي استجاب للعلاج؟</small></div>
+    <div class="q-options">
+      <label class="q-opt"><input type="radio" name="q20" value="a"> a) Patient continues to have cloudy urine but reports less pain</label>
+      <label class="q-opt"><input type="radio" name="q20" value="b"> b) Patient is afebrile, urine is clear, vital signs are stable, adheres to antibiotic regimen</label>
+      <label class="q-opt"><input type="radio" name="q20" value="c"> c) Patient still has fever but WBC count is normal</label>
+      <label class="q-opt"><input type="radio" name="q20" value="d"> d) Patient stopped antibiotics after 3 days because symptoms improved</label>
+    </div>
+    <div class="q-explanation" id="exp20">
+      <strong>✅ Correct Answer: B</strong><br>
+      Successful treatment outcomes for pyelonephritis include: afebrile state, stable vital signs, clear and normal-appearing urine, adherence to the complete antibiotic course, and no signs of recurrence or complications.<br>
+      <em>الإجابة: ب — النتائج الناجحة: غياب الحمى، علامات حيوية مستقرة، بول صافٍ، التزام بالمضادات الحيوية.</em>
+    </div>
+  </div>
+
+  <!-- QUIZ CONTROLS -->
+  <div class="quiz-controls">
+    <button class="btn btn-primary" onclick="submitQuiz()">✅ Submit Quiz / تسليم الاختبار</button>
+    <button class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset / إعادة</button>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--text);color:#a0906c;text-align:center;padding:1.2rem;font-size:0.78rem;margin-top:3rem;">
+  Urology System Disorders — Nursing Lecture &nbsp;|&nbsp; أمراض الجهاز البولي — محاضرة تمريض
+</div>
+
+<script>
+  // ─── TAB SWITCHING ───
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      if (b.getAttribute('onclick') === `showTab('${id}')`) b.classList.add('active');
+    });
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // ─── QUIZ LOGIC ───
+  const answers = {
+    q1:'b', q2:'b', q3:'c', q4:'c', q5:'b',
+    q6:'b', q7:'c', q8:'b', q9:'b', q10:'c',
+    q11:'c', q12:'b', q13:'b', q14:'c', q15:'b',
+    q16:'c', q17:'a', q18:'b', q19:'c', q20:'b'
+  };
+
+  function submitQuiz() {
+    let score = 0;
+    for (let i = 1; i <= 20; i++) {
+      const qname = 'q' + i;
+      const selected = document.querySelector(`input[name="${qname}"]:checked`);
+      const opts = document.querySelectorAll(`input[name="${qname}"]`);
+      const exp = document.getElementById('exp' + i);
+
+      opts.forEach(opt => {
+        const label = opt.parentElement;
+        label.classList.remove('correct','wrong','reveal-correct');
+        opt.disabled = true;
+      });
+
+      if (selected) {
+        const label = selected.parentElement;
+        if (selected.value === answers[qname]) {
+          label.classList.add('correct');
+          score++;
+        } else {
+          label.classList.add('wrong');
+          // reveal correct
+          opts.forEach(opt => {
+            if (opt.value === answers[qname]) opt.parentElement.classList.add('reveal-correct');
+          });
+        }
+      } else {
+        // No answer selected — just reveal correct
+        opts.forEach(opt => {
+          if (opt.value === answers[qname]) opt.parentElement.classList.add('reveal-correct');
+        });
+      }
+
+      exp.classList.add('show');
+    }
+
+    const scoreBox = document.getElementById('scoreBox');
+    scoreBox.style.display = 'inline-block';
+    const pct = Math.round((score/20)*100);
+    let grade = pct >= 90 ? '🏆 Excellent / ممتاز' :
+                pct >= 75 ? '✅ Good / جيد' :
+                pct >= 60 ? '📘 Pass / مقبول' : '❌ Needs Review / يحتاج مراجعة';
+    scoreBox.innerHTML = `Score: ${score}/20 (${pct}%) — ${grade}`;
+    scoreBox.scrollIntoView({behavior:'smooth'});
+  }
+
+  function resetQuiz() {
+    for (let i = 1; i <= 20; i++) {
+      const qname = 'q' + i;
+      const opts = document.querySelectorAll(`input[name="${qname}"]`);
+      opts.forEach(opt => {
+        opt.checked = false;
+        opt.disabled = false;
+        opt.parentElement.classList.remove('correct','wrong','reveal-correct');
+      });
+      const exp = document.getElementById('exp' + i);
+      exp.classList.remove('show');
+    }
+    document.getElementById('scoreBox').style.display = 'none';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+
+</body>
+</html>

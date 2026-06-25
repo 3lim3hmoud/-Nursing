@@ -41,7 +41,7 @@
     font-family: 'Inter', sans-serif;
     color: #20302a;
     min-height: 100vh;
-    background-color: #eef3f1;
+    background: transparent;
   }
 
   #bg-video {
@@ -1098,6 +1098,29 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
   });
 }
+
+// Ensure background video plays (fallback against autoplay restrictions)
+(function ensureVideoPlays() {
+  const vid = document.getElementById('bg-video');
+  if (!vid) return;
+  const tryPlay = () => {
+    const p = vid.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {
+        // Autoplay blocked; retry on first user interaction
+        const retry = () => { vid.play(); document.removeEventListener('click', retry); document.removeEventListener('touchstart', retry); };
+        document.addEventListener('click', retry, { once: true });
+        document.addEventListener('touchstart', retry, { once: true });
+      });
+    }
+  };
+  if (vid.readyState >= 2) {
+    tryPlay();
+  } else {
+    vid.addEventListener('loadeddata', tryPlay, { once: true });
+  }
+  window.addEventListener('load', tryPlay);
+})();
 </script>
 </body>
 </html>

@@ -636,6 +636,25 @@
     text-transform: uppercase;
   }
 
+  .file-list {
+    margin-top: auto;
+    padding-top: 1rem;
+    list-style: none;
+    width: 100%;
+  }
+  .file-list li { margin-bottom: 6px; }
+  .file-list a {
+    display: block;
+    font-size: 13px;
+    color: #185FA5;
+    text-decoration: none;
+    background: rgba(55,138,221,0.1);
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .file-list a:hover { background: rgba(55,138,221,0.2); }
+
   /* ─── FOOTER ─── */
   .footer {
     text-align: center;
@@ -763,6 +782,16 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ─── HOW TO ADD PDF FILES ───
+// 1) On GitHub, create folders following this pattern:
+//    files/<yearKey>/<termKey>/<subject-slug>/<resourceKey>/yourfile.pdf
+//    Example: files/y2/term1/adult-health-nursing-1/lectures/lecture1.pdf
+// 2) Upload your PDF inside the right folder.
+// 3) Add an entry to that subject's "files" object below, e.g.:
+//    files: { lectures: [ { title: 'Lecture 1 - Intro', file: 'lecture1.pdf' } ], summaries: [], flashcards: [], mcq: [] }
+// The "file" value must exactly match the uploaded PDF filename.
+// Resource keys are always: lectures, summaries, flashcards, mcq
+
 const years = {
   y1: {
     title: 'First Year',
@@ -772,16 +801,16 @@ const years = {
     color: 'rgba(29,158,117,0.18)',
     terms: {
       term1: [
-        { name: 'Subject 1', desc: 'To be added', icon: '🔬' },
-        { name: 'Subject 2', desc: 'To be added', icon: '🫀' },
-        { name: 'Subject 3', desc: 'To be added', icon: '🧬' },
-        { name: 'Subject 4', desc: 'To be added', icon: '💊' },
+        { name: 'Subject 1', slug: 'subject-1', desc: 'To be added', icon: '🔬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 2', slug: 'subject-2', desc: 'To be added', icon: '🫀', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 3', slug: 'subject-3', desc: 'To be added', icon: '🧬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 4', slug: 'subject-4', desc: 'To be added', icon: '💊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ],
       term2: [
-        { name: 'Subject 5', desc: 'To be added', icon: '🩺' },
-        { name: 'Subject 6', desc: 'To be added', icon: '📋' },
-        { name: 'Subject 7', desc: 'To be added', icon: '🧪' },
-        { name: 'Subject 8', desc: 'To be added', icon: '📚' },
+        { name: 'Subject 5', slug: 'subject-5', desc: 'To be added', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 6', slug: 'subject-6', desc: 'To be added', icon: '📋', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 7', slug: 'subject-7', desc: 'To be added', icon: '🧪', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 8', slug: 'subject-8', desc: 'To be added', icon: '📚', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ]
     }
   },
@@ -793,20 +822,35 @@ const years = {
     color: 'rgba(55,138,221,0.18)',
     terms: {
       term1: [
-        { name: 'Adult Health Nursing 1', desc: 'Fundamentals of adult health and medical-surgical nursing', icon: '🩺' },
-        { name: 'Critical Care & Emergency Nursing 1', desc: 'Introduction to critical care and emergency nursing principles', icon: '🚨' },
-        { name: 'Medicine', desc: 'Core medical concepts and internal medicine', icon: '💊' },
-        { name: 'Pathology', desc: 'Disease mechanisms and pathological processes', icon: '🧫' },
-        { name: 'Pharmacology', desc: 'Drug classifications, actions, and nursing implications', icon: '💉' },
-        { name: 'Technical Writing', desc: 'Scientific and professional writing skills for nurses', icon: '✍️' },
+        { name: 'Adult Health Nursing 1', slug: 'adult-health-nursing-1', desc: 'Fundamentals of adult health and medical-surgical nursing', icon: '🩺', files: { lectures: [
+            { title: 'Oncology 1', file: 'oncology 1.pdf' },
+            { title: 'Perioperative Care', file: 'Perioperative care.pdf' },
+            { title: 'Pneumonia & TB', file: 'Pneumonia & TB.pdf' },
+            { title: 'Upper Respiratory Tract Obstruction', file: 'Upper respiratory tract obstruction(1).pdf' },
+            { title: 'Asthma', file: 'Asthma_251015_221704.pdf' },
+            { title: 'Blood Disorder', file: 'blood disorder.pdf' },
+            { title: 'Cardiovascular Dysfunction', file: 'cardiovascular dysfunction.pdf' },
+            { title: 'Fluid & Electrolytes', file: 'Fluid electrolytes.pdf' },
+            { title: 'Heart Failure', file: 'Heart+Failure.pdf' },
+            { title: 'Hypertension', file: 'Hypertension(1).pdf' },
+            { title: 'Management of Patient with Deep Venous Thrombosis', file: 'Management of patient with Deep venous thrombosis.pdf' },
+            { title: 'Management of Patients with Atherosclerosis', file: 'Management of patients with atherosclerosis.pdf' },
+          ], summaries: [], flashcards: [], mcq: [
+            { title: 'Questions Bank - Dr. Bardes', file: 'questions bank dr.bardes.pdf' },
+          ] } },
+        { name: 'Critical Care & Emergency Nursing 1', slug: 'critical-care-emergency-nursing-1', desc: 'Introduction to critical care and emergency nursing principles', icon: '🚨', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Medicine', slug: 'medicine', desc: 'Core medical concepts and internal medicine', icon: '💊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pathology', slug: 'pathology', desc: 'Disease mechanisms and pathological processes', icon: '🧫', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pharmacology', slug: 'pharmacology', desc: 'Drug classifications, actions, and nursing implications', icon: '💉', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Technical Writing', slug: 'technical-writing', desc: 'Scientific and professional writing skills for nurses', icon: '✍️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ],
       term2: [
-        { name: 'Adult Health Nursing 2', desc: 'Advanced adult health nursing and complex care', icon: '🏥' },
-        { name: 'Critical Care Nursing 2', desc: 'Advanced critical care nursing and interventions', icon: '❤️‍🔥' },
-        { name: 'Critical Care Medicine', desc: 'Medical management of critically ill patients', icon: '🫀' },
-        { name: 'General Surgery', desc: 'Surgical procedures and perioperative nursing care', icon: '🩻' },
-        { name: 'Teaching Strategies', desc: 'Methods and approaches for patient and nursing education', icon: '📋' },
-        { name: 'Communication Skills', desc: 'Therapeutic communication and interpersonal skills', icon: '🗣️' },
+        { name: 'Adult Health Nursing 2', slug: 'adult-health-nursing-2', desc: 'Advanced adult health nursing and complex care', icon: '🏥', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Critical Care Nursing 2', slug: 'critical-care-nursing-2', desc: 'Advanced critical care nursing and interventions', icon: '❤️‍🔥', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Critical Care Medicine', slug: 'critical-care-medicine', desc: 'Medical management of critically ill patients', icon: '🫀', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'General Surgery', slug: 'general-surgery', desc: 'Surgical procedures and perioperative nursing care', icon: '🩻', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Teaching Strategies', slug: 'teaching-strategies', desc: 'Methods and approaches for patient and nursing education', icon: '📋', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Communication Skills', slug: 'communication-skills', desc: 'Therapeutic communication and interpersonal skills', icon: '🗣️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ]
     }
   },
@@ -818,16 +862,16 @@ const years = {
     color: 'rgba(216,90,48,0.18)',
     terms: {
       term1: [
-        { name: 'Subject 1', desc: 'To be added', icon: '🧠' },
-        { name: 'Subject 2', desc: 'To be added', icon: '❤️' },
-        { name: 'Subject 3', desc: 'To be added', icon: '🫀' },
-        { name: 'Subject 4', desc: 'To be added', icon: '🩺' },
+        { name: 'Subject 1', slug: 'subject-1', desc: 'To be added', icon: '🧠', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 2', slug: 'subject-2', desc: 'To be added', icon: '❤️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 3', slug: 'subject-3', desc: 'To be added', icon: '🫀', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 4', slug: 'subject-4', desc: 'To be added', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ],
       term2: [
-        { name: 'Subject 5', desc: 'To be added', icon: '📑' },
-        { name: 'Subject 6', desc: 'To be added', icon: '💊' },
-        { name: 'Subject 7', desc: 'To be added', icon: '🔬' },
-        { name: 'Subject 8', desc: 'To be added', icon: '📖' },
+        { name: 'Subject 5', slug: 'subject-5', desc: 'To be added', icon: '📑', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 6', slug: 'subject-6', desc: 'To be added', icon: '💊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 7', slug: 'subject-7', desc: 'To be added', icon: '🔬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Subject 8', slug: 'subject-8', desc: 'To be added', icon: '📖', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ]
     }
   }
@@ -911,14 +955,23 @@ function openSubject(idx) {
     { key: 'mcq', icon: '✅', label: 'MCQ Bank', desc: 'Practice multiple choice questions', color: '#D4537E' },
   ];
 
-  document.getElementById('resourceGrid').innerHTML = resources.map(r => `
+  const basePath = `files/${currentYear}/${currentTerm}/${s.slug}`;
+
+  document.getElementById('resourceGrid').innerHTML = resources.map(r => {
+    const list = (s.files && s.files[r.key]) ? s.files[r.key] : [];
+    const filesHtml = list.length
+      ? `<ul class="file-list">${list.map(f => `
+          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">📄 ${f.title || f.file}</a></li>
+        `).join('')}</ul>`
+      : `<span class="coming-soon">Coming soon</span>`;
+    return `
     <div class="resource-card ${r.key}">
       <div class="resource-icon" style="background:${r.color}22;">${r.icon}</div>
       <h3>${r.label}</h3>
       <p>${r.desc}</p>
-      <span class="coming-soon">Coming soon</span>
-    </div>
-  `).join('');
+      ${filesHtml}
+    </div>`;
+  }).join('');
 
   document.getElementById('subjectView').classList.add('active');
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myasthenia Gravis – Dr. Ghada Elsayed</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:    #2a7d8c;
+    --teal-lt: #e8f4f6;
+    --teal-md: #b2d8de;
+    --gold:    #c5883a;
+    --gold-lt: #fdf3e3;
+    --text:    #1e2a30;
+    --muted:   #5a7280;
+    --bg:      #f5f9fa;
+    --white:   #ffffff;
+    --radius:  14px;
+    --shadow:  0 4px 20px rgba(42,125,140,.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', 'Lora', serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    background: linear-gradient(135deg, var(--teal) 0%, #1a5560 100%);
+    color: #fff;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  header h1 { font-family: 'Lora', serif; font-size: clamp(1.6rem,4vw,2.5rem); font-weight: 700; position: relative; }
+  header p  { margin-top:.5rem; opacity:.8; font-size:1rem; position: relative; }
+  .badge { display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.3); border-radius:50px; padding:.3rem 1rem; font-size:.85rem; margin-top:.8rem; position:relative; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--teal-md);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  }
+  .tab-btn {
+    padding: .5rem 1rem;
+    border: 1.5px solid var(--teal-md);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--teal);
+    font-family: 'Tajawal', sans-serif;
+    font-size: .85rem;
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover  { background: var(--teal-lt); }
+  .tab-btn.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+  /* ── Main ── */
+  main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .tab-pane { display: none; animation: fadeIn .35s ease; }
+  .tab-pane.active { display: block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+  /* ── Section card ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--teal);
+  }
+  .card.gold { border-left-color: var(--gold); }
+
+  .card h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    color: var(--teal);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .card.gold h2 { color: var(--gold); }
+
+  /* ── Bilingual rows ── */
+  .bi-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #edf2f4;
+  }
+  .bi-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .en-col { font-family: 'Lora', serif; font-size: .95rem; line-height: 1.7; color: var(--text); }
+  .ar-col {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--muted);
+    text-align: right;
+    direction: rtl;
+    border-right: 3px solid var(--teal-md);
+    padding-right: .8rem;
+  }
+
+  .label-en { font-weight: 700; color: var(--teal); font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+  .label-ar { font-weight: 700; color: var(--teal); font-size: .85rem; margin-bottom: .3rem; text-align: right; }
+
+  /* ── Info pills ── */
+  .pill-grid { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
+  .pill {
+    background: var(--teal-lt);
+    border: 1px solid var(--teal-md);
+    border-radius: 50px;
+    padding: .35rem .9rem;
+    font-size: .85rem;
+    color: var(--teal);
+    font-family: 'Tajawal', sans-serif;
+  }
+  .pill.gold-pill { background: var(--gold-lt); border-color: #e8c88a; color: var(--gold); }
+
+  /* ── Numbered list ── */
+  .num-list { counter-reset: nl; list-style: none; }
+  .num-list li {
+    counter-increment: nl;
+    display: grid; grid-template-columns: auto 1fr 1fr; gap: .8rem 1rem;
+    align-items: start;
+    padding: .8rem 0;
+    border-bottom: 1px solid #edf2f4;
+  }
+  .num-list li:last-child { border-bottom: none; }
+  .num-list li::before {
+    content: counter(nl);
+    background: var(--teal);
+    color: #fff;
+    width: 1.8rem; height: 1.8rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8rem; font-weight: 700;
+    flex-shrink: 0; margin-top: .1rem;
+    font-family: 'Lora', serif;
+  }
+
+  /* ── Alert box ── */
+  .alert {
+    background: #fff5f5;
+    border: 1.5px solid #f5a0a0;
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    color: #7a2020;
+    font-family: 'Tajawal', sans-serif;
+    font-size: .92rem;
+  }
+  .alert strong { font-weight: 700; }
+
+  /* ── Quiz ── */
+  .quiz-q {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    border-left: 4px solid var(--teal-md);
+    transition: border-color .2s;
+  }
+  .quiz-q.correct  { border-left-color: #27ae60; background: #f0faf4; }
+  .quiz-q.wrong    { border-left-color: #e74c3c; background: #fff5f5; }
+
+  .q-text { font-family: 'Lora', serif; font-size: .98rem; font-weight: 600; margin-bottom: .4rem; }
+  .q-ar   { font-family: 'Tajawal'; font-size:.92rem; color:var(--muted); direction:rtl; text-align:right; margin-bottom: 1rem; }
+
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .opt-btn {
+    padding: .6rem .8rem;
+    border: 1.5px solid var(--teal-md);
+    border-radius: 8px;
+    background: var(--teal-lt);
+    color: var(--text);
+    font-family: 'Tajawal', sans-serif;
+    font-size: .88rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all .2s;
+  }
+  .opt-btn:hover:not(:disabled) { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .opt-btn.correct-ans { background: #27ae60; color: #fff; border-color: #27ae60; }
+  .opt-btn.wrong-ans   { background: #e74c3c; color: #fff; border-color: #e74c3c; }
+  .opt-btn:disabled    { cursor: default; }
+
+  .feedback { margin-top: .7rem; font-size: .88rem; font-family: 'Tajawal'; padding: .5rem .8rem; border-radius: 8px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.ok   { background: #d4edda; color: #155724; }
+  .feedback.no   { background: #f8d7da; color: #721c24; }
+
+  .quiz-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem; margin-bottom:1.5rem; }
+  .score-box { background:var(--teal); color:#fff; border-radius:50px; padding:.4rem 1.2rem; font-family:'Lora'; font-size:1rem; font-weight:700; }
+
+  .reset-btn {
+    background: var(--gold); color: #fff; border: none; border-radius: 50px;
+    padding: .6rem 1.5rem; font-family: 'Tajawal'; font-size: .9rem; cursor: pointer;
+    transition: opacity .2s;
+  }
+  .reset-btn:hover { opacity: .85; }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .bi-row { grid-template-columns: 1fr; }
+    .ar-col { border-right: none; border-top: 2px solid var(--teal-md); padding-right: 0; padding-top: .6rem; }
+    .options { grid-template-columns: 1fr; }
+    .num-list li { grid-template-columns: auto 1fr; }
+    .num-list li .ar-col-li { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧠 Myasthenia Gravis</h1>
+  <p>Prepared by Dr. Ghada Elsayed | وحدة التمريض العصبي</p>
+  <div class="badge">Bilingual Lecture Notes · ملاحظات ثنائية اللغة</div>
+</header>
+
+<!-- Tab Bar -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="showTab('definition')">📖 Definition</button>
+  <button class="tab-btn" onclick="showTab('causes')">🔍 Causes</button>
+  <button class="tab-btn" onclick="showTab('patho')">⚙️ Pathophysiology</button>
+  <button class="tab-btn" onclick="showTab('clinical')">🩺 Clinical Signs</button>
+  <button class="tab-btn" onclick="showTab('diagnosis')">🧪 Diagnosis</button>
+  <button class="tab-btn" onclick="showTab('treatment')">💊 Treatment</button>
+  <button class="tab-btn" onclick="showTab('nursing')">👩‍⚕️ Nursing Care</button>
+  <button class="tab-btn" onclick="showTab('quiz')">📝 Self-Test</button>
+</div>
+
+<main>
+
+<!-- ══ TAB: DEFINITION ══ -->
+<div class="tab-pane active" id="definition">
+  <div class="card">
+    <h2>📖 Definition · التعريف</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">English</div>
+        Myasthenia Gravis (MG) is a chronic autoimmune neuromuscular disorder that produces <strong>sporadic but progressive weakness</strong> and <strong>abnormal fatigue</strong> in striated (skeletal) muscles.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">العربي</div>
+        الوهن العضلي الوبيل (MG) هو اضطراب عصبي عضلي مناعي ذاتي مزمن يسبب <strong>ضعفاً تدريجياً</strong> وإرهاقاً غير طبيعي في عضلات الهيكل العظمي.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Key Feature</div>
+        Weakness and fatigue are <strong>worsened by exercise and repeated movement</strong>, but <strong>improved by anticholinesterase drugs</strong>.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">الخاصية الرئيسية</div>
+        الضعف والإرهاق يزدادان <strong>بالحركة والتمارين</strong>، لكنهما يتحسنان <strong>بأدوية مضادات الكولينستريز</strong>.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Muscles Affected</div>
+        Usually affects muscles innervated by <strong>cranial nerves</strong>: face, lips, tongue, neck, and throat — but <em>any muscle group</em> can be involved.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">العضلات المتأثرة</div>
+        تصيب عادةً العضلات التي تعصّبها <strong>الأعصاب القحفية</strong>: الوجه، الشفاه، اللسان، الرقبة، والحلق — لكن قد تصيب أي مجموعة عضلية.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: CAUSES ══ -->
+<div class="tab-pane" id="causes">
+  <div class="card">
+    <h2>🔍 Causes & Course · الأسباب والمسار</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Cause</div>
+        The <strong>exact cause is unknown</strong>. However, MG commonly accompanies <strong>autoimmune and thyroid disorders</strong>.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">السبب</div>
+        <strong>السبب الدقيق غير معروف</strong>، لكنه يُصاحب غالباً <strong>اضطرابات المناعة الذاتية وأمراض الغدة الدرقية</strong>.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Disease Course</div>
+        MG has an <strong>unpredictable course</strong> with periods of <strong>exacerbation</strong> (worsening) and <strong>remission</strong> (improvement).
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">مسار المرض</div>
+        يتميز بمسار <strong>غير قابل للتنبؤ</strong> مع فترات <strong>تفاقم</strong> وفترات <strong>هدأة</strong>.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Prognosis</div>
+        Drug treatment has <strong>improved prognosis</strong>, allowing patients to lead relatively normal lives — <em>except during exacerbations</em>.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">التشخيص</div>
+        العلاج الدوائي <strong>حسّن التشخيص</strong> وأتاح للمرضى عيش حياة شبه طبيعية — باستثناء فترات التفاقم.
+      </div>
+    </div>
+    <div class="alert">
+      <strong>⚠️ Warning · تحذير:</strong><br>
+      If MG involves the <strong>respiratory system</strong>, it can be <strong>life-threatening</strong>.<br>
+      إذا أصاب الجهاز التنفسي، فقد يكون <strong>مُهدِّداً للحياة</strong>.
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: PATHOPHYSIOLOGY ══ -->
+<div class="tab-pane" id="patho">
+  <div class="card">
+    <h2>⚙️ Pathophysiology · الفيزيولوجيا المرضية</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Step 1 – Antibody Production</div>
+        The patient's <strong>blood cells and thymus gland</strong> produce antibodies that target the neuromuscular junction.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">الخطوة ١ – إنتاج الأجسام المضادة</div>
+        تنتج <strong>خلايا الدم والغدة الصعترية</strong> أجساماً مضادة تهاجم الوصل العصبي العضلي.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Step 2 – Receptor Attack</div>
+        These antibodies <strong>block, destroy, or weaken</strong> the neuroreceptors that transmit nerve impulses → failure of neuromuscular transmission.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">الخطوة ٢ – الهجوم على المستقبلات</div>
+        تقوم الأجسام المضادة بـ<strong>حجب وتدمير وإضعاف</strong> المستقبلات العصبية → فشل في نقل الإشارة العصبية.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Step 3 – ACh Blockade</div>
+        Antibodies attach to <strong>acetylcholine (ACh) receptor sites</strong>, making them insensitive to ACh → muscles cannot contract properly.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">الخطوة ٣ – حصار الأسيتيل كولين</div>
+        ترتبط الأجسام المضادة بـ<strong>مستقبلات الأسيتيل كولين (ACh)</strong> → تصبح غير حساسة → العضلة لا تنقبض بشكل صحيح.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: CLINICAL SIGNS ══ -->
+<div class="tab-pane" id="clinical">
+  <div class="card">
+    <h2>🩺 Clinical Manifestations · المظاهر السريرية</h2>
+    <ul class="num-list">
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Gradual, progressive skeletal muscle weakness and fatigue</strong> that worsens throughout the day.
+        </div>
+        <div class="ar-col">
+          <strong>ضعف وإرهاق عضلي تدريجي</strong> يزداد خلال اليوم.
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Weak eye closure, ptosis (drooping eyelid), and diplopia (double vision).</strong>
+        </div>
+        <div class="ar-col">
+          <strong>ضعف إغلاق العين، تدلي الجفن، ورؤية مزدوجة.</strong>
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Blank, mask-like facial expression</strong> due to facial muscle weakness.
+        </div>
+        <div class="ar-col">
+          <strong>تعبير الوجه الفارغ الشبيه بالقناع</strong> بسبب ضعف عضلات الوجه.
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Difficulty chewing and swallowing</strong> (dysphagia & dysarthria).
+        </div>
+        <div class="ar-col">
+          <strong>صعوبة المضغ والبلع</strong> (عسر البلع وعسر الكلام).
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Difficulty with lateral motion of the head.</strong>
+        </div>
+        <div class="ar-col">
+          <strong>صعوبة في تحريك الرأس جانبياً.</strong>
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">
+          <strong>Symptoms of respiratory failure</strong> if respiratory muscles are involved — a medical emergency.
+        </div>
+        <div class="ar-col">
+          <strong>أعراض فشل تنفسي</strong> عند إصابة عضلات التنفس — حالة طارئة طبية.
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ TAB: DIAGNOSIS ══ -->
+<div class="tab-pane" id="diagnosis">
+  <div class="card">
+    <h2>🧪 Diagnostic Tests · الفحوصات التشخيصية</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">1 · Tensilon Test (Neostigmine)</div>
+        Confirms the diagnosis by <strong>temporarily improving muscle function</strong> after an IV injection of neostigmine. Long-standing ocular dysfunction may not respond.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">١ · اختبار التنسيلون</div>
+        يؤكد التشخيص من خلال <strong>تحسن مؤقت في وظيفة العضلات</strong> بعد حقن نيوستيغمين وريدي. ضعف العضلات العينية القديم قد لا يستجيب.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">2 · Electromyography (EMG)</div>
+        Helps <strong>differentiate nerve disorders from muscle disorders</strong>.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">٢ · تخطيط العضلات الكهربائي (EMG)</div>
+        يُساعد في <strong>التمييز بين اضطرابات الأعصاب والعضلات</strong>.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">3 · Nerve Conduction Studies</div>
+        Used to <strong>test for receptor antibodies</strong> confirming autoimmune activity.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">٣ · دراسات التوصيل العصبي</div>
+        تُستخدم للكشف عن <strong>الأجسام المضادة للمستقبلات</strong> مما يؤكد النشاط المناعي.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: TREATMENT ══ -->
+<div class="tab-pane" id="treatment">
+  <div class="card">
+    <h2>💊 Medical Treatment · العلاج الطبي</h2>
+    <p style="font-family:'Tajawal';color:var(--muted);margin-bottom:1.2rem;font-size:.9rem;">
+      Treatment is <strong>symptomatic</strong> · العلاج <strong>يُركز على تخفيف الأعراض</strong>
+    </p>
+    <ul class="num-list">
+      <li>
+        <span></span>
+        <div class="en-col"><strong>Anticholinesterase drugs</strong> — first-line to improve neuromuscular transmission.</div>
+        <div class="ar-col"><strong>أدوية مضادات الكولينستريز</strong> — الخط الأول لتحسين نقل الإشارة العصبية العضلية.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col"><strong>Corticosteroids</strong> — may help relieve symptoms by suppressing the immune response.</div>
+        <div class="ar-col"><strong>الكورتيكوستيرويدات</strong> — تُساعد في تخفيف الأعراض عن طريق كبح الاستجابة المناعية.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col"><strong>Plasmapheresis</strong> — removes harmful antibodies from the blood.</div>
+        <div class="ar-col"><strong>فصادة البلازما</strong> — إزالة الأجسام المضادة الضارة من الدم.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col"><strong>Thymectomy</strong> — surgical removal of the thymus in patients with thymoma; may lead to remission in adult-onset MG.</div>
+        <div class="ar-col"><strong>استئصال الغدة الصعترية</strong> — للمرضى الذين لديهم ورم صعتري؛ قد يؤدي إلى هدأة في MG البالغين.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card gold">
+    <h2>🚨 Crisis Management · إدارة الأزمات</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Emergency</div>
+        Acute exacerbations causing <strong>severe respiratory distress</strong> need emergency treatment immediately.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">طارئ</div>
+        التفاقم الحاد الذي يسبب <strong>ضائقة تنفسية شديدة</strong> يتطلب علاجاً طارئاً فورياً.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Interventions</div>
+        Tracheotomy · positive-pressure ventilation · vigorous suctioning → improvement usually within days.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">التدخلات</div>
+        فتح القصبة الهوائية · التنفس بضغط إيجابي · شفط الإفرازات بقوة → تحسن عادةً خلال أيام.
+      </div>
+    </div>
+    <div class="alert">
+      <strong>⚠️ Important · مهم:</strong> Anticholinesterase drugs are <strong>NOT effective during myasthenic crisis</strong> — discontinue them until respiratory function improves.<br>
+      أدوية مضادات الكولينستريز <strong>غير فعالة أثناء أزمة الوهن العضلي</strong> — أوقف إعطاءها حتى تتحسن وظيفة التنفس.
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: NURSING ══ -->
+<div class="tab-pane" id="nursing">
+  <div class="card">
+    <h2>👩‍⚕️ Nursing Management · الرعاية التمريضية</h2>
+    <ul class="num-list">
+      <li>
+        <span></span>
+        <div class="en-col">Establish an accurate <strong>neurologic and respiratory baseline</strong>.</div>
+        <div class="ar-col">إجراء تقييم دقيق للأساس <strong>العصبي والتنفسي</strong>.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col"><strong>Help remove secretions</strong> as they accumulate.</div>
+        <div class="ar-col"><strong>المساعدة في إزالة الإفرازات</strong> عند تراكمها.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Be alert for signs of <strong>impending crisis</strong>: increased muscle weakness, respiratory distress, difficulty talking or chewing.</div>
+        <div class="ar-col">الانتباه لعلامات <strong>الأزمة الوشيكة</strong>: ضعف عضلي متزايد، ضائقة تنفسية، صعوبة الكلام أو المضغ.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Administer drugs at <strong>evenly spaced intervals and on time</strong> as ordered.</div>
+        <div class="ar-col">إعطاء الأدوية في <strong>مواعيد منتظمة ودقيقة</strong> حسب الأوامر.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Be prepared to give <strong>atropine</strong> for anticholinesterase overdose or toxicity.</div>
+        <div class="ar-col">الاستعداد لإعطاء <strong>الأتروبين</strong> في حالة جرعة زائدة أو تسمم بمضادات الكولينستريز.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Plan <strong>exercise, meals, and activities</strong> to coincide with peaks in the patient's energy level.</div>
+        <div class="ar-col">تخطيط <strong>التمارين والوجبات والأنشطة</strong> لتتزامن مع ذروة طاقة المريض.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Provide <strong>soft, solid foods</strong> (not liquids) to reduce choking risk. Always sit the patient up to eat.</div>
+        <div class="ar-col">تقديم <strong>أطعمة طرية وصلبة</strong> (ليس سائلة) لتقليل خطر الاختناق. دائماً اجلس المريض للأكل.</div>
+      </li>
+      <li>
+        <span></span>
+        <div class="en-col">Encourage the patient to <strong>take an active role</strong> in his care decisions.</div>
+        <div class="ar-col">تشجيع المريض على <strong>المشاركة الفعالة</strong> في قرارات علاجه.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card gold">
+    <h2>📚 Patient Teaching Tips · نصائح تثقيف المريض</h2>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Activity Planning</div>
+        Help the patient plan daily activities to coincide with <strong>energy peaks</strong>. Stress the need for <strong>frequent rest periods</strong> throughout the day.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">تخطيط الأنشطة</div>
+        مساعدة المريض على تخطيط أنشطته اليومية لتتزامن مع <strong>ذروة الطاقة</strong>. التأكيد على <strong>الراحة المتكررة</strong> خلال اليوم.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Drug Toxicity Signs</div>
+        Teach patient to recognize adverse effects of anticholinesterase drugs: headaches, weakness, sweating, abdominal cramps, nausea, vomiting, diarrhea, excessive salivation, bronchospasm.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">علامات تسمم الدواء</div>
+        علّم المريض التعرف على الآثار الجانبية: صداع، ضعف، تعرق، تقلصات بطنية، غثيان، قيء، إسهال، إفراز لعاب زائد، تشنج قصبي.
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="en-col">
+        <div class="label-en">Lifestyle Precautions</div>
+        Avoid strenuous exercise · stress · infection · unnecessary sun/cold exposure · medications without consulting the physician.
+      </div>
+      <div class="ar-col">
+        <div class="label-ar">احتياطات نمط الحياة</div>
+        تجنب التمارين الشاقة · الإجهاد · العدوى · التعرض غير الضروري للشمس أو البرد · الأدوية بدون استشارة الطبيب.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB: QUIZ ══ -->
+<div class="tab-pane" id="quiz">
+  <div class="quiz-header">
+    <div>
+      <h2 style="font-family:'Lora';color:var(--teal);">📝 Self-Test · اختبر نفسك</h2>
+      <p style="font-family:'Tajawal';color:var(--muted);font-size:.9rem;">20 Multiple Choice Questions · ٢٠ سؤال اختيار من متعدد</p>
+    </div>
+    <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;">
+      <div class="score-box" id="scoreBox">Score: 0 / 0</div>
+      <button class="reset-btn" onclick="resetQuiz()">🔄 Reset</button>
+    </div>
+  </div>
+
+  <div id="quizContainer"></div>
+</div>
+
+</main>
+
+<script>
+// ── Tab switching ──
+function showTab(id) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── Quiz Data ──
+const questions = [
+  {
+    en: "What type of disease is Myasthenia Gravis?",
+    ar: "ما نوع مرض الوهن العضلي الوبيل؟",
+    options: ["Bacterial infection", "Chronic autoimmune neuromuscular disorder", "Viral infection", "Genetic bone disease"],
+    answer: 1
+  },
+  {
+    en: "What happens to muscle weakness in MG during exercise?",
+    ar: "ماذا يحدث لضعف العضلات في الوهن العضلي أثناء التمارين؟",
+    options: ["Improves", "Stays the same", "Worsens", "Disappears"],
+    answer: 2
+  },
+  {
+    en: "Which gland produces antibodies that attack the neuromuscular junction in MG?",
+    ar: "أي غدة تنتج الأجسام المضادة التي تهاجم الوصل العصبي العضلي في الوهن العضلي؟",
+    options: ["Adrenal gland", "Thymus gland", "Pituitary gland", "Pineal gland"],
+    answer: 1
+  },
+  {
+    en: "What do antibodies attack at the neuromuscular junction in MG?",
+    ar: "ماذا تهاجم الأجسام المضادة عند الوصل العصبي العضلي في الوهن العضلي؟",
+    options: ["Myelin sheath", "ACh receptor sites", "Motor neuron cell body", "Synaptic vesicles"],
+    answer: 1
+  },
+  {
+    en: "Which test confirms the diagnosis of MG by temporarily improving muscle function?",
+    ar: "أي اختبار يؤكد تشخيص الوهن العضلي عن طريق تحسين وظيفة العضلات مؤقتاً؟",
+    options: ["CT scan", "Tensilon test (Neostigmine)", "MRI brain", "Blood culture"],
+    answer: 1
+  },
+  {
+    en: "What does Electromyography (EMG) help differentiate in MG?",
+    ar: "ماذا يساعد تخطيط العضلات الكهربائي في التمييز بينه في الوهن العضلي؟",
+    options: ["Heart from lung disease", "Nerve disorders from muscle disorders", "Viral from bacterial infections", "Bone from joint disorders"],
+    answer: 1
+  },
+  {
+    en: "Which drug class is the first-line treatment for MG?",
+    ar: "أي فئة دوائية تُعدّ الخط الأول في علاج الوهن العضلي؟",
+    options: ["Antibiotics", "Anticholinesterase drugs", "Antivirals", "Anticoagulants"],
+    answer: 1
+  },
+  {
+    en: "What is Plasmapheresis used for in MG treatment?",
+    ar: "لماذا تُستخدم فصادة البلازما في علاج الوهن العضلي؟",
+    options: ["To increase ACh production", "To remove harmful antibodies from blood", "To repair damaged neurons", "To stimulate thymus function"],
+    answer: 1
+  },
+  {
+    en: "In MG patients with thymoma, what surgical procedure may lead to remission?",
+    ar: "في مرضى الوهن العضلي الذين لديهم ورم صعتري، أي إجراء جراحي قد يؤدي إلى الهدأة؟",
+    options: ["Lobectomy", "Thymectomy", "Appendectomy", "Splenectomy"],
+    answer: 1
+  },
+  {
+    en: "Which of the following is NOT a clinical manifestation of MG?",
+    ar: "أيٌّ مما يلي ليس من المظاهر السريرية للوهن العضلي؟",
+    options: ["Ptosis (drooping eyelid)", "Diplopia (double vision)", "High blood pressure", "Difficulty swallowing"],
+    answer: 2
+  },
+  {
+    en: "What type of food should be given to MG patients to reduce choking risk?",
+    ar: "ما نوع الطعام الذي يجب تقديمه لمرضى الوهن العضلي لتقليل خطر الاختناق؟",
+    options: ["Thin liquids", "Soft, solid foods", "Raw vegetables", "Carbonated drinks"],
+    answer: 1
+  },
+  {
+    en: "What drug should the nurse be prepared to give for anticholinesterase overdose?",
+    ar: "ما الدواء الذي يجب أن تكون الممرضة مستعدة لإعطائه عند جرعة زائدة من مضادات الكولينستريز؟",
+    options: ["Morphine", "Atropine", "Epinephrine", "Dopamine"],
+    answer: 1
+  },
+  {
+    en: "During myasthenic crisis, anticholinesterase drugs are:",
+    ar: "أثناء أزمة الوهن العضلي، أدوية مضادات الكولينستريز تكون:",
+    options: ["Doubled in dose", "Not effective and should be discontinued", "Given via IV only", "Combined with steroids"],
+    answer: 1
+  },
+  {
+    en: "What position should the MG patient always be in while eating?",
+    ar: "ما الوضعية التي يجب أن يكون عليها مريض الوهن العضلي دائماً أثناء الأكل؟",
+    options: ["Lying flat", "Sitting upright", "On the left side", "Head down"],
+    answer: 1
+  },
+  {
+    en: "Which cranial nerve-innervated area is most commonly affected first in MG?",
+    ar: "أي منطقة تعصّبها الأعصاب القحفية تتأثر في الغالب أولاً في الوهن العضلي؟",
+    options: ["Lower limbs", "Face, lips, tongue, neck, and throat", "Fingers and toes", "Abdominal muscles"],
+    answer: 1
+  },
+  {
+    en: "What is a sign of impending myasthenic crisis the nurse should watch for?",
+    ar: "ما علامة الأزمة الوشيكة للوهن العضلي التي يجب على الممرضة مراقبتها؟",
+    options: ["Increased appetite", "Increased muscle weakness and respiratory distress", "Skin rash", "High fever"],
+    answer: 1
+  },
+  {
+    en: "MG weakness is typically worst at what time of day?",
+    ar: "ضعف الوهن العضلي عادةً يكون في أسوأ حالاته في أي وقت من اليوم؟",
+    options: ["Morning after waking", "Late in the day after activity", "At midnight", "During sleep"],
+    answer: 1
+  },
+  {
+    en: "Which of the following is an adverse effect of anticholinesterase drugs that patients should recognize?",
+    ar: "أيٌّ مما يلي يُعدّ من الآثار الجانبية لمضادات الكولينستريز يجب أن يتعرف عليها المريض؟",
+    options: ["Dry mouth", "Excessive salivation and bronchospasm", "Hair loss", "Insomnia"],
+    answer: 1
+  },
+  {
+    en: "Emergency interventions in MG crisis include all EXCEPT:",
+    ar: "التدخلات الطارئة في أزمة الوهن العضلي تشمل كل ما يلي إلا:",
+    options: ["Tracheotomy", "Positive-pressure ventilation", "Suctioning secretions", "Anticholinesterase drug infusion"],
+    answer: 3
+  },
+  {
+    en: "MG is described as having an unpredictable course because:",
+    ar: "يُوصف الوهن العضلي بأنه ذو مسار غير قابل للتنبؤ لأن:",
+    options: ["It always worsens rapidly", "It has alternating periods of exacerbation and remission", "Symptoms never change", "It only affects children"],
+    answer: 1
+  }
+];
+
+let answered = 0, correct = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-q';
+    div.id = 'q' + i;
+    div.innerHTML = `
+      <div class="q-text">Q${i+1}. ${q.en}</div>
+      <div class="q-ar">${q.ar}</div>
+      <div class="options">
+        ${q.options.map((opt, j) => `
+          <button class="opt-btn" onclick="checkAnswer(${i},${j},${q.answer})">${String.fromCharCode(65+j)}. ${opt}</button>
+        `).join('')}
+      </div>
+      <div class="feedback" id="fb${i}"></div>
+    `;
+    container.appendChild(div);
+  });
+  updateScore();
+}
+
+function checkAnswer(qi, selected, correct_idx) {
+  const qEl = document.getElementById('q' + qi);
+  if (qEl.dataset.done) return;
+  qEl.dataset.done = '1';
+  answered++;
+
+  const btns = qEl.querySelectorAll('.opt-btn');
+  btns.forEach(b => b.disabled = true);
+  btns[correct_idx].classList.add('correct-ans');
+
+  const fb = document.getElementById('fb' + qi);
+  if (selected === correct_idx) {
+    correct++;
+    qEl.classList.add('correct');
+    fb.textContent = '✅ Correct! صح';
+    fb.className = 'feedback show ok';
+  } else {
+    btns[selected].classList.add('wrong-ans');
+    qEl.classList.add('wrong');
+    fb.textContent = `❌ Wrong. The correct answer is: ${questions[qi].options[correct_idx]} — غلط، الإجابة الصحيحة: ${questions[qi].options[correct_idx]}`;
+    fb.className = 'feedback show no';
+  }
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('scoreBox').textContent = `Score: ${correct} / ${answered}`;
+}
+
+function resetQuiz() {
+  answered = 0; correct = 0;
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

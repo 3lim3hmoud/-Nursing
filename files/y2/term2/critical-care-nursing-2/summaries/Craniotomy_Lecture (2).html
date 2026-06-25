@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craniotomy – Nursing Lecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1d4e6b;
+    --accent: #e07b39;
+    --accent2: #3a9e6e;
+    --light-bg: #f2f6f9;
+    --card-bg: #ffffff;
+    --border: #dde3ea;
+    --text: #1e2a38;
+    --muted: #5a6a7a;
+    --red: #c0392b;
+    --yellow: #d4a017;
+    --green: #2e7d53;
+    --shadow: 0 4px 24px rgba(29,78,107,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3','Cairo',sans-serif; background: var(--light-bg); color: var(--text); min-height: 100vh; }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1d4e6b 0%, #2a6f96 100%);
+    color: #fff; padding: 2.5rem 2rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  header::before {
+    content:''; position:absolute; inset:0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  header .badge { display:inline-block; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:20px; padding:4px 16px; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem; }
+  header h1 { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; line-height:1.2; margin-bottom:0.5rem; }
+  header h1 span { color:#f0c060; }
+  header .sub { font-family:'Cairo',sans-serif; font-size:1rem; opacity:0.8; margin-top:0.4rem; }
+  header .author { margin-top:1rem; font-size:0.9rem; opacity:0.85; font-family:'Cairo',sans-serif; }
+
+  /* Nav */
+  .nav-wrap { position:sticky; top:0; z-index:100; background:var(--card-bg); border-bottom:2px solid var(--border); box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+  .nav-tabs { display:flex; overflow-x:auto; max-width:1100px; margin:0 auto; padding:0 1rem; scrollbar-width:none; }
+  .nav-tabs::-webkit-scrollbar { display:none; }
+  .nav-tab { flex:0 0 auto; padding:1rem 1.2rem; font-size:0.8rem; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; color:#8fa5bb; cursor:pointer; border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; user-select:none; }
+  .nav-tab.active { color:var(--primary); border-bottom-color:var(--accent); }
+  .nav-tab:hover:not(.active) { color:var(--primary); }
+
+  /* Main */
+  .main { max-width:1100px; margin:0 auto; padding:2rem 1.5rem 4rem; }
+  .section { display:none; animation:fadeIn 0.3s ease; }
+  .section.active { display:block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+
+  /* Bilingual */
+  .bilingual { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:1.8rem; }
+  @media(max-width:640px){ .bilingual{grid-template-columns:1fr} }
+  .lang-en, .lang-ar { background:var(--card-bg); border-radius:14px; padding:1.5rem 1.8rem; box-shadow:var(--shadow); border-left:5px solid var(--primary); }
+  .lang-ar { border-left:none; border-right:5px solid var(--accent); direction:rtl; font-family:'Cairo',sans-serif; }
+  .lang-label { font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:0.7rem; display:flex; align-items:center; gap:6px; }
+  .lang-label .dot { width:8px; height:8px; border-radius:50%; background:var(--primary); display:inline-block; }
+  .lang-ar .lang-label .dot { background:var(--accent); }
+  .lang-en p, .lang-ar p { line-height:1.85; font-size:0.97rem; }
+
+  /* Section Head */
+  .sec-head { display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem; }
+  .sec-head .icon { width:48px; height:48px; border-radius:14px; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+  .sec-head h2 { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--primary); }
+  .sec-head .ar { font-family:'Cairo',sans-serif; font-size:0.97rem; color:var(--muted); direction:rtl; margin-top:2px; }
+
+  /* Info Card */
+  .info-card { background:var(--card-bg); border-radius:14px; padding:1.5rem 1.8rem; box-shadow:var(--shadow); margin-bottom:1.4rem; border-top:4px solid var(--accent); }
+  .info-card h3 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--primary); margin-bottom:0.8rem; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .info-card h3 .ar-title { font-family:'Cairo',sans-serif; font-size:0.88rem; color:var(--accent); direction:rtl; }
+
+  /* Steps */
+  .steps { display:flex; flex-direction:column; gap:0.9rem; margin-bottom:1.2rem; }
+  .step { display:flex; gap:1rem; background:var(--card-bg); border-radius:12px; padding:1.1rem 1.3rem; box-shadow:var(--shadow); align-items:flex-start; }
+  .step-num { width:34px; height:34px; border-radius:50%; background:var(--primary); color:#fff; font-weight:700; font-size:0.88rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .step-body { flex:1; }
+  .step-en { font-size:0.95rem; line-height:1.75; }
+  .step-ar { font-family:'Cairo',sans-serif; font-size:0.88rem; color:var(--muted); direction:rtl; margin-top:4px; line-height:1.75; }
+
+  /* Alert */
+  .alert { border-radius:12px; padding:1rem 1.4rem; margin-bottom:1.2rem; display:flex; gap:12px; align-items:flex-start; }
+  .alert.danger { background:#fef4f4; border-left:5px solid var(--red); }
+  .alert.info { background:#eff6fd; border-left:5px solid var(--primary); }
+  .alert.success { background:#edf7f2; border-left:5px solid var(--green); }
+  .alert.warning { background:#fdf8e8; border-left:5px solid var(--yellow); }
+  .alert-icon { font-size:1.4rem; flex-shrink:0; }
+  .alert-body strong { font-size:0.95rem; display:block; margin-bottom:3px; }
+  .alert-body .ar { font-family:'Cairo',sans-serif; font-size:0.87rem; color:var(--muted); direction:rtl; }
+
+  /* Tags */
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:0.8rem; }
+  .tag { background:var(--light-bg); border:1.5px solid var(--border); border-radius:20px; padding:4px 14px; font-size:0.82rem; color:var(--primary); font-weight:600; }
+  .tag.red { border-color:var(--red); color:var(--red); background:#fdf0ef; }
+  .tag.green { border-color:var(--green); color:var(--green); background:#edf7f2; }
+  .tag.orange { border-color:var(--accent); color:var(--accent); background:#fdf4ee; }
+
+  /* Two col */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:1.4rem; }
+  @media(max-width:640px){ .two-col{grid-template-columns:1fr} }
+
+  /* Table */
+  .data-table { width:100%; border-collapse:collapse; margin-bottom:1.5rem; background:var(--card-bg); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
+  .data-table th { background:var(--primary); color:#fff; padding:0.8rem 1rem; font-size:0.85rem; text-align:left; }
+  .data-table td { padding:0.75rem 1rem; border-bottom:1px solid var(--border); font-size:0.9rem; }
+  .data-table tr:last-child td { border-bottom:none; }
+  .data-table tr:nth-child(even) td { background:#f8fafc; }
+  .data-table .ar-cell { font-family:'Cairo',sans-serif; direction:rtl; color:var(--muted); font-size:0.85rem; }
+
+  /* Quiz */
+  .quiz-score-bar { background:var(--card-bg); border-radius:14px; padding:1.5rem; text-align:center; box-shadow:var(--shadow); margin-bottom:1.5rem; }
+  .quiz-score-bar h3 { font-family:'Playfair Display',serif; color:var(--primary); margin-bottom:0.5rem; }
+  .score-num { font-size:2.5rem; font-weight:700; color:var(--accent); }
+  .progress-bar { width:100%; height:12px; background:var(--border); border-radius:6px; overflow:hidden; margin-top:0.8rem; }
+  .progress-fill { height:100%; background:linear-gradient(90deg,var(--primary),var(--accent2)); border-radius:6px; transition:width 0.5s; }
+  .quiz-container { display:flex; flex-direction:column; gap:1.5rem; }
+  .quiz-card { background:var(--card-bg); border-radius:14px; padding:1.5rem 1.8rem; box-shadow:var(--shadow); border-left:5px solid var(--primary); }
+  .quiz-q { font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.3rem; }
+  .quiz-q-num { color:var(--accent); margin-right:6px; }
+  .quiz-q-ar { font-family:'Cairo',sans-serif; font-size:0.88rem; color:var(--muted); direction:rtl; margin-bottom:1rem; }
+  .quiz-options { display:flex; flex-direction:column; gap:8px; margin-bottom:1rem; }
+  .quiz-option { padding:0.65rem 1rem; border-radius:8px; border:2px solid var(--border); cursor:pointer; font-size:0.92rem; transition:all 0.2s; user-select:none; display:flex; gap:10px; align-items:flex-start; }
+  .quiz-option:hover { border-color:var(--primary); background:#eff6fd; }
+  .quiz-option.correct { border-color:var(--green); background:#edf7f2; color:var(--green); }
+  .quiz-option.wrong { border-color:var(--red); background:#fef4f4; color:var(--red); }
+  .quiz-option.disabled { cursor:default; pointer-events:none; }
+  .quiz-option .opt-ar { font-family:'Cairo',sans-serif; font-size:0.83rem; color:var(--muted); direction:rtl; display:block; margin-top:2px; }
+  .quiz-feedback { display:none; border-radius:8px; padding:0.8rem 1rem; font-size:0.9rem; margin-top:4px; }
+  .quiz-feedback.show { display:block; }
+  .quiz-feedback.correct { background:#edf7f2; color:var(--green); border-left:4px solid var(--green); }
+  .quiz-feedback.wrong { background:#fef4f4; color:var(--red); border-left:4px solid var(--red); }
+  .quiz-feedback .ar { font-family:'Cairo',sans-serif; direction:rtl; display:block; margin-top:4px; color:var(--muted); font-size:0.85rem; }
+
+  @media(max-width:480px){ header h1{font-size:1.6rem} .main{padding:1rem 0.8rem 3rem} .nav-tab{padding:0.8rem 0.9rem;font-size:0.73rem} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Neurosurgical Nursing Lecture</div>
+  <h1>Craniotomy — <span>جراحة القحف</span></h1>
+  <p class="sub">الرعاية التمريضية قبل وبعد عملية فتح الجمجمة</p>
+  <p class="author">Prepared by Dr. Ghada Elsayed</p>
+</header>
+
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showTab('intro')">📖 Definition تعريف</div>
+    <div class="nav-tab" onclick="showTab('indications')">✅ Indications مؤشرات</div>
+    <div class="nav-tab" onclick="showTab('preop')">🏥 Pre-op ما قبل</div>
+    <div class="nav-tab" onclick="showTab('complications')">⚠️ Complications مضاعفات</div>
+    <div class="nav-tab" onclick="showTab('postop')">💊 Post-op ما بعد</div>
+    <div class="nav-tab" onclick="showTab('nursing')">🩺 Nursing تمريض</div>
+    <div class="nav-tab" onclick="showTab('education')">📚 Education تثقيف</div>
+    <div class="nav-tab" onclick="showTab('quiz')">📝 Quiz اختبار</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ══ DEFINITION ══ -->
+  <div class="section active" id="intro">
+    <div class="sec-head">
+      <div class="icon">📖</div>
+      <div><h2>Definition</h2><div class="ar">التعريف</div></div>
+    </div>
+
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p><strong>Craniotomy</strong> is a surgical procedure in which a neurosurgeon temporarily removes a piece of the skull (bone flap) to access the brain, treating conditions such as tumors, blood clots, aneurysms, or brain swelling.</p>
+        <p style="margin-top:0.8rem">It is performed to remove a <strong>space-occupying abnormality</strong> such as a tumor, cyst, or vascular malformation.</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p><strong>فتح الجمجمة (Craniotomy)</strong> هو إجراء جراحي يُزيل فيه جراح الأعصاب قطعة من الجمجمة (رفرف عظمي) بصورة مؤقتة للوصول إلى الدماغ، لعلاج حالات كالأورام، الجلطات، أم الدم، أو تورم الدماغ.</p>
+        <p style="margin-top:0.8rem">يُجرى لاستئصال <strong>آفة شاغلة للحيز</strong> كورم، كيس، أو تشوه وعائي.</p>
+      </div>
+    </div>
+
+    <div class="alert info">
+      <div class="alert-icon">🧠</div>
+      <div class="alert-body">
+        <strong>Key concept: The bone flap may or may not be replaced at the end of surgery — this decision significantly affects postoperative management.</strong>
+        <div class="ar">مفهوم أساسي: قد يُعاد الرفرف العظمي إلى مكانه أو لا — وهذا القرار يؤثر بشكل كبير على إدارة ما بعد الجراحة.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ INDICATIONS ══ -->
+  <div class="section" id="indications">
+    <div class="sec-head">
+      <div class="icon">✅</div>
+      <div><h2>Indications of Craniotomy</h2><div class="ar">مؤشرات جراحة فتح الجمجمة</div></div>
+    </div>
+
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p>Craniotomy is indicated when a lesion inside the skull requires direct surgical access. Common procedures include the following:</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p>تُجرى عملية فتح الجمجمة عندما تحتاج آفة داخل الجمجمة إلى وصول جراحي مباشر. تشمل الإجراءات الشائعة ما يلي:</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-en">🧬 <strong>Tumor resection or removal</strong> — removing brain tumors (primary or metastatic)</div>
+          <div class="step-ar">استئصال الأورام أو إزالتها — إزالة أورام الدماغ (أولية أو منتقلة)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-en">🔓 <strong>Cerebral decompression</strong> — relieving pressure inside the skull</div>
+          <div class="step-ar">ضغط الدماغ الجراحي — تخفيف الضغط داخل الجمجمة</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-en">🩸 <strong>Evacuation of hematoma or abscess</strong> — draining blood collections or infected pus</div>
+          <div class="step-ar">تصريف الورم الدموي أو الخراج — تصريف تجمعات الدم أو القيح</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-en">🔗 <strong>Clipping or removal of an aneurysm</strong> — securing a ruptured or unruptured brain aneurysm</div>
+          <div class="step-ar">تثبيط أو إزالة تمدد الأوعية الدموية (Aneurysm) — تأمين أم الدم المتمزقة أو غير المتمزقة</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-en">🌀 <strong>AVM (Arteriovenous Malformation) treatment</strong> — removing or embolizing abnormal vessel tangles</div>
+          <div class="step-ar">علاج التشوه الشرياني الوريدي (AVM) — إزالة أو انصمام التشابك الوعائي غير الطبيعي</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PREOPERATIVE ══ -->
+  <div class="section" id="preop">
+    <div class="sec-head">
+      <div class="icon">🏥</div>
+      <div><h2>Preoperative Care</h2><div class="ar">الرعاية قبل الجراحة</div></div>
+    </div>
+
+    <div class="info-card">
+      <h3>🎯 Main Priority <span class="ar-title">الأولوية الرئيسية</span></h3>
+      <div class="bilingual" style="margin-bottom:0">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p><strong>Protection of the integrity of the CNS</strong> is the major priority. This requires optimal arterial oxygenation, hemodynamic stability, cerebral perfusion, and management of seizure activity.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p><strong>حماية سلامة الجهاز العصبي المركزي</strong> هي الأولوية الكبرى. وتستلزم: أكسجة شرايين مثلى، استقرار ديناميكي الدم، تروية دماغية، وإدارة النشاط التشنجي.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🧪 Routine Preoperative Studies <span class="ar-title">الفحوصات قبل الجراحية</span></h3>
+      <div class="tags">
+        <span class="tag">CBC – صورة دم كاملة</span>
+        <span class="tag">BUN – يوريا الدم</span>
+        <span class="tag">Creatinine – كرياتينين</span>
+        <span class="tag">FBG – سكر صيامي</span>
+        <span class="tag">Chest X-ray – أشعة صدر</span>
+        <span class="tag">ECG – تخطيط قلب</span>
+        <span class="tag orange">Blood type & crossmatch – فصيلة دم وتوافق</span>
+        <span class="tag orange">Endocrine function evaluation – وظائف الغدد</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>📢 Preoperative Teaching <span class="ar-title">التثقيف قبل الجراحة</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Explain intravascular lines and intracranial catheters used postoperatively</div>
+            <div class="step-ar">شرح الخطوط الوريدية والقسطرات داخل القحف المستخدمة بعد الجراحة</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Prepare patient for hair shaving and large craniotomy dressing — explain temporary eye/facial swelling and periorbital ecchymosis to reduce fear</div>
+            <div class="step-ar">تهيئة المريض لحلق الشعر والضمادة الكبيرة — شرح تورم الوجه والكدمات المحيطة بالعين مؤقتاً لتخفيف الخوف</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en"><strong>Avoid ICP-raising activities:</strong> bending, lifting, straining, Valsalva maneuver — teach mouth breathing during position changes</div>
+            <div class="step-ar">تجنب الأنشطة التي ترفع ICP: الانحناء، الرفع، الجهد، مناورة فالسالفا — تعليم التنفس الفموي عند تغيير الوضعية</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-en">Instruct to avoid coughing, sneezing, and nose-blowing postoperatively. Prepare for inability to breathe through nose (nasal packing)</div>
+            <div class="step-ar">توجيه بتجنب السعال والعطس ونفخ الأنف بعد الجراحة. التهيؤ لعدم القدرة على التنفس من الأنف (حشو أنفي)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-en">Address psychosocial concerns — fear of death or permanent neurological impairment. Patient AND family must express their fears together</div>
+            <div class="step-ar">معالجة المخاوف النفسية الاجتماعية — الخوف من الوفاة أو الإعاقة العصبية الدائمة. يجب على المريض والأسرة التعبير عن مخاوفهم معاً</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COMPLICATIONS ══ -->
+  <div class="section" id="complications">
+    <div class="sec-head">
+      <div class="icon">⚠️</div>
+      <div><h2>Postoperative Complications</h2><div class="ar">مضاعفات ما بعد الجراحة</div></div>
+    </div>
+
+    <!-- ICP -->
+    <div class="info-card" style="border-top-color:var(--red)">
+      <h3>🧠 1. Intracranial Hypertension (↑ICP) <span class="ar-title">ارتفاع الضغط داخل القحف</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Postoperative cerebral edema peaks <strong>48–72 hours after surgery</strong>. If the bone flap is not replaced, ICP produces bulging at the surgical site.</p>
+          <p style="margin-top:0.6rem"><strong>Management:</strong> CSF drainage, patient positioning (HOB 30–45°), hyperventilation, steroid administration.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>الوذمة الدماغية بعد الجراحة تبلغ ذروتها بعد <strong>48–72 ساعة من الجراحة</strong>. إذا لم يُعَد الرفرف العظمي، فإن ارتفاع ICP يسبب انتفاخاً في موضع الجراحة.</p>
+          <p style="margin-top:0.6rem"><strong>الإدارة:</strong> تصريف CSF، وضعية المريض (رفع رأس السرير 30–45°)، فرط التنفس، إعطاء الستيرويدات.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hemorrhage -->
+    <div class="info-card" style="border-top-color:var(--red)">
+      <h3>🩸 2. Surgical Hemorrhage <span class="ar-title">النزيف الجراحي</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Manifested by <strong>signs of increasing ICP</strong>. May appear as external drainage, persistent postnasal drip, or excessive swallowing. Loss of vision after pituitary surgery = evolving hemorrhage → requires surgical re-exploration.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>يظهر بعلامات <strong>ارتفاع ICP</strong>. قد يبدو كتصريف خارجي، نزيف أنفي مستمر، أو بلع مفرط. فقدان البصر بعد جراحة الغدة النخامية = نزيف متطور → يستدعي إعادة الاستكشاف الجراحي.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fluid Imbalance -->
+    <div class="info-card" style="border-top-color:var(--accent)">
+      <h3>💧 3. Fluid Imbalance — Diabetes Insipidus (DI) <span class="ar-title">اختلال السوائل — السكري الكاذب</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Results from disturbed ADH secretion (posterior pituitary). Intraoperative manipulation of pituitary/hypothalamus causes <strong>insufficient ADH → Diabetes Insipidus</strong>.</p>
+          <p style="margin-top:0.5rem"><strong>Signs:</strong> Polyuria &gt;200 mL/hr, urine specific gravity ≤1.005, elevated serum osmolality. <strong>Treatment:</strong> Fluid replacement ± IV vasopressin.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>ينتج عن اضطراب إفراز هرمون ADH (النخامة الخلفية). التلاعب الجراحي بالنخامة أو المهاد → <strong>نقص ADH → السكري الكاذب</strong>.</p>
+          <p style="margin-top:0.5rem"><strong>العلامات:</strong> كثرة تبول &gt;200 مل/ساعة، كثافة بول ≤1.005، ارتفاع أسمولالية المصل. <strong>العلاج:</strong> تعويض سوائل ± فازوبريسين وريدي.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSF Leak -->
+    <div class="info-card" style="border-top-color:var(--yellow)">
+      <h3>💧 4. Cerebrospinal Fluid (CSF) Leak <span class="ar-title">تسرب السائل الدماغي الشوكي</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Clear fluid draining from surgical site = opening in subarachnoid space. <strong>Confirmed by glucose ≥30 mg/dL</strong> (differentiates from serous drainage).</p>
+          <p style="margin-top:0.5rem"><strong>Management:</strong> Bed rest + head elevation. Lumbar puncture or subarachnoid catheter to reduce CSF pressure until dura heals. Risk of meningitis → may need surgical repair.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>سائل شفاف يتسرب من موضع الجراحة = فتحة في الفضاء تحت العنكبوتية. <strong>يُؤكَّد بغلوكوز ≥30 مغ/ديسيلتر</strong> (يميزه عن التصريف المصلي).</p>
+          <p style="margin-top:0.5rem"><strong>الإدارة:</strong> راحة في الفراش + رفع الرأس. بزل قطني أو قسطرة تحت عنكبوتية لخفض ضغط CSF. خطر التهاب السحايا → قد يستدعي إصلاحاً جراحياً.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DVT -->
+    <div class="info-card" style="border-top-color:var(--green)">
+      <h3>🦵 5. Deep Vein Thrombosis (DVT) <span class="ar-title">الجلطة الوريدية العميقة</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p><strong>Risk factors:</strong> preoperative leg weakness, prolonged bed rest, delayed mobilization, longer ICU stay.</p>
+          <p style="margin-top:0.5rem"><strong>Signs:</strong> Leg/calf pain, edema, localized tenderness, Homans' Sign (pain with dorsi/plantar flexion).</p>
+          <p style="margin-top:0.5rem"><strong>Prophylaxis:</strong> Intermittent pneumatic compression boots/stockings. Low-dose heparin in high-risk patients.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p><strong>عوامل الخطر:</strong> ضعف الساقين قبل الجراحة، راحة طويلة في الفراش، تأخر الحركة، إقامة طويلة في ICU.</p>
+          <p style="margin-top:0.5rem"><strong>العلامات:</strong> ألم الساق/الربلة، وذمة، حساسية موضعية، علامة هومانز (ألم عند ثني القدم).</p>
+          <p style="margin-top:0.5rem"><strong>الوقاية:</strong> جوارب ضغط هوائية متقطعة. جرعات صغيرة من الهيبارين في المرضى عالي الخطورة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POSTOP MANAGEMENT ══ -->
+  <div class="section" id="postop">
+    <div class="sec-head">
+      <div class="icon">💊</div>
+      <div><h2>Postoperative Management</h2><div class="ar">إدارة ما بعد الجراحة</div></div>
+    </div>
+
+    <div class="info-card">
+      <h3>🛏️ Positioning <span class="ar-title">وضعية المريض</span></h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Head of bed elevated <strong>30–45° at all times</strong> to reduce hemorrhage risk, facilitate venous drainage, and control ICP.</p>
+          <p style="margin-top:0.5rem">Maintain head in <strong>neutral position</strong> at all times. Avoid neck and hip flexion. Most patients may be turned side-to-side using pillows — EXCEPT after extensive tumor removal, cranioplasty, or when bone flap is not replaced.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>رفع رأس السرير <strong>30–45° طوال الوقت</strong> لخفض خطر النزيف، تسهيل الصرف الوريدي، والتحكم في ICP.</p>
+          <p style="margin-top:0.5rem">الحفاظ على الرأس في <strong>وضعية محايدة</strong> دائماً. تجنب ثني العنق والورك. يُسمح للمعظم بالدوران جانباً — <strong>ما عدا</strong> بعد استئصال ورم كبير، إصلاح جمجمة، أو عند عدم إعادة الرفرف العظمي.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>💧 Fluid Management <span class="ar-title">إدارة السوائل</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Hourly monitoring of fluid intake and output — facilitates early identification of fluid imbalance</div>
+            <div class="step-ar">مراقبة الإدخال والإخراج كل ساعة — تُسهّل الكشف المبكر عن اختلال السوائل</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Measure urine specific gravity if Diabetes Insipidus (DI) is suspected</div>
+            <div class="step-ar">قياس كثافة البول إذا اشتُبه في السكري الكاذب (DI)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">Fluid restriction may be ordered to lessen cerebral edema severity or treat SIADH-related electrolyte imbalance</div>
+            <div class="step-ar">قد يُوصى بتقييد السوائل لتخفيف الوذمة الدماغية أو لعلاج اختلال الشوارد المرتبط بـ SIADH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🤢 Vomiting & Fever Management <span class="ar-title">إدارة القيء والحمى</span></h3>
+      <div class="two-col">
+        <div>
+          <div class="tag red" style="margin-bottom:8px">Vomiting – القيء</div>
+          <p style="font-size:0.9rem;line-height:1.7">Vomiting must be <strong>avoided</strong> — increases ICP and risk of surgical hemorrhage. Administer <strong>antiemetics as soon as nausea appears</strong>. Early enteral feeding via NG tube can begin <strong>24 hours post-surgery</strong>.</p>
+          <p style="font-family:'Cairo';direction:rtl;font-size:0.85rem;color:var(--muted);margin-top:6px">يجب تجنب القيء — يرفع ICP وخطر النزيف. إعطاء مضادات القيء فور الغثيان. التغذية المعوية عبر أنبوب الأنف يمكن أن تبدأ بعد 24 ساعة من الجراحة.</p>
+        </div>
+        <div>
+          <div class="tag red" style="margin-bottom:8px">Fever – الحمى</div>
+          <p style="font-size:0.9rem;line-height:1.7">Fever adversely affects ICP and increases brain metabolic needs. <strong>Acetaminophen</strong> (oral/rectal/NG tube). External cooling measures (hypothermia blanket) if necessary.</p>
+          <p style="font-family:'Cairo';direction:rtl;font-size:0.85rem;color:var(--muted);margin-top:6px">الحمى تؤثر سلباً على ICP وتزيد الاحتياجات الأيضية للدماغ. باراسيتامول (فموي/مستقيمي/أنبوب). تبريد خارجي (بطانية افتراضية) عند الحاجة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>😣 Pain Management <span class="ar-title">إدارة الألم</span></h3>
+      <div class="bilingual" style="margin-bottom:0">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Primarily involves control of <strong>headache</strong>. Small doses of IV morphine in the critical care setting. When oral analgesics are tolerated: <strong>acetaminophen with codeine</strong>. Both cause constipation → administer stool softeners + bowel program. Constipation is hazardous: straining raises BP and ICP significantly.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>يتمحور بصورة رئيسية حول السيطرة على <strong>الصداع</strong>. جرعات صغيرة من مورفين وريدي في العناية المركزة. عند التحمل الفموي: <strong>باراسيتامول مع كودايين</strong>. كلاهما يسبب إمساكاً → مليّنات + برنامج للتبرز. الإمساك خطر: الإجهاد يرفع ضغط الدم وICP بشكل ملحوظ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NURSING ══ -->
+  <div class="section" id="nursing">
+    <div class="sec-head">
+      <div class="icon">🩺</div>
+      <div><h2>Nursing Care & Surveillance</h2><div class="ar">الرعاية التمريضية والمراقبة</div></div>
+    </div>
+
+    <div class="info-card">
+      <h3>🫁 Promoting Arterial Oxygenation <span class="ar-title">تعزيز الأكسجين الشرياني</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Routine pulmonary care to maintain airway clearance and prevent pulmonary complications</div>
+            <div class="step-ar">رعاية رئوية روتينية للحفاظ على نظافة مجرى الهواء ومنع المضاعفات الرئوية</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Pulmonary care must be performed with proper technique and spaced adequately from other activities to prevent dangerous ICP elevation</div>
+            <div class="step-ar">يجب أداء الرعاية الرئوية بتقنية صحيحة ومتباعدة زمنياً عن أنشطة أخرى لمنع ارتفاع ICP الخطير</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">If pulmonary complications arise, maintain adequate oxygenation during repositioning</div>
+            <div class="step-ar">إذا نشأت مضاعفات رئوية، الحفاظ على أكسجة كافية أثناء إعادة تغيير الوضعية</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🔍 Surveillance for Complications <span class="ar-title">مراقبة المضاعفات</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">🦠 <strong>Infection:</strong> Sterile technique for incision care and dressing changes. Secure all drainage devices to dressing to prevent displacement. Proper technique prevents meningitis.</div>
+            <div class="step-ar">العدوى: تقنية معقمة لرعاية الجرح وتغيير الضمادات. تثبيت أجهزة الصرف بالضمادة لمنع الإزاحة. التقنية الصحيحة تمنع التهاب السحايا.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">👁️ <strong>Corneal Abrasions:</strong> Periorbital edema interferes with blinking and eyelid closure. Instill saline drops every 2 hours. In coma: cover eyes with polyethylene film over orbits and eyebrows.</div>
+            <div class="step-ar">سحجات القرنية: الوذمة المحيطة بالعين تعيق الرمش وإغلاق الجفن. تقطير قطرات ملحية كل ساعتين. في حالة الغيبوبة: تغطية العينين بغشاء بولي إيثيلين.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">🛡️ <strong>Injury prevention:</strong> Pad side rails. Use restraints if needed during altered mentation. Family presence or music therapy to calm restlessness. Neuromuscular blockade (rare, short-term) if necessary.</div>
+            <div class="step-ar">منع الإصابة: تبطين جوانب السرير. استخدام أجهزة تقييد عند اضطراب الوعي. وجود الأسرة أو العلاج بالموسيقى للتهدئة. حصار عصبي عضلي (نادر، قصير الأمد) عند الضرورة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🏃 Early Rehabilitation <span class="ar-title">التأهيل المبكر</span></h3>
+      <div class="bilingual" style="margin-bottom:0">
+        <div class="lang-en">
+          <div class="lang-label"><span class="dot"></span> English</div>
+          <p>Increased activity, including ambulation, begins as soon as tolerated. Transfer to general care or rehab unit when patient is stable and free of complications.</p>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label"><span class="dot"></span> العربية</div>
+          <p>زيادة النشاط، بما يشمل المشي، يبدأ فور احتمال المريض. نقل المريض إلى وحدة رعاية عامة أو تأهيل عند الاستقرار وخلو الحالة من المضاعفات.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card" style="border-top-color:var(--primary)">
+      <h3>📋 Nursing Diagnoses <span class="ar-title">التشخيصات التمريضية</span></h3>
+      <div class="steps" style="gap:0.6rem">
+        <div class="step" style="padding:0.8rem 1rem">
+          <div class="step-num" style="background:var(--red);width:28px;height:28px;font-size:0.75rem">Dx</div>
+          <div class="step-body">
+            <div class="step-en">Decreased Intracranial Adaptive Capacity related to failure of normal intracranial compensatory mechanisms</div>
+            <div class="step-ar">انخفاض القدرة التكيفية داخل القحف بسبب فشل آليات التعويض الطبيعية</div>
+          </div>
+        </div>
+        <div class="step" style="padding:0.8rem 1rem">
+          <div class="step-num" style="background:var(--red);width:28px;height:28px;font-size:0.75rem">Dx</div>
+          <div class="step-body">
+            <div class="step-en">Ineffective Cerebral Tissue Perfusion</div>
+            <div class="step-ar">عدم فعالية تروية الأنسجة الدماغية</div>
+          </div>
+        </div>
+        <div class="step" style="padding:0.8rem 1rem">
+          <div class="step-num" style="background:var(--accent);width:28px;height:28px;font-size:0.75rem">Dx</div>
+          <div class="step-body">
+            <div class="step-en">Acute Pain related to transmission and perception of cutaneous, visceral, muscular, or ischemic impulses</div>
+            <div class="step-ar">ألم حاد مرتبط بانتقال وإدراك النبضات الجلدية والحشوية والعضلية والإقفارية</div>
+          </div>
+        </div>
+        <div class="step" style="padding:0.8rem 1rem">
+          <div class="step-num" style="background:var(--accent);width:28px;height:28px;font-size:0.75rem">Dx</div>
+          <div class="step-body">
+            <div class="step-en">Disturbed Body Image related to actual change in body structure, function, or appearance</div>
+            <div class="step-ar">اضطراب صورة الجسم مرتبط بتغيير فعلي في البنية أو الوظيفة أو المظهر الجسدي</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ EDUCATION ══ -->
+  <div class="section" id="education">
+    <div class="sec-head">
+      <div class="icon">📚</div>
+      <div><h2>Patient & Family Education Plan</h2><div class="ar">خطة تثقيف المريض والأسرة</div></div>
+    </div>
+
+    <div class="alert info" style="margin-bottom:1.5rem">
+      <div class="alert-icon">🎓</div>
+      <div class="alert-body">
+        <strong>Before discharge, the patient should be able to "teach back" all topics below to demonstrate understanding.</strong>
+        <div class="ar">قبل الخروج، يجب أن يكون المريض قادراً على إعادة شرح جميع المواضيع أدناه كدليل على الفهم.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card" style="border-top-color:var(--primary)">
+        <h3>🏥 Before Surgery <span class="ar-title">قبل الجراحة</span></h3>
+        <div class="steps" style="gap:0.6rem">
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="width:28px;height:28px;font-size:0.75rem">1</div>
+            <div class="step-body">
+              <div class="step-en">Pathophysiology and expected outcome of underlying disease</div>
+              <div class="step-ar">الفيزيولوجيا المرضية والنتيجة المتوقعة للمرض الأساسي</div>
+            </div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="width:28px;height:28px;font-size:0.75rem">2</div>
+            <div class="step-body">
+              <div class="step-en">Need for intensive care management after surgery</div>
+              <div class="step-ar">الحاجة إلى إدارة في العناية المركزة بعد الجراحة</div>
+            </div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="width:28px;height:28px;font-size:0.75rem">3</div>
+            <div class="step-body">
+              <div class="step-en">Routine preoperative surgical care</div>
+              <div class="step-ar">الرعاية الجراحية الروتينية قبل العملية</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-card" style="border-top-color:var(--accent2)">
+        <h3>🏠 After Surgery / Discharge <span class="ar-title">بعد الجراحة / عند الخروج</span></h3>
+        <div class="tags" style="flex-direction:column;gap:6px">
+          <span class="tag green">Medications: purpose, dosage, side effects<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">الأدوية: الغرض، الجرعة، الآثار الجانبية</span></span>
+          <span class="tag green">Incisional care<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">رعاية الجرح</span></span>
+          <span class="tag red">Signs of infection<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">علامات العدوى</span></span>
+          <span class="tag red">Signs of increased ICP<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">علامات ارتفاع ضغط الدماغ</span></span>
+          <span class="tag">Basic rehabilitation techniques<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">تقنيات التأهيل الأساسية</span></span>
+          <span class="tag">Importance of neurologic rehab program<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">أهمية برنامج التأهيل العصبي</span></span>
+          <span class="tag">Measures to compensate for residual deficits<br><span style="font-family:'Cairo';font-size:0.79rem;direction:rtl;display:block">إجراءات التكيف مع العجز المتبقي</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUIZ ══ -->
+  <div class="section" id="quiz">
+    <div class="sec-head">
+      <div class="icon">📝</div>
+      <div><h2>Self-Assessment Quiz</h2><div class="ar">اختبر نفسك — 20 سؤال</div></div>
+    </div>
+
+    <div class="quiz-score-bar">
+      <h3>Your Score / نتيجتك</h3>
+      <div class="score-num" id="score-display">0 / 20</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-top:0.5rem">Answer all questions to see your final score. / أجب على جميع الأسئلة لترى نتيجتك.</p>
+    </div>
+
+    <div class="quiz-container" id="quiz-container"></div>
+  </div>
+
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const map = {intro:0,indications:1,preop:2,complications:3,postop:4,nursing:5,education:6,quiz:7};
+  document.querySelectorAll('.nav-tab')[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const questions = [
+  {
+    q:"What is a Craniotomy?",
+    qAr:"ما هي عملية فتح الجمجمة (Craniotomy)؟",
+    options:[
+      {en:"A procedure to remove the entire skull permanently",ar:"إجراء لإزالة الجمجمة كاملاً بشكل دائم"},
+      {en:"A surgical procedure where a neurosurgeon temporarily removes a piece of skull (bone flap) to access the brain",ar:"إجراء جراحي يُزيل فيه جراح الأعصاب قطعة من الجمجمة (رفرف عظمي) مؤقتاً للوصول للدماغ"},
+      {en:"A non-surgical brain imaging technique",ar:"تقنية تصوير دماغية غير جراحية"},
+      {en:"A procedure to inject medication directly into the brain",ar:"إجراء لحقن دواء مباشرة في الدماغ"}
+    ],
+    correct:1,
+    explanation:"Craniotomy is a surgical procedure where a neurosurgeon TEMPORARILY removes a piece of the skull (bone flap) to access the brain.",
+    explanationAr:"فتح الجمجمة هو إجراء جراحي يُزيل فيه جراح الأعصاب قطعة مؤقتة من الجمجمة (رفرف عظمي) للوصول إلى الدماغ."
+  },
+  {
+    q:"Which of the following is a recognized indication for craniotomy?",
+    qAr:"أيٌّ من التالي مؤشر معتمد لإجراء فتح الجمجمة؟",
+    options:[
+      {en:"Migraine headache management",ar:"إدارة الصداع النصفي"},
+      {en:"Evacuation of intracranial hematoma or abscess",ar:"تصريف ورم دموي داخل القحف أو خراج"},
+      {en:"Treatment of peripheral neuropathy",ar:"علاج الاعتلال العصبي المحيطي"},
+      {en:"Repair of a fractured femur",ar:"إصلاح كسر في عظمة الفخذ"}
+    ],
+    correct:1,
+    explanation:"Craniotomy indications include tumor resection, cerebral decompression, evacuation of hematoma/abscess, aneurysm clipping, and AVM removal.",
+    explanationAr:"مؤشرات فتح الجمجمة تشمل: استئصال الأورام، ضغط الدماغ، تصريف الورم الدموي أو الخراج، ربط أم الدم، وإزالة التشوه الشرياني الوريدي."
+  },
+  {
+    q:"What is the MAJOR priority of preoperative care for a craniotomy patient?",
+    qAr:"ما هي الأولوية الكبرى في الرعاية قبل الجراحة لمريض فتح الجمجمة؟",
+    options:[
+      {en:"Shaving the head completely",ar:"حلق الرأس بالكامل"},
+      {en:"Protection of the integrity of the CNS through optimal oxygenation, hemodynamic stability, and cerebral perfusion",ar:"حماية سلامة الجهاز العصبي المركزي بالأكسجة والاستقرار الديناميكي والتروية الدماغية"},
+      {en:"Starting antibiotic prophylaxis 1 week before surgery",ar:"بدء الوقاية بالمضادات الحيوية أسبوعاً قبل الجراحة"},
+      {en:"Restricting family visits to reduce anxiety",ar:"تقييد زيارات الأسرة لتخفيف القلق"}
+    ],
+    correct:1,
+    explanation:"Protection of CNS integrity is the MAJOR preoperative priority — requiring optimal arterial oxygenation, hemodynamic stability, cerebral perfusion, and seizure management.",
+    explanationAr:"حماية سلامة الجهاز العصبي المركزي هي الأولوية الكبرى قبل الجراحة — تشمل: الأكسجة المثلى، الاستقرار الديناميكي الدموي، التروية الدماغية، وإدارة النشاط التشنجي."
+  },
+  {
+    q:"When is postoperative cerebral edema expected to PEAK after craniotomy?",
+    qAr:"متى يصل تورم الدماغ بعد فتح الجمجمة إلى ذروته؟",
+    options:[
+      {en:"Within the first 6 hours",ar:"خلال أول 6 ساعات"},
+      {en:"48 to 72 hours after surgery",ar:"48 إلى 72 ساعة بعد الجراحة"},
+      {en:"5 to 7 days after surgery",ar:"5 إلى 7 أيام بعد الجراحة"},
+      {en:"Immediately upon waking from anesthesia",ar:"فور الاستيقاظ من التخدير"}
+    ],
+    correct:1,
+    explanation:"Postoperative cerebral edema is expected to PEAK 48–72 hours after surgery. Close monitoring during this window is essential.",
+    explanationAr:"الوذمة الدماغية بعد الجراحة تصل ذروتها في 48–72 ساعة بعد العملية. المراقبة الدقيقة خلال هذه الفترة أمر ضروري."
+  },
+  {
+    q:"How is CSF leak differentiated from normal postoperative serous drainage?",
+    qAr:"كيف يُميَّز تسرب السائل الدماغي الشوكي عن التصريف المصلي الطبيعي بعد الجراحة؟",
+    options:[
+      {en:"By color — CSF is always pink",ar:"باللون — CSF يكون وردياً دائماً"},
+      {en:"By testing for glucose content — CSF confirmed at glucose ≥30 mg/dL",ar:"باختبار محتوى الجلوكوز — يُؤكَّد CSF بجلوكوز ≥30 مغ/ديسيلتر"},
+      {en:"By the smell of the drainage",ar:"برائحة التصريف"},
+      {en:"By performing a CT scan of the drainage fluid",ar:"بإجراء CT للسائل المتصرف"}
+    ],
+    correct:1,
+    explanation:"CSF leak is confirmed by glucose content ≥30 mg/dL in the drainage specimen. This differentiates it from normal serous postoperative drainage.",
+    explanationAr:"يُؤكَّد تسرب CSF بمحتوى جلوكوز ≥30 مغ/ديسيلتر في عينة التصريف، مما يميزه عن التصريف المصلي الطبيعي."
+  },
+  {
+    q:"What is the correct head-of-bed elevation for a post-craniotomy patient?",
+    qAr:"ما هو الارتفاع الصحيح لرأس السرير لمريض ما بعد فتح الجمجمة؟",
+    options:[
+      {en:"Flat (0°) to prevent hypotension",ar:"مسطح (0°) لمنع انخفاض الضغط"},
+      {en:"15 degrees only",ar:"15 درجة فقط"},
+      {en:"30 to 45 degrees at all times",ar:"30 إلى 45 درجة في جميع الأوقات"},
+      {en:"90 degrees (fully upright) at all times",ar:"90 درجة (مستقيم تماماً) في جميع الأوقات"}
+    ],
+    correct:2,
+    explanation:"Head of bed should be elevated 30–45° AT ALL TIMES to reduce hemorrhage incidence, facilitate venous drainage, and control ICP.",
+    explanationAr:"يجب رفع رأس السرير 30–45° في جميع الأوقات لتخفيف النزيف، تسهيل الصرف الوريدي، والتحكم في ضغط الدماغ."
+  },
+  {
+    q:"Diabetes Insipidus (DI) after craniotomy is caused by:",
+    qAr:"السكري الكاذب (DI) بعد فتح الجمجمة ينتج عن:",
+    options:[
+      {en:"Excess insulin secretion",ar:"إفراز مفرط للإنسولين"},
+      {en:"Insufficient ADH secretion due to pituitary/hypothalamus manipulation or postoperative edema",ar:"نقص إفراز هرمون ADH بسبب التلاعب بالنخامة أو المهاد أو الوذمة بعد الجراحة"},
+      {en:"Hyperglycemia from steroid administration",ar:"ارتفاع سكر الدم من إعطاء الستيرويدات"},
+      {en:"Excessive fluid intake postoperatively",ar:"الإفراط في تناول السوائل بعد الجراحة"}
+    ],
+    correct:1,
+    explanation:"Intraoperative manipulation of the pituitary gland or hypothalamus, or postoperative edema, results in INSUFFICIENT ADH → Diabetes Insipidus.",
+    explanationAr:"التلاعب الجراحي بالغدة النخامية أو المهاد، أو الوذمة بعد الجراحة، يؤدي إلى نقص ADH → السكري الكاذب."
+  },
+  {
+    q:"What is the hallmark sign of Diabetes Insipidus (DI) post-craniotomy?",
+    qAr:"ما هي العلامة المميزة للسكري الكاذب بعد فتح الجمجمة؟",
+    options:[
+      {en:"Polyuria >200 mL/hour with urine specific gravity ≤1.005",ar:"بول مفرط أكثر من 200 مل/ساعة مع كثافة بول ≤1.005"},
+      {en:"Oliguria and high urine specific gravity",ar:"قلة التبول وكثافة بول مرتفعة"},
+      {en:"Blood glucose >300 mg/dL",ar:"سكر دم أكثر من 300 مغ/ديسيلتر"},
+      {en:"Fever and confusion",ar:"حمى وارتباك"}
+    ],
+    correct:0,
+    explanation:"DI is characterized by polyuria >200 mL/hour, urine specific gravity ≤1.005, and elevated serum osmolality — indicating insufficient ADH.",
+    explanationAr:"السكري الكاذب يتميز بالتبول المفرط أكثر من 200 مل/ساعة، وكثافة بول ≤1.005، وارتفاع أسمولالية المصل — دليل على نقص ADH."
+  },
+  {
+    q:"What is Homans' Sign and what condition does it suggest?",
+    qAr:"ما هي علامة هومانز وما الحالة التي تشير إليها؟",
+    options:[
+      {en:"Pupil dilation — indicates brain herniation",ar:"اتساع حدقة العين — يشير إلى فتق الدماغ"},
+      {en:"Pain with dorsiflexion or plantar flexion — suggests DVT",ar:"ألم عند ثني القدم ظهرياً أو أخمصياً — يشير إلى تجلط وريدي عميق"},
+      {en:"Pain on head movement — indicates meningitis",ar:"ألم عند تحريك الرأس — يشير إلى التهاب السحايا"},
+      {en:"Blurred vision — indicates increased ICP",ar:"ضبابية الرؤية — تشير إلى ارتفاع ICP"}
+    ],
+    correct:1,
+    explanation:"Homans' Sign is pain with dorsiflexion or plantar flexion of the foot — it is a clinical sign suggesting DVT (Deep Vein Thrombosis).",
+    explanationAr:"علامة هومانز هي ألم عند ثني القدم ظهرياً أو أخمصياً — علامة سريرية تشير إلى تجلط وريدي عميق (DVT)."
+  },
+  {
+    q:"Why must postoperative vomiting be avoided in craniotomy patients?",
+    qAr:"لماذا يجب تجنب القيء بعد العملية في مرضى فتح الجمجمة؟",
+    options:[
+      {en:"Vomiting may dislodge the nasogastric tube",ar:"القيء قد يُزيح أنبوب المعدة"},
+      {en:"Vomiting increases ICP and the risk of surgical hemorrhage",ar:"القيء يرفع ضغط الدماغ (ICP) وخطر النزيف الجراحي"},
+      {en:"Vomiting dehydrates the patient only",ar:"القيء يُجفف المريض فقط"},
+      {en:"Vomiting causes aspiration pneumonia exclusively",ar:"القيء يسبب التهاب رئة استنشاقي حصراً"}
+    ],
+    correct:1,
+    explanation:"Postoperative vomiting must be avoided because it INCREASES ICP and risks surgical hemorrhage. Antiemetics should be given as soon as nausea appears.",
+    explanationAr:"يجب تجنب القيء بعد العملية لأنه يرفع ICP ويزيد خطر النزيف الجراحي. تُعطى مضادات القيء فور ظهور الغثيان."
+  },
+  {
+    q:"When can enteral feeding begin after craniotomy if the patient cannot eat?",
+    qAr:"متى يمكن البدء بالتغذية المعوية بعد فتح الجمجمة إذا تعذر على المريض الأكل؟",
+    options:[
+      {en:"Only after 1 week",ar:"بعد أسبوع فقط"},
+      {en:"As early as 24 hours after surgery",ar:"في أبكر وقت ممكن بعد 24 ساعة من الجراحة"},
+      {en:"Only when the patient is fully conscious",ar:"فقط عندما يكون المريض واعياً تماماً"},
+      {en:"After 72 hours minimum",ar:"بعد 72 ساعة على الأقل"}
+    ],
+    correct:1,
+    explanation:"Enteral feeding delivered through a feeding tube (preferred method) can be initiated as early as 24 hours after surgery in the neurosurgical patient.",
+    explanationAr:"التغذية المعوية عبر أنبوب التغذية (الطريقة المفضلة) يمكن البدء بها في أبكر وقت ممكن بعد 24 ساعة من الجراحة."
+  },
+  {
+    q:"Why is constipation particularly dangerous for post-craniotomy patients?",
+    qAr:"لماذا الإمساك خطر بشكل خاص على مرضى ما بعد فتح الجمجمة؟",
+    options:[
+      {en:"It leads to nutritional deficiency",ar:"يؤدي إلى نقص التغذية"},
+      {en:"Straining during bowel movements creates significant elevations in blood pressure and ICP",ar:"الإجهاد أثناء التبرز يرفع ضغط الدم وICP بشكل ملحوظ"},
+      {en:"It causes abdominal herniation",ar:"يسبب فتقاً بطنياً"},
+      {en:"It increases the risk of urinary infection",ar:"يزيد خطر العدوى البولية"}
+    ],
+    correct:1,
+    explanation:"Constipation is hazardous because straining to have a bowel movement creates significant elevations in blood pressure AND ICP. Stool softeners and a bowel program are essential.",
+    explanationAr:"الإمساك خطر لأن الإجهاد أثناء التبرز يرفع ضغط الدم وICP بشكل ملحوظ. مليّنات البراز وبرنامج الأمعاء ضروريان."
+  },
+  {
+    q:"How often should saline drops be instilled to prevent corneal abrasions after craniotomy?",
+    qAr:"كم مرة يجب وضع قطرات الملح لمنع سحجات القرنية بعد فتح الجمجمة؟",
+    options:[
+      {en:"Once daily",ar:"مرة يومياً"},
+      {en:"Every 8 hours",ar:"كل 8 ساعات"},
+      {en:"Every 2 hours",ar:"كل ساعتين"},
+      {en:"Only when the eye appears dry",ar:"فقط عندما تبدو العين جافة"}
+    ],
+    correct:2,
+    explanation:"Saline drops are instilled EVERY 2 HOURS to prevent corneal drying and ulceration, because periorbital edema interferes with normal blinking and eyelid closure.",
+    explanationAr:"تُوضع قطرات الملح كل ساعتين لمنع جفاف القرنية والتقرح، لأن وذمة المنطقة المحيطة بالعين تعيق الرمش وإغلاق الجفن."
+  },
+  {
+    q:"Which activity should craniotomy patients be instructed to AVOID to prevent sudden ICP changes?",
+    qAr:"أي نشاط يجب توجيه مرضى فتح الجمجمة لتجنبه لمنع تغيرات مفاجئة في ICP؟",
+    options:[
+      {en:"Walking slowly in the corridor",ar:"المشي البطيء في الممر"},
+      {en:"Bending, lifting, straining, and the Valsalva maneuver",ar:"الانحناء، الرفع، الإجهاد، ومناورة فالسالفا"},
+      {en:"Reading books for extended periods",ar:"قراءة الكتب لفترات طويلة"},
+      {en:"Eating soft foods",ar:"تناول الأطعمة اللينة"}
+    ],
+    correct:1,
+    explanation:"Patients must avoid bending, lifting, straining, and the Valsalva maneuver — all provoke sudden changes in ICP. Teaching mouth breathing during position changes helps prevent ICP spikes.",
+    explanationAr:"يجب تجنب الانحناء، الرفع، الإجهاد، ومناورة فالسالفا — كلها تُحدث تغيرات مفاجئة في ICP. تعليم التنفس الفموي عند تغيير الوضعية يساعد في منع ارتفاعات ICP."
+  },
+  {
+    q:"What does periorbital ecchymosis mean in the context of post-craniotomy care?",
+    qAr:"ماذا تعني الكدمات المحيطة بالعين (Periorbital Ecchymosis) في سياق رعاية ما بعد فتح الجمجمة؟",
+    options:[
+      {en:"A sign of serious intracranial bleeding requiring immediate surgery",ar:"علامة على نزيف دماغي خطير يستدعي جراحة فورية"},
+      {en:"A temporary and expected bruising around the eye area after craniotomy",ar:"كدمات مؤقتة ومتوقعة حول منطقة العين بعد فتح الجمجمة"},
+      {en:"A sign of corneal infection",ar:"علامة على عدوى القرنية"},
+      {en:"Evidence of retinal detachment",ar:"دليل على انفصال الشبكية"}
+    ],
+    correct:1,
+    explanation:"Periorbital ecchymosis (bruising around the eyes) is a TEMPORARY and EXPECTED change after craniotomy. Preoperative teaching about this helps reduce patient and family fear.",
+    explanationAr:"الكدمات المحيطة بالعين تغيير مؤقت ومتوقع بعد فتح الجمجمة. الشرح المسبق لهذا الأمر يقلل من خوف المريض والأسرة."
+  },
+  {
+    q:"What is the primary prophylaxis for DVT in post-craniotomy patients?",
+    qAr:"ما هي الوقاية الأساسية من DVT في مرضى ما بعد فتح الجمجمة؟",
+    options:[
+      {en:"Full anticoagulation with warfarin",ar:"مضاد تخثر كامل بالوارفارين"},
+      {en:"Intermittent pneumatic compression boots or stockings",ar:"جوارب أو أجهزة ضغط هوائية متقطعة"},
+      {en:"Complete bed rest for 2 weeks",ar:"راحة تامة في الفراش لأسبوعين"},
+      {en:"Aspirin 325 mg daily",ar:"أسبرين 325 ملغ يومياً"}
+    ],
+    correct:1,
+    explanation:"The PRIMARY DVT treatment in neurosurgery patients is PROPHYLAXIS by intermittent pneumatic compression boots or stockings. Low-dose heparin may be added in high-risk patients.",
+    explanationAr:"الوقاية الأساسية من DVT في مرضى جراحة الأعصاب هي الضغط الهوائي المتقطع بالجوارب أو الأجهزة. قد يُضاف الهيبارين بجرعة صغيرة في المرضى عالي الخطورة."
+  },
+  {
+    q:"Loss of vision after pituitary surgery in a post-craniotomy patient indicates:",
+    qAr:"فقدان البصر بعد جراحة الغدة النخامية في مريض ما بعد فتح الجمجمة يشير إلى:",
+    options:[
+      {en:"Normal anesthetic side effect",ar:"أثر جانبي طبيعي للتخدير"},
+      {en:"An evolving hemorrhage requiring surgical re-exploration",ar:"نزيف متطور يستدعي إعادة الاستكشاف الجراحي"},
+      {en:"Corneal abrasion from positioning",ar:"سحج قرنية من الوضعية"},
+      {en:"Periorbital edema pressing on the eye",ar:"وذمة محيطة بالعين تضغط على العين"}
+    ],
+    correct:1,
+    explanation:"Loss of vision after pituitary surgery indicates an EVOLVING HEMORRHAGE. This is a surgical emergency requiring immediate re-exploration.",
+    explanationAr:"فقدان البصر بعد جراحة الغدة النخامية يشير إلى نزيف متطور. هذه حالة طارئة جراحية تستدعي إعادة الاستكشاف الفوري."
+  },
+  {
+    q:"Which nursing diagnosis is MOST appropriate for a craniotomy patient with altered mentation and seizures?",
+    qAr:"أي تشخيص تمريضي الأنسب لمريض فتح الجمجمة مع اضطراب الوعي ونوبات تشنجية؟",
+    options:[
+      {en:"Risk for infection related to surgical incision",ar:"خطر العدوى مرتبط بالشق الجراحي"},
+      {en:"Decreased Intracranial Adaptive Capacity related to failure of normal intracranial compensatory mechanisms",ar:"انخفاض القدرة التكيفية داخل القحف بسبب فشل آليات التعويض الطبيعية"},
+      {en:"Impaired skin integrity related to immobility",ar:"ضعف سلامة الجلد مرتبط بانعدام الحركة"},
+      {en:"Deficient knowledge related to discharge instructions",ar:"نقص المعرفة مرتبط بتعليمات الخروج"}
+    ],
+    correct:1,
+    explanation:"'Decreased Intracranial Adaptive Capacity related to failure of normal intracranial compensatory mechanisms' is the most appropriate nursing diagnosis for altered mentation and seizures post-craniotomy.",
+    explanationAr:"'انخفاض القدرة التكيفية داخل القحف بسبب فشل آليات التعويض الطبيعية' هو التشخيص التمريضي الأنسب لاضطراب الوعي والتشنجات بعد فتح الجمجمة."
+  },
+  {
+    q:"What is the preferred method of fever control in post-craniotomy patients?",
+    qAr:"ما هي الطريقة المفضلة للسيطرة على الحمى في مرضى ما بعد فتح الجمجمة؟",
+    options:[
+      {en:"Aspirin only",ar:"الأسبرين فقط"},
+      {en:"Acetaminophen (oral/rectal/NG tube) ± external cooling measures (hypothermia blanket)",ar:"باراسيتامول (فموي/مستقيمي/أنبوب) ± وسائل تبريد خارجية (بطانية افتراضية)"},
+      {en:"Ibuprofen IV infusion",ar:"إيبوبروفين عبر التسريب الوريدي"},
+      {en:"Ice packs to the groin only",ar:"كمادات ثلجية على الفخذ فقط"}
+    ],
+    correct:1,
+    explanation:"Acetaminophen (oral, rectal, or via NG tube) is used to control postoperative fever. External cooling with a hypothermia blanket may be necessary for severe fever.",
+    explanationAr:"يُستخدم الباراسيتامول (فموي أو مستقيمي أو عبر أنبوب) للسيطرة على حمى ما بعد الجراحة. التبريد الخارجي بالبطانية قد يكون ضرورياً عند الحمى الشديدة."
+  },
+  {
+    q:"Before discharge, a post-craniotomy patient MUST be able to teach back which of the following?",
+    qAr:"قبل الخروج، يجب أن يكون مريض ما بعد فتح الجمجمة قادراً على إعادة شرح أيٌّ من التالي؟",
+    options:[
+      {en:"Detailed neurosurgical operative techniques",ar:"تقنيات العملية الجراحية العصبية التفصيلية"},
+      {en:"Signs and symptoms of increased ICP, infection, medication instructions, and rehabilitation program importance",ar:"علامات ارتفاع ICP، العدوى، تعليمات الأدوية، وأهمية برنامج التأهيل"},
+      {en:"How to interpret their own brain MRI scans",ar:"كيفية تفسير صور الرنين المغناطيسي للدماغ"},
+      {en:"Full ICU nursing protocols",ar:"بروتوكولات تمريض العناية المركزة الكاملة"}
+    ],
+    correct:1,
+    explanation:"Discharge education must include: signs/symptoms of increased ICP, signs of infection, medication instructions, incisional care, compensation for residual deficits, and the importance of neurologic rehab.",
+    explanationAr:"تثقيف الخروج يجب أن يشمل: علامات ارتفاع ICP، علامات العدوى، تعليمات الأدوية، رعاية الجرح، التكيف مع العجز المتبقي، وأهمية التأهيل العصبي."
+  }
+];
+
+let scores = new Array(questions.length).fill(null);
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  questions.forEach((q,i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="quiz-q"><span class="quiz-q-num">Q${i+1}.</span> ${q.q}</div>
+      <div class="quiz-q-ar">${q.qAr}</div>
+      <div class="quiz-options" id="opts-${i}">
+        ${q.options.map((o,j)=>`
+          <div class="quiz-option" onclick="selectAnswer(${i},${j})" id="opt-${i}-${j}">
+            <span style="font-weight:700;color:var(--primary);flex-shrink:0">${String.fromCharCode(65+j)}.</span>
+            <div><div>${o.en}</div><span class="opt-ar">${o.ar}</span></div>
+          </div>`).join('')}
+      </div>
+      <div class="quiz-feedback" id="feedback-${i}">
+        <div id="fbt-${i}"></div>
+        <div class="ar" id="fbar-${i}"></div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function selectAnswer(qi, selected) {
+  if (scores[qi] !== null) return;
+  const correct = questions[qi].correct;
+  scores[qi] = selected === correct ? 1 : 0;
+  document.querySelectorAll(`#opts-${qi} .quiz-option`).forEach((o,j) => {
+    o.classList.add('disabled');
+    if (j === correct) o.classList.add('correct');
+    if (j === selected && selected !== correct) o.classList.add('wrong');
+  });
+  const fb = document.getElementById(`feedback-${qi}`);
+  fb.classList.add('show');
+  if (selected === correct) {
+    fb.classList.add('correct');
+    document.getElementById(`fbt-${qi}`).textContent = '✅ Correct! ' + questions[qi].explanation;
+  } else {
+    fb.classList.add('wrong');
+    document.getElementById(`fbt-${qi}`).textContent = '❌ Incorrect. ' + questions[qi].explanation;
+  }
+  document.getElementById(`fbar-${qi}`).textContent = questions[qi].explanationAr;
+  const correct_count = scores.filter(s=>s===1).length;
+  document.getElementById('score-display').textContent = `${correct_count} / ${questions.length}`;
+  document.getElementById('progress-fill').style.width = (correct_count/questions.length*100)+'%';
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

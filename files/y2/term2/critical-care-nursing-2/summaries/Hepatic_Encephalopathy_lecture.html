@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hepatic Encephalopathy – Dr. Afaf Mohamed Mansour</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4f0;
+    --card: #ffffff;
+    --primary: #5a3e6b;
+    --primary-light: #7a5490;
+    --accent: #b05a2e;
+    --accent-light: #e8c4a0;
+    --text: #2a2a2a;
+    --text-muted: #6b6b6b;
+    --border: #e0dbd2;
+    --shadow: 0 4px 24px rgba(90,62,107,0.10);
+    --en-bg: #f3eef8;
+    --ar-bg: #fdf6ee;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Serif 4', serif; min-height: 100vh; }
+
+  /* HEADER */
+  header {
+    background: var(--primary);
+    color: #fff; padding: 40px 32px 32px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(176,90,46,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,5vw,2.8rem); letter-spacing: 0.02em; margin-bottom: 6px; }
+  header .subtitle { font-size: 1rem; opacity: 0.75; font-style: italic; margin-bottom: 4px; }
+  header .author { font-size: 0.95rem; color: var(--accent-light); font-family: 'Noto Naskh Arabic', serif; margin-top: 8px; }
+
+  /* TAB NAV */
+  .tab-nav-wrap {
+    background: var(--primary); padding: 0 16px;
+    display: flex; justify-content: center; overflow-x: auto;
+    gap: 4px; border-bottom: 3px solid var(--accent);
+    scrollbar-width: thin;
+  }
+  .tab-btn {
+    background: transparent; border: none;
+    color: rgba(255,255,255,0.65);
+    padding: 13px 15px 11px; cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.04em; white-space: nowrap;
+    border-bottom: 3px solid transparent; margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn:hover { color: #fff; }
+  .tab-btn.active { color: #fff; border-bottom-color: var(--accent); }
+
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  .section-card {
+    display: none; background: var(--card);
+    border-radius: 16px; box-shadow: var(--shadow);
+    overflow: hidden; animation: fadeIn 0.35s ease;
+  }
+  .section-card.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff; padding: 22px 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .card-header .icon { font-size: 1.8rem; flex-shrink: 0; }
+  .card-header h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; line-height: 1.2; }
+  .card-header .ar-title { font-family: 'Noto Naskh Arabic', serif; font-size: 1.05rem; opacity: 0.82; margin-top: 3px; direction: rtl; }
+
+  .bi-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; border-top: 1px solid var(--border);
+  }
+  .bi-col { padding: 20px 24px; }
+  .bi-col.en { background: var(--en-bg); border-right: 2px solid var(--border); }
+  .bi-col.ar { background: var(--ar-bg); direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; }
+
+  .lang-badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; padding: 2px 8px; border-radius: 20px;
+    margin-bottom: 8px; text-transform: uppercase;
+  }
+  .lang-badge.en-badge { background: var(--primary); color: #fff; }
+  .lang-badge.ar-badge { background: var(--accent); color: #fff; font-family: 'Source Serif 4', serif; }
+
+  .bi-col p { font-size: 0.97rem; line-height: 1.75; color: var(--text); }
+  .bi-col.ar p { font-size: 1.05rem; line-height: 2; }
+
+  .point-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .point-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.95rem; line-height: 1.65; }
+  .point-list li::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .bi-col.ar .point-list li { flex-direction: row-reverse; font-size: 1rem; line-height: 1.9; }
+  .bi-col.ar .point-list li::before { content: '◂'; }
+
+  .section-divider {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; gap: 12px; align-items: center;
+  }
+  .section-divider .ar-label {
+    font-family: 'Noto Naskh Arabic', serif; opacity: 0.8;
+    font-size: 0.85rem; letter-spacing: 0; text-transform: none; margin-left: auto;
+  }
+  .section-divider.accent { background: linear-gradient(90deg, var(--accent) 0%, #c97040 100%); }
+
+  .def-box {
+    border-radius: 10px; padding: 16px 20px;
+    font-size: 0.97rem; line-height: 1.8;
+    border: 1px solid var(--border); background: #fff;
+  }
+  .def-box.en { border-left: 5px solid var(--primary); }
+  .def-box.ar { border-right: 5px solid var(--accent); font-family: 'Noto Naskh Arabic', serif; font-size: 1.05rem; line-height: 2.1; }
+  .def-box strong { color: var(--primary); }
+  .def-box.ar strong { color: var(--accent); }
+
+  /* STAGES TIMELINE */
+  .stages-grid { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stage-card {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(90,62,107,0.08);
+  }
+  .stage-head {
+    padding: 10px 16px; font-weight: 700; font-size: 0.9rem;
+    display: flex; align-items: center; gap: 8px; color: #fff;
+  }
+  .stage-head .num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.25); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 800; flex-shrink: 0;
+  }
+  .stage-1 .stage-head { background: #4e8c6e; }
+  .stage-2 .stage-head { background: #c09a20; }
+  .stage-3 .stage-head { background: #c06030; }
+  .stage-4 .stage-head { background: #8b2020; }
+  .stage-body { padding: 12px 16px; background: #fff; }
+  .stage-body ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .stage-body ul li { font-size: 0.86rem; line-height: 1.55; padding-left: 14px; position: relative; color: var(--text); }
+  .stage-body ul li::before { content: '•'; position: absolute; left: 0; color: var(--accent); }
+  .stage-ar { direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; }
+  .stage-ar ul li { padding-left: 0; padding-right: 14px; font-size: 0.92rem; line-height: 1.85; }
+  .stage-ar ul li::before { left: auto; right: 0; }
+
+  /* DRUG CARD */
+  .drug-box {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1px solid var(--border); background: #fff;
+    margin-bottom: 10px;
+  }
+  .drug-box.en { border-left: 5px solid var(--primary); }
+  .drug-box.ar { border-right: 5px solid var(--accent); direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; }
+  .drug-title { font-weight: 700; color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
+  .drug-box.ar .drug-title { color: var(--accent); font-size: 1.05rem; }
+  .drug-row { font-size: 0.88rem; line-height: 1.6; margin-bottom: 5px; }
+  .drug-row span { font-weight: 600; color: var(--primary-light); }
+  .drug-box.ar .drug-row { font-size: 0.95rem; line-height: 1.9; }
+  .drug-box.ar .drug-row span { color: var(--accent); }
+
+  /* ══════════════════ MCQ STYLES ══════════════════ */
+  .mcq-wrap { padding: 24px; display: flex; flex-direction: column; gap: 22px; }
+  .mcq-score-bar {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff; border-radius: 12px; padding: 16px 22px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  }
+  .score-label { font-size: 0.9rem; opacity: 0.85; }
+  .score-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; }
+  .score-detail { font-size: 0.82rem; opacity: 0.7; }
+  .reset-btn {
+    background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; border-radius: 8px; padding: 8px 16px;
+    cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: background 0.2s;
+  }
+  .reset-btn:hover { background: rgba(255,255,255,0.3); }
+
+  .mcq-item {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(90,62,107,0.07);
+    border: 1.5px solid var(--border); transition: border-color 0.3s;
+  }
+  .mcq-item.answered-correct { border-color: #28a745; }
+  .mcq-item.answered-wrong { border-color: #dc3545; }
+
+  .mcq-q-block { padding: 16px 20px; background: var(--en-bg); }
+  .mcq-num {
+    display: inline-block; background: var(--primary); color: #fff;
+    border-radius: 6px; font-size: 0.72rem; font-weight: 700;
+    padding: 2px 9px; letter-spacing: 0.06em; margin-bottom: 8px;
+  }
+  .mcq-q-en { font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: var(--text); margin-bottom: 6px; }
+  .mcq-q-ar {
+    font-family: 'Noto Naskh Arabic', serif; direction: rtl; text-align: right;
+    font-size: 0.98rem; line-height: 1.9; color: var(--text-muted);
+    border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 6px;
+  }
+
+  .mcq-options { padding: 12px 20px 16px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
+  .mcq-opt {
+    padding: 10px 16px; border-radius: 8px;
+    border: 1.5px solid var(--border); background: #fdfdfd;
+    cursor: pointer; font-size: 0.9rem; line-height: 1.55;
+    transition: border-color 0.18s, background 0.18s;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .mcq-opt:hover:not(.locked) { border-color: var(--primary-light); background: var(--en-bg); }
+  .mcq-opt .opt-letter {
+    flex-shrink: 0; width: 24px; height: 24px;
+    border-radius: 50%; border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; color: var(--text-muted);
+    transition: all 0.18s;
+  }
+  .mcq-opt .opt-text { flex: 1; }
+  .mcq-opt .opt-ar { display: block; font-family: 'Noto Naskh Arabic', serif; direction: rtl; text-align: right; font-size: 0.88rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* States AFTER answer */
+  .mcq-opt.correct {
+    border-color: #28a745; background: #d4edda;
+  }
+  .mcq-opt.correct .opt-letter { background: #28a745; border-color: #28a745; color: #fff; }
+  .mcq-opt.wrong {
+    border-color: #dc3545; background: #f8d7da;
+  }
+  .mcq-opt.wrong .opt-letter { background: #dc3545; border-color: #dc3545; color: #fff; }
+  .mcq-opt.reveal-correct {
+    border-color: #28a745; background: #eafaf0;
+  }
+  .mcq-opt.reveal-correct .opt-letter { background: #28a745; border-color: #28a745; color: #fff; }
+  .mcq-opt.locked { cursor: default; }
+
+  .mcq-feedback {
+    margin: 0 20px 14px; padding: 10px 14px;
+    border-radius: 8px; font-size: 0.88rem; font-weight: 600;
+    display: none;
+  }
+  .mcq-feedback.show { display: block; }
+  .mcq-feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+  .mcq-feedback.wrong { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; }
+
+  @media(max-width: 640px) {
+    .bi-row { grid-template-columns: 1fr; }
+    .bi-col.en { border-right: none; border-bottom: 2px solid var(--border); }
+    .tab-btn { font-size: 0.68rem; padding: 10px 8px; }
+    .stages-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hepatic Encephalopathy</h1>
+  <p class="subtitle">A comprehensive clinical overview</p>
+  <p class="author">Assist. Prof. Dr. Afaf Mohamed Mansour &nbsp;|&nbsp; أ.د. عفاف محمد منصور</p>
+</header>
+
+<div class="tab-nav-wrap">
+  <button class="tab-btn active" onclick="showTab('def')">Definition</button>
+  <button class="tab-btn" onclick="showTab('causes')">Causes</button>
+  <button class="tab-btn" onclick="showTab('ammonia')">Ammonia</button>
+  <button class="tab-btn" onclick="showTab('patho')">Pathophysiology</button>
+  <button class="tab-btn" onclick="showTab('stages')">Stages</button>
+  <button class="tab-btn" onclick="showTab('clinical')">Clinical</button>
+  <button class="tab-btn" onclick="showTab('diag')">Diagnostics</button>
+  <button class="tab-btn" onclick="showTab('mgmt')">Management</button>
+  <button class="tab-btn" onclick="showTab('nursing')">Nursing</button>
+  <button class="tab-btn" onclick="showTab('mcq')">MCQ ✏️</button>
+</div>
+
+<main>
+
+  <!-- ══ DEFINITION ══ -->
+  <div id="tab-def" class="section-card active">
+    <div class="card-header">
+      <span class="icon">📖</span>
+      <div><h2>Definition</h2><div class="ar-title">التعريف</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="def-box en">
+          <strong>Hepatic Encephalopathy</strong> is a life-threatening complication of liver disease that occurs with profound liver failure. It is the <strong>neuropsychiatric manifestation</strong> of hepatic failure associated with portal hypertension and the shunting of blood from the portal venous system into the systemic circulation.
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="def-box ar">
+          <strong>الاعتلال الدماغي الكبدي</strong> هو مضاعفة مهددة للحياة لمرض الكبد تحدث مع الفشل الكبدي الشديد. وهو <strong>التظاهر العصبي النفسي</strong> للفشل الكبدي المرتبط بارتفاع ضغط الوريد البابي وتحويل الدم من الجهاز الوريدي البابي إلى الدورة الدموية الجهازية.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CAUSES ══ -->
+  <div id="tab-causes" class="section-card">
+    <div class="card-header">
+      <span class="icon">⚠️</span>
+      <div><h2>Causes</h2><div class="ar-title">الأسباب</div></div>
+    </div>
+    <div class="section-divider">Two Major Underlying Alterations <span class="ar-label">التغييرين الرئيسيين</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li><strong>Hepatic Insufficiency</strong> — the liver cannot detoxify toxic by-products of metabolism</li>
+          <li><strong>Portal Systemic Shunting</strong> — collateral vessels develop due to portal hypertension, allowing toxic portal blood to bypass the liver and enter systemic circulation</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li><strong>القصور الكبدي</strong> — يعجز الكبد عن إزالة السمية من المنتجات الأيضية الجانبية</li>
+          <li><strong>التحويل البابي الجهازي</strong> — تتكون أوعية جانبية بسبب ارتفاع الضغط البابي، تسمح لدم البوابة السام بالوصول للدورة الجهازية متجاوزاً الكبد</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-divider accent">Other Precipitating Causes <span class="ar-label">أسباب محرِّضة أخرى</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Excessive diuresis</li>
+          <li>Dehydration and infections</li>
+          <li>Surgery</li>
+          <li>Fever</li>
+          <li>Medications — sedatives, tranquilizers, analgesics, and diuretics that cause potassium loss</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الإدرار المفرط</li>
+          <li>الجفاف والعدوى</li>
+          <li>الجراحة</li>
+          <li>الحمى</li>
+          <li>الأدوية — المهدئات ومرخيات الأعصاب والمسكنات ومدرات البول المسببة لفقدان البوتاسيوم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ AMMONIA ══ -->
+  <div id="tab-ammonia" class="section-card">
+    <div class="card-header">
+      <span class="icon">🧪</span>
+      <div><h2>Ammonia — The Key Factor</h2><div class="ar-title">الأمونيا — العامل الرئيسي</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="def-box en" style="margin-bottom:14px;">
+          <strong>Ammonia</strong> is considered the major etiologic factor in the development of encephalopathy. It enters the brain, excites peripheral receptors on astrocyte cells, causes <strong>CNS depression</strong>, and inhibits neurotransmission and synaptic regulation — producing sleep and behavior pattern changes.
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="def-box ar" style="margin-bottom:14px;">
+          تُعدّ <strong>الأمونيا</strong> العامل المسبّب الرئيسي لتطور الاعتلال الدماغي. تدخل الأمونيا الدماغ وتُثير المستقبلات المحيطية على خلايا النجمية، مما يُسبب <strong>اكتئاب الجهاز العصبي المركزي</strong> وتثبيط ناقلية الأعصاب — منتجةً تغييرات في أنماط النوم والسلوك.
+        </div>
+      </div>
+    </div>
+    <div class="section-divider">Sources of Ammonia <span class="ar-label">مصادر الأمونيا</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>GI bleeding — bleeding esophageal varices, chronic GI bleeding</li>
+          <li>High-protein diet</li>
+          <li>Bacterial infection or uremia</li>
+          <li>Ingestion of ammonium salts</li>
+          <li>Presence of alkalosis or hypokalemia — increases ammonia absorption from the GI tract and renal tubular fluid</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>نزيف الجهاز الهضمي — دوالي المريء النازفة، والنزيف المزمن</li>
+          <li>النظام الغذائي عالي البروتين</li>
+          <li>العدوى البكتيرية أو ارتفاع اليوريا في الدم</li>
+          <li>تناول أملاح الأمونيوم</li>
+          <li>الحالة القلوية أو نقص البوتاسيوم — تزيد امتصاص الأمونيا من الجهاز الهضمي والسائل الكلوي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PATHOPHYSIOLOGY ══ -->
+  <div id="tab-patho" class="section-card">
+    <div class="card-header">
+      <span class="icon">🧬</span>
+      <div><h2>Pathophysiology</h2><div class="ar-title">الفيزيولوجيا المرضية</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Acute liver failure or chronic liver disease → liver loses ability to detoxify → ammonia accumulates in blood</li>
+          <li>Ammonia crosses the blood-brain barrier → acts on <strong>astrocytes</strong> → increased glutamine production, oxidative stress, cerebral edema, increased lactate</li>
+          <li>Ammonia also activates <strong>microglia</strong> → neuroinflammation and oxidative stress</li>
+          <li>Both pathways → <strong>worsening of HE</strong>, increased morbidity and mortality</li>
+          <li>Portal systemic shunting bypasses hepatic detoxification → further toxin accumulation</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>فشل كبدي حاد أو مزمن → يفقد الكبد قدرته على إزالة السموم → تراكم الأمونيا في الدم</li>
+          <li>تعبر الأمونيا الحاجز الدموي الدماغي → تعمل على <strong>الخلايا النجمية</strong> → زيادة الغلوتامين، وإجهاد تأكسدي، وذمة دماغية، وارتفاع اللاكتات</li>
+          <li>تُنشِّط الأمونيا أيضاً <strong>الخلايا الدبقية الصغيرة</strong> → التهاب عصبي وإجهاد تأكسدي</li>
+          <li>كلا المسارين → <strong>تفاقم الاعتلال الدماغي</strong> وزيادة المراضة والوفيات</li>
+          <li>التحويل البابي الجهازي يتجاوز إزالة السموم الكبدية → مزيد من تراكم السموم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ STAGES ══ -->
+  <div id="tab-stages" class="section-card">
+    <div class="card-header">
+      <span class="icon">📊</span>
+      <div><h2>Stages of Hepatic Encephalopathy</h2><div class="ar-title">مراحل الاعتلال الدماغي الكبدي</div></div>
+    </div>
+    <div class="stages-grid">
+      <!-- Stage 1 EN -->
+      <div class="stage-card stage-1">
+        <div class="stage-head"><div class="num">1</div> Stage One — EN</div>
+        <div class="stage-body">
+          <ul>
+            <li>Normal consciousness with periods of lethargy</li>
+            <li>Euphoria; reversal of day–night sleep patterns</li>
+            <li>Asterixis (flapping tremor); impaired writing and drawing</li>
+            <li>Normal EEG</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 1 AR -->
+      <div class="stage-card stage-1">
+        <div class="stage-head"><div class="num">١</div> المرحلة الأولى — عربي</div>
+        <div class="stage-body stage-ar">
+          <ul>
+            <li>وعي طبيعي مع فترات من الخمول</li>
+            <li>نشوة؛ انعكاس نمط النوم ليلاً ونهاراً</li>
+            <li>أستريكسيس (رعشة رفرفة)؛ ضعف الكتابة والرسم</li>
+            <li>رسم مخ طبيعي EEG</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 2 EN -->
+      <div class="stage-card stage-2">
+        <div class="stage-head"><div class="num">2</div> Stage Two — EN</div>
+        <div class="stage-body">
+          <ul>
+            <li>Increased drowsiness and disorientation</li>
+            <li>Inappropriate behavior; mood swings; agitation</li>
+            <li>Asterixis continues</li>
+            <li>Fetor hepaticus (sweet fecal breath odor)</li>
+            <li>Abnormal EEG with generalized slowing</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 2 AR -->
+      <div class="stage-card stage-2">
+        <div class="stage-head"><div class="num">٢</div> المرحلة الثانية — عربي</div>
+        <div class="stage-body stage-ar">
+          <ul>
+            <li>زيادة النعاس والارتباك</li>
+            <li>سلوك غير لائق؛ تقلبات مزاجية؛ هياج</li>
+            <li>استمرار الأستريكسيس</li>
+            <li>فيتور هيباتيكوس (رائحة زفير حلوة برازية)</li>
+            <li>رسم مخ غير طبيعي مع تباطؤ عام</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 3 EN -->
+      <div class="stage-card stage-3">
+        <div class="stage-head"><div class="num">3</div> Stage Three — EN</div>
+        <div class="stage-body">
+          <ul>
+            <li>Stuporous; difficult to arouse</li>
+            <li>Sleeps most of the time</li>
+            <li>Marked confusion; incoherent speech</li>
+            <li>Asterixis; increased deep tendon reflexes; rigidity</li>
+            <li>Markedly abnormal EEG</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 3 AR -->
+      <div class="stage-card stage-3">
+        <div class="stage-head"><div class="num">٣</div> المرحلة الثالثة — عربي</div>
+        <div class="stage-body stage-ar">
+          <ul>
+            <li>ذهول؛ صعوبة في الإيقاظ</li>
+            <li>ينام معظم الوقت</li>
+            <li>ارتباك شديد؛ كلام غير مترابط</li>
+            <li>أستريكسيس؛ زيادة منعكسات الأوتار العميقة؛ تيبّس</li>
+            <li>رسم مخ غير طبيعي بشكل واضح</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 4 EN -->
+      <div class="stage-card stage-4">
+        <div class="stage-head"><div class="num">4</div> Stage Four — EN</div>
+        <div class="stage-body">
+          <ul>
+            <li>Comatose; may not respond to painful stimuli</li>
+            <li>Absence of Asterixis</li>
+            <li>Absence of deep tendon reflexes</li>
+            <li>Flaccidity of extremities</li>
+            <li>Markedly abnormal EEG</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Stage 4 AR -->
+      <div class="stage-card stage-4">
+        <div class="stage-head"><div class="num">٤</div> المرحلة الرابعة — عربي</div>
+        <div class="stage-body stage-ar">
+          <ul>
+            <li>غيبوبة؛ قد لا يستجيب للمنبهات المؤلمة</li>
+            <li>غياب الأستريكسيس</li>
+            <li>غياب منعكسات الأوتار العميقة</li>
+            <li>ترهل الأطراف</li>
+            <li>رسم مخ غير طبيعي بشكل شديد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CLINICAL ══ -->
+  <div id="tab-clinical" class="section-card">
+    <div class="card-header">
+      <span class="icon">🩺</span>
+      <div><h2>Clinical Manifestations</h2><div class="ar-title">المظاهر السريرية</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Minor mental changes and motor disturbances — slight confusion, mood and sleep alterations</li>
+          <li>Patient tends to sleep during the day (restlessness and insomnia at night)</li>
+          <li>As HE progresses → difficult to awaken, completely disoriented to time and place</li>
+          <li>Further progression → frank coma and possible seizures</li>
+          <li><strong>Asterixis</strong> (flapping tremor of hands) — seen from stage II; simple tasks like handwriting become difficult</li>
+          <li><strong>Fetor Hepaticus</strong> — a sweet, slightly fecal odor to the breath, presumed to be of intestinal origin</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تغيرات ذهنية بسيطة واضطرابات حركية — ارتباك خفيف وتغييرات في المزاج والنوم</li>
+          <li>يميل المريض للنوم نهاراً (وأرق وبلاقة ليلاً)</li>
+          <li>مع تقدم المرض → صعوبة الإيقاظ وفقدان التوجه في الزمان والمكان</li>
+          <li>مع التطور أكثر → غيبوبة صريحة وتشنجات محتملة</li>
+          <li><strong>الأستريكسيس</strong> (رعشة رفرفة اليدين) — يظهر من المرحلة الثانية؛ حتى الكتابة تصبح صعبة</li>
+          <li><strong>فيتور هيباتيكوس</strong> — رائحة حلوة وبرازية خفيفة في الزفير، يُعتقد أنها ذات أصل معوي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ DIAGNOSTICS ══ -->
+  <div id="tab-diag" class="section-card">
+    <div class="card-header">
+      <span class="icon">🔬</span>
+      <div><h2>Assessment & Diagnostic Findings</h2><div class="ar-title">التقييم والنتائج التشخيصية</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li><strong>EEG (Electroencephalogram)</strong> — shows generalized slowing, increased amplitude of brain waves, and <strong>characteristic triphasic waves</strong></li>
+          <li>EEG is normal in Stage I; becomes progressively more abnormal in Stages II–IV</li>
+          <li>Handwriting and arithmetic tests are used to monitor mental status daily</li>
+          <li>Serum ammonia levels — monitored daily</li>
+          <li>Neurological assessment — LOC, pupil response, speech, motor strength</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li><strong>رسم المخ الكهربائي (EEG)</strong> — يُظهر تباطؤاً عاماً وزيادة في سعة موجات الدماغ و<strong>موجات ثلاثية الطور مميزة</strong></li>
+          <li>رسم المخ طبيعي في المرحلة الأولى ويصبح شاذاً تدريجياً في المراحل ٢-٤</li>
+          <li>اختبارات الكتابة والحساب لمراقبة الحالة الذهنية يومياً</li>
+          <li>مستوى الأمونيا في الدم — يُراقَب يومياً</li>
+          <li>تقييم عصبي — مستوى الوعي، استجابة الحدقة، الكلام، قوة الحركة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MANAGEMENT ══ -->
+  <div id="tab-mgmt" class="section-card">
+    <div class="card-header">
+      <span class="icon">💊</span>
+      <div><h2>Management</h2><div class="ar-title">العلاج</div></div>
+    </div>
+
+    <div class="section-divider">Lactulose — Ammonia-Lowering Therapy <span class="ar-label">لاكتولوز — علاج خفض الأمونيا</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="drug-box en">
+          <div class="drug-title">Lactulose</div>
+          <div class="drug-row"><span>Mechanism:</span> (1) Keeps ammonia ionized → decreases colon pH → reverses ammonia flow from colon to blood. (2) Bowel evacuation decreases ammonia absorbed from colon. (3) Changes fecal flora to organisms that do not produce ammonia from urea.</div>
+          <div class="drug-row"><span>Side effects:</span> Intestinal bloating and cramps (disappear within a week); sweet taste — can be diluted with fruit juice.</div>
+          <div class="drug-row"><span>Route:</span> Oral, nasogastric tube, or enema (for comatose patients).</div>
+          <div class="drug-row"><span>Nursing:</span> Monitor for watery diarrhea (overdose sign), hypokalemia, and dehydration. Do NOT give other laxatives concurrently.</div>
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="drug-box ar">
+          <div class="drug-title">لاكتولوز</div>
+          <div class="drug-row"><span>الآلية:</span> (١) يُبقي الأمونيا في حالة متأينة → يُخفض pH القولون → يعكس انتقال الأمونيا. (٢) إفراغ الأمعاء يُقلل الأمونيا الممتصة. (٣) يُغيّر النبيت البكتيري لأحياء لا تنتج أمونيا.</div>
+          <div class="drug-row"><span>الآثار الجانبية:</span> انتفاخ ومغص معوي (يختفي خلال أسبوع)؛ طعم حلو — يمكن تخفيفه بعصير فواكه.</div>
+          <div class="drug-row"><span>طريقة الإعطاء:</span> فموي، أنبوب أنفي معدي، أو حقنة شرجية للمرضى في غيبوبة.</div>
+          <div class="drug-row"><span>تمريض:</span> مراقبة الإسهال المائي (علامة جرعة زائدة)، نقص البوتاسيوم، والجفاف. لا تُعطِ ملينات أخرى.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider accent">Antibiotics — Reducing Ammonia-Forming Bacteria <span class="ar-label">المضادات الحيوية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="drug-box en">
+          <div class="drug-title">Neomycin / Metronidazole (Flagyl) / Rifaximin (Xifaxan)</div>
+          <div class="drug-row"><span>Action:</span> Broad-spectrum antibiotics that destroy bowel bacteria → decrease protein breakdown and ammonia production.</div>
+          <div class="drug-row"><span>Route (Neomycin):</span> Oral every 4–6 hours.</div>
+          <div class="drug-row"><span>Side effect:</span> Neomycin is nephrotoxic — cannot be given in renal failure.</div>
+          <div class="drug-row"><span>Nursing:</span> Daily renal function studies when Neomycin is administered.</div>
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="drug-box ar">
+          <div class="drug-title">نيومايسين / ميترونيدازول / ريفاكسيمين</div>
+          <div class="drug-row"><span>الآلية:</span> مضادات حيوية واسعة الطيف تقضي على بكتيريا الأمعاء → تُقلل تكسير البروتين وإنتاج الأمونيا.</div>
+          <div class="drug-row"><span>الطريق (نيومايسين):</span> فموي كل 4–6 ساعات.</div>
+          <div class="drug-row"><span>الآثار الجانبية:</span> النيومايسين سام للكلى — لا يُعطى في الفشل الكلوي.</div>
+          <div class="drug-row"><span>تمريض:</span> متابعة وظائف الكلى يومياً عند إعطاء النيومايسين.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">Nutritional Management <span class="ar-label">التغذية العلاجية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Prevent formation and absorption of ammonia from the intestine</li>
+          <li>Keep daily protein intake between <strong>1.0–1.5 g/kg</strong></li>
+          <li>Avoid protein restriction if possible, even in those with encephalopathy</li>
+          <li>If necessary, implement temporary restriction of <strong>0.5–0.8 g/kg</strong></li>
+          <li>Long-term restriction to &lt; 1 g/kg daily should be avoided</li>
+          <li>If animal protein triggers encephalopathy → substitute with <strong>vegetable or dairy proteins</strong> (up to 120 g/day)</li>
+          <li>Advise patients about high-protein foods (meat, eggs) that may need short-term elimination</li>
+          <li>Protein may be added back in <strong>10 g increments every 3–5 days</strong> if mental status is improving</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>منع تكوين الأمونيا وامتصاصها من الأمعاء</li>
+          <li>الحفاظ على بروتين يومي بين <strong>1.0–1.5 غ/كغ</strong></li>
+          <li>تجنب تقييد البروتين قدر الإمكان حتى في حالات الاعتلال</li>
+          <li>إذا لزم، تقييد مؤقت بـ<strong>0.5–0.8 غ/كغ</strong></li>
+          <li>يُتجنب التقييد طويل الأمد لأقل من 1 غ/كغ يومياً</li>
+          <li>إذا أثار البروتين الحيواني الاعتلال → استبدال بـ<strong>بروتينات نباتية أو ألبان</strong> (حتى 120 غ/يوم)</li>
+          <li>تثقيف المريض عن الأغذية عالية البروتين (لحوم، بيض) التي تُقلَّل مؤقتاً</li>
+          <li>إضافة البروتين تدريجياً بزيادات <strong>10 غ كل 3–5 أيام</strong> مع تحسن الحالة الذهنية</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider accent">Additional Management Principles <span class="ar-label">مبادئ إضافية في الإدارة</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Assess neurological status frequently</li>
+          <li>Monitor mental status by keeping daily record of handwriting and arithmetic</li>
+          <li>Record intake/output and body weight daily</li>
+          <li>Measure and record vital signs every 4 hours</li>
+          <li>Assess potential infection sites (peritoneum, lungs) frequently — report abnormal findings promptly</li>
+          <li>Monitor serum ammonia level daily</li>
+          <li>Grade 3 or 4 HE → admit to ICU</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تقييم الحالة العصبية بشكل متكرر</li>
+          <li>مراقبة الحالة الذهنية بتسجيل يومي للكتابة والحساب</li>
+          <li>تسجيل الإدخال والإخراج ووزن الجسم يومياً</li>
+          <li>قياس وتسجيل العلامات الحيوية كل 4 ساعات</li>
+          <li>تقييم مواقع العدوى المحتملة (البريتون، الرئتين) بانتظام — الإبلاغ الفوري عن أي نتائج شاذة</li>
+          <li>مراقبة مستوى الأمونيا في الدم يومياً</li>
+          <li>المرحلة 3 أو 4 → إدخال العناية المركزة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NURSING ══ -->
+  <div id="tab-nursing" class="section-card">
+    <div class="card-header">
+      <span class="icon">👩‍⚕️</span>
+      <div><h2>Nursing Management</h2><div class="ar-title">الرعاية التمريضية</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Maintain a <strong>safe environment</strong> to prevent injury, bleeding, and infection</li>
+          <li>Administer prescribed treatments and monitor for potential complications</li>
+          <li>Encourage <strong>deep breathing and position changes</strong> to prevent atelectasis, pneumonia, and other respiratory complications</li>
+          <li>Patients with severe HE may require <strong>intubation and mechanical ventilation</strong> to protect the airway — frequently admitted to ICU</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الحفاظ على <strong>بيئة آمنة</strong> للوقاية من الإصابة والنزيف والعدوى</li>
+          <li>إعطاء العلاجات الموصوفة ومراقبة المضاعفات المحتملة</li>
+          <li>تشجيع <strong>التنفس العميق وتغيير الأوضاع</strong> للوقاية من الانخماص الرئوي والالتهاب الرئوي</li>
+          <li>قد يحتاج مرضى HE الشديد إلى <strong>التنبيب والتهوية الاصطناعية</strong> لحماية مجرى الهواء — ويُدخلون العناية المركزة</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-divider">Teaching Patients Self-Care <span class="ar-label">تعليم المريض الرعاية الذاتية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Instruct family to watch for slight signs of recurrent encephalopathy after discharge</li>
+          <li>In acute phase, dietary protein may be reduced to <strong>0.8–1.0 g/kg/day</strong> briefly</li>
+          <li>During recovery, maintain a <strong>moderate-protein, high-calorie diet</strong></li>
+          <li>Protein added back in <strong>10 g increments every 3–5 days</strong> if mental status is improving</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تعليم الأسرة مراقبة أي علامات خفية لعودة الاعتلال بعد الخروج</li>
+          <li>في المرحلة الحادة، تخفيض البروتين مؤقتاً إلى <strong>0.8–1.0 غ/كغ/يوم</strong></li>
+          <li>أثناء التعافي، المحافظة على <strong>نظام غذائي معتدل البروتين عالي السعرات</strong></li>
+          <li>إضافة البروتين بزيادات <strong>10 غ كل 3–5 أيام</strong> مع تحسن الحالة الذهنية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MCQ ══ -->
+  <div id="tab-mcq" class="section-card">
+    <div class="card-header">
+      <span class="icon">✏️</span>
+      <div><h2>MCQ Practice — 20 Questions</h2><div class="ar-title">أسئلة اختيار من متعدد — ٢٠ سؤالاً</div></div>
+    </div>
+    <div class="mcq-wrap">
+
+      <div class="mcq-score-bar">
+        <div>
+          <div class="score-label">Your Score / درجتك</div>
+          <div class="score-value" id="score-val">0 / 20</div>
+          <div class="score-detail" id="score-detail">Answer questions to see your score</div>
+        </div>
+        <button class="reset-btn" onclick="resetAll()">🔄 Reset / إعادة</button>
+      </div>
+
+      <!-- Q1 -->
+      <div class="mcq-item" id="q1">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 1</span>
+          <div class="mcq-q-en">Hepatic Encephalopathy is primarily defined as:</div>
+          <div class="mcq-q-ar">يُعرَّف الاعتلال الدماغي الكبدي أساساً بأنه:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q1')"><span class="opt-letter">A</span><span class="opt-text">A metabolic disorder of glucose regulation<span class="opt-ar">اضطراب أيضي في تنظيم الجلوكوز</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q1')"><span class="opt-letter">B</span><span class="opt-text">A neuropsychiatric manifestation of hepatic failure<span class="opt-ar">تظاهر عصبي نفسي للفشل الكبدي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q1')"><span class="opt-letter">C</span><span class="opt-text">An inflammatory disease of the liver parenchyma<span class="opt-ar">مرض التهابي في حمة الكبد</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q1')"><span class="opt-letter">D</span><span class="opt-text">A complication of chronic kidney disease<span class="opt-ar">مضاعفة لمرض الكلى المزمن</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q1-fb"></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="mcq-item" id="q2">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 2</span>
+          <div class="mcq-q-en">Which substance is considered the MAJOR etiologic factor in hepatic encephalopathy?</div>
+          <div class="mcq-q-ar">أي مادة تُعدّ العامل المسبّب الرئيسي في الاعتلال الدماغي الكبدي؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q2')"><span class="opt-letter">A</span><span class="opt-text">Glucose<span class="opt-ar">الجلوكوز</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q2')"><span class="opt-letter">B</span><span class="opt-text">Bilirubin<span class="opt-ar">البيليروبين</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q2')"><span class="opt-letter">C</span><span class="opt-text">Ammonia<span class="opt-ar">الأمونيا</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q2')"><span class="opt-letter">D</span><span class="opt-text">Creatinine<span class="opt-ar">الكرياتينين</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q2-fb"></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="mcq-item" id="q3">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 3</span>
+          <div class="mcq-q-en">Portal systemic shunting contributes to hepatic encephalopathy by:</div>
+          <div class="mcq-q-ar">يُسهم التحويل البابي الجهازي في الاعتلال الدماغي عن طريق:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q3')"><span class="opt-letter">A</span><span class="opt-text">Decreasing blood glucose levels<span class="opt-ar">خفض مستويات سكر الدم</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q3')"><span class="opt-letter">B</span><span class="opt-text">Allowing toxic portal blood to bypass the liver and enter systemic circulation<span class="opt-ar">السماح لدم البوابة السام بتجاوز الكبد والدخول للدورة الجهازية</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q3')"><span class="opt-letter">C</span><span class="opt-text">Increasing hepatic blood flow<span class="opt-ar">زيادة تدفق الدم الكبدي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q3')"><span class="opt-letter">D</span><span class="opt-text">Reducing intestinal bacterial overgrowth<span class="opt-ar">تقليل فرط نمو البكتيريا المعوية</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q3-fb"></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="mcq-item" id="q4">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 4</span>
+          <div class="mcq-q-en">A patient in Stage I hepatic encephalopathy would most likely exhibit:</div>
+          <div class="mcq-q-ar">المريض في المرحلة الأولى من الاعتلال الدماغي يُظهر على الأرجح:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q4')"><span class="opt-letter">A</span><span class="opt-text">Coma and absence of deep tendon reflexes<span class="opt-ar">غيبوبة وغياب منعكسات الأوتار العميقة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q4')"><span class="opt-letter">B</span><span class="opt-text">Stupor and incoherent speech<span class="opt-ar">ذهول وكلام غير مترابط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q4')"><span class="opt-letter">C</span><span class="opt-text">Periods of lethargy and reversal of day–night sleep pattern<span class="opt-ar">فترات خمول وانعكاس نمط النوم ليلاً ونهاراً</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q4')"><span class="opt-letter">D</span><span class="opt-text">Marked confusion and rigidity of extremities<span class="opt-ar">ارتباك شديد وتيبّس الأطراف</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q4-fb"></div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="mcq-item" id="q5">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 5</span>
+          <div class="mcq-q-en">Asterixis (flapping tremor) is typically first observed in which stage?</div>
+          <div class="mcq-q-ar">الأستريكسيس (رعشة الرفرفة) يُلاحَظ أول مرة في أي مرحلة؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q5')"><span class="opt-letter">A</span><span class="opt-text">Stage IV<span class="opt-ar">المرحلة الرابعة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q5')"><span class="opt-letter">B</span><span class="opt-text">Stage I (can continue to Stage II)<span class="opt-ar">المرحلة الأولى (يستمر حتى الثانية)</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q5')"><span class="opt-letter">C</span><span class="opt-text">Stage III only<span class="opt-ar">المرحلة الثالثة فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q5')"><span class="opt-letter">D</span><span class="opt-text">Only during coma<span class="opt-ar">فقط أثناء الغيبوبة</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q5-fb"></div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="mcq-item" id="q6">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 6</span>
+          <div class="mcq-q-en">Fetor hepaticus is described as:</div>
+          <div class="mcq-q-ar">يُوصف فيتور هيباتيكوس بأنه:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q6')"><span class="opt-letter">A</span><span class="opt-text">A fruity acetone odor similar to DKA<span class="opt-ar">رائحة أسيتون فواكهية مشابهة لـ DKA</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q6')"><span class="opt-letter">B</span><span class="opt-text">A sweet, slightly fecal odor to the breath of intestinal origin<span class="opt-ar">رائحة حلوة وبرازية خفيفة في الزفير ذات أصل معوي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q6')"><span class="opt-letter">C</span><span class="opt-text">A strong ammonia smell from the urine<span class="opt-ar">رائحة أمونيا قوية من البول</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q6')"><span class="opt-letter">D</span><span class="opt-text">A musty odor only detectable on skin<span class="opt-ar">رائحة عفنة تُكتشف فقط على الجلد</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q6-fb"></div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="mcq-item" id="q7">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 7</span>
+          <div class="mcq-q-en">In Stage IV hepatic encephalopathy, which finding is ABSENT?</div>
+          <div class="mcq-q-ar">في المرحلة الرابعة من الاعتلال الدماغي، أي نتيجة تكون غائبة؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q7')"><span class="opt-letter">A</span><span class="opt-text">Abnormal EEG<span class="opt-ar">رسم مخ غير طبيعي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q7')"><span class="opt-letter">B</span><span class="opt-text">Flaccidity of extremities<span class="opt-ar">ترهل الأطراف</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q7')"><span class="opt-letter">C</span><span class="opt-text">Asterixis (flapping tremor)<span class="opt-ar">الأستريكسيس (رعشة الرفرفة)</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q7')"><span class="opt-letter">D</span><span class="opt-text">Coma<span class="opt-ar">الغيبوبة</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q7-fb"></div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="mcq-item" id="q8">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 8</span>
+          <div class="mcq-q-en">The EEG finding characteristic of hepatic encephalopathy includes:</div>
+          <div class="mcq-q-ar">نتيجة رسم المخ المميزة للاعتلال الدماغي الكبدي تشمل:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q8')"><span class="opt-letter">A</span><span class="opt-text">High-frequency beta waves only<span class="opt-ar">موجات بيتا عالية التردد فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q8')"><span class="opt-letter">B</span><span class="opt-text">Generalized slowing and characteristic triphasic waves<span class="opt-ar">تباطؤ عام وموجات ثلاثية الطور مميزة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q8')"><span class="opt-letter">C</span><span class="opt-text">Normal alpha waves throughout all stages<span class="opt-ar">موجات ألفا طبيعية في جميع المراحل</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q8')"><span class="opt-letter">D</span><span class="opt-text">Seizure-like spike-and-wave discharges<span class="opt-ar">تفريغات من نوع الأشواك والموجات الشبيهة بالنوبات</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q8-fb"></div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="mcq-item" id="q9">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 9</span>
+          <div class="mcq-q-en">Which of the following is NOT a source of ammonia in hepatic encephalopathy?</div>
+          <div class="mcq-q-ar">أي مما يلي ليس مصدراً للأمونيا في الاعتلال الدماغي الكبدي؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q9')"><span class="opt-letter">A</span><span class="opt-text">GI bleeding<span class="opt-ar">نزيف الجهاز الهضمي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q9')"><span class="opt-letter">B</span><span class="opt-text">High-protein diet<span class="opt-ar">نظام غذائي عالي البروتين</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q9')"><span class="opt-letter">C</span><span class="opt-text">High-fat diet only<span class="opt-ar">نظام غذائي عالي الدهون فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q9')"><span class="opt-letter">D</span><span class="opt-text">Bacterial infection or uremia<span class="opt-ar">عدوى بكتيرية أو ارتفاع اليوريا</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q9-fb"></div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="mcq-item" id="q10">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 10</span>
+          <div class="mcq-q-en">Lactulose reduces ammonia by which mechanism?</div>
+          <div class="mcq-q-ar">يُقلل اللاكتولوز الأمونيا عن طريق أي آلية؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q10')"><span class="opt-letter">A</span><span class="opt-text">Inhibiting ammonia synthesis in the liver<span class="opt-ar">تثبيط تصنيع الأمونيا في الكبد</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q10')"><span class="opt-letter">B</span><span class="opt-text">Binding ammonia in the blood<span class="opt-ar">ارتباط الأمونيا في الدم</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q10')"><span class="opt-letter">C</span><span class="opt-text">Keeping ammonia ionized, promoting bowel evacuation, and changing fecal flora<span class="opt-ar">إبقاء الأمونيا متأينة وتعزيز إفراغ الأمعاء وتغيير النبيت البكتيري</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q10')"><span class="opt-letter">D</span><span class="opt-text">Increasing urea production by the kidney<span class="opt-ar">زيادة إنتاج اليوريا في الكلية</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q10-fb"></div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="mcq-item" id="q11">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 11</span>
+          <div class="mcq-q-en">A patient receiving lactulose develops watery diarrheal stools. This most likely indicates:</div>
+          <div class="mcq-q-ar">مريض يتلقى اللاكتولوز يُصاب بإسهال مائي. هذا يدل على الأرجح على:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q11')"><span class="opt-letter">A</span><span class="opt-text">Therapeutic effect of the drug<span class="opt-ar">التأثير العلاجي للدواء</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q11')"><span class="opt-letter">B</span><span class="opt-text">Medication overdose<span class="opt-ar">جرعة زائدة من الدواء</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q11')"><span class="opt-letter">C</span><span class="opt-text">Bacterial superinfection<span class="opt-ar">إصابة بكتيرية فوقية</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q11')"><span class="opt-letter">D</span><span class="opt-text">Hyponatremia<span class="opt-ar">نقص صوديوم الدم</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q11-fb"></div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="mcq-item" id="q12">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 12</span>
+          <div class="mcq-q-en">Neomycin is contraindicated in patients with:</div>
+          <div class="mcq-q-ar">النيومايسين مُضادّ استطباب في المرضى المصابين بـ:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q12')"><span class="opt-letter">A</span><span class="opt-text">Hypertension<span class="opt-ar">ارتفاع ضغط الدم</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q12')"><span class="opt-letter">B</span><span class="opt-text">Renal failure<span class="opt-ar">الفشل الكلوي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q12')"><span class="opt-letter">C</span><span class="opt-text">Diabetes mellitus<span class="opt-ar">داء السكري</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q12')"><span class="opt-letter">D</span><span class="opt-text">Hyperthyroidism<span class="opt-ar">فرط نشاط الغدة الدرقية</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q12-fb"></div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="mcq-item" id="q13">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 13</span>
+          <div class="mcq-q-en">The recommended daily protein intake for a patient with hepatic encephalopathy is:</div>
+          <div class="mcq-q-ar">الكمية اليومية الموصى بها من البروتين لمريض الاعتلال الدماغي الكبدي هي:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q13')"><span class="opt-letter">A</span><span class="opt-text">0–0.3 g/kg (strict elimination)<span class="opt-ar">0–0.3 غ/كغ (حذف كامل)</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q13')"><span class="opt-letter">B</span><span class="opt-text">1.0–1.5 g/kg daily<span class="opt-ar">1.0–1.5 غ/كغ يومياً</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q13')"><span class="opt-letter">C</span><span class="opt-text">3–4 g/kg daily<span class="opt-ar">3–4 غ/كغ يومياً</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q13')"><span class="opt-letter">D</span><span class="opt-text">Protein should be completely avoided<span class="opt-ar">يجب تجنب البروتين كلياً</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q13-fb"></div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="mcq-item" id="q14">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 14</span>
+          <div class="mcq-q-en">If animal protein precipitates encephalopathy, the nurse should suggest substituting with:</div>
+          <div class="mcq-q-ar">إذا أثار البروتين الحيواني الاعتلال الدماغي، يجب استبداله بـ:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q14')"><span class="opt-letter">A</span><span class="opt-text">Simple sugars and carbohydrates only<span class="opt-ar">سكريات بسيطة وكربوهيدرات فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q14')"><span class="opt-letter">B</span><span class="opt-text">Vegetable or dairy proteins (up to 120 g/day)<span class="opt-ar">بروتينات نباتية أو ألبان (حتى 120 غ/يوم)</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q14')"><span class="opt-letter">C</span><span class="opt-text">Fish and shellfish<span class="opt-ar">أسماك ومأكولات بحرية</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q14')"><span class="opt-letter">D</span><span class="opt-text">Protein supplements in tablet form<span class="opt-ar">مكملات بروتينية على شكل أقراص</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q14-fb"></div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="mcq-item" id="q15">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 15</span>
+          <div class="mcq-q-en">How often should vital signs be measured in hepatic encephalopathy management?</div>
+          <div class="mcq-q-ar">كم مرة يجب قياس العلامات الحيوية في إدارة الاعتلال الدماغي الكبدي؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q15')"><span class="opt-letter">A</span><span class="opt-text">Once per day<span class="opt-ar">مرة واحدة يومياً</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q15')"><span class="opt-letter">B</span><span class="opt-text">Once per hour<span class="opt-ar">مرة كل ساعة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q15')"><span class="opt-letter">C</span><span class="opt-text">Every 4 hours<span class="opt-ar">كل 4 ساعات</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q15')"><span class="opt-letter">D</span><span class="opt-text">Every 12 hours<span class="opt-ar">كل 12 ساعة</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q15-fb"></div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="mcq-item" id="q16">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 16</span>
+          <div class="mcq-q-en">A patient with hepatic encephalopathy Grade 3 or 4 should be:</div>
+          <div class="mcq-q-ar">مريض الاعتلال الدماغي الكبدي من الدرجة 3 أو 4 يجب أن:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q16')"><span class="opt-letter">A</span><span class="opt-text">Discharged home with oral lactulose<span class="opt-ar">يُخرَّج للمنزل مع لاكتولوز فموي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q16')"><span class="opt-letter">B</span><span class="opt-text">Admitted to the ICU<span class="opt-ar">يُدخَل إلى العناية المركزة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q16')"><span class="opt-letter">C</span><span class="opt-text">Managed in outpatient clinic<span class="opt-ar">يُعالَج في العيادة الخارجية</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q16')"><span class="opt-letter">D</span><span class="opt-text">Given IV glucose only<span class="opt-ar">يُعطى جلوكوز وريدي فقط</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q16-fb"></div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="mcq-item" id="q17">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 17</span>
+          <div class="mcq-q-en">Which nursing intervention helps prevent respiratory complications in hepatic encephalopathy?</div>
+          <div class="mcq-q-ar">أي تدخل تمريضي يساعد في منع المضاعفات التنفسية في الاعتلال الدماغي؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q17')"><span class="opt-letter">A</span><span class="opt-text">Restricting all patient movement<span class="opt-ar">تقييد حركة المريض كلياً</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q17')"><span class="opt-letter">B</span><span class="opt-text">Encouraging deep breathing and position changes<span class="opt-ar">تشجيع التنفس العميق وتغيير الأوضاع</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q17')"><span class="opt-letter">C</span><span class="opt-text">Administering high-flow oxygen only<span class="opt-ar">إعطاء أكسجين بتدفق عالٍ فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q17')"><span class="opt-letter">D</span><span class="opt-text">Suctioning every 30 minutes<span class="opt-ar">شفط الإفرازات كل 30 دقيقة</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q17-fb"></div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="mcq-item" id="q18">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 18</span>
+          <div class="mcq-q-en">During recovery from hepatic encephalopathy at home, protein is re-introduced in increments of:</div>
+          <div class="mcq-q-ar">أثناء التعافي من الاعتلال الدماغي في المنزل، يُضاف البروتين بزيادات:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q18')"><span class="opt-letter">A</span><span class="opt-text">5 g every 24 hours<span class="opt-ar">5 غ كل 24 ساعة</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q18')"><span class="opt-letter">B</span><span class="opt-text">10 g every 3–5 days if mental status is improving<span class="opt-ar">10 غ كل 3–5 أيام مع تحسن الحالة الذهنية</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q18')"><span class="opt-letter">C</span><span class="opt-text">50 g immediately after discharge<span class="opt-ar">50 غ فور الخروج</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q18')"><span class="opt-letter">D</span><span class="opt-text">20 g every 2 weeks<span class="opt-ar">20 غ كل أسبوعين</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q18-fb"></div>
+      </div>
+
+      <!-- Q19 -->
+      <div class="mcq-item" id="q19">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 19</span>
+          <div class="mcq-q-en">Which medication used in hepatic encephalopathy requires daily renal function monitoring?</div>
+          <div class="mcq-q-ar">أي دواء يُستخدم في الاعتلال الدماغي الكبدي يستلزم مراقبة وظائف الكلى يومياً؟</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,true,'q19')"><span class="opt-letter">A</span><span class="opt-text">Neomycin<span class="opt-ar">نيومايسين</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q19')"><span class="opt-letter">B</span><span class="opt-text">Lactulose<span class="opt-ar">لاكتولوز</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q19')"><span class="opt-letter">C</span><span class="opt-text">Rifaximin<span class="opt-ar">ريفاكسيمين</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q19')"><span class="opt-letter">D</span><span class="opt-text">Metronidazole<span class="opt-ar">ميترونيدازول</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q19-fb"></div>
+      </div>
+
+      <!-- Q20 -->
+      <div class="mcq-item" id="q20">
+        <div class="mcq-q-block">
+          <span class="mcq-num">Q 20</span>
+          <div class="mcq-q-en">The presence of alkalosis or hypokalemia in hepatic encephalopathy results in:</div>
+          <div class="mcq-q-ar">وجود حالة قلوية أو نقص بوتاسيوم في الاعتلال الدماغي يُؤدي إلى:</div>
+        </div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="ans(this,false,'q20')"><span class="opt-letter">A</span><span class="opt-text">Decreased ammonia production by bacteria<span class="opt-ar">انخفاض إنتاج الأمونيا بواسطة البكتيريا</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q20')"><span class="opt-letter">B</span><span class="opt-text">Reduced intestinal motility only<span class="opt-ar">تقليل حركة الأمعاء فقط</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,true,'q20')"><span class="opt-letter">C</span><span class="opt-text">Increased ammonia absorption from the GI tract and renal tubular fluid<span class="opt-ar">زيادة امتصاص الأمونيا من الجهاز الهضمي والسائل الكلوي</span></span></div>
+          <div class="mcq-opt" onclick="ans(this,false,'q20')"><span class="opt-letter">D</span><span class="opt-text">Improvement of hepatic encephalopathy symptoms<span class="opt-ar">تحسن أعراض الاعتلال الدماغي الكبدي</span></span></div>
+        </div>
+        <div class="mcq-feedback" id="q20-fb"></div>
+      </div>
+
+    </div><!-- end mcq-wrap -->
+  </div><!-- end mcq card -->
+
+</main>
+
+<script>
+  /* ─── TAB NAVIGATION ─── */
+  function showTab(id) {
+    document.querySelectorAll('.section-card').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  /* ─── MCQ LOGIC ─── */
+  let correct = 0;
+  let answered = 0;
+  const total = 20;
+
+  function ans(el, isCorrect, qid) {
+    const qEl = document.getElementById(qid);
+    if (qEl.dataset.answered) return; // already answered
+    qEl.dataset.answered = '1';
+
+    const opts = qEl.querySelectorAll('.mcq-opt');
+    // Lock all options
+    opts.forEach(o => o.classList.add('locked'));
+
+    if (isCorrect) {
+      el.classList.add('correct');
+      correct++;
+    } else {
+      el.classList.add('wrong');
+      // Reveal the correct answer
+      opts.forEach(o => {
+        const fn = o.getAttribute('onclick');
+        if (fn && fn.includes('true')) o.classList.add('reveal-correct');
+      });
+    }
+
+    answered++;
+    updateScore();
+
+    const fb = document.getElementById(qid + '-fb');
+    fb.textContent = isCorrect
+      ? '✅ Correct! أحسنت!'
+      : '❌ Incorrect — the correct answer is highlighted above. / الإجابة الصحيحة مُميَّزة أعلاه.';
+    fb.className = 'mcq-feedback show ' + (isCorrect ? 'correct' : 'wrong');
+  }
+
+  function updateScore() {
+    document.getElementById('score-val').textContent = correct + ' / ' + total;
+    const pct = Math.round((correct / total) * 100);
+    let msg = answered < total
+      ? answered + ' answered — keep going! / ' + answered + ' أُجيب — استمر!'
+      : 'Completed! Score: ' + pct + '% / مكتمل! النتيجة: ' + pct + '%';
+    document.getElementById('score-detail').textContent = msg;
+  }
+
+  function resetAll() {
+    correct = 0; answered = 0;
+    document.querySelectorAll('.mcq-item').forEach(q => {
+      delete q.dataset.answered;
+      q.className = 'mcq-item';
+      q.querySelectorAll('.mcq-opt').forEach(o => {
+        o.className = 'mcq-opt';
+      });
+      const fb = q.querySelector('.mcq-feedback');
+      if (fb) { fb.className = 'mcq-feedback'; fb.textContent = ''; }
+    });
+    updateScore();
+  }
+</script>
+</body>
+</html>

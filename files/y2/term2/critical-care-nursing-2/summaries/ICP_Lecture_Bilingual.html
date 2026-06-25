@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Increased Intracranial Pressure — ICP</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --surface2: #eef1f7;
+    --accent: #1a6fa8;
+    --accent2: #e07b39;
+    --accent3: #2a9d8f;
+    --text: #1c2333;
+    --text-muted: #5a6480;
+    --ar-bg: #f0f7f4;
+    --border: #dde3ef;
+    --tab-active: #1a6fa8;
+    --quiz-correct: #2a9d8f;
+    --quiz-wrong: #c0392b;
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(26,111,168,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #0d3f6b 0%, #1a6fa8 60%, #2a9d8f 100%);
+    color: #fff;
+    padding: 36px 40px 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .header-icon {
+    font-size: 52px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+  }
+  .header-text h1 {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .header-text h1 span { color: #a8d8f0; }
+  .header-text p {
+    font-size: 13px;
+    margin-top: 6px;
+    opacity: 0.75;
+    font-weight: 300;
+    direction: rtl;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .header-badge {
+    margin-top: 10px;
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 3px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── TABS ── */
+  .tabs-wrapper {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 24px;
+    gap: 2px;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 14px 20px;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .tab:hover { color: var(--accent); background: var(--surface2); border-radius: 6px 6px 0 0; }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .tab .tab-num {
+    background: var(--surface2);
+    color: var(--text-muted);
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  .tab.active .tab-num { background: var(--accent); color: #fff; }
+
+  /* ── CONTENT ── */
+  .content-area {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+  .panel { display: none; animation: fadeIn 0.3s ease; }
+  .panel.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ── BILINGUAL CARD ── */
+  .bi-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .bi-card-header {
+    background: linear-gradient(90deg, var(--accent) 0%, #1d84c5 100%);
+    color: #fff;
+    padding: 14px 24px;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bi-card-header.green { background: linear-gradient(90deg, var(--accent3) 0%, #38b2a3 100%); }
+  .bi-card-header.orange { background: linear-gradient(90deg, var(--accent2) 0%, #e8954e 100%); }
+  .bi-card-header.dark { background: linear-gradient(90deg, #2c3e6b 0%, #3d5299 100%); }
+
+  .bi-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  @media (max-width: 680px) { .bi-body { grid-template-columns: 1fr; } }
+
+  .bi-en, .bi-ar {
+    padding: 20px 24px;
+  }
+  .bi-en { border-right: 1px solid var(--border); }
+  .bi-ar {
+    background: var(--ar-bg);
+    direction: rtl;
+    text-align: right;
+  }
+  .lang-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bi-ar .lang-label { justify-content: flex-end; }
+  .bi-en p, .bi-ar p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .bi-ar p { font-size: 14px; line-height: 1.85; }
+
+  /* ── KEY-VALUE ROWS ── */
+  .kv-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    gap: 12px;
+  }
+  .kv-row:last-child { border-bottom: none; }
+  .kv-en { font-size: 14px; flex:1; }
+  .kv-ar { font-size: 13.5px; flex:1; direction: rtl; text-align: right; color: #2a5a4a; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: linear-gradient(135deg, #e8f4fd 0%, #d6edf9 100%);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .highlight.warn {
+    background: linear-gradient(135deg, #fef3e8 0%, #fde8d0 100%);
+    border-left-color: var(--accent2);
+  }
+  .highlight.green {
+    background: linear-gradient(135deg, #e6f7f5 0%, #d0f0eb 100%);
+    border-left-color: var(--accent3);
+  }
+  .highlight strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; color: var(--text-muted); }
+
+  /* ── FLOW ── */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+  }
+  .flow-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .flow-step::before {
+    content: '';
+    position: absolute;
+    left: 19px; top: 40px;
+    width: 2px;
+    bottom: 0;
+    background: var(--border);
+  }
+  .flow-step:last-child::before { display: none; }
+  .flow-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(26,111,168,0.3);
+  }
+  .flow-dot.orange { background: var(--accent2); box-shadow: 0 2px 8px rgba(224,123,57,0.3); }
+  .flow-dot.green { background: var(--accent3); box-shadow: 0 2px 8px rgba(42,157,143,0.3); }
+  .flow-dot.dark { background: #2c3e6b; }
+  .flow-content { flex:1; padding-top: 8px; }
+  .flow-content .en { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.6; }
+  .flow-content .ar { font-size: 13px; color: var(--text-muted); direction: rtl; text-align: right; margin-top: 4px; line-height: 1.6; }
+
+  /* ── GRID CARDS ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+  .mini-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  }
+  .mini-card .icon { font-size: 24px; margin-bottom: 8px; }
+  .mini-card .title-en { font-weight: 600; font-size: 14px; color: var(--accent); }
+  .mini-card .title-ar { font-size: 13px; direction: rtl; text-align: right; color: var(--accent3); margin-top: 2px; }
+  .mini-card .body-en { font-size: 13px; margin-top: 8px; line-height: 1.6; color: var(--text); }
+  .mini-card .body-ar { font-size: 12.5px; direction: rtl; text-align: right; color: #4a6a60; margin-top: 4px; line-height: 1.6; }
+
+  /* ── TABLE ── */
+  .bi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .bi-table th {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .bi-table th:last-child { text-align: right; }
+  .bi-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); }
+  .bi-table td:last-child { text-align: right; direction: rtl; color: #2a5a4a; }
+  .bi-table tr:nth-child(even) td { background: var(--surface2); }
+  .bi-table tr:last-child td { border-bottom: none; }
+
+  /* ── QUIZ ── */
+  .quiz-header {
+    text-align: center;
+    padding: 32px 20px 20px;
+  }
+  .quiz-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    color: var(--accent);
+  }
+  .quiz-header p { color: var(--text-muted); margin-top: 6px; font-size: 14px; }
+  .quiz-header p span { direction: rtl; display: inline-block; }
+
+  .quiz-progress {
+    background: var(--border);
+    border-radius: 20px;
+    height: 6px;
+    margin: 16px auto;
+    max-width: 400px;
+    overflow: hidden;
+  }
+  .quiz-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    border-radius: 20px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .q-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .q-text-en {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .q-text-ar {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .option-btn {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    transition: all 0.18s;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--accent); background: #e8f4fd; }
+  .option-btn .opt-letter {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .option-btn .opt-en { font-size: 13.5px; line-height: 1.4; }
+  .option-btn .opt-ar { font-size: 12px; color: var(--text-muted); direction: rtl; }
+  .option-btn.correct { background: #d6f5f0; border-color: var(--quiz-correct); }
+  .option-btn.correct .opt-letter { background: var(--quiz-correct); color: #fff; }
+  .option-btn.wrong { background: #fde8e8; border-color: var(--quiz-wrong); }
+  .option-btn.wrong .opt-letter { background: var(--quiz-wrong); color: #fff; }
+  .option-btn:disabled { cursor: default; }
+
+  .feedback {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: none;
+    line-height: 1.6;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct { background: #d6f5f0; color: #1a5c54; border-left: 3px solid var(--quiz-correct); }
+  .feedback.wrong { background: #fde8e8; color: #7a1f1f; border-left: 3px solid var(--quiz-wrong); }
+
+  .score-box {
+    background: linear-gradient(135deg, #e8f4fd, #d0f0eb);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    margin: 24px 0;
+    display: none;
+  }
+  .score-box h3 { font-family: 'Lora', serif; font-size: 22px; color: var(--accent); }
+  .score-big { font-size: 56px; font-weight: 700; color: var(--accent); line-height: 1; margin: 8px 0; }
+  .score-box p { color: var(--text-muted); font-size: 14px; margin-top: 6px; }
+  .score-box p.ar { direction: rtl; }
+  .retry-btn {
+    margin-top: 16px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .retry-btn:hover { background: #155d8e; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: var(--accent);
+    margin: 28px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── FORMULA ── */
+  .formula {
+    background: #0d3f6b;
+    color: #a8d8f0;
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 16px 0;
+  }
+  .formula span { color: #fff; font-weight: 700; }
+  .formula small { display: block; font-family: 'DM Sans', sans-serif; font-size: 12px; color: #7ab8d8; margin-top: 4px; direction: rtl; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-icon">🧠</div>
+  <div class="header-text">
+    <h1>Increased <span>Intracranial</span> Pressure</h1>
+    <p>ارتفاع الضغط داخل الجمجمة</p>
+    <span class="header-badge">Dr. Ghada Elsayed &nbsp;|&nbsp; Neuroscience Nursing</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab(0)"><span class="tab-num">1</span>Intro & Definition</button>
+    <button class="tab" onclick="showTab(1)"><span class="tab-num">2</span>Pathophysiology</button>
+    <button class="tab" onclick="showTab(2)"><span class="tab-num">3</span>Causes</button>
+    <button class="tab" onclick="showTab(3)"><span class="tab-num">4</span>Assessment</button>
+    <button class="tab" onclick="showTab(4)"><span class="tab-num">5</span>Nursing Mgmt</button>
+    <button class="tab" onclick="showTab(5)"><span class="tab-num">6</span>Medical Mgmt</button>
+    <button class="tab" onclick="showTab(6)"><span class="tab-num">📝</span>Self-Test</button>
+  </div>
+</div>
+
+<div class="content-area">
+
+<!-- ═══════════════ TAB 1: INTRO ═══════════════ -->
+<div class="panel active" id="panel-0">
+  <div class="bi-card">
+    <div class="bi-card-header">📌 Introduction — مقدمة</div>
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>Many neurological problems are associated with increased ICP, such as brain injury and stroke. Sustained increases in ICP compound the extent of brain injury and can be life-threatening. Therefore, it is important to assess and maintain ICP within normal limits.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>كثير من المشاكل العصبية مرتبطة بارتفاع الضغط داخل الجمجمة، مثل إصابات الدماغ والسكتة الدماغية. الارتفاع المستمر في الضغط يُضاعف حجم إصابة الدماغ وقد يكون مهدداً للحياة. لذا من الضروري تقييم الضغط والحفاظ عليه ضمن الحدود الطبيعية.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="highlight">
+      <strong>Normal ICP — الضغط الطبيعي</strong>
+      Normal ICP ranges from <b>0 to 15 mm Hg</b><br>
+      <span style="direction:rtl;display:block;margin-top:4px;color:#4a6a6a;font-size:13px;">الضغط الطبيعي داخل الجمجمة يتراوح بين <b>٠ و ١٥ ملم زئبق</b></span>
+    </div>
+    <div class="highlight warn">
+      <strong>Increased ICP — الضغط المرتفع</strong>
+      ICP ≥ <b>20 mm Hg</b> lasting for <b>5 minutes or longer</b><br>
+      <span style="direction:rtl;display:block;margin-top:4px;color:#7a4a2a;font-size:13px;">ضغط <b>٢٠ ملم زئبق أو أكثر</b> يستمر لمدة <b>٥ دقائق فأكثر</b></span>
+    </div>
+  </div>
+
+  <h3 class="section-title">Key Numbers — الأرقام المهمة</h3>
+  <table class="bi-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>المعامل بالعربي</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Normal ICP</td><td>0 – 15 mm Hg</td><td>الضغط الطبيعي داخل الجمجمة</td></tr>
+      <tr><td>Increased ICP (definition)</td><td>≥ 20 mm Hg for ≥ 5 min</td><td>تعريف ارتفاع الضغط</td></tr>
+      <tr><td>Normal CPP (adult)</td><td>60 – 100 mm Hg</td><td>ضغط التروية الدماغية الطبيعي</td></tr>
+      <tr><td>Target CPP</td><td>≥ 70 mm Hg</td><td>الهدف العلاجي لضغط التروية</td></tr>
+      <tr><td>Management goal — ICP</td><td>&lt; 20 mm Hg</td><td>الهدف العلاجي للضغط داخل الجمجمة</td></tr>
+      <tr><td>Target MAP</td><td>70 – 90 mm Hg</td><td>الهدف العلاجي للضغط الشرياني الوسطي</td></tr>
+    </tbody>
+  </table>
+
+  <div class="formula">
+    <span>CPP = MAP − ICP</span>
+    <small>ضغط التروية الدماغية = الضغط الشرياني الوسطي − الضغط داخل الجمجمة</small>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 2: PATHOPHYSIOLOGY ═══════════════ -->
+<div class="panel" id="panel-1">
+  <div class="bi-card">
+    <div class="bi-card-header green">🔬 Pathophysiology — الفيزيولوجيا المرضية</div>
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>The rigid cranial vault contains three types of non-compressible contents: <b>brain tissue, blood, and CSF</b>. The pressure exerted by the combined volumes of these three components is ICP. If the volume of any one increases, the volume of the other(s) must decrease proportionally, or ICP rises.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>الجمجمة الصلبة تحتوي على ثلاثة مكونات غير قابلة للضغط: <b>أنسجة الدماغ، والدم، والسائل الدماغي الشوكي (CSF)</b>. الضغط الناتج عن مجموع أحجام هذه المكونات هو الضغط داخل الجمجمة. إذا زاد حجم أي منها، يجب أن تنخفض المكونات الأخرى أو يرتفع الضغط.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Cascade of Events — تسلسل الأحداث</h3>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-dot">1</div>
+      <div class="flow-content">
+        <div class="en">Compensatory mechanisms (compliance): CSF shifts to spinal subarachnoid space; blood shifts to venous sinuses → ICP stays normal</div>
+        <div class="ar">آليات التعويض (الامتثال): ينتقل السائل الدماغي الشوكي للفضاء تحت العنكبوتية الشوكي، وينتقل الدم للجيوب الوريدية → يبقى الضغط طبيعياً</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot orange">2</div>
+      <div class="flow-content">
+        <div class="en">Compensatory mechanisms exhausted → small volume increase causes large ICP rise</div>
+        <div class="ar">استنفاد آليات التعويض → زيادة بسيطة في الحجم تُسبب ارتفاعاً كبيراً في الضغط</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot orange">3</div>
+      <div class="flow-content">
+        <div class="en">ICP ↑ → Cerebral Blood Flow (CBF) ↓ → Brain becomes hypoxic, CO₂ ↑, acidosis occurs</div>
+        <div class="ar">ارتفاع الضغط → انخفاض تدفق الدم الدماغي → نقص أكسجين الدماغ وارتفاع ثاني أكسيد الكربون وحدوث الحماض</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot dark">4</div>
+      <div class="flow-content">
+        <div class="en">Cerebral blood vessels dilate to increase CBF → further increases intracranial volume → vicious cycle 🔄</div>
+        <div class="ar">توسع الأوعية الدموية الدماغية لزيادة التدفق → مزيد من ارتفاع الحجم داخل الجمجمة → دوامة مفرغة خطيرة 🔄</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#c0392b">⚠</div>
+      <div class="flow-content">
+        <div class="en">Sustained ICP ↑ → Herniation (brain tissue shifts from high to low pressure) → Life-threatening</div>
+        <div class="ar">استمرار ارتفاع الضغط → فتق الدماغ (انتقال أنسجة الدماغ من منطقة ضغط عالٍ لمنطقة ضغط منخفض) → يهدد الحياة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight green">
+    <strong>CPP Formula — معادلة ضغط التروية</strong>
+    <b>CPP = MAP − ICP</b> &nbsp;|&nbsp; Must be maintained ≥ 70 mm Hg<br>
+    Inadequate CPP → Cerebral ischemia or infarction<br>
+    <span style="direction:rtl;display:block;margin-top:6px;font-size:13px;color:#2a5a4a;">ضغط التروية = الضغط الشرياني الوسطي − الضغط داخل الجمجمة | يجب أن يُحافظ عليه ≥ ٧٠ ملم زئبق | عدم كفايته يُفضي إلى نقص تروية أو احتشاء دماغي</span>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 3: CAUSES ═══════════════ -->
+<div class="panel" id="panel-2">
+  <h3 class="section-title">Causes of Increased ICP — أسباب ارتفاع الضغط داخل الجمجمة</h3>
+  <div class="grid-2">
+    <div class="mini-card">
+      <div class="icon">🧠</div>
+      <div class="title-en">Cerebral Edema</div>
+      <div class="title-ar">الوذمة الدماغية</div>
+      <div class="body-en">Increase in water content of brain tissue. If uncorrected, leads to increased ICP.</div>
+      <div class="body-ar">زيادة محتوى الماء في أنسجة الدماغ. إذا لم تُعالَج تؤدي إلى ارتفاع الضغط داخل الجمجمة.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🩸</div>
+      <div class="title-en">Increased Cerebral Blood Volume (CBV)</div>
+      <div class="title-ar">زيادة حجم الدم الدماغي</div>
+      <div class="body-en">Caused by hypoxemia or hypercapnia → vasodilation → more blood volume inside the skull.</div>
+      <div class="body-ar">ناتج عن نقص الأكسجين أو ارتفاع ثاني أكسيد الكربون → توسع وعائي → زيادة حجم الدم داخل الجمجمة.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">💧</div>
+      <div class="title-en">Increased CSF (Hydrocephalus)</div>
+      <div class="title-ar">زيادة السائل الدماغي الشوكي (استسقاء الدماغ)</div>
+      <div class="body-en">Blocked CSF flow/absorption (e.g., SAH, meningitis, encephalitis) or excess CSF production.</div>
+      <div class="body-ar">انسداد تدفق أو امتصاص السائل الدماغي الشوكي (كنزيف تحت العنكبوتية، التهاب السحايا، التهاب الدماغ) أو الإنتاج الزائد.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🤕</div>
+      <div class="title-en">Head Injury</div>
+      <div class="title-ar">إصابة الرأس</div>
+      <div class="body-en">Direct trauma causes brain swelling, hemorrhage, or edema leading to ICP elevation.</div>
+      <div class="body-ar">الصدمة المباشرة تُسبب تورم الدماغ أو نزيفاً أو وذمة تؤدي لارتفاع الضغط.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">❤️‍🔥</div>
+      <div class="title-en">Hypertension & Intracranial Hemorrhage</div>
+      <div class="title-ar">ارتفاع ضغط الدم والنزيف داخل الجمجمة</div>
+      <div class="body-en">Both conditions increase intracranial volume and pressure directly.</div>
+      <div class="body-ar">كلا الحالتين تزيد الحجم والضغط داخل الجمجمة بشكل مباشر.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🌡️</div>
+      <div class="title-en">Increased Metabolic Demands</div>
+      <div class="title-ar">زيادة المتطلبات الأيضية</div>
+      <div class="body-en">Fever, pain, shivering, seizures, and clustered nursing activities can increase oxygen demand and ICP.</div>
+      <div class="body-ar">الحمى، الألم، الرجفة، التشنجات، وتجميع الأنشطة التمريضية معاً تزيد متطلبات الأكسجين وترفع الضغط.</div>
+    </div>
+  </div>
+
+  <div class="bi-card" style="margin-top:20px">
+    <div class="bi-card-header orange">⚡ Factors Contributing via Hypoxia/Hypercapnia</div>
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>Decreased cerebral oxygenation → cerebral vasodilation → ↑ CBF → ↑ ICP.<br><br>
+        Hypercapnia also causes vasodilation. Factors that cause hypoxemia/hypercapnia: ineffective ventilation, airway obstruction, endotracheal suctioning.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>انخفاض أكسجة الدماغ → توسع الأوعية الدماغية → زيادة التدفق الدموي الدماغي → ارتفاع الضغط داخل الجمجمة.<br><br>
+        فرط ثاني أكسيد الكربون يُسبب التوسع الوعائي أيضاً. عوامل تسبب ذلك: التهوية غير الفعالة، انسداد مجرى الهواء، شفط الأنبوب الرغامي.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 4: ASSESSMENT ═══════════════ -->
+<div class="panel" id="panel-3">
+  <div class="bi-card">
+    <div class="bi-card-header dark">🔍 Assessment — التقييم السريري</div>
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>Perform a careful neurologic examination with emphasis on Level of Consciousness (LOC), motor function, and cranial nerve function. Vital signs are part of routine assessment. ICP is manifested by deterioration in all aspects of neurological functioning.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>إجراء فحص عصبي دقيق مع التركيز على مستوى الوعي، الوظيفة الحركية، وأعصاب الرأس. العلامات الحيوية جزء أساسي من التقييم الدوري. يتجلى ارتفاع الضغط بتدهور جميع جوانب الوظيفة العصبية.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Clinical Progression — التدرج السريري</h3>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#e6ac20">1</div>
+      <div class="flow-content">
+        <div class="en"><b>Early:</b> Restlessness, confusion, hypertension (compensatory to maintain CPP)</div>
+        <div class="ar"><b>مبكر:</b> اضطراب، ارتباك، ارتفاع ضغط الدم (تعويضي للحفاظ على ضغط التروية)</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot orange">2</div>
+      <div class="flow-content">
+        <div class="en">Decreased LOC: from lethargy → stupor → coma</div>
+        <div class="ar">تراجع مستوى الوعي: من النعاس ← الذهول ← الغيبوبة</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot orange">3</div>
+      <div class="flow-content">
+        <div class="en">Pupillary changes: diminished reactions, change in pupil size</div>
+        <div class="ar">تغيرات في الحدقة: تراجع الاستجابة وتغير حجم الحدقة</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#c0392b">4</div>
+      <div class="flow-content">
+        <div class="en">Motor decline: abnormal flexion or extension (decorticate/decerebrate posturing)</div>
+        <div class="ar">تراجع الوظيفة الحركية: وضعية غير طبيعية (انثناء أو امتداد مرضي)</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#7b0000">⚠</div>
+      <div class="flow-content">
+        <div class="en"><b>Cushing's Triad (LATE, critical sign):</b> Systolic hypertension + widening pulse pressure + Bradycardia + Irregular respirations → often signifies irreversible damage</div>
+        <div class="ar"><b>ثالوث كوشينج (علامة متأخرة وحرجة):</b> ارتفاع الضغط الانقباضي + توسع الضغط النبضي + بطء القلب + تنفس غير منتظم → غالباً يدل على ضرر لا رجعة فيه</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Monitoring Techniques — تقنيات المراقبة</h3>
+  <div class="grid-2">
+    <div class="mini-card">
+      <div class="icon">📡</div>
+      <div class="title-en">ICP Monitoring</div>
+      <div class="title-ar">مراقبة الضغط داخل الجمجمة</div>
+      <div class="body-en">Invasive monitoring to correlate objective data with clinical picture and determine cerebral perfusion.</div>
+      <div class="body-ar">مراقبة تداخلية لربط البيانات الموضوعية بالصورة السريرية وتحديد التروية الدماغية.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🩺</div>
+      <div class="title-en">Cerebral Oxygenation (SjO₂)</div>
+      <div class="title-ar">أكسجة الدماغ (تشبع الأكسجين الوريدي الوداجي)</div>
+      <div class="body-en">CBF and brain oxygen utilization monitored via jugular oxygen saturation (SjO₂).</div>
+      <div class="body-ar">مراقبة تدفق الدم الدماغي واستهلاك الأكسجين عبر تشبع الأكسجين في الوريد الوداجي.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">💓</div>
+      <div class="title-en">Hemodynamic Monitoring</div>
+      <div class="title-ar">المراقبة الديناميكية الدموية</div>
+      <div class="body-en">To monitor fluid status and assist in maintaining adequate cerebral perfusion.</div>
+      <div class="body-ar">لمراقبة حالة السوائل والمساعدة في الحفاظ على كفاية التروية الدماغية.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🫁</div>
+      <div class="title-en">Pulse Oximetry & EEG</div>
+      <div class="title-ar">قياس نبض الأكسجين والرسم الكهربائي للدماغ</div>
+      <div class="body-en">Continuous monitoring of arterial oxygen saturation and brain electrical activity.</div>
+      <div class="body-ar">مراقبة مستمرة لتشبع أكسجين الشرايين والنشاط الكهربائي للدماغ.</div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Diagnostic Tests — الاختبارات التشخيصية</h3>
+  <table class="bi-table">
+    <thead><tr><th>Test (English)</th><th>Purpose</th><th>الاختبار (عربي)</th></tr></thead>
+    <tbody>
+      <tr><td>ABGs, SpO₂, ETCO₂</td><td>Oxygenation & ventilation status</td><td>غازات الدم الشرياني وتشبع الأكسجين وثاني أكسيد الكربون</td></tr>
+      <tr><td>CBC (Hct, Hgb, Platelets)</td><td>Oxygen-carrying capacity & clotting</td><td>صورة دم كاملة (هيماتوكريت، هيموجلوبين، صفائح)</td></tr>
+      <tr><td>Coagulation (PT, INR, aPTT)</td><td>Brain injury may cause coagulopathy</td><td>بروفايل التخثر (زمن البروثرومبين، INR، زمن الثرومبوبلاستين)</td></tr>
+      <tr><td>Electrolytes, BUN, Creatinine, LFTs, Osmolality</td><td>Metabolic status</td><td>الأملاح، نيتروجين اليوريا، الكرياتينين، وظائف الكبد، الأوزمولالية</td></tr>
+      <tr><td>CT Scan</td><td>Structural imaging</td><td>الأشعة المقطعية — تصوير هيكلي للدماغ</td></tr>
+      <tr><td>MRI</td><td>Detailed brain imaging</td><td>التصوير بالرنين المغناطيسي</td></tr>
+      <tr><td>CBF Monitoring & EEG</td><td>Flow & electrical brain activity</td><td>مراقبة التدفق الدماغي والرسم الكهربائي</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════ TAB 5: NURSING MGMT ═══════════════ -->
+<div class="panel" id="panel-4">
+  <div class="bi-card">
+    <div class="bi-card-header">🏥 Nursing Management Goals — الأهداف التمريضية</div>
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>Goal: Maintain ICP &lt; 20 mm Hg while maintaining CPP 60–70 mm Hg. Identify and treat the cause of increased ICP. Maintain airway, provide ventilation/oxygenation, and decrease metabolic demands on the injured brain.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>الهدف: الحفاظ على ضغط داخل الجمجمة أقل من ٢٠ ملم زئبق مع الحفاظ على ضغط التروية ٦٠-٧٠ ملم زئبق. تحديد سبب الارتفاع وعلاجه. الحفاظ على مجرى الهواء، وتوفير التهوية والأكسجة، وخفض المتطلبات الأيضية.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Positioning — وضعية المريض</h3>
+  <div class="bi-card">
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>• Elevate head of bed to <b>30 degrees</b>; keep head in neutral midline position to facilitate venous drainage.<br>
+        • Hemodynamically unstable patients may need flat position.<br>
+        • After position changes, if CPP does not return to baseline within 5 minutes, reposition to best CPP position.<br>
+        • Monitor individualized cerebral and hemodynamic response.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>• رفع رأس السرير <b>٣٠ درجة</b>؛ الحفاظ على الرأس في وضع محايد لتسهيل الصرف الوريدي.<br>
+        • المرضى غير المستقرين ديناميكياً قد يحتاجون لوضع مسطح.<br>
+        • بعد تغيير الوضع، إذا لم يعد ضغط التروية لخط الأساس خلال ٥ دقائق، يُعاد تغيير الوضع للأفضل.<br>
+        • مراقبة الاستجابة الفردية لكل مريض.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Suctioning Guidelines — إرشادات الشفط</h3>
+  <div class="grid-2">
+    <div class="highlight warn">
+      <strong>Before Suctioning — قبل الشفط</strong>
+      Preoxygenate with <b>100% oxygen</b> before, between attempts, and for 1 min after.<br>
+      <span style="direction:rtl;display:block;margin-top:4px;font-size:12px;color:#7a4a2a;">إعطاء أكسجين <b>١٠٠٪</b> قبل الشفط وبين المحاولات ولمدة دقيقة بعده</span>
+    </div>
+    <div class="highlight warn">
+      <strong>During Suctioning — أثناء الشفط</strong>
+      Limit each pass to <b>&lt; 10 seconds</b>, maximum <b>2 passes</b>. Maintain head in neutral position.<br>
+      <span style="direction:rtl;display:block;margin-top:4px;font-size:12px;color:#7a4a2a;">أقل من <b>١٠ ثوانٍ</b> لكل مرور، بحد أقصى <b>مرورين</b>. الرأس في وضع محايد</span>
+    </div>
+  </div>
+
+  <h3 class="section-title">Activity & Stimulation — النشاط والتحفيز</h3>
+  <div class="bi-card">
+    <div class="bi-body">
+      <div class="bi-en">
+        <div class="lang-label">🇬🇧 English</div>
+        <p>Space nursing care activities — allow rest between turning, repositioning, and hygiene care as these activities are associated with ICP increases. Elevated ICP from nursing care is usually temporary and should return to baseline within minutes.<br><br>
+        Assess physiologic response to visitors; family presence may <b>decrease</b> ICP, but caution family about excess stimulation or emotional conversations.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-label">العربية 🇪🇬</div>
+        <p>توزيع الأنشطة التمريضية على فترات — السماح بالراحة بين تقليب المريض وتغيير وضعيته والعناية الشخصية لأن هذه الأنشطة ترفع الضغط. الارتفاع عادةً مؤقت ويعود للقيم الطبيعية خلال دقائق.<br><br>
+        تقييم الاستجابة الفسيولوجية للزيارات؛ وجود الأسرة قد <b>يخفض</b> الضغط، لكن تحذيرهم من الإثارة الزائدة أو المحادثات العاطفية المُجهِدة.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 6: MEDICAL MGMT ═══════════════ -->
+<div class="panel" id="panel-5">
+  <h3 class="section-title">Medical Interventions — التدخلات الطبية</h3>
+  <div class="grid-2">
+    <div class="mini-card">
+      <div class="icon">💊</div>
+      <div class="title-en">Corticosteroids</div>
+      <div class="title-ar">الكورتيكوستيرويدات</div>
+      <div class="body-en">Useful for reducing cerebral edema associated with brain tumors and meningitis.</div>
+      <div class="body-ar">مفيدة لتقليل الوذمة الدماغية المرتبطة بأورام المخ والتهاب السحايا.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🫁</div>
+      <div class="title-en">Oxygenation & Ventilation</div>
+      <div class="title-ar">الأكسجة والتهوية</div>
+      <div class="body-en">Goal: PaO₂ > 80 mm Hg. PaO₂ &lt; 50 mm Hg can precipitate ICP rise. Managed via ETT + mechanical ventilation.</div>
+      <div class="body-ar">الهدف: PaO₂ أعلى من ٨٠ ملم زئبق. انخفاضه تحت ٥٠ قد يُعجل بارتفاع الضغط. يُدار عبر أنبوب رغامي وتهوية ميكانيكية.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🌬️</div>
+      <div class="title-en">CO₂ Management (Hyperventilation)</div>
+      <div class="title-ar">إدارة ثاني أكسيد الكربون (فرط التهوية)</div>
+      <div class="body-en">Decreases PaCO₂ → vasoconstriction → ↓ CBF → ↓ ICP. Used for short-term acute neurologic deterioration only.</div>
+      <div class="body-ar">يقلل PaCO₂ → تضيق وعائي → تقليل التدفق الدماغي → خفض الضغط. يُستخدم فقط للفترة القصيرة في التدهور العصبي الحاد.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">💉</div>
+      <div class="title-en">Osmotic & Loop Diuretics</div>
+      <div class="title-ar">المدرات الأسموزية وعروة هنلي</div>
+      <div class="body-en"><b>Mannitol</b> 0.5–1 g/kg IV over 5–10 min. <b>Loop diuretics</b> (furosemide) remove Na & water from brain cells, reduce CSF formation. Contraindicated in AKI.</div>
+      <div class="body-ar"><b>مانيتول</b> ٠.٥-١ غرام/كغم وريدياً خلال ٥-١٠ دقائق. <b>مدرات عروة هنلي</b> (فوروسيميد) تُزيل الصوديوم والماء وتُقلل تكوين السائل الدماغي. مضادة للاستطباب في الفشل الكلوي الحاد.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">🩺</div>
+      <div class="title-en">Blood Pressure Management</div>
+      <div class="title-ar">إدارة ضغط الدم</div>
+      <div class="body-en">MAP: 70–90 mm Hg. Hypotension → ↓ CBF → ischemia. Hypertension (&gt;160 systolic) → worsens edema. Labetalol or Nicardipine used.</div>
+      <div class="body-ar">ضغط شرياني وسطي: ٧٠-٩٠ ملم زئبق. الانخفاض يُسبب نقص التروية. الارتفاع فوق ١٦٠ يزيد الوذمة. يُستخدم لابيتالول أو نيكارديبين.</div>
+    </div>
+    <div class="mini-card">
+      <div class="icon">💧</div>
+      <div class="title-en">Fluid Administration</div>
+      <div class="title-ar">إعطاء السوائل</div>
+      <div class="body-en">Normal saline 0.9% (isotonic) recommended. Avoid hypotonic solutions (worsen cerebral edema). Monitor Na, K, osmolarity strictly.</div>
+      <div class="body-ar">محلول ملحي ٠.٩٪ (متساوي التوتر) مُوصى به. تجنب المحاليل الناقصة التوتر. مراقبة دقيقة للصوديوم والبوتاسيوم والأوزمولالية.</div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Reducing Metabolic Demands — خفض المتطلبات الأيضية</h3>
+  <table class="bi-table">
+    <thead><tr><th>Therapy</th><th>Mechanism</th><th>العلاج والآلية</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature Control (Hypothermia)</td><td>↓ cerebral metabolism, ↓ CBF, ↓ ICP. Target 34–35°C for 24–72 hrs</td><td>التحكم في درجة الحرارة (انخفاض حراري مُحرَّض): هدف ٣٤-٣٥ درجة مئوية لـ ٢٤-٧٢ ساعة</td></tr>
+      <tr><td>Sedation (Benzodiazepines, Propofol, Opioids)</td><td>Reduces agitation-related ICP rise; Propofol ↓ cerebral metabolism</td><td>التخدير الخفيف: يقلل الارتفاع الناجم عن الهياج؛ البروبوفول يخفض الأيض الدماغي</td></tr>
+      <tr><td>Seizure Prophylaxis</td><td>Prevents seizure-induced metabolic surge and ICP spike</td><td>الوقاية من التشنجات: تمنع الارتفاع الأيضي المفاجئ والضغط المصاحب للتشنج</td></tr>
+      <tr><td>Neuromuscular Blockade</td><td>For patients unresponsive to other treatments; requires ventilator support</td><td>الحصار العضلي العصبي: للمرضى غير المستجيبين؛ يتطلب التنفس الاصطناعي</td></tr>
+      <tr><td>Barbiturate Therapy (Pentobarbital)</td><td>Reduces ICP refractory to other treatments; requires hemodynamic monitoring</td><td>علاج الباربيتورات (بينتوباربيتال): لارتفاع الضغط المقاوم؛ يتطلب مراقبة ديناميكية دموية</td></tr>
+      <tr><td>Surgical Intervention</td><td>Remove mass/lesion causing ICP elevation</td><td>التدخل الجراحي: إزالة الكتلة أو الآفة المسببة لارتفاع الضغط</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════ TAB 7: QUIZ ═══════════════ -->
+<div class="panel" id="panel-6">
+  <div class="quiz-header">
+    <h2>🧠 Self-Test — اختبر نفسك</h2>
+    <p>20 Multiple Choice Questions &nbsp;|&nbsp; <span>٢٠ سؤال اختياري من متعدد</span></p>
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
+    <p id="progressText" style="font-size:12px;color:var(--text-muted);margin-top:4px;">0 / 20 answered</p>
+  </div>
+
+  <div id="quizContainer"></div>
+  <div class="score-box" id="scoreBox">
+    <h3>Quiz Complete! — انتهى الاختبار</h3>
+    <div class="score-big" id="scoreNum"></div>
+    <p id="scoreMsg"></p>
+    <p class="ar" id="scoreMsgAr"></p>
+    <button class="retry-btn" onclick="resetQuiz()">🔄 Try Again — حاول مجدداً</button>
+  </div>
+</div>
+
+</div><!-- end content-area -->
+
+<script>
+// ── TAB LOGIC ──
+function showTab(idx) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+
+// ── QUIZ DATA ──
+const questions = [
+  {
+    en: "What is the normal range of Intracranial Pressure (ICP)?",
+    ar: "ما هو النطاق الطبيعي للضغط داخل الجمجمة؟",
+    options: [
+      {en:"0 – 15 mm Hg", ar:"٠ – ١٥ ملم زئبق"},
+      {en:"20 – 30 mm Hg", ar:"٢٠ – ٣٠ ملم زئبق"},
+      {en:"60 – 100 mm Hg", ar:"٦٠ – ١٠٠ ملم زئبق"},
+      {en:"5 – 25 mm Hg", ar:"٥ – ٢٥ ملم زئبق"}
+    ],
+    correct: 0,
+    explain: "Normal ICP is 0–15 mm Hg. Values ≥20 mm Hg for ≥5 minutes define increased ICP. | الضغط الطبيعي ٠-١٥ ملم زئبق. الارتفاع يُعرَّف بـ ٢٠ ملم زئبق أو أكثر لمدة ٥ دقائق فأكثر."
+  },
+  {
+    en: "Increased ICP is defined as a pressure of:",
+    ar: "يُعرَّف ارتفاع الضغط داخل الجمجمة بأنه ضغط:",
+    options: [
+      {en:"≥ 15 mm Hg for 3 minutes", ar:"١٥ ملم زئبق أو أكثر لمدة ٣ دقائق"},
+      {en:"≥ 20 mm Hg for 5 minutes or longer", ar:"٢٠ ملم زئبق أو أكثر لمدة ٥ دقائق فأكثر"},
+      {en:"≥ 25 mm Hg for any duration", ar:"٢٥ ملم زئبق أو أكثر لأي مدة"},
+      {en:"≥ 10 mm Hg for 10 minutes", ar:"١٠ ملم زئبق أو أكثر لمدة ١٠ دقائق"}
+    ],
+    correct: 1,
+    explain: "By definition, ICP ≥20 mm Hg persisting for 5+ minutes = increased ICP. | بالتعريف: ٢٠ ملم زئبق أو أكثر لمدة ٥ دقائق أو أكثر = ارتفاع الضغط داخل الجمجمة."
+  },
+  {
+    en: "The three non-compressible contents of the cranial vault are:",
+    ar: "المحتويات الثلاثة غير القابلة للضغط داخل الجمجمة هي:",
+    options: [
+      {en:"Neurons, myelin, and blood", ar:"الخلايا العصبية والميالين والدم"},
+      {en:"Brain tissue, blood, and CSF", ar:"أنسجة الدماغ والدم والسائل الدماغي الشوكي"},
+      {en:"Gray matter, white matter, and CSF", ar:"المادة الرمادية والمادة البيضاء والسائل الدماغي الشوكي"},
+      {en:"Cerebellum, cerebrum, and blood", ar:"المخيخ والمخ والدم"}
+    ],
+    correct: 1,
+    explain: "The rigid cranial vault contains brain tissue, blood, and CSF — the Monro-Kellie doctrine. | الجمجمة الصلبة تحتوي على أنسجة الدماغ والدم والسائل الدماغي الشوكي — مبدأ مونرو-كيلي."
+  },
+  {
+    en: "What is the formula for Cerebral Perfusion Pressure (CPP)?",
+    ar: "ما هي معادلة ضغط التروية الدماغية؟",
+    options: [
+      {en:"CPP = ICP − MAP", ar:"CPP = ICP − MAP"},
+      {en:"CPP = MAP + ICP", ar:"CPP = MAP + ICP"},
+      {en:"CPP = MAP − ICP", ar:"CPP = MAP − ICP"},
+      {en:"CPP = SBP − DBP", ar:"CPP = الضغط الانقباضي − الانبساطي"}
+    ],
+    correct: 2,
+    explain: "CPP = MAP − ICP. This is the pressure required to perfuse the brain. | ضغط التروية = الضغط الشرياني الوسطي − الضغط داخل الجمجمة."
+  },
+  {
+    en: "The target Cerebral Perfusion Pressure (CPP) that must be maintained is:",
+    ar: "ضغط التروية الدماغية المستهدف الذي يجب الحفاظ عليه هو:",
+    options: [
+      {en:"≥ 50 mm Hg", ar:"٥٠ ملم زئبق أو أكثر"},
+      {en:"≥ 60 mm Hg", ar:"٦٠ ملم زئبق أو أكثر"},
+      {en:"≥ 70 mm Hg", ar:"٧٠ ملم زئبق أو أكثر"},
+      {en:"≥ 90 mm Hg", ar:"٩٠ ملم زئبق أو أكثر"}
+    ],
+    correct: 2,
+    explain: "CPP must be maintained at ≥70 mm Hg. Inadequate CPP causes ischemia or infarction. | يجب الحفاظ على ضغط التروية ≥٧٠ ملم زئبق. عدم الكفاية يُسبب نقص التروية أو الاحتشاء."
+  },
+  {
+    en: "Cushing's Triad is a LATE sign of increased ICP. Which combination is correct?",
+    ar: "ثالوث كوشينج علامة متأخرة لارتفاع الضغط. أي التركيبات صحيحة؟",
+    options: [
+      {en:"Tachycardia + hypotension + regular breathing", ar:"تسرع قلب + انخفاض ضغط الدم + تنفس منتظم"},
+      {en:"Systolic hypertension + widened pulse pressure + bradycardia + irregular respirations", ar:"ارتفاع انقباضي + توسع الضغط النبضي + بطء قلب + تنفس غير منتظم"},
+      {en:"Miosis + fever + hypertension", ar:"تضيق الحدقة + حمى + ارتفاع ضغط"},
+      {en:"Hypotension + tachycardia + bradypnea", ar:"انخفاض ضغط + تسرع قلب + بطء تنفس"}
+    ],
+    correct: 1,
+    explain: "Cushing's Triad: systolic hypertension + widened pulse pressure + bradycardia + irregular respirations. It often indicates irreversible damage. | ثالوث كوشينج: ارتفاع الضغط الانقباضي + توسع الضغط النبضي + بطء القلب + تنفس غير منتظم. غالباً يدل على ضرر لا رجعة فيه."
+  },
+  {
+    en: "When positioning a patient with increased ICP, the head of bed should be elevated to:",
+    ar: "عند تغيير وضعية مريض مرتفع الضغط داخل الجمجمة، يُرفع رأس السرير إلى:",
+    options: [
+      {en:"15 degrees", ar:"١٥ درجة"},
+      {en:"30 degrees", ar:"٣٠ درجة"},
+      {en:"45 degrees", ar:"٤٥ درجة"},
+      {en:"90 degrees (sitting)", ar:"٩٠ درجة (جلوس)"}
+    ],
+    correct: 1,
+    explain: "30 degrees elevation with head in neutral midline position facilitates venous drainage and decreases risk of venous obstruction. | رفع الرأس ٣٠ درجة مع الحفاظ على وضع محايد يُسهل الصرف الوريدي ويقلل خطر الانسداد الوريدي."
+  },
+  {
+    en: "Before endotracheal suctioning, the patient should be preoxygenated with:",
+    ar: "قبل شفط الأنبوب الرغامي، يجب تأكسج المريض بنسبة:",
+    options: [
+      {en:"40% oxygen for 2 minutes", ar:"٤٠٪ أكسجين لمدة دقيقتين"},
+      {en:"60% oxygen for 30 seconds", ar:"٦٠٪ أكسجين لمدة ٣٠ ثانية"},
+      {en:"100% oxygen before, between passes, and 1 minute after", ar:"١٠٠٪ أكسجين قبل وبين المحاولات ودقيقة واحدة بعده"},
+      {en:"80% oxygen for 3 minutes before only", ar:"٨٠٪ أكسجين لمدة ٣ دقائق قبله فقط"}
+    ],
+    correct: 2,
+    explain: "Preoxygenate with 100% O₂ before, between suction attempts, and for 1 minute after, to prevent hypoxemia. | أكسجة بـ١٠٠٪ قبل الشفط وبين المحاولات ولمدة دقيقة بعده لمنع نقص الأكسجين."
+  },
+  {
+    en: "Each suction pass in endotracheal suctioning should be limited to:",
+    ar: "يجب تحديد كل مرور أثناء شفط الأنبوب الرغامي بـ:",
+    options: [
+      {en:"Less than 5 seconds, max 3 passes", ar:"أقل من ٥ ثوانٍ، ٣ مرورات كحد أقصى"},
+      {en:"Less than 10 seconds, max 2 passes", ar:"أقل من ١٠ ثوانٍ، مرورين كحد أقصى"},
+      {en:"Less than 20 seconds, max 1 pass", ar:"أقل من ٢٠ ثانية، مرور واحد كحد أقصى"},
+      {en:"Less than 15 seconds, max 4 passes", ar:"أقل من ١٥ ثانية، ٤ مرورات كحد أقصى"}
+    ],
+    correct: 1,
+    explain: "Each suction pass must be <10 seconds, with no more than 2 passes, to minimize hypoxemia and ICP spikes. | كل مرور أقل من ١٠ ثوانٍ بحد أقصى مرورين لتقليل نقص الأكسجين وارتفاع الضغط."
+  },
+  {
+    en: "Mannitol reduces ICP by acting as a/an:",
+    ar: "يقلل المانيتول الضغط داخل الجمجمة عن طريق عمله كـ:",
+    options: [
+      {en:"Osmotic diuretic — creates osmotic gradient drawing water from brain", ar:"مدر أسموزي — يُنشئ تدرجاً أسموزياً يسحب الماء من الدماغ"},
+      {en:"Vasopressor — increases MAP", ar:"مضيق وعائي — يرفع الضغط الشرياني الوسطي"},
+      {en:"Steroid — reduces inflammation", ar:"ستيرويد — يقلل الالتهاب"},
+      {en:"Barbiturate — reduces brain metabolism", ar:"باربيتورات — يقلل الأيض الدماغي"}
+    ],
+    correct: 0,
+    explain: "Mannitol is an osmotic diuretic that draws water from brain extracellular compartment to plasma via an osmotic gradient, decreasing ICP within minutes. | المانيتول مدر أسموزي يسحب الماء من الدماغ إلى البلازما عبر تدرج أسموزي، يخفض الضغط خلال دقائق."
+  },
+  {
+    en: "Mannitol is CONTRAINDICATED in patients with:",
+    ar: "المانيتول مضاد للاستطباب في مرضى:",
+    options: [
+      {en:"Hypertension", ar:"ارتفاع ضغط الدم"},
+      {en:"Acute kidney injury (AKI)", ar:"الفشل الكلوي الحاد"},
+      {en:"Meningitis", ar:"التهاب السحايا"},
+      {en:"Cerebral edema from tumors", ar:"الوذمة الدماغية الناتجة عن الأورام"}
+    ],
+    correct: 1,
+    explain: "Mannitol is contraindicated in AKI because it is not metabolized and is excreted unchanged in the urine, worsening renal function. | مضاد للاستطباب في الفشل الكلوي الحاد لأنه لا يُستقلب ويُطرح دون تغيير في البول مما يُفاقم الكلى."
+  },
+  {
+    en: "Which IV fluid is recommended for volume resuscitation in increased ICP patients?",
+    ar: "أي سائل وريدي يُوصى به لإعاشة الحجم في مرضى ارتفاع الضغط داخل الجمجمة؟",
+    options: [
+      {en:"5% Dextrose in water (D5W)", ar:"دكستروز ٥٪ في الماء"},
+      {en:"0.45% NaCl (hypotonic)", ar:"كلوريد الصوديوم ٠.٤٥٪ (ناقص التوتر)"},
+      {en:"0.9% Normal Saline (isotonic)", ar:"المحلول الملحي الطبيعي ٠.٩٪ (متساوي التوتر)"},
+      {en:"Lactated Ringer's with dextrose", ar:"رينغر اللاكتاتي مع الدكستروز"}
+    ],
+    correct: 2,
+    explain: "Normal saline 0.9% (isotonic) is recommended. Hypotonic solutions are avoided as they worsen cerebral edema. | محلول ملحي ٠.٩٪ مُوصى به. تُتجنب المحاليل ناقصة التوتر لأنها تُفاقم الوذمة الدماغية."
+  },
+  {
+    en: "What PaO₂ level can PRECIPITATE increased ICP?",
+    ar: "أي مستوى من PaO₂ قد يُعجِّل بارتفاع الضغط داخل الجمجمة؟",
+    options: [
+      {en:"Below 80 mm Hg", ar:"أقل من ٨٠ ملم زئبق"},
+      {en:"Below 70 mm Hg", ar:"أقل من ٧٠ ملم زئبق"},
+      {en:"Below 50 mm Hg", ar:"أقل من ٥٠ ملم زئبق"},
+      {en:"Below 60 mm Hg", ar:"أقل من ٦٠ ملم زئبق"}
+    ],
+    correct: 2,
+    explain: "A PaO₂ below 50 mm Hg can precipitate increased ICP. The goal is to maintain PaO₂ above 80 mm Hg. | انخفاض PaO₂ تحت ٥٠ ملم زئبق قد يُعجِّل بارتفاع الضغط. الهدف الحفاظ عليه فوق ٨٠ ملم زئبق."
+  },
+  {
+    en: "Corticosteroids are particularly useful for cerebral edema associated with:",
+    ar: "الكورتيكوستيرويدات مفيدة بشكل خاص للوذمة الدماغية المرتبطة بـ:",
+    options: [
+      {en:"Traumatic brain injury", ar:"إصابة الدماغ الرضية"},
+      {en:"Brain tumors and meningitis", ar:"أورام المخ والتهاب السحايا"},
+      {en:"Ischemic stroke", ar:"السكتة الدماغية الإقفارية"},
+      {en:"Hydrocephalus", ar:"استسقاء الدماغ"}
+    ],
+    correct: 1,
+    explain: "Corticosteroids are useful for cerebral edema associated with brain tumors and meningitis specifically. | الكورتيكوستيرويدات مفيدة بشكل خاص للوذمة الدماغية المرتبطة بأورام المخ والتهاب السحايا."
+  },
+  {
+    en: "Target temperatures for induced hypothermia in ICP management are:",
+    ar: "درجات الحرارة المستهدفة لانخفاض الحرارة المُحرَّض في إدارة ارتفاع الضغط هي:",
+    options: [
+      {en:"32–33°C for 12 hours", ar:"٣٢-٣٣ درجة مئوية لمدة ١٢ ساعة"},
+      {en:"34–35°C for 24–72 hours", ar:"٣٤-٣٥ درجة مئوية لمدة ٢٤-٧٢ ساعة"},
+      {en:"36–37°C for 48 hours", ar:"٣٦-٣٧ درجة مئوية لمدة ٤٨ ساعة"},
+      {en:"30–32°C for 6 hours", ar:"٣٠-٣٢ درجة مئوية لمدة ٦ ساعات"}
+    ],
+    correct: 1,
+    explain: "Target temperatures for induced hypothermia are 34–35°C maintained for 24–72 hours, followed by gradual rewarming. | الهدف ٣٤-٣٥ درجة مئوية لمدة ٢٤-٧٢ ساعة تليها إعادة تدفئة تدريجية."
+  },
+  {
+    en: "Which medication is a BARBITURATE used for refractory increased ICP?",
+    ar: "أي دواء من الباربيتورات يُستخدم لارتفاع الضغط داخل الجمجمة المقاوم للعلاج؟",
+    options: [
+      {en:"Propofol", ar:"بروبوفول"},
+      {en:"Midazolam", ar:"ميدازولام"},
+      {en:"Pentobarbital", ar:"بينتوباربيتال"},
+      {en:"Fentanyl", ar:"فينتانيل"}
+    ],
+    correct: 2,
+    explain: "Pentobarbital is the most commonly used barbiturate for refractory ICP. Patients require hemodynamic monitoring and mechanical ventilation. | البينتوباربيتال هو الباربيتورات الأكثر استخداماً للضغط المقاوم. يتطلب المراقبة والتهوية الاصطناعية."
+  },
+  {
+    en: "Hydrocephalus (increased CSF) can occur when:",
+    ar: "يمكن أن يحدث استسقاء الدماغ (زيادة السائل الدماغي الشوكي) عندما:",
+    options: [
+      {en:"Brain tissue volume increases only", ar:"يزيد حجم أنسجة الدماغ فقط"},
+      {en:"CSF flow/absorption is blocked OR excess CSF is produced", ar:"ينسد تدفق/امتصاص السائل الدماغي الشوكي أو يُنتج بشكل زائد"},
+      {en:"Blood pressure drops significantly", ar:"ينخفض ضغط الدم بشكل ملحوظ"},
+      {en:"Cerebral blood flow increases", ar:"يزيد التدفق الدموي الدماغي"}
+    ],
+    correct: 1,
+    explain: "Hydrocephalus occurs when CSF flow/absorption is blocked (e.g., SAH, meningitis, encephalitis) OR when excess CSF is produced. | يحدث الاستسقاء عند انسداد تدفق أو امتصاص السائل (كنزيف تحت العنكبوتية أو التهاب السحايا) أو الإنتاج الزائد."
+  },
+  {
+    en: "Which antihypertensive drug is a CALCIUM CHANNEL BLOCKER that does NOT affect cerebral vasculature?",
+    ar: "أي دواء خافض لضغط الدم هو مثبط لقنوات الكالسيوم ولا يؤثر على الأوعية الدماغية؟",
+    options: [
+      {en:"Labetalol", ar:"لابيتالول"},
+      {en:"Nicardipine", ar:"نيكارديبين"},
+      {en:"Hydralazine", ar:"هيدرالازين"},
+      {en:"Metoprolol", ar:"ميتوبرولول"}
+    ],
+    correct: 1,
+    explain: "Nicardipine is a calcium channel blocker that does not affect cerebral vasculature; it provides faster and tighter BP control than other antihypertensives. | نيكارديبين مثبط لقنوات الكالسيوم لا يؤثر على أوعية الدماغ ويوفر تحكماً أسرع وأدق في ضغط الدم."
+  },
+  {
+    en: "The EARLIEST clinical sign of increased ICP is typically:",
+    ar: "أول العلامات السريرية لارتفاع الضغط داخل الجمجمة عادةً هو:",
+    options: [
+      {en:"Cushing's Triad", ar:"ثالوث كوشينج"},
+      {en:"Restlessness and confusion", ar:"الاضطراب والارتباك"},
+      {en:"Abnormal posturing", ar:"الوضعية المرضية غير الطبيعية"},
+      {en:"Fixed dilated pupils", ar:"حدقة متسعة وثابتة"}
+    ],
+    correct: 1,
+    explain: "The earliest signs of increased ICP include restlessness and confusion. These then progress to lethargy, coma, and other late signs. | أولى علامات ارتفاع الضغط هي الاضطراب والارتباك، ثم تتدرج إلى النعاس والغيبوبة وغيرها من العلامات المتأخرة."
+  },
+  {
+    en: "If CPP does not return to baseline within _____ minutes after a position change, reposition the patient.",
+    ar: "إذا لم يعد ضغط التروية الدماغية لقيم الأساس خلال _____ دقائق بعد تغيير الوضع، يجب إعادة تغيير الوضعية.",
+    options: [
+      {en:"2 minutes", ar:"دقيقتين"},
+      {en:"5 minutes", ar:"٥ دقائق"},
+      {en:"10 minutes", ar:"١٠ دقائق"},
+      {en:"15 minutes", ar:"١٥ دقيقة"}
+    ],
+    correct: 1,
+    explain: "If CPP does not return to baseline within 5 minutes after position change, reposition to the position that maximized CPP. | إذا لم يعد ضغط التروية خلال ٥ دقائق من تغيير الوضع، يُعاد الوضع الذي حقق أفضل ضغط تروية."
+  }
+];
+
+let answered = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  answered = 0;
+  updateProgress();
+  document.getElementById('scoreBox').style.display = 'none';
+
+  questions.forEach((q, qi) => {
+    const letters = ['A','B','C','D'];
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = `q${qi}`;
+
+    let optHtml = q.options.map((o,oi) => `
+      <button class="option-btn" onclick="selectAnswer(${qi},${oi})" id="opt-${qi}-${oi}">
+        <span class="opt-letter">${letters[oi]}</span>
+        <span><div class="opt-en">${o.en}</div><div class="opt-ar">${o.ar}</div></span>
+      </button>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-num">Question ${qi+1} of 20 — السؤال ${qi+1} من ٢٠</div>
+      <div class="q-text-en">${q.en}</div>
+      <div class="q-text-ar">${q.ar}</div>
+      <div class="options">${optHtml}</div>
+      <div class="feedback" id="fb-${qi}"></div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function selectAnswer(qi, oi) {
+  const q = questions[qi];
+  const btns = document.querySelectorAll(`[id^="opt-${qi}-"]`);
+  btns.forEach(b => b.disabled = true);
+
+  btns[oi].classList.add(oi === q.correct ? 'correct' : 'wrong');
+  if (oi !== q.correct) btns[q.correct].classList.add('correct');
+
+  const fb = document.getElementById(`fb-${qi}`);
+  fb.className = `feedback show ${oi === q.correct ? 'correct' : 'wrong'}`;
+  fb.innerHTML = (oi === q.correct ? '✅ ' : '❌ ') + q.explain;
+
+  answered++;
+  updateProgress();
+  if (answered === 20) setTimeout(showScore, 600);
+}
+
+function updateProgress() {
+  const pct = (answered / 20) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${answered} / 20 answered`;
+}
+
+function showScore() {
+  let score = 0;
+  questions.forEach((q,qi) => {
+    const correct = document.getElementById(`opt-${qi}-${q.correct}`);
+    if (correct && correct.classList.contains('correct')) {
+      const btns = document.querySelectorAll(`[id^="opt-${qi}-"]`);
+      if (!Array.from(btns).some(b => b.classList.contains('wrong') && b === correct)) {
+        // Check if correct button was clicked by user (has correct but no wrong on same btn)
+      }
+    }
+  });
+
+  // Recount from wrong classes
+  questions.forEach((q,qi) => {
+    const allBtns = document.querySelectorAll(`[id^="opt-${qi}-"]`);
+    let wrongClicked = false;
+    allBtns.forEach((b,bi) => {
+      if (b.classList.contains('wrong')) wrongClicked = true;
+    });
+    if (!wrongClicked) score++;
+  });
+
+  const box = document.getElementById('scoreBox');
+  box.style.display = 'block';
+  document.getElementById('scoreNum').textContent = `${score}/20`;
+
+  let msg, msgAr;
+  if (score >= 18) { msg = "🏆 Excellent! Outstanding performance!"; msgAr = "ممتاز! أداء رائع جداً!"; }
+  else if (score >= 14) { msg = "✅ Very Good! Keep reviewing!"; msgAr = "جيد جداً! استمر في المراجعة!"; }
+  else if (score >= 10) { msg = "📚 Good effort. Review the slides and try again!"; msgAr = "جهد جيد. راجع المحاضرة وحاول مجدداً!"; }
+  else { msg = "🔄 Needs more study. Go through all sections carefully!"; msgAr = "يحتاج دراسة أكثر. راجع جميع الأقسام بعناية!"; }
+
+  document.getElementById('scoreMsg').textContent = msg;
+  document.getElementById('scoreMsgAr').textContent = msgAr;
+  box.scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz() {
+  buildQuiz();
+  document.getElementById('quizContainer').scrollIntoView({behavior:'smooth'});
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

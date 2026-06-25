@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liver Transplantation | زراعة الكبد</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f2f4f0;
+    --surface: #ffffff;
+    --primary: #3a5a40;
+    --primary-light: #52786b;
+    --accent: #b5622a;
+    --accent-light: #f0dbc8;
+    --text-main: #1e2a22;
+    --text-muted: #5a7060;
+    --border: #d4d9cf;
+    --green: #3a5a40;
+    --green-light: #e8f0e9;
+    --red: #8b3a3a;
+    --red-light: #f5e8e8;
+    --amber: #7a5c1e;
+    --amber-light: #fdf4e2;
+    --shadow: 0 2px 20px rgba(58,90,64,0.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Source Serif 4',serif; background:var(--bg); color:var(--text-main); min-height:100vh; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #2e4a32 0%, #1a3020 100%);
+    color:white; text-align:center; padding:2.5rem 2rem 2rem; position:relative; overflow:hidden;
+  }
+  header::before { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; border-radius:50%; background:rgba(255,255,255,0.04); }
+  header::after  { content:''; position:absolute; bottom:-60px; left:-30px; width:260px; height:260px; border-radius:50%; background:rgba(255,255,255,0.03); }
+  .header-icon { font-size:3rem; margin-bottom:0.5rem; }
+  header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); letter-spacing:1px; margin-bottom:0.3rem; }
+  header .ar-title { font-family:'Noto Naskh Arabic',serif; font-size:clamp(1.1rem,3vw,1.5rem); opacity:.85; font-weight:600; direction:rtl; }
+  .badge { display:inline-block; margin-top:0.8rem; background:rgba(255,255,255,0.15); padding:0.25rem 1rem; border-radius:20px; font-size:0.85rem; letter-spacing:0.5px; }
+
+  /* TABS */
+  .tabs-wrapper { background:var(--surface); border-bottom:2px solid var(--border); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+  .tabs { display:flex; overflow-x:auto; scrollbar-width:none; max-width:1150px; margin:0 auto; }
+  .tabs::-webkit-scrollbar { display:none; }
+  .tab-btn { flex-shrink:0; padding:0.9rem 1.1rem; border:none; background:none; cursor:pointer; font-family:'Source Serif 4',serif; font-size:0.85rem; color:var(--text-muted); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; line-height:1.3; text-align:center; }
+  .tab-btn .ar { font-family:'Noto Naskh Arabic',serif; display:block; font-size:0.75rem; }
+  .tab-btn:hover { color:var(--primary); background:rgba(58,90,64,0.05); }
+  .tab-btn.active { color:var(--primary); border-bottom-color:var(--primary); font-weight:600; }
+
+  /* CONTENT */
+  .content { max-width:1150px; margin:0 auto; padding:2rem 1.2rem 3rem; }
+  .tab-panel { display:none; animation:fadeIn 0.3s ease; }
+  .tab-panel.active { display:block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+  /* SECTION INTRO */
+  .section-intro { text-align:center; margin-bottom:2rem; padding:1.5rem; background:var(--surface); border-radius:14px; border:1px solid var(--border); }
+  .section-intro h2 { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--primary); }
+  .section-intro .ar { font-family:'Noto Naskh Arabic',serif; font-size:1.1rem; color:var(--text-muted); direction:rtl; margin-top:0.3rem; }
+
+  /* BILINGUAL CARD */
+  .bi-card { background:var(--surface); border-radius:14px; box-shadow:var(--shadow); margin-bottom:1.5rem; overflow:hidden; border:1px solid var(--border); }
+  .bi-card-header { background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 100%); color:white; padding:0.8rem 1.4rem; display:flex; align-items:center; gap:0.7rem; }
+  .bi-card-header .icon { font-size:1.3rem; }
+  .bi-card-header .en-h { font-family:'Playfair Display',serif; font-size:1.05rem; }
+  .bi-card-header .ar-h { font-family:'Noto Naskh Arabic',serif; font-size:0.95rem; opacity:.88; margin-right:auto; direction:rtl; }
+  .bi-body { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  .bi-en { padding:1.4rem 1.6rem; border-right:1px solid var(--border); line-height:1.85; font-size:0.93rem; }
+  .bi-ar { padding:1.4rem 1.6rem; direction:rtl; font-family:'Noto Naskh Arabic',serif; line-height:2; font-size:1rem; background:rgba(242,244,240,0.5); }
+  @media(max-width:680px){ .bi-body{grid-template-columns:1fr} .bi-en{border-right:none;border-bottom:1px solid var(--border)} }
+
+  /* LANG LABEL */
+  .lang-label { display:inline-block; font-size:0.7rem; font-weight:700; letter-spacing:1px; padding:0.15rem 0.5rem; border-radius:4px; margin-bottom:0.5rem; }
+  .lang-label.en { background:rgba(58,90,64,0.12); color:var(--primary); }
+  .lang-label.ar { background:rgba(181,98,42,0.15); color:var(--accent); font-family:'Noto Naskh Arabic',serif; }
+
+  /* LIST */
+  .bi-en ul, .bi-ar ul { padding-right:1.2rem; padding-left:1.2rem; }
+  .bi-en li, .bi-ar li { margin-bottom:0.5rem; }
+  .bi-ar li { list-style:none; padding-right:1rem; position:relative; }
+  .bi-ar li::before { content:'◈'; position:absolute; right:-0.5rem; color:var(--accent); font-size:0.7rem; top:0.4rem; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box { background:var(--green-light); border-left:4px solid var(--green); padding:1rem 1.3rem; border-radius:0 8px 8px 0; margin:1rem 0; }
+  .highlight-box.warning { background:var(--red-light); border-left-color:var(--red); }
+  .highlight-box.amber { background:var(--amber-light); border-left-color:var(--amber); }
+  .highlight-box .ar-note { font-family:'Noto Naskh Arabic',serif; direction:rtl; display:block; margin-top:0.4rem; font-size:0.95rem; color:var(--text-muted); }
+
+  /* INDICATIONS GRID */
+  .ind-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.1rem; }
+  .ind-card { background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:1.1rem; box-shadow:var(--shadow); }
+  .ind-card .ic-icon { font-size:1.8rem; margin-bottom:0.4rem; }
+  .ind-card h4 { font-family:'Playfair Display',serif; font-size:0.95rem; color:var(--primary); margin-bottom:0.2rem; }
+  .ind-card .ic-ar { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.88rem; color:var(--accent); margin-bottom:0.6rem; }
+  .ind-card p { font-size:0.85rem; line-height:1.75; color:var(--text-main); }
+  .ind-card .ic-ar-body { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.88rem; color:var(--text-muted); line-height:1.9; padding-top:0.5rem; border-top:1px dashed var(--border); margin-top:0.5rem; }
+
+  /* TEAM GRID */
+  .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+  .team-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; box-shadow:var(--shadow); }
+  .team-card .tc-icon { font-size:2rem; margin-bottom:0.4rem; }
+  .team-card h4 { font-size:0.88rem; color:var(--primary); margin-bottom:0.2rem; font-weight:600; }
+  .team-card .tc-ar { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.85rem; color:var(--text-muted); }
+
+  /* STEPS */
+  .steps { }
+  .step { display:flex; gap:1rem; margin-bottom:1.2rem; background:var(--surface); border-radius:10px; border:1px solid var(--border); padding:1rem 1.2rem; align-items:flex-start; }
+  .step-num { flex-shrink:0; width:36px; height:36px; background:var(--primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem; }
+  .step-content { flex:1; }
+  .step-content p { font-size:0.9rem; line-height:1.7; margin-bottom:0.4rem; }
+  .step-content .ar-s { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.92rem; color:var(--text-muted); line-height:1.9; }
+
+  /* REJECTION TIMELINE */
+  .timeline { position:relative; padding-left:2rem; }
+  .timeline::before { content:''; position:absolute; left:0.6rem; top:0; bottom:0; width:2px; background:var(--border); }
+  .tl-item { position:relative; margin-bottom:1.5rem; }
+  .tl-dot { position:absolute; left:-1.7rem; top:0.3rem; width:14px; height:14px; border-radius:50%; border:2px solid white; box-shadow:0 0 0 2px var(--primary); background:var(--primary); }
+  .tl-dot.red { box-shadow:0 0 0 2px var(--red); background:var(--red); }
+  .tl-dot.amber { box-shadow:0 0 0 2px var(--amber); background:var(--amber); }
+  .tl-content { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; }
+  .tl-content h4 { font-family:'Playfair Display',serif; color:var(--primary); font-size:0.95rem; }
+  .tl-content h4.red { color:var(--red); }
+  .tl-content h4.amber { color:var(--amber); }
+  .tl-content .tl-ar { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.88rem; color:var(--accent); margin-bottom:0.5rem; }
+  .tl-content p { font-size:0.86rem; line-height:1.75; }
+  .tl-content .ar-p { font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.9rem; color:var(--text-muted); line-height:1.9; border-top:1px dashed var(--border); margin-top:0.5rem; padding-top:0.5rem; }
+
+  /* LAB TABLE */
+  .lab-table { width:100%; border-collapse:collapse; font-size:0.87rem; }
+  .lab-table th { background:var(--primary); color:white; padding:0.65rem 0.9rem; text-align:left; }
+  .lab-table td { padding:0.6rem 0.9rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  .lab-table tr:nth-child(even) td { background:rgba(58,90,64,0.04); }
+  .lab-table tr:hover td { background:rgba(58,90,64,0.08); }
+  .lab-table td.ar-col { text-align:right; font-family:'Noto Naskh Arabic',serif; direction:rtl; }
+  .label-low { color:#7a5c1e; font-weight:600; }
+  .label-high { color:var(--red); font-weight:600; }
+
+  /* QUIZ */
+  .quiz-container { max-width:860px; margin:0 auto; }
+  .quiz-header { text-align:center; margin-bottom:2rem; padding:2rem; background:linear-gradient(135deg,#2e4a32,#1a3020); border-radius:16px; color:white; }
+  .quiz-header h2 { font-family:'Playfair Display',serif; font-size:1.6rem; }
+  .quiz-header .ar { font-family:'Noto Naskh Arabic',serif; font-size:1.1rem; opacity:.85; direction:rtl; margin-top:0.4rem; }
+  .quiz-score-badge { display:inline-block; background:rgba(255,255,255,0.2); padding:0.4rem 1.2rem; border-radius:20px; margin-top:0.8rem; font-size:0.95rem; }
+  .q-card { background:var(--surface); border-radius:12px; border:1px solid var(--border); margin-bottom:1.4rem; overflow:hidden; box-shadow:var(--shadow); transition:box-shadow 0.2s; }
+  .q-card:hover { box-shadow:0 4px 24px rgba(58,90,64,0.15); }
+  .q-num { background:var(--primary); color:white; padding:0.6rem 1.2rem; font-size:0.82rem; font-weight:600; letter-spacing:0.5px; }
+  .q-text { padding:1.1rem 1.4rem 0.5rem; font-size:0.95rem; line-height:1.7; font-weight:600; }
+  .q-ar { padding:0 1.4rem 0.9rem; font-family:'Noto Naskh Arabic',serif; direction:rtl; font-size:0.95rem; color:var(--text-muted); line-height:1.8; }
+  .q-options { padding:0.3rem 1.2rem 1.2rem; display:grid; gap:0.5rem; }
+  .opt-btn { display:flex; align-items:flex-start; gap:0.7rem; padding:0.7rem 1rem; border:1.5px solid var(--border); border-radius:8px; background:var(--bg); cursor:pointer; font-family:'Source Serif 4',serif; font-size:0.88rem; text-align:left; transition:all 0.18s; line-height:1.5; }
+  .opt-btn:hover:not(:disabled) { border-color:var(--primary); background:rgba(58,90,64,0.07); }
+  .opt-btn .opt-letter { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--primary); color:white; font-size:0.75rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .opt-btn.correct { border-color:var(--green); background:var(--green-light); }
+  .opt-btn.correct .opt-letter { background:var(--green); }
+  .opt-btn.wrong { border-color:var(--red); background:var(--red-light); }
+  .opt-btn.wrong .opt-letter { background:var(--red); }
+  .opt-btn:disabled { cursor:default; }
+  .feedback { padding:0.6rem 1.2rem 1rem; font-size:0.85rem; display:none; }
+  .feedback.show { display:block; }
+  .feedback.correct-fb { color:var(--green); }
+  .feedback.wrong-fb { color:var(--red); }
+  .feedback .ar-fb { font-family:'Noto Naskh Arabic',serif; direction:rtl; display:block; margin-top:0.2rem; }
+  .quiz-actions { text-align:center; margin-top:2rem; }
+  .quiz-submit-btn, .quiz-reset-btn { padding:0.8rem 2.5rem; border-radius:8px; border:none; cursor:pointer; font-family:'Source Serif 4',serif; font-size:1rem; font-weight:600; transition:all 0.2s; }
+  .quiz-submit-btn { background:var(--primary); color:white; }
+  .quiz-submit-btn:hover { background:var(--primary-light); transform:translateY(-1px); }
+  .quiz-reset-btn { background:var(--accent); color:white; margin-left:1rem; }
+  .result-panel { margin-top:2rem; padding:2rem; background:var(--surface); border-radius:14px; border:2px solid var(--primary); text-align:center; display:none; }
+  .result-panel.show { display:block; }
+  .result-panel .score-big { font-size:3rem; font-weight:700; color:var(--primary); font-family:'Playfair Display',serif; }
+  .result-panel .result-text { font-size:1.1rem; margin-top:0.5rem; }
+  .result-panel .ar-result { font-family:'Noto Naskh Arabic',serif; direction:rtl; color:var(--text-muted); }
+
+  footer { text-align:center; padding:1.5rem; background:#2e4a32; color:rgba(255,255,255,0.7); font-size:0.82rem; }
+  footer .ar { font-family:'Noto Naskh Arabic',serif; direction:rtl; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-icon">🏥</div>
+  <h1>Liver Transplantation</h1>
+  <div class="ar-title">زراعة الكبد</div>
+  <div class="badge">Prepared by Assist Prof Dr. Afaf Mohamed</div>
+</header>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('definition')">Definition<span class="ar">التعريف</span></button>
+    <button class="tab-btn" onclick="showTab('indications')">Indications<span class="ar">المؤشرات</span></button>
+    <button class="tab-btn" onclick="showTab('contra')">Contraindications<span class="ar">الموانع</span></button>
+    <button class="tab-btn" onclick="showTab('candidates')">Candidates & Investigations<span class="ar">المرشحون والتحقيقات</span></button>
+    <button class="tab-btn" onclick="showTab('waiting')">Waiting List<span class="ar">قائمة الانتظار</span></button>
+    <button class="tab-btn" onclick="showTab('medcare')">Medical Care<span class="ar">الرعاية الطبية</span></button>
+    <button class="tab-btn" onclick="showTab('operation')">The Operation<span class="ar">العملية</span></button>
+    <button class="tab-btn" onclick="showTab('postfx')">Post-Transplant Functions<span class="ar">ما بعد الزراعة</span></button>
+    <button class="tab-btn" onclick="showTab('postop')">Post-Op Considerations<span class="ar">اعتبارات ما بعد الجراحة</span></button>
+    <button class="tab-btn" onclick="showTab('complications')">Complications<span class="ar">المضاعفات</span></button>
+    <button class="tab-btn" onclick="showTab('quiz')">🧠 Self-Test<span class="ar">اختبر نفسك</span></button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- DEFINITION -->
+  <div id="definition" class="tab-panel active">
+    <div class="section-intro"><h2>Definition of Liver Transplantation</h2><div class="ar">تعريف زراعة الكبد</div></div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">📖</span><span class="en-h">What is Liver Transplantation?</span><span class="ar-h">ما هي زراعة الكبد؟</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>Liver transplantation is a <strong>partial or total removal of the diseased liver</strong> and its replacement with a healthy liver in the <strong>same anatomic location</strong>.</p><br>
+          <p>It is used to treat <strong>life-threatening, end-stage liver disease</strong> for which no other form of treatment is available.</p>
+          <div class="highlight-box" style="margin-top:1rem;">
+            <strong>Key Point:</strong> Transplantation is considered only when all other treatment options have been exhausted.
+          </div>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>زراعة الكبد هي <strong>استئصال جزئي أو كلي للكبد المريض</strong> واستبداله بكبد سليم في <strong>نفس الموضع التشريحي</strong>.</p><br>
+          <p>تُستخدم لعلاج <strong>مرض الكبد في مراحله النهائية</strong> التي تهدد الحياة ولا يتوفر لها أي علاج آخر.</p>
+          <div class="highlight-box amber" style="margin-top:1rem;">
+            <strong>نقطة رئيسية:</strong> لا يُلجأ للزراعة إلا بعد استنفاد جميع خيارات العلاج الأخرى.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICATIONS -->
+  <div id="indications" class="tab-panel">
+    <div class="section-intro"><h2>Indications for Liver Transplantation</h2><div class="ar">مؤشرات زراعة الكبد</div></div>
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">📋</span><span class="en-h">When Is Transplantation Considered?</span><span class="ar-h">متى تُؤخذ الزراعة بالاعتبار؟</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span><p>Liver transplantation is considered when the liver <strong>no longer functions adequately</strong> (liver failure). Causes include <em>sudden (acute) failure</em> from infection or medication complications, and <em>long-term (chronic) failure</em>.</p></div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span><p>تُؤخذ زراعة الكبد بالاعتبار عندما <strong>يتوقف الكبد عن أداء وظائفه بشكل كافٍ</strong> (فشل كبدي). تشمل الأسباب: الفشل المفاجئ (الحاد) بسبب العدوى أو الأدوية، والفشل المزمن طويل الأمد.</p></div>
+      </div>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ic-icon">🛡️</div><h4>Autoimmune Hepatitis</h4><div class="ic-ar">التهاب الكبد المناعي الذاتي</div><p>Immune system attacks liver cells.</p><div class="ic-ar-body">الجهاز المناعي يهاجم خلايا الكبد.</div></div>
+      <div class="ind-card"><div class="ic-icon">🦠</div><h4>Chronic Hepatitis B & C</h4><div class="ic-ar">التهاب الكبد المزمن B وC</div><p>Viral hepatitis causing progressive liver damage (&lt;5% of cases).</p><div class="ic-ar-body">التهاب كبد فيروسي يُسبب تلفاً تدريجياً للكبد (أقل من 5% من الحالات).</div></div>
+      <div class="ind-card"><div class="ic-icon">🔴</div><h4>Primary Biliary Cirrhosis</h4><div class="ic-ar">تليف الكبد الصفراوي الأولي</div><p>Rare condition where immune system attacks and destroys bile ducts.</p><div class="ic-ar-body">حالة نادرة يهاجم فيها الجهاز المناعي القنوات الصفراوية ويدمرها.</div></div>
+      <div class="ind-card"><div class="ic-icon">🔗</div><h4>Sclerosing Cholangitis</h4><div class="ic-ar">التهاب الأقنية الصفراوية الصلب</div><p>Scarring and narrowing of bile ducts inside and outside the liver → bile backup → liver failure.</p><div class="ic-ar-body">تندب وتضيق في القنوات الصفراوية داخل وخارج الكبد → تراكم الصفراء → فشل كبدي.</div></div>
+      <div class="ind-card"><div class="ic-icon">👶</div><h4>Biliary Atresia</h4><div class="ic-ar">رتق القنوات الصفراوية</div><p>Malformation of the bile ducts. <strong>Common reason for transplant in children.</strong></p><div class="ic-ar-body">تشوه في القنوات الصفراوية. <strong>السبب الأكثر شيوعاً للزراعة عند الأطفال.</strong></div></div>
+      <div class="ind-card"><div class="ic-icon">🍺</div><h4>Alcoholic Cirrhosis (Laennec's)</h4><div class="ic-ar">تليف الكبد الكحولي (تليف لانيك)</div><p>Alcoholism causing progressive liver scarring and failure.</p><div class="ic-ar-body">إدمان الكحول يُسبب تندباً تدريجياً وفشل الكبد.</div></div>
+      <div class="ind-card"><div class="ic-icon">🟤</div><h4>Wilson's Disease</h4><div class="ic-ar">مرض ويلسون</div><p>Rare inherited disease with abnormal copper deposition throughout the body due to genetic mutation impairing hepatic copper excretion.</p><div class="ic-ar-body">مرض وراثي نادر يُسبب ترسب النحاس بشكل غير طبيعي في الجسم بسبب طفرة جينية تُعيق إفراز الكبد للنحاس.</div></div>
+      <div class="ind-card"><div class="ic-icon">🔩</div><h4>Hemochromatosis</h4><div class="ic-ar">داء ترسب الأصبغة الدموية</div><p>Common inherited disease with iron overload due to altered intestinal iron absorption.</p><div class="ic-ar-body">مرض وراثي شائع يُسبب تراكم الحديد بسبب اضطراب امتصاص الحديد من الأمعاء.</div></div>
+      <div class="ind-card"><div class="ic-icon">🧬</div><h4>Amyloidosis</h4><div class="ic-ar">الداء النشواني</div><p>Abnormal deposits of amyloid protein in the liver that disrupt normal liver function.</p><div class="ic-ar-body">ترسب غير طبيعي لبروتين النشا (الأميلويد) في الكبد يُعطل وظائفه الطبيعية.</div></div>
+      <div class="ind-card"><div class="ic-icon">🎗️</div><h4>Liver Cancer</h4><div class="ic-ar">سرطان الكبد</div><p>Primary liver malignancies that meet transplant criteria.</p><div class="ic-ar-body">الأورام الخبيثة الأولية في الكبد التي تستوفي معايير الزراعة.</div></div>
+      <div class="ind-card"><div class="ic-icon">🩸</div><h4>Hepatic Vein Thrombosis</h4><div class="ic-ar">تخثر الوريد الكبدي</div><p>Thrombosis in the hepatic vein that blocks hepatic venous outflow.</p><div class="ic-ar-body">تجلط في الوريد الكبدي يُعيق التدفق الوريدي من الكبد.</div></div>
+    </div>
+  </div>
+
+  <!-- CONTRAINDICATIONS -->
+  <div id="contra" class="tab-panel">
+    <div class="section-intro"><h2>Contraindications for Liver Transplantation</h2><div class="ar">موانع زراعة الكبد</div></div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">🚫</span><span class="en-h">When Should Transplantation NOT Be Performed?</span><span class="ar-h">متى لا تُجرى عملية الزراعة؟</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li>🦠 <strong>Sepsis</strong> — active systemic infection</li>
+            <li>🎗️ <strong>Malignancies outside the liver</strong></li>
+            <li>⚠️ <strong>Advanced hepatobiliary malignancy</strong></li>
+            <li>💊 <strong>Active substance abuse</strong></li>
+            <li>🧠 <strong>Irreversible brain damage</strong></li>
+            <li>💊 <strong>Inability to comply</strong> with post-transplant immunosuppression regimen</li>
+            <li>🔴 <strong>AIDS</strong></li>
+            <li>❤️ <strong>Active cardiopulmonary disease</strong></li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li>🦠 <strong>الإنتان (Sepsis)</strong> — عدوى جهازية نشطة</li>
+            <li>🎗️ <strong>الأورام الخبيثة خارج الكبد</strong></li>
+            <li>⚠️ <strong>الأورام الخبيثة الكبدية الصفراوية المتقدمة</strong></li>
+            <li>💊 <strong>تعاطي المواد المخدرة بشكل نشط</strong></li>
+            <li>🧠 <strong>تلف الدماغ غير القابل للعكس</strong></li>
+            <li>💊 <strong>عدم القدرة على الالتزام</strong> بنظام تثبيط المناعة بعد الزراعة</li>
+            <li>🔴 <strong>الإيدز (AIDS)</strong></li>
+            <li>❤️ <strong>مرض القلب والرئة النشط</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CANDIDATES & INVESTIGATIONS -->
+  <div id="candidates" class="tab-panel">
+    <div class="section-intro"><h2>Candidates & Pre-Transplant Investigations</h2><div class="ar">المرشحون وفحوصات ما قبل الزراعة</div></div>
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">👥</span><span class="en-h">The Interdisciplinary Healthcare Team</span><span class="ar-h">الفريق الصحي متعدد التخصصات</span></div>
+      <div style="padding:1.2rem;">
+        <div class="team-grid">
+          <div class="team-card"><div class="tc-icon">🩺</div><h4>Hepatologist</h4><div class="tc-ar">طبيب أمراض الكبد</div></div>
+          <div class="team-card"><div class="tc-icon">⚕️</div><h4>Transplant Surgeon</h4><div class="tc-ar">جراح زراعة الأعضاء</div></div>
+          <div class="team-card"><div class="tc-icon">👩‍⚕️</div><h4>Transplant Coordinator (RN)</h4><div class="tc-ar">منسق الزراعة (ممرض مسجل)</div></div>
+          <div class="team-card"><div class="tc-icon">🤝</div><h4>Social Worker</h4><div class="tc-ar">أخصائي اجتماعي</div></div>
+          <div class="team-card"><div class="tc-icon">🧠</div><h4>Psychiatrist</h4><div class="tc-ar">طبيب نفسي</div></div>
+          <div class="team-card"><div class="tc-icon">😴</div><h4>Anesthesiologist</h4><div class="tc-ar">طبيب التخدير</div></div>
+          <div class="team-card"><div class="tc-icon">🚫</div><h4>Chemical Dependency Specialist</h4><div class="tc-ar">أخصائي الإدمان</div></div>
+          <div class="team-card"><div class="tc-icon">💰</div><h4>Financial Counselor</h4><div class="tc-ar">مستشار مالي</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">🔬</span><span class="en-h">Investigations Before Liver Transplantation</span><span class="ar-h">التحقيقات قبل زراعة الكبد</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li><strong>CT Scan:</strong> Uses X-rays and a computer to generate pictures of the liver, showing its size and shape</li>
+            <li><strong>Doppler Ultrasound:</strong> To determine if the blood vessels to and from the liver are open</li>
+            <li><strong>Echocardiogram:</strong> To evaluate heart function</li>
+            <li><strong>Pulmonary Function Studies:</strong> To determine lungs' ability to exchange oxygen and CO₂</li>
+            <li><strong>Blood Tests:</strong> Blood type, clotting ability, biochemical status, liver function, AIDS testing, and hepatitis screening</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li><strong>الأشعة المقطعية (CT):</strong> تُنتج صوراً للكبد باستخدام الأشعة السينية والحاسوب، تُظهر حجم الكبد وشكله</li>
+            <li><strong>الموجات فوق الصوتية دوبلر:</strong> لتحديد ما إذا كانت الأوعية الدموية للكبد وعنه مفتوحة</li>
+            <li><strong>تخطيط صدى القلب:</strong> لتقييم وظائف القلب</li>
+            <li><strong>دراسات وظائف الرئة:</strong> لتحديد قدرة الرئتين على تبادل الأكسجين وثاني أكسيد الكربون</li>
+            <li><strong>فحوصات الدم:</strong> فصيلة الدم، القدرة على التخثر، الحالة الكيميائية الحيوية، وظائف الكبد، فحص الإيدز والتهاب الكبد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAITING LIST -->
+  <div id="waiting" class="tab-panel">
+    <div class="section-intro"><h2>How Does the Waiting List Work?</h2><div class="ar">كيف تعمل قائمة الانتظار؟</div></div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">📝</span><span class="en-h">The Transplant Waiting List</span><span class="ar-h">قائمة انتظار الزراعة</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>Once an active liver-transplant candidate is confirmed, the patient's name is placed on a <strong>waiting list</strong>. Patients are listed according to:</p>
+          <ul style="margin:0.7rem 0;">
+            <li>Blood type</li>
+            <li>Body size</li>
+            <li>Medical condition (severity of illness)</li>
+          </ul>
+          <p>Each patient receives a <strong>priority score</strong> based on three blood tests:</p>
+          <ul style="margin:0.7rem 0;">
+            <li>Creatinine</li>
+            <li>Bilirubin</li>
+            <li>INR (International Normalized Ratio)</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>MELD Score</strong> (adults) = Model for End-Stage Liver Disease<br>
+            <strong>PELD Score</strong> (children) = Pediatric End-Stage Liver Disease<br>
+            Patients with the <strong>highest scores</strong> receive priority.
+          </div>
+          <p style="margin-top:1rem;"><strong>Living Donor:</strong> The donor (blood relative, spouse, or friend) undergoes extensive medical and psychological evaluations. Blood type and body size are critical factors. The recipient's health must be stable enough for transplantation with excellent chances of success.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>بمجرد تأكيد ترشيح المريض لزراعة الكبد، يُدرج اسمه في <strong>قائمة الانتظار</strong>. يُرتب المرضى وفقاً لـ:</p>
+          <ul style="margin:0.7rem 0;">
+            <li>فصيلة الدم</li>
+            <li>حجم الجسم</li>
+            <li>الحالة الطبية (مدى خطورة المرض)</li>
+          </ul>
+          <p>يحصل كل مريض على <strong>درجة أولوية</strong> بناءً على ثلاثة فحوصات دم:</p>
+          <ul style="margin:0.7rem 0;">
+            <li>الكرياتينين</li>
+            <li>البيليروبين</li>
+            <li>INR (نسبة التطبيع الدولية)</li>
+          </ul>
+          <div class="highlight-box amber">
+            <strong>درجة MELD</strong> (البالغون) = نموذج مرض الكبد في المرحلة النهائية<br>
+            <strong>درجة PELD</strong> (الأطفال) = مرض الكبد في المرحلة النهائية للأطفال<br>
+            المرضى ذوو <strong>أعلى الدرجات</strong> يحصلون على الأولوية.
+          </div>
+          <p style="margin-top:1rem;"><strong>المتبرع الحي:</strong> يخضع المتبرع (قريب بالدم أو زوج أو صديق) لتقييمات طبية ونفسية شاملة. فصيلة الدم وحجم الجسم من العوامل الحاسمة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDICAL CARE WHILE WAITING -->
+  <div id="medcare" class="tab-panel">
+    <div class="section-intro"><h2>Medical Care While Awaiting Transplant</h2><div class="ar">الرعاية الطبية أثناء انتظار زراعة الكبد</div></div>
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">💧</span><span class="en-h">Treatment of Ascites</span><span class="ar-h">علاج الاستسقاء (تجمع السوائل)</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li><strong>Restriction of dietary sodium</strong></li>
+            <li><strong>Diuretic therapy:</strong> Spironolactone and Furosemide</li>
+            <li><strong>Paracentesis:</strong> Removal of ascitic fluid from the abdomen</li>
+            <li><strong>Peritoneovenous shunt (LeVeen shunt):</strong> Surgically drains abdominal cavity into a large central vein — less commonly used due to risk of infection, DIC, or valve occlusion</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li><strong>تقييد الصوديوم الغذائي</strong></li>
+            <li><strong>علاج مدر للبول:</strong> السبيرونولاكتون والفروسيميد</li>
+            <li><strong>بزل البطن (Paracentesis):</strong> إزالة السائل الاستسقائي من البطن</li>
+            <li><strong>تحويلة البريتون الوريدية (تحويلة لوفين):</strong> تُصرف التجويف البطني إلى وريد مركزي كبير — أقل استخداماً بسبب خطر العدوى وانتشار التخثر داخل الأوعية (DIC) وانسداد الصمام</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">🩸</span><span class="en-h">Treatment of Variceal Bleeding</span><span class="ar-h">علاج نزيف الدوالي</span></div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li><strong>Fluid resuscitation</strong></li>
+            <li><strong>Correction of coagulopathies</strong></li>
+            <li><strong>Sclerotherapy</strong> to control hemorrhage</li>
+            <li><strong>Esophageal-variceal ligation (banding)</strong></li>
+            <li><strong>Sengstaken-Blakemore tube:</strong> Compression device working by balloon tamponade</li>
+            <li><strong>Vasopressin or Octreotide therapy</strong></li>
+            <li><strong>TIPS</strong> (Transjugular Intrahepatic Portosystemic Shunt)</li>
+            <li><strong>Distal splenorenal shunt (Warren shunt):</strong> Distal splenic vein anastomosed with left renal vein → decompresses gastric and esophageal varices → prevents re-bleeding</li>
+            <li><strong>Partial mesocaval shunt:</strong> Dacron graft (&lt;15mm) between superior mesenteric vein and inferior vena cava → partial diversion of portal blood away from the liver</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li><strong>الإنعاش بالسوائل</strong></li>
+            <li><strong>تصحيح اضطرابات التخثر</strong></li>
+            <li><strong>العلاج التصليبي (Sclerotherapy)</strong> للسيطرة على النزيف</li>
+            <li><strong>ربط دوالي المريء (Banding)</strong></li>
+            <li><strong>أنبوب سينغستاكن-بلاكمور:</strong> جهاز ضغط يعمل بالبالون التمبوني</li>
+            <li><strong>علاج بالفازوبريسين أو الأوكتريوتيد</strong></li>
+            <li><strong>TIPS:</strong> التحويلة البابية الجهازية عبر الوريد الوداجي داخل الكبد</li>
+            <li><strong>تحويلة الطحال الكلوية البعيدة (تحويلة وارن):</strong> مفاغرة الوريد الطحالي البعيد مع الوريد الكلوي الأيسر → تخفيف ضغط دوالي المعدة والمريء → منع إعادة النزيف</li>
+            <li><strong>تحويلة مساريقية أجوية جزئية:</strong> طعم داكرون بين الوريد المساريقي العلوي والوريد الأجوف السفلي → تحويل جزئي لتدفق الدم البابي بعيداً عن الكبد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE OPERATION -->
+  <div id="operation" class="tab-panel">
+    <div class="section-intro"><h2>The Transplant Operation</h2><div class="ar">عملية زراعة الكبد</div></div>
+    <div class="highlight-box amber" style="margin-bottom:1.5rem;">
+      <strong>Duration:</strong> Liver transplants usually take from <strong>6 to 12 hours</strong>.
+      <span class="ar-note"><strong>المدة:</strong> تستغرق عملية زراعة الكبد عادةً من <strong>6 إلى 12 ساعة</strong>.</span>
+    </div>
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">📞</span><span class="en-h">When a Match Is Found</span><span class="ar-h">عند العثور على تطابق</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span><p>When an organ is identified, the transplant coordinator contacts the patient by telephone or pager. The patient must <strong>not eat or drink anything</strong> once called. On arrival: additional blood tests, ECG, and chest X-ray are taken. The patient may also meet the anesthesiologist and surgical resident.</p></div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span><p>عند تحديد العضو، يتصل منسق الزراعة بالمريض عبر الهاتف أو جهاز النداء. يجب على المريض <strong>ألا يأكل أو يشرب شيئاً</strong> بعد الاتصال. عند الوصول للمستشفى: فحوصات دم إضافية، رسم قلب، وأشعة على الصدر. قد يلتقي المريض أيضاً بطبيب التخدير والمقيم الجراحي.</p></div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><p>Surgeons <strong>remove the diseased liver</strong> and replace it with the donor liver. Several tubes are placed in the body.</p><div class="ar-s">يقوم الجراحون بـ<strong>استئصال الكبد المريض</strong> واستبداله بكبد المتبرع. يُوضع عدة أنابيب في جسم المريض.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><p>An <strong>endotracheal tube</strong> is placed through the mouth to assist breathing during the operation and for the first day or two afterward — attached to a ventilator.</p><div class="ar-s">يُوضع <strong>أنبوب القصبة الهوائية</strong> عبر الفم لمساعدة التنفس خلال العملية وليومين أو نحو ذلك بعدها — موصول بجهاز تنفس اصطناعي.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><p>Bile is <strong>flushed from the gallbladder</strong> to prevent damage to the biliary tract walls. The liver is <strong>perfused with a preservative and cooled</strong>.</p><div class="ar-s">تُشطف الصفراء من <strong>المرارة</strong> لمنع الضرر بجدران القناة الصفراوية. يُروى الكبد <strong>بمحلول حافظ ويُبرَّد</strong>.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><p>Immediately before implantation, the liver is <strong>flushed with cold lactated Ringer's solution</strong> to remove potassium and air bubbles.</p><div class="ar-s">قُبيل الزراعة مباشرةً، يُشطف الكبد <strong>بمحلول رينجر اللاكتاتي البارد</strong> لإزالة البوتاسيوم وفقاعات الهواء.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><p><strong>Anastomoses</strong> of blood vessels and bile duct between the donor liver and the recipient's liver are performed. Biliary reconstruction uses end-to-end anastomosis of the donor and recipient common bile ducts.</p><div class="ar-s">تُجرى <strong>المفاغرات</strong> بين الأوعية الدموية والقناة الصفراوية لكبد المتبرع وكبد المستقبِل. يستخدم إعادة بناء القناة الصفراوية مفاغرة طرف بطرف للقنوات الصفراوية المشتركة.</div></div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-content"><p>Due to <strong>portal hypertension and venous collaterals</strong> in liver failure, blood loss may be extensive. A <strong>T-tube</strong> may be placed (remains for 5 months) with no discomfort.</p><div class="ar-s">بسبب <strong>ارتفاع ضغط الوريد البابي والأوعية الجانبية الوريدية</strong> في فشل الكبد، قد يكون فقدان الدم كبيراً. قد يُوضع <strong>أنبوب T</strong> (يبقى لمدة 5 أشهر) دون إزعاج.</div></div></div>
+    </div>
+  </div>
+
+  <!-- POST TRANSPLANT FUNCTIONS -->
+  <div id="postfx" class="tab-panel">
+    <div class="section-intro"><h2>Indicators of Post-Transplant Liver Functions</h2><div class="ar">مؤشرات وظائف الكبد بعد الزراعة</div></div>
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">📊</span><span class="en-h">How Do We Know the New Liver Is Working?</span><span class="ar-h">كيف نعرف أن الكبد الجديد يعمل؟</span></div>
+      <div style="padding:1.2rem; overflow-x:auto;">
+        <table class="lab-table">
+          <thead>
+            <tr>
+              <th>Indicator / المؤشر</th>
+              <th>Expected Finding / النتيجة المتوقعة</th>
+              <th style="text-align:right; font-family:'Noto Naskh Arabic',serif; direction:rtl;">الشرح</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Neurological Status</strong><br><small>الحالة العصبية</small></td>
+              <td>Mental clearing as ammonia ↓ and cerebral edema ↓</td>
+              <td class="ar-col">تحسن الوعي مع انخفاض الأمونيا والوذمة الدماغية</td>
+            </tr>
+            <tr>
+              <td><strong>PT / PTT</strong><br><small>وقت البروثرومبين</small></td>
+              <td>Trending toward normal if liver produces clotting factors</td>
+              <td class="ar-col">يتحسن نحو الطبيعي إذا كان الكبد يُنتج عوامل التخثر</td>
+            </tr>
+            <tr>
+              <td><strong>LFTs: Albumin, AST, ALT, GGT, LDH, AlkPhos, Bilirubin, NH₃</strong><br><small>اختبارات وظائف الكبد</small></td>
+              <td>All trending toward normal with good graft function</td>
+              <td class="ar-col">جميعها تتجه نحو الطبيعي مع الأداء الجيد للطعم</td>
+            </tr>
+            <tr>
+              <td><strong>Bile Production</strong><br><small>إنتاج الصفراء</small></td>
+              <td>Thick, dark, golden-brown/green bile = good liver function ✅</td>
+              <td class="ar-col">الصفراء الكثيفة الداكنة ذهبية البنية/الخضراء = وظائف كبدية جيدة ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Lactate</strong><br><small>اللاكتات</small></td>
+              <td>Trending toward normal post-op (if fluid status adequate). Elevated lactate = hypoperfusion, late sepsis, or primary non-function</td>
+              <td class="ar-col">يتجه نحو الطبيعي بعد الجراحة. اللاكتات المرتفع يدل على نقص التروية أو إنتان متأخر أو عدم وظيفة أولي</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST-OP CONSIDERATIONS -->
+  <div id="postop" class="tab-panel">
+    <div class="section-intro"><h2>Post-Operative Considerations</h2><div class="ar">اعتبارات ما بعد الجراحة</div></div>
+
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">❤️</span><span class="en-h">A. Hemodynamics</span><span class="ar-h">أ. الديناميكا الدموية</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span>
+          <ul>
+            <li><strong>Vasodilation → Hypotension:</strong> May occur during warming phase of hypothermia</li>
+            <li><strong>Hypovolemia:</strong> Due to third spacing, hemorrhage, sepsis, low oncotic pressure (hypoalbuminemia). Tx: crystalloids (NS 0.9%), albumin, or blood products</li>
+            <li><strong>Hypertension:</strong> Due to physiologic stress, shivering, pain, hypothermia, Tacrolimus/Cyclosporine therapy, or fluid overload. Tx: Nipride drip</li>
+          </ul>
+        </div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span>
+          <ul>
+            <li><strong>توسع الأوعية → انخفاض ضغط الدم:</strong> قد يحدث خلال مرحلة الإدفاء من انخفاض الحرارة</li>
+            <li><strong>نقص حجم الدم:</strong> بسبب التحول للفضاء الثالث، النزيف، الإنتان، انخفاض الضغط الحلولي (نقص الألبومين). العلاج: محاليل بلورية (محلول ملحي 0.9%)، الألبومين، أو منتجات الدم</li>
+            <li><strong>ارتفاع ضغط الدم:</strong> بسبب الإجهاد الفيزيولوجي، الارتجاف، الألم، انخفاض الحرارة، التاكروليموس/السيكلوسبورين، أو الحمل الزائد للسوائل. العلاج: قطرة نيبريد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">🫘</span><span class="en-h">B. Renal Status</span><span class="ar-h">ب. حالة الكلى</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span>
+          <p>Patients with pre-operative renal insufficiency/failure combined with ESLD have <strong>hepatorenal syndrome</strong>. Risk factors for continued post-op renal problems:</p>
+          <ul style="margin-top:0.5rem;">
+            <li>Nephrotoxic drugs: Cyclosporine, Tacrolimus, Abelcet, aminoglycosides</li>
+            <li>Intra/post-operative instability coupled with hypoperfusion</li>
+            <li>Recurring hepatorenal syndrome related to primary nonfunction or acute liver failure</li>
+          </ul>
+        </div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span>
+          <p>المرضى الذين يعانون من قصور/فشل كلوي قبل الجراحة مصحوباً بمرض كبد نهائي (ESLD) يُصابون بـ<strong>المتلازمة الكبدية الكلوية</strong>. عوامل خطر مشاكل الكلى بعد الجراحة:</p>
+          <ul style="margin-top:0.5rem;">
+            <li>أدوية سامة للكلى: سيكلوسبورين، تاكروليموس، أبيلكت، أمينوغليكوزيدات</li>
+            <li>عدم استقرار أثناء/بعد الجراحة مصحوباً بنقص التروية</li>
+            <li>تكرار المتلازمة الكبدية الكلوية بسبب عدم وظيفة الطعم الأولي أو الفشل الكبدي الحاد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">🧪</span><span class="en-h">C. Laboratory Values (Electrolytes & Glucose)</span><span class="ar-h">ج. القيم المخبرية (الشوارد والجلوكوز)</span></div>
+      <div style="padding:1.2rem; overflow-x:auto;">
+        <table class="lab-table">
+          <thead>
+            <tr><th>Imbalance / الاختلال</th><th>Cause / السبب</th><th>Treatment / العلاج</th><th style="text-align:right;font-family:'Noto Naskh Arabic',serif;direction:rtl;">ملاحظة</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="label-low">↓ Hyponatremia</span><br>نقص صوديوم</td><td>Remobilization of free water</td><td>Fluid restriction (correct slowly)</td><td class="ar-col">تصحيح بطيء بتقييد السوائل</td></tr>
+            <tr><td><span class="label-high">↑ Hypernatremia</span><br>فرط صوديوم</td><td>Dehydration, diuretics, salt-rich solutions</td><td>Rehydrate, ↓ diuretics, mix albumin in D5W</td><td class="ar-col">إعادة ترطيب، تقليل مدرات البول</td></tr>
+            <tr><td><span class="label-low">↓ Hypokalemia</span><br>نقص بوتاسيوم</td><td>Diuretics, metabolic alkalosis, insulin, steroids, hypothermia</td><td>Potassium supplements</td><td class="ar-col">مكملات البوتاسيوم</td></tr>
+            <tr><td><span class="label-high">↑ Hyperkalemia</span><br>فرط بوتاسيوم</td><td>Renal failure, primary nonfunction (PNFG), blood transfusions, Tacro/Cyclosporine</td><td>Insulin/glucose, Kayexalate, or dialysis</td><td class="ar-col">أنسولين/جلوكوز أو غسيل كلى</td></tr>
+            <tr><td><span class="label-low">↓ Hypomagnesemia</span><br>نقص ماغنيسيوم</td><td>Hypocalcemia, Cyclosporine/Tacro side effects</td><td>Magnesium supplements</td><td class="ar-col">مكملات المغنيسيوم</td></tr>
+            <tr><td><span class="label-low">↓ Hypocalcemia</span><br>نقص كالسيوم</td><td>Massive blood transfusions</td><td>Calcium supplements</td><td class="ar-col">مكملات الكالسيوم</td></tr>
+            <tr><td><span class="label-low">↓ Hypophosphatemia</span><br>نقص فوسفات</td><td>Weakens respiratory muscles, causes neuromuscular irritability, platelet dysfunction</td><td>Phosphate supplements</td><td class="ar-col">يُضعف عضلات التنفس</td></tr>
+            <tr><td><span class="label-high">↑ Hyperphosphatemia</span><br>فرط فوسفات</td><td>Renal failure</td><td>Phosphate binders (CaCO₃) or dialysis</td><td class="ar-col">روابط الفوسفات أو غسيل الكلى</td></tr>
+            <tr><td><span class="label-low">↓ Hypoglycemia</span><br>نقص سكر</td><td>Recurrent acute liver failure</td><td>IV Dextrose per blood glucose levels</td><td class="ar-col">جلوكوز وريدي</td></tr>
+            <tr><td><span class="label-high">↑ Hyperglycemia</span><br>فرط سكر</td><td>Good sign (glycogen storage/gluconeogenesis). Also: steroids or sepsis</td><td>Insulin drip per protocol</td><td class="ar-col">علامة جيدة على عمل الطعم — قد يحتاج أنسولين</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPLICATIONS -->
+  <div id="complications" class="tab-panel">
+    <div class="section-intro"><h2>Complications of Liver Transplantation</h2><div class="ar">مضاعفات زراعة الكبد</div></div>
+
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">⚠️</span><span class="en-h">Two Most Common Complications: Rejection & Infection</span><span class="ar-h">أكثر مضاعفتين شيوعاً: الرفض والعدوى</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span><p>The immune system works to <strong>destroy foreign substances</strong>. It cannot distinguish between a transplanted liver and unwanted invaders (viruses/bacteria), so it attempts to attack and destroy the new liver.</p></div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span><p>يعمل الجهاز المناعي على <strong>تدمير المواد الغريبة</strong>. لا يستطيع التمييز بين الكبد المزروع والغزاة غير المرغوب فيهم (فيروسات/بكتيريا)، لذا يحاول مهاجمة الكبد الجديد وتدميره.</p></div>
+      </div>
+    </div>
+
+    <div class="bi-card" style="margin-bottom:1.5rem;">
+      <div class="bi-card-header"><span class="icon">🔴</span><span class="en-h">Types of Rejection</span><span class="ar-h">أنواع الرفض</span></div>
+      <div style="padding:1.2rem;">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot red"></div>
+            <div class="tl-content">
+              <h4 class="red">1. Hyperacute Rejection | الرفض فوق الحاد</h4>
+              <div class="tl-ar">يحدث خلال دقائق إلى ساعات بعد الزراعة</div>
+              <p><strong>Timing:</strong> Minutes to hours after transplantation. <strong>Mechanism:</strong> Pre-sensitization (B-cell action). <strong>Outcome:</strong> Total hepatic failure; immediate re-transplantation required. Acute and rare.</p>
+              <div class="ar-p">تحسس مسبق (فعل الخلايا البائية). يُسبب فشلاً كبدياً كاملاً ويتطلب إعادة الزراعة فوراً. حاد ونادر.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot amber"></div>
+            <div class="tl-content">
+              <h4 class="amber">2. Accelerated / Sub-acute Rejection | الرفض المتسارع / شبه الحاد</h4>
+              <div class="tl-ar">يحدث خلال 2-4 أيام بعد الجراحة</div>
+              <p><strong>Timing:</strong> 2–4 days post-operation. <strong>Mechanism:</strong> T-cell action. <strong>Symptoms:</strong> Fever, jaundice, decreasing quality and quantity of bile, malaise, clay-colored pain (clay pain).</p>
+              <div class="ar-p">فعل الخلايا التائية. الأعراض: حمى، يرقان، انخفاض جودة وكمية الصفراء، شعور بالضيق، ألم.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h4>3. Acute Rejection | الرفض الحاد</h4>
+              <div class="tl-ar">يحدث خلال 7 أيام إلى عدة أسابيع بعد الجراحة</div>
+              <p><strong>Timing:</strong> 7 days to several weeks post-operative. <strong>Mechanism:</strong> T-cell action. <strong>Symptoms:</strong> Same as accelerated rejection.</p>
+              <div class="ar-p">فعل الخلايا التائية. نفس أعراض الرفض المتسارع.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h4>4. Chronic Rejection | الرفض المزمن</h4>
+              <div class="tl-ar">يحدث بعد أشهر إلى سنوات من الجراحة</div>
+              <p><strong>Timing:</strong> Months to years post-operative. <strong>Mechanism:</strong> Combination of T-cells and B-cells. <strong>Lab findings:</strong> Elevated AlkPhos, GGT, AST, ALT, and bilirubin levels.</p>
+              <div class="ar-p">مزيج من الخلايا التائية والبائية. المختبر: ارتفاع الفوسفاتاز القلوي، GGT، AST، ALT، والبيليروبين.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bi-card">
+      <div class="bi-card-header"><span class="icon">🦠</span><span class="en-h">Infection</span><span class="ar-h">العدوى</span></div>
+      <div class="bi-body">
+        <div class="bi-en"><span class="lang-label en">EN</span><p>Because <strong>anti-rejection drugs suppress the immune system</strong>, patients are at increased risk for infections. This risk diminishes as time passes. Not all patients have infection problems, and most infections can be treated successfully.</p></div>
+        <div class="bi-ar"><span class="lang-label ar">عربي</span><p>نظراً لأن <strong>أدوية مضادات الرفض تُثبط الجهاز المناعي</strong>، يكون المرضى أكثر عرضة للإصابة بالعدوى. يتناقص هذا الخطر مع مرور الوقت. ليس جميع المرضى يعانون من مشاكل العدوى، ويمكن علاج معظم الإصابات بنجاح.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="tab-panel">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h2>🧠 Self-Assessment Test</h2>
+        <div class="ar">اختبر نفسك — 20 سؤال اختياري</div>
+        <div class="quiz-score-badge">20 Questions | Answer all then check results</div>
+      </div>
+      <div id="quizQuestions"></div>
+      <div class="quiz-actions">
+        <button class="quiz-submit-btn" onclick="submitQuiz()">✅ Submit & See Results | إرسال والنتيجة</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz()">🔄 Reset | إعادة</button>
+      </div>
+      <div class="result-panel" id="resultPanel">
+        <div class="score-big" id="scoreNum">—</div>
+        <div class="result-text" id="resultMsg"></div>
+        <div class="ar-result" id="resultAr"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<footer>
+  <p>Liver Transplantation — Academic Lecture | زراعة الكبد — محاضرة علمية</p>
+  <p class="ar">إعداد: أستاذ مساعد دكتورة/ عفاف محمد</p>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  const questions = [
+    { q:"What is the definition of liver transplantation?", ar:"ما تعريف زراعة الكبد؟", options:["Partial or total liver removal and replacement with a healthy liver in the same anatomic location","Injection of liver cells into the bloodstream","Artificial liver support without surgery","Removal of liver tumors only"], correct:0, explanation:"Liver transplantation is partial or total removal of the diseased liver and replacement with a healthy liver in the same anatomic location.", ar_exp:"زراعة الكبد هي استئصال جزئي أو كلي للكبد المريض واستبداله بكبد سليم في نفس الموضع التشريحي." },
+    { q:"Which condition is the MOST common reason for liver transplant in CHILDREN?", ar:"ما الحالة الأكثر شيوعاً كسبب لزراعة الكبد عند الأطفال؟", options:["Wilson's disease","Hepatitis C","Biliary atresia","Hemochromatosis"], correct:2, explanation:"Biliary atresia (malformation of the bile ducts) is the most common reason for transplant in children.", ar_exp:"رتق القنوات الصفراوية هو السبب الأكثر شيوعاً للزراعة عند الأطفال." },
+    { q:"Which of the following is a CONTRAINDICATION for liver transplantation?", ar:"أيٌّ من التالي يُعدّ موانعاً لزراعة الكبد؟", options:["Biliary atresia","Alcoholic cirrhosis (patient is sober)","Active substance abuse","Hepatitis B cirrhosis"], correct:2, explanation:"Active substance abuse is a contraindication for liver transplantation.", ar_exp:"تعاطي المواد المخدرة بشكل نشط يُعدّ موانعاً لزراعة الكبد." },
+    { q:"The MELD score is used to prioritize patients on the transplant list and is calculated using which THREE blood tests?", ar:"تُستخدم درجة MELD لتحديد أولوية المرضى وتُحسب باستخدام ثلاثة فحوصات دم هي؟", options:["Albumin, AST, ALT","Creatinine, Bilirubin, and INR","Sodium, Potassium, and Glucose","Hemoglobin, Hematocrit, and Platelets"], correct:1, explanation:"The MELD score is based on creatinine, bilirubin, and INR.", ar_exp:"تُحسب درجة MELD بناءً على: الكرياتينين، البيليروبين، والـ INR." },
+    { q:"What does MELD stand for?", ar:"ماذا تعني اختصار MELD؟", options:["Multiple Enzyme Liver Disorder","Model for End-stage Liver Disease","Medical Evaluation for Liver Donation","Metabolic End-stage Liver Dysfunction"], correct:1, explanation:"MELD stands for Model for End-stage Liver Disease.", ar_exp:"MELD تعني نموذج مرض الكبد في المرحلة النهائية." },
+    { q:"How long do liver transplant operations typically take?", ar:"كم تستغرق عملية زراعة الكبد عادةً؟", options:["1–3 hours","3–5 hours","6–12 hours","12–24 hours"], correct:2, explanation:"Liver transplants usually take from 6 to 12 hours.", ar_exp:"تستغرق عمليات زراعة الكبد عادةً من 6 إلى 12 ساعة." },
+    { q:"Hyperacute rejection after liver transplantation occurs:", ar:"يحدث الرفض فوق الحاد بعد زراعة الكبد:", options:["7 days to several weeks post-op","Minutes to hours after transplantation","2–4 days post-operation","Months to years post-operative"], correct:1, explanation:"Hyperacute rejection occurs minutes to hours after transplantation due to pre-sensitization (B-cell action).", ar_exp:"يحدث الرفض فوق الحاد خلال دقائق إلى ساعات بعد الزراعة بسبب التحسس المسبق (فعل الخلايا البائية)." },
+    { q:"Which type of rejection occurs 2–4 days post-operation and is caused by T-cell action?", ar:"أي نوع من الرفض يحدث 2-4 أيام بعد الجراحة ويحدث بسبب فعل الخلايا التائية؟", options:["Hyperacute rejection","Accelerated (sub-acute) rejection","Acute rejection","Chronic rejection"], correct:1, explanation:"Accelerated (sub-acute) rejection occurs 2–4 days post-operation due to T-cell action.", ar_exp:"الرفض المتسارع (شبه الحاد) يحدث خلال 2-4 أيام بعد الجراحة بسبب فعل الخلايا التائية." },
+    { q:"Chronic rejection occurs due to the action of:", ar:"يحدث الرفض المزمن بسبب فعل:", options:["B-cells only","T-cells only","A combination of T-cells and B-cells","Natural killer cells only"], correct:2, explanation:"Chronic rejection occurs months to years post-operative due to a combination of T-cells and B-cells.", ar_exp:"يحدث الرفض المزمن بعد أشهر إلى سنوات بسبب مزيج من الخلايا التائية والبائية." },
+    { q:"Why are liver transplant patients at increased risk for infections post-operatively?", ar:"لماذا يكون مرضى زراعة الكبد أكثر عرضة للعدوى بعد الجراحة؟", options:["Because of poor nutrition","Because anti-rejection drugs suppress the immune system","Because the liver cannot produce white blood cells","Because of the surgical incision only"], correct:1, explanation:"Anti-rejection drugs suppress the immune system, increasing the risk of infection.", ar_exp:"أدوية مضادات الرفض تُثبط الجهاز المناعي مما يزيد خطر الإصابة بالعدوى." },
+    { q:"What does thick, dark, golden-brown/green bile indicate after liver transplantation?", ar:"ماذا تدل الصفراء الكثيفة الداكنة ذهبية البنية/الخضراء بعد زراعة الكبد؟", options:["Rejection of the transplanted liver","Infection in the biliary tract","Good liver function of the graft","Primary non-function of the graft"], correct:2, explanation:"Thick, dark, golden-brown/green bile is an indicator of good liver function.", ar_exp:"الصفراء الكثيفة الداكنة ذهبية البنية/الخضراء هي مؤشر على وظائف كبدية جيدة للطعم." },
+    { q:"Post-transplant HYPERGLYCEMIA is considered:", ar:"فرط السكر في الدم بعد الزراعة يُعدّ:", options:["A sign of graft rejection","A good sign of glycogen storage and gluconeogenesis by the grafted liver","A sign of primary non-function","A sign of infection"], correct:1, explanation:"Post-operative hyperglycemia is considered a good sign of glycogen storage and gluconeogenesis by the grafted liver.", ar_exp:"فرط السكر بعد الجراحة يُعدّ علامة جيدة على تخزين الجليكوجين وتكوّن الجلوكوز في الكبد المزروع." },
+    { q:"Which treatment is used for post-transplant hypokalemia?", ar:"ما العلاج المستخدم لنقص البوتاسيوم بعد الزراعة؟", options:["Fluid restriction","Calcium supplements","Potassium supplements","Insulin drip"], correct:2, explanation:"Hypokalemia is treated with potassium supplements.", ar_exp:"يُعالَج نقص البوتاسيوم بمكملات البوتاسيوم." },
+    { q:"The Sengstaken-Blakemore tube works by:", ar:"يعمل أنبوب سينغستاكن-بلاكمور عن طريق:", options:["Sclerotherapy injection","Balloon tamponade compression","Surgical ligation","TIPS procedure"], correct:1, explanation:"The Sengstaken-Blakemore tube is a compression device which works by balloon tamponade.", ar_exp:"أنبوب سينغستاكن-بلاكمور هو جهاز ضغط يعمل بالبالون التمبوني." },
+    { q:"Wilson's disease affects liver function by:", ar:"يؤثر مرض ويلسون على وظائف الكبد عن طريق:", options:["Abnormal copper deposition due to impaired hepatic copper excretion","Abnormal iron accumulation","Autoimmune destruction of bile ducts","Viral infection of liver cells"], correct:0, explanation:"Wilson's disease is a rare inherited disease with abnormal copper deposition due to a genetic mutation impairing hepatic copper excretion.", ar_exp:"مرض ويلسون هو مرض وراثي نادر يُسبب ترسب النحاس بشكل غير طبيعي بسبب طفرة جينية تُعيق إفراز الكبد للنحاس." },
+    { q:"Doppler ultrasound before liver transplantation is used to:", ar:"يُستخدم الدوبلر بالموجات فوق الصوتية قبل زراعة الكبد لـ:", options:["Determine the size and shape of the liver","Evaluate heart function","Determine if blood vessels to and from the liver are open","Measure liver enzyme levels"], correct:2, explanation:"Doppler ultrasound determines if the blood vessels to and from the liver are open.", ar_exp:"يُستخدم دوبلر الموجات فوق الصوتية لتحديد ما إذا كانت الأوعية الدموية للكبد وعنه مفتوحة." },
+    { q:"Which of the following is used to treat post-transplant hypertension?", ar:"أيٌّ من التالي يُستخدم لعلاج ارتفاع ضغط الدم بعد الزراعة؟", options:["Albumin infusion","Nipride drip","Potassium supplements","Vasopressin"], correct:1, explanation:"Post-operative hypertension may be treated with a Nipride drip.", ar_exp:"يمكن علاج ارتفاع ضغط الدم بعد الجراحة بقطرة نيبريد." },
+    { q:"In the distal splenorenal (Warren) shunt, the distal splenic vein is anastomosed with:", ar:"في تحويلة وارن، يُفاغَر الوريد الطحالي البعيد مع:", options:["The inferior vena cava","The portal vein","The left renal vein","The superior mesenteric vein"], correct:2, explanation:"In the Warren shunt, the distal splenic vein is anastomosed with the left renal vein.", ar_exp:"في تحويلة وارن، يُفاغَر الوريد الطحالي البعيد مع الوريد الكلوي الأيسر." },
+    { q:"Before liver implantation, the liver is flushed with cold lactated Ringer's solution to remove:", ar:"قبل زراعة الكبد، يُشطف بمحلول رينجر اللاكتاتي البارد لإزالة:", options:["Bilirubin and bile acids","Potassium and air bubbles","Sodium and glucose","Ammonia and urea"], correct:1, explanation:"Immediately before transplantation, the liver is flushed with cold lactated Ringer's solution to remove potassium and air bubbles.", ar_exp:"قُبيل الزراعة مباشرةً، يُشطف الكبد بمحلول رينجر اللاكتاتي البارد لإزالة البوتاسيوم وفقاعات الهواء." },
+    { q:"A patient awaiting transplant is treated for ascites. Which medication combination is used for diuretic therapy?", ar:"مريض ينتظر الزراعة يُعالَج من الاستسقاء. ما مجموعة الأدوية المستخدمة كمدرات للبول؟", options:["Furosemide and Metoprolol","Spironolactone and Furosemide","Mannitol and Hydrochlorothiazide","Acetazolamide and Bumetanide"], correct:1, explanation:"Diuretic therapy for ascites includes Spironolactone and Furosemide.", ar_exp:"العلاج المدر للبول في الاستسقاء يشمل السبيرونولاكتون والفروسيميد." }
+  ];
+
+  let userAnswers = new Array(questions.length).fill(null);
+
+  function buildQuiz() {
+    const container = document.getElementById('quizQuestions');
+    container.innerHTML = '';
+    questions.forEach((q, i) => {
+      const letters = ['A','B','C','D'];
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.innerHTML = `
+        <div class="q-num">Question ${i+1} of ${questions.length} — سؤال ${i+1}</div>
+        <div class="q-text">${q.q}</div>
+        <div class="q-ar">${q.ar}</div>
+        <div class="q-options" id="opts-${i}">
+          ${q.options.map((opt,j)=>`
+            <button class="opt-btn" onclick="selectAnswer(${i},${j})" id="opt-${i}-${j}">
+              <span class="opt-letter">${letters[j]}</span><span>${opt}</span>
+            </button>`).join('')}
+        </div>
+        <div class="feedback" id="fb-${i}"></div>`;
+      container.appendChild(card);
+    });
+  }
+
+  function selectAnswer(qi, oi) {
+    userAnswers[qi] = oi;
+    const opts = document.querySelectorAll(`#opts-${qi} .opt-btn`);
+    opts.forEach((btn,j) => { btn.classList.remove('correct','wrong'); btn.style.opacity = j===oi?'1':'0.6'; });
+    opts[oi].classList.add('correct'); opts[oi].style.opacity='1';
+  }
+
+  function submitQuiz() {
+    let score = 0;
+    questions.forEach((q,i) => {
+      const opts = document.querySelectorAll(`#opts-${i} .opt-btn`);
+      opts.forEach(btn => { btn.disabled=true; btn.classList.remove('correct','wrong'); btn.style.opacity='0.5'; });
+      opts[q.correct].classList.add('correct'); opts[q.correct].style.opacity='1';
+      const fb = document.getElementById(`fb-${i}`);
+      if (userAnswers[i]===null) {
+        fb.className='feedback show wrong-fb';
+        fb.innerHTML=`⚠️ Not answered. Correct: <strong>${['A','B','C','D'][q.correct]}. ${q.options[q.correct]}</strong><span class="ar-fb">${q.ar_exp}</span>`;
+      } else if (userAnswers[i]===q.correct) {
+        score++;
+        opts[userAnswers[i]].classList.add('correct'); opts[userAnswers[i]].style.opacity='1';
+        fb.className='feedback show correct-fb';
+        fb.innerHTML=`✅ Correct! ${q.explanation}<span class="ar-fb">${q.ar_exp}</span>`;
+      } else {
+        opts[userAnswers[i]].classList.add('wrong'); opts[userAnswers[i]].style.opacity='0.8';
+        fb.className='feedback show wrong-fb';
+        fb.innerHTML=`❌ Wrong. Correct: <strong>${['A','B','C','D'][q.correct]}. ${q.options[q.correct]}</strong> — ${q.explanation}<span class="ar-fb">${q.ar_exp}</span>`;
+      }
+    });
+    const pct = Math.round((score/questions.length)*100);
+    let msg='', arMsg='';
+    if(pct>=90){msg='🏆 Excellent! Outstanding performance!';arMsg='ممتاز! أداء رائع جداً!';}
+    else if(pct>=75){msg='👍 Very Good! Keep it up!';arMsg='جيد جداً! استمر في التفوق!';}
+    else if(pct>=60){msg='📚 Good. Review the marked questions.';arMsg='جيد. راجع الأسئلة المحددة.';}
+    else{msg='📖 Needs more review. Re-read the lecture carefully.';arMsg='تحتاج لمراجعة أكثر. أعد قراءة المحاضرة بعناية.';}
+    const panel=document.getElementById('resultPanel');
+    document.getElementById('scoreNum').textContent=`${score} / ${questions.length}`;
+    document.getElementById('resultMsg').textContent=`${pct}% — ${msg}`;
+    document.getElementById('resultAr').textContent=arMsg;
+    panel.classList.add('show');
+    panel.scrollIntoView({behavior:'smooth'});
+  }
+
+  function resetQuiz() {
+    userAnswers=new Array(questions.length).fill(null);
+    document.getElementById('resultPanel').classList.remove('show');
+    buildQuiz();
+    document.getElementById('quizQuestions').scrollIntoView({behavior:'smooth'});
+  }
+
+  buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seizure – Dr. Ghada Elsayed</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --primary: #2c5f6e;
+    --primary-light: #3d7a8a;
+    --accent: #c0845a;
+    --accent-light: #e8c4a8;
+    --text: #2a2a2a;
+    --text-muted: #6b6b6b;
+    --border: #e0dbd2;
+    --tab-active-bg: #2c5f6e;
+    --shadow: 0 4px 24px rgba(44,95,110,0.10);
+    --en-bg: #eef4f6;
+    --ar-bg: #fdf5ee;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', serif;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--primary);
+    color: #fff;
+    padding: 40px 32px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(192,132,90,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+  header .subtitle {
+    font-size: 1rem;
+    opacity: 0.75;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  header .author {
+    font-size: 0.95rem;
+    color: var(--accent-light);
+    font-family: 'Noto Naskh Arabic', serif;
+    margin-top: 8px;
+  }
+
+  /* ── TAB NAV ── */
+  .tab-nav-wrap {
+    background: var(--primary);
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 4px;
+    border-bottom: 3px solid var(--accent);
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.65);
+    padding: 14px 18px 12px;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn:hover { color: #fff; }
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  /* ── SECTION CARD ── */
+  .section-card {
+    display: none;
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.35s ease;
+  }
+  .section-card.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .card-header .icon { font-size: 1.8rem; flex-shrink: 0; }
+  .card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .card-header .ar-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.1rem;
+    opacity: 0.82;
+    margin-top: 3px;
+    direction: rtl;
+  }
+
+  /* ── BILINGUAL ROW ── */
+  .bi-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .bi-row:first-of-type { border-top: none; }
+  .bi-col {
+    padding: 20px 24px;
+  }
+  .bi-col.en {
+    background: var(--en-bg);
+    border-right: 2px solid var(--border);
+  }
+  .bi-col.ar {
+    background: var(--ar-bg);
+    direction: rtl;
+    text-align: right;
+    font-family: 'Noto Naskh Arabic', serif;
+  }
+  .lang-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .lang-badge.en-badge { background: var(--primary); color: #fff; }
+  .lang-badge.ar-badge { background: var(--accent); color: #fff; font-family: 'Source Serif 4', serif; }
+
+  .bi-col p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .bi-col.ar p { font-size: 1.05rem; line-height: 2; }
+
+  /* ── POINT LIST ── */
+  .point-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .point-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .point-list li::before {
+    content: '▸';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .bi-col.ar .point-list li { flex-direction: row-reverse; font-size: 1rem; line-height: 1.9; }
+  .bi-col.ar .point-list li::before { content: '◂'; }
+
+  /* ── DRUG CARD ── */
+  .drug-grid { display: flex; flex-direction: column; gap: 10px; }
+  .drug-item {
+    background: var(--en-bg);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .drug-item.long { border-left-color: var(--accent); }
+  .drug-name { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+  .drug-item.long .drug-name { color: var(--accent); }
+  .drug-dose { font-size: 0.88rem; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+
+  .drug-grid-ar { display: flex; flex-direction: column; gap: 10px; }
+  .drug-item-ar {
+    background: var(--ar-bg);
+    border-right: 4px solid var(--primary);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Noto Naskh Arabic', serif;
+  }
+  .drug-item-ar.long { border-right-color: var(--accent); }
+  .drug-name-ar { font-weight: 700; color: var(--primary); font-size: 1rem; }
+  .drug-item-ar.long .drug-name-ar { color: var(--accent); }
+  .drug-dose-ar { font-size: 0.95rem; color: var(--text-muted); margin-top: 3px; line-height: 1.8; }
+
+  /* ── DEFINITION BOX ── */
+  .def-box {
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.97rem;
+    line-height: 1.8;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+  .def-box.en { border-left: 5px solid var(--primary); }
+  .def-box.ar { border-right: 5px solid var(--accent); font-family: 'Noto Naskh Arabic', serif; font-size: 1.05rem; line-height: 2.1; }
+  .def-box strong { color: var(--primary); }
+  .def-box.ar strong { color: var(--accent); }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .section-divider .ar-label {
+    font-family: 'Noto Naskh Arabic', serif;
+    opacity: 0.8;
+    font-size: 0.85rem;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 600px) {
+    .bi-row { grid-template-columns: 1fr; }
+    .bi-col.en { border-right: none; border-bottom: 2px solid var(--border); }
+    .tab-btn { font-size: 0.72rem; padding: 12px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Seizure Disorder</h1>
+  <p class="subtitle">A comprehensive clinical overview</p>
+  <p class="author">Dr. Ghada Elsayed &nbsp;|&nbsp; د. غادة السيد</p>
+</header>
+
+<!-- TAB NAVIGATION -->
+<div class="tab-nav-wrap">
+  <button class="tab-btn active" onclick="showTab('def')">Definition</button>
+  <button class="tab-btn" onclick="showTab('patho')">Pathophysiology</button>
+  <button class="tab-btn" onclick="showTab('risk')">Risk Factors</button>
+  <button class="tab-btn" onclick="showTab('clinical')">Clinical</button>
+  <button class="tab-btn" onclick="showTab('comp')">Complications</button>
+  <button class="tab-btn" onclick="showTab('diag')">Diagnostics</button>
+  <button class="tab-btn" onclick="showTab('mgmt')">Management</button>
+  <button class="tab-btn" onclick="showTab('nursing')">Nursing</button>
+</div>
+
+<main>
+
+  <!-- ══ DEFINITION ══ -->
+  <div id="tab-def" class="section-card active">
+    <div class="card-header">
+      <span class="icon">📖</span>
+      <div>
+        <h2>Definition</h2>
+        <div class="ar-title">التعريف</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="def-box en">
+          A <strong>seizure disorder</strong> is a temporary, abnormal, sudden, excessive, uncontrolled electrical discharge of neurons of the cerebral cortex.<br><br>
+          <strong>Status epilepticus (SE)</strong> denotes continuous seizure activity lasting more than 5 minutes, or two or more sequential seizures — this is a <strong>medical emergency</strong>.
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="def-box ar">
+          <strong>اضطراب النوبات</strong> هو تفريغ كهربائي مؤقت وغير طبيعي ومفاجئ ومفرط وغير منضبط لخلايا عصبية في قشرة المخ.<br><br>
+          <strong>الصرع المستمر (SE)</strong> هو نشاط نوبي متواصل يدوم أكثر من 5 دقائق أو نوبتان متتاليتان أو أكثر — ويُعدّ <strong>حالة طوارئ طبية</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PATHOPHYSIOLOGY ══ -->
+  <div id="tab-patho" class="section-card">
+    <div class="card-header">
+      <span class="icon">🧠</span>
+      <div>
+        <h2>Pathophysiology</h2>
+        <div class="ar-title">الفيزيولوجيا المرضية</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <p>Repetitive depolarization of <strong>hyperactive and hypersensitive brain cells</strong> leads to abnormal electrical activity throughout the brain. This uncontrolled discharge propagates through neural pathways, producing the clinical manifestations of a seizure.</p>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <p>الإزالة المتكررة لاستقطاب <strong>خلايا الدماغ فائقة النشاط والتحسس</strong> تُؤدي إلى نشاط كهربائي غير طبيعي في الدماغ. ينتشر هذا التفريغ غير المنضبط عبر المسارات العصبية مُنتجاً المظاهر السريرية للنوبة.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RISK FACTORS ══ -->
+  <div id="tab-risk" class="section-card">
+    <div class="card-header">
+      <span class="icon">⚠️</span>
+      <div>
+        <h2>Risk Factors</h2>
+        <div class="ar-title">عوامل الخطر</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Epilepsy</li>
+          <li>Drug or alcohol abuse</li>
+          <li>Drug toxicity (e.g. aminophylline)</li>
+          <li>Recent head injury</li>
+          <li>Infection</li>
+          <li>Headache</li>
+          <li>Acute metabolic disturbances — hypoglycemia, hyponatremia, hypocalcemia, renal failure</li>
+          <li>Cerebrovascular accident (CVA)</li>
+          <li>CNS infection (meningitis, encephalitis), CNS trauma or tumor</li>
+          <li>Hypoxemia</li>
+          <li>Fever (especially in children)</li>
+          <li>Hypertension (HTN)</li>
+          <li>Allergic reaction</li>
+          <li>Eclampsia related to pregnancy</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الصرع</li>
+          <li>تعاطي المخدرات أو الكحول</li>
+          <li>سُمية الأدوية (مثل الأمينوفيلين)</li>
+          <li>إصابة حديثة في الرأس</li>
+          <li>العدوى</li>
+          <li>الصداع</li>
+          <li>الاضطرابات الأيضية الحادة — نقص سكر الدم، نقص صوديوم الدم، نقص كالسيوم الدم، الفشل الكلوي</li>
+          <li>السكتة الدماغية</li>
+          <li>عدوى الجهاز العصبي المركزي (التهاب السحايا، التهاب الدماغ)، أو رض أو ورم في الجهاز العصبي</li>
+          <li>نقص الأكسجين في الدم</li>
+          <li>الحمى (خاصةً عند الأطفال)</li>
+          <li>ارتفاع ضغط الدم</li>
+          <li>التفاعل التحسسي</li>
+          <li>تسمم الحمل المرتبط بالحمل</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CLINICAL PRESENTATION ══ -->
+  <div id="tab-clinical" class="section-card">
+    <div class="card-header">
+      <span class="icon">🩺</span>
+      <div>
+        <h2>Clinical Presentation</h2>
+        <div class="ar-title">المظاهر السريرية</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Ranges from simple staring to prolonged convulsions</li>
+          <li>Brief memory loss, visual sparkling or flashes, sensing an unpleasant odor</li>
+          <li>Classified as motor, sensory, autonomic, emotional, or cognitive</li>
+          <li>Aura occurring before the seizure, accompanied by tachycardia</li>
+          <li>Alteration in mental state — confusion or dazed state</li>
+          <li>Automatisms such as lip smacking or chewing</li>
+          <li>Tonic or clonic movements</li>
+          <li>Loss of consciousness or inability to respond to external stimuli</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تتراوح بين التحديق البسيط والتشنجات المطوّلة</li>
+          <li>فقدان ذاكرة قصير، وميض بصري أو لمعات، شعور برائحة كريهة</li>
+          <li>تُصنَّف إلى حركية، حسية، لا إرادية، عاطفية، أو معرفية</li>
+          <li>أعراض تحذيرية (أورا) تسبق النوبة مع تسارع ضربات القلب</li>
+          <li>تغيّر في الحالة الذهنية — ارتباك أو ذهول</li>
+          <li>حركات آلية كتمطيط الشفتين أو المضغ</li>
+          <li>حركات تيتانية أو ارتجاجية</li>
+          <li>فقدان الوعي أو عدم القدرة على الاستجابة للمثيرات الخارجية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COMPLICATIONS ══ -->
+  <div id="tab-comp" class="section-card">
+    <div class="card-header">
+      <span class="icon">🚨</span>
+      <div>
+        <h2>Complications</h2>
+        <div class="ar-title">المضاعفات</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Pulmonary edema</li>
+          <li>Pulmonary aspiration</li>
+          <li>Cardiac dysrhythmias</li>
+          <li>Hypertension or hypotension</li>
+          <li>Hyperthermia</li>
+          <li>Hyperglycemia / hypoglycemia</li>
+          <li>Hypoxia</li>
+          <li>Dehydration and metabolic imbalances</li>
+          <li>Myoglobinuria</li>
+          <li>Oral or musculoskeletal injuries</li>
+          <li>Brain death</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الوذمة الرئوية</li>
+          <li>استنشاق محتويات الرئة</li>
+          <li>اضطرابات نظم القلب</li>
+          <li>ارتفاع أو انخفاض ضغط الدم</li>
+          <li>ارتفاع درجة الحرارة</li>
+          <li>ارتفاع أو انخفاض سكر الدم</li>
+          <li>نقص الأكسجين</li>
+          <li>الجفاف والاختلالات الأيضية</li>
+          <li>بيلة ميوغلوبينية</li>
+          <li>إصابات الفم أو الجهاز العضلي الهيكلي</li>
+          <li>موت الدماغ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ DIAGNOSTICS ══ -->
+  <div id="tab-diag" class="section-card">
+    <div class="card-header">
+      <span class="icon">🔬</span>
+      <div>
+        <h2>Diagnostic Tests</h2>
+        <div class="ar-title">الفحوصات التشخيصية</div>
+      </div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>EEG (electroencephalogram)</li>
+          <li>CT scan, MRI, or PET scan — to rule out cerebral lesions</li>
+          <li>Serum drug screen — to rule out drug or alcohol intoxication</li>
+          <li>Serum electrolytes: BUN, calcium, magnesium, glucose</li>
+          <li>CBC (Complete Blood Count)</li>
+          <li>ECG — to detect cardiac arrhythmias</li>
+          <li>ABGs or pulse oximetry</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>رسم المخ الكهربائي (EEG)</li>
+          <li>أشعة مقطعية أو رنين مغناطيسي أو PET — لاستبعاد الآفات الدماغية</li>
+          <li>فحص سمية الدم — لاستبعاد التسمم بالأدوية أو الكحول</li>
+          <li>الشوارد في الدم: نيتروجين اليوريا، الكالسيوم، المغنيسيوم، الجلوكوز</li>
+          <li>صورة دم كاملة (CBC)</li>
+          <li>رسم القلب (ECG) — للكشف عن اضطرابات النظم</li>
+          <li>غازات الدم الشرياني أو قياس التأكسج النبضي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MANAGEMENT ══ -->
+  <div id="tab-mgmt" class="section-card">
+    <div class="card-header">
+      <span class="icon">💊</span>
+      <div>
+        <h2>Management</h2>
+        <div class="ar-title">العلاج</div>
+      </div>
+    </div>
+
+    <!-- Aim -->
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <p>The primary aim of seizure management is to <strong>protect the airway</strong> and <strong>prevent injury</strong> to the patient.</p>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <p>الهدف الأساسي من إدارة النوبات هو <strong>المحافظة على مجرى الهواء</strong> و<strong>الوقاية من الإصابات</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Fast-acting -->
+    <div class="section-divider">
+      Fast-Acting Anticonvulsants
+      <span class="ar-label">مضادات التشنج سريعة المفعول</span>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="drug-grid">
+          <div class="drug-item">
+            <div class="drug-name">Lorazepam (Ativan)</div>
+            <div class="drug-dose">0.1 mg/kg IV — up to 4 mg/dose. No faster than 2 mg/min. May repeat in 5–10 min.</div>
+          </div>
+          <div class="drug-item">
+            <div class="drug-name">Midazolam</div>
+            <div class="drug-dose">0.2 mg/kg IM — up to 10 mg max.</div>
+          </div>
+          <div class="drug-item">
+            <div class="drug-name">Diazepam (Valium)</div>
+            <div class="drug-dose">0.15 mg/kg IV — up to 10 mg/dose. No faster than 5 mg/min. May repeat in 5 min.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="drug-grid-ar">
+          <div class="drug-item-ar">
+            <div class="drug-name-ar">لورازيبام (أتيفان)</div>
+            <div class="drug-dose-ar">0.1 ملغ/كغ وريدياً — حتى 4 ملغ/جرعة. لا يتجاوز 2 ملغ/دقيقة. يمكن التكرار بعد 5–10 دقائق.</div>
+          </div>
+          <div class="drug-item-ar">
+            <div class="drug-name-ar">ميدازولام</div>
+            <div class="drug-dose-ar">0.2 ملغ/كغ عضلياً — حتى 10 ملغ كحد أقصى.</div>
+          </div>
+          <div class="drug-item-ar">
+            <div class="drug-name-ar">ديازيبام (فاليوم)</div>
+            <div class="drug-dose-ar">0.15 ملغ/كغ وريدياً — حتى 10 ملغ/جرعة. لا يتجاوز 5 ملغ/دقيقة. يمكن التكرار بعد 5 دقائق.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Long-acting -->
+    <div class="section-divider" style="background: linear-gradient(90deg, var(--accent) 0%, #d4936a 100%);">
+      Long-Acting Anticonvulsants
+      <span class="ar-label">مضادات التشنج طويلة المفعول</span>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="drug-grid">
+          <div class="drug-item long">
+            <div class="drug-name">Phenytoin (Dilantin)</div>
+            <div class="drug-dose">20 mg/kg IV. No faster than 50 mg/min.</div>
+          </div>
+          <div class="drug-item long">
+            <div class="drug-name">Phenobarbital (Luminal)</div>
+            <div class="drug-dose">20 mg/kg IV. No faster than 50–100 mg/min. May give additional 5–10 mg/kg 10 min after loading.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="drug-grid-ar">
+          <div class="drug-item-ar long">
+            <div class="drug-name-ar">فينيتوين (ديلانتين)</div>
+            <div class="drug-dose-ar">20 ملغ/كغ وريدياً. لا يتجاوز 50 ملغ/دقيقة.</div>
+          </div>
+          <div class="drug-item-ar long">
+            <div class="drug-name-ar">فينوباربيتال (لومينال)</div>
+            <div class="drug-dose-ar">20 ملغ/كغ وريدياً. لا يتجاوز 50–100 ملغ/دقيقة. يمكن إعطاء 5–10 ملغ/كغ إضافية بعد 10 دقائق من جرعة التحميل.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NURSING ══ -->
+  <div id="tab-nursing" class="section-card">
+    <div class="card-header">
+      <span class="icon">👩‍⚕️</span>
+      <div>
+        <h2>Nursing Management</h2>
+        <div class="ar-title">الرعاية التمريضية</div>
+      </div>
+    </div>
+
+    <!-- Pre -->
+    <div class="section-divider">Before the Seizure — Assessment<span class="ar-label">قبل النوبة — التقييم</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Identify precipitating factors and preceding aura</li>
+          <li>What was the patient doing at the time of the seizure?</li>
+          <li>Were there unusual symptoms or behaviors before the seizure (movements, sensations, sounds, tastes, smells)?</li>
+          <li>Did the patient know a seizure was coming?</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تحديد العوامل المحرِّضة والأعراض التحذيرية السابقة</li>
+          <li>ماذا كان المريض يفعل وقت النوبة؟</li>
+          <li>هل كانت هناك أعراض أو سلوكيات غير معتادة قبل النوبة (حركات، إحساسات، أصوات، طعوم، روائح)؟</li>
+          <li>هل أحس المريض بأن نوبة ستحدث؟</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- During -->
+    <div class="section-divider">During the Seizure<span class="ar-label">أثناء النوبة</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Observe seizure type, point of origin, and spread of activity</li>
+          <li>Note the length (duration) of the seizure</li>
+          <li>Note automatisms such as lip smacking and repeated swallowing</li>
+          <li>Assess LOC, bowel and bladder incontinence, and tongue biting</li>
+          <li><strong>Avoid restraining the patient</strong></li>
+          <li><strong>Avoid forcing an airway into the patient's mouth</strong> when jaws are clenched</li>
+          <li><strong>Avoid use of a tongue blade</strong></li>
+          <li>Maintain a patent airway throughout</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>مراقبة نوع النوبة، ومكان البدء، وانتشار النشاط الكهربائي</li>
+          <li>تسجيل مدة النوبة</li>
+          <li>ملاحظة الحركات الآلية كتمطيط الشفاه والبلع المتكرر</li>
+          <li>تقييم مستوى الوعي وسلس البول والبراز وعضّ اللسان</li>
+          <li><strong>عدم تقييد المريض</strong></li>
+          <li><strong>عدم إجبار أداة لفتح مجرى الهواء</strong> عند إغلاق الفكين</li>
+          <li><strong>عدم استخدام ضاغط اللسان</strong></li>
+          <li>المحافظة على مجرى هواء مفتوح طوال النوبة</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Post-ictal -->
+    <div class="section-divider">Post-Ictal State (After the Seizure)<span class="ar-label">مرحلة ما بعد النوبة</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Assess vital signs closely; provide ECG monitoring</li>
+          <li>Monitor oxygenation and respiratory status (ABGs, SpO₂, breath sounds)</li>
+          <li>Turn patient to side-lying position; administer O₂ therapy; suction as needed</li>
+          <li>Check level of orientation and ability to speak (patient usually sleeps afterward)</li>
+          <li>Note headache and signs of increased ICP</li>
+          <li>Check pupil size, eye deviations, and response to auditory and tactile stimuli</li>
+          <li>Note paralysis or weakness of arms or legs</li>
+          <li>Keep oral or nasal airway or ETT at bedside</li>
+          <li>Ensure patient safety — pad side rails, keep bed at lowest position</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>متابعة العلامات الحيوية بدقة وتوصيل مراقبة القلب</li>
+          <li>مراقبة الأكسجة والحالة التنفسية (غازات الدم، SpO₂، أصوات التنفس)</li>
+          <li>وضع المريض على جانبه وإعطاء الأكسجين وشفط الإفرازات عند الحاجة</li>
+          <li>تقييم مستوى التوجه والقدرة على الكلام (عادةً ينام المريض بعدها)</li>
+          <li>ملاحظة الصداع وعلامات ارتفاع الضغط داخل الجمجمة</li>
+          <li>فحص حجم الحدقتين وانحراف العينين والاستجابة للمثيرات السمعية واللمسية</li>
+          <li>ملاحظة أي شلل أو ضعف في الأطراف</li>
+          <li>إبقاء أداة فتح مجرى الهواء الفمي أو الأنفي أو أنبوب التنبيب بجانب السرير</li>
+          <li>ضمان سلامة المريض — تبطين حواجز السرير وخفض السرير للمستوى الأدنى</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.section-card').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>

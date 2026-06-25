@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKA – Dr. Afaf Mohamed Mansour</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --primary: #1a5c4a;
+    --primary-light: #267a63;
+    --accent: #c07a3a;
+    --accent-light: #e8c99a;
+    --text: #2a2a2a;
+    --text-muted: #6b6b6b;
+    --border: #e0dbd2;
+    --shadow: 0 4px 24px rgba(26,92,74,0.10);
+    --en-bg: #eef6f3;
+    --ar-bg: #fdf6ee;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Serif 4', serif; min-height: 100vh; }
+
+  header {
+    background: var(--primary);
+    color: #fff;
+    padding: 40px 32px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(192,122,58,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: 0.02em; margin-bottom: 6px; }
+  header .subtitle { font-size: 1rem; opacity: 0.75; font-style: italic; margin-bottom: 4px; }
+  header .author { font-size: 0.95rem; color: var(--accent-light); font-family: 'Noto Naskh Arabic', serif; margin-top: 8px; }
+
+  .tab-nav-wrap {
+    background: var(--primary);
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 4px;
+    border-bottom: 3px solid var(--accent);
+  }
+  .tab-btn {
+    background: transparent; border: none;
+    color: rgba(255,255,255,0.65);
+    padding: 14px 16px 12px;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.80rem; font-weight: 600;
+    letter-spacing: 0.04em; white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn:hover { color: #fff; }
+  .tab-btn.active { color: #fff; border-bottom-color: var(--accent); }
+
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  .section-card {
+    display: none;
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.35s ease;
+  }
+  .section-card.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff; padding: 22px 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .card-header .icon { font-size: 1.8rem; flex-shrink: 0; }
+  .card-header h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; line-height: 1.2; }
+  .card-header .ar-title { font-family: 'Noto Naskh Arabic', serif; font-size: 1.05rem; opacity: 0.82; margin-top: 3px; direction: rtl; }
+
+  .bi-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; border-top: 1px solid var(--border);
+  }
+  .bi-col { padding: 20px 24px; }
+  .bi-col.en { background: var(--en-bg); border-right: 2px solid var(--border); }
+  .bi-col.ar { background: var(--ar-bg); direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; }
+
+  .lang-badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; padding: 2px 8px; border-radius: 20px;
+    margin-bottom: 8px; text-transform: uppercase;
+  }
+  .lang-badge.en-badge { background: var(--primary); color: #fff; }
+  .lang-badge.ar-badge { background: var(--accent); color: #fff; font-family: 'Source Serif 4', serif; }
+
+  .bi-col p { font-size: 0.97rem; line-height: 1.75; color: var(--text); }
+  .bi-col.ar p { font-size: 1.05rem; line-height: 2; }
+
+  .point-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .point-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.95rem; line-height: 1.65; }
+  .point-list li::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .bi-col.ar .point-list li { flex-direction: row-reverse; font-size: 1rem; line-height: 1.9; }
+  .bi-col.ar .point-list li::before { content: '◂'; }
+
+  .section-divider {
+    padding: 10px 24px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; gap: 12px; align-items: center;
+  }
+  .section-divider .ar-label {
+    font-family: 'Noto Naskh Arabic', serif; opacity: 0.8;
+    font-size: 0.85rem; letter-spacing: 0; text-transform: none; margin-left: auto;
+  }
+  .section-divider.accent { background: linear-gradient(90deg, var(--accent) 0%, #d4934a 100%); }
+
+  /* Definition box */
+  .def-box {
+    border-radius: 10px; padding: 16px 20px;
+    font-size: 0.97rem; line-height: 1.8;
+    border: 1px solid var(--border); background: #fff;
+  }
+  .def-box.en { border-left: 5px solid var(--primary); }
+  .def-box.ar { border-right: 5px solid var(--accent); font-family: 'Noto Naskh Arabic', serif; font-size: 1.05rem; line-height: 2.1; }
+  .def-box strong { color: var(--primary); }
+  .def-box.ar strong { color: var(--accent); }
+
+  /* Comparison table */
+  .compare-wrap { padding: 20px 24px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th { background: var(--primary); color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+  th.ar { text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+  td.ar { text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 0.93rem; direction: rtl; line-height: 1.9; }
+  tr:nth-child(even) td { background: #f3faf7; }
+  tr:nth-child(even) td.ar { background: #fdf8f2; }
+  td strong { color: var(--primary); }
+  td.ar strong { color: var(--accent); }
+
+  /* MCQ */
+  .mcq-box { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+  .mcq-item { background: var(--en-bg); border-left: 5px solid var(--primary); border-radius: 10px; padding: 16px 18px; }
+  .mcq-q { font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; }
+  .mcq-q.ar { direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 1rem; line-height: 1.9; }
+  .mcq-options { display: flex; flex-direction: column; gap: 6px; }
+  .mcq-opt { font-size: 0.9rem; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border); background: #fff; cursor: pointer; transition: background 0.2s; }
+  .mcq-opt:hover { background: var(--accent-light); }
+  .mcq-opt.correct { background: #d4edda; border-color: #28a745; color: #155724; font-weight: 700; }
+  .mcq-opt.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+  .mcq-opt.ar { direction: rtl; text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; }
+  .mcq-feedback { margin-top: 8px; font-size: 0.85rem; font-weight: 600; display: none; }
+  .mcq-feedback.show { display: block; }
+  .mcq-feedback.correct { color: #155724; }
+  .mcq-feedback.wrong { color: #721c24; }
+
+  /* Treatment step cards */
+  .step-grid { display: flex; flex-direction: column; gap: 10px; }
+  .step-item {
+    border-left: 4px solid var(--primary); border-radius: 8px;
+    padding: 12px 16px; background: var(--en-bg);
+  }
+  .step-item.accent { border-left-color: var(--accent); }
+  .step-name { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+  .step-item.accent .step-name { color: var(--accent); }
+  .step-detail { font-size: 0.88rem; color: var(--text-muted); margin-top: 3px; line-height: 1.55; }
+
+  .step-grid-ar { display: flex; flex-direction: column; gap: 10px; }
+  .step-item-ar {
+    border-right: 4px solid var(--primary); border-radius: 8px;
+    padding: 12px 16px; background: var(--ar-bg);
+    font-family: 'Noto Naskh Arabic', serif;
+  }
+  .step-item-ar.accent { border-right-color: var(--accent); }
+  .step-name-ar { font-weight: 700; color: var(--primary); font-size: 1rem; }
+  .step-item-ar.accent .step-name-ar { color: var(--accent); }
+  .step-detail-ar { font-size: 0.93rem; color: var(--text-muted); margin-top: 3px; line-height: 1.85; }
+
+  @media(max-width: 640px) {
+    .bi-row { grid-template-columns: 1fr; }
+    .bi-col.en { border-right: none; border-bottom: 2px solid var(--border); }
+    .tab-btn { font-size: 0.70rem; padding: 11px 9px; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Diabetic Ketoacidosis (DKA)</h1>
+  <p class="subtitle">A comprehensive clinical overview</p>
+  <p class="author">Assist. Prof. Dr. Afaf Mohamed Mansour &nbsp;|&nbsp; أ.د. عفاف محمد منصور</p>
+</header>
+
+<div class="tab-nav-wrap">
+  <button class="tab-btn active" onclick="showTab('def')">Definition</button>
+  <button class="tab-btn" onclick="showTab('etiology')">Etiology</button>
+  <button class="tab-btn" onclick="showTab('patho')">Pathophysiology</button>
+  <button class="tab-btn" onclick="showTab('clinical')">Clinical</button>
+  <button class="tab-btn" onclick="showTab('lab')">Lab Studies</button>
+  <button class="tab-btn" onclick="showTab('mgmt')">Management</button>
+  <button class="tab-btn" onclick="showTab('nursing')">Nursing</button>
+  <button class="tab-btn" onclick="showTab('compare')">DKA vs HHS</button>
+  <button class="tab-btn" onclick="showTab('mcq')">MCQ ✏️</button>
+</div>
+
+<main>
+
+  <!-- ══ DEFINITION ══ -->
+  <div id="tab-def" class="section-card active">
+    <div class="card-header">
+      <span class="icon">📖</span>
+      <div><h2>Definition</h2><div class="ar-title">التعريف</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div class="def-box en">
+          <strong>Diabetic Ketoacidosis (DKA)</strong> is a life-threatening hyperglycemic crisis associated with diabetes mellitus. It occurs when glucose cannot be transported to the cells due to a <strong>lack of insulin</strong>.
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div class="def-box ar">
+          <strong>الحماض الكيتوني السكري (DKA)</strong> هو أزمة ارتفاع سكر الدم المهددة للحياة والمرتبطة بداء السكري. يحدث عندما لا يستطيع الجلوكوز الوصول إلى الخلايا بسبب <strong>نقص الأنسولين</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ETIOLOGY ══ -->
+  <div id="tab-etiology" class="section-card">
+    <div class="card-header">
+      <span class="icon">⚠️</span>
+      <div><h2>Etiology</h2><div class="ar-title">الأسباب والمسببات</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li><strong>Infection</strong> is a major reason that diabetic patients progress to DKA</li>
+          <li>Changes in insulin type, dosage, or increased metabolic demand can precipitate DKA in Type I DM</li>
+          <li>Surgery, infection, and trauma — all increase insulin requirements</li>
+          <li>In young persons with DM, psychological problems combined with eating disorders</li>
+          <li>DKA also occurs with acute pancreatitis</li>
+          <li>Non-diabetic causes include starvation and alcoholism</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li><strong>العدوى</strong> هي السبب الرئيسي الذي يدفع مرضى السكري نحو DKA</li>
+          <li>التغييرات في نوع الأنسولين أو جرعته أو زيادة الطلب الأيضي قد تُحرِّض DKA في النوع الأول</li>
+          <li>الجراحة والعدوى والصدمة — جميعها تزيد من الحاجة للأنسولين</li>
+          <li>في الشباب المصابين بالسكري، المشكلات النفسية مع اضطرابات الأكل</li>
+          <li>يحدث DKA أيضاً مع التهاب البنكرياس الحاد</li>
+          <li>الأسباب غير السكرية: المجاعة والإدمان على الكحول</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PATHOPHYSIOLOGY ══ -->
+  <div id="tab-patho" class="section-card">
+    <div class="card-header">
+      <span class="icon">🧬</span>
+      <div><h2>Pathophysiology</h2><div class="ar-title">الفيزيولوجيا المرضية</div></div>
+    </div>
+
+    <div class="section-divider">1 — Insulin Deficiency <span class="ar-label">نقص الأنسولين</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Insulin is the metabolic key to transfer glucose from the bloodstream into the cell for energy</li>
+          <li>Without insulin, glucose remains in the bloodstream and cells are deprived of their energy source</li>
+          <li>The liver converts its glycogen stores back to glucose (Glycogenolysis), raising blood glucose even higher</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الأنسولين هو المفتاح الأيضي لنقل الجلوكوز من مجرى الدم إلى الخلية لإنتاج الطاقة</li>
+          <li>بدون أنسولين يبقى الجلوكوز في مجرى الدم وتُحرم الخلايا من مصدر طاقتها</li>
+          <li>يقوم الكبد بتحويل مخازن الجليكوجين إلى جلوكوز (تحلل الجليكوجين) مما يرفع السكر أكثر</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider">2 — Hyperglycemia & Fluid Volume Deficit <span class="ar-label">ارتفاع السكر ونقص حجم السوائل</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Hyperglycemia causes osmotic diuresis — high extracellular glucose draws fluid out of cells</li>
+          <li>When serum glucose exceeds renal threshold, glucose spills into urine (Glycosuria) causing polyuria</li>
+          <li>Large volumes of water, sodium, potassium, and phosphorus are lost in urine → fluid volume deficit</li>
+          <li>Blood becomes hyperosmolar → cellular dehydration</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>ارتفاع السكر يُسبب إدراراً أسموزياً — السكر المرتفع خارج الخلية يسحب السوائل منها</li>
+          <li>عند تجاوز العتبة الكلوية، ينسكب الجلوكوز في البول (بيلة سكرية) مُسبِّباً كثرة التبول</li>
+          <li>تفقد كميات كبيرة من الماء والصوديوم والبوتاسيوم والفوسفور في البول → نقص حجم السوائل</li>
+          <li>يصبح الدم مفرط الأسمولية → جفاف الخلايا</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider">3 — Ketoacidosis & Acid-Base Disturbance <span class="ar-label">الحماض الكيتوني واضطراب الحمض والقاعدة</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Body starts using fat and protein stores for energy</li>
+          <li>Fatty acids flood the liver → excess ketone body production</li>
+          <li>Ketones accumulate in blood (ketosis) and spill into urine (ketonuria)</li>
+          <li>Ketone accumulation causes metabolic acidosis → decreased pH and bicarbonate</li>
+          <li>Breathing becomes deep and rapid (Kussmaul respirations) to blow off CO₂</li>
+          <li>Acetone is exhaled — giving the breath a characteristic fruity odor</li>
+          <li>Severe acidosis may cause loss of consciousness</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>يبدأ الجسم باستخدام مخازن الدهون والبروتينات للحصول على الطاقة</li>
+          <li>تتدفق الأحماض الدهنية إلى الكبد → إنتاج مفرط لأجسام الكيتون</li>
+          <li>تتراكم الكيتونات في الدم (كيتوزيس) وتفيض في البول (كيتونوريا)</li>
+          <li>تراكم الكيتونات يُسبب حماضاً أيضياً → انخفاض الرقم الهيدروجيني وبيكربونات الدم</li>
+          <li>يصبح التنفس عميقاً وسريعاً (تنفس كوسماول) للتخلص من CO₂</li>
+          <li>يُطرح الأسيتون في الزفير مُعطياً رائحة فواكه مميزة</li>
+          <li>الحماض الشديد قد يُفقد المريض الوعي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CLINICAL MANIFESTATION ══ -->
+  <div id="tab-clinical" class="section-card">
+    <div class="card-header">
+      <span class="icon">🩺</span>
+      <div><h2>Clinical Manifestation</h2><div class="ar-title">المظاهر السريرية</div></div>
+    </div>
+
+    <div class="section-divider">Patient Complaints <span class="ar-label">شكاوى المريض</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Dry mouth</li>
+          <li>Malaise (general discomfort)</li>
+          <li>Headache</li>
+          <li>Polyuria — excessive urination</li>
+          <li>Polydipsia — excessive thirst</li>
+          <li>Polyphagia — excessive hunger</li>
+          <li>Dehydration: dry skin, hypotension, weakness</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>جفاف الفم</li>
+          <li>شعور عام بالتعب والضيق</li>
+          <li>الصداع</li>
+          <li>بوال — كثرة التبول</li>
+          <li>عطش شديد</li>
+          <li>جوع مفرط</li>
+          <li>جفاف: جفاف الجلد، انخفاض ضغط الدم، الضعف العام</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider accent">Ketoacidosis & CNS Signs <span class="ar-label">علامات الكيتوزيس والجهاز العصبي</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Air hunger and acetone breath odor (fruity smell)</li>
+          <li>Deep and rapid (Kussmaul) respirations</li>
+          <li>Nausea and vomiting</li>
+          <li>Extreme fatigue, dehydration, and weight loss</li>
+          <li>CNS depression — confusion, changes in level of consciousness</li>
+          <li>Can lead quickly to coma if untreated</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>جوع الهواء ورائحة الأسيتون في الزفير (رائحة فواكه)</li>
+          <li>تنفس كوسماول — عميق وسريع</li>
+          <li>غثيان وقيء</li>
+          <li>إرهاق شديد وجفاف وفقدان الوزن</li>
+          <li>اكتئاب الجهاز العصبي المركزي — ارتباك وتغيير في مستوى الوعي</li>
+          <li>قد يتطور بسرعة إلى غيبوبة إن لم يُعالَج</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider">Physical Examination Findings <span class="ar-label">نتائج الفحص السريري</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Flushed, dry skin and dry buccal membranes (evidence of dehydration)</li>
+          <li>Skin turgor takes >3 seconds to return after being lifted</li>
+          <li>Sunken eyeballs from lack of interstitial fluid</li>
+          <li>Tachycardia and hypotension signaling profound fluid loss</li>
+          <li>Kussmaul respirations with fruity acetone odor</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>جلد محمر وجاف وأغشية فم جافة (دليل على الجفاف)</li>
+          <li>مرونة الجلد تأخذ أكثر من 3 ثوانٍ للعودة بعد الشد</li>
+          <li>انهماد مقل العيون بسبب نقص السوائل الخلالية</li>
+          <li>تسارع القلب وانخفاض الضغط دلالةً على فقدان السوائل الشديد</li>
+          <li>تنفس كوسماول مع رائحة الأسيتون الفواكهية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LAB STUDIES ══ -->
+  <div id="tab-lab" class="section-card">
+    <div class="card-header">
+      <span class="icon">🔬</span>
+      <div><h2>Laboratory Studies</h2><div class="ar-title">الدراسات المخبرية</div></div>
+    </div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li><strong>Hyperglycemia</strong> — blood glucose > 250 mg/dL</li>
+          <li><strong>Urine ketones</strong> — strongly positive</li>
+          <li><strong>Arterial blood gas</strong> — confirms metabolic acidosis (pH &lt; 7.3)</li>
+          <li><strong>Low CO₂</strong> in venous blood chemistry (uncompensated metabolic acidosis)</li>
+          <li><strong>Low serum sodium</strong> — water shifts from intracellular to extracellular space</li>
+          <li><strong>Elevated serum potassium</strong> — potassium moves from inside the cell to extracellular space</li>
+          <li><strong>Low bicarbonate</strong> — &lt; 15 mEq/L</li>
+          <li><strong>Osmolality</strong> — &lt; 350 mOsm/L</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li><strong>ارتفاع سكر الدم</strong> — أكثر من 250 ملغ/ديسيلتر</li>
+          <li><strong>كيتونات البول</strong> — إيجابية بشدة</li>
+          <li><strong>غازات الدم الشرياني</strong> — تؤكد الحماض الأيضي (pH &lt; 7.3)</li>
+          <li><strong>انخفاض CO₂</strong> في كيمياء الدم الوريدي (حماض أيضي غير تعويضي)</li>
+          <li><strong>انخفاض صوديوم الدم</strong> — انتقال الماء من داخل الخلية للخارج</li>
+          <li><strong>ارتفاع بوتاسيوم الدم</strong> — انتقال البوتاسيوم من داخل الخلية للخارج</li>
+          <li><strong>انخفاض البيكربونات</strong> — أقل من 15 ميلي مكافئ/لتر</li>
+          <li><strong>الأسمولية</strong> — أقل من 350 ملي أوزمول/لتر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MANAGEMENT ══ -->
+  <div id="tab-mgmt" class="section-card">
+    <div class="card-header">
+      <span class="icon">💊</span>
+      <div><h2>Management of DKA</h2><div class="ar-title">علاج الحماض الكيتوني السكري</div></div>
+    </div>
+
+    <!-- Goals -->
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <div style="background:#fff;border-left:5px solid var(--primary);border-radius:10px;padding:14px 18px;font-size:0.97rem;line-height:1.8;">
+          Treatment goals for DKA:<br>
+          <strong>1.</strong> Reverse Dehydration &nbsp;|&nbsp; <strong>2.</strong> Replace Insulin &nbsp;|&nbsp; <strong>3.</strong> Reverse Ketoacidosis &nbsp;|&nbsp; <strong>4.</strong> Replenish Electrolytes
+        </div>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <div style="background:#fff;border-right:5px solid var(--accent);border-radius:10px;padding:14px 18px;font-family:'Noto Naskh Arabic',serif;font-size:1rem;line-height:2;direction:rtl;">
+          أهداف علاج DKA:<br>
+          <strong>١.</strong> عكس الجفاف &nbsp;|&nbsp; <strong>٢.</strong> إعطاء الأنسولين &nbsp;|&nbsp; <strong>٣.</strong> عكس الحماض &nbsp;|&nbsp; <strong>٤.</strong> تعويض الشوارد
+        </div>
+      </div>
+    </div>
+
+    <!-- Rehydration -->
+    <div class="section-divider">1 — Reversing Dehydration <span class="ar-label">عكس الجفاف</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Patients may have lost 5–10% of body weight in fluid</li>
+          <li>Aggressive IV fluid replacement with <strong>0.9% NaCl (isotonic normal saline)</strong> to replenish vascular deficit and reverse hypotension</li>
+          <li>If serum sodium is high (hypernatremia), follow with hypotonic <strong>0.45% NaCl</strong></li>
+          <li>Add <strong>20–30 mEq/L potassium</strong> to replacement fluids to restore intracellular potassium</li>
+          <li>When blood glucose falls to <strong>200 mg/dL</strong>, switch to 50/50 mix of hypotonic saline and <strong>5% dextrose</strong> to prevent hypoglycemia</li>
+          <li>Caution in patients with kidney failure or cardiopulmonary disease to avoid fluid overload</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>قد يفقد المريض 5–10% من وزنه في صورة سوائل</li>
+          <li>تعويض سوائل وريدي مكثف بـ<strong>محلول ملحي طبيعي 0.9%</strong> لتعويض العجز الوعائي وعكس انخفاض الضغط</li>
+          <li>إذا كان الصوديوم مرتفعاً، يُتبع بمحلول مخفف <strong>0.45% NaCl</strong></li>
+          <li>إضافة <strong>20–30 ميلي مكافئ/لتر بوتاسيوم</strong> لتعويض البوتاسيوم داخل الخلايا</li>
+          <li>عند انخفاض الجلوكوز إلى <strong>200 ملغ/ديسيلتر</strong>، التحول إلى خليط 50/50 من محلول مخفف و<strong>دكستروز 5%</strong> منعاً لنقص السكر</li>
+          <li>الحذر عند مرضى الكلى وأمراض القلب والرئة لتجنب زيادة السوائل</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Insulin -->
+    <div class="section-divider">2 — Insulin Administration <span class="ar-label">إعطاء الأنسولين</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Initial IV bolus of regular insulin: <strong>0.1 unit/kg</strong></li>
+          <li>Continuous IV infusion: <strong>0.1 unit/kg/hour</strong> (e.g., 7 units/hour for 70 kg patient)</li>
+          <li>Check blood glucose every hour — target decrease of <strong>50–70 mg/dL/hour</strong></li>
+          <li>Once glucose reaches 200 mg/dL and acidosis is corrected, reduce insulin to <strong>0.05–0.1 unit/kg/hour</strong></li>
+          <li>Insulin drip continues until ketoacidosis resolves (no ketones, normal pH)</li>
+          <li>Switch to subcutaneous insulin only when patient is stable and on oral diet</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>جرعة أنسولين وريدية أولية: <strong>0.1 وحدة/كغ</strong></li>
+          <li>تسريب وريدي مستمر: <strong>0.1 وحدة/كغ/ساعة</strong> (مثلاً 7 وحدات/ساعة لمريض 70 كغ)</li>
+          <li>قياس سكر الدم كل ساعة — الهدف انخفاض <strong>50–70 ملغ/ديسيلتر/ساعة</strong></li>
+          <li>عند وصول السكر إلى 200 ملغ وتصحيح الحماض، تخفيض الأنسولين إلى <strong>0.05–0.1 وحدة/كغ/ساعة</strong></li>
+          <li>يستمر تسريب الأنسولين حتى اختفاء الكيتوزيس وعودة pH لطبيعته</li>
+          <li>التحول إلى أنسولين تحت الجلد فقط عند استقرار الحالة وتناول الغذاء الفموي</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Ketoacidosis -->
+    <div class="section-divider accent">3 — Reversing Ketoacidosis <span class="ar-label">عكس الحماض الكيتوني</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Adequate hydration and insulin usually correct acidosis</li>
+          <li>If pH &lt; 7.10, bicarbonate replacement may be required</li>
+          <li>Bicarbonate deficit calculated and replaced IV over several hours to raise level to at least <strong>10–12 mEq/L</strong></li>
+          <li>Sodium bicarbonate given by <strong>slow IV infusion</strong> over hours (bolus only in cardiac arrest)</li>
+          <li>Watch for rapid potassium drop and sodium overload with bicarbonate use</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>الترطيب الكافي والأنسولين عادةً يُصحِّحان الحماض</li>
+          <li>إذا كان pH &lt; 7.10، قد يلزم تعويض البيكربونات</li>
+          <li>يُحسَب العجز في البيكربونات ويُعوَّض وريدياً على مدى ساعات لرفع المستوى لـ<strong>10–12 ميلي مكافئ/لتر</strong> على الأقل</li>
+          <li>يُعطى بيكربونات الصوديوم بـ<strong>تسريب وريدي بطيء</strong> على مدار ساعات (جرعة سريعة فقط في حالة توقف القلب)</li>
+          <li>مراقبة انخفاض البوتاسيوم والحمل الزائد من الصوديوم عند استخدام البيكربونات</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Electrolytes -->
+    <div class="section-divider">4 — Replenishing Electrolytes <span class="ar-label">تعويض الشوارد</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Low serum potassium (hypokalemia) occurs as insulin drives potassium back into cells</li>
+          <li>Potassium level must be <strong>≥ 3.3 mEq</strong> before starting insulin</li>
+          <li>Potassium replaced at <strong>20–40 mEq/L</strong> of IV fluid, depending on serum level</li>
+          <li>Phosphate replacement if phosphate &lt; 1 mg/dL</li>
+          <li>Watch for signs of <strong>tetany</strong> during phosphate therapy (tingling, neuromuscular irritability, carpopedal spasm, seizures) — phosphate lowers circulating calcium</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>نقص بوتاسيوم الدم يحدث لأن الأنسولين يعيد البوتاسيوم داخل الخلايا</li>
+          <li>يجب أن يكون مستوى البوتاسيوم <strong>≥ 3.3 ميلي مكافئ</strong> قبل بدء الأنسولين</li>
+          <li>تعويض البوتاسيوم بـ<strong>20–40 ميلي مكافئ/لتر</strong> من السوائل الوريدية حسب المستوى</li>
+          <li>تعويض الفوسفات إذا كان أقل من 1 ملغ/ديسيلتر</li>
+          <li>مراقبة علامات <strong>التيتاني</strong> أثناء علاج الفوسفات (وخز، تهيج عصبي عضلي، تشنج النهايات) — الفوسفات يخفض الكالسيوم</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GI -->
+    <div class="section-divider accent">5 — Reestablishing Metabolic Function <span class="ar-label">استعادة الوظيفة الأيضية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Gastric motility is greatly impaired in DKA</li>
+          <li>Gastric distention, dark hemo-positive fluid, vomiting, abdominal pain, and paralytic ileus are common</li>
+          <li>Patient may need a <strong>nasogastric tube</strong> to decompress the stomach (reduces aspiration risk)</li>
+          <li>Patient should be NPO (nothing by mouth) during acute phase; ice chips may ease thirst</li>
+          <li>Oral intake resumes when distention lessens and motility returns</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>حركة المعدة تتأثر بشدة في DKA</li>
+          <li>انتفاخ المعدة وسائل معدي داكن إيجابي للدم وقيء وألم بطني وإيلاس شلوي شائعة</li>
+          <li>قد يحتاج المريض لـ<strong>أنبوب أنفي معدي</strong> لتفريغ المعدة (يقلل خطر الاستنشاق)</li>
+          <li>صيام تام أثناء المرحلة الحادة؛ قطع الثلج قد يُخفف العطش</li>
+          <li>يبدأ تناول الطعام الفموي عند تحسن الانتفاخ وعودة الحركة المعوية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NURSING ══ -->
+  <div id="tab-nursing" class="section-card">
+    <div class="card-header">
+      <span class="icon">👩‍⚕️</span>
+      <div><h2>Nursing Management</h2><div class="ar-title">الرعاية التمريضية</div></div>
+    </div>
+
+    <!-- Goals -->
+    <div class="section-divider">Nursing Goals <span class="ar-label">الأهداف التمريضية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Administering fluids, insulin, and electrolytes</li>
+          <li>Monitoring response to therapy</li>
+          <li>Surveillance for complications</li>
+          <li>Providing patient education</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>إعطاء السوائل والأنسولين والشوارد</li>
+          <li>مراقبة الاستجابة للعلاج</li>
+          <li>المراقبة للكشف عن المضاعفات</li>
+          <li>تثقيف المريض وتعليمه</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fluids -->
+    <div class="section-divider">Administering Fluids, Insulin & Electrolytes <span class="ar-label">إعطاء السوائل والأنسولين والشوارد</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Rapid IV fluid replacement requires a <strong>volumetric pump</strong></li>
+          <li>Insulin given IV to severely dehydrated patients (poor peripheral perfusion) to ensure absorption</li>
+          <li>Patients on <strong>NPO status</strong> until hyperglycemia is controlled</li>
+          <li>Monitor blood glucose, potassium, and often blood gases <strong>hourly</strong></li>
+          <li>Goal: glucose fall of <strong>50–75 mg/dL/hour</strong></li>
+          <li>At glucose 200 mg/dL, switch to <strong>D5W + 0.45% NaCl</strong> to prevent hypoglycemia</li>
+          <li>Insulin drip not discontinued until ketoacidosis resolves (no ketones, normal pH)</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>تعويض السوائل الوريدي السريع يستلزم <strong>مضخة حجمية</strong></li>
+          <li>الأنسولين يُعطى وريدياً للمرضى شديدي الجفاف (نقص التروية المحيطية) لضمان الامتصاص</li>
+          <li>المريض في وضع <strong>NPO</strong> حتى التحكم في ارتفاع السكر</li>
+          <li>رصد سكر الدم والبوتاسيوم وغالباً غازات الدم <strong>كل ساعة</strong></li>
+          <li>الهدف: انخفاض السكر بمعدل <strong>50–75 ملغ/ديسيلتر/ساعة</strong></li>
+          <li>عند السكر 200 ملغ، التحول إلى <strong>D5W + NaCl 0.45%</strong> منعاً لنقص السكر</li>
+          <li>لا تُوقَف قطرة الأنسولين حتى زوال الكيتوزيس وعودة pH لطبيعته</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Complications -->
+    <div class="section-divider accent">Surveillance for Complications <span class="ar-label">المراقبة للمضاعفات</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Fluid volume overload</li>
+          <li>Hypoglycemia</li>
+          <li>Hyperkalemia</li>
+          <li>Hyponatremia</li>
+          <li>Cerebral edema</li>
+          <li>Infection</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>زيادة حجم السوائل (حمل زائد)</li>
+          <li>نقص سكر الدم</li>
+          <li>ارتفاع بوتاسيوم الدم</li>
+          <li>نقص صوديوم الدم</li>
+          <li>الوذمة الدماغية</li>
+          <li>العدوى</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nursing Diagnoses -->
+    <div class="section-divider">Nursing Diagnoses <span class="ar-label">التشخيصات التمريضية</span></div>
+    <div class="bi-row">
+      <div class="bi-col en">
+        <span class="lang-badge en-badge">EN</span>
+        <ul class="point-list">
+          <li>Decreased Cardiac Output related to alterations in preload</li>
+          <li>Deficient Fluid Volume related to absolute loss</li>
+          <li>Anxiety related to threat to biologic, psychologic, and social integrity</li>
+          <li>Disturbed Body Image related to functional dependence on life-sustaining technology</li>
+          <li>Ineffective Coping related to situational crisis and personal vulnerability</li>
+          <li>Powerlessness related to lack of control over current situation or disease progression</li>
+          <li>Deficient Knowledge related to lack of previous exposure to information</li>
+        </ul>
+      </div>
+      <div class="bi-col ar">
+        <span class="lang-badge ar-badge">عربي</span>
+        <ul class="point-list">
+          <li>انخفاض النتاج القلبي مرتبط بتغيرات في الحمل المسبق</li>
+          <li>نقص حجم السوائل مرتبط بخسارة مطلقة</li>
+          <li>القلق مرتبط بالتهديد للسلامة البيولوجية والنفسية والاجتماعية</li>
+          <li>اضطراب صورة الجسم مرتبط بالاعتماد الوظيفي على التقنيات المُبقِية للحياة</li>
+          <li>المقاومة غير الفعالة مرتبطة بأزمة ظرفية وضعف شخصي</li>
+          <li>العجز عن السيطرة مرتبط بغياب التحكم في مجريات المرض</li>
+          <li>نقص المعرفة مرتبط بغياب التعرض السابق للمعلومات</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COMPARISON DKA vs HHS ══ -->
+  <div id="tab-compare" class="section-card">
+    <div class="card-header">
+      <span class="icon">⚖️</span>
+      <div><h2>DKA vs HHS Comparison</h2><div class="ar-title">مقارنة DKA مع متلازمة فرط الأسمولية السكرية HHS</div></div>
+    </div>
+    <div class="compare-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>DKA</th>
+            <th>HHS</th>
+            <th class="ar">الخاصية</th>
+            <th class="ar">DKA الحماض الكيتوني</th>
+            <th class="ar">HHS فرط الأسمولية</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cause</td>
+            <td>Insufficient insulin for glucose needs</td>
+            <td>Insufficient endogenous/exogenous insulin</td>
+            <td class="ar">السبب</td>
+            <td class="ar">نقص الأنسولين لاحتياجات الجلوكوز</td>
+            <td class="ar">نقص الأنسولين الداخلي أو الخارجي</td>
+          </tr>
+          <tr>
+            <td>Onset</td>
+            <td>Sudden (hours)</td>
+            <td>Slow, insidious (days–weeks)</td>
+            <td class="ar">البداية</td>
+            <td class="ar">مفاجئ (ساعات)</td>
+            <td class="ar">تدريجي خفي (أيام–أسابيع)</td>
+          </tr>
+          <tr>
+            <td>Patients affected</td>
+            <td>Type I diabetes</td>
+            <td>Type II diabetes (older)</td>
+            <td class="ar">المرضى المصابون</td>
+            <td class="ar">السكري النوع الأول</td>
+            <td class="ar">السكري النوع الثاني (كبار السن)</td>
+          </tr>
+          <tr>
+            <td>Mortality</td>
+            <td>9–14%</td>
+            <td>10–50%</td>
+            <td class="ar">معدل الوفيات</td>
+            <td class="ar">9–14%</td>
+            <td class="ar">10–50%</td>
+          </tr>
+          <tr>
+            <td>Ketosis</td>
+            <td><strong>Present</strong> — fruity breath odor</td>
+            <td>Absent or mild — no breath odor</td>
+            <td class="ar">الكيتوزيس</td>
+            <td class="ar"><strong>موجود</strong> — رائحة زفير فواكه</td>
+            <td class="ar">غائب أو خفيف — لا رائحة زفير</td>
+          </tr>
+          <tr>
+            <td>Respirations</td>
+            <td>Deep and rapid (Kussmaul)</td>
+            <td>Rapid and shallow, usually mild N/V</td>
+            <td class="ar">التنفس</td>
+            <td class="ar">عميق وسريع (كوسماول)</td>
+            <td class="ar">سريع وسطحي، غثيان وقيء خفيف</td>
+          </tr>
+          <tr>
+            <td>Consciousness</td>
+            <td>Confusion → coma</td>
+            <td>Mental confusion, tachycardia, ↓ LOC</td>
+            <td class="ar">الوعي</td>
+            <td class="ar">ارتباك → غيبوبة</td>
+            <td class="ar">ارتباك، تسارع قلب، انخفاض الوعي</td>
+          </tr>
+          <tr>
+            <td>Blood glucose</td>
+            <td>300–800 mg/dL</td>
+            <td>600–2000 mg/dL</td>
+            <td class="ar">سكر الدم</td>
+            <td class="ar">300–800 ملغ/ديسيلتر</td>
+            <td class="ar">600–2000 ملغ/ديسيلتر</td>
+          </tr>
+          <tr>
+            <td>pH</td>
+            <td>&lt; 7.3</td>
+            <td>Normal</td>
+            <td class="ar">الرقم الهيدروجيني</td>
+            <td class="ar">أقل من 7.3</td>
+            <td class="ar">طبيعي</td>
+          </tr>
+          <tr>
+            <td>Osmolality</td>
+            <td>&lt; 350 mOsm/L</td>
+            <td>&gt; 350 mOsm/L</td>
+            <td class="ar">الأسمولية</td>
+            <td class="ar">أقل من 350 ملي أوزمول/لتر</td>
+            <td class="ar">أكثر من 350 ملي أوزمول/لتر</td>
+          </tr>
+          <tr>
+            <td>Bicarbonate</td>
+            <td>&lt; 15 mEq/L</td>
+            <td>Normal</td>
+            <td class="ar">البيكربونات</td>
+            <td class="ar">أقل من 15 ميلي مكافئ/لتر</td>
+            <td class="ar">طبيعية</td>
+          </tr>
+          <tr>
+            <td>Urine acetone</td>
+            <td>Strong</td>
+            <td>Absent or mild</td>
+            <td class="ar">أسيتون البول</td>
+            <td class="ar">قوي</td>
+            <td class="ar">غائب أو خفيف</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ MCQ ══ -->
+  <div id="tab-mcq" class="section-card">
+    <div class="card-header">
+      <span class="icon">✏️</span>
+      <div><h2>MCQ Practice</h2><div class="ar-title">أسئلة اختيار من متعدد</div></div>
+    </div>
+    <div class="mcq-box">
+
+      <!-- Q1 -->
+      <div class="mcq-item" id="q1">
+        <div class="mcq-q">Q1 — Which condition is identified as a major precipitating factor that causes diabetic patients to progress into DKA?</div>
+        <div class="mcq-q ar">س١ — ما العامل المحرِّض الرئيسي الذي يدفع مرضى السكري نحو الحماض الكيتوني؟</div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="answer(this,'wrong','q1')">A. Excessive exercise without dietary adjustment / ممارسة تمارين مفرطة دون تعديل غذائي</div>
+          <div class="mcq-opt" onclick="answer(this,'correct','q1')">B. Acute infection / العدوى الحادة ✓</div>
+          <div class="mcq-opt" onclick="answer(this,'wrong','q1')">C. High protein intake / تناول بروتين مرتفع</div>
+          <div class="mcq-opt" onclick="answer(this,'wrong','q1')">D. Over-hydration with hypotonic fluids / فرط الترطيب بسوائل مخففة</div>
+        </div>
+        <div class="mcq-feedback" id="q1-fb"></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="mcq-item" id="q2">
+        <div class="mcq-q">Q2 — When managing DKA, at what blood glucose level should the IV solution be changed to include 5% Dextrose?</div>
+        <div class="mcq-q ar">س٢ — في إدارة DKA، عند أي مستوى من السكر يجب تغيير المحلول الوريدي ليتضمن دكستروز 5%؟</div>
+        <div class="mcq-options">
+          <div class="mcq-opt" onclick="answer(this,'wrong','q2')">A. 300 mg/dL</div>
+          <div class="mcq-opt" onclick="answer(this,'wrong','q2')">B. 100 mg/dL</div>
+          <div class="mcq-opt" onclick="answer(this,'wrong','q2')">C. 500 mg/dL</div>
+          <div class="mcq-opt" onclick="answer(this,'correct','q2')">D. 200 mg/dL ✓</div>
+        </div>
+        <div class="mcq-feedback" id="q2-fb"></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.section-card').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  function answer(el, type, qid) {
+    const q = document.getElementById(qid);
+    if (q.dataset.answered) return;
+    q.dataset.answered = '1';
+    const opts = q.querySelectorAll('.mcq-opt');
+    opts.forEach(o => {
+      o.style.pointerEvents = 'none';
+      if (o === el) o.classList.add(type);
+    });
+    const fb = document.getElementById(qid + '-fb');
+    fb.textContent = type === 'correct' ? '✅ Correct! أحسنت!' : '❌ Incorrect. Try reviewing the lecture content.';
+    fb.className = 'mcq-feedback show ' + type;
+  }
+</script>
+</body>
+</html>

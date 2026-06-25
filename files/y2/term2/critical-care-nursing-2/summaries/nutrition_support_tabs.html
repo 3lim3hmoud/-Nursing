@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Support — Critically Ill Patients</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:        #0B7A75;
+  --teal-light:  #13C4BB;
+  --teal-pale:   #E6F7F6;
+  --navy:        #0E2340;
+  --gold:        #C9912A;
+  --gold-light:  #F5D98B;
+  --red:         #C0392B;
+  --green:       #1E8449;
+  --blue:        #1A6FA0;
+  --orange:      #CA6F1E;
+  --purple:      #7D3C98;
+  --bg:          #F2F6F7;
+  --white:       #FFFFFF;
+  --gray:        #E8ECED;
+  --text:        #111C24;
+  --muted:       #4A6070;
+  --ar-accent:   #0B7A75;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #1A4060 50%, var(--teal) 100%);
+  padding: 48px 24px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position:absolute; border-radius:50%; opacity:.07;
+  background: var(--teal-light);
+}
+.hero-glow.g1 { width:400px;height:400px;top:-150px;left:-100px; }
+.hero-glow.g2 { width:300px;height:300px;bottom:-100px;right:-60px; background:var(--gold); }
+
+.hero-badge {
+  display:inline-block;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  color: var(--gold-light);
+  font-size:.72rem; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  padding:5px 16px; border-radius:20px;
+  margin-bottom:18px;
+}
+.hero h1 {
+  font-family:'DM Serif Display',serif;
+  font-size:2.4rem; color:#fff;
+  line-height:1.2; margin-bottom:8px;
+  position:relative; z-index:1;
+}
+.hero h1 em { color:var(--gold-light); font-style:normal; }
+.hero-sub {
+  font-family:'Cairo',sans-serif;
+  font-size:1.1rem; color:rgba(255,255,255,.7);
+  margin-bottom:8px; direction:rtl;
+}
+.hero-author { font-size:.8rem; color:rgba(255,255,255,.5); margin-bottom:28px; }
+
+/* ── TABS BAR ── */
+.tabs-wrap {
+  background: var(--navy);
+  position: sticky; top:0; z-index:99;
+  padding: 0 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-wrap::-webkit-scrollbar { display:none; }
+.tabs {
+  display: flex;
+  gap: 2px;
+  max-width: 960px;
+  margin: 0 auto;
+  min-width: max-content;
+}
+.tab-btn {
+  background: transparent;
+  border: none; cursor: pointer;
+  color: rgba(255,255,255,.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .82rem; font-weight:500;
+  padding: 14px 18px;
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  white-space: nowrap;
+  display: flex; align-items: center; gap:7px;
+}
+.tab-btn:hover { color:rgba(255,255,255,.85); }
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+  font-weight: 600;
+}
+.tab-btn .tab-icon { font-size:1rem; }
+
+/* ── CONTENT ── */
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+.container { max-width:960px; margin:0 auto; padding:32px 16px 60px; }
+
+/* ── SECTION CARD ── */
+.scard {
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 3px 18px rgba(11,122,117,.09);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.scard-head {
+  display:flex; align-items:center; gap:14px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--gray);
+}
+.scard-icon {
+  width:46px; height:46px; border-radius:13px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; flex-shrink:0;
+}
+.scard-title { font-size:1.1rem; font-weight:700; color:var(--navy); }
+.scard-body { padding:24px; }
+
+/* ── BILINGUAL BLOCK ── */
+.biblock { margin-bottom:20px; }
+.biblock-en {
+  font-size:.93rem; line-height:1.8; color:var(--text);
+  margin-bottom:10px;
+}
+.biblock-en strong { color:var(--teal); }
+.biblock-ar {
+  background: var(--teal-pale);
+  border-right: 4px solid var(--teal);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  font-family:'Cairo',sans-serif;
+  font-size:.88rem; line-height:1.85;
+  color:#1A3A38; direction:rtl;
+}
+.ar-label {
+  font-size:.65rem; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--teal); opacity:.7;
+  margin-bottom:5px; display:block;
+}
+
+/* ── SIMPLE EXPLAIN BOX ── */
+.explain {
+  background: #FFFBF0;
+  border: 1.5px dashed var(--gold);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  display:flex; gap:12px; align-items:flex-start;
+}
+.explain-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.explain-en { font-size:.87rem; line-height:1.7; color:var(--text); }
+.explain-en strong { color:var(--gold); }
+.explain-ar { font-family:'Cairo',sans-serif; font-size:.83rem; color:#5A4010; direction:rtl; line-height:1.75; margin-top:6px; border-top:1px dashed #E8D080; padding-top:6px; }
+
+/* ── CARDS GRID ── */
+.cgrid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px; margin:16px 0;
+}
+.ccard {
+  border-radius:14px; padding:18px;
+  position:relative; overflow:hidden;
+}
+.ccard::after {
+  content:''; position:absolute;
+  bottom:-20px; right:-20px;
+  width:70px; height:70px; border-radius:50%;
+  background:currentColor; opacity:.06;
+}
+.ccard-icon { font-size:1.6rem; margin-bottom:10px; }
+.ccard-en { font-size:.87rem; font-weight:600; color:inherit; margin-bottom:4px; }
+.ccard-ar { font-family:'Cairo',sans-serif; font-size:.8rem; opacity:.75; direction:rtl; margin-bottom:8px; }
+.ccard-body { font-size:.8rem; line-height:1.65; opacity:.85; }
+.ccard-body-ar { font-family:'Cairo',sans-serif; font-size:.76rem; opacity:.7; direction:rtl; border-top:1px solid currentColor; border-opacity:.2; margin-top:6px; padding-top:6px; line-height:1.7; }
+
+.c-teal   { background:#E6F7F6; color:#0B5E5B; }
+.c-navy   { background:#EAF0F5; color:#0E2340; }
+.c-gold   { background:#FEF8EC; color:#7A5000; }
+.c-red    { background:#FDEEEE; color:#922B21; }
+.c-green  { background:#EAF5EE; color:#1E6E3A; }
+.c-purple { background:#F4EEF9; color:#6C2E8A; }
+.c-orange { background:#FEF5E8; color:#9E5A0F; }
+.c-blue   { background:#EBF3FB; color:#145A80; }
+
+/* ── LIST ── */
+.slist { list-style:none; }
+.slist li {
+  display:flex; gap:12px; align-items:flex-start;
+  padding:11px 0;
+  border-bottom:1px solid var(--gray);
+  font-size:.9rem; line-height:1.65; color:var(--muted);
+}
+.slist li:last-child { border-bottom:none; }
+.slist .num {
+  min-width:24px; height:24px; border-radius:50%;
+  background:var(--teal); color:#fff;
+  font-size:.7rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; margin-top:1px;
+}
+.slist .num.gold { background:var(--gold); }
+.slist .num.red  { background:var(--red); }
+.slist .item-en { font-size:.89rem; color:var(--text); font-weight:500; }
+.slist .item-ar { font-family:'Cairo',sans-serif; font-size:.81rem; color:var(--muted); direction:rtl; display:block; margin-top:3px; }
+
+/* ── MACRO BARS ── */
+.macro-row { display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+.mbar { flex:1; min-width:140px; background:var(--white); border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,.06); overflow:hidden; }
+.mbar-fill { height:10px; }
+.mbar-body { padding:14px; }
+.mbar-pct { font-size:1.5rem; font-weight:800; }
+.mbar-name-en { font-size:.82rem; font-weight:600; color:var(--navy); margin-top:2px; }
+.mbar-name-ar { font-family:'Cairo',sans-serif; font-size:.76rem; color:var(--muted); direction:rtl; }
+
+/* ── TABLE ── */
+.stable { width:100%; border-collapse:collapse; font-size:.84rem; border-radius:12px; overflow:hidden; }
+.stable th {
+  padding:12px 16px; text-align:left;
+  background:var(--navy); color:#fff; font-weight:600;
+}
+.stable th.ar-th { text-align:right; }
+.stable td { padding:11px 16px; border-bottom:1px solid var(--gray); vertical-align:top; line-height:1.6; }
+.stable tr:nth-child(even) td { background:#FAFCFC; }
+.stable td.ar-td { font-family:'Cairo',sans-serif; direction:rtl; text-align:right; font-size:.81rem; color:var(--muted); }
+.stable td strong { color:var(--navy); }
+
+/* ── COMPARE TABLE ── */
+.ctable { width:100%; border-collapse:collapse; font-size:.84rem; }
+.ctable th { padding:13px 16px; font-weight:700; }
+.ctable th.h-label { background:var(--gray); color:var(--navy); text-align:center; }
+.ctable th.h-ent { background:var(--teal); color:#fff; }
+.ctable th.h-par { background:var(--navy); color:#fff; }
+.ctable td { padding:11px 16px; border-bottom:1px solid var(--gray); vertical-align:top; }
+.ctable tr:nth-child(even) td { background:#FAFCFC; }
+.ctable .td-label { font-weight:700; color:var(--navy); background:var(--gray); font-size:.82rem; }
+.ctable .td-ent { color:#0B5E5B; font-size:.84rem; }
+.ctable .td-par { color:#0E2340; font-size:.84rem; }
+.ctable .ar-note { font-family:'Cairo',sans-serif; font-size:.75rem; color:var(--muted); direction:rtl; display:block; margin-top:4px; }
+
+/* ── INFOBOX ── */
+.ibox {
+  border-radius:13px; padding:16px 18px;
+  margin:14px 0; display:flex; gap:13px; align-items:flex-start;
+}
+.ibox .ii { font-size:1.4rem; flex-shrink:0; margin-top:2px; }
+.ibox-en { font-size:.88rem; line-height:1.75; color:var(--text); }
+.ibox-en strong { color:inherit; }
+.ibox-ar { font-family:'Cairo',sans-serif; font-size:.83rem; direction:rtl; color:var(--muted); margin-top:7px; border-top:1px dashed rgba(0,0,0,.1); padding-top:7px; line-height:1.8; }
+.ibox.warn  { background:#FFFBF0; border-right:4px solid var(--gold); }
+.ibox.dang  { background:#FDEEEE; border-right:4px solid var(--red); }
+.ibox.good  { background:#EAF5EE; border-right:4px solid var(--green); }
+.ibox.info  { background:#EBF3FB; border-right:4px solid var(--blue); }
+
+/* ── PROCESS FLOW ── */
+.pflow { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; align-items:center; }
+.pstep {
+  background:var(--white);
+  border:2px solid var(--gray);
+  border-radius:14px;
+  padding:14px 16px;
+  text-align:center;
+  min-width:120px;
+  transition:border-color .2s;
+}
+.pstep:hover { border-color:var(--teal); }
+.pstep-icon { font-size:1.5rem; margin-bottom:6px; }
+.pstep-en { font-size:.82rem; font-weight:600; color:var(--navy); }
+.pstep-ar { font-family:'Cairo',sans-serif; font-size:.76rem; color:var(--muted); direction:rtl; margin-top:2px; }
+.parrow { color:var(--teal); font-size:1.3rem; font-weight:700; }
+
+/* ── COMPLICATION CARD ── */
+.comp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:14px 0; }
+.comp-card { border-radius:14px; padding:18px; border-top:4px solid; }
+.comp-card .cc-title-en { font-size:.92rem; font-weight:700; margin-bottom:4px; }
+.comp-card .cc-title-ar { font-family:'Cairo',sans-serif; font-size:.82rem; direction:rtl; color:var(--muted); margin-bottom:10px; }
+.comp-card .cc-signs { font-size:.8rem; margin-bottom:10px; color:var(--muted); line-height:1.65; }
+.comp-card .cc-prev { font-size:.8rem; line-height:1.7; }
+.comp-card .cc-sub { font-size:.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; opacity:.5; margin-bottom:4px; margin-top:8px; }
+.comp-card .cc-ar { font-family:'Cairo',sans-serif; font-size:.76rem; direction:rtl; color:var(--muted); margin-top:8px; border-top:1px dashed currentColor; padding-top:6px; line-height:1.75; }
+
+/* ── SUBSECTION TITLE ── */
+.sub-title {
+  font-size:1rem; font-weight:700; color:var(--teal);
+  padding-bottom:8px;
+  border-bottom:2px solid var(--teal-pale);
+  margin:24px 0 14px;
+  display:flex; justify-content:space-between; align-items:flex-end;
+}
+.sub-title .ar-s { font-family:'Cairo',sans-serif; font-size:.82rem; color:var(--muted); font-weight:400; direction:rtl; }
+
+/* ── BADGE ── */
+.badge {
+  display:inline-block; padding:3px 10px;
+  border-radius:10px; font-size:.72rem; font-weight:700;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .hero h1 { font-size:1.7rem; }
+  .cgrid { grid-template-columns:1fr; }
+  .macro-row { flex-direction:column; }
+  .tab-btn { padding:12px 13px; font-size:.77rem; }
+  .pflow { justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-badge">Critical Care Nursing · تمريض العناية المركزة</div>
+  <h1>Nutrition Support to the<br><em>Critically Ill Patients</em></h1>
+  <p class="hero-sub">الدعم الغذائي للمرضى الحرجين</p>
+  <p class="hero-author">Prepared by: Asst. Prof. Dr. Afaf Mohamed Mansour</p>
+</div>
+
+<!-- ═══════════════ TABS BAR ═══════════════ -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('intro',this)"><span class="tab-icon">🏠</span>Intro</button>
+    <button class="tab-btn" onclick="switchTab('malnutrition',this)"><span class="tab-icon">⚠️</span>Malnutrition</button>
+    <button class="tab-btn" onclick="switchTab('goals',this)"><span class="tab-icon">🎯</span>Goals & Nutrients</button>
+    <button class="tab-btn" onclick="switchTab('enteral',this)"><span class="tab-icon">🥛</span>Enteral Nutrition</button>
+    <button class="tab-btn" onclick="switchTab('parenteral',this)"><span class="tab-icon">💉</span>Parenteral (TPN)</button>
+    <button class="tab-btn" onclick="switchTab('nursing',this)"><span class="tab-icon">👩‍⚕️</span>Nursing Role</button>
+    <button class="tab-btn" onclick="switchTab('compare',this)"><span class="tab-icon">⚖️</span>Compare</button>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 1 — INTRO ═══════════════ -->
+<div class="tab-content active" id="tab-intro">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#E6F7F6">🌿</div>
+      <div class="scard-title">Introduction</div>
+    </div>
+    <div class="scard-body">
+
+      <div class="biblock">
+        <div class="biblock-en">
+          Nutrition is recognized as a <strong>vital component of health</strong>. An optimum nutritional status helps:
+          maintain health, promote normal growth and development, regulate body processes, and protect the body against diseases.
+        </div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          التغذية تُعتبر مكوناً أساسياً للصحة. الوضع الغذائي الجيد يساعد على: الحفاظ على الصحة، تعزيز النمو الطبيعي، تنظيم وظائف الجسم، وحمايته من الأمراض.
+        </div>
+      </div>
+
+      <div class="explain">
+        <div class="explain-icon">💡</div>
+        <div>
+          <div class="explain-en">Think of nutrition like <strong>fuel for a car</strong> — without it, nothing works properly. For sick patients, the right "fuel" is even more critical.</div>
+          <div class="explain-ar">فكّر في التغذية كـ"وقود السيارة" — بدونه لا شيء يعمل. للمرضى، الوقود الصحيح أهم بكثير.</div>
+        </div>
+      </div>
+
+      <div class="biblock">
+        <div class="biblock-en">
+          Critically ill patients are <strong>hypermetabolic</strong> — meaning their bodies burn energy at a much faster rate than normal. This means they have <strong>greatly increased nutrient requirements</strong>. As a result, nutritional support has become a <strong>routine part of critical care</strong>.
+        </div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          المرضى الحرجون يعانون من فرط التمثيل الغذائي — أجسامهم تحرق الطاقة بمعدل أسرع بكثير من الطبيعي. لذلك احتياجاتهم من المغذيات مرتفعة جداً، وأصبح الدعم الغذائي جزءاً أساسياً من رعايتهم.
+        </div>
+      </div>
+
+      <div class="sub-title">Course Outline <span class="ar-s">محاور المحاضرة</span></div>
+      <div class="cgrid">
+        <div class="ccard c-teal">
+          <div class="ccard-icon">📖</div>
+          <div class="ccard-en">Introduction</div>
+          <div class="ccard-ar">المقدمة</div>
+        </div>
+        <div class="ccard c-red">
+          <div class="ccard-icon">⚠️</div>
+          <div class="ccard-en">Malnutrition in ICU</div>
+          <div class="ccard-ar">سوء التغذية في العناية المركزة</div>
+        </div>
+        <div class="ccard c-gold">
+          <div class="ccard-icon">🎯</div>
+          <div class="ccard-en">Goals of Nutritional Support</div>
+          <div class="ccard-ar">أهداف الدعم الغذائي</div>
+        </div>
+        <div class="ccard c-blue">
+          <div class="ccard-icon">🥛</div>
+          <div class="ccard-en">Enteral Nutrition</div>
+          <div class="ccard-ar">التغذية المعوية</div>
+        </div>
+        <div class="ccard c-navy">
+          <div class="ccard-icon">💉</div>
+          <div class="ccard-en">Parenteral Nutrition (TPN)</div>
+          <div class="ccard-ar">التغذية الوريدية الكلية</div>
+        </div>
+        <div class="ccard c-green">
+          <div class="ccard-icon">👩‍⚕️</div>
+          <div class="ccard-en">Nursing Role</div>
+          <div class="ccard-ar">الدور التمريضي</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 2 — MALNUTRITION ═══════════════ -->
+<div class="tab-content" id="tab-malnutrition">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FDEEEE">⚠️</div>
+      <div class="scard-title">Definition of Malnutrition in Critically Ill Patients</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">
+          Malnutrition refers to a <strong>generalized disordering of body composition</strong> in which either macro- or micro-nutrient intake is suboptimal. Severe deficits can result in:
+          <strong>organ dysfunction</strong>, <strong>blood biochemistry abnormalities</strong>, and <strong>reduced body mass</strong>.
+        </div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          سوء التغذية هو اضطراب عام في تكوين الجسم حيث يكون تناول المغذيات الكبيرة أو الصغيرة دون المستوى المطلوب. النقص الشديد يؤدي إلى: خلل في وظائف الأعضاء، اضطرابات كيمياء الدم، وانخفاض كتلة الجسم.
+        </div>
+      </div>
+      <div class="explain">
+        <div class="explain-icon">💡</div>
+        <div>
+          <div class="explain-en"><strong>Simple:</strong> Imagine your body is a factory. Malnutrition means the factory isn't getting enough raw materials — so production breaks down, machines (organs) fail, and the building (body mass) starts to crumble.</div>
+          <div class="explain-ar">تخيّل جسمك مصنعاً — سوء التغذية يعني المصنع لا يحصل على المواد الخام الكافية، فتتوقف الماكينات (الأعضاء) وينهار المبنى (الجسم).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FEF5E8">🔥</div>
+      <div class="scard-title">Causes of Malnutrition in ICU</div>
+    </div>
+    <div class="scard-body">
+      <div class="sub-title">1 — Physiological Stress <span class="ar-s">ضغط الجسم الفسيولوجي</span></div>
+      <div class="biblock-en">When the body is under stress, <strong>protein becomes a major energy source</strong> — burning muscle mass. Stress states include:</div>
+      <div class="biblock-ar" style="margin-top:8px;margin-bottom:14px">
+        <span class="ar-label">الترجمة</span>
+        عند التعرض للإجهاد، يصبح البروتين مصدراً رئيسياً للطاقة مما يُحرق كتلة العضلات. حالات الإجهاد تشمل:
+      </div>
+      <div class="cgrid">
+        <div class="ccard c-red">
+          <div class="ccard-icon">🦠</div>
+          <div class="ccard-en">Sepsis</div>
+          <div class="ccard-ar">الإنتان</div>
+        </div>
+        <div class="ccard c-orange">
+          <div class="ccard-icon">🔥</div>
+          <div class="ccard-en">Major Burns</div>
+          <div class="ccard-ar">الحروق الكبرى</div>
+        </div>
+        <div class="ccard c-navy">
+          <div class="ccard-icon">🏥</div>
+          <div class="ccard-en">Trauma & Surgery</div>
+          <div class="ccard-ar">الإصابات الرضية والجراحة</div>
+        </div>
+        <div class="ccard c-purple">
+          <div class="ccard-icon">🫁</div>
+          <div class="ccard-en">Respiratory Compromise</div>
+          <div class="ccard-ar">اضطرابات الجهاز التنفسي</div>
+        </div>
+        <div class="ccard c-blue">
+          <div class="ccard-icon">🫀</div>
+          <div class="ccard-en">Multi-Organ Failure</div>
+          <div class="ccard-ar">فشل الأعضاء المتعددة</div>
+        </div>
+      </div>
+
+      <div class="sub-title">2 — Absorption Problems <span class="ar-s">مشاكل الامتصاص</span></div>
+      <div class="biblock">
+        <div class="biblock-en">
+          Contributing factors include:
+          <strong>Intestinal villous atrophy</strong> — which reduces the surface area available for absorption (like shrinking the sponge that absorbs nutrients).
+          Also: <strong>digestive enzyme deficiency</strong> related to malnutrition itself.
+        </div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          العوامل المؤثرة تشمل: ضمور الزغابات المعوية (تقليل مساحة الامتصاص — كتقليص الإسفنجة التي تمتص المغذيات)، ونقص إنزيمات الهضم بسبب سوء التغذية نفسه.
+        </div>
+      </div>
+
+      <div class="sub-title">3 — Increased Losses: Diarrhea (Most Important in ICU) <span class="ar-s">الإسهال — السبب الأهم لزيادة الفقد</span></div>
+      <div class="biblock">
+        <div class="biblock-en">Diarrhea is the <strong>most important cause of nutrient loss</strong> in ICU patients. Its causes include:</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span> الإسهال هو السبب الأهم لفقد المغذيات في العناية المركزة. أسبابه تشمل:</div>
+      </div>
+      <ul class="slist">
+        <li><span class="num">1</span><div><span class="item-en">Prolonged bowel rest → subsequent gut atrophy</span><span class="item-ar">الراحة المطوّلة للأمعاء تؤدي لضمورها</span></div></li>
+        <li><span class="num">2</span><div><span class="item-en">Lack of fiber in feeding products — fiber normally normalizes stool patterns and provides short-chain fatty acids that prevent diarrhea. Vitamin A deficiency also contributes.</span><span class="item-ar">نقص الألياف في التركيبات الغذائية — الألياف تنظم حركة الأمعاء وتوفر أحماض دهنية قصيرة السلسلة تمنع الإسهال. نقص فيتامين A يساهم أيضاً.</span></div></li>
+        <li><span class="num">3</span><div><span class="item-en">Hypertonic tube feeding — high osmolality pulls water into the gut, causing diarrhea</span><span class="item-ar">التغذية الأنبوبية فائقة الضغط الأسموزي — تسحب الماء إلى الأمعاء مسببةً الإسهال</span></div></li>
+        <li><span class="num">4</span><div><span class="item-en"><strong>Hypoalbuminemia</strong> (albumin &lt;2.5 g/dl) — low colloid osmotic pressure causes mucosal edema and impaired absorption → diarrhea</span><span class="item-ar">نقص ألبومين الدم (أقل من 2.5 جم/ديسيلتر) — يقلل الضغط الغروياني فيحدث وذمة في الغشاء المخاطي وضعف الامتصاص</span></div></li>
+      </ul>
+
+      <div class="sub-title">4 — Stress Ulcer & GI Bleeding <span class="ar-s">قرحة الضغط ونزيف الجهاز الهضمي</span></div>
+      <div class="ibox dang">
+        <div class="ii">🩸</div>
+        <div>
+          <div class="ibox-en">Stress ulcer-related GI bleeding is a <strong>serious complication</strong> that increases morbidity and mortality in ICU. H2 antagonists (histamine blockers) and antacids are prescribed to reduce stress ulceration. However, buffering hydrochloric acid (HCl) <strong>reduces the stomach's bacteriostatic capabilities</strong> — allowing bacteria to survive in the stomach.</div>
+          <div class="ibox-ar">نزيف الجهاز الهضمي بسبب قرحة الضغط مضاعفة خطيرة تزيد المراضة والوفيات. تُعطى مضادات H2 والمضادات الحامضية للوقاية، لكن تخفيض حمض المعدة يقلل قدرتها على قتل البكتيريا.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 3 — GOALS & NUTRIENTS ═══════════════ -->
+<div class="tab-content" id="tab-goals">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EAF5EE">🎯</div>
+      <div class="scard-title">General Goals of Nutritional Support</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">The primary goal is to <strong>provide patients with their general nutrient requirements</strong>. Needs depend on: individual patient needs AND the specific disease process.<br><br>
+        Caloric needs are estimated using the <strong>Harris-Benedict Equation</strong> or simply: <strong>25 kcal/kg/day</strong> (the most commonly used estimate).</div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          الهدف الرئيسي هو تزويد المريض باحتياجاته الغذائية. تعتمد الاحتياجات على: خصائص المريض الفردية ونوع المرض. يُقدَّر الاحتياج الحراري بمعادلة هاريس-بينديكت أو ببساطة 25 كيلو كالوري/كجم/يوم.
+        </div>
+      </div>
+      <div class="explain">
+        <div class="explain-icon">💡</div>
+        <div>
+          <div class="explain-en"><strong>Easy way to remember:</strong> Take the patient's weight in kg × 25 = estimated daily calorie need. A 70 kg patient needs about <strong>1,750 kcal/day</strong> as a starting point.</div>
+          <div class="explain-ar">طريقة سهلة: وزن المريض بالكجم × 25 = الاحتياج اليومي المقدر. مريض 70 كجم يحتاج حوالي 1,750 سعر حراري يومياً كنقطة بداية.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FEF8EC">🍽️</div>
+      <div class="scard-title">Macronutrients — Caloric Distribution</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock-en" style="margin-bottom:14px">Calories are provided in three forms with specific percentage ranges:</div>
+      <div class="macro-row">
+        <div class="mbar">
+          <div class="mbar-fill" style="background:var(--teal)"></div>
+          <div class="mbar-body">
+            <div class="mbar-pct" style="color:var(--teal)">30–70%</div>
+            <div class="mbar-name-en">🌾 Carbohydrates</div>
+            <div class="mbar-name-ar">الكربوهيدرات</div>
+          </div>
+        </div>
+        <div class="mbar">
+          <div class="mbar-fill" style="background:var(--gold)"></div>
+          <div class="mbar-body">
+            <div class="mbar-pct" style="color:var(--gold)">20–50%</div>
+            <div class="mbar-name-en">🥑 Fat</div>
+            <div class="mbar-name-ar">الدهون</div>
+          </div>
+        </div>
+        <div class="mbar">
+          <div class="mbar-fill" style="background:var(--red)"></div>
+          <div class="mbar-body">
+            <div class="mbar-pct" style="color:var(--red)">15–20%</div>
+            <div class="mbar-name-en">🥩 Protein / Amino Acids</div>
+            <div class="mbar-name-ar">البروتين / أحماض أمينية</div>
+          </div>
+        </div>
+      </div>
+      <div class="biblock-ar">
+        <span class="ar-label">الترجمة</span>
+        توزيع السعرات: كربوهيدرات 30–70%، دهون 20–50%، بروتين 15–20% (يختلف حسب طريقة الإعطاء).
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EBF3FB">💊</div>
+      <div class="scard-title">Micronutrients — Vitamins & Minerals</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">
+          <strong>Electrolytes:</strong> Approximately <strong>1 mmol/kg</strong> each of sodium (Na) and potassium (K) daily.<br><br>
+          <strong>Trace minerals</strong> (needed in smaller amounts): Magnesium, Iron, Copper, Zinc, Selenium.<br><br>
+          <strong>Fat-soluble vitamins:</strong> A, D, E, K and Carotene.<br><br>
+          <strong>Water-soluble vitamins:</strong> B complex, C.
+        </div>
+        <div class="biblock-ar">
+          <span class="ar-label">الترجمة</span>
+          الكهارل: حوالي 1 مليمول/كجم من الصوديوم والبوتاسيوم يومياً. المعادن النادرة (بكميات أقل): مغنيسيوم، حديد، نحاس، زنك، سيلينيوم. فيتامينات ذائبة في الدهون: A، D، E، K، كاروتين. فيتامينات ذائبة في الماء: مجموعة B، C.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EBF3FB">💧</div>
+      <div class="scard-title">Fluid Requirements</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">The average adult requires approximately <strong>35–45 ml/kg/day</strong> of water. Fluid needs are NOT fixed — they increase or decrease based on clinical status.</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>المتوسط للبالغ: 35–45 مل/كجم/يوم. هذا الرقم ليس ثابتاً — يزيد أو ينقص بحسب الحالة الصحية.</div>
+      </div>
+      <div class="cgrid">
+        <div class="ccard c-red">
+          <div class="ccard-icon">📈</div>
+          <div class="ccard-en">Fluid INCREASES with:</div>
+          <div class="ccard-ar">تزيد مع:</div>
+          <div class="ccard-body">Fever · Diarrhea · Hemorrhage · Surgical drains · Burns / open wounds
+            <div class="ccard-body-ar">حمى · إسهال · نزيف · مصارف جراحية · حروق / جروح مفتوحة</div>
+          </div>
+        </div>
+        <div class="ccard c-blue">
+          <div class="ccard-icon">📉</div>
+          <div class="ccard-en">Fluid DECREASES with:</div>
+          <div class="ccard-ar">تنقص مع:</div>
+          <div class="ccard-body">Cardiac disease · Pulmonary disease · Renal disease → these patients need fluid restriction
+            <div class="ccard-body-ar">أمراض القلب · الرئة · الكلى → هؤلاء المرضى يحتاجون تقييد السوائل</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-title">How Do We Monitor Fluid Status? <span class="ar-s">كيف نراقب حالة السوائل؟</span></div>
+      <ul class="slist">
+        <li><span class="num">1</span><div><span class="item-en"><strong>Physical appearance:</strong> Dry mucous membranes = volume depletion; Edema = volume excess</span><span class="item-ar">المظهر الجسدي: أغشية مخاطية جافة = نقص سوائل؛ وذمة = زيادة سوائل</span></div></li>
+        <li><span class="num">2</span><div><span class="item-en"><strong>Serum sodium:</strong> Hyponatremia (excess/normal/depleted fluid) | Hypernatremia (water loss/salt gain)</span><span class="item-ar">صوديوم الدم: نقص الصوديوم (سوائل زائدة/طبيعية/منقوصة) | ارتفاع الصوديوم (فقد ماء أو زيادة ملح)</span></div></li>
+        <li><span class="num">3</span><div><span class="item-en"><strong>BUN : Creatinine ratio</strong> — Normal = 10:1 to 15:1. Renal failure or fluid abnormalities alter this ratio.</span><span class="item-ar">نسبة يوريا الدم : كرياتينين — الطبيعي = 10:1 إلى 15:1. الفشل الكلوي أو اضطرابات السوائل تغير هذه النسبة.</span></div></li>
+        <li><span class="num">4</span><div><span class="item-en"><strong>Intake and output:</strong> Urine output + other fluid losses (vomiting, diarrhea, skin losses, fistula drainage)</span><span class="item-ar">القياس والمخرج: إنتاج البول + خسائر السوائل الأخرى (قيء، إسهال، فقد جلدي، ناسور)</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 4 — ENTERAL ═══════════════ -->
+<div class="tab-content" id="tab-enteral">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#E6F7F6">🥛</div>
+      <div class="scard-title">Enteral Nutrition — Definition & Routes</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">Enteral nutrition (EN) is defined as nutrition delivered <strong>via the gastrointestinal (GI) tract</strong>. It is generally understood as <strong>tube feeding</strong>. Routes of delivery include:</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>التغذية المعوية هي توصيل الغذاء عبر القناة الهضمية — عادةً بأنبوب غذائي. مسارات التوصيل تشمل:</div>
+      </div>
+      <div class="cgrid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+        <div class="ccard c-teal"><div class="ccard-icon">👃</div><div class="ccard-en">Nasogastric (NG) tube</div><div class="ccard-ar">أنبوب أنفي معدي</div></div>
+        <div class="ccard c-blue"><div class="ccard-icon">👄</div><div class="ccard-en">Orogastric tube</div><div class="ccard-ar">أنبوب فموي معدي</div></div>
+        <div class="ccard c-navy"><div class="ccard-icon">🔵</div><div class="ccard-en">Esophagostomy</div><div class="ccard-ar">فتحة مريئية</div></div>
+        <div class="ccard c-green"><div class="ccard-icon">🟢</div><div class="ccard-en">Pharyngotomy</div><div class="ccard-ar">فتحة بلعومية</div></div>
+        <div class="ccard c-gold"><div class="ccard-icon">🟡</div><div class="ccard-en">Gastrostomy (PEG)</div><div class="ccard-ar">فتحة معدية خارجية</div></div>
+        <div class="ccard c-orange"><div class="ccard-icon">🟠</div><div class="ccard-en">Jejunostomy</div><div class="ccard-ar">فتحة صائمية</div></div>
+      </div>
+      <div class="explain">
+        <div class="explain-icon">💡</div>
+        <div>
+          <div class="explain-en">The key idea: <strong>the GI tract is still being used</strong>. Food goes in through a tube that enters different parts of the gut, depending on which is accessible and functional.</div>
+          <div class="explain-ar">الفكرة الأساسية: القناة الهضمية لا تزال تعمل. الطعام يدخل عبر أنبوب إلى جزء من الجهاز الهضمي، يُختار حسب الجزء السليم.</div>
+        </div>
+      </div>
+
+      <div class="sub-title">Why Prefer Enteral over Parenteral? <span class="ar-s">لماذا التغذية المعوية أفضل؟</span></div>
+      <div class="cgrid">
+        <div class="ccard c-green"><div class="ccard-icon">🏥</div><div class="ccard-en">Maintains gut structure & function</div><div class="ccard-ar">تحافظ على بنية ووظيفة الأمعاء</div></div>
+        <div class="ccard c-teal"><div class="ccard-icon">✅</div><div class="ccard-en">Enhanced nutrient utilization</div><div class="ccard-ar">استخدام أفضل للمغذيات</div></div>
+        <div class="ccard c-blue"><div class="ccard-icon">🛡️</div><div class="ccard-en">Safer when administered carefully</div><div class="ccard-ar">أكثر أماناً عند التطبيق الصحيح</div></div>
+        <div class="ccard c-gold"><div class="ccard-icon">💰</div><div class="ccard-en">Reduced cost</div><div class="ccard-ar">تكلفة أقل</div></div>
+      </div>
+
+      <div class="sub-title">Indications for Enteral Nutrition <span class="ar-s">مؤشرات التغذية المعوية</span></div>
+      <ul class="slist">
+        <li><span class="num">1</span><div><span class="item-en">Functional GI tract — but patient cannot consume adequate calories/nutrients orally</span><span class="item-ar">قناة هضمية تعمل — لكن المريض لا يستطيع الأكل بالفم بشكل كافٍ</span></div></li>
+        <li><span class="num">2</span><div><span class="item-en">Protein-calorie malnutrition with inadequate oral intake for the past 5 days; OR normal nutritional status but less than 50% of required intake for 7–10 days</span><span class="item-ar">سوء تغذية بروتيني-حراري مع إدخال فموي غير كافٍ لمدة 5 أيام؛ أو أقل من 50% من الاحتياج لمدة 7–10 أيام</span></div></li>
+        <li><span class="num">3</span><div><span class="item-en">Severe dysphagia (difficulty swallowing)</span><span class="item-ar">عسر البلع الشديد</span></div></li>
+        <li><span class="num">4</span><div><span class="item-en">Major full-thickness burns</span><span class="item-ar">الحروق الكاملة الكبرى</span></div></li>
+        <li><span class="num">5</span><div><span class="item-en">Massive small-bowel resection (combined with TPN)</span><span class="item-ar">استئصال كبير للأمعاء الدقيقة (مع التغذية الوريدية)</span></div></li>
+        <li><span class="num">6</span><div><span class="item-en">Major trauma, radiation therapy, mild chemotherapy</span><span class="item-ar">الصدمات الكبرى، العلاج الإشعاعي، العلاج الكيميائي الخفيف</span></div></li>
+        <li><span class="num">7</span><div><span class="item-en">Liver or kidney failure</span><span class="item-ar">فشل الكبد أو الكلى</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#F4EEF9">⚗️</div>
+      <div class="scard-title">Types of Enteral Formulas</div>
+    </div>
+    <div class="scard-body">
+      <div class="cgrid">
+        <div class="ccard c-teal">
+          <div class="ccard-icon">🧪</div>
+          <div class="ccard-en">Polymeric Formulas</div>
+          <div class="ccard-ar">تركيبات بوليميرية</div>
+          <div class="ccard-body">Made from blended foods or protein isolates (casein, soy) + vegetable oils + carbohydrates. <strong>Lactose-free</strong> (critically ill often have secondary lactase deficiency). Caloric density: <strong>1 kcal/ml</strong> (some 1.5–2 kcal/ml for higher energy needs).
+            <div class="ccard-body-ar">من أطعمة مخلوطة أو معزولات بروتين + زيوت + كربوهيدرات. خالية من اللاكتوز. كثافة حرارية: 1 كيلو كالوري/مل (بعضها 1.5–2).</div>
+          </div>
+        </div>
+        <div class="ccard c-navy">
+          <div class="ccard-icon">💊</div>
+          <div class="ccard-en">Monomeric Formulas</div>
+          <div class="ccard-ar">تركيبات مونوميرية</div>
+          <div class="ccard-body">"Pre-digested" — nutrients in simple form, minimal digestion required. Made from crystalline amino acids + glucose molecules (or di/tripeptides + oligosaccharides). Usually <strong>powder that requires reconstitution</strong>. <strong>1 kcal/ml</strong> at full strength.
+            <div class="ccard-body-ar">مهضومة مسبقاً — مغذيات بسيطة تحتاج هضماً أقل. من أحماض أمينية بلورية + جلوكوز. عادةً مسحوق يحتاج تحضيراً. 1 كيلو كالوري/مل.</div>
+          </div>
+        </div>
+        <div class="ccard c-purple">
+          <div class="ccard-icon">🎯</div>
+          <div class="ccard-en">Disease-Specific Formulas</div>
+          <div class="ccard-ar">تركيبات خاصة بالمرض</div>
+          <div class="ccard-body">Formulated for special disease-related needs: <strong>renal, hepatic, pulmonary, cardiac, trauma/stress</strong>, and clear liquid formulas.
+            <div class="ccard-body-ar">لاحتياجات خاصة: كلوي، كبدي، رئوي، قلبي، صدمة وإجهاد، سائل صافٍ.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox warn">
+        <div class="ii">👩‍⚕️</div>
+        <div>
+          <div class="ibox-en"><strong>Nursing note:</strong> Monitor for formula tolerance — absence of abdominal distension, nausea, vomiting, or diarrhea confirms tolerance.</div>
+          <div class="ibox-ar">ملاحظة تمريضية: راقب تحمّل المريض للتركيبة — غياب انتفاخ البطن، الغثيان، القيء، والإسهال يدل على التحمل الجيد.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FDEEEE">🚨</div>
+      <div class="scard-title">Complications of Enteral Nutrition</div>
+    </div>
+    <div class="scard-body">
+      <div class="comp-grid">
+        <div class="comp-card" style="background:#FDEEEE;border-color:var(--red)">
+          <div class="cc-title-en">1. Pulmonary Aspiration ⭐ MOST DANGEROUS</div>
+          <div class="cc-title-ar">الاستنشاق الرئوي — الأخطر</div>
+          <div class="cc-sub">Signs</div>
+          <div class="cc-signs">Fever · Tachypnea · Tachycardia · Hypoxemia/Hypercapnia · New pulmonary infiltrate on X-ray</div>
+          <div class="cc-sub">Note</div>
+          <div class="cc-prev" style="color:var(--red)">May result in <strong>death</strong> if untreated</div>
+          <div class="cc-ar">الأعراض: حمى، تسرع التنفس والقلب، نقص أكسجين، ارتشاح رئوي جديد في الأشعة. قد يؤدي للوفاة.</div>
+        </div>
+
+        <div class="comp-card" style="background:#FEF5E8;border-color:var(--orange)">
+          <div class="cc-title-en">2. GI Complications (2.3%–63%)</div>
+          <div class="cc-title-ar">مضاعفات معوية هضمية</div>
+          <div class="cc-signs">Nausea, vomiting, diarrhea (most common), constipation</div>
+          <div class="cc-sub">Causes of nausea/vomiting</div>
+          <div class="cc-prev">Medications · Critical illness · Rapid infusion · Diabetes · Neurological dysfunction · Improper tube placement · GI infection · Hyperosmolar formula</div>
+          <div class="cc-ar">غثيان، قيء، إسهال (الأشيع)، إمساك. أسباب الغثيان: أدوية، الانسكاب السريع، السكري، اضطرابات عصبية، تركيبة فائقة الأسموزية.</div>
+        </div>
+
+        <div class="comp-card" style="background:#EBF3FB;border-color:var(--blue)">
+          <div class="cc-title-en">3. Metabolic Complications</div>
+          <div class="cc-title-ar">مضاعفات أيضية</div>
+          <div class="cc-signs">Dehydration or overhydration · Hyperglycemia · Electrolyte/mineral abnormalities</div>
+          <div class="cc-sub">Hyperglycemia most common in</div>
+          <div class="cc-prev">Diabetes · Metabolic stress · Sepsis · Steroid use · Excess glucose admin</div>
+          <div class="cc-ar">جفاف أو احتباس سوائل، ارتفاع سكر الدم (أشيع في السكري والإنتان واستخدام الكورتيزون)، اضطرابات الكهارل.</div>
+        </div>
+
+        <div class="comp-card" style="background:#EAF0F5;border-color:var(--navy)">
+          <div class="cc-title-en">4. Tube Occlusion</div>
+          <div class="cc-title-ar">انسداد الأنبوب</div>
+          <div class="cc-sub">Causes</div>
+          <div class="cc-signs">Inadequate flushing · Medications given through tube · Formula residue adhering to tube lumen</div>
+          <div class="cc-ar">الأسباب: غسل غير كافٍ، إعطاء أدوية عبر الأنبوب، تراكم بقايا التركيبة على جدار الأنبوب.</div>
+        </div>
+
+        <div class="comp-card" style="background:#F4EEF9;border-color:var(--purple)">
+          <div class="cc-title-en">5. Mechanical Complications</div>
+          <div class="cc-title-ar">مضاعفات ميكانيكية</div>
+          <div class="cc-signs">Occur during tube insertion (especially blind insertion of small-bore tubes with rigid stylet)</div>
+          <div class="cc-sub">Key principle</div>
+          <div class="cc-prev">Insert with caution — <strong>never use undue force</strong></div>
+          <div class="cc-ar">تحدث أثناء إدخال الأنبوب. الأنابيب الصغيرة بمُوجَّه صلب خطيرة. لا تُجبر الأنبوب أبداً.</div>
+        </div>
+      </div>
+
+      <div class="ibox good">
+        <div class="ii">🛡️</div>
+        <div>
+          <div class="ibox-en"><strong>Prevention of enteral complications:</strong> Close monitoring + timely assessment of tolerance. Clinical pathways help track outcomes. <strong>The nurse is central</strong> to complication prevention.</div>
+          <div class="ibox-ar">الوقاية: مراقبة دقيقة ومنتظمة، التقييم الدوري للتحمل. الممرض/ة محور أساسي في الوقاية من المضاعفات.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 5 — PARENTERAL ═══════════════ -->
+<div class="tab-content" id="tab-parenteral">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EAF0F5">💉</div>
+      <div class="scard-title">Total Parenteral Nutrition (TPN) — Definition</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">TPN is the delivery of <strong>ALL nutrients by intravenous (IV) infusion</strong>, bypassing the GI tract completely. It is usually recommended when oral or tube feedings are expected to be <strong>contraindicated or inadequate for more than 5–7 days</strong>.</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>التغذية الوريدية الكلية هي إمداد جميع المغذيات عبر الوريد مباشرةً، متجاوزةً القناة الهضمية. تُستخدم عندما تكون التغذية الفموية أو بالأنبوب مستحيلة أو غير كافية لأكثر من 5–7 أيام.</div>
+      </div>
+      <div class="explain">
+        <div class="explain-icon">💡</div>
+        <div>
+          <div class="explain-en"><strong>Simple:</strong> Imagine the gut is "closed for repairs." TPN is like a <strong>direct delivery truck</strong> that bypasses the gut completely and drops nutrients directly into the bloodstream.</div>
+          <div class="explain-ar">تخيّل أن الأمعاء "مغلقة للإصلاح." التغذية الوريدية كشاحنة توصيل مباشرة تتجاوز الأمعاء وتضع المغذيات مباشرةً في مجرى الدم.</div>
+        </div>
+      </div>
+
+      <div class="sub-title">When is TPN Used? <span class="ar-s">متى تُستخدم التغذية الوريدية؟</span></div>
+      <div class="cgrid">
+        <div class="ccard c-navy">
+          <div class="ccard-icon">🚫</div>
+          <div class="ccard-en">GI tract cannot digest or absorb</div>
+          <div class="ccard-ar">القناة الهضمية لا تستطيع الهضم أو الامتصاص</div>
+          <div class="ccard-body">Intractable vomiting · Severe diarrhea · Prematurity · Abdominal trauma · Prolonged ileus · Massive small bowel resection
+            <div class="ccard-body-ar">قيء عنيد · إسهال شديد · الخداجة · صدمة بطنية · انسداد معوي مطول · استئصال كبير للأمعاء</div>
+          </div>
+        </div>
+        <div class="ccard c-teal">
+          <div class="ccard-icon">😴</div>
+          <div class="ccard-en">Bowel rest is needed</div>
+          <div class="ccard-ar">القناة الهضمية تحتاج راحة</div>
+          <div class="ccard-body">Enteral fistulae · Acute inflammatory bowel disease not responding to other therapies (Crohn's, ulcerative colitis)
+            <div class="ccard-body-ar">الناسور المعوي · مرض التهاب الأمعاء الحاد (كرون، التهاب القولون)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ibox dang">
+        <div class="ii">🚫</div>
+        <div>
+          <div class="ibox-en"><strong>TPN is CONTRAINDICATED when the GI tract is functional.</strong> Using TPN alone (without any gut feeding) causes: <strong>villous atrophy</strong> (gut wall shrinks), impaired absorption when feeding resumes, weakened mucosal barrier (bacteria can move into the bloodstream — "translocation"). Small amounts of food prevent this when tolerated.</div>
+          <div class="ibox-ar">التغذية الوريدية مُضادة للاستطباب عندما تعمل القناة الهضمية. استخدامها وحدها يسبب: ضمور الزغابات، ضعف الامتصاص عند العودة للتغذية، وخطر انتقال البكتيريا للدم. كميات صغيرة من الطعام تمنع هذا عندما يتحملها المريض.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EAF5EE">🔌</div>
+      <div class="scard-title">Routes for Parenteral Nutrition</div>
+    </div>
+    <div class="scard-body">
+      <table class="stable">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Advantages</th>
+            <th>Disadvantages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🩹 Peripheral Venous Catheter</strong><span class="ar-td" style="display:block;font-family:'Cairo';direction:rtl;font-size:.78rem;color:var(--muted);margin-top:4px">قسطرة وريدية محيطية</span></td>
+            <td class="">Few advantages. Easier to insert.</td>
+            <td>Requires good venous access · Limits long-term use · Cannot tolerate &gt;900 mOsm/kg · Max ~10% dextrose · Not for home TPN
+              <div class="ar-td">يحتاج وريداً جيداً · غير مناسب للاستخدام طويل الأمد · لا يتحمل تركيزات عالية · لا يُناسب المنزل</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>🫀 Central Venous Catheter (CVC)</strong><span class="ar-td" style="display:block;font-family:'Cairo';direction:rtl;font-size:.78rem;color:var(--muted);margin-top:4px">قسطرة وريدية مركزية</span><br><em style="font-size:.75rem;color:var(--muted)">Via subclavian, jugular, or femoral vein</em></td>
+            <td>Hypertonic solutions (&gt;1800 mOsm/kg) · Long-term &amp; home use · Multi-lumen reduces drug incompatibilities · Blood sampling via catheter
+              <div class="ar-td">يتحمل محاليل شديدة التركيز · مناسب طويل الأمد وللمنزل · يقلل تفاعلات الأدوية · يمكن سحب دم منه</div>
+            </td>
+            <td>Pneumothorax · Air embolism · Central vein thrombosis · Catheter-related sepsis · Catheter mobilization
+              <div class="ar-td">استرواح الصدر · انسداد هوائي · تجلط الوريد · إنتان القسطرة · تحرك القسطرة</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>🔌 Subcutaneous Infusion Port</strong><span class="ar-td" style="display:block;font-family:'Cairo';direction:rtl;font-size:.78rem;color:var(--muted);margin-top:4px">منفذ التسريب تحت الجلد</span><br><em style="font-size:.75rem;color:var(--muted)">Implanted reservoir with catheter</em></td>
+            <td>Useful for intermittent therapy (chemo, intermittent TPN) · No flushing/site care when not in use · Lower infection rates
+              <div class="ar-td">للعلاج المتقطع · لا يحتاج صيانة عند عدم الاستخدام · معدل إصابة أقل</div>
+            </td>
+            <td>Requires needle access before each infusion · Risk of extravasation if needle slips out
+              <div class="ar-td">يحتاج إبرة في كل مرة · خطر تسرب المحلول إذا انزلقت الإبرة</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FEF8EC">🧪</div>
+      <div class="scard-title">TPN Formula & Administration</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">Daily requirements are estimated by <strong>body weight</strong> plus deficit. Daily readjustment depends on monitoring fluid, electrolyte, and nutritional status.</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>الاحتياجات اليومية تُقدَّر حسب الوزن ويُضاف إليها العجز. التعديل اليومي يعتمد على مراقبة السوائل والكهارل والحالة الغذائية.</div>
+      </div>
+      <ul class="slist">
+        <li><span class="num gold">1</span><div><span class="item-en"><strong>Carbohydrates:</strong> Mainly provided as <strong>glucose at 20% or 50% concentration</strong> — high concentrations used to provide adequate energy without overloading the circulation</span><span class="item-ar">الكربوهيدرات: بصورة رئيسية جلوكوز بتركيز 20–50% — تركيزات عالية لإمداد الطاقة دون تحميل الدورة الدموية</span></div></li>
+        <li><span class="num gold">2</span><div><span class="item-en"><strong>Proteins:</strong> Administered as <strong>L-amino acids solutions</strong> (essential amino acids). Commercial examples: <em>Vamin, Freamine, Novoplex</em>. These also contain Na, K, phosphate, Mg, vitamins, trace elements</span><span class="item-ar">البروتينات: محاليل L-أحماض أمينية. أمثلة تجارية: فامين، فريامين، نوفوبليكس. تحتوي أيضاً على صوديوم، بوتاسيوم، فوسفات، مغنيسيوم، فيتامينات، عناصر نادرة</span></div></li>
+        <li><span class="num gold">3</span><div><span class="item-en"><strong>Fat emulsions:</strong> Made from <strong>soya oil</strong>, available in 10% and 20% (isotonic). 1 liter of 20% = <strong>2000 kcal</strong>. Given <strong>twice weekly</strong> to provide essential fatty acids. Can be given via peripheral vein</span><span class="item-ar">الدهون: مستحلبات من زيت الصويا 10% أو 20% (متساوية التوتر). لتر واحد من 20% = 2000 سعر. تُعطى مرتين أسبوعياً لتوفير الأحماض الدهنية الأساسية</span></div></li>
+        <li><span class="num gold">4</span><div><span class="item-en"><strong>Start gradually:</strong> Amino acid/carbohydrate solution should be increased gradually over <strong>3–4 days</strong> to allow tolerance development</span><span class="item-ar">البدء التدريجي: تُزاد الجرعة تدريجياً على مدى 3–4 أيام للتكيف وتجنب المضاعفات</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FDEEEE">🚨</div>
+      <div class="scard-title">TPN Complications — Prevention & Management</div>
+    </div>
+    <div class="scard-body">
+      <table class="stable">
+        <thead>
+          <tr>
+            <th>Complication</th>
+            <th>Signs & Symptoms</th>
+            <th>Prevention / Intervention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🦠 Catheter-Related Sepsis</strong><div class="ar-td">إنتان القسطرة</div></td>
+            <td>Fever · Chills · Glucose intolerance · Positive blood culture (bacteria count 5–10× higher in catheter blood than peripheral)<div class="ar-td">حمى، قشعريرة، عدم تحمل سكر، مزرعة دم إيجابية</div></td>
+            <td>Maintain intact dressing · Strict aseptic technique · Hang TPN max <strong>24h</strong>, lipid emulsion max <strong>12h</strong> · Antibiotic lock if infected catheter<div class="ar-td">ضمادة محكمة، تقنية معقمة، TPN أقصاه 24 ساعة، دهون أقصاه 12 ساعة، قفل مضاد حيوي</div></td>
+          </tr>
+          <tr>
+            <td><strong>💨 Air Embolism</strong><div class="ar-td">انسداد هوائي</div></td>
+            <td>Dyspnea · Cyanosis · Tachycardia · Hypotension · Possibly death<div class="ar-td">ضيق تنفس، زرقة، تسرع قلب، انخفاض ضغط، وفاة محتملة</div></td>
+            <td>Use Luer-lok system · 0.22 µm air-eliminating filter · <strong>Valsalva maneuver</strong> during tubing changes · If suspected: left lateral decubitus + O₂ + notify physician<div class="ar-td">نظام لوير-لوك، فلتر هواء، مناورة فالسالفا، وضعية الجانب الأيسر + أكسجين</div></td>
+          </tr>
+          <tr>
+            <td><strong>🩸 Central Venous Thrombosis</strong><div class="ar-td">تجلط الوريد المركزي</div></td>
+            <td>Unilateral edema of neck/shoulder/arm · Collateral circulation on chest · Pain at insertion site<div class="ar-td">وذمة أحادية في الرقبة والكتف والذراع، دوران جانبي على الصدر، ألم</div></td>
+            <td>Prevent sepsis · Avoid repeated/traumatic catheterizations · Anticoagulation · Thrombolytic therapy / catheter removal if severe<div class="ar-td">منع الإنتان، تجنب القثطرة المتكررة، مضادات تخثر، تحليل الجلطة أو نزع القسطرة</div></td>
+          </tr>
+          <tr>
+            <td><strong>🔒 Catheter Occlusion</strong><div class="ar-td">انسداد القسطرة</div></td>
+            <td>No flow or sluggish flow · Cannot aspirate blood<div class="ar-td">لا تدفق أو تدفق بطيء، لا يمكن سحب الدم</div></td>
+            <td>Flush with heparinized saline · Aspirate clot · Thrombolytic agent · HCl 0.1N for drug precipitates · 70% ethanol for lipid precipitates<div class="ar-td">غسيل بمحلول هيبارين، تحليل جلطة بدواء، حمض HCl لترسبات الأدوية، إيثانول لترسبات الدهون</div></td>
+          </tr>
+          <tr>
+            <td><strong>📉 Hypoglycemia</strong><div class="ar-td">نقص سكر الدم</div></td>
+            <td>Diaphoresis · Shakiness · Confusion · Loss of consciousness<div class="ar-td">تعرق، رعشة، ارتباك، فقدان الوعي</div></td>
+            <td><strong>Never stop TPN abruptly</strong> — taper over hours · Use pump (±10% of ordered rate) · Oral carbohydrate or IV bolus if hypoglycemia occurs<div class="ar-td">لا تُوقف التغذية فجأة، قلّلها تدريجياً · استخدم مضخة · أعطِ كربوهيدرات أو محلول وريدي عند الحاجة</div></td>
+          </tr>
+          <tr>
+            <td><strong>📈 Hyperglycemia</strong><div class="ar-td">ارتفاع سكر الدم</div></td>
+            <td>Thirst · Headache · Lethargy · Increased urination<div class="ar-td">عطش، صداع، كسل، كثرة التبول</div></td>
+            <td>Frequent blood glucose monitoring · Start at slow rate/low dextrose · Increase gradually over <strong>2–3 days</strong> · Add insulin to TPN if needed<div class="ar-td">مراقبة متكررة للسكر، البدء بجرعة منخفضة، الزيادة التدريجية، إضافة إنسولين عند الحاجة</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 6 — NURSING ROLE ═══════════════ -->
+<div class="tab-content" id="tab-nursing">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EAF5EE">👩‍⚕️</div>
+      <div class="scard-title">Nursing Role in Nutritional Care</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">The nurse plays a <strong>vital role</strong> in initiating, monitoring, and evaluating the response to nutritional care. Nutritional care follows the <strong>nursing process</strong>.</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>الممرض/ة يلعب دوراً محورياً في بدء التغذية، مراقبتها، وتقييم الاستجابة. الرعاية الغذائية تسير وفق خطوات العملية التمريضية.</div>
+      </div>
+      <div class="pflow">
+        <div class="pstep"><div class="pstep-icon">🔍</div><div class="pstep-en">Assessment</div><div class="pstep-ar">التقييم</div></div>
+        <div class="parrow">→</div>
+        <div class="pstep"><div class="pstep-icon">📝</div><div class="pstep-en">Diagnosis</div><div class="pstep-ar">التشخيص</div></div>
+        <div class="parrow">→</div>
+        <div class="pstep"><div class="pstep-icon">📋</div><div class="pstep-en">Planning</div><div class="pstep-ar">التخطيط</div></div>
+        <div class="parrow">→</div>
+        <div class="pstep"><div class="pstep-icon">⚙️</div><div class="pstep-en">Implementation</div><div class="pstep-ar">التطبيق</div></div>
+        <div class="parrow">→</div>
+        <div class="pstep"><div class="pstep-icon">✅</div><div class="pstep-en">Evaluation</div><div class="pstep-ar">التقييم النهائي</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FEF8EC">🔍</div>
+      <div class="scard-title">Step 1 — Nutritional Assessment</div>
+    </div>
+    <div class="scard-body">
+
+      <div class="sub-title">A. Risk Factors for Nutritional Deficiencies <span class="ar-s">عوامل خطر نقص المغذيات</span></div>
+      <ul class="slist">
+        <li><span class="num red">!</span><div><span class="item-en">Age &lt;18 or &gt;65 years (risk increases further above 75)</span><span class="item-ar">العمر أقل من 18 أو أكثر من 65 (الخطر أعلى فوق 75)</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Recent <strong>unintentional weight loss:</strong> &gt;5% in 1 month or &gt;10% in 6 months</span><span class="item-ar">فقدان وزن غير مقصود: أكثر من 5% في شهر أو 10% في 6 أشهر</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Excessive alcohol intake or other substance abuse</span><span class="item-ar">إفراط في الكحول أو تعاطي المواد المخدرة</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Limited capacity for oral intake (dysphagia, stomatitis, mucositis)</span><span class="item-ar">محدودية التناول الفموي (عسر البلع، التهاب الفم)</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">NPO (nothing by mouth) for more than 3 days</span><span class="item-ar">الصيام عن الأكل لأكثر من 3 أيام</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Increased metabolic demands: extensive burns, major surgery, trauma, fever, infection, fistulae, pregnancy</span><span class="item-ar">زيادة الطلب الأيضي: حروق، جراحة كبرى، صدمة، حمى، عدوى، ناسور، حمل</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Protracted nutrient losses: malabsorption syndromes, short-gut syndrome, dialysis</span><span class="item-ar">فقد مزمن للمغذيات: متلازمات سوء الامتصاص، الأمعاء القصيرة، الغسيل الكلوي</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Catabolic drugs: corticosteroids, immunosuppressants, antineoplastics</span><span class="item-ar">أدوية كابوليكية: كورتيزون، مثبطات المناعة، أدوية علاج السرطان</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Protracted vomiting: anorexia nervosa, bulimia, hyperemesis gravidarum, chemo/radiation</span><span class="item-ar">قيء مزمن: فقدان شهية عصبي، شره مرضي، قيء الحمل، العلاج الكيميائي</span></div></li>
+        <li><span class="num red">!</span><div><span class="item-en">Chronic disease: AIDS, diabetes, cystic fibrosis, stroke, cancer</span><span class="item-ar">أمراض مزمنة: إيدز، سكري، التليف الكيسي، سكتة دماغية، سرطان</span></div></li>
+      </ul>
+
+      <div class="sub-title">B. Diet History & Calorie Count <span class="ar-s">التاريخ الغذائي وحساب السعرات</span></div>
+      <div class="biblock">
+        <div class="biblock-en">
+          The nurse accurately records <strong>all food and fluids</strong> consumed daily (type + amount). Calculates daily protein and calorie intake. Makes recommendations for nutritional support. 
+          Critical during <strong>weaning from parenteral/tube feeding to oral diet</strong>. Also identifies actual and potential problems — <strong>primary</strong> (poor intake) or <strong>secondary</strong> (digestion/absorption/metabolism issues).
+        </div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>الممرض/ة يُسجّل بدقة كل ما يتناوله المريض (نوعاً وكمية). يحسب السعرات والبروتين اليومي. يُقدّم توصيات للدعم الغذائي. مهم جداً عند الفطام من التغذية الوريدية أو الأنبوبية. يُحدد المشاكل: أولية (نقص تناول) أو ثانوية (اضطراب هضم/امتصاص).</div>
+      </div>
+
+      <div class="sub-title">C. Physical Examination & Measurements <span class="ar-s">الفحص الجسدي والقياسات</span></div>
+      <div class="biblock">
+        <div class="biblock-en">
+          Key measurements: <strong>height, weight, triceps skinfold thickness, mid-arm circumference</strong>.<br>
+          <strong>BMI = Weight (kg) ÷ Height (m)²</strong> — a useful indicator of nutritional state.
+        </div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>القياسات الأساسية: الطول، الوزن، سماكة ثنية الجلد فوق العضلة ثلاثية الرأس، محيط منتصف الذراع. مؤشر كتلة الجسم = الوزن (كجم) ÷ الطول (م)²</div>
+      </div>
+
+      <div class="sub-title">D. Physical Signs of Nutrient Deficiencies <span class="ar-s">العلامات الجسدية لنقص المغذيات</span></div>
+      <table class="stable">
+        <thead><tr><th>Location</th><th>Signs / Symptoms</th><th class="ar-th">Deficient Nutrient</th></tr></thead>
+        <tbody>
+          <tr><td>🦱 Hair</td><td>Lustreless, thin, sparse, easily plucked, dyspigmentation</td><td class="ar-td">Energy, Protein<br>طاقة، بروتين</td></tr>
+          <tr><td>😶 Face</td><td>Nasolabial seborrhea, diffuse dyspigmentation, pallor</td><td class="ar-td">Riboflavin, Iron<br>ريبوفلافين، حديد</td></tr>
+          <tr><td>👁️ Eyes</td><td>Pale conjunctiva, poor dark adaptation, Bitot's spots, corneal xerosis, intraocular hemorrhage</td><td class="ar-td">Iron, Retinol (A), Riboflavin, Niacin, Ascorbic acid (C)</td></tr>
+          <tr><td>👄 Lips</td><td>Bilateral angular stomatitis, cheilosis</td><td class="ar-td">Riboflavin, Niacin<br>ريبوفلافين، نياسين</td></tr>
+          <tr><td>👅 Tongue</td><td>Scarlet/raw tongue, magenta tongue, glossitis (beefy red), atrophic papillae (slick tongue)</td><td class="ar-td">Niacin, Riboflavin, Folic acid, Cobalamin (B12), Iron</td></tr>
+          <tr><td>🦷 Teeth & Gums</td><td>Caries · Spongy, bleeding, swollen, receding gums</td><td class="ar-td">Fluoride · Iron, Ascorbic acid</td></tr>
+          <tr><td>🖐️ Skin</td><td>Purpura, hyperpigmentation, follicular hyperkeratosis, petechiae, thickening at pressure/sun-exposed areas</td><td class="ar-td">Vit K, Energy, Niacin, Retinol, Ascorbic acid, Riboflavin</td></tr>
+          <tr><td>💅 Nails</td><td>Koilonychia (spoon nails), pallor</td><td class="ar-td">Iron<br>حديد</td></tr>
+          <tr><td>🦴 Musculoskeletal</td><td>Wasting, bow legs, beading of ribs, musculoskeletal hemorrhage</td><td class="ar-td">Energy, Protein, Vitamin D, Ascorbic acid</td></tr>
+          <tr><td>❤️ Cardiovascular</td><td>Cardiomegaly, tachycardia, heart failure (wet beriberi)</td><td class="ar-td">Thiamin (B1)<br>ثيامين</td></tr>
+          <tr><td>🧠 Nervous System</td><td>Mental confusion, encephalopathy, sensory loss, motor weakness, absent ankle/knee jerks (dry beriberi)</td><td class="ar-td">Thiamin, Cobalamin (B12)</td></tr>
+          <tr><td>🫁 GI System</td><td>Hepatomegaly</td><td class="ar-td">Protein<br>بروتين</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-title">E. Laboratory Values <span class="ar-s">القيم المختبرية</span></div>
+      <div class="cgrid">
+        <div class="ccard c-blue"><div class="ccard-icon">🩸</div><div class="ccard-en">CBC (Complete Blood Count)</div><div class="ccard-ar">صورة دم كاملة</div></div>
+        <div class="ccard c-teal"><div class="ccard-icon">🧬</div><div class="ccard-en">Serum Protein (especially Albumin)</div><div class="ccard-ar">بروتين المصل (خاصة الألبومين)</div></div>
+        <div class="ccard c-navy"><div class="ccard-icon">🛡️</div><div class="ccard-en">Immunocompetence: TLC + delayed cutaneous hypersensitivity</div><div class="ccard-ar">كفاءة المناعة: عدد الخلايا اللمفاوية + اختبار حساسية الجلد المتأخر</div></div>
+        <div class="ccard c-gold"><div class="ccard-icon">🧪</div><div class="ccard-en">Urine Assays</div><div class="ccard-ar">تحاليل البول</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#FDEEEE">📝</div>
+      <div class="scard-title">Step 2 — Nursing Diagnoses</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock-en" style="margin-bottom:14px">Common nursing diagnoses for critically ill patients receiving nutritional support:</div>
+      <ul class="slist">
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for nutritional deficit related to loss of consciousness / protein loss</span><span class="item-ar">خطر مرتفع لنقص التغذية مرتبط بفقدان الوعي أو فقد البروتين</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">Nutritional alteration — less than body requirements — related to hypermetabolic demands</span><span class="item-ar">تغيير في التغذية - أقل من متطلبات الجسم - مرتبط بالطلب الأيضي المرتفع</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for pulmonary aspiration related to gastric atony</span><span class="item-ar">خطر مرتفع للاستنشاق الرئوي مرتبط بضعف حركة المعدة</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">Decreased gastric motility related to paralytic ileus</span><span class="item-ar">انخفاض حركة المعدة مرتبط بالانسداد المعوي الشللي</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for nutritional deficit related to diarrhea</span><span class="item-ar">خطر مرتفع لنقص التغذية مرتبط بالإسهال</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for infection related to catheter sepsis</span><span class="item-ar">خطر مرتفع للعدوى مرتبط بإنتان القسطرة</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for allergic response related to fat emulsion administration</span><span class="item-ar">خطر مرتفع للاستجابة التحسسية مرتبط بإعطاء مستحلب الدهون</span></div></li>
+        <li><span class="num red">Dx</span><div><span class="item-en">High risk for trace mineral deficiencies related to dependence on parenteral nutrition</span><span class="item-ar">خطر مرتفع لنقص المعادن النادرة مرتبط بالاعتماد على التغذية الوريدية</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EAF5EE">⚙️</div>
+      <div class="scard-title">Steps 3 & 4 — Planning & Implementation</div>
+    </div>
+    <div class="scard-body">
+      <div class="ibox good">
+        <div class="ii">🎯</div>
+        <div>
+          <div class="ibox-en"><strong>Two main goals:</strong> 1) Ensure proper delivery of nutrients. 2) Prevent & early-detect complications. The nurse must continuously assess for signs/symptoms of complications.</div>
+          <div class="ibox-ar">الهدفان الرئيسيان: ١) ضمان إيصال المغذيات بشكل صحيح. ٢) منع المضاعفات واكتشافها مبكراً. يجب على الممرض/ة المراقبة المستمرة.</div>
+        </div>
+      </div>
+
+      <div class="sub-title">Respiratory Monitoring <span class="ar-s">المراقبة التنفسية</span></div>
+      <ul class="slist">
+        <li><span class="num">→</span><div><span class="item-en">Check <strong>gastric residual every 4 hours</strong> — should not exceed 50% of previous feeding or 50% of hourly infusion rate</span><span class="item-ar">فحص بواقي المعدة كل 4 ساعات — يجب ألا تتجاوز 50% من الإعطاء السابق أو 50% من معدل الساعة</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Assess bowel sounds regularly</span><span class="item-ar">تقييم أصوات الأمعاء بانتظام</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Keep HOB (head of bed) <strong>elevated 30–40°</strong> during feeding and for 30 minutes after</span><span class="item-ar">رفع رأس السرير 30–40° أثناء التغذية ولمدة 30 دقيقة بعدها</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Assess for signs of respiratory aspiration: fever, restlessness, tachycardia, tachypnea, new infiltrate on chest X-ray</span><span class="item-ar">تقييم علامات الاستنشاق: حمى، قلق، تسرع قلب وتنفس، ارتشاح جديد في الأشعة</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Evaluate <strong>ABGs daily</strong> — watch for elevated PaCO₂</span><span class="item-ar">تقييم غازات الدم الشرياني يومياً — انتبه لارتفاع PaCO₂</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Ensure cuff is inflated to <strong>minimum occlusion volume (20–25 cmH₂O)</strong> for patients with artificial airways</span><span class="item-ar">ضمان نفخ الكفة بأدنى ضغط انسداد (20–25 سم ماء) للمرضى بمجاري هوائية اصطناعية</span></div></li>
+      </ul>
+
+      <div class="sub-title">Cardiovascular, Fluid & Electrolytes <span class="ar-s">القلب والسوائل والكهارل</span></div>
+      <ul class="slist">
+        <li><span class="num">→</span><div><span class="item-en">Monitor vital signs every 4 hours — orthostatic BP drop of 15 mmHg + pulse increase of 15 bpm = 15% deficit of intravascular water</span><span class="item-ar">علامات حيوية كل 4 ساعات — انخفاض ضغط 15 مم زئبق + زيادة نبض 15 = عجز 15% في الماء داخل الأوعية</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Assess hydration via <strong>CVP (central venous pressure)</strong></span><span class="item-ar">تقييم الترطيب عبر ضغط الوريد المركزي</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Daily weight — gaining &gt;0.7 kg/day likely indicates fluid overload</span><span class="item-ar">وزن يومي — زيادة أكثر من 0.7 كجم/يوم تشير لاحتباس سوائل</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Monitor: serum electrolytes, blood glucose, BUN, creatinine, Mg, phosphorus, Ca, LFTs, nitrogen balance</span><span class="item-ar">مراقبة: الكهارل، سكر الدم، يوريا وكرياتينين، مغنيسيوم، فوسفور، كالسيوم، إنزيمات الكبد، توازن النيتروجين</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Monitor urine specific gravity — elevated blood sugar increases risk of osmotic diuresis and fluid volume deficit</span><span class="item-ar">مراقبة الثقل النوعي للبول — ارتفاع السكر يزيد خطر إدرار البول الأسموزي ونقص السوائل</span></div></li>
+      </ul>
+
+      <div class="sub-title">GI Monitoring <span class="ar-s">مراقبة الجهاز الهضمي</span></div>
+      <ul class="slist">
+        <li><span class="num">→</span><div><span class="item-en">Assess tube position: record tube length beyond nares every 8 hours + mark tube with permanent ink at exit site</span><span class="item-ar">فحص موضع الأنبوب: تسجيل طوله خارج فتحة الأنف كل 8 ساعات + تعليمه بحبر دائم</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Prevent tube obstruction — flush intermittently with sterile water (diminishes microbial growth)</span><span class="item-ar">منع انسداد الأنبوب — غسله بانتظام بماء معقم لتقليل نمو البكتيريا</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Check for <strong>delayed gastric emptying</strong>: anorexia, nausea, vomiting, frequent measurement of gastric residuals</span><span class="item-ar">فحص تأخر إفراغ المعدة: فقدان شهية، غثيان، قيء، قياس متكرر لبواقي المعدة</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Record stool character, consistency, and number per shift</span><span class="item-ar">تسجيل طابع وقوام وعدد البراز في كل وردية</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Review medications — identify which cause diarrhea or decreased motility and ensure they are properly diluted</span><span class="item-ar">مراجعة الأدوية — تحديد المسببة للإسهال أو إبطاء الحركة والتأكد من تخفيفها</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">All personnel handling feeding must use proper <strong>hand washing technique</strong>. Most formulas safe at room temperature for 8–12 hours</span><span class="item-ar">جميع المتعاملين مع التغذية يجب أن يغسلوا أيديهم جيداً. معظم التركيبات آمنة في درجة حرارة الغرفة 8–12 ساعة</span></div></li>
+      </ul>
+
+      <div class="sub-title">Metabolic Assessment <span class="ar-s">التقييم الأيضي</span></div>
+      <ul class="slist">
+        <li><span class="num">→</span><div><span class="item-en">Repeat nutritional assessment every <strong>7–10 days</strong> + determine energy expenditure by indirect calorimetry</span><span class="item-ar">إعادة التقييم الغذائي كل 7–10 أيام + تحديد استهلاك الطاقة بالقياس غير المباشر</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Calorie & protein count for first 5 days, then weekly</span><span class="item-ar">حساب السعرات والبروتين لمدة 5 أيام ثم أسبوعياً</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Ensure patient receives electrolytes in early feeding stages — to prevent rapid, life-threatening cardiac dysrhythmia or respiratory arrest</span><span class="item-ar">التأكد من إعطاء الكهارل في مراحل التغذية الأولى — للوقاية من اضطراب ضربات القلب الخطير</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Evaluate: serum albumin, prealbumin, transferrin, retinol-binding protein, blood glucose</span><span class="item-ar">تقييم: ألبومين المصل، البريألبومين، ترانسفيرين، بروتين ربط الريتينول، سكر الدم</span></div></li>
+      </ul>
+
+      <div class="sub-title">Integumentary & Psychosocial Assessment <span class="ar-s">التقييم الجلدي والنفسي الاجتماعي</span></div>
+      <ul class="slist">
+        <li><span class="num">→</span><div><span class="item-en">Observe skin around tube entry sites for irritation and excoriation</span><span class="item-ar">مراقبة الجلد حول مواقع إدخال الأنابيب للتهيج والتقرح</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Assess skin for signs of edema or dehydration. Radiological evaluation of sinuses + otologic examination if indicated</span><span class="item-ar">تقييم الجلد لعلامات الوذمة أو الجفاف. تقييم إشعاعي للجيوب الأنفية وفحص أذني إذا لزم</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Ensure tube is not uncomfortable or potentially harmful in position</span><span class="item-ar">التأكد أن الأنبوب غير مؤلم وموضوع بأمان</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Determine if patient needs to express feelings about body image changes or inability to eat orally</span><span class="item-ar">التحقق من حاجة المريض للتعبير عن مشاعره تجاه تغير صورة الجسم وعدم القدرة على الأكل فموياً</span></div></li>
+        <li><span class="num">→</span><div><span class="item-en">Educate patient about tube feeding — enhancing tolerance and progress with nutrition</span><span class="item-ar">تثقيف المريض حول التغذية الأنبوبية — لتعزيز التقبل والتقدم في التغذية</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#EBF3FB">✅</div>
+      <div class="scard-title">Step 5 — Evaluation</div>
+    </div>
+    <div class="scard-body">
+      <div class="biblock">
+        <div class="biblock-en">The final step of the nursing process. The nurse determines <strong>the extent to which the nutritional goal has been achieved</strong>. Evaluation is ongoing and guides adjustments to the nutritional care plan.</div>
+        <div class="biblock-ar"><span class="ar-label">الترجمة</span>الخطوة الأخيرة. يحدد الممرض/ة مدى تحقق الهدف الغذائي. التقييم مستمر ويوجّه تعديلات خطة الرعاية الغذائية.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ TAB 7 — COMPARE ═══════════════ -->
+<div class="tab-content" id="tab-compare">
+<div class="container">
+
+  <div class="scard">
+    <div class="scard-head">
+      <div class="scard-icon" style="background:#E6F7F6">⚖️</div>
+      <div class="scard-title">Enteral vs Parenteral Nutrition — Full Comparison</div>
+    </div>
+    <div class="scard-body">
+      <table class="ctable" style="border-collapse:collapse;width:100%">
+        <thead>
+          <tr>
+            <th class="h-label" style="width:22%">Aspect</th>
+            <th class="h-ent" style="width:39%">🥛 Enteral Nutrition<div class="ar-note">التغذية المعوية</div></th>
+            <th class="h-par" style="width:39%">💉 Parenteral Nutrition (TPN)<div class="ar-note">التغذية الوريدية الكلية</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">Route</td>
+            <td class="td-ent">GI tract via feeding tube<span class="ar-note">عبر القناة الهضمية بأنبوب غذائي</span></td>
+            <td class="td-par">Intravenous (peripheral or central vein)<span class="ar-note">وريدياً (وريد محيطي أو مركزي)</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Prerequisite</td>
+            <td class="td-ent">Functional GI tract<span class="ar-note">القناة الهضمية يجب أن تعمل</span></td>
+            <td class="td-par">GI tract non-functional or needs rest<span class="ar-note">القناة الهضمية لا تعمل أو تحتاج راحة</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Cost</td>
+            <td class="td-ent">✅ Lower<span class="ar-note">أقل تكلفة</span></td>
+            <td class="td-par">❌ Higher<span class="ar-note">أعلى تكلفة</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Gut effect</td>
+            <td class="td-ent">✅ Preserves gut structure, function, and mucosal barrier<span class="ar-note">تحافظ على بنية الأمعاء ووظيفتها وحاجز الغشاء المخاطي</span></td>
+            <td class="td-par">❌ Causes villous atrophy, impaired absorption, weakened mucosal barrier → bacterial translocation risk<span class="ar-note">تسبب ضمور الزغابات وضعف الامتصاص وضعف الحاجز وخطر انتقال البكتيريا</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Safety</td>
+            <td class="td-ent">Safer when administered correctly<span class="ar-note">أكثر أماناً عند التطبيق الصحيح</span></td>
+            <td class="td-par">Higher risk of serious complications<span class="ar-note">خطر مضاعفات خطيرة أعلى</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Main danger</td>
+            <td class="td-ent">⚠️ Pulmonary aspiration<span class="ar-note">الاستنشاق الرئوي</span></td>
+            <td class="td-par">⚠️ Catheter sepsis · Air embolism · Thrombosis<span class="ar-note">إنتان القسطرة · انسداد هوائي · تجلط</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Timing</td>
+            <td class="td-ent">First choice when GI is functional<span class="ar-note">الخيار الأول عند وجود شرط عمل الأمعاء</span></td>
+            <td class="td-par">When enteral is contraindicated for &gt;5–7 days<span class="ar-note">عندما يكون المعوي مضاداً للاستطباب لأكثر من 5–7 أيام</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Nutrient use</td>
+            <td class="td-ent">Enhanced utilization through normal digestion<span class="ar-note">استخدام أفضل عبر الهضم الطبيعي</span></td>
+            <td class="td-par">Direct IV delivery — bypasses digestion<span class="ar-note">توصيل وريدي مباشر — يتجاوز عملية الهضم</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Long-term use</td>
+            <td class="td-ent">Yes, with proper tube management<span class="ar-note">نعم، مع إدارة صحيحة للأنبوب</span></td>
+            <td class="td-par">CVC allows long-term and home use<span class="ar-note">القسطرة المركزية تسمح بالاستخدام طويل الأمد وفي المنزل</span></td>
+          </tr>
+          <tr>
+            <td class="td-label">Formulas</td>
+            <td class="td-ent">Polymeric · Monomeric · Disease-specific<span class="ar-note">بوليميرية · مونوميرية · خاصة بالمرض</span></td>
+            <td class="td-par">Glucose (20–50%) + L-amino acids + Fat emulsions (soya oil 10–20%) + electrolytes + vitamins<span class="ar-note">جلوكوز + أحماض أمينية + مستحلب دهون + كهارل + فيتامينات</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ibox good" style="margin-top:20px">
+        <div class="ii">📌</div>
+        <div>
+          <div class="ibox-en"><strong>Golden rule:</strong> "If the gut works — use it." Enteral nutrition is always preferred over parenteral when the GI tract is functional, because it is safer, cheaper, and maintains gut health.</div>
+          <div class="ibox-ar">القاعدة الذهبية: "إذا كانت الأمعاء تعمل — استخدمها." التغذية المعوية تُفضَّل دائماً على الوريدية عندما تعمل الأمعاء، لأنها أكثر أماناً وأقل تكلفةً وتحافظ على صحة الأمعاء.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ SCRIPT ═══════════════ -->
+<script>
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

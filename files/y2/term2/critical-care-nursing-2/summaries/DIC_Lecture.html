@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIC – Disseminated Intravascular Coagulation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a4a6b;
+    --accent: #e07b39;
+    --accent2: #3a9e6e;
+    --light-bg: #f4f7fa;
+    --card-bg: #ffffff;
+    --border: #dde3ea;
+    --text: #1e2a38;
+    --muted: #5a6a7a;
+    --red: #c0392b;
+    --yellow: #e8b84b;
+    --green: #2e7d53;
+    --tab-active: #1a4a6b;
+    --tab-inactive: #8fa5bb;
+    --shadow: 0 4px 24px rgba(26,74,107,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans 3', 'Cairo', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, #2a6496 100%);
+    color: #fff;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  header h1 span { color: var(--yellow); }
+  header .sub {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    margin-top: 0.5rem;
+    font-family: 'Cairo', sans-serif;
+  }
+  header .author {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* ── Navigation Tabs ── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--card-bg);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 0;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    flex: 0 0 auto;
+    padding: 1rem 1.3rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--tab-inactive);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    user-select: none;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .nav-tab.active {
+    color: var(--tab-active);
+    border-bottom-color: var(--accent);
+  }
+  .nav-tab:hover:not(.active) { color: var(--primary); }
+
+  /* ── Main ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── Sections ── */
+  .section { display: none; animation: fadeIn 0.3s ease; }
+  .section.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: none; } }
+
+  /* ── Bilingual Block ── */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  @media (max-width: 640px) { .bilingual { grid-template-columns: 1fr; } }
+  .lang-en, .lang-ar {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary);
+  }
+  .lang-ar {
+    border-left: none;
+    border-right: 5px solid var(--accent);
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+  }
+  .lang-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: inline-block;
+  }
+  .lang-ar .lang-label .dot { background: var(--accent); }
+  .lang-en p, .lang-ar p {
+    line-height: 1.8;
+    font-size: 0.97rem;
+    color: var(--text);
+  }
+
+  /* ── Section Heading ── */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    margin-top: 0.5rem;
+  }
+  .sec-head .icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .sec-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--primary);
+  }
+  .sec-head .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    direction: rtl;
+    margin-top: 2px;
+  }
+
+  /* ── Info Card ── */
+  .info-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.4rem;
+    border-top: 4px solid var(--accent);
+  }
+  .info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .info-card h3 .ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    direction: rtl;
+  }
+
+  /* ── Tags / Chips ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8rem; }
+  .tag {
+    background: var(--light-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.82rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .tag.red { border-color: var(--red); color: var(--red); background: #fdf0ef; }
+  .tag.green { border-color: var(--green); color: var(--green); background: #edf7f2; }
+  .tag.yellow { border-color: #c9960a; color: #8a6500; background: #fdf8e8; }
+
+  /* ── Numbered Step ── */
+  .steps { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .step {
+    display: flex;
+    gap: 1.1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: var(--shadow);
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-body { flex: 1; }
+  .step-en { font-size: 0.97rem; line-height: 1.7; }
+  .step-ar { font-family: 'Cairo', sans-serif; font-size: 0.9rem; color: var(--muted); direction: rtl; margin-top: 4px; line-height: 1.7; }
+
+  /* ── Alert Box ── */
+  .alert {
+    border-radius: 12px;
+    padding: 1rem 1.4rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .alert.danger { background: #fef4f4; border-left: 5px solid var(--red); }
+  .alert.info { background: #eff6fd; border-left: 5px solid var(--primary); }
+  .alert.success { background: #edf7f2; border-left: 5px solid var(--green); }
+  .alert.warning { background: #fdf8e8; border-left: 5px solid var(--yellow); }
+  .alert-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .alert-body { flex: 1; }
+  .alert-body strong { font-size: 0.95rem; display: block; margin-bottom: 3px; }
+  .alert-body .ar { font-family: 'Cairo', sans-serif; font-size: 0.88rem; color: var(--muted); direction: rtl; }
+
+  /* ── Two-col grid ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── Lab Table ── */
+  .lab-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+  .lab-table th { background: var(--primary); color: #fff; padding: 0.8rem 1rem; font-size: 0.85rem; text-align: left; font-family: 'Source Sans 3', sans-serif; }
+  .lab-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .lab-table tr:last-child td { border-bottom: none; }
+  .lab-table tr:nth-child(even) td { background: #f8fafc; }
+  .lab-table .ar-cell { font-family: 'Cairo', sans-serif; direction: rtl; color: var(--muted); font-size: 0.85rem; }
+
+  /* ── Quiz ── */
+  .quiz-container { display: flex; flex-direction: column; gap: 1.5rem; }
+  .quiz-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary);
+  }
+  .quiz-q {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+  }
+  .quiz-q-num { color: var(--accent); margin-right: 6px; }
+  .quiz-q-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    color: var(--muted);
+    direction: rtl;
+    margin-bottom: 1rem;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
+  .quiz-option {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    font-size: 0.92rem;
+    transition: all 0.2s;
+    user-select: none;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .quiz-option:hover { border-color: var(--primary); background: #eff6fd; }
+  .quiz-option.correct { border-color: var(--green); background: #edf7f2; color: var(--green); }
+  .quiz-option.wrong { border-color: var(--red); background: #fef4f4; color: var(--red); }
+  .quiz-option.disabled { cursor: default; pointer-events: none; }
+  .quiz-option .opt-ar { font-family: 'Cairo', sans-serif; font-size: 0.83rem; color: var(--muted); direction: rtl; display: block; margin-top: 2px; }
+  .quiz-feedback {
+    display: none;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct { background: #edf7f2; color: var(--green); border-left: 4px solid var(--green); }
+  .quiz-feedback.wrong { background: #fef4f4; color: var(--red); border-left: 4px solid var(--red); }
+  .quiz-feedback .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 4px; color: var(--muted); font-size: 0.85rem; }
+  .quiz-score-bar {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+  .quiz-score-bar h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.5rem; }
+  .score-num { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+  .progress-bar { width: 100%; height: 12px; background: var(--border); border-radius: 6px; overflow: hidden; margin-top: 0.8rem; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent2)); border-radius: 6px; transition: width 0.5s; }
+
+  /* ── Flow Diagram ── */
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 0; margin-bottom: 1.5rem; }
+  .flow-box {
+    background: var(--card-bg);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    max-width: 340px;
+    width: 100%;
+  }
+  .flow-box .ar { font-family:'Cairo',sans-serif; font-size:0.8rem; color:var(--muted); direction:rtl; margin-top:3px; }
+  .flow-box.orange { border-color: var(--accent); color: var(--accent); }
+  .flow-box.green { border-color: var(--green); color: var(--green); }
+  .flow-box.red { border-color: var(--red); color: var(--red); }
+  .flow-arrow { font-size: 1.4rem; color: var(--muted); line-height: 1; margin: 2px 0; }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    header h1 { font-size: 1.6rem; }
+    .main { padding: 1rem 0.8rem 3rem; }
+    .nav-tab { padding: 0.8rem 0.9rem; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="badge">Hematology Lecture</div>
+  <h1>Disseminated Intravascular <span>Coagulation</span></h1>
+  <p class="sub">التخثر المنتشر داخل الأوعية الدموية</p>
+  <p class="author">Prepared by Dr. Ghada Elsayed</p>
+</header>
+
+<!-- ── Navigation ── -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showTab('intro')">📖 Intro مقدمة</div>
+    <div class="nav-tab" onclick="showTab('causes')">⚠️ Causes أسباب</div>
+    <div class="nav-tab" onclick="showTab('patho')">🔬 Pathophysiology فيزيولوجيا</div>
+    <div class="nav-tab" onclick="showTab('symptoms')">🩺 Symptoms أعراض</div>
+    <div class="nav-tab" onclick="showTab('diagnosis')">🧪 Diagnosis تشخيص</div>
+    <div class="nav-tab" onclick="showTab('treatment')">💊 Treatment علاج</div>
+    <div class="nav-tab" onclick="showTab('nursing')">🏥 Nursing تمريض</div>
+    <div class="nav-tab" onclick="showTab('quiz')">📝 Quiz اختبار</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ══════════════ INTRO ══════════════ -->
+  <div class="section active" id="intro">
+    <div class="sec-head">
+      <div class="icon">📖</div>
+      <div>
+        <h2>Introduction & Definition</h2>
+        <div class="ar">المقدمة والتعريف</div>
+      </div>
+    </div>
+
+    <div class="alert danger">
+      <div class="alert-icon">🚨</div>
+      <div class="alert-body">
+        <strong>DIC is a life-threatening condition that requires immediate medical attention.</strong>
+        <div class="ar">DIC حالة مهددة للحياة تستدعي تدخلاً طبياً فورياً</div>
+      </div>
+    </div>
+
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p><strong>Disseminated Intravascular Coagulation (DIC)</strong> is a condition in which blood clots form throughout the body, blocking small blood vessels.</p>
+        <p style="margin-top:0.8rem;">The formation of micro-clots affects tissue perfusion in the major organs, causing <strong>hypoxia, ischemia, and tissue damage</strong>.</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p><strong>التخثر المنتشر داخل الأوعية الدموية (DIC)</strong> هو حالة تتكوّن فيها جلطات دموية في جميع أنحاء الجسم تسدّ الأوعية الدموية الصغيرة.</p>
+        <p style="margin-top:0.8rem;">تؤثر الجلطات الدقيقة على تروية أنسجة الأعضاء الرئيسية، مسببةً <strong>نقص الأكسجين، والإقفار، وتلف الأنسجة</strong>.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🔄 Two Coagulation Pathways <span class="ar-title">مسارا التخثر</span></h3>
+      <div class="two-col">
+        <div>
+          <div class="tag" style="margin-bottom:8px">Intrinsic Pathway – المسار الداخلي</div>
+          <p style="font-size:0.92rem; line-height:1.7">Endothelial cell damage — commonly from <strong>sepsis or infection</strong>. <br><span style="font-family:'Cairo';direction:rtl;display:block;color:var(--muted);font-size:0.87rem;">تلف الخلايا البطانية — غالباً بسبب الإنتان أو العدوى</span></p>
+        </div>
+        <div>
+          <div class="tag yellow" style="margin-bottom:8px">Extrinsic Pathway – المسار الخارجي</div>
+          <p style="font-size:0.92rem; line-height:1.7">Initiated by tissue injuries: <strong>malignancy, trauma, or obstetrical complications</strong>. <br><span style="font-family:'Cairo';direction:rtl;display:block;color:var(--muted);font-size:0.87rem;">يُحفَّز بإصابات الأنسجة: الأورام، الصدمات، أو مضاعفات الولادة</span></p>
+        </div>
+      </div>
+      <div class="alert info" style="margin-top:1rem;margin-bottom:0">
+        <div class="alert-icon">ℹ️</div>
+        <div class="alert-body">
+          <strong>DIC may present as an acute or chronic condition.</strong>
+          <div class="ar">قد يظهر DIC كحالة حادة أو مزمنة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>⚡ Factors That Accelerate DIC <span class="ar-title">عوامل تُسرّع DIC</span></h3>
+      <div class="tags">
+        <span class="tag red">Shock – الصدمة</span>
+        <span class="tag red">Acidosis – الحماض</span>
+        <span class="tag red">Hypoxemia – نقص الأكسجين</span>
+        <span class="tag red">Stasis – الركود</span>
+        <span class="tag red">Dehydration – الجفاف</span>
+        <span class="tag red">Hyperthermia – ارتفاع الحرارة</span>
+        <span class="tag">Chronic renal insufficiency – قصور كلوي مزمن</span>
+        <span class="tag">Chronic hepatic insufficiency – قصور كبدي مزمن</span>
+        <span class="tag">Malnutrition – سوء التغذية</span>
+        <span class="tag">Impaired anti-coagulation – خلل مضادات التخثر</span>
+        <span class="tag">Phagocytic dysfunction – خلل البلعمة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ CAUSES ══════════════ -->
+  <div class="section" id="causes">
+    <div class="sec-head">
+      <div class="icon">⚠️</div>
+      <div>
+        <h2>Causes of DIC</h2>
+        <div class="ar">أسباب DIC</div>
+      </div>
+    </div>
+
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p>DIC is <strong>not a primary disease</strong> — it always occurs secondary to an underlying condition that triggers abnormal coagulation.</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p>DIC <strong>ليس مرضاً أوّلياً</strong> — يحدث دائماً كاستجابة ثانوية لحالة أساسية تُطلق التخثر غير الطبيعي.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-en">🦠 <strong>Infection</strong> — Bacterial (Gram+/−), viral, fungal, or protozoan</div>
+          <div class="step-ar">العدوى — جرثومية (سالبة/موجبة الغرام)، فيروسية، فطرية، أو أولية</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-en">🩸 <strong>Cancer</strong> — Particularly acute promyelocytic leukemia (APL)</div>
+          <div class="step-ar">السرطان — خاصةً ابيضاض الدم النقيوي الحاد (APL)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-en">🤰 <strong>Obstetric complications</strong> — Abruptio placentae, preeclampsia/eclampsia, postpartum hemorrhage</div>
+          <div class="step-ar">مضاعفات الحمل — انفصال المشيمة، تسمم الحمل، النزيف بعد الولادة</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-en">💥 <strong>Massive tissue injury</strong> — Trauma, burns, hyperthermia, rhabdomyolysis, surgery</div>
+          <div class="step-ar">إصابة نسيجية واسعة — صدمة، حروق، ارتفاع حرارة، انحلال العضلات، جراحة</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-en">🩺 <strong>Transfusion reaction</strong> — ABO blood group incompatibility</div>
+          <div class="step-ar">تفاعل نقل الدم — عدم توافق فصيلة الدم ABO</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-en">🫀 <strong>Aortic aneurysm</strong></div>
+          <div class="step-ar">أم الدم الأبهرية</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert warning">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-body">
+        <strong>Conditions that MIMIC DIC (but different mechanism): Liver disease, HELLP syndrome, TTP, HUS, malignant hypertension.</strong>
+        <div class="ar">حالات تُشبه DIC لكن تختلف آلياً: أمراض الكبد، متلازمة HELLP، فرفرية نقص الصفيحات، متلازمة انحلال الدم والبول، ارتفاع الضغط الخبيث</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ PATHOPHYSIOLOGY ══════════════ -->
+  <div class="section" id="patho">
+    <div class="sec-head">
+      <div class="icon">🔬</div>
+      <div>
+        <h2>Pathophysiology</h2>
+        <div class="ar">الفيزيولوجيا المرضية</div>
+      </div>
+    </div>
+
+    <div class="bilingual" style="margin-bottom:1rem">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p>In DIC, the processes of <strong>coagulation and fibrinolysis are dysregulated</strong>, resulting in widespread clotting with resultant bleeding.</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p>في DIC، تختلّ عمليتا <strong>التخثر وتحلل الفيبرين</strong>، مما ينتج عنه تخثر واسع النطاق يُفضي إلى نزيف.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>📊 Step-by-Step Mechanism <span class="ar-title">آلية الحدوث</span></h3>
+      <div class="flow">
+        <div class="flow-box orange">Trigger (Sepsis / Tissue Injury / Endothelial Damage)<div class="ar">محفّز: الإنتان / إصابة نسيجية / تلف بطانة الأوعية</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Release of Tissue Factor → Excess Thrombin<div class="ar">إفراز عامل الأنسجة ← فرط الثرومبين</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box orange">Thrombin cleaves Fibrinogen → Fibrin clots<div class="ar">الثرومبين يكسر الفيبرينوجين ← جلطات الفيبرين</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Widespread Microvascular Thrombosis<div class="ar">تجلط الأوعية الدقيقة المنتشر</div></div>
+        <div class="flow-arrow">↓ ↓</div>
+        <div class="two-col" style="width:100%;max-width:680px">
+          <div class="flow-box red" style="max-width:100%">Consumption of clotting factors & platelets → Bleeding<div class="ar">استهلاك عوامل التخثر والصفائح ← نزيف</div></div>
+          <div class="flow-box red" style="max-width:100%">Vascular occlusion → Ischemic organ damage<div class="ar">انسداد الأوعية ← تلف إقفاري للأعضاء</div></div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box">Activation of Fibrinolysis (Plasmin) → FDPs/FSPs<div class="ar">تنشيط تحلل الفيبرين ← منتجات تحلل الفيبرين</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box red">Inhibition of thrombin & fibrin polymerization → MORE Bleeding<div class="ar">تثبيط الثرومبين وتجمّع الفيبرين ← مزيد من النزيف</div></div>
+      </div>
+    </div>
+
+    <div class="alert info">
+      <div class="alert-icon">🔑</div>
+      <div class="alert-body">
+        <strong>Key: In sepsis, pro-inflammatory cytokines (IL-6, TNF-α) drive coagulation activation AND impair fibrinolysis, leading to microvascular thrombosis.</strong>
+        <div class="ar">في الإنتان، السيتوكينات الالتهابية (IL-6، TNF-α) تُنشّط التخثر وتُعطّل تحلل الفيبرين في آنٍ واحد، مما يؤدي للتجلط الوعائي الدقيق.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SYMPTOMS ══════════════ -->
+  <div class="section" id="symptoms">
+    <div class="sec-head">
+      <div class="icon">🩺</div>
+      <div>
+        <h2>Signs & Symptoms</h2>
+        <div class="ar">العلامات والأعراض</div>
+      </div>
+    </div>
+
+    <div class="alert danger" style="margin-bottom:1.5rem">
+      <div class="alert-icon">⚡</div>
+      <div class="alert-body">
+        <strong>DIC presents a paradox: simultaneous CLOTTING and BLEEDING throughout the body.</strong>
+        <div class="ar">DIC حالة متناقضة: تخثر ونزيف في وقت واحد في جميع أنحاء الجسم</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card" style="border-top-color:var(--red)">
+        <h3>🩸 Bleeding Signs <span class="ar-title">علامات النزيف</span></h3>
+        <div class="steps" style="gap:0.6rem">
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--red); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Bleeding from multiple body sites</div><div class="step-ar">نزيف من مواضع متعددة بالجسم</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--red); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Bruising (purpura, petechiae)</div><div class="step-ar">كدمات (فرفرية، نمشات)</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--red); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Drop in blood pressure</div><div class="step-ar">انخفاض ضغط الدم</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--red); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Hematuria, hemoptysis</div><div class="step-ar">دم في البول أو البلغم</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="info-card" style="border-top-color:var(--accent)">
+        <h3>🫀 Thrombotic Signs <span class="ar-title">علامات التجلط</span></h3>
+        <div class="steps" style="gap:0.6rem">
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--accent); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Blood clots (DVT, PE)</div><div class="step-ar">جلطات دموية (وريدية، رئوية)</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--accent); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Shortness of breath</div><div class="step-ar">ضيق في التنفس</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--accent); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Confusion, memory loss</div><div class="step-ar">ارتباك وفقدان ذاكرة</div></div>
+          </div>
+          <div class="step" style="padding:0.7rem 1rem">
+            <div class="step-num" style="background:var(--accent); width:28px;height:28px;font-size:0.8rem">•</div>
+            <div class="step-body"><div class="step-en">Fever, oliguria, cyanosis</div><div class="step-ar">حمى، قلة التبول، زرقة</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ DIAGNOSIS ══════════════ -->
+  <div class="section" id="diagnosis">
+    <div class="sec-head">
+      <div class="icon">🧪</div>
+      <div>
+        <h2>Diagnosis</h2>
+        <div class="ar">التشخيص</div>
+      </div>
+    </div>
+
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label"><span class="dot"></span> English</div>
+        <p>The <strong>ISTH scoring algorithm</strong> (International Society of Thrombosis and Haemostasis) is <strong>91% sensitive and 97% specific</strong> for overt DIC. A score of <strong>≥5 = DIC confirmed</strong>; repeat daily. Score &lt;5: suggestive — repeat occasionally.</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label"><span class="dot"></span> العربية</div>
+        <p>خوارزمية تسجيل ISTH دقيقها <strong>91% حساسية و97% نوعية</strong>. درجة <strong>≥5 = تأكيد DIC</strong> وتُكرَّر يومياً. درجة &lt;5: مشتبه به فقط.</p>
+      </div>
+    </div>
+
+    <table class="lab-table">
+      <tr>
+        <th>Test / الاختبار</th>
+        <th>Finding in DIC / النتيجة</th>
+        <th>Score / الدرجة</th>
+        <th class="ar-cell">ملاحظة</th>
+      </tr>
+      <tr>
+        <td><strong>Platelet count</strong></td>
+        <td>Rapidly declining ↓</td>
+        <td>&gt;100k=0 / &lt;100k=1 / &lt;50k=2</td>
+        <td class="ar-cell">انخفاض سريع بالصفائح</td>
+      </tr>
+      <tr>
+        <td><strong>PT (Prothrombin Time)</strong></td>
+        <td>Prolonged &gt;15 sec</td>
+        <td>&lt;3s=0 / &gt;3s=1 / &gt;6s=2</td>
+        <td class="ar-cell">إطالة زمن البروثرومبين</td>
+      </tr>
+      <tr>
+        <td><strong>aPTT</strong></td>
+        <td>Prolonged &gt;60–90 sec</td>
+        <td>Abnormal</td>
+        <td class="ar-cell">إطالة وقت الثرومبوبلاستين</td>
+      </tr>
+      <tr>
+        <td><strong>D-Dimer / FDPs</strong></td>
+        <td>Markedly elevated ↑↑</td>
+        <td>No↑=0 / Mod=2 / Strong=3</td>
+        <td class="ar-cell">ارتفاع ملحوظ في D-دايمر</td>
+      </tr>
+      <tr>
+        <td><strong>Fibrinogen</strong></td>
+        <td>Low (if normal — seen in 57%)</td>
+        <td>&gt;1g/L=0 / &lt;1g/L=1</td>
+        <td class="ar-cell">قد يكون طبيعياً في 57% من الحالات</td>
+      </tr>
+      <tr>
+        <td><strong>Schistocytes (blood smear)</strong></td>
+        <td>Fragmented RBCs</td>
+        <td>Supportive only</td>
+        <td class="ar-cell">كريات دم حمراء مجزأة</td>
+      </tr>
+      <tr>
+        <td><strong>Underlying disorder present</strong></td>
+        <td>Yes</td>
+        <td>No=0 / Yes=2</td>
+        <td class="ar-cell">وجود مرض أساسي</td>
+      </tr>
+    </table>
+
+    <div class="alert success">
+      <div class="alert-icon">✅</div>
+      <div class="alert-body">
+        <strong>Additional monitoring: CBC, ABG, liver enzymes (ALT/AST), serum creatinine, imaging (CT/MRI/Ultrasound).</strong>
+        <div class="ar">مراقبة إضافية: صورة دم كاملة، غازات الدم، إنزيمات الكبد، كرياتينين، تصوير بالأشعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ TREATMENT ══════════════ -->
+  <div class="section" id="treatment">
+    <div class="sec-head">
+      <div class="icon">💊</div>
+      <div>
+        <h2>Treatment</h2>
+        <div class="ar">العلاج</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🎯 General Treatment Priorities <span class="ar-title">أولويات العلاج العامة</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en"><strong>Treat the underlying cause</strong> — antibiotics for infection, surgery/drainage for infected foci, immobilize fractures, evacuate uterus in obstetric DIC</div>
+            <div class="step-ar">علاج السبب الجذري — مضادات حيوية، تصريف بؤر العدوى، تجبير الكسور، إفراغ الرحم في DIC التوليدي</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en"><strong>Supportive care for MODS</strong> — Shock: fluids + catecholamines | Hypoxemia: O₂ / ventilation | Renal failure: diuretics / dialysis | Severe anemia: transfusion</div>
+            <div class="step-ar">دعم وظائف الأعضاء: الصدمة (سوائل + كاتيكولامينات)، نقص الأكسجين (أكسجين/تهوية)، الفشل الكلوي (مدرات/غسيل)، فقر الدم (نقل دم)</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en"><strong>Hemostatic therapy</strong></div>
+            <div class="step-ar">العلاج الإرقائي</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card" style="border-top-color:var(--primary)">
+        <h3>🩸 Blood Products <span class="ar-title">مشتقات الدم</span></h3>
+        <div class="tags" style="margin-bottom:0.8rem">
+          <span class="tag">FFP – بلازما طازجة مجمدة</span>
+          <span class="tag green">Platelets – صفائح دموية</span>
+          <span class="tag">RBCs – كريات حمراء</span>
+          <span class="tag">Cryoprecipitate – تخثر</span>
+        </div>
+        <p style="font-size:0.88rem;line-height:1.7;color:var(--muted)">FFP: given when bleeding — after antithrombin. Platelets: for severe thrombocytopenia + bleeding. RBCs: improve O₂ carrying capacity.</p>
+        <p style="font-family:'Cairo';direction:rtl;font-size:0.84rem;color:var(--muted);margin-top:6px">FFP: تُعطى عند النزيف بعد الأنثرومبين. صفائح: لنقص الصفائح الشديد مع نزيف. RBC: لتحسين حمل الأكسجين.</p>
+      </div>
+      <div class="info-card" style="border-top-color:var(--accent)">
+        <h3>💉 Antithrombotic Therapy <span class="ar-title">مضادات التخثر</span></h3>
+        <div class="alert info" style="margin-bottom:0.8rem">
+          <div class="alert-icon">ℹ️</div>
+          <div class="alert-body" style="font-size:0.88rem">
+            <strong>Heparin</strong> — used in milder cases when clotting &gt; bleeding. Blocks thrombin production. Augments antithrombin III.
+            <div class="ar" style="font-size:0.83rem">الهيبارين: في الحالات الأخف حيث التجلط أكثر من النزيف. يثبط إنتاج الثرومبين.</div>
+          </div>
+        </div>
+        <div class="alert danger" style="margin-bottom:0">
+          <div class="alert-icon">🚫</div>
+          <div class="alert-body" style="font-size:0.88rem">
+            <strong>Avoid antifibrinolytic therapy. Avoid heparin WITH antithrombin concentrate.</strong>
+            <div class="ar" style="font-size:0.83rem">تجنب مضادات تحلل الفيبرين. تجنب الهيبارين مع مركّز الأنثرومبين.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ NURSING ══════════════ -->
+  <div class="section" id="nursing">
+    <div class="sec-head">
+      <div class="icon">🏥</div>
+      <div>
+        <h2>Nursing Care Plans & Management</h2>
+        <div class="ar">خطط وإدارة الرعاية التمريضية</div>
+      </div>
+    </div>
+
+    <div class="alert info" style="margin-bottom:1.5rem">
+      <div class="alert-icon">🎯</div>
+      <div class="alert-body">
+        <strong>Three Nursing Priorities: (1) Minimizing bleeding risk | (2) Respiratory support | (3) Patient education</strong>
+        <div class="ar">ثلاثة أولويات تمريضية: (١) تقليل خطر النزيف | (٢) الدعم التنفسي | (٣) تثقيف المريض</div>
+      </div>
+    </div>
+
+    <!-- Priority 1 -->
+    <div class="info-card">
+      <h3>🫁 1. Promoting Effective Gas Exchange <span class="ar-title">تحسين تبادل الغازات</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Assess level of consciousness — early cerebral hypoxia: restlessness/irritability → later: confusion/somnolence</div>
+            <div class="step-ar">تقييم مستوى الوعي — نقص أكسجين مبكر: قلق وتهيج → متأخر: ارتباك وهبوط وعي</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Monitor O₂ saturation (keep ≥90%) and ABGs — rising PaCO₂ + falling PaO₂ = hypoxemia/respiratory acidosis</div>
+            <div class="step-ar">مراقبة تشبع الأكسجين (≥90%) وغازات الدم — ارتفاع PaCO₂ وانخفاض PaO₂ = حماض تنفسي</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">Position: high-Fowler's — promotes diaphragmatic excursion and optimal lung expansion</div>
+            <div class="step-ar">وضعية فاولر العالية — تُعزز حركة الحجاب الحاجز وتمدد الرئة</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-en">Reposition every 2 hours + chest physiotherapy (percussion, vibration) — facilitates secretion drainage</div>
+            <div class="step-ar">تغيير الوضعية كل ساعتين + علاج طبيعي للصدر — يُسهّل تصريف الإفرازات</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-en">Anticipate intubation & mechanical ventilation if deteriorating — early MV prevents decompensation</div>
+            <div class="step-ar">التهيؤ للتنبيب والتهوية الاصطناعية عند التدهور — التدخل المبكر يمنع التدهور الكامل</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <div class="step-en">Provide reassurance during respiratory distress — anxiety increases dyspnea and respiratory rate</div>
+            <div class="step-ar">تقديم الطمأنينة أثناء الكرب التنفسي — القلق يزيد ضيق التنفس وسرعته</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priority 2 -->
+    <div class="info-card">
+      <h3>🩸 2. Preventing Bleeding Risk & Injury <span class="ar-title">الوقاية من النزيف والإصابة</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Monitor HR and BP — tachycardia + hypotension = decreased cardiac output; orthostasis (&gt;15 mmHg drop) = reduced volume</div>
+            <div class="step-ar">مراقبة النبض والضغط — تسارع قلب وانخفاض ضغط = انخفاض ناتج القلب</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Examine skin for petechiae, purpura, hematomas, oozing from IV sites — prolonged oozing is the FIRST sign of DIC</div>
+            <div class="step-ar">فحص الجلد بحثاً عن نمشات وفرفرية وأورام دموية — التسرب المستمر من مواضع الوريد أول علامة</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">Avoid IM injections and unnecessary venipunctures — use oral/SC routes instead to minimize hematoma risk</div>
+            <div class="step-ar">تجنب الحقن العضلية والوخز الوريدي غير الضروري — استخدام الطريق الفموي أو تحت الجلد</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-en">Provide gentle oral care (saline rinses instead of toothbrushes) — prevents oral infection without bleeding risk</div>
+            <div class="step-ar">عناية فموية لطيفة (غسول ملحي بدل الفرشاة) — يمنع عدوى الفم دون خطر النزيف</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-en">Monitor coagulation labs: PT &gt;15s, PTT &gt;60–90s, low fibrinogen, high FSPs/D-dimer, thrombocytopenia</div>
+            <div class="step-ar">مراقبة مخبريات التخثر: PT أكثر من 15 ثانية، PTT أكثر من 60–90 ثانية، انخفاض فيبرينوجين، ارتفاع D-دايمر</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <div class="step-en">Administer blood products (RBCs, FFP, platelets, cryoprecipitate) and parenteral fluids as prescribed</div>
+            <div class="step-ar">إعطاء مشتقات الدم والسوائل الوريدية حسب الطلب الطبي</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priority 3 -->
+    <div class="info-card">
+      <h3>📚 3. Patient Education <span class="ar-title">تثقيف المريض</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-en">Assess the patient's knowledge of DIC and explain the underlying cause clearly</div>
+            <div class="step-ar">تقييم معرفة المريض بـ DIC وشرح السبب الأساسي بوضوح</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-en">Explain drug and transfusion therapy — treatment is complex and may be hard to understand in the acute setting</div>
+            <div class="step-ar">شرح العلاج الدوائي ونقل الدم — قد يكون معقداً في الحالات الحادة</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-en">Instruct patient/family to notify nurse of any new bleeding from wounds or IV sites immediately</div>
+            <div class="step-ar">توجيه المريض والأسرة للإبلاغ الفوري عن أي نزيف جديد من الجروح أو مواضع الوريد</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-en">Educate on self-monitoring and importance of follow-up appointments for active involvement in care</div>
+            <div class="step-ar">التثقيف بالمتابعة الذاتية وأهمية المواعيد للمشاركة الفعالة في الرعاية</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priority 4 Monitoring -->
+    <div class="info-card">
+      <h3>📊 4. Monitoring for Complications <span class="ar-title">مراقبة المضاعفات</span></h3>
+      <div class="two-col">
+        <div>
+          <div class="tags" style="flex-direction:column;gap:6px">
+            <div class="tag">Monitor vital signs regularly<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">مراقبة العلامات الحيوية باستمرار</span></div>
+            <div class="tag">Cardiac rhythm (ECG) monitoring<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">مراقبة إيقاع القلب (ECG)</span></div>
+            <div class="tag">Neurological status assessment<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">تقييم الحالة العصبية</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="tags" style="flex-direction:column;gap:6px">
+            <div class="tag">Respiratory status + O₂ sat<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">الحالة التنفسية وتشبع الأكسجين</span></div>
+            <div class="tag">Monitor medication side effects<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">مراقبة آثار الأدوية الجانبية</span></div>
+            <div class="tag">Collaborate with interdisciplinary team<br><span style="font-family:'Cairo';font-size:0.8rem;direction:rtl;display:block">التعاون مع الفريق متعدد التخصصات</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ QUIZ ══════════════ -->
+  <div class="section" id="quiz">
+    <div class="sec-head">
+      <div class="icon">📝</div>
+      <div>
+        <h2>Self-Assessment Quiz</h2>
+        <div class="ar">اختبر نفسك — 20 سؤال</div>
+      </div>
+    </div>
+
+    <div class="quiz-score-bar">
+      <h3>Your Score / نتيجتك</h3>
+      <div class="score-num" id="score-display">0 / 20</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-top:0.5rem">Answer all questions to see your final score. / أجب على جميع الأسئلة لترى نتيجتك النهائية.</p>
+    </div>
+
+    <div class="quiz-container" id="quiz-container"></div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+// ── Tab switching ──
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const map = {intro:0,causes:1,patho:2,symptoms:3,diagnosis:4,treatment:5,nursing:6,quiz:7};
+  tabs[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Quiz Data ──
+const questions = [
+  {
+    q: "What is DIC?",
+    qAr: "ما هو DIC؟",
+    options: [
+      { en:"A primary disease of the bone marrow", ar:"مرض أولي في نخاع العظم" },
+      { en:"A condition where blood clots form throughout the body, blocking small vessels", ar:"حالة تتكوّن فيها جلطات دموية في الجسم تسدّ الأوعية الصغيرة" },
+      { en:"A type of anemia", ar:"نوع من فقر الدم" },
+      { en:"A liver disorder causing portal hypertension", ar:"اضطراب كبدي يسبب ارتفاع ضغط البوابة" }
+    ],
+    correct: 1,
+    explanation: "DIC is defined as a condition where blood clots form throughout the body, blocking small blood vessels. It is NOT a primary disease.",
+    explanationAr: "DIC هو حالة تتكوّن فيها جلطات في الجسم تسدّ الأوعية الصغيرة. وهو ليس مرضاً أوّلياً."
+  },
+  {
+    q: "Which pathway is triggered by endothelial cell damage from sepsis?",
+    qAr: "أي مسار يُحفَّز بتلف الخلايا البطانية من الإنتان؟",
+    options: [
+      { en:"Extrinsic pathway", ar:"المسار الخارجي" },
+      { en:"Intrinsic pathway", ar:"المسار الداخلي" },
+      { en:"Fibrinolytic pathway", ar:"مسار تحلل الفيبرين" },
+      { en:"Complement pathway", ar:"مسار المتممة" }
+    ],
+    correct: 1,
+    explanation: "The INTRINSIC pathway is triggered by endothelial cell damage, commonly from sepsis or infection.",
+    explanationAr: "المسار الداخلي (Intrinsic) يُحفَّز بتلف الخلايا البطانية، وغالباً من الإنتان أو العدوى."
+  },
+  {
+    q: "Which of the following is NOT a factor that accelerates DIC?",
+    qAr: "أيٌّ من التالي ليس عاملاً يُسرّع DIC؟",
+    options: [
+      { en:"Shock", ar:"الصدمة" },
+      { en:"Hyperthermia", ar:"ارتفاع الحرارة" },
+      { en:"Hyperventilation alone", ar:"فرط التنفس وحده" },
+      { en:"Acidosis", ar:"الحماض" }
+    ],
+    correct: 2,
+    explanation: "The factors accelerating DIC are: Shock, Acidosis, Hypoxemia, Stasis, Dehydration, and Hyperthermia. Hyperventilation alone is not listed.",
+    explanationAr: "عوامل تسريع DIC هي: الصدمة، الحماض، نقص الأكسجين، الركود، الجفاف، ارتفاع الحرارة. فرط التنفس وحده ليس من بينها."
+  },
+  {
+    q: "Acute promyelocytic leukemia (APL) is a major cause of DIC. True or False?",
+    qAr: "سرطان الدم النقيوي الحاد (APL) من الأسباب الرئيسية لـ DIC؟",
+    options: [
+      { en:"True", ar:"صحيح" },
+      { en:"False", ar:"خطأ" },
+      { en:"Only in children", ar:"فقط عند الأطفال" },
+      { en:"Only in elderly patients", ar:"فقط عند كبار السن" }
+    ],
+    correct: 0,
+    explanation: "TRUE. Cancer — particularly ACUTE PROMYELOCYTIC LEUKEMIA — is a well-known cause of DIC.",
+    explanationAr: "صحيح. السرطان — خاصةً ابيضاض الدم النقيوي الحاد — من الأسباب المعروفة لـ DIC."
+  },
+  {
+    q: "Which lab finding is MOST characteristic of DIC?",
+    qAr: "أي نتيجة مخبرية الأكثر تميزاً في DIC؟",
+    options: [
+      { en:"Elevated hemoglobin", ar:"ارتفاع الهيموغلوبين" },
+      { en:"Elevated D-dimer with prolonged PT/aPTT and thrombocytopenia", ar:"ارتفاع D-دايمر مع إطالة PT/aPTT ونقص صفائح" },
+      { en:"Normal fibrinogen level only", ar:"مستوى فيبرينوجين طبيعي فقط" },
+      { en:"Low white blood cell count", ar:"انخفاض عدد كريات الدم البيضاء" }
+    ],
+    correct: 1,
+    explanation: "The classic DIC lab profile: elevated D-dimer/FSPs, prolonged PT (>15s) and aPTT (>60-90s), thrombocytopenia, and low fibrinogen.",
+    explanationAr: "الصورة المخبرية الكلاسيكية لـ DIC: ارتفاع D-دايمر، إطالة PT وaPTT، نقص صفائح، انخفاض الفيبرينوجين."
+  },
+  {
+    q: "According to the ISTH scoring system, what score confirms overt DIC?",
+    qAr: "وفق نظام تسجيل ISTH، أي درجة تؤكد DIC؟",
+    options: [
+      { en:"≥3", ar:"≥3" },
+      { en:"≥5", ar:"≥5" },
+      { en:"≥7", ar:"≥7" },
+      { en:"≥10", ar:"≥10" }
+    ],
+    correct: 1,
+    explanation: "A score of ≥5 is compatible with overt DIC and should be repeated daily. Score <5 is suggestive but not confirmed.",
+    explanationAr: "درجة ≥5 تؤكد DIC وتُكرَّر يومياً. درجة أقل من 5 مشتبه به فقط."
+  },
+  {
+    q: "What does excess thrombin do in DIC?",
+    qAr: "ماذا يفعل الثرومبين الزائد في DIC؟",
+    options: [
+      { en:"Activates fibrinolysis only", ar:"يُنشّط تحلل الفيبرين فقط" },
+      { en:"Cleaves fibrinogen to form fibrin clots, leading to microvascular thrombosis", ar:"يكسر الفيبرينوجين لتكوين جلطات الفيبرين → تجلط وعائي دقيق" },
+      { en:"Dissolves existing clots", ar:"يذيب الجلطات الموجودة" },
+      { en:"Stimulates platelet production", ar:"يُحفّز إنتاج الصفائح الدموية" }
+    ],
+    correct: 1,
+    explanation: "Excess thrombin cleaves fibrinogen → fibrin clots → these trap platelets → larger clots → microvascular and macrovascular thrombosis → ischemia/organ damage.",
+    explanationAr: "الثرومبين الزائد يكسر الفيبرينوجين → جلطات فيبرين → تحبس الصفائح → جلطات أكبر → تجلط وعائي → إقفار وتلف الأعضاء."
+  },
+  {
+    q: "Which obstetric complication is a recognized cause of DIC?",
+    qAr: "أي مضاعفة توليدية سبب معروف لـ DIC؟",
+    options: [
+      { en:"Hyperemesis gravidarum", ar:"القيء المفرط في الحمل" },
+      { en:"Abruptio placentae", ar:"انفصال المشيمة المبكر" },
+      { en:"Gestational diabetes", ar:"سكري الحمل" },
+      { en:"Iron deficiency anemia", ar:"فقر الدم بسبب نقص الحديد" }
+    ],
+    correct: 1,
+    explanation: "Obstetric complications causing DIC include: abruptio placentae, preeclampsia/eclampsia, postpartum hemorrhage, and intrauterine fetal death.",
+    explanationAr: "مضاعفات الحمل المسببة لـ DIC: انفصال المشيمة، تسمم الحمل، النزيف بعد الولادة، ووفاة الجنين داخل الرحم."
+  },
+  {
+    q: "What is the FIRST clinical sign that DIC is developing from IV/injection sites?",
+    qAr: "ما هي أولى العلامات السريرية على تطور DIC من مواضع الحقن الوريدي؟",
+    options: [
+      { en:"Acute renal failure", ar:"الفشل الكلوي الحاد" },
+      { en:"Prolonged oozing of blood from injection or venipuncture sites", ar:"تسرب دم مستمر من مواضع الحقن والوريد" },
+      { en:"Sudden loss of vision", ar:"فقدان مفاجئ للبصر" },
+      { en:"High fever above 40°C", ar:"حمى شديدة فوق 40 درجة" }
+    ],
+    correct: 1,
+    explanation: "Prolonged oozing from injection sites or venipuncture sites is often the FIRST indication of DIC.",
+    explanationAr: "التسرب المستمر للدم من مواضع الحقن أو الوريد هو غالباً أولى علامات DIC."
+  },
+  {
+    q: "Why should intramuscular (IM) injections be avoided in DIC patients?",
+    qAr: "لماذا يجب تجنب الحقن العضلية في مرضى DIC؟",
+    options: [
+      { en:"They are painful and slow to absorb", ar:"مؤلمة وبطيئة الامتصاص" },
+      { en:"They can cause bleeding or hematoma formation, worsening clotting and organ damage", ar:"قد تسبب نزيفاً أو أورام دموية تزيد التجلط وتلف الأعضاء" },
+      { en:"They interfere with antibiotic absorption", ar:"تتداخل مع امتصاص المضادات الحيوية" },
+      { en:"They cause allergic reactions", ar:"تسبب تفاعلات تحسسية" }
+    ],
+    correct: 1,
+    explanation: "IM injections can cause bleeding or hematoma formation in DIC patients, leading to further clotting and organ damage. Use oral or SC routes instead.",
+    explanationAr: "الحقن العضلية قد تسبب نزيفاً وأورام دموية في مرضى DIC تزيد التجلط وتلف الأعضاء. يُفضَّل الطريق الفموي أو تحت الجلد."
+  },
+  {
+    q: "What is the target oxygen saturation in DIC nursing management?",
+    qAr: "ما هو الهدف المطلوب لتشبع الأكسجين في إدارة DIC التمريضية؟",
+    options: [
+      { en:"≥70%", ar:"≥70%" },
+      { en:"≥80%", ar:"≥80%" },
+      { en:"≥90%", ar:"≥90%" },
+      { en:"≥95% only in neonates", ar:"≥95% فقط في الأطفال حديثي الولادة" }
+    ],
+    correct: 2,
+    explanation: "Oxygen saturation should be maintained at ≥90% in DIC patients. Pulse oximetry is used to detect early changes.",
+    explanationAr: "يجب الحفاظ على تشبع الأكسجين ≥90% في مرضى DIC. يُستخدم مقياس النبض للكشف المبكر."
+  },
+  {
+    q: "What does heparin do in DIC treatment?",
+    qAr: "ماذا يفعل الهيبارين في علاج DIC؟",
+    options: [
+      { en:"Directly dissolves existing clots", ar:"يذيب الجلطات الموجودة مباشرة" },
+      { en:"Blocks thrombin production and inhibits factor X, slowing clot formation", ar:"يثبط إنتاج الثرومبين ويثبط العامل X مما يُبطئ تكوين الجلطات" },
+      { en:"Replaces consumed clotting factors", ar:"يعوض عوامل التخثر المستهلكة" },
+      { en:"Increases platelet production", ar:"يزيد إنتاج الصفائح الدموية" }
+    ],
+    correct: 1,
+    explanation: "Heparin augments antithrombin III activity, blocking thrombin production and inhibiting factor X (intrinsic and extrinsic pathways), slowing clot formation.",
+    explanationAr: "الهيبارين يعزز نشاط الأنثرومبين III، يثبط إنتاج الثرومبين والعامل X (المسارين الداخلي والخارجي)، يُبطئ تكوين الجلطات."
+  },
+  {
+    q: "In the ISTH scoring system, a platelet count <50,000 scores how many points?",
+    qAr: "في نظام تسجيل ISTH، كم درجة يُعطى عدد صفائح أقل من 50,000؟",
+    options: [
+      { en:"0 points", ar:"0 درجات" },
+      { en:"1 point", ar:"درجة واحدة" },
+      { en:"2 points", ar:"درجتان" },
+      { en:"3 points", ar:"3 درجات" }
+    ],
+    correct: 2,
+    explanation: "ISTH platelet scoring: >100k = 0 points, <100k = 1 point, <50k = 2 points.",
+    explanationAr: "تسجيل صفائح ISTH: أكثر من 100 ألف = 0، أقل من 100 ألف = 1، أقل من 50 ألف = 2 درجات."
+  },
+  {
+    q: "Which blood product is used to REPLACE clotting factors and inhibitors in DIC?",
+    qAr: "أي مشتق دموي يُستخدم لتعويض عوامل التخثر والمثبطات في DIC؟",
+    options: [
+      { en:"Packed RBCs", ar:"كريات حمراء معبأة" },
+      { en:"Fresh Frozen Plasma (FFP)", ar:"البلازما الطازجة المجمدة (FFP)" },
+      { en:"Albumin infusion", ar:"ضخ الألبومين" },
+      { en:"Normal saline", ar:"محلول ملحي طبيعي" }
+    ],
+    correct: 1,
+    explanation: "FFP (Fresh Frozen Plasma) replaces clotting factors and inhibitors. RBCs improve O₂ capacity; platelets and cryoprecipitate provide proteins for coagulation.",
+    explanationAr: "FFP تعوض عوامل التخثر والمثبطات. RBC تحسن حمل الأكسجين؛ الصفائح والكريوبريسيبيتيت توفر بروتينات التخثر."
+  },
+  {
+    q: "Hematuria (blood in urine) in DIC is primarily caused by:",
+    qAr: "دم البول (البيلة الدموية) في DIC يحدث أساساً بسبب:",
+    options: [
+      { en:"High blood pressure damaging kidney filtration", ar:"ارتفاع ضغط الدم يتلف الترشيح الكلوي" },
+      { en:"Decreased kidney perfusion due to tissue injury and clotted capillary beds", ar:"انخفاض تروية الكلى بسبب إصابة الأنسجة وتجلط الشعيرات الدموية" },
+      { en:"Antibiotic nephrotoxicity", ar:"سمية الأنثيبيوتيك للكلى" },
+      { en:"Excess IV fluid administration", ar:"إفراط في إعطاء السوائل الوريدية" }
+    ],
+    correct: 1,
+    explanation: "Hematuria and oliguria occur due to DECREASED perfusion to the kidneys as a result of tissue injury and clotted capillary beds.",
+    explanationAr: "دم البول وقلة التبول تحدث بسبب انخفاض تروية الكلى نتيجة إصابة الأنسجة وتجلط الشعيرات الدموية."
+  },
+  {
+    q: "Why is anxiety particularly harmful in DIC patients with respiratory distress?",
+    qAr: "لماذا يُعدّ القلق ضاراً بشكل خاص في مرضى DIC مع الكرب التنفسي؟",
+    options: [
+      { en:"Anxiety reduces platelet count", ar:"القلق يخفض عدد الصفائح" },
+      { en:"Anxiety increases dyspnea, work of breathing, and respiratory rate", ar:"القلق يزيد ضيق التنفس وجهد التنفس وسرعته" },
+      { en:"Anxiety triggers coagulation cascade", ar:"القلق يُطلق سلسلة التخثر" },
+      { en:"Anxiety prevents IV access", ar:"القلق يمنع الوصول الوريدي" }
+    ],
+    correct: 1,
+    explanation: "Anxiety increases dyspnea, the work of breathing, and the respiratory rate — worsening oxygenation. Nurses should provide reassurance during acute distress.",
+    explanationAr: "القلق يزيد ضيق التنفس وجهد وسرعة التنفس — يُفاقم نقص الأكسجين. يجب على الممرض تقديم الطمأنينة."
+  },
+  {
+    q: "What does D-dimer test measure in DIC?",
+    qAr: "ماذا يقيس اختبار D-دايمر في DIC؟",
+    options: [
+      { en:"Platelet aggregation speed", ar:"سرعة تجميع الصفائح" },
+      { en:"A protein resulting from clot breakdown — elevated due to intense fibrinolysis", ar:"بروتين ناتج عن تحلل الجلطة — يرتفع بسبب التحلل الليفي الشديد" },
+      { en:"Kidney filtration rate", ar:"معدل ترشيح الكلى" },
+      { en:"Liver synthetic function", ar:"وظيفة تخليق الكبد" }
+    ],
+    correct: 1,
+    explanation: "D-dimer detects a protein resulting from clot breakdown. It is often MARKEDLY elevated in DIC due to intense fibrinolytic activity stimulated by fibrin in circulation.",
+    explanationAr: "D-دايمر يكشف البروتين الناتج عن تحلل الجلطة. يرتفع بشكل ملحوظ في DIC بسبب النشاط الليفي الشديد المحفَّز بوجود الفيبرين في الدم."
+  },
+  {
+    q: "Which of the following is a LATE sign of cerebral hypoxia in DIC?",
+    qAr: "أيٌّ من التالي علامة متأخرة لنقص أكسجين الدماغ في DIC؟",
+    options: [
+      { en:"Restlessness and irritability", ar:"قلق وتهيج" },
+      { en:"Mild headache", ar:"صداع خفيف" },
+      { en:"Confusion and somnolence", ar:"ارتباك وهبوط وعي (النعاس)" },
+      { en:"Tachycardia alone", ar:"تسارع قلب وحده" }
+    ],
+    correct: 2,
+    explanation: "EARLY signs of cerebral hypoxia: restlessness and irritability. LATE signs: confusion and somnolence (drowsiness).",
+    explanationAr: "العلامات المبكرة لنقص أكسجين الدماغ: قلق وتهيج. العلامات المتأخرة: ارتباك وهبوط وعي."
+  },
+  {
+    q: "What condition mimics DIC but originates via a different pathway?",
+    qAr: "أي حالة تُشبه DIC لكن تنشأ عبر مسار مختلف؟",
+    options: [
+      { en:"Aplastic anemia", ar:"فقر الدم اللاتنسجي" },
+      { en:"HELLP syndrome", ar:"متلازمة HELLP" },
+      { en:"Iron deficiency anemia", ar:"فقر الدم بنقص الحديد" },
+      { en:"Vitamin K deficiency", ar:"نقص فيتامين K" }
+    ],
+    correct: 1,
+    explanation: "HELLP syndrome (Hemolysis, Elevated Liver enzymes, Low Platelets), TTP, HUS, and malignant hypertension can MIMIC DIC but originate via different pathways.",
+    explanationAr: "متلازمة HELLP، فرفرية نقص الصفيحات الخثارية (TTP)، متلازمة انحلال الدم والبول، وارتفاع الضغط الخبيث تُشبه DIC لكن تختلف آلياً."
+  },
+  {
+    q: "In high-Fowler's position (sitting upright), what is the primary nursing benefit?",
+    qAr: "في وضعية فاولر العالية (جلوس مستقيم)، ما هي الفائدة التمريضية الأساسية؟",
+    options: [
+      { en:"Prevents pressure ulcers", ar:"يمنع قرح الضغط" },
+      { en:"Allows adequate diaphragmatic excursion and promotes optimal lung expansion", ar:"يتيح حركة كافية للحجاب الحاجز ويُعزز تمدد الرئة الأمثل" },
+      { en:"Reduces cardiac preload", ar:"يقلل التحميل المسبق للقلب" },
+      { en:"Improves kidney perfusion", ar:"يُحسّن تروية الكلى" }
+    ],
+    correct: 1,
+    explanation: "High-Fowler's position allows for adequate diaphragmatic and lung excursion and promotes optimal lung expansion, improving gas exchange.",
+    explanationAr: "وضعية فاولر العالية تتيح حركة الحجاب الحاجز وتمدد الرئة الأمثل، مما يُحسّن تبادل الغازات."
+  }
+];
+
+let scores = new Array(questions.length).fill(null);
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  questions.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="quiz-q"><span class="quiz-q-num">Q${i+1}.</span> ${q.q}</div>
+      <div class="quiz-q-ar">${q.qAr}</div>
+      <div class="quiz-options" id="opts-${i}">
+        ${q.options.map((o,j) => `
+          <div class="quiz-option" onclick="selectAnswer(${i},${j})" id="opt-${i}-${j}">
+            <span style="font-weight:700;color:var(--primary);flex-shrink:0">${String.fromCharCode(65+j)}.</span>
+            <div>
+              <div>${o.en}</div>
+              <span class="opt-ar">${o.ar}</span>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="quiz-feedback" id="feedback-${i}">
+        <div id="feedback-text-${i}"></div>
+        <div class="ar" id="feedback-ar-${i}"></div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function selectAnswer(qi, selected) {
+  if (scores[qi] !== null) return;
+  const correct = questions[qi].correct;
+  scores[qi] = selected === correct ? 1 : 0;
+
+  const opts = document.querySelectorAll(`#opts-${qi} .quiz-option`);
+  opts.forEach((o,j) => {
+    o.classList.add('disabled');
+    if (j === correct) o.classList.add('correct');
+    if (j === selected && selected !== correct) o.classList.add('wrong');
+  });
+
+  const fb = document.getElementById(`feedback-${qi}`);
+  const fbt = document.getElementById(`feedback-text-${qi}`);
+  const fbar = document.getElementById(`feedback-ar-${qi}`);
+  fb.classList.add('show');
+  if (selected === correct) {
+    fb.classList.add('correct');
+    fbt.textContent = '✅ Correct! ' + questions[qi].explanation;
+  } else {
+    fb.classList.add('wrong');
+    fbt.textContent = '❌ Incorrect. ' + questions[qi].explanation;
+  }
+  fbar.textContent = questions[qi].explanationAr;
+  updateScore();
+}
+
+function updateScore() {
+  const answered = scores.filter(s => s !== null).length;
+  const correct = scores.filter(s => s === 1).length;
+  document.getElementById('score-display').textContent = `${correct} / ${questions.length}`;
+  const pct = (correct / questions.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

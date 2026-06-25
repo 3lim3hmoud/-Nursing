@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypertensive Crisis — أزمة ارتفاع ضغط الدم</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4f1;
+    --surface: #ffffff;
+    --surface2: #f0ecE8;
+    --accent: #b03a2e;
+    --accent2: #1a5276;
+    --accent3: #117a65;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --border: #ddd8d0;
+    --en-bg: #fdf0ee;
+    --ar-bg: #eaf2fb;
+    --correct: #1e8449;
+    --wrong: #a93226;
+    --shadow: 0 2px 18px rgba(0,0,0,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #7b241c 0%, #b03a2e 50%, #c0392b 100%);
+    color: white; padding: 2.5rem 2rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h20v-9.5zm-2 4.5H7v-4h11v4zm2-10V0H0v10h2V2h16v5H0v3h20zm0 10h18V20H20v5zM0 0h20v18H0V0zm2 16h16V2H2v14z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  header h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px; position: relative; }
+  header h1 span.ar { font-family: 'Cairo', sans-serif; font-size: 1.5rem; font-weight: 600; display: block; opacity: 0.85; margin-top: 0.3rem; }
+  header p { margin-top: 0.6rem; opacity: 0.75; font-size: 0.9rem; font-style: italic; position: relative; }
+
+  /* TABS */
+  .tab-bar {
+    background: var(--surface); border-bottom: 2px solid var(--border);
+    display: flex; overflow-x: auto; padding: 0 1rem; gap: 0;
+    position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tab-bar::-webkit-scrollbar { height: 3px; }
+  .tab-bar::-webkit-scrollbar-thumb { background: var(--accent); }
+  .tab-btn {
+    padding: 0.85rem 1.15rem; border: none; background: none; cursor: pointer;
+    font-family: 'Source Serif 4', serif; font-size: 0.82rem; font-weight: 600;
+    color: var(--text-light); white-space: nowrap; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .tab-btn .ar-label { font-family: 'Cairo', sans-serif; font-size: 0.7rem; font-weight: 400; opacity: 0.7; }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-btn.quiz-tab.active { color: var(--accent2); border-bottom-color: var(--accent2); }
+
+  /* CONTENT */
+  .tab-content { display: none; padding: 2rem 1.5rem; max-width: 980px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* BILINGUAL CARD */
+  .bi-card { background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+  .bi-card-header { background: var(--accent); color: white; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+  .bi-card-header.blue { background: var(--accent2); }
+  .bi-card-header.green { background: var(--accent3); }
+  .bi-card-header .en-title { font-size: 1rem; font-weight: 600; }
+  .bi-card-header .ar-title { font-family: 'Cairo', sans-serif; font-size: 0.95rem; font-weight: 600; direction: rtl; }
+  .bi-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .bi-en, .bi-ar { padding: 1.25rem 1.5rem; line-height: 1.8; font-size: 0.93rem; }
+  .bi-en { background: var(--en-bg); border-right: 1px solid var(--border); }
+  .bi-ar { background: var(--ar-bg); font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; }
+  .bi-en ul, .bi-ar ul, .bi-en ol, .bi-ar ol { padding-right: 1.2rem; padding-left: 1.2rem; }
+  .bi-en li, .bi-ar li { margin-bottom: 0.35rem; }
+  .label-en { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+  .label-ar { font-size: 0.7rem; font-weight: 700; color: var(--accent2); margin-bottom: 0.5rem; display: block; font-family: 'Cairo', sans-serif; }
+
+  /* HERO */
+  .def-hero {
+    background: linear-gradient(135deg, #7b241c 0%, #b03a2e 100%);
+    color: white; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; text-align: center; box-shadow: var(--shadow);
+  }
+  .def-hero p { font-size: 1.05rem; line-height: 1.8; max-width: 720px; margin: 0 auto 1rem; }
+  .def-hero p.ar { font-family: 'Cairo', sans-serif; direction: rtl; opacity: 0.9; font-size: 1rem; }
+
+  /* COMPARISON TABLE */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .compare-table th { padding: 0.7rem 1rem; text-align: left; font-weight: 600; }
+  .compare-table th:first-child { background: #2c3e50; color: white; }
+  .compare-table th.emergency { background: var(--accent); color: white; }
+  .compare-table th.urgency { background: var(--accent2); color: white; }
+  .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: var(--surface2); }
+  .compare-table .row-header { font-weight: 600; background: #f5f0eb !important; }
+  .compare-table .ar-cell { font-family: 'Cairo', sans-serif; direction: rtl; font-size: 0.8rem; color: var(--text-light); display: block; margin-top: 2px; }
+
+  /* PATHWAY */
+  .pathway { display: flex; flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
+  .pathway-step {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-bottom: 0.5rem; position: relative;
+  }
+  .pathway-step::after { content: '↓'; position: absolute; bottom: -1.1rem; left: 50%; transform: translateX(-50%); font-size: 1.2rem; color: var(--accent); z-index: 2; }
+  .pathway-step:last-child::after { display: none; }
+  .pathway-step .step-en { font-size: 0.9rem; }
+  .pathway-step .step-ar { font-family: 'Cairo', sans-serif; font-size: 0.9rem; direction: rtl; text-align: right; }
+
+  /* WARN BOX */
+  .warn-box { background: #fdf2f8; border-left: 4px solid var(--accent); border-radius: 6px; padding: 0.9rem 1.2rem; margin-top: 0.8rem; font-size: 0.87rem; }
+  .warn-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.84rem; color: var(--text-light); }
+  .info-box { background: #eaf4fb; border-left: 4px solid var(--accent2); border-radius: 6px; padding: 0.9rem 1.2rem; margin-top: 0.8rem; font-size: 0.87rem; }
+  .info-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.84rem; color: var(--text-light); }
+
+  /* NURSING LIST */
+  .nursing-list { list-style: none; padding: 0; }
+  .nursing-list li { padding: 0.4rem 0 0.4rem 1.4rem; position: relative; border-bottom: 1px dashed var(--border); font-size: 0.9rem; }
+  .nursing-list li:last-child { border-bottom: none; }
+  .nursing-list li::before { content: '◆'; position: absolute; left: 0; color: var(--accent); font-size: 0.6rem; top: 0.6rem; }
+
+  /* DRUG TABLE */
+  .drug-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .drug-table th { background: var(--accent2); color: white; padding: 0.7rem 1rem; text-align: left; font-weight: 600; }
+  .drug-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .drug-table tr:nth-child(even) td { background: var(--surface2); }
+  .drug-table .ar-cell { font-family: 'Cairo', sans-serif; direction: rtl; font-size: 0.78rem; color: var(--text-light); display: block; margin-top: 2px; }
+
+  /* QUIZ */
+  .quiz-header { background: linear-gradient(135deg, #1a5276, #2980b9); color: white; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; text-align: center; }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+  .quiz-header p { font-family: 'Cairo', sans-serif; opacity: 0.85; margin-top: 0.3rem; }
+  .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1.2rem; overflow: hidden; box-shadow: var(--shadow); }
+  .q-num { background: var(--accent2); color: white; padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 700; }
+  .q-body { padding: 1.2rem 1.5rem; }
+  .q-text { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.6; }
+  .q-text-ar { font-family: 'Cairo', sans-serif; font-size: 0.88rem; color: var(--text-light); direction: rtl; text-align: right; margin-bottom: 0.9rem; line-height: 1.7; }
+  .options { display: flex; flex-direction: column; gap: 0.5rem; }
+  .opt-btn { display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.65rem 1rem; border: 1.5px solid var(--border); border-radius: 8px; background: var(--surface); cursor: pointer; text-align: left; font-family: 'Source Serif 4', serif; font-size: 0.88rem; transition: all 0.15s; line-height: 1.5; }
+  .opt-btn:hover:not(:disabled) { border-color: var(--accent2); background: #eaf2fb; }
+  .opt-btn.correct { border-color: var(--correct); background: #e9f7ef; color: var(--correct); }
+  .opt-btn.wrong { border-color: var(--wrong); background: #fde8e8; color: var(--wrong); }
+  .opt-btn:disabled { cursor: default; }
+  .opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .opt-btn.correct .opt-letter { background: var(--correct); color: white; }
+  .opt-btn.wrong .opt-letter { background: var(--wrong); color: white; }
+  .explanation { display: none; margin-top: 0.9rem; padding: 0.8rem 1rem; border-radius: 8px; background: #e9f7ef; border-left: 4px solid var(--correct); font-size: 0.85rem; color: #145a32; line-height: 1.7; }
+  .explanation.show { display: block; }
+  .explanation .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.82rem; }
+  .score-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1.5rem; box-shadow: var(--shadow); }
+  .score-circle { width: 70px; height: 70px; border-radius: 50%; background: conic-gradient(var(--accent2) 0deg, var(--surface2) 0deg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.5s; }
+  .score-inner { width: 56px; height: 56px; background: var(--surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; color: var(--accent2); }
+  .score-text { flex: 1; }
+  .score-text h3 { font-size: 1rem; margin-bottom: 0.2rem; }
+  .score-text p { font-size: 0.83rem; color: var(--text-light); font-family: 'Cairo', sans-serif; direction: rtl; }
+  .reset-btn { padding: 0.55rem 1.2rem; background: var(--accent2); color: white; border: none; border-radius: 7px; cursor: pointer; font-size: 0.83rem; font-weight: 600; font-family: 'Source Serif 4', serif; transition: opacity 0.2s; }
+  .reset-btn:hover { opacity: 0.85; }
+
+  @media(max-width:650px) {
+    .bi-card-body { grid-template-columns: 1fr; }
+    .bi-en { border-right: none; border-bottom: 1px solid var(--border); }
+    header h1 { font-size: 1.6rem; }
+    .tab-content { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hypertensive Crisis <span class="ar">أزمة ارتفاع ضغط الدم</span></h1>
+  <p>Prepared by: Dr. Ghada Elsayed</p>
+</header>
+
+<nav class="tab-bar" role="tablist">
+  <button class="tab-btn active" onclick="showTab('intro')">Introduction <span class="ar-label">مقدمة</span></button>
+  <button class="tab-btn" onclick="showTab('definition')">Definition & Types <span class="ar-label">التعريف والأنواع</span></button>
+  <button class="tab-btn" onclick="showTab('patho')">Pathophysiology <span class="ar-label">الفيزيولوجيا المرضية</span></button>
+  <button class="tab-btn" onclick="showTab('clinical')">Clinical Manifestations <span class="ar-label">المظاهر السريرية</span></button>
+  <button class="tab-btn" onclick="showTab('treatment')">Treatment <span class="ar-label">العلاج</span></button>
+  <button class="tab-btn" onclick="showTab('management')">Nursing Management <span class="ar-label">الإدارة التمريضية</span></button>
+  <button class="tab-btn" onclick="showTab('education')">Patient Education <span class="ar-label">تثقيف المريض</span></button>
+  <button class="tab-btn quiz-tab" onclick="showTab('quiz')">🎯 Self-Test Quiz <span class="ar-label">اختبر نفسك</span></button>
+</nav>
+
+<!-- ═══════════════════ INTRO ═══════════════════ -->
+<section id="tab-intro" class="tab-content active">
+  <div class="def-hero">
+    <p><strong>Hypertensive crisis</strong> is a severe increase in blood pressure that can lead to stroke. It occurs in less than 1% of the 60 million people with hypertension. If left untreated, hypertension causes vascular changes resulting in stroke, blindness, and renal failure.</p>
+    <p class="ar"><strong>أزمة ارتفاع ضغط الدم</strong> هي ارتفاع حاد وشديد في ضغط الدم يمكن أن يؤدي إلى السكتة الدماغية. تحدث في أقل من 1% من مرضى ارتفاع ضغط الدم. إذا لم تُعالَج، تُسبّب تغيرات وعائية تؤدي إلى السكتة، العمى، والفشل الكلوي.</p>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Risk Factors for Hypertension</span>
+      <span class="ar-title">عوامل خطر ارتفاع ضغط الدم</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Predisposing Factors</span>
+        <ul>
+          <li>Primary hypertension: often unknown cause</li>
+          <li>Commonly diagnosed in men aged <strong>30–50 years</strong></li>
+          <li><strong>Obesity</strong></li>
+          <li><strong>Smoking</strong></li>
+          <li>Excessive sodium intake</li>
+          <li>Elevated serum lipids</li>
+          <li>Alcohol intake</li>
+          <li>Stress → increased sympathetic nervous system activity</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">العوامل المُهيِّئة</span>
+        <ul>
+          <li>ارتفاع ضغط الدم الأولي: غالبًا سبب مجهول</li>
+          <li>يُشخَّص عادةً في الرجال بين <strong>30-50 عامًا</strong></li>
+          <li><strong>السمنة</strong></li>
+          <li><strong>التدخين</strong></li>
+          <li>الإفراط في تناول الملح</li>
+          <li>ارتفاع دهون الدم</li>
+          <li>تناول الكحول</li>
+          <li>الضغط النفسي → زيادة نشاط الجهاز العصبي الودي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ DEFINITION & TYPES ═══════════════════ -->
+<section id="tab-definition" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Definition</span>
+      <span class="ar-title">التعريف</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p>Hypertensive crisis is a <strong>severe increase in blood pressure</strong> that can lead to stroke. Blood pressure is <strong>greater than 180/110 mmHg</strong>.</p>
+      </div>
+      <div class="bi-ar">
+        <p>أزمة ارتفاع ضغط الدم هي <strong>ارتفاع حاد في ضغط الدم</strong> يمكن أن يؤدي إلى السكتة الدماغية. يكون ضغط الدم <strong>أكبر من 180/110 ملم زئبق</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Types: Emergency vs. Urgency</span>
+      <span class="ar-title">الأنواع: طارئ مقابل مُلِح</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1rem;">
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature / الميزة</th>
+              <th class="emergency">🚨 Hypertensive Emergency<br><span style="font-family:'Cairo';font-size:0.8rem;font-weight:400;">ارتفاع ضغط الطارئ</span></th>
+              <th class="urgency">⚠️ Hypertensive Urgency<br><span style="font-family:'Cairo';font-size:0.8rem;font-weight:400;">ارتفاع ضغط المُلِح</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">BP Level<br><span class="ar-cell">مستوى الضغط</span></td>
+              <td>≥ 180/120 mmHg<span class="ar-cell">أكبر من 180/120</span></td>
+              <td>Severely elevated BP<span class="ar-cell">ارتفاع شديد في الضغط</span></td>
+            </tr>
+            <tr>
+              <td class="row-header">Organ Damage<br><span class="ar-cell">تلف الأعضاء</span></td>
+              <td><strong>YES</strong> — actual or developing target organ damage<span class="ar-cell">نعم — تلف العضو المستهدف</span></td>
+              <td><strong>NO</strong> — no acute end-organ damage<span class="ar-cell">لا — لا يوجد تلف حاد</span></td>
+            </tr>
+            <tr>
+              <td class="row-header">Setting<br><span class="ar-cell">مكان العلاج</span></td>
+              <td>ICU / intensive care<span class="ar-cell">وحدة العناية المركزة</span></td>
+              <td>Outpatient / oral meds<span class="ar-cell">عيادة خارجية / أدوية فموية</span></td>
+            </tr>
+            <tr>
+              <td class="row-header">Conditions<br><span class="ar-cell">الحالات المرتبطة</span></td>
+              <td>Hypertension of pregnancy, acute MI, aortic dissection, intracranial hemorrhage<span class="ar-cell">تسمم الحمل، احتشاء عضلة القلب، تشريح الأبهر، نزيف داخل القحف</span></td>
+              <td>Severe headache, nosebleeds, shortness of breath, severe anxiety<span class="ar-cell">صداع شديد، رعاف، ضيق تنفس، قلق شديد</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PATHOPHYSIOLOGY ═══════════════════ -->
+<section id="tab-patho" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Causes of Hypertensive Crisis</span>
+      <span class="ar-title">أسباب أزمة ارتفاع ضغط الدم</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Abnormal renal function</li>
+          <li>Hypertensive encephalopathy</li>
+          <li>Intracerebral hemorrhage</li>
+          <li>Heart failure</li>
+          <li><strong>Abrupt withdrawal</strong> of antihypertensive drugs</li>
+          <li>Myocardial ischemia</li>
+          <li>Eclampsia (pregnancy)</li>
+          <li>Pheochromocytoma</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>خلل وظيفي كلوي</li>
+          <li>اعتلال دماغي ناجم عن ارتفاع ضغط الدم</li>
+          <li>نزيف داخل المخ</li>
+          <li>فشل القلب</li>
+          <li><strong>التوقف المفاجئ</strong> عن أدوية ضغط الدم</li>
+          <li>نقص تروية عضلة القلب</li>
+          <li>تسمم الحمل</li>
+          <li>ورم القواتم (Pheochromocytoma)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pathway -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Pathophysiology Pathway</span>
+      <span class="ar-title">مسار الفيزيولوجيا المرضية</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1.2rem;">
+    </div>
+  </div>
+  <div class="pathway">
+    <div class="pathway-step">
+      <div class="step-en">1. <strong>Prolonged Hypertension</strong></div>
+      <div class="step-ar"><strong>ارتفاع ضغط الدم المزمن</strong> .1</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">2. <strong>Inflammation and necrosis of arterioles</strong></div>
+      <div class="step-ar"><strong>التهاب ونخر الشرينات</strong> .2</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">3. <strong>Narrowing of blood vessels</strong></div>
+      <div class="step-ar"><strong>تضيق الأوعية الدموية</strong> .3</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">4. <strong>Restriction of blood flow to major organs</strong></div>
+      <div class="step-ar"><strong>تقييد تدفق الدم إلى الأعضاء الرئيسية</strong> .4</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">5. <strong>Organ Damage:</strong> Renal + Cerebral + Cardiac</div>
+      <div class="step-ar"><strong>تلف الأعضاء:</strong> الكلى + الدماغ + القلب .5</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header blue">
+      <span class="en-title">Organ Damage Details</span>
+      <span class="ar-title">تفاصيل تلف الأعضاء</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p><strong>🫘 Renal:</strong></p>
+        <ul style="margin-bottom:0.8rem;">
+          <li>Decreased renal perfusion</li>
+          <li>Progressive deterioration of nephrons</li>
+          <li>Decreased ability to filter body fluid</li>
+        </ul>
+        <p><strong>🧠 Cerebral:</strong></p>
+        <ul style="margin-bottom:0.8rem;">
+          <li>Decreased cerebral perfusion</li>
+          <li>Increased stress on vessel wall</li>
+        </ul>
+        <p><strong>❤️ Cardiac:</strong></p>
+        <ul>
+          <li>Decreased cardiac perfusion</li>
+          <li>Coronary artery disease → angina or MI</li>
+          <li>Increased cardiac workload</li>
+          <li>Left ventricular hypertrophy</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <p><strong>🫘 الكلوي:</strong></p>
+        <ul style="margin-bottom:0.8rem;">
+          <li>انخفاض التروية الكلوية</li>
+          <li>تدهور تدريجي في النفرونات</li>
+          <li>انخفاض القدرة على ترشيح السوائل</li>
+        </ul>
+        <p><strong>🧠 الدماغي:</strong></p>
+        <ul style="margin-bottom:0.8rem;">
+          <li>انخفاض التروية الدماغية</li>
+          <li>زيادة الضغط على جدار الوعاء</li>
+        </ul>
+        <p><strong>❤️ القلبي:</strong></p>
+        <ul>
+          <li>انخفاض التروية القلبية</li>
+          <li>مرض الشريان التاجي → ذبحة أو احتشاء</li>
+          <li>زيادة العبء على القلب</li>
+          <li>تضخم البطين الأيسر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CLINICAL ═══════════════════ -->
+<section id="tab-clinical" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#5b2c6f;">
+      <span class="en-title">🧠 CNS Manifestations (Emergency)</span>
+      <span class="ar-title">مظاهر الجهاز العصبي المركزي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.5rem;">Classic & Advanced</p>
+        <ul>
+          <li><strong>Classic:</strong> Headache, altered level of consciousness</li>
+          <li><strong>Advanced:</strong> Retinopathy with arteriolar changes, hemorrhage, exudates, and <strong>papilledema</strong></li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.5rem;">الكلاسيكي والمتقدم</p>
+        <ul>
+          <li><strong>كلاسيكي:</strong> صداع، تغيير في مستوى الوعي</li>
+          <li><strong>متقدم:</strong> اعتلال شبكية مع تغيرات شريانية، نزيف، إفرازات، <strong>وذمة الحليمة</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#a93226;">
+      <span class="en-title">❤️ Cardiovascular Manifestations</span>
+      <span class="ar-title">المظاهر القلبية الوعائية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Angina or acute myocardial infarction (AMI)</li>
+          <li>Chest pain</li>
+          <li>Myocardial ischemia</li>
+          <li>Aortic dissection → back pain</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>ذبحة صدرية أو احتشاء حاد في عضلة القلب</li>
+          <li>ألم في الصدر</li>
+          <li>نقص تروية عضلة القلب</li>
+          <li>تشريح الأبهر → ألم في الظهر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#117a65;">
+      <span class="en-title">🫁 Respiratory Manifestations</span>
+      <span class="ar-title">المظاهر التنفسية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Dyspnea (shortness of breath)</li>
+          <li>Cough</li>
+          <li>Fatigue</li>
+          <li>Frank pulmonary edema</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>ضيق التنفس</li>
+          <li>السعال</li>
+          <li>التعب والإرهاق</li>
+          <li>وذمة رئوية واضحة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#1a5276;">
+      <span class="en-title">🫘 Renal Manifestations</span>
+      <span class="ar-title">المظاهر الكلوية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Renal failure with <strong>oliguria</strong> (decreased urine output)</li>
+          <li><strong>Hematuria</strong> (blood in urine)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>فشل كلوي مع <strong>قلة البول</strong></li>
+          <li><strong>بيلة دموية</strong> (دم في البول)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#784212;">
+      <span class="en-title">⚠️ Urgency Clinical Manifestations (vs Emergency)</span>
+      <span class="ar-title">مظاهر الحالة المُلِحة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Severe headache</li>
+          <li>Nosebleeds (epistaxis)</li>
+          <li>Severe anxiety</li>
+          <li>Shortness of breath</li>
+          <li><strong>No acute organ damage</strong></li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>صداع شديد</li>
+          <li>رعاف (نزيف الأنف)</li>
+          <li>قلق شديد</li>
+          <li>ضيق في التنفس</li>
+          <li><strong>لا يوجد تلف حاد في الأعضاء</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TREATMENT ═══════════════════ -->
+<section id="tab-treatment" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Therapeutic Goals — Emergency</span>
+      <span class="ar-title">الأهداف العلاجية — الطارئ</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Step-Down Approach</span>
+        <ol style="padding-left:1.2rem;">
+          <li style="margin-bottom:0.5rem;">Reduce mean BP by <strong>up to 25%</strong> within the <strong>first hour</strong></li>
+          <li style="margin-bottom:0.5rem;">Further reduction to <strong>160/100 mmHg</strong> over the next <strong>6 hours</strong></li>
+          <li>Then <strong>gradual</strong> reduction over days</li>
+        </ol>
+        <div class="warn-box">⚠️ Exception: Aortic dissection — goal is systolic &lt; 100 mmHg if tolerated.<span class="ar">⚠️ الاستثناء: تشريح الأبهر — الهدف انقباضي أقل من 100 ملم زئبق إذا تحمّله المريض.</span></div>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">نهج التخفيض التدريجي</span>
+        <ol style="padding-right:1.2rem;list-style-position:inside;">
+          <li style="margin-bottom:0.5rem;">تخفيض متوسط الضغط بـ<strong>25%</strong> خلال <strong>الساعة الأولى</strong></li>
+          <li style="margin-bottom:0.5rem;">تخفيض إضافي إلى <strong>160/100 ملم زئبق</strong> خلال <strong>6 ساعات</strong></li>
+          <li>ثم تخفيض <strong>تدريجي</strong> على مدى أيام</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drug Table Emergency -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Medications — Hypertensive Emergency (IV)</span>
+      <span class="ar-title">أدوية الطوارئ (وريدية)</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1rem;">
+      <div style="overflow-x:auto;">
+        <table class="drug-table">
+          <thead>
+            <tr>
+              <th>Drug / الدواء</th>
+              <th>Type / النوع</th>
+              <th>Notes / ملاحظات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sodium Nitroprusside</strong><br>(Nipridem, Nitropress)</td>
+              <td>Arteriolar + venous vasodilator<span class="ar-cell">موسِّع شرياني وريدي</span></td>
+              <td>IV; potent, rapid onset<span class="ar-cell">وريدي؛ قوي وسريع المفعول</span></td>
+            </tr>
+            <tr>
+              <td><strong>Diazoxide</strong></td>
+              <td>Arteriolar vasodilator<span class="ar-cell">موسِّع شرياني</span></td>
+              <td>IV bolus<span class="ar-cell">جرعة وريدية سريعة</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hydralazine</strong></td>
+              <td>Arteriolar vasodilator<span class="ar-cell">موسِّع شرياني</span></td>
+              <td>Used in eclampsia<span class="ar-cell">يُستخدم في تسمم الحمل</span></td>
+            </tr>
+            <tr>
+              <td><strong>Labetalol</strong></td>
+              <td>Nonselective beta-blocker<span class="ar-cell">حاصر بيتا غير انتقائي</span></td>
+              <td>IV; safe in most settings<span class="ar-cell">وريدي؛ آمن في معظم الحالات</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nicardipine</strong> (Cardene)</td>
+              <td>Calcium channel blocker<span class="ar-cell">حاصر قنوات الكالسيوم</span></td>
+              <td>IV infusion<span class="ar-cell">ضخ وريدي مستمر</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nitroglycerin</strong></td>
+              <td>Vasodilator (short-acting)<span class="ar-cell">موسّع وعائي (قصير المفعول)</span></td>
+              <td>Effect lasts minutes to 4 hours; initial treatment<span class="ar-cell">المفعول دقائق - 4 ساعات؛ للبداية</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drug Table Urgency -->
+  <div class="bi-card">
+    <div class="bi-card-header blue">
+      <span class="en-title">Medications — Hypertensive Urgency (Oral)</span>
+      <span class="ar-title">أدوية الحالة المُلِحة (فموية)</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1rem;">
+      <div style="overflow-x:auto;">
+        <table class="drug-table">
+          <thead>
+            <tr>
+              <th>Drug / الدواء</th>
+              <th>Class / الفئة</th>
+              <th>Notes / ملاحظات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Labetalol / Normodyne</strong></td>
+              <td>Beta-adrenergic blocker<span class="ar-cell">حاصر بيتا أدرينالي</span></td>
+              <td>Fast-acting oral agent<span class="ar-cell">دواء فموي سريع المفعول</span></td>
+            </tr>
+            <tr>
+              <td><strong>Captopril (Capoten)</strong></td>
+              <td>ACE inhibitor<span class="ar-cell">مثبط إنزيم محول الأنجيوتنسين</span></td>
+              <td>Oral; fast onset<span class="ar-cell">فموي؛ سريع المفعول</span></td>
+            </tr>
+            <tr>
+              <td><strong>Clonidine (Catapres)</strong></td>
+              <td>Alpha-2 agonist<span class="ar-cell">ناهض ألفا-2</span></td>
+              <td>Recommended for urgency<span class="ar-cell">مُوصى به للحالة المُلِحة</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nifedipine</strong></td>
+              <td>Calcium channel blocker<span class="ar-cell">حاصر قنوات الكالسيوم</span></td>
+              <td>Oral<span class="ar-cell">فموي</span></td>
+            </tr>
+            <tr>
+              <td><strong>Minoxidil</strong></td>
+              <td>Arteriolar vasodilator<span class="ar-cell">موسِّع شرياني</span></td>
+              <td>Oral<span class="ar-cell">فموي</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ NURSING MANAGEMENT ═══════════════════ -->
+<section id="tab-management" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Initial Assessment Objectives</span>
+      <span class="ar-title">أهداف التقييم الأولي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>Determine the extent of <strong>target organ damage</strong></li>
+          <li>Ascertain the presence of other cardiovascular disorders</li>
+          <li>Identify the types of antihypertensive drugs used</li>
+        </ul>
+        <div class="info-box">All objectives established through: history, physical examination, and laboratory studies.<span class="ar">تُحقَّق جميع الأهداف من خلال: التاريخ المرضي، الفحص الجسدي، والدراسات المخبرية.</span></div>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>تحديد مدى <strong>تلف العضو المستهدف</strong></li>
+          <li>التحقق من وجود اضطرابات قلبية وعائية أخرى</li>
+          <li>تحديد أنواع أدوية ضغط الدم المستخدمة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header blue">
+      <span class="en-title">Initial Investigations</span>
+      <span class="ar-title">الفحوصات الأولية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>BP measured in <strong>all limbs</strong>; use appropriate cuff size for obese patients</li>
+          <li>Funduscopic exam — detect <strong>papilledema</strong></li>
+          <li>CBC, electrolytes, BUN, creatinine, urinalysis</li>
+          <li>Peripheral blood smear — microangiopathic hemolytic anemia</li>
+          <li>Chest X-ray, ECG, CT scan (if dyspnea, chest pain, neurological changes)</li>
+          <li>Echocardiogram — LV function and ventricular hypertrophy</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>قياس ضغط الدم في <strong>جميع الأطراف</strong>؛ استخدام كفّة مناسبة للبدناء</li>
+          <li>فحص قاع العين — الكشف عن <strong>وذمة الحليمة</strong></li>
+          <li>صورة الدم الكاملة، الشوارد، BUN، الكرياتينين، تحليل البول</li>
+          <li>مسحة الدم المحيطي — فقر دم انحلالي</li>
+          <li>X-ray صدر، تخطيط قلب، CT للمخ (عند ضيق التنفس، ألم صدر، تغير عصبي)</li>
+          <li>إيكو القلب — وظيفة البطين الأيسر وتضخمه</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nursing Diagnoses -->
+  <div class="bi-card">
+    <div class="bi-card-header green">
+      <span class="en-title">Nursing Diagnoses & Interventions</span>
+      <span class="ar-title">التشخيصات التمريضية والتدخلات</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1.2rem;">
+      <!-- ND 1 -->
+      <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem;">
+        <div style="background:#f9ebea;padding:0.7rem 1rem;font-weight:700;font-size:0.9rem;border-bottom:1px solid var(--border);">
+          1. Ineffective Management of Therapeutic Regimen
+          <span style="font-family:'Cairo',sans-serif;display:block;font-size:0.82rem;color:var(--text-light);font-weight:400;direction:rtl;">عدم فعالية إدارة النظام العلاجي</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;">
+            <ul class="nursing-list">
+              <li>Assess patient's understanding of hypertension and risk factors</li>
+              <li>Provide clear, practical guidelines about treatment and follow-up</li>
+              <li>Simplify drug regimen; explain benefits of adherence</li>
+              <li>Teach patient how to measure BP at home</li>
+              <li>Involve family and significant others in education</li>
+            </ul>
+          </div>
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;background:var(--ar-bg);font-family:'Cairo',sans-serif;direction:rtl;text-align:right;">
+            <ul class="nursing-list">
+              <li>تقييم فهم المريض لارتفاع ضغط الدم وعوامل الخطر</li>
+              <li>تقديم إرشادات واضحة وعملية حول العلاج والمتابعة</li>
+              <li>تبسيط نظام الأدوية وشرح فوائد الالتزام</li>
+              <li>تعليم المريض كيفية قياس ضغط الدم في المنزل</li>
+              <li>إشراك الأسرة في برنامج التعليم</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ND 2 -->
+      <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem;">
+        <div style="background:#eaf4fb;padding:0.7rem 1rem;font-weight:700;font-size:0.9rem;border-bottom:1px solid var(--border);">
+          2. Activity Intolerance
+          <span style="font-family:'Cairo',sans-serif;display:block;font-size:0.82rem;color:var(--text-light);font-weight:400;direction:rtl;">عدم تحمل النشاط</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;">
+            <ul class="nursing-list">
+              <li>Assess activity tolerance and ADL ability</li>
+              <li>Space nursing activities; schedule rest periods</li>
+              <li>Monitor cardiopulmonary signs (tachycardia, hypotension, tachypnea)</li>
+              <li>Vital signs before, during, and after activity</li>
+              <li>Avoid prolonged bed rest — prevents pressure ulcers and DVT</li>
+              <li>Increase activities gradually as ordered</li>
+            </ul>
+          </div>
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;background:var(--ar-bg);font-family:'Cairo',sans-serif;direction:rtl;text-align:right;">
+            <ul class="nursing-list">
+              <li>تقييم تحمل النشاط وقدرة أنشطة الحياة اليومية</li>
+              <li>توزيع التدخلات التمريضية وجدولة فترات الراحة</li>
+              <li>مراقبة العلامات القلبية الرئوية</li>
+              <li>قياس العلامات الحيوية قبل وأثناء وبعد النشاط</li>
+              <li>تجنب الراحة المديدة — يمنع قرح الضغط والجلطات</li>
+              <li>زيادة النشاط تدريجيًا حسب الأوامر الطبية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ND 3 -->
+      <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem;">
+        <div style="background:#e9f7ef;padding:0.7rem 1rem;font-weight:700;font-size:0.9rem;border-bottom:1px solid var(--border);">
+          3. Fluid Volume Excess
+          <span style="font-family:'Cairo',sans-serif;display:block;font-size:0.82rem;color:var(--text-light);font-weight:400;direction:rtl;">زيادة حجم السوائل</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;">
+            <ul class="nursing-list">
+              <li>Monitor I&O every 4 hours</li>
+              <li>Weigh patient daily</li>
+              <li>Assess for jugular vein distension, hepatomegaly, edema</li>
+              <li>Auscultate breath sounds for crackles</li>
+              <li>Provide low sodium diet and fluid restriction</li>
+              <li>Elevate head of bed to shift fluid away from heart</li>
+              <li>Monitor urea and creatinine for renal function</li>
+            </ul>
+          </div>
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;background:var(--ar-bg);font-family:'Cairo',sans-serif;direction:rtl;text-align:right;">
+            <ul class="nursing-list">
+              <li>مراقبة المدخول والمخرج كل 4 ساعات</li>
+              <li>وزن المريض يوميًا</li>
+              <li>تقييم احتقان الأوداج والكبد والوذمة</li>
+              <li>الإنصات للرئتين للكشف عن الفرقعات</li>
+              <li>نظام غذائي قليل الصوديوم وتقييد السوائل</li>
+              <li>رفع رأس السرير لإزاحة السوائل عن القلب</li>
+              <li>مراقبة اليوريا والكرياتينين لوظائف الكلى</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ND 4 -->
+      <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+        <div style="background:#fef9e7;padding:0.7rem 1rem;font-weight:700;font-size:0.9rem;border-bottom:1px solid var(--border);">
+          4. Altered Tissue Perfusion (Peripheral/Cerebral/Renal)
+          <span style="font-family:'Cairo',sans-serif;display:block;font-size:0.82rem;color:var(--text-light);font-weight:400;direction:rtl;">تغير في تروية الأنسجة</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;">
+            <ul class="nursing-list">
+              <li>Note skin color and temperature</li>
+              <li>Monitor peripheral pulse</li>
+              <li>Provide warm environment to promote vasodilation</li>
+              <li>Encourage active range of motion</li>
+              <li>Monitor urine output</li>
+              <li>Observe mental status constantly</li>
+              <li>Maintain adequate blood pressure; avoid inducing hypotension</li>
+              <li>Early detection of thrombophlebitis</li>
+            </ul>
+          </div>
+          <div style="padding:1rem;font-size:0.88rem;line-height:1.7;background:var(--ar-bg);font-family:'Cairo',sans-serif;direction:rtl;text-align:right;">
+            <ul class="nursing-list">
+              <li>ملاحظة لون وحرارة الجلد</li>
+              <li>مراقبة النبض المحيطي</li>
+              <li>بيئة دافئة لتعزيز توسع الأوعية</li>
+              <li>تشجيع تمارين مدى الحركة النشطة</li>
+              <li>مراقبة إدرار البول</li>
+              <li>مراقبة الحالة العقلية باستمرار</li>
+              <li>الحفاظ على ضغط الدم المناسب؛ تجنب انخفاضه</li>
+              <li>الكشف المبكر عن التهاب الوريد الخثاري</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Follow-up -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Follow-Up Schedule</span>
+      <span class="ar-title">جدول المتابعة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>Every <strong>1–2 weeks</strong> until target BP achieved</li>
+          <li>Then every <strong>month for 3 months</strong></li>
+          <li>Then every <strong>6 months</strong> indefinitely</li>
+          <li>Annual screening: creatinine, potassium, urinalysis</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>كل <strong>1-2 أسبوع</strong> حتى تحقيق الهدف</li>
+          <li>ثم كل <strong>شهر لمدة 3 أشهر</strong></li>
+          <li>ثم كل <strong>6 أشهر</strong> إلى أجل غير مسمى</li>
+          <li>فحص سنوي: كرياتينين، بوتاسيوم، تحليل بول</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PATIENT EDUCATION ═══════════════════ -->
+<section id="tab-education" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header green">
+      <span class="en-title">Weight Control</span>
+      <span class="ar-title">التحكم في الوزن</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p>Overweight people have <strong>2–3 times</strong> the risk of developing hypertension compared to people of normal weight. Weight loss combined with physical activity is most effective.</p>
+      </div>
+      <div class="bi-ar">
+        <p>البدناء لديهم <strong>2-3 أضعاف</strong> خطر الإصابة بارتفاع ضغط الدم مقارنة بالأوزان الطبيعية. فقدان الوزن مع النشاط البدني هو الأكثر فعالية.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header blue">
+      <span class="en-title">Low Sodium Diet Guidance</span>
+      <span class="ar-title">إرشادات النظام الغذائي قليل الملح</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Foods to AVOID</span>
+        <ul>
+          <li>Foods high in sodium</li>
+          <li>Baking soda, monosodium glutamate, meat tenderizer, soy sauce</li>
+          <li>Canned foods and some frozen foods with added sodium</li>
+          <li>Canned, smoked, or cured meat and fish products</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">الأطعمة التي يجب تجنبها</span>
+        <ul>
+          <li>الأطعمة العالية في الصوديوم</li>
+          <li>صودا الخبز، الغلوتامات، مُليِّن اللحوم، صلصة الصويا</li>
+          <li>الأطعمة المعلبة وبعض المجمدة المضاف إليها ملح</li>
+          <li>اللحوم والأسماك المعلبة والمدخنة والمعالجة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Low Fat Diet Guidance</span>
+      <span class="ar-title">إرشادات النظام الغذائي قليل الدهون</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Use margarine and vegetable oil instead of butter</li>
+          <li>Avoid gravies, creams, and cheese sauces</li>
+          <li>Use skim or low-fat milk</li>
+          <li>Choose lean cuts of meat, trim all visible fat</li>
+          <li>No more than <strong>3 egg yolks per week</strong> (egg whites are low in cholesterol)</li>
+          <li>Limit organ meats and shellfish</li>
+          <li>Fish oil supplements reduce cardiovascular risk</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>استخدام السمن النباتي وزيت الخضروات بدل الزبدة</li>
+          <li>تجنب المرق الدسم والكريمة وصلصات الجبن</li>
+          <li>استخدام الحليب خالي الدسم أو قليله</li>
+          <li>اختيار قطع اللحم الخالية من الدهون</li>
+          <li>لا أكثر من <strong>3 صفار بيض أسبوعيًا</strong> (البياض قليل الكوليسترول)</li>
+          <li>تقليل اللحوم الداخلية والمأكولات البحرية الصدفية</li>
+          <li>زيت السمك يُقلل خطر أمراض القلب</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header green">
+      <span class="en-title">Other Lifestyle Modifications</span>
+      <span class="ar-title">تعديلات أسلوب الحياة الأخرى</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li><strong>Physical activity:</strong> Reduces elevated BP when combined with weight loss</li>
+          <li><strong>Reduce alcohol intake &amp; smoking</strong> — alcohol increases BP directly</li>
+          <li><strong>Avoid coffee, tea, cola, and chocolate</strong></li>
+          <li><strong>Relaxation techniques</strong> — yoga, psychotherapy shown to reduce BP</li>
+          <li><strong>Potassium supplementation</strong> — may lower BP by balancing high sodium-to-potassium ratio</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li><strong>النشاط البدني:</strong> يُقلّل ارتفاع الضغط عند دمجه مع فقدان الوزن</li>
+          <li><strong>تقليل الكحول والتدخين</strong> — الكحول يرفع ضغط الدم مباشرةً</li>
+          <li><strong>تجنب القهوة، الشاي، الكولا، والشوكولاتة</strong></li>
+          <li><strong>تقنيات الاسترخاء</strong> — اليوغا والعلاج النفسي تُقلّل الضغط</li>
+          <li><strong>مكملات البوتاسيوم</strong> — قد تُخفّض الضغط بتوازن الصوديوم/البوتاسيوم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ QUIZ ═══════════════════ -->
+<section id="tab-quiz" class="tab-content">
+  <div class="quiz-header">
+    <h2>Self-Test Quiz</h2>
+    <p>اختبر معلوماتك — 20 سؤال اختيار من متعدد</p>
+  </div>
+  <div class="score-bar">
+    <div class="score-circle" id="scoreCircle"><div class="score-inner" id="scoreDisplay">0/20</div></div>
+    <div class="score-text">
+      <h3>Your Score / درجتك</h3>
+      <p id="scoreAr">لم تجب على أي سؤال بعد</p>
+    </div>
+    <button class="reset-btn" onclick="resetQuiz()">Reset / إعادة</button>
+  </div>
+  <div id="quizContainer"></div>
+</section>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+const questions = [
+  {
+    en: "The threshold blood pressure for defining hypertensive crisis is:",
+    ar: "حد ضغط الدم لتعريف أزمة ارتفاع ضغط الدم هو:",
+    options: ["120/80 mmHg", "140/90 mmHg", "160/100 mmHg", "180/110 mmHg"],
+    optionsAr: ["120/80 ملم زئبق", "140/90 ملم زئبق", "160/100 ملم زئبق", "180/110 ملم زئبق"],
+    correct: 3,
+    explanation: "Hypertensive crisis is defined as BP greater than 180/110 mmHg.",
+    explanationAr: "تُعرَّف أزمة ارتفاع ضغط الدم بضغط أكبر من 180/110 ملم زئبق."
+  },
+  {
+    en: "What is the KEY difference between hypertensive emergency and hypertensive urgency?",
+    ar: "ما الفرق الرئيسي بين ارتفاع ضغط الدم الطارئ والمُلِح؟",
+    options: ["The level of blood pressure only", "Presence or absence of target organ damage", "Age of the patient", "Route of medication administration only"],
+    optionsAr: ["مستوى ضغط الدم فقط", "وجود أو غياب تلف العضو المستهدف", "عمر المريض", "طريق إعطاء الدواء فقط"],
+    correct: 1,
+    explanation: "The clinical differentiation depends on the PRESENCE of target organ damage, not just the level of BP.",
+    explanationAr: "التمييز السريري يعتمد على وجود تلف العضو المستهدف وليس فقط مستوى ضغط الدم."
+  },
+  {
+    en: "Which is NOT a cause of hypertensive crisis listed in this lecture?",
+    ar: "أي مما يلي ليس سببًا لأزمة ضغط الدم وفقًا للمحاضرة؟",
+    options: ["Pheochromocytoma", "Eclampsia", "Hyperthyroidism", "Abrupt withdrawal of antihypertensive drugs"],
+    optionsAr: ["ورم القواتم", "تسمم الحمل", "فرط نشاط الغدة الدرقية", "التوقف المفاجئ عن أدوية ضغط الدم"],
+    correct: 2,
+    explanation: "The listed causes include pheochromocytoma, eclampsia, abrupt drug withdrawal, renal dysfunction, and others — but NOT hyperthyroidism specifically.",
+    explanationAr: "الأسباب المذكورة تشمل ورم القواتم، تسمم الحمل، توقف الأدوية، الخلل الكلوي — وليس فرط الغدة الدرقية تحديدًا."
+  },
+  {
+    en: "The initial therapeutic goal in hypertensive emergency is to reduce mean BP by:",
+    ar: "الهدف العلاجي الأولي في الطارئ هو تخفيض متوسط ضغط الدم بـ:",
+    options: ["50% within 30 minutes", "Up to 25% within the first hour", "To normal levels within 2 hours", "10% per day"],
+    optionsAr: ["50% خلال 30 دقيقة", "حتى 25% خلال الساعة الأولى", "إلى المستوى الطبيعي خلال ساعتين", "10% يوميًا"],
+    correct: 1,
+    explanation: "The therapeutic goal is reduction of mean BP by up to 25% within the first hour of treatment.",
+    explanationAr: "الهدف هو تخفيض متوسط ضغط الدم بحتى 25% خلال الساعة الأولى من العلاج."
+  },
+  {
+    en: "Sodium nitroprusside acts as:",
+    ar: "نيتروبروسيد الصوديوم يعمل كـ:",
+    options: ["Arteriolar vasodilator only", "Venous vasodilator only", "Both arteriolar AND venous vasodilator", "Beta-adrenergic blocker"],
+    optionsAr: ["موسِّع شرياني فقط", "موسِّع وريدي فقط", "موسِّع شرياني وريدي معًا", "حاصر بيتا أدرينالي"],
+    correct: 2,
+    explanation: "Sodium nitroprusside (Nipridem, Nitropress) is both an arteriolar AND venous vasodilator.",
+    explanationAr: "نيتروبروسيد الصوديوم هو موسِّع للأوعية الشريانية والوريدية معًا."
+  },
+  {
+    en: "Which medication is recommended for treating hypertensive URGENCY?",
+    ar: "أي دواء يُوصى به لعلاج ارتفاع ضغط الدم المُلِح؟",
+    options: ["IV Sodium nitroprusside", "Oral Clonidine (Catapres)", "IV Nitroglycerin", "IV Hydralazine"],
+    optionsAr: ["نيتروبروسيد الصوديوم وريدياً", "كلونيدين فموي", "نيتروغليسيرين وريدياً", "هيدرالازين وريدياً"],
+    correct: 1,
+    explanation: "Clonidine (Catapres), an alpha-2 agonist, is recommended for hypertensive urgency along with oral labetalol and captopril.",
+    explanationAr: "الكلونيدين (كاتابريس)، ناهض ألفا-2، موصى به لارتفاع ضغط الدم المُلِح مع اللابيتالول والكابتوبريل الفمويين."
+  },
+  {
+    en: "Which of the following is an advanced CNS manifestation of hypertensive emergency?",
+    ar: "أي مما يلي من المظاهر العصبية المتقدمة لأزمة ضغط الدم الطارئة؟",
+    options: ["Mild headache", "Papilledema with retinal hemorrhages and exudates", "Anxiety", "Nosebleeds"],
+    optionsAr: ["صداع خفيف", "وذمة الحليمة مع نزيف الشبكية والإفرازات", "قلق", "رعاف"],
+    correct: 1,
+    explanation: "Advanced CNS manifestations include retinopathy with arteriolar changes, hemorrhage, exudates, and papilledema.",
+    explanationAr: "المظاهر العصبية المتقدمة تشمل اعتلال الشبكية مع تغيرات شريانية، نزيف، إفرازات، ووذمة الحليمة."
+  },
+  {
+    en: "Renal manifestations in hypertensive emergency include:",
+    ar: "المظاهر الكلوية في الطارئ تشمل:",
+    options: ["Polyuria and polydipsia", "Renal failure with oliguria and hematuria", "Proteinuria only", "Increased GFR"],
+    optionsAr: ["كثرة التبول وكثرة العطش", "فشل كلوي مع قلة البول وبيلة دموية", "بروتين في البول فقط", "زيادة معدل الترشيح الكبيبي"],
+    correct: 1,
+    explanation: "Renal manifestations include renal failure with oliguria (decreased urine output) and hematuria (blood in urine).",
+    explanationAr: "المظاهر الكلوية تشمل الفشل الكلوي مع قلة البول (انخفاض إدرار البول) والبيلة الدموية."
+  },
+  {
+    en: "Prolonged hypertension causes organ damage through which primary mechanism?",
+    ar: "ارتفاع ضغط الدم المزمن يُسبّب تلف الأعضاء عبر أي آلية رئيسية؟",
+    options: ["Direct toxicity of antihypertensive drugs", "Inflammation and necrosis of arterioles → narrowing → restricted blood flow", "Increased cardiac output only", "Autoimmune destruction of organ cells"],
+    optionsAr: ["السمية المباشرة لأدوية ضغط الدم", "التهاب ونخر الشرينات → تضيق → تقييد تدفق الدم", "زيادة القذف القلبي فقط", "التدمير المناعي الذاتي لخلايا الأعضاء"],
+    correct: 1,
+    explanation: "Prolonged hypertension causes inflammation and necrosis of arterioles → narrowing → restriction of blood flow → organ damage.",
+    explanationAr: "ارتفاع الضغط المزمن يُسبّب التهاب ونخر في الشرينات → تضيق → تقييد تدفق الدم → تلف الأعضاء."
+  },
+  {
+    en: "Which nursing diagnosis relates to decreased cardiac output and oxygen imbalance?",
+    ar: "أي تشخيص تمريضي يرتبط بانخفاض القذف القلبي وعدم توازن الأكسجين؟",
+    options: ["Fluid volume excess", "Activity intolerance", "Altered tissue perfusion", "Ineffective therapeutic management"],
+    optionsAr: ["زيادة حجم السوائل", "عدم تحمل النشاط", "تغير تروية الأنسجة", "عدم فعالية إدارة النظام العلاجي"],
+    correct: 1,
+    explanation: "Activity intolerance is related to imbalance between oxygen supply and demand secondary to decreased cardiac output.",
+    explanationAr: "عدم تحمل النشاط يرتبط بعدم التوازن بين عرض الأكسجين والطلب ثانويًا لانخفاض القذف القلبي."
+  },
+  {
+    en: "When should vital signs be monitored during patient activity?",
+    ar: "متى يجب قياس العلامات الحيوية أثناء نشاط المريض؟",
+    options: ["Only after the activity", "Only before the activity", "Before, during, AND after activity", "Once per shift regardless of activity"],
+    optionsAr: ["بعد النشاط فقط", "قبل النشاط فقط", "قبل وأثناء وبعد النشاط", "مرة واحدة لكل نوبة بغض النظر عن النشاط"],
+    correct: 2,
+    explanation: "Vital signs must be taken BEFORE, DURING, and AFTER activity to detect adverse cardiopulmonary responses.",
+    explanationAr: "يجب قياس العلامات الحيوية قبل وأثناء وبعد النشاط للكشف عن الاستجابات القلبية الرئوية الضارة."
+  },
+  {
+    en: "A patient with hypertensive emergency is NOT receiving papilledema detection. Which investigation confirms papilledema?",
+    ar: "أي فحص يُؤكّد وجود وذمة الحليمة؟",
+    options: ["ECG", "CT scan", "Funduscopic examination", "Echocardiogram"],
+    optionsAr: ["تخطيط القلب", "التصوير المقطعي", "فحص قاع العين", "إيكو القلب"],
+    correct: 2,
+    explanation: "Funduscopic examination (ophthalmoscopy) is used to detect the presence of papilledema.",
+    explanationAr: "فحص قاع العين (طب العيون) يُستخدم للكشف عن وجود وذمة الحليمة."
+  },
+  {
+    en: "Hypertension is most commonly diagnosed in which group?",
+    ar: "يُشخَّص ارتفاع ضغط الدم بشكل أكثر شيوعًا في أي فئة؟",
+    options: ["Women aged 20–30 years", "Men aged 30–50 years", "Children under 10 years", "Elderly women over 70"],
+    optionsAr: ["النساء بين 20-30 عامًا", "الرجال بين 30-50 عامًا", "الأطفال أقل من 10 سنوات", "النساء المسنات فوق 70 عامًا"],
+    correct: 1,
+    explanation: "Hypertension is usually diagnosed in men between 30–50 years of age.",
+    explanationAr: "يُشخَّص ارتفاع ضغط الدم عادةً في الرجال بين عمر 30-50 عامًا."
+  },
+  {
+    en: "What is the goal blood pressure target over 6 hours in hypertensive emergency?",
+    ar: "ما الهدف المستهدف لضغط الدم على مدى 6 ساعات في الطارئ؟",
+    options: ["120/80 mmHg", "140/90 mmHg", "160/100 mmHg", "180/110 mmHg"],
+    optionsAr: ["120/80 ملم زئبق", "140/90 ملم زئبق", "160/100 ملم زئبق", "180/110 ملم زئبق"],
+    correct: 2,
+    explanation: "After the initial 25% reduction, the goal is about 160/100 mmHg over a period of up to 6 hours.",
+    explanationAr: "بعد التخفيض الأولي بـ25%، الهدف هو حوالي 160/100 ملم زئبق على مدى 6 ساعات."
+  },
+  {
+    en: "Overweight people have how many times the risk of developing hypertension?",
+    ar: "البدناء لديهم كم مرة من خطر الإصابة بارتفاع ضغط الدم؟",
+    options: ["Same risk as normal weight", "2–3 times the risk", "5 times the risk", "10 times the risk"],
+    optionsAr: ["نفس خطر الوزن الطبيعي", "2-3 أضعاف الخطر", "5 أضعاف الخطر", "10 أضعاف الخطر"],
+    correct: 1,
+    explanation: "Overweight people have two to three times the risk of developing hypertension compared to normal weight people.",
+    explanationAr: "البدناء لديهم ضعفان إلى ثلاثة أضعاف خطر الإصابة بارتفاع ضغط الدم مقارنةً بالوزن الطبيعي."
+  },
+  {
+    en: "In aortic dissection, what is the systolic BP target?",
+    ar: "في حالة تشريح الأبهر، ما هو الهدف الانقباضي لضغط الدم؟",
+    options: ["< 160 mmHg", "< 140 mmHg", "< 120 mmHg", "< 100 mmHg if tolerated"],
+    optionsAr: ["أقل من 160 ملم زئبق", "أقل من 140 ملم زئبق", "أقل من 120 ملم زئبق", "أقل من 100 ملم زئبق إذا تحمّله المريض"],
+    correct: 3,
+    explanation: "For aortic dissection, the goal is to lower systolic pressure to less than 100 mmHg if the patient can tolerate the reduction.",
+    explanationAr: "في تشريح الأبهر، الهدف خفض الضغط الانقباضي إلى أقل من 100 ملم زئبق إذا تحمّله المريض."
+  },
+  {
+    en: "Which lab test is evaluated ANNUALLY as part of hypertensive patient screening?",
+    ar: "أي اختبار مخبري يُقيَّم سنويًا في فحص مريض ضغط الدم؟",
+    options: ["Full CBC only", "Creatinine, potassium, and urinalysis", "Lipid profile only", "Thyroid function tests"],
+    optionsAr: ["صورة الدم الكاملة فقط", "الكرياتينين، البوتاسيوم، وتحليل البول", "ملف الدهون فقط", "اختبارات وظيفة الغدة الدرقية"],
+    correct: 1,
+    explanation: "Creatinine and potassium levels and urine analysis should be evaluated annually as part of screening.",
+    explanationAr: "مستويات الكرياتينين والبوتاسيوم وتحليل البول تُقيَّم سنويًا كجزء من الفحص الروتيني."
+  },
+  {
+    en: "Nitroglycerin's duration of action is:",
+    ar: "مدة مفعول النيتروغليسيرين هي:",
+    options: ["12–24 hours", "6–8 hours", "Minutes to 4 hours", "24–48 hours"],
+    optionsAr: ["12-24 ساعة", "6-8 ساعات", "دقائق إلى 4 ساعات", "24-48 ساعة"],
+    correct: 2,
+    explanation: "Nitroglycerin has immediate actions that are short-lived (minutes to 4 hours) and is used for initial treatment.",
+    explanationAr: "للنيتروغليسيرين تأثيرات فورية قصيرة المدة (دقائق حتى 4 ساعات) ويُستخدم للعلاج الأولي."
+  },
+  {
+    en: "Left ventricular hypertrophy in hypertension is detected by:",
+    ar: "تضخم البطين الأيسر في ارتفاع ضغط الدم يُكتشف بـ:",
+    options: ["Chest X-ray alone", "Peripheral blood smear", "Echocardiogram", "Urinalysis"],
+    optionsAr: ["الأشعة السينية للصدر فقط", "مسحة الدم المحيطي", "إيكو القلب", "تحليل البول"],
+    correct: 2,
+    explanation: "Echocardiogram is used to assess left ventricular function and evidence of ventricular hypertrophy.",
+    explanationAr: "إيكو القلب يُستخدم لتقييم وظيفة البطين الأيسر والكشف عن تضخمه."
+  },
+  {
+    en: "Which relaxation techniques have been shown to reduce blood pressure?",
+    ar: "أي تقنيات الاسترخاء التالية ثبت أنها تُخفّض ضغط الدم؟",
+    options: ["Sleep therapy only", "Yoga and psychotherapy", "Deep breathing only", "Hydrotherapy only"],
+    optionsAr: ["علاج النوم فقط", "اليوغا والعلاج النفسي", "التنفس العميق فقط", "العلاج بالماء فقط"],
+    correct: 1,
+    explanation: "A variety of relaxation therapies including yoga and psychotherapy have been shown to reduce blood pressure.",
+    explanationAr: "تقنيات الاسترخاء المتنوعة بما فيها اليوغا والعلاج النفسي ثبت أنها تُخفّض ضغط الدم."
+  }
+];
+
+let answered = new Array(questions.length).fill(false);
+let score = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  questions.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    const letters = ['A','B','C','D'];
+    const opts = q.options.map((opt, i) => `
+      <button class="opt-btn" id="opt-${qi}-${i}" onclick="answerQ(${qi},${i})" ${answered[qi]?'disabled':''}>
+        <span class="opt-letter">${letters[i]}</span>
+        <span>${opt}<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--text-light);direction:rtl;">${q.optionsAr[i]}</span></span>
+      </button>`).join('');
+    card.innerHTML = `
+      <div class="q-num">Question ${qi+1} / السؤال ${qi+1}</div>
+      <div class="q-body">
+        <p class="q-text">${q.en}</p>
+        <p class="q-text-ar">${q.ar}</p>
+        <div class="options">${opts}</div>
+        <div class="explanation ${answered[qi]?'show':''}" id="exp-${qi}">
+          ✅ ${q.explanation}<span class="ar">${q.explanationAr}</span>
+        </div>
+      </div>`;
+    container.appendChild(card);
+    if (answered[qi]) applyStyles(qi, q.correct);
+  });
+}
+
+function answerQ(qi, chosen) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+  if (chosen === questions[qi].correct) score++;
+  applyStyles(qi, questions[qi].correct, chosen);
+  document.getElementById('exp-' + qi).classList.add('show');
+  updateScore();
+}
+
+function applyStyles(qi, correct, chosen) {
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById('opt-' + qi + '-' + i);
+    if (!btn) continue;
+    btn.disabled = true;
+    if (i === correct) btn.classList.add('correct');
+    else if (chosen !== undefined && i === chosen) btn.classList.add('wrong');
+  }
+}
+
+function updateScore() {
+  const cnt = answered.filter(Boolean).length;
+  const pct = cnt > 0 ? (score / cnt * 100) : 0;
+  document.getElementById('scoreDisplay').textContent = score + '/' + cnt;
+  document.getElementById('scoreAr').textContent = `أجبت على ${cnt} سؤالاً، ${score} منها صحيح (${Math.round(pct)}%)`;
+  const deg = (score / questions.length) * 360;
+  document.getElementById('scoreCircle').style.background = `conic-gradient(var(--accent2) ${deg}deg, var(--surface2) ${deg}deg)`;
+}
+
+function resetQuiz() {
+  answered = new Array(questions.length).fill(false);
+  score = 0;
+  updateScore();
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stroke – Dr. Ghada Elsayed</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:       #f4f6f4;
+  --white:    #ffffff;
+  --surface:  #eef1ee;
+  --border:   #d3dbd3;
+  --green:    #4a7c59;
+  --green2:   #3d6b4a;
+  --green-lt: #e8f0ea;
+  --green-xl: #f0f5f1;
+  --teal:     #4a8a80;
+  --teal-lt:  #e6f2f0;
+  --sage:     #7a9e7e;
+  --text:     #2a3528;
+  --sub:      #5a7060;
+  --muted:    #8a9e8e;
+  --red:      #c0392b;
+  --radius:   12px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  font-family: 'Source Sans 3', 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, var(--green2) 0%, var(--teal) 100%);
+  padding: 40px 30px 32px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse 80% 70% at 50% -20%, rgba(255,255,255,.12), transparent);
+  pointer-events:none;
+}
+.header-inner { position:relative; z-index:1; }
+header .en-title {
+  font-family:'Lora',serif;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  letter-spacing:.03em;
+  color:#fff;
+}
+header .ar-title {
+  font-family:'Cairo',sans-serif;
+  font-size:1.1rem;
+  color:rgba(255,255,255,.8);
+  direction:rtl;
+  margin-top:6px;
+}
+header .by {
+  margin-top:14px;
+  font-size:.85rem;
+  color:rgba(255,255,255,.7);
+  letter-spacing:.06em;
+}
+.header-badges {
+  display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
+  margin-top:18px;
+}
+.hbadge {
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  color:#fff;
+  border-radius:20px;
+  padding:4px 14px;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.05em;
+}
+
+/* ── TABS ── */
+.tabs-wrap {
+  position:sticky; top:0; z-index:100;
+  background:var(--white);
+  border-bottom:2px solid var(--border);
+  box-shadow:0 2px 12px rgba(74,124,89,.12);
+}
+.tabs {
+  display:flex; overflow-x:auto; gap:2px;
+  padding:8px 14px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent;
+}
+.tabs::-webkit-scrollbar{height:3px;}
+.tabs::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+.tab-btn {
+  flex-shrink:0;
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--sub);
+  padding:7px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-family:'Source Sans 3',sans-serif;
+  font-size:.8rem;
+  font-weight:600;
+  white-space:nowrap;
+  transition:all .2s;
+  outline:none;
+}
+.tab-btn:hover { border-color:var(--green); color:var(--green); background:var(--green-xl); }
+.tab-btn.active { background:var(--green); border-color:var(--green); color:#fff; }
+
+/* ── PANELS ── */
+.panel { display:none; padding:30px 18px 50px; max-width:900px; margin:0 auto; animation:fadeUp .3s ease; }
+.panel.active { display:block; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTION HEADER ── */
+.sec-header {
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:26px;
+  padding-bottom:16px;
+  border-bottom:2px solid var(--border);
+}
+.sec-num {
+  width:46px; height:46px; border-radius:12px;
+  background:var(--green); color:#fff;
+  font-family:'Lora',serif; font-size:1.3rem;
+  display:grid; place-items:center; flex-shrink:0;
+}
+.sec-en { font-family:'Lora',serif; font-size:1.25rem; color:var(--green2); }
+.sec-ar { font-family:'Cairo',sans-serif; font-size:.9rem; color:var(--muted); direction:rtl; margin-top:2px; }
+
+/* ── BILINGUAL CARD ── */
+.bi-card {
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:14px;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(74,124,89,.06);
+}
+.bi-card-header {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 16px 8px;
+  background:var(--green-xl);
+  border-bottom:1px solid var(--border);
+}
+.bi-tag {
+  background:var(--green); color:#fff;
+  font-size:.7rem; font-weight:700;
+  padding:2px 9px; border-radius:6px;
+  letter-spacing:.06em; text-transform:uppercase;
+}
+.bi-label-en { font-size:.82rem; font-weight:700; color:var(--green2); }
+.bi-label-ar { font-family:'Cairo',sans-serif; font-size:.82rem; color:var(--sub); direction:rtl; margin-right:auto; }
+
+.bi-body { display:grid; grid-template-columns:1fr 1fr; }
+.bi-col { padding:14px 16px; }
+.bi-col + .bi-col {
+  border-right:1px solid var(--border);
+  background:var(--green-xl);
+  direction:rtl;
+  font-family:'Cairo',sans-serif;
+}
+.bi-col p, .bi-col li { font-size:.9rem; line-height:1.75; color:var(--text); }
+.bi-col ul { padding-right:16px; padding-left:16px; }
+.bi-col ul li { margin-bottom:5px; }
+.bi-col strong { color:var(--green2); }
+.bi-col .sub-title {
+  font-weight:700; color:var(--teal);
+  font-size:.85rem; margin-top:10px; margin-bottom:4px;
+  text-transform:uppercase; letter-spacing:.04em;
+}
+@media(max-width:600px){
+  .bi-body { grid-template-columns:1fr; }
+  .bi-col+.bi-col { border-right:none; border-top:1px solid var(--border); }
+}
+
+/* ── DEFINITION BANNER ── */
+.def-banner {
+  background:linear-gradient(135deg, var(--green2), var(--teal));
+  border-radius:var(--radius);
+  padding:20px 22px;
+  color:#fff;
+  margin-bottom:14px;
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
+}
+.def-banner p { font-size:.92rem; line-height:1.7; }
+.def-banner .ar-side { font-family:'Cairo',sans-serif; direction:rtl; text-align:right; }
+.def-banner .en-label,.def-banner .ar-label {
+  font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(255,255,255,.65); margin-bottom:6px; font-weight:700;
+}
+@media(max-width:600px){ .def-banner{ grid-template-columns:1fr; } }
+
+/* ── HIGHLIGHT BOX ── */
+.hi-box {
+  background:var(--teal-lt);
+  border:1px solid #b2d4cf;
+  border-left:4px solid var(--teal);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  margin-bottom:14px;
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
+}
+.hi-box .ar-side { font-family:'Cairo',sans-serif; direction:rtl; text-align:right; border-right:1px solid #b2d4cf; padding-right:14px; }
+.hi-box p, .hi-box li { font-size:.88rem; line-height:1.75; color:var(--text); }
+.hi-box ul { padding-left:16px; padding-right:16px; }
+.hi-box strong { color:var(--teal); }
+@media(max-width:600px){ .hi-box{grid-template-columns:1fr;} .hi-box .ar-side{border-right:none;border-top:1px solid #b2d4cf;padding-right:0;padding-top:10px;} }
+
+/* ── OUTLINE LIST ── */
+.outline-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  margin-bottom:14px;
+}
+.outline-item {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; padding:12px 14px;
+  display:flex; align-items:flex-start; gap:10px;
+}
+.outline-item .dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--green); flex-shrink:0; margin-top:6px;
+}
+.outline-item .en { font-size:.88rem; font-weight:600; color:var(--text); }
+.outline-item .ar { font-family:'Cairo',sans-serif; font-size:.82rem; color:var(--sub); direction:rtl; text-align:right; margin-top:2px; }
+@media(max-width:500px){ .outline-grid{grid-template-columns:1fr;} }
+
+/* ── TABLE ── */
+.bi-table { width:100%; border-collapse:collapse; margin-bottom:14px; border-radius:var(--radius); overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+.bi-table th { background:var(--green); color:#fff; padding:10px 14px; font-size:.85rem; font-weight:700; }
+.bi-table th:nth-child(2) { font-family:'Cairo',sans-serif; direction:rtl; }
+.bi-table td { padding:10px 14px; font-size:.88rem; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.6; }
+.bi-table td:nth-child(2) { font-family:'Cairo',sans-serif; direction:rtl; text-align:right; background:var(--green-xl); }
+.bi-table tr:last-child td { border-bottom:none; }
+.bi-table tr:hover td { background:#e8f0ea; }
+.bi-table tr:hover td:nth-child(2) { background:#dde9de; }
+
+/* ── NURSING DIAG ── */
+.nd-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; padding:13px 16px;
+  display:flex; align-items:flex-start; gap:12px;
+  margin-bottom:10px;
+}
+.nd-num { font-family:'Lora',serif; font-size:1rem; color:var(--muted); flex-shrink:0; width:24px; }
+.nd-en { font-size:.88rem; font-weight:600; color:var(--text); }
+.nd-ar { font-family:'Cairo',sans-serif; font-size:.84rem; color:var(--sub); direction:rtl; text-align:right; margin-top:4px; }
+
+/* footer */
+.footer-note {
+  text-align:center; color:var(--muted); font-size:.8rem;
+  margin-top:30px; padding-top:20px; border-top:1px solid var(--border);
+  font-family:'Cairo',sans-serif;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="en-title">Stroke</div>
+    <div class="ar-title">السكتة الدماغية</div>
+    <div class="by">Prepared by Dr. Ghada Elsayed · إعداد د. غادة السيد</div>
+    <div class="header-badges">
+      <span class="hbadge">Classification</span>
+      <span class="hbadge">Etiology</span>
+      <span class="hbadge">Risk Factors</span>
+      <span class="hbadge">Manifestations</span>
+      <span class="hbadge">Diagnosis</span>
+      <span class="hbadge">Management</span>
+      <span class="hbadge">Nursing Care</span>
+    </div>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="go(0)">📋 Outline</button>
+    <button class="tab-btn"        onclick="go(1)">🔵 Definition</button>
+    <button class="tab-btn"        onclick="go(2)">📊 Classification</button>
+    <button class="tab-btn"        onclick="go(3)">🔬 Etiology</button>
+    <button class="tab-btn"        onclick="go(4)">⚠️ Risk Factors</button>
+    <button class="tab-btn"        onclick="go(5)">🩺 Manifestations</button>
+    <button class="tab-btn"        onclick="go(6)">🔍 Diagnosis</button>
+    <button class="tab-btn"        onclick="go(7)">💊 Management</button>
+    <button class="tab-btn"        onclick="go(8)">👩‍⚕️ Nursing Care</button>
+    <button class="tab-btn"        onclick="go(9)">📝 Nursing Diagnosis</button>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 0 – OUTLINE ═══════════ -->
+<div class="panel active" id="p0">
+  <div class="sec-header">
+    <div class="sec-num">📋</div>
+    <div>
+      <div class="sec-en">Lecture Outline</div>
+      <div class="sec-ar">محتويات المحاضرة</div>
+    </div>
+  </div>
+  <div class="outline-grid">
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Classification of Stroke</div><div class="ar">تصنيف السكتة الدماغية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Etiology of Stroke</div><div class="ar">أسباب السكتة الدماغية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Risk Factors</div><div class="ar">عوامل الخطر</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Clinical Manifestations</div><div class="ar">المظاهر السريرية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Diagnosis of Stroke</div><div class="ar">تشخيص السكتة الدماغية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Management of Stroke</div><div class="ar">إدارة وعلاج السكتة الدماغية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Nursing Management</div><div class="ar">الإدارة التمريضية</div></div></div>
+    <div class="outline-item"><div class="dot"></div><div><div class="en">Patient & Family Education</div><div class="ar">تثقيف المريض والأسرة</div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 1 – DEFINITION ═══════════ -->
+<div class="panel" id="p1">
+  <div class="sec-header">
+    <div class="sec-num">🔵</div>
+    <div>
+      <div class="sec-en">Definition of Stroke</div>
+      <div class="sec-ar">تعريف السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <div class="def-banner">
+    <div>
+      <div class="en-label">English</div>
+      <p>Stroke is the <strong>sudden onset of acute neurological deficit</strong> persisting for more than <strong>24 hours</strong>, caused by the interruption of blood flow to a region of the brain.</p>
+    </div>
+    <div class="ar-side">
+      <div class="ar-label">العربية</div>
+      <p>السكتة الدماغية هي <strong>ظهور مفاجئ لعجز عصبي حاد</strong> يستمر لأكثر من <strong>24 ساعة</strong>، ناجم عن انقطاع تدفق الدم إلى منطقة في الدماغ.</p>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Causes</span>
+      <span class="bi-label-en">Why blood flow is disrupted</span>
+      <span class="bi-label-ar">لماذا ينقطع تدفق الدم</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Obstruction of a vessel</li>
+          <li>Thrombus (blood clot)</li>
+          <li>Embolus (travelling clot)</li>
+          <li>Rupture of a vessel</li>
+        </ul>
+        <p style="margin-top:10px;font-size:.85rem;color:var(--sub)">Clinical features depend on the <strong>location</strong> and the region of brain perfused by the affected vessel.</p>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>انسداد في الأوعية الدموية</li>
+          <li>خثرة دموية (جلطة)</li>
+          <li>صمّة (جلطة متنقلة)</li>
+          <li>تمزق وعاء دموي</li>
+        </ul>
+        <p style="margin-top:10px;font-size:.85rem;">تعتمد الأعراض السريرية على <strong>موقع</strong> الحادثة والمنطقة التي يروي منها الوعاء الدموي.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hi-box">
+    <div>
+      <strong>TIA – Transient Ischemic Attack</strong>
+      <p style="margin-top:6px;">If symptoms resolve in <strong>less than 24 hours</strong>, the event is classified as a TIA. It lasts only minutes to less than an hour and is attributed to focal cerebral or retinal ischemia.</p>
+    </div>
+    <div class="ar-side">
+      <strong>النوبة الإقفارية العابرة (TIA)</strong>
+      <p style="margin-top:6px;">إذا زالت الأعراض في <strong>أقل من 24 ساعة</strong>، تُصنَّف الحادثة كـ TIA. تستمر دقائق فقط وتُعزى إلى نقص التروية البؤري في الدماغ أو الشبكية.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 2 – CLASSIFICATION ═══════════ -->
+<div class="panel" id="p2">
+  <div class="sec-header">
+    <div class="sec-num">📊</div>
+    <div>
+      <div class="sec-en">Classification of Stroke</div>
+      <div class="sec-ar">تصنيف السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <table class="bi-table">
+    <thead>
+      <tr><th>Classification / التصنيف</th><th>العربية / Arabic</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ischemic Stroke</strong> — 87% of all strokes<br>Subtypes: Thrombotic (75%) · Embolic (25%)</td>
+        <td><strong>السكتة الإقفارية</strong> — 87% من جميع الحالات<br>أنواعها: خثارية (75%) · صمّية (25%)</td>
+      </tr>
+      <tr>
+        <td><strong>Hemorrhagic Stroke</strong> — 13%<br>• Intracerebral hemorrhage (10%)<br>• Subarachnoid hemorrhage (3%)</td>
+        <td><strong>السكتة النزفية</strong> — 13%<br>• نزيف داخل المخ (10%)<br>• نزيف تحت العنكبوتية (3%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Causes by Type</span>
+      <span class="bi-label-en">Major types and their causes</span>
+      <span class="bi-label-ar">الأنواع الرئيسية وأسبابها</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <div class="sub-title">Ischemic</div>
+        <ul>
+          <li>Large artery thrombosis</li>
+          <li>Small penetrating artery thrombosis</li>
+          <li>Cardiogenic embolic</li>
+          <li>Cryptogenic (no known cause)</li>
+        </ul>
+        <div class="sub-title">Hemorrhagic</div>
+        <ul>
+          <li>Intracerebral hemorrhage</li>
+          <li>Subarachnoid hemorrhage</li>
+          <li>Cerebral aneurysm</li>
+          <li>Arteriovenous malformation (AVM)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <div class="sub-title">إقفارية</div>
+        <ul>
+          <li>خثار الشريان الكبير</li>
+          <li>خثار الشريان الثاقب الصغير</li>
+          <li>صمّة قلبية المنشأ</li>
+          <li>مجهولة السبب (Cryptogenic)</li>
+        </ul>
+        <div class="sub-title">نزفية</div>
+        <ul>
+          <li>نزيف داخل المخ</li>
+          <li>نزيف تحت العنكبوتية</li>
+          <li>أم دم دماغية</li>
+          <li>تشوه شرياني وريدي (AVM)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 3 – ETIOLOGY ═══════════ -->
+<div class="panel" id="p3">
+  <div class="sec-header">
+    <div class="sec-num">🔬</div>
+    <div>
+      <div class="sec-en">Etiology of Stroke</div>
+      <div class="sec-ar">أسباب السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Ischemic</span>
+      <span class="bi-label-en">Ischemic Stroke Cause</span>
+      <span class="bi-label-ar">سبب السكتة الإقفارية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col"><p>Due to <strong>vascular obstruction</strong> (thrombi or emboli), resulting in ischemia and infarction of brain tissue.</p></div>
+      <div class="bi-col"><p>تحدث بسبب <strong>انسداد وعائي</strong> (خثرات أو صمات)، مما يؤدي إلى نقص التروية واحتشاء نسيج الدماغ.</p></div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Hemorrhagic</span>
+      <span class="bi-label-en">Hemorrhagic Stroke Causes</span>
+      <span class="bi-label-ar">أسباب السكتة النزفية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li><strong>Hypertensive vascular disease</strong> → intracerebral hemorrhage</li>
+          <li><strong>Ruptured aneurysm</strong> — dilation of cerebral artery wall due to weakness</li>
+          <li><strong>Ruptured AVM</strong> — abnormal tangle of arteries and veins without a capillary bed; leads to dilation and eventual rupture</li>
+          <li>AVM is a common cause of hemorrhage in <strong>young people</strong></li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li><strong>ارتفاع ضغط الدم الوعائي</strong> → نزيف داخل المخ</li>
+          <li><strong>تمزق أم دم</strong> — تمدد جدار الشريان الدماغي بسبب ضعفه</li>
+          <li><strong>تمزق تشوه شرياني وريدي (AVM)</strong> — تشابك غير طبيعي من الشرايين والأوردة بدون سرير شعري؛ يؤدي إلى تمدد ثم تمزق</li>
+          <li>AVM سبب شائع للنزيف عند <strong>الشباب</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 4 – RISK FACTORS ═══════════ -->
+<div class="panel" id="p4">
+  <div class="sec-header">
+    <div class="sec-num">⚠️</div>
+    <div>
+      <div class="sec-en">Risk Factors for Stroke</div>
+      <div class="sec-ar">عوامل خطر السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Risk Factors</span>
+      <span class="bi-label-en">Modifiable & non-modifiable risks</span>
+      <span class="bi-label-ar">عوامل الخطر القابلة وغير القابلة للتعديل</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Smoking</li>
+          <li>Hypertension (most important)</li>
+          <li>Obesity</li>
+          <li>Cardiac disease</li>
+          <li>Hypercholesterolemia</li>
+          <li>Diabetes mellitus</li>
+          <li>Cancer</li>
+          <li>Atrial fibrillation</li>
+          <li>Previous TIA or stroke</li>
+          <li>Advanced age</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>التدخين</li>
+          <li>ارتفاع ضغط الدم (الأهم)</li>
+          <li>السمنة</li>
+          <li>أمراض القلب</li>
+          <li>ارتفاع الكوليسترول</li>
+          <li>السكري</li>
+          <li>السرطان</li>
+          <li>الرجفان الأذيني</li>
+          <li>TIA أو سكتة سابقة</li>
+          <li>التقدم في السن</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 5 – MANIFESTATIONS ═══════════ -->
+<div class="panel" id="p5">
+  <div class="sec-header">
+    <div class="sec-num">🩺</div>
+    <div>
+      <div class="sec-en">Clinical Manifestations of Stroke</div>
+      <div class="sec-ar">المظاهر السريرية للسكتة الدماغية</div>
+    </div>
+  </div>
+
+  <!-- Ischemic early -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Ischemic – Early Signs</span>
+      <span class="bi-label-en">Early signs of ischemic stroke</span>
+      <span class="bi-label-ar">العلامات المبكرة للسكتة الإقفارية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Numbness or weakness of face, arm, or leg (one side)</li>
+          <li>Confusion or change in mental status</li>
+          <li>Trouble speaking or understanding speech</li>
+          <li>Visual disturbances</li>
+          <li>Difficulty walking, dizziness, loss of balance</li>
+          <li>Sudden severe headache</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>خدر أو ضعف في الوجه أو الذراع أو الساق (جانب واحد)</li>
+          <li>ارتباك أو تغير في الحالة الذهنية</li>
+          <li>صعوبة الكلام أو فهمه</li>
+          <li>اضطرابات بصرية</li>
+          <li>صعوبة المشي أو الدوخة أو فقدان التوازن</li>
+          <li>صداع شديد مفاجئ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visual deficits -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Visual Field Deficits</span>
+      <span class="bi-label-en">Visual Field Deficits</span>
+      <span class="bi-label-ar">اضطرابات المجال البصري</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li><strong>Homonymous Hemianopsia:</strong> Loss of half visual field; neglect of one side of body</li>
+          <li><strong>Loss of Peripheral Vision:</strong> Difficulty seeing at night; unaware of object borders</li>
+          <li><strong>Diplopia:</strong> Double vision</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li><strong>العمى النصفي المتماثل:</strong> فقدان نصف المجال البصري؛ إهمال أحد جانبي الجسم</li>
+          <li><strong>فقدان الرؤية المحيطية:</strong> صعوبة الرؤية ليلاً؛ عدم الإدراك بحدود الأشياء</li>
+          <li><strong>الازدواج البصري (Diplopia):</strong> رؤية مزدوجة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Motor deficits -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Motor Deficits</span>
+      <span class="bi-label-en">Motor Deficits</span>
+      <span class="bi-label-ar">العجز الحركي</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li><strong>Hemiparesis:</strong> Weakness of face, arm, leg (same side)</li>
+          <li><strong>Hemiplegia:</strong> Paralysis of face, arm, leg (same side)</li>
+          <li><strong>Ataxia:</strong> Staggering, unsteady gait</li>
+          <li><strong>Dysarthria:</strong> Difficulty forming words</li>
+          <li><strong>Dysphagia:</strong> Difficulty swallowing</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li><strong>الشلل النصفي الجزئي:</strong> ضعف في الوجه والذراع والساق (نفس الجانب)</li>
+          <li><strong>الشلل النصفي الكامل:</strong> شلل في الوجه والذراع والساق (نفس الجانب)</li>
+          <li><strong>ترنّح (Ataxia):</strong> مشية متعثرة غير مستقرة</li>
+          <li><strong>عسر التلفظ (Dysarthria):</strong> صعوبة تكوين الكلام</li>
+          <li><strong>عسر البلع (Dysphagia):</strong> صعوبة البلع</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sensory/Verbal -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Sensory & Verbal Deficits</span>
+      <span class="bi-label-en">Sensory & Verbal Deficits</span>
+      <span class="bi-label-ar">العجز الحسي واللفظي</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <p><strong>Sensory:</strong></p>
+        <ul>
+          <li>Paresthesia (opposite side of lesion)</li>
+          <li>Numbness and tingling of extremity</li>
+          <li>Difficulty with proprioception</li>
+        </ul>
+        <p style="margin-top:8px"><strong>Verbal (Aphasia):</strong></p>
+        <ul>
+          <li><strong>Expressive aphasia:</strong> Cannot form understandable words</li>
+          <li><strong>Receptive aphasia:</strong> Cannot comprehend spoken word</li>
+          <li><strong>Global aphasia:</strong> Both expressive and receptive</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <p><strong>حسي:</strong></p>
+        <ul>
+          <li>تنمل (في الجانب المقابل للآفة)</li>
+          <li>خدر ووخز في الأطراف</li>
+          <li>صعوبة الإحساس بوضع الجسم</li>
+        </ul>
+        <p style="margin-top:8px"><strong>اللغوي (الحبسة):</strong></p>
+        <ul>
+          <li><strong>حبسة تعبيرية:</strong> عدم القدرة على تكوين كلام مفهوم</li>
+          <li><strong>حبسة استقبالية:</strong> عدم فهم الكلام المنطوق</li>
+          <li><strong>حبسة شاملة:</strong> الجمع بين الاثنتين</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hemorrhagic -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Hemorrhagic Stroke</span>
+      <span class="bi-label-en">Manifestations of Hemorrhagic Stroke</span>
+      <span class="bi-label-ar">مظاهر السكتة النزفية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li><strong>"Exploding headache"</strong> — worst headache of life</li>
+          <li>Decreased level of consciousness</li>
+          <li>Vomiting</li>
+          <li>Focal seizures</li>
+          <li>Nuchal rigidity (meningeal irritation)</li>
+          <li>Visual disturbances (diplopia, ptosis)</li>
+          <li>Tinnitus, dizziness, hemiparesis</li>
+          <li>Similar motor/sensory deficits as ischemic stroke</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li><strong>صداع انفجاري</strong> — أسوأ صداع في حياة المريض</li>
+          <li>انخفاض مستوى الوعي</li>
+          <li>قيء</li>
+          <li>نوبات صرع بؤرية</li>
+          <li>تيبّس الرقبة (تهيج السحايا)</li>
+          <li>اضطرابات بصرية (ازدواج، هبوط الجفن)</li>
+          <li>طنين أذن، دوخة، شلل نصفي</li>
+          <li>عجز حركي وحسي مشابه للسكتة الإقفارية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cognitive -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Cognitive & Emotional</span>
+      <span class="bi-label-en">Cognitive & Emotional Deficits</span>
+      <span class="bi-label-ar">العجز المعرفي والعاطفي</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <p><strong>Cognitive:</strong></p>
+        <ul>
+          <li>Decreased attention span</li>
+          <li>Impaired concentration</li>
+          <li>Poor abstract reasoning</li>
+          <li>Altered judgment</li>
+        </ul>
+        <p style="margin-top:8px"><strong>Emotional:</strong></p>
+        <ul>
+          <li>Loss of self-control, emotional lability</li>
+          <li>Depression, withdrawal</li>
+          <li>Fear, hostility, anger</li>
+          <li>Feelings of isolation</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <p><strong>معرفي:</strong></p>
+        <ul>
+          <li>تقلص مدة الانتباه</li>
+          <li>ضعف القدرة على التركيز</li>
+          <li>ضعف التفكير المجرد</li>
+          <li>اضطراب الحكم والتقدير</li>
+        </ul>
+        <p style="margin-top:8px"><strong>عاطفي:</strong></p>
+        <ul>
+          <li>فقدان ضبط النفس، تقلب المزاج</li>
+          <li>اكتئاب، انسحاب اجتماعي</li>
+          <li>خوف، عدوانية، غضب</li>
+          <li>الشعور بالعزلة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 6 – DIAGNOSIS ═══════════ -->
+<div class="panel" id="p6">
+  <div class="sec-header">
+    <div class="sec-num">🔍</div>
+    <div>
+      <div class="sec-en">Diagnosis of Stroke</div>
+      <div class="sec-ar">تشخيص السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <div class="hi-box">
+    <div><p>Rapid diagnosis is <strong>essential</strong> so appropriate patients can receive thrombolytic therapy to save damaged brain tissue and minimize permanent deficits.</p></div>
+    <div class="ar-side"><p>التشخيص السريع <strong>ضرورة قصوى</strong> حتى يتمكن المرضى المناسبون من تلقي العلاج الحالّ للجلطات لإنقاذ أنسجة الدماغ وتقليل العجوز الدائمة.</p></div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Imaging</span>
+      <span class="bi-label-en">Imaging Studies</span>
+      <span class="bi-label-ar">الدراسات التصويرية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li><strong>CT (without contrast):</strong> Differentiates hemorrhagic from ischemic stroke — first-line</li>
+          <li><strong>MRI:</strong> Detects infarction earlier than CT; determines stroke type, size, location</li>
+          <li><strong>CT/MRI Angiography:</strong> Confirms aneurysm or AVM location and size</li>
+          <li><strong>Transcranial Doppler:</strong> Assesses cerebral blood flow</li>
+          <li><strong>SPECT scan:</strong> Cerebral perfusion imaging</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li><strong>CT (بدون صبغة):</strong> يُفرق بين النزيف والإقفار — الخط الأول</li>
+          <li><strong>MRI:</strong> يكشف الاحتشاء مبكراً أكثر من CT؛ يحدد نوع السكتة وحجمها وموقعها</li>
+          <li><strong>تصوير الأوعية بـ CT/MRI:</strong> يؤكد موضع أم الدم أو AVM وحجمها</li>
+          <li><strong>دوبلر عبر الجمجمة:</strong> يقيّم تدفق الدم الدماغي</li>
+          <li><strong>SPECT scan:</strong> تصوير التروية الدماغية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Labs & Other Tests</span>
+      <span class="bi-label-en">Laboratory & Other Investigations</span>
+      <span class="bi-label-ar">الفحوصات المخبرية والأخرى</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>12-lead ECG + continuous cardiac monitoring</li>
+          <li>Chest X-ray</li>
+          <li>Echocardiography (for cardioembolic source)</li>
+          <li>CBC, electrolytes, glucose, renal/hepatic function</li>
+          <li>Prothrombin time / INR</li>
+          <li>Arterial Blood Gases (if hypoxia suspected)</li>
+          <li>EEG (if seizures suspected)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>تخطيط القلب 12-اشتقاقاً + مراقبة مستمرة</li>
+          <li>أشعة الصدر</li>
+          <li>تخطيط صدى القلب (للكشف عن مصدر الصمّة)</li>
+          <li>صورة دم، شوارد، سكر، وظائف كلوية وكبدية</li>
+          <li>زمن البروثرومبين / INR</li>
+          <li>غازات الدم الشرياني (عند الاشتباه بنقص الأكسجين)</li>
+          <li>تخطيط الدماغ (عند الاشتباه بنوبات صرعية)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 7 – MANAGEMENT ═══════════ -->
+<div class="panel" id="p7">
+  <div class="sec-header">
+    <div class="sec-num">💊</div>
+    <div>
+      <div class="sec-en">Management of Stroke</div>
+      <div class="sec-ar">إدارة وعلاج السكتة الدماغية</div>
+    </div>
+  </div>
+
+  <!-- Ischemic -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Ischemic – Medical</span>
+      <span class="bi-label-en">Medical Management – Ischemic Stroke</span>
+      <span class="bi-label-ar">العلاج الطبي – السكتة الإقفارية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <div class="sub-title">Goals</div>
+        <ul><li>Restore cerebral blood flow</li><li>Maintain reperfusion</li><li>Prevent recurrent thrombosis</li></ul>
+        <div class="sub-title">Thrombolytic Therapy (rtPA / t-PA)</div>
+        <ul>
+          <li>Dose: <strong>0.9 mg/kg</strong> (max 90 mg)</li>
+          <li>10% as IV bolus over 1–2 min; 90% infusion over 60 min</li>
+          <li>Window: <strong>≤ 4.5 hours</strong> from symptom onset</li>
+          <li>No antithrombotic therapy for next 24 hours</li>
+          <li>Risk: intracerebral hemorrhage (~6.4%)</li>
+        </ul>
+        <div class="sub-title">Anticoagulants</div>
+        <ul><li>IV Heparin / Low-molecular-weight heparin</li><li>Warfarin (atrial fibrillation)</li></ul>
+        <div class="sub-title">Antiplatelet Drugs</div>
+        <ul>
+          <li>Aspirin 81–325 mg/day</li>
+          <li>Clopidogrel (Plavix)</li>
+          <li>Dipyridamole</li>
+          <li>Ticlopidine 250 mg BID (rarely used now)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <div class="sub-title">الأهداف</div>
+        <ul><li>استعادة تدفق الدم الدماغي</li><li>الحفاظ على إعادة التروية</li><li>منع تكرار الجلطة</li></ul>
+        <div class="sub-title">العلاج الحالّ للجلطات (rtPA)</div>
+        <ul>
+          <li>الجرعة: <strong>0.9 ملغ/كغ</strong> (بحد أقصى 90 ملغ)</li>
+          <li>10% جرعة بلعة وريدية؛ 90% تسريب على 60 دقيقة</li>
+          <li>النافذة الزمنية: <strong>≤ 4.5 ساعة</strong> من بدء الأعراض</li>
+          <li>لا يُعطى أي مضاد تخثر للـ 24 ساعة التالية</li>
+          <li>خطر: نزيف داخل المخ (~6.4%)</li>
+        </ul>
+        <div class="sub-title">مضادات التخثر</div>
+        <ul><li>هيبارين وريدي / هيبارين منخفض الوزن الجزيئي</li><li>وارفارين (في الرجفان الأذيني)</li></ul>
+        <div class="sub-title">أدوية مضادة الصفيحات</div>
+        <ul>
+          <li>أسبرين 81–325 ملغ/يوم</li>
+          <li>كلوبيدوغريل (بلافيكس)</li>
+          <li>ديبيريدامول</li>
+          <li>تيكلوبيدين 250 ملغ مرتين (نادر الاستخدام)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- tPA inclusion criteria -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">tPA Criteria</span>
+      <span class="bi-label-en">Inclusion Criteria for Thrombolytic Therapy</span>
+      <span class="bi-label-ar">معايير تأهيل العلاج الحالّ للجلطات</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Clinical diagnosis of ischemic stroke</li>
+          <li>Onset ≤ 3 hours (up to 4.5 h)</li>
+          <li>Systolic BP ≤ 185 mmHg; Diastolic ≤ 110 mmHg</li>
+          <li>Not a minor or rapidly resolving stroke</li>
+          <li>No seizure at onset</li>
+          <li>Not on warfarin; PT ≤ 15 sec / INR ≤ 1.7</li>
+          <li>Platelet count ≥ 100,000/mm³</li>
+          <li>No intracranial hemorrhage, neoplasm, AVM, or aneurysm</li>
+          <li>No major surgery within 14 days</li>
+          <li>No stroke/head injury within 3 months</li>
+          <li>No GI/GU bleeding within 21 days</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>تشخيص سريري بسكتة إقفارية</li>
+          <li>بداية الأعراض ≤ 3 ساعات (حتى 4.5 ساعة)</li>
+          <li>الانقباضي ≤ 185 ملم/زئبق؛ الانبساطي ≤ 110</li>
+          <li>ليس سكتة خفيفة أو متحسنة سريعاً</li>
+          <li>لا نوبات صرعية عند البداية</li>
+          <li>لا يأخذ وارفارين؛ PT ≤ 15 ثانية / INR ≤ 1.7</li>
+          <li>الصفيحات ≥ 100,000 /مم³</li>
+          <li>لا نزيف داخل الجمجمة أو ورم أو AVM أو أم دم</li>
+          <li>لا جراحة كبرى خلال 14 يوماً</li>
+          <li>لا سكتة أو إصابة رأس خلال 3 أشهر</li>
+          <li>لا نزيف هضمي أو بولي خلال 21 يوماً</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Surgical Ischemic -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Surgical – Ischemic</span>
+      <span class="bi-label-en">Carotid Endarterectomy</span>
+      <span class="bi-label-ar">استئصال نسيج الشريان السباتي</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <p>Removal of atherosclerotic plaque from the carotid artery to prevent stroke.</p>
+        <p style="margin-top:8px"><strong>Indications:</strong> TIA or mild stroke due to severe carotid stenosis (70–99%) or moderate stenosis (50–69%) with significant risk factors.</p>
+        <div class="sub-title" style="margin-top:10px">Complications</div>
+        <ul>
+          <li>Incision hematoma (5.5%)</li>
+          <li>Hypertension → risk of hematoma/hyperperfusion</li>
+          <li>Postoperative hypotension (~5%)</li>
+          <li>Hyperperfusion syndrome</li>
+          <li>Intracerebral hemorrhage (often fatal 60%)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <p>إزالة اللويحات التصلبية من الشريان السباتي للوقاية من السكتة.</p>
+        <p style="margin-top:8px"><strong>المؤشرات:</strong> TIA أو سكتة خفيفة بسبب تضيق شديد (70–99%) أو متوسط (50–69%) مع عوامل خطر.</p>
+        <div class="sub-title" style="margin-top:10px">المضاعفات</div>
+        <ul>
+          <li>ورم دموي في الشق الجراحي (5.5%)</li>
+          <li>ارتفاع ضغط الدم → خطر ورم دموي/فرط التروية</li>
+          <li>انخفاض الضغط بعد العملية (~5%)</li>
+          <li>متلازمة فرط التروية</li>
+          <li>نزيف داخل المخ (كثيراً ما يكون مميتاً 60%)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hemorrhagic -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Hemorrhagic – Surgical</span>
+      <span class="bi-label-en">Surgical Management – Hemorrhagic Stroke</span>
+      <span class="bi-label-ar">الجراحة – السكتة النزفية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <p><strong>Goals:</strong> Allow brain recovery, prevent re-bleeding, and treat complications.</p>
+        <ul style="margin-top:8px">
+          <li><strong>Craniotomy:</strong> Evacuate hematoma; expose aneurysm or AVM</li>
+          <li><strong>Surgical clipping:</strong> Clip applied to aneurysm neck</li>
+          <li><strong>Endovascular coiling:</strong> Complete obliteration of the aneurysm</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <p><strong>الأهداف:</strong> السماح للدماغ بالتعافي، منع إعادة النزيف، وعلاج المضاعفات.</p>
+        <ul style="margin-top:8px">
+          <li><strong>بضع الجمجمة (Craniotomy):</strong> إخلاء الورم الدموي؛ كشف أم الدم أو AVM</li>
+          <li><strong>مشبك جراحي:</strong> تطبيق مشبك على عنق أم الدم</li>
+          <li><strong>اللف الوعائي الداخلي (Coiling):</strong> إغلاق كامل لأم الدم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 8 – NURSING CARE ═══════════ -->
+<div class="panel" id="p8">
+  <div class="sec-header">
+    <div class="sec-num">👩‍⚕️</div>
+    <div>
+      <div class="sec-en">Nursing Management of Stroke</div>
+      <div class="sec-ar">الإدارة التمريضية للسكتة الدماغية</div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Neurological Monitoring</span>
+      <span class="bi-label-en">Monitoring for Neurological & Hemodynamic Changes</span>
+      <span class="bi-label-ar">مراقبة التغيرات العصبية والديناميكية الدموية</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Continuous neurological signs and vital sign monitoring</li>
+          <li>Automatic noninvasive devices (BP cuff, pulse oximeter)</li>
+          <li>Identify and treat seizure activity immediately</li>
+          <li>Notify physician at first sign of change</li>
+          <li>Monitor vital signs: every 15 min (first 2h) → every 30 min (6h) → every 1h (16h)</li>
+          <li>Maintain systolic BP &lt; 180 mmHg, diastolic &lt; 100 mmHg</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>مراقبة مستمرة للعلامات العصبية والحيوية</li>
+          <li>أجهزة غير غازية (مقياس ضغط، مقياس تشبع الأكسجين)</li>
+          <li>الكشف الفوري وعلاج نوبات الصرع</li>
+          <li>إبلاغ الطبيب عند أول علامة تغيير</li>
+          <li>قياس العلامات الحيوية: كل 15 دقيقة (2 ساعة أولى) ← كل 30 دقيقة (6 ساعات) ← كل ساعة (16 ساعة)</li>
+          <li>الحفاظ على الانقباضي &lt; 180، الانبساطي &lt; 100 ملم/زئبق</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Complications</span>
+      <span class="bi-label-en">Surveillance for Complications</span>
+      <span class="bi-label-ar">مراقبة المضاعفات</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Monitor for bleeding, vasospasm, increased ICP</li>
+          <li>Aspiration, malnutrition, pneumonia</li>
+          <li>DVT, pulmonary embolism</li>
+          <li>Pressure ulcers, contractures, joint abnormalities</li>
+        </ul>
+        <div class="sub-title" style="margin-top:10px">Signs of Increased ICP</div>
+        <ul>
+          <li>Change in level of consciousness (most sensitive)</li>
+          <li>Unequal pupils, decreased pupillary response</li>
+          <li>Headache, projectile vomiting</li>
+          <li>Cushing's triad: bradycardia + systolic HTN + bradypnea</li>
+          <li>Abnormal posturing (decerebrate/decorticate)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>مراقبة النزيف، التشنج الوعائي، ارتفاع الضغط داخل الجمجمة</li>
+          <li>الاستنشاق، سوء التغذية، الالتهاب الرئوي</li>
+          <li>جلطة وريدية عميقة، انسداد رئوي</li>
+          <li>قرح الضغط، التقلصات، اضطرابات المفاصل</li>
+        </ul>
+        <div class="sub-title" style="margin-top:10px">علامات ارتفاع الضغط داخل الجمجمة</div>
+        <ul>
+          <li>تغيير مستوى الوعي (المؤشر الأكثر حساسية)</li>
+          <li>عدم تساوي الحدقتين، ضعف الاستجابة للضوء</li>
+          <li>صداع، قيء نافوري</li>
+          <li>ثالوث كوشينغ: بطء القلب + ارتفاع الانقباضي + بطء التنفس</li>
+          <li>وضع مرضي شاذ (تصلب مخيخي / قشري)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Swallowing</span>
+      <span class="bi-label-en">Impaired Swallowing / Dysphagia</span>
+      <span class="bi-label-ar">اضطراب البلع / عسر البلع</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <p>Assess for signs of dysphagia:</p>
+        <ul>
+          <li>Drooling, difficulty handling oral secretions</li>
+          <li>Absent gag/cough/swallowing reflex</li>
+          <li>Moist, gurgling voice quality</li>
+          <li>Decreased mouth and tongue movements</li>
+          <li>Presence of dysarthria</li>
+        </ul>
+        <p style="margin-top:8px">→ If present: <strong>NPO + speech therapy consult</strong></p>
+      </div>
+      <div class="bi-col">
+        <p>تقييم علامات عسر البلع:</p>
+        <ul>
+          <li>سيلان اللعاب، صعوبة التحكم في الإفرازات الفموية</li>
+          <li>غياب منعكس البلع أو السعال أو الوجود في الحنجرة</li>
+          <li>صوت رطب أو غرغري</li>
+          <li>قلة حركة الفم واللسان</li>
+          <li>وجود عسر تلفظ</li>
+        </ul>
+        <p style="margin-top:8px">→ في حالة وجودها: <strong>صيام + استشارة علاج النطق</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Post-Endarterectomy</span>
+      <span class="bi-label-en">Nursing Care Post Carotid Endarterectomy</span>
+      <span class="bi-label-ar">التمريض بعد استئصال نسيج الشريان السباتي</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Maintain adequate blood pressure (avoid hypotension → ischemia)</li>
+          <li>Control hypertension (prevents hemorrhage/edema)</li>
+          <li>Continuous cardiac monitoring (high CAD incidence)</li>
+          <li>Notify surgeon immediately of new neurological deficits</li>
+          <li>Monitor for thrombus: sudden weakness on one side</li>
+          <li>Assess cranial nerves: VII (Facial), X (Vagus), XI (Accessory), XII (Hypoglossal)</li>
+          <li>Assess swallowing, hoarseness, cranial nerve dysfunction</li>
+          <li>Keep emergency airway supplies ready (including tracheostomy)</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>الحفاظ على ضغط دم كافٍ (تجنب انخفاضه → نقص تروية)</li>
+          <li>التحكم في ارتفاع الضغط (يمنع النزيف والوذمة)</li>
+          <li>مراقبة القلب المستمرة (ارتفاع نسبة مرض الشريان التاجي)</li>
+          <li>إبلاغ الجراح فوراً عند ظهور عجز عصبي جديد</li>
+          <li>مراقبة علامات الجلطة: ضعف مفاجئ في أحد الجانبين</li>
+          <li>تقييم الأعصاب القحفية: VII، X، XI، XII</li>
+          <li>تقييم البلع والبحّة ووظائف الأعصاب القحفية</li>
+          <li>إبقاء مستلزمات طوارئ مجرى الهواء جاهزة (بما فيها الفغر)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="bi-tag">Patient Education</span>
+      <span class="bi-label-en">Patient & Family Education at Discharge</span>
+      <span class="bi-label-ar">تثقيف المريض والأسرة عند الخروج</span>
+    </div>
+    <div class="bi-body">
+      <div class="bi-col">
+        <ul>
+          <li>Pathophysiology of stroke</li>
+          <li>Specific cause and risk factor modification</li>
+          <li>Importance of taking medications as prescribed</li>
+          <li>Activities of daily living and self-care</li>
+          <li>Measures to prevent injuries of impaired limbs</li>
+          <li>How to compensate for residual deficits</li>
+          <li>Basic rehabilitation techniques</li>
+          <li>Encourage participation in neurologic rehab / support groups</li>
+          <li>Family: how to feed, dress, and bathe the patient</li>
+        </ul>
+      </div>
+      <div class="bi-col">
+        <ul>
+          <li>الفيزيولوجيا المرضية للسكتة الدماغية</li>
+          <li>السبب المحدد وتعديل عوامل الخطر</li>
+          <li>أهمية الالتزام بالأدوية</li>
+          <li>أنشطة الحياة اليومية والاعتناء بالنفس</li>
+          <li>الوقاية من إصابات الأطراف المشلولة</li>
+          <li>التكيف مع العجوز المتبقية</li>
+          <li>أساسيات تقنيات إعادة التأهيل</li>
+          <li>تشجيع المشاركة في برامج التأهيل العصبي ومجموعات الدعم</li>
+          <li>الأسرة: كيفية إطعام المريض وإلباسه واستحمامه</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL 9 – NURSING DIAGNOSIS ═══════════ -->
+<div class="panel" id="p9">
+  <div class="sec-header">
+    <div class="sec-num">📝</div>
+    <div>
+      <div class="sec-en">Examples of Nursing Diagnosis</div>
+      <div class="sec-ar">أمثلة على التشخيصات التمريضية</div>
+    </div>
+  </div>
+
+  <div class="nd-card"><div class="nd-num">1</div><div><div class="nd-en">Risk for Ineffective Cerebral Tissue Perfusion</div><div class="nd-ar">خطر عدم فعالية تروية الأنسجة الدماغية</div></div></div>
+  <div class="nd-card"><div class="nd-num">2</div><div><div class="nd-en">Acute Pain related to transmission of cutaneous, visceral muscular, or ischemic impulses</div><div class="nd-ar">ألم حاد مرتبط بنقل الإشارات الجلدية أو الحشوية أو الإقفارية</div></div></div>
+  <div class="nd-card"><div class="nd-num">3</div><div><div class="nd-en">Unilateral Neglect related to perceptual disruption</div><div class="nd-ar">إهمال أحادي الجانب مرتبط باضطراب الإدراك الحسي</div></div></div>
+  <div class="nd-card"><div class="nd-num">4</div><div><div class="nd-en">Impaired Verbal Communication related to cerebral speech center injury</div><div class="nd-ar">ضعف التواصل اللفظي مرتبط بإصابة مركز الكلام في الدماغ</div></div></div>
+  <div class="nd-card"><div class="nd-num">5</div><div><div class="nd-en">Impaired Swallowing related to neuromuscular impairment, fatigue, and limited awareness</div><div class="nd-ar">اضطراب البلع مرتبط بعجز عصبي عضلي وإرهاق ومحدودية الوعي</div></div></div>
+  <div class="nd-card"><div class="nd-num">6</div><div><div class="nd-en">Risk for Aspiration</div><div class="nd-ar">خطر الاستنشاق</div></div></div>
+  <div class="nd-card"><div class="nd-num">7</div><div><div class="nd-en">Risk for Infection</div><div class="nd-ar">خطر العدوى</div></div></div>
+  <div class="nd-card"><div class="nd-num">8</div><div><div class="nd-en">Anxiety related to threat to biologic, psychologic, or social integrity</div><div class="nd-ar">قلق مرتبط بتهديد السلامة البيولوجية أو النفسية أو الاجتماعية</div></div></div>
+  <div class="nd-card"><div class="nd-num">9</div><div><div class="nd-en">Disturbed Body Image related to actual change in body structure, function, or appearance</div><div class="nd-ar">اضطراب صورة الجسم مرتبط بتغيير فعلي في بنية الجسم أو وظيفته أو مظهره</div></div></div>
+  <div class="nd-card"><div class="nd-num">10</div><div><div class="nd-en">Compromised Family Coping related to critically ill family member</div><div class="nd-ar">تأقلم أسري مُعتل مرتبط بمريض حرج في الأسرة</div></div></div>
+
+  <div class="footer-note">إعداد د. غادة السيد · Prepared by Dr. Ghada Elsayed</div>
+</div>
+
+<script>
+function go(i){
+  document.querySelectorAll('.panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
+  document.querySelectorAll('.tab-btn').forEach((b,idx)=>b.classList.toggle('active',idx===i));
+}
+</script>
+</body>
+</html>

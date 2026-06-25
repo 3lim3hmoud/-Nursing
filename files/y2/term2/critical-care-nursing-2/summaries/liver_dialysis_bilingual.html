@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liver Dialysis | غسيل الكبد</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f2ed;
+    --surface: #ffffff;
+    --primary: #2c5f6e;
+    --primary-light: #3d7a8a;
+    --accent: #c0845a;
+    --accent-light: #e8c9ae;
+    --text-main: #1e2d35;
+    --text-muted: #5a7080;
+    --border: #d9cfc4;
+    --green: #3d6b5e;
+    --green-light: #e6f0ec;
+    --red: #8b3a3a;
+    --red-light: #f5e8e8;
+    --tab-active: #2c5f6e;
+    --shadow: 0 2px 20px rgba(44,95,110,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', serif;
+    background: var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, #1a3d49 100%);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .header-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+  header .ar-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    opacity: 0.85;
+    font-weight: 600;
+    direction: rtl;
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background: rgba(255,255,255,0.15);
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* TABS */
+  .tabs-wrapper {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .tab-btn .ar { font-family: 'Noto Naskh Arabic', serif; display: block; font-size: 0.78rem; }
+  .tab-btn:hover { color: var(--primary); background: rgba(44,95,110,0.05); }
+  .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+
+  /* CONTENT */
+  .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.2rem 3rem;
+  }
+  .tab-panel { display: none; animation: fadeIn 0.3s ease; }
+  .tab-panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* BILINGUAL CARD */
+  .bi-card {
+    background: var(--surface);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .bi-card-header {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 0.8rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .bi-card-header .icon { font-size: 1.3rem; }
+  .bi-card-header .en-h { font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+  .bi-card-header .ar-h { font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; opacity: 0.88; margin-right: auto; direction: rtl; }
+  .bi-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .bi-en {
+    padding: 1.4rem 1.6rem;
+    border-right: 1px solid var(--border);
+    line-height: 1.85;
+    font-size: 0.93rem;
+    color: var(--text-main);
+  }
+  .bi-ar {
+    padding: 1.4rem 1.6rem;
+    direction: rtl;
+    font-family: 'Noto Naskh Arabic', serif;
+    line-height: 2;
+    font-size: 1rem;
+    color: var(--text-main);
+    background: rgba(245,242,237,0.5);
+  }
+  @media (max-width: 680px) {
+    .bi-body { grid-template-columns: 1fr; }
+    .bi-en { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  /* LIST STYLES */
+  .bi-en ul, .bi-ar ul { padding-right: 1.2rem; padding-left: 1.2rem; }
+  .bi-en li, .bi-ar li { margin-bottom: 0.5rem; }
+  .bi-ar li { list-style: none; padding-right: 1rem; position: relative; }
+  .bi-ar li::before { content: '◈'; position: absolute; right: -0.5rem; color: var(--accent); font-size: 0.7rem; top: 0.4rem; }
+
+  /* COMPARISON TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+  }
+  .compare-table th {
+    background: var(--primary);
+    color: white;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  .compare-table th.ar-col { text-align: right; font-family: 'Noto Naskh Arabic', serif; direction: rtl; }
+  .compare-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table td.ar-col { text-align: right; font-family: 'Noto Naskh Arabic', serif; direction: rtl; }
+  .compare-table tr:nth-child(even) td { background: rgba(44,95,110,0.04); }
+  .compare-table tr:hover td { background: rgba(44,95,110,0.08); }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--green-light);
+    border-left: 4px solid var(--green);
+    padding: 1rem 1.3rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+  }
+  .highlight-box.accent {
+    background: #fef6ef;
+    border-left-color: var(--accent);
+  }
+  .highlight-box .ar-note { font-family: 'Noto Naskh Arabic', serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.95rem; color: var(--text-muted); }
+
+  /* SECTION TITLE */
+  .section-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+  }
+  .section-intro h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary); }
+  .section-intro .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 1.1rem; color: var(--text-muted); direction: rtl; margin-top: 0.3rem; }
+
+  /* DEVICE CARDS */
+  .device-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .device-card {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .device-card .dc-head {
+    padding: 1rem 1.2rem;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+  }
+  .device-card .dc-head.mars { background: linear-gradient(135deg, #2c5f6e, #1a3d49); }
+  .device-card .dc-head.spad { background: linear-gradient(135deg, #3d6b5e, #2a4a42); }
+  .device-card .dc-head.prom { background: linear-gradient(135deg, #7a4a2c, #5a3520); }
+  .device-card .dc-body { padding: 1.1rem 1.2rem; font-size: 0.89rem; line-height: 1.8; }
+  .device-card .dc-ar { padding: 0.8rem 1.2rem 1.1rem; background: var(--bg); font-family: 'Noto Naskh Arabic', serif; direction: rtl; font-size: 0.94rem; line-height: 2; border-top: 1px solid var(--border); }
+
+  /* CLINICAL GRID */
+  .clinical-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+  .clin-card {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 1.3rem;
+    box-shadow: var(--shadow);
+  }
+  .clin-card .clin-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .clin-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary); margin-bottom: 0.3rem; }
+  .clin-card .ar-title { font-family: 'Noto Naskh Arabic', serif; font-size: 0.92rem; color: var(--text-muted); direction: rtl; margin-bottom: 0.7rem; }
+  .clin-card p { font-size: 0.87rem; line-height: 1.75; color: var(--text-main); margin-bottom: 0.5rem; }
+  .clin-card .ar-p { font-family: 'Noto Naskh Arabic', serif; direction: rtl; font-size: 0.92rem; line-height: 1.9; color: var(--text-muted); padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+
+  /* QUIZ */
+  .quiz-container { max-width: 860px; margin: 0 auto; }
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary), #1a3d49);
+    border-radius: 16px;
+    color: white;
+  }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+  .quiz-header .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 1.1rem; opacity: 0.85; direction: rtl; margin-top: 0.4rem; }
+  .quiz-score-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .q-card {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 1.4rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .q-card:hover { box-shadow: 0 4px 24px rgba(44,95,110,0.15); }
+  .q-num {
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .q-text {
+    padding: 1.1rem 1.4rem 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+  .q-ar {
+    padding: 0 1.4rem 0.9rem;
+    font-family: 'Noto Naskh Arabic', serif;
+    direction: rtl;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .q-options {
+    padding: 0.3rem 1.2rem 1.2rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .opt-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    text-align: left;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+  .opt-btn:hover:not(:disabled) { border-color: var(--primary); background: rgba(44,95,110,0.07); }
+  .opt-btn .opt-letter {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .opt-btn.correct { border-color: var(--green); background: var(--green-light); }
+  .opt-btn.correct .opt-letter { background: var(--green); }
+  .opt-btn.wrong { border-color: var(--red); background: var(--red-light); }
+  .opt-btn.wrong .opt-letter { background: var(--red); }
+  .opt-btn:disabled { cursor: default; }
+  .feedback {
+    padding: 0.6rem 1.2rem 1rem;
+    font-size: 0.85rem;
+    display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct-fb { color: var(--green); }
+  .feedback.wrong-fb { color: var(--red); }
+  .feedback .ar-fb { font-family: 'Noto Naskh Arabic', serif; direction: rtl; display: block; margin-top: 0.2rem; }
+
+  .quiz-actions { text-align: center; margin-top: 2rem; }
+  .quiz-submit-btn, .quiz-reset-btn {
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .quiz-submit-btn { background: var(--primary); color: white; }
+  .quiz-submit-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
+  .quiz-reset-btn { background: var(--accent); color: white; margin-left: 1rem; }
+  .quiz-reset-btn:hover { opacity: 0.9; }
+  .result-panel {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 2px solid var(--primary);
+    text-align: center;
+    display: none;
+  }
+  .result-panel.show { display: block; }
+  .result-panel .score-big { font-size: 3rem; font-weight: 700; color: var(--primary); font-family: 'Playfair Display', serif; }
+  .result-panel .result-text { font-size: 1.1rem; margin-top: 0.5rem; }
+  .result-panel .ar-result { font-family: 'Noto Naskh Arabic', serif; direction: rtl; color: var(--text-muted); }
+
+  /* LANG LABEL */
+  .lang-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .lang-label.en { background: rgba(44,95,110,0.12); color: var(--primary); }
+  .lang-label.ar { background: rgba(192,132,90,0.15); color: var(--accent); font-family: 'Noto Naskh Arabic', serif; }
+
+  /* SIDE EFFECTS */
+  .side-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .side-item {
+    background: var(--red-light);
+    border: 1px solid rgba(139,58,58,0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .side-item .si-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+  .side-item h4 { font-size: 0.9rem; color: var(--red); margin-bottom: 0.2rem; }
+  .side-item .si-ar { font-family: 'Noto Naskh Arabic', serif; direction: rtl; font-size: 0.85rem; color: var(--text-muted); }
+
+  /* PROCEDURE STEPS */
+  .steps { counter-reset: step; }
+  .step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 1rem 1.2rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .step-content { flex: 1; }
+  .step-content p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.4rem; }
+  .step-content .ar-s { font-family: 'Noto Naskh Arabic', serif; direction: rtl; font-size: 0.92rem; color: var(--text-muted); line-height: 1.9; }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.82rem;
+  }
+  footer .ar { font-family: 'Noto Naskh Arabic', serif; direction: rtl; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-icon">🫀</div>
+  <h1>Liver Dialysis</h1>
+  <div class="ar-title">غسيل الكبد</div>
+  <div class="badge">Prepared by Assist Prof Dr. Afaf Mohamed Mansour</div>
+</header>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('intro')">Introduction<span class="ar">المقدمة</span></button>
+    <button class="tab-btn" onclick="showTab('definition')">Definition<span class="ar">التعريف</span></button>
+    <button class="tab-btn" onclick="showTab('hypothesis')">Hypothesis<span class="ar">الفرضية</span></button>
+    <button class="tab-btn" onclick="showTab('indications')">Indications<span class="ar">المؤشرات</span></button>
+    <button class="tab-btn" onclick="showTab('goals')">Goals & Places<span class="ar">الأهداف</span></button>
+    <button class="tab-btn" onclick="showTab('machines')">Machines<span class="ar">الأجهزة</span></button>
+    <button class="tab-btn" onclick="showTab('devices')">Devices<span class="ar">الأنواع</span></button>
+    <button class="tab-btn" onclick="showTab('procedure')">Procedure<span class="ar">الإجراء</span></button>
+    <button class="tab-btn" onclick="showTab('clinical')">Clinical Efficiency<span class="ar">الكفاءة</span></button>
+    <button class="tab-btn" onclick="showTab('sideeffects')">Side Effects<span class="ar">الآثار الجانبية</span></button>
+    <button class="tab-btn" onclick="showTab('quiz')">🧠 Self-Test<span class="ar">اختبر نفسك</span></button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- INTRODUCTION -->
+  <div id="intro" class="tab-panel active">
+    <div class="section-intro">
+      <h2>Introduction</h2>
+      <div class="ar">المقدمة</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">📖</span>
+        <span class="en-h">Background</span>
+        <span class="ar-h">الخلفية العلمية</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>The <strong>lack of liver detoxification</strong> as well as the loss of metabolic and regulatory functions of the liver leads to life-threatening complications.</p>
+          <br>
+          <p>During the acute phase of their disease, a substantial number of patients are treated using <strong>extracorporeal blood purification devices</strong>.</p>
+          <br>
+          <p>Besides regular hemodialysis, the <strong>Molecular Adsorbent Recycling System (MARS)</strong> is used with increasing frequency.</p>
+          <br>
+          <p>Liver dialysis is utilized in appropriate cases to <strong>support the patient through liver failure</strong> until transplantation can be performed.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>إن <strong>غياب وظيفة إزالة السموم من الكبد</strong> وفقدان الوظائف الأيضية والتنظيمية يؤدي إلى مضاعفات تهدد الحياة.</p>
+          <br>
+          <p>خلال المرحلة الحادة من المرض، يُعالَج عدد كبير من المرضى باستخدام <strong>أجهزة تنقية الدم خارج الجسم</strong>.</p>
+          <br>
+          <p>إلى جانب غسيل الكلى العادي، بات استخدام <strong>نظام MARS</strong> (نظام إعادة تدوير الجزيئات الماصة) يزداد تكراراً.</p>
+          <br>
+          <p>يُستخدم غسيل الكبد في الحالات المناسبة <strong>لدعم المريض خلال فشل الكبد</strong> حتى يمكن إجراء عملية الزرع.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEFINITION -->
+  <div id="definition" class="tab-panel">
+    <div class="section-intro">
+      <h2>Definition of Liver Dialysis</h2>
+      <div class="ar">تعريف غسيل الكبد</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">🔬</span>
+        <span class="en-h">What is Liver Dialysis?</span>
+        <span class="ar-h">ما هو غسيل الكبد؟</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>Liver dialysis is a <strong>detoxification treatment for liver failure</strong> and has shown promise for patients with hepatorenal syndrome.</p>
+          <br>
+          <p>It is <strong>similar to hemodialysis</strong> and based on the same principles.</p>
+          <br>
+          <p>Like a bioartificial liver device, it is a form of <strong>artificial extracorporeal liver support</strong>.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>غسيل الكبد هو <strong>علاج لإزالة السموم في حالات فشل الكبد</strong> وقد أثبت نجاعةً في علاج مرضى المتلازمة الكبدية الكلوية.</p>
+          <br>
+          <p>يُشبه <strong>غسيل الكلى</strong> ويقوم على نفس المبادئ.</p>
+          <br>
+          <p>مثل جهاز الكبد الاصطناعي الحيوي، يُعدّ شكلاً من أشكال <strong>دعم الكبد الاصطناعي خارج الجسم</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HYPOTHESIS -->
+  <div id="hypothesis" class="tab-panel">
+    <div class="section-intro">
+      <h2>Liver Dialysis Hypothesis</h2>
+      <div class="ar">فرضية غسيل الكبد</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">💡</span>
+        <span class="en-h">The Core Hypothesis</span>
+        <span class="ar-h">الفرضية الأساسية</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>A critical issue in liver failure is the <strong>accumulation of toxins</strong> not cleared by the failing liver. Based on this hypothesis, the removal of the following substances should be beneficial:</p>
+          <ul style="margin-top:0.8rem;">
+            <li>Lipophilic substances</li>
+            <li>Albumin-bound substances (bilirubin, bile acids)</li>
+            <li>Metabolites of aromatic amino acids</li>
+            <li>Medium-chain fatty acids</li>
+            <li>Cytokines</li>
+          </ul>
+          <div class="highlight-box" style="margin-top:1rem;">
+            <strong>⚠️ Key Limitation:</strong> Hemodialysis (used for renal failure) primarily removes <em>water-soluble</em> toxins — it does <strong>not</strong> remove albumin-bound toxins.
+          </div>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>تتمثل المشكلة الجوهرية في فشل الكبد بـ<strong>تراكم السموم</strong> التي لا يستطيع الكبد الفاشل إزالتها. ووفقاً لهذه الفرضية، فإن إزالة المواد التالية يُفيد المريض:</p>
+          <ul style="margin-top:0.8rem;">
+            <li>المواد المحبة للدهون (Lipophilic)</li>
+            <li>المواد المرتبطة بالألبومين (البيليروبين، الأحماض الصفراوية)</li>
+            <li>نواتج استقلاب الأحماض الأمينية العطرية</li>
+            <li>الأحماض الدهنية متوسطة السلسلة</li>
+            <li>السيتوكينات</li>
+          </ul>
+          <div class="highlight-box accent" style="margin-top:1rem;">
+            <strong>⚠️ قيد مهم:</strong> غسيل الكلى (المستخدم لفشل الكلى) يُزيل فقط السموم <em>القابلة للذوبان في الماء</em> — ولا يُزيل السموم المرتبطة بالألبومين.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICATIONS -->
+  <div id="indications" class="tab-panel">
+    <div class="section-intro">
+      <h2>Indications for Liver Dialysis</h2>
+      <div class="ar">مؤشرات غسيل الكبد</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">🏥</span>
+        <span class="en-h">When is Liver Dialysis Indicated?</span>
+        <span class="ar-h">متى يُستخدم غسيل الكبد؟</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li><strong>Acute hepatic encephalopathy</strong> due to worsening of chronic liver disease (acute-on-chronic) or sudden-onset liver failure (fulminant hepatic failure)</li>
+            <li><strong>Severe drug overdose</strong> (e.g., acetaminophen, tricyclic antidepressants)</li>
+            <li><strong>Acute decompensation</strong> of chronic liver diseases</li>
+            <li><strong>Acute liver failure</strong> and liver dysfunction</li>
+            <li><strong>Poisoning</strong> of various types including drug overdose</li>
+            <li><strong>Liver transplant failure</strong></li>
+            <li><strong>Multiple organ failure</strong></li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li><strong>الاعتلال الدماغي الكبدي الحاد</strong> بسبب تدهور مرض الكبد المزمن أو الفشل الكبدي المفاجئ (الفشل الكبدي الخاطف)</li>
+            <li><strong>جرعة زائدة حادة من الأدوية</strong> (كالباراسيتامول، ومضادات الاكتئاب ثلاثية الحلقات)</li>
+            <li><strong>التعويض الحاد</strong> لأمراض الكبد المزمنة</li>
+            <li><strong>الفشل الكبدي الحاد</strong> وخلل وظائف الكبد</li>
+            <li><strong>التسمم</strong> بأنواعه المختلفة بما في ذلك جرعة زائدة من الأدوية</li>
+            <li><strong>فشل زرع الكبد</strong></li>
+            <li><strong>الفشل متعدد الأعضاء</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOALS & PLACES -->
+  <div id="goals" class="tab-panel">
+    <div class="section-intro">
+      <h2>Goals & Therapy Locations</h2>
+      <div class="ar">الأهداف وأماكن العلاج</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">🎯</span>
+        <span class="en-h">General Goals of Liver Dialysis</span>
+        <span class="ar-h">الأهداف العامة لغسيل الكبد</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li>Complete recovery of liver function following recompensation</li>
+            <li>Bridging short-term or long-term waiting times until liver transplantation</li>
+            <li>Increasing the survival rate of liver transplants</li>
+            <li>Improving the quality of the patient's life</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li>التعافي التام لوظائف الكبد بعد التعويض</li>
+            <li>تجسير فترات الانتظار القصيرة أو الطويلة حتى زرع الكبد</li>
+            <li>زيادة معدل البقاء على قيد الحياة بعد زرع الكبد</li>
+            <li>تحسين جودة حياة المريض</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bi-card" style="margin-top:1.5rem;">
+      <div class="bi-card-header">
+        <span class="icon">📍</span>
+        <span class="en-h">Where Can Dialysis Therapy Be Performed?</span>
+        <span class="ar-h">أين يمكن إجراء علاج الغسيل؟</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <ul>
+            <li>🏛️ Transplantation centers</li>
+            <li>🏥 Intensive care units (ICU)</li>
+            <li>💉 Dialysis units</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <ul>
+            <li>🏛️ مراكز زرع الأعضاء</li>
+            <li>🏥 وحدات العناية المركزة</li>
+            <li>💉 وحدات الغسيل (الديلزة)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACHINES -->
+  <div id="machines" class="tab-panel">
+    <div class="section-intro">
+      <h2>Liver Dialysis Machines</h2>
+      <div class="ar">أجهزة غسيل الكبد</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">⚙️</span>
+        <span class="en-h">Two Categories of Machines</span>
+        <span class="ar-h">نوعان من الأجهزة</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>There are broadly <strong>two categories</strong> of liver dialysis machines:</p>
+          <ul style="margin-top:0.7rem;">
+            <li><strong>Biological:</strong> Contains liver cells — provides both detoxifying AND synthetic functions</li>
+            <li><strong>Non-biological:</strong> No living cells — only provides detoxifying functions without contribution to normal liver synthetic function (simpler and cheaper)</li>
+          </ul>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>هناك <strong>فئتان رئيسيتان</strong> من أجهزة غسيل الكبد:</p>
+          <ul style="margin-top:0.7rem;">
+            <li><strong>الأجهزة البيولوجية:</strong> تحتوي على خلايا كبد حية — توفر وظائف إزالة السموم والتوليف معاً</li>
+            <li><strong>الأجهزة غير البيولوجية:</strong> بدون خلايا حية — توفر وظائف إزالة السموم فقط دون المساهمة في وظائف التوليف الطبيعية (أبسط وأقل تكلفة)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bi-card" style="margin-top:1.5rem;">
+      <div class="bi-card-header">
+        <span class="icon">📊</span>
+        <span class="en-h">Comparison: Artificial vs Bio-artificial Liver Support</span>
+        <span class="ar-h">مقارنة: الاصطناعي مقابل الحيوي الاصطناعي</span>
+      </div>
+      <div style="padding:1.2rem; overflow-x:auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature / الميزة</th>
+              <th>Artificial / اصطناعي</th>
+              <th>Bio-artificial / حيوي اصطناعي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cellular Component / مكون خلوي</td><td>❌ No / لا</td><td>✅ Yes / نعم</td></tr>
+            <tr><td>Hepatic Functions / وظائف كبدية</td><td>Detoxification only / إزالة سموم فقط</td><td>All hepatic functions / جميع الوظائف</td></tr>
+            <tr><td>Cost / التكلفة</td><td>Comparatively less / أقل نسبياً</td><td>High (design, operation, management) / مرتفعة</td></tr>
+            <tr><td>Ease of Use / سهولة الاستخدام</td><td>Relatively easier / أسهل</td><td>Complex (maintaining living components) / معقدة</td></tr>
+            <tr><td>Efficacy / الفعالية</td><td>Limited / محدودة</td><td>More promising results / نتائج أكثر إشراقاً</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEVICES -->
+  <div id="devices" class="tab-panel">
+    <div class="section-intro">
+      <h2>Liver Dialysis Devices</h2>
+      <div class="ar">أجهزة غسيل الكبد المتاحة</div>
+    </div>
+    <div class="device-grid">
+      <div class="device-card">
+        <div class="dc-head mars">🔵 MARS — Molecular Adsorbents Recirculation System<br><small style="opacity:0.8;">نظام إعادة تدوير الجزيئات الماصة</small></div>
+        <div class="dc-body">
+          <p>The <strong>best known</strong> extracorporeal liver dialysis system, existing for ~10 years. Consists of two separate dialysis circuits:</p>
+          <ul style="margin-top:0.5rem; padding-left:1.2rem;">
+            <li><strong>1st circuit:</strong> Human serum albumin in contact with patient's blood via semipermeable membrane</li>
+            <li><strong>2nd circuit:</strong> Two special filters to clean albumin after toxin absorption</li>
+          </ul>
+        </div>
+        <div class="dc-ar">
+          <p>النظام الأكثر شهرةً في غسيل الكبد خارج الجسم، موجود منذ ~10 سنوات. يتكون من دائرتين منفصلتين:</p>
+          <ul style="padding-right:1.2rem; margin-top:0.5rem;">
+            <li><strong>الدائرة الأولى:</strong> ألبومين مصل بشري يتلامس مع دم المريض عبر غشاء شبه منفذ</li>
+            <li><strong>الدائرة الثانية:</strong> مرشحان خاصان لتنقية الألبومين بعد امتصاص السموم</li>
+          </ul>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-head spad">🟢 SPAD — Single Pass Albumin Dialysis<br><small style="opacity:0.8;">غسيل الألبومين أحادي المرور</small></div>
+        <div class="dc-body">
+          <p>A <strong>simpler method</strong> using standard renal replacement therapy machines without an additional perfusion pump. Features:</p>
+          <ul style="margin-top:0.5rem; padding-left:1.2rem;">
+            <li>High-flux hollow fiber hemodiafilter</li>
+            <li>Albumin solution in counter-directional flow</li>
+            <li>Albumin solution discarded after use</li>
+            <li>Causes significant reduction in bilirubin & bile acids</li>
+          </ul>
+        </div>
+        <div class="dc-ar">
+          <p><strong>طريقة أبسط</strong> تستخدم أجهزة العلاج التعويضي الكلوي القياسية دون مضخة ضخ إضافية. مميزاته:</p>
+          <ul style="padding-right:1.2rem; margin-top:0.5rem;">
+            <li>مرشح ألياف مجوفة عالي التدفق</li>
+            <li>محلول ألبومين بتدفق عكس الاتجاه</li>
+            <li>يُتخلص من الألبومين بعد المرور</li>
+            <li>يُقلل البيليروبين والأحماض الصفراوية بشكل ملحوظ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="device-card">
+        <div class="dc-head prom">🟠 Prometheus System<br><small style="opacity:0.8;">نظام بروميثيوس</small></div>
+        <div class="dc-body">
+          <p>A <strong>newer device</strong> combining albumin adsorption with high-flux hemodialysis using a specific polysulfon filter (AlbuFlow). Studied in patients with hepatorenal syndrome. Treatment for <strong>2 consecutive days (4+ hours)</strong> significantly improved: bilirubin, bile acids, ammonia, cholinesterase, creatinine, urea, and blood pH.</p>
+        </div>
+        <div class="dc-ar">
+          <p><strong>جهاز أحدث</strong> يجمع بين امتصاص الألبومين وغسيل الكلى عالي التدفق باستخدام مرشح بولي سلفون خاص (AlbuFlow). دُرس في مرضى المتلازمة الكبدية الكلوية. يُحسّن بشكل ملحوظ مستويات: البيليروبين، الأحماض الصفراوية، الأمونيا، الكرياتينين، اليوريا ورقم الأس الهيدروجيني.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCEDURE -->
+  <div id="procedure" class="tab-panel">
+    <div class="section-intro">
+      <h2>Operating Principles & Procedure</h2>
+      <div class="ar">مبادئ التشغيل والإجراء</div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p>The patient's blood flows through a <strong>catheter into an extracorporeal circuit</strong> equipped with a MARS flux Dialyzer made of special hollow fibres, guaranteeing high selectivity for liver toxins.</p>
+          <div class="ar-s">يتدفق دم المريض عبر قسطرة إلى <strong>دائرة خارج الجسم</strong> مزودة بجهاز MARS flux Dialyzer المصنوع من ألياف مجوفة خاصة، تضمن انتقائية عالية لسموم الكبد.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p>The blood is <strong>dialysed against a 20% albumin solution</strong> (not normal dialysate). Albumin acts as a transport molecule playing a key role in human detoxification.</p>
+          <div class="ar-s">يُغسَل الدم بـ<strong>محلول ألبومين بتركيز 20%</strong> (وليس محلول غسيل عادياً). يعمل الألبومين كجزيء ناقل يؤدي دوراً رئيسياً في إزالة السموم من جسم الإنسان.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <p>The blood circuit uses <strong>veno-venous access</strong> with a blood pump at ~150 ml/min. Blood passes through a non-albumin permeable high-flux dialyzer membrane (usually polysulphone) capable of adsorbing albumin-bound toxins.</p>
+          <div class="ar-s">تستخدم دائرة الدم <strong>وصولاً وريدياً-وريدياً</strong> مع مضخة دم بسرعة ~150 مل/دقيقة. يمر الدم عبر غشاء غسيل عالي التدفق (عادةً بولي سلفون) قادر على امتصاص السموم المرتبطة بالألبومين.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <p>The <strong>albumin dialysate binds toxins</strong> from the blood albumin through the membrane <em>without exchanging albumin molecules</em>.</p>
+          <div class="ar-s"><strong>يربط محلول الألبومين السموم</strong> من ألبومين الدم عبر الغشاء <em>دون تبادل جزيئات الألبومين</em> نفسها.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <p>The albumin circuit contains ~<strong>600 ml of 20% human albumin</strong>, driven by a pump at ~150 ml/min, passing through the dialysate compartment to remove toxins bound to the dialyzer membrane.</p>
+          <div class="ar-s">تحتوي دائرة الألبومين على ~<strong>600 مل من ألبومين بشري 20%</strong>، تُضخ بسرعة ~150 مل/دقيقة، وتمر عبر حجرة محلول الغسيل لإزالة السموم المرتبطة بغشاء الغسيل.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <p>The albumin dialysate is <strong>regenerated in a closed circuit</strong> through a second dialyser and special adsorber for repeated toxin transport.</p>
+          <div class="ar-s">يُجدَّد محلول غسيل الألبومين <strong>في دائرة مغلقة</strong> عبر غسالة ثانية وماص خاص لإعادة نقل السموم بشكل متكرر.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <p>Treatment is usually done for <strong>2–5 consecutive days</strong> lasting <strong>4–6 hours</strong> per session.</p>
+          <div class="ar-s">يُجرى العلاج عادةً على مدى <strong>2-5 أيام متتالية</strong> بمعدل <strong>4-6 ساعات</strong> لكل جلسة.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLINICAL EFFICIENCY -->
+  <div id="clinical" class="tab-panel">
+    <div class="section-intro">
+      <h2>Clinical Efficiency of Liver Dialysis</h2>
+      <div class="ar">الكفاءة السريرية لغسيل الكبد</div>
+    </div>
+    <div class="clinical-grid">
+      <div class="clin-card">
+        <div class="clin-icon">🟡</div>
+        <h3>Hyperbilirubinemia</h3>
+        <div class="ar-title">فرط البيليروبين في الدم</div>
+        <p>Bilirubin (strongly albumin-bound) indicates accumulation of albumin-bound substances in intrahepatic cholestasis. Liver dialysis can <strong>selectively remove bilirubin and other albumin-bound substances</strong> with direct effect on hepatic cholestasis.</p>
+        <div class="ar-p">البيليروبين (المرتبط بشدة بالألبومين) يدل على تراكم المواد المرتبطة بالألبومين في الركود الصفراوي داخل الكبد. يُزيل غسيل الكبد البيليروبين والمواد الأخرى المرتبطة بالألبومين <strong>بشكل انتقائي</strong> مع تأثير مباشر على الركود الكبدي.</div>
+      </div>
+      <div class="clin-card">
+        <div class="clin-icon">🧠</div>
+        <h3>Hepatic Encephalopathy / Brain Edema</h3>
+        <div class="ar-title">الاعتلال الدماغي الكبدي / وذمة الدماغ</div>
+        <p>Ammonia is the main cause of hepatic encephalopathy (hepatic coma) and brain edema. Dialysis therapy reduces ammonia levels — patients wake up and the degree of encephalopathy is reduced. Glutamine accumulation (from ammonia) causes astrocyte swelling → brain edema; dialysis <strong>stops this process</strong>.</p>
+        <div class="ar-p">الأمونيا هي السبب الرئيسي للاعتلال الدماغي الكبدي (الغيبوبة) ووذمة الدماغ. يُقلل الغسيل الأمونيا ← يستيقظ المريض وتتحسن درجة الاعتلال الدماغي. تراكم الغلوتامين (من الأمونيا) يُسبب تورم الخلايا النجمية → وذمة دماغية؛ يوقف الغسيل هذه العملية.</div>
+      </div>
+      <div class="clin-card">
+        <div class="clin-icon">❤️</div>
+        <h3>Hemodynamics</h3>
+        <div class="ar-title">الديناميكا الدموية</div>
+        <p>Vasoactive substances like plasma <strong>nitric oxide (NO)</strong> cause hemodynamic instability in liver failure. Dialysis removes NO and reduces its production → significant increases in systemic vascular resistance (SVRI) and mean arterial pressure (MAP), decreased cardiac index, improved blood supply to liver, brain, and kidneys.</p>
+        <div class="ar-p">مواد فعّالة وعائياً كـ<strong>أكسيد النيتريك (NO)</strong> تُسبب عدم استقرار الدورة الدموية في فشل الكبد. يُزيل الغسيل NO ويُقلل إنتاجه → ارتفاع ملحوظ في مقاومة الأوعية الجهازية وضغط الشرايين، انخفاض مؤشر القلب، وتحسّن إمداد الدم للكبد والدماغ والكليتين.</div>
+      </div>
+      <div class="clin-card">
+        <div class="clin-icon">🫘</div>
+        <h3>Renal Function</h3>
+        <div class="ar-title">وظائف الكلى</div>
+        <p>When liver failure is accompanied by deteriorating renal function, prognosis is poor (multiple organ failure risk). Studies show dialysis can <strong>reverse and even prevent</strong> this deterioration through improved systemic and local hemodynamics.</p>
+        <div class="ar-p">عندما يقترن فشل الكبد بتدهور وظائف الكلى، يكون التشخيص سيئاً (خطر الفشل متعدد الأعضاء). تُظهر الدراسات أن الغسيل يمكنه <strong>عكس هذا التدهور ومنعه</strong> من خلال تحسين ديناميكيات الدم الجهازية والمحلية.</div>
+      </div>
+      <div class="clin-card">
+        <div class="clin-icon">🧬</div>
+        <h3>Protein Synthesis</h3>
+        <div class="ar-title">تخليق البروتين</div>
+        <p>Both detoxification and <strong>synthesis functions</strong> of the liver begin to improve upon removal of albumin-bound toxins (given adequate regenerative capacity). Clinical experience suggests early use may: avoid respirator use, decrease ICU days, shorten hospital stay, and improve transplant outcomes.</p>
+        <div class="ar-p">تبدأ وظائف إزالة السموم و<strong>تخليق البروتين</strong> بالتحسن عند إزالة السموم المرتبطة بالألبومين (إذا كانت قدرة التجديد كافية). التجربة السريرية تُشير إلى أن الاستخدام المبكر قد يتجنب الحاجة للتنفس الاصطناعي، يُقلل أيام العناية المركزة، ويُحسّن نتائج الزرع.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDE EFFECTS -->
+  <div id="sideeffects" class="tab-panel">
+    <div class="section-intro">
+      <h2>Side Effects of Liver Dialysis</h2>
+      <div class="ar">الآثار الجانبية لغسيل الكبد</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-card-header">
+        <span class="icon">⚠️</span>
+        <span class="en-h">Known Side Effects</span>
+        <span class="ar-h">الآثار الجانبية المعروفة</span>
+      </div>
+      <div class="bi-body">
+        <div class="bi-en">
+          <span class="lang-label en">EN</span>
+          <p>There are some <strong>long-term side effects</strong> patients should be aware of before treatment:</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-label ar">عربي</span>
+          <p>هناك بعض <strong>الآثار الجانبية طويلة الأمد</strong> يجب أن يكون المرضى على علم بها قبل العلاج:</p>
+        </div>
+      </div>
+    </div>
+    <div class="side-grid" style="margin-top:1.5rem;">
+      <div class="side-item"><div class="si-icon">🦠</div><h4>Infection / عدوى</h4><div class="si-ar">خطر الإصابة بالعدوى — يجب المراقبة المستمرة</div></div>
+      <div class="side-item"><div class="si-icon">⚖️</div><h4>Weight Gain / زيادة الوزن</h4><div class="si-ar">زيادة في الوزن</div></div>
+      <div class="side-item"><div class="si-icon">🩸</div><h4>Low Blood Pressure / انخفاض ضغط الدم</h4><div class="si-ar">انخفاض ضغط الدم</div></div>
+      <div class="side-item"><div class="si-icon">💊</div><h4>Iron Deficiency / نقص الحديد</h4><div class="si-ar">نقص الحديد في الدم</div></div>
+      <div class="side-item"><div class="si-icon">🫁</div><h4>Hernia / فتق</h4><div class="si-ar">حدوث فتق</div></div>
+      <div class="side-item"><div class="si-icon">⚡</div><h4>Nerve Damage / تلف الأعصاب</h4><div class="si-ar">تلف في الأعصاب الطرفية</div></div>
+      <div class="side-item"><div class="si-icon">😔</div><h4>Severe Depression / اكتئاب شديد</h4><div class="si-ar">اكتئاب شديد وقلق نتيجة ضغط المرض</div></div>
+      <div class="side-item"><div class="si-icon">😰</div><h4>Anxiety / القلق</h4><div class="si-ar">قلق شديد — قد تُستخدم أدوية ومعالجة نفسية</div></div>
+    </div>
+    <div class="highlight-box" style="margin-top:1.5rem;">
+      <strong>Note:</strong> Medications may be used to treat serious side effects. Psychological therapy may also be provided for those with psychological side effects.
+      <span class="ar-note">ملاحظة: يمكن استخدام الأدوية لعلاج الآثار الجانبية الخطيرة. كما يمكن توفير العلاج النفسي لمن يعانون من آثار جانبية نفسية.</span>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="tab-panel">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h2>🧠 Self-Assessment Test</h2>
+        <div class="ar">اختبر نفسك — 20 سؤال اختياري</div>
+        <div class="quiz-score-badge" id="scoreDisplay">20 Questions | Answer all then check results</div>
+      </div>
+
+      <div id="quizQuestions"></div>
+
+      <div class="quiz-actions">
+        <button class="quiz-submit-btn" onclick="submitQuiz()">✅ Submit & See Results | إرسال والنتيجة</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz()">🔄 Reset | إعادة</button>
+      </div>
+
+      <div class="result-panel" id="resultPanel">
+        <div class="score-big" id="scoreNum">—</div>
+        <div class="result-text" id="resultMsg"></div>
+        <div class="ar-result" id="resultAr"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<footer>
+  <p>Liver Dialysis — Academic Lecture | غسيل الكبد — محاضرة علمية</p>
+  <p class="ar">إعداد: أستاذ مساعد دكتورة/ عفاف محمد منصور</p>
+</footer>
+
+<script>
+  // TAB NAVIGATION
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // QUIZ DATA
+  const questions = [
+    {
+      q: "What is the primary purpose of liver dialysis?",
+      ar: "ما الهدف الرئيسي من غسيل الكبد؟",
+      options: ["To replace kidney function", "To detoxify the blood in liver failure", "To provide nutrients to the liver", "To perform surgical liver repair"],
+      correct: 1,
+      explanation: "Liver dialysis is a detoxification treatment for liver failure.",
+      ar_exp: "غسيل الكبد هو علاج لإزالة السموم في حالات فشل الكبد."
+    },
+    {
+      q: "Which system is considered the best known extracorporeal liver dialysis system?",
+      ar: "أي نظام يُعتبر الأكثر شهرةً في غسيل الكبد خارج الجسم؟",
+      options: ["SPAD", "Prometheus", "MARS", "CRRT"],
+      correct: 2,
+      explanation: "MARS (Molecular Adsorbents Recirculation System) is the best known extracorporeal liver dialysis system.",
+      ar_exp: "MARS (نظام إعادة تدوير الجزيئات الماصة) هو الأكثر شهرةً."
+    },
+    {
+      q: "What percentage of albumin solution is used in the MARS albumin circuit?",
+      ar: "ما نسبة محلول الألبومين المستخدمة في دائرة MARS؟",
+      options: ["5%", "10%", "15%", "20%"],
+      correct: 3,
+      explanation: "The MARS albumin circuit uses 20% human albumin solution (~600 ml).",
+      ar_exp: "تستخدم دائرة MARS محلول ألبومين بشري بتركيز 20% (~600 مل)."
+    },
+    {
+      q: "Which toxin is considered the main cause of hepatic encephalopathy?",
+      ar: "أي سُم يُعدّ السبب الرئيسي للاعتلال الدماغي الكبدي؟",
+      options: ["Bilirubin", "Bile acids", "Ammonia", "Creatinine"],
+      correct: 2,
+      explanation: "Ammonia is considered the main cause of hepatic encephalopathy (hepatic coma) and brain edema.",
+      ar_exp: "تُعدّ الأمونيا السبب الرئيسي للاعتلال الدماغي الكبدي والغيبوبة الكبدية."
+    },
+    {
+      q: "How many separate dialysis circuits does MARS consist of?",
+      ar: "كم عدد الدوائر الانفصالية في نظام MARS؟",
+      options: ["One", "Two", "Three", "Four"],
+      correct: 1,
+      explanation: "MARS consists of two separate dialysis circuits.",
+      ar_exp: "يتكون MARS من دائرتين منفصلتين للغسيل."
+    },
+    {
+      q: "Which vasoactive substance does liver dialysis remove to improve hemodynamics?",
+      ar: "أي مادة فعّالة وعائياً يُزيلها غسيل الكبد لتحسين الديناميكا الدموية؟",
+      options: ["Histamine", "Nitric oxide (NO)", "Serotonin", "Dopamine"],
+      correct: 1,
+      explanation: "Dialysis removes nitric oxide (NO) and reduces its production, causing significant increases in SVRI and MAP.",
+      ar_exp: "يُزيل الغسيل أكسيد النيتريك (NO) ويُقلل إنتاجه، مما يُسبب ارتفاعاً ملحوظاً في مقاومة الأوعية الجهازية وضغط الشرايين."
+    },
+    {
+      q: "SPAD stands for:",
+      ar: "ماذا تعني اختصار SPAD؟",
+      options: ["Standard Plasma Albumin Dialysis", "Single Pass Albumin Dialysis", "Serial Purification Albumin Device", "Systematic Plasma Adsorption Dialysis"],
+      correct: 1,
+      explanation: "SPAD stands for Single Pass Albumin Dialysis.",
+      ar_exp: "SPAD تعني غسيل الألبومين أحادي المرور (Single Pass Albumin Dialysis)."
+    },
+    {
+      q: "Which liver dialysis device combines albumin adsorption with high-flux hemodialysis?",
+      ar: "أي جهاز يجمع بين امتصاص الألبومين وغسيل الكلى عالي التدفق؟",
+      options: ["MARS", "SPAD", "Prometheus", "CRRT"],
+      correct: 2,
+      explanation: "The Prometheus system combines albumin adsorption with high-flux hemodialysis using a polysulfon filter (AlbuFlow).",
+      ar_exp: "نظام Prometheus يجمع بين امتصاص الألبومين وغسيل الكلى عالي التدفق باستخدام مرشح بولي سلفون (AlbuFlow)."
+    },
+    {
+      q: "In which of the following settings can liver dialysis therapy NOT typically be performed?",
+      ar: "في أيٍّ من الأماكن التالية لا يُجرى غسيل الكبد عادةً؟",
+      options: ["Transplantation centers", "Intensive care units", "Home dialysis setting", "Dialysis units"],
+      correct: 2,
+      explanation: "Liver dialysis is performed in transplantation centers, ICUs, and dialysis units — not at home.",
+      ar_exp: "يُجرى غسيل الكبد في مراكز الزرع، وحدات العناية المركزة، ووحدات الغسيل — وليس في المنزل."
+    },
+    {
+      q: "What is the typical duration of each liver dialysis session?",
+      ar: "ما المدة المعتادة لكل جلسة غسيل كبد؟",
+      options: ["1–2 hours", "2–3 hours", "4–6 hours", "8–10 hours"],
+      correct: 2,
+      explanation: "Treatment is usually done for 2–5 consecutive days lasting 4–6 hours per session.",
+      ar_exp: "يُجرى العلاج عادةً على مدى 2-5 أيام متتالية بمعدل 4-6 ساعات لكل جلسة."
+    },
+    {
+      q: "What does the non-biological liver dialysis machine lack compared to the biological one?",
+      ar: "ماذا يفتقر الجهاز غير البيولوجي مقارنةً بالبيولوجي؟",
+      options: ["Detoxification function", "Living liver cells", "A dialysis membrane", "Albumin circuits"],
+      correct: 1,
+      explanation: "The non-biological machine has no living cells, so it provides only detoxification, without liver synthetic functions.",
+      ar_exp: "الجهاز غير البيولوجي لا يحتوي على خلايا حية، لذا يوفر إزالة السموم فقط دون وظائف التوليف الكبدي."
+    },
+    {
+      q: "Which substance accumulates as a metabolic product causing astrocyte swelling in liver failure?",
+      ar: "أي مادة تتراكم كناتج استقلابي تُسبب تورم الخلايا النجمية في فشل الكبد؟",
+      options: ["Ammonia", "Glutamine", "Bilirubin", "Creatinine"],
+      correct: 1,
+      explanation: "Glutamine accumulates as a metabolic product of increased ammonia utilisation, causing astrocytes to swell → brain edema.",
+      ar_exp: "يتراكم الغلوتامين كناتج استقلابي لزيادة استهلاك الأمونيا، مما يُسبب تورم الخلايا النجمية → وذمة دماغية."
+    },
+    {
+      q: "Liver dialysis has shown promise for patients with which syndrome?",
+      ar: "أثبت غسيل الكبد نجاعةً في علاج مرضى أي متلازمة؟",
+      options: ["Cushing's syndrome", "Hepatorenal syndrome", "Reye's syndrome", "Wilson's disease"],
+      correct: 1,
+      explanation: "Liver dialysis has shown promise for patients with hepatorenal syndrome.",
+      ar_exp: "أثبت غسيل الكبد نجاعةً في علاج مرضى المتلازمة الكبدية الكلوية."
+    },
+    {
+      q: "What type of membrane does SPAD use?",
+      ar: "ما نوع الغشاء الذي يستخدمه نظام SPAD؟",
+      options: ["Low-flux cellulose membrane", "High-flux hollow fiber hemodiafilter", "Polyamide flat membrane", "Cuprophane membrane"],
+      correct: 1,
+      explanation: "SPAD uses a high-flux hollow fiber hemodiafilter, identical to that used in the MARS system.",
+      ar_exp: "يستخدم SPAD مرشح ألياف مجوفة عالي التدفق، مطابق لذلك المستخدم في نظام MARS."
+    },
+    {
+      q: "What is the blood pump speed used in the MARS blood circuit?",
+      ar: "ما سرعة مضخة الدم المستخدمة في دائرة الدم بنظام MARS؟",
+      options: ["Around 50 ml/min", "Around 100 ml/min", "Around 150 ml/min", "Around 300 ml/min"],
+      correct: 2,
+      explanation: "The blood circuit generally employs a veno-venous access with a blood pump at a speed of around 150 ml/min.",
+      ar_exp: "تستخدم دائرة الدم وصولاً وريدياً-وريدياً مع مضخة دم بسرعة ~150 مل/دقيقة."
+    },
+    {
+      q: "Which of the following is NOT listed as an indication for liver dialysis?",
+      ar: "أيٌّ من التالي ليس مؤشراً لغسيل الكبد؟",
+      options: ["Acute hepatic encephalopathy", "Liver transplant failure", "Type 1 diabetes mellitus", "Multiple organ failure"],
+      correct: 2,
+      explanation: "Type 1 diabetes mellitus is not an indication for liver dialysis.",
+      ar_exp: "السكري من النوع الأول ليس مؤشراً لغسيل الكبد."
+    },
+    {
+      q: "What is one major advantage of the bio-artificial liver support device over the artificial one?",
+      ar: "ما الميزة الرئيسية للجهاز الحيوي الاصطناعي على الجهاز الاصطناعي البسيط؟",
+      options: ["Lower cost", "Easier to maintain", "Performs all hepatic functions", "Faster treatment sessions"],
+      correct: 2,
+      explanation: "Bio-artificial devices perform all hepatic functions (detoxification AND synthesis), unlike artificial devices which only detoxify.",
+      ar_exp: "الأجهزة الحيوية الاصطناعية تؤدي جميع وظائف الكبد (إزالة السموم والتوليف)، على عكس الأجهزة الاصطناعية التي تُزيل السموم فقط."
+    },
+    {
+      q: "What psychological side effects may occur in liver dialysis patients?",
+      ar: "ما الآثار الجانبية النفسية التي قد تحدث في مرضى غسيل الكبد؟",
+      options: ["Euphoria and hyperactivity", "Severe depression and anxiety", "Memory enhancement", "Increased energy levels"],
+      correct: 1,
+      explanation: "Liver dialysis patients may experience severe depression and anxiety, often as a result of the stress from dealing with severe illness.",
+      ar_exp: "قد يُعاني مرضى غسيل الكبد من اكتئاب شديد وقلق، كثيراً ما يكون نتيجة ضغط التعامل مع مرض خطير."
+    },
+    {
+      q: "What is the primary role of albumin in MARS therapy?",
+      ar: "ما الدور الرئيسي للألبومين في علاج MARS؟",
+      options: ["It provides nutrition to failing liver cells", "It acts as a transport molecule to bind and carry toxins", "It directly destroys bacteria", "It replaces red blood cells"],
+      correct: 1,
+      explanation: "Albumin is a transport molecule playing an important role in human detoxification — it binds toxins so they can be removed.",
+      ar_exp: "الألبومين جزيء ناقل يؤدي دوراً مهماً في إزالة السموم من جسم الإنسان — يربط السموم ليُسهّل إزالتها."
+    },
+    {
+      q: "Which of the following best describes the goal of 'bridging' in liver dialysis?",
+      ar: "أيٌّ من التالي يصف أفضل هدف 'التجسير' في غسيل الكبد؟",
+      options: ["Permanently replacing liver function", "Supporting the patient until transplantation can be performed", "Connecting two dialysis machines together", "Treating kidney failure alongside liver failure"],
+      correct: 1,
+      explanation: "One key goal of liver dialysis is bridging — supporting the patient through liver failure until transplantation can be performed.",
+      ar_exp: "أحد الأهداف الرئيسية لغسيل الكبد هو التجسير — دعم المريض خلال فشل الكبد حتى يمكن إجراء عملية الزرع."
+    }
+  ];
+
+  // BUILD QUIZ
+  function buildQuiz() {
+    const container = document.getElementById('quizQuestions');
+    container.innerHTML = '';
+    questions.forEach((q, i) => {
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.id = `qcard-${i}`;
+      const letters = ['A','B','C','D'];
+      card.innerHTML = `
+        <div class="q-num">Question ${i+1} of ${questions.length} — سؤال ${i+1}</div>
+        <div class="q-text">${q.q}</div>
+        <div class="q-ar">${q.ar}</div>
+        <div class="q-options" id="opts-${i}">
+          ${q.options.map((opt, j) => `
+            <button class="opt-btn" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+              <span class="opt-letter">${letters[j]}</span>
+              <span>${opt}</span>
+            </button>
+          `).join('')}
+        </div>
+        <div class="feedback" id="fb-${i}"></div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  let userAnswers = new Array(questions.length).fill(null);
+
+  function selectAnswer(qi, oi) {
+    userAnswers[qi] = oi;
+    const opts = document.querySelectorAll(`#opts-${qi} .opt-btn`);
+    opts.forEach((btn, j) => {
+      btn.classList.remove('correct','wrong');
+      btn.style.opacity = j === oi ? '1' : '0.65';
+    });
+    opts[oi].classList.add('correct');
+    opts[oi].style.opacity = '1';
+  }
+
+  function submitQuiz() {
+    let score = 0;
+    questions.forEach((q, i) => {
+      const opts = document.querySelectorAll(`#opts-${i} .opt-btn`);
+      opts.forEach(btn => btn.disabled = true);
+      opts.forEach((btn, j) => {
+        btn.classList.remove('correct','wrong');
+        btn.style.opacity = '0.5';
+      });
+      opts[q.correct].classList.add('correct');
+      opts[q.correct].style.opacity = '1';
+
+      const fb = document.getElementById(`fb-${i}`);
+      if (userAnswers[i] === null) {
+        fb.className = 'feedback show wrong-fb';
+        fb.innerHTML = `⚠️ Not answered. Correct: <strong>${['A','B','C','D'][q.correct]}. ${q.options[q.correct]}</strong><span class="ar-fb">${q.ar_exp}</span>`;
+      } else if (userAnswers[i] === q.correct) {
+        score++;
+        opts[userAnswers[i]].classList.remove('correct');
+        opts[userAnswers[i]].classList.add('correct');
+        opts[userAnswers[i]].style.opacity = '1';
+        fb.className = 'feedback show correct-fb';
+        fb.innerHTML = `✅ Correct! ${q.explanation}<span class="ar-fb">${q.ar_exp}</span>`;
+      } else {
+        opts[userAnswers[i]].classList.add('wrong');
+        opts[userAnswers[i]].style.opacity = '0.8';
+        fb.className = 'feedback show wrong-fb';
+        fb.innerHTML = `❌ Wrong. Correct answer: <strong>${['A','B','C','D'][q.correct]}. ${q.options[q.correct]}</strong> — ${q.explanation}<span class="ar-fb">${q.ar_exp}</span>`;
+      }
+    });
+
+    const pct = Math.round((score/questions.length)*100);
+    let msg = '', arMsg = '';
+    if (pct >= 90) { msg = '🏆 Excellent! Outstanding performance!'; arMsg = 'ممتاز! أداء رائع جداً!'; }
+    else if (pct >= 75) { msg = '👍 Very Good! Keep it up!'; arMsg = 'جيد جداً! استمر في التفوق!'; }
+    else if (pct >= 60) { msg = '📚 Good. Review the marked questions.'; arMsg = 'جيد. راجع الأسئلة المحددة.'; }
+    else { msg = '📖 Needs more review. Re-read the lecture carefully.'; arMsg = 'تحتاج لمراجعة أكثر. أعد قراءة المحاضرة بعناية.'; }
+
+    const panel = document.getElementById('resultPanel');
+    document.getElementById('scoreNum').textContent = `${score} / ${questions.length}`;
+    document.getElementById('resultMsg').textContent = `${pct}% — ${msg}`;
+    document.getElementById('resultAr').textContent = arMsg;
+    panel.classList.add('show');
+    panel.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function resetQuiz() {
+    userAnswers = new Array(questions.length).fill(null);
+    document.getElementById('resultPanel').classList.remove('show');
+    buildQuiz();
+    document.getElementById('quizQuestions').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  buildQuiz();
+</script>
+</body>
+</html>

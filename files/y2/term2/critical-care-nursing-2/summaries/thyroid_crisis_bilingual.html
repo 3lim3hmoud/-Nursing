@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thyroid Crisis — أزمة الغدة الدرقية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface2: #f0ede6;
+    --accent: #3d6b5e;
+    --accent2: #c47a3a;
+    --accent3: #8a4f7d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --border: #d9d4c7;
+    --tab-active: #3d6b5e;
+    --en-bg: #eef4f2;
+    --ar-bg: #fdf6ee;
+    --correct: #2d7a4f;
+    --wrong: #a33030;
+    --neutral: #5a6a7a;
+    --shadow: 0 2px 18px rgba(0,0,0,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #2c5248 0%, #3d6b5e 50%, #4a8a7a 100%);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  header h1 span.ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+  }
+  header p {
+    margin-top: 0.6rem;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    font-style: italic;
+    position: relative;
+  }
+
+  /* ── TABS ── */
+  .tab-bar {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    padding: 0 1rem;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tab-bar::-webkit-scrollbar { height: 3px; }
+  .tab-bar::-webkit-scrollbar-thumb { background: var(--accent); }
+
+  .tab-btn {
+    padding: 0.85rem 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-light);
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .tab-btn .ar-label {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .tab-btn.quiz-tab.active { color: var(--accent2); border-bottom-color: var(--accent2); }
+
+  /* ── CONTENT ── */
+  .tab-content { display: none; padding: 2rem 1.5rem; max-width: 960px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* ── BILINGUAL CARD ── */
+  .bi-card {
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+  }
+  .bi-card-header {
+    background: var(--accent);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bi-card-header .en-title { font-size: 1rem; font-weight: 600; }
+  .bi-card-header .ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    direction: rtl;
+  }
+  .bi-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .bi-en, .bi-ar {
+    padding: 1.25rem 1.5rem;
+    line-height: 1.8;
+    font-size: 0.93rem;
+  }
+  .bi-en { background: var(--en-bg); border-right: 1px solid var(--border); }
+  .bi-ar {
+    background: var(--ar-bg);
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .bi-en ul, .bi-ar ul { padding-right: 1.2rem; padding-left: 1.2rem; }
+  .bi-en li, .bi-ar li { margin-bottom: 0.35rem; }
+  .label-en { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+  .label-ar { font-size: 0.7rem; font-weight: 700; color: var(--accent2); margin-bottom: 0.5rem; display: block; font-family: 'Cairo', sans-serif; }
+
+  /* ── DEFINITION HERO ── */
+  .def-hero {
+    background: linear-gradient(135deg, var(--accent) 0%, #4a8a7a 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .def-hero p { font-size: 1.05rem; line-height: 1.8; max-width: 700px; margin: 0 auto 1rem; }
+  .def-hero p.ar { font-family: 'Cairo', sans-serif; direction: rtl; opacity: 0.9; font-size: 1rem; }
+
+  /* ── PATHWAY ── */
+  .pathway {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+  .pathway-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  .pathway-step::after {
+    content: '↓';
+    position: absolute;
+    bottom: -1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: var(--accent);
+    z-index: 2;
+  }
+  .pathway-step:last-child::after { display: none; }
+  .pathway-step .step-en { font-size: 0.9rem; }
+  .pathway-step .step-ar { font-family: 'Cairo', sans-serif; font-size: 0.9rem; direction: rtl; text-align: right; }
+
+  /* ── SYSTEM TAG ── */
+  .sys-tag {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+  .tag-cardio { background: #ffe0e0; color: #a33030; }
+  .tag-neuro { background: #e0e8ff; color: #2a3a8a; }
+  .tag-gi { background: #e0f5e8; color: #1a6a3a; }
+  .tag-skin { background: #fff0d8; color: #8a5a00; }
+  .tag-thermo { background: #fde8e8; color: #a33030; }
+  .tag-lab { background: #f0e0ff; color: #6a1a8a; }
+
+  /* ── DRUG TABLE ── */
+  .drug-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .drug-table th {
+    background: var(--accent);
+    color: white;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  .drug-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .drug-table tr:nth-child(even) td { background: var(--surface2); }
+  .drug-table .ar-cell { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; font-size: 0.8rem; }
+
+  /* ── QUIZ ── */
+  .quiz-header {
+    background: linear-gradient(135deg, #c47a3a, #d4963a);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+  .quiz-header p { font-family: 'Cairo', sans-serif; opacity: 0.85; margin-top: 0.3rem; }
+
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .q-num {
+    background: var(--accent2);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .q-body { padding: 1.2rem 1.5rem; }
+  .q-text { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.6; }
+  .q-text-ar { font-family: 'Cairo', sans-serif; font-size: 0.88rem; color: var(--text-light); direction: rtl; text-align: right; margin-bottom: 0.9rem; line-height: 1.7; }
+  .options { display: flex; flex-direction: column; gap: 0.5rem; }
+  .opt-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+  .opt-btn:hover:not(:disabled) { border-color: var(--accent2); background: #fdf6ee; }
+  .opt-btn.correct { border-color: var(--correct); background: #e8f5ef; color: var(--correct); }
+  .opt-btn.wrong { border-color: var(--wrong); background: #faeaea; color: var(--wrong); }
+  .opt-btn:disabled { cursor: default; }
+  .opt-letter {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .opt-btn.correct .opt-letter { background: var(--correct); color: white; }
+  .opt-btn.wrong .opt-letter { background: var(--wrong); color: white; }
+  .explanation {
+    display: none;
+    margin-top: 0.9rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background: #e8f5ef;
+    border-left: 4px solid var(--correct);
+    font-size: 0.85rem;
+    color: #1a4a2a;
+    line-height: 1.7;
+  }
+  .explanation.show { display: block; }
+  .explanation .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.82rem; }
+
+  /* Quiz score */
+  .score-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .score-circle {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent2) 0deg, var(--surface2) 0deg);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.5s;
+  }
+  .score-inner {
+    width: 56px; height: 56px;
+    background: var(--surface);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 700;
+    color: var(--accent2);
+  }
+  .score-text { flex: 1; }
+  .score-text h3 { font-size: 1rem; margin-bottom: 0.2rem; }
+  .score-text p { font-size: 0.83rem; color: var(--text-light); font-family: 'Cairo', sans-serif; direction: rtl; }
+  .reset-btn {
+    padding: 0.55rem 1.2rem;
+    background: var(--accent2);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.83rem;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+    transition: opacity 0.2s;
+  }
+  .reset-btn:hover { opacity: 0.85; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:650px) {
+    .bi-card-body { grid-template-columns: 1fr; }
+    .bi-en { border-right: none; border-bottom: 1px solid var(--border); }
+    header h1 { font-size: 1.6rem; }
+    .tab-content { padding: 1rem; }
+  }
+
+  /* ── HIGHLIGHT BOXES ── */
+  .warn-box {
+    background: #fff8e1;
+    border-left: 4px solid var(--accent2);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    margin-top: 0.8rem;
+    font-size: 0.87rem;
+  }
+  .warn-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; display: block; margin-top: 0.4rem; font-size: 0.84rem; color: var(--text-light); }
+
+  /* nursing icon bullets */
+  .nursing-list { list-style: none; padding: 0; }
+  .nursing-list li { padding: 0.4rem 0 0.4rem 1.4rem; position: relative; border-bottom: 1px dashed var(--border); font-size: 0.9rem; }
+  .nursing-list li:last-child { border-bottom: none; }
+  .nursing-list li::before { content: '✦'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.55rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Thyroid Crisis <span class="ar">أزمة الغدة الدرقية (العاصفة الدرقية)</span></h1>
+  <p>Prepared by: Assist. Prof. Dr. Afaf Mohamed Mansour</p>
+</header>
+
+<!-- TAB BAR -->
+<nav class="tab-bar" role="tablist">
+  <button class="tab-btn active" onclick="showTab('intro')" role="tab">
+    Introduction <span class="ar-label">مقدمة</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('anatomy')" role="tab">
+    Thyroid Gland <span class="ar-label">الغدة الدرقية</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('etiology')" role="tab">
+    Etiology <span class="ar-label">المسببات</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('patho')" role="tab">
+    Pathophysiology <span class="ar-label">الفيزيولوجيا</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('clinical')" role="tab">
+    Clinical Manifestations <span class="ar-label">المظاهر السريرية</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('assessment')" role="tab">
+    Assessment <span class="ar-label">التقييم</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('management')" role="tab">
+    Management <span class="ar-label">العلاج</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('nursing')" role="tab">
+    Nursing Care <span class="ar-label">رعاية تمريضية</span>
+  </button>
+  <button class="tab-btn quiz-tab" onclick="showTab('quiz')" role="tab">
+    🎯 Self-Test Quiz <span class="ar-label">اختبر نفسك</span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════ INTRO ══════════════════════════════ -->
+<section id="tab-intro" class="tab-content active">
+  <div class="def-hero">
+    <p><strong>Thyroid storm (thyrotoxic crisis)</strong> is a form of severe hyperthyroidism, usually of abrupt onset. Untreated, it is almost always fatal. Patients require astute observation, aggressive and supportive nursing care. With proper treatment, the mortality rate is substantially reduced.</p>
+    <p class="ar"><strong>العاصفة الدرقية (الأزمة التسممية الدرقية)</strong> هي شكل حاد من فرط نشاط الغدة الدرقية، يحدث فجأةً. وبدون علاج تكاد تكون مميتة دائمًا. يحتاج المريض إلى مراقبة دقيقة ورعاية تمريضية مكثفة. ومع العلاج الصحيح، تنخفض نسبة الوفيات بشكل ملحوظ.</p>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">What is Thyroid Storm?</span>
+      <span class="ar-title">ما هي العاصفة الدرقية؟</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Key Points</span>
+        <ul>
+          <li>Severe, life-threatening form of hyperthyroidism</li>
+          <li>Abrupt (sudden) onset</li>
+          <li>Almost always fatal if untreated</li>
+          <li>Requires ICU-level care</li>
+          <li>Mortality significantly reduced with proper treatment</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">النقاط الرئيسية</span>
+        <ul>
+          <li>شكل حاد ومهدِّد للحياة من فرط نشاط الغدة الدرقية</li>
+          <li>بداية مفاجئة</li>
+          <li>تكاد تكون مميتة دائمًا بدون علاج</li>
+          <li>تتطلب رعاية على مستوى وحدة العناية المركزة</li>
+          <li>تنخفض نسبة الوفيات بشكل كبير مع العلاج المناسب</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ ANATOMY ══════════════════════════════ -->
+<section id="tab-anatomy" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Location & Structure</span>
+      <span class="ar-title">الموقع والتركيب</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Anatomy</span>
+        <p>The thyroid is a small, <strong>butterfly-shaped</strong> endocrine gland located in the front of the neck, below the larynx and anterior to the trachea.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">التشريح</span>
+        <p>الغدة الدرقية غدة صماء صغيرة <strong>على شكل فراشة</strong> تقع في مقدمة العنق، أسفل الحنجرة وأمام القصبة الهوائية.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Hormones Produced</span>
+      <span class="ar-title">الهرمونات المُنتَجة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Three Hormones</span>
+        <ul>
+          <li><strong>Thyroxine (T4)</strong> — iodine-dependent</li>
+          <li><strong>Triiodothyronine (T3)</strong> — iodine-dependent, more active form</li>
+          <li><strong>Calcitonin (Thyrocalcitonin)</strong> — produced by C-cells in response to calcium levels; helps regulate blood calcium</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">ثلاثة هرمونات</span>
+        <ul>
+          <li><strong>الثيروكسين (T4)</strong> — يعتمد على اليود</li>
+          <li><strong>ثلاثي يودوثيرونين (T3)</strong> — يعتمد على اليود، الشكل الأكثر نشاطًا</li>
+          <li><strong>الكالسيتونين</strong> — تنتجه الخلايا C استجابةً لمستويات الكالسيوم؛ يُنظّم الكالسيوم في الدم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Functions of Thyroid Hormones</span>
+      <span class="ar-title">وظائف هرمونات الغدة الدرقية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Roles</span>
+        <ul>
+          <li>Regulating metabolic processes &amp; controlling growth rate</li>
+          <li>Oxygen consumption</li>
+          <li>Contractility of the heart</li>
+          <li>Calcium absorption</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">الأدوار</span>
+        <ul>
+          <li>تنظيم العمليات الأيضية والتحكم في معدل النمو</li>
+          <li>استهلاك الأكسجين</li>
+          <li>انقباض عضلة القلب</li>
+          <li>امتصاص الكالسيوم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ ETIOLOGY ══════════════════════════════ -->
+<section id="tab-etiology" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Primary Cause — Graves' Disease</span>
+      <span class="ar-title">السبب الرئيسي — مرض غريفز</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Autoimmune Mechanism</span>
+        <p>Over <strong>half</strong> the causes of primary hyperthyroidism are due to <strong>Graves' disease</strong>, an autoimmune condition. IgG antibodies attack the TSH receptor cells on the gland, causing release of thyroid hormone.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">الآلية المناعية الذاتية</span>
+        <p>يُعدّ <strong>مرض غريفز</strong> مسؤولاً عن أكثر من <strong>نصف</strong> حالات فرط نشاط الغدة الدرقية الأولي. تهاجم أجسام مضادة IgG مستقبلات TSH على الغدة مما يُفرز هرمونات الغدة الدرقية.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Other Precipitating Causes</span>
+      <span class="ar-title">أسباب محرِّضة أخرى</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Triggers</span>
+        <ul>
+          <li><strong>Amiodarone</strong> (antidysrhythmic drug) — causes thyroid dysfunction in 10–20% of patients</li>
+          <li><strong>Stopping antithyroid medications</strong> abruptly</li>
+          <li><strong>Major stressors:</strong> infection, surgery, trauma, pregnancy, or critical illness</li>
+        </ul>
+        <div class="warn-box">⚠️ Any major stressor in a patient with pre-existing hyperthyroidism can precipitate thyroid storm.
+          <span class="ar">⚠️ أي ضغط كبير في مريض لديه فرط نشاط سابق يمكن أن يُحرِّض العاصفة الدرقية.</span>
+        </div>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">المحرِّضات</span>
+        <ul>
+          <li><strong>الأميودارون</strong> — يُسبّب خلل الغدة الدرقية في 10-20% من المرضى</li>
+          <li><strong>التوقف المفاجئ</strong> عن أدوية الغدة الدرقية</li>
+          <li><strong>الضغوط الكبرى:</strong> العدوى، الجراحة، الصدمة، الحمل، أو المرض الحرج</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Mechanism in Thyroid Storm</span>
+      <span class="ar-title">الآلية في العاصفة الدرقية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p>Excessive endogenous thyroid hormone:</p>
+        <ul>
+          <li>Increases metabolic activity</li>
+          <li>Stimulates beta-adrenergic receptors → heightened SNS response</li>
+          <li>Results in hyperactivity of cardiac, nervous &amp; smooth muscle tissue + tremendous heat production</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <p>الهرمون الدرقي الزائد داخليًا يؤدي إلى:</p>
+        <ul>
+          <li>زيادة النشاط الأيضي</li>
+          <li>تنشيط مستقبلات بيتا الأدرينالية → استجابة مبالغ فيها للجهاز العصبي الودي</li>
+          <li>فرط نشاط القلب والأعصاب والعضلات الملساء + إنتاج حرارة هائل</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PATHO ══════════════════════════════ -->
+<section id="tab-patho" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Pathophysiology Pathway</span>
+      <span class="ar-title">مسار الفيزيولوجيا المرضية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Step by Step</span>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">خطوة بخطوة</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pathway">
+    <div class="pathway-step">
+      <div class="step-en">1. <strong>Precipitating Factor</strong> (infection, surgery, stress…)</div>
+      <div class="step-ar"><strong>عامل محرِّض</strong> (عدوى، جراحة، ضغط…) .1</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">2. <strong>Increased Cellular Response</strong> to thyroid hormone</div>
+      <div class="step-ar"><strong>زيادة الاستجابة الخلوية</strong> لهرمون الغدة الدرقية .2</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">3. <strong>Hyperactivity of Sympathetic Nervous System (SNS)</strong></div>
+      <div class="step-ar"><strong>فرط نشاط الجهاز العصبي الودي</strong> .3</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">4. <strong>Increased Response to Catecholamines</strong></div>
+      <div class="step-ar"><strong>زيادة الاستجابة للكاتيكولامينات</strong> .4</div>
+    </div>
+    <div class="pathway-step">
+      <div class="step-en">5a. <strong>Intense metabolic activity</strong> → cytokine release → multi-organ dysfunction<br>5b. <strong>Direct effects:</strong> hypertension, tachycardia, hyperthermia, increased BMR, sweating, heart failure</div>
+      <div class="step-ar"><strong>نشاط أيضي مكثف</strong> → إفراز سيتوكينات → خلل متعدد الأعضاء<br><strong>تأثيرات مباشرة:</strong> ارتفاع ضغط الدم، تسرع القلب، حرارة مرتفعة، زيادة معدل الأيض، التعرق، فشل القلب .5</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ CLINICAL ══════════════════════════════ -->
+<section id="tab-clinical" class="tab-content">
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#a33030;">
+      <span class="en-title"><span class="sys-tag tag-cardio" style="background:rgba(255,255,255,0.25);color:white;">❤️ Cardiovascular System</span></span>
+      <span class="ar-title">الجهاز القلبي الوعائي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.6rem;">Due to increased affinity of beta-adrenergic receptors in the heart</p>
+        <ul>
+          <li>Tachycardia, systolic murmur</li>
+          <li>Increased stroke volume &amp; cardiac output</li>
+          <li>↑ Systolic BP, ↓ Diastolic BP</li>
+          <li>Paroxysmal atrial tachycardia, PVCs, palpitations</li>
+          <li>Chest pain, increased cardiac contractility</li>
+          <li>Acute heart failure, pulmonary edema</li>
+          <li>Cardiogenic shock</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.6rem;direction:rtl;">بسبب زيادة تقارب مستقبلات بيتا الأدرينالية في القلب</p>
+        <ul>
+          <li>تسرع القلب، النفخة الانقباضية</li>
+          <li>زيادة حجم الضربة وحجم القذف القلبي</li>
+          <li>↑ الضغط الانقباضي، ↓ الضغط الانبساطي</li>
+          <li>تسرع القلب الأذيني الانتيابي، ضربات بطينية مبكرة، خفقان</li>
+          <li>ألم في الصدر، زيادة انقباض القلب</li>
+          <li>فشل قلبي حاد، وذمة رئوية</li>
+          <li>صدمة قلبية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#2a3a8a;">
+      <span class="en-title">🧠 Central Nervous System</span>
+      <span class="ar-title">الجهاز العصبي المركزي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.6rem;">Resulting from increased catecholamine response</p>
+        <ul>
+          <li>Hyperkinesis, nervousness, muscle weakness</li>
+          <li>Confusion, convulsions, heat intolerance</li>
+          <li>Fine tremor, emotional lability</li>
+          <li>Frank psychosis, apathy, diaphoresis</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:0.6rem;direction:rtl;">نتيجة زيادة استجابة الكاتيكولامين</p>
+        <ul>
+          <li>فرط الحركة، العصبية، ضعف العضلات</li>
+          <li>الارتباك، التشنجات، عدم تحمل الحرارة</li>
+          <li>رعشة خفيفة، التقلب العاطفي</li>
+          <li>الذهان، اللامبالاة، التعرق الشديد</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#1a6a3a;">
+      <span class="en-title">🫃 Gastrointestinal System</span>
+      <span class="ar-title">الجهاز الهضمي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Nausea &amp; vomiting</li>
+          <li>Diarrhea</li>
+          <li>Liver enlargement (hepatomegaly)</li>
+          <li>Abdominal pain</li>
+          <li>Weight loss</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>الغثيان والقيء</li>
+          <li>الإسهال</li>
+          <li>تضخم الكبد</li>
+          <li>ألم في البطن</li>
+          <li>فقدان الوزن</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#8a5a00;">
+      <span class="en-title">🧴 Integumentary System</span>
+      <span class="ar-title">الجهاز الجلدي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Pruritus (itching)</li>
+          <li>Hyperpigmentation of skin</li>
+          <li>Fine, straight hair</li>
+          <li>Alopecia (hair loss)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>حكة جلدية (الحَكَّة)</li>
+          <li>فرط تصبغ الجلد</li>
+          <li>شعر ناعم ومستقيم</li>
+          <li>الثعلبة (تساقط الشعر)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#a33030;">
+      <span class="en-title">🌡️ Thermoregulatory System</span>
+      <span class="ar-title">الجهاز التنظيم الحراري</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Hyperthermia (high body temperature)</li>
+          <li>Heat dissipation</li>
+          <li>Diaphoresis (profuse sweating)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>ارتفاع درجة الحرارة (حمى شديدة)</li>
+          <li>تبديد الحرارة</li>
+          <li>التعرق الغزير</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header" style="background:#6a1a8a;">
+      <span class="en-title">🧪 Serum / Urine Lab Findings</span>
+      <span class="ar-title">نتائج مخبرية في الدم/البول</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Hypercalcemia (↑ calcium)</li>
+          <li>Hyperglycemia (↑ glucose)</li>
+          <li>Hypoalbuminemia (↓ albumin)</li>
+          <li>Hypoprothrombinemia (↓ prothrombin)</li>
+          <li>Hypocholesterolemia (↓ cholesterol)</li>
+          <li>Creatinuria (creatine in urine)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>ارتفاع الكالسيوم</li>
+          <li>ارتفاع السكر في الدم</li>
+          <li>انخفاض الألبومين</li>
+          <li>انخفاض البروثرومبين</li>
+          <li>انخفاض الكوليسترول</li>
+          <li>وجود الكرياتين في البول</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ ASSESSMENT ══════════════════════════════ -->
+<section id="tab-assessment" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Clinical Presentation by System</span>
+      <span class="ar-title">العرض السريري حسب الجهاز</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Diagnostic Features</span>
+        <ol style="padding-left:1.2rem;">
+          <li style="margin-bottom:0.5rem;"><strong>Thermoregulation:</strong> Fever</li>
+          <li style="margin-bottom:0.5rem;"><strong>Heart:</strong> Atrial fibrillation, supraventricular tachycardia, acute heart failure</li>
+          <li style="margin-bottom:0.5rem;"><strong>CNS:</strong> Agitation, restlessness, delirium</li>
+          <li><strong>GI:</strong> Nausea, vomiting, diarrhea, unexplained jaundice, stupor, coma</li>
+        </ol>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">الميزات التشخيصية</span>
+        <ol style="padding-right:1.2rem;list-style-position:inside;">
+          <li style="margin-bottom:0.5rem;"><strong>التنظيم الحراري:</strong> حمى</li>
+          <li style="margin-bottom:0.5rem;"><strong>القلب:</strong> رجفان أذيني، تسرع فوق بطيني، فشل قلبي حاد</li>
+          <li style="margin-bottom:0.5rem;"><strong>الجهاز العصبي:</strong> هياج، اضطراب، هذيان</li>
+          <li><strong>الجهاز الهضمي:</strong> غثيان، قيء، إسهال، يرقان غير مفسَّر، ذهول، غيبوبة</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ MANAGEMENT ══════════════════════════════ -->
+<section id="tab-management" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Goals of Acute Management</span>
+      <span class="ar-title">أهداف الإدارة الحادة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Reduce clinical effects of thyroid hormone as rapidly as possible</li>
+          <li>Prevent cardiac decompensation</li>
+          <li>Reduce hyperthermia</li>
+          <li>Reverse dehydration caused by fever or GI losses</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>تقليل التأثيرات السريرية لهرمون الغدة الدرقية بأسرع وقت ممكن</li>
+          <li>منع تدهور وظيفة القلب</li>
+          <li>تقليل ارتفاع الحرارة</li>
+          <li>معالجة الجفاف الناجم عن الحمى أو فقدان السوائل الهضمية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Prevent Cardiovascular Collapse</span>
+      <span class="ar-title">منع الانهيار القلبي الوعائي</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Control atrial dysrhythmias &amp; halt heart failure progression</li>
+          <li><strong>Beta-blockers</strong> are the mainstay of cardiac protection</li>
+          <li>Propranolol most frequently used</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>السيطرة على اضطرابات الإيقاع الأذيني وإيقاف تطور الفشل القلبي</li>
+          <li><strong>حاصرات بيتا</strong> هي حجر الأساس لحماية القلب</li>
+          <li>البروبرانولول هو الأكثر استخدامًا</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Reduce Hyperthermia</span>
+      <span class="ar-title">تخفيض الحرارة المرتفعة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Cooling blanket</li>
+          <li>Antipyretic: <strong>Acetaminophen</strong> (drug of choice)</li>
+          <li>⚠️ <strong>Salicylates (aspirin) are CONTRAINDICATED</strong> — they inhibit protein binding of T3/T4, increasing free (active) thyroid hormone</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>بطانية التبريد</li>
+          <li>خافض الحرارة: <strong>الباراسيتامول</strong> (الدواء المفضل)</li>
+          <li>⚠️ <strong>السالسيلات (الأسبرين) ممنوعة</strong> — تمنع ارتباط T3/T4 بالبروتين مما يرفع الهرمون الحر النشط</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Reverse Dehydration</span>
+      <span class="ar-title">معالجة الجفاف</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul>
+          <li>Large volumes of glucose &amp; isotonic sodium solutions to replace fluid and sodium losses</li>
+          <li>Antibiotic therapy if systemic infection present</li>
+          <li>Insulin for hyperglycemia</li>
+          <li>Monitor serum sodium for hyponatremia</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul>
+          <li>كميات كبيرة من محاليل الجلوكوز والصوديوم متساوي التوتر لتعويض الفقدان</li>
+          <li>العلاج بالمضادات الحيوية عند وجود عدوى جهازية</li>
+          <li>الأنسولين لارتفاع السكر</li>
+          <li>متابعة صوديوم الدم لتحري نقص الصوديوم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drug Table -->
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Pharmacologic Management — Drug Summary</span>
+      <span class="ar-title">ملخص الأدوية</span>
+    </div>
+    <div class="bi-card-body" style="display:block;padding:1rem;">
+      <div style="overflow-x:auto;">
+        <table class="drug-table">
+          <thead>
+            <tr>
+              <th>Drug / الدواء</th>
+              <th>Dose / الجرعة</th>
+              <th>Action / التأثير</th>
+              <th>Nursing Notes / ملاحظات تمريضية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PTU</strong><br><span style="font-size:0.75rem;color:var(--text-light)">Propylthiouracil</span></td>
+              <td>Loading: 800–1200 mg<br>Maintenance: 100–400 mg q4-6h PO</td>
+              <td>Blocks T3/T4 synthesis<br><span class="ar-cell">يمنع تصنيع T3/T4</span></td>
+              <td>Monitor cardiac; watch for agranulocytosis, rash, nausea<br><span class="ar-cell">راقب القلب؛ انتبه لندرة المحببات، طفح، غثيان</span></td>
+            </tr>
+            <tr>
+              <td><strong>Methimazole</strong></td>
+              <td>10–20 mg q6-8h PO</td>
+              <td>Blocks thyroid hormone synthesis<br><span class="ar-cell">يمنع تصنيع الهرمون الدرقي</span></td>
+              <td>More toxic than PTU; watch for rash<br><span class="ar-cell">أكثر سمية من PTU؛ انتبه للطفح الجلدي</span></td>
+            </tr>
+            <tr>
+              <td><strong>Sodium Iodide</strong></td>
+              <td>1 g q12h IV</td>
+              <td>Suppresses hormone release<br><span class="ar-cell">يُثبّط إفراز الهرمون</span></td>
+              <td>Give 1h AFTER PTU/methimazole; watch for edema, GI upset<br><span class="ar-cell">أعطه بعد PTU/methimazole بساعة؛ راقب الوذمة</span></td>
+            </tr>
+            <tr>
+              <td><strong>Potassium Iodide</strong></td>
+              <td>2–5 gtts q8h PO</td>
+              <td>Suppresses hormone release<br><span class="ar-cell">يُثبّط إفراز الهرمون</span></td>
+              <td>Discontinue for rash; watch for toxic iodinism<br><span class="ar-cell">أوقف عند الطفح؛ راقب التسمم اليودي</span></td>
+            </tr>
+            <tr>
+              <td><strong>SSKI</strong></td>
+              <td>5–10 gtts q8h PO</td>
+              <td>Suppresses hormone release<br><span class="ar-cell">يُثبّط إفراز الهرمون</span></td>
+              <td>Mix with juice/milk; give by straw to prevent teeth staining<br><span class="ar-cell">اخلطه بعصير/حليب؛ أعطه بمصاصة</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dexamethasone</strong></td>
+              <td>2 mg q6h IV</td>
+              <td>Suppresses hormone release<br><span class="ar-cell">يُثبّط إفراز الهرمون</span></td>
+              <td>Monitor I&amp;O, glucose; may cause hypertension, nausea<br><span class="ar-cell">راقب السكر والسوائل؛ قد يرفع ضغط الدم</span></td>
+            </tr>
+            <tr>
+              <td><strong>Propranolol</strong><br><span style="font-size:0.75rem;color:var(--text-light)">β-Blocker</span></td>
+              <td>1–3 mg q1-4h IV</td>
+              <td>β-Adrenergic blocking<br><span class="ar-cell">يمنع مستقبلات بيتا الأدرينالية</span></td>
+              <td>Monitor cardiac status; hold for bradycardia or ↓ CO<br><span class="ar-cell">راقب القلب؛ أوقفه عند بطء القلب أو انخفاض CO</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ NURSING ══════════════════════════════ -->
+<section id="tab-nursing" class="tab-content">
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Nursing Interventions — Overview</span>
+      <span class="ar-title">التدخلات التمريضية — نظرة عامة</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <span class="label-en">Directed Toward</span>
+        <ul class="nursing-list">
+          <li>Safe administration &amp; monitoring of prescribed medications</li>
+          <li>Normalizing body temperature</li>
+          <li>Rehydration &amp; correction of metabolic derangements</li>
+          <li>Patient &amp; family education</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <span class="label-ar">موجهة نحو</span>
+        <ul class="nursing-list">
+          <li>إعطاء الأدوية المقررة بأمان ومراقبة تأثيراتها</li>
+          <li>تطبيع درجة حرارة الجسم</li>
+          <li>الترطيب وتصحيح الاضطرابات الأيضية</li>
+          <li>تثقيف المريض والأسرة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Medication Administration</span>
+      <span class="ar-title">إعطاء الأدوية</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>Timely, ordered sequence of medication administration is essential</li>
+          <li>Provide calm environment for agitated patient</li>
+          <li>Heart rate should decrease with beta-blockade — monitor closely</li>
+          <li>Reassure patient &amp; family that agitation is due to the disease and medications will help</li>
+          <li>Frequent, clear, simple explanations reduce fear</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>الإعطاء الدقيق والمنظم للأدوية بالترتيب الصحيح ضروري</li>
+          <li>توفير بيئة هادئة للمريض المضطرب</li>
+          <li>معدل القلب يجب أن ينخفض مع حاصرات بيتا — تابع عن كثب</li>
+          <li>طمأنة المريض والأسرة أن الهياج بسبب المرض وأن الأدوية ستساعد</li>
+          <li>الشرح البسيط والمتكرر يُقلّل الخوف</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Normalize Body Temperature</span>
+      <span class="ar-title">تطبيع درجة حرارة الجسم</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>Assess temperature frequently until normal</li>
+          <li>Cool environment + fan to circulate air</li>
+          <li>Comfortable, non-restrictive bedclothes</li>
+          <li>Tepid sponge bath — reduces heat by evaporation</li>
+          <li>Cold-pack applications to groin &amp; axilla — increases heat loss at major vessels</li>
+          <li>Use <strong>acetaminophen</strong> for antipyresis (NOT aspirin)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>قياس الحرارة بشكل متكرر حتى تعود لطبيعتها</li>
+          <li>بيئة باردة + مروحة لتدوير الهواء</li>
+          <li>ملابس نوم مريحة وغير ضيقة</li>
+          <li>مسح الجسم بماء فاتر — يُقلّل الحرارة بالتبخر</li>
+          <li>أكياس ثلج على الأربية والإبط — يُعزّز فقدان الحرارة عند الأوعية الكبيرة</li>
+          <li>الباراسيتامول لخفض الحرارة (وليس الأسبرين)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-card">
+    <div class="bi-card-header">
+      <span class="en-title">Patient Education (Discharge Teaching)</span>
+      <span class="ar-title">تثقيف المريض عند الخروج</span>
+    </div>
+    <div class="bi-card-body">
+      <div class="bi-en">
+        <ul class="nursing-list">
+          <li>Explain cause of fever, anxiety, and dysrhythmias in understandable terms</li>
+          <li>Teach side effects of medication therapy before discharge</li>
+          <li>Beta-blocker patients: report <strong>bradycardia, unexplained fatigue, orthostatic hypotension</strong></li>
+          <li>Antithyroid medication patients: alert to <strong>agranulocytosis</strong> (sudden cough, fever, rash, inflammation)</li>
+          <li>Use <strong>acetaminophen</strong> for fever — not salicylates (aspirin increases free thyroid hormone)</li>
+        </ul>
+      </div>
+      <div class="bi-ar">
+        <ul class="nursing-list">
+          <li>شرح سبب الحمى، القلق، واضطرابات الإيقاع بلغة مفهومة</li>
+          <li>تعليم الآثار الجانبية للأدوية قبل الخروج</li>
+          <li>مرضى حاصرات بيتا: الإبلاغ عن <strong>بطء القلب، الإجهاد المفاجئ، انخفاض ضغط الدم الانتصابي</strong></li>
+          <li>مرضى أدوية الغدة الدرقية: التنبيه من <strong>ندرة المحببات</strong> (سعال مفاجئ، حمى، طفح، التهاب)</li>
+          <li>استخدام <strong>الباراسيتامول</strong> للحمى — وليس الأسبرين (يرفع الهرمون الحر)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ QUIZ ══════════════════════════════ -->
+<section id="tab-quiz" class="tab-content">
+  <div class="quiz-header">
+    <h2>Self-Test Quiz</h2>
+    <p>اختبر معلوماتك — 20 سؤال اختيار من متعدد</p>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-circle" id="scoreCircle">
+      <div class="score-inner" id="scoreDisplay">0/20</div>
+    </div>
+    <div class="score-text">
+      <h3>Your Score / درجتك</h3>
+      <p id="scoreAr">لم تجب على أي سؤال بعد</p>
+    </div>
+    <button class="reset-btn" onclick="resetQuiz()">Reset / إعادة</button>
+  </div>
+
+  <div id="quizContainer"></div>
+</section>
+
+<script>
+// ─── TAB LOGIC ───
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ─── QUIZ DATA ───
+const questions = [
+  {
+    en: "Thyroid storm is best described as:",
+    ar: "أفضل وصف للعاصفة الدرقية هو:",
+    options: ["A mild increase in thyroid activity", "A severe, life-threatening form of hyperthyroidism", "A chronic underactive thyroid condition", "An autoimmune attack on the parathyroid gland"],
+    optionsAr: ["زيادة خفيفة في نشاط الغدة الدرقية", "شكل حاد ومهدد للحياة من فرط نشاط الغدة الدرقية", "حالة مزمنة لضعف نشاط الغدة الدرقية", "هجوم مناعي ذاتي على الغدة جارة الدرقية"],
+    correct: 1,
+    explanation: "Thyroid storm is a severe, life-threatening form of hyperthyroidism with abrupt onset that is almost always fatal if untreated.",
+    explanationAr: "العاصفة الدرقية شكل حاد ومهدد للحياة من فرط نشاط الغدة الدرقية، تحدث فجأةً وتكاد تكون مميتة دون علاج."
+  },
+  {
+    en: "Which finding is MOST characteristic of thyroid storm?",
+    ar: "أي من الآتي الأكثر تميزاً في العاصفة الدرقية؟",
+    options: ["Bradycardia and hypothermia", "Hyperpyrexia and extreme tachycardia", "Numbness and tingling in the fingers", "Lethargy and cold intolerance"],
+    optionsAr: ["بطء القلب وانخفاض الحرارة", "ارتفاع شديد في الحرارة وتسرع القلب الشديد", "تنميل ووخز في الأصابع", "خمول وعدم تحمل البرد"],
+    correct: 1,
+    explanation: "Hyperpyrexia (very high fever) and extreme tachycardia are hallmark signs of thyroid storm due to the hypermetabolic state.",
+    explanationAr: "ارتفاع الحرارة الشديد وتسرع القلب الشديد من أبرز علامات العاصفة الدرقية نتيجة فرط حالة الأيض."
+  },
+  {
+    en: "What is the most common cause of primary hyperthyroidism?",
+    ar: "ما السبب الأكثر شيوعاً لفرط نشاط الغدة الدرقية الأولي؟",
+    options: ["Hashimoto's disease", "Graves' disease", "Thyroid cancer", "Amiodarone toxicity"],
+    optionsAr: ["مرض هاشيموتو", "مرض غريفز", "سرطان الغدة الدرقية", "سمية الأميودارون"],
+    correct: 1,
+    explanation: "Over half of primary hyperthyroidism cases are due to Graves' disease, an autoimmune condition caused by IgG antibodies attacking TSH receptors.",
+    explanationAr: "يُعدّ مرض غريفز مسؤولاً عن أكثر من نصف حالات فرط نشاط الغدة الدرقية الأولي."
+  },
+  {
+    en: "Why are salicylates (aspirin) CONTRAINDICATED in thyroid storm?",
+    ar: "لماذا يُمنع استخدام الأسبرين في العاصفة الدرقية؟",
+    options: ["They cause renal failure", "They inhibit protein binding of T3/T4, increasing free thyroid hormone", "They cause hypothyroidism", "They block beta receptors"],
+    optionsAr: ["يُسبّب فشلاً كلوياً", "يمنع ارتباط T3/T4 بالبروتين مما يزيد الهرمون الحر", "يُسبّب قصور الغدة الدرقية", "يحصر مستقبلات بيتا"],
+    correct: 1,
+    explanation: "Salicylates inhibit protein binding of T3 and T4, increasing the level of free, metabolically active thyroid hormone — worsening the storm.",
+    explanationAr: "يمنع الأسبرين ارتباط T3/T4 بالبروتين مما يرفع مستوى الهرمون الحر النشط أيضيًا مما يُفاقم العاصفة."
+  },
+  {
+    en: "Which antipyretic is the drug of choice for fever management in thyroid storm?",
+    ar: "ما هو خافض الحرارة المفضل في إدارة الحمى بالعاصفة الدرقية؟",
+    options: ["Ibuprofen", "Aspirin", "Acetaminophen (Paracetamol)", "Naproxen"],
+    optionsAr: ["الإيبوبروفين", "الأسبرين", "الباراسيتامول", "النابروكسين"],
+    correct: 2,
+    explanation: "Acetaminophen is the antipyretic of choice. Salicylates (aspirin, ibuprofen) are contraindicated because they increase free thyroid hormone.",
+    explanationAr: "الباراسيتامول هو الدواء المفضل لخفض الحرارة. الأسبرين ممنوع لأنه يرفع الهرمون الدرقي الحر."
+  },
+  {
+    en: "Beta-blockers in thyroid storm primarily act to:",
+    ar: "حاصرات بيتا في العاصفة الدرقية تعمل بشكل رئيسي على:",
+    options: ["Block synthesis of thyroid hormone", "Decrease peripheral sensitivity to catecholamines and slow AV conduction", "Increase TSH levels", "Suppress iodine uptake"],
+    optionsAr: ["منع تصنيع هرمون الغدة الدرقية", "تقليل حساسية الأنسجة للكاتيكولامينات وإبطاء التوصيل الأذيني البطيني", "رفع مستوى TSH", "تثبيط امتصاص اليود"],
+    correct: 1,
+    explanation: "Beta-blockers reduce exaggerated myocardial stimulation and slow AV conduction. They do NOT affect thyroid hormone levels directly.",
+    explanationAr: "تُقلّل حاصرات بيتا التنبيه المبالغ فيه لعضلة القلب وتُبطّئ التوصيل الأذيني البطيني ولا تؤثر مباشرةً على مستوى الهرمون."
+  },
+  {
+    en: "Which medication blocks the SYNTHESIS of thyroid hormone?",
+    ar: "أي دواء يمنع تصنيع هرمون الغدة الدرقية؟",
+    options: ["Propranolol", "Sodium iodide", "Propylthiouracil (PTU)", "Dexamethasone"],
+    optionsAr: ["البروبرانولول", "يوديد الصوديوم", "البروبيلثيوراسيل (PTU)", "ديكساميثازون"],
+    correct: 2,
+    explanation: "PTU (and methimazole) block the synthesis of new thyroid hormone. They act within 1-2 hours of GI absorption.",
+    explanationAr: "PTU (والميثيمازول) يمنعان تصنيع الهرمون الدرقي الجديد ويعملان خلال 1-2 ساعة بعد الامتصاص."
+  },
+  {
+    en: "Iodine therapy (sodium iodide) must be given:",
+    ar: "يجب إعطاء اليود (يوديد الصوديوم):",
+    options: ["Before PTU or methimazole", "At least 1 hour AFTER PTU or methimazole", "Simultaneously with beta-blockers only", "72 hours before any other drug"],
+    optionsAr: ["قبل PTU أو الميثيمازول", "بعد PTU أو الميثيمازول بساعة على الأقل", "مع حاصرات بيتا فقط في نفس الوقت", "قبل أي دواء آخر بـ72 ساعة"],
+    correct: 1,
+    explanation: "Iodine blocks RELEASE of preformed hormone. It must be given after adequate inhibition of new synthesis (at least 1 hour after PTU/methimazole) to prevent worsening.",
+    explanationAr: "اليود يمنع إفراز الهرمون الجاهز. يجب إعطاؤه بعد تثبيط كافٍ للتصنيع الجديد (ساعة بعد PTU/methimazole) لتجنب تفاقم الحالة."
+  },
+  {
+    en: "A patient with thyroid storm develops hyperthermia. Which nursing measure uses evaporation to reduce heat?",
+    ar: "مريض بعاصفة درقية يعاني من ارتفاع الحرارة. أي إجراء تمريضي يستخدم التبخر لتقليل الحرارة؟",
+    options: ["Applying cold packs to groin only", "Tepid sponge bath", "IV cold saline infusion", "Increasing room temperature"],
+    optionsAr: ["وضع أكياس ثلج على الأربية فقط", "مسح الجسم بماء فاتر", "ضخ محلول ملحي بارد وريدياً", "رفع درجة حرارة الغرفة"],
+    correct: 1,
+    explanation: "A tepid sponge bath reduces heat by evaporation. Cold packs to groin/axilla increase heat loss at major blood vessels.",
+    explanationAr: "المسح بماء فاتر يُقلّل الحرارة بالتبخر. أكياس الثلج على الأربية/الإبط تُقلّل الحرارة عند الأوعية الكبيرة."
+  },
+  {
+    en: "What is the primary mechanism causing symptoms in thyroid storm?",
+    ar: "ما الآلية الرئيسية التي تُسبّب الأعراض في العاصفة الدرقية؟",
+    options: ["Decreased thyroid hormone production", "Increased cellular response to thyroid hormone → hyperactivity of SNS", "Calcium channel blockade", "Hypothalamic dysfunction"],
+    optionsAr: ["انخفاض إنتاج هرمون الغدة الدرقية", "زيادة استجابة الخلايا لهرمون الغدة الدرقية → فرط نشاط الجهاز الودي", "حصار قنوات الكالسيوم", "خلل في الوطاء"],
+    correct: 1,
+    explanation: "A precipitating factor increases cellular response to thyroid hormone → sympathetic hyperactivity → increased catecholamine response → multi-organ effects.",
+    explanationAr: "عامل محرِّض يُعزّز استجابة الخلايا للهرمون → فرط نشاط ودي → زيادة استجابة الكاتيكولامين → تأثيرات متعددة الأعضاء."
+  },
+  {
+    en: "Amiodarone (antidysrhythmic drug) causes thyroid dysfunction in what percentage of patients?",
+    ar: "الأميودارون يُسبّب خلل وظيفي في الغدة الدرقية في كم بالمائة من المرضى؟",
+    options: ["1–5%", "10–20%", "30–40%", "50–60%"],
+    optionsAr: ["1-5%", "10-20%", "30-40%", "50-60%"],
+    correct: 1,
+    explanation: "Amiodarone causes thyroid dysfunction in 10% to 20% of treated patients.",
+    explanationAr: "الأميودارون يُسبّب خلل الغدة الدرقية في 10-20% من المرضى الذين يتلقونه."
+  },
+  {
+    en: "Which CNS manifestation is NOT typically seen in thyroid storm?",
+    ar: "أي من المظاهر العصبية التالية لا يُشاهَد عادةً في العاصفة الدرقية؟",
+    options: ["Fine tremor and hyperkinesis", "Frank psychosis and emotional lability", "Somnolence (excessive sleepiness) without any agitation", "Confusion and convulsions"],
+    optionsAr: ["رعشة خفيفة وفرط الحركة", "ذهان صريح وتقلب عاطفي", "النعاس الشديد بدون أي هياج", "ارتباك وتشنجات"],
+    correct: 2,
+    explanation: "Thyroid storm causes CNS excitation: agitation, hyperkinesis, tremor, confusion. Excessive somnolence alone (without agitation) is not typical.",
+    explanationAr: "العاصفة الدرقية تُسبّب تنشيطًا عصبيًا: هياج، فرط حركة، رعشة، ارتباك. النعاس الشديد المنفرد ليس نموذجيًا."
+  },
+  {
+    en: "Dehydration in thyroid storm is treated with:",
+    ar: "يُعالج الجفاف في العاصفة الدرقية بـ:",
+    options: ["Hypertonic saline only", "Large volumes of glucose and isotonic sodium solutions", "Oral rehydration only (no IV)", "Diuretics to reduce fluid overload"],
+    optionsAr: ["محلول ملحي مفرط التوتر فقط", "كميات كبيرة من الجلوكوز ومحاليل الصوديوم متساوية التوتر", "ترطيب فموي فقط (بدون وريدي)", "مدرات البول لتقليل فرط السوائل"],
+    correct: 1,
+    explanation: "Large volumes of glucose and isotonic sodium solutions replace circulating fluid and sodium losses from hypermetabolism.",
+    explanationAr: "كميات كبيرة من الجلوكوز والمحاليل متساوية التوتر تُعوّض الفقدان من السوائل والصوديوم نتيجة فرط الأيض."
+  },
+  {
+    en: "A patient on antithyroid medications should be instructed to report which side effect immediately?",
+    ar: "يجب إرشاد مريض على أدوية الغدة الدرقية للإبلاغ فوراً عن:",
+    options: ["Mild drowsiness", "Sudden cough, fever, rash, and inflammation (signs of agranulocytosis)", "Slight headache", "Increased appetite"],
+    optionsAr: ["نعاس خفيف", "سعال مفاجئ، حمى، طفح، التهاب (علامات ندرة المحببات)", "صداع خفيف", "زيادة الشهية"],
+    correct: 1,
+    explanation: "Agranulocytosis is a serious side effect of PTU and methimazole. Signs include sudden cough, fever, rash, and inflammation.",
+    explanationAr: "ندرة المحببات من الآثار الجانبية الخطيرة لـPTU والميثيمازول. العلامات: سعال مفاجئ، حمى، طفح، التهاب."
+  },
+  {
+    en: "The thyroid gland is located:",
+    ar: "تقع الغدة الدرقية:",
+    options: ["Behind the trachea", "In the front of the neck, below the larynx, anterior to the trachea", "In the mediastinum", "Adjacent to the kidneys"],
+    optionsAr: ["خلف القصبة الهوائية", "في مقدمة العنق، أسفل الحنجرة، أمام القصبة الهوائية", "في المنصف", "بجانب الكلى"],
+    correct: 1,
+    explanation: "The thyroid is in the front of the neck, below the larynx (voicebox) and anterior to the trachea (windpipe).",
+    explanationAr: "الغدة الدرقية تقع في مقدمة العنق، أسفل الحنجرة وأمام القصبة الهوائية."
+  },
+  {
+    en: "Which of the following is a gastrointestinal manifestation of thyroid storm?",
+    ar: "أي من الآتي من المظاهر الهضمية للعاصفة الدرقية؟",
+    options: ["Constipation and decreased bowel sounds", "Nausea, vomiting, diarrhea, abdominal pain, weight loss", "Hematemesis (vomiting blood)", "Ascites and portal hypertension"],
+    optionsAr: ["إمساك وأصوات معوية خافتة", "غثيان، قيء، إسهال، ألم بطني، فقدان وزن", "قيء الدم", "استسقاء وارتفاع ضغط البابي"],
+    correct: 1,
+    explanation: "GI manifestations include nausea, vomiting, diarrhea, liver enlargement, abdominal pain, and weight loss.",
+    explanationAr: "المظاهر الهضمية تشمل: غثيان، قيء، إسهال، تضخم الكبد، ألم بطني، وفقدان وزن."
+  },
+  {
+    en: "Corticosteroids (hydrocortisone/dexamethasone) are used in thyroid storm for patients with:",
+    ar: "تُستخدم الكورتيكوستيرويدات في العاصفة الدرقية للمرضى الذين لديهم:",
+    options: ["Hypertension only", "Concomitant adrenal insufficiency", "Renal failure", "Hyperglycemia"],
+    optionsAr: ["ارتفاع ضغط الدم فقط", "قصور الغدة الكظرية المصاحب", "الفشل الكلوي", "ارتفاع السكر"],
+    correct: 1,
+    explanation: "Some patients with thyroid storm have concomitant adrenal insufficiency and may be prescribed hydrocortisone or dexamethasone.",
+    explanationAr: "بعض مرضى العاصفة الدرقية يعانون من قصور مصاحب في الغدة الكظرية ويُوصف لهم هيدروكورتيزون أو ديكساميثازون."
+  },
+  {
+    en: "What is the expected outcome of UNTREATED thyroid storm?",
+    ar: "ما النتيجة المتوقعة للعاصفة الدرقية غير المُعالَجة؟",
+    options: ["Spontaneous recovery", "Progression to mild hypothyroidism", "It is almost always fatal", "It converts to hypothyroidism"],
+    optionsAr: ["تعافٍ تلقائي", "تتحول إلى قصور خفيف في الغدة", "تكاد تكون مميتة دائمًا", "تتحول إلى قصور الغدة الدرقية"],
+    correct: 2,
+    explanation: "Untreated thyroid storm is almost always fatal. Proper treatment substantially reduces the mortality rate.",
+    explanationAr: "العاصفة الدرقية غير المُعالَجة تكاد تكون مميتة دائمًا. العلاج الصحيح يُقلّل نسبة الوفيات بشكل كبير."
+  },
+  {
+    en: "The hormone calcitonin is produced by which cells of the thyroid?",
+    ar: "هرمون الكالسيتونين تُنتجه أي خلايا في الغدة الدرقية؟",
+    options: ["Follicular cells (A cells)", "C cells (parafollicular cells)", "B cells", "Oxyphilic cells"],
+    optionsAr: ["الخلايا الجريبية (خلايا A)", "الخلايا C (المجاورة للجريبات)", "الخلايا B", "الخلايا الحامضية"],
+    correct: 1,
+    explanation: "Calcitonin is produced by the C cells (parafollicular cells) of the thyroid gland in response to calcium levels.",
+    explanationAr: "الكالسيتونين تُنتجه الخلايا C (المجاورة للجريبات) في الغدة الدرقية استجابةً لمستويات الكالسيوم."
+  },
+  {
+    en: "A patient with thyroid storm on beta-blockers should be monitored for:",
+    ar: "مريض بعاصفة درقية على حاصرات بيتا يجب مراقبته من أجل:",
+    options: ["Hypertension and tachycardia", "Bradycardia, decreased cardiac output, and orthostatic hypotension", "Hyperthermia and diaphoresis", "Hyperglycemia and polyuria"],
+    optionsAr: ["ارتفاع ضغط الدم وتسرع القلب", "بطء القلب وانخفاض القذف القلبي وانخفاض ضغط الدم الانتصابي", "ارتفاع الحرارة والتعرق", "ارتفاع السكر وكثرة التبول"],
+    correct: 1,
+    explanation: "Beta-blockers can cause bradycardia and decreased cardiac output — hold the medication and notify the physician if this occurs.",
+    explanationAr: "حاصرات بيتا قد تُسبّب بطء القلب وانخفاض القذف القلبي — أوقف الدواء وأبلغ الطبيب إذا حدث ذلك."
+  }
+];
+
+let answered = new Array(questions.length).fill(false);
+let score = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  questions.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-' + qi;
+    const letters = ['A','B','C','D'];
+    const opts = q.options.map((opt, i) => `
+      <button class="opt-btn" id="opt-${qi}-${i}" onclick="answerQ(${qi},${i})" ${answered[qi] ? 'disabled' : ''}>
+        <span class="opt-letter">${letters[i]}</span>
+        <span>${opt}<br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--text-light);direction:rtl;">${q.optionsAr[i]}</span></span>
+      </button>`).join('');
+    card.innerHTML = `
+      <div class="q-num">Question ${qi+1} / السؤال ${qi+1}</div>
+      <div class="q-body">
+        <p class="q-text">${q.en}</p>
+        <p class="q-text-ar">${q.ar}</p>
+        <div class="options">${opts}</div>
+        <div class="explanation ${answered[qi] ? 'show' : ''}" id="exp-${qi}">
+          ✅ ${q.explanation}
+          <span class="ar">${q.explanationAr}</span>
+        </div>
+      </div>`;
+    container.appendChild(card);
+
+    // Re-apply correct/wrong states if already answered
+    if (answered[qi]) {
+      applyStyles(qi, q.correct);
+    }
+  });
+}
+
+function answerQ(qi, chosen) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+  const q = questions[qi];
+  if (chosen === q.correct) score++;
+  applyStyles(qi, q.correct, chosen);
+  document.getElementById('exp-' + qi).classList.add('show');
+  updateScore();
+}
+
+function applyStyles(qi, correct, chosen) {
+  const letters = ['A','B','C','D'];
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById('opt-' + qi + '-' + i);
+    if (!btn) continue;
+    btn.disabled = true;
+    if (i === correct) btn.classList.add('correct');
+    else if (chosen !== undefined && i === chosen) btn.classList.add('wrong');
+  }
+}
+
+function updateScore() {
+  const answered_count = answered.filter(Boolean).length;
+  const pct = answered_count > 0 ? (score / answered_count * 100) : 0;
+  document.getElementById('scoreDisplay').textContent = score + '/' + answered_count;
+  document.getElementById('scoreAr').textContent = `أجبت على ${answered_count} سؤالاً، ${score} منها صحيح (${Math.round(pct)}%)`;
+  const deg = (score / questions.length) * 360;
+  document.getElementById('scoreCircle').style.background = `conic-gradient(var(--accent2) ${deg}deg, var(--surface2) ${deg}deg)`;
+}
+
+function resetQuiz() {
+  answered = new Array(questions.length).fill(false);
+  score = 0;
+  updateScore();
+  buildQuiz();
+}
+
+// Init
+buildQuiz();
+</script>
+</body>
+</html>

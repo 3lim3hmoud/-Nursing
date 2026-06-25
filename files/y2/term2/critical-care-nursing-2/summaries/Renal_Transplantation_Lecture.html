@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kidney Transplantation Insights | رؤى زراعة الكلى</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d4f6e;
+    --primary-light: #1a7a9f;
+    --accent: #00b4d8;
+    --accent2: #e76f51;
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --text: #1a2332;
+    --muted: #5a7080;
+    --border: #d0e4ef;
+    --correct: #2a9d8f;
+    --wrong: #e63946;
+    --quiz-bg: #0a2e3d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', serif;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, #0a2a3e 0%, #0d4f6e 40%, #1a7a9f 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.18) 0%, transparent 60%);
+  }
+  .hero-icon { font-size: 3.5rem; margin-bottom: 12px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .hero h1 span {
+    display: block;
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--accent);
+    margin-top: 6px;
+    font-weight: 700;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    margin-top: 14px;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* ─── LANG TOGGLE ─── */
+  .lang-bar {
+    background: var(--primary);
+    display: flex; justify-content: center; gap: 12px;
+    padding: 10px 20px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(13,79,110,0.25);
+  }
+  .lang-btn {
+    padding: 6px 24px; border-radius: 20px;
+    border: 2px solid var(--accent);
+    background: transparent; color: #fff;
+    font-family: 'Cairo', sans-serif; font-size: 0.9rem;
+    cursor: pointer; transition: all .25s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--accent); color: var(--primary);
+    font-weight: 700;
+  }
+
+  /* ─── CONTAINER ─── */
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  /* ─── SECTION CARD ─── */
+  .section-card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(13,79,110,0.10);
+    margin-bottom: 28px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    animation: fadeUp .5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(18px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .section-card:nth-child(1) { animation-delay: .05s; }
+  .section-card:nth-child(2) { animation-delay: .1s; }
+  .section-card:nth-child(3) { animation-delay: .15s; }
+  .section-card:nth-child(4) { animation-delay: .2s; }
+  .section-card:nth-child(5) { animation-delay: .25s; }
+  .section-card:nth-child(6) { animation-delay: .3s; }
+  .section-card:nth-child(7) { animation-delay: .35s; }
+  .section-card:nth-child(8) { animation-delay: .4s; }
+
+  .section-header {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 16px 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-number {
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title-wrap { flex: 1; }
+  .section-title-en {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  .section-title-ar {
+    font-family: 'Cairo', sans-serif;
+    color: var(--accent);
+    font-size: 0.95rem;
+    direction: rtl;
+  }
+
+  .section-body { padding: 22px 24px; }
+
+  /* ─── BILINGUAL BLOCK ─── */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 14px;
+  }
+  .lang-en .bilingual .ar-block,
+  .lang-en .ar-only { display: none; }
+  .lang-ar .bilingual .en-block,
+  .lang-ar .en-only { display: none; }
+  .lang-both .bilingual { grid-template-columns: 1fr 1fr; }
+
+  @media (max-width: 620px) {
+    .bilingual { grid-template-columns: 1fr; }
+  }
+
+  .en-block {
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+  }
+  .ar-block {
+    border-right: 3px solid var(--accent2);
+    padding-right: 14px;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .block-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* ─── BULLETS ─── */
+  .point-list { list-style: none; padding: 0; }
+  .point-list li {
+    padding: 7px 0 7px 0;
+    font-size: 0.95rem;
+    display: flex; align-items: flex-start; gap: 10px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .point-list li:last-child { border-bottom: none; }
+  .point-list li::before {
+    content: '▸';
+    color: var(--accent);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .ar-block .point-list li {
+    flex-direction: row-reverse;
+  }
+  .ar-block .point-list li::before {
+    content: '◂';
+  }
+
+  /* ─── NOTE BOX ─── */
+  .note-box {
+    background: linear-gradient(135deg, #e8f7fb 0%, #d0effa 100%);
+    border: 1px solid #90d0e8;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .note-box .note-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+
+  /* ─── STATS ROW ─── */
+  .stats-row {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin: 12px 0;
+  }
+  .stat-pill {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .stat-pill strong { color: var(--accent); font-size: 1rem; }
+
+  /* ─── WARNING / CONTRAINDICATION BADGE ─── */
+  .badge-abs { display: inline-block; background: #ffe0e0; color: #c0392b; border-radius: 6px; padding: 2px 10px; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; font-family: 'Cairo', sans-serif; }
+  .badge-rel { display: inline-block; background: #fff3e0; color: #e67e22; border-radius: 6px; padding: 2px 10px; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; font-family: 'Cairo', sans-serif; }
+
+  /* ─── QUIZ SECTION ─── */
+  .quiz-section {
+    background: var(--quiz-bg);
+    padding: 50px 20px 60px;
+  }
+  .quiz-container { max-width: 860px; margin: 0 auto; }
+  .quiz-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .quiz-title-ar {
+    font-family: 'Cairo', sans-serif;
+    color: var(--accent);
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* MCQ */
+  .mcq-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    transition: transform .2s;
+  }
+  .mcq-card:hover { transform: translateY(-2px); }
+  .q-num {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .q-text-en {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    font-family: 'Source Serif 4', serif;
+  }
+  .q-text-ar {
+    font-family: 'Cairo', sans-serif;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 14px;
+  }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 560px) { .options { grid-template-columns: 1fr; } }
+
+  .option-btn {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 9px 14px;
+    color: rgba(255,255,255,0.85);
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    transition: all .2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .option-btn:hover:not(:disabled) {
+    background: rgba(0,180,216,0.2);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .option-btn.correct {
+    background: rgba(42,157,143,0.3);
+    border-color: var(--correct);
+    color: #a8f0e8;
+  }
+  .option-btn.wrong {
+    background: rgba(230,57,70,0.25);
+    border-color: var(--wrong);
+    color: #ffaaaa;
+  }
+  .option-btn .opt-letter {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .option-btn.correct .opt-letter { background: var(--correct); color: #fff; }
+  .option-btn.wrong .opt-letter { background: var(--wrong); color: #fff; }
+
+  .q-feedback {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    direction: rtl;
+    text-align: right;
+  }
+  .q-feedback.show { display: block; }
+  .q-feedback.correct-fb { background: rgba(42,157,143,0.2); color: #a8f0e8; border: 1px solid rgba(42,157,143,0.4); }
+  .q-feedback.wrong-fb  { background: rgba(230,57,70,0.2);  color: #ffbbbb; border: 1px solid rgba(230,57,70,0.4); }
+
+  /* SCORE */
+  .score-bar {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,180,216,0.3);
+    border-radius: 14px;
+    padding: 20px 28px;
+    margin-bottom: 28px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+  }
+  .score-label { font-family: 'Cairo', sans-serif; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+  .score-value { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2rem; }
+  .reset-btn {
+    background: var(--accent2);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  .reset-btn:hover { opacity: .85; }
+
+  /* ESSAY */
+  .essay-section-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 40px 0 6px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+  }
+  .essay-section-title-ar {
+    font-family: 'Cairo', sans-serif;
+    color: var(--accent2);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    direction: rtl;
+    text-align: right;
+  }
+  .essay-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(231,111,81,0.3);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  .essay-num { color: var(--accent2); font-weight: 700; font-family: 'Cairo', sans-serif; font-size: 0.85rem; margin-bottom: 8px; }
+  .essay-q-en { color: #fff; font-family: 'Source Serif 4', serif; font-size: 1rem; margin-bottom: 6px; }
+  .essay-q-ar { font-family: 'Cairo', sans-serif; color: rgba(255,255,255,0.65); font-size: 0.9rem; direction: rtl; text-align: right; margin-bottom: 14px; }
+  .essay-answer-area {
+    width: 100%;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: #fff;
+    padding: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    min-height: 100px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .essay-answer-area:focus { border-color: var(--accent2); }
+  .essay-hint-btn {
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid rgba(231,111,81,0.5);
+    color: var(--accent2);
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all .2s;
+    display: block;
+  }
+  .essay-hint-btn:hover { background: rgba(231,111,81,0.15); }
+  .essay-hint {
+    display: none;
+    margin-top: 10px;
+    padding: 12px 16px;
+    background: rgba(231,111,81,0.12);
+    border: 1px solid rgba(231,111,81,0.3);
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.87rem;
+    color: #ffd5c8;
+    direction: rtl;
+    text-align: right;
+  }
+  .essay-hint.show { display: block; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--primary);
+    text-align: center;
+    padding: 20px;
+    color: rgba(255,255,255,0.45);
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+  }
+  .footer span { color: var(--accent); }
+
+  /* DIVIDER */
+  .section-divider {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+    padding: 10px 0;
+    opacity: .5;
+  }
+</style>
+</head>
+<body class="lang-both">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">🫁</div>
+  <h1>Kidney Transplantation Insights
+    <span>رؤى زراعة الكلى</span>
+  </h1>
+  <p>Lecture Notes — English & Arabic &nbsp;|&nbsp; محاضرة بالإنجليزية والعربية</p>
+</div>
+
+<!-- LANG TOGGLE -->
+<div class="lang-bar">
+  <button class="lang-btn" onclick="setLang('lang-en')">🇬🇧 English</button>
+  <button class="lang-btn active" onclick="setLang('lang-both')">🌐 Both / كلاهما</button>
+  <button class="lang-btn" onclick="setLang('lang-ar')">🇪🇬 العربية</button>
+</div>
+
+<!-- LECTURE CONTENT -->
+<div class="container">
+
+  <!-- 1: SELECTION OF DONOR -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Selection of Donor</div>
+        <div class="section-title-ar">اختيار المتبرع</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">English</div>
+          <ul class="point-list">
+            <li>Use of carefully selected donors <strong>over 60 years</strong> should be maintained and encouraged as a continuing source of deceased donor kidneys.</li>
+            <li>A donor <strong>over 70 years</strong> should be evaluated on an individual basis.</li>
+            <li>Better results are obtained when an older organ is transplanted to patients <strong>older than 60 years</strong>.</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">العربية</div>
+          <ul class="point-list">
+            <li>يجب الحفاظ على استخدام المتبرعين المختارين بعناية <strong>فوق سن 60 عامًا</strong> وتشجيعه كمصدر مستمر للكلى من المتوفين.</li>
+            <li>يجب تقييم المتبرع <strong>فوق 70 عامًا</strong> بشكل فردي.</li>
+            <li>تُحقَّق نتائج أفضل عند زرع الأعضاء الأكبر سنًا في مرضى <strong>تجاوزوا 60 عامًا</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2: CARE OF DECEASED DONOR -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Care of Donor (Deceased)</div>
+        <div class="section-title-ar">رعاية المتبرع المتوفى</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">English</div>
+          <ul class="point-list">
+            <li><strong>Hypertension</strong> — caused by catecholamine release after brain death → treated with beta-blockers / nitroprusside.</li>
+            <li><strong>Hypovolemia</strong> — ~75% of organ donors develop <em>diabetes insipidus</em> due to pituitary necrosis → fluid replacement.</li>
+            <li><strong>Coagulopathy</strong> — results from hypothalamic ischaemia causing hepatic and cardiac dysfunction.</li>
+            <li>After brainstem necrosis, catecholamine levels drop → <strong>hypotension</strong> corrected with fluids and vasopressors.</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">العربية</div>
+          <ul class="point-list">
+            <li><strong>ارتفاع ضغط الدم</strong> — ناتج عن إفراز الكاتيكولامين بعد الوفاة الدماغية → يُعالَج بحاصرات بيتا / نيتروبروسيد.</li>
+            <li><strong>نقص حجم الدم</strong> — ~75% من المتبرعين يصابون بـ <em>مرض السكري الكاذب</em> بسبب نخر الغدة النخامية.</li>
+            <li><strong>اضطراب التخثر</strong> — نتيجة نقص تروية منطقة ما تحت المهاد مما يسبب خلل في الكبد والقلب.</li>
+            <li>بعد نخر جذع الدماغ، تنخفض مستويات الكاتيكولامين → <strong>انخفاض الضغط</strong> يُصحَّح بالسوائل وضاغطات الأوعية.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3: LIVING VS DECEASED -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Living Donor vs. Deceased Donor</div>
+        <div class="section-title-ar">المتبرع الحي مقابل المتبرع المتوفى</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="stats-row">
+        <div class="stat-pill">🟢 Living 1yr: <strong>95%</strong></div>
+        <div class="stat-pill">🟢 Living 5yr: <strong>76%</strong></div>
+        <div class="stat-pill">🔵 Deceased 1yr: <strong>89%</strong></div>
+        <div class="stat-pill">🔵 Deceased 5yr: <strong>61%</strong></div>
+      </div>
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">Advantages of Living Donor</div>
+          <ul class="point-list">
+            <li>Better long- and short-term outcomes</li>
+            <li>Consistent early function and easier management</li>
+            <li>Avoidance of long waiting times</li>
+            <li>Less aggressive immunosuppressive regimens</li>
+            <li>Emotional gain to the donor</li>
+            <li>Increases the global kidney transplant rate</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">مزايا المتبرع الحي</div>
+          <ul class="point-list">
+            <li>نتائج أفضل على المدى القصير والطويل</li>
+            <li>وظيفة كلوية مبكرة منتظمة وإدارة أسهل</li>
+            <li>تجنب فترات الانتظار الطويلة</li>
+            <li>أنظمة تثبيط مناعي أقل شدة</li>
+            <li>فائدة نفسية وعاطفية للمتبرع</li>
+            <li>يرفع معدل زراعة الكلى عالميًا</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4: EXCLUSION CRITERIA -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Exclusion Criteria for Living Donors</div>
+        <div class="section-title-ar">معايير استبعاد المتبرع الحي</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <span class="badge-abs">Absolute Contraindications / موانع مطلقة</span>
+      <div class="bilingual">
+        <div class="en-block">
+          <ul class="point-list">
+            <li>Age &lt; 18 years</li>
+            <li>Uncontrolled hypertension</li>
+            <li>Diabetes mellitus</li>
+            <li>Proteinuria &gt; 300 mg/24h</li>
+            <li>Abnormal GFR for age</li>
+            <li>Microscopic haematuria</li>
+            <li>High risk of thromboembolism</li>
+            <li>Medically significant illness (chronic lung, recent malignancy, heart disease)</li>
+            <li>History of bilateral kidney stones</li>
+            <li>HIV positive</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <ul class="point-list">
+            <li>العمر أقل من 18 سنة</li>
+            <li>ارتفاع ضغط الدم غير المضبوط</li>
+            <li>مرض السكري</li>
+            <li>بروتين البول &gt; 300 ملجم/24 ساعة</li>
+            <li>معدل ترشيح كبيبي غير طبيعي للعمر</li>
+            <li>دم مجهري في البول</li>
+            <li>خطر مرتفع للانصمام الخثاري</li>
+            <li>مرض طبي خطير (أمراض رئوية مزمنة، ورم خبيث حديث، أمراض قلب)</li>
+            <li>تاريخ من حصوات كلى ثنائية</li>
+            <li>فيروس HIV إيجابي</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <span class="badge-rel">Relative Contraindications / موانع نسبية</span>
+        <div class="bilingual">
+          <div class="en-block">
+            <ul class="point-list">
+              <li>Anatomical anomalies of the graft</li>
+              <li>Active chronic infection (TB, Hepatitis B/C, parasites)</li>
+              <li>Obesity</li>
+              <li>Psychiatric disorders</li>
+            </ul>
+          </div>
+          <div class="ar-block">
+            <ul class="point-list">
+              <li>تشوهات تشريحية في الطعم</li>
+              <li>عدوى مزمنة نشطة (السل، التهاب الكبد B/C، طفيليات)</li>
+              <li>السمنة</li>
+              <li>اضطرابات نفسية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <span class="note-icon">⚠️</span>
+        <span><strong>Note:</strong> Active malignancy is a contraindication because immunosuppressive therapy may aggravate it. | <span style="font-family:'Cairo',sans-serif; direction:rtl; display:inline-block;"> الأورام الخبيثة النشطة موانع للزراعة لأن العلاج المثبط للمناعة قد يُفاقمها.</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5: PREPARATION OF RECIPIENT -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Preparation of Recipient</div>
+        <div class="section-title-ar">تحضير المتلقي</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">English</div>
+          <ul class="point-list">
+            <li>Beta-blockers may be considered in high CV risk patients — introduced <strong>at least 1 month before</strong> transplant.</li>
+            <li>Beta-blockers should <strong>NOT</strong> be discontinued suddenly preoperatively.</li>
+            <li>Low-dose aspirin and Plavix are <strong>not</strong> contraindicated.</li>
+            <li>Patients should be <strong>strongly encouraged to stop smoking</strong> before and after transplantation.</li>
+            <li>Obese patients (BMI &gt; 30 kg/m²) should be screened vigorously for cardiovascular disease.</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">العربية</div>
+          <ul class="point-list">
+            <li>يمكن استخدام حاصرات بيتا لمرضى القلب — تُبدأ <strong>قبل شهر على الأقل</strong> من الزراعة.</li>
+            <li>يجب <strong>عدم إيقاف</strong> حاصرات بيتا فجأة قبل العملية.</li>
+            <li>الأسبرين منخفض الجرعة والكلوبيدوجريل <strong>ليسا موانع</strong>.</li>
+            <li>يجب <strong>تشجيع المرضى بشدة على الإقلاع عن التدخين</strong> قبل الزراعة وبعدها.</li>
+            <li>مرضى السمنة (BMI &gt; 30) يجب فحصهم جيدًا للكشف عن أمراض القلب والأوعية.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6: POSTOPERATIVE CARE -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Postoperative Care of the Recipient</div>
+        <div class="section-title-ar">الرعاية بعد العملية</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">Immediate Goals</div>
+          <ul class="point-list">
+            <li>Maintain fluid & electrolyte balance</li>
+            <li>Wound care</li>
+            <li>Pain management (around the clock)</li>
+            <li>Good pulmonary hygiene with incentive spirometry & early ambulation</li>
+            <li>Restore normal bowel function (risk of ileus/constipation from steroids)</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">Common Complications</div>
+          <ul class="point-list">
+            <li>Infection</li>
+            <li>CHF — <em>most common cause of hospital admission</em></li>
+            <li>Hypertension (75–85%)</li>
+            <li>Hyperlipidemia (60%)</li>
+            <li>Cardiovascular disease (16–25%)</li>
+            <li>Diabetes mellitus (17–20%) — may be new-onset related to corticosteroids</li>
+            <li>Malignancy — skin (40%), lymphatic (11%)</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">الأهداف الفورية</div>
+          <ul class="point-list">
+            <li>الحفاظ على توازن السوائل والكهارل</li>
+            <li>العناية بالجرح</li>
+            <li>إدارة الألم (على مدار الساعة)</li>
+            <li>نظافة الجهاز التنفسي بمحفزات التنفس والحركة المبكرة</li>
+            <li>استعادة وظيفة الأمعاء (خطر الانسداد/الإمساك من الستيرويد)</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">المضاعفات الشائعة</div>
+          <ul class="point-list">
+            <li>العدوى</li>
+            <li>فشل القلب الاحتقاني — <em>الأكثر شيوعًا للدخول المستشفى</em></li>
+            <li>ارتفاع الضغط (75–85%)</li>
+            <li>ارتفاع دهون الدم (60%)</li>
+            <li>أمراض القلب والأوعية (16–25%)</li>
+            <li>السكري (17–20%) — قد يكون جديدًا بسبب الكورتيزون</li>
+            <li>الأورام — الجلد (40%)، اللمفاوي (11%)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Annual Screening -->
+      <div style="margin-top:16px; border-top:1px dashed var(--border); padding-top:14px;">
+        <div class="bilingual">
+          <div class="en-block">
+            <div class="block-label">Annual Screening</div>
+            <ul class="point-list">
+              <li>Lifelong follow-up by transplant specialist every <strong>6–12 months</strong></li>
+              <li>Renal function & immunosuppression monitoring every <strong>4–8 weeks</strong></li>
+              <li>Annual dermatological exam, tumor screening, nodal exam, faecal occult, chest X-ray, gynaecological/urological exam, abdominal ultrasound</li>
+              <li>Monitor proteinuria, recurrence of original disease</li>
+              <li>Cardiac assessment and control of BP, glucose, lipids</li>
+            </ul>
+          </div>
+          <div class="ar-block">
+            <div class="block-label">الفحص السنوي</div>
+            <ul class="point-list">
+              <li>متابعة مدى الحياة مع متخصص الزراعة كل <strong>6–12 شهرًا</strong></li>
+              <li>مراقبة وظائف الكلى والمناعة كل <strong>4–8 أسابيع</strong></li>
+              <li>فحص سنوي للجلد، الأورام، الغدد الليمفاوية، الدم الخفي في البراز، صورة الصدر، النساء والمسالك</li>
+              <li>مراقبة البروتين في البول وعودة المرض الأصلي</li>
+              <li>تقييم القلب ومراقبة الضغط، السكر، الدهون</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7: HOME DISCHARGE -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Home Discharge Instructions</div>
+        <div class="section-title-ar">تعليمات الخروج من المستشفى</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">Call your doctor if you have:</div>
+          <ul class="point-list">
+            <li>Fever over <strong>100°F (38°C)</strong></li>
+            <li>Flu-like symptoms: chills, aches, headaches, dizziness, nausea/vomiting</li>
+            <li>New pain or tenderness around transplanted kidney</li>
+            <li>Fluid retention / swelling</li>
+            <li>Weight gain &gt; 2–4 lbs within 24 hours</li>
+            <li>Significant decrease in urine output</li>
+          </ul>
+          <ul class="point-list" style="margin-top:10px;">
+            <li>Follow recommended dietary plan</li>
+            <li>Follow recommended fluid intake</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">اتصل بطبيبك إذا كان لديك:</div>
+          <ul class="point-list">
+            <li>حرارة فوق <strong>38°م</strong></li>
+            <li>أعراض إنفلونزا: قشعريرة، أوجاع، صداع، دوخة، غثيان/قيء</li>
+            <li>ألم جديد أو حساسية حول الكلية المزروعة</li>
+            <li>احتباس سوائل / انتفاخ</li>
+            <li>زيادة وزن &gt; 1–2 كجم خلال 24 ساعة</li>
+            <li>انخفاض ملحوظ في كمية البول</li>
+          </ul>
+          <ul class="point-list" style="margin-top:10px;">
+            <li>اتبع النظام الغذائي الموصى به</li>
+            <li>اتبع كمية السوائل الموصى بها</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8: EXERCISE -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <div class="section-title-wrap">
+        <div class="section-title-en">Exercise Guidelines & Precautions</div>
+        <div class="section-title-ar">إرشادات الرياضة واحتياطاتها</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="en-block">
+          <div class="block-label">Guidelines</div>
+          <ul class="point-list">
+            <li><strong>20–30 minutes</strong>, 3–4 times per week</li>
+            <li>Wait <strong>1.5 hours after eating</strong> before exercising</li>
+            <li>5-min warm-up + stretching, 5–10 min cool-down</li>
+            <li>Dress appropriately; wear protective footwear</li>
+            <li>Schedule exercise at the same time daily</li>
+            <li>Vary exercises to avoid boredom</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">Precautions</div>
+          <ul class="point-list">
+            <li>Avoid heavy lifting, pushing, raking, shoveling, mowing, scrubbing</li>
+            <li>Avoid bed rest immediately after exercise</li>
+            <li>If pulse &gt; 120–150 bpm after 15 min rest → call your doctor</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">Stop and Rest If:</div>
+          <ul class="point-list">
+            <li>Chest pain</li>
+            <li>Weakness, dizziness, lightheadedness</li>
+            <li>Unexplained weight gain or swelling</li>
+            <li>Pain in chest, neck, arm, jaw, or shoulder</li>
+          </ul>
+        </div>
+        <div class="ar-block">
+          <div class="block-label">الإرشادات</div>
+          <ul class="point-list">
+            <li><strong>20–30 دقيقة</strong>، 3–4 مرات أسبوعيًا</li>
+            <li>الانتظار <strong>1.5 ساعة بعد الأكل</strong> قبل التمرين</li>
+            <li>دفء 5 دقائق + تمدد، تهدئة 5–10 دقائق</li>
+            <li>ارتداء ملابس مناسبة وأحذية واقية</li>
+            <li>جدولة التمارين في نفس الوقت يوميًا</li>
+            <li>تنويع التمارين لتجنب الملل</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">الاحتياطات</div>
+          <ul class="point-list">
+            <li>تجنب الرفع الثقيل والدفع والكنس والحفر وقطع العشب والتدعيك</li>
+            <li>تجنب الراحة في الفراش مباشرة بعد التمرين</li>
+            <li>إذا كان النبض &gt; 120–150 بعد 15 دقيقة راحة → اتصل بطبيبك</li>
+          </ul>
+          <div class="block-label" style="margin-top:12px;">توقف عن التمرين إذا:</div>
+          <ul class="point-list">
+            <li>ألم في الصدر</li>
+            <li>ضعف، دوخة، إغماء</li>
+            <li>زيادة وزن غير مبررة أو انتفاخ</li>
+            <li>ألم في الصدر أو الرقبة أو الذراع أو الفك أو الكتف</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<!-- ════════════ QUIZ ════════════ -->
+<div class="quiz-section">
+  <div class="quiz-container">
+    <div class="quiz-title">📝 Practice Quiz</div>
+    <div class="quiz-title-ar">أسئلة تقييم المحاضرة</div>
+
+    <div class="score-bar">
+      <div>
+        <div class="score-label">Current Score / الدرجة الحالية</div>
+        <div class="score-value" id="scoreDisplay">0 / 20</div>
+      </div>
+      <button class="reset-btn" onclick="resetQuiz()">🔄 Reset Quiz / إعادة الاختبار</button>
+    </div>
+
+    <div id="mcqContainer"></div>
+
+    <!-- ESSAY -->
+    <div class="essay-section-title">✍️ Essay Questions</div>
+    <div class="essay-section-title-ar">الأسئلة المقالية</div>
+    <div id="essayContainer"></div>
+
+  </div>
+</div>
+
+<div class="footer">
+  Kidney Transplantation Insights &nbsp;|&nbsp; <span>رؤى زراعة الكلى</span> &nbsp;·&nbsp; Educational Material
+</div>
+
+<script>
+// ─────────────────── LANGUAGE TOGGLE ───────────────────
+function setLang(cls) {
+  document.body.className = cls;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const idx = { 'lang-en': 0, 'lang-both': 1, 'lang-ar': 2 };
+  document.querySelectorAll('.lang-btn')[idx[cls]].classList.add('active');
+}
+
+// ─────────────────── MCQ DATA ───────────────────
+const mcqs = [
+  {
+    q_en: "What is the minimum recommended age for a living kidney donor?",
+    q_ar: "ما الحد الأدنى للسن الموصى به للمتبرع الحي بالكلى؟",
+    options: ["16 years", "18 years", "21 years", "25 years"],
+    options_ar: ["16 سنة", "18 سنة", "21 سنة", "25 سنة"],
+    answer: 1,
+    feedback_ar: "صحيح! عمر 18 سنة هو الحد الأدنى — أقل من ذلك هو منع مطلق."
+  },
+  {
+    q_en: "What percentage of organ donors develop diabetes insipidus?",
+    q_ar: "كم نسبة متبرعي الأعضاء الذين يصابون بمرض السكري الكاذب؟",
+    options: ["25%", "50%", "75%", "90%"],
+    options_ar: ["25%", "50%", "75%", "90%"],
+    answer: 2,
+    feedback_ar: "صحيح! حوالي 75% يصابون بمرض السكري الكاذب بسبب نخر الغدة النخامية."
+  },
+  {
+    q_en: "What is the 1-year graft survival rate for living donor kidneys?",
+    q_ar: "ما معدل البقاء للطعم عند سنة واحدة للكلى من المتبرع الحي؟",
+    options: ["75%", "89%", "95%", "99%"],
+    options_ar: ["75%", "89%", "95%", "99%"],
+    answer: 2,
+    feedback_ar: "صحيح! معدل البقاء عند سنة واحدة للمتبرع الحي هو 95%."
+  },
+  {
+    q_en: "What is the 5-year graft survival rate for cadaveric (deceased) donor kidneys?",
+    q_ar: "ما معدل بقاء الطعم لخمس سنوات للكلى من متبرع متوفى؟",
+    options: ["50%", "61%", "76%", "85%"],
+    options_ar: ["50%", "61%", "76%", "85%"],
+    answer: 1,
+    feedback_ar: "صحيح! معدل البقاء 5 سنوات للمتبرع المتوفى هو 61%."
+  },
+  {
+    q_en: "Which of the following is an ABSOLUTE contraindication for a living donor?",
+    q_ar: "أي مما يلي يُعد منعًا مطلقًا للمتبرع الحي؟",
+    options: ["Mild obesity", "HIV positive", "Psychiatric disorder", "Hepatitis C"],
+    options_ar: ["سمنة خفيفة", "HIV إيجابي", "اضطراب نفسي", "التهاب كبد C"],
+    answer: 1,
+    feedback_ar: "صحيح! الـ HIV الإيجابي هو منع مطلق، أما البقية فهي موانع نسبية."
+  },
+  {
+    q_en: "What proteinuria level is an absolute contraindication for a living donor?",
+    q_ar: "ما مستوى البروتين في البول الذي يُعد منعًا مطلقًا للمتبرع الحي؟",
+    options: ["> 100 mg/24h", "> 150 mg/24h", "> 300 mg/24h", "> 500 mg/24h"],
+    options_ar: ["> 100 مجم/24 ساعة", "> 150 مجم/24 ساعة", "> 300 مجم/24 ساعة", "> 500 مجم/24 ساعة"],
+    answer: 2,
+    feedback_ar: "صحيح! البروتين > 300 مجم/24 ساعة هو منع مطلق."
+  },
+  {
+    q_en: "How long before transplant should beta-blockers be introduced in high-risk cardiovascular patients?",
+    q_ar: "كم قبل الزراعة يجب إدخال حاصرات بيتا لمرضى القلب ذوي الخطورة العالية؟",
+    options: ["1 week", "2 weeks", "1 month", "3 months"],
+    options_ar: ["أسبوع واحد", "أسبوعان", "شهر واحد", "3 أشهر"],
+    answer: 2,
+    feedback_ar: "صحيح! يجب إدخال حاصرات بيتا قبل شهر على الأقل من الزراعة."
+  },
+  {
+    q_en: "What is the most common cause of hospital admission after renal transplantation?",
+    q_ar: "ما أكثر أسباب دخول المستشفى شيوعًا بعد زراعة الكلى؟",
+    options: ["Infection", "Malignancy", "CHF (Heart Failure)", "Hypertension"],
+    options_ar: ["العدوى", "الأورام", "فشل القلب الاحتقاني", "ارتفاع الضغط"],
+    answer: 2,
+    feedback_ar: "صحيح! فشل القلب الاحتقاني هو أكثر أسباب دخول المستشفى شيوعًا بعد الزراعة."
+  },
+  {
+    q_en: "How often should lifelong post-transplant specialist follow-up occur?",
+    q_ar: "كم مرة تُوصى بمتابعة متخصص الزراعة مدى الحياة؟",
+    options: ["Every month", "Every 3 months", "Every 6–12 months", "Every 2 years"],
+    options_ar: ["كل شهر", "كل 3 أشهر", "كل 6–12 شهرًا", "كل سنتين"],
+    answer: 2,
+    feedback_ar: "صحيح! المتابعة كل 6–12 شهرًا مع متخصص الزراعة موصى بها مدى الحياة."
+  },
+  {
+    q_en: "At what temperature (°F) should a post-transplant patient call their physician?",
+    q_ar: "عند أي درجة حرارة يجب على مريض ما بعد الزراعة الاتصال بطبيبه؟",
+    options: ["99°F", "100°F", "101°F", "102°F"],
+    options_ar: ["99°F", "100°F", "101°F", "102°F"],
+    answer: 1,
+    feedback_ar: "صحيح! يجب الاتصال بالطبيب إذا تجاوزت الحرارة 100°F."
+  },
+  {
+    q_en: "How long should a patient wait after eating before exercising post-transplant?",
+    q_ar: "كم يجب أن ينتظر المريض بعد الأكل قبل ممارسة الرياضة؟",
+    options: ["30 minutes", "1 hour", "1.5 hours", "2 hours"],
+    options_ar: ["30 دقيقة", "ساعة واحدة", "ساعة ونصف", "ساعتان"],
+    answer: 2,
+    feedback_ar: "صحيح! الانتظار ساعة ونصف بعد الأكل قبل التمرين."
+  },
+  {
+    q_en: "If the pulse remains above what rate after 15 minutes of rest, should the doctor be called?",
+    q_ar: "إذا بقي النبض فوق كم بعد 15 دقيقة راحة يجب الاتصال بالطبيب؟",
+    options: ["80–90 bpm", "100–110 bpm", "120–150 bpm", "160–170 bpm"],
+    options_ar: ["80–90 نبضة/دقيقة", "100–110 نبضة/دقيقة", "120–150 نبضة/دقيقة", "160–170 نبضة/دقيقة"],
+    answer: 2,
+    feedback_ar: "صحيح! النبض فوق 120–150 نبضة/دقيقة بعد 15 دقيقة راحة يستدعي الاتصال بالطبيب."
+  },
+  {
+    q_en: "What percentage of post-transplant patients develop hypertension?",
+    q_ar: "ما نسبة مرضى ما بعد الزراعة الذين يصابون بارتفاع ضغط الدم؟",
+    options: ["30–40%", "50–60%", "75–85%", "90–95%"],
+    options_ar: ["30–40%", "50–60%", "75–85%", "90–95%"],
+    answer: 2,
+    feedback_ar: "صحيح! 75–85% من مرضى ما بعد الزراعة يصابون بارتفاع الضغط."
+  },
+  {
+    q_en: "What causes hypertension immediately after brain death in a deceased donor?",
+    q_ar: "ما سبب ارتفاع الضغط مباشرة بعد الوفاة الدماغية عند المتبرع المتوفى؟",
+    options: ["Fluid overload", "Catecholamine release", "Pituitary necrosis", "Hypothalamic ischemia"],
+    options_ar: ["زيادة السوائل", "إفراز الكاتيكولامين", "نخر الغدة النخامية", "نقص تروية ما تحت المهاد"],
+    answer: 1,
+    feedback_ar: "صحيح! إفراز الكاتيكولامين بعد الوفاة الدماغية يسبب ارتفاع الضغط."
+  },
+  {
+    q_en: "What is the rate of skin malignancy among post-transplant patients?",
+    q_ar: "ما نسبة إصابة الجلد بالأورام في مرضى ما بعد الزراعة؟",
+    options: ["11%", "20%", "40%", "60%"],
+    options_ar: ["11%", "20%", "40%", "60%"],
+    answer: 2,
+    feedback_ar: "صحيح! نسبة الأورام الجلدية هي 40% مقارنة بـ 11% للجهاز اللمفاوي."
+  },
+  {
+    q_en: "What is the recommended exercise session duration for post-transplant patients?",
+    q_ar: "ما المدة الموصى بها لجلسة التمرين لمريض ما بعد زراعة الكلى؟",
+    options: ["10–15 minutes", "20–30 minutes", "45–60 minutes", "60–90 minutes"],
+    options_ar: ["10–15 دقيقة", "20–30 دقيقة", "45–60 دقيقة", "60–90 دقيقة"],
+    answer: 1,
+    feedback_ar: "صحيح! 20–30 دقيقة 3–4 مرات أسبوعيًا هي التوصية."
+  },
+  {
+    q_en: "What BMI threshold indicates obesity requiring extra cardiac screening before transplant?",
+    q_ar: "ما قيمة مؤشر كتلة الجسم التي تستدعي فحص قلب مكثف قبل الزراعة؟",
+    options: ["BMI > 25", "BMI > 28", "BMI > 30", "BMI > 35"],
+    options_ar: ["BMI > 25", "BMI > 28", "BMI > 30", "BMI > 35"],
+    answer: 2,
+    feedback_ar: "صحيح! مؤشر كتلة الجسم > 30 يستدعي فحصًا مكثفًا للقلب."
+  },
+  {
+    q_en: "How frequently should renal function and immunosuppression be monitored post-transplant?",
+    q_ar: "كم مرة يجب مراقبة وظائف الكلى وتثبيط المناعة بعد الزراعة؟",
+    options: ["Every 2 weeks", "Every 4–8 weeks", "Every 3 months", "Every 6 months"],
+    options_ar: ["كل أسبوعين", "كل 4–8 أسابيع", "كل 3 أشهر", "كل 6 أشهر"],
+    answer: 1,
+    feedback_ar: "صحيح! المراقبة كل 4–8 أسابيع موصى بها بشدة."
+  },
+  {
+    q_en: "Which of the following is a RELATIVE (not absolute) contraindication for a living donor?",
+    q_ar: "أي مما يلي هو منع نسبي (وليس مطلقًا) للمتبرع الحي؟",
+    options: ["Age < 18", "Diabetes mellitus", "Obesity", "HIV positive"],
+    options_ar: ["عمر < 18 سنة", "مرض السكري", "السمنة", "HIV إيجابي"],
+    answer: 2,
+    feedback_ar: "صحيح! السمنة منع نسبي فقط، بينما البقية موانع مطلقة."
+  },
+  {
+    q_en: "What causes hypotension in a deceased donor after brainstem necrosis?",
+    q_ar: "ما سبب انخفاض الضغط في المتبرع المتوفى بعد نخر جذع الدماغ؟",
+    options: ["Excess fluid intake", "Catecholamine levels drop rapidly", "Renal failure", "Cardiac arrhythmia"],
+    options_ar: ["زيادة السوائل", "انخفاض مستويات الكاتيكولامين بسرعة", "فشل كلوي", "اضطراب إيقاع القلب"],
+    answer: 1,
+    feedback_ar: "صحيح! بعد نخر جذع الدماغ تنخفض الكاتيكولامين بسرعة مسببةً انخفاض الضغط."
+  }
+];
+
+// ─────────────────── ESSAY DATA ───────────────────
+const essays = [
+  {
+    q_en: "Explain the physiological changes that occur after brain death and describe how each change is managed to preserve donor organ perfusion.",
+    q_ar: "اشرح التغيرات الفيزيولوجية التي تحدث بعد الوفاة الدماغية، وصف كيفية إدارة كل تغيير للحفاظ على تروية أعضاء المتبرع.",
+    hint_ar: "نقاط أساسية: إفراز الكاتيكولامين → ارتفاع ضغط يُعالَج بحاصرات بيتا/نيتروبروسيد. نخر النخامة → سكري كاذب → نقص حجم الدم. نخر جذع الدماغ → انخفاض الكاتيكولامين → انخفاض الضغط → سوائل وضاغطات أوعية. نقص تروية ما تحت المهاد → اضطراب تخثر + ضعف كبد وقلب."
+  },
+  {
+    q_en: "Compare the outcomes of living donor versus deceased donor kidney transplantation, including graft survival rates and other key advantages of living donation.",
+    q_ar: "قارن بين نتائج زراعة الكلى من متبرع حي مقابل متبرع متوفى، متضمنًا معدلات البقاء والمزايا الرئيسية الأخرى للتبرع الحي.",
+    hint_ar: "معدلات البقاء: حي 1 سنة = 95% vs. متوفى 1 سنة = 89%. حي 5 سنوات = 76% vs. متوفى 5 سنوات = 61%. مزايا إضافية: وظيفة مبكرة منتظمة، أقل تثبيطًا مناعيًا، لا انتظار طويل، فائدة نفسية للمتبرع، يرفع معدل الزراعة عالميًا."
+  },
+  {
+    q_en: "Describe the immediate postoperative care goals for a kidney transplant recipient and list the most common post-transplant complications with their approximate incidence rates.",
+    q_ar: "صف أهداف الرعاية الفورية بعد العملية لمتلقي زراعة الكلى، وأدرج أكثر مضاعفات ما بعد الزراعة شيوعًا مع معدلات حدوثها التقريبية.",
+    hint_ar: "الأهداف: توازن سوائل وكهارل، رعاية جرح، إدارة ألم، نظافة رئوية، وظيفة أمعاء. المضاعفات: ارتفاع ضغط 75-85%، دهون 60%، قلب وأوعية 16-25%، سكري 17-20%، جلد 40%، ليمفاوي 11%، فشل قلب احتقاني (الأكثر للدخول)."
+  },
+  {
+    q_en: "Outline the comprehensive annual screening protocol recommended for post-kidney-transplant patients, explaining the rationale for each screening component.",
+    q_ar: "حدد بروتوكول الفحص السنوي الشامل الموصى به لمرضى ما بعد زراعة الكلى، مع تفسير المبرر لكل عنصر فحص.",
+    hint_ar: "متابعة متخصص كل 6-12 شهرًا، مراقبة وظائف كلى وتثبيط مناعة كل 4-8 أسابيع، فحص جلدي (خطر الأورام 40%)، تنظير للأورام، غدد ليمفاوية، دم خفي بالبراز، صورة صدر، نساء ومسالك، سونار بطن ومتابعة الكلى المزروعة، مراقبة ضغط + سكر + دهون."
+  },
+  {
+    q_en: "Describe the exercise guidelines and precautions for a patient following kidney transplantation. Include the recommended frequency, duration, warning signs to stop, and specific activities to avoid.",
+    q_ar: "صف إرشادات الرياضة واحتياطاتها لمريض ما بعد زراعة الكلى. تضمن التكرار الموصى به والمدة وعلامات التوقف والأنشطة الممنوعة.",
+    hint_ar: "20-30 دقيقة، 3-4 مرات/أسبوع. الانتظار 1.5 ساعة بعد الأكل. دفء 5 دق + تمدد، تهدئة 5-10 دق. تجنب: الرفع الثقيل، الدفع، الكنس، الحفر، قطع العشب. توقف إذا: ألم صدر، دوخة، نبض > 150 بعد 15 دق راحة، انتفاخ مفاجئ."
+  }
+];
+
+// ─────────────────── BUILD MCQ ───────────────────
+let score = 0;
+let answered = 0;
+
+function buildMCQ() {
+  const container = document.getElementById('mcqContainer');
+  container.innerHTML = '';
+  mcqs.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'mcq-card';
+    card.id = `mcq-${idx}`;
+
+    const letters = ['A', 'B', 'C', 'D'];
+    const optHtml = q.options.map((opt, i) =>
+      `<button class="option-btn" onclick="checkAnswer(${idx}, ${i})" id="opt-${idx}-${i}">
+        <span class="opt-letter">${letters[i]}</span>
+        ${opt} <span style="font-family:'Cairo',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.5); margin-right:4px;">(${q.options_ar[i]})</span>
+      </button>`
+    ).join('');
+
+    card.innerHTML = `
+      <div class="q-num">Q${idx + 1} / سؤال ${idx + 1}</div>
+      <div class="q-text-en">${q.q_en}</div>
+      <div class="q-text-ar">${q.q_ar}</div>
+      <div class="options">${optHtml}</div>
+      <div class="q-feedback" id="fb-${idx}"></div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function checkAnswer(qIdx, chosen) {
+  const q = mcqs[qIdx];
+  if (document.getElementById(`mcq-${qIdx}`).dataset.done) return;
+  document.getElementById(`mcq-${qIdx}`).dataset.done = true;
+
+  const letters = ['A', 'B', 'C', 'D'];
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById(`opt-${qIdx}-${i}`);
+    btn.disabled = true;
+    if (i === q.answer) btn.classList.add('correct');
+    else if (i === chosen && chosen !== q.answer) btn.classList.add('wrong');
+  }
+
+  const fb = document.getElementById(`fb-${qIdx}`);
+  if (chosen === q.answer) {
+    score++;
+    answered++;
+    fb.className = 'q-feedback correct-fb show';
+    fb.textContent = '✅ ' + q.feedback_ar;
+  } else {
+    answered++;
+    fb.className = 'q-feedback wrong-fb show';
+    fb.textContent = `❌ الإجابة الصحيحة: ${letters[q.answer]}. ${q.feedback_ar}`;
+  }
+  document.getElementById('scoreDisplay').textContent = `${score} / 20`;
+}
+
+function resetQuiz() {
+  score = 0; answered = 0;
+  document.getElementById('scoreDisplay').textContent = '0 / 20';
+  buildMCQ();
+}
+
+// ─────────────────── BUILD ESSAYS ───────────────────
+function buildEssays() {
+  const container = document.getElementById('essayContainer');
+  container.innerHTML = '';
+  essays.forEach((e, idx) => {
+    const card = document.createElement('div');
+    card.className = 'essay-card';
+    card.innerHTML = `
+      <div class="essay-num">Essay ${idx + 1} / مقال ${idx + 1}</div>
+      <div class="essay-q-en">${e.q_en}</div>
+      <div class="essay-q-ar">${e.q_ar}</div>
+      <textarea class="essay-answer-area" placeholder="Write your answer here... اكتب إجابتك هنا..."></textarea>
+      <button class="essay-hint-btn" onclick="toggleHint(${idx})">💡 Show Answer Hints / عرض نقاط الإجابة</button>
+      <div class="essay-hint" id="hint-${idx}">${e.hint_ar}</div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function toggleHint(idx) {
+  const hint = document.getElementById(`hint-${idx}`);
+  hint.classList.toggle('show');
+  const btn = hint.previousElementSibling;
+  btn.textContent = hint.classList.contains('show')
+    ? '🔼 Hide Hints / إخفاء النقاط'
+    : '💡 Show Answer Hints / عرض نقاط الإجابة';
+}
+
+// ─────────────────── INIT ───────────────────
+buildMCQ();
+buildEssays();
+</script>
+</body>
+</html>

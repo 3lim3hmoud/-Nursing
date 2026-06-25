@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Care Nursing — Exam Preparation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8f7f4;
+    --white: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e0ddd8;
+    --accent: #1d4ed8;
+    --accent-light: #eff6ff;
+    --correct: #15803d;
+    --correct-bg: #f0fdf4;
+    --wrong: #b91c1c;
+    --wrong-bg: #fef2f2;
+    --gold: #b45309;
+    --gold-bg: #fffbeb;
+    --section-colors: #1d4ed8, #7c3aed, #0f766e, #c2410c, #0e7490, #4d7c0f, #9333ea, #b45309, #0369a1, #be185d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--white);
+    border-bottom: 2px solid var(--ink);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .site-header h1 span { color: var(--accent); }
+  .tab-nav { display: flex; gap: 6px; }
+  .tab-btn {
+    padding: 8px 22px;
+    border: 2px solid var(--ink);
+    background: transparent;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+  }
+  .tab-btn.active { background: var(--ink); color: var(--white); }
+  .tab-btn:hover:not(.active) { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+  /* LAYOUT */
+  .container { max-width: 940px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* PAGE */
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SECTION */
+  .exam-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .section-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header:hover { background: #fafafa; }
+  .section-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    flex: 1;
+  }
+  .section-meta { font-size: 0.8rem; color: var(--muted); }
+  .chevron { font-size: 1rem; color: var(--muted); transition: transform 0.25s; }
+  .section-header.open .chevron { transform: rotate(180deg); }
+
+  .section-body { display: none; padding: 24px; }
+  .section-body.open { display: block; animation: fadeIn 0.2s ease; }
+
+  /* MCQ */
+  .mcq-item { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px dashed var(--border); }
+  .mcq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .mcq-q {
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .mcq-q .qnum {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 8px;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .option-label:hover { border-color: var(--accent); background: var(--accent-light); }
+  .option-label input { display: none; }
+  .opt-key {
+    font-weight: 700;
+    color: var(--muted);
+    min-width: 20px;
+    font-size: 0.85rem;
+    margin-top: 1px;
+  }
+  .option-label.correct { border-color: var(--correct); background: var(--correct-bg); color: var(--correct); }
+  .option-label.correct .opt-key { color: var(--correct); }
+  .option-label.wrong { border-color: var(--wrong); background: var(--wrong-bg); color: var(--wrong); }
+  .option-label.wrong .opt-key { color: var(--wrong); }
+  .option-label.revealed-correct { border-color: var(--correct); background: var(--correct-bg); }
+
+  .feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: none;
+  }
+  .feedback.correct { background: var(--correct-bg); color: var(--correct); border-left: 3px solid var(--correct); display: block; }
+  .feedback.wrong { background: var(--wrong-bg); color: var(--wrong); border-left: 3px solid var(--wrong); display: block; }
+
+  /* ESSAY PAGE */
+  .essay-intro {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .essay-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .essay-intro p { color: var(--muted); font-size: 0.95rem; }
+
+  .essay-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .essay-q-header {
+    padding: 16px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .essay-q-header:hover { background: #fafafa; }
+  .essay-num {
+    background: var(--ink);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .essay-q-text {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 4px;
+  }
+  .essay-q-source { font-size: 0.78rem; color: var(--muted); margin-top: 4px; font-weight: 400; }
+  .essay-toggle-btn {
+    padding: 5px 14px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-top: 2px;
+    transition: background 0.18s;
+  }
+  .essay-toggle-btn:hover { background: #1e40af; }
+  .essay-toggle-btn.open { background: var(--muted); }
+
+  .essay-answer {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 20px 22px 20px 68px;
+    animation: fadeIn 0.2s ease;
+    background: #fafaf8;
+  }
+  .essay-answer.open { display: block; }
+  .essay-answer ul { padding-left: 0; list-style: none; }
+  .essay-answer ul li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    border-bottom: 1px dotted #e8e5df;
+    color: #222;
+  }
+  .essay-answer ul li:last-child { border-bottom: none; }
+  .essay-answer ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .essay-answer p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #222;
+  }
+  .answer-tag {
+    display: inline-block;
+    background: var(--gold-bg);
+    color: var(--gold);
+    border: 1px solid #fde68a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-val { font-size: 1.5rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+  .stat-lbl { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-val.green { color: var(--correct); }
+  .stat-val.red { color: var(--wrong); }
+
+  .reset-btn {
+    margin-left: auto;
+    padding: 8px 18px;
+    border: 2px solid var(--ink);
+    background: transparent;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.18s;
+  }
+  .reset-btn:hover { background: var(--ink); color: #fff; }
+
+  /* SECTION TAG */
+  .section-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .site-header { padding: 14px 16px; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .container { padding: 20px 12px 60px; }
+    .section-body { padding: 16px; }
+    .essay-answer { padding: 16px; }
+    .stats-bar { flex-wrap: wrap; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Critical Care Nursing <span>Exam Prep</span></h1>
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="showPage('mcq')">📝 MCQ Practice</button>
+    <button class="tab-btn" onclick="showPage('essay')">📖 Essay Answers</button>
+  </nav>
+</header>
+
+<!-- ═══════════════════ MCQ PAGE ═══════════════════ -->
+<div id="page-mcq" class="page active">
+<div class="container">
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val" id="stat-total">0</div><div class="stat-lbl">Answered</div></div>
+    <div class="stat"><div class="stat-val green" id="stat-correct">0</div><div class="stat-lbl">Correct</div></div>
+    <div class="stat"><div class="stat-val red" id="stat-wrong">0</div><div class="stat-lbl">Wrong</div></div>
+    <div class="stat"><div class="stat-val" id="stat-pct">—</div><div class="stat-lbl">Score</div></div>
+    <button class="reset-btn" onclick="resetAll()">↺ Reset All</button>
+  </div>
+
+  <!-- HYPERTENSIVE CRISIS -->
+  <div class="exam-section">
+    <div class="section-header open" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#1d4ed8"></div>
+      <div class="section-title">Hypertensive Crisis</div>
+      <div class="section-meta">7 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body open">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Which of the following is a clinical manifestation of hypertensive <em>urgency</em>?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="htn1"><span class="opt-key">A</span> Retinopathy</label>
+          <label class="option-label"><input type="radio" name="htn1"><span class="opt-key">B</span> Papilledema</label>
+          <label class="option-label"><input type="radio" name="htn1"><span class="opt-key">C</span> Cough</label>
+          <label class="option-label"><input type="radio" name="htn1"><span class="opt-key">D</span> Severe headache, nose bleeding</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which of the following characterizes a hypertensive emergency?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="htn2"><span class="opt-key">A</span> Sudden elevation of BP ≥180/110 without organ damage</label>
+          <label class="option-label"><input type="radio" name="htn2"><span class="opt-key">B</span> Sudden elevation of BP ≥180/110 with organ damage</label>
+          <label class="option-label"><input type="radio" name="htn2"><span class="opt-key">C</span> Elevation of BP 150/100 with organ damage</label>
+          <label class="option-label"><input type="radio" name="htn2"><span class="opt-key">D</span> Elevation of BP ≥150/100 or more</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Diagnostic tests for hypertensive crisis include all of the following EXCEPT:</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="htn3"><span class="opt-key">A</span> Measuring BP from right and left arm</label>
+          <label class="option-label"><input type="radio" name="htn3"><span class="opt-key">B</span> ECG</label>
+          <label class="option-label"><input type="radio" name="htn3"><span class="opt-key">C</span> Chest radiograph</label>
+          <label class="option-label"><input type="radio" name="htn3"><span class="opt-key">D</span> Abdominal ultrasound</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Which of the following is a cause of hypertensive crisis?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="htn4"><span class="opt-key">A</span> Intracerebral hemorrhage</label>
+          <label class="option-label"><input type="radio" name="htn4"><span class="opt-key">B</span> Acute appendicitis</label>
+          <label class="option-label"><input type="radio" name="htn4"><span class="opt-key">C</span> Pneumonia</label>
+          <label class="option-label"><input type="radio" name="htn4"><span class="opt-key">D</span> Abdominal hernia</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> A patient with BP 190/120 mmHg without symptoms is classified as:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="htn5"><span class="opt-key">A</span> Hypertensive emergency</label>
+          <label class="option-label"><input type="radio" name="htn5"><span class="opt-key">B</span> Hypertensive urgency</label>
+          <label class="option-label"><input type="radio" name="htn5"><span class="opt-key">C</span> Stage 1 hypertension</label>
+          <label class="option-label"><input type="radio" name="htn5"><span class="opt-key">D</span> Secondary hypertension</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Which condition is commonly associated with hypertensive emergency?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="htn6"><span class="opt-key">A</span> Aortic dissection</label>
+          <label class="option-label"><input type="radio" name="htn6"><span class="opt-key">B</span> Asthma</label>
+          <label class="option-label"><input type="radio" name="htn6"><span class="opt-key">C</span> Diabetes mellitus</label>
+          <label class="option-label"><input type="radio" name="htn6"><span class="opt-key">D</span> Hypothyroidism</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> First-line treatment in hypertensive emergency is:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="htn7"><span class="opt-key">A</span> Oral antihypertensive</label>
+          <label class="option-label"><input type="radio" name="htn7"><span class="opt-key">B</span> Lifestyle modification</label>
+          <label class="option-label"><input type="radio" name="htn7"><span class="opt-key">C</span> Intravenous antihypertensive</label>
+          <label class="option-label"><input type="radio" name="htn7"><span class="opt-key">D</span> Diuretics only</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIC -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#7c3aed"></div>
+      <div class="section-title">DIC — Disseminated Intravascular Coagulation</div>
+      <div class="section-meta">7 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Which of the following is a risk factor for DIC?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="dic1"><span class="opt-key">A</span> Abruptio placentae (complications of pregnancy)</label>
+          <label class="option-label"><input type="radio" name="dic1"><span class="opt-key">B</span> Hypertensive emergency</label>
+          <label class="option-label"><input type="radio" name="dic1"><span class="opt-key">C</span> Acute myocardial infarction</label>
+          <label class="option-label"><input type="radio" name="dic1"><span class="opt-key">D</span> Acute lung injury</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which of the following includes clinical manifestations of DIC?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="dic2"><span class="opt-key">A</span> Bleeding from many body sites</label>
+          <label class="option-label"><input type="radio" name="dic2"><span class="opt-key">B</span> Blood clots</label>
+          <label class="option-label"><input type="radio" name="dic2"><span class="opt-key">C</span> Bruising</label>
+          <label class="option-label"><input type="radio" name="dic2"><span class="opt-key">D</span> All of the above</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Which of the following are diagnostic tests for DIC?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="dic3"><span class="opt-key">A</span> PT, PTT, INR</label>
+          <label class="option-label"><input type="radio" name="dic3"><span class="opt-key">B</span> D-Dimer</label>
+          <label class="option-label"><input type="radio" name="dic3"><span class="opt-key">C</span> Both A and B</label>
+          <label class="option-label"><input type="radio" name="dic3"><span class="opt-key">D</span> CBC only</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Treatment of severe thrombocytopenia with bleeding in DIC is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="dic4"><span class="opt-key">A</span> FFP (Fresh Frozen Plasma)</label>
+          <label class="option-label"><input type="radio" name="dic4"><span class="opt-key">B</span> Platelet transfusion</label>
+          <label class="option-label"><input type="radio" name="dic4"><span class="opt-key">C</span> Antifibrinolytic treatment</label>
+          <label class="option-label"><input type="radio" name="dic4"><span class="opt-key">D</span> Heparin</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> The most common cause of DIC is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="dic5"><span class="opt-key">A</span> Trauma</label>
+          <label class="option-label"><input type="radio" name="dic5"><span class="opt-key">B</span> Sepsis</label>
+          <label class="option-label"><input type="radio" name="dic5"><span class="opt-key">C</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="dic5"><span class="opt-key">D</span> Asthma</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Platelet count in DIC is usually:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="dic6"><span class="opt-key">A</span> Normal</label>
+          <label class="option-label"><input type="radio" name="dic6"><span class="opt-key">B</span> Increased</label>
+          <label class="option-label"><input type="radio" name="dic6"><span class="opt-key">C</span> Decreased</label>
+          <label class="option-label"><input type="radio" name="dic6"><span class="opt-key">D</span> Variable</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> Treatment of active bleeding in DIC is:</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="dic7"><span class="opt-key">A</span> FFP (Fresh Frozen Plasma)</label>
+          <label class="option-label"><input type="radio" name="dic7"><span class="opt-key">B</span> Platelet transfusion</label>
+          <label class="option-label"><input type="radio" name="dic7"><span class="opt-key">C</span> Antifibrinolytic treatment</label>
+          <label class="option-label"><input type="radio" name="dic7"><span class="opt-key">D</span> Heparin</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STROKE -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#0f766e"></div>
+      <div class="section-title">Stroke</div>
+      <div class="section-meta">7 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Which stroke type has the highest incidence?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str1"><span class="opt-key">A</span> Hemorrhagic stroke</label>
+          <label class="option-label"><input type="radio" name="str1"><span class="opt-key">B</span> Ischemic stroke</label>
+          <label class="option-label"><input type="radio" name="str1"><span class="opt-key">C</span> Brain tumor</label>
+          <label class="option-label"><input type="radio" name="str1"><span class="opt-key">D</span> Cerebral aneurysm</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which manifestation is the hallmark of hemorrhagic stroke?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str2"><span class="opt-key">A</span> Numbness and weakness of the affected side</label>
+          <label class="option-label"><input type="radio" name="str2"><span class="opt-key">B</span> Severe headache and disturbed level of consciousness</label>
+          <label class="option-label"><input type="radio" name="str2"><span class="opt-key">C</span> Visual defect</label>
+          <label class="option-label"><input type="radio" name="str2"><span class="opt-key">D</span> Ataxia</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Which of the following is a cause of hemorrhagic stroke?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="str3"><span class="opt-key">A</span> Smoking</label>
+          <label class="option-label"><input type="radio" name="str3"><span class="opt-key">B</span> Hyperlipidemia</label>
+          <label class="option-label"><input type="radio" name="str3"><span class="opt-key">C</span> Arteriovenous malformation (AVM)</label>
+          <label class="option-label"><input type="radio" name="str3"><span class="opt-key">D</span> Heart disease</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> A patient presents with sudden weakness on one side and difficulty speaking. The most likely diagnosis is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str4"><span class="opt-key">A</span> Migraine</label>
+          <label class="option-label"><input type="radio" name="str4"><span class="opt-key">B</span> Stroke</label>
+          <label class="option-label"><input type="radio" name="str4"><span class="opt-key">C</span> Seizure</label>
+          <label class="option-label"><input type="radio" name="str4"><span class="opt-key">D</span> Brain tumor</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> The accurate time for IV thrombolysis (tPA) in acute ischemic stroke is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str5"><span class="opt-key">A</span> Within 1 hour</label>
+          <label class="option-label"><input type="radio" name="str5"><span class="opt-key">B</span> Within 3–4.5 hours</label>
+          <label class="option-label"><input type="radio" name="str5"><span class="opt-key">C</span> Within 12 hours</label>
+          <label class="option-label"><input type="radio" name="str5"><span class="opt-key">D</span> Within 24 hours</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Which diagnostic test is used first in suspected stroke?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str6"><span class="opt-key">A</span> MRI</label>
+          <label class="option-label"><input type="radio" name="str6"><span class="opt-key">B</span> CT scan</label>
+          <label class="option-label"><input type="radio" name="str6"><span class="opt-key">C</span> X-ray</label>
+          <label class="option-label"><input type="radio" name="str6"><span class="opt-key">D</span> Ultrasound</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> What is a Transient Ischemic Attack (TIA)?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="str7"><span class="opt-key">A</span> Permanent brain damage</label>
+          <label class="option-label"><input type="radio" name="str7"><span class="opt-key">B</span> Temporary blockage with reversible symptoms</label>
+          <label class="option-label"><input type="radio" name="str7"><span class="opt-key">C</span> Brain hemorrhage</label>
+          <label class="option-label"><input type="radio" name="str7"><span class="opt-key">D</span> Infection of the brain</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MYASTHENIA GRAVIS -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#c2410c"></div>
+      <div class="section-title">Myasthenia Gravis</div>
+      <div class="section-meta">5 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Myasthenia gravis is described as:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="mg1"><span class="opt-key">A</span> A neurodegenerative disorder</label>
+          <label class="option-label"><input type="radio" name="mg1"><span class="opt-key">B</span> An autoimmune disease affecting the neuromuscular junction</label>
+          <label class="option-label"><input type="radio" name="mg1"><span class="opt-key">C</span> A muscular dystrophy</label>
+          <label class="option-label"><input type="radio" name="mg1"><span class="opt-key">D</span> A metabolic disorder</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> A classic symptom of myasthenia gravis is:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="mg2"><span class="opt-key">A</span> Muscle rigidity</label>
+          <label class="option-label"><input type="radio" name="mg2"><span class="opt-key">B</span> Muscle weakness that improves with activity</label>
+          <label class="option-label"><input type="radio" name="mg2"><span class="opt-key">C</span> Muscle weakness that worsens with activity</label>
+          <label class="option-label"><input type="radio" name="mg2"><span class="opt-key">D</span> Tremors</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Which disorder is commonly associated with myasthenia gravis?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="mg3"><span class="opt-key">A</span> Thyroid tumor</label>
+          <label class="option-label"><input type="radio" name="mg3"><span class="opt-key">B</span> Thymus gland disorder</label>
+          <label class="option-label"><input type="radio" name="mg3"><span class="opt-key">C</span> Pituitary adenoma</label>
+          <label class="option-label"><input type="radio" name="mg3"><span class="opt-key">D</span> Adrenal tumor</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Which test is used to diagnose myasthenia gravis?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="mg4"><span class="opt-key">A</span> ECG</label>
+          <label class="option-label"><input type="radio" name="mg4"><span class="opt-key">B</span> EMG (Electromyography)</label>
+          <label class="option-label"><input type="radio" name="mg4"><span class="opt-key">C</span> EEG</label>
+          <label class="option-label"><input type="radio" name="mg4"><span class="opt-key">D</span> Spirometry</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Myasthenic crisis is characterized by:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="mg5"><span class="opt-key">A</span> Severe hypertension</label>
+          <label class="option-label"><input type="radio" name="mg5"><span class="opt-key">B</span> Respiratory failure</label>
+          <label class="option-label"><input type="radio" name="mg5"><span class="opt-key">C</span> Seizures</label>
+          <label class="option-label"><input type="radio" name="mg5"><span class="opt-key">D</span> Hyperglycemia</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEIZURES -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#0e7490"></div>
+      <div class="section-title">Seizures</div>
+      <div class="section-meta">5 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> A seizure is defined as:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="sz1"><span class="opt-key">A</span> Permanent brain damage</label>
+          <label class="option-label"><input type="radio" name="sz1"><span class="opt-key">B</span> Sudden abnormal electrical activity of the brain</label>
+          <label class="option-label"><input type="radio" name="sz1"><span class="opt-key">C</span> Loss of consciousness only</label>
+          <label class="option-label"><input type="radio" name="sz1"><span class="opt-key">D</span> Infection of the brain</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which is a common cause of seizures?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="sz2"><span class="opt-key">A</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="sz2"><span class="opt-key">B</span> Fever</label>
+          <label class="option-label"><input type="radio" name="sz2"><span class="opt-key">C</span> Hyperlipidemia</label>
+          <label class="option-label"><input type="radio" name="sz2"><span class="opt-key">D</span> Arthritis</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Which examination is most useful in diagnosing seizure disorder?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="sz3"><span class="opt-key">A</span> CT scan</label>
+          <label class="option-label"><input type="radio" name="sz3"><span class="opt-key">B</span> MRI</label>
+          <label class="option-label"><input type="radio" name="sz3"><span class="opt-key">C</span> EEG (Electroencephalogram)</label>
+          <label class="option-label"><input type="radio" name="sz3"><span class="opt-key">D</span> X-ray</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> The postictal phase refers to:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="sz4"><span class="opt-key">A</span> Before seizure</label>
+          <label class="option-label"><input type="radio" name="sz4"><span class="opt-key">B</span> During seizure</label>
+          <label class="option-label"><input type="radio" name="sz4"><span class="opt-key">C</span> After seizure</label>
+          <label class="option-label"><input type="radio" name="sz4"><span class="opt-key">D</span> Between seizures</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Which electrolyte imbalance can cause seizures?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="sz5"><span class="opt-key">A</span> Hyperkalemia</label>
+          <label class="option-label"><input type="radio" name="sz5"><span class="opt-key">B</span> Hyponatremia</label>
+          <label class="option-label"><input type="radio" name="sz5"><span class="opt-key">C</span> Hypercalcemia</label>
+          <label class="option-label"><input type="radio" name="sz5"><span class="opt-key">D</span> Hypermagnesemia</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICP -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#4d7c0f"></div>
+      <div class="section-title">Increased Intracranial Pressure (ICP)</div>
+      <div class="section-meta">7 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> The earliest sign of increased ICP is:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="icp1"><span class="opt-key">A</span> Bradycardia</label>
+          <label class="option-label"><input type="radio" name="icp1"><span class="opt-key">B</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="icp1"><span class="opt-key">C</span> Disturbed level of consciousness</label>
+          <label class="option-label"><input type="radio" name="icp1"><span class="opt-key">D</span> Fixed dilated pupil</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Cushing's triad includes all EXCEPT:</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="icp2"><span class="opt-key">A</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="icp2"><span class="opt-key">B</span> Bradycardia</label>
+          <label class="option-label"><input type="radio" name="icp2"><span class="opt-key">C</span> Irregular respiration</label>
+          <label class="option-label"><input type="radio" name="icp2"><span class="opt-key">D</span> Tachycardia</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Which position best helps reduce ICP?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="icp3"><span class="opt-key">A</span> Supine flat position</label>
+          <label class="option-label"><input type="radio" name="icp3"><span class="opt-key">B</span> Head elevation 30 degrees</label>
+          <label class="option-label"><input type="radio" name="icp3"><span class="opt-key">C</span> Trendelenburg position</label>
+          <label class="option-label"><input type="radio" name="icp3"><span class="opt-key">D</span> Prone position</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Which medication is commonly used to reduce ICP?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="icp4"><span class="opt-key">A</span> Mannitol</label>
+          <label class="option-label"><input type="radio" name="icp4"><span class="opt-key">B</span> Aspirin</label>
+          <label class="option-label"><input type="radio" name="icp4"><span class="opt-key">C</span> Metformin</label>
+          <label class="option-label"><input type="radio" name="icp4"><span class="opt-key">D</span> Atropine</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Normal intracranial pressure in adults is:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="icp5"><span class="opt-key">A</span> 0–5 mmHg</label>
+          <label class="option-label"><input type="radio" name="icp5"><span class="opt-key">B</span> 5–15 mmHg</label>
+          <label class="option-label"><input type="radio" name="icp5"><span class="opt-key">C</span> 0–15 mmHg</label>
+          <label class="option-label"><input type="radio" name="icp5"><span class="opt-key">D</span> 20–30 mmHg</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Which of the following can increase ICP?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="icp6"><span class="opt-key">A</span> Hyperventilation</label>
+          <label class="option-label"><input type="radio" name="icp6"><span class="opt-key">B</span> Hypoventilation</label>
+          <label class="option-label"><input type="radio" name="icp6"><span class="opt-key">C</span> Sedation</label>
+          <label class="option-label"><input type="radio" name="icp6"><span class="opt-key">D</span> Hypotension</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> Which diagnostic tool is most effective in assessing ICP?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="icp7"><span class="opt-key">A</span> MRI</label>
+          <label class="option-label"><input type="radio" name="icp7"><span class="opt-key">B</span> CT scan</label>
+          <label class="option-label"><input type="radio" name="icp7"><span class="opt-key">C</span> Intrajugular catheter / cerebral oxygenation measurement</label>
+          <label class="option-label"><input type="radio" name="icp7"><span class="opt-key">D</span> Lumbar puncture</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRANIOTOMY -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#9333ea"></div>
+      <div class="section-title">Craniotomy</div>
+      <div class="section-meta">6 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Craniotomy is defined as:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr1"><span class="opt-key">A</span> Removal of brain tissue</label>
+          <label class="option-label"><input type="radio" name="cr1"><span class="opt-key">B</span> Surgical opening of the skull with replacement of the bone flap</label>
+          <label class="option-label"><input type="radio" name="cr1"><span class="opt-key">C</span> Permanent removal of skull bone</label>
+          <label class="option-label"><input type="radio" name="cr1"><span class="opt-key">D</span> Drainage of cerebrospinal fluid</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which is an indication for craniotomy?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr2"><span class="opt-key">A</span> Migraine</label>
+          <label class="option-label"><input type="radio" name="cr2"><span class="opt-key">B</span> Brain tumor</label>
+          <label class="option-label"><input type="radio" name="cr2"><span class="opt-key">C</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="cr2"><span class="opt-key">D</span> Diabetes mellitus</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Removal of a bone flap WITHOUT replacement is called:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr3"><span class="opt-key">A</span> Craniotomy</label>
+          <label class="option-label"><input type="radio" name="cr3"><span class="opt-key">B</span> Craniectomy</label>
+          <label class="option-label"><input type="radio" name="cr3"><span class="opt-key">C</span> Lobectomy</label>
+          <label class="option-label"><input type="radio" name="cr3"><span class="opt-key">D</span> Laminectomy</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> A major complication after craniotomy is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr4"><span class="opt-key">A</span> Hypoglycemia</label>
+          <label class="option-label"><input type="radio" name="cr4"><span class="opt-key">B</span> Infection</label>
+          <label class="option-label"><input type="radio" name="cr4"><span class="opt-key">C</span> Asthma</label>
+          <label class="option-label"><input type="radio" name="cr4"><span class="opt-key">D</span> Peptic ulcer</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> A patient develops fluid leakage from the nose after craniotomy. This indicates:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr5"><span class="opt-key">A</span> Infection</label>
+          <label class="option-label"><input type="radio" name="cr5"><span class="opt-key">B</span> CSF leakage</label>
+          <label class="option-label"><input type="radio" name="cr5"><span class="opt-key">C</span> Allergy</label>
+          <label class="option-label"><input type="radio" name="cr5"><span class="opt-key">D</span> Sinusitis</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> A goal of nursing care after craniotomy is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="cr6"><span class="opt-key">A</span> Increase ICP</label>
+          <label class="option-label"><input type="radio" name="cr6"><span class="opt-key">B</span> Prevent complications</label>
+          <label class="option-label"><input type="radio" name="cr6"><span class="opt-key">C</span> Promote hyperventilation</label>
+          <label class="option-label"><input type="radio" name="cr6"><span class="opt-key">D</span> Restrict extra fluid</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACTERIAL MENINGITIS -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#b45309"></div>
+      <div class="section-title">Bacterial Meningitis</div>
+      <div class="section-meta">6 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Which condition is a risk factor for bacterial meningitis?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="bm1"><span class="opt-key">A</span> Asthma</label>
+          <label class="option-label"><input type="radio" name="bm1"><span class="opt-key">B</span> Chronic kidney disease</label>
+          <label class="option-label"><input type="radio" name="bm1"><span class="opt-key">C</span> Cerebrospinal fluid leak</label>
+          <label class="option-label"><input type="radio" name="bm1"><span class="opt-key">D</span> Peptic ulcer</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which factor reduces the risk of bacterial meningitis?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="bm2"><span class="opt-key">A</span> Smoking</label>
+          <label class="option-label"><input type="radio" name="bm2"><span class="opt-key">B</span> Overcrowding</label>
+          <label class="option-label"><input type="radio" name="bm2"><span class="opt-key">C</span> Vaccination</label>
+          <label class="option-label"><input type="radio" name="bm2"><span class="opt-key">D</span> Poor hygiene</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> In bacterial meningitis, CSF glucose is usually:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="bm3"><span class="opt-key">A</span> Increased</label>
+          <label class="option-label"><input type="radio" name="bm3"><span class="opt-key">B</span> Decreased</label>
+          <label class="option-label"><input type="radio" name="bm3"><span class="opt-key">C</span> Normal</label>
+          <label class="option-label"><input type="radio" name="bm3"><span class="opt-key">D</span> Absent</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Which test helps identify the causative organism rapidly?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="bm4"><span class="opt-key">A</span> Gram stain and culture</label>
+          <label class="option-label"><input type="radio" name="bm4"><span class="opt-key">B</span> ECG</label>
+          <label class="option-label"><input type="radio" name="bm4"><span class="opt-key">C</span> Urinalysis</label>
+          <label class="option-label"><input type="radio" name="bm4"><span class="opt-key">D</span> CBC</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Which neurological symptom may occur in bacterial meningitis?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="bm5"><span class="opt-key">A</span> Hyperactivity</label>
+          <label class="option-label"><input type="radio" name="bm5"><span class="opt-key">B</span> Hearing impairment</label>
+          <label class="option-label"><input type="radio" name="bm5"><span class="opt-key">C</span> Seizures</label>
+          <label class="option-label"><input type="radio" name="bm5"><span class="opt-key">D</span> Fatigue</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Which systemic complication develops with bacterial meningitis?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="bm6"><span class="opt-key">A</span> Hypertension</label>
+          <label class="option-label"><input type="radio" name="bm6"><span class="opt-key">B</span> Seizures and hemiparesis</label>
+          <label class="option-label"><input type="radio" name="bm6"><span class="opt-key">C</span> Hyperthyroidism</label>
+          <label class="option-label"><input type="radio" name="bm6"><span class="opt-key">D</span> Cataract</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THYROID CRISIS -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#0369a1"></div>
+      <div class="section-title">Thyroid Crisis (Thyroid Storm)</div>
+      <div class="section-meta">10 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> A patient with thyroid storm is considered:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy1"><span class="opt-key">A</span> Mildly ill requiring minimal care</label>
+          <label class="option-label"><input type="radio" name="thy1"><span class="opt-key">B</span> Critically ill requiring intensive monitoring and care</label>
+          <label class="option-label"><input type="radio" name="thy1"><span class="opt-key">C</span> Stable and does not need observation</label>
+          <label class="option-label"><input type="radio" name="thy1"><span class="opt-key">D</span> Only needs medication without nursing care</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Which of the following are iodine-dependent hormones?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy2"><span class="opt-key">A</span> Calcitonin and insulin</label>
+          <label class="option-label"><input type="radio" name="thy2"><span class="opt-key">B</span> Thyroxine (T4) and Triiodothyronine (T3)</label>
+          <label class="option-label"><input type="radio" name="thy2"><span class="opt-key">C</span> T3 and calcitonin</label>
+          <label class="option-label"><input type="radio" name="thy2"><span class="opt-key">D</span> Insulin and glucagon</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Thyroxine is also known as:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy3"><span class="opt-key">A</span> T3</label>
+          <label class="option-label"><input type="radio" name="thy3"><span class="opt-key">B</span> T4</label>
+          <label class="option-label"><input type="radio" name="thy3"><span class="opt-key">C</span> T2</label>
+          <label class="option-label"><input type="radio" name="thy3"><span class="opt-key">D</span> T1</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Calcitonin is produced by:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="thy4"><span class="opt-key">A</span> Follicular cells</label>
+          <label class="option-label"><input type="radio" name="thy4"><span class="opt-key">B</span> Parathyroid glands</label>
+          <label class="option-label"><input type="radio" name="thy4"><span class="opt-key">C</span> C cells of the thyroid gland</label>
+          <label class="option-label"><input type="radio" name="thy4"><span class="opt-key">D</span> Pituitary gland</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Calcitonin helps regulate:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy5"><span class="opt-key">A</span> Blood sugar levels</label>
+          <label class="option-label"><input type="radio" name="thy5"><span class="opt-key">B</span> Calcium levels in the blood</label>
+          <label class="option-label"><input type="radio" name="thy5"><span class="opt-key">C</span> Sodium levels</label>
+          <label class="option-label"><input type="radio" name="thy5"><span class="opt-key">D</span> Potassium levels</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Thyroid hormones primarily regulate:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy6"><span class="opt-key">A</span> Blood clotting</label>
+          <label class="option-label"><input type="radio" name="thy6"><span class="opt-key">B</span> Metabolic processes and growth rate</label>
+          <label class="option-label"><input type="radio" name="thy6"><span class="opt-key">C</span> Immune response</label>
+          <label class="option-label"><input type="radio" name="thy6"><span class="opt-key">D</span> Kidney filtration</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> The effect of thyroid hormones on the heart includes:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="thy7"><span class="opt-key">A</span> Decreasing contractility</label>
+          <label class="option-label"><input type="radio" name="thy7"><span class="opt-key">B</span> No effect on the heart</label>
+          <label class="option-label"><input type="radio" name="thy7"><span class="opt-key">C</span> Increasing contractility</label>
+          <label class="option-label"><input type="radio" name="thy7"><span class="opt-key">D</span> Causing heart block</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q8</span> Thyroid hormones increase:</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="thy8"><span class="opt-key">A</span> Oxygen consumption</label>
+          <label class="option-label"><input type="radio" name="thy8"><span class="opt-key">B</span> Carbon dioxide removal only</label>
+          <label class="option-label"><input type="radio" name="thy8"><span class="opt-key">C</span> Water retention</label>
+          <label class="option-label"><input type="radio" name="thy8"><span class="opt-key">D</span> Sodium loss</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q9</span> Thyroid storm is also known as:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="thy9"><span class="opt-key">A</span> Hypothyroid crisis</label>
+          <label class="option-label"><input type="radio" name="thy9"><span class="opt-key">B</span> Myxedema coma</label>
+          <label class="option-label"><input type="radio" name="thy9"><span class="opt-key">C</span> Thyrotoxic crisis</label>
+          <label class="option-label"><input type="radio" name="thy9"><span class="opt-key">D</span> Addisonian crisis</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q10</span> Thyroid storm is a form of:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="thy10"><span class="opt-key">A</span> Hypothyroidism</label>
+          <label class="option-label"><input type="radio" name="thy10"><span class="opt-key">B</span> Severe hyperthyroidism</label>
+          <label class="option-label"><input type="radio" name="thy10"><span class="opt-key">C</span> Normal thyroid function</label>
+          <label class="option-label"><input type="radio" name="thy10"><span class="opt-key">D</span> Parathyroid disorder</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DKA -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#be185d"></div>
+      <div class="section-title">DKA — Diabetic Ketoacidosis</div>
+      <div class="section-meta">5 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> The major precipitating factor causing diabetic patients to develop DKA is:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="dka1"><span class="opt-key">A</span> Excessive exercise without dietary adjustment</label>
+          <label class="option-label"><input type="radio" name="dka1"><span class="opt-key">B</span> Acute infection</label>
+          <label class="option-label"><input type="radio" name="dka1"><span class="opt-key">C</span> High protein intake</label>
+          <label class="option-label"><input type="radio" name="dka1"><span class="opt-key">D</span> Over-hydration with hypotonic fluids</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> When managing DKA, at what blood glucose level should IV solution be changed to include 5% Dextrose?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="dka2"><span class="opt-key">A</span> 300 mg/dL</label>
+          <label class="option-label"><input type="radio" name="dka2"><span class="opt-key">B</span> 100 mg/dL</label>
+          <label class="option-label"><input type="radio" name="dka2"><span class="opt-key">C</span> 500 mg/dL</label>
+          <label class="option-label"><input type="radio" name="dka2"><span class="opt-key">D</span> 200 mg/dL</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> The recommended hourly rate of plasma glucose decline during insulin infusion for DKA is:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="dka3"><span class="opt-key">A</span> 5–10% of total glucose per hour</label>
+          <label class="option-label"><input type="radio" name="dka3"><span class="opt-key">B</span> 150–200 mg/dL per hour</label>
+          <label class="option-label"><input type="radio" name="dka3"><span class="opt-key">C</span> 50–75 mg/dL per hour</label>
+          <label class="option-label"><input type="radio" name="dka3"><span class="opt-key">D</span> 10–25 mg/dL per hour</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> For a 70 kg patient with DKA, what is the initial hourly insulin infusion rate?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="dka4"><span class="opt-key">A</span> 7 units per hour</label>
+          <label class="option-label"><input type="radio" name="dka4"><span class="opt-key">B</span> 1 unit per hour</label>
+          <label class="option-label"><input type="radio" name="dka4"><span class="opt-key">C</span> 70 units per hour</label>
+          <label class="option-label"><input type="radio" name="dka4"><span class="opt-key">D</span> 14 units per hour</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Which non-diabetic condition can cause DKA?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="dka5"><span class="opt-key">A</span> High-carbohydrate dieting</label>
+          <label class="option-label"><input type="radio" name="dka5"><span class="opt-key">B</span> Excessive vitamin intake</label>
+          <label class="option-label"><input type="radio" name="dka5"><span class="opt-key">C</span> Hypothyroidism</label>
+          <label class="option-label"><input type="radio" name="dka5"><span class="opt-key">D</span> Starvation</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVER / HEPATIC -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#1d4ed8"></div>
+      <div class="section-title">Liver Transplantation, Liver Dialysis & Hepatic Encephalopathy</div>
+      <div class="section-meta">11 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> Absolute contraindication for liver transplantation:</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="liv1"><span class="opt-key">A</span> Sepsis</label>
+          <label class="option-label"><input type="radio" name="liv1"><span class="opt-key">B</span> Primary biliary cirrhosis</label>
+          <label class="option-label"><input type="radio" name="liv1"><span class="opt-key">C</span> History of Hepatitis C</label>
+          <label class="option-label"><input type="radio" name="liv1"><span class="opt-key">D</span> Age over 40</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> Laboratory values used to determine MELD score priority for liver transplant:</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="liv2"><span class="opt-key">A</span> AST, ALT, and alkaline phosphatase</label>
+          <label class="option-label"><input type="radio" name="liv2"><span class="opt-key">B</span> Platelet count and glucose</label>
+          <label class="option-label"><input type="radio" name="liv2"><span class="opt-key">C</span> Albumin, ammonia, and lactate</label>
+          <label class="option-label"><input type="radio" name="liv2"><span class="opt-key">D</span> Creatinine, bilirubin, and INR</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> In Wilson's disease, liver failure is caused by:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="liv3"><span class="opt-key">A</span> Immune attack on bile ducts</label>
+          <label class="option-label"><input type="radio" name="liv3"><span class="opt-key">B</span> Amyloid protein accumulation</label>
+          <label class="option-label"><input type="radio" name="liv3"><span class="opt-key">C</span> Abnormal deposition of copper due to impaired hepatic excretion</label>
+          <label class="option-label"><input type="radio" name="liv3"><span class="opt-key">D</span> Excessive iron absorption</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Marker for accumulation of albumin-bound substances in intrahepatic cholestasis:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="liv4"><span class="opt-key">A</span> Ammonia</label>
+          <label class="option-label"><input type="radio" name="liv4"><span class="opt-key">B</span> Urea</label>
+          <label class="option-label"><input type="radio" name="liv4"><span class="opt-key">C</span> Bilirubin</label>
+          <label class="option-label"><input type="radio" name="liv4"><span class="opt-key">D</span> Creatinine</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q5</span> Which is a 'biological' liver dialysis system?</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="liv5"><span class="opt-key">A</span> SPAD</label>
+          <label class="option-label"><input type="radio" name="liv5"><span class="opt-key">B</span> Prometheus System</label>
+          <label class="option-label"><input type="radio" name="liv5"><span class="opt-key">C</span> ELAD (Extracorporeal Liver Assist Device)</label>
+          <label class="option-label"><input type="radio" name="liv5"><span class="opt-key">D</span> MARS</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q6</span> Why is anticoagulation 'brittle' in liver failure patients during dialysis?</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="liv6"><span class="opt-key">A</span> Heparin is metabolized too quickly by the failing liver</label>
+          <label class="option-label"><input type="radio" name="liv6"><span class="opt-key">B</span> High risk of systemic bleeding while the circuit risks triggering clotting</label>
+          <label class="option-label"><input type="radio" name="liv6"><span class="opt-key">C</span> Anticoagulants interfere with bilirubin-albumin binding</label>
+          <label class="option-label"><input type="radio" name="liv6"><span class="opt-key">D</span> Liver failure patients produce too much heparin naturally</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q7</span> How does SPAD differ from MARS?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="liv7"><span class="opt-key">A</span> SPAD uses a recirculating circuit; MARS discards albumin after one pass</label>
+          <label class="option-label"><input type="radio" name="liv7"><span class="opt-key">B</span> SPAD incorporates live pig liver cells into dialysate flow</label>
+          <label class="option-label"><input type="radio" name="liv7"><span class="opt-key">C</span> SPAD uses a recycled albumin solution; MARS uses a fresh solution</label>
+          <label class="option-label"><input type="radio" name="liv7"><span class="opt-key">D</span> SPAD discards the albumin solution after it passes the filter once</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q8</span> Typical duration and frequency of liver dialysis sessions:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="liv8"><span class="opt-key">A</span> 24 hours a day for up to two weeks</label>
+          <label class="option-label"><input type="radio" name="liv8"><span class="opt-key">B</span> 4–6 hours per day for 2–5 consecutive days</label>
+          <label class="option-label"><input type="radio" name="liv8"><span class="opt-key">C</span> A single 12-hour session</label>
+          <label class="option-label"><input type="radio" name="liv8"><span class="opt-key">D</span> Once a week for 8 hours</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q9 — Hepatic Encephalopathy</span> The two major alterations responsible for hepatic encephalopathy:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="liv9"><span class="opt-key">A</span> Biliary obstruction and gallbladder inflammation</label>
+          <label class="option-label"><input type="radio" name="liv9"><span class="opt-key">B</span> Hepatic insufficiency and portal-systemic shunting</label>
+          <label class="option-label"><input type="radio" name="liv9"><span class="opt-key">C</span> Bacterial infection and esophageal varices</label>
+          <label class="option-label"><input type="radio" name="liv9"><span class="opt-key">D</span> Hypokalemia and increased renal tubular fluid</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q10</span> 'Flapping tremor' (asterixis) first appears in which stage of hepatic encephalopathy?</div>
+        <div class="options" data-correct="A">
+          <label class="option-label"><input type="radio" name="liv10"><span class="opt-key">A</span> Stage Two</label>
+          <label class="option-label"><input type="radio" name="liv10"><span class="opt-key">B</span> Stage Four</label>
+          <label class="option-label"><input type="radio" name="liv10"><span class="opt-key">C</span> Stage One</label>
+          <label class="option-label"><input type="radio" name="liv10"><span class="opt-key">D</span> Stage Three</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q11</span> Lactulose reduces serum ammonia by:</div>
+        <div class="options" data-correct="B">
+          <label class="option-label"><input type="radio" name="liv11"><span class="opt-key">A</span> Increasing protein absorption in the small intestine</label>
+          <label class="option-label"><input type="radio" name="liv11"><span class="opt-key">B</span> Lowering colon pH to trap ammonia in an ionized state</label>
+          <label class="option-label"><input type="radio" name="liv11"><span class="opt-key">C</span> Binding ammonia in blood and filtering through kidneys</label>
+          <label class="option-label"><input type="radio" name="liv11"><span class="opt-key">D</span> Stimulating the liver to produce more urea cycle enzymes</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUTRITION -->
+  <div class="exam-section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-dot" style="background:#0f766e"></div>
+      <div class="section-title">Nutrition (Enteral & Parenteral)</div>
+      <div class="section-meta">4 questions</div>
+      <div class="chevron">▼</div>
+    </div>
+    <div class="section-body">
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q1</span> A tube-fed patient develops sudden fever, tachycardia, and pulmonary infiltrate on X-ray. Most likely complication:</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="nut1"><span class="opt-key">A</span> Refeeding syndrome</label>
+          <label class="option-label"><input type="radio" name="nut1"><span class="opt-key">B</span> Tube occlusion</label>
+          <label class="option-label"><input type="radio" name="nut1"><span class="opt-key">C</span> GI dysmotility</label>
+          <label class="option-label"><input type="radio" name="nut1"><span class="opt-key">D</span> Pulmonary aspiration</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q2</span> During CVC insertion, the patient performs the Valsalva maneuver to:</div>
+        <div class="options" data-correct="C">
+          <label class="option-label"><input type="radio" name="nut2"><span class="opt-key">A</span> Help the catheter move toward the heart</label>
+          <label class="option-label"><input type="radio" name="nut2"><span class="opt-key">B</span> Prevent hypoglycemia</label>
+          <label class="option-label"><input type="radio" name="nut2"><span class="opt-key">C</span> Prevent air embolism</label>
+          <label class="option-label"><input type="radio" name="nut2"><span class="opt-key">D</span> Reduce risk of phlebitis</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q3</span> Recommended position for subclavian CVC insertion:</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="nut3"><span class="opt-key">A</span> Left lateral decubitus</label>
+          <label class="option-label"><input type="radio" name="nut3"><span class="opt-key">B</span> Prone position</label>
+          <label class="option-label"><input type="radio" name="nut3"><span class="opt-key">C</span> High Fowler's position</label>
+          <label class="option-label"><input type="radio" name="nut3"><span class="opt-key">D</span> Trendelenburg position</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="mcq-item">
+        <div class="mcq-q"><span class="qnum">Q4</span> Fat emulsions are typically administered how often in PN patients?</div>
+        <div class="options" data-correct="D">
+          <label class="option-label"><input type="radio" name="nut4"><span class="opt-key">A</span> Daily with every bag of TPN</label>
+          <label class="option-label"><input type="radio" name="nut4"><span class="opt-key">B</span> Only once a month</label>
+          <label class="option-label"><input type="radio" name="nut4"><span class="opt-key">C</span> Every 4 hours as a bolus</label>
+          <label class="option-label"><input type="radio" name="nut4"><span class="opt-key">D</span> Twice weekly</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /page-mcq -->
+
+
+<!-- ═══════════════════ ESSAY PAGE ═══════════════════ -->
+<div id="page-essay" class="page">
+<div class="container">
+
+  <div class="essay-intro">
+    <h2>Essay & Short Answer Questions</h2>
+    <p>Click <strong>Show Answer</strong> on any question to reveal the model answer from lecture notes.</p>
+  </div>
+
+  <!-- HELPER: each essay item -->
+
+  <!-- HYPERTENSIVE CRISIS ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:24px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#1d4ed8; border-left:4px solid #1d4ed8; padding-left:12px;">Hypertensive Crisis</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">1</div>
+      <div><div class="essay-q-text">Mention 4 points for patient education about control of blood pressure.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Take antihypertensive medications regularly and never stop without consulting the doctor</li>
+        <li>Follow a low-sodium (low-salt) diet and maintain a healthy weight</li>
+        <li>Exercise regularly, quit smoking, and reduce alcohol intake</li>
+        <li>Monitor blood pressure at home and attend regular follow-up appointments</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">2</div>
+      <div><div class="essay-q-text">Mention 4 nursing diagnoses for a patient with hypertensive crisis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Acute pain (severe headache) related to increased arterial pressure</li>
+        <li>Risk for decreased cardiac output related to elevated afterload</li>
+        <li>Ineffective tissue perfusion (cerebral/renal) related to markedly elevated BP</li>
+        <li>Deficient knowledge related to management of hypertension</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">3</div>
+      <div><div class="essay-q-text">Mention 4 nursing management steps for patients with hypertensive urgency.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Monitor blood pressure every 15–30 minutes and document trends</li>
+        <li>Administer oral antihypertensive medications as prescribed</li>
+        <li>Keep the patient in a calm, quiet environment and reduce anxiety</li>
+        <li>Educate patient about medication compliance and lifestyle modifications</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DIC ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#7c3aed; border-left:4px solid #7c3aed; padding-left:12px;">DIC</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">4</div>
+      <div><div class="essay-q-text">Mention 4 nursing interventions for patients with DIC.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Monitor vital signs and assess for signs of bleeding (petechiae, purpura, oozing from IV sites)</li>
+        <li>Administer blood products (FFP, platelets, cryoprecipitate) as ordered and monitor response</li>
+        <li>Assess all body systems for signs of organ failure due to microthrombi</li>
+        <li>Minimize invasive procedures to reduce bleeding risk; apply pressure to puncture sites</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">5</div>
+      <div><div class="essay-q-text">Mention 4 precautions to prevent bleeding in DIC patients.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Avoid unnecessary injections and invasive procedures; use smallest needle possible</li>
+        <li>Apply gentle pressure for at least 5 minutes after any puncture site</li>
+        <li>Prevent falls and trauma — pad side rails, keep environment safe</li>
+        <li>Use soft toothbrush, avoid rectal temperatures, and use electric razor instead of blades</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">6</div>
+      <div><div class="essay-q-text">Mention 4 nursing interventions to enhance tissue perfusion in DIC patients.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Administer oxygen therapy to maintain adequate SpO₂ and prevent hypoxia</li>
+        <li>Monitor urine output hourly — report output &lt;30 mL/hr (sign of renal hypoperfusion)</li>
+        <li>Assess peripheral pulses, capillary refill, and skin color/temperature</li>
+        <li>Reposition patient every 2 hours and apply sequential compression devices to promote circulation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STROKE ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#0f766e; border-left:4px solid #0f766e; padding-left:12px;">Stroke</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">7</div>
+      <div><div class="essay-q-text">Mention 4 diagnostic tests for stroke patients.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>CT scan (first-line: distinguishes ischemic from hemorrhagic stroke)</li>
+        <li>MRI (more detailed brain imaging)</li>
+        <li>ECG (to detect atrial fibrillation as a cardioembolic source)</li>
+        <li>Blood glucose level (to rule out hypoglycemia mimicking stroke)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">8</div>
+      <div><div class="essay-q-text">Mention 4 nursing care priorities for patients with acute stroke.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Maintain patent airway and adequate oxygenation; suction secretions as needed</li>
+        <li>Monitor neurological status frequently using GCS and pupil assessment</li>
+        <li>Maintain bed rest with head elevated 30° to reduce ICP</li>
+        <li>Prevent complications: turn patient every 2 hours, early physiotherapy, DVT prophylaxis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">9</div>
+      <div><div class="essay-q-text">Mention 4 nursing care priorities during tPA administration in acute stroke.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Monitor blood pressure every 15 minutes during infusion (target &lt;185/110 mmHg)</li>
+        <li>Observe closely for signs of bleeding: neurological deterioration, petechiae, GI/urinary bleeding</li>
+        <li>Avoid invasive procedures during and 24 hours after tPA infusion</li>
+        <li>Reassess neurological status every 15–30 minutes for improvement or deterioration</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MYASTHENIA GRAVIS ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#c2410c; border-left:4px solid #c2410c; padding-left:12px;">Myasthenia Gravis</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">10</div>
+      <div><div class="essay-q-text">Mention 4 diagnostic tests for myasthenia gravis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>EMG (Electromyography) — shows decremental response on repetitive nerve stimulation</li>
+        <li>Tensilon (Edrophonium) test — brief improvement in muscle strength after IV injection</li>
+        <li>AChR antibody blood test (acetylcholine receptor antibodies)</li>
+        <li>CT scan of chest — to detect thymoma (thymus gland enlargement)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">11</div>
+      <div><div class="essay-q-text">Mention 4 teaching tips for patients with myasthenia gravis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Take anticholinesterase medications on time — never skip or delay doses</li>
+        <li>Plan activities during peak medication effect (when strength is best), rest before meals</li>
+        <li>Avoid extreme heat, infections, and emotional stress — these can trigger a crisis</li>
+        <li>Know signs of myasthenic crisis (difficulty breathing/swallowing) and seek emergency care immediately</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">12</div>
+      <div><div class="essay-q-text">Mention 4 adverse effects and signs of toxicity of anticholinesterase drugs.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Excessive salivation, lacrimation, and sweating (cholinergic excess)</li>
+        <li>Abdominal cramps, nausea, vomiting, and diarrhea</li>
+        <li>Bradycardia and hypotension</li>
+        <li>Increased muscle weakness (cholinergic crisis) — the most dangerous sign; may mimic myasthenic crisis</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEIZURES ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#0e7490; border-left:4px solid #0e7490; padding-left:12px;">Seizures</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">13</div>
+      <div><div class="essay-q-text">Mention 4 causes of seizures.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>CNS infections (meningitis, encephalitis)</li>
+        <li>Stroke or traumatic brain injury</li>
+        <li>Electrolyte imbalances (hyponatremia, hypoglycemia)</li>
+        <li>Fever (especially febrile seizures in children) and brain tumors</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">14</div>
+      <div><div class="essay-q-text">Mention 4 nursing interventions during a seizure.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Protect the patient from injury — clear the area, pad side rails, never restrain limbs</li>
+        <li>Turn patient on their side to prevent aspiration of secretions</li>
+        <li>Maintain airway patency; do NOT insert anything into the mouth</li>
+        <li>Time the seizure, note type of movements, and call for help; administer prescribed anticonvulsants</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">15</div>
+      <div><div class="essay-q-text">Mention 4 nursing interventions during the postictal period.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Reassess level of consciousness, vital signs, and neurological status</li>
+        <li>Maintain a safe, quiet environment — patient may be confused, drowsy, or combative</li>
+        <li>Reorient the patient calmly; provide reassurance and explain what happened</li>
+        <li>Document duration of seizure, postictal behavior, and report any new deficits to physician</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ICP ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#4d7c0f; border-left:4px solid #4d7c0f; padding-left:12px;">Increased ICP</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">16</div>
+      <div><div class="essay-q-text">Mention 4 diagnostic tests to determine increased ICP.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>CT scan (first choice to identify cause and herniation)</li>
+        <li>MRI (detailed brain tissue evaluation)</li>
+        <li>ICP monitoring device (intraventricular catheter — gold standard for direct measurement)</li>
+        <li>Cerebral oxygenation monitoring (intrajugular catheter/brain tissue O₂ probe)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">17</div>
+      <div><div class="essay-q-text">Mention 4 nursing precautions for patients with increased ICP.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Elevate head of bed to 30° with neck in neutral alignment (avoid neck flexion)</li>
+        <li>Minimize suctioning — limit to &lt;10 seconds; avoid excessive stimulation</li>
+        <li>Monitor neurological status hourly (GCS, pupils, motor response)</li>
+        <li>Avoid activities that raise ICP: Valsalva maneuver, coughing, clustering care without rest periods</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">18</div>
+      <div><div class="essay-q-text">Mention 4 medical management strategies for patients with increased ICP.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Osmotic diuretics: Mannitol IV to draw fluid out of brain tissue</li>
+        <li>Controlled hyperventilation (short-term) to reduce PaCO₂ → cerebral vasoconstriction → reduces ICP</li>
+        <li>Corticosteroids (dexamethasone) for vasogenic edema (e.g., around tumors)</li>
+        <li>Surgical intervention: ventricular drainage (EVD) or decompressive craniectomy</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CRANIOTOMY ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#9333ea; border-left:4px solid #9333ea; padding-left:12px;">Craniotomy</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">19</div>
+      <div><div class="essay-q-text">Mention 4 indications for craniotomy.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Brain tumor (resection)</li>
+        <li>Intracranial hemorrhage or hematoma evacuation</li>
+        <li>Cerebral aneurysm clipping</li>
+        <li>Epilepsy surgery or abscess drainage</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">20</div>
+      <div><div class="essay-q-text">Mention 4 preoperative care priorities before craniotomy.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Complete neurological baseline assessment (GCS, pupils, motor/sensory function)</li>
+        <li>Obtain informed consent; explain procedure and expected outcomes to patient and family</li>
+        <li>Administer prescribed preoperative medications (anticonvulsants, corticosteroids, antibiotics)</li>
+        <li>Prepare the scalp (hair removal if required) and ensure IV access; NPO status per protocol</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">21</div>
+      <div><div class="essay-q-text">Mention 4 complications after craniotomy.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Increased ICP or cerebral edema</li>
+        <li>Infection (meningitis, wound infection)</li>
+        <li>CSF leakage (rhinorrhea or otorrhea)</li>
+        <li>Seizures and neurological deficits (hemiplegia, aphasia)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BACTERIAL MENINGITIS ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#b45309; border-left:4px solid #b45309; padding-left:12px;">Bacterial Meningitis</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">22</div>
+      <div><div class="essay-q-text">Mention 4 nursing diagnoses for patients with bacterial meningitis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Ineffective tissue perfusion (cerebral) related to cerebral edema</li>
+        <li>Hyperthermia related to infectious process</li>
+        <li>Acute pain (severe headache, photophobia) related to meningeal irritation and increased ICP</li>
+        <li>Disturbed sensory perception related to decreased level of consciousness</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">23</div>
+      <div><div class="essay-q-text">Mention 4 nursing interventions for patients with bacterial meningitis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Administer IV antibiotics as prescribed — early initiation is critical for survival</li>
+        <li>Maintain droplet isolation precautions until 24 hours after antibiotic initiation</li>
+        <li>Monitor neurological status, vital signs, and signs of increased ICP frequently</li>
+        <li>Maintain quiet, darkened room; reduce stimulation; manage fever with antipyretics and tepid sponging</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">24</div>
+      <div><div class="essay-q-text">Mention 4 complications of bacterial meningitis.</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Brain herniation due to severely elevated ICP</li>
+        <li>Hearing loss and other cranial nerve damage</li>
+        <li>Seizures and hemiparesis</li>
+        <li>Septicemia, DIC, and septic shock (Waterhouse–Friderichsen syndrome)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ORAL Q ESSAYS -->
+  <div style="margin-bottom:8px; margin-top:28px; font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#be185d; border-left:4px solid #be185d; padding-left:12px;">Oral Exam Questions</div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">25</div>
+      <div><div class="essay-q-text">What are the causes of thyroid crisis (thyroid storm)?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Infection or sepsis</li>
+        <li>Surgery or trauma (especially thyroid surgery)</li>
+        <li>Stopping antithyroid medications suddenly</li>
+        <li>Critical illness, Graves' disease, or amiodarone use</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">26</div>
+      <div><div class="essay-q-text">What are the indications for enteral nutrition?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Functional GIT but inability to take oral food (e.g., severe dysphagia, coma)</li>
+        <li>Major burns or trauma with increased metabolic demands</li>
+        <li>Liver or kidney failure with malnutrition</li>
+        <li>Malnutrition with inadequate oral intake despite functional gut</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">27</div>
+      <div><div class="essay-q-text">What are the causes of stroke?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Ischemic stroke: thrombus or embolus blocking a cerebral artery</li>
+        <li>Hemorrhagic stroke: hypertension causing vessel rupture</li>
+        <li>Ruptured cerebral aneurysm</li>
+        <li>Arteriovenous malformation (AVM) rupture</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">28</div>
+      <div><div class="essay-q-text">What is the definition of DIC?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <p>DIC (Disseminated Intravascular Coagulation) is a life-threatening disorder in which widespread activation of the clotting cascade leads to the simultaneous formation of microthrombi throughout small blood vessels AND consumption of clotting factors, causing paradoxical severe bleeding.</p>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">29</div>
+      <div><div class="essay-q-text">What are the complications of enteral nutrition?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Pulmonary aspiration (most serious)</li>
+        <li>Nausea, vomiting, diarrhea, or constipation</li>
+        <li>Hyperglycemia and electrolyte imbalances</li>
+        <li>Tube displacement, occlusion, or dehydration</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">30</div>
+      <div><div class="essay-q-text">What are the causes of malnutrition?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Inadequate nutrient intake or poor absorption</li>
+        <li>Increased metabolic demands (burns, trauma, sepsis)</li>
+        <li>Chronic diarrhea or GI malabsorption disorders</li>
+        <li>Major surgery or chronic disease (cancer, kidney disease)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">31</div>
+      <div><div class="essay-q-text">What are the causes of hypertension?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Obesity and high sodium intake</li>
+        <li>Smoking and chronic stress</li>
+        <li>Renal disease and pregnancy complications</li>
+        <li>Withdrawal of antihypertensive medications; sedentary lifestyle</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">32</div>
+      <div><div class="essay-q-text">What are the causes of DKA?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Acute infection (most common trigger)</li>
+        <li>Missing insulin doses or inadequate insulin therapy</li>
+        <li>Surgery, trauma, or physical stress</li>
+        <li>Starvation or newly diagnosed uncontrolled Type 1 diabetes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-q-header">
+      <div class="essay-num">33</div>
+      <div><div class="essay-q-text">What are the causes of diabetes mellitus?</div></div>
+      <button class="essay-toggle-btn" onclick="toggleEssay(this)">Show Answer</button>
+    </div>
+    <div class="essay-answer">
+      <span class="answer-tag">Model Answer</span>
+      <ul>
+        <li>Type 1: Autoimmune destruction of pancreatic beta cells → no insulin production</li>
+        <li>Type 2: Insulin resistance + relative insulin deficiency (linked to obesity, sedentary lifestyle)</li>
+        <li>Long-term corticosteroid therapy (steroid-induced diabetes)</li>
+        <li>Pancreatic disease or genetic syndromes</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /page-essay -->
+
+<script>
+// ─── TAB SWITCHING ───────────────────────────────────
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ─── SECTION TOGGLE ──────────────────────────────────
+function toggleSection(header) {
+  const body = header.nextElementSibling;
+  header.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+// ─── ESSAY TOGGLE ────────────────────────────────────
+function toggleEssay(btn) {
+  const answer = btn.closest('.essay-q-header').nextElementSibling;
+  const isOpen = answer.classList.toggle('open');
+  btn.textContent = isOpen ? 'Hide Answer' : 'Show Answer';
+  btn.classList.toggle('open', isOpen);
+}
+
+// ─── MCQ LOGIC ───────────────────────────────────────
+let totalAnswered = 0, totalCorrect = 0, totalWrong = 0;
+
+document.addEventListener('click', function(e) {
+  const label = e.target.closest('.option-label');
+  if (!label) return;
+  const input = label.querySelector('input');
+  if (!input || input.disabled) return;
+
+  const optionsDiv = label.closest('.options');
+  const correctKey = optionsDiv.dataset.correct;
+  const allLabels = optionsDiv.querySelectorAll('.option-label');
+  const feedback = optionsDiv.nextElementSibling;
+  const keys = ['A','B','C','D'];
+  const clickedKey = keys[Array.from(allLabels).indexOf(label)];
+
+  // Disable all options
+  allLabels.forEach(l => l.querySelector('input').disabled = true);
+
+  if (clickedKey === correctKey) {
+    label.classList.add('correct');
+    feedback.textContent = '✓ Correct!';
+    feedback.className = 'feedback correct';
+    totalCorrect++;
+  } else {
+    label.classList.add('wrong');
+    feedback.textContent = '✗ Incorrect. The correct answer is ' + correctKey + '.';
+    feedback.className = 'feedback wrong';
+    // highlight correct
+    allLabels[keys.indexOf(correctKey)].classList.add('revealed-correct');
+    totalWrong++;
+  }
+
+  totalAnswered++;
+  updateStats();
+});
+
+function updateStats() {
+  document.getElementById('stat-total').textContent = totalAnswered;
+  document.getElementById('stat-correct').textContent = totalCorrect;
+  document.getElementById('stat-wrong').textContent = totalWrong;
+  const pct = Math.round((totalCorrect / totalAnswered) * 100);
+  document.getElementById('stat-pct').textContent = pct + '%';
+}
+
+function resetAll() {
+  // Reset all radio inputs
+  document.querySelectorAll('input[type=radio]').forEach(i => {
+    i.checked = false;
+    i.disabled = false;
+  });
+  document.querySelectorAll('.option-label').forEach(l => {
+    l.classList.remove('correct','wrong','revealed-correct');
+  });
+  document.querySelectorAll('.feedback').forEach(f => {
+    f.className = 'feedback';
+    f.textContent = '';
+  });
+  totalAnswered = 0; totalCorrect = 0; totalWrong = 0;
+  document.getElementById('stat-total').textContent = '0';
+  document.getElementById('stat-correct').textContent = '0';
+  document.getElementById('stat-wrong').textContent = '0';
+  document.getElementById('stat-pct').textContent = '—';
+}
+</script>
+</body>
+</html>

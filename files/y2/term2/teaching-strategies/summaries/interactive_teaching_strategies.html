@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Teaching Strategies | Dr. Saeed Mohammad</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1a7a6e;
+    --dark-teal: #0f5147;
+    --gold: #c9941a;
+    --navy: #1a2a5e;
+    --purple: #6b3fa0;
+    --red: #b84040;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+    --text: #1e1e2e;
+    --muted: #6b7280;
+    --border: #d1d9d8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', 'Cairo', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--dark-teal) 0%, var(--navy) 60%, #0a1a3a 100%);
+    color: white;
+    padding: 70px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(201,148,26,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .hero h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 1rem;
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  /* ── NAV TABS ── */
+  .tab-nav {
+    background: var(--white);
+    border-bottom: 3px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+  .tab-nav-inner {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .tab-nav-inner::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: none;
+    padding: 16px 22px;
+    border: none;
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: all 0.25s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+  }
+
+  /* ── CONTENT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+  .section { display: none; animation: fadeIn 0.4s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 32px;
+    margin-bottom: 28px;
+    border-left: 5px solid var(--teal);
+  }
+  .card.navy   { border-left-color: var(--navy); }
+  .card.gold   { border-left-color: var(--gold); }
+  .card.purple { border-left-color: var(--purple); }
+  .card.red    { border-left-color: var(--red); }
+  .card.teal2  { border-left-color: #2aa198; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .badge {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1rem; color: white;
+    flex-shrink: 0;
+  }
+  .bg-teal   { background: var(--teal); }
+  .bg-navy   { background: var(--navy); }
+  .bg-gold   { background: var(--gold); }
+  .bg-purple { background: var(--purple); }
+  .bg-red    { background: var(--red); }
+  .bg-teal2  { background: #2aa198; }
+
+  .card-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .card-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    direction: rtl;
+  }
+
+  /* bilingual row */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 16px;
+  }
+  @media (max-width: 640px) {
+    .bilingual { grid-template-columns: 1fr; }
+  }
+  .lang-block {
+    background: #f8faf9;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .lang-block.ar {
+    direction: rtl;
+    text-align: right;
+    background: #faf8f4;
+    font-family: 'Cairo', sans-serif;
+  }
+  .lang-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .steps-list { list-style: none; padding: 0; margin-top: 8px; }
+  .steps-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 0.93rem;
+  }
+  .steps-list li::before {
+    content: attr(data-n);
+    background: var(--teal);
+    color: white;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .ar .steps-list li { flex-direction: row-reverse; }
+
+  /* ── STRATEGY COLORS ── */
+  .strat-teal  .badge { background: var(--teal); }
+  .strat-navy  .badge { background: var(--navy); }
+  .strat-red   .badge { background: var(--red); }
+  .strat-dark-teal .badge { background: var(--dark-teal); }
+  .strat-purple .badge { background: var(--purple); }
+  .strat-gold  .badge { background: var(--gold); }
+
+  /* ── OBJECTIVE TABLE ── */
+  .obj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .obj-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-top: 4px solid;
+  }
+  .obj-item:nth-child(1) { border-color: var(--teal); }
+  .obj-item:nth-child(2) { border-color: var(--navy); }
+  .obj-item:nth-child(3) { border-color: var(--gold); }
+  .obj-item:nth-child(4) { border-color: var(--purple); }
+  .obj-item:nth-child(5) { border-color: var(--red); }
+  .obj-num { font-size: 2rem; font-weight: 900; opacity: 0.15; line-height: 1; }
+  .obj-verb { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+  .obj-desc { font-size: 0.82rem; color: var(--muted); }
+  .obj-ar { font-family: 'Cairo', sans-serif; font-size: 0.8rem; color: var(--muted); direction: rtl; margin-top: 6px; }
+
+  /* ── COMPARISON TABLE ── */
+  .comp-table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th {
+    background: var(--dark-teal);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+  }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: #f0f7f5; }
+  .bloom-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    background: #e0f0ee;
+    color: var(--dark-teal);
+  }
+
+  /* ── QUIZ ── */
+  .quiz-q {
+    background: white;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .q-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .q-text {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .q-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+    border-right: 3px solid var(--gold);
+    padding-right: 10px;
+  }
+  .options { display: flex; flex-direction: column; gap: 9px; }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 16px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+  }
+  .opt:hover { border-color: var(--teal); background: #f0f9f7; }
+  .opt.correct { border-color: #22c55e; background: #f0fdf4; }
+  .opt.wrong   { border-color: #ef4444; background: #fef2f2; }
+  .opt-letter {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  .opt-text-wrap { flex: 1; }
+  .opt-en { font-size: 0.88rem; }
+  .opt-ar { font-family: 'Cairo', sans-serif; font-size: 0.8rem; color: var(--muted); direction: rtl; text-align: right; }
+  .feedback { display: none; margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; }
+  .feedback.show { display: block; }
+  .feedback.correct-msg { background: #f0fdf4; border: 1px solid #86efac; color: #15803d; }
+  .feedback.wrong-msg   { background: #fef2f2; border: 1px solid #fca5a5; color: #b91c1c; }
+  .feedback-ar { font-family: 'Cairo', sans-serif; direction: rtl; font-size: 0.83rem; margin-top: 4px; display: block; }
+
+  /* ── ESSAY ── */
+  .essay-q {
+    background: white;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--navy);
+  }
+  .essay-q h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .essay-q .q-ar { border-right-color: var(--navy); }
+  .model-ans {
+    display: none;
+    margin-top: 16px;
+    background: #f0f7ff;
+    border-radius: 10px;
+    padding: 18px;
+    font-size: 0.88rem;
+    border: 1px solid #bfdbfe;
+  }
+  .model-ans.show { display: block; }
+  .model-ans h5 { font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .model-ans-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #1e3a5f;
+    border-top: 1px dashed #bfdbfe;
+    padding-top: 10px;
+  }
+  .show-btn {
+    margin-top: 14px;
+    padding: 8px 20px;
+    border: 2px solid var(--navy);
+    background: transparent;
+    color: var(--navy);
+    border-radius: 8px;
+    font-size: 0.83rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .show-btn:hover { background: var(--navy); color: white; }
+
+  /* ── SUMMARY ── */
+  .summary-page {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .summary-hero {
+    background: linear-gradient(135deg, var(--dark-teal), var(--navy));
+    color: white;
+    padding: 36px 36px 28px;
+    text-align: center;
+  }
+  .summary-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+  .summary-hero h3 {
+    font-family: 'Cairo', sans-serif;
+    opacity: 0.8;
+    font-size: 1rem;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 700px) { .summary-grid { grid-template-columns: 1fr 1fr; } }
+  .sum-cell {
+    padding: 22px 20px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .sum-cell:nth-child(3n) { border-right: none; }
+  .sum-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .sum-en { font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; }
+  .sum-ar { font-family: 'Cairo', sans-serif; font-size: 0.82rem; color: var(--muted); direction: rtl; text-align: right; }
+  .sum-desc-en { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+  .takeaways {
+    padding: 28px 32px;
+    background: #fafbfc;
+  }
+  .takeaways h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--dark-teal);
+  }
+  .takeaway-list { list-style: none; }
+  .takeaway-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .takeaway-list li:last-child { border-bottom: none; }
+  .tk-num {
+    width: 28px; height: 28px;
+    background: var(--teal);
+    color: white;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .tk-en { font-weight: 700; font-size: 0.9rem; }
+  .tk-ar { font-family: 'Cairo', sans-serif; font-size: 0.82rem; color: var(--muted); direction: rtl; }
+
+  .quote-bar {
+    background: var(--gold);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+  }
+  .section-heading .sub {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    direction: rtl;
+  }
+  .line-accent {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--teal), transparent);
+  }
+
+  .score-box {
+    background: var(--dark-teal);
+    color: white;
+    border-radius: 12px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .score-box .score-num { font-size: 2.5rem; font-weight: 900; }
+  .score-box p { font-size: 0.85rem; opacity: 0.8; }
+
+  /* progress bar for quiz */
+  .quiz-progress {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .quiz-progress-bar {
+    height: 100%;
+    background: var(--teal);
+    transition: width 0.4s;
+  }
+
+  .note-box {
+    background: #fff8e7;
+    border: 1px solid #fbbf24;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    color: #92400e;
+    margin-bottom: 16px;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .note-en { font-family: 'Lato', sans-serif; direction: ltr; text-align: left; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Nursing Education</div>
+  <h1>Interactive Teaching Strategies</h1>
+  <h2>استراتيجيات التدريس التفاعلي</h2>
+  <p>Prepared by Dr. Saeed Mohammad &nbsp;|&nbsp; إعداد د. سعيد محمد</p>
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="showTab('intro')">📘 Introduction</button>
+    <button class="tab-btn" onclick="showTab('strat1')">💡 Think-Pair-Share</button>
+    <button class="tab-btn" onclick="showTab('strat2')">🩺 Case-Based</button>
+    <button class="tab-btn" onclick="showTab('strat3')">🎭 Simulation</button>
+    <button class="tab-btn" onclick="showTab('strat4')">🔄 Flipped Classroom</button>
+    <button class="tab-btn" onclick="showTab('strat5')">🎮 Gamification</button>
+    <button class="tab-btn" onclick="showTab('strat6')">🦉 Socratic Q</button>
+    <button class="tab-btn" onclick="showTab('compare')">📊 Comparison</button>
+    <button class="tab-btn" onclick="showTab('mcq')">✅ MCQ Quiz</button>
+    <button class="tab-btn" onclick="showTab('essay')">📝 Essay Q</button>
+    <button class="tab-btn" onclick="showTab('summary')">📋 Summary</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════ INTRO ═══════════ -->
+<div id="intro" class="section active">
+  <div class="section-heading">
+    <h2>Introduction to Interactive Teaching</h2>
+    <div class="line-accent"></div>
+    <span class="sub">مقدمة في التدريس التفاعلي</span>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="badge bg-teal">📘</div>
+      <div>
+        <div class="card-title-en">What Is Interactive Teaching?</div>
+        <div class="card-title-ar">ما هو التدريس التفاعلي؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        An approach where learners are <strong>active participants — not passive recipients</strong>. It involves two-way communication, collaborative inquiry, and learner-centered activities that deepen understanding and critical thinking.
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label" style="text-align:right">العربية</span>
+        نهج يكون فيه المتعلمون <strong>مشاركين فاعلين — وليس متلقين سلبيين</strong>. يتضمن تواصلاً ثنائي الاتجاه، واستفساراً تعاونياً، وأنشطة تتمحور حول المتعلم تعمق الفهم والتفكير النقدي.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-heading" style="margin-top:36px">
+    <h2>Learning Objectives</h2>
+    <div class="line-accent"></div>
+    <span class="sub">الأهداف التعليمية</span>
+  </div>
+
+  <div class="obj-grid">
+    <div class="obj-item">
+      <div class="obj-num">01</div>
+      <div class="obj-verb" style="color:var(--teal)">Define</div>
+      <div class="obj-desc">Interactive teaching strategies and distinguish them from traditional methods</div>
+      <div class="obj-ar">تعريف استراتيجيات التدريس التفاعلي وتمييزها عن الأساليب التقليدية</div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-num">02</div>
+      <div class="obj-verb" style="color:var(--navy)">Identify</div>
+      <div class="obj-desc">At least 6 evidence-based interactive strategies in health professions education</div>
+      <div class="obj-ar">تحديد ٦ استراتيجيات تفاعلية على الأقل في تعليم المهن الصحية</div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-num">03</div>
+      <div class="obj-verb" style="color:var(--gold)">Apply</div>
+      <div class="obj-desc">Selected strategies within nursing curricula</div>
+      <div class="obj-ar">تطبيق الاستراتيجيات المختارة في مناهج التمريض</div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-num">04</div>
+      <div class="obj-verb" style="color:var(--purple)">Evaluate</div>
+      <div class="obj-desc">Student engagement using formative assessment tools aligned to each strategy</div>
+      <div class="obj-ar">تقييم مشاركة الطلاب باستخدام أدوات التقييم التكويني</div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-num">05</div>
+      <div class="obj-verb" style="color:var(--red)">Adapt</div>
+      <div class="obj-desc">Strategies to clinical, simulation lab, bedside, and online teaching environments</div>
+      <div class="obj-ar">تكييف الاستراتيجيات للبيئات السريرية والمختبر ومواقع التعليم الإلكتروني</div>
+    </div>
+  </div>
+
+  <div class="card navy" style="margin-top:32px">
+    <div class="card-header">
+      <div class="badge bg-navy">⚡</div>
+      <div>
+        <div class="card-title-en">4 Pillars of Interactive Teaching</div>
+        <div class="card-title-ar">٤ ركائز للتدريس التفاعلي</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:8px;">
+      <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-top:3px solid var(--navy)">
+        <strong>1. Active Engagement</strong><br>
+        <span style="font-size:0.83rem;color:var(--muted)">Students construct knowledge through doing</span><br>
+        <span style="font-family:'Cairo',sans-serif;font-size:0.8rem;direction:rtl;display:block;margin-top:6px;color:var(--muted)">المشاركة الفاعلة — الطلاب يبنون المعرفة بالفعل</span>
+      </div>
+      <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-top:3px solid var(--teal)">
+        <strong>2. Feedback & Dialogue</strong><br>
+        <span style="font-size:0.83rem;color:var(--muted)">Real-time interaction guides understanding</span><br>
+        <span style="font-family:'Cairo',sans-serif;font-size:0.8rem;direction:rtl;display:block;margin-top:6px;color:var(--muted)">التغذية الراجعة والحوار الفوري</span>
+      </div>
+      <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-top:3px solid var(--gold)">
+        <strong>3. Collaborative Learning</strong><br>
+        <span style="font-size:0.83rem;color:var(--muted)">Peer interaction enriches perspectives</span><br>
+        <span style="font-family:'Cairo',sans-serif;font-size:0.8rem;direction:rtl;display:block;margin-top:6px;color:var(--muted)">التعلم التعاوني — تفاعل الأقران يثري وجهات النظر</span>
+      </div>
+      <div style="background:#f0f4ff;border-radius:10px;padding:16px;border-top:3px solid var(--purple)">
+        <strong>4. Critical Thinking</strong><br>
+        <span style="font-size:0.83rem;color:var(--muted)">Open questions demand analysis & synthesis</span><br>
+        <span style="font-family:'Cairo',sans-serif;font-size:0.8rem;direction:rtl;display:block;margin-top:6px;color:var(--muted)">التفكير النقدي — الأسئلة المفتوحة تتطلب تحليلاً وتركيباً</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 1: TPS ═══════════ -->
+<div id="strat1" class="section">
+  <div class="section-heading">
+    <h2>Strategy 01 — Think-Pair-Share (TPS)</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card strat-teal">
+    <div class="card-header">
+      <div class="badge bg-teal">💡</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        Students <strong>think individually</strong>, then <strong>discuss with a partner</strong>, then <strong>share with the class</strong>. This simple structure ensures every student processes the question before group discussion.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Pose an open clinical question</li>
+          <li data-n="2">Think silently (1–3 min)</li>
+          <li data-n="3">Discuss in pairs (3–5 min)</li>
+          <li data-n="4">Share with the whole class</li>
+          <li data-n="5">Instructor consolidates answers</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        يفكر الطلاب <strong>بشكل فردي</strong>، ثم يتناقشون <strong>مع زميل</strong>، ثم <strong>يشاركون الفصل</strong>. يضمن هذا الهيكل البسيط أن كل طالب يعالج السؤال قبل النقاش الجماعي.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">طرح سؤال سريري مفتوح</li>
+          <li data-n="٢">التفكير بصمت (١–٣ دقائق)</li>
+          <li data-n="٣">المناقشة في أزواج (٣–٥ دقائق)</li>
+          <li data-n="٤">المشاركة مع الفصل بأكمله</li>
+          <li data-n="٥">المحاضر يجمع الإجابات ويصحح</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card gold">
+    <div class="card-header">
+      <div class="badge bg-gold">🏥</div>
+      <div>
+        <div class="card-title-en">Nursing Application Example</div>
+        <div class="card-title-ar">مثال تطبيقي في التمريض</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        <strong>Clinical Question:</strong> "A patient receiving IV morphine now has a respiratory rate of 8/min and is unresponsive. What is your FIRST nursing intervention?"<br><br>
+        Students write individually → pairs compare priorities → class shares → instructor corrects: <em>"ABC assessment first, then Naloxone per Opioid Overdose protocol."</em>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        <strong>السؤال السريري:</strong> "مريض يتلقى مورفين وريدي، معدل تنفسه أصبح ٨/دقيقة وهو نائم. ما هو تدخلك التمريضي الأول؟"<br><br>
+        الطلاب يكتبون بمفردهم ← المجموعات تقارن الأولويات ← الفصل يشارك ← المحاضر يصحح: <em>"تقييم ABC أولاً ثم نالوكسان حسب بروتوكول جرعة الأفيون الزائدة."</em>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> Clinical decisions, pharmacology, medication safety — Bloom's Level: Comprehension–Analysis</span><br>
+      📌 <strong>الأنسب لـ:</strong> القرارات السريرية، الدوائية، أمان الدواء — مستوى بلوم: الفهم والتحليل
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 2: CBL ═══════════ -->
+<div id="strat2" class="section">
+  <div class="section-heading">
+    <h2>Strategy 02 — Case-Based Learning (CBL)</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card navy">
+    <div class="card-header">
+      <div class="badge bg-navy">🩺</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        Students <strong>analyze a real patient case</strong> to apply knowledge and make clinical decisions. Groups work through assessment, diagnosis, care planning, and evidence-based rationale.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Present a realistic patient case</li>
+          <li data-n="2">Identify nursing problems & gaps</li>
+          <li data-n="3">Groups discuss care plan</li>
+          <li data-n="4">Present reasoning to class</li>
+          <li data-n="5">Debrief & link to evidence</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        يحلل الطلاب <strong>حالة مريض حقيقية</strong> لتطبيق المعرفة واتخاذ القرارات السريرية. تعمل المجموعات على التقييم والتشخيص والتخطيط للرعاية.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">عرض حالة مريض واقعية</li>
+          <li data-n="٢">تحديد مشكلات التمريض والفجوات</li>
+          <li data-n="٣">المجموعات تناقش خطة الرعاية</li>
+          <li data-n="٤">تقديم التفكير للفصل</li>
+          <li data-n="٥">الإحاطة والربط بالأدلة العلمية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card gold">
+    <div class="card-header">
+      <div class="badge bg-gold">🏥</div>
+      <div>
+        <div class="card-title-en">Nursing Application Example</div>
+        <div class="card-title-ar">مثال تطبيقي</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        <strong>Mr. Ahmed, 65 y/o diabetic:</strong> BP 80/50, HR 120, chest pain, diaphoresis.<br>
+        Groups form NANDA diagnoses → develop SBAR communication → create full nursing care plan using NANDA + NIC + NOC framework. <em>Assessed on quality of clinical thinking, not memorization.</em>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        <strong>السيد أحمد، ٦٥ سنة، مصاب بالسكر:</strong> ضغطه ٨٠/٥٠، نبضه ١٢٠، ألم صدر وتعرق بارد.<br>
+        المجموعات تضع تشخيصات NANDA ← تطور تواصل SBAR ← تنشئ خطة تمريضية كاملة. <em>التقييم يعتمد على جودة التفكير السريري لا الحفظ.</em>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> Patient scenarios, care planning — Bloom's Level: Analysis–Evaluation</span><br>
+      📌 <strong>الأنسب لـ:</strong> سيناريوهات المرضى، التخطيط للرعاية — مستوى بلوم: التحليل والتقييم
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 3: SIMULATION ═══════════ -->
+<div id="strat3" class="section">
+  <div class="section-heading">
+    <h2>Strategy 03 — Simulation & Role-Play</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card red">
+    <div class="card-header">
+      <div class="badge bg-red">🎭</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        Learners <strong>practice clinical skills in realistic, safe environments</strong> with full role assignments. Mistakes become learning moments without harming real patients.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Assign roles: nurse, patient, family</li>
+          <li data-n="2">Brief on scenario context</li>
+          <li data-n="3">Enact the clinical scenario</li>
+          <li data-n="4">Pause at decision points</li>
+          <li data-n="5">Debrief: Describe → Analyze → Apply</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        يتدرب المتعلمون على <strong>المهارات السريرية في بيئات آمنة وواقعية</strong> مع تعيين كامل للأدوار. تصبح الأخطاء لحظات تعلم دون إيذاء المرضى الحقيقيين.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">تعيين الأدوار: ممرض، مريض، عائلة</li>
+          <li data-n="٢">الإحاطة بسياق السيناريو</li>
+          <li data-n="٣">تمثيل السيناريو السريري</li>
+          <li data-n="٤">التوقف عند نقاط القرار</li>
+          <li data-n="٥">الإحاطة: وصف ← تحليل ← تطبيق</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card gold">
+    <div class="card-header"><div class="badge bg-gold">🏥</div><div><div class="card-title-en">Nursing Application Example</div><div class="card-title-ar">مثال تطبيقي</div></div></div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        Student Sara acts as nurse for a postpartum patient who suddenly develops: HR 130, SpO₂ 88%, shortness of breath.<br>
+        Sara responds → instructor pauses: <em>"Did you notify the physician via SBAR? Did you document the time?"</em> → Class debriefs on what was done well and what to improve. Peer feedback follows.
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        الطالبة سارة تمثل دور الممرضة لمريضة بعد الولادة تطور فجأة: نبض ١٣٠، SpO₂ 88%، ضيق تنفس.<br>
+        سارة تستجيب ← المحاضر يوقف: <em>"هل أبلغت الطبيب بـ SBAR؟ هل وثقت الوقت؟"</em> ← الفصل يناقش ما أحسنت وما ستغير. التغذية الراجعة من الأقران تتبع.
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> Skills lab, ACLS, patient safety — Bloom's Level: Application–Synthesis</span><br>
+      📌 <strong>الأنسب لـ:</strong> مختبر المهارات، ACLS، سلامة المرضى — مستوى بلوم: التطبيق والتركيب
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 4: FLIPPED ═══════════ -->
+<div id="strat4" class="section">
+  <div class="section-heading">
+    <h2>Strategy 04 — Flipped Classroom</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card" style="border-left-color:var(--dark-teal)">
+    <div class="card-header">
+      <div class="badge bg-teal">🔄</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        <strong>Content is studied at home</strong>; class time is reserved for <strong>application and problem-solving</strong>. Students arrive prepared, so every classroom minute is high-value active learning.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Pre-class: video + quiz on LMS</li>
+          <li data-n="2">In-class: brief clarification (5–10 min)</li>
+          <li data-n="3">Group application tasks</li>
+          <li data-n="4">Instructor coaches thinking</li>
+          <li data-n="5">Consolidation & Q&A</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        <strong>يتعلم الطلاب المحتوى في المنزل</strong>؛ وقت الفصل مخصص <strong>للتطبيق وحل المشكلات</strong>. يصل الطلاب مستعدين، فكل دقيقة في الفصل ذات قيمة عالية.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">قبل الفصل: فيديو + اختبار على نظام LMS</li>
+          <li data-n="٢">في الفصل: توضيح مختصر (٥–١٠ دقائق)</li>
+          <li data-n="٣">مهام تطبيقية جماعية</li>
+          <li data-n="٤">المحاضر يوجه التفكير</li>
+          <li data-n="٥">التوحيد والأسئلة والأجوبة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card gold">
+    <div class="card-header"><div class="badge bg-gold">🏥</div><div><div class="card-title-en">Nursing Application Example</div><div class="card-title-ar">مثال تطبيقي</div></div></div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        <strong>Pre-class:</strong> Students watch a 15-min video on electrolyte imbalances + answer 10 questions on Moodle.<br>
+        <strong>In-class:</strong> "Your patient: SpO₂ 88%, Na⁺ 118, K⁺ 6.5. Design a complete nursing care plan." Instructor circulates asking: <em>"Why 0.9% saline and not 3%? What's the danger of rapid Na⁺ correction?"</em>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        <strong>قبل الفصل:</strong> الطلاب يشاهدون فيديو ١٥ دقيقة عن اختلال الشوارد + يجيبون على ١٠ أسئلة على Moodle.<br>
+        <strong>في الفصل:</strong> "مريضكم: SpO₂ 88%، Na⁺ 118، K⁺ 6.5. صمموا خطة تمريضية كاملة." المحاضر يتجول سائلاً: <em>"لماذا 0.9% وليس 3%؟ ما خطر رفع Na⁺ بسرعة؟"</em>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> Pathophysiology, pharmacology — Bloom's Level: All levels</span><br>
+      📌 <strong>الأنسب لـ:</strong> الفيزيولوجيا المرضية، الصيدلة — مستوى بلوم: جميع المستويات
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 5: GAMIFICATION ═══════════ -->
+<div id="strat5" class="section">
+  <div class="section-heading">
+    <h2>Strategy 05 — Gamification & Interactive Quizzing</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card purple">
+    <div class="card-header">
+      <div class="badge bg-purple">🎮</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        <strong>Game-design elements boost motivation</strong> and provide instant feedback on learning. Competition and immediate correction create memorable learning moments.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Design multi-level Bloom's questions</li>
+          <li data-n="2">Launch Kahoot! / Mentimeter</li>
+          <li data-n="3">Team-based competitive rounds</li>
+          <li data-n="4">Pause on wrong answers to discuss</li>
+          <li data-n="5">Award points — celebrate learning</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        <strong>عناصر تصميم الألعاب تعزز الدافعية</strong> وتوفر تغذية راجعة فورية. المنافسة والتصحيح الفوري يخلقان لحظات تعلم لا تُنسى.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">تصميم أسئلة متعددة المستويات وفق بلوم</li>
+          <li data-n="٢">تشغيل Kahoot! / Mentimeter</li>
+          <li data-n="٣">جولات تنافسية قائمة على الفريق</li>
+          <li data-n="٤">التوقف عند الإجابات الخاطئة للنقاش</li>
+          <li data-n="٥">منح النقاط والاحتفال بالتعلم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card gold">
+    <div class="card-header"><div class="badge bg-gold">🏥</div><div><div class="card-title-en">Nursing Application Example</div><div class="card-title-ar">مثال تطبيقي</div></div></div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        Kahoot! quiz on antibiotics. Question: <em>"A patient with Penicillin allergy needs Streptococcal treatment. What's the alternative? (30 sec)"</em><br>
+        58% chose Azithromycin (correct) — 30% chose Amoxicillin. Instructor pauses: <em>"Amoxicillin is from the same Penicillin family — cross-reaction!"</em> Students: "Oh! Now I understand!"
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        مسابقة Kahoot! عن المضادات الحيوية. السؤال: <em>"مريضة حساسة من Penicillin تحتاج علاج Streptococcal. ما البديل؟ (٣٠ ثانية)"</em><br>
+        58% اختاروا Azithromycin (صح) — 30% اختاروا Amoxicillin. المحاضر يوقف: <em>"Amoxicillin من نفس عائلة Penicillin — تفاعل متقاطع!"</em> الطلاب: "آه! الآن فهمت!"
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> NCLEX prep, drug calculations — Bloom's Level: Knowledge–Application</span><br>
+      📌 <strong>الأنسب لـ:</strong> تحضير NCLEX، حسابات الدواء — مستوى بلوم: المعرفة والتطبيق
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ STRATEGY 6: SOCRATIC ═══════════ -->
+<div id="strat6" class="section">
+  <div class="section-heading">
+    <h2>Strategy 06 — Socratic Questioning</h2>
+    <div class="line-accent"></div>
+  </div>
+  <div class="card" style="border-left-color:#b45309">
+    <div class="card-header">
+      <div class="badge" style="background:#b45309">🦉</div>
+      <div>
+        <div class="card-title-en">How It Works</div>
+        <div class="card-title-ar">كيف تعمل الاستراتيجية؟</div>
+      </div>
+    </div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English</span>
+        The instructor <strong>guides students to discover knowledge</strong> through structured probing dialogue. Rather than giving answers, the teacher asks questions that reveal gaps and deepen understanding.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="1">Start with an observable clinical finding</li>
+          <li data-n="2">Ask: "Why?", "What evidence?"</li>
+          <li data-n="3">Invite peer challenge</li>
+          <li data-n="4">Clarify assumptions & implications</li>
+          <li data-n="5">Guide to self-correction</li>
+        </ul>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">العربية</span>
+        يوجه المحاضر <strong>الطلاب لاكتشاف المعرفة</strong> من خلال حوار استقصائي منظم. بدلاً من إعطاء الإجابات، يطرح المعلم أسئلة تكشف الفجوات وتعمق الفهم.
+        <ul class="steps-list" style="margin-top:12px">
+          <li data-n="١">البدء بملاحظة سريرية واضحة</li>
+          <li data-n="٢">السؤال: "لماذا؟"، "ما الدليل؟"</li>
+          <li data-n="٣">دعوة الأقران للتحدي</li>
+          <li data-n="٤">توضيح الافتراضات والآثار</li>
+          <li data-n="٥">التوجيه نحو التصحيح الذاتي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card gold">
+    <div class="card-header"><div class="badge bg-gold">🏥</div><div><div class="card-title-en">Nursing Application Example (Ward Round)</div><div class="card-title-ar">مثال تطبيقي (جولة الصباح)</div></div></div>
+    <div class="bilingual">
+      <div class="lang-block">
+        <span class="lang-label">English Scenario</span>
+        Student (on rounds): <em>"Doctor, the wound looks inflamed."</em><br>
+        Instructor: <em>"What made you say inflamed? What exact signs did you see?"</em><br>
+        Student: <em>"Redness, warmth, yellow discharge, patient complains of pain on touch."</em><br>
+        Instructor: <em>"Excellent — those are REEDA scale signs. Now: does every yellow discharge mean infection? What do you think?"</em>
+      </div>
+      <div class="lang-block ar">
+        <span class="lang-label">السيناريو بالعربية</span>
+        الطالب (في الجولة): <em>"دكتور، الجرح يبدو ملتهباً."</em><br>
+        المحاضر: <em>"ما الذي جعلك تقول ملتهب؟ ما العلامات التي رأيتها بالضبط؟"</em><br>
+        الطالب: <em>"فيه احمرار، دفء، وإفراز أصفر، والمريض يشكو من ألم عند اللمس."</em><br>
+        المحاضر: <em>"ممتاز — هذه علامات الـ REEDA scale. الآن: هل كل إفراز أصفر يعني التهاباً؟ ماذا تعتقدون؟"</em>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <span class="note-en">📌 <strong>Best For:</strong> Clinical reasoning, ward teaching — Bloom's Level: Analysis–Evaluation | No technology required</span><br>
+      📌 <strong>الأنسب لـ:</strong> التفكير السريري، التعليم في الجناح — مستوى بلوم: التحليل والتقييم | لا تقنية مطلوبة
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ COMPARISON ═══════════ -->
+<div id="compare" class="section">
+  <div class="section-heading">
+    <h2>Strategies at a Glance</h2>
+    <div class="line-accent"></div>
+    <span class="sub">مقارنة الاستراتيجيات</span>
+  </div>
+  <div class="comp-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy / الاستراتيجية</th>
+          <th>Group Size / حجم المجموعة</th>
+          <th>Time / الوقت</th>
+          <th>Best Nursing Use / أفضل استخدام</th>
+          <th>Bloom's Level</th>
+          <th>Technology</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Think-Pair-Share (TPS)</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">فكر–زاوج–شارك</span></td>
+          <td>2–3</td>
+          <td>5–15 min</td>
+          <td>Clinical decisions, pharmacology<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">القرارات السريرية، الصيدلة</span></td>
+          <td><span class="bloom-pill">Comprehension–Analysis</span></td>
+          <td>Polling tools</td>
+        </tr>
+        <tr>
+          <td><strong>Case-Based Learning (CBL)</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">التعلم القائم على الحالات</span></td>
+          <td>3–5</td>
+          <td>30–60 min</td>
+          <td>Patient scenarios, care planning<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">سيناريوهات المرضى، التخطيط للرعاية</span></td>
+          <td><span class="bloom-pill">Analysis–Evaluation</span></td>
+          <td>LMS / Printed</td>
+        </tr>
+        <tr>
+          <td><strong>Simulation & Role-Play</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">المحاكاة ولعب الأدوار</span></td>
+          <td>3–6</td>
+          <td>30–90 min</td>
+          <td>Skills lab, ACLS, patient safety<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">مختبر المهارات، ACLS، سلامة المرضى</span></td>
+          <td><span class="bloom-pill">Application–Synthesis</span></td>
+          <td>SimMan / SP</td>
+        </tr>
+        <tr>
+          <td><strong>Flipped Classroom</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">الفصل المعكوس</span></td>
+          <td>Whole class</td>
+          <td>60–90 min</td>
+          <td>Pathophysiology, pharmacology<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">الفيزيولوجيا المرضية، الصيدلة</span></td>
+          <td><span class="bloom-pill">All Levels</span></td>
+          <td>Video / LMS</td>
+        </tr>
+        <tr>
+          <td><strong>Gamification</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">التلعيب</span></td>
+          <td>Indiv/Team</td>
+          <td>15–30 min</td>
+          <td>NCLEX prep, drug calculations<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">تحضير NCLEX، حسابات الدواء</span></td>
+          <td><span class="bloom-pill">Knowledge–Application</span></td>
+          <td>Kahoot / Quizlet</td>
+        </tr>
+        <tr>
+          <td><strong>Socratic Questioning</strong><br><span style="font-family:'Cairo',sans-serif;font-size:0.8rem;color:var(--muted)">التساؤل السقراطي</span></td>
+          <td>Whole class</td>
+          <td>10–30 min</td>
+          <td>Clinical reasoning, ward teaching<br><span style="font-family:'Cairo',sans-serif;font-size:0.78rem;color:var(--muted)">التفكير السريري، التعليم السريري</span></td>
+          <td><span class="bloom-pill">Analysis–Evaluation</span></td>
+          <td>None required</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════ MCQ ═══════════ -->
+<div id="mcq" class="section">
+  <div class="section-heading">
+    <h2>Multiple Choice Questions</h2>
+    <div class="line-accent"></div>
+    <span class="sub">أسئلة الاختيار من متعدد</span>
+  </div>
+  <div class="score-box" id="scoreBox" style="display:none">
+    <div>
+      <div style="font-size:0.85rem;opacity:0.8">Your Score / درجتك</div>
+      <div class="score-num" id="scoreNum">0/10</div>
+    </div>
+    <div style="text-align:right">
+      <p id="scoreMsg">Keep going!</p>
+      <button onclick="resetQuiz()" style="margin-top:8px;padding:8px 18px;background:white;color:var(--dark-teal);border:none;border-radius:8px;font-weight:700;cursor:pointer">↺ Retry</button>
+    </div>
+  </div>
+
+  <div id="q1" class="quiz-q">
+    <div class="q-num">Question 1 of 10</div>
+    <div class="q-text">In Think-Pair-Share, what is the correct sequence?</div>
+    <div class="q-ar">في استراتيجية فكر–زاوج–شارك، ما هو الترتيب الصحيح؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q1',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Share first, then think individually</div><div class="opt-ar">الشارك أولاً ثم التفكير الفردي</div></div></div>
+      <div class="opt" onclick="checkMCQ('q1',this,'correct')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Individual thinking → pair discussion → class sharing</div><div class="opt-ar">التفكير الفردي ← النقاش في زوج ← المشاركة مع الفصل</div></div></div>
+      <div class="opt" onclick="checkMCQ('q1',this,'wrong')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Group discussion first, then individual reflection</div><div class="opt-ar">النقاش الجماعي أولاً ثم التفكير الفردي</div></div></div>
+      <div class="opt" onclick="checkMCQ('q1',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Instructor explains, then students discuss</div><div class="opt-ar">المحاضر يشرح ثم الطلاب يناقشون</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q1-correct correct-msg">✅ <strong>Correct!</strong> TPS follows: Think → Pair → Share. This ensures individual processing before group influence. | <span class="feedback-ar">صحيح! التسلسل هو: فكر ← زاوج ← شارك. هذا يضمن المعالجة الفردية قبل تأثير المجموعة.</span></div>
+    <div class="feedback" id="fb-q1-wrong wrong-msg">❌ <strong>Incorrect.</strong> The correct sequence is: Think individually first → then pair discussion → then share with class. | <span class="feedback-ar">غير صحيح. الترتيب الصحيح: فكر بمفردك ← ناقش في زوج ← شارك مع الفصل.</span></div>
+  </div>
+
+  <div id="q2" class="quiz-q">
+    <div class="q-num">Question 2 of 10</div>
+    <div class="q-text">Which interactive strategy is BEST suited for NCLEX preparation and drug calculations?</div>
+    <div class="q-ar">أي استراتيجية تفاعلية هي الأنسب لتحضير NCLEX وحسابات الدواء؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q2',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Case-Based Learning</div><div class="opt-ar">التعلم القائم على الحالات</div></div></div>
+      <div class="opt" onclick="checkMCQ('q2',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Socratic Questioning</div><div class="opt-ar">التساؤل السقراطي</div></div></div>
+      <div class="opt" onclick="checkMCQ('q2',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Gamification & Interactive Quizzing</div><div class="opt-ar">التلعيب والاختبار التفاعلي</div></div></div>
+      <div class="opt" onclick="checkMCQ('q2',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Simulation & Role-Play</div><div class="opt-ar">المحاكاة ولعب الأدوار</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q2-correct correct-msg">✅ <strong>Correct!</strong> Gamification (Kahoot!/Quizlet) is ideal for Knowledge–Application level tasks like NCLEX prep. | <span class="feedback-ar">صحيح! التلعيب مثالي لمهام مستوى المعرفة والتطبيق كتحضير NCLEX.</span></div>
+    <div class="feedback" id="fb-q2-wrong wrong-msg">❌ <strong>Incorrect.</strong> Gamification with tools like Kahoot! is best for NCLEX prep and drug calculations. | <span class="feedback-ar">غير صحيح. التلعيب بأدوات مثل Kahoot! هو الأنسب لتحضير NCLEX وحسابات الدواء.</span></div>
+  </div>
+
+  <div id="q3" class="quiz-q">
+    <div class="q-num">Question 3 of 10</div>
+    <div class="q-text">In the Flipped Classroom model, what happens BEFORE the class session?</div>
+    <div class="q-ar">في نموذج الفصل المعكوس، ماذا يحدث قبل جلسة الفصل؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q3',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Students role-play clinical scenarios</div><div class="opt-ar">يمثل الطلاب سيناريوهات سريرية</div></div></div>
+      <div class="opt" onclick="checkMCQ('q3',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">The instructor delivers the full lecture</div><div class="opt-ar">يلقي المحاضر المحاضرة الكاملة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q3',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Students watch videos and complete an LMS quiz</div><div class="opt-ar">يشاهد الطلاب مقاطع الفيديو ويكملون اختباراً على LMS</div></div></div>
+      <div class="opt" onclick="checkMCQ('q3',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Groups compete using Kahoot!</div><div class="opt-ar">تتنافس المجموعات باستخدام Kahoot!</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q3-correct correct-msg">✅ <strong>Correct!</strong> Pre-class work (video + LMS quiz) frees class time for higher-order application tasks. | <span class="feedback-ar">صحيح! العمل قبل الفصل يحرر وقت الفصل لمهام التطبيق العليا.</span></div>
+    <div class="feedback" id="fb-q3-wrong wrong-msg">❌ <strong>Incorrect.</strong> In the Flipped Classroom, students study content at home via video + LMS quiz before class. | <span class="feedback-ar">غير صحيح. في الفصل المعكوس، يدرس الطلاب المحتوى في المنزل عبر فيديو + اختبار LMS.</span></div>
+  </div>
+
+  <div id="q4" class="quiz-q">
+    <div class="q-num">Question 4 of 10</div>
+    <div class="q-text">Which Bloom's taxonomy level is primarily targeted by Simulation & Role-Play?</div>
+    <div class="q-ar">أي مستوى من تصنيف بلوم تستهدفه المحاكاة ولعب الأدوار بشكل رئيسي؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q4',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Knowledge & Remembering</div><div class="opt-ar">المعرفة والتذكر</div></div></div>
+      <div class="opt" onclick="checkMCQ('q4',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Comprehension only</div><div class="opt-ar">الفهم فقط</div></div></div>
+      <div class="opt" onclick="checkMCQ('q4',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Application & Synthesis</div><div class="opt-ar">التطبيق والتركيب</div></div></div>
+      <div class="opt" onclick="checkMCQ('q4',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Analysis & Evaluation only</div><div class="opt-ar">التحليل والتقييم فقط</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q4-correct correct-msg">✅ <strong>Correct!</strong> Simulation targets Application–Synthesis, where students actively perform and synthesize clinical skills. | <span class="feedback-ar">صحيح! المحاكاة تستهدف التطبيق والتركيب حيث يؤدي الطلاب المهارات السريرية ويوحدونها.</span></div>
+    <div class="feedback" id="fb-q4-wrong wrong-msg">❌ <strong>Incorrect.</strong> Simulation & Role-Play primarily targets Application–Synthesis levels of Bloom's taxonomy. | <span class="feedback-ar">غير صحيح. المحاكاة تستهدف بشكل رئيسي مستوى التطبيق والتركيب.</span></div>
+  </div>
+
+  <div id="q5" class="quiz-q">
+    <div class="q-num">Question 5 of 10</div>
+    <div class="q-text">What is the PRIMARY purpose of debriefing after a simulation exercise?</div>
+    <div class="q-ar">ما الغرض الرئيسي من الإحاطة بعد تمرين المحاكاة؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q5',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">To grade students' performance immediately</div><div class="opt-ar">لتقييم أداء الطلاب فوراً</div></div></div>
+      <div class="opt" onclick="checkMCQ('q5',this,'correct')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">To facilitate reflection: Describe → Analyze → Apply</div><div class="opt-ar">لتسهيل التأمل: وصف ← تحليل ← تطبيق</div></div></div>
+      <div class="opt" onclick="checkMCQ('q5',this,'wrong')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">To assign homework based on performance gaps</div><div class="opt-ar">لتعيين الواجبات بناءً على فجوات الأداء</div></div></div>
+      <div class="opt" onclick="checkMCQ('q5',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">To introduce new clinical content for the next class</div><div class="opt-ar">لتقديم محتوى سريري جديد للدرس التالي</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q5-correct correct-msg">✅ <strong>Correct!</strong> Debriefing follows Describe → Analyze → Apply to convert experience into lasting learning. | <span class="feedback-ar">صحيح! الإحاطة تتبع: وصف ← تحليل ← تطبيق لتحويل التجربة إلى تعلم دائم.</span></div>
+    <div class="feedback" id="fb-q5-wrong wrong-msg">❌ <strong>Incorrect.</strong> Debriefing's primary purpose is structured reflection using Describe → Analyze → Apply framework. | <span class="feedback-ar">غير صحيح. الغرض الرئيسي للإحاطة هو التأمل المنظم باستخدام إطار وصف ← تحليل ← تطبيق.</span></div>
+  </div>
+
+  <div id="q6" class="quiz-q">
+    <div class="q-num">Question 6 of 10</div>
+    <div class="q-text">In Socratic Questioning, the instructor's main role is to:</div>
+    <div class="q-ar">في التساؤل السقراطي، الدور الرئيسي للمحاضر هو:</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q6',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Deliver answers to students efficiently</div><div class="opt-ar">تقديم الإجابات للطلاب بكفاءة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q6',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Evaluate written assignments</div><div class="opt-ar">تقييم الواجبات المكتوبة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q6',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Guide students to discover knowledge through probing questions</div><div class="opt-ar">توجيه الطلاب لاكتشاف المعرفة من خلال أسئلة استقصائية</div></div></div>
+      <div class="opt" onclick="checkMCQ('q6',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Play the role of the patient during simulation</div><div class="opt-ar">تمثيل دور المريض أثناء المحاكاة</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q6-correct correct-msg">✅ <strong>Correct!</strong> Socratic method uses probing dialogue to help students arrive at knowledge themselves. | <span class="feedback-ar">صحيح! الأسلوب السقراطي يستخدم الحوار الاستقصائي لمساعدة الطلاب على الوصول للمعرفة بأنفسهم.</span></div>
+    <div class="feedback" id="fb-q6-wrong wrong-msg">❌ <strong>Incorrect.</strong> In Socratic Questioning, the instructor guides through questions — not by giving answers. | <span class="feedback-ar">غير صحيح. في التساؤل السقراطي، يوجه المحاضر بالأسئلة — وليس بإعطاء الإجابات.</span></div>
+  </div>
+
+  <div id="q7" class="quiz-q">
+    <div class="q-num">Question 7 of 10</div>
+    <div class="q-text">Which strategy requires NO technology and can be used during morning ward rounds?</div>
+    <div class="q-ar">أي استراتيجية لا تتطلب تقنية ويمكن استخدامها خلال جولات الصباح؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q7',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Gamification</div><div class="opt-ar">التلعيب</div></div></div>
+      <div class="opt" onclick="checkMCQ('q7',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Flipped Classroom</div><div class="opt-ar">الفصل المعكوس</div></div></div>
+      <div class="opt" onclick="checkMCQ('q7',this,'wrong')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Case-Based Learning</div><div class="opt-ar">التعلم القائم على الحالات</div></div></div>
+      <div class="opt" onclick="checkMCQ('q7',this,'correct')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Socratic Questioning</div><div class="opt-ar">التساؤل السقراطي</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q7-correct correct-msg">✅ <strong>Correct!</strong> Socratic Questioning requires no technology — just skillful dialogue, making it perfect for ward rounds. | <span class="feedback-ar">صحيح! التساؤل السقراطي لا يتطلب تقنية — فقط حوار ماهر، مما يجعله مثالياً لجولات الأجنحة.</span></div>
+    <div class="feedback" id="fb-q7-wrong wrong-msg">❌ <strong>Incorrect.</strong> Socratic Questioning requires no technology and is ideal for ward rounds. | <span class="feedback-ar">غير صحيح. التساؤل السقراطي لا يتطلب تقنية وهو مثالي لجولات الأجنحة.</span></div>
+  </div>
+
+  <div id="q8" class="quiz-q">
+    <div class="q-num">Question 8 of 10</div>
+    <div class="q-text">What does CBL (Case-Based Learning) primarily develop in nursing students?</div>
+    <div class="q-ar">ماذا يطور التعلم القائم على الحالات بشكل رئيسي في طلاب التمريض؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q8',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Memorization of anatomical structures</div><div class="opt-ar">حفظ التراكيب التشريحية</div></div></div>
+      <div class="opt" onclick="checkMCQ('q8',this,'correct')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Clinical thinking and evidence-based care planning</div><div class="opt-ar">التفكير السريري والتخطيط للرعاية القائمة على الأدلة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q8',this,'wrong')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Speed of performing procedures</div><div class="opt-ar">سرعة أداء الإجراءات</div></div></div>
+      <div class="opt" onclick="checkMCQ('q8',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Competitiveness among students</div><div class="opt-ar">التنافسية بين الطلاب</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q8-correct correct-msg">✅ <strong>Correct!</strong> CBL develops clinical thinking by requiring students to analyze real cases and justify care decisions with evidence. | <span class="feedback-ar">صحيح! يطور CBL التفكير السريري بتطلبه من الطلاب تحليل حالات حقيقية وتبرير قرارات الرعاية بالأدلة.</span></div>
+    <div class="feedback" id="fb-q8-wrong wrong-msg">❌ <strong>Incorrect.</strong> CBL primarily develops clinical thinking and evidence-based care planning skills. | <span class="feedback-ar">غير صحيح. يطور CBL بشكل رئيسي التفكير السريري ومهارات التخطيط للرعاية القائمة على الأدلة.</span></div>
+  </div>
+
+  <div id="q9" class="quiz-q">
+    <div class="q-num">Question 9 of 10</div>
+    <div class="q-text">According to the key takeaways, how should an instructor select an interactive strategy?</div>
+    <div class="q-ar">وفقاً للنقاط الرئيسية، كيف يختار المحاضر الاستراتيجية التفاعلية؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q9',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Based on available technology in the classroom</div><div class="opt-ar">بناءً على التكنولوجيا المتاحة في الفصل</div></div></div>
+      <div class="opt" onclick="checkMCQ('q9',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Based on personal preference and habit</div><div class="opt-ar">بناءً على التفضيل الشخصي والعادة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q9',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Based on the learning objective and Bloom's level</div><div class="opt-ar">بناءً على الهدف التعليمي ومستوى بلوم</div></div></div>
+      <div class="opt" onclick="checkMCQ('q9',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Based on the number of students in the class</div><div class="opt-ar">بناءً على عدد الطلاب في الفصل</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q9-correct correct-msg">✅ <strong>Correct!</strong> "Match strategy to objective — Select based on Bloom's level, not habit." | <span class="feedback-ar">صحيح! "طابق الاستراتيجية مع الهدف — اختر بناءً على مستوى بلوم، لا بناءً على العادة."</span></div>
+    <div class="feedback" id="fb-q9-wrong wrong-msg">❌ <strong>Incorrect.</strong> Strategy selection should be based on the learning objective and Bloom's taxonomy level. | <span class="feedback-ar">غير صحيح. يجب أن يكون اختيار الاستراتيجية بناءً على الهدف التعليمي ومستوى تصنيف بلوم.</span></div>
+  </div>
+
+  <div id="q10" class="quiz-q">
+    <div class="q-num">Question 10 of 10</div>
+    <div class="q-text">What is described as "the engine" that makes interactive strategies effective?</div>
+    <div class="q-ar">ما الذي وُصف بأنه "المحرك" الذي يجعل الاستراتيجيات التفاعلية فعالة؟</div>
+    <div class="options">
+      <div class="opt" onclick="checkMCQ('q10',this,'wrong')"><div class="opt-letter">A</div><div class="opt-text-wrap"><div class="opt-en">Technology tools like Kahoot! and Moodle</div><div class="opt-ar">أدوات التكنولوجيا مثل Kahoot! وMoodle</div></div></div>
+      <div class="opt" onclick="checkMCQ('q10',this,'wrong')"><div class="opt-letter">B</div><div class="opt-text-wrap"><div class="opt-en">Group size and classroom arrangement</div><div class="opt-ar">حجم المجموعة وترتيب الفصل</div></div></div>
+      <div class="opt" onclick="checkMCQ('q10',this,'correct')"><div class="opt-letter">C</div><div class="opt-text-wrap"><div class="opt-en">Immediate and specific feedback</div><div class="opt-ar">التغذية الراجعة الفورية والمحددة</div></div></div>
+      <div class="opt" onclick="checkMCQ('q10',this,'wrong')"><div class="opt-letter">D</div><div class="opt-text-wrap"><div class="opt-en">Competition between student teams</div><div class="opt-ar">التنافس بين فرق الطلاب</div></div></div>
+    </div>
+    <div class="feedback" id="fb-q10-correct correct-msg">✅ <strong>Correct!</strong> "Feedback is the engine — Interactive strategies only work with immediate, specific feedback." | <span class="feedback-ar">صحيح! "التغذية الراجعة هي المحرك — الاستراتيجيات التفاعلية تعمل فقط مع تغذية راجعة فورية ومحددة."</span></div>
+    <div class="feedback" id="fb-q10-wrong wrong-msg">❌ <strong>Incorrect.</strong> According to the key takeaways, feedback is "the engine" that powers interactive teaching. | <span class="feedback-ar">غير صحيح. وفقاً للنقاط الرئيسية، التغذية الراجعة هي "المحرك" الذي يشغّل التدريس التفاعلي.</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ ESSAY ═══════════ -->
+<div id="essay" class="section">
+  <div class="section-heading">
+    <h2>Essay Questions</h2>
+    <div class="line-accent"></div>
+    <span class="sub">الأسئلة المقالية</span>
+  </div>
+  <div class="note-box"><span class="note-en">📝 Click "Show Model Answer" to reveal a suggested answer after you've written your own response.</span><br>📝 انقر على "عرض الإجابة النموذجية" للكشف عن إجابة مقترحة بعد كتابة إجابتك الخاصة.</div>
+
+  <div class="essay-q">
+    <h4>Essay Question 1</h4>
+    <div class="q-ar">السؤال المقالي الأول</div>
+    <p style="margin:10px 0 0;font-size:0.95rem"><strong>Compare and contrast</strong> Think-Pair-Share (TPS) and Case-Based Learning (CBL) in terms of: (a) learning objectives, (b) time required, (c) nursing context suitability, and (d) assessment methods.</p>
+    <div class="q-ar" style="margin-top:10px"><strong>قارن وفرق</strong> بين استراتيجية فكر–زاوج–شارك (TPS) والتعلم القائم على الحالات (CBL) من حيث: (أ) الأهداف التعليمية، (ب) الوقت المطلوب، (ج) ملاءمة السياق التمريضي، (د) طرق التقييم.</div>
+    <button class="show-btn" onclick="toggleModel(this)">📖 Show Model Answer / عرض الإجابة النموذجية</button>
+    <div class="model-ans">
+      <h5>Model Answer — English:</h5>
+      Think-Pair-Share (TPS) and Case-Based Learning (CBL) are both active learning strategies, but they differ significantly. Regarding learning objectives, TPS targets Comprehension–Analysis levels, making it ideal for checking understanding of pharmacological concepts or prioritizing nursing interventions. CBL operates at Analysis–Evaluation, demanding students analyze complex patient data and formulate evidence-based care plans. In terms of time, TPS is a brief activity (5–15 minutes) requiring no prior preparation, while CBL requires 30–60 minutes and often pre-prepared case materials. For nursing context, TPS suits any classroom setting including bedside teaching, whereas CBL is particularly powerful for developing clinical reasoning in realistic patient scenarios using NANDA/NIC/NOC frameworks. Assessment-wise, TPS uses informal verbal assessment and polling tools, while CBL is assessed through quality of clinical reasoning, SBAR communication, and care plan completeness rather than rote memorization.
+      <div class="model-ans-ar">
+        <strong>الإجابة النموذجية — بالعربية:</strong><br>
+        كلا الاستراتيجيتين TPS وCBL هما من التعلم النشط، لكنهما تختلفان بشكل كبير. من حيث الأهداف: تستهدف TPS مستوى الفهم والتحليل، مثالية للتحقق من الفهم الدوائي أو ترتيب أولويات التدخلات. بينما تعمل CBL عند مستوى التحليل والتقييم، مطالبةً الطلاب بتحليل بيانات معقدة ووضع خطط رعاية قائمة على الأدلة. زمنياً، TPS نشاط قصير (5-15 دقيقة) لا يتطلب تحضيراً مسبقاً، بينما CBL تحتاج 30-60 دقيقة ومواد حالات محضرة مسبقاً. للسياق التمريضي، TPS تناسب أي بيئة فصل بما فيها التدريس على السرير، بينما CBL قوية بشكل خاص لتطوير التفكير السريري في سيناريوهات واقعية باستخدام أطر NANDA/NIC/NOC. تقييمياً، TPS تستخدم تقييماً شفهياً غير رسمي، بينما CBL تُقيَّم بجودة التفكير السريري وتواصل SBAR وشمولية خطة الرعاية.
+      </div>
+    </div>
+  </div>
+
+  <div class="essay-q">
+    <h4>Essay Question 2</h4>
+    <div class="q-ar">السؤال المقالي الثاني</div>
+    <p style="margin:10px 0 0;font-size:0.95rem"><strong>Explain</strong> the importance of "psychological safety" in interactive teaching. How can a nursing educator create a safe learning environment, especially during simulation debriefing?</p>
+    <div class="q-ar" style="margin-top:10px"><strong>اشرح</strong> أهمية "الأمان النفسي" في التدريس التفاعلي. كيف يمكن لمعلم التمريض خلق بيئة تعليمية آمنة، خاصةً خلال إحاطة المحاكاة؟</div>
+    <button class="show-btn" onclick="toggleModel(this)">📖 Show Model Answer / عرض الإجابة النموذجية</button>
+    <div class="model-ans">
+      <h5>Model Answer — English:</h5>
+      Psychological safety is the belief that one can speak up, make mistakes, or ask questions without fear of punishment or embarrassment. In interactive teaching, especially nursing education, it is foundational because students deal with complex clinical scenarios where mistakes are inevitable during learning. Without psychological safety, students become passive, avoid participation, and fail to develop honest self-reflection skills. During simulation debriefing, educators create safety by establishing ground rules: "What happens in the sim lab stays here." Using the Describe → Analyze → Apply framework, instructors start by asking what the student observed (not judging), then explore the reasoning behind decisions, and finally guide how to improve. Phrases like "What would you do differently?" replace "Why did you do that wrong?" Peer feedback should be structured and strengths-based before addressing gaps. The key takeaway from Dr. Saeed Mohammad's lecture is: "Wrong answers must be learning opportunities — not sources of shame."
+      <div class="model-ans-ar">
+        <strong>الإجابة النموذجية — بالعربية:</strong><br>
+        الأمان النفسي هو الاعتقاد بأن الشخص يستطيع التحدث أو ارتكاب الأخطاء أو طرح الأسئلة دون خوف من العقوبة أو الإحراج. في التدريس التفاعلي، وخاصة تعليم التمريض، هو أساسي لأن الطلاب يتعاملون مع سيناريوهات سريرية معقدة حيث الأخطاء حتمية خلال التعلم. بدون الأمان النفسي يصبح الطلاب سلبيين ويتجنبون المشاركة. خلال إحاطة المحاكاة، يخلق المعلمون الأمان بوضع قواعد أساسية، واستخدام إطار وصف → تحليل → تطبيق، حيث يبدأ المحاضر بسؤال الطالب عما لاحظه (دون حكم)، ثم يستكشف منطق القرارات، وأخيراً يوجه للتحسين. عبارات مثل "ماذا ستفعل بشكل مختلف؟" تحل محل "لماذا فعلت ذلك بشكل خاطئ؟" الفكرة الرئيسية: "يجب أن تكون الإجابات الخاطئة فرصاً للتعلم — وليس مصادر للخزي."
+      </div>
+    </div>
+  </div>
+
+  <div class="essay-q">
+    <h4>Essay Question 3</h4>
+    <div class="q-ar">السؤال المقالي الثالث</div>
+    <p style="margin:10px 0 0;font-size:0.95rem"><strong>Design</strong> a 60-minute interactive nursing class on "Acute Respiratory Failure" using a minimum of TWO different strategies from this lecture. Justify your strategy selection using Bloom's taxonomy.</p>
+    <div class="q-ar" style="margin-top:10px"><strong>صمم</strong> محاضرة تمريض تفاعلية مدتها 60 دقيقة حول "الفشل التنفسي الحاد" باستخدام استراتيجيتين مختلفتين على الأقل من هذه المحاضرة. برر اختيارك للاستراتيجيتين باستخدام تصنيف بلوم.</div>
+    <button class="show-btn" onclick="toggleModel(this)">📖 Show Model Answer / عرض الإجابة النموذجية</button>
+    <div class="model-ans">
+      <h5>Model Answer — English:</h5>
+      <strong>Class Design: Acute Respiratory Failure (60 min)</strong><br><br>
+      <strong>Phase 1 — Activation (10 min): Think-Pair-Share</strong><br>
+      Clinical question: "A 70-year-old COPD patient arrives with SpO₂ 82%, RR 28, and confusion. What is your first nursing intervention?"<br>
+      Justification: TPS targets Comprehension–Analysis, activating prior knowledge and exposing common misconceptions before new content. Students who think before hearing answers retain more.<br><br>
+      <strong>Phase 2 — Application (40 min): Case-Based Learning</strong><br>
+      Groups receive a 3-part evolving case: (1) Initial assessment, (2) Deterioration scenario, (3) Post-intubation care. They develop full SBAR communications and NANDA nursing diagnoses.<br>
+      Justification: CBL targets Analysis–Evaluation, requiring students to synthesize respiratory physiology, pharmacology, and nursing interventions in a realistic context. This moves beyond recall to genuine clinical reasoning.<br><br>
+      <strong>Phase 3 — Consolidation (10 min): Socratic Questioning</strong><br>
+      Instructor asks: "Why do we avoid high-flow oxygen in COPD?" guiding students to self-discover hypoxic drive theory.<br>
+      Justification: Socratic method targets Analysis–Evaluation without technology, deepening understanding through guided dialogue.
+      <div class="model-ans-ar">
+        <strong>الإجابة النموذجية — بالعربية:</strong><br>
+        <strong>المرحلة الأولى (10 دقائق): فكر–زاوج–شارك</strong> — سؤال سريري عن مريض COPD مع SpO₂ 82% لتفعيل المعرفة السابقة. المبرر: TPS تستهدف الفهم والتحليل.<br><br>
+        <strong>المرحلة الثانية (40 دقيقة): التعلم القائم على الحالات</strong> — حالة متطورة بـ 3 مراحل مع تشخيصات NANDA وتواصل SBAR. المبرر: CBL تستهدف التحليل والتقييم وتطور التفكير السريري الحقيقي.<br><br>
+        <strong>المرحلة الثالثة (10 دقائق): التساؤل السقراطي</strong> — "لماذا نتجنب الأكسجين بتركيز عالٍ في COPD؟" للوصول لنظرية الدافع التنفسي ذاتياً. المبرر: يستهدف التحليل والتقييم بدون تقنية.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SUMMARY ═══════════ -->
+<div id="summary" class="section">
+  <div class="section-heading">
+    <h2>One-Page Summary</h2>
+    <div class="line-accent"></div>
+    <span class="sub">ملخص في صفحة واحدة</span>
+  </div>
+
+  <div class="summary-page">
+    <div class="summary-hero">
+      <h2>Interactive Teaching Strategies</h2>
+      <h3>استراتيجيات التدريس التفاعلي — د. سعيد محمد</h3>
+      <p style="opacity:0.7;font-size:0.85rem;margin-top:8px">Nursing Education Applications | تطبيقات في تعليم التمريض</p>
+    </div>
+
+    <div style="padding:24px 28px 8px; background:#f8faf9; border-bottom:1px solid var(--border)">
+      <strong style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--dark-teal)">Core Concept / المفهوم الأساسي</strong>
+      <div class="bilingual" style="margin-top:10px">
+        <div class="lang-block" style="font-size:0.88rem">Learners are <strong>active participants</strong>, not passive recipients. Interactive teaching involves <strong>two-way communication</strong>, collaborative inquiry, and activities that deepen critical thinking.</div>
+        <div class="lang-block ar" style="font-size:0.85rem">المتعلمون مشاركون فاعلون، لا متلقون سلبيون. يتضمن التدريس التفاعلي <strong>تواصلاً ثنائي الاتجاه</strong>، واستفساراً تعاونياً، وأنشطة تعمق التفكير النقدي.</div>
+      </div>
+    </div>
+
+    <div style="padding:20px 28px 8px">
+      <strong style="font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--dark-teal)">6 Strategies at a Glance / ٦ استراتيجيات بنظرة واحدة</strong>
+    </div>
+
+    <div class="summary-grid">
+      <div class="sum-cell">
+        <div class="sum-icon">💡</div>
+        <div class="sum-en">Think-Pair-Share</div>
+        <div class="sum-ar">فكر–زاوج–شارك</div>
+        <div class="sum-desc-en">5–15 min | 2–3 students | Comprehension–Analysis | Pharmacology & clinical decisions</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-icon">🩺</div>
+        <div class="sum-en">Case-Based Learning</div>
+        <div class="sum-ar">التعلم القائم على الحالات</div>
+        <div class="sum-desc-en">30–60 min | 3–5 students | Analysis–Evaluation | Patient scenarios & care plans</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-icon">🎭</div>
+        <div class="sum-en">Simulation & Role-Play</div>
+        <div class="sum-ar">المحاكاة ولعب الأدوار</div>
+        <div class="sum-desc-en">30–90 min | 3–6 students | Application–Synthesis | Skills lab & ACLS</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-icon">🔄</div>
+        <div class="sum-en">Flipped Classroom</div>
+        <div class="sum-ar">الفصل المعكوس</div>
+        <div class="sum-desc-en">60–90 min | Whole class | All Bloom's Levels | Pathophysiology & pharmacology</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-icon">🎮</div>
+        <div class="sum-en">Gamification</div>
+        <div class="sum-ar">التلعيب</div>
+        <div class="sum-desc-en">15–30 min | Teams | Knowledge–Application | NCLEX prep & drug calculations</div>
+      </div>
+      <div class="sum-cell">
+        <div class="sum-icon">🦉</div>
+        <div class="sum-en">Socratic Questioning</div>
+        <div class="sum-ar">التساؤل السقراطي</div>
+        <div class="sum-desc-en">10–30 min | Whole class | Analysis–Evaluation | Ward rounds, no tech needed</div>
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <h3>5 Key Takeaways / ٥ نقاط رئيسية</h3>
+      <ul class="takeaway-list">
+        <li>
+          <div class="tk-num">1</div>
+          <div>
+            <div class="tk-en">Match strategy to objective — Select based on Bloom's level, not habit.</div>
+            <div class="tk-ar">طابق الاستراتيجية مع الهدف — اختر بناءً على مستوى بلوم، لا بناءً على العادة.</div>
+          </div>
+        </li>
+        <li>
+          <div class="tk-num">2</div>
+          <div>
+            <div class="tk-en">Nursing context is non-negotiable — Every strategy must be grounded in real clinical scenarios.</div>
+            <div class="tk-ar">السياق التمريضي أمر لا تنازل عنه — يجب أن تُبنى كل استراتيجية على سيناريوهات سريرية حقيقية.</div>
+          </div>
+        </li>
+        <li>
+          <div class="tk-num">3</div>
+          <div>
+            <div class="tk-en">Feedback is the engine — Interactive strategies only work with immediate, specific feedback.</div>
+            <div class="tk-ar">التغذية الراجعة هي المحرك — الاستراتيجيات التفاعلية تعمل فقط مع تغذية راجعة فورية ومحددة.</div>
+          </div>
+        </li>
+        <li>
+          <div class="tk-num">4</div>
+          <div>
+            <div class="tk-en">Start small, scale up — Introduce one strategy per course; refine before adding another.</div>
+            <div class="tk-ar">ابدأ بصغير وتوسع — قدم استراتيجية واحدة لكل مقرر؛ ثم اصقلها قبل إضافة أخرى.</div>
+          </div>
+        </li>
+        <li>
+          <div class="tk-num">5</div>
+          <div>
+            <div class="tk-en">Create psychological safety — Wrong answers must be learning opportunities, not sources of shame.</div>
+            <div class="tk-ar">أنشئ أماناً نفسياً — يجب أن تكون الإجابات الخاطئة فرصاً للتعلم، وليس مصادر للخزي.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="quote-bar">
+      "The great teacher inspires." — William A. Ward &nbsp;|&nbsp; "المعلم العظيم يُلهم." — وليام أ. وارد
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+  // Tab navigation
+  function showTab(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // MCQ scoring
+  let scores = {};
+  let answered = {};
+
+  function checkMCQ(qId, el, result) {
+    if (answered[qId]) return;
+    answered[qId] = true;
+
+    const opts = el.closest('.options').querySelectorAll('.opt');
+    opts.forEach(o => o.style.pointerEvents = 'none');
+
+    if (result === 'correct') {
+      el.classList.add('correct');
+      scores[qId] = 1;
+      const fb = document.querySelector(`#fb-${qId}-correct`);
+      if (fb) { fb.classList.add('show', 'correct-msg'); }
+    } else {
+      el.classList.add('wrong');
+      scores[qId] = 0;
+      const fb = document.querySelector(`#fb-${qId}-wrong`);
+      if (fb) { fb.classList.add('show', 'wrong-msg'); }
+      // highlight correct
+      opts.forEach(o => {
+        if (o.getAttribute('onclick') && o.getAttribute('onclick').includes("'correct'")) {
+          o.classList.add('correct');
+        }
+      });
+    }
+
+    // update score display
+    const total = Object.keys(scores).length;
+    const correct = Object.values(scores).filter(v => v === 1).length;
+    if (total >= 1) {
+      const box = document.getElementById('scoreBox');
+      box.style.display = 'flex';
+      document.getElementById('scoreNum').textContent = correct + '/10';
+      document.getElementById('scoreMsg').textContent = total < 10 ? `${10 - total} questions remaining` : (correct >= 8 ? '🎉 Excellent!' : correct >= 6 ? '👍 Good job!' : '📚 Keep studying!');
+    }
+  }
+
+  function resetQuiz() {
+    scores = {};
+    answered = {};
+    document.querySelectorAll('.opt').forEach(o => {
+      o.classList.remove('correct', 'wrong');
+      o.style.pointerEvents = '';
+    });
+    document.querySelectorAll('.feedback').forEach(f => f.classList.remove('show', 'correct-msg', 'wrong-msg'));
+    document.getElementById('scoreBox').style.display = 'none';
+  }
+
+  // Essay toggle
+  function toggleModel(btn) {
+    const ans = btn.nextElementSibling;
+    if (ans.classList.contains('show')) {
+      ans.classList.remove('show');
+      btn.textContent = '📖 Show Model Answer / عرض الإجابة النموذجية';
+    } else {
+      ans.classList.add('show');
+      btn.textContent = '🔼 Hide Answer / إخفاء الإجابة';
+    }
+  }
+</script>
+</body>
+</html>

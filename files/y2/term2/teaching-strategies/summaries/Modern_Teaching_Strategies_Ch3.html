@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chapter 3 – Modern Teaching Strategies | استراتيجيات التدريس الحديثة</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  /* ─── TOKENS ─── */
+  :root {
+    --teal-dark:   #00504A;
+    --teal:        #007A70;
+    --teal-mid:    #00A896;
+    --teal-light:  #D4F0ED;
+    --teal-pale:   #F0FAFA;
+    --gold:        #F5A623;
+    --white:       #FFFFFF;
+    --ink:         #0D2B2B;
+    --ink-soft:    #2C4A4A;
+    --ar-accent:   #00C9B1;
+    --card-shadow: 0 4px 24px rgba(0,80,74,0.10);
+  }
+
+  /* ─── RESET & BASE ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', 'Cairo', sans-serif;
+    background: var(--teal-pale);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--teal-dark);
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding: 10px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+  nav a {
+    color: rgba(255,255,255,0.80);
+    text-decoration: none;
+    font-size: 12px; font-weight: 600;
+    padding: 5px 12px; border-radius: 20px;
+    transition: background .2s, color .2s;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav a:hover { background: var(--teal-mid); color: #fff; }
+
+  /* ─── COVER ─── */
+  #cover {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, var(--teal-mid) 100%);
+    color: #fff;
+    padding: 80px 40px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 75% 30%, rgba(0,200,177,0.18) 0%, transparent 60%);
+  }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 30px;
+    padding: 6px 22px;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  #cover h1 {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800; line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  #cover h1 span { color: var(--ar-accent); }
+  .cover-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(22px, 3.5vw, 40px);
+    font-weight: 700;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 28px;
+    direction: rtl;
+  }
+  .cover-meta {
+    font-size: 14px; opacity: 0.75;
+    margin-top: 32px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .cover-pills {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-top: 36px;
+  }
+  .cover-pills span {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px; font-weight: 600;
+  }
+
+  /* ─── SECTION WRAPPERS ─── */
+  .section { padding: 64px 24px; max-width: 1100px; margin: 0 auto; }
+  .section-full { padding: 64px 24px; }
+  .section-full > .inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 10px;
+  }
+  .section-num {
+    background: var(--teal);
+    color: #fff;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    color: var(--teal-dark);
+    line-height: 1.2;
+  }
+  .ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: 700;
+    color: var(--teal);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-top: 4px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--teal-light);
+  }
+
+  /* ─── BILINGUAL BLOCK ─── */
+  .bilingual {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 24px;
+  }
+  .bi-en {
+    padding: 22px 26px;
+    border-left: 5px solid var(--teal-mid);
+    font-size: 15px; color: var(--ink-soft);
+  }
+  .bi-ar {
+    padding: 18px 26px 18px 22px;
+    background: var(--teal-pale);
+    border-top: 1px solid var(--teal-light);
+    border-right: 5px solid var(--ar-accent);
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px; color: var(--ink-soft);
+    direction: rtl; text-align: right;
+    line-height: 1.9;
+  }
+  .lang-badge-en {
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .lang-badge-ar {
+    display: inline-block;
+    background: var(--ar-accent);
+    color: #fff;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* ─── CARD GRID ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 22px;
+    box-shadow: var(--card-shadow);
+    border-top: 4px solid var(--teal-mid);
+    transition: transform .2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card h3 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px; }
+  .card .card-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; font-weight: 700;
+    color: var(--teal);
+    direction: rtl; text-align: right;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--teal-light);
+  }
+  .card p { font-size: 14px; color: var(--ink-soft); margin-bottom: 8px; }
+  .card .card-ar-body {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: #4a7070;
+    direction: rtl; text-align: right;
+    line-height: 1.8;
+    background: var(--teal-pale);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+
+  /* ─── OBJECTIVES ─── */
+  #objectives { background: var(--teal-dark); }
+  #objectives .inner { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+  #objectives h2 { color: #fff; font-size: 32px; margin-bottom: 32px; }
+  .obj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .obj-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 24px 20px;
+  }
+  .obj-num { font-size: 40px; font-weight: 800; color: var(--ar-accent); line-height: 1; margin-bottom: 10px; }
+  .obj-en { color: rgba(255,255,255,0.90); font-size: 14px; margin-bottom: 12px; }
+  .obj-ar {
+    font-family: 'Cairo', sans-serif;
+    color: rgba(255,255,255,0.70);
+    font-size: 14px;
+    direction: rtl; text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ─── INTRO HIGHLIGHT ─── */
+  .intro-box {
+    background: var(--teal);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-box::after {
+    content: '📚';
+    position: absolute; right: 30px; top: 20px;
+    font-size: 80px; opacity: 0.12;
+  }
+  .intro-box h3 { font-size: 22px; margin-bottom: 12px; }
+  .intro-box p { font-size: 15px; opacity: 0.92; }
+  .intro-box .ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; text-align: right;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    font-size: 16px; opacity: 0.88; line-height: 1.9;
+  }
+
+  /* ─── STRATEGY SECTION BANDS ─── */
+  .strategy-band {
+    padding: 56px 24px;
+  }
+  .strategy-band:nth-child(odd) { background: #fff; }
+  .strategy-band:nth-child(even) { background: var(--teal-pale); }
+  .strategy-band .inner { max-width: 1100px; margin: 0 auto; }
+
+  .strategy-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+  .strategy-label .num { color: var(--ar-accent); font-size: 18px; font-weight: 800; }
+
+  .strategy-title-en { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: var(--teal-dark); }
+  .strategy-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 700;
+    color: var(--teal);
+    direction: rtl; text-align: right;
+    margin-bottom: 28px;
+  }
+
+  /* ─── NUMBERED ROWS ─── */
+  .num-row {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--card-shadow);
+  }
+  .strategy-band:nth-child(odd) .num-row { background: var(--teal-pale); }
+  .row-num {
+    width: 36px; height: 36px; min-width: 36px;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+    margin-top: 4px;
+  }
+  .row-content h4 { font-size: 15px; font-weight: 700; color: var(--teal-dark); margin-bottom: 4px; }
+  .row-content p { font-size: 14px; color: var(--ink-soft); margin-bottom: 10px; }
+  .row-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: #4a7070;
+    direction: rtl; text-align: right;
+    line-height: 1.85;
+    background: rgba(0,168,150,0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    border-right: 3px solid var(--ar-accent);
+  }
+  .row-ar-title {
+    font-weight: 700; color: var(--teal);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  /* ─── FLOW STEPS (Flipped) ─── */
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    margin: 24px 0;
+    position: relative;
+  }
+  .flow-step {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 22px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--teal-mid);
+    position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: '▶';
+    position: absolute;
+    right: -14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--teal-mid);
+    font-size: 18px;
+    z-index: 5;
+  }
+  .flow-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--teal); text-transform: uppercase; margin-bottom: 8px; }
+  .flow-title { font-size: 17px; font-weight: 800; color: var(--teal-dark); margin-bottom: 10px; }
+  .flow-en { font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+  .flow-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px; color: #4a7070;
+    direction: rtl; text-align: right;
+    line-height: 1.8;
+    background: var(--teal-pale);
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .flow-benefit {
+    margin-top: 12px;
+    font-size: 12px; font-weight: 600;
+    color: var(--teal);
+    background: var(--teal-light);
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  .flow-benefit-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    font-size: 12px; color: var(--teal);
+    margin-top: 4px; text-align: center;
+  }
+
+  /* ─── DEFINITION BOX ─── */
+  .definition-box {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    border-radius: 16px;
+    padding: 36px 40px;
+    color: #fff;
+    margin-bottom: 36px;
+  }
+  .definition-box .def-en { font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
+  .definition-box .def-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px; line-height: 2;
+    direction: rtl; text-align: right;
+    color: rgba(255,255,255,0.90);
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 18px;
+  }
+  .four-pills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .four-pill {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .four-pill .icon { font-size: 28px; margin-bottom: 8px; }
+  .four-pill .en { font-weight: 700; font-size: 15px; }
+  .four-pill .ar { font-family: 'Cairo', sans-serif; font-size: 14px; color: rgba(255,255,255,0.75); }
+
+  /* ─── GAMIFICATION SPECIAL ─── */
+  .gami-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+  }
+  .gami-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 20px;
+    box-shadow: var(--card-shadow);
+    border-bottom: 4px solid var(--gold);
+  }
+  .gami-icon { font-size: 32px; margin-bottom: 12px; }
+  .gami-card h4 { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px; }
+  .gami-card p { font-size: 14px; color: var(--ink-soft); }
+  .gami-card .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: #4a7070;
+    direction: rtl; text-align: right;
+    line-height: 1.8;
+    background: #FFF8EC;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    border-right: 3px solid var(--gold);
+  }
+
+  /* ─── NURSING NOTE ─── */
+  .nursing-note {
+    background: linear-gradient(90deg, rgba(0,80,74,0.08), rgba(0,200,177,0.06));
+    border-left: 5px solid var(--teal-mid);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-top: 24px;
+    font-size: 14px; color: var(--teal-dark); font-weight: 600;
+  }
+  .nursing-note-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: var(--teal);
+    direction: rtl; text-align: right;
+    line-height: 1.9;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  /* ─── SUMMARY TABLE ─── */
+  #summary { background: var(--teal-dark); }
+  #summary .inner { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+  #summary h2 { color: #fff; font-size: 32px; margin-bottom: 8px; }
+  #summary .ar-h2 { font-family: 'Cairo', sans-serif; color: var(--ar-accent); font-size: 22px; direction: rtl; text-align: right; margin-bottom: 32px; }
+  .summary-table {
+    width: 100%; border-collapse: collapse;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .summary-table thead tr { background: var(--teal-mid); }
+  .summary-table thead th {
+    padding: 14px 18px;
+    text-align: left;
+    color: #fff;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .summary-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.04); }
+  .summary-table tbody tr:hover { background: rgba(0,200,177,0.10); }
+  .summary-table td {
+    padding: 14px 18px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: top;
+  }
+  .summary-table .ar-cell {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; text-align: right;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+  .num-badge {
+    display: inline-block;
+    background: var(--ar-accent);
+    color: var(--teal-dark);
+    font-weight: 800; font-size: 12px;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    text-align: center; line-height: 26px;
+  }
+
+  /* ─── MCQ ─── */
+  #mcq { padding: 64px 24px; background: #fff; }
+  #mcq .inner { max-width: 900px; margin: 0 auto; }
+  .quiz-header {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .quiz-header h2 { font-size: 28px; margin-bottom: 6px; }
+  .quiz-header .ar { font-family: 'Cairo', sans-serif; font-size: 22px; color: var(--ar-accent); }
+
+  .mcq-item {
+    background: var(--teal-pale);
+    border-radius: 14px;
+    padding: 28px 28px 22px;
+    margin-bottom: 28px;
+    box-shadow: var(--card-shadow);
+  }
+  .mcq-q-num {
+    font-size: 11px; font-weight: 700; color: var(--teal);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .mcq-q-en { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px; }
+  .mcq-q-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px; font-weight: 700; color: var(--teal);
+    direction: rtl; text-align: right;
+    margin-bottom: 20px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--teal-light);
+  }
+  .options { display: grid; gap: 10px; }
+  .option {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #fff;
+    border: 2px solid var(--teal-light);
+    border-radius: 10px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  .option:hover { border-color: var(--teal-mid); background: #F0FAFA; }
+  .opt-letter {
+    width: 28px; height: 28px; min-width: 28px;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px;
+    margin-top: 2px;
+  }
+  .opt-text-en { font-size: 14px; color: var(--ink-soft); }
+  .opt-text-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: #4a7070;
+    direction: rtl; text-align: right;
+    margin-top: 3px;
+  }
+  .answer-reveal {
+    margin-top: 16px;
+    background: rgba(0,168,150,0.10);
+    border-left: 4px solid var(--teal-mid);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 14px; font-weight: 700; color: var(--teal-dark);
+  }
+  .answer-reveal .ar { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; font-size: 14px; color: var(--teal); margin-top: 4px; }
+
+  /* ─── ESSAY ─── */
+  #essay { padding: 64px 24px; background: var(--teal-pale); }
+  #essay .inner { max-width: 900px; margin: 0 auto; }
+  .essay-item {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--card-shadow);
+    border-left: 5px solid var(--teal);
+  }
+  .essay-q-num { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .essay-q-en { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin-bottom: 8px; }
+  .essay-q-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px; font-weight: 700; color: var(--teal);
+    direction: rtl; text-align: right;
+    padding: 14px 16px;
+    background: var(--teal-pale);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-right: 4px solid var(--ar-accent);
+  }
+  .essay-hint {
+    font-size: 13px; color: #7a9a9a;
+    font-style: italic;
+  }
+  .essay-hint-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px; color: #7a9a9a;
+    direction: rtl; text-align: right;
+    font-style: normal;
+  }
+
+  /* ─── KEY TAKEAWAY ─── */
+  #takeaway {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+    padding: 80px 24px;
+    text-align: center;
+    color: #fff;
+  }
+  #takeaway h2 { font-size: clamp(22px, 4vw, 42px); font-weight: 800; margin-bottom: 16px; }
+  #takeaway .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(18px, 3vw, 30px);
+    color: var(--ar-accent);
+    font-weight: 700;
+    direction: rtl;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .takeaway-pills {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    margin-top: 36px;
+  }
+  .takeaway-pills span {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px; font-weight: 600;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #081A1A;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .flow-steps { grid-template-columns: 1fr; }
+    .flow-step::after { display: none; }
+    #cover { padding: 60px 20px 50px; }
+    .definition-box { padding: 26px 22px; }
+    .summary-table { font-size: 12px; }
+    .summary-table td, .summary-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover">Cover</a>
+  <a href="#objectives">Objectives</a>
+  <a href="#intro">Intro</a>
+  <a href="#s1">1. Active</a>
+  <a href="#s2">2. Collaborative</a>
+  <a href="#s3">3. Flipped</a>
+  <a href="#s4">4. Personalized</a>
+  <a href="#s5">5. PBL</a>
+  <a href="#s6">6. Gamification</a>
+  <a href="#s7">7. Blended</a>
+  <a href="#summary">Summary</a>
+  <a href="#mcq">MCQ</a>
+  <a href="#essay">Essay</a>
+</nav>
+
+<!-- ═══════════════════════ COVER ═══════════════════════ -->
+<section id="cover">
+  <div class="cover-tag">Chapter 3 | الفصل الثالث</div>
+  <h1>Modern <span>Teaching</span><br>Strategies</h1>
+  <div class="cover-ar">استراتيجيات التدريس الحديثة</div>
+  <div class="cover-pills">
+    <span>🎯 Student-Centered | محور الطالب</span>
+    <span>💡 Active Learning | التعلم النشط</span>
+    <span>🤝 Collaborative | تعاوني</span>
+    <span>🏥 Nursing Education | تعليم التمريض</span>
+  </div>
+  <div class="cover-meta">
+    Teaching &amp; Learning Strategies and Skills &nbsp;|&nbsp;
+    Dr. Saeed Mohammed Abdelguid &nbsp;|&nbsp; College of Nursing – Al Ryada University
+  </div>
+</section>
+
+<!-- ═══════════════════════ OBJECTIVES ═══════════════════════ -->
+<section id="objectives">
+  <div class="inner">
+    <h2>📋 Learning Objectives &nbsp;<span style="font-family:'Cairo',sans-serif;font-size:22px;color:var(--ar-accent);">أهداف التعلم</span></h2>
+    <div class="obj-grid">
+      <div class="obj-card">
+        <div class="obj-num">01</div>
+        <div class="obj-en">Define modern teaching strategies and explain their key characteristics.</div>
+        <div class="obj-ar">تعريف استراتيجيات التدريس الحديثة وشرح خصائصها الرئيسية.</div>
+      </div>
+      <div class="obj-card">
+        <div class="obj-num">02</div>
+        <div class="obj-en">Identify various types of modern instructional strategies used in education.</div>
+        <div class="obj-ar">تحديد الأنواع المختلفة للاستراتيجيات التعليمية الحديثة المستخدمة في التعليم.</div>
+      </div>
+      <div class="obj-card">
+        <div class="obj-num">03</div>
+        <div class="obj-en">Explain the importance of student-centered learning approaches.</div>
+        <div class="obj-ar">شرح أهمية مداخل التعلم المتمركزة حول الطالب.</div>
+      </div>
+      <div class="obj-card">
+        <div class="obj-num">04</div>
+        <div class="obj-en">Apply modern strategies effectively within the context of nursing education.</div>
+        <div class="obj-ar">تطبيق الاستراتيجيات الحديثة بفاعلية في سياق تعليم التمريض.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ INTRODUCTION ═══════════════════════ -->
+<section id="intro" class="section-full" style="background:#fff;">
+  <div class="inner" style="padding:64px 24px;">
+    <div class="section-header">
+      <div class="section-num">💡</div>
+      <h2>Introduction</h2>
+    </div>
+    <div class="ar-title">مقدمة: ما هي استراتيجيات التدريس الحديثة؟</div>
+
+    <div class="intro-box">
+      <h3>What Are Modern Teaching Strategies?</h3>
+      <p>Modern teaching strategies represent a significant shift in 21st-century education. Unlike traditional models that emphasised passive listening and rote memorisation, contemporary approaches place the <strong>student at the centre</strong> of the learning process — integrating educational theory, technology, and innovative pedagogical practice.</p>
+      <div class="ar">
+        تُمثّل استراتيجيات التدريس الحديثة تحوّلاً جوهرياً في تعليم القرن الحادي والعشرين. فخلافاً للنماذج التقليدية التي كانت تُركّز على الاستماع السلبي والحفظ الآلي، تضع المناهج المعاصرة <strong>الطالبَ في مركز</strong> العملية التعليمية، من خلال دمج النظرية التربوية والتكنولوجيا والممارسات البيداغوجية المبتكرة.
+      </div>
+    </div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        <p>In nursing education, modern strategies are especially critical. Healthcare demands graduates with not only theoretical knowledge but also strong <strong>critical thinking, clinical reasoning, communication, and collaborative skills</strong> — competencies best developed through experiential and reflective learning.</p>
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        في تعليم التمريض، تكتسب الاستراتيجيات الحديثة أهمية بالغة بشكل خاص. فقطاع الرعاية الصحية يحتاج إلى خرّيجين يمتلكون ليس فقط المعرفة النظرية، بل أيضاً مهارات <strong>التفكير النقدي، والاستدلال السريري، والتواصل، والعمل التعاوني</strong> — وهي كفاءات تُنمَّى بصورة أفضل من خلال التعلم التجريبي والتأملي.
+      </div>
+    </div>
+
+    <!-- Definition -->
+    <div class="definition-box" style="margin-top:32px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--ar-accent);margin-bottom:12px;text-transform:uppercase;">Key Definition | التعريف الأساسي</div>
+      <div class="def-en">Modern teaching strategies are <strong>instructional approaches</strong> that leverage technology, interactive methodologies, and student-centered techniques to facilitate active learning. They focus on developing <strong>critical thinking, collaboration, creativity, and problem-solving skills</strong> in learners, preparing them for real-world professional challenges.</div>
+      <div class="def-ar">
+        استراتيجيات التدريس الحديثة هي <strong>مناهج تعليمية</strong> تستفيد من التكنولوجيا والأساليب التفاعلية والتقنيات المتمركزة حول الطالب لتيسير التعلم النشط. وتركّز على تنمية مهارات <strong>التفكير النقدي والتعاون والإبداع وحل المشكلات</strong> لدى المتعلمين، وإعدادهم لمواجهة تحديات بيئة العمل في الحياة الواقعية.
+      </div>
+      <div class="four-pills">
+        <div class="four-pill"><div class="icon">💡</div><div class="en">Critical Thinking</div><div class="ar">التفكير النقدي</div></div>
+        <div class="four-pill"><div class="icon">🤝</div><div class="en">Collaboration</div><div class="ar">التعاون</div></div>
+        <div class="four-pill"><div class="icon">🎨</div><div class="en">Creativity</div><div class="ar">الإبداع</div></div>
+        <div class="four-pill"><div class="icon">🧩</div><div class="en">Problem-Solving</div><div class="ar">حل المشكلات</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 1 ═══════════════════════ -->
+<section id="s1" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">01</span> Strategy One | الاستراتيجية الأولى</div>
+    <div class="strategy-title-en">Active / Interactive Learning</div>
+    <div class="strategy-title-ar">التعلم النشط / التفاعلي</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Students are directly and meaningfully involved through discussions, problem-solving, case studies, role-playing, and collaborative group work — grounded in constructivist learning theory.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        يُشارك الطلاب بصورة مباشرة وهادفة من خلال المناقشات وحل المشكلات ودراسة الحالات ولعب الأدوار والعمل الجماعي التعاوني — وكل ذلك مستند إلى نظرية التعلم البنائي (الكونستركتيفية).
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🔄 Think – Pair – Share</h3>
+        <div class="card-ar">فكّر – ناقش – شارك</div>
+        <p>Students think individually, discuss with a partner, then share conclusions with the class. Promotes individual accountability alongside collaborative reflection.</p>
+        <div class="card-ar-body">يفكّر الطالب بشكل فردي أولاً، ثم يناقش زميله، ثم يشاركان نتائجهما مع الصف بأكمله. تُعزّز هذه الطريقة المسؤولية الفردية والتأمل التعاوني في آنٍ واحد.</div>
+      </div>
+      <div class="card">
+        <h3>👥 Peer Teaching</h3>
+        <div class="card-ar">التعليم بين الأقران</div>
+        <p>Students teach topics or demonstrate skills to each other in small groups. Reinforces the teacher's own understanding while building communication and leadership competencies.</p>
+        <div class="card-ar-body">يقوم الطلاب بتدريس الموضوعات أو عرض المهارات لبعضهم في مجموعات صغيرة. يُعمّق هذا الأسلوب فهمَ المُعلِّم الطالب ذاته، ويُنمّي كفاءات التواصل والقيادة.</div>
+      </div>
+      <div class="card">
+        <h3>🗣️ Socratic Seminars</h3>
+        <div class="card-ar">الحلقات السقراطية</div>
+        <p>In-depth discussions based on texts or clinical scenarios. The instructor facilitates, prompting students to analyse, question, and defend their reasoning.</p>
+        <div class="card-ar-body">نقاشات معمّقة تُبنى على نصوص أو مواقف سريرية، حيث يضطلع المدرس بدور الميسّر، فيُحفّز الطلاب على التحليل والتساؤل والدفاع عن استنتاجاتهم المنطقية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 2 ═══════════════════════ -->
+<section id="s2" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">02</span> Strategy Two | الاستراتيجية الثانية</div>
+    <div class="strategy-title-en">Collaborative &amp; Cooperative Learning</div>
+    <div class="strategy-title-ar">التعلم التعاوني والاشتراكي</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Students work together toward shared learning goals — enhancing conceptual understanding, communication, and professional community. Essential in nursing where teamwork is foundational to safe patient care.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        يعمل الطلاب معاً نحو أهداف تعليمية مشتركة، مما يُعزّز الفهم المفاهيمي والتواصل وبناء المجتمع المهني. وتُعدّ هذه الاستراتيجية ضرورية في مجال التمريض حيث يمثّل العمل الجماعي ركيزةً أساسية لتقديم رعاية آمنة للمريض.
+      </div>
+    </div>
+
+    <div class="num-row">
+      <div class="row-num">1</div>
+      <div class="row-content">
+        <h4>📂 Group Projects</h4>
+        <p>Teams collaboratively research a clinical or health-related topic and present findings to peers, simulating the multidisciplinary teamwork encountered in healthcare settings.</p>
+        <div class="row-ar"><div class="row-ar-title">المشاريع الجماعية</div>تقوم الفرق بالبحث تعاونياً في موضوع سريري أو صحي وتعرض النتائج على الزملاء، مما يُحاكي العمل الجماعي متعدد التخصصات في البيئات الصحية.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">2</div>
+      <div class="row-content">
+        <h4>🧩 Jigsaw Technique</h4>
+        <p>Each student becomes an expert on a specific subtopic and teaches that content to the rest of the group, ensuring every member contributes meaningfully to shared understanding.</p>
+        <div class="row-ar"><div class="row-ar-title">أسلوب الأحجية (Jigsaw)</div>يتخصّص كل طالب في جزء محدد من الموضوع ويُعلّمه لبقية أفراد المجموعة، مما يكفل مساهمة كل عضو بصورة فعّالة في الفهم المشترك.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">3</div>
+      <div class="row-content">
+        <h4>🔄 Learning Stations</h4>
+        <p>Groups rotate through different task stations, each presenting a unique activity or simulation — enabling diverse learning experiences within a single session.</p>
+        <div class="row-ar"><div class="row-ar-title">محطات التعلم</div>تتنقّل المجموعات بين محطات مهام متنوعة، تتضمن كل منها نشاطاً أو محاكاةً مختلفة — مما يُتيح تجارب تعليمية متنوعة في جلسة واحدة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 3 ═══════════════════════ -->
+<section id="s3" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">03</span> Strategy Three | الاستراتيجية الثالثة</div>
+    <div class="strategy-title-en">Flipped Classroom</div>
+    <div class="strategy-title-ar">الفصل المقلوب</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Inverts the traditional instructional sequence — students review foundational materials at home; classroom time is dedicated entirely to applying knowledge through interactive activities and collaborative problem-solving.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        يعكس هذا النموذج التسلسل التعليمي التقليدي؛ إذ يراجع الطلاب المواد الأساسية في المنزل، بينما يُخصَّص وقت الفصل الدراسي بالكامل لتطبيق المعرفة من خلال أنشطة تفاعلية وحل جماعي للمشكلات.
+      </div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-label">Before Class | قبل المحاضرة</div>
+        <div class="flow-title">🏠 Pre-Class Content</div>
+        <div class="flow-en">Videos, articles, or digital tools on LMS reviewed independently at home.</div>
+        <div class="flow-ar">مقاطع فيديو ومقالات وأدوات رقمية على نظام إدارة التعلم (LMS) تُراجَع بشكل مستقل في المنزل.</div>
+        <div class="flow-benefit">Frees classroom time</div>
+        <div class="flow-benefit-ar">يُحرّر وقت الفصل الدراسي</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-label">In Class | داخل الفصل</div>
+        <div class="flow-title">🏫 Active Application</div>
+        <div class="flow-en">Discussions, problem-solving, projects, and collaborative activities.</div>
+        <div class="flow-ar">نقاشات وحل مشكلات ومشاريع وأنشطة تعاونية تُطبَّق داخل الفصل.</div>
+        <div class="flow-benefit">Learn at own pace</div>
+        <div class="flow-benefit-ar">التعلم بالسرعة الذاتية</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-label">Technology | التكنولوجيا</div>
+        <div class="flow-title">💻 Tools &amp; Platforms</div>
+        <div class="flow-en">LMS, video platforms, interactive tools, digital simulations.</div>
+        <div class="flow-ar">نظام إدارة التعلم، منصات الفيديو، الأدوات التفاعلية، المحاكاة الرقمية.</div>
+        <div class="flow-benefit">Increases engagement</div>
+        <div class="flow-benefit-ar">يزيد الدافعية والتفاعل</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 4 ═══════════════════════ -->
+<section id="s4" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">04</span> Strategy Four | الاستراتيجية الرابعة</div>
+    <div class="strategy-title-en">Personalized Learning</div>
+    <div class="strategy-title-ar">التعلم الشخصي / المخصَّص</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Tailors instruction to individual needs, strengths, prior knowledge, and learning preferences of each student, ensuring every learner progresses at their optimal pace.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        يُكيّف هذا النهج التعليمَ وفقاً للاحتياجات الفردية ونقاط القوة والمعرفة السابقة وتفضيلات أسلوب التعلم لكل طالب، بما يضمن تقدّم كل متعلم بالوتيرة المثلى المناسبة له.
+      </div>
+    </div>
+
+    <div class="num-row">
+      <div class="row-num">1</div>
+      <div class="row-content">
+        <h4>📋 Individualized Learning Plans (ILPs)</h4>
+        <p>Custom educational roadmaps developed collaboratively between instructor and student, outlining personalised goals, content pathways, and assessment criteria.</p>
+        <div class="row-ar"><div class="row-ar-title">خطط التعلم الفردية (ILPs)</div>خرائط تعليمية مخصّصة تُوضَع بالتعاون بين المدرس والطالب، وتتضمن أهدافاً شخصية ومسارات محتوى ومعايير تقييم محددة.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">2</div>
+      <div class="row-content">
+        <h4>🤖 Adaptive Learning Technology</h4>
+        <p>Digital platforms and software that automatically adjust the difficulty, format, and pacing of content based on each student's ongoing responses and performance data.</p>
+        <div class="row-ar"><div class="row-ar-title">تكنولوجيا التعلم التكيّفي</div>منصات رقمية وبرمجيات تُعدّل آلياً مستوى صعوبة المحتوى وصيغته ووتيرته استناداً إلى ردود أفعال الطالب المستمرة وبيانات أدائه.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">3</div>
+      <div class="row-content">
+        <h4>🎯 Student-Driven Learning</h4>
+        <p>Students take ownership by setting personal goals, selecting relevant resources, and self-directing their academic journey for maximum engagement and autonomy.</p>
+        <div class="row-ar"><div class="row-ar-title">التعلم الموجَّه ذاتياً</div>يتولّى الطلاب مسؤولية مسيرتهم التعليمية بأنفسهم عبر تحديد أهداف شخصية واختيار الموارد المناسبة وتوجيه مسارهم الأكاديمي لتحقيق أقصى درجات الانخراط والاستقلالية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 5 ═══════════════════════ -->
+<section id="s5" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">05</span> Strategy Five | الاستراتيجية الخامسة</div>
+    <div class="strategy-title-en">Problem-Based Learning (PBL)</div>
+    <div class="strategy-title-ar">التعلم القائم على المشكلات (PBL)</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        An inquiry-driven strategy where students work on complex, open-ended real-world problems. They investigate, formulate questions, gather evidence, and develop creative solutions — especially powerful in nursing education.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        استراتيجية تستند إلى الاستقصاء، يعمل فيها الطلاب على مشكلات واقعية معقدة ومفتوحة النهاية. يستقصون ويصيغون الأسئلة ويجمعون الأدلة ويطوّرون حلولاً إبداعية — وهي استراتيجية بالغة الأثر في تعليم التمريض بوجه خاص.
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌍 Real-World Connection</h3>
+        <div class="card-ar">الارتباط بالواقع</div>
+        <p>Projects are centered on actual clinical practice or community health issues — making learning immediately relevant and professionally meaningful.</p>
+        <div class="card-ar-body">تتمحور المشاريع حول ممارسات سريرية فعلية أو قضايا صحة المجتمع، مما يجعل التعلم ذا صلة فورية وقيمة مهنية حقيقية.</div>
+      </div>
+      <div class="card">
+        <h3>🔬 Inquiry &amp; Innovation</h3>
+        <div class="card-ar">الاستقصاء والابتكار</div>
+        <p>Students ask probing questions, challenge assumptions, and develop evidence-based solutions through the investigative process.</p>
+        <div class="card-ar-body">يطرح الطلاب أسئلة استقصائية ويتحدّون الافتراضات المسلَّم بها ويُطوّرون حلولاً مبنية على الأدلة من خلال العملية البحثية.</div>
+      </div>
+      <div class="card">
+        <h3>🎤 Public Presentation</h3>
+        <div class="card-ar">العرض أمام الجمهور</div>
+        <p>Findings are presented to a broader audience, developing professional communication, confidence, and accountability.</p>
+        <div class="card-ar-body">تُعرض النتائج أمام جمهور أوسع، مما يُنمّي مهارات التواصل المهني والثقة بالنفس والمسؤولية.</div>
+      </div>
+    </div>
+
+    <div class="nursing-note">
+      🏥 <strong>Nursing Application:</strong> PBL develops diagnostic reasoning, ethical decision-making, and interprofessional communication through realistic clinical case studies.
+      <div class="nursing-note-ar">🏥 <strong>التطبيق في التمريض:</strong> يُنمّي التعلم القائم على المشكلات مهارات الاستدلال التشخيصي واتخاذ القرار الأخلاقي والتواصل بين المهن الصحية المختلفة من خلال دراسات الحالة السريرية الواقعية.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 6 ═══════════════════════ -->
+<section id="s6" class="strategy-band" style="background: #FFFBF0;">
+  <div class="inner">
+    <div class="strategy-label" style="background:#B8860B;"><span class="num" style="color:#FFE066;">06</span> Strategy Six | الاستراتيجية السادسة</div>
+    <div class="strategy-title-en">Gamification</div>
+    <div class="strategy-title-ar">التلعيب (الجيميفيكيشن)</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Applying game design elements — points, badges, leaderboards, levels, and challenges — within educational contexts to increase intrinsic motivation, enhance knowledge retention, and promote sustained engagement.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        تطبيق عناصر تصميم الألعاب — النقاط والشارات وجداول المتصدّرين والمستويات والتحديات — في السياقات التعليمية، بهدف تعزيز الدافعية الداخلية وتحسين الاحتفاظ بالمعرفة وتشجيع الانخراط المستدام.
+      </div>
+    </div>
+
+    <div class="gami-grid">
+      <div class="gami-card">
+        <div class="gami-icon">👁️</div>
+        <h4>Attracts &amp; Sustains Attention</h4>
+        <p>Novelty and challenge sustain student focus throughout the session.</p>
+        <div class="ar"><strong>جذب الانتباه والحفاظ عليه:</strong> تُبقي الجِدّة والتحدي تركيزَ الطالب طوال الجلسة.</div>
+      </div>
+      <div class="gami-card">
+        <div class="gami-icon">⚡</div>
+        <h4>Immediate Feedback</h4>
+        <p>Students know instantly if they answered correctly, enabling rapid self-correction.</p>
+        <div class="ar"><strong>التغذية الراجعة الفورية:</strong> يعلم الطالب على الفور ما إذا كانت إجابته صحيحة، مما يُمكّنه من التصحيح الذاتي السريع.</div>
+      </div>
+      <div class="gami-card">
+        <div class="gami-icon">🎯</div>
+        <h4>Appropriate Challenge</h4>
+        <p>Game mechanics create a 'flow state' — difficulty calibrated just above comfort level.</p>
+        <div class="ar"><strong>التحدي الملائم:</strong> تُولّد آليات اللعبة "حالة التدفق" — صعوبة مُعيَّرة تتخطى منطقة الراحة بقدر محدود.</div>
+      </div>
+      <div class="gami-card">
+        <div class="gami-icon">🏆</div>
+        <h4>Sense of Progress</h4>
+        <p>Progression systems and rewards foster accomplishment, motivating continued effort.</p>
+        <div class="ar"><strong>الإحساس بالتقدم:</strong> تُعزّز أنظمة التطوّر والمكافآت الشعورَ بالإنجاز وتحفّز الاستمرار في بذل الجهد.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STRATEGY 7 ═══════════════════════ -->
+<section id="s7" class="strategy-band">
+  <div class="inner">
+    <div class="strategy-label"><span class="num">07</span> Strategy Seven | الاستراتيجية السابعة</div>
+    <div class="strategy-title-en">Blended Learning</div>
+    <div class="strategy-title-ar">التعلم المدمج</div>
+
+    <div class="bilingual">
+      <div class="bi-en">
+        <div class="lang-badge-en">EN</div>
+        Combines traditional face-to-face classroom instruction with online learning activities, strategically integrating the strengths of both in-person and digital environments for a flexible, diverse educational experience.
+      </div>
+      <div class="bi-ar">
+        <div class="lang-badge-ar">عربي</div>
+        يجمع بين التعليم التقليدي وجهاً لوجه وأنشطة التعلم عبر الإنترنت، ويدمج بشكل استراتيجي نقاط القوة في كلا البيئتين الحضورية والرقمية لتوفير تجربة تعليمية مرنة ومتنوعة.
+      </div>
+    </div>
+
+    <div class="num-row">
+      <div class="row-num">1</div>
+      <div class="row-content">
+        <h4>🔁 Station Rotation Model</h4>
+        <p>Students rotate on a fixed schedule between face-to-face instruction, small group collaboration, and individual online learning tasks within a single session.</p>
+        <div class="row-ar"><div class="row-ar-title">نموذج التناوب على المحطات</div>يتناوب الطلاب وفق جدول ثابت بين التعليم وجهاً لوجه والعمل الجماعي والمهام الفردية عبر الإنترنت في جلسة واحدة.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">2</div>
+      <div class="row-content">
+        <h4>📱 Flex Model</h4>
+        <p>Online instruction serves as the primary delivery mode, with students progressing at their own pace and the instructor providing targeted face-to-face support as needed.</p>
+        <div class="row-ar"><div class="row-ar-title">النموذج المرن</div>يُمثّل التعليم عبر الإنترنت الوسيلة الأساسية للتقديم، فيتقدّم الطلاب بوتيرتهم الخاصة بينما يُقدّم المدرس دعماً حضورياً مُستهدَفاً عند الحاجة.</div>
+      </div>
+    </div>
+    <div class="num-row">
+      <div class="row-num">3</div>
+      <div class="row-content">
+        <h4>🧭 Self-Directed Model</h4>
+        <p>Students are given the autonomy to choose their own learning pathways, determining when, where, and how they engage with online and in-person components.</p>
+        <div class="row-ar"><div class="row-ar-title">نموذج التوجيه الذاتي</div>يمتلك الطلاب الاستقلالية الكاملة لاختيار مسارات تعلّمهم بأنفسهم، وتحديد متى وأين وكيف يتفاعلون مع المكوّنات الرقمية والحضورية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SUMMARY ═══════════════════════ -->
+<section id="summary">
+  <div class="inner">
+    <h2>📊 Chapter Summary</h2>
+    <div class="ar-h2">ملخص الفصل — الاستراتيجيات السبع لمحة سريعة</div>
+    <div style="overflow-x:auto;">
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Strategy | الاستراتيجية</th>
+          <th>Core Focus | المحور الأساسي</th>
+          <th>Key Methods | الأساليب الرئيسية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="num-badge">1</span></td>
+          <td>Active / Interactive Learning<br><span class="ar-cell">التعلم النشط / التفاعلي</span></td>
+          <td>Direct student participation<br><span class="ar-cell">المشاركة الفعلية للطالب</span></td>
+          <td>Think-Pair-Share, Peer Teaching, Socratic Seminars<br><span class="ar-cell">فكّر-ناقش-شارك، التعليم بين الأقران، الحلقات السقراطية</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">2</span></td>
+          <td>Collaborative &amp; Cooperative<br><span class="ar-cell">التعلم التعاوني والاشتراكي</span></td>
+          <td>Shared learning goals<br><span class="ar-cell">أهداف تعليمية مشتركة</span></td>
+          <td>Group Projects, Jigsaw, Learning Stations<br><span class="ar-cell">مشاريع جماعية، أسلوب الأحجية، محطات التعلم</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">3</span></td>
+          <td>Flipped Classroom<br><span class="ar-cell">الفصل المقلوب</span></td>
+          <td>Pre-class content delivery<br><span class="ar-cell">تقديم المحتوى قبل الفصل</span></td>
+          <td>LMS, Video Platforms, In-class Application<br><span class="ar-cell">إدارة التعلم، منصات الفيديو، التطبيق داخل الفصل</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">4</span></td>
+          <td>Personalized Learning<br><span class="ar-cell">التعلم الشخصي / المخصَّص</span></td>
+          <td>Individual learning paths<br><span class="ar-cell">مسارات تعلم فردية</span></td>
+          <td>ILPs, Adaptive Technology, Student-Driven Goals<br><span class="ar-cell">خطط فردية، تكنولوجيا تكيّفية، أهداف ذاتية</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">5</span></td>
+          <td>Problem-Based Learning (PBL)<br><span class="ar-cell">التعلم القائم على المشكلات</span></td>
+          <td>Real-world inquiry<br><span class="ar-cell">الاستقصاء الواقعي</span></td>
+          <td>Clinical Cases, Inquiry Projects, Presentation<br><span class="ar-cell">حالات سريرية، مشاريع استقصائية، عروض تقديمية</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">6</span></td>
+          <td>Gamification<br><span class="ar-cell">التلعيب</span></td>
+          <td>Motivation &amp; engagement<br><span class="ar-cell">الدافعية والانخراط</span></td>
+          <td>Points, Badges, Challenges, Immediate Feedback<br><span class="ar-cell">نقاط، شارات، تحديات، تغذية راجعة فورية</span></td>
+        </tr>
+        <tr>
+          <td><span class="num-badge">7</span></td>
+          <td>Blended Learning<br><span class="ar-cell">التعلم المدمج</span></td>
+          <td>Flexible hybrid delivery<br><span class="ar-cell">تقديم مرن مختلط</span></td>
+          <td>Station Rotation, Flex Model, Self-Directed<br><span class="ar-cell">تناوب المحطات، النموذج المرن، التوجيه الذاتي</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ KEY TAKEAWAY ═══════════════════════ -->
+<section id="takeaway">
+  <div style="font-size:11px;font-weight:700;letter-spacing:3px;color:var(--ar-accent);margin-bottom:18px;text-transform:uppercase;">Key Takeaway | الخلاصة الجوهرية</div>
+  <h2>Modern teaching strategies shift the focus<br>from the teacher to the student.</h2>
+  <div class="ar">
+    استراتيجيات التدريس الحديثة تُحوّل المحور<br>من المعلم إلى الطالب.
+  </div>
+  <p style="font-size:16px;opacity:0.85;max-width:700px;margin:0 auto 12px;">Active participation, collaboration, technology, and real-world problem-solving are the foundations that prepare nursing graduates for the challenges of modern healthcare.</p>
+  <p style="font-family:'Cairo',sans-serif;font-size:17px;opacity:0.78;max-width:700px;margin:0 auto;direction:rtl;line-height:1.9;">المشاركة الفعّالة والتعاون والتكنولوجيا وحل مشكلات الواقع هي الركائز التي تُعِدّ خرّيجي التمريض لمواجهة تحديات الرعاية الصحية الحديثة.</p>
+  <div class="takeaway-pills">
+    <span>🎯 Active Learning | نشط</span>
+    <span>🤝 Collaborative | تعاوني</span>
+    <span>🔄 Flipped | مقلوب</span>
+    <span>👤 Personalized | شخصي</span>
+    <span>🧩 PBL | قائم على المشكلات</span>
+    <span>🎮 Gamification | تلعيب</span>
+    <span>💻 Blended | مدمج</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MCQ ═══════════════════════ -->
+<section id="mcq">
+  <div class="inner">
+    <div class="quiz-header">
+      <h2>📝 Multiple Choice Questions</h2>
+      <div class="ar">أسئلة الاختيار من متعدد</div>
+      <p style="font-size:13px;opacity:0.80;margin-top:8px;">15 Questions | ١٥ سؤال — Chapter 3: Modern Teaching Strategies</p>
+    </div>
+
+    <!-- Q1 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 1 | السؤال الأول</div>
+      <div class="mcq-q-en">Modern teaching strategies primarily place which party at the centre of the learning process?</div>
+      <div class="mcq-q-ar">تضع استراتيجيات التدريس الحديثة في المقام الأول أيَّ طرفٍ في مركز العملية التعليمية؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">The teacher</div><div class="opt-text-ar">المعلم</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">The curriculum</div><div class="opt-text-ar">المنهج الدراسي</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">The student ✓</div><div class="opt-text-ar">الطالب ✓</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">The institution</div><div class="opt-text-ar">المؤسسة التعليمية</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: C — The student<div class="ar">الإجابة الصحيحة: ج — الطالب</div></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 2 | السؤال الثاني</div>
+      <div class="mcq-q-en">Which theoretical framework underpins Active / Interactive Learning?</div>
+      <div class="mcq-q-ar">ما النظرية التي يرتكز عليها التعلم النشط / التفاعلي؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Behaviourist theory</div><div class="opt-text-ar">النظرية السلوكية</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Constructivist learning theory ✓</div><div class="opt-text-ar">نظرية التعلم البنائي ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Cognitive load theory</div><div class="opt-text-ar">نظرية الحمل المعرفي</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Humanistic theory</div><div class="opt-text-ar">النظرية الإنسانية</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B — Constructivist learning theory<div class="ar">الإجابة الصحيحة: ب — نظرية التعلم البنائي</div></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 3 | السؤال الثالث</div>
+      <div class="mcq-q-en">In the "Think-Pair-Share" technique, what is the correct sequence?</div>
+      <div class="mcq-q-ar">في أسلوب "فكّر – ناقش – شارك"، ما الترتيب الصحيح للخطوات؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Share → Think → Pair</div><div class="opt-text-ar">شارك → فكّر → ناقش</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Pair → Share → Think</div><div class="opt-text-ar">ناقش → شارك → فكّر</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Think → Pair → Share ✓</div><div class="opt-text-ar">فكّر → ناقش → شارك ✓</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Think → Share → Pair</div><div class="opt-text-ar">فكّر → شارك → ناقش</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: C — Think → Pair → Share<div class="ar">الإجابة الصحيحة: ج — فكّر → ناقش → شارك</div></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 4 | السؤال الرابع</div>
+      <div class="mcq-q-en">In the Jigsaw Technique, each student:</div>
+      <div class="mcq-q-ar">في أسلوب الأحجية (Jigsaw)، يقوم كل طالب بـ:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Memorises the entire chapter independently</div><div class="opt-text-ar">حفظ الفصل بأكمله بشكل مستقل</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Becomes an expert on a subtopic and teaches it to peers ✓</div><div class="opt-text-ar">يتخصّص في جزء ويُعلّمه للزملاء ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Rotates through online platforms only</div><div class="opt-text-ar">التنقل بين المنصات الإلكترونية فقط</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Completes a self-assessment quiz</div><div class="opt-text-ar">إجراء اختبار تقييم ذاتي</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 5 | السؤال الخامس</div>
+      <div class="mcq-q-en">The Flipped Classroom model is best described as:</div>
+      <div class="mcq-q-ar">يُوصف نموذج الفصل المقلوب على أفضل وجه بأنه:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Delivering all content through lectures in class</div><div class="opt-text-ar">تقديم جميع المحتوى من خلال محاضرات داخل الفصل</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Students study at home and apply knowledge in class ✓</div><div class="opt-text-ar">يدرس الطلاب في المنزل ويطبّقون المعرفة في الفصل ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Replacing all classroom time with online sessions</div><div class="opt-text-ar">استبدال وقت الفصل الدراسي بالكامل بجلسات إلكترونية</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Using games to motivate students</div><div class="opt-text-ar">استخدام الألعاب لتحفيز الطلاب</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 6 | السؤال السادس</div>
+      <div class="mcq-q-en">Individualized Learning Plans (ILPs) are a feature of which strategy?</div>
+      <div class="mcq-q-ar">تُعدّ خطط التعلم الفردية (ILPs) ميزةً من مميزات أي استراتيجية؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Active Learning</div><div class="opt-text-ar">التعلم النشط</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Gamification</div><div class="opt-text-ar">التلعيب</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Personalized Learning ✓</div><div class="opt-text-ar">التعلم الشخصي ✓</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Blended Learning</div><div class="opt-text-ar">التعلم المدمج</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: C — Personalized Learning<div class="ar">الإجابة الصحيحة: ج — التعلم الشخصي</div></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 7 | السؤال السابع</div>
+      <div class="mcq-q-en">Problem-Based Learning (PBL) in nursing education primarily develops:</div>
+      <div class="mcq-q-ar">يُنمّي التعلم القائم على المشكلات (PBL) في تعليم التمريض بشكل رئيسي:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Memorisation of drug names</div><div class="opt-text-ar">حفظ أسماء الأدوية</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Diagnostic reasoning, ethical decision-making, and interprofessional communication ✓</div><div class="opt-text-ar">الاستدلال التشخيصي واتخاذ القرار الأخلاقي والتواصل بين المهن ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Speed of document completion</div><div class="opt-text-ar">سرعة إتمام الوثائق</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Administrative skills</div><div class="opt-text-ar">المهارات الإدارية</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 8 | السؤال الثامن</div>
+      <div class="mcq-q-en">The "flow state" in gamification refers to:</div>
+      <div class="mcq-q-ar">يُشير مفهوم "حالة التدفق" في التلعيب إلى:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Students feeling bored due to easy tasks</div><div class="opt-text-ar">شعور الطلاب بالملل بسبب سهولة المهام</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Difficulty calibrated just above comfort level, maintaining optimal engagement ✓</div><div class="opt-text-ar">صعوبة مُعيَّرة تتخطى منطقة الراحة قليلاً للحفاظ على التفاعل الأمثل ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Free time given to students</div><div class="opt-text-ar">وقت حر يُمنح للطلاب</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Online streaming of lectures</div><div class="opt-text-ar">بث المحاضرات عبر الإنترنت</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 9 | السؤال التاسع</div>
+      <div class="mcq-q-en">In the Station Rotation Model of Blended Learning, students:</div>
+      <div class="mcq-q-ar">في نموذج التناوب على المحطات ضمن التعلم المدمج، يقوم الطلاب بـ:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Study only online with no class interaction</div><div class="opt-text-ar">الدراسة عبر الإنترنت فقط دون أي تفاعل صفي</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Rotate on a fixed schedule between face-to-face, group, and online tasks ✓</div><div class="opt-text-ar">التناوب وفق جدول ثابت بين التعلم الحضوري والجماعي والإلكتروني ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Work on one task for the entire session</div><div class="opt-text-ar">العمل على مهمة واحدة طوال الجلسة</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Choose when to attend class</div><div class="opt-text-ar">اختيار موعد حضور الفصل الدراسي</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 10 | السؤال العاشر</div>
+      <div class="mcq-q-en">Which of the following is NOT a technique of Active / Interactive Learning?</div>
+      <div class="mcq-q-ar">أيٌّ مما يلي لا يُعدّ من أساليب التعلم النشط / التفاعلي؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Socratic Seminars</div><div class="opt-text-ar">الحلقات السقراطية</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Peer Teaching</div><div class="opt-text-ar">التعليم بين الأقران</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Adaptive Learning Technology ✓</div><div class="opt-text-ar">تكنولوجيا التعلم التكيّفي ✓</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Think-Pair-Share</div><div class="opt-text-ar">فكّر-ناقش-شارك</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: C — Adaptive Learning Technology belongs to Personalized Learning<div class="ar">الإجابة الصحيحة: ج — تكنولوجيا التعلم التكيّفي تنتمي إلى استراتيجية التعلم الشخصي</div></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 11 | السؤال الحادي عشر</div>
+      <div class="mcq-q-en">Which four core skills do modern teaching strategies aim to develop?</div>
+      <div class="mcq-q-ar">ما المهارات الأربع الجوهرية التي تسعى استراتيجيات التدريس الحديثة إلى تنميتها؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Reading, Writing, Arithmetic, Speaking</div><div class="opt-text-ar">القراءة والكتابة والحساب والتحدث</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Critical thinking, Collaboration, Creativity, Problem-solving ✓</div><div class="opt-text-ar">التفكير النقدي والتعاون والإبداع وحل المشكلات ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Memorisation, Speed, Accuracy, Discipline</div><div class="opt-text-ar">الحفظ والسرعة والدقة والانضباط</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Research, Analysis, Reporting, Filing</div><div class="opt-text-ar">البحث والتحليل والتقرير والأرشفة</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 12 | السؤال الثاني عشر</div>
+      <div class="mcq-q-en">In the Flex Model of Blended Learning, the primary mode of delivery is:</div>
+      <div class="mcq-q-ar">في النموذج المرن (Flex Model) للتعلم المدمج، تتمثّل الوسيلة الأساسية للتقديم في:</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Face-to-face lectures only</div><div class="opt-text-ar">المحاضرات الحضورية فقط</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Online instruction, with face-to-face support as needed ✓</div><div class="opt-text-ar">التعليم الإلكتروني مع دعم حضوري عند الحاجة ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Game-based activities</div><div class="opt-text-ar">الأنشطة القائمة على الألعاب</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Problem-based clinical cases</div><div class="opt-text-ar">الحالات السريرية القائمة على المشكلات</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 13 | السؤال الثالث عشر</div>
+      <div class="mcq-q-en">Why is collaborative learning especially essential in nursing education?</div>
+      <div class="mcq-q-ar">لماذا يُعدّ التعلم التعاوني ضرورياً بشكل خاص في تعليم التمريض؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">It reduces the workload for instructors</div><div class="opt-text-ar">يُقلّل من عبء العمل على أعضاء هيئة التدريس</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">It eliminates the need for clinical placements</div><div class="opt-text-ar">يُلغي الحاجة إلى التدريب السريري</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Teamwork is foundational to safe patient care ✓</div><div class="opt-text-ar">العمل الجماعي ركيزة أساسية لتقديم رعاية آمنة للمريض ✓</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">It is required by examination boards</div><div class="opt-text-ar">تفرضه هيئات الامتحانات</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: C<div class="ar">الإجابة الصحيحة: ج</div></div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 14 | السؤال الرابع عشر</div>
+      <div class="mcq-q-en">Adaptive Learning Technology automatically adjusts which elements based on student performance?</div>
+      <div class="mcq-q-ar">تُعدّل تكنولوجيا التعلم التكيّفي آلياً أيّ عناصر بناءً على أداء الطالب؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Student grades and attendance records</div><div class="opt-text-ar">درجات الطالب وسجلات الحضور</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">The difficulty, format, and pacing of content ✓</div><div class="opt-text-ar">مستوى الصعوبة وصيغة المحتوى ووتيرة تقديمه ✓</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Classroom seating arrangements</div><div class="opt-text-ar">ترتيب مقاعد الفصل الدراسي</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Instructor teaching style</div><div class="opt-text-ar">أسلوب تدريس المدرس</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: B<div class="ar">الإجابة الصحيحة: ب</div></div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="mcq-item">
+      <div class="mcq-q-num">Question 15 | السؤال الخامس عشر</div>
+      <div class="mcq-q-en">Which strategy combines traditional face-to-face instruction with online learning activities?</div>
+      <div class="mcq-q-ar">أي استراتيجية تجمع بين التعليم التقليدي الحضوري وأنشطة التعلم عبر الإنترنت؟</div>
+      <div class="options">
+        <div class="option"><div class="opt-letter">A</div><div><div class="opt-text-en">Flipped Classroom</div><div class="opt-text-ar">الفصل المقلوب</div></div></div>
+        <div class="option"><div class="opt-letter">B</div><div><div class="opt-text-en">Problem-Based Learning</div><div class="opt-text-ar">التعلم القائم على المشكلات</div></div></div>
+        <div class="option"><div class="opt-letter">C</div><div><div class="opt-text-en">Gamification</div><div class="opt-text-ar">التلعيب</div></div></div>
+        <div class="option"><div class="opt-letter">D</div><div><div class="opt-text-en">Blended Learning ✓</div><div class="opt-text-ar">التعلم المدمج ✓</div></div></div>
+      </div>
+      <div class="answer-reveal">✅ Correct Answer: D — Blended Learning<div class="ar">الإجابة الصحيحة: د — التعلم المدمج</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ ESSAY ═══════════════════════ -->
+<section id="essay">
+  <div class="inner">
+    <div class="quiz-header" style="background: linear-gradient(135deg, #00504A, #007A70);">
+      <h2>✍️ Essay Questions</h2>
+      <div class="ar">الأسئلة المقالية</div>
+      <p style="font-size:13px;opacity:0.80;margin-top:8px;">8 Questions | ٨ أسئلة — Write detailed answers with examples</p>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 1 | السؤال المقالي الأول</div>
+      <div class="essay-q-en">Define modern teaching strategies and explain why they represent a significant shift from traditional education. What are the four core competencies they aim to develop?</div>
+      <div class="essay-q-ar">عرِّف استراتيجيات التدريس الحديثة، واشرح لماذا تُمثّل تحوّلاً جوهرياً عن التعليم التقليدي. ما الكفاءات الأربع الجوهرية التي تسعى إلى تنميتها؟</div>
+      <div class="essay-hint">💡 Hint: Contrast with passive/rote learning, mention constructivism, technology, and student-centeredness.</div>
+      <div class="essay-hint-ar">💡 تلميح: قارن بالتعليم السلبي والحفظ الآلي، واذكر البنائية والتكنولوجيا ومحورية الطالب.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 2 | السؤال المقالي الثاني</div>
+      <div class="essay-q-en">Compare and contrast Active / Interactive Learning with Collaborative and Cooperative Learning. In what situations would a nursing instructor prefer each approach?</div>
+      <div class="essay-q-ar">قارن بين التعلم النشط / التفاعلي والتعلم التعاوني والاشتراكي. في أي مواقف يُفضّل المدرس في مجال التمريض كل مدخل؟</div>
+      <div class="essay-hint">💡 Hint: Discuss Think-Pair-Share vs. Jigsaw, individual vs. group goals, nursing teamwork context.</div>
+      <div class="essay-hint-ar">💡 تلميح: ناقش فكّر-ناقش-شارك مقابل الأحجية، الأهداف الفردية مقابل الجماعية، سياق العمل الجماعي في التمريض.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 3 | السؤال المقالي الثالث</div>
+      <div class="essay-q-en">Describe the Flipped Classroom model in detail. How does it benefit nursing students in terms of learning outcomes? What technology tools are typically used?</div>
+      <div class="essay-q-ar">صِف نموذج الفصل المقلوب بالتفصيل. كيف يُفيد طلاب التمريض من حيث مخرجات التعلم؟ وما أدوات التكنولوجيا المستخدمة عادةً؟</div>
+      <div class="essay-hint">💡 Hint: Before/In/Technology phases, benefits: pacing, deeper engagement, increased motivation.</div>
+      <div class="essay-hint-ar">💡 تلميح: مراحل قبل/داخل/التكنولوجيا، الفوائد: وتيرة التعلم، التفاعل العميق، زيادة الدافعية.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 4 | السؤال المقالي الرابع</div>
+      <div class="essay-q-en">Explain Personalized Learning and its three components (ILPs, Adaptive Technology, Student-Driven Learning). How can this strategy meet the diverse needs of nursing students?</div>
+      <div class="essay-q-ar">اشرح مفهوم التعلم الشخصي ومكوّناته الثلاثة (خطط التعلم الفردية، التكنولوجيا التكيّفية، التعلم الموجَّه ذاتياً). كيف يمكن لهذه الاستراتيجية أن تلبّي الاحتياجات المتنوعة لطلاب التمريض؟</div>
+      <div class="essay-hint">💡 Hint: Tailor to strength/weakness, prior knowledge, learning style, autonomy, adaptive platforms.</div>
+      <div class="essay-hint-ar">💡 تلميح: التكيّف مع نقاط القوة/الضعف والمعرفة السابقة وأسلوب التعلم والاستقلالية والمنصات التكيّفية.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 5 | السؤال المقالي الخامس</div>
+      <div class="essay-q-en">Discuss Problem-Based Learning (PBL) as an instructional strategy. What makes it particularly valuable in nursing education? Provide a clinical example of how PBL could be implemented.</div>
+      <div class="essay-q-ar">ناقش التعلم القائم على المشكلات (PBL) بوصفه استراتيجية تعليمية. ما الذي يجعله ذا قيمة خاصة في تعليم التمريض؟ اذكر مثالاً سريرياً لكيفية تطبيق PBL.</div>
+      <div class="essay-hint">💡 Hint: Inquiry-driven, real-world problems, three pillars (connection, inquiry, presentation), nursing application note.</div>
+      <div class="essay-hint-ar">💡 تلميح: الاستقصاء والمشكلات الواقعية والركائز الثلاث (الارتباط والاستقصاء والعرض) وتطبيقات التمريض.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 6 | السؤال المقالي السادس</div>
+      <div class="essay-q-en">Analyse the role of Gamification in enhancing student engagement. Explain its four key benefits and how game elements such as points, badges, and leaderboards can be applied in a nursing classroom.</div>
+      <div class="essay-q-ar">حلِّل دور التلعيب في تعزيز انخراط الطلاب. اشرح فوائده الأربع الرئيسية، وكيف يمكن تطبيق عناصر اللعبة كالنقاط والشارات وجداول المتصدّرين في فصل تمريض.</div>
+      <div class="essay-hint">💡 Hint: Attention, feedback, flow state, progress — relate to nursing quiz apps, simulation scores.</div>
+      <div class="essay-hint-ar">💡 تلميح: الانتباه، التغذية الراجعة، حالة التدفق، التقدم — ربطها بتطبيقات الاختبار والمحاكاة في التمريض.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 7 | السؤال المقالي السابع</div>
+      <div class="essay-q-en">Compare the three models of Blended Learning (Station Rotation, Flex, Self-Directed). Which model do you consider most suitable for nursing education and why?</div>
+      <div class="essay-q-ar">قارن بين نماذج التعلم المدمج الثلاثة (التناوب على المحطات، المرن، التوجيه الذاتي). أي نموذج تراه الأنسب لتعليم التمريض ولماذا؟</div>
+      <div class="essay-hint">💡 Hint: Consider clinical simulation needs, skill practice, diverse student backgrounds, technology access.</div>
+      <div class="essay-hint-ar">💡 تلميح: ضع في الحسبان احتياجات محاكاة المهارات السريرية والخلفيات المتنوعة للطلاب وإمكانية الوصول للتكنولوجيا.</div>
+    </div>
+
+    <div class="essay-item">
+      <div class="essay-q-num">Essay Question 8 | السؤال المقالي الثامن</div>
+      <div class="essay-q-en">If you were designing a nursing course unit, which combination of two modern teaching strategies would you choose and why? Explain how you would implement them together in a single teaching session.</div>
+      <div class="essay-q-ar">لو كنت مصمّماً وحدة تعليمية في مجال التمريض، أيّ مزيج من استراتيجيتين حديثتين ستختار ولماذا؟ اشرح كيف ستُطبّقهما معاً في جلسة تعليمية واحدة.</div>
+      <div class="essay-hint">💡 Hint: Open-ended. Consider Flipped + PBL, or Gamification + Collaborative. Justify with learning outcomes.</div>
+      <div class="essay-hint-ar">💡 تلميح: سؤال مفتوح. فكّر في الجمع بين الفصل المقلوب وPBL، أو التلعيب والتعلم التعاوني. اجعل مبرّراتك مرتبطة بمخرجات التعلم.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Chapter 3: Modern Teaching Strategies &nbsp;|&nbsp; Teaching &amp; Learning Strategies and Skills &nbsp;|&nbsp;
+  Dr. Saeed Mohammed Abdelguid &nbsp;|&nbsp; College of Nursing – Al Ryada University
+  <br><span style="opacity:0.5;font-size:11px;">الفصل الثالث: استراتيجيات التدريس الحديثة | كلية التمريض – جامعة الريادة</span>
+</footer>
+
+</body>
+</html>

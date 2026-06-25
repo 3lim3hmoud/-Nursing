@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom's Taxonomy — محاضرة شاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1623;
+    --surface: #19253a;
+    --surface2: #1e2d45;
+    --border: #2a3d5a;
+    --accent: #f0c040;
+    --accent2: #5b9cf6;
+    --accent3: #6ee7b7;
+    --text: #e8edf5;
+    --muted: #8da0bb;
+    --l1: #3b82f6;
+    --l2: #10b981;
+    --l3: #f59e0b;
+    --l4: #ef4444;
+    --l5: #8b5cf6;
+    --l6: #ec4899;
+    --cog: #3b82f6;
+    --aff: #be185d;
+    --psy: #059669;
+    --r: 0.75rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Tajawal', 'Inter', sans-serif;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,22,35,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  nav .logo { font-weight: 800; font-size: 1.1rem; color: var(--accent); flex: 1; }
+  nav a {
+    color: var(--muted); text-decoration: none; font-size: 0.82rem;
+    font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 0.4rem;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--accent); background: rgba(240,192,64,0.08); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1e38 100%);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(91,156,246,0.12) 0%, transparent 70%);
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent) 0%, #f97316 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem; position: relative;
+  }
+  .hero .sub {
+    font-size: 1.2rem; color: var(--accent2);
+    font-weight: 600; margin-bottom: 0.4rem;
+  }
+  .hero .ar { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+  .hero-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+  .chip {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 2rem; padding: 0.35rem 1rem;
+    font-size: 0.8rem; color: var(--muted);
+  }
+
+  /* ── LAYOUT ── */
+  main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 3.5rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1.8rem; padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-tag {
+    background: var(--accent); color: #000;
+    font-weight: 800; font-size: 0.72rem;
+    padding: 0.2rem 0.6rem; border-radius: 0.3rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-header h2 { font-size: 1.7rem; font-weight: 800; }
+
+  /* ── BILINGUAL BLOCK ── */
+  .bi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    border-right: 4px solid var(--accent2);
+  }
+  .bi .en {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem; color: #c8d8f0;
+    margin-bottom: 0.35rem; direction: ltr;
+  }
+  .bi .ar-text {
+    font-size: 1rem; color: var(--accent3);
+    font-weight: 600;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-right: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; right: 0.9rem; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .tl-item {
+    position: relative; margin-bottom: 1.5rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1rem 1.2rem;
+  }
+  .tl-item::before {
+    content: ''; position: absolute;
+    right: -2.5rem; top: 1rem;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+  }
+  .tl-year {
+    font-size: 0.8rem; font-weight: 800; color: var(--accent);
+    margin-bottom: 0.4rem; font-family: 'Inter', sans-serif;
+  }
+
+  /* ── LEVEL CARDS ── */
+  .levels { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 640px) { .levels { grid-template-columns: 1fr; } }
+  .level-card {
+    border-radius: var(--r); padding: 1.2rem;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .level-card::before {
+    content: ''; position: absolute; inset: 0; opacity: 0.06;
+  }
+  .level-card.l1 { border-right: 4px solid var(--l1); }
+  .level-card.l1::before { background: var(--l1); }
+  .level-card.l2 { border-right: 4px solid var(--l2); }
+  .level-card.l2::before { background: var(--l2); }
+  .level-card.l3 { border-right: 4px solid var(--l3); }
+  .level-card.l3::before { background: var(--l3); }
+  .level-card.l4 { border-right: 4px solid var(--l4); }
+  .level-card.l4::before { background: var(--l4); }
+  .level-card.l5 { border-right: 4px solid var(--l5); }
+  .level-card.l5::before { background: var(--l5); }
+  .level-card.l6 { border-right: 4px solid var(--l6); }
+  .level-card.l6::before { background: var(--l6); }
+  .level-num {
+    font-size: 0.72rem; font-weight: 800; font-family: 'Inter', sans-serif;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.3rem; opacity: 0.7;
+  }
+  .level-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.15rem; }
+  .level-title-ar { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .level-desc { font-size: 0.88rem; color: #aec0d8; margin-bottom: 0.3rem; font-family: 'Inter', sans-serif; direction: ltr; }
+  .level-desc-ar { font-size: 0.9rem; color: var(--accent3); margin-bottom: 0.5rem; }
+  .verbs {
+    font-size: 0.78rem; font-family: 'Inter', sans-serif;
+    color: var(--muted); margin-bottom: 0.4rem;
+    direction: ltr;
+  }
+  .verbs span { color: var(--text); }
+  .example {
+    font-size: 0.82rem; font-family: 'Inter', sans-serif;
+    color: var(--accent); font-style: italic;
+    background: rgba(240,192,64,0.07); padding: 0.35rem 0.6rem;
+    border-radius: 0.3rem; direction: ltr;
+  }
+  .example-ar { font-size: 0.88rem; color: var(--accent); margin-top: 0.3rem; }
+
+  /* ── DOMAINS ── */
+  .domains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 640px) { .domains { grid-template-columns: 1fr; } }
+  .domain-card {
+    border-radius: var(--r); padding: 1.4rem;
+    text-align: center; border: 1px solid var(--border);
+  }
+  .domain-card.cog { border-top: 4px solid var(--cog); }
+  .domain-card.aff { border-top: 4px solid var(--aff); }
+  .domain-card.psy { border-top: 4px solid var(--psy); }
+  .domain-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .domain-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.2rem; }
+  .domain-name-ar { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .domain-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    padding: 0.2rem 0.6rem; border-radius: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  .cog .domain-tag { background: rgba(59,130,246,0.2); color: #93c5fd; }
+  .aff .domain-tag { background: rgba(190,24,93,0.2); color: #f9a8d4; }
+  .psy .domain-tag { background: rgba(5,150,105,0.2); color: #6ee7b7; }
+  .domain-list { list-style: none; text-align: right; }
+  .domain-list li {
+    font-size: 0.82rem; padding: 0.2rem 0;
+    color: var(--muted); font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid var(--border);
+  }
+  .domain-list li:last-child { border: none; }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; direction: ltr; }
+  .compare-table th {
+    background: var(--surface2); padding: 0.8rem 1rem;
+    text-align: left; font-weight: 700; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    border-bottom: 2px solid var(--border); color: var(--accent);
+  }
+  .compare-table td {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .orig { color: #93c5fd; font-weight: 600; }
+  .rev { color: #6ee7b7; font-weight: 600; }
+  .change { color: var(--muted); font-size: 0.85rem; }
+
+  /* ── ABCD ── */
+  .abcd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 640px) { .abcd-grid { grid-template-columns: 1fr; } }
+  .abcd-card {
+    border-radius: var(--r); padding: 1.3rem;
+    border: 1px solid var(--border);
+  }
+  .abcd-letter {
+    font-size: 3rem; font-weight: 900; line-height: 1;
+    font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;
+  }
+  .abcd-card:nth-child(1) .abcd-letter { color: var(--l1); }
+  .abcd-card:nth-child(2) .abcd-letter { color: var(--l2); }
+  .abcd-card:nth-child(3) .abcd-letter { color: var(--l3); }
+  .abcd-card:nth-child(4) .abcd-letter { color: var(--l5); }
+  .abcd-word { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.15rem; }
+  .abcd-word-ar { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.6rem; }
+  .abcd-desc { font-size: 0.88rem; color: #aec0d8; font-family: 'Inter', sans-serif; direction: ltr; margin-bottom: 0.3rem; }
+  .abcd-desc-ar { font-size: 0.9rem; color: var(--accent3); margin-bottom: 0.6rem; }
+  .abcd-eg { font-size: 0.8rem; color: var(--accent); font-style: italic; font-family: 'Inter', sans-serif; direction: ltr; }
+  .abcd-eg-ar { font-size: 0.82rem; color: var(--accent); margin-top: 0.2rem; }
+
+  /* ── SMART ── */
+  .smart-row {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1rem 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .smart-letter {
+    font-size: 2.2rem; font-weight: 900;
+    font-family: 'Inter', sans-serif;
+    min-width: 2.5rem; text-align: center; line-height: 1;
+  }
+  .smart-row:nth-child(1) .smart-letter { color: var(--l1); }
+  .smart-row:nth-child(2) .smart-letter { color: var(--l2); }
+  .smart-row:nth-child(3) .smart-letter { color: var(--l3); }
+  .smart-row:nth-child(4) .smart-letter { color: var(--l4); }
+  .smart-row:nth-child(5) .smart-letter { color: var(--l5); }
+  .smart-body { flex: 1; }
+  .smart-word { font-weight: 800; font-size: 1rem; }
+  .smart-word-ar { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.3rem; }
+  .not-yes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.4rem; }
+  .not-tag, .yes-tag {
+    font-size: 0.78rem; padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem; font-family: 'Inter', sans-serif;
+  }
+  .not-tag { background: rgba(239,68,68,0.12); color: #fca5a5; }
+  .yes-tag { background: rgba(16,185,129,0.12); color: #6ee7b7; }
+
+  /* ── WEAK/STRONG ── */
+  .ws-pair { margin-bottom: 1.5rem; }
+  .weak, .strong {
+    padding: 1rem 1.2rem; border-radius: var(--r); margin-bottom: 0.5rem;
+  }
+  .weak {
+    background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.3);
+    border-right: 4px solid #ef4444;
+  }
+  .strong {
+    background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.3);
+    border-right: 4px solid #10b981;
+  }
+  .ws-label {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.3rem; font-family: 'Inter', sans-serif;
+  }
+  .weak .ws-label { color: #f87171; }
+  .strong .ws-label { color: #34d399; }
+  .ws-text { font-size: 0.9rem; font-family: 'Inter', sans-serif; direction: ltr; color: #c8d8f0; }
+  .ws-text-ar { font-size: 0.92rem; color: var(--muted); margin-top: 0.3rem; }
+
+  /* ── PYRAMID VIZ ── */
+  .pyramid-wrap {
+    display: flex; justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .pyramid svg { max-width: 100%; height: auto; }
+
+  /* ── SUMMARY ── */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 580px) { .summary-grid { grid-template-columns: 1fr; } }
+  .sum-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1.1rem 1.3rem;
+    display: flex; gap: 0.8rem; align-items: flex-start;
+  }
+  .sum-num {
+    font-size: 1.4rem; font-weight: 900; color: var(--accent);
+    font-family: 'Inter', sans-serif; min-width: 2rem; line-height: 1.2;
+  }
+  .sum-title { font-weight: 700; margin-bottom: 0.2rem; }
+  .sum-ar { font-size: 0.88rem; color: var(--muted); }
+
+  /* ── QUIZ ── */
+  .quiz-section { margin-top: 3rem; }
+  .quiz-section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .quiz-section .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .q-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1.3rem 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .q-num {
+    font-size: 0.75rem; font-weight: 800; color: var(--accent);
+    font-family: 'Inter', sans-serif; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 0.5rem;
+  }
+  .q-text {
+    font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem;
+  }
+  .q-text-ar { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.8rem; }
+  .options { list-style: none; display: grid; gap: 0.5rem; }
+  .options li {
+    padding: 0.7rem 1rem; border-radius: 0.5rem;
+    border: 1px solid var(--border); cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 0.88rem;
+    transition: all 0.2s; display: flex; align-items: center; gap: 0.7rem;
+    direction: ltr;
+  }
+  .options li:hover { border-color: var(--accent2); background: rgba(91,156,246,0.07); }
+  .options li.correct { border-color: #10b981; background: rgba(16,185,129,0.1); color: #6ee7b7; }
+  .options li.wrong { border-color: #ef4444; background: rgba(239,68,68,0.08); color: #fca5a5; }
+  .options li .opt-letter {
+    font-weight: 800; min-width: 1.5rem; text-align: center;
+    background: var(--surface2); padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem; font-size: 0.8rem;
+  }
+  .feedback {
+    margin-top: 0.8rem; padding: 0.7rem 1rem; border-radius: 0.5rem;
+    font-size: 0.88rem; font-weight: 600; display: none;
+    font-family: 'Inter', sans-serif; direction: ltr;
+  }
+  .feedback.show { display: block; }
+  .feedback.ok { background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+  .feedback.err { background: rgba(239,68,68,0.1); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+
+  /* ── ESSAY ── */
+  .essay-section { margin-top: 3rem; }
+  .essay-section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .essay-q {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1.3rem 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .e-num {
+    font-size: 0.75rem; font-weight: 800; color: var(--l5);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-family: 'Inter', sans-serif; margin-bottom: 0.5rem;
+  }
+  .e-text { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
+  .e-text-ar { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.7rem; }
+  .e-hint { font-size: 0.82rem; color: var(--accent3); font-family: 'Inter', sans-serif; direction: ltr; }
+  .e-hint-ar { font-size: 0.85rem; color: var(--accent3); margin-top: 0.2rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border); color: var(--muted);
+    font-size: 0.82rem;
+  }
+  footer strong { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🧠 Bloom's Taxonomy</div>
+  <a href="#background">History</a>
+  <a href="#original">Original</a>
+  <a href="#revised">Revised</a>
+  <a href="#domains">Domains</a>
+  <a href="#cognitive">Cognitive</a>
+  <a href="#psychomotor">Psychomotor</a>
+  <a href="#affective">Affective</a>
+  <a href="#abcd">ABCD</a>
+  <a href="#summary">Summary</a>
+  <a href="#quiz">Quiz</a>
+</nav>
+
+<div class="hero">
+  <h1>Bloom's Taxonomy</h1>
+  <div class="sub">A Comprehensive Bilingual Lecture</div>
+  <div class="ar">محاضرة شاملة ثنائية اللغة</div>
+  <div class="hero-chips">
+    <span class="chip">Bloom 1956</span>
+    <span class="chip">Anderson & Krathwohl 2001</span>
+    <span class="chip">3 Domains</span>
+    <span class="chip">ABCD Model</span>
+    <span class="chip">SMART Objectives</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══════════════════════════════════════
+       BACKGROUND
+  ════════════════════════════════════════ -->
+  <section class="section" id="background">
+    <div class="section-header">
+      <div class="section-tag">Background</div>
+      <h2>Benjamin S. Bloom & the Origins — النشأة والتاريخ</h2>
+    </div>
+
+    <div class="bi">
+      <div class="en">Benjamin S. Bloom (1913–1999) was a psychologist and educator at the University of Chicago.</div>
+      <div class="ar-text">بنيامين بلوم كان عالم نفس وتربوي في جامعة شيكاغو.</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1948</div>
+        <div class="bi" style="margin:0; border:none; padding:0; background:transparent;">
+          <div class="en">At an APA conference, Bloom proposed a classification system for educational objectives.</div>
+          <div class="ar-text">في مؤتمر جمعية علم النفس الأمريكية، اقترح بلوم نظام تصنيف للأهداف التعليمية.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1956</div>
+        <div class="bi" style="margin:0; border:none; padding:0; background:transparent;">
+          <div class="en">Published "Taxonomy of Educational Objectives: Cognitive Domain" — the original 6-level hierarchy that revolutionized curriculum design.</div>
+          <div class="ar-text">نشر كتاب "تصنيف الأهداف التعليمية: المجال المعرفي" — التسلسل الهرمي الأصلي ذو 6 مستويات الذي أحدث ثورة في تصميم المناهج.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1964</div>
+        <div class="bi" style="margin:0; border:none; padding:0; background:transparent;">
+          <div class="en">Krathwohl, Bloom & Masia published the Affective Domain taxonomy, addressing attitudes and values.</div>
+          <div class="ar-text">كراثول وبلوم وماسيا نشروا تصنيف المجال الوجداني الذي يتناول المواقف والقيم.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2001</div>
+        <div class="bi" style="margin:0; border:none; padding:0; background:transparent;">
+          <div class="en">Anderson & Krathwohl revised the taxonomy — renaming levels with verbs and moving Synthesis → Create to the top.</div>
+          <div class="ar-text">أندرسون وكراثول راجعا التصنيف — غيّرا أسماء المستويات إلى أفعال، ونقلا "التركيب" ليصبح "الإنشاء" في القمة.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ORIGINAL TAXONOMY
+  ════════════════════════════════════════ -->
+  <section class="section" id="original">
+    <div class="section-header">
+      <div class="section-tag">1956</div>
+      <h2>Original Taxonomy — التصنيف الأصلي</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Six levels in the Cognitive Domain, arranged from lower to higher order thinking.</div>
+      <div class="ar-text">ستة مستويات في المجال المعرفي، مرتبة من التفكير البسيط إلى المعقد.</div>
+    </div>
+    <div class="levels">
+      <div class="level-card l1">
+        <div class="level-num" style="color:var(--l1)">L1 — المستوى الأول</div>
+        <div class="level-title">Knowledge</div>
+        <div class="level-title-ar">المعرفة</div>
+        <div class="level-desc">Recall of facts, terms, and basic concepts.</div>
+        <div class="level-desc-ar">استرجاع الحقائق والمصطلحات والمفاهيم الأساسية.</div>
+        <div class="example">e.g. List the 5 stages of cell division</div>
+        <div class="example-ar">مثال: اذكر 5 مراحل لانقسام الخلايا</div>
+      </div>
+      <div class="level-card l2">
+        <div class="level-num" style="color:var(--l2)">L2 — المستوى الثاني</div>
+        <div class="level-title">Comprehension</div>
+        <div class="level-title-ar">الفهم</div>
+        <div class="level-desc">Explain or interpret meaning from material.</div>
+        <div class="level-desc-ar">شرح أو تفسير المعنى من المادة المُقدَّمة.</div>
+        <div class="example">e.g. Explain how photosynthesis works</div>
+        <div class="example-ar">مثال: اشرح كيف تعمل عملية البناء الضوئي</div>
+      </div>
+      <div class="level-card l3">
+        <div class="level-num" style="color:var(--l3)">L3 — المستوى الثالث</div>
+        <div class="level-title">Application</div>
+        <div class="level-title-ar">التطبيق</div>
+        <div class="level-desc">Use information in new and concrete situations.</div>
+        <div class="level-desc-ar">استخدام المعلومات في مواقف جديدة وملموسة.</div>
+        <div class="example">e.g. Solve a chemistry equation</div>
+        <div class="example-ar">مثال: احلل معادلة كيميائية</div>
+      </div>
+      <div class="level-card l4">
+        <div class="level-num" style="color:var(--l4)">L4 — المستوى الرابع</div>
+        <div class="level-title">Analysis</div>
+        <div class="level-title-ar">التحليل</div>
+        <div class="level-desc">Break material into parts; find patterns.</div>
+        <div class="level-desc-ar">تفكيك المادة إلى أجزاء واكتشاف الأنماط.</div>
+        <div class="example">e.g. Compare causes of WWI vs WWII</div>
+        <div class="example-ar">مثال: قارن أسباب الحرب العالمية الأولى والثانية</div>
+      </div>
+      <div class="level-card l5">
+        <div class="level-num" style="color:var(--l5)">L5 — المستوى الخامس</div>
+        <div class="level-title">Synthesis</div>
+        <div class="level-title-ar">التركيب</div>
+        <div class="level-desc">Combine elements to form a new whole.</div>
+        <div class="level-desc-ar">دمج العناصر لتكوين كيان جديد متكامل.</div>
+        <div class="example">e.g. Design an experiment to test a hypothesis</div>
+        <div class="example-ar">مثال: صمم تجربة لاختبار فرضية</div>
+      </div>
+      <div class="level-card l6">
+        <div class="level-num" style="color:var(--l6)">L6 — المستوى السادس</div>
+        <div class="level-title">Evaluation</div>
+        <div class="level-title-ar">التقييم</div>
+        <div class="level-desc">Judge value; justify decisions or courses of action.</div>
+        <div class="level-desc-ar">الحكم على القيمة وتبرير القرارات.</div>
+        <div class="example">e.g. Assess the validity of a research paper</div>
+        <div class="example-ar">مثال: قيّم مدى صحة ورقة بحثية</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       REVISED TAXONOMY
+  ════════════════════════════════════════ -->
+  <section class="section" id="revised">
+    <div class="section-header">
+      <div class="section-tag">2001</div>
+      <h2>Revised Taxonomy — التصنيف المُعدَّل</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Anderson & Krathwohl — nouns replaced by verbs, Synthesis renamed Create & moved to the apex.</div>
+      <div class="ar-text">أندرسون وكراثول — استُبدلت الأسماء بأفعال، وأُعيد تسمية التركيب بـ"الإنشاء" ونُقل إلى القمة.</div>
+    </div>
+    <div class="levels">
+      <div class="level-card l1">
+        <div class="level-num" style="color:var(--l1)">L1 — المستوى الأول</div>
+        <div class="level-title">Remember</div>
+        <div class="level-title-ar">التذكر</div>
+        <div class="level-desc">Retrieve relevant knowledge from memory.</div>
+        <div class="level-desc-ar">استرجاع المعرفة ذات الصلة من الذاكرة.</div>
+        <div class="example">e.g. Name the bones of the human hand</div>
+        <div class="example-ar">مثال: سمِّ عظام اليد البشرية</div>
+      </div>
+      <div class="level-card l2">
+        <div class="level-num" style="color:var(--l2)">L2 — المستوى الثاني</div>
+        <div class="level-title">Understand</div>
+        <div class="level-title-ar">الفهم</div>
+        <div class="level-desc">Construct meaning from instructional messages.</div>
+        <div class="level-desc-ar">بناء المعنى من الرسائل التعليمية.</div>
+        <div class="example">e.g. Summarize a research article in own words</div>
+        <div class="example-ar">مثال: لخّص مقالة بحثية بكلماتك الخاصة</div>
+      </div>
+      <div class="level-card l3">
+        <div class="level-num" style="color:var(--l3)">L3 — المستوى الثالث</div>
+        <div class="level-title">Apply</div>
+        <div class="level-title-ar">التطبيق</div>
+        <div class="level-desc">Carry out a procedure in a given situation.</div>
+        <div class="level-desc-ar">تنفيذ إجراء في موقف معين.</div>
+        <div class="example">e.g. Calculate medication dosage for a patient</div>
+        <div class="example-ar">مثال: احسب جرعة الدواء لمريض</div>
+      </div>
+      <div class="level-card l4">
+        <div class="level-num" style="color:var(--l4)">L4 — المستوى الرابع</div>
+        <div class="level-title">Analyze</div>
+        <div class="level-title-ar">التحليل</div>
+        <div class="level-desc">Break material into parts; determine how they interrelate.</div>
+        <div class="level-desc-ar">تفكيك المادة وتحديد العلاقات بين أجزائها.</div>
+        <div class="example">e.g. Differentiate between Type 1 and Type 2 diabetes</div>
+        <div class="example-ar">مثال: فرّق بين السكري النوع الأول والثاني</div>
+      </div>
+      <div class="level-card l5">
+        <div class="level-num" style="color:var(--l5)">L5 — المستوى الخامس</div>
+        <div class="level-title">Evaluate</div>
+        <div class="level-title-ar">التقييم</div>
+        <div class="level-desc">Make judgments based on criteria and standards.</div>
+        <div class="level-desc-ar">إصدار أحكام بناءً على معايير ومقاييس محددة.</div>
+        <div class="example">e.g. Critique the methodology of a clinical trial</div>
+        <div class="example-ar">مثال: انتقد منهجية تجربة سريرية</div>
+      </div>
+      <div class="level-card l6">
+        <div class="level-num" style="color:var(--l6)">L6 — المستوى السادس</div>
+        <div class="level-title">Create</div>
+        <div class="level-title-ar">الإنشاء / الإبداع</div>
+        <div class="level-desc">Put elements together to form a novel whole.</div>
+        <div class="level-desc-ar">تجميع العناصر لإنتاج شيء جديد ومبتكر.</div>
+        <div class="example">e.g. Design a patient care protocol from scratch</div>
+        <div class="example-ar">مثال: صمم بروتوكول رعاية مريض من الصفر</div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div style="margin-top:2rem;">
+      <div class="bi">
+        <div class="en"><strong>What Changed?</strong> The 2001 revision transformed nouns into action verbs and restructured the apex.</div>
+        <div class="ar-text"><strong>ماذا تغيّر؟</strong> حوّلت مراجعة 2001 الأسماء إلى أفعال وأعادت هيكلة القمة.</div>
+      </div>
+      <div style="overflow-x:auto; margin-top:1rem;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Original 1956 / الأصلي</th>
+              <th>Revised 2001 / المعدّل</th>
+              <th>Key Change / التغيير</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="orig">Knowledge — المعرفة</td><td class="rev">Remember — التذكر</td><td class="change">Noun → Verb / من اسم إلى فعل</td></tr>
+            <tr><td class="orig">Comprehension — الفهم</td><td class="rev">Understand — الفهم (نشط)</td><td class="change">More active, learners construct meaning / المتعلم يبني المعنى</td></tr>
+            <tr><td class="orig">Application — التطبيق</td><td class="rev">Apply — التطبيق (فعل)</td><td class="change">Verb clarifies observable behavior / يوضح السلوك الملاحظ</td></tr>
+            <tr><td class="orig">Analysis — التحليل</td><td class="rev">Analyze — التحليل (فعل)</td><td class="change">Consistent verb convention / اتساق صيغة الفعل</td></tr>
+            <tr><td class="orig">Synthesis (L5) — التركيب</td><td class="rev">Create (L6 TOP) — الإنشاء</td><td class="change">Moved to apex as highest order / انتقل إلى القمة كأعلى مستوى</td></tr>
+            <tr><td class="orig">Evaluation (L6) — التقييم</td><td class="rev">Evaluate (L5) — التقييم</td><td class="change">Moved down one level / نزل مستوى واحداً</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       THREE DOMAINS
+  ════════════════════════════════════════ -->
+  <section class="section" id="domains">
+    <div class="section-header">
+      <div class="section-tag">Domains</div>
+      <h2>Three Domains of Learning — مجالات التعلم الثلاثة</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Bloom identified that all learning occurs across three interconnected dimensions.</div>
+      <div class="ar-text">حدّد بلوم أن كل التعلم يحدث عبر ثلاثة أبعاد متشابكة.</div>
+    </div>
+    <div class="domains">
+      <div class="domain-card cog">
+        <div class="domain-icon">🧠</div>
+        <div class="domain-name">Cognitive</div>
+        <div class="domain-name-ar">المجال المعرفي</div>
+        <div class="domain-tag">THINKING — التفكير</div>
+        <ul class="domain-list">
+          <li>Remember / التذكر</li>
+          <li>Understand / الفهم</li>
+          <li>Apply / التطبيق</li>
+          <li>Analyze / التحليل</li>
+          <li>Evaluate / التقييم</li>
+          <li>Create / الإنشاء</li>
+        </ul>
+      </div>
+      <div class="domain-card aff">
+        <div class="domain-icon">❤️</div>
+        <div class="domain-name">Affective</div>
+        <div class="domain-name-ar">المجال الوجداني</div>
+        <div class="domain-tag">FEELING — الشعور</div>
+        <ul class="domain-list">
+          <li>Receiving / الاستقبال</li>
+          <li>Responding / الاستجابة</li>
+          <li>Valuing / التقدير</li>
+          <li>Organization / التنظيم</li>
+          <li>Characterization / التجسيد</li>
+        </ul>
+      </div>
+      <div class="domain-card psy">
+        <div class="domain-icon">🤲</div>
+        <div class="domain-name">Psychomotor</div>
+        <div class="domain-name-ar">المجال النفسحركي</div>
+        <div class="domain-tag">DOING — الممارسة</div>
+        <ul class="domain-list">
+          <li>Perception / الإدراك</li>
+          <li>Set / الاستعداد</li>
+          <li>Guided Response / الاستجابة الموجهة</li>
+          <li>Mechanism / الآلية</li>
+          <li>Complex Response / الاستجابة المركبة</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       COGNITIVE DOMAIN VERBS
+  ════════════════════════════════════════ -->
+  <section class="section" id="cognitive">
+    <div class="section-header">
+      <div class="section-tag">Cognitive</div>
+      <h2>Cognitive Domain: Verbs & Examples — المجال المعرفي: الأفعال والأمثلة</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Mental skills — from simple recall to complex creation. Use these verbs when writing learning objectives.</div>
+      <div class="ar-text">المهارات العقلية — من الاستدعاء البسيط إلى الإنشاء المعقد. استخدم هذه الأفعال عند كتابة الأهداف التعليمية.</div>
+    </div>
+    <div style="display:grid; gap:0.8rem; margin-top:1rem;">
+      <div class="level-card l1" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l1);font-family:'Inter',sans-serif;">L1</div>
+          <div style="flex:1;">
+            <div class="level-title">Remember — التذكر</div>
+            <div class="verbs">Verbs: <span>Define, List, Recall, Name, Identify, Label, Repeat, State</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: عرّف، اذكر، استذكر، سمّ، حدّد، ضع تسمية، كرّر</div>
+            <div class="example">Example: List the 4 blood types</div>
+            <div class="example-ar">مثال: اذكر فصائل الدم الأربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="level-card l2" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l2);font-family:'Inter',sans-serif;">L2</div>
+          <div style="flex:1;">
+            <div class="level-title">Understand — الفهم</div>
+            <div class="verbs">Verbs: <span>Explain, Summarize, Paraphrase, Classify, Describe, Interpret, Compare</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: اشرح، لخّص، أعد الصياغة، صنّف، صف، فسّر، قارن</div>
+            <div class="example">Example: Explain the water cycle</div>
+            <div class="example-ar">مثال: اشرح دورة المياه</div>
+          </div>
+        </div>
+      </div>
+      <div class="level-card l3" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l3);font-family:'Inter',sans-serif;">L3</div>
+          <div style="flex:1;">
+            <div class="level-title">Apply — التطبيق</div>
+            <div class="verbs">Verbs: <span>Solve, Demonstrate, Calculate, Use, Execute, Implement, Operate</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: احلل، أوضح، احسب، استخدم، نفّذ، طبّق، شغّل</div>
+            <div class="example">Example: Calculate medication dosage</div>
+            <div class="example-ar">مثال: احسب جرعة الدواء</div>
+          </div>
+        </div>
+      </div>
+      <div class="level-card l4" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l4);font-family:'Inter',sans-serif;">L4</div>
+          <div style="flex:1;">
+            <div class="level-title">Analyze — التحليل</div>
+            <div class="verbs">Verbs: <span>Compare, Differentiate, Examine, Break down, Distinguish, Organize</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: قارن، فرّق، افحص، فكّك، ميّز، نظّم</div>
+            <div class="example">Example: Compare WWI & WWII causes</div>
+            <div class="example-ar">مثال: قارن أسباب الحربين العالميتين</div>
+          </div>
+        </div>
+      </div>
+      <div class="level-card l5" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l5);font-family:'Inter',sans-serif;">L5</div>
+          <div style="flex:1;">
+            <div class="level-title">Evaluate — التقييم</div>
+            <div class="verbs">Verbs: <span>Judge, Justify, Critique, Defend, Assess, Argue, Prioritize</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: احكم، برّر، انتقد، دافع، قيّم، جادل، رتّب حسب الأولوية</div>
+            <div class="example">Example: Critique a research methodology</div>
+            <div class="example-ar">مثال: انتقد منهجية بحث علمي</div>
+          </div>
+        </div>
+      </div>
+      <div class="level-card l6" style="display:block;">
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div style="min-width:3rem;text-align:center;font-size:1.8rem;font-weight:900;color:var(--l6);font-family:'Inter',sans-serif;">L6</div>
+          <div style="flex:1;">
+            <div class="level-title">Create — الإنشاء</div>
+            <div class="verbs">Verbs: <span>Design, Construct, Formulate, Develop, Compose, Plan, Produce</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.3rem;">أفعال: صمّم، أنشئ، صُغ، طوّر، أَلِّف، خطّط، أنتج</div>
+            <div class="example">Example: Design a new patient care protocol</div>
+            <div class="example-ar">مثال: صمّم بروتوكول رعاية مريض جديد</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PSYCHOMOTOR DOMAIN
+  ════════════════════════════════════════ -->
+  <section class="section" id="psychomotor">
+    <div class="section-header">
+      <div class="section-tag">Psychomotor</div>
+      <h2>Psychomotor Domain — المجال النفسحركي</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Physical skills — motor coordination from imitation to mastery (Simpson, 1972).</div>
+      <div class="ar-text">المهارات الجسدية — التنسيق الحركي من المحاكاة إلى الإتقان (سيمبسون، 1972).</div>
+    </div>
+    <div style="display:grid;gap:0.8rem;margin-top:1rem;">
+      <div class="level-card l1" style="display:block;">
+        <div class="level-title">L1 — Perception / الإدراك</div>
+        <div class="verbs">Verbs: <span>Detect, Choose, Identify, Distinguish</span> | أفعال: يكتشف، يختار، يحدد، يميز</div>
+        <div class="example">Ex: Student notices incorrect grip on surgical tool</div>
+        <div class="example-ar">مثال: الطالب يلاحظ الإمساك الخاطئ بالأداة الجراحية</div>
+      </div>
+      <div class="level-card l2" style="display:block;">
+        <div class="level-title">L2 — Set / الاستعداد</div>
+        <div class="verbs">Verbs: <span>Prepare, Position, Display, Begin, React</span> | أفعال: يهيئ، يضع، يُظهر، يبدأ، يتفاعل</div>
+        <div class="example">Ex: Positions hands correctly before starting IV insertion</div>
+        <div class="example-ar">مثال: يضع يديه بشكل صحيح قبل بدء الحقن الوريدي</div>
+      </div>
+      <div class="level-card l3" style="display:block;">
+        <div class="level-title">L3 — Guided Response / الاستجابة الموجهة</div>
+        <div class="verbs">Verbs: <span>Copy, Follow, Imitate, Attempt, Trace</span> | أفعال: ينسخ، يتبع، يقلّد، يحاول، يتتبع</div>
+        <div class="example">Ex: Follows step-by-step guide to suture a wound</div>
+        <div class="example-ar">مثال: يتبع دليلاً خطوة بخطوة لخياطة جرح</div>
+      </div>
+      <div class="level-card l4" style="display:block;">
+        <div class="level-title">L4 — Mechanism / الآلية</div>
+        <div class="verbs">Verbs: <span>Calibrate, Construct, Operate, Perform</span> | أفعال: يُعاير، يُنشئ، يُشغّل، يُنجز</div>
+        <div class="example">Ex: Operates ECG machine without supervision</div>
+        <div class="example-ar">مثال: يُشغّل جهاز تخطيط القلب دون إشراف</div>
+      </div>
+      <div class="level-card l5" style="display:block;">
+        <div class="level-title">L5 — Complex Response / الاستجابة المركبة</div>
+        <div class="verbs">Verbs: <span>Execute, Adapt, Coordinate, Refine, Automate</span> | أفعال: ينفّذ، يتكيّف، ينسّق، يُحسّن، يُشغّل آلياً</div>
+        <div class="example">Ex: Performs laparoscopic procedure with full fluency</div>
+        <div class="example-ar">مثال: يُجري عملية منظار بطن بكفاءة كاملة</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       AFFECTIVE DOMAIN
+  ════════════════════════════════════════ -->
+  <section class="section" id="affective">
+    <div class="section-header">
+      <div class="section-tag">Affective</div>
+      <h2>Affective Domain — المجال الوجداني</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Attitudes, values & emotions — from passive awareness to internalized belief (Krathwohl et al., 1964).</div>
+      <div class="ar-text">المواقف والقيم والمشاعر — من الوعي السلبي إلى المعتقد المُستبطَن (كراثول وآخرون، 1964).</div>
+    </div>
+    <div style="display:grid;gap:0.8rem;margin-top:1rem;">
+      <div class="level-card l1" style="display:block;">
+        <div class="level-title">L1 — Receiving / الاستقبال</div>
+        <div class="verbs">Verbs: <span>Listen, Attend, Notice, Accept, Be aware</span> | أفعال: يُصغي، يُولي انتباهاً، يُلاحظ، يقبل</div>
+        <div class="example">Ex: Student listens attentively to a patient's concerns</div>
+        <div class="example-ar">مثال: الطالب يُصغي باهتمام لمخاوف المريض</div>
+      </div>
+      <div class="level-card l2" style="display:block;">
+        <div class="level-title">L2 — Responding / الاستجابة</div>
+        <div class="verbs">Verbs: <span>Participate, Comply, Discuss, Contribute, React</span> | أفعال: يشارك، يمتثل، يناقش، يساهم، يتفاعل</div>
+        <div class="example">Ex: Actively participates in ethics seminar discussion</div>
+        <div class="example-ar">مثال: يشارك بنشاط في نقاش ندوة الأخلاقيات</div>
+      </div>
+      <div class="level-card l3" style="display:block;">
+        <div class="level-title">L3 — Valuing / التقدير</div>
+        <div class="verbs">Verbs: <span>Appreciate, Prefer, Justify, Support, Advocate</span> | أفعال: يُقدّر، يُفضّل، يُبرّر، يدعم، يدافع</div>
+        <div class="example">Ex: Advocates for patient rights in team meetings</div>
+        <div class="example-ar">مثال: يدافع عن حقوق المريض في اجتماعات الفريق</div>
+      </div>
+      <div class="level-card l4" style="display:block;">
+        <div class="level-title">L4 — Organization / التنظيم</div>
+        <div class="verbs">Verbs: <span>Organize, Prioritize, Integrate, Balance, Compare</span> | أفعال: ينظّم، يُرتّب، يُدمج، يوازن، يقارن</div>
+        <div class="example">Ex: Reconciles personal beliefs with professional ethics</div>
+        <div class="example-ar">مثال: يوفّق بين معتقداته الشخصية والأخلاقيات المهنية</div>
+      </div>
+      <div class="level-card l5" style="display:block;">
+        <div class="level-title">L5 — Characterization / التجسيد</div>
+        <div class="verbs">Verbs: <span>Internalize, Embody, Demonstrate, Revise, Develop</span> | أفعال: يستوعب، يُجسّد، يُوضّح، يُراجع، يطوّر</div>
+        <div class="example">Ex: Consistently embodies patient-centered care values</div>
+        <div class="example-ar">مثال: يُجسّد باستمرار قيم الرعاية المتمحورة حول المريض</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GOALS & OBJECTIVES
+  ════════════════════════════════════════ -->
+  <section class="section" id="goals">
+    <div class="section-header">
+      <div class="section-tag">Goals & Objectives</div>
+      <h2>Goals vs. Objectives — الأهداف العامة مقابل السلوكية</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div class="level-card l2" style="display:block;">
+        <div style="font-size:1.1rem;font-weight:800;color:var(--l2);margin-bottom:0.8rem;">🎯 Goals / الأهداف العامة</div>
+        <div class="bi" style="margin-bottom:0.5rem;">
+          <div class="en">Broad, long-term statements of educational purpose. NOT directly measurable.</div>
+          <div class="ar-text">عبارات عامة وبعيدة المدى عن الغرض التعليمي. غير قابلة للقياس مباشرة.</div>
+        </div>
+        <div class="example">"Students will develop an appreciation for evidence-based practice."</div>
+        <div class="example-ar">مثال: "سيطوّر الطلاب تقديراً للممارسة المبنية على الأدلة."</div>
+      </div>
+      <div class="level-card l4" style="display:block;">
+        <div style="font-size:1.1rem;font-weight:800;color:var(--l4);margin-bottom:0.8rem;">✅ Objectives / الأهداف السلوكية</div>
+        <div class="bi" style="margin-bottom:0.5rem;">
+          <div class="en">Specific, measurable statements of what learners DO. Observable & assessable.</div>
+          <div class="ar-text">عبارات محددة وقابلة للقياس عمّا يفعله المتعلم. قابلة للملاحظة والتقييم.</div>
+        </div>
+        <div class="example">"Given a patient case, students will calculate oral medication dose with 90% accuracy."</div>
+        <div class="example-ar">مثال: "بإعطاء حالة مريض، سيحسب الطلاب جرعة الدواء بدقة 90%."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SMART
+  ════════════════════════════════════════ -->
+  <section class="section" id="smart">
+    <div class="section-header">
+      <div class="section-tag">SMART</div>
+      <h2>Characteristics of Effective Objectives — خصائص الأهداف الفعّالة</h2>
+    </div>
+    <div class="smart-row">
+      <div class="smart-letter">S</div>
+      <div class="smart-body">
+        <div class="smart-word">Specific — محدد</div>
+        <div class="smart-word-ar">يوضح بجلاء ما سيفعله المتعلم، باستخدام أفعال قابلة للملاحظة.</div>
+        <div class="not-yes">
+          <div class="not-tag">✗ NOT: "Understand anatomy"</div>
+          <div class="yes-tag">✓ YES: "Label the 12 cranial nerves"</div>
+        </div>
+        <div class="not-yes" style="margin-top:0.3rem;">
+          <div class="not-tag">✗ لا: "افهم علم التشريح"</div>
+          <div class="yes-tag">✓ نعم: "ضع تسمية على الأعصاب القحفية الـ12"</div>
+        </div>
+      </div>
+    </div>
+    <div class="smart-row">
+      <div class="smart-letter">M</div>
+      <div class="smart-body">
+        <div class="smart-word">Measurable — قابل للقياس</div>
+        <div class="smart-word-ar">يمكن ملاحظته وعدّه أو تقييمه بمعيار محدد.</div>
+        <div class="not-yes">
+          <div class="not-tag">✗ NOT: "Improve communication"</div>
+          <div class="yes-tag">✓ YES: "Score ≥85% on OSCE station"</div>
+        </div>
+        <div class="not-yes" style="margin-top:0.3rem;">
+          <div class="not-tag">✗ لا: "تحسين التواصل"</div>
+          <div class="yes-tag">✓ نعم: "الحصول على ≥85% في محطة OSCE"</div>
+        </div>
+      </div>
+    </div>
+    <div class="smart-row">
+      <div class="smart-letter">A</div>
+      <div class="smart-body">
+        <div class="smart-word">Achievable — قابل للتحقيق</div>
+        <div class="smart-word-ar">واقعي لمستوى المتعلم الحالي والوقت المتاح.</div>
+        <div class="not-yes">
+          <div class="not-tag">✗ NOT: Set for first-day students</div>
+          <div class="yes-tag">✓ YES: Built on prior foundational skills</div>
+        </div>
+        <div class="not-yes" style="margin-top:0.3rem;">
+          <div class="not-tag">✗ لا: هدف لطلاب اليوم الأول</div>
+          <div class="yes-tag">✓ نعم: مبني على مهارات أساسية سابقة</div>
+        </div>
+      </div>
+    </div>
+    <div class="smart-row">
+      <div class="smart-letter">R</div>
+      <div class="smart-body">
+        <div class="smart-word">Relevant — ذو صلة</div>
+        <div class="smart-word-ar">متوافق مع هدف المقرر واحتياجات الممارسة المهنية الفعلية.</div>
+        <div class="not-yes">
+          <div class="not-tag">✗ NOT: Memorize historical trivia</div>
+          <div class="yes-tag">✓ YES: Apply evidence-based protocols</div>
+        </div>
+        <div class="not-yes" style="margin-top:0.3rem;">
+          <div class="not-tag">✗ لا: حفظ معلومات تاريخية غير مفيدة</div>
+          <div class="yes-tag">✓ نعم: تطبيق بروتوكولات مبنية على الأدلة</div>
+        </div>
+      </div>
+    </div>
+    <div class="smart-row">
+      <div class="smart-letter">T</div>
+      <div class="smart-body">
+        <div class="smart-word">Time-bound — محدد بوقت</div>
+        <div class="smart-word-ar">قابل للتحقيق خلال فترة تعليمية محددة.</div>
+        <div class="not-yes">
+          <div class="not-tag">✗ NOT: "Eventually be able to..."</div>
+          <div class="yes-tag">✓ YES: "By end of Week 3, students will..."</div>
+        </div>
+        <div class="not-yes" style="margin-top:0.3rem;">
+          <div class="not-tag">✗ لا: "في نهاية المطاف..."</div>
+          <div class="yes-tag">✓ نعم: "بنهاية الأسبوع الثالث، سيتمكن الطلاب من..."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ABCD MODEL
+  ════════════════════════════════════════ -->
+  <section class="section" id="abcd">
+    <div class="section-header">
+      <div class="section-tag">ABCD Model</div>
+      <h2>The ABCD Model — نموذج ABCD</h2>
+    </div>
+    <div class="bi">
+      <div class="en">Four essential components that make a learning objective complete and unambiguous.</div>
+      <div class="ar-text">أربعة مكونات أساسية تجعل الهدف التعليمي مكتملاً وواضحاً.</div>
+    </div>
+    <div class="abcd-grid" style="margin-top:1rem;">
+      <div class="abcd-card">
+        <div class="abcd-letter">A</div>
+        <div class="abcd-word">Audience — الجمهور المستهدف</div>
+        <div class="abcd-desc">WHO are the learners? Always make the learner the subject.</div>
+        <div class="abcd-desc-ar">من هم المتعلمون؟ اجعل المتعلم دائماً هو محور الهدف.</div>
+        <div class="abcd-eg">e.g. Nursing students / Medical interns / Grade 6 pupils</div>
+        <div class="abcd-eg-ar">مثال: طلاب التمريض / المقيمون الطبيون / طلاب الصف السادس</div>
+      </div>
+      <div class="abcd-card">
+        <div class="abcd-letter">B</div>
+        <div class="abcd-word">Behavior — السلوك</div>
+        <div class="abcd-desc">What will they DO? Use an observable action verb. Avoid vague verbs like "know".</div>
+        <div class="abcd-desc-ar">ماذا سيفعلون؟ استخدم فعلاً قابلاً للملاحظة. تجنّب الأفعال الغامضة مثل "يعرف".</div>
+        <div class="abcd-eg">e.g. Identify / Calculate / Construct</div>
+        <div class="abcd-eg-ar">مثال: يحدّد / يحسب / يُنشئ</div>
+      </div>
+      <div class="abcd-card">
+        <div class="abcd-letter">C</div>
+        <div class="abcd-word">Condition — الشرط / السياق</div>
+        <div class="abcd-desc">Under what CIRCUMSTANCES? Specify context, tools, materials, or constraints.</div>
+        <div class="abcd-desc-ar">في أي ظروف؟ حدّد السياق والأدوات والمواد أو القيود المفروضة.</div>
+        <div class="abcd-eg">e.g. Given a patient case / Without reference materials</div>
+        <div class="abcd-eg-ar">مثال: بإعطاء حالة مريض / بدون مراجع</div>
+      </div>
+      <div class="abcd-card">
+        <div class="abcd-letter">D</div>
+        <div class="abcd-word">Degree — الدرجة / المعيار</div>
+        <div class="abcd-desc">How WELL must they perform? Define the minimum acceptable standard.</div>
+        <div class="abcd-desc-ar">ما مستوى الأداء المطلوب؟ حدّد الحد الأدنى المقبول للنجاح.</div>
+        <div class="abcd-eg">e.g. ...with 80% accuracy / ...in 4 out of 5 cases</div>
+        <div class="abcd-eg-ar">مثال: بدقة 80% / في 4 من أصل 5 حالات</div>
+      </div>
+    </div>
+
+    <!-- ABCD Examples -->
+    <div style="margin-top:1.5rem;">
+      <div class="bi">
+        <div class="en"><strong>ABCD in Practice — Worked Examples:</strong></div>
+        <div class="ar-text"><strong>نموذج ABCD في التطبيق — أمثلة محلولة:</strong></div>
+      </div>
+      <div style="margin-top:1rem; display:grid; gap:1rem;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;border-top:3px solid var(--l1);">
+          <div style="font-size:0.78rem;font-weight:800;color:var(--l1);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;font-family:'Inter',sans-serif;">Healthcare / Nursing — الرعاية الصحية / التمريض</div>
+          <div style="font-family:'Inter',sans-serif;font-size:0.9rem;direction:ltr;line-height:2;">
+            <span style="background:rgba(59,130,246,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#93c5fd;font-size:0.78rem;font-weight:700;">A</span> First-year nursing students
+            <span style="background:rgba(16,185,129,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#6ee7b7;font-size:0.78rem;font-weight:700;margin-right:0.3rem;margin-left:0.3rem;">B</span> will correctly measure and document vital signs
+            <span style="background:rgba(245,158,11,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#fcd34d;font-size:0.78rem;font-weight:700;margin-right:0.3rem;">C</span> given a standardized simulated patient scenario
+            <span style="background:rgba(139,92,246,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#c4b5fd;font-size:0.78rem;font-weight:700;margin-right:0.3rem;">D</span> with 90% accuracy across 5 consecutive assessments.
+          </div>
+          <div style="font-size:0.88rem;color:var(--accent3);margin-top:0.5rem;">
+            <span style="color:#93c5fd">أ</span> طلاب التمريض في السنة الأولى&nbsp;
+            <span style="color:#6ee7b7">ب</span> سيقيسون ويوثّقون العلامات الحيوية بشكل صحيح&nbsp;
+            <span style="color:#fcd34d">ج</span> في سيناريو مريض محاكى موحّد&nbsp;
+            <span style="color:#c4b5fd">د</span> بدقة 90% في 5 تقييمات متتالية.
+          </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;border-top:3px solid var(--l2);">
+          <div style="font-size:0.78rem;font-weight:800;color:var(--l2);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;font-family:'Inter',sans-serif;">Science Education — التعليم العلمي</div>
+          <div style="font-family:'Inter',sans-serif;font-size:0.9rem;direction:ltr;line-height:2;">
+            <span style="background:rgba(59,130,246,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#93c5fd;font-size:0.78rem;font-weight:700;">A</span> Grade 10 biology students
+            <span style="background:rgba(16,185,129,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#6ee7b7;font-size:0.78rem;font-weight:700;margin-right:0.3rem;margin-left:0.3rem;">B</span> will construct and label a detailed diagram of cell division
+            <span style="background:rgba(245,158,11,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#fcd34d;font-size:0.78rem;font-weight:700;margin-right:0.3rem;">C</span> without the use of textbooks or notes
+            <span style="background:rgba(139,92,246,0.2);padding:0.1rem 0.4rem;border-radius:0.2rem;color:#c4b5fd;font-size:0.78rem;font-weight:700;margin-right:0.3rem;">D</span> correctly identifying all 5 phases with ≥80% accuracy.
+          </div>
+          <div style="font-size:0.88rem;color:var(--accent3);margin-top:0.5rem;">
+            <span style="color:#93c5fd">أ</span> طلاب أحياء الصف العاشر&nbsp;
+            <span style="color:#6ee7b7">ب</span> سيرسمون ويُسمّون مراحل انقسام الخلايا&nbsp;
+            <span style="color:#fcd34d">ج</span> بدون استخدام الكتب أو الملاحظات&nbsp;
+            <span style="color:#c4b5fd">د</span> بتحديد صحيح لجميع المراحل الـ5 بدقة ≥80%.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weak vs Strong -->
+    <div style="margin-top:2rem;">
+      <div class="bi">
+        <div class="en"><strong>Weak vs. Strong Objectives — spot the difference:</strong></div>
+        <div class="ar-text"><strong>أهداف ضعيفة مقابل قوية — اكتشف الفرق:</strong></div>
+      </div>
+      <div style="margin-top:1rem;">
+        <div class="ws-pair">
+          <div class="weak"><div class="ws-label">WEAK ضعيف</div><div class="ws-text">"Students will know about infection control."</div><div class="ws-text-ar">سيعرف الطلاب مكافحة العدوى.</div></div>
+          <div class="strong"><div class="ws-label">STRONG قوي — Psychomotor L4</div><div class="ws-text">"Given a clinical simulation, nursing students will demonstrate correct hand hygiene technique before and after patient contact in 5 out of 5 observations."</div><div class="ws-text-ar">في محاكاة سريرية، سيُوضح طلاب التمريض تقنية النظافة اليدوية الصحيحة في 5 من أصل 5 ملاحظات.</div></div>
+        </div>
+        <div class="ws-pair">
+          <div class="weak"><div class="ws-label">WEAK ضعيف</div><div class="ws-text">"Learners will understand cardiovascular disease."</div><div class="ws-text-ar">سيفهم المتعلمون أمراض القلب والأوعية الدموية.</div></div>
+          <div class="strong"><div class="ws-label">STRONG قوي — Cognitive L4</div><div class="ws-text">"After the cardiology lecture, students will compare the pathophysiology of atherosclerosis vs. hypertension using a Venn diagram with at least 4 correct distinctions."</div><div class="ws-text-ar">بعد محاضرة أمراض القلب، سيقارن الطلاب باستخدام مخطط فين بين تصلب الشرايين وارتفاع ضغط الدم بـ4 فروقات صحيحة على الأقل.</div></div>
+        </div>
+        <div class="ws-pair">
+          <div class="weak"><div class="ws-label">WEAK ضعيف</div><div class="ws-text">"Students will appreciate ethical practice."</div><div class="ws-text-ar">سيُقدّر الطلاب الممارسة الأخلاقية.</div></div>
+          <div class="strong"><div class="ws-label">STRONG قوي — Affective L3</div><div class="ws-text">"Following the bioethics workshop, students will defend their chosen position on a given case study in a written reflection of 300+ words, citing at least 2 ethical principles."</div><div class="ws-text-ar">بعد ورشة أخلاقيات الطب، سيدافع الطلاب عن موقفهم في تأمل كتابي 300+ كلمة مستشهدين بمبدأين أخلاقيين على الأقل.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SUMMARY
+  ════════════════════════════════════════ -->
+  <section class="section" id="summary">
+    <div class="section-header">
+      <div class="section-tag">Summary</div>
+      <h2>Key Takeaways — أهم النقاط</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="sum-card"><div class="sum-num">1</div><div><div class="sum-title">Three Domains — المجالات الثلاثة</div><div class="sum-ar">كل التعلم: معرفي (تفكير) + وجداني (شعور) + نفسحركي (ممارسة). التصميم الفعّال يُعالج الثلاثة. / All learning: Cognitive + Affective + Psychomotor. Effective design addresses all three.</div></div></div>
+      <div class="sum-card"><div class="sum-num">2</div><div><div class="sum-title">Hierarchy Matters — التسلسل الهرمي مهم</div><div class="sum-ar">كل مجال يتدرج من البسيط للمعقد. ابنِ الأهداف الأساسية أولاً. / Each domain progresses from lower to higher order. Build foundational objectives before advanced ones.</div></div></div>
+      <div class="sum-card"><div class="sum-num">3</div><div><div class="sum-title">Verb Choice is Critical — اختيار الفعل أساسي</div><div class="sum-ar">الأفعال تحدد السلوك الملاحظ ومستوى المجال. "صمّم" = الإنشاء L6 / "اذكر" = التذكر L1 / Action verbs define behavior and domain level.</div></div></div>
+      <div class="sum-card"><div class="sum-num">4</div><div><div class="sum-title">Goals ≠ Objectives — الأهداف العامة ≠ السلوكية</div><div class="sum-ar">الأهداف العامة = تطلعات واسعة. السلوكية = عبارات محددة وقابلة للقياس عن سلوك المتعلم. / Goals = broad ideals; Objectives = specific measurable learner behaviors.</div></div></div>
+      <div class="sum-card"><div class="sum-num">5</div><div><div class="sum-title">ABCD Model — نموذج ABCD</div><div class="sum-ar">كل هدف قوي يحتوي: الجمهور + السلوك + الشرط + الدرجة. غياب أي عنصر يُضعّف الهدف. / Every strong objective needs: Audience + Behavior + Condition + Degree.</div></div></div>
+      <div class="sum-card"><div class="sum-num">6</div><div><div class="sum-title">SMART + ABCD = Excellence</div><div class="sum-ar">ABCD يُعطيك الهيكل، وSMART يضمن الجودة. طبّق كلا النموذجين على كل هدف تكتبه. / ABCD provides structure; SMART ensures quality. Apply both to every objective.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       QUIZ — MCQ
+  ════════════════════════════════════════ -->
+  <section class="quiz-section" id="quiz">
+    <h2>📝 Multiple Choice Quiz — أسئلة اختيارية</h2>
+    <div class="sub">اختر الإجابة الصحيحة — Click the correct answer</div>
+
+    <div class="q-block" id="q1">
+      <div class="q-num">Question 1 / السؤال الأول</div>
+      <div class="q-text">In the Revised Taxonomy (2001), which level was moved to the TOP of the hierarchy?</div>
+      <div class="q-text-ar">في التصنيف المُعدَّل 2001، أي مستوى انتقل إلى قمة التسلسل الهرمي؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q1',false)"><span class="opt-letter">A</span> Evaluate / التقييم</li>
+        <li onclick="answer(this,'q1',false)"><span class="opt-letter">B</span> Synthesis / التركيب</li>
+        <li onclick="answer(this,'q1',true)"><span class="opt-letter">C</span> Create / الإنشاء</li>
+        <li onclick="answer(this,'q1',false)"><span class="opt-letter">D</span> Analyze / التحليل</li>
+      </ul>
+      <div class="feedback" id="fb-q1"></div>
+    </div>
+
+    <div class="q-block" id="q2">
+      <div class="q-num">Question 2 / السؤال الثاني</div>
+      <div class="q-text">Which domain covers ATTITUDES, VALUES, and EMOTIONS?</div>
+      <div class="q-text-ar">أي مجال يتناول المواقف والقيم والمشاعر؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q2',false)"><span class="opt-letter">A</span> Cognitive / المعرفي</li>
+        <li onclick="answer(this,'q2',true)"><span class="opt-letter">B</span> Affective / الوجداني</li>
+        <li onclick="answer(this,'q2',false)"><span class="opt-letter">C</span> Psychomotor / النفسحركي</li>
+        <li onclick="answer(this,'q2',false)"><span class="opt-letter">D</span> Behavioral / السلوكي</li>
+      </ul>
+      <div class="feedback" id="fb-q2"></div>
+    </div>
+
+    <div class="q-block" id="q3">
+      <div class="q-num">Question 3 / السؤال الثالث</div>
+      <div class="q-text">A teacher writes: "Students will understand pharmacology." What is WRONG with this objective?</div>
+      <div class="q-text-ar">كتب المعلم: "سيفهم الطلاب علم الأدوية." ما المشكلة في هذا الهدف؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q3',false)"><span class="opt-letter">A</span> It is too long / طويل جداً</li>
+        <li onclick="answer(this,'q3',true)"><span class="opt-letter">B</span> "Understand" is vague and not observable / "يفهم" غامض وغير قابل للملاحظة</li>
+        <li onclick="answer(this,'q3',false)"><span class="opt-letter">C</span> It mentions the wrong subject / يذكر المادة الخاطئة</li>
+        <li onclick="answer(this,'q3',false)"><span class="opt-letter">D</span> It has no audience / لا يحدد الجمهور</li>
+      </ul>
+      <div class="feedback" id="fb-q3"></div>
+    </div>
+
+    <div class="q-block" id="q4">
+      <div class="q-num">Question 4 / السؤال الرابع</div>
+      <div class="q-text">In the ABCD model, the "D" stands for:</div>
+      <div class="q-text-ar">في نموذج ABCD، حرف "D" يرمز إلى:</div>
+      <ul class="options">
+        <li onclick="answer(this,'q4',false)"><span class="opt-letter">A</span> Domain / المجال</li>
+        <li onclick="answer(this,'q4',false)"><span class="opt-letter">B</span> Duration / المدة</li>
+        <li onclick="answer(this,'q4',true)"><span class="opt-letter">C</span> Degree / الدرجة والمعيار</li>
+        <li onclick="answer(this,'q4',false)"><span class="opt-letter">D</span> Description / الوصف</li>
+      </ul>
+      <div class="feedback" id="fb-q4"></div>
+    </div>
+
+    <div class="q-block" id="q5">
+      <div class="q-num">Question 5 / السؤال الخامس</div>
+      <div class="q-text">Which verb belongs to the HIGHEST level (L6 — Create) of Bloom's Revised Taxonomy?</div>
+      <div class="q-text-ar">أي فعل ينتمي إلى أعلى مستوى (L6 — الإنشاء) في التصنيف المُعدَّل؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q5',false)"><span class="opt-letter">A</span> Identify / يحدّد</li>
+        <li onclick="answer(this,'q5',false)"><span class="opt-letter">B</span> Compare / يقارن</li>
+        <li onclick="answer(this,'q5',false)"><span class="opt-letter">C</span> Critique / ينتقد</li>
+        <li onclick="answer(this,'q5',true)"><span class="opt-letter">D</span> Design / يصمّم</li>
+      </ul>
+      <div class="feedback" id="fb-q5"></div>
+    </div>
+
+    <div class="q-block" id="q6">
+      <div class="q-num">Question 6 / السؤال السادس</div>
+      <div class="q-text">The Psychomotor Domain was developed by:</div>
+      <div class="q-text-ar">من طوّر المجال النفسحركي؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q6',false)"><span class="opt-letter">A</span> Benjamin Bloom (1956)</li>
+        <li onclick="answer(this,'q6',false)"><span class="opt-letter">B</span> Anderson & Krathwohl (2001)</li>
+        <li onclick="answer(this,'q6',false)"><span class="opt-letter">C</span> Krathwohl, Bloom & Masia (1964)</li>
+        <li onclick="answer(this,'q6',true)"><span class="opt-letter">D</span> Simpson (1972)</li>
+      </ul>
+      <div class="feedback" id="fb-q6"></div>
+    </div>
+
+    <div class="q-block" id="q7">
+      <div class="q-num">Question 7 / السؤال السابع</div>
+      <div class="q-text">Which of the following is a GOAL (not an objective)?</div>
+      <div class="q-text-ar">أي من التالي هدف عام (وليس هدفاً سلوكياً)؟</div>
+      <ul class="options">
+        <li onclick="answer(this,'q7',false)"><span class="opt-letter">A</span> "Given a case study, students will calculate dosage with 90% accuracy."</li>
+        <li onclick="answer(this,'q7',true)"><span class="opt-letter">B</span> "Students will develop an appreciation for evidence-based practice."</li>
+        <li onclick="answer(this,'q7',false)"><span class="opt-letter">C</span> "By end of Week 3, students will label 12 cranial nerves."</li>
+        <li onclick="answer(this,'q7',false)"><span class="opt-letter">D</span> "Students will score ≥85% on the OSCE station."</li>
+      </ul>
+      <div class="feedback" id="fb-q7"></div>
+    </div>
+
+    <div class="q-block" id="q8">
+      <div class="q-num">Question 8 / السؤال الثامن</div>
+      <div class="q-text">In the Affective Domain, "Characterization" (L5) means the learner:</div>
+      <div class="q-text-ar">في المجال الوجداني، "التجسيد" (L5) يعني أن المتعلم:</div>
+      <ul class="options">
+        <li onclick="answer(this,'q8',false)"><span class="opt-letter">A</span> Simply listens to new information / يُصغي فقط لمعلومات جديدة</li>
+        <li onclick="answer(this,'q8',false)"><span class="opt-letter">B</span> Participates when required / يشارك عند الطلب فقط</li>
+        <li onclick="answer(this,'q8',false)"><span class="opt-letter">C</span> Prefers one value over another / يُفضّل قيمة على أخرى</li>
+        <li onclick="answer(this,'q8',true)"><span class="opt-letter">D</span> Has internalized values that consistently guide behavior / استوعب القيم وتُوجّه سلوكه باستمرار</li>
+      </ul>
+      <div class="feedback" id="fb-q8"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ESSAY QUESTIONS
+  ════════════════════════════════════════ -->
+  <section class="essay-section" id="essay">
+    <h2>✍️ Essay Questions — أسئلة مقالية</h2>
+    <div class="sub" style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Think deeply and write structured answers / فكّر بعمق واكتب إجابات منظمة</div>
+
+    <div class="essay-q">
+      <div class="e-num">Essay Question 1 / السؤال المقالي الأول</div>
+      <div class="e-text">Compare the Original (1956) and Revised (2001) Bloom's Taxonomy. What were the key changes, and why were they significant?</div>
+      <div class="e-text-ar">قارن بين تصنيف بلوم الأصلي (1956) والمعدَّل (2001). ما التغييرات الرئيسية وما أهميتها؟</div>
+      <div class="e-hint">Hint: Discuss noun→verb shift, the repositioning of Synthesis/Create, and how verb-based levels better guide instructional design.</div>
+      <div class="e-hint-ar">تلميح: ناقش التحول من الأسماء للأفعال، وانتقال "التركيب" إلى القمة كـ"إنشاء"، وكيف تُرشد المستويات المبنية على الأفعال تصميم التدريس بشكل أفضل.</div>
+    </div>
+
+    <div class="essay-q">
+      <div class="e-num">Essay Question 2 / السؤال المقالي الثاني</div>
+      <div class="e-text">Explain the Three Domains of Learning with examples from the healthcare field. Why is it important to address all three domains in curriculum design?</div>
+      <div class="e-text-ar">اشرح مجالات التعلم الثلاثة مع أمثلة من المجال الصحي. لماذا من المهم معالجة الثلاثة في تصميم المناهج؟</div>
+      <div class="e-hint">Hint: Use specific examples — e.g., cognitive (calculate dosage), psychomotor (suture technique), affective (patient empathy). Discuss how each domain shapes a complete healthcare professional.</div>
+      <div class="e-hint-ar">تلميح: استخدم أمثلة محددة — مثلاً: معرفي (حساب الجرعة)، نفسحركي (تقنية الخياطة)، وجداني (التعاطف مع المريض). ناقش كيف يشكّل كل مجال المختص الصحي المتكامل.</div>
+    </div>
+
+    <div class="essay-q">
+      <div class="e-num">Essay Question 3 / السؤال المقالي الثالث</div>
+      <div class="e-text">Write three complete learning objectives using the ABCD model — one for each domain (Cognitive, Affective, Psychomotor). Then evaluate each using the SMART criteria.</div>
+      <div class="e-text-ar">اكتب ثلاثة أهداف تعليمية كاملة باستخدام نموذج ABCD — هدف لكل مجال (المعرفي، الوجداني، النفسحركي). ثم قيّم كل هدف وفق معايير SMART.</div>
+      <div class="e-hint">Hint: Use the structure — [A] + [B] + [C] + [D]. Then check: Is the verb specific? Is the degree measurable? Is it time-bound? Is it relevant to real practice?</div>
+      <div class="e-hint-ar">تلميح: استخدم الهيكل — [جمهور] + [سلوك] + [شرط] + [درجة]. ثم تحقق: هل الفعل محدد؟ هل المعيار قابل للقياس؟ هل محدد بوقت؟ هل مرتبط بالممارسة الفعلية؟</div>
+    </div>
+
+    <div class="essay-q">
+      <div class="e-num">Essay Question 4 / السؤال المقالي الرابع</div>
+      <div class="e-text">Analyze the difference between a GOAL and an OBJECTIVE. Provide two examples of each and explain how they relate to each other in curriculum planning.</div>
+      <div class="e-text-ar">حلّل الفرق بين الهدف العام والهدف السلوكي. أعطِ مثالين لكل نوع، واشرح كيف يرتبط كل منهما بالآخر في تخطيط المناهج.</div>
+      <div class="e-hint">Hint: Goals guide the direction of instruction; objectives operationalize goals into measurable, observable behaviors that can be assessed.</div>
+      <div class="e-hint-ar">تلميح: الأهداف العامة تُرشد اتجاه التدريس؛ أما السلوكية فتحوّل الأهداف العامة إلى سلوكيات قابلة للقياس والملاحظة والتقييم.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Based on <strong>Bloom (1956)</strong> · <strong>Anderson & Krathwohl (2001)</strong> · <strong>Simpson (1972)</strong> · <strong>Krathwohl, Bloom & Masia (1964)</strong>
+  <br>Bilingual lecture — English / Arabic | محاضرة ثنائية اللغة
+</footer>
+
+<script>
+  const answers = {
+    q1: { correct: 2, explanation: "Correct! ✓ In 2001, Synthesis was renamed 'Create' and moved to the apex (L6) as the highest-order thinking skill.\nصحيح! في 2001 أُعيد تسمية 'التركيب' بـ'الإنشاء' ونُقل إلى القمة كأعلى مستوى." },
+    q2: { correct: 1, explanation: "Correct! ✓ The Affective Domain (Krathwohl et al., 1964) covers attitudes, values and emotions.\nصحيح! المجال الوجداني (كراثول وآخرون، 1964) يتناول المواقف والقيم والمشاعر." },
+    q3: { correct: 1, explanation: "Correct! ✓ 'Understand' is vague — it's not observable or measurable. Replace with verbs like 'summarize', 'explain', 'classify'.\nصحيح! 'يفهم' غامض وغير قابل للملاحظة. استبدله بأفعال مثل 'يلخّص' أو 'يصنّف'." },
+    q4: { correct: 2, explanation: "Correct! ✓ D = Degree — the minimum acceptable standard of performance (e.g., with 80% accuracy).\nصحيح! D = الدرجة — الحد الأدنى المقبول للأداء (مثل: بدقة 80%)." },
+    q5: { correct: 3, explanation: "Correct! ✓ 'Design' is a Create (L6) verb. Identify=L1, Compare=L4, Critique=L5.\nصحيح! 'يصمّم' فعل إنشاء (L6). يحدد=L1، يقارن=L4، ينتقد=L5." },
+    q6: { correct: 3, explanation: "Correct! ✓ Elizabeth Simpson developed the Psychomotor Domain taxonomy in 1972.\nصحيح! إليزابيث سيمبسون طوّرت تصنيف المجال النفسحركي عام 1972." },
+    q7: { correct: 1, explanation: "Correct! ✓ 'Develop an appreciation' is a broad, non-measurable aspiration — that's a GOAL, not an objective.\nصحيح! 'تطوير تقدير' هو تطلع عام غير قابل للقياس — هدف عام وليس سلوكياً." },
+    q8: { correct: 3, explanation: "Correct! ✓ Characterization (L5) is the highest affective level — the value is fully internalized and consistently guides behavior.\nصحيح! التجسيد (L5) هو أعلى مستوى وجداني — القيمة مستوعبة تماماً وتوجّه السلوك باستمرار." }
+  };
+
+  function answer(el, qId, isCorrect) {
+    const block = document.getElementById(qId);
+    const opts = block.querySelectorAll('.options li');
+    opts.forEach(o => { o.onclick = null; });
+    const fb = document.getElementById('fb-' + qId);
+    if (isCorrect) {
+      el.classList.add('correct');
+      fb.className = 'feedback show ok';
+      fb.textContent = answers[qId].explanation;
+    } else {
+      el.classList.add('wrong');
+      fb.className = 'feedback show err';
+      fb.textContent = '✗ Not quite. ' + answers[qId].explanation;
+      opts.forEach(o => {
+        if (o.onclick === null && o !== el) {
+          o.addEventListener('click', () => {
+            const isC = Array.from(opts).indexOf(o) === answers[qId].correct;
+            answer(o, qId, isC);
+          }, {once:true});
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

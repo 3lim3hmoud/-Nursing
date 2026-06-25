@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traditional Teaching Methods | أساليب التدريس التقليدية</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%); color: white; text-align: center; padding: 60px 20px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -60px; left: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .hero::after { content: ''; position: absolute; bottom: -80px; right: -40px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .hero .chapter { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+  .hero .ar-title { font-size: clamp(20px, 3vw, 32px); color: #FFB300; font-weight: 700; margin-bottom: 20px; }
+  .hero .author { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+  /* NAV TABS */
+  .nav-tabs { display: flex; background: #fff; border-bottom: 2px solid #e0e0e0; overflow-x: auto; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .nav-tab { padding: 14px 20px; cursor: pointer; font-size: 13px; font-weight: 600; color: #666; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  .nav-tab:hover { color: #1565c0; background: #f5f7ff; }
+  .nav-tab.active { color: #1565c0; border-bottom-color: #1565c0; background: #f5f7ff; }
+
+  /* SECTIONS */
+  .section { display: none; padding: 32px 20px; max-width: 960px; margin: 0 auto; }
+  .section.active { display: block; }
+
+  /* CARDS */
+  .card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #e8eaf0; }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; font-weight: 800; font-size: 16px; color: white; flex-shrink: 0; }
+
+  /* SECTION TITLES */
+  .section-title { font-size: 22px; font-weight: 800; color: #1a237e; margin-bottom: 6px; }
+  .section-subtitle { font-size: 15px; color: #E65100; font-weight: 600; text-align: right; direction: rtl; margin-bottom: 24px; }
+
+  /* OBJECTIVES */
+  .obj-item { display: flex; gap: 14px; padding: 14px 16px; border-radius: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .obj-en { font-size: 15px; font-weight: 600; color: white; }
+  .obj-ar { font-size: 13px; color: rgba(255,255,255,0.8); direction: rtl; text-align: right; margin-top: 4px; }
+  .obj-num { width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: white; flex-shrink: 0; }
+
+  /* DEFINITION BOX */
+  .def-box { background: linear-gradient(135deg, #EDE7F6, #F3E5F5); border-left: 5px solid #7B1FA2; border-radius: 12px; padding: 24px; }
+  .def-en { font-size: 16px; color: #4A148C; line-height: 1.7; margin-bottom: 12px; }
+  .def-ar { font-size: 14px; color: #6A1B9A; direction: rtl; text-align: right; line-height: 1.8; font-style: italic; border-top: 1px dashed #CE93D8; padding-top: 12px; }
+
+  /* CHARACTERISTICS */
+  .char-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .char-item { display: flex; gap: 12px; padding: 14px; background: #f8f9ff; border-radius: 12px; border: 1px solid #e0e4f8; align-items: flex-start; }
+  .char-num { width: 30px; height: 30px; background: #1565c0; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+  .char-en { font-size: 14px; font-weight: 600; color: #1a237e; }
+  .char-ar { font-size: 12px; color: #546e7a; direction: rtl; margin-top: 3px; }
+
+  /* METHOD CARDS */
+  .method-header { border-radius: 12px; padding: 18px 22px; margin-bottom: 16px; color: white; }
+  .method-title { font-size: 20px; font-weight: 800; }
+  .method-subtitle-ar { font-size: 14px; opacity: 0.8; direction: rtl; text-align: right; margin-top: 4px; }
+  .method-desc { font-size: 14px; color: #37474f; background: #f5f7fa; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; border-left: 3px solid #90a4ae; }
+  .method-desc-ar { font-size: 13px; color: #607d8b; direction: rtl; text-align: right; margin-top: 6px; font-style: italic; }
+  .adv-lim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media(max-width: 600px) { .adv-lim-grid { grid-template-columns: 1fr; } }
+  .adv-box { background: #E8F5E9; border-radius: 10px; padding: 14px; border-top: 3px solid #2E7D32; }
+  .lim-box { background: #FFEBEE; border-radius: 10px; padding: 14px; border-top: 3px solid #C62828; }
+  .box-label { font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .adv-box .box-label { color: #1B5E20; }
+  .lim-box .box-label { color: #B71C1C; }
+  .al-item { display: flex; flex-direction: column; gap: 3px; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .al-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .al-en { font-size: 13px; font-weight: 600; }
+  .adv-box .al-en { color: #2E7D32; }
+  .lim-box .al-en { color: #C62828; }
+  .al-ar { font-size: 12px; direction: rtl; text-align: right; }
+  .adv-box .al-ar { color: #388E3C; }
+  .lim-box .al-ar { color: #D32F2F; }
+
+  /* COMPARISON TABLE */
+  .compare-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; }
+  .compare-table th { padding: 14px 18px; font-size: 14px; font-weight: 700; text-align: center; }
+  .compare-table .th-trad { background: #E65100; color: white; }
+  .compare-table .th-vs { background: #ECEFF1; color: #546e7a; font-size: 12px; }
+  .compare-table .th-mod { background: #00695C; color: white; }
+  .compare-table td { padding: 12px 18px; font-size: 13px; vertical-align: middle; }
+  .compare-table tr:nth-child(even) td { background: #f9fafb; }
+  .compare-table tr:nth-child(odd) td { background: white; }
+  .td-trad { color: #BF360C; font-weight: 600; border-left: 3px solid #FF8A65; }
+  .td-vs { text-align: center; color: #90A4AE; font-size: 18px; }
+  .td-mod { color: #004D40; font-weight: 600; border-right: 3px solid #4DB6AC; }
+
+  /* METHODS OVERVIEW */
+  .methods-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .method-pill { border-radius: 12px; padding: 16px 12px; text-align: center; color: white; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .method-pill:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .method-pill .mp-num { font-size: 22px; font-weight: 900; display: block; }
+  .method-pill .mp-en { font-size: 12px; font-weight: 700; margin: 4px 0; display: block; }
+  .method-pill .mp-ar { font-size: 11px; opacity: 0.8; direction: rtl; display: block; }
+
+  /* MCQ */
+  .mcq-item { background: white; border-radius: 14px; padding: 22px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #e0e4f0; }
+  .mcq-q { font-size: 15px; font-weight: 700; color: #1a237e; margin-bottom: 6px; }
+  .mcq-q-ar { font-size: 13px; color: #546e7a; direction: rtl; text-align: right; margin-bottom: 14px; font-style: italic; }
+  .mcq-options { display: grid; gap: 8px; }
+  .mcq-opt { display: flex; gap: 10px; align-items: center; padding: 11px 14px; border-radius: 10px; border: 1.5px solid #e0e4f0; cursor: pointer; transition: all 0.2s; }
+  .mcq-opt:hover { border-color: #5c6bc0; background: #f5f7ff; }
+  .mcq-opt.selected { border-color: #1565c0; background: #E3F2FD; }
+  .mcq-opt.correct { border-color: #2E7D32; background: #E8F5E9; }
+  .mcq-opt.wrong { border-color: #C62828; background: #FFEBEE; }
+  .opt-letter { width: 28px; height: 28px; border-radius: 8px; background: #e8eaf6; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #3f51b5; flex-shrink: 0; }
+  .mcq-opt.correct .opt-letter { background: #2E7D32; color: white; }
+  .mcq-opt.wrong .opt-letter { background: #C62828; color: white; }
+  .opt-text { flex: 1; }
+  .opt-en { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+  .opt-ar { font-size: 12px; color: #607d8b; direction: rtl; }
+  .mcq-result { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+  .mcq-result.show { display: block; }
+  .mcq-result.correct-msg { background: #E8F5E9; color: #1B5E20; }
+  .mcq-result.wrong-msg { background: #FFEBEE; color: #B71C1C; }
+
+  /* MCQ SCORE */
+  .score-box { background: linear-gradient(135deg, #1a237e, #283593); border-radius: 16px; padding: 28px; text-align: center; color: white; margin-bottom: 24px; display: none; }
+  .score-box.show { display: block; }
+  .score-num { font-size: 56px; font-weight: 900; }
+  .score-label { font-size: 16px; opacity: 0.8; margin-top: 8px; }
+  .btn-primary { background: #1565c0; color: white; border: none; padding: 12px 28px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; margin-top: 12px; transition: background 0.2s; }
+  .btn-primary:hover { background: #0d47a1; }
+  .btn-secondary { background: white; color: #1565c0; border: 2px solid #1565c0; padding: 10px 24px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; margin: 8px 4px; transition: all 0.2s; }
+  .btn-secondary:hover { background: #E3F2FD; }
+
+  /* ESSAY */
+  .essay-item { background: white; border-radius: 14px; padding: 22px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #e0e4f0; }
+  .essay-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #E65100; color: white; border-radius: 10px; font-weight: 800; font-size: 14px; margin-bottom: 12px; }
+  .essay-q { font-size: 15px; font-weight: 700; color: #1a237e; margin-bottom: 8px; line-height: 1.6; }
+  .essay-q-ar { font-size: 13px; color: #546e7a; direction: rtl; text-align: right; margin-bottom: 12px; font-style: italic; line-height: 1.7; }
+  .essay-hint { font-size: 12px; color: #78909C; background: #F5F7FA; padding: 8px 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #B0BEC5; }
+  .essay-textarea { width: 100%; border: 1.5px solid #e0e4f0; border-radius: 10px; padding: 14px; font-size: 14px; font-family: inherit; resize: vertical; min-height: 120px; color: #1a1a2e; background: #fafbff; transition: border-color 0.2s; }
+  .essay-textarea:focus { outline: none; border-color: #5c6bc0; background: white; }
+
+  /* SUMMARY */
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .summary-method { border-radius: 12px; padding: 16px; color: white; }
+  .sm-title { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+  .sm-ar { font-size: 12px; opacity: 0.8; direction: rtl; text-align: right; margin-bottom: 10px; }
+  .sm-row { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+  .sm-tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,0.2); font-weight: 600; }
+  .sm-tag.green-tag { background: rgba(165,214,167,0.3); }
+  .sm-tag.red-tag { background: rgba(239,154,154,0.3); }
+
+  .conclusion-box { background: linear-gradient(135deg, #E8F5E9, #E3F2FD); border-radius: 16px; padding: 28px; border-left: 6px solid #1565c0; margin-bottom: 24px; }
+  .conclusion-en { font-size: 16px; color: #1a237e; font-weight: 700; line-height: 1.7; margin-bottom: 12px; }
+  .conclusion-ar { font-size: 14px; color: #2e7d32; direction: rtl; text-align: right; line-height: 1.8; font-style: italic; border-top: 1px dashed #a5d6a7; padding-top: 12px; }
+
+  /* PROGRESS */
+  .progress-bar { height: 4px; background: #e0e0e0; border-radius: 2px; margin-bottom: 20px; }
+  .progress-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #1565c0, #0288d1); transition: width 0.4s; }
+  .mcq-counter { font-size: 13px; color: #546e7a; margin-bottom: 16px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="chapter">Chapter 2 | الفصل الثاني</div>
+  <h1>TRADITIONAL TEACHING METHODS</h1>
+  <div class="ar-title">أساليب التدريس التقليدية</div>
+  <div class="author">Prepared by Dr. Saeed Mohammed</div>
+</div>
+
+<div class="nav-tabs">
+  <div class="nav-tab active" onclick="showTab('objectives')">📋 Objectives | الأهداف</div>
+  <div class="nav-tab" onclick="showTab('definition')">📖 Definition | التعريف</div>
+  <div class="nav-tab" onclick="showTab('methods')">🧩 Methods | الأساليب</div>
+  <div class="nav-tab" onclick="showTab('compare')">⚖️ Compare | المقارنة</div>
+  <div class="nav-tab" onclick="showTab('mcq')">✅ MCQ | اختيار متعدد</div>
+  <div class="nav-tab" onclick="showTab('essay')">✏️ Essay | مقالي</div>
+  <div class="nav-tab" onclick="showTab('summary')">📄 Summary | الملخص</div>
+</div>
+
+<!-- ─── OBJECTIVES ─────────────────────────────── -->
+<div id="tab-objectives" class="section active">
+  <div class="section-title">Learning Objectives</div>
+  <div class="section-subtitle">أهداف التعلم</div>
+
+  <div class="obj-item" style="background:#1565c0;">
+    <div class="obj-num">1</div>
+    <div><div class="obj-en">Define traditional teaching methods and historical context</div>
+    <div class="obj-ar">تعريف أساليب التدريس التقليدية وسياقها التاريخي</div></div>
+  </div>
+  <div class="obj-item" style="background:#C62828;">
+    <div class="obj-num">2</div>
+    <div><div class="obj-en">Identify and explain major traditional approaches</div>
+    <div class="obj-ar">تحديد الأساليب التقليدية الرئيسية وشرحها</div></div>
+  </div>
+  <div class="obj-item" style="background:#2E7D32;">
+    <div class="obj-num">3</div>
+    <div><div class="obj-en">Analyze strengths and limitations of each method</div>
+    <div class="obj-ar">تحليل مزايا وقيود كل أسلوب</div></div>
+  </div>
+  <div class="obj-item" style="background:#6A1B9A;">
+    <div class="obj-num">4</div>
+    <div><div class="obj-en">Compare traditional with modern pedagogical approaches</div>
+    <div class="obj-ar">المقارنة بين الأساليب التقليدية والحديثة في التدريس</div></div>
+  </div>
+</div>
+
+<!-- ─── DEFINITION ─────────────────────────────── -->
+<div id="tab-definition" class="section">
+  <div class="section-title">Definition & Key Characteristics</div>
+  <div class="section-subtitle">التعريف والخصائص الرئيسية</div>
+
+  <div class="card">
+    <div class="def-box">
+      <div style="font-size:18px;font-weight:800;color:#4A148C;margin-bottom:10px;">Traditional Teaching</div>
+      <div class="def-en">Also known as the <strong>lecture-based or didactic approach</strong> — a method where the teacher transmits knowledge through lectures, readings, or other forms of presentation.</div>
+      <div class="def-ar">يُعرف أيضاً بالأسلوب المحاضراتي أو التعليمي — وهو أسلوب يقوم فيه المعلم بنقل المعرفة عبر المحاضرات والقراءات وأشكال العرض المختلفة.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-size:17px;font-weight:800;color:#00695C;margin-bottom:16px;">Key Characteristics | الخصائص الرئيسية</div>
+    <div class="char-grid">
+      <div class="char-item"><div class="char-num">1</div><div><div class="char-en">Teacher-centered instruction</div><div class="char-ar">التعليم يتمحور حول المعلم</div></div></div>
+      <div class="char-item"><div class="char-num">2</div><div><div class="char-en">Curriculum-driven content</div><div class="char-ar">المحتوى مبني على المنهج الدراسي</div></div></div>
+      <div class="char-item"><div class="char-num">3</div><div><div class="char-en">Passive learning approach</div><div class="char-ar">أسلوب التعلم السلبي</div></div></div>
+      <div class="char-item"><div class="char-num">4</div><div><div class="char-en">Standardized assessment</div><div class="char-ar">التقييم الموحد والمقنن</div></div></div>
+      <div class="char-item"><div class="char-num">5</div><div><div class="char-en">Whole-class instruction</div><div class="char-ar">التعليم الموجه لكامل الفصل</div></div></div>
+      <div class="char-item"><div class="char-num">6</div><div><div class="char-en">Structured environment</div><div class="char-ar">البيئة التعليمية المنظمة والمقيدة</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── METHODS ─────────────────────────────────── -->
+<div id="tab-methods" class="section">
+  <div class="section-title">The 6 Traditional Methods</div>
+  <div class="section-subtitle">الأساليب التقليدية الستة</div>
+
+  <div class="methods-overview">
+    <div class="method-pill" style="background:#1565c0;" onclick="scrollToMethod('m1')"><span class="mp-num">1</span><span class="mp-en">Lecture</span><span class="mp-ar">المحاضرة</span></div>
+    <div class="method-pill" style="background:#C62828;" onclick="scrollToMethod('m2')"><span class="mp-num">2</span><span class="mp-en">Group Discussion</span><span class="mp-ar">المناقشة</span></div>
+    <div class="method-pill" style="background:#2E7D32;" onclick="scrollToMethod('m3')"><span class="mp-num">3</span><span class="mp-en">Demonstration</span><span class="mp-ar">العرض التوضيحي</span></div>
+    <div class="method-pill" style="background:#6A1B9A;" onclick="scrollToMethod('m4')"><span class="mp-num">4</span><span class="mp-en">Recitation</span><span class="mp-ar">الاستظهار</span></div>
+    <div class="method-pill" style="background:#E65100;" onclick="scrollToMethod('m5')"><span class="mp-num">5</span><span class="mp-en">Drill & Practice</span><span class="mp-ar">التدريب</span></div>
+    <div class="method-pill" style="background:#00695C;" onclick="scrollToMethod('m6')"><span class="mp-num">6</span><span class="mp-en">Textbook</span><span class="mp-ar">الكتاب</span></div>
+  </div>
+
+  <!-- Method 1 -->
+  <div id="m1" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#1565c0,#1976D2);">
+      <div class="method-title">1. Lecture Method</div>
+      <div class="method-subtitle-ar">أسلوب المحاضرة</div>
+    </div>
+    <div class="method-desc">Teacher delivers information verbally to students.<div class="method-desc-ar">يقوم المعلم بتوصيل المعلومات للطلاب بشكل شفهي.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Efficient for large volumes of information</div><div class="al-ar">فعّال لتغطية كميات كبيرة من المعلومات</div></div>
+        <div class="al-item"><div class="al-en">Cost-effective for many students</div><div class="al-ar">اقتصادي ومناسب لأعداد كبيرة</div></div>
+        <div class="al-item"><div class="al-en">Systematic curriculum coverage</div><div class="al-ar">يغطي المنهج بشكل منهجي ومنظم</div></div>
+        <div class="al-item"><div class="al-en">Can inspire through expert delivery</div><div class="al-ar">يمكن أن يلهم الطلاب عبر أسلوب الخبير</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Promotes passive learning</div><div class="al-ar">يعزز التعلم السلبي لدى الطلاب</div></div>
+        <div class="al-item"><div class="al-en">Difficult for different learning styles</div><div class="al-ar">صعب لذوي أساليب التعلم المختلفة</div></div>
+        <div class="al-item"><div class="al-en">Poor information retention</div><div class="al-ar">ضعف الاحتفاظ بالمعلومات</div></div>
+        <div class="al-item"><div class="al-en">Limited immediate feedback</div><div class="al-ar">محدودية التغذية الراجعة الفورية</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 2 -->
+  <div id="m2" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#C62828,#D32F2F);">
+      <div class="method-title">2. Group Discussion</div>
+      <div class="method-subtitle-ar">أسلوب المناقشة الجماعية</div>
+    </div>
+    <div class="method-desc">Cooperative problem-solving with consensus.<div class="method-desc-ar">حل المشكلات بشكل تعاوني والتوصل إلى إجماع بين الطلاب.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Develops critical thinking</div><div class="al-ar">يطوّر مهارات التفكير النقدي</div></div>
+        <div class="al-item"><div class="al-en">Encourages active participation</div><div class="al-ar">يشجع على المشاركة الفعّالة</div></div>
+        <div class="al-item"><div class="al-en">Builds communication skills</div><div class="al-ar">يبني مهارات التواصل والتعبير</div></div>
+        <div class="al-item"><div class="al-en">Promotes collaborative learning</div><div class="al-ar">يعزز التعلم التعاوني بين الطلاب</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Time-consuming process</div><div class="al-ar">يستغرق وقتاً طويلاً نسبياً</div></div>
+        <div class="al-item"><div class="al-en">May be dominated by few students</div><div class="al-ar">قد يهيمن عليه عدد قليل من الطلاب</div></div>
+        <div class="al-item"><div class="al-en">Requires skilled facilitation</div><div class="al-ar">يتطلب تيسيراً ماهراً من المعلم</div></div>
+        <div class="al-item"><div class="al-en">Difficult to assess individual learning</div><div class="al-ar">صعوبة تقييم تعلم كل طالب فردياً</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 3 -->
+  <div id="m3" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#2E7D32,#388E3C);">
+      <div class="method-title">3. Demonstration</div>
+      <div class="method-subtitle-ar">أسلوب العرض التوضيحي</div>
+    </div>
+    <div class="method-desc">Teacher shows a skill/process for students to observe and replicate.<div class="method-desc-ar">يقوم المعلم بعرض مهارة أو إجراء ليتابعه الطلاب ويحاكوه.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Makes concepts concrete</div><div class="al-ar">يجعل المفاهيم المجردة ملموسة وواضحة</div></div>
+        <div class="al-item"><div class="al-en">Effective for practical skills</div><div class="al-ar">فعّال لتعليم المهارات العملية</div></div>
+        <div class="al-item"><div class="al-en">Engages visual learners</div><div class="al-ar">يناسب الطلاب ذوي الأسلوب البصري</div></div>
+        <div class="al-item"><div class="al-en">Reduces student errors</div><div class="al-ar">يقلل من أخطاء الطلاب في التطبيق</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Students remain passive observers</div><div class="al-ar">يبقى الطلاب مراقبين سلبيين</div></div>
+        <div class="al-item"><div class="al-en">Visibility issues in large classes</div><div class="al-ar">مشكلات الرؤية في الفصول الكبيرة</div></div>
+        <div class="al-item"><div class="al-en">Difficult to scale</div><div class="al-ar">صعب التطبيق مع الأعداد الكبيرة</div></div>
+        <div class="al-item"><div class="al-en">No guarantee of replication ability</div><div class="al-ar">لا ضمان لقدرة الطلاب على التكرار</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 4 -->
+  <div id="m4" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#6A1B9A,#7B1FA2);">
+      <div class="method-title">4. Recitation</div>
+      <div class="method-subtitle-ar">أسلوب الاستظهار</div>
+    </div>
+    <div class="method-desc">Teacher questions; students recall previously learned material.<div class="method-desc-ar">يطرح المعلم أسئلة والطلاب يستذكرون ما تعلموه مسبقاً.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Reinforces memorization</div><div class="al-ar">يعزز الحفظ والاستذكار</div></div>
+        <div class="al-item"><div class="al-en">Provides immediate feedback</div><div class="al-ar">يوفر تغذية راجعة فورية</div></div>
+        <div class="al-item"><div class="al-en">Encourages participation</div><div class="al-ar">يشجع الطلاب على المشاركة</div></div>
+        <div class="al-item"><div class="al-en">Quick comprehension assessment</div><div class="al-ar">تقييم سريع لمستوى الفهم</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Focuses on rote memorization</div><div class="al-ar">يركز على الحفظ الآلي دون فهم</div></div>
+        <div class="al-item"><div class="al-en">Can create student anxiety</div><div class="al-ar">قد يسبب قلقاً وتوتراً للطلاب</div></div>
+        <div class="al-item"><div class="al-en">Limited critical thinking</div><div class="al-ar">محدودية في تنمية التفكير النقدي</div></div>
+        <div class="al-item"><div class="al-en">Teacher-dominated process</div><div class="al-ar">يهيمن عليه المعلم بشكل كبير</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 5 -->
+  <div id="m5" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#E65100,#EF6C00);">
+      <div class="method-title">5. Drill & Practice</div>
+      <div class="method-subtitle-ar">أسلوب التدريب والتطبيق</div>
+    </div>
+    <div class="method-desc">Repeated practice until skill mastery is achieved.<div class="method-desc-ar">التكرار المتواصل في التدريب على المهارات حتى يتقنها الطلاب.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Builds skill automaticity</div><div class="al-ar">يبني إتقاناً تلقائياً للمهارة</div></div>
+        <div class="al-item"><div class="al-en">Structured practice opportunities</div><div class="al-ar">يوفر فرص تدريب منظمة ومتكررة</div></div>
+        <div class="al-item"><div class="al-en">Develops student confidence</div><div class="al-ar">يطور ثقة الطلاب بأنفسهم</div></div>
+        <div class="al-item"><div class="al-en">Individual pacing possible</div><div class="al-ar">يتيح التعلم وفق الوتيرة الفردية</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Can become tedious</div><div class="al-ar">قد يصبح مملاً ومتكرراً بشكل مُفرط</div></div>
+        <div class="al-item"><div class="al-en">No higher-order thinking</div><div class="al-ar">لا يشجع على التفكير الأعلى مستوى</div></div>
+        <div class="al-item"><div class="al-en">Surface learning only</div><div class="al-ar">يحقق تعلماً سطحياً فحسب</div></div>
+        <div class="al-item"><div class="al-en">Poor transfer to novel contexts</div><div class="al-ar">ضعف نقل المعرفة لسياقات جديدة</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 6 -->
+  <div id="m6" class="card">
+    <div class="method-header" style="background:linear-gradient(135deg,#00695C,#00796B);">
+      <div class="method-title">6. Textbook Method</div>
+      <div class="method-subtitle-ar">أسلوب الكتاب المدرسي</div>
+    </div>
+    <div class="method-desc">Textbook serves as primary curriculum guide.<div class="method-desc-ar">يعتمد الكتاب المدرسي كمرجع أساسي وموجّه رئيسي لتقديم المنهج.</div></div>
+    <div class="adv-lim-grid">
+      <div class="adv-box">
+        <div class="box-label">✓ Advantages | المزايا</div>
+        <div class="al-item"><div class="al-en">Structured comprehensive curriculum</div><div class="al-ar">منهج شامل ومنظم بشكل واضح</div></div>
+        <div class="al-item"><div class="al-en">Supports self-study</div><div class="al-ar">يدعم التعلم الذاتي لدى الطلاب</div></div>
+        <div class="al-item"><div class="al-en">Standardization across schools</div><div class="al-ar">يحقق التوحيد والتقنين بين المدارس</div></div>
+        <div class="al-item"><div class="al-en">Convenient reference material</div><div class="al-ar">مادة مرجعية مناسبة وسهلة الاستخدام</div></div>
+      </div>
+      <div class="lim-box">
+        <div class="box-label">✗ Limitations | القيود</div>
+        <div class="al-item"><div class="al-en">Rigid and disconnected</div><div class="al-ar">جامد ومنفصل عن الواقع</div></div>
+        <div class="al-item"><div class="al-en">Content becomes outdated</div><div class="al-ar">يصبح المحتوى قديماً بمرور الوقت</div></div>
+        <div class="al-item"><div class="al-en">Surface-level reading</div><div class="al-ar">يشجع على القراءة السطحية فحسب</div></div>
+        <div class="al-item"><div class="al-en">Reduces teacher creativity</div><div class="al-ar">يقيّد إبداع المعلم وابتكاره</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COMPARE ─────────────────────────────────── -->
+<div id="tab-compare" class="section">
+  <div class="section-title">Traditional vs Modern</div>
+  <div class="section-subtitle">التقليدي مقابل الحديث</div>
+
+  <div class="card">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="th-trad">TRADITIONAL | تقليدي</th>
+          <th class="th-vs">vs</th>
+          <th class="th-mod">MODERN | حديث</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-trad">Teacher-centered<br><small style="color:#E64A19;font-weight:400;">متمحور حول المعلم</small></td>
+          <td class="td-vs">↔</td>
+          <td class="td-mod">Student-centered<br><small style="color:#00796B;font-weight:400;">متمحور حول الطالب</small></td>
+        </tr>
+        <tr>
+          <td class="td-trad">Authority source<br><small style="color:#E64A19;font-weight:400;">مصدر السلطة والمعرفة</small></td>
+          <td class="td-vs">↔</td>
+          <td class="td-mod">Facilitator guide<br><small style="color:#00796B;font-weight:400;">الموجّه والميسّر</small></td>
+        </tr>
+        <tr>
+          <td class="td-trad">Passive recipient<br><small style="color:#E64A19;font-weight:400;">المتلقي السلبي</small></td>
+          <td class="td-vs">↔</td>
+          <td class="td-mod">Active constructor<br><small style="color:#00796B;font-weight:400;">البانِي الفعّال للمعرفة</small></td>
+        </tr>
+        <tr>
+          <td class="td-trad">Tests & exams<br><small style="color:#E64A19;font-weight:400;">الاختبارات والامتحانات</small></td>
+          <td class="td-vs">↔</td>
+          <td class="td-mod">Portfolio & projects<br><small style="color:#00796B;font-weight:400;">الملفات والمشاريع</small></td>
+        </tr>
+        <tr>
+          <td class="td-trad">Fixed<br><small style="color:#E64A19;font-weight:400;">ثابت وغير مرن</small></td>
+          <td class="td-vs">↔</td>
+          <td class="td-mod">Flexible<br><small style="color:#00796B;font-weight:400;">مرن وقابل للتكيف</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="conclusion-box">
+      <div class="conclusion-en">Effective teaching draws on both traditional and modern methods. The question is not which is 'correct,' but which is most appropriate for the learning objective, student population, and context.</div>
+      <div class="conclusion-ar">التدريس الفعّال يستمد قوته من كلا الأسلوبين التقليدي والحديث. السؤال ليس أيّهما "صحيح"، بل أيّهما الأنسب لهدف التعلم وطبيعة الطلاب والسياق التعليمي.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MCQ ─────────────────────────────────────── -->
+<div id="tab-mcq" class="section">
+  <div class="section-title">Multiple Choice Questions</div>
+  <div class="section-subtitle">أسئلة الاختيار من متعدد</div>
+
+  <div id="scoreBox" class="score-box">
+    <div class="score-num" id="scoreNum">0/10</div>
+    <div class="score-label" id="scoreLabel"></div>
+    <br>
+    <button class="btn-primary" onclick="resetMCQ()">Try Again | أعد المحاولة</button>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="mcq-counter" id="mcqCounter">0 of 10 answered | 0 من 10 تمت الإجابة عليها</div>
+
+  <div id="mcqContainer"></div>
+
+  <div style="text-align:center;margin-top:20px;">
+    <button class="btn-primary" onclick="submitMCQ()">Submit Answers | تسليم الإجابات</button>
+  </div>
+</div>
+
+<!-- ─── ESSAY ─────────────────────────────────────── -->
+<div id="tab-essay" class="section">
+  <div class="section-title">Essay Questions</div>
+  <div class="section-subtitle">الأسئلة المقالية</div>
+
+  <div class="essay-item">
+    <div class="essay-num">1</div>
+    <div class="essay-q">Define traditional teaching methods and explain three of its key characteristics in detail.</div>
+    <div class="essay-q-ar">عرّف أساليب التدريس التقليدية، واشرح ثلاث من خصائصها الرئيسية بالتفصيل.</div>
+    <div class="essay-hint">💡 Hint: Include definition, teacher-centered, passive learning, standardized assessment</div>
+    <textarea class="essay-textarea" placeholder="Write your answer here... | اكتب إجابتك هنا..."></textarea>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-num">2</div>
+    <div class="essay-q">Compare and contrast the Lecture Method with Group Discussion, discussing the advantages and limitations of each.</div>
+    <div class="essay-q-ar">قارن بين أسلوب المحاضرة والمناقشة الجماعية، مع مناقشة مزايا وقيود كل منهما.</div>
+    <div class="essay-hint">💡 Hint: Focus on student role, engagement, feedback, and learning outcomes</div>
+    <textarea class="essay-textarea" placeholder="Write your answer here... | اكتب إجابتك هنا..."></textarea>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-num">3</div>
+    <div class="essay-q">Critically analyze the Demonstration Method. In what educational contexts is it most appropriate and why?</div>
+    <div class="essay-q-ar">حلّل أسلوب العرض التوضيحي تحليلاً نقدياً. في أيّ سياقات تعليمية يكون الأنسب ولماذا؟</div>
+    <div class="essay-hint">💡 Hint: Include nursing/clinical contexts, practical skills, visual learning</div>
+    <textarea class="essay-textarea" placeholder="Write your answer here... | اكتب إجابتك هنا..."></textarea>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-num">4</div>
+    <div class="essay-q">Compare traditional and modern pedagogical approaches, highlighting the role of the teacher and learner in each.</div>
+    <div class="essay-q-ar">قارن بين الأساليب البيداغوجية التقليدية والحديثة، مع إبراز دور المعلم والمتعلم في كل منهما.</div>
+    <div class="essay-hint">💡 Hint: Use the 5 comparison points: role, instruction, assessment, etc.</div>
+    <textarea class="essay-textarea" placeholder="Write your answer here... | اكتب إجابتك هنا..."></textarea>
+  </div>
+
+  <div class="essay-item">
+    <div class="essay-num">5</div>
+    <div class="essay-q">As a nursing educator, how would you integrate traditional teaching methods with modern approaches to enhance student learning? Give specific examples.</div>
+    <div class="essay-q-ar">بوصفك مُعلماً في التمريض، كيف ستدمج أساليب التدريس التقليدية مع الأساليب الحديثة لتعزيز تعلم الطلاب؟ أعطِ أمثلة محددة.</div>
+    <div class="essay-hint">💡 Hint: Lecture + simulation, Demonstration + peer practice, Drill + clinical reasoning</div>
+    <textarea class="essay-textarea" placeholder="Write your answer here... | اكتب إجابتك هنا..."></textarea>
+  </div>
+</div>
+
+<!-- ─── SUMMARY ─────────────────────────────────── -->
+<div id="tab-summary" class="section">
+  <div class="section-title">Lecture Summary</div>
+  <div class="section-subtitle">ملخص المحاضرة الكاملة</div>
+
+  <div class="card">
+    <div style="font-size:16px;font-weight:700;color:#1a237e;margin-bottom:10px;">Overview | نظرة عامة</div>
+    <p style="font-size:14px;color:#37474f;line-height:1.8;margin-bottom:10px;">Traditional teaching (didactic/lecture-based) is a <strong>teacher-centered</strong> approach where the instructor transmits knowledge through structured presentations. It is characterized by passive learning, curriculum-driven content, standardized assessment, and whole-class delivery.</p>
+    <p style="font-size:13px;color:#607d8b;direction:rtl;text-align:right;line-height:1.9;border-top:1px dashed #ccc;padding-top:10px;font-style:italic;">التدريس التقليدي هو نهج يتمحور حول المعلم الذي ينقل المعرفة للطلاب عبر عروض منظمة، ويتسم بالتعلم السلبي والمحتوى المبني على المنهج والتقييم الموحد.</p>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-method" style="background:#1565c0;">
+      <div class="sm-title">1. Lecture | المحاضرة</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Efficient</span><span class="sm-tag green-tag">✓ Large groups</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Passive</span><span class="sm-tag red-tag">✗ Poor retention</span></div>
+    </div>
+    <div class="summary-method" style="background:#C62828;">
+      <div class="sm-title">2. Group Discussion | المناقشة</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Critical thinking</span><span class="sm-tag green-tag">✓ Teamwork</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Time-consuming</span><span class="sm-tag red-tag">✗ Few dominate</span></div>
+    </div>
+    <div class="summary-method" style="background:#2E7D32;">
+      <div class="sm-title">3. Demonstration | العرض</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Concrete</span><span class="sm-tag green-tag">✓ Visual</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Passive observers</span><span class="sm-tag red-tag">✗ Scaling</span></div>
+    </div>
+    <div class="summary-method" style="background:#6A1B9A;">
+      <div class="sm-title">4. Recitation | الاستظهار</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Feedback</span><span class="sm-tag green-tag">✓ Participation</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Anxiety</span><span class="sm-tag red-tag">✗ Rote learning</span></div>
+    </div>
+    <div class="summary-method" style="background:#E65100;">
+      <div class="sm-title">5. Drill & Practice | التدريب</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Automaticity</span><span class="sm-tag green-tag">✓ Confidence</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Tedious</span><span class="sm-tag red-tag">✗ Surface only</span></div>
+    </div>
+    <div class="summary-method" style="background:#00695C;">
+      <div class="sm-title">6. Textbook | الكتاب</div>
+      <div class="sm-row"><span class="sm-tag green-tag">✓ Standardized</span><span class="sm-tag green-tag">✓ Self-study</span></div>
+      <div class="sm-row"><span class="sm-tag red-tag">✗ Rigid</span><span class="sm-tag red-tag">✗ Outdated</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-size:15px;font-weight:700;color:#1a237e;margin-bottom:14px;">Traditional vs Modern | مقارنة سريعة</div>
+    <table style="width:100%;font-size:13px;border-collapse:collapse;">
+      <tr style="background:#E65100;color:white;">
+        <th style="padding:10px 14px;border-radius:8px 0 0 0;">Traditional | تقليدي</th>
+        <th style="padding:10px 6px;color:rgba(255,255,255,0.6);width:40px;">vs</th>
+        <th style="padding:10px 14px;border-radius:0 8px 0 0;background:#00695C;">Modern | حديث</th>
+      </tr>
+      <tr><td style="padding:9px 14px;color:#BF360C;font-weight:600;border-bottom:1px solid #eee;">Teacher-centered | متمحور حول المعلم</td><td style="text-align:center;color:#90A4AE;">↔</td><td style="padding:9px 14px;color:#004D40;font-weight:600;border-bottom:1px solid #eee;">Student-centered | متمحور حول الطالب</td></tr>
+      <tr style="background:#fafafa;"><td style="padding:9px 14px;color:#BF360C;font-weight:600;border-bottom:1px solid #eee;">Authority source | مصدر السلطة</td><td style="text-align:center;color:#90A4AE;">↔</td><td style="padding:9px 14px;color:#004D40;font-weight:600;border-bottom:1px solid #eee;">Facilitator | الموجّه والميسّر</td></tr>
+      <tr><td style="padding:9px 14px;color:#BF360C;font-weight:600;border-bottom:1px solid #eee;">Passive learner | المتعلم السلبي</td><td style="text-align:center;color:#90A4AE;">↔</td><td style="padding:9px 14px;color:#004D40;font-weight:600;border-bottom:1px solid #eee;">Active constructor | البانِي الفعّال</td></tr>
+      <tr style="background:#fafafa;"><td style="padding:9px 14px;color:#BF360C;font-weight:600;border-bottom:1px solid #eee;">Tests & exams | الاختبارات</td><td style="text-align:center;color:#90A4AE;">↔</td><td style="padding:9px 14px;color:#004D40;font-weight:600;border-bottom:1px solid #eee;">Portfolio & projects | الملفات</td></tr>
+      <tr><td style="padding:9px 14px;color:#BF360C;font-weight:600;">Fixed | ثابت ومقيّد</td><td style="text-align:center;color:#90A4AE;">↔</td><td style="padding:9px 14px;color:#004D40;font-weight:600;">Flexible | مرن وقابل للتكيف</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="conclusion-box">
+      <div class="conclusion-en">🎓 Key Takeaway: Effective teaching integrates both traditional and modern methods. The key question is not which is "correct," but which best serves the learning objective, student population, and educational context.</div>
+      <div class="conclusion-ar">الفكرة الجوهرية: التدريس الفعّال يدمج بين الأسلوبين التقليدي والحديث. السؤال الجوهري ليس أيّهما "صحيح"، بل أيّهما يخدم الهدف التعليمي وطبيعة الطلاب والسياق التعليمي بشكل أفضل.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const mcqData = [
+  { q: "Traditional teaching is also known as:", ar: "يُعرف التدريس التقليدي أيضاً بـ:", opts: [["Constructivist approach","النهج البنائي"],["Lecture-based or didactic approach","النهج المحاضراتي أو التعليمي"],["Student-centered approach","النهج الطلابي المتمحور"],["Experiential learning","التعلم بالتجربة"]], ans: 1 },
+  { q: "Which is a key characteristic of traditional teaching?", ar: "أيٌّ من التالي خاصية رئيسية للتدريس التقليدي؟", opts: [["Student-centered instruction","التعليم المتمحور حول الطالب"],["Flexible assessment","التقييم المرن"],["Teacher-centered instruction","التعليم المتمحور حول المعلم"],["Portfolio-based evaluation","التقييم القائم على الملفات"]], ans: 2 },
+  { q: "Which method involves the teacher showing a skill for students to observe and replicate?", ar: "أيّ أسلوب يقوم فيه المعلم بعرض مهارة ليراقبها الطلاب ويكررونها؟", opts: [["Recitation","الاستظهار"],["Drill & Practice","التدريب والتطبيق"],["Demonstration","العرض التوضيحي"],["Group Discussion","المناقشة الجماعية"]], ans: 2 },
+  { q: "A major limitation of the Lecture Method is:", ar: "أحد القيود الرئيسية لأسلوب المحاضرة هو:", opts: [["Systematic curriculum coverage","التغطية المنهجية للمنهج"],["Poor information retention","ضعف الاحتفاظ بالمعلومات"],["Cost-effective for many students","الاقتصادية مع الأعداد الكبيرة"],["Can inspire through expert delivery","القدرة على الإلهام عبر الخبير"]], ans: 1 },
+  { q: "Which traditional method focuses on repeated practice until skill mastery?", ar: "أيّ أسلوب تقليدي يركز على التكرار المستمر حتى إتقان المهارة؟", opts: [["Textbook Method","أسلوب الكتاب المدرسي"],["Lecture Method","أسلوب المحاضرة"],["Recitation","الاستظهار"],["Drill & Practice","التدريب والتطبيق"]], ans: 3 },
+  { q: "What role does the teacher play in modern education?", ar: "ما الدور الذي يؤديه المعلم في التعليم الحديث؟", opts: [["Authority source","مصدر السلطة والمعرفة"],["Passive observer","المراقب السلبي"],["Facilitator guide","الموجّه والميسّر"],["Examiner","المُمتحِن"]], ans: 2 },
+  { q: "Which traditional method is most likely to cause student anxiety?", ar: "أيّ الأساليب التقليدية هو الأكثر احتمالاً لإثارة القلق لدى الطلاب؟", opts: [["Textbook Method","أسلوب الكتاب المدرسي"],["Recitation","الاستظهار"],["Demonstration","العرض التوضيحي"],["Group Discussion","المناقشة الجماعية"]], ans: 1 },
+  { q: "The Textbook Method is criticized for:", ar: "يُنتقد أسلوب الكتاب المدرسي بسبب:", opts: [["Supporting self-study","دعمه للتعلم الذاتي"],["Standardization across schools","تحقيقه التوحيد بين المدارس"],["Content becoming outdated","أن محتواه يصبح قديماً"],["Providing comprehensive curriculum","توفيره منهجاً شاملاً"]], ans: 2 },
+  { q: "Group Discussion is described as cooperative problem-solving with:", ar: "تُوصف المناقشة الجماعية بأنها حل مشكلات تعاوني مع:", opts: [["Individual competition","التنافس الفردي"],["Consensus","التوافق والإجماع"],["Rote memorization","الحفظ الآلي"],["Passive observation","المراقبة السلبية"]], ans: 1 },
+  { q: "According to the conclusion, which teaching approach is most appropriate?", ar: "وفقاً للخلاصة، أيّ أسلوب تدريسي هو الأنسب؟", opts: [["Always traditional","التقليدي دائماً"],["Always modern","الحديث دائماً"],["Depends on objective, students, and context","يعتمد على الهدف والطلاب والسياق"],["Based on teacher preference only","بناءً على تفضيل المعلم فقط"]], ans: 2 }
+];
+
+const userAnswers = new Array(10).fill(-1);
+
+function buildMCQ() {
+  const container = document.getElementById('mcqContainer');
+  container.innerHTML = '';
+  mcqData.forEach((q, qi) => {
+    const letters = ['a','b','c','d'];
+    let optsHtml = q.opts.map((o, oi) => `
+      <div class="mcq-opt" id="opt-${qi}-${oi}" onclick="selectOpt(${qi},${oi})">
+        <div class="opt-letter">${letters[oi]}</div>
+        <div class="opt-text">
+          <div class="opt-en">${o[0]}</div>
+          <div class="opt-ar">${o[1]}</div>
+        </div>
+      </div>`).join('');
+    container.innerHTML += `
+      <div class="mcq-item">
+        <div class="mcq-q">Q${qi+1}. ${q.q}</div>
+        <div class="mcq-q-ar">${q.ar}</div>
+        <div class="mcq-options">${optsHtml}</div>
+        <div class="mcq-result" id="result-${qi}"></div>
+      </div>`;
+  });
+}
+
+function selectOpt(qi, oi) {
+  if (document.getElementById('scoreBox').classList.contains('show')) return;
+  const prev = userAnswers[qi];
+  if (prev >= 0) document.getElementById(`opt-${qi}-${prev}`).classList.remove('selected');
+  userAnswers[qi] = oi;
+  document.getElementById(`opt-${qi}-${oi}`).classList.add('selected');
+  const answered = userAnswers.filter(a => a >= 0).length;
+  document.getElementById('progressFill').style.width = (answered/10*100) + '%';
+  document.getElementById('mcqCounter').textContent = `${answered} of 10 answered | ${answered} من 10 تمت الإجابة عليها`;
+}
+
+function submitMCQ() {
+  let score = 0;
+  mcqData.forEach((q, qi) => {
+    const ua = userAnswers[qi];
+    const res = document.getElementById(`result-${qi}`);
+    for (let oi = 0; oi < 4; oi++) {
+      const el = document.getElementById(`opt-${qi}-${oi}`);
+      el.classList.remove('selected');
+      if (oi === q.ans) el.classList.add('correct');
+      else if (oi === ua && ua !== q.ans) el.classList.add('wrong');
+    }
+    if (ua === q.ans) {
+      score++;
+      res.className = 'mcq-result show correct-msg';
+      res.textContent = '✓ Correct! | صحيح!';
+    } else {
+      res.className = 'mcq-result show wrong-msg';
+      const letters = ['a','b','c','d'];
+      res.textContent = `✗ Incorrect. Correct answer: ${letters[q.ans]}) ${q.opts[q.ans][0]} | الإجابة الصحيحة: ${q.opts[q.ans][1]}`;
+    }
+  });
+  const scoreBox = document.getElementById('scoreBox');
+  scoreBox.classList.add('show');
+  document.getElementById('scoreNum').textContent = `${score}/10`;
+  const pct = score/10*100;
+  let msg = pct >= 80 ? '🎉 Excellent! ممتاز' : pct >= 60 ? '👍 Good. جيد' : '📚 Keep studying. استمر في الدراسة';
+  document.getElementById('scoreLabel').textContent = msg;
+  scoreBox.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetMCQ() {
+  userAnswers.fill(-1);
+  document.getElementById('scoreBox').classList.remove('show');
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('mcqCounter').textContent = '0 of 10 answered | 0 من 10 تمت الإجابة عليها';
+  buildMCQ();
+}
+
+function showTab(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToMethod(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+buildMCQ();
+</script>
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching & Learning – Lecture I</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --orange: #FF6B1A;
+    --orange-light: #FF8C42;
+    --teal: #1A7A8A;
+    --teal-light: #2BA8BD;
+    --gold: #F5A623;
+    --purple: #8B5CF6;
+    --green: #10B981;
+    --red: #EF4444;
+    --navy: #1E2A3A;
+    --bg: #F7F8FC;
+    --card: #FFFFFF;
+    --text: #1E2A3A;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --arabic-font: 'Cairo', sans-serif;
+    --en-font: 'Inter', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--en-font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #FF6B1A 0%, #F5A623 60%, #FF8C42 100%);
+    padding: 70px 40px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    top: -120px; left: -80px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    bottom: -100px; right: -60px;
+  }
+  .hero-icon { font-size: 64px; margin-bottom: 18px; }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-family: var(--arabic-font);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: rgba(255,255,255,0.88);
+    margin-top: 6px;
+    font-weight: 700;
+  }
+  .hero-meta {
+    margin-top: 22px;
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 40px;
+    padding: 8px 24px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 60px 0 40px; }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+  .sec-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .sec-header h2 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  .sec-header .ar {
+    font-family: var(--arabic-font);
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-weight: 600;
+    display: block;
+    margin-top: 1px;
+  }
+
+  /* ── BILINGUAL CARD ── */
+  .bi-card {
+    background: var(--card);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .bi-card-header {
+    padding: 16px 22px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bi-card-body { display: grid; grid-template-columns: 1fr 1fr; }
+  @media(max-width:620px){ .bi-card-body { grid-template-columns: 1fr; } }
+  .bi-en, .bi-ar {
+    padding: 20px 22px;
+  }
+  .bi-ar {
+    border-left: 1px solid var(--border);
+    font-family: var(--arabic-font);
+    direction: rtl;
+    text-align: right;
+  }
+  @media(max-width:620px){
+    .bi-ar { border-left: none; border-top: 1px solid var(--border); }
+  }
+  .lang-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-en { background: #DBEAFE; color: #1D4ED8; }
+  .badge-ar { background: #FEF3C7; color: #92400E; font-family: var(--arabic-font); }
+  .bi-en p, .bi-ar p { font-size: 0.97rem; color: var(--text); }
+
+  /* ── DEFINITION BOX ── */
+  .def-box {
+    border-left: 5px solid var(--orange);
+    padding: 16px 20px;
+    background: #FFF7F0;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 14px;
+  }
+  .def-box.teal { border-color: var(--teal); background: #F0FBFC; }
+  .def-box.purple { border-color: var(--purple); background: #F5F3FF; }
+  .def-box strong {
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .def-box .ar-text {
+    font-family: var(--arabic-font);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+    color: var(--muted);
+    font-size: 0.93rem;
+  }
+
+  /* ── COMPONENTS GRID ── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .comp-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 18px;
+    text-align: center;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s;
+  }
+  .comp-card:hover { transform: translateY(-3px); }
+  .comp-card .num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 auto 12px;
+  }
+  .comp-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .comp-card .ar-sub {
+    font-family: var(--arabic-font);
+    font-size: 0.88rem;
+    color: var(--muted);
+    direction: rtl;
+  }
+  .comp-card p { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+
+  /* ── KEY CONNECTIONS ── */
+  .conn-list { list-style: none; }
+  .conn-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .conn-list li:last-child { border-bottom: none; }
+  .conn-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .conn-list .title { font-weight: 700; font-size: 0.97rem; }
+  .conn-list .desc { font-size: 0.88rem; color: var(--muted); }
+  .conn-list .ar-desc {
+    font-family: var(--arabic-font);
+    font-size: 0.88rem;
+    color: var(--muted);
+    direction: rtl;
+    text-align: right;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── CYCLE ── */
+  .cycle-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .cycle-step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 120px;
+    position: relative;
+    flex: 1 1 120px;
+    max-width: 140px;
+  }
+  .cycle-step .step-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .cycle-step p { font-size: 0.82rem; font-weight: 600; }
+  .cycle-step .ar-p {
+    font-family: var(--arabic-font);
+    font-size: 0.78rem;
+    color: var(--muted);
+    direction: rtl;
+  }
+
+  /* ── COMPETENCIES ── */
+  .comp-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    transition: transform 0.15s;
+  }
+  .comp-row:hover { transform: translateX(4px); }
+  .comp-row .c-num {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .comp-row .c-en { font-weight: 700; font-size: 0.97rem; }
+  .comp-row .c-sub { font-size: 0.83rem; color: var(--muted); }
+  .comp-row .c-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.9rem;
+    color: var(--teal);
+    font-weight: 700;
+    margin-left: auto;
+    text-align: right;
+    direction: rtl;
+  }
+
+  /* ── FACTORS ── */
+  .factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .factor-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid var(--border);
+  }
+  .factor-card .f-icon { font-size: 24px; margin-bottom: 8px; }
+  .factor-card h4 { font-weight: 700; font-size: 0.95rem; }
+  .factor-card .f-sub { font-size: 0.82rem; color: var(--muted); }
+  .factor-card .f-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.85rem;
+    color: var(--orange);
+    font-weight: 700;
+    direction: rtl;
+    text-align: right;
+    margin-top: 6px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 20px 0;
+  }
+
+  /* ── SUMMARY BOX ── */
+  .summary-box {
+    background: linear-gradient(135deg, #1E2A3A 0%, #2A3F58 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: #fff;
+    margin-bottom: 50px;
+  }
+  .summary-box h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .summary-ar {
+    font-family: var(--arabic-font);
+    direction: rtl;
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .sum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .sum-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .sum-item .s-title { font-weight: 700; font-size: 0.95rem; color: var(--gold); margin-bottom: 4px; }
+  .sum-item .s-body { font-size: 0.84rem; color: rgba(255,255,255,0.8); }
+  .sum-item .s-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.65);
+    direction: rtl;
+    text-align: right;
+    margin-top: 5px;
+  }
+
+  /* ── MCQ SECTION ── */
+  .quiz-section {
+    background: #fff;
+    border-radius: 20px;
+    border: 2px solid var(--teal);
+    padding: 36px;
+    margin-bottom: 30px;
+  }
+  .quiz-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .quiz-title-ar {
+    font-family: var(--arabic-font);
+    font-size: 1rem;
+    color: var(--muted);
+    direction: rtl;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .q-block { margin-bottom: 28px; }
+  .q-num {
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .q-text { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+  .q-text-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.93rem;
+    color: var(--muted);
+    direction: rtl;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .options { list-style: none; }
+  .options li {
+    padding: 9px 14px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    margin-bottom: 7px;
+    font-size: 0.93rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .options li:hover { background: #F0FBFC; border-color: var(--teal-light); }
+  .options li.correct { background: #D1FAE5; border-color: var(--green); }
+  .options li.wrong { background: #FEE2E2; border-color: var(--red); }
+  .opt-letter {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .opt-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.85rem;
+    color: var(--muted);
+    direction: rtl;
+    margin-left: auto;
+  }
+  .answer-key {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: #F0FDF4;
+    border-radius: 12px;
+    border: 1px solid #A7F3D0;
+  }
+  .answer-key h4 { font-weight: 700; color: var(--green); margin-bottom: 8px; font-size: 0.95rem; }
+  .answer-key p { font-size: 0.88rem; color: var(--text); line-height: 1.8; }
+
+  /* ── ESSAY SECTION ── */
+  .essay-section {
+    background: #fff;
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+    padding: 36px;
+    margin-bottom: 50px;
+  }
+  .essay-title { font-size: 1.4rem; font-weight: 800; color: var(--purple); margin-bottom: 6px; }
+  .essay-title-ar {
+    font-family: var(--arabic-font);
+    font-size: 1rem; color: var(--muted);
+    direction: rtl; margin-bottom: 24px; display: block;
+  }
+  .essay-q {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--purple);
+  }
+  .essay-q .eq-num {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--purple);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .essay-q .eq-text { font-weight: 700; font-size: 0.97rem; margin-bottom: 4px; }
+  .essay-q .eq-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.9rem; color: var(--muted);
+    direction: rtl; display: block; margin-top: 4px;
+  }
+  .essay-q .eq-hint {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .essay-q .eq-hint-ar {
+    font-family: var(--arabic-font);
+    font-size: 0.82rem;
+    color: var(--muted);
+    direction: rtl;
+    display: block;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.85rem;
+  }
+  footer .f-title { color: #fff; font-weight: 700; margin-bottom: 4px; }
+  footer .f-ar {
+    font-family: var(--arabic-font);
+    direction: rtl;
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* colors for numbered items */
+  .c1 { background: var(--orange); }
+  .c2 { background: var(--gold); }
+  .c3 { background: var(--teal); }
+  .c4 { background: var(--purple); }
+  .c5 { background: var(--green); }
+  .c6 { background: #E05A4B; }
+  .c7 { background: var(--navy); }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-orange { background: #FEE2C8; color: var(--orange); }
+  .tag-teal { background: #CCEFF4; color: var(--teal); }
+  .tag-purple { background: #EDE9FE; color: var(--purple); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">🎓</div>
+  <h1>Teaching &amp; Learning</h1>
+  <div class="hero-sub">التعليم والتعلم — المحاضرة الأولى</div>
+  <div class="hero-meta">Dr. Saeed M. Abdelguid · Medical Surgical Nursing · Al Ryada University</div>
+</div>
+
+<div class="container">
+
+  <!-- ══ 1. INTRODUCTION ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#FEE2C8;">💡</div>
+      <div>
+        <h2>Introduction</h2>
+        <span class="ar">المقدمة</span>
+      </div>
+    </div>
+
+    <div class="bi-card">
+      <div class="bi-card-header" style="background:#FFF7F0;">
+        <span>📖</span> What is Education about?
+        &nbsp;<span class="tag tag-orange">Intro / مقدمة</span>
+      </div>
+      <div class="bi-card-body">
+        <div class="bi-en">
+          <span class="lang-badge badge-en">English</span>
+          <p style="margin-top:10px;">Education is more than making students literate. Its true purpose is to develop <strong>rational thinking</strong>, build <strong>knowledge</strong>, and foster <strong>self-sufficiency</strong>. Creativity can be developed through education, and innovation benefits both students and teachers alike.</p>
+          <br>
+          <p style="font-style:italic;color:#FF6B1A;">"Education is a light that shows mankind the right direction to surge."</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge badge-ar">عربي</span>
+          <p style="margin-top:10px;">التعليم أكثر من مجرد تعليم القراءة والكتابة. الهدف الحقيقي منه هو تنمية <strong>التفكير العقلاني</strong>، وبناء <strong>المعرفة</strong>، وتعزيز <strong>الاعتماد على الذات</strong>. يمكن تنمية الإبداع من خلال التعليم، والابتكار يفيد كلاً من الطلاب والمعلمين.</p>
+          <br>
+          <p style="font-style:italic;color:#FF6B1A;">"التعليم نور يُضيء للإنسان الطريق الصحيح للتقدم."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 2. DEFINITIONS ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#CCEFF4;">📚</div>
+      <div>
+        <h2>Key Definitions</h2>
+        <span class="ar">التعريفات الأساسية</span>
+      </div>
+    </div>
+
+    <!-- Teaching -->
+    <div class="def-box">
+      <strong>🔦 Teaching <span style="color:var(--orange)">/ التدريس</span></strong>
+      <p>Teaching is a <strong>deliberate process</strong> of facilitating learning. It involves <em>planning</em>, <em>delivering</em>, and <em>evaluating</em> instruction to help learners acquire knowledge, skills, and attitudes.</p>
+      <p>It is also a <strong>social process</strong> with three focal points: <strong>Teacher</strong>, <strong>Student</strong>, and <strong>Subject Matter</strong>.</p>
+      <span class="ar-text">التدريس هو عملية مقصودة لتيسير التعلم، تشمل التخطيط وتقديم المادة وتقييم التعليم لمساعدة المتعلمين على اكتساب المعرفة والمهارات والاتجاهات. وهو عملية اجتماعية ترتكز على ثلاثة محاور: <strong>المعلم — الطالب — المادة الدراسية</strong>.</span>
+    </div>
+
+    <!-- Learning -->
+    <div class="def-box teal">
+      <strong>🧠 Learning <span style="color:var(--teal)">/ التعلم</span></strong>
+      <p>Learning is a <strong>lifelong process</strong> of transforming information and experience into knowledge, skills, and attitudes. It represents a <strong>permanent change in capability</strong> through:</p>
+      <ul style="margin:10px 0 0 18px;font-size:0.93rem;">
+        <li><strong>Change Process</strong> – causes change in knowledge, skills, and attitude</li>
+        <li><strong>Acquisition</strong> – gaining knowledge, behaviors, skills, values</li>
+        <li><strong>Observable Change</strong> – the individual's behavior or knowledge visibly changes</li>
+        <li><strong>Permanent Modification</strong> – lasting change in thinking, feeling, and doing</li>
+      </ul>
+      <span class="ar-text">التعلم هو عملية مستمرة مدى الحياة تحوّل المعلومات والتجارب إلى معرفة ومهارات واتجاهات. وهو تغيير دائم في القدرة يشمل: <strong>عملية التغيير — الاكتساب — التغيير الملاحظ — التعديل الدائم</strong>.</span>
+    </div>
+
+    <!-- Education -->
+    <div class="def-box purple">
+      <strong>🌟 Education <span style="color:var(--purple)">/ التربية</span></strong>
+      <p>Education is a <strong>dynamic process</strong> involving the interplay of educator, educand (student), and social forces to make an individual <em>socially adjustable and responsible</em>. It is:</p>
+      <ul style="margin:10px 0 0 18px;font-size:0.93rem;">
+        <li>A systematic, sequential, and logical process</li>
+        <li>The interaction between learning &amp; teaching</li>
+      </ul>
+      <span class="ar-text">التربية هي عملية ديناميكية تشمل التفاعل بين المعلم والمتعلم والقوى الاجتماعية لجعل الفرد متكيفاً اجتماعياً ومسؤولاً. وهي عملية منهجية ومتسلسلة ومنطقية، وتمثل التفاعل بين التعلم والتعليم.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 3. COMPONENTS ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#EDE9FE;">⚙️</div>
+      <div>
+        <h2>4 Components of the Education Process</h2>
+        <span class="ar">مكونات العملية التعليمية الأربعة</span>
+      </div>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="num c1">1</div>
+        <h3>Learning Environment</h3>
+        <div class="ar-sub">بيئة التعلم</div>
+        <p>The setting in which students learn. Standards exist for location and design to create an inclusive atmosphere.</p>
+      </div>
+      <div class="comp-card">
+        <div class="num c2">2</div>
+        <h3>Teacher</h3>
+        <div class="ar-sub">المعلم</div>
+        <p>The most important factor in education quality. Must be trained, skilled, communicative, and student-centered.</p>
+      </div>
+      <div class="comp-card">
+        <div class="num c3">3</div>
+        <h3>Curriculum</h3>
+        <div class="ar-sub">المنهج الدراسي</div>
+        <p>The set of guidelines for a discipline — the series of experiences a student must go through to develop abilities.</p>
+      </div>
+      <div class="comp-card">
+        <div class="num c4">4</div>
+        <h3>Learner</h3>
+        <div class="ar-sub">المتعلم</div>
+        <p>The person who acquires and experiences knowledge, attitudes, and skills throughout the educational process.</p>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="bi-card">
+      <div class="bi-card-header" style="background:#F5F3FF;">
+        <span>🔍</span> Component Details
+      </div>
+      <div class="bi-card-body">
+        <div class="bi-en">
+          <span class="lang-badge badge-en">English</span>
+          <p style="margin-top:10px;"><strong>Learning Environment:</strong> Must be inclusive and meet government/authority standards for location. A positive atmosphere helps everyone grow.</p>
+          <br>
+          <p><strong>Teacher:</strong> Should be trained, skilled, communicate effectively, use appropriate methods, and provide materials that meet student needs.</p>
+          <br>
+          <p><strong>Curriculum:</strong> Guidelines of a discipline that guide experiences to build abilities for learning and training.</p>
+          <br>
+          <p><strong>Learner:</strong> The person who experiences knowledge, attitudes, and skills.</p>
+        </div>
+        <div class="bi-ar">
+          <span class="lang-badge badge-ar">عربي</span>
+          <p style="margin-top:10px;"><strong>بيئة التعلم:</strong> يجب أن تكون شاملة وتلبي المعايير الحكومية. الجو الإيجابي يساعد الجميع على النمو.</p>
+          <br>
+          <p><strong>المعلم:</strong> يجب أن يكون مدرباً وماهراً ويتواصل بفاعلية ويستخدم أساليب مناسبة ويوفر مواد تلبي احتياجات الطلاب.</p>
+          <br>
+          <p><strong>المنهج:</strong> إرشادات التخصص التي توجه التجارب لبناء القدرات في التعلم والتدريب.</p>
+          <br>
+          <p><strong>المتعلم:</strong> الشخص الذي يكتسب المعرفة والاتجاهات والمهارات.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 4. TEACHING-LEARNING RELATIONSHIP ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#FEE2C8;">🔄</div>
+      <div>
+        <h2>Teaching–Learning Relationship</h2>
+        <span class="ar">العلاقة بين التعليم والتعلم</span>
+      </div>
+    </div>
+
+    <!-- 7 key connections -->
+    <p style="font-weight:700;font-size:1rem;margin-bottom:14px;">7 Key Connections <span style="font-family:var(--arabic-font);color:var(--muted);font-size:0.9rem;">— ٧ روابط أساسية</span></p>
+    <ul class="conn-list">
+      <li>
+        <div class="conn-dot" style="background:var(--orange)"></div>
+        <div>
+          <div class="title">1. Interdependent Process</div>
+          <div class="desc">Teaching and learning are two sides of the same coin — one cannot exist without the other.</div>
+          <span class="ar-desc">عملية متبادلة — التعليم والتعلم وجهان لعملة واحدة.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:var(--gold)"></div>
+        <div>
+          <div class="title">2. Mutual Influence</div>
+          <div class="desc">The quality of teaching directly affects the depth and outcomes of learning.</div>
+          <span class="ar-desc">التأثير المتبادل — جودة التعليم تؤثر مباشرة على عمق نتائج التعلم.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:var(--teal)"></div>
+        <div>
+          <div class="title">3. Shared Responsibility</div>
+          <div class="desc">Both teacher and student share responsibility for educational success.</div>
+          <span class="ar-desc">المسؤولية المشتركة — المعلم والطالب يتشاركان مسؤولية النجاح التعليمي.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:var(--purple)"></div>
+        <div>
+          <div class="title">4. Dynamic Interaction</div>
+          <div class="desc">The relationship is constantly evolving and adapting to the learner's needs.</div>
+          <span class="ar-desc">التفاعل الديناميكي — العلاقة تتطور باستمرار وتتكيف مع احتياجات المتعلم.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:var(--green)"></div>
+        <div>
+          <div class="title">5. Goal Alignment</div>
+          <div class="desc">Both parties aim for the development of knowledge and skills.</div>
+          <span class="ar-desc">توافق الأهداف — كلا الطرفين يسعيان لتنمية المعرفة والمهارات.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:#E05A4B"></div>
+        <div>
+          <div class="title">6. Communication Bridge</div>
+          <div class="desc">Teaching transmits knowledge; learning internalizes it.</div>
+          <span class="ar-desc">جسر التواصل — التعليم ينقل المعرفة والتعلم يستوعبها ويُدمجها.</span>
+        </div>
+      </li>
+      <li>
+        <div class="conn-dot" style="background:var(--navy)"></div>
+        <div>
+          <div class="title">7. Contextual Framework</div>
+          <div class="desc">Both processes occur within specific educational, social, and cultural contexts.</div>
+          <span class="ar-desc">الإطار السياقي — كلا العمليتين تحدثان ضمن سياقات تعليمية واجتماعية وثقافية محددة.</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Cycle -->
+    <p style="font-weight:700;font-size:1rem;margin:28px 0 14px;">The Teaching–Learning Cycle <span style="font-family:var(--arabic-font);color:var(--muted);font-size:0.9rem;">— دورة التعليم والتعلم</span></p>
+    <div class="cycle-wrap">
+      <div class="cycle-step"><div class="step-num c1">1</div><p>Plan Instruction</p><p class="ar-p">التخطيط</p></div>
+      <div class="cycle-step"><div class="step-num c2">2</div><p>Implement Strategies</p><p class="ar-p">التنفيذ</p></div>
+      <div class="cycle-step"><div class="step-num c3">3</div><p>Students Engage</p><p class="ar-p">مشاركة الطلاب</p></div>
+      <div class="cycle-step"><div class="step-num c4">4</div><p>Learning Occurs</p><p class="ar-p">حدوث التعلم</p></div>
+      <div class="cycle-step"><div class="step-num c5">5</div><p>Assessment</p><p class="ar-p">التقييم</p></div>
+      <div class="cycle-step"><div class="step-num c6">6</div><p>Teacher Reflects</p><p class="ar-p">تأمل المعلم</p></div>
+      <div class="cycle-step"><div class="step-num c7">7</div><p>Continuous Improvement</p><p class="ar-p">التحسين المستمر</p></div>
+    </div>
+
+    <!-- Factors -->
+    <p style="font-weight:700;font-size:1rem;margin:28px 0 14px;">Factors Affecting the Relationship <span style="font-family:var(--arabic-font);color:var(--muted);font-size:0.9rem;">— العوامل المؤثرة في العلاقة</span></p>
+    <div class="factors-grid">
+      <div class="factor-card"><div class="f-icon">👨‍🏫</div><h4>Teacher Expertise</h4><div class="f-sub">Pedagogical knowledge</div><div class="f-ar">خبرة المعلم</div></div>
+      <div class="factor-card"><div class="f-icon">🎯</div><h4>Student Motivation</h4><div class="f-sub">Prior knowledge</div><div class="f-ar">دافعية الطالب</div></div>
+      <div class="factor-card"><div class="f-icon">📋</div><h4>Materials Quality</h4><div class="f-sub">Instructional resources</div><div class="f-ar">جودة المواد</div></div>
+      <div class="factor-card"><div class="f-icon">🏫</div><h4>Learning Environment</h4><div class="f-sub">Climate and atmosphere</div><div class="f-ar">بيئة التعلم</div></div>
+      <div class="factor-card"><div class="f-icon">💬</div><h4>Communication</h4><div class="f-sub">Effectiveness</div><div class="f-ar">التواصل</div></div>
+      <div class="factor-card"><div class="f-icon">📊</div><h4>Assessment</h4><div class="f-sub">Feedback mechanisms</div><div class="f-ar">التقييم</div></div>
+      <div class="factor-card"><div class="f-icon">🌍</div><h4>Cultural Context</h4><div class="f-sub">Social environment</div><div class="f-ar">السياق الثقافي</div></div>
+      <div class="factor-card"><div class="f-icon">💻</div><h4>Technology</h4><div class="f-sub">Support systems</div><div class="f-ar">التكنولوجيا</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 5. TEACHER COMPETENCIES ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#D1FAE5;">🏆</div>
+      <div>
+        <h2>7 Teacher Competencies</h2>
+        <span class="ar">الكفايات السبع للمعلم</span>
+      </div>
+    </div>
+
+    <div class="comp-row"><div class="c-num c1">1</div><div><div class="c-en">Subject Matter</div><div class="c-sub">Deep content knowledge in the field</div></div><div class="c-ar">الكفاية المعرفية<br><small style="color:var(--muted);font-size:0.78rem;">المعرفة العميقة بالمحتوى</small></div></div>
+    <div class="comp-row"><div class="c-num c2">2</div><div><div class="c-en">Transactional</div><div class="c-sub">Effective communication strategies</div></div><div class="c-ar">الكفاية التواصلية<br><small style="color:var(--muted);font-size:0.78rem;">استراتيجيات التواصل الفعّال</small></div></div>
+    <div class="comp-row"><div class="c-num c3">3</div><div><div class="c-en">Personal</div><div class="c-sub">Professional attributes and character</div></div><div class="c-ar">الكفاية الشخصية<br><small style="color:var(--muted);font-size:0.78rem;">الصفات المهنية والشخصية</small></div></div>
+    <div class="comp-row"><div class="c-num c4">4</div><div><div class="c-en">Co-Curricular</div><div class="c-sub">Clinical and practical experiences</div></div><div class="c-ar">الكفاية اللامنهجية<br><small style="color:var(--muted);font-size:0.78rem;">الخبرات السريرية والعملية</small></div></div>
+    <div class="comp-row"><div class="c-num c5">5</div><div><div class="c-en">Evaluation</div><div class="c-sub">Assessment and feedback expertise</div></div><div class="c-ar">كفاية التقييم<br><small style="color:var(--muted);font-size:0.78rem;">خبرة التقييم والتغذية الراجعة</small></div></div>
+    <div class="comp-row"><div class="c-num c6">6</div><div><div class="c-en">Management</div><div class="c-sub">Organizing effective learning environments</div></div><div class="c-ar">كفاية الإدارة<br><small style="color:var(--muted);font-size:0.78rem;">تنظيم بيئات التعلم الفعّالة</small></div></div>
+    <div class="comp-row"><div class="c-num c7">7</div><div><div class="c-en">Community</div><div class="c-sub">Healthcare and community collaboration</div></div><div class="c-ar">كفاية المجتمع<br><small style="color:var(--muted);font-size:0.78rem;">التعاون مع المجتمع والرعاية الصحية</small></div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ SUMMARY ══ -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon" style="background:#FEF3C7;">⭐</div>
+      <div>
+        <h2>Lecture Summary</h2>
+        <span class="ar">ملخص المحاضرة</span>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <h2>Key Takeaways ⭐</h2>
+      <span class="summary-ar">النقاط الرئيسية في المحاضرة</span>
+
+      <div class="sum-grid">
+        <div class="sum-item">
+          <div class="s-title">🔦 Teaching / التدريس</div>
+          <div class="s-body">A deliberate, planned social process involving teacher, student, and subject matter to facilitate learning.</div>
+          <div class="s-ar">عملية اجتماعية مقصودة تشمل المعلم والطالب والمادة لتيسير التعلم.</div>
+        </div>
+        <div class="sum-item">
+          <div class="s-title">🧠 Learning / التعلم</div>
+          <div class="s-body">A lifelong, permanent change in knowledge, skills, and attitudes through experience and information.</div>
+          <div class="s-ar">تغيير دائم في المعرفة والمهارات والاتجاهات عبر التجربة والمعلومات.</div>
+        </div>
+        <div class="sum-item">
+          <div class="s-title">🌟 Education / التربية</div>
+          <div class="s-body">A dynamic, systematic process — the interaction of teaching and learning within social contexts.</div>
+          <div class="s-ar">عملية ديناميكية منهجية — التفاعل بين التعليم والتعلم ضمن سياقات اجتماعية.</div>
+        </div>
+        <div class="sum-item">
+          <div class="s-title">⚙️ 4 Components / المكونات</div>
+          <div class="s-body">Learning Environment · Teacher · Curriculum · Learner — all must work together.</div>
+          <div class="s-ar">بيئة التعلم · المعلم · المنهج · المتعلم — يجب أن تعمل معاً.</div>
+        </div>
+        <div class="sum-item">
+          <div class="s-title">🔄 Relationship / العلاقة</div>
+          <div class="s-body">7 key connections: interdependent, mutual influence, shared responsibility, dynamic, goal-aligned, communicative, contextual.</div>
+          <div class="s-ar">٧ روابط: الترابط · التأثير المتبادل · المسؤولية المشتركة · الديناميكية · توافق الأهداف · التواصل · السياق.</div>
+        </div>
+        <div class="sum-item">
+          <div class="s-title">🏆 7 Competencies / الكفايات</div>
+          <div class="s-body">Subject Matter · Transactional · Personal · Co-Curricular · Evaluation · Management · Community.</div>
+          <div class="s-ar">المعرفة · التواصل · الشخصية · اللامنهجية · التقييم · الإدارة · المجتمع.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MCQ ══ -->
+  <div class="quiz-section">
+    <div class="quiz-title">📝 Multiple Choice Questions (MCQ)</div>
+    <span class="quiz-title-ar">أسئلة الاختيار من متعدد</span>
+
+    <!-- Q1 -->
+    <div class="q-block">
+      <span class="q-num">Q1</span>
+      <div class="q-text">Which of the following BEST defines teaching?</div>
+      <span class="q-text-ar">أي من التعريفات التالية يُعبّر بشكل أفضل عن مفهوم التدريس؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> A random process of sharing information with students <span class="opt-ar">عملية عشوائية لتبادل المعلومات</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">B</span> A deliberate process of facilitating learning through planning, delivery, and evaluation <span class="opt-ar">عملية مقصودة لتيسير التعلم بالتخطيط والتنفيذ والتقييم</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">C</span> Memorizing facts and reciting them to students <span class="opt-ar">حفظ الحقائق وإلقاؤها على الطلاب</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> A one-way transfer of knowledge from books to students <span class="opt-ar">نقل أحادي الاتجاه للمعرفة من الكتب إلى الطلاب</span></li>
+      </ul>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-block">
+      <span class="q-num">Q2</span>
+      <div class="q-text">Teaching is described as a social process with how many focal points?</div>
+      <span class="q-text-ar">وصف التدريس بأنه عملية اجتماعية ذات كم من المحاور الرئيسية؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> Two — Teacher and Student <span class="opt-ar">اثنان — المعلم والطالب</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">B</span> Four — Teacher, Student, Curriculum, Environment <span class="opt-ar">أربعة — المعلم والطالب والمنهج والبيئة</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">C</span> Three — Teacher, Student, Subject Matter <span class="opt-ar">ثلاثة — المعلم والطالب والمادة الدراسية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> Five — Teacher, Student, Content, Time, Place <span class="opt-ar">خمسة — المعلم والطالب والمحتوى والوقت والمكان</span></li>
+      </ul>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-block">
+      <span class="q-num">Q3</span>
+      <div class="q-text">Learning is best described as:</div>
+      <span class="q-text-ar">التعلم يُوصف بشكل أفضل بأنه:</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> A temporary increase in test scores <span class="opt-ar">ارتفاع مؤقت في درجات الاختبارات</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">B</span> A lifelong process resulting in permanent change in knowledge, skills, and attitude <span class="opt-ar">عملية مستمرة مدى الحياة تؤدي إلى تغيير دائم في المعرفة والمهارات والاتجاهات</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">C</span> Only occurs in formal school settings <span class="opt-ar">تحدث فقط في البيئات المدرسية الرسمية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> A passive process of receiving information <span class="opt-ar">عملية سلبية لاستقبال المعلومات</span></li>
+      </ul>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-block">
+      <span class="q-num">Q4</span>
+      <div class="q-text">Which is NOT one of the 4 components of the education process?</div>
+      <span class="q-text-ar">أي مما يلي ليس من المكونات الأربعة للعملية التعليمية؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> Learning Environment <span class="opt-ar">بيئة التعلم</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">B</span> Teacher <span class="opt-ar">المعلم</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">C</span> Government Policy <span class="opt-ar">السياسة الحكومية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> Learner <span class="opt-ar">المتعلم</span></li>
+      </ul>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-block">
+      <span class="q-num">Q5</span>
+      <div class="q-text">Which teacher competency refers to communication strategies used during instruction?</div>
+      <span class="q-text-ar">أي كفاية للمعلم تشير إلى استراتيجيات التواصل المستخدمة أثناء التدريس؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> Subject Matter Competency <span class="opt-ar">الكفاية المعرفية</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">B</span> Transactional Competency <span class="opt-ar">الكفاية التواصلية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">C</span> Personal Competency <span class="opt-ar">الكفاية الشخصية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> Community Competency <span class="opt-ar">كفاية المجتمع</span></li>
+      </ul>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-block">
+      <span class="q-num">Q6</span>
+      <div class="q-text">In the Teaching–Learning Cycle, which step comes immediately AFTER assessment?</div>
+      <span class="q-text-ar">في دورة التعليم والتعلم، أي خطوة تأتي مباشرة بعد التقييم؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> Implement Strategies <span class="opt-ar">تنفيذ الاستراتيجيات</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">B</span> Students Engage <span class="opt-ar">مشاركة الطلاب</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">C</span> Teacher Reflects <span class="opt-ar">تأمل المعلم</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> Plan Instruction <span class="opt-ar">التخطيط للتدريس</span></li>
+      </ul>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-block">
+      <span class="q-num">Q7</span>
+      <div class="q-text">Education is defined as a _______ process that involves the interplay of educator, educand, and social forces.</div>
+      <span class="q-text-ar">تُعرَّف التربية بأنها عملية _______ تشمل تفاعل المعلم والمتعلم والقوى الاجتماعية.</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> Static <span class="opt-ar">ساكنة</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">B</span> Passive <span class="opt-ar">سلبية</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">C</span> Dynamic <span class="opt-ar">ديناميكية</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> Rigid <span class="opt-ar">جامدة</span></li>
+      </ul>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-block">
+      <span class="q-num">Q8</span>
+      <div class="q-text">Which of the following is a factor that affects the teaching–learning relationship?</div>
+      <span class="q-text-ar">أي مما يلي يُعدّ من العوامل المؤثرة في العلاقة بين التعليم والتعلم؟</span>
+      <ul class="options">
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">A</span> The color of the classroom walls <span class="opt-ar">لون جدران الفصل الدراسي</span></li>
+        <li onclick="markOption(this,'correct')"><span class="opt-letter">B</span> Student motivation and prior knowledge <span class="opt-ar">دافعية الطالب والمعرفة السابقة</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">C</span> The number of students in school <span class="opt-ar">عدد الطلاب في المدرسة</span></li>
+        <li onclick="markOption(this,'wrong')"><span class="opt-letter">D</span> The teacher's age <span class="opt-ar">عمر المعلم</span></li>
+      </ul>
+    </div>
+
+    <div class="answer-key">
+      <h4>✅ Answer Key / مفتاح الإجابات</h4>
+      <p>Q1: B &nbsp;|&nbsp; Q2: C &nbsp;|&nbsp; Q3: B &nbsp;|&nbsp; Q4: C &nbsp;|&nbsp; Q5: B &nbsp;|&nbsp; Q6: C &nbsp;|&nbsp; Q7: C &nbsp;|&nbsp; Q8: B</p>
+    </div>
+  </div>
+
+  <!-- ══ ESSAY QUESTIONS ══ -->
+  <div class="essay-section">
+    <div class="essay-title">✍️ Essay Questions</div>
+    <span class="essay-title-ar">أسئلة مقالية</span>
+
+    <div class="essay-q">
+      <span class="eq-num">Essay Q1</span>
+      <div class="eq-text">Define teaching, learning, and education. How are they related to each other?</div>
+      <span class="eq-ar">عرِّف كلاً من التدريس والتعلم والتربية. كيف ترتبط هذه المفاهيم الثلاثة ببعضها؟</span>
+      <div class="eq-hint">Hint: Cover all three definitions, compare their similarities and differences, and explain the concept of education as the interaction between teaching and learning.</div>
+      <span class="eq-hint-ar">تلميح: تناول التعريفات الثلاثة، وقارن بين أوجه التشابه والاختلاف، واشرح مفهوم التربية كتفاعل بين التعليم والتعلم.</span>
+    </div>
+
+    <div class="essay-q">
+      <span class="eq-num">Essay Q2</span>
+      <div class="eq-text">Describe the four components of the education process and explain the role of each component in achieving educational goals.</div>
+      <span class="eq-ar">صِف المكونات الأربعة للعملية التعليمية واشرح دور كل مكون في تحقيق الأهداف التعليمية.</span>
+      <div class="eq-hint">Hint: Address Learning Environment, Teacher, Curriculum, and Learner — and explain how they interact.</div>
+      <span class="eq-hint-ar">تلميح: تناول بيئة التعلم والمعلم والمنهج والمتعلم، واشرح كيف تتفاعل مع بعضها.</span>
+    </div>
+
+    <div class="essay-q">
+      <span class="eq-num">Essay Q3</span>
+      <div class="eq-text">Explain the teaching–learning relationship using the 7 key connections and the teaching–learning cycle.</div>
+      <span class="eq-ar">اشرح العلاقة بين التعليم والتعلم مستعيناً بالروابط السبعة الرئيسية ودورة التعليم والتعلم.</span>
+      <div class="eq-hint">Hint: Cover all 7 connections, then walk through the 7 steps of the cycle, explaining how each contributes to effective education.</div>
+      <span class="eq-hint-ar">تلميح: تناول الروابط السبعة كاملة، ثم اشرح خطوات الدورة السبع موضحاً كيف تساهم كل منها في فاعلية العملية التعليمية.</span>
+    </div>
+
+    <div class="essay-q">
+      <span class="eq-num">Essay Q4</span>
+      <div class="eq-text">Describe the 7 teacher competencies. Why is each competency important for a nursing educator specifically?</div>
+      <span class="eq-ar">صِف الكفايات السبع للمعلم. لماذا تعدّ كل كفاية مهمة بشكل خاص بالنسبة لمعلم التمريض؟</span>
+      <div class="eq-hint">Hint: List all 7 competencies with definitions, and link each to the nursing education context (clinical skills, patient safety, professional communication, etc.).</div>
+      <span class="eq-hint-ar">تلميح: اذكر الكفايات السبعة مع تعريفاتها، وربط كلٍّ منها بسياق تعليم التمريض كالمهارات السريرية وسلامة المريض والتواصل المهني.</span>
+    </div>
+
+    <div class="essay-q">
+      <span class="eq-num">Essay Q5 (Applied / تطبيقي)</span>
+      <div class="eq-text">A clinical instructor is teaching sterile technique in a simulation lab. Apply the concepts from this lecture (teaching process, components, cycle, and factors) to analyze this educational scenario.</div>
+      <span class="eq-ar">مدرب سريري يُعلّم تقنية العقامة في مختبر المحاكاة. طبّق مفاهيم هذه المحاضرة (عملية التدريس والمكونات والدورة والعوامل) لتحليل هذا الموقف التعليمي.</span>
+      <div class="eq-hint">Hint: Identify the three focal points of teaching, apply the 7-step cycle, identify the factors at play, and suggest how to improve the experience.</div>
+      <span class="eq-hint-ar">تلميح: حدد المحاور الثلاثة للتدريس، وطبق دورة الخطوات السبع، وحدد العوامل المؤثرة، واقترح كيفية تحسين التجربة التعليمية.</span>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-title">Teaching and Learning — Lecture I</div>
+  <div>Prepared by Dr. Saeed M. Abdelguid · Medical Surgical Nursing</div>
+  <div class="f-ar">د. سعيد محمد عبدالجويد · قسم تمريض الباطنة والجراحة · جامعة الريادة للعلوم والتكنولوجيا</div>
+</footer>
+
+<script>
+function markOption(el, type) {
+  const siblings = el.parentElement.querySelectorAll('li');
+  siblings.forEach(s => s.classList.remove('correct','wrong'));
+  el.classList.add(type);
+}
+</script>
+
+</body>
+</html>

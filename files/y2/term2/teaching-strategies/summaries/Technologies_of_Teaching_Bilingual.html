@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technologies of Teaching | تقنيات التدريس</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Tajawal:wght@300;400;700;800&display=swap');
+
+  :root {
+    --navy: #0D1B2A;
+    --teal: #1A7A72;
+    --teal-light: #25A99D;
+    --amber: #E8A020;
+    --purple: #5B3A9E;
+    --red-accent: #C0392B;
+    --bg: #F0F4F8;
+    --white: #ffffff;
+    --card: #ffffff;
+    --text: #1a2535;
+    --muted: #6B7A90;
+    --border: #D9E2EF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', 'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 60%, var(--teal) 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: rgba(26,122,114,0.25);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--teal-light);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 6px;
+  }
+  .hero h1 span { color: var(--teal-light); }
+  .hero .arabic-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 700;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 16px;
+    direction: rtl;
+  }
+  .hero-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-bar {
+    background: var(--navy);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 20px;
+  }
+  .nav-bar::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 14px 22px;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+    letter-spacing: .5px;
+  }
+  .nav-tab:hover { color: white; }
+  .nav-tab.active { color: var(--teal-light); border-bottom-color: var(--teal-light); }
+
+  /* ── SECTIONS ── */
+  .section { display: none; padding: 40px 20px; max-width: 980px; margin: 0 auto; }
+  .section.active { display: block; }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .sec-icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .sec-icon.teal { background: #e0f5f3; }
+  .sec-icon.amber { background: #fdf3e0; }
+  .sec-icon.purple { background: #ede6fa; }
+  .sec-icon.navy { background: #e0e7f0; }
+  .sec-title h2 { font-size: 22px; font-weight: 800; color: var(--navy); }
+  .sec-title .ar { font-family: 'Tajawal'; font-size: 16px; color: var(--muted); direction: rtl; }
+
+  /* ── CARDS ── */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-bottom: 24px; }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    transition: box-shadow .2s, transform .2s;
+  }
+  .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
+  .card-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--navy); }
+  .card .ar-sub { font-family: 'Tajawal'; font-size: 13px; color: var(--teal); direction: rtl; margin-bottom: 8px; }
+  .card p { font-size: 13px; color: #4a5568; line-height: 1.6; }
+  .card .ar-p { font-family: 'Tajawal'; font-size: 13px; color: #718096; direction: rtl; margin-top: 6px; line-height: 1.7; border-top: 1px dashed var(--border); padding-top: 6px; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--navy), #1a3a5c);
+    color: white;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+  }
+  .highlight-box .en { font-size: 14px; line-height: 1.7; }
+  .highlight-box .ar { font-family: 'Tajawal'; font-size: 14px; direction: rtl; color: rgba(255,255,255,0.75); margin-top: 8px; line-height: 1.8; }
+
+  /* ── COMPARE TABLE ── */
+  .compare-table { width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden; margin-bottom: 24px; border: 1px solid var(--border); }
+  .compare-table th { padding: 14px 18px; font-size: 13px; font-weight: 700; text-align: left; }
+  .compare-table th:first-child { background: #6b7a90; color: white; }
+  .compare-table th:last-child { background: var(--teal); color: white; }
+  .compare-table td { padding: 12px 18px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child { background: #f8f9fb; color: var(--muted); }
+  .compare-table .label { font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); display: block; margin-bottom: 2px; }
+  .compare-table .ar-cell { font-family: 'Tajawal'; direction: rtl; font-size: 12px; color: var(--muted); display: block; margin-top: 3px; }
+
+  /* ── PRO/CON LISTS ── */
+  .pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+  @media(max-width: 600px) { .pro-con { grid-template-columns: 1fr; } }
+  .pro-box, .con-box { border-radius: 14px; padding: 20px; }
+  .pro-box { background: #e8f8f5; border: 1px solid #a3e4d7; }
+  .con-box { background: #fdf0ed; border: 1px solid #f5c6bc; }
+  .pro-box h4 { color: var(--teal); font-size: 13px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .con-box h4 { color: var(--red-accent); font-size: 13px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+  .pro-con-item { display: flex; gap: 8px; margin-bottom: 9px; align-items: flex-start; }
+  .pro-con-item .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+  .pro-dot { background: var(--teal); }
+  .con-dot { background: var(--red-accent); }
+  .pro-con-item .text-wrap .en { font-size: 12.5px; color: var(--text); }
+  .pro-con-item .text-wrap .ar { font-family: 'Tajawal'; font-size: 12px; color: var(--muted); direction: rtl; }
+
+  /* ── NUMBERED STEPS ── */
+  .steps-list { margin-bottom: 24px; }
+  .step-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px; margin-bottom: 12px;
+  }
+  .step-num {
+    width: 32px; height: 32px;
+    background: var(--teal); color: white;
+    border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+  }
+  .step-content .en { font-size: 13.5px; color: var(--text); }
+  .step-content .ar { font-family: 'Tajawal'; font-size: 13px; color: var(--muted); direction: rtl; margin-top: 4px; }
+
+  /* ── QUIZ ── */
+  .quiz-q {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+  }
+  .quiz-q .q-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 8px;
+  }
+  .quiz-q .q-text { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .quiz-q .q-ar { font-family: 'Tajawal'; font-size: 14px; color: var(--muted); direction: rtl; margin-bottom: 14px; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media(max-width: 500px) { .options { grid-template-columns: 1fr; } }
+  .option-btn {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+  }
+  .option-btn:hover { border-color: var(--teal); background: #e0f5f3; }
+  .option-btn.correct { background: #e8f8f5; border-color: var(--teal); color: var(--teal); font-weight: 600; }
+  .option-btn.wrong { background: #fdf0ed; border-color: var(--red-accent); color: var(--red-accent); }
+  .option-btn.reveal { background: #e8f8f5; border-color: var(--teal); opacity: 0.6; }
+  .feedback {
+    margin-top: 10px; padding: 10px 14px;
+    border-radius: 8px; font-size: 13px; display: none;
+  }
+  .feedback.correct { background: #e8f8f5; color: var(--teal); border: 1px solid var(--teal); display: block; }
+  .feedback.wrong { background: #fdf0ed; color: var(--red-accent); border: 1px solid var(--red-accent); display: block; }
+  .feedback .fb-ar { font-family: 'Tajawal'; direction: rtl; font-size: 13px; display: block; margin-top: 4px; }
+
+  /* ── ESSAY QS ── */
+  .essay-q {
+    background: white; border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px; margin-bottom: 18px;
+  }
+  .essay-q .q-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
+  .essay-q .q-text { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .essay-q .q-ar { font-family: 'Tajawal'; font-size: 14px; color: var(--muted); direction: rtl; margin-bottom: 14px; }
+  .essay-toggle {
+    background: var(--purple); color: white;
+    border: none; border-radius: 8px;
+    padding: 9px 18px; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: background .2s; font-family: 'Inter';
+  }
+  .essay-toggle:hover { background: #4a2d88; }
+  .essay-answer {
+    background: #f4f0fa; border: 1px solid #d4c9f0;
+    border-radius: 10px; padding: 16px; margin-top: 12px;
+    display: none;
+  }
+  .essay-answer.open { display: block; }
+  .essay-answer .en { font-size: 13px; color: var(--text); line-height: 1.75; }
+  .essay-answer .ar { font-family: 'Tajawal'; direction: rtl; font-size: 13px; color: #4a3a7a; line-height: 1.8; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #d4c9f0; }
+
+  /* ── SUMMARY ── */
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .sum-card {
+    background: white; border-radius: 14px;
+    padding: 18px; border-top: 4px solid var(--teal);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--teal);
+  }
+  .sum-card.amber-top { border-top-color: var(--amber); }
+  .sum-card.purple-top { border-top-color: var(--purple); }
+  .sum-card.navy-top { border-top-color: var(--navy); }
+  .sum-card h4 { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .sum-card .ar-head { font-family: 'Tajawal'; font-size: 12px; color: var(--teal); direction: rtl; margin-bottom: 10px; }
+  .sum-point { display: flex; gap: 7px; margin-bottom: 7px; }
+  .sum-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin-top: 7px; flex-shrink: 0; }
+  .sum-point .en { font-size: 12px; color: var(--text); }
+  .sum-point .ar { font-family: 'Tajawal'; font-size: 12px; color: var(--muted); direction: rtl; }
+
+  .quote-box {
+    background: var(--navy); color: white;
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 22px;
+  }
+  .quote-box .en { font-size: 16px; font-style: italic; font-weight: 600; }
+  .quote-box .ar { font-family: 'Tajawal'; font-size: 15px; direction: rtl; color: rgba(255,255,255,0.7); margin-top: 8px; }
+
+  /* score tracker */
+  .score-bar {
+    background: white; border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 22px; font-size: 14px; font-weight: 600;
+  }
+  .score-num { font-size: 22px; font-weight: 800; color: var(--teal); }
+
+  /* section label */
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 20px; margin-top: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Al Ryada University · College of Nursing</div>
+  <h1>Technologies of <span>Teaching</span></h1>
+  <div class="arabic-title">تقنيات التدريس</div>
+  <p class="hero-meta">E-Learning · Virtual Classroom · Blended Learning · Mobile Learning<br>
+  د. سعيد محمد عبدالجيد — كلية التمريض</p>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-tab active" onclick="show('intro')">Key Concepts | المفاهيم</div>
+  <div class="nav-tab" onclick="show('elearn')">E-Learning</div>
+  <div class="nav-tab" onclick="show('virtual')">Virtual Classroom | الفصل الافتراضي</div>
+  <div class="nav-tab" onclick="show('mlearn')">M-Learning | التعلم المحمول</div>
+  <div class="nav-tab" onclick="show('blended')">Blended Learning | التعلم المدمج</div>
+  <div class="nav-tab" onclick="show('mcq')">MCQ Quiz | أسئلة اختيارية</div>
+  <div class="nav-tab" onclick="show('essay')">Essay Qs | أسئلة مقالية</div>
+  <div class="nav-tab" onclick="show('summary')">Summary | الملخص</div>
+</div>
+
+<!-- ═══════════════ INTRO ═══════════════ -->
+<div id="intro" class="section active">
+
+  <div class="sec-header">
+    <div class="sec-icon teal">💡</div>
+    <div class="sec-title">
+      <h2>Key Definitions</h2>
+      <div class="ar">تعريفات أساسية</div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">Definition 01</div>
+      <h3>Technology</h3>
+      <div class="ar-sub">التكنولوجيا</div>
+      <p>The systematic application of scientific or organized knowledge to practical tasks.</p>
+      <div class="ar-p">التطبيق المنهجي للمعرفة العلمية أو المنظمة على المهام العملية.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Definition 02</div>
+      <h3>Educational Technology</h3>
+      <div class="ar-sub">تكنولوجيا التعليم</div>
+      <p>The use of technology to improve education — a systematic, interactive process for designing instruction to improve performance. Also called instructional or learning technology.</p>
+      <div class="ar-p">استخدام التكنولوجيا لتحسين التعليم — عملية منهجية وتفاعلية لتصميم التعليم بهدف تحسين الأداء. تُعرف أيضاً بتكنولوجيا التعلم.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Core Purpose</div>
+      <h3>Goal of Ed-Tech</h3>
+      <div class="ar-sub">الهدف من تكنولوجيا التعليم</div>
+      <p>Integrating technology to promote diverse learning environments, empower students, improve efficiency, motivation, and access to learning.</p>
+      <div class="ar-p">دمج التكنولوجيا لتعزيز بيئات تعليم متنوعة وتمكين الطلاب وتحسين الكفاءة والتحفيز والوصول إلى التعليم.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Traditional vs E-Learning | التقليدي مقابل الإلكتروني</div>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Traditional Classroom | الفصل التقليدي</th>
+        <th>E-Learning | التعلم الإلكتروني</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="label">Classroom</span> Physical, limited size, synchronous only<span class="ar-cell">فصل مادي، حجم محدود، متزامن فقط</span></td>
+        <td><span class="label">Classroom</span> Unlimited — anytime, anywhere access<span class="ar-cell">غير محدود — الوصول في أي وقت ومن أي مكان</span></td>
+      </tr>
+      <tr>
+        <td><span class="label">Content</span> PowerPoint, textbooks, library<span class="ar-cell">عروض تقديمية، كتب مدرسية، مكتبة</span></td>
+        <td><span class="label">Content</span> Multimedia, simulation, digital library, on-demand<span class="ar-cell">وسائط متعددة، محاكاة، مكتبة رقمية، عند الطلب</span></td>
+      </tr>
+      <tr>
+        <td><span class="label">Personalization</span> One fixed path for all students<span class="ar-cell">مسار تعليمي ثابت لجميع الطلاب</span></td>
+        <td><span class="label">Personalization</span> Learning path & pace set by the learner<span class="ar-cell">المتعلم يحدد مساره ووتيرته</span></td>
+      </tr>
+      <tr>
+        <td><span class="label">Schedule</span> Fixed time and location dependent<span class="ar-cell">وقت ومكان محددان</span></td>
+        <td><span class="label">Communication</span> Synchronous & asynchronous tools<span class="ar-cell">أدوات تزامنية وغير تزامنية</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- ═══════════════ E-LEARNING ═══════════════ -->
+<div id="elearn" class="section">
+
+  <div class="sec-header">
+    <div class="sec-icon teal">💻</div>
+    <div class="sec-title">
+      <h2>E-Learning</h2>
+      <div class="ar">التعلم الإلكتروني</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="en">E-Learning: Teaching using modern communication mechanisms — computers, networks, multimedia, and internet portals — to deliver information fast and cost-effectively, while enabling management, measurement, and evaluation of learner performance.</div>
+    <div class="ar">التعلم الإلكتروني: التدريس باستخدام آليات الاتصال الحديثة — الحواسيب والشبكات والوسائط المتعددة وبوابات الإنترنت — لتوصيل المعلومات بسرعة وبتكلفة مناسبة، مع إمكانية إدارة وقياس وتقييم أداء المتعلم.</div>
+  </div>
+
+  <div class="section-label">Four Modalities | أربعة أنماط</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">Modality 01</div>
+      <h3>Self-Paced Online</h3>
+      <div class="ar-sub">التعلم الذاتي عبر الإنترنت</div>
+      <p>Individual learner accesses resources (databases, courses) via Intranet or Internet — e.g., solo online research.</p>
+      <div class="ar-p">يصل المتعلم منفرداً للمصادر عبر الشبكة الداخلية أو الإنترنت — كالبحث الأكاديمي الفردي.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Modality 02</div>
+      <h3>Self-Paced Offline</h3>
+      <div class="ar-sub">التعلم الذاتي دون إنترنت</div>
+      <p>Individual learner uses resources offline — hard drive, CD or DVD — without an internet connection.</p>
+      <div class="ar-p">يستخدم المتعلم موارد غير متصلة بالإنترنت مثل القرص الصلب أو الأقراص المضغوطة.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Modality 03</div>
+      <h3>Group-Based Synchronous</h3>
+      <div class="ar-sub">التعلم الجماعي المتزامن</div>
+      <p>Groups work together in real time via Intranet/Internet — includes text chat, audio/video conferencing.</p>
+      <div class="ar-p">مجموعات تعمل معاً في الوقت الفعلي — يشمل الدردشة النصية ومؤتمرات الصوت والفيديو.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">Modality 04</div>
+      <h3>Group-Based Asynchronous</h3>
+      <div class="ar-sub">التعلم الجماعي غير المتزامن</div>
+      <p>Groups work with delayed exchanges — e-mail lists, threaded discussions, LMS forums.</p>
+      <div class="ar-p">مجموعات تتبادل بشكل متأخر — قوائم البريد والنقاشات المتشعبة ومنتديات نظام إدارة التعلم.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Delivery Methods | طرق التوصيل</div>
+  <div class="card-grid">
+    <div class="card"><h3>📖 Print & Text</h3><div class="ar-sub">النص والطباعة</div><p>e-Text, e-Textbooks delivered digitally via browser or app.</p><div class="ar-p">الكتب الإلكترونية المقدمة رقمياً عبر المتصفح أو التطبيق.</div></div>
+    <div class="card"><h3>🎥 Video</h3><div class="ar-sub">الفيديو</div><p>Streaming video, satellite transmission, cable TV.</p><div class="ar-p">بث الفيديو، الإرسال عبر الأقمار الاصطناعية، التلفزيون الكابلي.</div></div>
+    <div class="card"><h3>🎙️ Audio</h3><div class="ar-sub">الصوت</div><p>Streaming audio, audio tapes for lectures and podcasts.</p><div class="ar-p">بث الصوت، التسجيلات الصوتية للمحاضرات والبودكاست.</div></div>
+    <div class="card"><h3>📝 Review & Exams</h3><div class="ar-sub">المراجعة والامتحانات</div><p>Electronic interactive assessments and traditional paper exams.</p><div class="ar-p">التقييمات التفاعلية الإلكترونية والامتحانات الورقية التقليدية.</div></div>
+    <div class="card"><h3>✉️ Async Communication</h3><div class="ar-sub">التواصل غير المتزامن</div><p>Email, threaded discussions, weblogs, online forums.</p><div class="ar-p">البريد الإلكتروني، النقاشات المتشعبة، المدونات، المنتديات الإلكترونية.</div></div>
+    <div class="card"><h3>💬 Sync Communication</h3><div class="ar-sub">التواصل المتزامن</div><p>Live chat, videoconferencing and teleconferencing sessions.</p><div class="ar-p">الدردشة المباشرة، مؤتمرات الفيديو والتليفون.</div></div>
+  </div>
+
+  <div class="section-label">Impact | تأثير التعلم الإلكتروني</div>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="en">Improves efficiency in both learning and teaching</div><div class="ar">يحسّن الكفاءة في التعلم والتدريس معاً</div></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="en">Increases learner motivation and deepens understanding</div><div class="ar">يزيد تحفيز المتعلم ويعمّق الفهم</div></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="en">Promotes collaborative learning across distances</div><div class="ar">يعزز التعلم التعاوني عبر المسافات</div></div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="en">Addresses different learning and cognitive styles</div><div class="ar">يراعي الأساليب المختلفة للتعلم والإدراك</div></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="en">Self-pacing for slow and quick learners — reduces stress and increases satisfaction</div><div class="ar">التعلم بالوتيرة الذاتية للمتعلمين البطيئين والسريعين — يقلل الضغط ويزيد الرضا</div></div></div>
+    <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="en">Paves the way for personality development and social skill building</div><div class="ar">يمهّد الطريق لتنمية الشخصية وبناء المهارات الاجتماعية</div></div></div>
+  </div>
+
+  <div class="section-label">Advantages & Disadvantages | المزايا والعيوب</div>
+  <div class="pro-con">
+    <div class="pro-box">
+      <h4>✅ Advantages | المزايا</h4>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Convenient — self-service, on-demand, flexible</div><div class="ar">مريح — خدمة ذاتية، عند الطلب، مرن</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Cost-effective — reduced material & travel costs</div><div class="ar">فعّال اقتصادياً — يخفض تكاليف المواد والتنقل</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Consistent — same quality for all learners</div><div class="ar">متسق — نفس الجودة لجميع المتعلمين</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Media-rich — more engaging multimedia content</div><div class="ar">غني بالوسائط — محتوى وسائط متعددة جذاب</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Repeatable — access lessons as many times as needed</div><div class="ar">قابل للتكرار — الوصول للدروس كلما احتجت</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Easy monitoring — precise progress tracking</div><div class="ar">مراقبة سهلة — تتبع دقيق للتقدم</div></div></div>
+    </div>
+    <div class="con-box">
+      <h4>❌ Disadvantages | العيوب</h4>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Unmotivated learners may fall behind</div><div class="ar">المتعلمون غير المتحمسين قد يتأخرون</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Lack of familiar structure may be hard to adjust to</div><div class="ar">غياب الهيكل المألوف قد يصعب التأقلم معه</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Students may feel isolated</div><div class="ar">قد يشعر الطلاب بالعزلة</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Instructor may not be available on demand</div><div class="ar">قد لا يكون المدرس متاحاً عند الطلب</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Slow/unreliable internet is frustrating</div><div class="ar">الإنترنت البطيء أو غير الموثوق مزعج</div></div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Challenges & Motivation Tips | التحديات ونصائح التحفيز</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>🏛️ Organizational Change</h3>
+      <div class="ar-sub">التغيير المؤسسي</div>
+      <p>Institutions must restructure processes and administrative systems.</p>
+      <div class="ar-p">يجب على المؤسسات إعادة هيكلة العمليات والأنظمة الإدارية.</div>
+    </div>
+    <div class="card">
+      <h3>⚙️ Technical Infrastructure</h3>
+      <div class="ar-sub">البنية التحتية التقنية</div>
+      <p>Requires expertise, support systems, and reliable technology setup.</p>
+      <div class="ar-p">يتطلب خبرة وأنظمة دعم وإعداداً تقنياً موثوقاً.</div>
+    </div>
+    <div class="card">
+      <h3>👥 Social Interaction</h3>
+      <div class="ar-sub">التفاعل الاجتماعي</div>
+      <p>Loss of face-to-face contact affects engagement and program quality.</p>
+      <div class="ar-p">فقدان الاتصال المباشر يؤثر على التفاعل وجودة البرنامج.</div>
+    </div>
+    <div class="card">
+      <h3>⚖️ Legal & Evaluation Issues</h3>
+      <div class="ar-sub">قضايا قانونية وتقييم</div>
+      <p>Data protection, cross-country regulations, and measuring effectiveness.</p>
+      <div class="ar-p">حماية البيانات، اللوائح عبر الحدود، وقياس الفاعلية.</div>
+    </div>
+  </div>
+
+  <div class="section-label">5 Tips to Enhance Motivation | 5 نصائح لتعزيز التحفيز</div>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="en">Grab learners' attention — visual variety, interactivity, multimedia, provocative questions</div><div class="ar">اجذب انتباه المتعلمين — تنوع بصري، تفاعلية، وسائط متعددة، أسئلة استفزازية</div></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="en">Improve engagement with interactive and meaningful activities</div><div class="ar">حسّن التفاعل بأنشطة تفاعلية وذات معنى</div></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="en">Boost confidence through achievable milestones and positive feedback</div><div class="ar">عزز الثقة من خلال إنجازات قابلة للتحقيق وتغذية راجعة إيجابية</div></div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="en">Increase satisfaction with relevant, practical content</div><div class="ar">زِد الرضا بمحتوى ذي صلة وعملي</div></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="en">Encourage social interaction through forums, chats, and group work</div><div class="ar">شجّع التفاعل الاجتماعي عبر المنتديات والدردشات والعمل الجماعي</div></div></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ VIRTUAL ═══════════════ -->
+<div id="virtual" class="section">
+  <div class="sec-header">
+    <div class="sec-icon teal">🖥️</div>
+    <div class="sec-title">
+      <h2>Virtual Classroom</h2>
+      <div class="ar">الفصل الدراسي الافتراضي</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="en">A virtual classroom is an online teaching and learning environment where instructors teach remotely in real time using multimedia materials (slides, audio, video). It is the e-learning modality most similar to traditional classroom training — distinguished by its live, synchronous nature.</div>
+    <div class="ar">الفصل الافتراضي هو بيئة تعليمية وتعلمية عبر الإنترنت حيث يدرّس المعلمون عن بُعد في الوقت الحقيقي باستخدام مواد وسائط متعددة. وهو أكثر أنماط التعلم الإلكتروني شبهاً بالتدريب في الفصل التقليدي — يتميز بطابعه المباشر والمتزامن.</div>
+  </div>
+
+  <div class="section-label">Instructor Capabilities | إمكانيات المدرب</div>
+  <div class="card-grid">
+    <div class="card"><h3>🎙️ Moderate Participation</h3><div class="ar-sub">إدارة المشاركة</div><p>Control and manage student engagement and involvement.</p><div class="ar-p">التحكم في مشاركة الطلاب وإدارتها.</div></div>
+    <div class="card"><h3>📁 Display Materials</h3><div class="ar-sub">عرض المواد</div><p>Share documents, slide decks, and multimedia files.</p><div class="ar-p">مشاركة المستندات والعروض التقديمية والملفات.</div></div>
+    <div class="card"><h3>🖥️ Screen Sharing</h3><div class="ar-sub">مشاركة الشاشة</div><p>Virtual whiteboard and real-time screen sharing features.</p><div class="ar-p">السبورة الافتراضية ومشاركة الشاشة في الوقت الحقيقي.</div></div>
+    <div class="card"><h3>👥 Breakout Rooms</h3><div class="ar-sub">غرف المجموعات الصغيرة</div><p>Divide participants into small groups for collaboration.</p><div class="ar-p">تقسيم المشاركين إلى مجموعات صغيرة للتعاون.</div></div>
+    <div class="card"><h3>📊 Polls & Quizzes</h3><div class="ar-sub">الاستطلاعات والاختبارات</div><p>Engage participants with interactive assessments.</p><div class="ar-p">إشراك المشاركين بتقييمات تفاعلية.</div></div>
+    <div class="card"><h3>⏺️ Record Sessions</h3><div class="ar-sub">تسجيل الجلسات</div><p>Record, archive and manage session recordings.</p><div class="ar-p">تسجيل الجلسات وأرشفتها وإدارتها.</div></div>
+  </div>
+
+  <div class="section-label">Benefits | الفوائد</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>🎓 Distance Learning</h3><div class="ar-sub">التعلم عن بُعد</div>
+      <p>Enables working professionals, busy learners, and those with fewer financial resources to learn new skills.</p>
+      <div class="ar-p">يتيح للمهنيين العاملين والمتعلمين المشغولين ومحدودي الموارد المالية اكتساب مهارات جديدة.</div>
+    </div>
+    <div class="card">
+      <h3>💰 Share & Monetize</h3><div class="ar-sub">المشاركة والتحقيق المادي</div>
+      <p>Institutions can share and monetize courses without traveling — MOOCs, bootcamps, online degrees.</p>
+      <div class="ar-p">تستطيع المؤسسات مشاركة الدورات والاستفادة منها دون سفر — MOOCs، معسكرات تدريبية، درجات علمية.</div>
+    </div>
+    <div class="card">
+      <h3>🌍 Grow Brand Presence</h3><div class="ar-sub">تعزيز الحضور المؤسسي</div>
+      <p>Universities can attract students beyond their geographic area by offering live virtual courses.</p>
+      <div class="ar-p">الجامعات تستطيع استقطاب طلاب من خارج نطاقها الجغرافي عبر الدورات الافتراضية المباشرة.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Real-World Examples | أمثلة تطبيقية</div>
+  <div class="card-grid">
+    <div class="card"><h3>🌐 MOOCs</h3><div class="ar-sub">الدورات المفتوحة الضخمة عبر الإنترنت</div><p>Massive Open Online Courses — Coursera, edX. Open enrollment, some accredited, free or fee-based.</p><div class="ar-p">دورات مفتوحة ضخمة — Coursera, edX. تسجيل مفتوح، بعضها معتمد، مجاني أو مدفوع.</div></div>
+    <div class="card"><h3>⚡ Bootcamps</h3><div class="ar-sub">معسكرات التدريب المكثف</div><p>Intensive focused training in tech, design, or data — Thinkful, General Assembly, Galvanize.</p><div class="ar-p">تدريب مكثف في التكنولوجيا أو التصميم أو البيانات.</div></div>
+    <div class="card"><h3>🏛️ Online Degree Programs</h3><div class="ar-sub">برامج الدرجات العلمية عبر الإنترنت</div><p>Full university degrees delivered virtually — recruiting online students beyond geographic limits.</p><div class="ar-p">درجات جامعية كاملة مقدمة افتراضياً — استقطاب طلاب عبر الإنترنت خارج الحدود الجغرافية.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ M-LEARNING ═══════════════ -->
+<div id="mlearn" class="section">
+  <div class="sec-header">
+    <div class="sec-icon purple">📱</div>
+    <div class="sec-title">
+      <h2>Mobile Learning (M-Learning)</h2>
+      <div class="ar">التعلم عبر الأجهزة المحمولة</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="en">M-Learning is a model of training that blends electronic and distance education with portable mobile devices such as smartphones and handheld computers — enabling anytime, anywhere learning.</div>
+    <div class="ar">التعلم المحمول هو نموذج تدريب يمزج التعليم الإلكتروني والتعليم عن بُعد مع الأجهزة المحمولة مثل الهواتف الذكية والحواسيب المحمولة — مما يتيح التعلم في أي وقت ومن أي مكان.</div>
+  </div>
+
+  <div class="section-label">Key Benefits | الفوائد الرئيسية</div>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-num">✓</div><div class="step-content"><div class="en">Self-directed, individualized and self-paced learning</div><div class="ar">تعلم ذاتي التوجيه، فردي وبوتيرة ذاتية</div></div></div>
+    <div class="step-item"><div class="step-num">✓</div><div class="step-content"><div class="en">Interactive learning with engaging digital content</div><div class="ar">تعلم تفاعلي بمحتوى رقمي جذاب</div></div></div>
+    <div class="step-item"><div class="step-num">✓</div><div class="step-content"><div class="en">Promotes lifelong learning — education moves out of the classroom</div><div class="ar">يعزز التعلم مدى الحياة — يخرج التعليم من الفصل الدراسي</div></div></div>
+    <div class="step-item"><div class="step-num">✓</div><div class="step-content"><div class="en">Global delivery of learning materials</div><div class="ar">التوصيل العالمي لمواد التعلم</div></div></div>
+    <div class="step-item"><div class="step-num">✓</div><div class="step-content"><div class="en">Complements and extends distance, online, and classroom learning</div><div class="ar">يكمل ويمتد ليشمل التعلم عن بُعد والإلكتروني والصفي</div></div></div>
+  </div>
+
+  <div class="section-label">Advantages & Disadvantages | المزايا والعيوب</div>
+  <div class="pro-con">
+    <div class="pro-box">
+      <h4>✅ Advantages | المزايا</h4>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Access lessons, video clips, and audio from anywhere</div><div class="ar">الوصول للدروس والفيديو والصوت من أي مكان</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Portability — take your learning wherever you go</div><div class="ar">قابلية الحمل — خذ تعليمك معك أينما ذهبت</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Device ownership increases motivation and commitment</div><div class="ar">امتلاك الجهاز يزيد الدافعية والالتزام</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Colorful, inviting material prompts repeated practice</div><div class="ar">مواد ملونة وجذابة تحفز على التدريب المتكرر</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Flexible 24/7 access; each student learns at own pace</div><div class="ar">وصول مرن على مدار الساعة؛ كل طالب بوتيرته</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Saves cost of learning materials and commuting</div><div class="ar">يوفر تكلفة مواد التعلم والتنقل</div></div></div>
+    </div>
+    <div class="con-box">
+      <h4>❌ Disadvantages | العيوب</h4>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Size inconvenience — small screens limit display</div><div class="ar">إزعاج الحجم — الشاشات الصغيرة تحدد العرض</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Limited storage capacity on PDAs</div><div class="ar">سعة تخزين محدودة في المساعدات الرقمية الشخصية</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Short battery life is a nuisance</div><div class="ar">قصر عمر البطارية أمر مزعج</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Rapid device obsolescence</div><div class="ar">تقادم الأجهزة السريع</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Limited wireless bandwidth with more users</div><div class="ar">نطاق ترددي لاسلكي محدود مع زيادة المستخدمين</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">No printing capability without network connection</div><div class="ar">لا قدرة على الطباعة دون اتصال بالشبكة</div></div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Uses in Nursing Education | الاستخدامات في تعليم التمريض</div>
+  <div class="card-grid">
+    <div class="card"><h3>💊 Drug Database Access</h3><div class="ar-sub">الوصول لقواعد بيانات الأدوية</div><p>Quick access to current drug databases and nursing reference books at point of care.</p><div class="ar-p">الوصول السريع لقواعد بيانات الأدوية الحالية ومراجع التمريض عند نقطة الرعاية.</div></div>
+    <div class="card"><h3>📋 Procedure Information</h3><div class="ar-sub">معلومات الإجراءات</div><p>Access step-by-step procedure information instantly during clinical work.</p><div class="ar-p">الوصول الفوري لمعلومات الإجراءات خطوة بخطوة أثناء العمل السريري.</div></div>
+    <div class="card"><h3>🗃️ Bedside Data Entry</h3><div class="ar-sub">إدخال البيانات بجانب السرير</div><p>Real-time bedside data entry for patient records and clinical documentation.</p><div class="ar-p">إدخال بيانات بجانب سرير المريض في الوقت الحقيقي للسجلات والوثائق السريرية.</div></div>
+    <div class="card"><h3>🔬 Research & Teaching</h3><div class="ar-sub">البحث والتعليم</div><p>Data collection for research activities and as a teaching support tool.</p><div class="ar-p">جمع البيانات للأنشطة البحثية وكأداة دعم تعليمي.</div></div>
+    <div class="card"><h3>❤️ Patient Health Management</h3><div class="ar-sub">إدارة صحة المريض</div><p>Tools to support patient monitoring, health management, and care plans.</p><div class="ar-p">أدوات لدعم مراقبة المريض وإدارة الصحة وخطط الرعاية.</div></div>
+    <div class="card"><h3>📡 Health Team Communication</h3><div class="ar-sub">تواصل الفريق الصحي</div><p>Improved communication and coordination across the healthcare team.</p><div class="ar-p">تحسين التواصل والتنسيق عبر الفريق الصحي بأكمله.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ BLENDED ═══════════════ -->
+<div id="blended" class="section">
+  <div class="sec-header">
+    <div class="sec-icon amber">🔀</div>
+    <div class="sec-title">
+      <h2>Blended Learning</h2>
+      <div class="ar">التعلم المدمج</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="en">Blended Learning combines traditional face-to-face classroom instruction with online digital learning activities. It offers the best of both worlds — the structure of traditional classrooms with the flexibility and reach of online learning.</div>
+    <div class="ar">التعلم المدمج يجمع بين التعليم التقليدي وجهاً لوجه وأنشطة التعلم الرقمي عبر الإنترنت. يقدم أفضل ما في العالمين — هيكل الفصل التقليدي مع مرونة ووصول التعلم الإلكتروني.</div>
+  </div>
+
+  <div class="section-label">Flipped Classroom Model | نموذج الفصل المقلوب</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-num">Before Class</div>
+      <h3>At Home (Online)</h3>
+      <div class="ar-sub">في المنزل — عبر الإنترنت</div>
+      <p>Students watch video lectures, read digital content, and review materials at their own pace before the class session.</p>
+      <div class="ar-p">يشاهد الطلاب محاضرات فيديو ويقرؤون المحتوى الرقمي ويراجعون المواد بوتيرتهم الخاصة قبل الجلسة.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">In Class</div>
+      <h3>In Classroom (Active)</h3>
+      <div class="ar-sub">في الفصل — نشاط تطبيقي</div>
+      <p>Classroom time is used for discussions, problem-solving, case studies, and hands-on application of knowledge.</p>
+      <div class="ar-p">يُستخدم وقت الفصل للنقاشات وحل المشكلات ودراسة الحالات والتطبيق العملي للمعرفة.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Benefits & Hazards | الفوائد والمخاطر</div>
+  <div class="pro-con">
+    <div class="pro-box">
+      <h4>✅ Benefits | الفوائد</h4>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Combines flexibility of online with richness of face-to-face</div><div class="ar">يجمع مرونة الإنترنت مع غنى التعليم المباشر</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Increases student engagement and motivation</div><div class="ar">يزيد تفاعل الطلاب ودافعيتهم</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">Supports diverse learning styles</div><div class="ar">يدعم أساليب التعلم المتنوعة</div></div></div>
+      <div class="pro-con-item"><div class="dot pro-dot"></div><div class="text-wrap"><div class="en">More cost-effective than fully face-to-face</div><div class="ar">أكثر اقتصادية من التعليم الوجاهي الكامل</div></div></div>
+    </div>
+    <div class="con-box">
+      <h4>⚠️ Hazards | المخاطر</h4>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Requires reliable technology for all students</div><div class="ar">يتطلب تكنولوجيا موثوقة لجميع الطلاب</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Higher preparation time for instructors</div><div class="ar">يستلزم وقت تحضير أكبر من المدرسين</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">Risk of digital divide between students</div><div class="ar">خطر الفجوة الرقمية بين الطلاب</div></div></div>
+      <div class="pro-con-item"><div class="dot con-dot"></div><div class="text-wrap"><div class="en">May be confusing without clear structure</div><div class="ar">قد يكون مربكاً دون هيكل واضح</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MCQ ═══════════════ -->
+<div id="mcq" class="section">
+  <div class="sec-header">
+    <div class="sec-icon amber">❓</div>
+    <div class="sec-title">
+      <h2>Multiple Choice Questions</h2>
+      <div class="ar">أسئلة الاختيار من متعدد</div>
+    </div>
+  </div>
+
+  <div class="score-bar">
+    <span>Score | الدرجة: <span id="scoreDisplay" class="score-num">0 / 15</span></span>
+    <span style="font-size:12px;color:var(--muted)">Click your answer | اختر إجابتك</span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 01</div>
+    <div class="q-text">What is the best definition of Educational Technology?</div>
+    <div class="q-ar">ما هو أفضل تعريف لتكنولوجيا التعليم؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q1')">A. Using computers only in classrooms | استخدام الحاسوب فقط في الفصول</button>
+      <button class="option-btn" onclick="answer(this,'correct','q1')">B. A systematic process for designing instruction to improve performance | عملية منهجية لتصميم التعليم لتحسين الأداء</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q1')">C. Teaching using textbooks and PowerPoint | التدريس باستخدام الكتب والعروض</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q1')">D. Online testing only | الاختبار الإلكتروني فقط</button>
+    </div>
+    <div id="q1-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 02</div>
+    <div class="q-text">Which e-learning modality involves groups working together in real time via the internet?</div>
+    <div class="q-ar">أي نمط من أنماط التعلم الإلكتروني يشمل عمل المجموعات معاً في الوقت الحقيقي عبر الإنترنت؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q2')">A. Self-paced offline | ذاتي التوجيه بدون إنترنت</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q2')">B. Self-paced online | ذاتي التوجيه عبر الإنترنت</button>
+      <button class="option-btn" onclick="answer(this,'correct','q2')">C. Group-based synchronous | جماعي متزامن</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q2')">D. Group-based asynchronous | جماعي غير متزامن</button>
+    </div>
+    <div id="q2-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 03</div>
+    <div class="q-text">Which of the following is a DISADVANTAGE of e-learning?</div>
+    <div class="q-ar">أي مما يلي يُعدّ عيباً من عيوب التعلم الإلكتروني؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q3')">A. Flexible scheduling | جدول مرن</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q3')">B. Cost-effective delivery | توصيل اقتصادي</button>
+      <button class="option-btn" onclick="answer(this,'correct','q3')">C. Students may feel isolated | قد يشعر الطلاب بالعزلة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q3')">D. Accessible anywhere | يمكن الوصول إليه من أي مكان</button>
+    </div>
+    <div id="q3-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 04</div>
+    <div class="q-text">A virtual classroom is BEST described as:</div>
+    <div class="q-ar">الفصل الافتراضي يوصف بأنه:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q4')">A. Fully asynchronous learning system | نظام تعليمي غير متزامن كلياً</button>
+      <button class="option-btn" onclick="answer(this,'correct','q4')">B. Live, synchronous online teaching environment | بيئة تعليمية عبر الإنترنت مباشرة ومتزامنة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q4')">C. Traditional classroom moved to another room | فصل تقليدي نُقل لغرفة أخرى</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q4')">D. CD-based learning program | برنامج تعلم قائم على الأقراص المضغوطة</button>
+    </div>
+    <div id="q4-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 05</div>
+    <div class="q-text">MOOCs stand for:</div>
+    <div class="q-ar">اختصار MOOCs يعني:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q5')">A. Mobile Open Online Courses | دورات مفتوحة متنقلة عبر الإنترنت</button>
+      <button class="option-btn" onclick="answer(this,'correct','q5')">B. Massive Open Online Courses | دورات مفتوحة ضخمة عبر الإنترنت</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q5')">C. Multi-Orientation Online Courses | دورات إلكترونية متعددة التوجهات</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q5')">D. Modular Open Online Courses | دورات وحدوية مفتوحة عبر الإنترنت</button>
+    </div>
+    <div id="q5-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 06</div>
+    <div class="q-text">Which is NOT a feature of the virtual classroom for instructors?</div>
+    <div class="q-ar">أي مما يلي ليس من ميزات الفصل الافتراضي للمدرسين؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q6')">A. Breakout rooms | غرف المجموعات الصغيرة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q6')">B. Polls and quizzes | استطلاعات واختبارات</button>
+      <button class="option-btn" onclick="answer(this,'correct','q6')">C. Physical textbook distribution | توزيع الكتب المادية</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q6')">D. Recording sessions | تسجيل الجلسات</button>
+    </div>
+    <div id="q6-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 07</div>
+    <div class="q-text">M-Learning uses which type of devices?</div>
+    <div class="q-ar">التعلم المحمول يستخدم أي نوع من الأجهزة؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q7')">A. Desktop computers and projectors | الحواسيب المكتبية وأجهزة العرض</button>
+      <button class="option-btn" onclick="answer(this,'correct','q7')">B. Smartphones and handheld computers (PDAs) | الهواتف الذكية والحواسيب المحمولة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q7')">C. Television and satellite | التلفزيون والأقمار الاصطناعية</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q7')">D. Overhead projectors | أجهزة العرض العلوي</button>
+    </div>
+    <div id="q7-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 08</div>
+    <div class="q-text">In nursing, M-Learning is used for:</div>
+    <div class="q-ar">في مجال التمريض، يُستخدم التعلم المحمول في:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q8')">A. Replacing all clinical training | استبدال كل التدريب السريري</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q8')">B. Administrative payroll processing | معالجة الرواتب الإدارية</button>
+      <button class="option-btn" onclick="answer(this,'correct','q8')">C. Accessing drug databases and clinical procedures at point of care | الوصول لقواعد بيانات الأدوية والإجراءات السريرية</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q8')">D. Printing patient documents | طباعة وثائق المريض</button>
+    </div>
+    <div id="q8-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 09</div>
+    <div class="q-text">Which of these is a challenge to implementing e-learning in institutions?</div>
+    <div class="q-ar">أي من هذه يُعدّ تحدياً لتطبيق التعلم الإلكتروني في المؤسسات؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q9')">A. Easy access to materials | سهولة الوصول للمواد</button>
+      <button class="option-btn" onclick="answer(this,'correct','q9')">B. Organizational change and technical infrastructure | التغيير المؤسسي والبنية التحتية التقنية</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q9')">C. Reduced course duration | تقليل مدة الدورة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q9')">D. Student location tracking | تتبع موقع الطالب</button>
+    </div>
+    <div id="q9-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 10</div>
+    <div class="q-text">Blended learning BEST combines:</div>
+    <div class="q-ar">التعلم المدمج يجمع بشكل أمثل بين:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q10')">A. Two different online platforms | منصتين إلكترونيتين مختلفتين</button>
+      <button class="option-btn" onclick="answer(this,'correct','q10')">B. Traditional face-to-face instruction with online digital activities | التعليم التقليدي المباشر والأنشطة الرقمية الإلكترونية</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q10')">C. Classroom instruction and library study only | تعليم الفصل ودراسة المكتبة فقط</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q10')">D. Mobile learning and satellite TV | التعلم المحمول والتلفزيون عبر الأقمار</button>
+    </div>
+    <div id="q10-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 11</div>
+    <div class="q-text">Which delivery method uses live chat and videoconferencing?</div>
+    <div class="q-ar">أي طريقة توصيل تستخدم الدردشة المباشرة ومؤتمرات الفيديو؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q11')">A. Asynchronous communication | التواصل غير المتزامن</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q11')">B. Print and Text | النص والطباعة</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q11')">C. Review and Exams | المراجعة والامتحانات</button>
+      <button class="option-btn" onclick="answer(this,'correct','q11')">D. Synchronous communication | التواصل المتزامن</button>
+    </div>
+    <div id="q11-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 12</div>
+    <div class="q-text">The "flipped classroom" model means:</div>
+    <div class="q-ar">نموذج "الفصل المقلوب" يعني:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q12')">A. Students teach the instructor | الطلاب يدرّسون المدرس</button>
+      <button class="option-btn" onclick="answer(this,'correct','q12')">B. Students review content at home online; class time is for active application | مراجعة المحتوى في المنزل؛ الفصل للتطبيق النشط</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q12')">C. All teaching is done in reverse order | التدريس بترتيب عكسي تماماً</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q12')">D. Exams are done first, then studying | الامتحانات أولاً ثم المذاكرة</button>
+    </div>
+    <div id="q12-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 13</div>
+    <div class="q-text">Which advantage is unique to M-Learning compared to traditional e-learning?</div>
+    <div class="q-ar">أي ميزة فريدة في التعلم المحمول مقارنة بالتعلم الإلكتروني التقليدي؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q13')">A. Access to video content | الوصول لمحتوى الفيديو</button>
+      <button class="option-btn" onclick="answer(this,'correct','q13')">B. True portability — learning anywhere including on buses and in clinical settings | قابلية الحمل الحقيقية — التعلم في أي مكان</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q13')">C. Lower cost than all other methods | أقل تكلفة من جميع الطرق الأخرى</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q13')">D. Better screen resolution | دقة شاشة أفضل</button>
+    </div>
+    <div id="q13-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 14</div>
+    <div class="q-text">Email lists and threaded discussions are examples of:</div>
+    <div class="q-ar">قوائم البريد الإلكتروني والنقاشات المتشعبة أمثلة على:</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q14')">A. Self-paced offline learning | التعلم الذاتي دون إنترنت</button>
+      <button class="option-btn" onclick="answer(this,'correct','q14')">B. Group-based asynchronous e-learning | التعلم الإلكتروني الجماعي غير المتزامن</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q14')">C. Virtual classroom features | مميزات الفصل الافتراضي</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q14')">D. Mobile learning tools | أدوات التعلم المحمول</button>
+    </div>
+    <div id="q14-fb" class="feedback"></div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="quiz-q">
+    <div class="q-num">Question 15</div>
+    <div class="q-text">Which of the following best describes the core purpose of educational technology?</div>
+    <div class="q-ar">أي من التالي يصف بشكل أفضل الهدف الجوهري لتكنولوجيا التعليم؟</div>
+    <div class="options">
+      <button class="option-btn" onclick="answer(this,'wrong','q15')">A. To replace all human teachers with machines | استبدال المدرسين البشريين بالآلات</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q15')">B. To make education more expensive and exclusive | جعل التعليم أكثر تكلفة وحصرية</button>
+      <button class="option-btn" onclick="answer(this,'correct','q15')">C. To promote diverse learning environments and improve efficiency, motivation, and access | تعزيز بيئات التعلم المتنوعة وتحسين الكفاءة والتحفيز والوصول</button>
+      <button class="option-btn" onclick="answer(this,'wrong','q15')">D. To limit learning to computer science fields | تقييد التعلم بمجالات علوم الحاسوب</button>
+    </div>
+    <div id="q15-fb" class="feedback"></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ ESSAY ═══════════════ -->
+<div id="essay" class="section">
+  <div class="sec-header">
+    <div class="sec-icon purple">✍️</div>
+    <div class="sec-title">
+      <h2>Essay Questions</h2>
+      <div class="ar">الأسئلة المقالية</div>
+    </div>
+  </div>
+
+  <!-- E1 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 01</div>
+    <div class="q-text">Define e-learning and describe its four modalities with examples.</div>
+    <div class="q-ar">عرّف التعلم الإلكتروني واذكر أنماطه الأربعة مع أمثلة.</div>
+    <button class="essay-toggle" onclick="toggleEssay('e1')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e1" class="essay-answer">
+      <div class="en"><strong>Definition:</strong> E-Learning is teaching using modern communication mechanisms — computers, networks, multimedia, and internet portals — to deliver information fast and cost-effectively, enabling management, measurement, and evaluation of learner performance.<br><br>
+      <strong>Four Modalities:</strong><br>
+      1. <strong>Self-Paced Online:</strong> Individual learner accesses resources via Intranet/Internet (e.g., solo online research).<br>
+      2. <strong>Self-Paced Offline:</strong> Individual learner uses resources offline on hard drives or CDs without internet connection.<br>
+      3. <strong>Group-Based Synchronous:</strong> Groups work together in real time via internet — includes text chat, audio/videoconferencing.<br>
+      4. <strong>Group-Based Asynchronous:</strong> Groups work with delayed exchanges — e-mail lists, threaded discussions, LMS forums.</div>
+      <div class="ar"><strong>التعريف:</strong> التعلم الإلكتروني هو التدريس باستخدام آليات الاتصال الحديثة — الحواسيب والشبكات والوسائط المتعددة وبوابات الإنترنت — لتوصيل المعلومات بسرعة وفاعلية، مع إمكانية الإدارة والقياس والتقييم.<br><br>
+      <strong>الأنماط الأربعة:</strong><br>
+      ١. <strong>ذاتي التوجيه عبر الإنترنت:</strong> المتعلم يصل للموارد عبر الشبكة (مثل البحث الأكاديمي الفردي).<br>
+      ٢. <strong>ذاتي التوجيه دون إنترنت:</strong> استخدام موارد غير متصلة مثل الأقراص الصلبة والمضغوطة.<br>
+      ٣. <strong>جماعي متزامن:</strong> مجموعات تعمل في الوقت الحقيقي — دردشة، مؤتمرات صوت وفيديو.<br>
+      ٤. <strong>جماعي غير متزامن:</strong> تبادل متأخر — بريد إلكتروني، نقاشات متشعبة، منتديات LMS.</div>
+    </div>
+  </div>
+
+  <!-- E2 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 02</div>
+    <div class="q-text">Compare traditional classroom teaching with e-learning across four dimensions.</div>
+    <div class="q-ar">قارن بين التعليم الصفي التقليدي والتعلم الإلكتروني في أربعة محاور.</div>
+    <button class="essay-toggle" onclick="toggleEssay('e2')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e2" class="essay-answer">
+      <div class="en">
+      <strong>1. Classroom:</strong> Traditional = Physical, limited, synchronous only. E-Learning = Unlimited, anytime/anywhere access.<br><br>
+      <strong>2. Content:</strong> Traditional = PowerPoint, textbooks, library. E-Learning = Multimedia, simulation, digital library, on-demand.<br><br>
+      <strong>3. Personalization:</strong> Traditional = One fixed path for all. E-Learning = Learner controls their own path and pace.<br><br>
+      <strong>4. Schedule/Communication:</strong> Traditional = Fixed time and location. E-Learning = Both synchronous and asynchronous collaboration tools.
+      </div>
+      <div class="ar">
+      <strong>١. الفصل الدراسي:</strong> تقليدي = مادي، محدود، متزامن فقط. إلكتروني = غير محدود، في أي وقت ومكان.<br><br>
+      <strong>٢. المحتوى:</strong> تقليدي = عروض، كتب، مكتبة. إلكتروني = وسائط متعددة، محاكاة، مكتبة رقمية، عند الطلب.<br><br>
+      <strong>٣. التخصيص:</strong> تقليدي = مسار ثابت للجميع. إلكتروني = المتعلم يتحكم في مساره ووتيرته.<br><br>
+      <strong>٤. الجدول/التواصل:</strong> تقليدي = وقت ومكان محددان. إلكتروني = أدوات تعاون متزامنة وغير متزامنة.
+      </div>
+    </div>
+  </div>
+
+  <!-- E3 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 03</div>
+    <div class="q-text">Discuss the impact of e-learning on teaching and learning. Mention at least 6 points.</div>
+    <div class="q-ar">ناقش تأثير التعلم الإلكتروني على التعليم والتعلم. اذكر ستة نقاط على الأقل.</div>
+    <button class="essay-toggle" onclick="toggleEssay('e3')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e3" class="essay-answer">
+      <div class="en">E-learning impacts teaching and learning in many ways:<br>
+      1. Improves efficiency in both learning and teaching processes.<br>
+      2. Increases learner motivation and deepens understanding through engaging content.<br>
+      3. Promotes collaborative learning across geographic distances.<br>
+      4. Gives new approaches to learning, working, and interacting.<br>
+      5. Provides social skill-building opportunities through online collaboration.<br>
+      6. Paves the way for personality development.<br>
+      7. Helps self-evaluation — wide reach and consistent delivery.<br>
+      8. Addresses different learning and cognitive styles.<br>
+      9. Self-pacing reduces stress for both slow and quick learners, increasing satisfaction.</div>
+      <div class="ar">يؤثر التعلم الإلكتروني على التعليم والتعلم بطرق عديدة:<br>
+      ١. يحسّن الكفاءة في عمليتي التعلم والتدريس.<br>
+      ٢. يزيد تحفيز المتعلم ويعمّق الفهم من خلال المحتوى الجذاب.<br>
+      ٣. يعزز التعلم التعاوني عبر المسافات الجغرافية.<br>
+      ٤. يقدم مناهج جديدة للتعلم والعمل والتفاعل.<br>
+      ٥. يوفر فرص بناء المهارات الاجتماعية عبر التعاون الإلكتروني.<br>
+      ٦. يمهد الطريق لتنمية الشخصية.<br>
+      ٧. يساعد في التقييم الذاتي — نطاق واسع وتسليم متسق.<br>
+      ٨. يراعي أساليب التعلم والإدراك المختلفة.<br>
+      ٩. التعلم بالوتيرة الذاتية يقلل الضغط ويزيد الرضا لدى جميع المتعلمين.</div>
+    </div>
+  </div>
+
+  <!-- E4 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 04</div>
+    <div class="q-text">What is a virtual classroom? Describe its key features and provide real-world examples.</div>
+    <div class="q-ar">ما هو الفصل الافتراضي؟ صف مميزاته الرئيسية وقدم أمثلة واقعية.</div>
+    <button class="essay-toggle" onclick="toggleEssay('e4')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e4" class="essay-answer">
+      <div class="en"><strong>Definition:</strong> A virtual classroom is an online teaching and learning environment where instructors teach remotely in real time using multimedia materials. It is the e-learning modality most similar to traditional classroom training — distinguished by its live, synchronous nature.<br><br>
+      <strong>Key Features:</strong><br>
+      • Moderate participation — manage student engagement<br>
+      • Display materials — share slides, documents, multimedia<br>
+      • Screen sharing and virtual whiteboard<br>
+      • Breakout rooms for small-group collaboration<br>
+      • Polls and quizzes for interactive assessment<br>
+      • Session recording and archiving<br><br>
+      <strong>Examples:</strong> MOOCs (Coursera, edX), Bootcamps (General Assembly, Thinkful), Online Degree Programs.</div>
+      <div class="ar"><strong>التعريف:</strong> الفصل الافتراضي بيئة تعليمية عبر الإنترنت يدرّس فيها المعلمون عن بُعد في الوقت الحقيقي. هو أكثر أنماط التعلم الإلكتروني شبهاً بالفصل التقليدي.<br><br>
+      <strong>المميزات الرئيسية:</strong><br>
+      • إدارة مشاركة الطلاب<br>
+      • عرض الشرائح والمستندات والوسائط<br>
+      • مشاركة الشاشة والسبورة الافتراضية<br>
+      • غرف المجموعات الصغيرة<br>
+      • استطلاعات واختبارات تفاعلية<br>
+      • تسجيل الجلسات وأرشفتها<br><br>
+      <strong>أمثلة:</strong> MOOCs (Coursera, edX)، معسكرات تدريبية، برامج درجات علمية عبر الإنترنت.</div>
+    </div>
+  </div>
+
+  <!-- E5 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 05</div>
+    <div class="q-text">Describe the uses of mobile learning (M-Learning) in nursing education. Why is it important for nurses?</div>
+    <div class="q-ar">اذكر استخدامات التعلم المحمول في تعليم التمريض. لماذا هو مهم للممرضين؟</div>
+    <button class="essay-toggle" onclick="toggleEssay('e5')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e5" class="essay-answer">
+      <div class="en">M-Learning in nursing education is important because it provides real-time clinical support at the point of care. Uses include:<br>
+      1. <strong>Drug Database Access:</strong> Quick access to current drug databases and nursing references during patient care.<br>
+      2. <strong>Procedure Information:</strong> Instant access to step-by-step procedure guides during clinical work.<br>
+      3. <strong>Bedside Data Entry:</strong> Real-time patient records and clinical documentation at the bedside.<br>
+      4. <strong>Research & Teaching:</strong> Data collection for research and as a teaching support tool.<br>
+      5. <strong>Patient Health Management:</strong> Tools to support patient monitoring and care plans.<br>
+      6. <strong>Health Team Communication:</strong> Improves coordination across the healthcare team.<br><br>
+      M-Learning enables nurses to access current clinical knowledge anytime, promoting safer, evidence-based care and lifelong professional development.</div>
+      <div class="ar">التعلم المحمول في تعليم التمريض مهم لأنه يوفر دعماً سريرياً فورياً عند نقطة الرعاية. الاستخدامات تشمل:<br>
+      ١. <strong>الوصول لقواعد بيانات الأدوية:</strong> وصول سريع للأدوية والمراجع التمريضية أثناء رعاية المريض.<br>
+      ٢. <strong>معلومات الإجراءات:</strong> الوصول الفوري لأدلة الإجراءات خطوة بخطوة.<br>
+      ٣. <strong>إدخال بيانات جانب السرير:</strong> سجلات المريض والتوثيق السريري في الوقت الحقيقي.<br>
+      ٤. <strong>البحث والتعليم:</strong> جمع البيانات للبحث وكأداة دعم تعليمي.<br>
+      ٥. <strong>إدارة صحة المريض:</strong> أدوات لمراقبة المريض وخطط الرعاية.<br>
+      ٦. <strong>تواصل الفريق الصحي:</strong> يحسن التنسيق عبر الفريق.<br><br>
+      يمكّن التعلم المحمول الممرضين من الوصول للمعرفة السريرية الحالية في أي وقت، مما يعزز الرعاية المبنية على الأدلة والتطور المهني المستمر.</div>
+    </div>
+  </div>
+
+  <!-- E6 -->
+  <div class="essay-q">
+    <div class="q-num">Essay Question 06</div>
+    <div class="q-text">List the advantages and disadvantages of e-learning. (3 each minimum)</div>
+    <div class="q-ar">اذكر مزايا وعيوب التعلم الإلكتروني. (ثلاثة من كل على الأقل)</div>
+    <button class="essay-toggle" onclick="toggleEssay('e6')">Show Model Answer | اظهر الإجابة النموذجية</button>
+    <div id="e6" class="essay-answer">
+      <div class="en"><strong>Advantages:</strong><br>
+      1. Convenient — self-service, on-demand, private, self-paced, flexible.<br>
+      2. Cost-effective — virtual environments reduce material and travel costs.<br>
+      3. Consistent — central control ensures same quality for all learners.<br>
+      4. Media-rich — engaging multimedia content aids understanding.<br>
+      5. Repeatable — access lessons as many times as needed.<br>
+      6. Easy monitoring — less admin work, more precise progress tracking.<br><br>
+      <strong>Disadvantages:</strong><br>
+      1. Unmotivated learners or those with poor study habits may fall behind.<br>
+      2. Lack of familiar structure may be hard to adjust to.<br>
+      3. Students may feel isolated or miss social interaction.<br>
+      4. Instructor may not always be available on demand.<br>
+      5. Slow or unreliable internet connections can be frustrating.</div>
+      <div class="ar"><strong>المزايا:</strong><br>
+      ١. مريح — خدمة ذاتية، عند الطلب، خاص، بوتيرة ذاتية، مرن.<br>
+      ٢. اقتصادي — البيئات الافتراضية تخفض تكاليف المواد والتنقل.<br>
+      ٣. متسق — التحكم المركزي يضمن نفس الجودة للجميع.<br>
+      ٤. غني بالوسائط — يسهّل الفهم ويزيد التفاعل.<br>
+      ٥. قابل للتكرار — الوصول للدروس كلما احتجت.<br>
+      ٦. سهل المراقبة — تتبع دقيق للتقدم بجهد إداري أقل.<br><br>
+      <strong>العيوب:</strong><br>
+      ١. المتعلمون غير المتحمسين أو ذوو العادات الدراسية الضعيفة قد يتأخرون.<br>
+      ٢. غياب الهيكل المألوف قد يصعب التأقلم معه.<br>
+      ٣. قد يشعر الطلاب بالعزلة ويفتقدون التفاعل الاجتماعي.<br>
+      ٤. قد لا يكون المدرس متاحاً عند الطلب دائماً.<br>
+      ٥. الإنترنت البطيء أو غير الموثوق مصدر إزعاج.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ SUMMARY ═══════════════ -->
+<div id="summary" class="section">
+  <div class="sec-header">
+    <div class="sec-icon navy">📌</div>
+    <div class="sec-title">
+      <h2>Lecture Summary</h2>
+      <div class="ar">ملخص المحاضرة</div>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="sum-card">
+      <h4>Key Definitions | المفاهيم الأساسية</h4>
+      <div class="ar-head">التعريفات</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Technology = systematic application of knowledge</div><div class="ar">التكنولوجيا = تطبيق منهجي للمعرفة</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Ed-Tech = systematic process to improve learning performance</div><div class="ar">تكنولوجيا التعليم = عملية منهجية لتحسين الأداء</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Goal = diverse environments, better access & motivation</div><div class="ar">الهدف = بيئات متنوعة، وصول أفضل وتحفيز</div></div></div>
+    </div>
+
+    <div class="sum-card amber-top">
+      <h4>E-Learning | التعلم الإلكتروني</h4>
+      <div class="ar-head">4 أنماط + 6 طرق توصيل</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">4 modalities: self-paced (online/offline), group (sync/async)</div><div class="ar">٤ أنماط: ذاتي (متصل/غير متصل)، جماعي (متزامن/غير متزامن)</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">6 delivery methods: text, video, audio, exams, async, sync</div><div class="ar">٦ طرق توصيل: نص، فيديو، صوت، امتحانات، غير متزامن، متزامن</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Key advantages: convenient, cost-effective, consistent, repeatable</div><div class="ar">المزايا: مريح، اقتصادي، متسق، قابل للتكرار</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Key challenges: organizational change, tech infrastructure, social isolation</div><div class="ar">التحديات: التغيير المؤسسي، البنية التقنية، العزلة الاجتماعية</div></div></div>
+    </div>
+
+    <div class="sum-card">
+      <h4>Virtual Classroom | الفصل الافتراضي</h4>
+      <div class="ar-head">تعليم مباشر عبر الإنترنت</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Live, synchronous — most like traditional classroom</div><div class="ar">مباشر ومتزامن — الأقرب للفصل التقليدي</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Features: screen share, breakout rooms, polls, recording</div><div class="ar">مميزات: مشاركة شاشة، غرف جماعية، استطلاعات، تسجيل</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Examples: MOOCs (Coursera, edX), Bootcamps, Online Degrees</div><div class="ar">أمثلة: دورات MOOC، معسكرات تدريب، درجات علمية</div></div></div>
+    </div>
+
+    <div class="sum-card purple-top">
+      <h4>M-Learning | التعلم المحمول</h4>
+      <div class="ar-head">تعليم عبر الأجهزة المحمولة</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Devices: smartphones + PDAs (handheld computers)</div><div class="ar">الأجهزة: الهواتف الذكية والمساعدات الرقمية</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Advantages: portability, 24/7 access, self-paced, affordable</div><div class="ar">المزايا: قابلية الحمل، وصول مستمر، ذاتي التوجيه، اقتصادي</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Disadvantages: small screen, limited storage, battery, bandwidth</div><div class="ar">العيوب: شاشة صغيرة، تخزين محدود، بطارية، نطاق ترددي</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Nursing uses: drug databases, procedures, bedside data, team communication</div><div class="ar">في التمريض: أدوية، إجراءات، بيانات جانب السرير، تواصل الفريق</div></div></div>
+    </div>
+
+    <div class="sum-card navy-top">
+      <h4>Blended Learning | التعلم المدمج</h4>
+      <div class="ar-head">دمج الوجاهي والإلكتروني</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Combines face-to-face + online digital activities</div><div class="ar">يجمع الوجاهي والأنشطة الرقمية الإلكترونية</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Flipped classroom: study online at home → apply in class</div><div class="ar">الفصل المقلوب: مذاكرة إلكترونية في المنزل ← تطبيق في الفصل</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">Benefits: flexible, engaging, supports diverse learners</div><div class="ar">الفوائد: مرن، جذاب، يدعم المتعلمين المتنوعين</div></div></div>
+    </div>
+
+    <div class="sum-card">
+      <h4>5 Motivation Tips | ٥ نصائح تحفيز</h4>
+      <div class="ar-head">تعزيز الدافعية في التعلم الإلكتروني</div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">1. Grab attention with visual variety & interactivity</div><div class="ar">١. اجذب الانتباه بتنوع بصري وتفاعلية</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">2. Improve engagement with meaningful activities</div><div class="ar">٢. حسّن التفاعل بأنشطة ذات معنى</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">3. Boost confidence with milestones & positive feedback</div><div class="ar">٣. عزز الثقة بإنجازات وتغذية راجعة إيجابية</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">4. Increase satisfaction with practical content</div><div class="ar">٤. زِد الرضا بمحتوى عملي وذي صلة</div></div></div>
+      <div class="sum-point"><div class="sum-dot"></div><div><div class="en">5. Encourage social interaction via forums & group work</div><div class="ar">٥. شجّع التفاعل الاجتماعي عبر المنتديات والعمل الجماعي</div></div></div>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <div class="en">"Educational technology is not about technology — it is about learning."</div>
+    <div class="ar">"تكنولوجيا التعليم ليست عن التكنولوجيا — إنها عن التعلم."</div>
+  </div>
+
+</div>
+
+<script>
+  let score = 0;
+  let answered = {};
+
+  function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    const idx = ['intro','elearn','virtual','mlearn','blended','mcq','essay','summary'];
+    tabs[idx.indexOf(id)].classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function answer(btn, result, qId) {
+    if (answered[qId]) return;
+    answered[qId] = true;
+    const allBtns = btn.closest('.options').querySelectorAll('.option-btn');
+    allBtns.forEach(b => {
+      b.disabled = true;
+      if (b.getAttribute('onclick').includes("'correct'")) b.classList.add('reveal');
+    });
+    const fb = document.getElementById(qId + '-fb');
+    if (result === 'correct') {
+      btn.classList.remove('reveal');
+      btn.classList.add('correct');
+      score++;
+      fb.className = 'feedback correct';
+      fb.innerHTML = '✅ Correct! <span class="fb-ar">إجابة صحيحة!</span>';
+    } else {
+      btn.classList.add('wrong');
+      fb.className = 'feedback wrong';
+      fb.innerHTML = '❌ Incorrect — see the highlighted correct answer. <span class="fb-ar">خطأ — راجع الإجابة الصحيحة أعلاه.</span>';
+    }
+    document.getElementById('scoreDisplay').textContent = score + ' / 15';
+  }
+
+  function toggleEssay(id) {
+    const el = document.getElementById(id);
+    const btn = el.previousElementSibling;
+    if (el.classList.contains('open')) {
+      el.classList.remove('open');
+      btn.textContent = 'Show Model Answer | اظهر الإجابة النموذجية';
+    } else {
+      el.classList.add('open');
+      btn.textContent = 'Hide Answer | اخفِ الإجابة';
+    }
+  }
+</script>
+</body>
+</html>

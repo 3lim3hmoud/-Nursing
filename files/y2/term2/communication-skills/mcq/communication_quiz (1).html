@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Quiz Bank</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#f0f4f8;min-height:100vh;color:#2c3e50}
+.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right}
+
+/* ===== LANDING ===== */
+#landing{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#0f2c54 0%,#1a5276 50%,#2980b9 100%);padding:40px;gap:32px}
+#landing .logo{font-size:4rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4))}
+#landing h1{color:white;font-size:2.4rem;text-align:center;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,0.3)}
+#landing p{color:#a8d4f0;font-size:1.1rem;text-align:center;max-width:500px;line-height:1.7}
+.lang-cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.lang-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.3);border-radius:20px;padding:28px 40px;cursor:pointer;transition:all 0.25s;text-align:center;min-width:240px;color:white}
+.lang-card:hover{background:rgba(255,255,255,0.22);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+.lang-card .flag{font-size:2.5rem;margin-bottom:10px}
+.lang-card h3{font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.lang-card p{font-size:0.9rem;opacity:0.8}
+
+/* ===== QUIZ LAYOUT ===== */
+#quiz{display:none;max-width:960px;margin:0 auto;padding:16px}
+.top-bar{background:#0f2c54;color:white;padding:14px 22px;border-radius:14px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.top-bar-left h2{font-size:1rem;opacity:0.8;font-weight:600}
+.top-bar-left .q-counter{font-size:1.5rem;font-weight:800}
+.score-badge{background:rgba(255,255,255,0.15);padding:8px 18px;border-radius:30px;font-size:0.9rem;font-weight:700}
+.progress-track{height:6px;background:rgba(255,255,255,0.2);border-radius:3px;margin-top:10px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#52c41a,#a0e020);border-radius:3px;transition:width 0.4s}
+
+.nav-panel{background:white;border-radius:14px;padding:14px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.nav-panel-title{font-size:0.8rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.nav-dots{display:flex;flex-wrap:wrap;gap:5px}
+.ndot{width:34px;height:34px;border-radius:50%;border:2px solid #e0e7ef;cursor:pointer;font-size:0.75rem;font-weight:700;background:white;display:flex;align-items:center;justify-content:center;transition:all 0.15s;color:#555}
+.ndot:hover{border-color:#2980b9;color:#2980b9}
+.ndot.cur{border-color:#2980b9;background:#2980b9;color:white}
+.ndot.ok{border-color:#52c41a;background:#52c41a;color:white}
+.ndot.err{border-color:#e74c3c;background:#e74c3c;color:white}
+
+.q-card{background:white;border-radius:18px;padding:28px;margin-bottom:16px;box-shadow:0 2px 16px rgba(0,0,0,0.09);border:1px solid #e8edf2}
+.q-badge{display:inline-block;background:#e8f4ff;color:#2980b9;font-size:0.78rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+.q-type-badge{display:inline-block;font-size:0.75rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:8px}
+.type-mcq{background:#fff3cd;color:#856404}
+.type-tf{background:#d1ecf1;color:#0c5460}
+.type-fill{background:#f8d7da;color:#721c24}
+
+.q-text{font-size:1.05rem;line-height:1.85;color:#2c3e50;margin-bottom:18px;font-weight:600}
+.q-text-ar{font-size:1.05rem;line-height:2;color:#5d4037;margin-top:14px;padding-top:14px;border-top:2px dashed #e0e7ef;font-family:'Cairo',sans-serif;direction:rtl;text-align:right}
+
+/* ===== MCQ ===== */
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{padding:13px 18px;border:2px solid #e8edf2;border-radius:12px;cursor:pointer;font-size:0.97rem;line-height:1.5;transition:all 0.15s;background:white;text-align:left;display:flex;align-items:flex-start;gap:12px;color:#2c3e50}
+.opt:hover{border-color:#2980b9;background:#f0f7ff}
+.opt.sel{border-color:#2980b9;background:#e8f4ff}
+.opt.ok{border-color:#52c41a !important;background:#f0faf0 !important;color:#276221 !important}
+.opt.err{border-color:#e74c3c !important;background:#fff0f0 !important;color:#b71c1c !important}
+.opt-letter{width:26px;height:26px;border-radius:50%;background:#e8edf2;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;flex-shrink:0;margin-top:1px}
+.opt.sel .opt-letter{background:#2980b9;color:white}
+.opt.ok .opt-letter{background:#52c41a;color:white}
+.opt.err .opt-letter{background:#e74c3c;color:white}
+.opt-ar{font-size:0.9rem;color:#5d4037;margin-top:4px;font-family:'Cairo',sans-serif;direction:rtl;text-align:right}
+
+/* ===== T/F ===== */
+.tf-row{display:flex;gap:14px}
+.tf-btn{flex:1;padding:16px;border:2px solid #e8edf2;border-radius:14px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all 0.2s;background:white}
+.tf-btn:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
+.tf-t{color:#276221}
+.tf-f{color:#b71c1c}
+.tf-t.sel,.tf-t.ok{border-color:#52c41a;background:#f0faf0;color:#276221}
+.tf-f.sel,.tf-f.ok{border-color:#52c41a;background:#f0faf0;color:#276221}
+.tf-t.err,.tf-f.err{border-color:#e74c3c;background:#fff0f0;color:#b71c1c}
+
+/* ===== FILL BLANK ===== */
+.fill-text{font-size:1.05rem;line-height:2.6;color:#2c3e50}
+.blank-wrap{position:relative;display:inline-block;margin:0 4px}
+.blank{display:inline-flex;align-items:center;justify-content:center;min-width:110px;padding:3px 12px;background:#eef4ff;border-bottom:3px solid #2980b9;border-radius:6px;cursor:pointer;font-size:0.93rem;font-weight:700;color:#1a5276;transition:all 0.15s;white-space:nowrap;vertical-align:middle}
+.blank:hover{background:#d6eaff}
+.blank.filled{background:#d6eaff;border-color:#1a5276}
+.blank.ok{background:#e8f8e8;border-color:#52c41a;color:#276221}
+.blank.err{background:#ffecec;border-color:#e74c3c;color:#b71c1c}
+.blank-placeholder{color:#999;font-style:italic;font-weight:400;font-size:0.85rem}
+
+.opts-drop{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:white;border:2px solid #2980b9;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.18);z-index:1000;min-width:150px;display:none;flex-direction:column;overflow:hidden;max-height:220px;overflow-y:auto}
+.opts-drop.open{display:flex}
+.drop-opt{padding:10px 16px;cursor:pointer;font-size:0.9rem;font-weight:600;transition:background 0.1s;border-bottom:1px solid #eef;white-space:nowrap;color:#2c3e50}
+.drop-opt:last-child{border-bottom:none}
+.drop-opt:hover{background:#f0f7ff;color:#2980b9}
+.drop-opt.used{color:#bbb;text-decoration:line-through;cursor:not-allowed}
+.drop-opt.used:hover{background:white;color:#bbb}
+
+/* ===== DIAGRAM ===== */
+.diagram-box{background:#f8f9fa;border:1px solid #e8edf2;border-radius:12px;padding:16px;margin-bottom:18px;overflow-x:auto}
+.diagram-box svg{max-width:100%;height:auto}
+
+/* ===== ACTIONS ===== */
+.action-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;align-items:center}
+.btn{padding:12px 26px;border:none;border-radius:11px;cursor:pointer;font-size:0.95rem;font-weight:700;font-family:'Nunito',sans-serif;transition:all 0.15s}
+.btn-check{background:#0f2c54;color:white}
+.btn-check:hover{background:#1a5276}
+.btn-next{background:#52c41a;color:white}
+.btn-next:hover{background:#3d9b12}
+.btn-prev{background:#e8edf2;color:#555}
+.btn-prev:hover{background:#d8dfe8}
+.btn-reset{background:#ff9800;color:white}
+.btn-reset:hover{background:#e67e00}
+.feedback-box{padding:12px 18px;border-radius:10px;font-size:0.95rem;font-weight:600;margin-top:14px;display:none}
+.fb-ok{background:#e8f8e8;color:#276221;border:1.5px solid #52c41a;display:block}
+.fb-err{background:#ffecec;color:#b71c1c;border:1.5px solid #e74c3c;display:block}
+.correct-label{font-size:0.85rem;margin-top:6px;opacity:0.8;font-weight:400}
+
+/* ===== SCORE ===== */
+#score-screen{display:none;background:white;border-radius:20px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,0.1)}
+.score-ring{width:160px;height:160px;border-radius:50%;margin:0 auto 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f2c54,#2980b9);color:white;box-shadow:0 8px 28px rgba(41,128,185,0.4)}
+.score-num{font-size:3.2rem;font-weight:800;line-height:1}
+.score-sub{font-size:0.85rem;opacity:0.75;margin-top:4px}
+.score-pct{font-size:2rem;font-weight:800;color:#2980b9;margin-bottom:8px}
+.score-msg{font-size:1.2rem;color:#555;margin-bottom:24px}
+.score-breakdown{display:flex;gap:20px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
+.sb-item{background:#f8f9fa;padding:14px 22px;border-radius:12px;text-align:center}
+.sb-num{font-size:1.8rem;font-weight:800}
+.sb-lbl{font-size:0.8rem;color:#999;font-weight:600;text-transform:uppercase}
+.sb-ok .sb-num{color:#52c41a}
+.sb-err .sb-num{color:#e74c3c}
+.sb-skip .sb-num{color:#ff9800}
+.btn-restart{background:linear-gradient(135deg,#0f2c54,#2980b9);color:white;font-size:1rem;padding:14px 36px;border-radius:14px;border:none;cursor:pointer;font-weight:700;font-family:'Nunito',sans-serif}
+
+/* Close dropdown on outside click */
+.overlay{position:fixed;inset:0;z-index:999;display:none}
+.overlay.active{display:block}
+
+@media(max-width:600px){
+  #landing h1{font-size:1.8rem}
+  .lang-card{min-width:180px;padding:20px 24px}
+  .q-card{padding:18px}
+  .tf-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing">
+  <div class="logo">📡</div>
+  <h1>Communication Quiz Bank</h1>
+  <p>104 questions covering communication theory, models, barriers, presentation skills & study habits</p>
+  <div class="lang-cards">
+    <div class="lang-card" onclick="startQuiz('en')">
+      <div class="flag">🇬🇧</div>
+      <h3>English Only</h3>
+      <p>Questions in English</p>
+    </div>
+    <div class="lang-card" onclick="startQuiz('both')">
+      <div class="flag">🇬🇧 / 🇪🇬</div>
+      <h3>English + Arabic</h3>
+      <p style="font-family:'Cairo',sans-serif">إنجليزي + عربي</p>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="q-counter" id="qCounter">Q 1 / 104</div>
+      <div class="q-type-label" id="qTypeLabel" style="font-size:0.85rem;opacity:0.7;margin-top:2px"></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:1%"></div></div>
+    </div>
+    <div class="score-badge" id="scoreBadge">⭐ Score: 0</div>
+  </div>
+
+  <div class="nav-panel">
+    <div class="nav-panel-title">Questions Navigator</div>
+    <div class="nav-dots" id="navDots"></div>
+  </div>
+
+  <div id="qArea"></div>
+
+  <div id="scoreScreen" style="display:none" class="q-card">
+    <div class="score-ring"><div class="score-num" id="sFinalScore">0</div><div class="score-sub">points</div></div>
+    <div class="score-pct" id="sPct">0%</div>
+    <div class="score-msg" id="sMsg"></div>
+    <div class="score-breakdown">
+      <div class="sb-item sb-ok"><div class="sb-num" id="sOk">0</div><div class="sb-lbl">✅ Correct</div></div>
+      <div class="sb-item sb-err"><div class="sb-num" id="sErr">0</div><div class="sb-lbl">❌ Wrong</div></div>
+      <div class="sb-item sb-skip"><div class="sb-num" id="sSkip">0</div><div class="sb-lbl">⏭ Skipped</div></div>
+    </div>
+    <button class="btn-restart" onclick="location.reload()">🔄 Try Again</button>
+  </div>
+</div>
+
+<!-- overlay for closing dropdowns -->
+<div class="overlay" id="overlay" onclick="closeAllDrops()"></div>
+
+<script>
+// =====================================
+// SVG DIAGRAMS
+// =====================================
+const SVG = {
+q22:`<svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="aR" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><polygon points="0 0,9 4.5,0 9" fill="#f39c12"/></marker><marker id="aL" markerWidth="9" markerHeight="9" refX="0" refY="4.5" orient="auto"><polygon points="9 0,0 4.5,9 9" fill="#f39c12"/></marker></defs>
+<ellipse cx="165" cy="100" rx="145" ry="90" fill="#aed6f1" opacity="0.75"/>
+<ellipse cx="355" cy="100" rx="145" ry="90" fill="#aed6f1" opacity="0.75"/>
+<ellipse cx="260" cy="100" rx="75" ry="85" fill="#2980b9" opacity="0.85"/>
+<text x="165" y="60" text-anchor="middle" font-size="13" fill="#154360" font-weight="bold">Encoder</text>
+<text x="165" y="78" text-anchor="middle" font-size="12" fill="#154360">Source</text>
+<text x="165" y="96" text-anchor="middle" font-size="12" fill="#154360">Decoder</text>
+<text x="260" y="88" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Message</text>
+<text x="260" y="116" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Feedback</text>
+<text x="355" y="60" text-anchor="middle" font-size="13" fill="#154360" font-weight="bold">Decoder</text>
+<text x="355" y="78" text-anchor="middle" font-size="12" fill="#154360">Source</text>
+<text x="355" y="96" text-anchor="middle" font-size="12" fill="#154360">Encoder</text>
+<line x1="200" y1="88" x2="315" y2="88" stroke="#f39c12" stroke-width="3.5" marker-end="url(#aR)"/>
+<line x1="315" y1="112" x2="200" y2="112" stroke="#f39c12" stroke-width="3.5" marker-end="url(#aL)"/>
+</svg>`,
+
+q23:`<svg viewBox="0 0 420 310" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="aW" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="white"/></marker></defs>
+<ellipse cx="190" cy="145" rx="175" ry="130" fill="#aed6f1" opacity="0.8"/>
+<ellipse cx="190" cy="145" rx="110" ry="80" fill="#2980b9" opacity="0.85"/>
+<text x="190" y="32" text-anchor="middle" font-size="12" fill="#154360" font-weight="bold">Communicator A's</text>
+<text x="190" y="48" text-anchor="middle" font-size="12" fill="#154360">field of experience</text>
+<text x="190" y="90" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Communicator A</text>
+<text x="107" y="148" text-anchor="middle" font-size="10" fill="white">Shared</text>
+<text x="107" y="162" text-anchor="middle" font-size="10" fill="white">field of</text>
+<text x="107" y="176" text-anchor="middle" font-size="10" fill="white">experience</text>
+<text x="275" y="142" text-anchor="middle" font-size="10" fill="white">Symbolic</text>
+<text x="275" y="156" text-anchor="middle" font-size="10" fill="white">Interactions</text>
+<text x="275" y="170" text-anchor="middle" font-size="10" fill="white">over time</text>
+<text x="190" y="198" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Communicator B</text>
+<text x="190" y="244" text-anchor="middle" font-size="12" fill="#154360" font-weight="bold">Communicator B's</text>
+<text x="190" y="260" text-anchor="middle" font-size="12" fill="#154360">field of experience</text>
+<line x1="190" y1="105" x2="190" y2="183" stroke="white" stroke-width="2.5" marker-end="url(#aW)"/>
+<polygon points="330,90 346,79 342,95 364,87 350,101 364,113 347,107 352,124 336,115 329,134 318,116 307,128 313,110 298,117 307,100 292,95 311,87 307,72" fill="#e74c3c" opacity="0.9"/>
+<text x="331" y="108" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Noise</text>
+<rect x="130" y="278" width="120" height="24" rx="12" fill="#aed6f1"/>
+<text x="190" y="295" text-anchor="middle" font-size="12" fill="#154360" font-weight="bold">Communicator ↔</text>
+</svg>`,
+
+q24:`<svg viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="a4" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><polygon points="0 0,9 4.5,0 9" fill="#2980b9"/></marker></defs>
+<rect x="4" y="14" width="118" height="52" rx="7" fill="#aed6f1" stroke="#2980b9" stroke-width="1.5"/>
+<text x="63" y="36" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Who (said)</text>
+<line x1="122" y1="40" x2="145" y2="40" stroke="#2980b9" stroke-width="2.5" marker-end="url(#a4)"/>
+<rect x="147" y="14" width="100" height="52" rx="7" fill="#aed6f1" stroke="#2980b9" stroke-width="1.5"/>
+<text x="197" y="43" text-anchor="middle" font-size="12" fill="#154360" font-weight="bold">What</text>
+<line x1="247" y1="40" x2="270" y2="40" stroke="#2980b9" stroke-width="2.5" marker-end="url(#a4)"/>
+<rect x="272" y="14" width="132" height="52" rx="7" fill="#aed6f1" stroke="#2980b9" stroke-width="1.5"/>
+<text x="338" y="38" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">In what</text>
+<text x="338" y="54" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">channel</text>
+<line x1="404" y1="40" x2="428" y2="40" stroke="#2980b9" stroke-width="2.5" marker-end="url(#a4)"/>
+<rect x="430" y="14" width="100" height="52" rx="7" fill="#aed6f1" stroke="#2980b9" stroke-width="1.5"/>
+<text x="480" y="38" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">To</text>
+<text x="480" y="54" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">whom</text>
+<text x="543" y="44" text-anchor="middle" font-size="20" fill="#2980b9" font-weight="bold">=</text>
+<rect x="558" y="8" width="155" height="64" rx="7" fill="#154360" stroke="#2980b9" stroke-width="1.5"/>
+<text x="635" y="35" text-anchor="middle" font-size="11" fill="white" font-weight="bold">With what</text>
+<text x="635" y="52" text-anchor="middle" font-size="11" fill="white" font-weight="bold">effect?</text>
+</svg>`,
+
+q25:`<svg viewBox="0 0 620 255" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="a5" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><polygon points="0 0,9 4.5,0 9" fill="#2980b9"/></marker></defs>
+<rect x="8" y="8" width="170" height="148" rx="9" fill="#eaf4fb" stroke="#2980b9" stroke-width="2"/>
+<rect x="8" y="8" width="170" height="36" rx="9" fill="#2980b9"/>
+<rect x="8" y="27" width="170" height="17" fill="#2980b9"/>
+<text x="93" y="31" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Sender (Encoder)</text>
+<text x="93" y="70" text-anchor="middle" font-size="11" fill="#154360">Attitude</text>
+<text x="93" y="86" text-anchor="middle" font-size="11" fill="#154360">experience</text>
+<text x="93" y="102" text-anchor="middle" font-size="11" fill="#154360">perception</text>
+<rect x="24" y="115" width="138" height="34" rx="6" fill="#c8e6f8"/>
+<text x="93" y="130" text-anchor="middle" font-size="10" fill="#154360">Encoder chooses</text>
+<text x="93" y="144" text-anchor="middle" font-size="10" fill="#154360">medium &amp; encodes</text>
+<text x="310" y="52" text-anchor="middle" font-size="13" fill="#154360" font-weight="bold">Transmission</text>
+<line x1="180" y1="62" x2="440" y2="62" stroke="#2980b9" stroke-width="2.5" marker-end="url(#a5)"/>
+<text x="310" y="100" text-anchor="middle" font-size="13" fill="#154360" font-weight="bold">Medium</text>
+<text x="310" y="118" text-anchor="middle" font-size="11" fill="#154360">Verbal / Non verbal</text>
+<rect x="442" y="8" width="170" height="148" rx="9" fill="#eaf4fb" stroke="#2980b9" stroke-width="2"/>
+<rect x="442" y="8" width="170" height="36" rx="9" fill="#2980b9"/>
+<rect x="442" y="27" width="170" height="17" fill="#2980b9"/>
+<text x="527" y="31" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Receiver (Decoder)</text>
+<text x="527" y="70" text-anchor="middle" font-size="11" fill="#154360">Attitude</text>
+<text x="527" y="86" text-anchor="middle" font-size="11" fill="#154360">experience</text>
+<text x="527" y="102" text-anchor="middle" font-size="11" fill="#154360">perception</text>
+<rect x="458" y="115" width="138" height="34" rx="6" fill="#c8e6f8"/>
+<text x="527" y="135" text-anchor="middle" font-size="10" fill="#154360">Decodes &amp; interprets</text>
+<path d="M527,160 Q527,225 310,225 Q93,225 93,160" fill="none" stroke="#2980b9" stroke-width="2.5" stroke-dasharray="7,4"/>
+<polygon points="91,155 98,162 84,162" fill="#2980b9"/>
+</svg>`,
+
+q26:`<svg viewBox="0 0 630 285" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="a6r" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><polygon points="0 0,9 4.5,0 9" fill="#5b8fc7"/></marker><marker id="a6l" markerWidth="9" markerHeight="9" refX="0" refY="4.5" orient="auto"><polygon points="9 0,0 4.5,9 9" fill="#5b8fc7"/></marker></defs>
+<ellipse cx="205" cy="120" rx="185" ry="105" fill="#fdf0d5" opacity="0.65" stroke="#c8a850" stroke-width="1.5"/>
+<ellipse cx="425" cy="120" rx="185" ry="105" fill="#fdf0d5" opacity="0.65" stroke="#c8a850" stroke-width="1.5"/>
+<text x="145" y="30" text-anchor="middle" font-size="12" fill="#7d5a00" font-weight="bold">Fields of experience</text>
+<text x="495" y="30" text-anchor="middle" font-size="12" fill="#7d5a00" font-weight="bold">Fields of experience</text>
+<polygon points="315,80 358,112 315,144 272,112" fill="#f0d090" stroke="#c8a850" stroke-width="1.5"/>
+<text x="315" y="102" text-anchor="middle" font-size="9" fill="#7d5a00">Noise</text>
+<text x="315" y="114" text-anchor="middle" font-size="8.5" fill="#7d5a00">Channel of</text>
+<text x="315" y="126" text-anchor="middle" font-size="8.5" fill="#7d5a00">Message</text>
+<text x="315" y="138" text-anchor="middle" font-size="8.5" fill="#7d5a00">Noise</text>
+<rect x="8" y="96" width="64" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5"/>
+<text x="40" y="116" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Source</text>
+<rect x="85" y="96" width="68" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5"/>
+<text x="119" y="116" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Encode</text>
+<rect x="449" y="96" width="68" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5"/>
+<text x="483" y="116" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Decode</text>
+<rect x="532" y="96" width="78" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="571" y="116" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Receiver</text>
+<line x1="72" y1="111" x2="83" y2="111" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<line x1="153" y1="111" x2="270" y2="111" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<line x1="358" y1="111" x2="447" y2="111" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<line x1="517" y1="111" x2="530" y2="111" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<rect x="155" y="206" width="86" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5"/>
+<text x="198" y="226" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Feedback</text>
+<rect x="389" y="206" width="86" height="30" rx="6" fill="#aed6f1" stroke="#5b8fc7" stroke-width="1.5"/>
+<text x="432" y="226" text-anchor="middle" font-size="11" fill="#154360" font-weight="bold">Response</text>
+<line x1="389" y1="221" x2="243" y2="221" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6l)"/>
+<line x1="571" y1="126" x2="571" y2="221" stroke="#5b8fc7" stroke-width="2"/>
+<line x1="571" y1="221" x2="477" y2="221" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<line x1="155" y1="221" x2="40" y2="221" stroke="#5b8fc7" stroke-width="2"/>
+<line x1="40" y1="221" x2="40" y2="126" stroke="#5b8fc7" stroke-width="2" marker-end="url(#a6r)"/>
+<text x="315" y="265" text-anchor="middle" font-size="11" fill="#5b8fc7" font-weight="bold">Feedback loop</text>
+</svg>`
+};
+
+// =====================================
+// QUESTION DATA
+// =====================================
+// types: 'mcq', 'tf', 'fill'
+// fill: parts[] (strings & null for blanks), answers[] correct in order
+// mcq: opts[], answer (0-based index)
+// tf: stmt, answer (bool)
+
+const Q=[
+// ── Q1 ─────────────────────────────────────────────────────────────────
+{id:1,type:'fill',
+ en:{parts:['When writing or speaking to someone, be ',null,' about your goal or ',null,'. What is your purpose in communicating with this person? If you\'re not sure, then your audience won\'t be sure either. To be clear, try to ',null,' the number of ideas in each sentence. Make sure that it\'s easy for your reader to ',null,' your meaning. People shouldn\'t have to "read between the lines".\n\nWhen you are concise in your communication, you ',null,' and keep it brief. Your audience doesn\'t want to read six sentences when you could communicate your message in three.'],
+  answers:['clear','message','minimize','understand','stick to the point']},
+ ar:{parts:['عند الكتابة أو التحدث مع شخص ما، كن ',null,' بشأن هدفك أو ',null,'. لكي تكون واضحاً، حاول أن ',null,' عدد الأفكار في كل جملة. تأكد من أنه من السهل على القارئ ',null,' معناك. عندما تكون موجزاً، فأنت ',null,' وتُبقي الأمر مختصراً.'],
+  answers:['واضحاً','رسالتك','تقلل','يفهم','تلتزم بالموضوع']}},
+
+// ── Q2 ─────────────────────────────────────────────────────────────────
+{id:2,type:'mcq',
+ en:{q:'What is the main difference between "communication" and "effective communication"?',
+  opts:['Communication is faster, but effective communication uses more technology.',
+        'Communication is only for friends, while effective communication is for work.',
+        'Communication is just sending information, while effective communication makes sure the other person actually understands it.',
+        'There is no difference; they are the exact same thing.'],ans:2},
+ ar:{q:'ما الفرق الرئيسي بين "التواصل" و"التواصل الفعّال"؟',
+  opts:['التواصل أسرع، لكن التواصل الفعّال يستخدم تقنية أكثر.',
+        'التواصل للأصدقاء فقط، بينما التواصل الفعّال للعمل.',
+        'التواصل مجرد إرسال معلومات، بينما التواصل الفعّال يتأكد أن الشخص يفهم فعلاً.',
+        'لا فرق بينهما.'],ans:2}},
+
+// ── Q3 ─────────────────────────────────────────────────────────────────
+{id:3,type:'mcq',
+ en:{q:'Why is effective communication called a "two-way process"?',
+  opts:['Because it requires a group of people to speak at the exact same time.',
+        'Because it involves both sending a message and getting a response (feedback).',
+        'Because you have to say everything twice to be understood.',
+        'Because it only happens when people are walking in two different directions.'],ans:1},
+ ar:{q:'لماذا يُسمى التواصل الفعّال "عملية ثنائية الاتجاه"؟',
+  opts:['لأنه يتطلب مجموعة من الناس تتكلم في نفس الوقت.',
+        'لأنه يتضمن إرسال رسالة والحصول على استجابة (تغذية راجعة).',
+        'لأنك يجب أن تقول كل شيء مرتين لتُفهَم.',
+        'لأنه يحدث فقط عندما يسير الناس في اتجاهين مختلفين.'],ans:1}},
+
+// ── Q4 ─────────────────────────────────────────────────────────────────
+{id:4,type:'mcq',
+ en:{q:'When a sender is "Encoding" a message, what are they doing?',
+  opts:['They are waiting for the receiver to wake up.',
+        'They are putting their thoughts into words, gestures, or pictures.',
+        'They are reading a reply from the receiver.',
+        'They are ignoring the person they are talking to.'],ans:1},
+ ar:{q:'عندما يقوم المرسل بـ"تشفير" الرسالة، ماذا يفعل؟',
+  opts:['ينتظر استيقاظ المستقبِل.',
+        'يضع أفكاره في كلمات أو إيماءات أو صور.',
+        'يقرأ ردًا من المستقبِل.',
+        'يتجاهل الشخص الذي يتحدث إليه.'],ans:1}},
+
+// ── Q5 ─────────────────────────────────────────────────────────────────
+{id:5,type:'mcq',
+ en:{q:'If a doctor uses "jargon" (hard medical words) that a patient doesn\'t know, which part of the process is failing?',
+  opts:['The conception of the idea.',
+        'The physical internet connection.',
+        'The receiver\'s ability to "decode" (understand) the message.',
+        'The sender\'s memory.'],ans:2},
+ ar:{q:'إذا استخدم طبيب مصطلحات طبية معقدة لا يعرفها المريض، أي جزء من العملية يفشل؟',
+  opts:['تصور الفكرة.',
+        'الاتصال بالإنترنت.',
+        'قدرة المستقبِل على "فك الشفرة" (فهم الرسالة).',
+        'ذاكرة المرسِل.'],ans:2}},
+
+// ── Q6 ─────────────────────────────────────────────────────────────────
+{id:6,type:'mcq',
+ en:{q:'Which of these is the best reason to choose a "face-to-face meeting" instead of a letter?',
+  opts:['You want to make sure the message is kept a secret forever.',
+        'You want to save money on paper and stamps.',
+        'The person you are talking to lives in another country.',
+        'You need to quickly see how people feel and hear their opinions.'],ans:3},
+ ar:{q:'أيٌّ من هذه هو أفضل سبب لاختيار "الاجتماع وجهاً لوجه" بدلاً من رسالة؟',
+  opts:['تريد الحفاظ على سرية الرسالة للأبد.',
+        'تريد توفير المال على الورق والطوابع.',
+        'الشخص الذي تتحدث إليه يعيش في بلد آخر.',
+        'تحتاج إلى رؤية مشاعر الناس وسماع آرائهم بسرعة.'],ans:3}},
+
+// ── Q7 ─────────────────────────────────────────────────────────────────
+{id:7,type:'mcq',
+ en:{q:'In communication, what does "Noise" mean?',
+  opts:['Only the sound of a loud radio or construction.',
+        'The sound of the sender\'s voice.',
+        'A positive response from the person listening.',
+        'Anything that distracts the receiver or messes up the message.'],ans:3},
+ ar:{q:'في التواصل، ماذا تعني "الضوضاء"؟',
+  opts:['فقط صوت راديو عالٍ أو بناء.',
+        'صوت المرسِل.',
+        'استجابة إيجابية من المستمع.',
+        'أي شيء يُشتت المستقبِل أو يُفسد الرسالة.'],ans:3}},
+
+// ── Q8 ─────────────────────────────────────────────────────────────────
+{id:8,type:'mcq',
+ en:{q:'Why is "Feedback" so important?',
+  opts:['It helps the sender choose a cheaper channel.',
+        'It\'s the only way to end a conversation.',
+        'It prevents the sender from ever having to speak again.',
+        'It tells the sender if they are actually making sense.'],ans:3},
+ ar:{q:'لماذا تعتبر "التغذية الراجعة" مهمة جداً؟',
+  opts:['تساعد المرسِل على اختيار قناة أرخص.',
+        'إنها الطريقة الوحيدة لإنهاء محادثة.',
+        'تمنع المرسِل من التحدث مرة أخرى.',
+        'تخبر المرسِل إذا كان كلامه منطقياً فعلاً.'],ans:3}},
+
+// ── Q9 ─────────────────────────────────────────────────────────────────
+{id:9,type:'mcq',
+ en:{q:'How can you be a better "Receiver" of information?',
+  opts:['Just nod your head even if you are totally confused.',
+        'Wait for the sender to stop talking and then walk away.',
+        'Pay full attention and ask questions if you don\'t understand.',
+        'Think about what you\'re going to eat for dinner while the person is talking.'],ans:2},
+ ar:{q:'كيف يمكنك أن تكون "مستقبِلاً" أفضل للمعلومات؟',
+  opts:['فقط أومئ بالرأس حتى لو كنت مرتبكاً تماماً.',
+        'انتظر حتى يتوقف المرسِل عن الكلام ثم ابتعد.',
+        'انتبه جيداً واسأل أسئلة إذا لم تفهم.',
+        'فكر فيما ستأكله على العشاء بينما الشخص يتحدث.'],ans:2}},
+
+// ── Q10 ─────────────────────────────────────────────────────────────────
+{id:10,type:'mcq',
+ en:{q:'Which type of communication uses sounds, words, or language to share a message?',
+  opts:['Visual communication','Verbal communication','Non-verbal communication','Written communication'],ans:1},
+ ar:{q:'أي نوع من التواصل يستخدم الأصوات أو الكلمات أو اللغة لمشاركة رسالة؟',
+  opts:['التواصل البصري','التواصل اللفظي','التواصل غير اللفظي','التواصل المكتوب'],ans:1}},
+
+// ── Q11 ─────────────────────────────────────────────────────────────────
+{id:11,type:'mcq',
+ en:{q:'Non-verbal communication is best described as:',
+  opts:['The use of written reports and emails.',
+        'Using charts and graphs to explain data.',
+        'Sending and receiving wordless messages through body language and gestures.',
+        'Speaking clearly and loudly to an audience.'],ans:2},
+ ar:{q:'التواصل غير اللفظي يُوصف بأنه:',
+  opts:['استخدام التقارير المكتوبة والبريد الإلكتروني.',
+        'استخدام الرسوم البيانية لشرح البيانات.',
+        'إرسال واستقبال رسائل بدون كلمات عبر لغة الجسد والإيماءات.',
+        'التحدث بوضوح وبصوت عالٍ أمام الجمهور.'],ans:2}},
+
+// ── Q12 ─────────────────────────────────────────────────────────────────
+{id:12,type:'mcq',
+ en:{q:'Which of these is a form of non-verbal communication?',
+  opts:['Giving a speech','Facial expressions and eye contact','Sending a text message','Writing a formal essay'],ans:1},
+ ar:{q:'أيٌّ من هذه يُعد شكلاً من أشكال التواصل غير اللفظي؟',
+  opts:['إلقاء خطاب','تعبيرات الوجه والتواصل البصري','إرسال رسالة نصية','كتابة مقال رسمي'],ans:1}},
+
+// ── Q13 ─────────────────────────────────────────────────────────────────
+{id:13,type:'mcq',
+ en:{q:'What is a key advantage of "Oral Communication"?',
+  opts:['It provides a permanent legal record.',
+        'It allows for immediate feedback and clarification.',
+        'It cannot be misunderstood by the receiver.',
+        'It is always more formal than writing.'],ans:1},
+ ar:{q:'ما الميزة الرئيسية للتواصل الشفهي؟',
+  opts:['يوفر سجلاً قانونياً دائماً.',
+        'يتيح تغذية راجعة فورية وتوضيحاً.',
+        'لا يمكن للمستقبِل إساءة فهمه.',
+        'إنه دائماً أكثر رسمية من الكتابة.'],ans:1}},
+
+// ── Q14 ─────────────────────────────────────────────────────────────────
+{id:14,type:'mcq',
+ en:{q:'Which of the following is an example of "Written Communication"?',
+  opts:['A face-to-face interview','A memorandum (memo) or report','A hand gesture','A telephone conversation'],ans:1},
+ ar:{q:'أيٌّ مما يلي مثال على "التواصل المكتوب"؟',
+  opts:['مقابلة وجهاً لوجه','مذكرة أو تقرير','إيماءة باليد','محادثة هاتفية'],ans:1}},
+
+// ── Q15 ─────────────────────────────────────────────────────────────────
+{id:15,type:'mcq',
+ en:{q:'What defines "Formal Communication" in an organization?',
+  opts:['It follows the official chain of command and hierarchy.',
+        'It ignores all company rules and regulations.',
+        'It happens randomly during coffee breaks.',
+        'It is always spoken and never written.'],ans:0},
+ ar:{q:'ما الذي يُعرّف "التواصل الرسمي" في منظمة ما؟',
+  opts:['يتبع سلسلة القيادة والتسلسل الهرمي الرسمي.',
+        'يتجاهل جميع قواعد ولوائح الشركة.',
+        'يحدث بشكل عشوائي خلال استراحات القهوة.',
+        'يكون شفهياً دائماً ولا يُكتب أبداً.'],ans:0}},
+
+// ── Q16 ─────────────────────────────────────────────────────────────────
+{id:16,type:'mcq',
+ en:{q:'"Visual Communication" involves the use of which of the following?',
+  opts:['Physical touch','Tone of voice and pitch','Signs, typography, and drawing','Only spoken words'],ans:2},
+ ar:{q:'"التواصل البصري" يتضمن استخدام أيٍّ مما يلي؟',
+  opts:['اللمس الجسدي','نبرة الصوت','العلامات والطباعة والرسم','الكلمات المنطوقة فقط'],ans:2}},
+
+// ── Q17 ─────────────────────────────────────────────────────────────────
+{id:17,type:'mcq',
+ en:{q:'Which term is used to describe factors that hinder the clear interpretation of a message?',
+  opts:['Filters','Enhancers','Transmitters','Blockers'],ans:3},
+ ar:{q:'أي مصطلح يُستخدم لوصف العوامل التي تعيق التفسير الواضح للرسالة؟',
+  opts:['المرشحات','المعززات','الناقلات','العوائق'],ans:3}},
+
+// ── Q18 ─────────────────────────────────────────────────────────────────
+{id:18,type:'mcq',
+ en:{q:'If a message contains too much specialist jargon and abbreviations, it is considered which type of barrier?',
+  opts:['Language barrier','Physical barrier','Attitudinal barrier','Systematic barrier'],ans:0},
+ ar:{q:'إذا احتوت رسالة على مصطلحات متخصصة واختصارات كثيرة، فأي نوع من الحواجز يُعدّ هذا؟',
+  opts:['حاجز لغوي','حاجز جسدي','حاجز في الموقف','حاجز منهجي'],ans:0}},
+
+// ── Q19 ─────────────────────────────────────────────────────────────────
+{id:19,type:'mcq',
+ en:{q:'Attitudinal barriers, such as resistance to change or lack of motivation, primarily result from:',
+  opts:['Geographic distance between the sender and receiver.',
+        'Personality conflicts or poor management.',
+        'Inefficient information systems in an organization.',
+        'High levels of background noise.'],ans:1},
+ ar:{q:'الحواجز الموقفية، كمقاومة التغيير أو انعدام الدافعية، تنشأ أساساً من:',
+  opts:['المسافة الجغرافية بين المرسِل والمستقبِل.',
+        'الصراعات الشخصية أو سوء الإدارة.',
+        'أنظمة المعلومات غير الفعّالة.',
+        'المستويات العالية من الضوضاء.'],ans:1}},
+
+// ── Q20 ─────────────────────────────────────────────────────────────────
+{id:20,type:'mcq',
+ en:{q:'"Information Overload" occurs when:',
+  opts:['Too many details and facts are given in a very short period of time.',
+        'There is a "clash of personalities" between the parties.',
+        'The sender has a lack of confidence in self-expression.',
+        'The receiver has no interest in the subject.'],ans:0},
+ ar:{q:'"الحمل الزائد من المعلومات" يحدث عندما:',
+  opts:['تُعطى تفاصيل وحقائق كثيرة جداً في فترة زمنية قصيرة.',
+        'يوجد "تعارض في الشخصيات" بين الأطراف.',
+        'يفتقر المرسِل إلى الثقة في التعبير عن نفسه.',
+        'لا يهتم المستقبِل بالموضوع.'],ans:0}},
+
+// ── Q21 ─────────────────────────────────────────────────────────────────
+{id:21,type:'mcq',
+ en:{q:'To overcome language barriers, the lecture recommends using:',
+  opts:['Direct, simple, and unambiguous language.',
+        'Words with deep symbolic meaning.',
+        'Complex terminology to show expertise.',
+        'More abbreviations to save time.'],ans:0},
+ ar:{q:'للتغلب على الحواجز اللغوية، توصي المحاضرة باستخدام:',
+  opts:['لغة مباشرة وبسيطة وواضحة.',
+        'كلمات ذات معنى رمزي عميق.',
+        'مصطلحات معقدة لإظهار الخبرة.',
+        'مزيد من الاختصارات لتوفير الوقت.'],ans:0}},
+
+// ── Q22 ── IMAGE + FILL ───────────────────────────────────────────────
+{id:22,type:'fill',diagram:'q22',
+ en:{parts:['This picture describes the ',null,', when the sender first ',null,' the message; then, the receiver ',null,' the message to understand it. After understanding, the receiver sends ',null,' back to the sender. This process continues because both sides communicate ',null,'.'],
+  answers:['Interactive model','encodes','decodes','feedback','alternately']},
+ ar:{parts:['تصف هذه الصورة ',null,', عندما يقوم المرسِل أولاً بـ',null,' الرسالة؛ ثم يقوم المستقبِل بـ',null,' الرسالة لفهمها. بعد الفهم، يرسل المستقبِل ',null,' إلى المرسِل. تستمر هذه العملية لأن كلا الطرفين يتواصلان ',null,'.'],
+  answers:['النموذج التفاعلي','ترميز','فك ترميز','تغذية راجعة','بالتناوب']}},
+
+// ── Q23 ── IMAGE + FILL ───────────────────────────────────────────────
+{id:23,type:'fill',diagram:'q23',
+ en:{parts:['In the ',null,', both communicators A and B communicate at the ',null,' time. Communicator A and Communicator B each share a ',null,'. Both communicators, A and B, can act as ',null,' in this communication. The process can be affected by ',null,' during communication.'],
+  answers:['transactional model','same','field of experience','sender and receiver','noise']},
+ ar:{parts:['في ',null,', يتواصل كلٌّ من المتواصلَين A وB في ',null,' الوقت. يتشارك كل من A وB ',null,'. يمكن لكلٍّ من A وB أن يعمل كـ',null,' في هذا التواصل. يمكن أن تتأثر العملية بـ',null,' أثناء التواصل.'],
+  answers:['النموذج التبادلي','نفس','مجال الخبرة','مُرسِل ومستقبِل','الضوضاء']}},
+
+// ── Q24 ── IMAGE + FILL ───────────────────────────────────────────────
+{id:24,type:'fill',diagram:'q24',
+ en:{parts:['This diagram describes the ',null,' as follows:\n• Who said? The message comes from the ',null,'.\n• What? The sender sends a ',null,' to the receiver.\n• How? The message is delivered through a ',null,'.\n• To whom? The message is received by the ',null,'.'],
+  answers:['linear model','sender','message','channel','receiver']},
+ ar:{parts:['يصف هذا الرسم التخطيطي ',null,' كالآتي:\n• من قال؟ تأتي الرسالة من ',null,'.\n• ماذا؟ يرسل المرسِل ',null,' إلى المستقبِل.\n• كيف؟ تُسلَّم الرسالة عبر ',null,'.\n• إلى من؟ تُستقبَل الرسالة من قِبل ',null,'.'],
+  answers:['النموذج الخطي','المرسِل','الرسالة','القناة','المستقبِل']}},
+
+// ── Q25 ── IMAGE + FILL ───────────────────────────────────────────────
+{id:25,type:'fill',diagram:'q25',
+ en:{parts:['This picture describes the ',null,', when the sender ',null,' the message. The message is transmitted through the ',null,'. The receiver ',null,' the message by interpreting it. Once the receiver sends ',null,' back, the conversation starts again.'],
+  answers:['communication process','encodes','medium','decodes','feedback']},
+ ar:{parts:['تصف هذه الصورة ',null,', عندما يقوم المرسِل بـ',null,' الرسالة. تُنقل الرسالة عبر ',null,'. يقوم المستقبِل بـ',null,' الرسالة عن طريق تفسيرها. بمجرد أن يرسل المستقبِل ',null,' إلى المرسِل، تبدأ المحادثة من جديد.'],
+  answers:['عملية التواصل','ترميز','الوسيلة','فك ترميز','تغذية راجعة']}},
+
+// ── Q26 ── IMAGE + FILL ───────────────────────────────────────────────
+{id:26,type:'fill',diagram:'q26',
+ en:{parts:['This picture describes the ',null,' when the ',null,' first encodes the message. The encoded message is sent through a ',null,'. The message can be affected by ',null,' during communication. The receiver then ',null,' the message to understand it.'],
+  answers:['communication process','sender','medium','noise','decodes']},
+ ar:{parts:['تصف هذه الصورة ',null,' عندما يقوم ',null,' أولاً بترميز الرسالة. تُرسَل الرسالة المُشفَّرة عبر ',null,'. يمكن أن تتأثر الرسالة بـ',null,' أثناء التواصل. يقوم المستقبِل بعد ذلك بـ',null,' الرسالة لفهمها.'],
+  answers:['عملية التواصل','المرسِل','الوسيلة','الضوضاء','فك الترميز']}},
+
+// ── Q27–47: TRUE/FALSE ────────────────────────────────────────────────
+{id:27,type:'tf',en:{stmt:'Communication is an exchange of facts, ideas, opinions or emotions by two or more persons.',ans:true},ar:{stmt:'التواصل هو تبادل للحقائق والأفكار والآراء أو المشاعر بين شخصين أو أكثر.',ans:true}},
+{id:28,type:'tf',en:{stmt:'Anger and stress are examples of a psychological barrier to communication.',ans:true},ar:{stmt:'الغضب والتوتر من أمثلة الحواجز النفسية أمام التواصل.',ans:true}},
+{id:29,type:'tf',en:{stmt:'Before the message is sent to the recipient, the sender needs to decode it in an appropriate language.',ans:false},ar:{stmt:'قبل إرسال الرسالة إلى المستقبِل، يحتاج المرسِل إلى فك ترميزها بلغة مناسبة.',ans:false}},
+{id:30,type:'tf',en:{stmt:'A message that includes a lot of specialist jargon and abbreviations may act as a psychological barrier.',ans:false},ar:{stmt:'قد تعمل الرسالة التي تتضمن كثيراً من المصطلحات والاختصارات المتخصصة كحاجز نفسي.',ans:false}},
+{id:31,type:'tf',en:{stmt:'The personal space is used in public settings, where individuals feel detached from others, such as during speeches or in crowded areas.',ans:false},ar:{stmt:'يُستخدم الفضاء الشخصي في البيئات العامة، حيث يشعر الأفراد بالانفصال عن الآخرين.',ans:false}},
+{id:32,type:'tf',en:{stmt:'Noise is a vehicle/medium by which the message is passed on to the audience.',ans:false},ar:{stmt:'الضوضاء هي وسيلة يتم من خلالها نقل الرسالة إلى الجمهور.',ans:false}},
+{id:33,type:'tf',en:{stmt:'The way in which you fold your arms, cross your legs, sit, stand, walk, move your head, eyes, lips cannot reveal what you may be thinking or feeling.',ans:false},ar:{stmt:'الطريقة التي تثني بها ذراعيك، وتتقاطع بها ساقيك، وتجلس، وتقف لا يمكنها الكشف عما تفكر فيه أو تشعر به.',ans:false}},
+{id:34,type:'tf',en:{stmt:'Written communication is the most common form of business communication.',ans:true},ar:{stmt:'التواصل المكتوب هو الشكل الأكثر شيوعاً في التواصل التجاري.',ans:true}},
+{id:35,type:'tf',en:{stmt:'Each person in the transactional communication is both a speaker and a listener and can be simultaneously sending and receiving messages.',ans:true},ar:{stmt:'كل شخص في التواصل التبادلي هو متحدث ومستمع في آنٍ واحد ويمكنه إرسال واستقبال الرسائل في وقت واحد.',ans:true}},
+{id:36,type:'tf',en:{stmt:'Interpersonal communication is also known as self-talk or thinking and refers to the ways we communicate with ourselves.',ans:false},ar:{stmt:'التواصل البيني يُعرَف أيضاً بالحديث الذاتي أو التفكير ويشير إلى الطرق التي نتواصل بها مع أنفسنا.',ans:false}},
+{id:37,type:'tf',en:{stmt:'Communication is the transfer of information from one or more people to one or more other people.',ans:true},ar:{stmt:'التواصل هو نقل المعلومات من شخص أو أكثر إلى شخص آخر أو أكثر.',ans:true}},
+{id:38,type:'tf',en:{stmt:'Public communication refers to any type of media that is used to communicate with mass audiences, such as books, television, radios, magazines and newspapers.',ans:false},ar:{stmt:'التواصل العام يشير إلى أي نوع من وسائل الإعلام التي تُستخدم للتواصل مع جماهير واسعة.',ans:false}},
+{id:39,type:'tf',en:{stmt:'The interactive model depicts communication as a one-way process where speakers only speak and never listen.',ans:false},ar:{stmt:'يصوّر النموذج التفاعلي التواصل كعملية أحادية الاتجاه حيث يتحدث المتحدثون فقط ولا يستمعون.',ans:false}},
+{id:40,type:'tf',en:{stmt:'By sending back the feedback, the communication process starts again.',ans:true},ar:{stmt:'بإرسال التغذية الراجعة، تبدأ عملية التواصل من جديد.',ans:true}},
+{id:41,type:'tf',en:{stmt:'Any kind of interruption that distracts or distorts the message from being understood correctly or clearly is considered as noise.',ans:true},ar:{stmt:'أي نوع من الانقطاع يُشتت الرسالة أو يُشوهها ويمنع فهمها بشكل صحيح يُعدّ ضوضاء.',ans:true}},
+{id:42,type:'tf',en:{stmt:'Paralinguistic or paralanguage features are the aspects of spoken communication that do not involve words, such as intonation and pitch of voice.',ans:true},ar:{stmt:'السمات شبه اللغوية هي جوانب التواصل الشفهي التي لا تتضمن الكلمات، كالتنغيم ودرجة الصوت.',ans:true}},
+{id:43,type:'tf',en:{stmt:'It is essential for small business owners and managers to develop effective written communication skills in all employees.',ans:true},ar:{stmt:'من الضروري لأصحاب الأعمال الصغيرة والمديرين تطوير مهارات التواصل الكتابي الفعّال لدى جميع الموظفين.',ans:true}},
+{id:44,type:'tf',en:{stmt:'People usually communicate verbally in face-to-face conversations such as meetings, interviews, conferences, speeches, etc.',ans:true},ar:{stmt:'يتواصل الناس عادةً لفظياً في المحادثات وجهاً لوجه كالاجتماعات والمقابلات والمؤتمرات والخطب.',ans:true}},
+{id:45,type:'tf',en:{stmt:'The intimate space is used for business meetings and casual interactions with strangers. It allows for communication while maintaining a respectful distance.',ans:false},ar:{stmt:'تُستخدم المساحة الحميمة في اجتماعات العمل والتفاعلات غير الرسمية مع الغرباء.',ans:false}},
+{id:46,type:'tf',en:{stmt:'Modern technology often serves to reduce the impact of physical barriers, such as geographical distance between the sender and receiver.',ans:true},ar:{stmt:'كثيراً ما تُساعد التكنولوجيا الحديثة على تقليل تأثير الحواجز الجسدية كالمسافة الجغرافية.',ans:true}},
+{id:47,type:'tf',en:{stmt:'While communication is about transmitting information, effective communication focuses on ensuring that the information is received and understood as intended.',ans:true},ar:{stmt:'بينما يتعلق التواصل بنقل المعلومات، يركز التواصل الفعّال على ضمان استقبال المعلومات وفهمها كما هو مقصود.',ans:true}},
+
+// ── Q48–54: MCQ (Presentations) ─────────────────────────────────────
+{id:48,type:'mcq',
+ en:{q:'If you realize you forgot to say something important three slides ago, what should you do?',
+  opts:['Stop everything, panic, and try to click back through all the slides to find it.',
+        'Briefly mention it when it fits the current topic, or save it for the "Summary" at the end.'],ans:1},
+ ar:{q:'إذا أدركت أنك نسيت قول شيء مهم قبل ثلاث شرائح، ماذا يجب أن تفعل؟',
+  opts:['أوقف كل شيء واذهب إلى الوراء لإيجاده.',
+        'اذكره باختصار عندما يناسب الموضوع الحالي، أو احفظه للملخص في النهاية.'],ans:1}},
+
+{id:49,type:'mcq',
+ en:{q:'How should you handle a question from the audience that you can\'t answer?',
+  opts:['"That\'s a great question. I\'m not 100% sure, but I can find out and email you."',
+        'Quickly change the subject so no one notices you don\'t know.'],ans:0},
+ ar:{q:'كيف تتعامل مع سؤال من الجمهور لا تستطيع الإجابة عليه؟',
+  opts:['"سؤال رائع. لست متأكداً 100%، لكن يمكنني معرفة الإجابة وإرسالها لك."',
+        'غيّر الموضوع بسرعة حتى لا يلاحظ أحد أنك لا تعرف.'],ans:0}},
+
+{id:50,type:'mcq',
+ en:{q:'You are making your first slide. What is the best "golden rule"?',
+  opts:['Use one big, clear picture and just a few words of text.',
+        'Write your whole speech on the slide so you don\'t forget what to say.'],ans:0},
+ ar:{q:'أنت تصنع أول شريحة لك. ما "القاعدة الذهبية" الأفضل؟',
+  opts:['استخدم صورة كبيرة وواضحة وعدد قليل من الكلمات.',
+        'اكتب خطابك كله على الشريحة حتى لا تنسى ما تقوله.'],ans:0}},
+
+{id:51,type:'mcq',
+ en:{q:'Your hands feel shaky because you are nervous. What should you do?',
+  opts:['Use them to point at your slides or make natural gestures while you talk.',
+        'Hide them in your pockets or behind your back.'],ans:0},
+ ar:{q:'يداك ترتجفان بسبب التوتر. ماذا يجب أن تفعل؟',
+  opts:['استخدمهما للإشارة إلى شرائحك أو لعمل إيماءات طبيعية أثناء الكلام.',
+        'أخفِهما في جيبيك أو وراء ظهرك.'],ans:0}},
+
+{id:52,type:'mcq',
+ en:{q:'Where should your eyes be while you are speaking?',
+  opts:['Looking at the floor or the ceiling so you don\'t get distracted.',
+        'Looking at different people in the room for a few seconds each.'],ans:1},
+ ar:{q:'أين يجب أن تكون عيناك أثناء حديثك؟',
+  opts:['انظر إلى الأرض أو السقف حتى لا تنشتت.',
+        'انظر إلى أشخاص مختلفين في الغرفة لبضع ثوانٍ لكل منهم.'],ans:1}},
+
+{id:53,type:'mcq',
+ en:{q:'What should you do with your voice to keep people interested?',
+  opts:['Change your speed and volume occasionally to emphasize important points.',
+        'Keep the same volume and speed the whole time so you don\'t startle anyone.'],ans:0},
+ ar:{q:'ما الذي يجب أن تفعله بصوتك لإبقاء الناس مهتمين؟',
+  opts:['غيّر سرعتك وحجم صوتك أحياناً للتأكيد على النقاط المهمة.',
+        'حافظ على نفس الحجم والسرعة طوال الوقت.'],ans:0}},
+
+{id:54,type:'mcq',
+ en:{q:'You are about to start your presentation. How should you begin?',
+  opts:['Start with a strong story, a surprising fact, or a question for the audience.',
+        'Start by spending 5 minutes explaining your name, your degree, and your life history.'],ans:0},
+ ar:{q:'أنت على وشك بدء عرضك التقديمي. كيف يجب أن تبدأ؟',
+  opts:['ابدأ بقصة قوية أو حقيقة مفاجئة أو سؤال للجمهور.',
+        'ابدأ بقضاء 5 دقائق في شرح اسمك ودرجتك وتاريخ حياتك.'],ans:0}},
+
+// ── Q55–67: TRUE/FALSE (Presentations) ──────────────────────────────
+{id:55,type:'tf',en:{stmt:'Eye contact helps you connect with the people in the room.',ans:true},ar:{stmt:'التواصل البصري يساعدك على التواصل مع الناس في الغرفة.',ans:true}},
+{id:56,type:'tf',en:{stmt:'Standing up straight and using your hands to gesture can make you look more confident to your audience.',ans:true},ar:{stmt:'الوقوف منتصباً واستخدام اليدين للإيماء يجعلك تبدو أكثر ثقة أمام الجمهور.',ans:true}},
+{id:57,type:'tf',en:{stmt:'If you are nervous, it is a good idea to speak as fast as possible so the presentation ends sooner.',ans:false},ar:{stmt:'إذا كنت متوتراً، فمن الجيد التحدث بأسرع ما يمكن لإنهاء العرض بسرعة.',ans:false}},
+{id:58,type:'tf',en:{stmt:'Using big, clear pictures on your slides is usually better than using many long sentences.',ans:true},ar:{stmt:'استخدام صور كبيرة وواضحة على شرائحك أفضل عادةً من استخدام جمل طويلة.',ans:true}},
+{id:59,type:'tf',en:{stmt:'It is okay to look at your audience while you speak instead of just reading from your paper.',ans:true},ar:{stmt:'من المقبول النظر إلى جمهورك أثناء حديثك بدلاً من القراءة من ورقتك فقط.',ans:true}},
+{id:60,type:'tf',en:{stmt:'A monotone voice acts like a lullaby; changing your tone keeps people awake and focused.',ans:true},ar:{stmt:'الصوت الرتيب يعمل كأغنية تنويم؛ تغيير نبرتك يُبقي الناس مستيقظين ومركّزين.',ans:true}},
+{id:61,type:'tf',en:{stmt:'Smiling at your audience (when appropriate) makes them feel more comfortable and interested in what you are saying.',ans:true},ar:{stmt:'الابتسامة لجمهورك (عند الاقتضاء) تجعلهم يشعرون بمزيد من الراحة والاهتمام.',ans:true}},
+{id:62,type:'tf',en:{stmt:'Ending your presentation by just saying "That\'s it" is the most professional way to finish.',ans:false},ar:{stmt:'إنهاء عرضك بقول "هذا كل شيء" فقط هو الطريقة الأكثر احترافية.',ans:false}},
+{id:63,type:'tf',en:{stmt:'Arriving 10 minutes early to check the room and the equipment can help reduce your "stage fright".',ans:true},ar:{stmt:'الوصول مبكراً بـ10 دقائق للتحقق من الغرفة والمعدات يمكن أن يساعد في تقليل "رهاب المسرح".',ans:true}},
+{id:64,type:'tf',en:{stmt:'You should read your slides word-for-word to make sure you don\'t make any mistakes.',ans:true},ar:{stmt:'يجب عليك قراءة شرائحك كلمة بكلمة للتأكد من عدم ارتكاب أخطاء.',ans:true}},
+{id:65,type:'tf',en:{stmt:'One idea per slide is much easier for an audience to follow.',ans:true},ar:{stmt:'فكرة واحدة لكل شريحة أسهل بكثير على الجمهور لمتابعتها.',ans:true}},
+{id:66,type:'tf',en:{stmt:'You should put every single word you are going to say on your PowerPoint slides.',ans:false},ar:{stmt:'يجب عليك وضع كل كلمة ستقولها على شرائح PowerPoint.',ans:false}},
+{id:67,type:'tf',en:{stmt:'It is better to have 20 simple slides than 5 slides that are crowded with too much information.',ans:true},ar:{stmt:'من الأفضل أن يكون لديك 20 شريحة بسيطة من 5 شرائح مزدحمة بالمعلومات.',ans:true}},
+
+// ── Q68–74: MCQ (Study Skills) ──────────────────────────────────────
+{id:68,type:'mcq',
+ en:{q:'If you find a topic really confusing, which "trick" helps the most?',
+  opts:['Pretending you are a teacher and explaining the topic to an empty chair.',
+        'Highlighting every single sentence in the book with a bright color.'],ans:0},
+ ar:{q:'إذا وجدت موضوعاً مربكاً جداً، أي "حيلة" تساعد أكثر؟',
+  opts:['التظاهر بأنك معلم وشرح الموضوع لكرسي فارغ.',
+        'تسليط الضوء على كل جملة في الكتاب بلون زاهٍ.'],ans:0}},
+
+{id:69,type:'mcq',
+ en:{q:'Which of these is a "hidden" enemy of good study habits?',
+  opts:['Playing soft background music without lyrics.',
+        'Having your phone on the desk (even if it\'s face down).'],ans:1},
+ ar:{q:'أيٌّ من هؤلاء يُعد "عدواً خفياً" للعادات الدراسية الجيدة؟',
+  opts:['تشغيل موسيقى هادئة في الخلفية بدون كلمات.',
+        'وضع هاتفك على المكتب (حتى لو كان مقلوباً).'],ans:1}},
+
+{id:70,type:'mcq',
+ en:{q:'You\'ve just finished a long study session. What is the best way to "recharge"?',
+  opts:['Taking a 15-minute walk or closing your eyes for a short nap.',
+        'Scrolling through social media for an hour.'],ans:0},
+ ar:{q:'لقد أنهيت للتو جلسة دراسة طويلة. ما أفضل طريقة "لإعادة الشحن"؟',
+  opts:['أخذ نزهة لمدة 15 دقيقة أو إغماض عينيك لقيلولة قصيرة.',
+        'تصفح وسائل التواصل الاجتماعي لمدة ساعة.'],ans:0}},
+
+{id:71,type:'mcq',
+ en:{q:'You just finished reading a chapter. What should you do next to remember it?',
+  opts:['Close the book and try to write down the 3 most important things you learned.',
+        'Immediately read the same chapter again from the beginning.'],ans:0},
+ ar:{q:'أنهيت للتو قراءة فصل. ما الذي يجب أن تفعله بعد ذلك لتتذكره؟',
+  opts:['أغلق الكتاب وحاول كتابة أهم 3 أشياء تعلمتها.',
+        'اقرأ الفصل نفسه مرة أخرى من البداية فوراً.'],ans:0}},
+
+{id:72,type:'mcq',
+ en:{q:'When should you use a "To-Do" list?',
+  opts:['Only when you have a hundred things to do and feel overwhelmed.',
+        'Every morning, so you know exactly which task to start first.'],ans:1},
+ ar:{q:'متى يجب عليك استخدام "قائمة المهام"؟',
+  opts:['فقط عندما يكون لديك مئة شيء لتفعله وتشعر بالإرهاق.',
+        'كل صباح، حتى تعرف بالضبط أي مهمة تبدأ بها أولاً.'],ans:1}},
+
+{id:73,type:'mcq',
+ en:{q:'When you are taking notes during a lecture, what should you focus on?',
+  opts:['Writing down the main ideas and "connecting" them with arrows or symbols.',
+        'Writing down every single word the teacher says like a transcript.'],ans:0},
+ ar:{q:'عند أخذ الملاحظات خلال محاضرة، على ماذا يجب التركيز؟',
+  opts:['كتابة الأفكار الرئيسية و"ربطها" بالأسهم أو الرموز.',
+        'كتابة كل كلمة يقولها المعلم كالنص الحرفي.'],ans:0}},
+
+{id:74,type:'mcq',
+ en:{q:'You have a big exam in two days. Which plan is better?',
+  opts:['Studying for 10 hours straight the night before.',
+        'Studying for 2 hours today and 2 hours tomorrow.'],ans:1},
+ ar:{q:'لديك امتحان كبير بعد يومين. أي خطة أفضل؟',
+  opts:['الدراسة 10 ساعات متواصلة ليلة الامتحان.',
+        'الدراسة 2 ساعة اليوم و2 ساعة غداً.'],ans:1}},
+
+// ── Q75–88: TRUE/FALSE (Study/Listening) ────────────────────────────
+{id:75,type:'tf',en:{stmt:'Active listening is only important in personal friendships, not in professional or academic settings.',ans:false},ar:{stmt:'الاستماع النشط مهم فقط في الصداقات الشخصية، وليس في البيئات المهنية أو الأكاديمية.',ans:false}},
+{id:76,type:'tf',en:{stmt:'You should wait until you feel "motivated" before you start studying.',ans:false},ar:{stmt:'يجب عليك الانتظار حتى تشعر بـ"الدافعية" قبل البدء في الدراسة.',ans:false}},
+{id:77,type:'tf',en:{stmt:'Writing your notes by hand usually helps you remember things better.',ans:true},ar:{stmt:'كتابة ملاحظاتك باليد عادةً يساعدك على تذكر الأشياء بشكل أفضل.',ans:true}},
+{id:78,type:'tf',en:{stmt:'It is better to study in a quiet place rather than a room with a loud TV or people talking.',ans:true},ar:{stmt:'من الأفضل الدراسة في مكان هادئ بدلاً من غرفة فيها تلفاز صاخب أو أشخاص يتحدثون.',ans:true}},
+{id:79,type:'tf',en:{stmt:'If you can explain a concept to someone who knows nothing about it, you probably understand it well.',ans:true},ar:{stmt:'إذا كان بإمكانك شرح مفهوم لشخص لا يعرف عنه شيئاً، فعلى الأرجح أنك تفهمه جيداً.',ans:true}},
+{id:80,type:'tf',en:{stmt:'Drinking water and staying hydrated can actually help your brain focus better during a long session.',ans:true},ar:{stmt:'شرب الماء والبقاء رطبًا يمكن أن يساعد فعلاً دماغك على التركيز بشكل أفضل خلال جلسة طويلة.',ans:true}},
+{id:81,type:'tf',en:{stmt:'Taking a short break every 35–40 minutes is better for your brain than studying for 5 hours straight without stopping.',ans:true},ar:{stmt:'أخذ استراحة قصيرة كل 35-40 دقيقة أفضل لدماغك من الدراسة 5 ساعات متواصلة.',ans:true}},
+{id:82,type:'tf',en:{stmt:'Explaining a topic to a friend in your own words helps you understand it better.',ans:true},ar:{stmt:'شرح موضوع ما لصديق بكلماتك الخاصة يساعدك على فهمه بشكل أفضل.',ans:true}},
+{id:83,type:'tf',en:{stmt:'You should only study in one specific room because your brain cannot learn new things in different environments.',ans:false},ar:{stmt:'يجب عليك الدراسة في غرفة واحدة فقط لأن دماغك لا يستطيع تعلم أشياء جديدة في بيئات مختلفة.',ans:false}},
+{id:84,type:'tf',en:{stmt:'Using a timetable helps reduce stress because you can see exactly what needs to be done.',ans:true},ar:{stmt:'استخدام جدول زمني يساعد على تقليل التوتر لأنك تستطيع رؤية ما يجب عمله بالضبط.',ans:true}},
+{id:85,type:'tf',en:{stmt:'Active listening means staying completely silent and never interrupting the speaker for any reason.',ans:false},ar:{stmt:'الاستماع النشط يعني البقاء صامتاً تماماً وعدم مقاطعة المتحدث أبداً لأي سبب.',ans:false}},
+{id:86,type:'tf',en:{stmt:'Checking your phone while someone is talking to you is a sign that you are not fully engaged in active listening.',ans:true},ar:{stmt:'التحقق من هاتفك بينما يتحدث إليك شخص ما يدل على أنك لا تستمع باهتمام كامل.',ans:true}},
+{id:87,type:'tf',en:{stmt:'Maintaining eye contact and nodding are "non-verbal" ways to show the speaker you are paying attention.',ans:true},ar:{stmt:'الحفاظ على التواصل البصري والإيماء طرق "غير لفظية" لإظهار الاهتمام للمتحدث.',ans:true}},
+{id:88,type:'tf',en:{stmt:'It is important to ignore the speaker\'s body language and only focus on the literal words they are saying.',ans:false},ar:{stmt:'من المهم تجاهل لغة جسد المتحدث والتركيز فقط على الكلمات الحرفية التي يقولها.',ans:false}},
+
+// ── Q89 FILL ─────────────────────────────────────────────────────────
+{id:89,type:'fill',
+ en:{parts:['Sarah is explaining a new project deadline to her colleague, David, during a noisy lunch break. David nods and says "Got it." However, due to background chatter, he misunderstands the exact time.\n\n• Sender is ',null,' : The person who conceptualizes and initiates the message.\n• Receiver ',null,' : The intended audience who decodes and interprets the message.\n• Channel ',null,' : The medium through which the message is transmitted.\n• Noise ',null,' : Any interference or barrier that distorts the message.\n• Feedback ',null,' : The receiver\'s reaction sent back to the sender.'],
+  answers:['Sarah','David','Spoken words','Cafeteria chatter','David\'s nod and verbal response']},
+ ar:{parts:['سارة تشرح موعداً نهائياً لمشروع جديد لزميلها داود خلال استراحة الغداء الصاخبة. يومئ داود ويقول "فهمت." لكن بسبب ضجيج الخلفية يسيء فهم الوقت الدقيق.\n\n• المرسِل هو ',null,' : الشخص الذي يُنشئ الرسالة ويبدأها.\n• المستقبِل ',null,' : الجمهور المقصود الذي يفك ترميز الرسالة.\n• القناة ',null,' : الوسيلة التي تنتقل من خلالها الرسالة.\n• الضوضاء ',null,' : أي تشويش يُشوه الرسالة.\n• التغذية الراجعة ',null,' : رد فعل المستقبِل المُرسَل إلى المرسِل.'],
+  answers:['سارة','داود','الكلمات المنطوقة','ضجيج الكافيتيريا','إيماء داود وردّه اللفظي']}},
+
+// ── Q90 FILL ─────────────────────────────────────────────────────────
+{id:90,type:'fill',
+ en:{parts:['In a face-to-face professional consultation, the physical airwaves carrying the spoken words represent the ',null,', while an unexpected construction sound outside the window represents the ',null,'.'],
+  answers:['channel','noise']},
+ ar:{parts:['في استشارة مهنية وجهاً لوجه، تمثل الموجات الصوتية الجسدية التي تحمل الكلمات ',null,', بينما يمثل صوت البناء المفاجئ من خارج النافذة ',null,'.'],
+  answers:['القناة','الضوضاء']}},
+
+// ── Q91 FILL ─────────────────────────────────────────────────────────
+{id:91,type:'fill',
+ en:{parts:['During a shift handover, a head nurse gives detailed instructions to a new resident. The resident listens carefully, takes notes, and accurately summarizes the instructions back to ensure nothing was missed.\n\nIn this interaction, the resident\'s act of interpreting the nurse\'s instructions is known as ',null,', which is a primary responsibility of the ',null,'.'],
+  answers:['decoding','receiver']},
+ ar:{parts:['خلال تسليم المناوبة، تعطي ممرضة أولى تعليمات مفصّلة للمقيم الجديد. يستمع المقيم باهتمام ويأخذ ملاحظات ويلخص التعليمات.\n\nفي هذا التفاعل، يُعرَف فعل المقيم في تفسير تعليمات الممرضة بـ',null,', وهي مسؤولية أساسية لـ',null,'.'],
+  answers:['فك الترميز','المستقبِل']}},
+
+// ── Q92 FILL ─────────────────────────────────────────────────────────
+{id:92,type:'fill',
+ en:{parts:[null,' is not always environmental or physical (like loud sounds). Internal distractions, such as stress, anxiety, or biases, are classified as ',null,' because they interfere with the receiver\'s ability to decode the message properly.'],
+  answers:['Noise','psychological noise']},
+ ar:{parts:[null,' ليست دائماً بيئية أو جسدية (كالأصوات العالية). تُصنَّف المشتتات الداخلية، كالتوتر والقلق والتحيز، كـ',null,' لأنها تتدخل في قدرة المستقبِل على فك ترميز الرسالة بشكل صحيح.'],
+  answers:['الضوضاء','الضوضاء النفسية']}},
+
+// ── Q93 FILL ─────────────────────────────────────────────────────────
+{id:93,type:'fill',
+ en:{parts:['The standard linear-to-interactive model flows from the ',null,' who ',null,' a message, passes it through a ',null,', to the ',null,' who ',null,' it and provides ',null,'. ',null,' can disrupt this flow at any stage.'],
+  answers:['sender','encodes','channel','receiver','decodes','feedback','Noise']},
+ ar:{parts:['ينتقل النموذج الخطي-التفاعلي المعياري من ',null,' الذي ',null,' رسالة، ويمررها عبر ',null,', إلى ',null,' الذي ',null,' يفككها ويقدم ',null,'. يمكن أن تُخل ',null,' بهذا التدفق في أي مرحلة.'],
+  answers:['المرسِل','يُرمّز','القناة','المستقبِل','يفك ترميزها','تغذية راجعة','الضوضاء']}},
+
+// ── Q94 MCQ ─────────────────────────────────────────────────────────
+{id:94,type:'mcq',
+ en:{q:'An engineer is explaining a technical schematic to a client via a video call. Due to a lagging internet connection, the client only hears every other word. In this situation, the lagging internet connection serves as which component?',
+  opts:['The noise','The receiver','The sender','The feedback'],ans:0},
+ ar:{q:'مهندس يشرح مخططاً تقنياً لعميل عبر مكالمة فيديو. بسبب بطء الاتصال، يسمع العميل كلمة واحدة من كل كلمتين. ما الدور الذي يؤديه بطء الاتصال في هذه الحالة؟',
+  opts:['الضوضاء','المستقبِل','المرسِل','التغذية الراجعة'],ans:0}},
+
+// ── Q95 MCQ ─────────────────────────────────────────────────────────
+{id:95,type:'mcq',
+ en:{q:'Which of the following sequences correctly represents the logical flow of a complete communication cycle?',
+  opts:['Receiver – Encoding – Channel – Decoding – Sender – Noise',
+        'Channel – Sender – Encoding – Noise – Receiver – Feedback',
+        'Sender – Encoding – Channel – Receiver – Decoding – Feedback',
+        'Sender – Decoding – Feedback – Channel – Receiver – Encoding'],ans:2},
+ ar:{q:'أيٌّ من التسلسلات التالية يمثل بشكل صحيح التدفق المنطقي لدورة تواصل كاملة؟',
+  opts:['مستقبِل – ترميز – قناة – فك ترميز – مرسِل – ضوضاء',
+        'قناة – مرسِل – ترميز – ضوضاء – مستقبِل – تغذية راجعة',
+        'مرسِل – ترميز – قناة – مستقبِل – فك ترميز – تغذية راجعة',
+        'مرسِل – فك ترميز – تغذية راجعة – قناة – مستقبِل – ترميز'],ans:2}},
+
+// ── Q96 FILL ─────────────────────────────────────────────────────────
+{id:96,type:'fill',
+ en:{parts:['Personal space refers to the ',null,' boundaries individuals set to feel comfortable and ',null,' in their interactions with others.\n\n1. ',null,' (0 to 18 inches): Reserved for close relationships, family and romantic partners.\n2. Personal Space (1.5 to 4 feet): For friends and acquaintances.\n3. ',null,' (4 to 12 feet): Common in formal settings, used for business meetings.\n4. ',null,' (12 feet and beyond): Used in public settings such as speeches.'],
+  answers:['physical and emotional','safe','Intimate Space','Social Space','Public Space']},
+ ar:{parts:['المساحة الشخصية تشير إلى الحدود ',null,' التي يضعها الأفراد للشعور بالراحة و',null,' في تفاعلاتهم مع الآخرين.\n\n1. ',null,' (0 إلى 18 بوصة): محجوزة للعلاقات الوثيقة.\n2. المساحة الشخصية (1.5-4 أقدام): للأصدقاء والمعارف.\n3. ',null,' (4 إلى 12 قدماً): شائعة في البيئات الرسمية لاجتماعات العمل.\n4. ',null,' (12 قدماً وأبعد): تُستخدم في البيئات العامة كالخطابات.'],
+  answers:['الجسدية والعاطفية','بأمان','المساحة الحميمة','المساحة الاجتماعية','المساحة العامة']}},
+
+// ── Q97 FILL ─────────────────────────────────────────────────────────
+{id:97,type:'fill',
+ en:{parts:[null,' communication is also known as ',null,' or thinking and refers to the ways we communicate with ourselves.\n\n',null,' communication is the communication we have with other people.\n\nPublic communication refers to public speeches delivered in front of ',null,'.\n\nMass communication refers to any type of ',null,' used to communicate with mass audiences.'],
+  answers:['Intrapersonal','self-talk','Interpersonal','audiences','media']},
+ ar:{parts:['التواصل ',null,' يُعرَف أيضاً بـ',null,' أو التفكير ويشير إلى طرق تواصلنا مع أنفسنا.\n\nالتواصل ',null,' هو التواصل الذي نجريه مع الآخرين.\n\nالتواصل العام يشير إلى الخطابات العامة التي تُلقى أمام ',null,'.\n\nالاتصال الجماهيري يشير إلى أي نوع من ',null,' يُستخدم للتواصل مع الجماهير الواسعة.'],
+  answers:['داخل الفرد','الحديث الذاتي','بين الأفراد','الجمهور','وسائل الإعلام']}},
+
+// ── Q98 FILL ─────────────────────────────────────────────────────────
+{id:98,type:'fill',
+ en:{parts:['An example of a ',null,' to communication is ',null,' between the ',null,' and receiver(s). Communication is generally easier over ',null,' distances. Although modern ',null,' often serves to reduce the impact of physical barriers, the advantages and disadvantages of each channel should be understood.'],
+  answers:['physical barrier','geographic distance','sender','shorter','technology']},
+ ar:{parts:['مثال على ',null,' للتواصل هو ',null,' بين ',null,' والمستقبِل(ين). التواصل أسهل عموماً عبر مسافات ',null,'. رغم أن ',null,' الحديثة كثيراً ما تقلل من تأثير الحواجز الجسدية، يجب فهم مزايا وعيوب كل قناة.'],
+  answers:['حاجز جسدي','المسافة الجغرافية','المرسِل','أقصر','التكنولوجيا']}},
+
+// ── Q99 FILL ─────────────────────────────────────────────────────────
+{id:99,type:'fill',
+ en:{parts:['Communication is an ',null,' of facts, ideas, opinions or emotions by two or more persons. The communication process is complete once the receiver ',null,' the message. This may be ',null,' (using voice), ',null,' (using printed or digital media), visually (using logos, maps, charts or graphs) or ',null,' (using body language and gestures).'],
+  answers:['exchange','has understood','verbally','written','non-verbally']},
+ ar:{parts:['التواصل هو ',null,' للحقائق والأفكار والآراء أو المشاعر بين شخصين أو أكثر. تكتمل عملية التواصل عندما ',null,' المستقبِل الرسالة. قد يكون ذلك ',null,' (باستخدام الصوت)، أو ',null,' (باستخدام وسائط مطبوعة أو رقمية)، أو بصرياً (شعارات وخرائط)، أو ',null,' (باستخدام لغة الجسد والإيماءات).'],
+  answers:['تبادل','يفهم','لفظياً','مكتوباً','غير لفظياً']}},
+
+// ── Q100 FILL ────────────────────────────────────────────────────────
+{id:100,type:'fill',
+ en:{parts:['Communication is the ',null,' of information. While communication is about transmitting information, effective communication focuses on ensuring that the information is received and ',null,' as intended. Effective communication means also paying attention to the ',null,' cues of the receiver who will often give eye contact, or a gesture such as a smile or a ',null,' to let you know they are listening. It is important that the receiver sends ',null,' to the sender.'],
+  answers:['sharing','understood','nonverbal','nod of the head','feedback']},
+ ar:{parts:['التواصل هو ',null,' للمعلومات. بينما يتعلق التواصل بنقل المعلومات، يركز التواصل الفعّال على ضمان استقبال المعلومات و',null,' كما هو مقصود. يعني التواصل الفعّال أيضاً الانتباه إلى الإشارات ',null,' للمستقبِل الذي كثيراً ما يُظهر تواصلاً بصرياً أو إيماءة كالابتسامة أو ',null,' لإعلامك بأنه يستمع. من المهم أن يرسل المستقبِل ',null,' إلى المرسِل.'],
+  answers:['مشاركة','مفهومة','غير اللفظية','إيماءة الرأس','تغذية راجعة']}},
+
+// ── Q101 FILL ────────────────────────────────────────────────────────
+{id:101,type:'fill',
+ en:{parts:['Before the message is sent to the ',null,', the ',null,' needs to encode it in an appropriate language. The response the sender gets from the receiver is called ',null,'. The communication process is complete when the message is transmitted back to the sender. Only when this cycle is completed, communication ',null,'. Hence, communication is considered as a ',null,' process.'],
+  answers:['receiver','sender','feedback','starts again','dynamic']},
+ ar:{parts:['قبل إرسال الرسالة إلى ',null,', يحتاج ',null,' إلى ترميزها بلغة مناسبة. يُسمى الرد الذي يحصل عليه المرسِل من المستقبِل ',null,'. عندما يكتمل هذا الدورة، ',null,' عملية التواصل. لذلك يُعتبر التواصل عملية ',null,'.'],
+  answers:['المستقبِل','المرسِل','تغذية راجعة','تبدأ من جديد','ديناميكية']}},
+
+// ── Q102 FILL ────────────────────────────────────────────────────────
+{id:102,type:'fill',
+ en:{parts:['The ',null,' views communication as a one-way process in which the speaker speaks and the listener listens. In one-way communication, information is transferred in ',null,' only, from the ',null,' to the ',null,'. There isn\'t any opportunity for the receiver to give ',null,' to the sender.'],
+  answers:['linear model','one direction','sender','receiver','feedback']},
+ ar:{parts:[' ',null,' ينظر إلى التواصل كعملية أحادية الاتجاه. في التواصل أحادي الاتجاه، تنتقل المعلومات في ',null,' فقط، من ',null,' إلى ',null,'. لا توجد أي فرصة للمستقبِل لإعطاء ',null,' للمرسِل.'],
+  answers:['النموذج الخطي','اتجاه واحد','المرسِل','المستقبِل','تغذية راجعة']}},
+
+// ── Q103 FILL ────────────────────────────────────────────────────────
+{id:103,type:'fill',
+ en:{parts:['The ',null,' indicates that the receiver provides feedback to the sender ',null,'. The sender also listens to the feedback given by the ',null,'. Feedback is given either ',null,' or non-verbally. The main drawback is that it does NOT indicate that communicators can both send and receive messages ',null,'.'],
+  answers:['interactive model','alternately','receiver','verbally','simultaneously']},
+ ar:{parts:[' ',null,' يُشير إلى أن المستقبِل يقدم تغذية راجعة للمرسِل ',null,'. يستمع المرسِل أيضاً إلى التغذية الراجعة من ',null,'. تُعطى التغذية الراجعة إما ',null,' أو بشكل غير لفظي. العيب الرئيسي أنه لا يُشير إلى إمكانية إرسال الرسائل واستقبالها ',null,'.'],
+  answers:['النموذج التفاعلي','بالتناوب','المستقبِل','لفظياً','في وقت واحد']}},
+
+// ── Q104 FILL ────────────────────────────────────────────────────────
+{id:104,type:'fill',
+ en:{parts:['Communication is derived from the Latin word communis, which means "to make common" or ',null,'. Communication is the art of transmitting information, ',null,' and attitudes from one person to another.\n\nThe basic steps of communication are: forming of communicative intent, message composition, message encoding, and ',null,', reception of signal, ',null,' and finally interpretation of the message by the ',null,'.'],
+  answers:['to share','ideas','sending a message','message decoding','receiver']},
+ ar:{parts:['التواصل مشتق من الكلمة اللاتينية communis، التي تعني "جعل الشيء مشتركاً" أو ',null,'. التواصل هو فن نقل المعلومات و',null,' والمواقف من شخص لآخر.\n\nالخطوات الأساسية للتواصل هي: تكوين النية، صياغة الرسالة، ترميزها، و',null,', استقبال الإشارة، ',null,' وأخيراً تفسير الرسالة من قِبل ',null,'.'],
+  answers:['المشاركة','الأفكار','إرسال الرسالة','فك ترميز الرسالة','المستقبِل']}}
+];
+
+// =====================================
+// APP STATE
+// =====================================
+let lang = 'en';
+let cur = 0;
+let results = {}; // {qId: 'ok'|'err'|null}
+let score = 0;
+let userAnswers = {}; // {qId: selected (index for mcq/tf, array for fill)}
+
+function startQuiz(mode){
+  lang = mode;
+  document.getElementById('landing').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  initQuiz();
+}
+
+function initQuiz(){
+  Q.forEach(q=>{ results[q.id]=null; userAnswers[q.id]=q.type==='fill'? new Array(getAnswers(q).length).fill(null) : null; });
+  buildNavDots();
+  showQ(0);
+}
+
+function getQ(idx){ return Q[idx]; }
+function getData(q){ return lang==='both'? q.en : q[lang]||q.en; }
+function getAnswers(q){ return (q.en||q).answers || []; }
+
+function buildNavDots(){
+  const c=document.getElementById('navDots'); c.innerHTML='';
+  Q.forEach((q,i)=>{
+    const d=document.createElement('button');
+    d.className='ndot'+(i===cur?' cur':'');
+    d.textContent=q.id;
+    d.onclick=()=>showQ(i);
+    c.appendChild(d);
+  });
+}
+
+function updateNavDot(idx){
+  const dots=document.querySelectorAll('.ndot');
+  dots.forEach((d,i)=>{
+    d.className='ndot';
+    if(i===idx) d.classList.add('cur');
+    const r=results[Q[i].id];
+    if(r==='ok') d.classList.add('ok');
+    else if(r==='err') d.classList.add('err');
+  });
+}
+
+function showQ(idx){
+  cur=idx;
+  document.getElementById('scoreScreen').style.display='none';
+  const q=Q[idx];
+  document.getElementById('qCounter').textContent=`Q ${q.id} / ${Q.length}`;
+  const pct=((idx+1)/Q.length*100).toFixed(0);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('scoreBadge').textContent=`⭐ Score: ${score}`;
+  updateNavDot(idx);
+
+  const area=document.getElementById('qArea');
+  area.innerHTML='';
+  const card=document.createElement('div');
+  card.className='q-card';
+
+  // badge
+  const badge=document.createElement('div');
+  const typeLabels={mcq:'Multiple Choice 🔘',tf:'True / False ✅',fill:'Fill in the Blanks ✏️'};
+  const typeLang={mcq:'اختيار من متعدد',tf:'صح / خطأ',fill:'أكمل الفراغات'};
+  badge.className='q-badge';
+  badge.innerHTML=`Question ${q.id} <span class="q-type-badge type-${q.type}">${typeLabels[q.type]}</span>`;
+  if(lang==='both') badge.innerHTML+=` <span style="font-family:Cairo,sans-serif;font-size:0.75rem;color:#5d4037;margin-right:6px">${typeLang[q.type]}</span>`;
+  card.appendChild(badge);
+
+  // diagram if any
+  if(q.diagram && SVG[q.diagram]){
+    const db=document.createElement('div');
+    db.className='diagram-box';
+    db.innerHTML=SVG[q.diagram];
+    card.appendChild(db);
+  }
+
+  // render by type
+  if(q.type==='mcq') renderMCQ(q,card);
+  else if(q.type==='tf') renderTF(q,card);
+  else renderFill(q,card);
+
+  // actions
+  const ar=document.createElement('div');
+  ar.className='action-row';
+
+  if(results[q.id]===null){
+    const bc=document.createElement('button');
+    bc.className='btn btn-check';
+    bc.textContent='✅ Check Answer';
+    bc.onclick=()=>checkAnswer(q);
+    ar.appendChild(bc);
+  }
+
+  if(results[q.id]!==null){
+    const br=document.createElement('button');
+    br.className='btn btn-reset';
+    br.textContent='🔄 Reset';
+    br.onclick=()=>resetQ(q);
+    ar.appendChild(br);
+  }
+
+  if(idx>0){
+    const bp=document.createElement('button');
+    bp.className='btn btn-prev';
+    bp.textContent='← Prev';
+    bp.onclick=()=>showQ(idx-1);
+    ar.appendChild(bp);
+  }
+
+  if(idx<Q.length-1){
+    const bn=document.createElement('button');
+    bn.className='btn btn-next';
+    bn.textContent='Next →';
+    bn.onclick=()=>showQ(idx+1);
+    ar.appendChild(bn);
+  } else {
+    const bf=document.createElement('button');
+    bf.className='btn btn-next';
+    bf.textContent='📊 See Results';
+    bf.onclick=showScore;
+    ar.appendChild(bf);
+  }
+
+  card.appendChild(ar);
+
+  // feedback if already answered
+  if(results[q.id]!==null){
+    const fb=document.createElement('div');
+    fb.className='feedback-box '+(results[q.id]==='ok'?'fb-ok':'fb-err');
+    if(results[q.id]==='ok') fb.innerHTML='✅ Correct! Well done!';
+    else {
+      let correct='';
+      const d=getData(q);
+      if(q.type==='mcq') correct=d.opts[d.ans];
+      else if(q.type==='tf') correct=d.ans?'True ✅':'False ❌';
+      else correct=getAnswers(q).join(', ');
+      fb.innerHTML=`❌ Incorrect. <span class="correct-label">Correct answer: <strong>${correct}</strong></span>`;
+    }
+    card.appendChild(fb);
+  }
+
+  area.appendChild(card);
+}
+
+function renderMCQ(q,card){
+  const d=getData(q);
+  const qtxt=document.createElement('div');
+  qtxt.className='q-text';
+  qtxt.textContent=d.q;
+  card.appendChild(qtxt);
+
+  if(lang==='both'){
+    const qtAr=document.createElement('div');
+    qtAr.className='q-text-ar ar';
+    qtAr.textContent=q.ar.q;
+    card.appendChild(qtAr);
+  }
+
+  const opts=document.createElement('div');
+  opts.className='opts';
+  const letters=['A','B','C','D'];
+  d.opts.forEach((o,i)=>{
+    const btn=document.createElement('button');
+    btn.className='opt';
+    const locked=results[q.id]!==null;
+    if(userAnswers[q.id]===i) btn.classList.add(locked?(i===d.ans?'ok':'err'):'sel');
+    if(locked && i===d.ans && userAnswers[q.id]!==i) btn.classList.add('ok');
+
+    const lbl=document.createElement('span');
+    lbl.className='opt-letter';
+    lbl.textContent=letters[i]||i+1;
+    btn.appendChild(lbl);
+
+    const txt=document.createElement('div');
+    txt.style.flex='1';
+    txt.textContent=o;
+    if(lang==='both' && q.ar && q.ar.opts && q.ar.opts[i]){
+      const ar=document.createElement('div');
+      ar.className='opt-ar ar';
+      ar.textContent=q.ar.opts[i];
+      txt.appendChild(ar);
+    }
+    btn.appendChild(txt);
+
+    if(!locked) btn.onclick=()=>{ userAnswers[q.id]=i; showQ(cur); };
+    opts.appendChild(btn);
+  });
+  card.appendChild(opts);
+}
+
+function renderTF(q,card){
+  const d=getData(q);
+  const qtxt=document.createElement('div');
+  qtxt.className='q-text';
+  qtxt.textContent=d.stmt;
+  card.appendChild(qtxt);
+
+  if(lang==='both'){
+    const qtAr=document.createElement('div');
+    qtAr.className='q-text-ar ar';
+    qtAr.textContent=q.ar.stmt;
+    card.appendChild(qtAr);
+  }
+
+  const row=document.createElement('div');
+  row.className='tf-row';
+  const locked=results[q.id]!==null;
+
+  ['True ✅','False ❌'].forEach((lbl,i)=>{
+    const val=i===0;
+    const btn=document.createElement('button');
+    btn.className='tf-btn '+(i===0?'tf-t':'tf-f');
+    btn.textContent=lbl;
+    if(locked){
+      if(userAnswers[q.id]===val){
+        btn.classList.add(val===d.ans?'ok':'err');
+      } else if(val===d.ans){
+        btn.classList.add('ok');
+      }
+    } else {
+      if(userAnswers[q.id]===val) btn.classList.add('sel');
+    }
+    if(!locked) btn.onclick=()=>{ userAnswers[q.id]=val; showQ(cur); };
+    row.appendChild(btn);
+  });
+  card.appendChild(row);
+}
+
+function renderFill(q,card){
+  const d=getData(q);
+  const answers=getAnswers(q);
+  const locked=results[q.id]!==null;
+  const ua=userAnswers[q.id]||new Array(answers.length).fill(null);
+
+  // shuffle options for dropdowns
+  const shuffled=[...answers].sort(()=>Math.random()-0.5);
+
+  const ftxt=document.createElement('div');
+  ftxt.className='fill-text';
+
+  let blankIdx=0;
+  d.parts.forEach(part=>{
+    if(part===null){
+      const bi=blankIdx++;
+      const wrap=document.createElement('span');
+      wrap.className='blank-wrap';
+
+      const blank=document.createElement('span');
+      blank.className='blank'+(ua[bi]?' filled':'');
+      blank.dataset.bi=bi;
+
+      if(locked){
+        blank.classList.remove('filled');
+        blank.classList.add(ua[bi]===answers[bi]?'ok':'err');
+        blank.textContent=ua[bi]||'_____';
+      } else if(ua[bi]){
+        blank.textContent=ua[bi];
+      } else {
+        const ph=document.createElement('span');
+        ph.className='blank-placeholder';
+        ph.textContent='click to fill';
+        blank.appendChild(ph);
+      }
+
+      if(!locked){
+        blank.onclick=(e)=>{
+          e.stopPropagation();
+          closeAllDrops();
+          drop.classList.add('open');
+          document.getElementById('overlay').classList.add('active');
+        };
+      }
+
+      const drop=document.createElement('div');
+      drop.className='opts-drop';
+
+      shuffled.forEach(opt=>{
+        const usedByOther=ua.some((v,idx)=>v===opt && idx!==bi);
+        const item=document.createElement('div');
+        item.className='drop-opt'+(usedByOther?' used':'');
+        item.textContent=opt;
+        if(!usedByOther){
+          item.onclick=(e)=>{
+            e.stopPropagation();
+            ua[bi]=opt;
+            userAnswers[q.id]=ua;
+            closeAllDrops();
+            showQ(cur);
+          };
+        }
+        drop.appendChild(item);
+      });
+
+      wrap.appendChild(blank);
+      wrap.appendChild(drop);
+      ftxt.appendChild(wrap);
+    } else {
+      // handle newlines
+      const parts=part.split('\n');
+      parts.forEach((p,pi)=>{
+        if(pi>0) ftxt.appendChild(document.createElement('br'));
+        if(p) ftxt.appendChild(document.createTextNode(p));
+      });
+    }
+  });
+
+  card.appendChild(ftxt);
+
+  if(lang==='both' && q.ar){
+    const sep=document.createElement('div');
+    sep.style.cssText='height:2px;border-top:2px dashed #e0e7ef;margin:18px 0';
+    card.appendChild(sep);
+
+    const arData=q.ar;
+    const arAnswers=arData.answers||answers;
+    const arFtxt=document.createElement('div');
+    arFtxt.className='fill-text ar';
+    arFtxt.style.direction='rtl';
+    arFtxt.style.textAlign='right';
+    arFtxt.style.fontFamily="'Cairo',sans-serif";
+
+    let arBlankIdx=0;
+    arData.parts.forEach(part=>{
+      if(part===null){
+        const bi=arBlankIdx++;
+        const arBlank=document.createElement('span');
+        arBlank.className='blank';
+        arBlank.style.fontFamily="'Cairo',sans-serif";
+        if(locked){
+          arBlank.classList.add(ua[bi]===answers[bi]?'ok':'err');
+          arBlank.textContent=arAnswers[bi]||'_____';
+        } else if(ua[bi]){
+          arBlank.textContent=arAnswers[bi]||ua[bi];
+          arBlank.classList.add('filled');
+        } else {
+          const ph=document.createElement('span');
+          ph.className='blank-placeholder';
+          ph.textContent='انقر للملء';
+          arBlank.appendChild(ph);
+        }
+        arFtxt.appendChild(arBlank);
+      } else {
+        const parts=part.split('\n');
+        parts.forEach((p,pi)=>{
+          if(pi>0) arFtxt.appendChild(document.createElement('br'));
+          if(p) arFtxt.appendChild(document.createTextNode(p));
+        });
+      }
+    });
+    card.appendChild(arFtxt);
+  }
+}
+
+function closeAllDrops(){
+  document.querySelectorAll('.opts-drop.open').forEach(d=>d.classList.remove('open'));
+  document.getElementById('overlay').classList.remove('active');
+}
+
+function checkAnswer(q){
+  const d=getData(q);
+  const ua=userAnswers[q.id];
+
+  if(q.type==='mcq'){
+    if(ua===null){alert('Please select an answer first!');return;}
+    const ok=ua===d.ans;
+    results[q.id]=ok?'ok':'err';
+    if(ok) score++;
+  } else if(q.type==='tf'){
+    if(ua===null){alert('Please select True or False!');return;}
+    const ok=ua===d.ans;
+    results[q.id]=ok?'ok':'err';
+    if(ok) score++;
+  } else {
+    const answers=getAnswers(q);
+    if(!ua||ua.some(v=>v===null)){alert('Please fill all the blanks first!');return;}
+    const ok=answers.every((a,i)=>ua[i]===a);
+    results[q.id]=ok?'ok':'err';
+    if(ok) score++;
+  }
+
+  document.getElementById('scoreBadge').textContent=`⭐ Score: ${score}`;
+  updateNavDot(cur);
+  showQ(cur);
+}
+
+function resetQ(q){
+  results[q.id]=null;
+  userAnswers[q.id]=q.type==='fill'? new Array(getAnswers(q).length).fill(null) : null;
+  showQ(cur);
+}
+
+function showScore(){
+  document.getElementById('qArea').innerHTML='';
+  const ss=document.getElementById('scoreScreen');
+  ss.style.display='block';
+
+  const answered=Object.values(results).filter(v=>v!==null).length;
+  const correct=Object.values(results).filter(v=>v==='ok').length;
+  const wrong=Object.values(results).filter(v=>v==='err').length;
+  const skipped=Q.length-answered;
+  const pct=Math.round(correct/Q.length*100);
+
+  document.getElementById('sFinalScore').textContent=score;
+  document.getElementById('sPct').textContent=pct+'%';
+  document.getElementById('sOk').textContent=correct;
+  document.getElementById('sErr').textContent=wrong;
+  document.getElementById('sSkip').textContent=skipped;
+
+  const msgs=['Keep trying! 💪','Getting there! 📚','Good effort! 👍','Well done! 🌟','Great job! 🎉','Excellent! 🏆','Outstanding! 🥇'];
+  const mi=Math.min(Math.floor(pct/15),6);
+  document.getElementById('sMsg').textContent=msgs[mi];
+}
+</script>
+</body>
+</html>

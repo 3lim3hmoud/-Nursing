@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Zinab — Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burn: #e05c2a;
+    --burn-light: #fff4ef;
+    --burn-mid: #f8cdb9;
+    --immune: #1a7fcf;
+    --immune-light: #eef6ff;
+    --immune-mid: #b3d8f7;
+    --sle: #c0392b;
+    --sle-light: #fef0ef;
+    --ms: #27ae60;
+    --ms-light: #edfaf3;
+    --text: #1e1e2e;
+    --text2: #555;
+    --card: #fff;
+    --bg: #f7f5f0;
+    --radius: 14px;
+    --shadow: 0 4px 18px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: var(--burn);
+    opacity: .08;
+    border-radius: 50%;
+    top: -80px; left: -60px;
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    width: 250px; height: 250px;
+    background: var(--immune);
+    opacity: .08;
+    border-radius: 50%;
+    bottom: -80px; right: -40px;
+  }
+  .site-header h1 {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  .site-header p {
+    color: rgba(255,255,255,0.55);
+    font-size: .9rem;
+    margin-top: .4rem;
+    position: relative;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.4rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 40px;
+    border: 2px solid transparent;
+    font-family: inherit;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .25s;
+    background: var(--bg);
+    color: var(--text2);
+  }
+  .tab-btn.active-burn {
+    background: var(--burn);
+    color: #fff;
+    border-color: var(--burn);
+    box-shadow: 0 4px 14px rgba(224,92,42,.35);
+  }
+  .tab-btn.active-immune {
+    background: var(--immune);
+    color: #fff;
+    border-color: var(--immune);
+    box-shadow: 0 4px 14px rgba(26,127,207,.35);
+  }
+  .tab-btn:not(.active-burn):not(.active-immune):hover {
+    background: #ece9e3;
+  }
+  .tab-icon { font-size: 1.1rem; }
+
+  /* ── SECTIONS ── */
+  .section { display: none; padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .section.visible { display: block; animation: fadeUp .35s ease; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION HERO ── */
+  .section-hero {
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .burn-hero  { background: linear-gradient(120deg, var(--burn) 0%, #c44a1a 100%); color: #fff; }
+  .immune-hero { background: linear-gradient(120deg, var(--immune) 0%, #1260a0 100%); color: #fff; }
+  .hero-icon { font-size: 3rem; }
+  .hero-text h2 { font-size: 1.6rem; font-weight: 800; }
+  .hero-text p  { opacity: .8; font-size: .9rem; margin-top: .3rem; }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .85rem; margin-bottom: 1rem; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow);
+    transition: transform .2s;
+  }
+  .card:hover { transform: translateY(-2px); }
+
+  .card-title {
+    font-size: .82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: .7rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: .55rem; }
+  .row-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+  .row-text { font-size: .82rem; line-height: 1.6; }
+  .row-text .ar { color: var(--text2); font-size: .78rem; display: block; }
+
+  /* ── DEGREE CARDS ── */
+  .degree-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 4px solid;
+    transition: transform .2s;
+  }
+  .degree-card:hover { transform: translateY(-3px); }
+  .degree-card h4 { font-size: .9rem; font-weight: 800; margin-bottom: .4rem; }
+  .degree-card p { font-size: .75rem; color: var(--text2); line-height: 1.6; }
+  .d1 { border-color: #f39c12; }
+  .d2 { border-color: #e74c3c; }
+  .d3 { border-color: #8e44ad; }
+  .d4 { border-color: #1e1e2e; }
+
+  /* ── DISEASE CARDS (immune) ── */
+  .disease-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid;
+  }
+  .disease-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: .2rem;
+  }
+  .disease-card .subtitle {
+    font-size: .78rem;
+    color: var(--text2);
+    margin-bottom: .9rem;
+  }
+  .hiv-card  { border-color: var(--immune); }
+  .sle-card  { border-color: var(--sle); }
+  .ms-card   { border-color: var(--ms); }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: .7rem;
+  }
+  .badge-blue   { background: var(--immune-light); color: var(--immune); }
+  .badge-red    { background: var(--sle-light);    color: var(--sle); }
+  .badge-green  { background: var(--ms-light);     color: var(--ms); }
+
+  /* ── QUICK TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .8rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+  }
+  .compare-table th {
+    padding: .85rem 1rem;
+    text-align: left;
+    font-weight: 800;
+    color: #fff;
+  }
+  .compare-table td {
+    padding: .75rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: #fafafa; }
+  .th-burn   { background: var(--burn); }
+  .th-immune { background: var(--immune); }
+  .th-sle    { background: var(--sle); }
+  .th-ms     { background: var(--ms); }
+  .th-label  { background: #f0ede8; color: var(--text); }
+
+  /* ── NINES GRID ── */
+  .nines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: .5rem;
+  }
+  .nines-item {
+    background: var(--burn-light);
+    border-radius: 10px;
+    padding: .7rem .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+  }
+  .nines-pct {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--burn);
+  }
+
+  /* ── PHASES ── */
+  .phases { display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .phase {
+    flex: 1 1 140px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .phase-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: .85rem;
+    margin: 0 auto .5rem;
+    color: #fff;
+  }
+  .phase h4 { font-size: .85rem; font-weight: 700; margin-bottom: .3rem; }
+  .phase p  { font-size: .75rem; color: var(--text2); line-height: 1.5; }
+
+  /* ── SECTION TITLE ── */
+  .section-label {
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    margin: 1.2rem 0 .6rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0ddd7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text2);
+    font-size: .8rem;
+    border-top: 1px solid #e0ddd7;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    .tabs { gap: 8px; }
+    .tab-btn { padding: 8px 14px; font-size: .8rem; }
+    .section { padding: 1rem; }
+    .hero-text h2 { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>📚 Dr. Zinab — Study Guide</h1>
+  <p>Simplified Bilingual Notes · مذكرات مبسطة ثنائية اللغة</p>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active-burn" onclick="showTab('burn', this)" id="tab-burn">
+    <span class="tab-icon">🔥</span> Burns — الحروق
+  </button>
+  <button class="tab-btn" onclick="showTab('immune', this)" id="tab-immune">
+    <span class="tab-icon">🛡️</span> Immune System — الجهاز المناعي
+  </button>
+</div>
+
+<!-- ═══════════════ BURN SECTION ═══════════════ -->
+<div class="section visible" id="sec-burn">
+
+  <div class="section-hero burn-hero">
+    <div class="hero-icon">🔥</div>
+    <div class="hero-text">
+      <h2>Burns — الحروق</h2>
+      <p>Tissue damage from heat, chemicals, electricity, radiation · تلف الأنسجة من مصادر متعددة</p>
+    </div>
+  </div>
+
+  <!-- Definition + Causes -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title" style="color:var(--burn)">📖 Definition — التعريف</div>
+      <div class="row">
+        <span class="row-icon">🔸</span>
+        <div class="row-text">
+          Tissue damage from heat, sun radiation, chemicals, or electricity.
+          <span class="ar">تلف الأنسجة الناتج عن الحرارة أو الشمس أو الإشعاع أو المواد الكيميائية أو الكهرباء.</span>
+        </div>
+      </div>
+      <div class="row">
+        <span class="row-icon">🔸</span>
+        <div class="row-text">
+          The skin protects against infection, prevents fluid loss, regulates temperature & identity.
+          <span class="ar">الجلد يحمي من العدوى، يمنع فقدان السوائل، وينظم الحرارة.</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--burn)">⚡ Causes / Etiology — الأسباب</div>
+      <div class="row"><span class="row-icon">🔥</span><div class="row-text">Thermal — flame, hot liquids, steam<br><span class="ar">حراري: لهب، سوائل ساخنة، بخار</span></div></div>
+      <div class="row"><span class="row-icon">🧪</span><div class="row-text">Chemical — strong acids/alkalines<br><span class="ar">كيميائي: أحماض وقلويات قوية</span></div></div>
+      <div class="row"><span class="row-icon">⚡</span><div class="row-text">Electrical — electric current heat<br><span class="ar">كهربائي: حرارة التيار الكهربائي</span></div></div>
+      <div class="row"><span class="row-icon">☢️</span><div class="row-text">Radiation — least common type<br><span class="ar">إشعاعي: النوع الأقل شيوعاً</span></div></div>
+      <div class="row"><span class="row-icon">💨</span><div class="row-text">Inhalation — smoke & gases<br><span class="ar">استنشاق: الدخان والغازات</span></div></div>
+    </div>
+  </div>
+
+  <!-- Degrees -->
+  <div class="section-label">🏷️ Degrees of Burns — درجات الحروق</div>
+  <div class="grid-4" style="margin-bottom:1rem">
+    <div class="degree-card d1">
+      <h4>1st Degree<br>الدرجة الأولى</h4>
+      <p>Superficial · Redness only<br>No blisters · Heals in 1 week ✅<br><br>سطحي · احمرار فقط<br>لا فقاعات · يشفى خلال أسبوع</p>
+    </div>
+    <div class="degree-card d2">
+      <h4>2nd Degree<br>الدرجة الثانية</h4>
+      <p>Partial thickness · Blisters<br>Pain + sensitive to cold<br>Heals in 2–4 weeks ⏳<br><br>فقاعات وألم<br>يشفى 2–4 أسابيع</p>
+    </div>
+    <div class="degree-card d3">
+      <h4>3rd Degree<br>الدرجة الثالثة</h4>
+      <p>Full thickness · Pain-FREE<br>Pale/white/charred skin<br>Needs skin grafting 🏥<br><br>لا ألم · جلد أبيض أو متفحم<br>يحتاج ترقيع</p>
+    </div>
+    <div class="degree-card d4">
+      <h4>4th Degree<br>الدرجة الرابعة</h4>
+      <p>Extends to bone & muscle<br>Most severe ⚠️<br>Irreversible damage<br><br>يصل للعظام والعضلات<br>الأشد خطورة</p>
+    </div>
+  </div>
+
+  <!-- Rule of Nines + Severity -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title" style="color:var(--burn)">📏 Rule of Nines — قاعدة التسعات</div>
+      <div class="nines-grid">
+        <div class="nines-item">Head & Neck <span class="nines-pct">9%</span></div>
+        <div class="nines-item">Each Arm <span class="nines-pct">9%</span></div>
+        <div class="nines-item">Anterior Trunk <span class="nines-pct">18%</span></div>
+        <div class="nines-item">Posterior Trunk <span class="nines-pct">18%</span></div>
+        <div class="nines-item">Each Leg <span class="nines-pct">18%</span></div>
+        <div class="nines-item">Groin <span class="nines-pct">1%</span></div>
+      </div>
+      <p style="font-size:.75rem; color:var(--text2); margin-top:.7rem;">🖐️ Palmar method: 1 hand = 1% TBSA · راحة اليد = 1%</p>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--burn)">⚖️ Severity — شدة الحرق</div>
+      <div class="row">
+        <span class="row-icon">🟢</span>
+        <div class="row-text"><strong>Minor:</strong> 2nd° &lt;15% adults or &lt;10% children. 3rd° &lt;2%.<br><span class="ar">بسيط: حرق 2° أقل من 15% بالغين / 10% أطفال</span></div>
+      </div>
+      <div class="row">
+        <span class="row-icon">🟡</span>
+        <div class="row-text"><strong>Moderate:</strong> 2nd° 15–25% adults or 10–20% children.<br><span class="ar">متوسط: حرق 2° من 15–25% بالغين</span></div>
+      </div>
+      <div class="row">
+        <span class="row-icon">🔴</span>
+        <div class="row-text"><strong>Major:</strong> 2nd° &gt;25%, all 3rd° &gt;10%, burns on face/hands/feet/joints/perineum, inhalation, electrical.<br><span class="ar">شديد: حرق الوجه والأيدي والمفاصل والاستنشاق</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pathophysiology -->
+  <div class="section-label">🔬 Pathophysiology — الفيزيولوجيا المرضية</div>
+  <div class="grid-2">
+    <div class="card" style="border-top:3px solid #e74c3c">
+      <div class="card-title" style="color:#e74c3c">💧 Stage 1 — Hypovolemic · مرحلة نقص الحجم</div>
+      <div class="row"><span class="row-icon">➡️</span><div class="row-text">Fluid shifts from vessels to interstitial spaces<br><span class="ar">السوائل تنتقل من الأوعية إلى الفراغات الخلالية</span></div></div>
+      <div class="row"><span class="row-icon">➡️</span><div class="row-text">Histamine & prostaglandins released → increased capillary permeability<br><span class="ar">إفراز هستامين → زيادة نفاذية الشعيرات</span></div></div>
+      <div class="row"><span class="row-icon">➡️</span><div class="row-text">Burn shock, decreased cardiac output, hyperkalemia, hyponatremia<br><span class="ar">صدمة حرق · نقص الأوكسجين</span></div></div>
+    </div>
+    <div class="card" style="border-top:3px solid #3498db">
+      <div class="card-title" style="color:#3498db">🔄 Stage 2 — Diuretic · مرحلة الإدرار</div>
+      <div class="row"><span class="row-icon">➡️</span><div class="row-text">Begins 18–72 hours after burn<br><span class="ar">تبدأ 18–72 ساعة بعد الحرق</span></div></div>
+      <div class="row"><span class="row-icon">➡️</span><div class="row-text">Fluid returns to vessels → increased urine output<br><span class="ar">السوائل تعود للأوعية → زيادة إخراج البول</span></div></div>
+      <div class="row"><span class="row-icon">⚠️</span><div class="row-text">Risk of fluid overload, sodium deficit, hypokalemia<br><span class="ar">خطر فرط السوائل ونقص الصوديوم والبوتاسيوم</span></div></div>
+    </div>
+  </div>
+
+  <!-- 3 Phases of Care -->
+  <div class="section-label">🏥 3 Phases of Care — مراحل الرعاية</div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num" style="background:var(--burn)">1</div>
+      <h4>Emergent<br>الطارئة</h4>
+      <p>Airway · Fluids · Assessment<br>المجرى الهوائي والسوائل</p>
+    </div>
+    <div class="phase">
+      <div class="phase-num" style="background:#c0392b">2</div>
+      <h4>Acute<br>الحادة</h4>
+      <p>Wound care · Infection · Nutrition<br>العناية بالجرح والتغذية</p>
+    </div>
+    <div class="phase">
+      <div class="phase-num" style="background:#27ae60">3</div>
+      <h4>Rehabilitation<br>التأهيل</h4>
+      <p>Exercise · Scar · Psychosocial<br>تمارين وتأهيل نفسي</p>
+    </div>
+  </div>
+
+  <!-- Nursing Interventions -->
+  <div class="section-label">💉 Key Nursing Interventions — التدخلات التمريضية</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="row"><span class="row-icon">🫁</span><div class="row-text">Maintain airway & humidified oxygen · المجرى الهوائي والأكسجين</div></div>
+      <div class="row"><span class="row-icon">💧</span><div class="row-text">Monitor fluid & electrolyte balance · السوائل والإلكتروليتات</div></div>
+      <div class="row"><span class="row-icon">🦠</span><div class="row-text">Prevent infection (gowns, gloves, topical antibiotics) · مكافحة العدوى</div></div>
+      <div class="row"><span class="row-icon">🥗</span><div class="row-text">High-calorie, high-protein diet · التغذية العالية السعرات</div></div>
+    </div>
+    <div class="card">
+      <div class="row"><span class="row-icon">🩹</span><div class="row-text">Wound cleansing & dressing changes · العناية بالجرح</div></div>
+      <div class="row"><span class="row-icon">😌</span><div class="row-text">Pain relief & relaxation techniques · تسكين الألم</div></div>
+      <div class="row"><span class="row-icon">🌡️</span><div class="row-text">Maintain body temperature · درجة الحرارة</div></div>
+      <div class="row"><span class="row-icon">🚶</span><div class="row-text">Mobility, splints, range-of-motion, self-feeding · الحركة والاستقلالية</div></div>
+    </div>
+  </div>
+
+  <!-- Home Care -->
+  <div class="card" style="margin-bottom:1rem; border-top:3px solid var(--burn)">
+    <div class="card-title" style="color:var(--burn)">🏠 Home Care Tips — نصائح المنزل</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:.5rem">
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Cool · Cover · Get help · برد الحرق، غطه، اطلب مساعدة</div></div>
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Don't break blisters · لا تكسر الفقاعات</div></div>
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Lubricate healed skin for 1 year · رطّب الجلد لمدة سنة</div></div>
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Exercise daily per therapist plan · تمرن يومياً</div></div>
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Eat high protein & calories · تغذية عالية البروتين</div></div>
+      <div class="row"><span class="row-icon">✅</span><div class="row-text">Follow-up appointments · المتابعة الدورية</div></div>
+    </div>
+  </div>
+
+</div><!-- end burn section -->
+
+
+<!-- ═══════════════ IMMUNE SECTION ═══════════════ -->
+<div class="section" id="sec-immune">
+
+  <div class="section-hero immune-hero">
+    <div class="hero-icon">🛡️</div>
+    <div class="hero-text">
+      <h2>Immune System Disorders — اضطرابات الجهاز المناعي</h2>
+      <p>HIV/AIDS · SLE (Lupus) · Multiple Sclerosis · 3 diseases covered</p>
+    </div>
+  </div>
+
+  <!-- HIV/AIDS -->
+  <div class="section-label" style="color:var(--immune)">🦠 Disease 1: HIV / AIDS — فيروس نقص المناعة</div>
+  <div class="disease-card hiv-card" style="margin-bottom:1rem">
+    <h3>🦠 HIV / AIDS</h3>
+    <div class="subtitle">Human Immunodeficiency Virus · فيروس نقص المناعة البشري</div>
+    <span class="badge badge-blue">Immunodeficiency — نقص مناعي</span>
+    <div class="grid-2">
+      <div>
+        <div class="row"><span class="row-icon">📌</span><div class="row-text"><strong>What:</strong> Retrovirus attacking CD4+ T-cells → immune collapse<br><span class="ar">فيروس يهاجم خلايا CD4 ويدمر المناعة</span></div></div>
+        <div class="row"><span class="row-icon">📌</span><div class="row-text"><strong>AIDS defined:</strong> CD4 &lt; 200 cells/µl or opportunistic infection<br><span class="ar">إيدز = CD4 أقل من 200 أو عدوى انتهازية</span></div></div>
+        <div class="row"><span class="row-icon">📌</span><div class="row-text"><strong>Incubation:</strong> 8–10 years asymptomatic<br><span class="ar">فترة الحضانة 8–10 سنوات بدون أعراض</span></div></div>
+        <div class="row"><span class="row-icon">🔗</span><div class="row-text"><strong>Transmission:</strong> Sexual · Blood transfusion · Contaminated needles · Mother to child (placenta/breast milk)<br><span class="ar">جنسي · نقل دم · إبر ملوثة · من الأم للطفل</span></div></div>
+      </div>
+      <div>
+        <div class="row"><span class="row-icon">🔬</span><div class="row-text"><strong>Stages:</strong> Acute (flu-like) → Latent (lymph nodes) → Symptomatic → AIDS<br><span class="ar">حادة → كامنة → أعراض → إيدز</span></div></div>
+        <div class="row"><span class="row-icon">🤒</span><div class="row-text"><strong>Symptoms:</strong> Fever, fatigue, weight loss, diarrhea, oral thrush, swollen lymph nodes<br><span class="ar">حمى، إعياء، فقدان وزن، إسهال، مبيضات</span></div></div>
+        <div class="row"><span class="row-icon">🧪</span><div class="row-text"><strong>Diagnosis:</strong> EIA + Western Blot, CD4 count<br><span class="ar">تشخيص: اختبار الأجسام المضادة + عد CD4</span></div></div>
+        <div class="row"><span class="row-icon">💊</span><div class="row-text"><strong>Treatment:</strong> Antiretroviral drugs — no cure ❌<br><span class="ar">أدوية مضادة للفيروسات — لا يوجد علاج شافٍ</span></div></div>
+        <div class="row"><span class="row-icon">👩‍⚕️</span><div class="row-text"><strong>Nursing:</strong> Watch for infections, oral candida, standard precautions, emotional support, nutrition<br><span class="ar">مراقبة العدوى، احتياطات قياسية، دعم نفسي، تغذية</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLE -->
+  <div class="section-label" style="color:var(--sle)">🦋 Disease 2: SLE (Lupus) — الذئبة الحمراء</div>
+  <div class="disease-card sle-card" style="margin-bottom:1rem">
+    <h3>🦋 Systemic Lupus Erythematosus (SLE)</h3>
+    <div class="subtitle">Chronic autoimmune inflammatory disorder · مرض التهابي مناعي ذاتي مزمن</div>
+    <span class="badge badge-red">Autoimmune — مناعة ذاتية</span>
+    <div class="grid-2">
+      <div>
+        <div class="row"><span class="row-icon">📌</span><div class="row-text"><strong>What:</strong> Body attacks its own connective tissues → multi-organ damage<br><span class="ar">الجسم يهاجم أنسجته: كلى، مفاصل، رئة، قلب</span></div></div>
+        <div class="row"><span class="row-icon">🔁</span><div class="row-text"><strong>Pattern:</strong> Flares (تفاقم) & Remissions (هدأة) — worse in spring/summer<br><span class="ar">نوبات تفاقم وهدوء، أسوأ في الربيع والصيف</span></div></div>
+        <div class="row"><span class="row-icon">⚠️</span><div class="row-text"><strong>Triggers:</strong> Sunlight · UV · Pregnancy · Genetics · Viral infections · Medications<br><span class="ar">شمس، حمل، وراثة، فيروسات، أدوية</span></div></div>
+        <div class="row"><span class="row-icon">🦋</span><div class="row-text"><strong>Key sign:</strong> Butterfly (malar) rash on cheeks & nose<br><span class="ar">العلامة المميزة: طفح الفراشة على الخدين والأنف</span></div></div>
+      </div>
+      <div>
+        <div class="row"><span class="row-icon">🤒</span><div class="row-text"><strong>Symptoms:</strong> Joint pain · Photosensitivity · Fatigue · Dry eyes · Kidney issues · Neuropsychiatric · Pleuritic pain<br><span class="ar">ألم مفاصل، حساسية للشمس، كلى، عصبي</span></div></div>
+        <div class="row"><span class="row-icon">🧪</span><div class="row-text"><strong>Diagnosis:</strong> ANA · Anti-DNA · CBC · ESR · Urine · C3/C4 · Chest X-ray<br><span class="ar">تحاليل ANA + صورة دم + بول + أشعة صدر</span></div></div>
+        <div class="row"><span class="row-icon">💊</span><div class="row-text"><strong>Treatment:</strong> Corticosteroids · NSAIDs/Aspirin · Topical for skin<br><span class="ar">كورتيزون · مضادات التهاب · مراهم للجلد</span></div></div>
+        <div class="row"><span class="row-icon">👩‍⚕️</span><div class="row-text"><strong>Nursing:</strong> Avoid sun · Heat packs for joints · Check urine for blood · Hair loss · Balanced diet · Follow-up<br><span class="ar">تجنبي الشمس · فحص البول · نظام غذائي متوازن</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MS -->
+  <div class="section-label" style="color:var(--ms)">🧠 Disease 3: Multiple Sclerosis — التصلب المتعدد</div>
+  <div class="disease-card ms-card" style="margin-bottom:1rem">
+    <h3>🧠 Multiple Sclerosis (MS)</h3>
+    <div class="subtitle">Chronic progressive autoimmune CNS disorder · اضطراب مناعي ذاتي مزمن في الجهاز العصبي المركزي</div>
+    <span class="badge badge-green">Autoimmune CNS — مناعة ذاتية عصبية</span>
+    <div class="grid-2">
+      <div>
+        <div class="row"><span class="row-icon">📌</span><div class="row-text"><strong>What:</strong> Immune system attacks myelin sheath → nerve damage in brain/spinal cord<br><span class="ar">الجهاز المناعي يهاجم غمد الميالين في المخ والنخاع</span></div></div>
+        <div class="row"><span class="row-icon">🗂️</span><div class="row-text"><strong>Types:</strong> RRMS (most common) · SPMS · PPMS · PRMS<br><span class="ar">انتكاسي هادئ (الأكثر شيوعاً) · تقدمي ثانوي · أولي · انتكاسي تقدمي</span></div></div>
+        <div class="row"><span class="row-icon">⚠️</span><div class="row-text"><strong>Risk factors:</strong> Women 20–40y · Family history · Low Vitamin D · Smoking · Northern descent<br><span class="ar">إناث 20–40 · وراثة · نقص فيتامين د · تدخين</span></div></div>
+        <div class="row"><span class="row-icon">🤒</span><div class="row-text"><strong>Symptoms:</strong> Fatigue · Vision problems · Muscle weakness · Numbness · Ataxia · Bladder/bowel · Memory · Depression<br><span class="ar">إعياء، مشاكل بصر، ضعف عضلي، خدر، مثانة، ذاكرة</span></div></div>
+      </div>
+      <div>
+        <div class="row"><span class="row-icon">⚡</span><div class="row-text"><strong>Complications:</strong> Disability · UTIs · Pressure ulcers · Osteoporosis · Infections<br><span class="ar">إعاقة · التهاب مسالك بولية · قرح ضغط · هشاشة عظام</span></div></div>
+        <div class="row"><span class="row-icon">🧪</span><div class="row-text"><strong>Diagnosis:</strong> MRI brain/spine · Lumbar puncture · Evoked potential tests · Blood tests<br><span class="ar">MRI المخ والعمود الفقري · بزل قطني · اختبارات دم</span></div></div>
+        <div class="row"><span class="row-icon">💊</span><div class="row-text"><strong>Treatment:</strong> DMTs (Interferon beta) · Steroids · Muscle relaxants (Baclofen) · Physical/Occupational/Speech therapy<br><span class="ar">أدوية معدِّلة، كورتيزون، علاج طبيعي ووظيفي وكلامي</span></div></div>
+        <div class="row"><span class="row-icon">👩‍⚕️</span><div class="row-text"><strong>Nursing:</strong> Mobility aids · Rest periods · Bladder training · Emotional support · Medication monitoring · Avoid overheating<br><span class="ar">مساعدات حركة · راحة · تدريب مثانة · دعم نفسي · تجنب الحرارة الزائدة</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Comparison Table -->
+  <div class="section-label">🔑 Quick Comparison — مقارنة سريعة</div>
+  <div style="overflow-x:auto; margin-bottom:1rem">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="th-label">Feature</th>
+          <th class="th-immune">HIV/AIDS</th>
+          <th class="th-sle">SLE (Lupus)</th>
+          <th class="th-ms">Multiple Sclerosis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Type</strong></td><td>Immunodeficiency<br><small>نقص مناعي</small></td><td>Autoimmune<br><small>مناعة ذاتية</small></td><td>Autoimmune (CNS)<br><small>عصبي مناعي</small></td></tr>
+        <tr><td><strong>Target</strong></td><td>CD4+ T-cells<br><small>خلايا المناعة</small></td><td>Multiple organs<br><small>أعضاء متعددة</small></td><td>Myelin sheath<br><small>غمد الميالين</small></td></tr>
+        <tr><td><strong>Key sign</strong></td><td>CD4 &lt; 200<br><small>عدد خلايا منخفض</small></td><td>🦋 Butterfly rash<br><small>طفح الفراشة</small></td><td>Vision/weakness<br><small>ضعف بصري وعضلي</small></td></tr>
+        <tr><td><strong>Cure</strong></td><td>❌ No cure<br><small>لا يوجد علاج</small></td><td>❌ Managed only<br><small>يُدار فقط</small></td><td>❌ Managed only<br><small>يُدار فقط</small></td></tr>
+        <tr><td><strong>Main drug</strong></td><td>Antiretrovirals<br><small>مضادات فيروسية</small></td><td>Corticosteroids<br><small>كورتيزون</small></td><td>Interferon beta<br><small>إنترفيرون</small></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- end immune section -->
+
+<footer>
+  📚 Dr. Zinab Mohamed — Study Guide · Simplified for Nursing Students · كل التوفيق! 🌟
+</footer>
+
+<script>
+  function showTab(name, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('active-burn','active-immune');
+    });
+    document.getElementById('sec-' + name).classList.add('visible');
+    if(name === 'burn') btn.classList.add('active-burn');
+    else btn.classList.add('active-immune');
+  }
+</script>
+
+</body>
+</html>

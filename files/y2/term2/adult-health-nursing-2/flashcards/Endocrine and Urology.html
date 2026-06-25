@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6fb;
+    --white: #ffffff;
+    --border: #e2e8f2;
+    --text: #1a2035;
+    --muted: #6b7a99;
+    --dim: #a0aec0;
+    --shadow: 0 2px 12px rgba(30,50,100,0.07);
+    --shadow-md: 0 4px 20px rgba(30,50,100,0.10);
+
+    /* Endocrine — warm amber/orange */
+    --endo: #e07b2a;
+    --endo-soft: #fff4ea;
+    --endo-mid: #fde3c3;
+    --endo-border: #f5c898;
+
+    /* Urology — clean blue */
+    --uro: #2563eb;
+    --uro-soft: #eef3ff;
+    --uro-mid: #c7d9fd;
+    --uro-border: #93b4fb;
+
+    --red: #e53e3e;       --red-soft: #fff5f5;    --red-border: #feb2b2;
+    --blue: #2563eb;      --blue-soft: #ebf4ff;   --blue-border: #93c5fd;
+    --teal: #0d9488;      --teal-soft: #f0fdfa;   --teal-border: #5eead4;
+    --amber: #d97706;     --amber-soft: #fffbeb;  --amber-border: #fcd34d;
+    --purple: #7c3aed;    --purple-soft: #f5f3ff; --purple-border: #c4b5fd;
+    --green: #16a34a;     --green-soft: #f0fdf4;  --green-border: #86efac;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: sticky; top: 0; z-index: 100;
+    padding: 0 2rem;
+  }
+  .topbar-inner {
+    max-width: 960px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 58px;
+  }
+  .topbar-title {
+    font-weight: 800; font-size: 15px; color: var(--text);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .topbar-title span { font-size: 11px; color: var(--muted); font-weight: 400; }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex; gap: 4px; background: var(--bg);
+    padding: 4px; border-radius: 12px;
+  }
+  .tab-btn {
+    padding: 7px 18px; border-radius: 9px; border: none; cursor: pointer;
+    font-family: inherit; font-size: 12px; font-weight: 600;
+    transition: all 0.2s; color: var(--muted); background: transparent;
+    display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--text); background: var(--white); }
+  .tab-btn.active { color: var(--white); box-shadow: var(--shadow-md); }
+  .tab-btn.endo.active { background: var(--endo); }
+  .tab-btn.uro.active  { background: var(--uro);  }
+
+  /* ── WRAPPER ── */
+  .wrapper { max-width: 960px; margin: 0 auto; padding: 1.8rem 1.5rem 4rem; }
+
+  /* ── LECTURE PANEL ── */
+  .lecture-panel { display: none; }
+  .lecture-panel.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── LECTURE HERO ── */
+  .lecture-hero {
+    border-radius: 18px; padding: 1.6rem 1.8rem;
+    margin-bottom: 1.2rem; border: 1px solid transparent;
+    display: flex; align-items: center; gap: 1.2rem;
+  }
+  .lecture-hero.endo { background: linear-gradient(135deg, var(--endo-soft), #fff9f2); border-color: var(--endo-border); }
+  .lecture-hero.uro  { background: linear-gradient(135deg, var(--uro-soft), #f0f5ff);  border-color: var(--uro-border);  }
+
+  .hero-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; flex-shrink: 0;
+  }
+  .hero-icon.endo { background: var(--endo-mid); }
+  .hero-icon.uro  { background: var(--uro-mid);  }
+  .hero-title { font-weight: 800; font-size: 1.35rem; color: var(--text); }
+  .hero-sub   { font-size: 12px; color: var(--muted); margin-top: 2px; font-family: 'Tajawal', sans-serif; }
+
+  /* ── BADGE (lecture label) ── */
+  .lecture-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 11px; border-radius: 20px; margin-bottom: 1rem;
+  }
+  .lecture-badge.endo { background: var(--endo-mid); color: var(--endo); }
+  .lecture-badge.uro  { background: var(--uro-mid);  color: var(--uro);  }
+
+  /* ── GRID ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .span2 { grid-column: 1 / -1; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 7px;
+    margin-bottom: 11px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-title .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .card-title.red    .dot { background: var(--red); }
+  .card-title.blue   .dot { background: var(--blue); }
+  .card-title.teal   .dot { background: var(--teal); }
+  .card-title.amber  .dot { background: var(--amber); }
+  .card-title.purple .dot { background: var(--purple); }
+  .card-title.green  .dot { background: var(--green); }
+
+  /* ── SECTION LABEL ── */
+  .slabel {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--dim); margin: 9px 0 5px;
+  }
+
+  /* ── TAGS ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+  .tag {
+    font-size: 10.5px; padding: 3px 10px; border-radius: 20px;
+    border: 1px solid transparent; font-weight: 500;
+  }
+  .tag.red    { background: var(--red-soft);    color: var(--red);    border-color: var(--red-border); }
+  .tag.blue   { background: var(--blue-soft);   color: var(--blue);   border-color: var(--blue-border); }
+  .tag.teal   { background: var(--teal-soft);   color: var(--teal);   border-color: var(--teal-border); }
+  .tag.amber  { background: var(--amber-soft);  color: var(--amber);  border-color: var(--amber-border); }
+  .tag.purple { background: var(--purple-soft); color: var(--purple); border-color: var(--purple-border); }
+  .tag.green  { background: var(--green-soft);  color: var(--green);  border-color: var(--green-border); }
+
+  /* ── INFO ROW ── */
+  .info-row { display: flex; gap: 8px; margin-bottom: 6px; align-items: flex-start; }
+  .info-lbl { font-size: 11px; color: var(--muted); min-width: 74px; flex-shrink: 0; padding-top: 1px; font-weight: 600; }
+  .info-val { font-size: 11px; color: var(--text); line-height: 1.5; }
+  .ar { font-family: 'Tajawal', sans-serif; color: var(--muted); font-size: 10.5px; }
+
+  /* ── COMPARE ── */
+  .compare-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    margin-top: 6px;
+  }
+  .compare-col { padding: 13px 15px; background: var(--white); }
+  .compare-col.left { background: var(--red-soft); border-right: 1px solid var(--border); }
+  .compare-col.right { background: var(--blue-soft); }
+  .compare-head { font-size: 12px; font-weight: 700; margin-bottom: 9px; }
+  .compare-item { font-size: 11px; color: var(--text); padding-left: 14px; position: relative; margin-bottom: 5px; line-height: 1.45; }
+  .compare-item::before { content: '→'; position: absolute; left: 0; color: var(--dim); font-size: 10px; top: 1px; }
+  .compare-item .ar { display: block; }
+
+  /* ── STAGES ── */
+  .stages { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .stage-card {
+    border-radius: 13px; padding: 13px 14px;
+    border: 1.5px solid var(--border); background: var(--white);
+    box-shadow: var(--shadow);
+  }
+  .stage-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-bottom: 7px; }
+  .stage-badge.s1 { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber-border); }
+  .stage-badge.s2 { background: #fff5f5; color: #e05a5a; border: 1px solid #fca5a5; }
+  .stage-badge.s3 { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+  .stage-title { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+  .stage-body  { font-size: 10.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ── DIALYSIS ── */
+  .dialysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .dialysis-card { border-radius: 12px; padding: 14px; border: 1.5px solid var(--border); background: var(--bg); }
+  .dialysis-title { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+  .dialysis-title.hemo { color: var(--purple); }
+  .dialysis-title.peri { color: var(--teal); }
+
+  /* ── NURSING GRID ── */
+  .nursing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+  .nursing-item {
+    font-size: 11px; color: var(--text);
+    padding: 4px 8px 4px 16px; position: relative; margin-bottom: 4px;
+    line-height: 1.5; border-radius: 6px; background: var(--bg);
+  }
+  .nursing-item::before { content: '·'; position: absolute; left: 6px; color: var(--dim); font-size: 14px; top: 2px; }
+
+  /* ── DIVIDER ── */
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    border-radius: 10px; padding: 10px 13px;
+    font-size: 11px; display: flex; gap: 8px; align-items: flex-start;
+    margin-top: 4px;
+  }
+  .alert.red    { background: var(--red-soft);    border: 1px solid var(--red-border);    color: var(--red); }
+  .alert.amber  { background: var(--amber-soft);  border: 1px solid var(--amber-border);  color: var(--amber); }
+  .alert .alert-body { color: var(--text); font-size: 11px; }
+
+  /* ── FOOTER ── */
+  .footer { text-align: center; margin-top: 2.5rem; color: var(--dim); font-size: 11px; letter-spacing: 0.05em; }
+
+  @media (max-width: 640px) {
+    .topbar-inner { flex-direction: column; height: auto; padding: 10px 0; gap: 8px; }
+    .grid2, .grid3, .stages, .dialysis-grid, .nursing-grid { grid-template-columns: 1fr; }
+    .span2 { grid-column: 1; }
+    .compare-wrap { grid-template-columns: 1fr; }
+    .compare-col.left { border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-title { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-title">
+      📚 Medical Nursing Study Guide
+      <span>دليل دراسة التمريض الطبي</span>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn endo active" onclick="switchTab('endo')">🔬 Endocrine — الغدد الصمّاء</button>
+      <button class="tab-btn uro"         onclick="switchTab('uro')">🫘 Urology — الجهاز البولي</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <!-- ══════════════════════ LECTURE 1 — ENDOCRINE ══════════════════════ -->
+  <div id="panel-endo" class="lecture-panel active">
+
+    <!-- Hero -->
+    <div class="lecture-hero endo">
+      <div class="hero-icon endo">🔬</div>
+      <div>
+        <div class="lecture-badge endo">Lecture 1 — المحاضرة الأولى</div>
+        <div class="hero-title">Endocrine System Disorders — اضطرابات الجهاز الغدد الصمّاء</div>
+        <div class="hero-sub">Adrenal Gland Disorders &nbsp;·&nbsp; اضطرابات الغدة الكظرية (فوق الكلوية)</div>
+      </div>
+    </div>
+
+    <!-- Adrenal overview -->
+    <div class="section-title">Adrenal Gland Overview — نظرة عامة على الغدة الكظرية</div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title teal"><span class="dot"></span>Adrenal Medulla — النخاع (داخل الغدة)</div>
+        <div class="info-row"><span class="info-lbl">Hormones</span><span class="info-val">Epinephrine (90%) & Norepinephrine<br><span class="ar">الإبينفرين والنورإبينفرين — هرمونات الطوارئ</span></span></div>
+        <div class="info-row"><span class="info-lbl">Function</span><span class="info-val">Regulate metabolism & catabolism<br><span class="ar">تنظيم عمليات الأيض وإنتاج الطاقة</span></span></div>
+      </div>
+      <div class="card">
+        <div class="card-title teal"><span class="dot"></span>Adrenal Cortex — القشرة (خارج الغدة)</div>
+        <div class="info-row"><span class="info-lbl">Hormones</span><span class="info-val">Cortisol · Aldosterone · Androgens<br><span class="ar">الكورتيزول · الألدوستيرون · الأندروجين</span></span></div>
+        <div class="info-row"><span class="info-lbl">Without it</span><span class="info-val">Circulatory shock — صدمة دورانية<br><span class="ar">ضرورية للحياة ومقاومة الإجهاد</span></span></div>
+      </div>
+    </div>
+
+    <!-- Compare -->
+    <div class="section-title">Disease Comparison — مقارنة بين المرضين</div>
+    <div class="card span2" style="margin-bottom:12px;">
+      <div class="card-title amber"><span class="dot"></span>Addison's vs Cushing's — الفرق بين داء أديسون ومتلازمة كوشينج</div>
+      <div class="compare-wrap">
+        <div class="compare-col left">
+          <div class="compare-head" style="color:var(--red);">⬇ Addison's Disease — داء أديسون<br><small style="font-weight:400; color:var(--muted); font-size:10px;">نقص الكورتيزول — Low Cortisol</small></div>
+          <div class="compare-item">Weight loss <span class="ar">فقدان الوزن</span></div>
+          <div class="compare-item">Hypotension <span class="ar">انخفاض ضغط الدم</span></div>
+          <div class="compare-item">Hypoglycemia <span class="ar">انخفاض سكر الدم</span></div>
+          <div class="compare-item">Hyperpigmentation <span class="ar">تصبغ الجلد (بني داكن)</span></div>
+          <div class="compare-item">Fatigue & muscle weakness <span class="ar">تعب وضعف عضلي</span></div>
+          <div class="compare-item">Anorexia <span class="ar">فقدان الشهية</span></div>
+        </div>
+        <div class="compare-col right">
+          <div class="compare-head" style="color:var(--blue);">⬆ Cushing's Syndrome — متلازمة كوشينج<br><small style="font-weight:400; color:var(--muted); font-size:10px;">زيادة الكورتيزول — High Cortisol</small></div>
+          <div class="compare-item">Weight gain <span class="ar">زيادة الوزن</span></div>
+          <div class="compare-item">Hypertension <span class="ar">ارتفاع ضغط الدم</span></div>
+          <div class="compare-item">Hyperglycemia <span class="ar">ارتفاع سكر الدم</span></div>
+          <div class="compare-item">Moon face & Buffalo hump <span class="ar">وجه قمري وسنام جاموسي</span></div>
+          <div class="compare-item">Purple striae <span class="ar">خطوط بنفسجية على الجلد</span></div>
+          <div class="compare-item">Mood swings & osteoporosis <span class="ar">تقلبات مزاجية وهشاشة العظام</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Addison's + Cushing's details -->
+    <div class="section-title">Diagnosis & Treatment — التشخيص والعلاج</div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title red"><span class="dot"></span>Addison's Disease — داء أديسون</div>
+        <div class="slabel">Lab Findings — نتائج المختبر</div>
+        <div class="tags">
+          <span class="tag red">↓ Glucose سكر منخفض</span>
+          <span class="tag red">↓ Sodium صوديوم منخفض</span>
+          <span class="tag red">↑ Potassium بوتاسيوم مرتفع</span>
+          <span class="tag red">↑ WBCs كريات بيضاء</span>
+          <span class="tag red">↓ Cortisol كورتيزول منخفض</span>
+        </div>
+        <div class="alert red" style="margin-top:8px; margin-bottom:8px;">
+          <span>⚠️</span>
+          <div class="alert-body"><strong>Addisonian Crisis — الأزمة الكظرية</strong><br>صدمة دورانية — Circulatory shock<br>نبض سريع وضعيف، انخفاض ضغط حاد<br>Rapid weak pulse · Very low BP · Pallor</div>
+        </div>
+        <div class="slabel">Treatment — العلاج</div>
+        <div class="info-row"><span class="info-lbl">Immediate</span><span class="info-val">IV Hydrocortisone + IV fluids<br><span class="ar">هيدروكورتيزون وريدي + سوائل</span></span></div>
+        <div class="info-row"><span class="info-lbl">Position</span><span class="info-val">Recumbent + legs elevated<br><span class="ar">استلقاء مع رفع الأرجل</span></span></div>
+        <div class="info-row"><span class="info-lbl">If needed</span><span class="info-val">Vasopressors + Antibiotics<br><span class="ar">موسعات الأوعية + مضادات حيوية</span></span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title blue"><span class="dot"></span>Cushing's Syndrome — متلازمة كوشينج</div>
+        <div class="slabel">Causes — الأسباب</div>
+        <div class="tags">
+          <span class="tag blue">Long-term steroids الستيرويدات طويلة الأمد</span>
+          <span class="tag blue">Adrenal hyperplasia تضخم الغدة</span>
+          <span class="tag blue">ACTH-secreting tumor ورم يفرز ACTH</span>
+        </div>
+        <div class="slabel">Lab Findings — نتائج المختبر</div>
+        <div class="tags">
+          <span class="tag blue">↑ Glucose سكر مرتفع</span>
+          <span class="tag blue">↑ Sodium صوديوم مرتفع</span>
+          <span class="tag blue">↓ Potassium بوتاسيوم منخفض</span>
+          <span class="tag blue">↑ Cortisol كورتيزول مرتفع</span>
+        </div>
+        <hr class="divider">
+        <div class="slabel">Treatment — العلاج</div>
+        <div class="info-row"><span class="info-lbl">Surgery</span><span class="info-val">Adrenalectomy (unilateral/bilateral)<br><span class="ar">استئصال الغدة الكظرية</span></span></div>
+        <div class="info-row"><span class="info-lbl">Radiation</span><span class="info-val">Pituitary radiation<br><span class="ar">علاج إشعاعي للغدة النخامية</span></span></div>
+        <div class="info-row"><span class="info-lbl">Meds</span><span class="info-val">Metyrapone · Steroid taper<br><span class="ar">أدوية لتقليل الكورتيزول</span></span></div>
+      </div>
+    </div>
+
+    <!-- Nursing Endocrine -->
+    <div class="section-title">Nursing Management — التمريض</div>
+    <div class="card span2">
+      <div class="card-title amber"><span class="dot"></span>Nursing Management — إدارة التمريض</div>
+      <div class="nursing-grid">
+        <div>
+          <div class="slabel">Addison's — Nursing الرعاية التمريضية</div>
+          <div class="nursing-item">Avoid stressors — تجنب الإجهاد</div>
+          <div class="nursing-item">Monitor fluid balance — مراقبة توازن السوائل</div>
+          <div class="nursing-item">High sodium diet — غذاء غني بالصوديوم</div>
+          <div class="nursing-item">Hormone replacement education — التثقيف عن الهرمونات</div>
+          <div class="nursing-item">Teach patient to recognize crisis — تعرّف على علامات الأزمة</div>
+        </div>
+        <div>
+          <div class="slabel">Cushing's — Nursing Diagnoses التشخيصات</div>
+          <div class="nursing-item">Risk for injury — خطر الإصابة (ضعف عضلي)</div>
+          <div class="nursing-item">Risk for infection — خطر العدوى</div>
+          <div class="nursing-item">Impaired skin integrity — تلف الجلد</div>
+          <div class="nursing-item">Disturbed body image — اضطراب صورة الجسم</div>
+          <div class="nursing-item">Disturbed thought processes — اضطراب التفكير</div>
+        </div>
+        <div>
+          <div class="slabel">Cushing's — Interventions التدخلات</div>
+          <div class="nursing-item">Fall prevention — منع السقوط</div>
+          <div class="nursing-item">Gentle skin care — رعاية لطيفة للجلد</div>
+          <div class="nursing-item">High protein, low sodium diet — بروتين عالي، ملح قليل</div>
+          <div class="nursing-item">Emotional & psychological support — دعم نفسي وعاطفي</div>
+          <div class="nursing-item">Breathing exercises & rest — تمارين التنفس والراحة</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-endo -->
+
+
+  <!-- ══════════════════════ LECTURE 2 — UROLOGY ══════════════════════ -->
+  <div id="panel-uro" class="lecture-panel">
+
+    <!-- Hero -->
+    <div class="lecture-hero uro">
+      <div class="hero-icon uro">🫘</div>
+      <div>
+        <div class="lecture-badge uro">Lecture 2 — المحاضرة الثانية</div>
+        <div class="hero-title">Urology System Disorders — اضطرابات الجهاز البولي</div>
+        <div class="hero-sub">Chronic Kidney Disease · Renal Stones · Glomerulonephritis · Pyelonephritis</div>
+      </div>
+    </div>
+
+    <!-- CKD Stages -->
+    <div class="section-title">Stages of Chronic Kidney Disease — مراحل القصور الكلوي المزمن</div>
+    <div class="stages">
+      <div class="stage-card">
+        <span class="stage-badge s1">Stage 1 — المرحلة الأولى</span>
+        <div class="stage-title">Reduced Renal Reserve<br><span style="font-family:'Tajawal'; font-size:10.5px; color:var(--muted);">انخفاض الاحتياطي الكلوي</span></div>
+        <div class="stage-body">40–75% nephron loss فقدان<br>No symptoms — لا توجد أعراض<br>Bone loss may start — قد تبدأ هشاشة العظام</div>
+      </div>
+      <div class="stage-card">
+        <span class="stage-badge s2">Stage 2 — المرحلة الثانية</span>
+        <div class="stage-title">Renal Insufficiency<br><span style="font-family:'Tajawal'; font-size:10.5px; color:var(--muted);">قصور كلوي</span></div>
+        <div class="stage-body">75–90% nephron loss فقدان<br>↑ Creatinine & BUN ارتفاع<br>Dilute urine — بول مخفف</div>
+      </div>
+      <div class="stage-card">
+        <span class="stage-badge s3">Stage 3 — ESRD الفشل الكلوي</span>
+        <div class="stage-title">End-Stage Renal Disease<br><span style="font-family:'Tajawal'; font-size:10.5px; color:var(--muted);">المرحلة النهائية</span></div>
+        <div class="stage-body">&lt;10% nephron function وظيفة<br>Shortness of breath — ضيق تنفس<br>Uremic frost — بَرَد يوريمي</div>
+      </div>
+    </div>
+
+    <!-- Manifestations + Diagnostics -->
+    <div class="section-title">Clinical Manifestations & Diagnostics — الأعراض والتشخيص</div>
+    <div class="grid2" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="card-title red"><span class="dot"></span>Clinical Manifestations — الأعراض السريرية</div>
+        <div class="slabel">Cardiovascular — القلب والأوعية</div>
+        <div class="tags">
+          <span class="tag red">Hypertension ارتفاع الضغط</span>
+          <span class="tag red">Pitting edema وذمة</span>
+          <span class="tag red">Heart failure فشل قلبي</span>
+          <span class="tag red">Pericarditis التهاب التامور</span>
+        </div>
+        <div class="slabel">Neurologic — العصبي</div>
+        <div class="tags">
+          <span class="tag red">Fatigue تعب شديد</span>
+          <span class="tag red">Confusion تشوش ذهني</span>
+          <span class="tag red">Seizures تشنجات</span>
+          <span class="tag red">Tremors رعشة</span>
+        </div>
+        <div class="slabel">GI — الجهاز الهضمي</div>
+        <div class="tags">
+          <span class="tag red">Nausea غثيان</span>
+          <span class="tag red">Metallic taste طعم معدني</span>
+          <span class="tag red">GI Bleeding نزيف</span>
+        </div>
+        <div class="slabel">Skin — الجلد</div>
+        <div class="tags">
+          <span class="tag red">Pruritus حكة</span>
+          <span class="tag red">Gray-bronze skin لون رمادي</span>
+          <span class="tag red">Dry skin جفاف</span>
+        </div>
+        <div class="slabel">Musculoskeletal — العظام والعضلات</div>
+        <div class="tags">
+          <span class="tag red">Bone pain ألم العظام</span>
+          <span class="tag red">Muscle cramps تشنج عضلي</span>
+          <span class="tag red">Fractures كسور</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title blue"><span class="dot"></span>Diagnostics & Treatment — التشخيص والعلاج</div>
+        <div class="slabel">Lab Findings — نتائج المختبر</div>
+        <div class="tags">
+          <span class="tag blue">↓ GFR انخفاض معدل الترشيح</span>
+          <span class="tag blue">↑ Creatinine كرياتينين مرتفع</span>
+          <span class="tag blue">↑ BUN يوريا مرتفعة</span>
+          <span class="tag blue">↑ Potassium ⚠ بوتاسيوم خطر</span>
+          <span class="tag blue">↓ Calcium كالسيوم منخفض</span>
+          <span class="tag blue">Metabolic acidosis حماض</span>
+          <span class="tag blue">Anemia — ↓ EPO فقر الدم</span>
+        </div>
+        <hr class="divider">
+        <div class="slabel">Pharmacology — الأدوية</div>
+        <div class="tags">
+          <span class="tag blue">Antihypertensives خافضات الضغط</span>
+          <span class="tag blue">Erythropoietin هرمون كريات الدم</span>
+          <span class="tag blue">Antacids مضادات الحموضة</span>
+        </div>
+        <hr class="divider">
+        <div class="slabel">Diet Restrictions — القيود الغذائية</div>
+        <div class="info-row"><span class="info-lbl">Protein بروتين</span><span class="info-val">1 g/kg/day — تقليل البروتين</span></div>
+        <div class="info-row"><span class="info-lbl">Sodium ملح</span><span class="info-val">2–3 g/day — تقليل الملح</span></div>
+        <div class="info-row"><span class="info-lbl">Potassium</span><span class="info-val">1.5–2.5 g/day — تحكم في البوتاسيوم</span></div>
+        <div class="info-row"><span class="info-lbl">Fluid سوائل</span><span class="info-val">Urine output + 500 ml/day</span></div>
+      </div>
+    </div>
+
+    <!-- Dialysis -->
+    <div class="section-title">Dialysis — الغسيل الكلوي</div>
+    <div class="card span2" style="margin-bottom:12px;">
+      <div class="card-title purple"><span class="dot"></span>Types of Dialysis — أنواع الغسيل الكلوي</div>
+      <div class="dialysis-grid">
+        <div class="dialysis-card">
+          <div class="dialysis-title hemo">🩸 Hemodialysis — الغسيل الدموي</div>
+          <div class="info-val" style="font-size:11px; margin-bottom:8px; color:var(--muted);">
+            Most common method — الأكثر شيوعاً<br>
+            Used in acute illness & ESRD long-term<br>
+            <span style="font-family:'Tajawal';">يحتاج: وصول وعائي (ناسور / فستولا)</span>
+          </div>
+          <div class="slabel">Complications — المضاعفات</div>
+          <div class="tags">
+            <span class="tag purple">Hypotension انخفاض الضغط</span>
+            <span class="tag purple">Dysrhythmia اضطراب نظم القلب</span>
+            <span class="tag purple">Muscle cramping تشنج</span>
+            <span class="tag purple">Sleep problems 85% اضطراب النوم</span>
+            <span class="tag purple">Chest pain ألم صدر</span>
+            <span class="tag purple">Atherosclerosis تصلب شرايين</span>
+          </div>
+          <div class="alert amber" style="margin-top:8px;">
+            <span>⚠️</span>
+            <div class="alert-body"><strong>Protect Fistula — حماية الناسور:</strong> No BP measurement or blood draw on fistula arm!<br><span style="font-family:'Tajawal';">لا تقس الضغط أو تسحب دم من ذراع الناسور!</span></div>
+          </div>
+        </div>
+        <div class="dialysis-card">
+          <div class="dialysis-title peri">🫁 Peritoneal Dialysis — الغسيل البريتوني</div>
+          <div class="info-val" style="font-size:11px; margin-bottom:8px; color:var(--muted);">
+            الغشاء البريتوني يعمل كفلتر طبيعي<br>
+            Abdominal catheter — <span style="font-family:'Tajawal';">كاتيتر بطني</span><br>
+            Dialysate in → dwell → drain (خروج)
+          </div>
+          <div class="slabel">Complications — المضاعفات</div>
+          <div class="tags">
+            <span class="tag teal">Peritonitis التهاب البريتون ⚠</span>
+            <span class="tag teal">Catheter leakage تسرب الكاتيتر</span>
+            <span class="tag teal">Abdominal hernia فتق بطني</span>
+            <span class="tag teal">Hypertriglyceridemia دهون مرتفعة</span>
+            <span class="tag teal">Bleeding نزيف</span>
+          </div>
+          <div class="alert amber" style="margin-top:8px;">
+            <span>💧</span>
+            <div class="alert-body"><strong>Catheter Care — رعاية الكاتيتر:</strong> Clean with soap & water. Never submerge in bath.<br><span style="font-family:'Tajawal';">تنظيف يومي بالماء والصابون. لا غمر في الماء.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Urology Conditions -->
+    <div class="section-title">Other Urological Conditions — حالات بولية أخرى</div>
+    <div class="grid2" style="margin-bottom:12px;">
+      <!-- Renal Stones -->
+      <div class="card">
+        <div class="card-title blue"><span class="dot"></span>Renal Stones — حصوات الكلى (Nephrolithiasis)</div>
+        <div class="info-row"><span class="info-lbl">Definition</span><span class="info-val">Crystalline mineral deposits in kidneys<br><span class="ar">ترسب معادن بلورية داخل الكلى</span></span></div>
+        <div class="slabel">Types — الأنواع</div>
+        <div class="tags">
+          <span class="tag blue">Calcium Oxalate ★ الأكثر شيوعاً</span>
+          <span class="tag blue">Uric Acid حمض يوريك</span>
+          <span class="tag blue">Struvite ستروفيت</span>
+          <span class="tag blue">Cystine سيستين</span>
+        </div>
+        <div class="slabel">Symptoms — الأعراض</div>
+        <div class="tags">
+          <span class="tag blue">Severe flank pain ألم شديد بالخاصرة</span>
+          <span class="tag blue">Hematuria دم بالبول</span>
+          <span class="tag blue">Nausea غثيان</span>
+          <span class="tag blue">Painful urination ألم أثناء التبول</span>
+        </div>
+        <hr class="divider">
+        <div class="slabel">Treatment — العلاج</div>
+        <div class="tags">
+          <span class="tag blue">Hydration ترطيب 2-2.5L</span>
+          <span class="tag blue">NSAIDs مسكنات</span>
+          <span class="tag blue">Lithotripsy موجات صدمية</span>
+          <span class="tag blue">Ureteroscopy منظار الحالب</span>
+        </div>
+        <div class="slabel">Prevention — الوقاية</div>
+        <div class="info-row"><span class="info-lbl">Lifestyle</span><span class="info-val">↑ fluids · ↓ sodium · ↓ oxalate foods<br><span class="ar">زيادة السوائل، تقليل الملح والأكسالات</span></span></div>
+      </div>
+
+      <!-- Glomerulonephritis + Pyelonephritis -->
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="card">
+          <div class="card-title red"><span class="dot"></span>Glomerulonephritis — التهاب كبيبات الكلى</div>
+          <div class="info-row"><span class="info-lbl">Causes</span><span class="info-val">Strep infection · Autoimmune · Vasculitis<br><span class="ar">عدوى عقدية · مناعة ذاتية · التهاب أوعية</span></span></div>
+          <div class="slabel">Symptoms — الأعراض</div>
+          <div class="tags">
+            <span class="tag red">Hematuria دم بالبول</span>
+            <span class="tag red">Proteinuria بروتين بالبول</span>
+            <span class="tag red">Edema تورم</span>
+            <span class="tag red">Hypertension ضغط مرتفع</span>
+            <span class="tag red">Oliguria قلة البول</span>
+          </div>
+          <div class="slabel">Treatment — العلاج</div>
+          <div class="tags">
+            <span class="tag red">ACE Inhibitors خافضات الضغط</span>
+            <span class="tag red">Steroids كورتيزون</span>
+            <span class="tag red">Diuretics مدرات البول</span>
+            <span class="tag red">Low Na diet ملح قليل</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title amber"><span class="dot"></span>Pyelonephritis — التهاب الحويضة والكلية</div>
+          <div class="info-row"><span class="info-lbl">Cause</span><span class="info-val">Bacterial UTI ascending to kidneys<br><span class="ar">عدوى بكتيرية صاعدة من المثانة للكلى</span></span></div>
+          <div class="slabel">Acute Symptoms — أعراض حادة</div>
+          <div class="tags">
+            <span class="tag amber">Fever & chills حمى وقشعريرة</span>
+            <span class="tag amber">Flank pain ألم الخاصرة</span>
+            <span class="tag amber">Dysuria ألم التبول</span>
+            <span class="tag amber">Foul urine بول برائحة كريهة</span>
+          </div>
+          <div class="slabel">Treatment — العلاج</div>
+          <div class="tags">
+            <span class="tag amber">Antibiotics مضادات حيوية</span>
+            <span class="tag amber">IV Fluids سوائل وريدية</span>
+            <span class="tag amber">Antipyretics خافضات حرارة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nursing Urology -->
+    <div class="section-title">Nursing Management — التمريض</div>
+    <div class="card span2">
+      <div class="card-title amber"><span class="dot"></span>Nursing Management (CKD & Dialysis) — التمريض للقصور الكلوي</div>
+      <div class="nursing-grid">
+        <div>
+          <div class="slabel">Nursing Diagnoses — التشخيصات التمريضية</div>
+          <div class="nursing-item">Excess fluid volume — احتباس سوائل</div>
+          <div class="nursing-item">Imbalanced nutrition — سوء التغذية</div>
+          <div class="nursing-item">Activity intolerance — تعب وأنيميا</div>
+          <div class="nursing-item">Low self-esteem — الاعتماد على الغير</div>
+          <div class="nursing-item">Knowledge deficit — قلة المعرفة بالمرض</div>
+        </div>
+        <div>
+          <div class="slabel">Monitor Daily — المراقبة اليومية</div>
+          <div class="nursing-item">BP & fluid balance — الضغط وتوازن السوائل</div>
+          <div class="nursing-item">Electrolytes — خاصة البوتاسيوم ⚠</div>
+          <div class="nursing-item">Cardiac & lung sounds — أصوات القلب والرئة</div>
+          <div class="nursing-item">Uremic symptoms worsening — أعراض اليوريميا</div>
+          <div class="nursing-item">IV rate — strictly slow — سرعة التسريب</div>
+        </div>
+        <div>
+          <div class="slabel">Key Interventions — التدخلات الأساسية</div>
+          <div class="nursing-item">Protect vascular access — لا قياس ضغط على ذراع الناسور!</div>
+          <div class="nursing-item">No tight dressings on fistula arm — لا ضمادات ضاغطة</div>
+          <div class="nursing-item">Antihistamines for pruritus — مضادات الهيستامين للحكة</div>
+          <div class="nursing-item">Psychosocial support — دعم نفسي واجتماعي</div>
+          <div class="nursing-item">Educate patient & family — تثقيف المريض والأسرة</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-uro -->
+
+  <footer class="footer">Endocrine &amp; Urology System Disorders &nbsp;·&nbsp; Medical Nursing Study Guide &nbsp;·&nbsp; دليل دراسة التمريض الطبي</footer>
+</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.lecture-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  document.querySelector('.tab-btn.' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrine System Disorders — Dr. Zinab</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #f5f6fa;
+  --white:     #ffffff;
+  --border:    #e4e7f0;
+  --text:      #1a1d2e;
+  --muted:     #6b7280;
+  --light:     #f0f2f8;
+
+  --blue:      #2563eb;
+  --blue-bg:   #eff6ff;
+  --blue-b:    #bfdbfe;
+
+  --teal:      #0d9488;
+  --teal-bg:   #f0fdfa;
+  --teal-b:    #99f6e4;
+
+  --amber:     #d97706;
+  --amber-bg:  #fffbeb;
+  --amber-b:   #fde68a;
+
+  --coral:     #dc2626;
+  --coral-bg:  #fef2f2;
+  --coral-b:   #fecaca;
+
+  --purple:    #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-b:  #ddd6fe;
+
+  --green:     #059669;
+  --green-bg:  #ecfdf5;
+  --green-b:   #a7f3d0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.ar { font-family: 'Noto Sans Arabic', sans-serif; }
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #1d4ed8 100%);
+  padding: 2.5rem 2rem 1.8rem;
+  text-align: center;
+  color: white;
+}
+.header-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+header h1 { font-size: clamp(20px,4vw,32px); font-weight: 700; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.8; margin-bottom: 20px; }
+.tabs {
+  display: flex; justify-content: center;
+  gap: 8px; flex-wrap: wrap;
+}
+.tab {
+  padding: 9px 22px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: white; transition: all .2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.tab.active, .tab:hover {
+  background: white; color: var(--blue); border-color: white;
+}
+
+/* ── LAYOUT ── */
+.section { display: none; padding: 1.8rem; max-width: 1080px; margin: 0 auto; }
+.section.active { display: block; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.g3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; margin-bottom: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 8px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.ch { font-size: 11.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .8px; margin-bottom: 10px; padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 7px; }
+.ch-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+.card-lb { border-left: 3px solid var(--blue); }
+.card-lt { border-left: 3px solid var(--teal); }
+.card-la { border-left: 3px solid var(--amber); }
+.card-lc { border-left: 3px solid var(--coral); }
+.card-lp { border-left: 3px solid var(--purple); }
+.card-lg { border-left: 3px solid var(--green); }
+
+/* ── ROWS ── */
+.row {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 5px 0; border-bottom: 1px solid #f3f4f6;
+  font-size: 12.5px; line-height: 1.55;
+}
+.row:last-child { border-bottom: none; }
+.ren { color: var(--text); }
+.rar { color: var(--muted); font-size: 11.5px; margin-top: 1px; }
+
+/* ── TAGS ── */
+.tag {
+  display: inline-block; font-size: 10.5px; font-weight: 600;
+  padding: 2px 9px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.tb  { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-b); }
+.tt  { background: var(--teal-bg);   color: var(--teal);   border: 1px solid var(--teal-b); }
+.ta  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-b); }
+.tc  { background: var(--coral-bg);  color: var(--coral);  border: 1px solid var(--coral-b); }
+.tp  { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-b); }
+.tg  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-b); }
+
+/* ── STAT MINI ── */
+.stat {
+  background: var(--light); border-radius: 10px;
+  padding: 10px 8px; text-align: center;
+}
+.stat .n { font-size: 22px; font-weight: 700; }
+.stat .l { font-size: 10px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+
+/* ── SECTION HEADING ── */
+.sh { font-size: 16px; font-weight: 700; color: var(--text); margin: 0 0 3px;
+  display: flex; align-items: center; gap: 7px; }
+.ss { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+/* ── BIG COMPARE ── */
+.bcomp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.bhypo { background: var(--blue-bg); border: 1.5px solid var(--blue-b); border-radius: 14px; padding: 16px 18px; }
+.bhyper { background: var(--coral-bg); border: 1.5px solid var(--coral-b); border-radius: 14px; padding: 16px 18px; }
+.bhypo .ch { color: var(--blue); border-color: var(--blue-b); }
+.bhyper .ch { color: var(--coral); border-color: var(--coral-b); }
+
+/* ── TABLE ── */
+.tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tbl th {
+  background: var(--light); padding: 8px 12px;
+  text-align: left; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px; color: var(--muted);
+  border-bottom: 2px solid var(--border);
+}
+.tbl td { padding: 7px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: var(--light); }
+.th-hypo { color: var(--blue) !important; }
+.th-hyper { color: var(--coral) !important; }
+.tc-hypo { color: #1d4ed8; }
+.tc-hyper { color: #991b1b; }
+
+/* ── NURSING ROW ── */
+.nrow { display: flex; gap: 10px; align-items: flex-start;
+  padding: 7px 0; border-bottom: 1px solid #f3f4f6; font-size: 12.5px; }
+.nrow:last-child { border-bottom: none; }
+.nico { width: 30px; height: 30px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0; }
+
+/* ── TYPE BOX ── */
+.type-box { border-radius: 12px; padding: 13px 14px; }
+
+/* ── INSULIN TABLE ── */
+.itbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.itbl th { background: var(--light); padding: 8px 10px; text-align: left;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; color: var(--muted); }
+.itbl td { padding: 7px 10px; border-bottom: 1px solid #f3f4f6; }
+.itbl tr:last-child td { border-bottom: none; }
+.itbl tr:hover td { background: var(--light); }
+
+/* ── FOOTER ── */
+footer { text-align: center; padding: 1.8rem; color: var(--muted);
+  font-size: 12px; border-top: 1px solid var(--border); margin-top: 1rem;
+  background: var(--white); }
+
+@media (max-width:620px) {
+  .g2, .bcomp { grid-template-columns: 1fr; }
+  .section { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Endocrine System · Dr. Zinab</div>
+  <h1>Endocrine System Disorders</h1>
+  <p class="sub">اضطرابات الجهاز الصماوي · ملخص المحاضرتين</p>
+  <div class="tabs">
+    <div class="tab active" onclick="go('dm',this)">🩸 Diabetes Mellitus</div>
+    <div class="tab" onclick="go('thy',this)">🦋 Thyroid Disorders</div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ DIABETES ═══════════════════════ -->
+<section id="dm" class="section active">
+
+  <p class="sh">🩸 Diabetes Mellitus — السكري</p>
+  <p class="ss">A metabolic disorder with elevated blood glucose · اضطراب في الأنسولين وارتفاع السكر</p>
+
+  <!-- Pancreas -->
+  <div class="g2">
+    <div class="card card-lb">
+      <div class="ch" style="color:var(--blue)"><div class="ch-dot" style="background:var(--blue)"></div>Pancreas — البنكرياس</div>
+      <div class="row">
+        <span class="tag tb">Acini</span>
+        <div><div class="ren">Exocrine → digestive juices to duodenum</div><div class="rar ar">خارجي — عصارات هضمية للاثني عشر</div></div>
+      </div>
+      <div class="row">
+        <span class="tag tt">Islets</span>
+        <div><div class="ren">Endocrine → hormones directly into blood</div><div class="rar ar">داخلي — هرمونات مباشرة للدم</div></div>
+      </div>
+      <div class="g4" style="margin-top:10px">
+        <div class="stat"><div class="n" style="color:var(--blue)">60%</div><div class="l">β cells<br>→ Insulin</div></div>
+        <div class="stat"><div class="n" style="color:var(--teal)">25%</div><div class="l">α cells<br>→ Glucagon</div></div>
+        <div class="stat"><div class="n" style="color:var(--amber)">10%</div><div class="l">δ cells<br>→ Somatostatin</div></div>
+        <div class="stat"><div class="n" style="color:var(--muted)">5%</div><div class="l">PP cells<br>→ Polypeptide</div></div>
+      </div>
+    </div>
+
+    <div class="card card-lt">
+      <div class="ch" style="color:var(--teal)"><div class="ch-dot" style="background:var(--teal)"></div>What is Diabetes? — تعريف السكري</div>
+      <div class="row"><span class="tag tt">Def</span><div><div class="ren">Group of metabolic disorders → hyperglycemia (high blood glucose)</div><div class="rar ar">اضطرابات أيضية → ارتفاع الغلوكوز في الدم</div></div></div>
+      <div class="row"><span class="tag tb">Cause</span><div><div class="ren">Defect in insulin secretion, action, or both</div><div class="rar ar">خلل في إفراز أو عمل الأنسولين أو كليهما</div></div></div>
+      <div class="row"><span class="tag ta">History</span><div><div class="ren">Treatable since 1921 — no complete cure yet</div><div class="rar ar">يُعالَج منذ 1921 · لا يوجد علاج كامل حتى الآن</div></div></div>
+      <div class="row"><span class="tag tp">Insulin</span><div><div class="ren">Controls blood glucose — produced by β cells of pancreas</div><div class="rar ar">ينظم السكر في الدم — تنتجه خلايا بيتا في البنكرياس</div></div></div>
+    </div>
+  </div>
+
+  <!-- Types -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="ch" style="color:var(--purple)"><div class="ch-dot" style="background:var(--purple)"></div>Types of Diabetes — أنواع السكري</div>
+    <div class="g4">
+      <div class="type-box" style="background:var(--blue-bg);border:1px solid var(--blue-b)">
+        <div style="color:var(--blue);font-size:12px;font-weight:700;margin-bottom:5px">Type 1 · النوع الأول</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6">
+          Beta cells destroyed · IDDM<br>5-10% of all diabetes<br>Usually &lt;30 yrs · thin<br>Needs insulin always<br>
+          <span class="ar" style="font-size:11px">خلايا بيتا مدمرة · يحتاج أنسولين دائماً</span>
+        </div>
+      </div>
+      <div class="type-box" style="background:var(--amber-bg);border:1px solid var(--amber-b)">
+        <div style="color:var(--amber);font-size:12px;font-weight:700;margin-bottom:5px">Type 2 · النوع الثاني</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6">
+          Insulin resistance · NIDDM<br>90-95% · usually >30 yrs<br>Often obese · hereditary<br>Diet/oral meds/insulin<br>
+          <span class="ar" style="font-size:11px">مقاومة الأنسولين · الأكثر شيوعاً</span>
+        </div>
+      </div>
+      <div class="type-box" style="background:var(--teal-bg);border:1px solid var(--teal-b)">
+        <div style="color:var(--teal);font-size:12px;font-weight:700;margin-bottom:5px">Gestational · حمل</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6">
+          Pregnancy hormones block insulin<br>2-5% of pregnancies<br>Screen at 24-28 weeks<br>Resolves after delivery<br>
+          <span class="ar" style="font-size:11px">هرمونات المشيمة تثبط الأنسولين</span>
+        </div>
+      </div>
+      <div class="type-box" style="background:var(--purple-bg);border:1px solid var(--purple-b)">
+        <div style="color:var(--purple);font-size:12px;font-weight:700;margin-bottom:5px">Secondary · ثانوي</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.6">
+          Due to other conditions<br>Pancreatic disease<br>Hormonal abnormalities<br>Drugs (steroids, estrogen)<br>
+          <span class="ar" style="font-size:11px">بسبب أمراض أو أدوية أخرى</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Symptoms & Diagnosis -->
+  <div class="g2">
+    <div class="card card-lc">
+      <div class="ch" style="color:var(--coral)"><div class="ch-dot" style="background:var(--coral)"></div>Symptoms — الأعراض (Classic 3 Ps)</div>
+      <div class="row"><span class="tag tc">Polyuria</span><div><div class="ren">Frequent urination · كثرة التبول</div><div class="rar ar">من أوائل الأعراض وأكثرها وضوحاً</div></div></div>
+      <div class="row"><span class="tag tc">Polydipsia</span><div><div class="ren">Excessive thirst · كثرة العطش</div><div class="rar ar">بسبب فقدان السوائل عن طريق البول</div></div></div>
+      <div class="row"><span class="tag tc">Polyphagia</span><div><div class="ren">Excessive hunger · كثرة الأكل</div><div class="rar ar">لأن الخلايا لا تحصل على الطاقة</div></div></div>
+      <div class="row"><span class="tag ta">Other</span><div><div class="ren">Fatigue · weight loss · blurred vision · dry skin · numbness · recurrent infections</div><div class="rar ar">تعب · فقدان وزن · ضبابية البصر · جفاف · تنميل · عدوى متكررة</div></div></div>
+    </div>
+    <div class="card card-lg">
+      <div class="ch" style="color:var(--green)"><div class="ch-dot" style="background:var(--green)"></div>Diagnosis — التشخيص</div>
+      <div class="row"><span class="tag tg">FBG</span><div><div class="ren">Fasting blood glucose ≥ 126 mg/dl</div><div class="rar ar">سكر صيام ≥ 126 · لا أكل ولا شرب غير الماء بعد منتصف الليل</div></div></div>
+      <div class="row"><span class="tag tb">2h PPG</span><div><div class="ren">2-hr post 75g glucose ≥ 200 mg/dl</div><div class="rar ar">سكر ساعتين بعد شرب الجلوكوز ≥ 200</div></div></div>
+      <div class="row"><span class="tag ta">Random</span><div><div class="ren">Random glucose ≥ 200 + classic symptoms</div><div class="rar ar">عشوائي ≥ 200 مع وجود أعراض</div></div></div>
+      <div class="row"><span class="tag tp">HbA1c</span><div><div class="ren">Reflects avg glucose over 2-3 months · glucose binds to hemoglobin in RBCs</div><div class="rar ar">متوسط السكر لآخر 3 شهور · الجلوكوز يرتبط بالهيموجلوبين</div></div></div>
+    </div>
+  </div>
+
+  <!-- Management -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="ch" style="color:var(--green)"><div class="ch-dot" style="background:var(--green)"></div>Management — الإدارة والعلاج</div>
+    <div class="g3" style="margin:0">
+      <div>
+        <div style="color:var(--teal);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">🥗 Nutrition · التغذية</div>
+        <div class="row"><span class="tag tt">Carbs</span><div><div class="ren">50–60% of calories · الكربوهيدرات</div></div></div>
+        <div class="row"><span class="tag tb">Fat</span><div><div class="ren">20–30% of calories · الدهون</div></div></div>
+        <div class="row"><span class="tag ta">Protein</span><div><div class="ren">~20% · (50% converts to glucose)</div></div></div>
+        <div class="row"><span class="tag tg">Goal</span><div><div class="ren">Maintain ideal weight · control serum lipids</div><div class="rar ar">الوصول للوزن المثالي والسيطرة على الدهون</div></div></div>
+      </div>
+      <div>
+        <div style="color:var(--blue);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">🏃 Exercise · الرياضة</div>
+        <div class="row"><span class="tag tb">↓ BG</span><div><div class="ren">Lowers blood glucose → muscles uptake glucose</div><div class="rar ar">تقلل السكر — العضلات تمتص الجلوكوز</div></div></div>
+        <div class="row"><span class="tag tt">↑ Insulin</span><div><div class="ren">Improves insulin utilization</div><div class="rar ar">تحسّن استخدام الأنسولين</div></div></div>
+        <div class="row"><span class="tag tg">Heart</span><div><div class="ren">Reduces cardiovascular risk factors</div><div class="rar ar">تقلل عوامل خطر القلب والأوعية</div></div></div>
+      </div>
+      <div>
+        <div style="color:var(--amber);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">📊 Monitoring · الرصد</div>
+        <div class="row"><span class="tag ta">BGM</span><div><div class="ren">2–4×/day · before meals · fingerstick method</div><div class="rar ar">2-4 مرات يومياً · قبل الوجبات</div></div></div>
+        <div class="row"><span class="tag tc">Ketones</span><div><div class="ren">Urine dipstick when BG >250 or during illness/pregnancy</div><div class="rar ar">شريط البول عند ارتفاع السكر أو المرض</div></div></div>
+        <div class="row"><span class="tag tp">HbA1c</span><div><div class="ren">Every 2–3 months to track long-term control</div><div class="rar ar">كل 3 شهور لمتابعة الضبط طويل الأمد</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Insulin Table -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="ch" style="color:var(--amber)"><div class="ch-dot" style="background:var(--amber)"></div>Insulin Categories — أنواع الأنسولين</div>
+    <div style="overflow-x:auto">
+      <table class="itbl">
+        <thead>
+          <tr>
+            <th>Type / النوع</th>
+            <th>Drug Examples</th>
+            <th>Onset</th>
+            <th>Peak</th>
+            <th>Duration</th>
+            <th>Use / الاستخدام</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tc">Rapid-acting</span><div style="font-size:10.5px;color:var(--muted);margin-top:2px">سريع المفعول</div></td>
+            <td>Lispro (Humalog)<br>Aspart (Novolog)</td>
+            <td>10–15 min</td>
+            <td>40–60 min</td>
+            <td>2–4 h</td>
+            <td style="font-size:11.5px;color:var(--muted)">Post-meal hyperglycemia · بعد الأكل مباشرة</td>
+          </tr>
+          <tr>
+            <td><span class="tag ta">Short-acting</span><div style="font-size:10.5px;color:var(--muted);margin-top:2px">قصير المفعول</div></td>
+            <td>Regular (Humalog R, Novolin R)</td>
+            <td>30–60 min</td>
+            <td>2–3 h</td>
+            <td>4–6 h</td>
+            <td style="font-size:11.5px;color:var(--muted)">20–30 min before meal · قبل الوجبة</td>
+          </tr>
+          <tr>
+            <td><span class="tag tb">Intermediate</span><div style="font-size:10.5px;color:var(--muted);margin-top:2px">متوسط المفعول</div></td>
+            <td>NPH (Humulin N)</td>
+            <td>2–4 h</td>
+            <td>4–12 h</td>
+            <td>16–20 h</td>
+            <td style="font-size:11.5px;color:var(--muted)">Usually after food · بعد الأكل</td>
+          </tr>
+          <tr>
+            <td><span class="tag tp">Very long-acting</span><div style="font-size:10.5px;color:var(--muted);margin-top:2px">طويل جداً</div></td>
+            <td>Glargine (Lantus)<br>Detemir (Levemir)</td>
+            <td>1 h</td>
+            <td>No peak</td>
+            <td>24 h</td>
+            <td style="font-size:11.5px;color:var(--muted)">Basal dose · الجرعة القاعدية الأساسية</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+      💉 <strong>Injection sites (fastest → slowest absorption):</strong>
+      Abdomen &rarr; Arms &rarr; Thighs &rarr; Hips &nbsp;|&nbsp;
+      <span class="ar">البطن ← الذراعين ← الأفخاذ ← الوركين</span>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="g3">
+    <div class="card card-lc">
+      <div class="ch" style="color:var(--coral)"><div class="ch-dot" style="background:var(--coral)"></div>Hypoglycemia — انخفاض السكر</div>
+      <div class="row"><span class="tag tb">BG</span><div><div class="ren">&lt; 3 mmol/L · rapid onset · good health before</div><div class="rar ar">أقل من 3 · ظهور سريع · صحة جيدة قبلها</div></div></div>
+      <div class="row"><span class="tag tt">Cause</span><div><div class="ren">Too much insulin · missed meal · unexpected exercise</div><div class="rar ar">زيادة الأنسولين · تخطي وجبة · رياضة مفاجئة</div></div></div>
+      <div class="row"><span class="tag tc">Signs</span><div><div class="ren">Pale cold clammy skin · strong pulse · ↑ systolic BP</div><div class="rar ar">جلد شاحب بارد رطب · نبض قوي · ارتفاع ضغط</div></div></div>
+      <div class="row"><span class="tag tg">Treat</span><div><div class="ren">Oral sugar → rapid recovery · irritable after</div><div class="rar ar">سكر فموي → تعافي سريع</div></div></div>
+    </div>
+    <div class="card card-la">
+      <div class="ch" style="color:var(--amber)"><div class="ch-dot" style="background:var(--amber)"></div>DKA — الكيتونية الحمضية</div>
+      <div class="row"><span class="tag tc">BG</span><div><div class="ren">&gt; 20 mmol/L · slow onset · ill before</div><div class="rar ar">أكثر من 20 · ظهور بطيء · مريض قبلها</div></div></div>
+      <div class="row"><span class="tag ta">Signs</span><div><div class="ren">Flushed hot dry skin · acetone breath (fruity odor) · N&V · air hunger</div><div class="rar ar">جلد محمر جاف · رائحة أسيتون · غثيان وقيء</div></div></div>
+      <div class="row"><span class="tag tb">Path</span><div><div class="ren">↓Insulin → ↑lipolysis → metabolic acidosis → coma/death</div><div class="rar ar">نقص أنسولين → تكسير دهون → حموضة → غيبوبة</div></div></div>
+      <div class="row"><span class="tag tt">Treat</span><div><div class="ren">IV fluids (0.9% NS) + Insulin + K⁺ replacement</div><div class="rar ar">سوائل وريدية + أنسولين + بوتاسيوم</div></div></div>
+    </div>
+    <div class="card card-lp">
+      <div class="ch" style="color:var(--purple)"><div class="ch-dot" style="background:var(--purple)"></div>Long-term — المضاعفات طويلة الأمد</div>
+      <div class="row"><span class="tag tc">Macro</span><div><div class="ren">Cardiovascular disease · Peripheral vascular · Stroke</div><div class="rar ar">أمراض قلب وأوعية · جلطات دماغية</div></div></div>
+      <div class="row"><span class="tag tb">Micro</span><div><div class="ren">Retinopathy (eyes) · Neuropathy (nerves) · Nephropathy (kidneys)</div><div class="rar ar">اعتلال شبكية · أعصاب · كلى</div></div></div>
+      <div class="row"><span class="tag ta">HHNK</span><div><div class="ren">Hyperglycemic hyperosmolar nonketotic coma</div><div class="rar ar">غيبوبة فرط السكر بدون كيتونات</div></div></div>
+      <div class="row"><span class="tag tg">Other</span><div><div class="ren">Sexual dysfunction · poor wound healing · foot ulcers</div><div class="rar ar">خلل جنسي · إبطاء التئام الجروح · قرحة القدم</div></div></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════ THYROID ═══════════════════════ -->
+<section id="thy" class="section">
+
+  <p class="sh">🦋 Thyroid Disorders — اضطرابات الغدة الدرقية</p>
+  <p class="ss">Hypothyroidism (↓) vs Hyperthyroidism (↑) · قصور الدرقية مقابل فرط نشاطها</p>
+
+  <!-- Big Compare -->
+  <div class="bcomp">
+    <div class="bhypo">
+      <div class="ch"><div class="ch-dot" style="background:var(--blue)"></div>Hypothyroidism ↓ — قصور الدرقية</div>
+      <div class="row"><span class="tag tb">Def</span><div><div class="ren">Deficiency of thyroid hormone → slowed metabolism + personality changes</div><div class="rar ar">نقص هرمونات الدرقية → بطء التمثيل الغذائي وتغيرات في الشخصية</div></div></div>
+      <div class="row"><span class="tag tt">Who</span><div><div class="ren">Women 5× more than men · peak age 30–60 yrs</div><div class="rar ar">النساء أكثر 5 مرات · عمر 30-60 سنة</div></div></div>
+      <div class="row"><span class="tag tp">Complication</span><div><div class="ren">Myxedema → severe hypo-metabolic state · Myxedema coma = life-threatening</div><div class="rar ar">المخسمة → حالة حادة خطيرة تهدد الحياة</div></div></div>
+    </div>
+    <div class="bhyper">
+      <div class="ch"><div class="ch-dot" style="background:var(--coral)"></div>Hyperthyroidism ↑ — فرط الدرقية</div>
+      <div class="row"><span class="tag tc">Def</span><div><div class="ren">Excess thyroid hormones → accelerated metabolism · 2nd most common endocrine disorder</div><div class="rar ar">زيادة هرمونات الدرقية → تسارع التمثيل الغذائي</div></div></div>
+      <div class="row"><span class="tag ta">Who</span><div><div class="ren">Women 8× more · may follow emotional shock, stress, or infection</div><div class="rar ar">النساء أكثر 8 مرات · يبدأ بعد صدمة نفسية أو إجهاد</div></div></div>
+      <div class="row"><span class="tag tp">Graves'</span><div><div class="ren">Most common type · abnormal immunoglobulins stimulate thyroid gland excessively</div><div class="rar ar">أشيع نوع · أجسام مناعية غير طبيعية تحفز الغدة</div></div></div>
+    </div>
+  </div>
+
+  <!-- Causes -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="ch" style="color:var(--amber)"><div class="ch-dot" style="background:var(--amber)"></div>Causes — الأسباب</div>
+    <div class="g2" style="margin:0">
+      <div>
+        <div style="color:var(--blue);font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:7px">Hypothyroidism — أسباب القصور</div>
+        <div class="row"><span class="tag tb">Primary</span><div><div class="ren">Iodine deficiency · congenital defects · surgery/radioactive therapy · antithyroid drugs · chronic inflammatory disease</div><div class="rar ar">نقص يود · عيوب خلقية · جراحة · أدوية</div></div></div>
+        <div class="row"><span class="tag tt">Secondary</span><div><div class="ren">Insufficient pituitary stimulation of a normal thyroid gland</div><div class="rar ar">تحفيز غير كافٍ من الغدة النخامية</div></div></div>
+        <div class="row"><span class="tag tp">Tertiary</span><div><div class="ren">Hypothalamus fails to produce TRH · due to tumor or destructive lesion</div><div class="rar ar">فشل视丘 في إنتاج TRH · بسبب ورم</div></div></div>
+      </div>
+      <div>
+        <div style="color:var(--coral);font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:7px">Hyperthyroidism — أسباب الفرط</div>
+        <div class="row"><span class="tag tc">Graves'</span><div><div class="ren">Abnormal immunoglobulins over-stimulate thyroid → excess hormone output</div><div class="rar ar">أجسام مناعية تحفز الغدة بشكل مفرط</div></div></div>
+        <div class="row"><span class="tag ta">Other</span><div><div class="ren">Thyroiditis · emotional stress/shock · infection</div><div class="rar ar">التهاب الدرقية · إجهاد عاطفي · عدوى</div></div></div>
+        <div class="row"><span class="tag tp">Drug</span><div><div class="ren">Excessive ingestion of thyroid hormone medication</div><div class="rar ar">جرعة زائدة من هرمون الدرقية</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Symptoms Comparison Table -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="ch" style="color:var(--teal)"><div class="ch-dot" style="background:var(--teal)"></div>Symptoms Comparison — مقارنة الأعراض</div>
+    <div style="overflow-x:auto">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:18%">Feature / الصفة</th>
+            <th class="th-hypo" style="width:41%">↓ Hypothyroidism — قصور</th>
+            <th class="th-hyper" style="width:41%">↑ Hyperthyroidism — فرط</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Metabolism</td>
+            <td class="tc-hypo">Slow · بطيء — decreased O₂ consumption by tissues</td>
+            <td class="tc-hyper">Fast · سريع — accelerated O₂ consumption</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Weight</td>
+            <td class="tc-hypo">↑ Weight gain (without extra food) · زيادة الوزن بدون أكل زائد</td>
+            <td class="tc-hyper">↓ Weight loss (despite ↑ appetite) · فقدان وزن رغم الأكل</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Heart rate</td>
+            <td class="tc-hypo">Low / subnormal · بطيء</td>
+            <td class="tc-hyper">Rapid 90–160 bpm · خفقان سريع 90-160</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Temperature</td>
+            <td class="tc-hypo">Subnormal · always feels cold · يشعر بالبرد دائماً حتى في الدفء</td>
+            <td class="tc-hyper">↑ Heat intolerance · flushed · لا يتحمل الحرارة</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Skin</td>
+            <td class="tc-hypo">Dry · cold · جاف وبارد</td>
+            <td class="tc-hyper">Flushed · warm · sweaty · محمر دافئ رطب</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Hair</td>
+            <td class="tc-hypo">Thinning · falls out · brittle nails · شعر يتساقط وأظافر هشة</td>
+            <td class="tc-hyper">Fine / generally normal · طبيعي عموماً</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Voice</td>
+            <td class="tc-hypo">Husky · hoarse · أجش خشن</td>
+            <td class="tc-hyper">Normal · طبيعي</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Eyes</td>
+            <td class="tc-hypo">Normal · طبيعي</td>
+            <td class="tc-hyper">Exophthalmos (bulging eyes) · جحوظ العيون</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Mood</td>
+            <td class="tc-hypo">Apathy · lethargy · social isolation · خمول واكتئاب وعزلة</td>
+            <td class="tc-hyper">Nervousness · irritability · restlessness · توتر وعصبية وقلق</td>
+          </tr>
+          <tr>
+            <td style="font-size:11.5px;color:var(--muted);font-weight:600">Appetite</td>
+            <td class="tc-hypo">Decreased · قلة شهية</td>
+            <td class="tc-hyper">↑ Increased appetite · زيادة شهية مع نقص وزن</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Management -->
+  <div class="g2">
+    <div class="card card-lb">
+      <div class="ch" style="color:var(--blue)"><div class="ch-dot" style="background:var(--blue)"></div>Hypothyroidism Treatment — علاج القصور</div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--blue-bg)">💊</div>
+        <div><div class="ren">Levothyroxine (lifelong) — هرمون درقي مدى الحياة<br>Start with small dose for cardiac patients (risk of MI/HF)</div><div class="rar ar">ابدأ بجرعة صغيرة لمرضى القلب تجنباً للجلطة أو الفشل القلبي</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--teal-bg)">🥗</div>
+        <div><div class="ren">High iodine diet · avoid: soy, spinach, broccoli, cabbage, strawberries (inhibit thyroid)</div><div class="rar ar">نظام غذائي غني باليود · تجنب أطعمة تثبط الغدة</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--amber-bg)">⏰</div>
+        <div><div class="ren">Take medication on empty stomach · 2h gap before Ca/Fe/walnuts supplements</div><div class="rar ar">تناول الدواء على معدة فارغة · فجوة ساعتين قبل الكالسيوم/الحديد</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--purple-bg)">🔪</div>
+        <div><div class="ren">Surgery for large goiter unresponsive to treatment or compressing neck structures</div><div class="rar ar">جراحة لتضخم الغدة الكبير أو الضاغط على العنق</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--coral-bg)">🚨</div>
+        <div><div class="ren">Myxedema coma: patent airway + O₂ + IV fluids immediately</div><div class="rar ar">غيبوبة المخسمة: فتح مجرى الهواء + أكسجين + سوائل وريدية فوراً</div></div>
+      </div>
+    </div>
+
+    <div class="card card-lc">
+      <div class="ch" style="color:var(--coral)"><div class="ch-dot" style="background:var(--coral)"></div>Hyperthyroidism Treatment — علاج الفرط</div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--coral-bg)">💊</div>
+        <div><div class="ren">Antithyroid medications · Propranolol (β-blocker) — controls heart rate & palpitations</div><div class="rar ar">أدوية مضادة للدرقية · حاصرات بيتا لتهدئة القلب</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--amber-bg)">☢️</div>
+        <div><div class="ren">Radioiodine (radioactive iodine capsule) → destroys overactive thyroid tissue</div><div class="rar ar">يود مشع في كبسولة → يدمر أنسجة الغدة المفرطة النشاط</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--teal-bg)">🥗</div>
+        <div><div class="ren">4000–5000 cal/day + high protein · 6 meals/day · weigh daily · avoid stimulants (caffeine)</div><div class="rar ar">4000-5000 سعرة + بروتين عالٍ · 6 وجبات يومياً</div></div>
+      </div>
+      <div class="nrow">
+        <div class="nico" style="background:var(--purple-bg)">🔪</div>
+        <div><div class="ren">Thyroidectomy — surgical removal of thyroid gland · استئصال الغدة الدرقية جراحياً</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nursing Diagnoses -->
+  <div class="card" style="margin-top:12px; margin-bottom:12px">
+    <div class="ch" style="color:var(--green)"><div class="ch-dot" style="background:var(--green)"></div>Nursing Care — الرعاية التمريضية</div>
+    <div class="g2" style="margin:0">
+      <div>
+        <div style="color:var(--blue);font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:7px">For Hypothyroidism</div>
+        <div class="nrow"><span class="tag tb" style="flex-shrink:0">Skin</span><div><div class="ren">Risk for impaired skin integrity (edema/dryness) → strict turning schedule · pressure reduction mattress · monitor all pressure points</div><div class="rar ar">خطر تلف الجلد بسبب الوذمة → جدول تحريك منتظم + مرتبة ضغط</div></div></div>
+        <div class="nrow"><span class="tag tt" style="flex-shrink:0">Temp</span><div><div class="ren">Hypothermia risk (very cold-sensitive) → warm comfortable environment · extra blankets · clothing</div><div class="rar ar">خطر انخفاض الحرارة → بيئة دافئة + بطاطين إضافية</div></div></div>
+        <div class="nrow"><span class="tag tp" style="flex-shrink:0">Social</span><div><div class="ren">Social isolation (lethargy/apathy) → reassure client & family that appearance & energy will improve with therapy</div><div class="rar ar">عزلة اجتماعية → طمأنة المريض بأن المظهر والطاقة سيتحسنان</div></div></div>
+      </div>
+      <div>
+        <div style="color:var(--coral);font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:7px">For Hyperthyroidism</div>
+        <div class="nrow"><span class="tag tc" style="flex-shrink:0">Rest</span><div><div class="ren">Activity intolerance (exhaustion) → private quiet room · restful environment mentally & physically · limit stimulation</div><div class="rar ar">عدم تحمل النشاط → غرفة هادئة خاصة · بيئة هادئة</div></div></div>
+        <div class="nrow"><span class="tag tb" style="flex-shrink:0">Eyes</span><div><div class="ren">Exophthalmos risk → artificial tears · eye patches · treat early to prevent corneal ulceration/blindness</div><div class="rar ar">خطر جحوظ عيون → دموع اصطناعية + رقع العين + علاج مبكر</div></div></div>
+        <div class="nrow"><span class="tag tg" style="flex-shrink:0">Nutrition</span><div><div class="ren">Altered nutrition (less than body requirements) → high-calorie diet · 6 meals/day · daily weight monitoring</div><div class="rar ar">سوء تغذية → نظام عالي السعرات · 6 وجبات · وزن يومي</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="g3">
+    <div class="card card-lc">
+      <div class="ch" style="color:var(--coral)"><div class="ch-dot" style="background:var(--coral)"></div>Graves' Complications — مضاعفات</div>
+      <div class="row"><span class="tag tb">1</span><div><div class="ren">Exophthalmos — bulging eyes</div><div class="rar ar">جحوظ العيون — لا تستطيع إغلاق الجفنين</div></div></div>
+      <div class="row"><span class="tag tc">2</span><div><div class="ren">Heart disease — palpitations · cardiac damage</div><div class="rar ar">أمراض القلب — خفقان ومشاكل قلبية</div></div></div>
+      <div class="row"><span class="tag ta">3</span><div><div class="ren">Thyroid storm (thyrotoxicosis) — extreme crisis, high mortality</div><div class="rar ar">أزمة درقية — حالة طارئة بمعدل وفيات عالٍ</div></div></div>
+    </div>
+    <div class="card card-lb">
+      <div class="ch" style="color:var(--blue)"><div class="ch-dot" style="background:var(--blue)"></div>Myxedema Coma — غيبوبة المخسمة</div>
+      <div class="row"><span class="tag tb">What</span><div><div class="ren">Life-threatening hypo-metabolic emergency — all body systems severely compromised</div><div class="rar ar">طوارئ مهددة للحياة — جميع أجهزة الجسم متأثرة بشدة</div></div></div>
+      <div class="row"><span class="tag tc">Treat</span><div><div class="ren">Patent airway · O₂ · IV fluids · IV thyroid hormone immediately</div><div class="rar ar">مجرى هوائي + أكسجين + سوائل وريدية + هرمون درقي فوراً</div></div></div>
+    </div>
+    <div class="card card-lt">
+      <div class="ch" style="color:var(--teal)"><div class="ch-dot" style="background:var(--teal)"></div>Lab Diagnosis — التشخيص المختبري</div>
+      <div class="row"><span class="tag tb">Hypo</span><div><div class="ren">↓ Serum T3/T4 · ↑TSH (primary) · enlarged thyroid on imaging</div><div class="rar ar">انخفاض T3/T4 · ارتفاع TSH في القصور الأولي</div></div></div>
+      <div class="row"><span class="tag tc">Hyper</span><div><div class="ren">↑ Serum T3/T4 · ↓ serum cholesterol · enlarged neck + protruding eyes on exam</div><div class="rar ar">ارتفاع T3/T4 · انخفاض الكوليسترول · تضخم الرقبة</div></div></div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>Dr. Zinab · Endocrine System Disorders · Lectures 1 & 2 · ملخص المحاضرتين · للاستخدام الدراسي فقط</p>
+</footer>
+
+<script>
+function go(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

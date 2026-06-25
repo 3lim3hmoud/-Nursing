@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urology Lecture Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0d9488;
+    --blue: #1d4ed8;
+    --red: #dc2626;
+    --amber: #d97706;
+    --purple: #7c3aed;
+    --bg: #f0fdf9;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', 'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 14px 16px;
+    background: white;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0f766e 0%, #1d4ed8 100%);
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 16px; font-weight: 800; }
+  .header p { font-size: 11px; opacity: 0.85; font-family: 'Tajawal', sans-serif; }
+
+  /* GRID */
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .badge {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    color: white;
+    font-weight: 800;
+  }
+
+  .card-title { font-size: 11.5px; font-weight: 800; }
+  .card-subtitle { font-size: 9px; color: var(--muted); font-family: 'Tajawal', sans-serif; }
+
+  /* TEAL theme */
+  .teal .badge { background: var(--teal); }
+  .teal .card-header { border-color: #ccfbf1; }
+  .teal { border-color: #99f6e4; }
+
+  /* BLUE theme */
+  .blue .badge { background: var(--blue); }
+  .blue .card-header { border-color: #dbeafe; }
+  .blue { border-color: #bfdbfe; }
+
+  /* RED theme */
+  .red .badge { background: var(--red); }
+  .red .card-header { border-color: #fee2e2; }
+  .red { border-color: #fca5a5; }
+
+  /* AMBER theme */
+  .amber .badge { background: var(--amber); }
+  .amber .card-header { border-color: #fef3c7; }
+  .amber { border-color: #fde68a; }
+
+  /* PURPLE theme */
+  .purple .badge { background: var(--purple); }
+  .purple .card-header { border-color: #ede9fe; }
+  .purple { border-color: #c4b5fd; }
+
+  ul { padding-left: 12px; }
+  ul li { margin-bottom: 2px; font-size: 11px; }
+  ul li span.ar { font-family: 'Tajawal', sans-serif; color: var(--muted); font-size: 10px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .two-col h4 { font-size: 10px; font-weight: 700; margin-bottom: 3px; color: var(--teal); }
+
+  .tag {
+    display: inline-block;
+    background: #f1f5f9;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 10px;
+    margin: 1px;
+    font-weight: 600;
+  }
+
+  .nursing-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 4px;
+  }
+  .nursing-step {
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 5px 7px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    text-align: center;
+  }
+  .nursing-step .icon { font-size: 14px; display: block; }
+  .nursing-step strong { display: block; font-weight: 700; margin: 2px 0 1px; }
+  .nursing-step .ar-s { font-family: 'Tajawal', sans-serif; color: var(--muted); font-size: 9px; }
+
+  .divider {
+    text-align: center;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 6px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .footer {
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 6px;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+  .pill-teal { background: var(--teal); }
+  .pill-blue { background: var(--blue); }
+  .pill-red { background: var(--red); }
+  .pill-amber { background: var(--amber); }
+  .pill-purple { background: var(--purple); }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1>🫘 Urology System Disorders — Lecture Summary</h1>
+      <p style="margin-top:2px;">ملخص محاضرة: اضطرابات الجهاز البولي</p>
+    </div>
+    <div style="text-align:right; font-size:10px; opacity:0.8;">
+      3 Main Topics<br>
+      <span style="font-family:'Tajawal';">٣ موضوعات رئيسية</span>
+    </div>
+  </div>
+
+  <!-- ROW 1 — 3 disease intros -->
+  <div class="grid-3">
+
+    <!-- CRF -->
+    <div class="card teal">
+      <div class="card-header">
+        <div class="badge" style="background:#0d9488;">1</div>
+        <div>
+          <div class="card-title">Chronic Renal Failure (ESRD)</div>
+          <div class="card-subtitle">الفشل الكلوي المزمن</div>
+        </div>
+      </div>
+      <p style="font-size:10.5px; margin-bottom:5px;">Kidneys slowly stop working → waste builds up in blood (uremia/azotemia).</p>
+      <p style="font-family:'Tajawal'; font-size:10px; color:#64748b; margin-bottom:5px;">الكلى تتوقف تدريجياً عن العمل → تراكم الفضلات في الدم</p>
+      <div class="two-col">
+        <div>
+          <h4>Causes / الأسباب</h4>
+          <ul>
+            <li>Diabetes <span class="ar">السكري</span></li>
+            <li>Hypertension <span class="ar">ضغط الدم</span></li>
+            <li>Glomerulonephritis</li>
+            <li>Heavy metals / toxins</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Symptoms / الأعراض</h4>
+          <ul>
+            <li>Fatigue <span class="ar">تعب</span></li>
+            <li>Anemia <span class="ar">فقر الدم</span></li>
+            <li>Bone disease</li>
+            <li>Mental confusion</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:5px;">
+        <h4 style="color:#0d9488; font-size:10px; margin-bottom:2px;">Treatment / العلاج</h4>
+        <span class="pill pill-teal">Dialysis غسيل</span>
+        <span class="pill pill-teal">BP Control</span>
+        <span class="pill pill-teal">Diet</span>
+      </div>
+    </div>
+
+    <!-- Renal Stones -->
+    <div class="card blue">
+      <div class="card-header">
+        <div class="badge" style="background:#1d4ed8;">2</div>
+        <div>
+          <div class="card-title">Renal Stones (Nephrolithiasis)</div>
+          <div class="card-subtitle">حصوات الكلى</div>
+        </div>
+      </div>
+      <p style="font-size:10.5px; margin-bottom:5px;">Crystals form in kidneys due to concentrated urine or lack of inhibitors.</p>
+      <p style="font-family:'Tajawal'; font-size:10px; color:#64748b; margin-bottom:5px;">تبلور المعادن في الكلى بسبب تركيز البول</p>
+      <div class="two-col">
+        <div>
+          <h4>Types / الأنواع</h4>
+          <ul>
+            <li>Calcium oxalate ★</li>
+            <li>Uric acid <span class="ar">حمض يوريك</span></li>
+            <li>Struvite</li>
+            <li>Cystine</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Symptoms / الأعراض</h4>
+          <ul>
+            <li>Severe flank pain</li>
+            <li>Hematuria <span class="ar">دم بالبول</span></li>
+            <li>Nausea <span class="ar">غثيان</span></li>
+            <li>Painful urination</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:5px;">
+        <h4 style="color:#1d4ed8; font-size:10px; margin-bottom:2px;">Treatment / العلاج</h4>
+        <span class="pill pill-blue">Hydration</span>
+        <span class="pill pill-blue">NSAIDs</span>
+        <span class="pill pill-blue">Lithotripsy</span>
+      </div>
+    </div>
+
+    <!-- Glomerulonephritis -->
+    <div class="card red">
+      <div class="card-header">
+        <div class="badge" style="background:#dc2626;">3</div>
+        <div>
+          <div class="card-title">Glomerulonephritis</div>
+          <div class="card-subtitle">التهاب كبيبات الكلى</div>
+        </div>
+      </div>
+      <p style="font-size:10.5px; margin-bottom:5px;">Inflammation of tiny kidney filters (glomeruli) → damages filtration.</p>
+      <p style="font-family:'Tajawal'; font-size:10px; color:#64748b; margin-bottom:5px;">التهاب في مرشحات الكلى الصغيرة</p>
+      <div class="two-col">
+        <div>
+          <h4>Causes / الأسباب</h4>
+          <ul>
+            <li>Strep infection</li>
+            <li>Autoimmune <span class="ar">مناعة</span></li>
+            <li>Vasculitis</li>
+            <li>Diabetic nephropathy</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Symptoms / الأعراض</h4>
+          <ul>
+            <li>Hematuria <span class="ar">دم بالبول</span></li>
+            <li>Proteinuria <span class="ar">بروتين</span></li>
+            <li>Edema <span class="ar">تورم</span></li>
+            <li>Hypertension</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:5px;">
+        <h4 style="color:#dc2626; font-size:10px; margin-bottom:2px;">Treatment / العلاج</h4>
+        <span class="pill pill-red">ACE Inhibitors</span>
+        <span class="pill pill-red">Steroids</span>
+        <span class="pill pill-red">Low-Na diet</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2 — Pyelonephritis + Nursing Process -->
+  <div class="grid-2">
+
+    <!-- Pyelonephritis -->
+    <div class="card amber">
+      <div class="card-header">
+        <div class="badge" style="background:#d97706;">4</div>
+        <div>
+          <div class="card-title">Pyelonephritis</div>
+          <div class="card-subtitle">التهاب الحويضة والكلية</div>
+        </div>
+      </div>
+      <p style="font-size:10.5px; margin-bottom:4px;">Bacterial infection of kidneys, usually ascending from bladder (UTI).</p>
+      <p style="font-family:'Tajawal'; font-size:10px; color:#64748b; margin-bottom:4px;">عدوى بكتيرية في الكلى صاعدة من المثانة</p>
+      <div class="two-col">
+        <div>
+          <h4>Acute Symptoms</h4>
+          <ul>
+            <li>Fever & chills <span class="ar">حمى</span></li>
+            <li>Flank/back pain</li>
+            <li>Dysuria <span class="ar">ألم تبول</span></li>
+            <li>Foul-smelling urine</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Treatment</h4>
+          <ul>
+            <li>Antibiotics <span class="ar">مضادات</span></li>
+            <li>IV Fluids <span class="ar">سوائل</span></li>
+            <li>Antipyretics</li>
+            <li>Pain control</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:5px; font-size:10px; color:#92400e; background:#fffbeb; border-radius:4px; padding:4px 6px;">
+        ⚠️ Chronic form → may cause permanent kidney damage / <span style="font-family:'Tajawal';">الشكل المزمن قد يسبب ضرر دائم للكلى</span>
+      </div>
+    </div>
+
+    <!-- Nursing Process (shared) -->
+    <div class="card purple">
+      <div class="card-header">
+        <div class="badge" style="background:#7c3aed;">👩‍⚕️</div>
+        <div>
+          <div class="card-title">Nursing Process (All Conditions)</div>
+          <div class="card-subtitle">العملية التمريضية — لجميع الحالات</div>
+        </div>
+      </div>
+      <div class="nursing-row">
+        <div class="nursing-step">
+          <span class="icon">🔍</span>
+          <strong>Assessment</strong>
+          <div class="ar-s">التقييم</div>
+          <div style="font-size:9px; margin-top:2px; color:#475569;">Pain, vitals, urine output, labs</div>
+        </div>
+        <div class="nursing-step">
+          <span class="icon">📋</span>
+          <strong>Diagnosis</strong>
+          <div class="ar-s">التشخيص</div>
+          <div style="font-size:9px; margin-top:2px; color:#475569;">Acute pain, fluid deficit, risk of infection</div>
+        </div>
+        <div class="nursing-step">
+          <span class="icon">🎯</span>
+          <strong>Planning</strong>
+          <div class="ar-s">التخطيط</div>
+          <div style="font-size:9px; margin-top:2px; color:#475569;">Goals: pain relief, urine ≥30 mL/hr, no infection</div>
+        </div>
+        <div class="nursing-step">
+          <span class="icon">💉</span>
+          <strong>Implementation</strong>
+          <div class="ar-s">التنفيذ</div>
+          <div style="font-size:9px; margin-top:2px; color:#475569;">Meds, hydration, monitor, educate</div>
+        </div>
+      </div>
+      <div style="margin-top:6px; background:#f5f3ff; border-radius:5px; padding:5px 7px;">
+        <div style="font-size:10px; font-weight:700; color:#7c3aed; margin-bottom:3px;">Common Nursing Diagnoses / تشخيصات تمريضية مشتركة</div>
+        <span class="tag">🔴 Acute Pain ألم حاد</span>
+        <span class="tag">💧 Fluid Deficit نقص سوائل</span>
+        <span class="tag">🦠 Risk for Infection خطر عدوى</span>
+        <span class="tag">📚 Knowledge Deficit نقص معرفة</span>
+        <span class="tag">🚽 Impaired Urination</span>
+      </div>
+      <div style="margin-top:5px; background:#f5f3ff; border-radius:5px; padding:5px 7px; font-size:10px;">
+        <strong style="color:#7c3aed;">✅ Evaluation / التقييم:</strong> Was pain relieved? Is urine output adequate? No infection signs? Patient understands prevention?
+        <div style="font-family:'Tajawal'; font-size:9.5px; color:#64748b; margin-top:2px;">هل انخفض الألم؟ هل كمية البول كافية؟ هل المريض يفهم طرق الوقاية؟</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUICK COMPARE TABLE -->
+  <div class="card" style="border-color:#e2e8f0; margin-bottom:7px;">
+    <div style="font-size:11px; font-weight:800; margin-bottom:6px; color:#1e293b;">⚡ Quick Comparison / مقارنة سريعة</div>
+    <table style="width:100%; border-collapse:collapse; font-size:10px;">
+      <thead>
+        <tr style="background:#f8fafc;">
+          <th style="padding:4px 6px; text-align:left; border-bottom:2px solid #e2e8f0; color:#475569;">Disease / المرض</th>
+          <th style="padding:4px 6px; text-align:left; border-bottom:2px solid #e2e8f0; color:#475569;">Main Cause / السبب</th>
+          <th style="padding:4px 6px; text-align:left; border-bottom:2px solid #e2e8f0; color:#475569;">Key Symptom / الأعراض</th>
+          <th style="padding:4px 6px; text-align:left; border-bottom:2px solid #e2e8f0; color:#475569;">Diagnosis / التشخيص</th>
+          <th style="padding:4px 6px; text-align:left; border-bottom:2px solid #e2e8f0; color:#475569;">Main Treatment / العلاج</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9; font-weight:700; color:#0d9488;">CRF / الفشل الكلوي</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Diabetes, HTN</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Uremia, edema, fatigue</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">BUN, Creatinine ↑</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Dialysis, diet</td>
+        </tr>
+        <tr style="background:#f8fafc;">
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9; font-weight:700; color:#1d4ed8;">Renal Stones / حصوات</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Dehydration, diet</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Severe flank pain</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">CT scan, urinalysis</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Fluids, lithotripsy</td>
+        </tr>
+        <tr>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9; font-weight:700; color:#dc2626;">Glomerulonephritis</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Autoimmune, Strep</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Hematuria, proteinuria</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Biopsy, urinalysis</td>
+          <td style="padding:4px 6px; border-bottom:1px solid #f1f5f9;">Steroids, ACE inhibitors</td>
+        </tr>
+        <tr style="background:#f8fafc;">
+          <td style="padding:4px 6px; font-weight:700; color:#d97706;">Pyelonephritis</td>
+          <td style="padding:4px 6px;">Bacteria (UTI)</td>
+          <td style="padding:4px 6px;">Fever, flank pain</td>
+          <td style="padding:4px 6px;">Urine culture, CBC</td>
+          <td style="padding:4px 6px;">Antibiotics, fluids</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    💡 <strong>Remember / تذكر:</strong> All urological conditions share common nursing priorities — Monitor urine output, control pain, prevent infection, and educate the patient.
+    &nbsp;|&nbsp; جميع الحالات البولية لها أولويات تمريضية مشتركة: مراقبة البول، السيطرة على الألم، منع العدوى، وتثقيف المريض.
+  </div>
+
+</div>
+</body>
+</html>

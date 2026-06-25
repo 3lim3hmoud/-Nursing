@@ -106,9 +106,6 @@
     top: 18px;
     left: 18px;
     z-index: 50;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .profile-ring {
@@ -137,7 +134,9 @@
   }
 
   .profile-popover {
-    margin-top: 8px;
+    position: absolute;
+    top: 60px;
+    left: 0;
     background: rgba(255, 255, 255, 0.55);
     border: 1px solid rgba(255,255,255,0.6);
     border-radius: 12px;
@@ -859,6 +858,40 @@
 </head>
 <body>
 
+<!-- ══════════════════════ SPLASH SCREEN ══════════════════════ -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-icon">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" stroke="url(#sg)" stroke-width="2.5"/>
+        <path d="M30 18v12l7 4" stroke="#6CE3B4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 38c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <defs><linearGradient id="sg" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#1D9E75"/><stop offset="1" stop-color="#378ADD"/></linearGradient></defs>
+      </svg>
+    </div>
+    <div class="splash-title">Faculty of Nursing</div>
+    <div class="splash-sub">Study Hub</div>
+    <div class="splash-bar"><div class="splash-fill"></div></div>
+  </div>
+</div>
+<style>
+  #splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0a1f18 0%,#0d2235 100%);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease;}
+  #splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
+  .splash-inner{display:flex;flex-direction:column;align-items:center;gap:0.6rem;animation:splashFadeIn 0.7s ease forwards;}
+  @keyframes splashFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .splash-icon svg{width:72px;height:72px;filter:drop-shadow(0 0 18px rgba(29,158,117,.45));animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{filter:drop-shadow(0 0 14px rgba(29,158,117,.4))}50%{filter:drop-shadow(0 0 28px rgba(55,138,221,.6))}}
+  .splash-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.02em;margin-top:.4rem;}
+  .splash-sub{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#6CE3B4;}
+  .splash-bar{margin-top:1.6rem;width:140px;height:3px;background:rgba(255,255,255,.1);border-radius:100px;overflow:hidden;}
+  .splash-fill{height:100%;width:0%;background:linear-gradient(90deg,#1D9E75,#378ADD);border-radius:100px;animation:fillBar 1.6s ease forwards;animation-delay:.3s;}
+  @keyframes fillBar{from{width:0%}to{width:100%}}
+</style>
+<script>
+  window.addEventListener("load",function(){setTimeout(function(){document.getElementById("splash").classList.add("hide");},2100);});
+</script>
+
+
 <!-- ══════════════════════ VIDEO BACKGROUND ══════════════════════ -->
 <video id="bg-video" autoplay muted loop playsinline>
   <source src="bg.mp4" type="video/mp4">
@@ -1135,7 +1168,7 @@ const years = {
             { title: 'Liver Transplant', file: 'Liver_Transplant_45_Slides.pdf' },
             { title: 'Myocardial Infarction', file: 'Myocardial Infarction.pdf' },
             { title: 'Nephrotic Syndrome', file: 'Nephrotic Syndrome (1).pdf' },
-            { title: 'Peptic Ulcer Disease', file: 'Peptic ulcer disease' },
+            { title: 'Peptic Ulcer Disease', file: 'Peptic ulcer disease.pdf' },
             { title: 'Respiratory Failure', file: 'Respiratory failure.pdf' },
             { title: 'Rheumatic Fever', file: 'Rheumatic_Fever_Lecture_for_Nursing_Students (1).pdf' },
           ], summaries: [

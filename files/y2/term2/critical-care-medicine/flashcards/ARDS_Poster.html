@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARDS - Acute Respiratory Distress Syndrome</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .download-btn {
+    margin: 15px auto;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(231,76,60,0.4);
+    transition: all 0.3s;
+    letter-spacing: 1px;
+  }
+  .download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(231,76,60,0.6); }
+
+  /* ===== POSTER ===== */
+  #poster {
+    width: 1200px;
+    background: linear-gradient(160deg, #0f0c29, #302b63, #24243e);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #922b21 50%, #7b241c 100%);
+    padding: 30px 40px;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid #e74c3c;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    padding: 4px 18px;
+    font-size: 11px;
+    color: #ffeaa7;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  }
+  .header h1 span { color: #ffeaa7; }
+  .header-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 8px;
+    direction: rtl;
+  }
+  .header-meta {
+    margin-top: 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    padding: 2px;
+  }
+
+  .card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+    padding: 22px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+
+  /* Card color themes */
+  .card.red::before   { background: linear-gradient(180deg, #e74c3c, #c0392b); }
+  .card.blue::before  { background: linear-gradient(180deg, #3498db, #2980b9); }
+  .card.green::before { background: linear-gradient(180deg, #27ae60, #1e8449); }
+  .card.orange::before{ background: linear-gradient(180deg, #f39c12, #e67e22); }
+  .card.purple::before{ background: linear-gradient(180deg, #9b59b6, #7d3c98); }
+  .card.teal::before  { background: linear-gradient(180deg, #1abc9c, #148f77); }
+  .card.pink::before  { background: linear-gradient(180deg, #e91e8c, #c0185a); }
+  .card.indigo::before{ background: linear-gradient(180deg, #5c6bc0, #3949ab); }
+  .card.yellow::before{ background: linear-gradient(180deg, #f1c40f, #d4ac0d); }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .card-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    direction: rtl;
+    margin-bottom: 12px;
+    opacity: 0.75;
+  }
+  .card.red .card-title    { color: #e74c3c; }
+  .card.blue .card-title   { color: #5dade2; }
+  .card.green .card-title  { color: #52be80; }
+  .card.orange .card-title { color: #f5b041; }
+  .card.purple .card-title { color: #bb8fce; }
+  .card.teal .card-title   { color: #48c9b0; }
+  .card.pink .card-title   { color: #f06292; }
+  .card.indigo .card-title { color: #9fa8da; }
+  .card.yellow .card-title { color: #f7dc6f; }
+
+  .card.red .card-title-ar    { color: #e74c3c; }
+  .card.blue .card-title-ar   { color: #5dade2; }
+  .card.green .card-title-ar  { color: #52be80; }
+  .card.orange .card-title-ar { color: #f5b041; }
+  .card.purple .card-title-ar { color: #bb8fce; }
+  .card.teal .card-title-ar   { color: #48c9b0; }
+  .card.pink .card-title-ar   { color: #f06292; }
+  .card.indigo .card-title-ar { color: #9fa8da; }
+  .card.yellow .card-title-ar { color: #f7dc6f; }
+
+  .en-item {
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 5px;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .en-item::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    font-size: 7px;
+    top: 3px;
+    opacity: 0.6;
+  }
+  .ar-item {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 5px;
+    padding-right: 12px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .ar-item::before {
+    content: '◀';
+    position: absolute;
+    right: 0;
+    font-size: 7px;
+    top: 3px;
+    opacity: 0.5;
+  }
+
+  .divider { 
+    border: none; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    margin: 8px 0; 
+  }
+
+  /* STAGES TABLE */
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .stage-box {
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 8px;
+    border-top: 2px solid;
+    text-align: center;
+  }
+  .stage-box.s1 { border-color: #3498db; }
+  .stage-box.s2 { border-color: #f39c12; }
+  .stage-box.s3 { border-color: #e74c3c; }
+  .stage-box.s4 { border-color: #9b59b6; }
+  .stage-num {
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .stage-box.s1 .stage-num { color: #5dade2; }
+  .stage-box.s2 .stage-num { color: #f5b041; }
+  .stage-box.s3 .stage-num { color: #e74c3c; }
+  .stage-box.s4 .stage-num { color: #bb8fce; }
+  .stage-name { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; }
+  .stage-time { font-size: 9px; color: rgba(255,255,255,0.5); margin: 2px 0; }
+  .stage-desc { font-size: 9px; color: rgba(255,255,255,0.7); line-height: 1.3; }
+  .stage-ar { font-family: 'Cairo', sans-serif; font-size: 9px; color: rgba(255,255,255,0.5); direction: rtl; margin-top: 2px; }
+
+  /* SPAN FULL ROW */
+  .col-span-3 { grid-column: span 3; }
+  .col-span-2 { grid-column: span 2; }
+
+  /* ABG BOX */
+  .abg-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .abg-chip {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* TREATMENT BOX */
+  .tx-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .tx-chip {
+    background: rgba(39,174,96,0.15);
+    border: 1px solid rgba(39,174,96,0.3);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10px;
+    color: #7dcea0;
+    font-weight: 600;
+    text-align: center;
+  }
+  .tx-chip-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 9px;
+    color: rgba(125,206,160,0.7);
+    direction: rtl;
+  }
+
+  /* COMPLICATIONS */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .comp-item {
+    background: rgba(231,76,60,0.1);
+    border: 1px solid rgba(231,76,60,0.25);
+    border-radius: 6px;
+    padding: 6px;
+    text-align: center;
+    font-size: 10px;
+    color: #f1948a;
+    font-weight: 600;
+  }
+  .comp-item-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 9px;
+    color: rgba(241,148,138,0.7);
+    direction: rtl;
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: rgba(0,0,0,0.4);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(231,76,60,0.4);
+  }
+  .footer-left { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+  .footer-mid { 
+    font-size: 13px; font-weight: 700; color: #e74c3c; 
+    text-transform: uppercase; letter-spacing: 3px;
+  }
+  .footer-right { 
+    font-family: 'Cairo', sans-serif; 
+    font-size: 11px; color: rgba(255,255,255,0.4); 
+    direction: rtl;
+  }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="downloadImage()">⬇ Download as Image / تحميل كصورة</button>
+
+<div id="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">Critical Care Nursing • تمريض الرعاية الحرجة</div>
+    <h1>Acute <span>Respiratory</span> Distress Syndrome</h1>
+    <div class="header-ar">متلازمة الضائقة التنفسية الحادة — ARDS</div>
+    <div class="header-meta">Dr. Ghada Elsayed &nbsp;|&nbsp; Critical Care Nursing Lecture</div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- 1. DEFINITION -->
+    <div class="card red">
+      <span class="card-icon">🫁</span>
+      <div class="card-title">Definition</div>
+      <div class="card-title-ar">التعريف</div>
+      <div class="en-item">Life-threatening lung condition causing fluid buildup in the alveoli</div>
+      <div class="ar-item">حالة مهددة للحياة تسبب تجمع السوائل في الحويصلات الهوائية</div>
+      <div class="en-item">Lungs become heavy, stiff, with severely decreased expansion</div>
+      <div class="ar-item">تصبح الرئتان ثقيلتين وصلبتين مع انخفاض شديد في قدرة التمدد</div>
+      <div class="en-item">Breakdown of the alveolar-capillary membrane → fluid leaks into alveoli</div>
+      <div class="ar-item">انهيار الغشاء السنخي الشعري ← تسرب السوائل إلى الحويصلات</div>
+      <div class="en-item">Not a disease — it's a syndrome (group of signs & symptoms)</div>
+      <div class="ar-item">ليس مرضاً بل متلازمة (مجموعة من العلامات والأعراض)</div>
+    </div>
+
+    <!-- 2. CAUSES - DIRECT -->
+    <div class="card blue">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">Direct Causes (Pulmonary)</div>
+      <div class="card-title-ar">الأسباب المباشرة (رئوية)</div>
+      <div class="en-item">Aspiration of stomach contents / near drowning</div>
+      <div class="ar-item">استنشاق محتويات المعدة / الغرق الوشيك</div>
+      <div class="en-item">Massive trauma / severe injury</div>
+      <div class="ar-item">الصدمة الشديدة / إصابة خطيرة</div>
+      <div class="en-item">DIC – Disseminated Intravascular Coagulation</div>
+      <div class="ar-item">التخثر المنتشر داخل الأوعية الدموية</div>
+      <div class="en-item">Fat embolism entering pulmonary circulation</div>
+      <div class="ar-item">انسداد دهني يصل إلى الدورة الرئوية</div>
+      <hr class="divider">
+      <div class="card-title" style="font-size:11px; margin-bottom:4px; color:#5dade2;">Indirect Causes (Non-pulmonary)</div>
+      <div class="card-title-ar" style="font-size:11px; margin-bottom:8px;">الأسباب غير المباشرة (غير رئوية)</div>
+      <div class="en-item">Sepsis / viral or bacterial infection</div>
+      <div class="ar-item">الإنتان / العدوى الفيروسية أو البكتيرية</div>
+      <div class="en-item">Drug overdose (narcotics, sedatives, aspirin)</div>
+      <div class="ar-item">جرعة زائدة من الأدوية (المخدرات، المهدئات، الأسبرين)</div>
+      <div class="en-item">Smoke inhalation / toxic gases / O₂ toxicity</div>
+      <div class="ar-item">استنشاق الدخان / الغازات السامة / سمية الأكسجين</div>
+      <div class="en-item">Pancreatitis, severe burns, shock, cardiopulmonary bypass</div>
+      <div class="ar-item">التهاب البنكرياس، الحروق الشديدة، الصدمة، القلب الرئوي</div>
+    </div>
+
+    <!-- 3. PATHOPHYSIOLOGY -->
+    <div class="card purple">
+      <span class="card-icon">🔬</span>
+      <div class="card-title">Pathophysiology</div>
+      <div class="card-title-ar">الفيزيولوجيا المرضية</div>
+      <div class="en-item">ARDS associated with Diffuse Alveolar Damage (DAD)</div>
+      <div class="ar-item">ARDS مرتبط بالتلف السنخي المنتشر (DAD)</div>
+      <div class="en-item">Triggering insult → release of cytokines & inflammatory mediators</div>
+      <div class="ar-item">المحرض المبدئي ← إطلاق السيتوكينات والوسطاء الالتهابيين</div>
+      <div class="en-item">Epithelial & endothelial cells secrete mediators → neutrophil recruitment</div>
+      <div class="ar-item">الخلايا الظهارية والبطانية تُفرز وسطاء ← جذب الخلايا المحببة</div>
+      <div class="en-item">Inflammation → vascular permeability ↑ → fluid floods alveoli</div>
+      <div class="ar-item">التهاب ← زيادة نفاذية الأوعية ← فيضان السوائل في الحويصلات</div>
+      <div class="en-item">Surfactant inactivated → alveolar collapse → impaired gas exchange</div>
+      <div class="ar-item">تعطل مادة التوتر السطحي ← انهيار الحويصلات ← ضعف تبادل الغازات</div>
+      <div class="en-item">Results in refractory hypoxemia (unresponsive to O₂ therapy)</div>
+      <div class="ar-item">نتيجة: نقص أكسجة مقاوم لا يستجيب لعلاج الأكسجين</div>
+    </div>
+
+    <!-- 4. STAGES -->
+    <div class="card col-span-3 orange">
+      <span class="card-icon">📊</span>
+      <div class="card-title">4 Stages of ARDS</div>
+      <div class="card-title-ar">مراحل ARDS الأربعة</div>
+      <div class="stages-grid">
+        <div class="stage-box s1">
+          <span class="stage-num">1</span>
+          <div class="stage-name">Injury Phase</div>
+          <div class="stage-time">First 12 hrs</div>
+          <div class="stage-desc">No cellular damage. Restlessness, dyspnea, tachypnea. ABG: Respiratory alkalosis. CXR: Normal.</div>
+          <div class="stage-ar">لا يوجد تلف خلوي. ضيق تنفس. ABG: قلاء تنفسي. صدر شعاعي طبيعي</div>
+        </div>
+        <div class="stage-box s2">
+          <span class="stage-num">2</span>
+          <div class="stage-name">Exudative Stage</div>
+          <div class="stage-time">24 Hours</div>
+          <div class="stage-desc">Neutrophil infiltration, vascular congestion & interstitial edema. Cyanosis, coarse crackles, tachycardia. Patchy bilateral infiltrates on CXR.</div>
+          <div class="stage-ar">تسرب النيوتروفيل، وذمة خلالية. زرقة، أصوات طقطقة ثنائية</div>
+        </div>
+        <div class="stage-box s3">
+          <span class="stage-num">3</span>
+          <div class="stage-name">Proliferative Stage</div>
+          <div class="stage-time">2–10 Days</div>
+          <div class="stage-desc">Cell proliferation & increased alveolar edema. Worsening hypoxemia, generalized edema, poor skin integrity, decreased gut motility.</div>
+          <div class="stage-ar">تكاثر خلوي ووذمة سنخية. نقص أكسجة متفاقم، وذمة عامة</div>
+        </div>
+        <div class="stage-box s4">
+          <span class="stage-num">4</span>
+          <div class="stage-name">Fibrotic Stage</div>
+          <div class="stage-time">&gt; 10 Days</div>
+          <div class="stage-desc">Thickening of interstitial wall with fibrosis & cyst formation. MODS symptoms or gradual improvement. ABG: Hypoxemia + Hypercapnia.</div>
+          <div class="stage-ar">تليف جداري وتكوين كيسات. أعراض MODS أو تحسن تدريجي</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SIGNS & SYMPTOMS -->
+    <div class="card teal">
+      <span class="card-icon">🩺</span>
+      <div class="card-title">Signs & Symptoms</div>
+      <div class="card-title-ar">العلامات والأعراض</div>
+      <div class="en-item">Restlessness & agitation</div>
+      <div class="ar-item">قلق وتهيج</div>
+      <div class="en-item">Severe dyspnea (difficulty breathing)</div>
+      <div class="ar-item">ضيق تنفس شديد</div>
+      <div class="en-item">Tachypnea (rapid breathing rate)</div>
+      <div class="ar-item">تسرع التنفس</div>
+      <div class="en-item">Tachycardia (rapid heart rate)</div>
+      <div class="ar-item">تسرع القلب</div>
+      <div class="en-item">Cyanosis (bluish discoloration)</div>
+      <div class="ar-item">زرقة (تلون أزرق)</div>
+      <div class="en-item">Bilateral coarse crackles on auscultation</div>
+      <div class="ar-item">أصوات طقطقة خشنة ثنائية عند الإصغاء</div>
+      <div class="en-item">Decreased air entry to lung fields</div>
+      <div class="ar-item">انخفاض دخول الهواء للحقول الرئوية</div>
+      <div class="en-item">Use of accessory respiratory muscles</div>
+      <div class="ar-item">استخدام عضلات التنفس الإضافية</div>
+      <div class="en-item">Impaired responsiveness / confusion</div>
+      <div class="ar-item">ضعف الاستجابة / ارتباك ذهني</div>
+    </div>
+
+    <!-- 6. DIAGNOSTIC TESTS -->
+    <div class="card indigo">
+      <span class="card-icon">🔍</span>
+      <div class="card-title">Diagnostic Tests</div>
+      <div class="card-title-ar">الاختبارات التشخيصية</div>
+      <div class="en-item"><b>ABG:</b> Refractory hypoxemia (↓PaO₂ unresponsive to ↑FiO₂). Initially pH &gt;7.45 (respiratory alkalosis) → pH &lt;7.35 (respiratory acidosis)</div>
+      <div class="ar-item"><b>ABG:</b> نقص أكسجة مقاوم. pH مرتفع أولاً ثم ينخفض مع التفاقم</div>
+      <div class="en-item"><b>CXR:</b> Initially normal → bilateral patchy infiltrates → air bronchograms, ↓ lung volumes, pneumothorax</div>
+      <div class="ar-item"><b>صدر شعاعي:</b> طبيعي أولاً ← ارتشاحات ثنائية ← حجم رئوي منخفض</div>
+      <div class="en-item"><b>Echocardiogram:</b> Normal heart size (rules out cardiac failure)</div>
+      <div class="ar-item"><b>صدى القلب:</b> حجم قلب طبيعي (يستبعد قصور القلب)</div>
+      <div class="en-item"><b>CBC:</b> ↓ platelets & hemoglobin, ↑ WBC, abnormal clotting factors</div>
+      <div class="ar-item"><b>CBC:</b> انخفاض الصفائح والهيموجلوبين، ارتفاع كريات البيضاء</div>
+      <div class="en-item"><b>Hemodynamic:</b> ↑ PAP (Pulmonary Artery Pressure), normal/low PAWP</div>
+      <div class="ar-item"><b>ديناميكا الدم:</b> ارتفاع ضغط الشريان الرئوي، PAWP طبيعي/منخفض</div>
+      <div class="en-item">Sputum cultures, blood chemistries, infection evaluation</div>
+      <div class="ar-item">مزارع البلغم، كيمياء الدم، تقييم الإنتان</div>
+    </div>
+
+    <!-- 7. TREATMENT -->
+    <div class="card green">
+      <span class="card-icon">💊</span>
+      <div class="card-title">Treatment</div>
+      <div class="card-title-ar">العلاج</div>
+      <div class="tx-row">
+        <div class="tx-chip">
+          Mechanical Ventilation<br><span class="tx-chip-ar">التهوية الميكانيكية</span>
+        </div>
+        <div class="tx-chip">
+          PEEP Therapy<br><span class="tx-chip-ar">علاج PEEP</span>
+        </div>
+        <div class="tx-chip">
+          Prone Positioning<br><span class="tx-chip-ar">وضعية الاستلقاء الأمامي</span>
+        </div>
+        <div class="tx-chip">
+          Antibiotics<br><span class="tx-chip-ar">المضادات الحيوية</span>
+        </div>
+        <div class="tx-chip">
+          Fluid Management<br><span class="tx-chip-ar">إدارة السوائل</span>
+        </div>
+        <div class="tx-chip">
+          Corticosteroids<br><span class="tx-chip-ar">الكورتيكوستيرويدات</span>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="en-item">Mechanical ventilation via oro-tracheal intubation (ICU)</div>
+      <div class="ar-item">تهوية ميكانيكية عبر التنبيب الرغامي في العناية المركزة</div>
+      <div class="en-item">PEEP: improves oxygenation by ↓ intrapulmonary shunt, uses low tidal volume</div>
+      <div class="ar-item">PEEP: يحسن الأكسجة ويقلل التحويل داخل الرئة، يستخدم حجم جزر منخفض</div>
+      <div class="en-item">Prone position: relieves atelectasis & improves perfusion</div>
+      <div class="ar-item">وضعية الانبطاح: تعالج الانخماص وتحسن التروية</div>
+      <div class="en-item">Methylprednisolone 2mg/kg/day (taper after 1–2 weeks)</div>
+      <div class="ar-item">ميثيل بريدنيزولون 2 ملغ/كغ يومياً (تخفيف تدريجي بعد 1-2 أسبوع)</div>
+      <div class="en-item">Inhaled Nitric Oxide (NO): selective pulmonary vasodilator</div>
+      <div class="ar-item">أكسيد النيتريك المستنشق: موسع وعائي رئوي انتقائي</div>
+    </div>
+
+    <!-- 8. COMPLICATIONS -->
+    <div class="card pink col-span-2">
+      <span class="card-icon">⚠️</span>
+      <div class="card-title">Complications</div>
+      <div class="card-title-ar">المضاعفات</div>
+      <div class="comp-grid">
+        <div class="comp-item">Pulmonary Embolism (PE)<div class="comp-item-ar">الجلطة الرئوية</div></div>
+        <div class="comp-item">Pulmonary Fibrosis<div class="comp-item-ar">التليف الرئوي</div></div>
+        <div class="comp-item">VAP (Pneumonia)<div class="comp-item-ar">التهاب رئة بالمنفسة</div></div>
+        <div class="comp-item">GI Hemorrhage<div class="comp-item-ar">نزيف معدي معوي</div></div>
+        <div class="comp-item">Cardiac Arrhythmias<div class="comp-item-ar">اضطرابات نظم القلب</div></div>
+        <div class="comp-item">Acute Renal Failure<div class="comp-item-ar">الفشل الكلوي الحاد</div></div>
+        <div class="comp-item">Pneumothorax<div class="comp-item-ar">استرواح الصدر</div></div>
+        <div class="comp-item">Malnutrition<div class="comp-item-ar">سوء التغذية</div></div>
+        <div class="comp-item">Memory Loss / Brain<div class="comp-item-ar">فقدان الذاكرة / الدماغ</div></div>
+      </div>
+    </div>
+
+    <!-- 9. NURSING CARE -->
+    <div class="card yellow">
+      <span class="card-icon">👩‍⚕️</span>
+      <div class="card-title">Nursing Care</div>
+      <div class="card-title-ar">الرعاية التمريضية</div>
+      <div class="en-item"><b>Oxygenation:</b> Auscultate q2–4h, suction ETT, hyperoxygenate before suctioning, chest physiotherapy q4h, daily CXR</div>
+      <div class="ar-item"><b>الأكسجين:</b> تسمع كل 2-4 ساعات، شفط الأنبوب، تأكسج قبل الشفط</div>
+      <div class="en-item"><b>Circulation:</b> Monitor ECG for dysrhythmias, hemodynamic effects of ventilator changes, VS q1–2h</div>
+      <div class="ar-item"><b>الدورة الدموية:</b> مراقبة ECG، العلامات الحيوية كل 1-2 ساعة</div>
+      <div class="en-item"><b>Fluids/Electrolytes:</b> Monitor I&O, replace electrolytes, avoid nephrotoxins</div>
+      <div class="ar-item"><b>السوائل:</b> مراقبة الوارد والصادر، تعويض الشوارد</div>
+      <div class="en-item"><b>Mobility:</b> DVT prophylaxis, reposition frequently, ROM exercises, physio consult</div>
+      <div class="ar-item"><b>الحركة:</b> وقاية من الجلطة الوريدية، تغيير الوضع، تمارين ROM</div>
+      <div class="en-item"><b>Skin:</b> Assess q4h, Braden Scale, pressure-relief mattress, turn q2h</div>
+      <div class="ar-item"><b>الجلد:</b> تقييم كل 4 ساعات، مقياس برادن، مرتبة واقية</div>
+      <div class="en-item"><b>Nutrition:</b> Enteral feeding within 24h, dietitian consult, monitor albumin</div>
+      <div class="ar-item"><b>التغذية:</b> تغذية معوية خلال 24 ساعة، استشارة أخصائي تغذية</div>
+      <div class="en-item"><b>Pain/Sedation:</b> Pain scale assessment, IV sedation q1–2h, analgesia</div>
+      <div class="ar-item"><b>الألم والتخدير:</b> تقييم الألم، مسكنات ومهدئات وريدية</div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">Critical Care Nursing • ARDS Lecture Summary</div>
+    <div class="footer-mid">ARDS</div>
+    <div class="footer-right">د. غادة السيد • ملخص محاضرة</div>
+  </div>
+
+</div><!-- end poster -->
+
+<br>
+<button class="download-btn" onclick="downloadImage()">⬇ Download as Image / تحميل كصورة</button>
+
+<script>
+function downloadImage() {
+  const poster = document.getElementById('poster');
+  const btn = document.querySelectorAll('.download-btn');
+  btn.forEach(b => b.style.display = 'none');
+  
+  html2canvas(poster, {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: '#1a1a2e',
+    logging: false,
+    width: poster.offsetWidth,
+    height: poster.offsetHeight
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'ARDS_Lecture_Poster.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    btn.forEach(b => b.style.display = '');
+  });
+}
+</script>
+
+</body>
+</html>

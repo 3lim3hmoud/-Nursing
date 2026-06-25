@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hepatic Encephalopathy – Lecture Summary Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d1b2a;
+    font-family: 'Open Sans', sans-serif;
+    color: #f0f0f0;
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 100%);
+    border: 2px solid #e8a020;
+    border-radius: 16px;
+    padding: 30px 36px;
+    margin-bottom: 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #e8a020, #e84040, #e8a020);
+  }
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem; font-weight: 900;
+    color: #e8a020;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: #ff5a5a;
+    margin-top: 6px; letter-spacing: 1px;
+  }
+  .header .ar-title {
+    font-size: 1.5rem; font-weight: 700;
+    color: #f0c060;
+    margin-top: 8px;
+    direction: rtl;
+  }
+  .header .subtitle {
+    font-size: 0.85rem; color: #aac4e0;
+    margin-top: 10px;
+  }
+
+  /* ── SECTION CARD ── */
+  .section {
+    border-radius: 14px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255,255,255,0.08);
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px;
+  }
+  .section-icon {
+    font-size: 1.6rem;
+  }
+  .section-title-wrap { flex: 1; }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 1.5px;
+  }
+  .section-title-ar {
+    font-size: 0.9rem; font-weight: 600;
+    direction: rtl; margin-top: 2px; opacity: 0.85;
+  }
+  .section-body {
+    padding: 16px 20px 20px;
+    background: rgba(0,0,0,0.35);
+  }
+
+  /* Color themes */
+  .c-def   { background: linear-gradient(135deg,#1e3a5f,#152d4a); }
+  .c-etio  { background: linear-gradient(135deg,#3d1a5e,#2a1240); }
+  .c-patho { background: linear-gradient(135deg,#1a4a2e,#0f2d1a); }
+  .c-mani  { background: linear-gradient(135deg,#5e2a1a,#3d1810); }
+  .c-diag  { background: linear-gradient(135deg,#1a3d5e,#0f2540); }
+  .c-med   { background: linear-gradient(135deg,#3d3d1a,#2a2a0f); }
+  .c-nur   { background: linear-gradient(135deg,#1a4a45,#0f2d2a); }
+
+  .t-def   { color: #60aaff; } .tar-def  { color: #a0ccff; }
+  .t-etio  { color: #cc80ff; } .tar-etio { color: #e0b0ff; }
+  .t-patho { color: #60dd80; } .tar-patho{ color: #a0f0b0; }
+  .t-mani  { color: #ff8060; } .tar-mani { color: #ffb0a0; }
+  .t-diag  { color: #60c8ff; } .tar-diag { color: #a0e0ff; }
+  .t-med   { color: #ffe060; } .tar-med  { color: #fff0a0; }
+  .t-nur   { color: #60ffdd; } .tar-nur  { color: #a0ffe8; }
+
+  /* ── GRID for cards ── */
+  .grid {
+    display: grid;
+    gap: 10px;
+  }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border-left: 3px solid;
+  }
+  .card .en { font-size: 0.82rem; font-weight: 600; line-height: 1.4; }
+  .card .ar { font-size: 0.75rem; direction: rtl; margin-top: 4px; opacity: 0.8; line-height: 1.4; }
+
+  /* ── FLOW ── */
+  .flow {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .flow-step {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .flow-arrow {
+    text-align: center; color: #888; font-size: 1rem;
+    padding: 2px 0;
+  }
+  .flow-step .num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 1.1rem;
+    opacity: 0.4; min-width: 22px;
+  }
+  .flow-step .content .en { font-size: 0.82rem; font-weight: 600; }
+  .flow-step .content .ar { font-size: 0.75rem; direction: rtl; margin-top: 3px; opacity: 0.8; }
+
+  /* ── LIST ── */
+  .list { display: flex; flex-direction: column; gap: 8px; }
+  .list-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 10px 14px;
+    border-left: 3px solid;
+  }
+  .list-item .en { font-size: 0.82rem; font-weight: 600; }
+  .list-item .ar { font-size: 0.75rem; direction: rtl; margin-top: 3px; opacity: 0.8; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #556;
+    font-size: 0.75rem;
+  }
+
+  /* accent colors for cards & list borders */
+  .acc-def  { border-color: #60aaff; }
+  .acc-etio { border-color: #cc80ff; }
+  .acc-patho{ border-color: #60dd80; }
+  .acc-mani { border-color: #ff8060; }
+  .acc-diag { border-color: #60c8ff; }
+  .acc-med  { border-color: #ffe060; }
+  .acc-nur  { border-color: #60ffdd; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header">
+  <h1>Hepatic Encephalopathy</h1>
+  <h2>Comprehensive Lecture Summary Poster</h2>
+  <div class="ar-title">اعتلال الدماغ الكبدي – ملخص المحاضرة</div>
+  <div class="subtitle">DR. Abdelrahman Elzefzaf · Consultant in Intensive Care & Critical Care</div>
+</div>
+
+<!-- ════════════════ 1. DEFINITION ════════════════ -->
+<div class="section">
+  <div class="section-header c-def">
+    <div class="section-icon">🧠</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-def">1 · Definition</div>
+      <div class="section-title-ar tar-def">التعريف</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="grid grid-2">
+      <div class="card acc-def">
+        <div class="en">A <strong>deadly complication of liver disease</strong> caused by profound liver failure and accumulation of <strong>ammonia &amp; toxic metabolites</strong> in the blood.</div>
+        <div class="ar">مضاعفة خطيرة من مضاعفات أمراض الكبد تحدث بسبب فشل الكبد الحاد وتراكم الأمونيا والمواد السامة في الدم.</div>
+      </div>
+      <div class="card acc-def">
+        <div class="en"><strong>Hepatic Coma</strong> is the advanced stage of hepatic encephalopathy — the most severe form of the condition.</div>
+        <div class="ar"><strong>الغيبوبة الكبدية</strong> هي المرحلة المتقدمة من اعتلال الدماغ الكبدي وأشد أشكاله خطورة.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 2. ETIOLOGY ════════════════ -->
+<div class="section">
+  <div class="section-header c-etio">
+    <div class="section-icon">⚡</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-etio">2 · Etiology / Precipitating Factors</div>
+      <div class="section-title-ar tar-etio">الأسباب والعوامل المحرضة</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="grid grid-4">
+      <div class="card acc-etio">
+        <div class="en">🦠 Build-up of toxins in the bloodstream</div>
+        <div class="ar">تراكم السموم في مجرى الدم</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🫁 Infections (e.g. Pneumonia)</div>
+        <div class="ar">الالتهابات كالالتهاب الرئوي</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🫘 Kidney problems</div>
+        <div class="ar">مشاكل الكلى</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">💧 Dehydration</div>
+        <div class="ar">الجفاف</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🚽 Constipation</div>
+        <div class="ar">الإمساك</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">💊 Diuretics</div>
+        <div class="ar">مدرات البول</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🫀 Low oxygen levels (Hypoxia)</div>
+        <div class="ar">انخفاض مستوى الأكسجين (نقص التأكسج)</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🔪 Recent surgery or trauma</div>
+        <div class="ar">الجراحة الحديثة أو الصدمات</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">💊 CNS depressant drugs (barbiturates, benzodiazepines)</div>
+        <div class="ar">أدوية مثبطة للجهاز العصبي المركزي</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🥩 Increased protein intake</div>
+        <div class="ar">زيادة تناول البروتين</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">🩺 Paracentesis</div>
+        <div class="ar">البزل البطني (سحب الاستسقاء)</div>
+      </div>
+      <div class="card acc-etio">
+        <div class="en">⚗️ Electrolyte imbalance (Hypokalemia)</div>
+        <div class="ar">اضطراب الشوارد (نقص البوتاسيوم)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 3. PATHOPHYSIOLOGY ════════════════ -->
+<div class="section">
+  <div class="section-header c-patho">
+    <div class="section-icon">🔬</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-patho">3 · Pathophysiology</div>
+      <div class="section-title-ar tar-patho">الفيزيولوجيا المرضية</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="flow">
+      <div class="flow-step">
+        <div class="num">①</div>
+        <div class="content">
+          <div class="en">Damaged liver cells <strong>fail to detoxify</strong> and convert ammonia to urea</div>
+          <div class="ar">خلايا الكبد التالفة تفشل في تحويل الأمونيا إلى يوريا</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="num">②</div>
+        <div class="content">
+          <div class="en">Ammonia continuously enters the bloodstream from <strong>GI absorption, kidneys &amp; muscle cells</strong></div>
+          <div class="ar">تتراكم الأمونيا في مجرى الدم من الامتصاص المعوي والكلى وخلايا العضلات</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="num">③</div>
+        <div class="content">
+          <div class="en"><strong>Increased ammonia concentration</strong> in blood + NH₃ shunting + GABA-BD receptor activation</div>
+          <div class="ar">ارتفاع تركيز الأمونيا في الدم وتفعيل مستقبلات GABA-BD</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="num">④</div>
+        <div class="content">
+          <div class="en"><strong>Brain dysfunction &amp; damage</strong></div>
+          <div class="ar">خلل وتلف في وظائف المخ</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="num">⑤</div>
+        <div class="content">
+          <div class="en">➡ <strong>Hepatic Encephalopathy</strong></div>
+          <div class="ar">➡ اعتلال الدماغ الكبدي</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 4. CLINICAL MANIFESTATIONS ════════════════ -->
+<div class="section">
+  <div class="section-header c-mani">
+    <div class="section-icon">🩺</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-mani">4 · Clinical Manifestations</div>
+      <div class="section-title-ar tar-mani">المظاهر السريرية</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="grid grid-3">
+      <div class="card acc-mani">
+        <div class="en">🧩 Minor mental changes</div>
+        <div class="ar">تغيرات ذهنية بسيطة</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">⚡ Motor disturbances</div>
+        <div class="ar">اضطرابات حركية</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">😵 Confusion &amp; mood alteration</div>
+        <div class="ar">ارتباك وتقلبات في المزاج</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">😴 Altered sleep pattern / Insomnia</div>
+        <div class="ar">اضطراب النوم / الأرق</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">🙌 Asterixis (flapping tremor of hands)</div>
+        <div class="ar">رفرفة اليدين (رعشة الاستسلام)</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">✍️ Changes in handwriting</div>
+        <div class="ar">تغير في الكتابة اليدوية</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">👃 Fetor hepaticus (breath smells like mowed grass / acetone / old wine)</div>
+        <div class="ar">رائحة الفم الكبدية (كالعشب أو الأسيتون)</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">🗺️ Disoriented to time &amp; place</div>
+        <div class="ar">فقدان التوجه في الزمان والمكان</div>
+      </div>
+      <div class="card acc-mani">
+        <div class="en">⚠️ Coma · Seizures · Severe personality changes</div>
+        <div class="ar">غيبوبة · تشنجات · تغيرات شخصية شديدة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 5. DIAGNOSTIC TESTS ════════════════ -->
+<div class="section">
+  <div class="section-header c-diag">
+    <div class="section-icon">🔭</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-diag">5 · Diagnostic Tests</div>
+      <div class="section-title-ar tar-diag">الفحوصات التشخيصية</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="list">
+      <div class="list-item acc-diag">
+        <div class="en">🩸 <strong>Blood Tests (CBC)</strong> — Check RBC, WBC, platelets. Low RBC = blood loss &amp; oxygen deficiency. Also measure <strong>sodium, potassium &amp; ammonia levels</strong>; elevated levels indicate impaired liver function.</div>
+        <div class="ar">تحاليل الدم (CBC) – فحص كريات الدم الحمراء والبيضاء والصفائح + مستويات الصوديوم والبوتاسيوم والأمونيا للكشف عن ضعف وظائف الكبد.</div>
+      </div>
+      <div class="list-item acc-diag">
+        <div class="en">🖥️ <strong>Imaging Tests</strong> — Head CT scan or MRI to detect bleeding or brain abnormalities.</div>
+        <div class="ar">التصوير الإشعاعي – أشعة مقطعية أو رنين مغناطيسي للرأس للكشف عن نزيف أو تشوهات في المخ.</div>
+      </div>
+      <div class="list-item acc-diag">
+        <div class="en">🧪 <strong>Liver Function Tests (LFTs)</strong> — Elevated liver enzymes indicate liver stress or damage.</div>
+        <div class="ar">وظائف الكبد – ارتفاع الإنزيمات يدل على توتر أو تلف بالكبد.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 6. MEDICAL MANAGEMENT ════════════════ -->
+<div class="section">
+  <div class="section-header c-med">
+    <div class="section-icon">💊</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-med">6 · Medical Management</div>
+      <div class="section-title-ar tar-med">الإدارة الطبية</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="list">
+      <div class="list-item acc-med">
+        <div class="en">🎯 <strong>Identify &amp; treat precipitating causes:</strong> GI bleeding, increased protein, constipation, infection, CNS depressant drugs, dehydration. GI bleeding &amp; increased protein → more nitrogenous compounds → worsen encephalopathy.</div>
+        <div class="ar">تحديد وعلاج الأسباب المحرضة: نزيف الجهاز الهضمي، زيادة البروتين، الإمساك، العدوى، مثبطات الجهاز العصبي، الجفاف.</div>
+      </div>
+      <div class="list-item acc-med">
+        <div class="en">🧫 <strong>Reduce ammonia / colonic bacteria:</strong> <strong>Neomycin</strong> (not absorbed → destroys ammonia-producing intestinal bacteria) + <strong>Lactulose</strong> (acidifies colon → traps ammonia).</div>
+        <div class="ar">تقليل الأمونيا وبكتيريا القولون: نيومايسين (غير ممتص → يقضي على البكتيريا المنتجة للأمونيا) + لاكتيلوز.</div>
+      </div>
+      <div class="list-item acc-med">
+        <div class="en">💧 <strong>Maintain fluid volume balance:</strong> Ascites, bleeding &amp; low fluid intake cause fluid deficit. Correct with IV fluids (carefully monitored) + electrolyte replacement.</div>
+        <div class="ar">الحفاظ على توازن السوائل: علاج نقص السوائل الناتج عن الاستسقاء والنزيف بمحاليل وريدية مع مراقبة دقيقة وتصحيح الشوارد.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ 7. NURSING DIAGNOSIS & INTERVENTIONS ════════════════ -->
+<div class="section">
+  <div class="section-header c-nur">
+    <div class="section-icon">👩‍⚕️</div>
+    <div class="section-title-wrap">
+      <div class="section-title t-nur">7 · Nursing Diagnosis &amp; Interventions</div>
+      <div class="section-title-ar tar-nur">التشخيص التمريضي والتدخلات</div>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="grid grid-2" style="margin-bottom:12px;">
+      <div>
+        <div style="color:#60ffdd;font-weight:700;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Nursing Diagnoses · التشخيصات التمريضية</div>
+        <div class="list">
+          <div class="list-item acc-nur">
+            <div class="en">📋 Ineffective therapeutic regimen management (patient &amp; family) related to reduced dietary protein &amp; long-term neomycin therapy</div>
+            <div class="ar">عدم فاعلية إدارة النظام العلاجي (للمريض والأسرة) بشأن تقليل البروتين والعلاج الدوائي طويل الأمد</div>
+          </div>
+          <div class="list-item acc-nur">
+            <div class="en">💧 Fluid volume deficit related to bleeding, decreased intake &amp; ascites</div>
+            <div class="ar">نقص حجم السوائل بسبب النزيف وقلة الإدخال والاستسقاء</div>
+          </div>
+          <div class="list-item acc-nur">
+            <div class="en">⚠️ Risk for injury related to loss of protective mechanisms secondary to hepatic coma</div>
+            <div class="ar">خطر الإصابة بسبب فقدان آليات الحماية الثانوية للغيبوبة الكبدية</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="color:#60ffdd;font-weight:700;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Nursing Interventions · التدخلات التمريضية</div>
+        <div class="grid grid-2" style="gap:8px;">
+          <div class="card acc-nur">
+            <div class="en">🥗 Promote low-protein diet</div>
+            <div class="ar">تشجيع النظام الغذائي قليل البروتين</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">🩸 Monitor for GI haemorrhage</div>
+            <div class="ar">مراقبة النزيف الهضمي</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">🚿 Encourage bowel cleansing</div>
+            <div class="ar">تشجيع تنظيف الأمعاء</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">⚖️ Maintain intake-output balance</div>
+            <div class="ar">المتابعة الدقيقة لميزان السوائل</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">🫁 Maintain patent airway</div>
+            <div class="ar">المحافظة على سالكية مجرى الهواء</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">🦠 Prevent infection</div>
+            <div class="ar">الوقاية من العدوى</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">⚗️ Prevent ammonia toxicity &amp; hypokalemia</div>
+            <div class="ar">منع سمية الأمونيا ونقص البوتاسيوم</div>
+          </div>
+          <div class="card acc-nur">
+            <div class="en">😴 Avoid sedation</div>
+            <div class="ar">تجنب التهدئة</div>
+          </div>
+          <div class="card acc-nur" style="grid-column:1/-1;">
+            <div class="en">🦴 Prevent complications of immobility</div>
+            <div class="ar">الوقاية من مضاعفات الثبات وعدم الحركة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Hepatic Encephalopathy · Nursing Education Summary Poster · DR. Abdelrahman Elzefzaf
+</div>
+
+</body>
+</html>

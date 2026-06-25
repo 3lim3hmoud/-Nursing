@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Mechanical Ventilator in Critical Care</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Montserrat:wght@400;600;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1122px;
+    min-height: 794px;
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 40%, #0d2744 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    padding: 24px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #00c6ff;
+    padding-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 900;
+    color: #00c6ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header h2 {
+    font-size: 18px;
+    color: #e0e0e0;
+    font-weight: 600;
+    margin-top: 4px;
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+  }
+  .header p { font-size: 11px; color: #a0c4e8; margin-top: 3px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border-left: 4px solid #00c6ff;
+    backdrop-filter: blur(4px);
+  }
+  .card.green  { border-left-color: #2ecc71; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.red    { border-left-color: #e74c3c; }
+  .card.purple { border-left-color: #9b59b6; }
+  .card.teal   { border-left-color: #1abc9c; }
+  .card.yellow { border-left-color: #f1c40f; }
+
+  .card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00c6ff;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
+  }
+  .card.green  h3 { color: #2ecc71; }
+  .card.orange h3 { color: #e67e22; }
+  .card.red    h3 { color: #e74c3c; }
+  .card.purple h3 { color: #9b59b6; }
+  .card.teal   h3 { color: #1abc9c; }
+  .card.yellow h3 { color: #f1c40f; }
+
+  .card .ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 10.5px;
+    color: #b0d4f0;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  .card .en {
+    font-size: 10px;
+    color: #e0e0e0;
+    line-height: 1.55;
+  }
+
+  ul.dots { list-style: none; }
+  ul.dots li::before { content: "▸ "; color: #00c6ff; font-size: 10px; }
+  ul.dots.g li::before { color: #2ecc71; }
+  ul.dots.o li::before { color: #e67e22; }
+  ul.dots.r li::before { color: #e74c3c; }
+  ul.dots.p li::before { color: #9b59b6; }
+  ul.dots.t li::before { color: #1abc9c; }
+  ul.dots.y li::before { color: #f1c40f; }
+
+  .span2 { grid-column: span 2; }
+  .span4 { grid-column: span 4; }
+
+  table.params {
+    width: 100%; font-size: 9px; border-collapse: collapse; margin-top: 4px;
+  }
+  table.params th {
+    background: rgba(0,198,255,0.25); padding: 4px; text-align: center; font-size: 9px;
+  }
+  table.params td { padding: 3px 5px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  table.params tr:nth-child(even) td { background: rgba(255,255,255,0.04); }
+
+  .badge {
+    display: inline-block; background: rgba(0,198,255,0.2);
+    border: 1px solid #00c6ff; border-radius: 4px;
+    padding: 1px 5px; font-size: 9px; margin: 1px 2px;
+  }
+  .badge.g { background: rgba(46,204,113,0.2); border-color: #2ecc71; }
+  .badge.r { background: rgba(231,76,60,0.2);  border-color: #e74c3c; }
+  .badge.o { background: rgba(230,126,34,0.2); border-color: #e67e22; }
+
+  .footer {
+    grid-column: span 4;
+    text-align: center;
+    font-size: 9px;
+    color: #5a8ab0;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Tajawal', sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Basic Mechanical Ventilator in Critical Care</h1>
+  <h2>التنفس الصناعي في العناية المركزة</h2>
+  <p>Dr. Ghada Elsayed &nbsp;|&nbsp; Critical Care Nursing Lecture</p>
+</div>
+
+<div class="grid">
+
+  <!-- Definition -->
+  <div class="card span2">
+    <h3>📖 Definition — التعريف</h3>
+    <p class="ar">الجهاز الذي يحل محل وظيفة التنفس أو يدعمها عن طريق ضخ الهواء للرئتين وإخراجه</p>
+    <p class="en">A mechanical device that <strong>inflates & deflates the lungs</strong>, replacing or supplementing natural breathing. Types: <span class="badge">Siemens Servo 300</span> <span class="badge">Drager Evita 4</span></p>
+  </div>
+
+  <!-- Indications -->
+  <div class="card span2 green">
+    <h3>✅ Indications — المؤشرات</h3>
+    <p class="ar">الغياب التام للتنفس · فشل تنفسي حاد · نقص أكسجين حاد · إرهاق عضلات التنفس</p>
+    <ul class="dots g en">
+      <li>Apnea (absence of breathing)</li>
+      <li>Acute ventilatory failure — pH ≤7.25, PaCO₂ ≥50 mmHg</li>
+      <li>Severe hypoxemia — PaO₂ ≤50 mmHg on room air</li>
+      <li>Respiratory muscle fatigue (COPD)</li>
+    </ul>
+  </div>
+
+  <!-- Types -->
+  <div class="card green">
+    <h3>🔀 Types — الأنواع</h3>
+    <p class="ar">ضغط سلبي (الرئة الحديدية) · ضغط إيجابي (الأجهزة الحديثة)</p>
+    <ul class="dots g en">
+      <li><strong>Negative pressure</strong> — Iron lung (historical)</li>
+      <li><strong>Positive pressure</strong> — Modern ventilators (invasive / non-invasive)</li>
+    </ul>
+  </div>
+
+  <!-- Modes -->
+  <div class="card orange">
+    <h3>⚙️ Ventilation Modes — الأوضاع</h3>
+    <p class="ar">أوضاع حجمية: CMV · AMV · SIMV | أوضاع ضغطية: PSV · PC/IRV · BiPAP · CPAP</p>
+    <ul class="dots o en">
+      <li><strong>CMV</strong> — Full control by ventilator</li>
+      <li><strong>AMV/AC</strong> — Patient triggers, vent delivers full Vt</li>
+      <li><strong>SIMV</strong> — Mixed mandatory + spontaneous</li>
+      <li><strong>PSV</strong> — Patient-initiated, pressure-assisted</li>
+      <li><strong>CPAP</strong> — Continuous positive pressure, patient breathes</li>
+      <li><strong>BiPAP</strong> — Non-invasive bilevel pressure</li>
+    </ul>
+  </div>
+
+  <!-- Settings table -->
+  <div class="card span2 purple">
+    <h3>🎛️ Ventilator Settings — الإعدادات</h3>
+    <p class="ar">إعدادات يضعها الطبيب حسب حالة المريض</p>
+    <table class="params">
+      <tr><th>Parameter</th><th>Normal / Target</th><th>بالعربي</th></tr>
+      <tr><td>Tidal Volume (Vt)</td><td>6–8 ml/kg</td><td>حجم المد والجزر</td></tr>
+      <tr><td>Respiratory Rate</td><td>10–20 br/min</td><td>معدل التنفس</td></tr>
+      <tr><td>FiO₂</td><td>21–100%</td><td>كسر الأكسجين المستنشق</td></tr>
+      <tr><td>I:E Ratio</td><td>1:2</td><td>نسبة الشهيق للزفير</td></tr>
+      <tr><td>PEEP</td><td>5–8 cmH₂O</td><td>ضغط نهاية الزفير الإيجابي</td></tr>
+      <tr><td>PIP (Pressure Limit)</td><td>10–20 cmH₂O above PIP</td><td>حد الضغط القمي</td></tr>
+    </table>
+  </div>
+
+  <!-- Criteria for institution -->
+  <div class="card red">
+    <h3>🚨 Criteria for Ventilation — معايير التنفس الصناعي</h3>
+    <p class="ar">يُبدأ التنفس الصناعي عند: RR>35 · Vt<5 ml/kg · pH<7.25 · PaO₂<60 · PaCO₂>50</p>
+    <table class="params">
+      <tr><th>Parameter</th><th>Ventilation ✔</th><th>Normal</th></tr>
+      <tr><td>RR (br/min)</td><td>&gt;35</td><td>10–20</td></tr>
+      <tr><td>Tidal Vol (ml/kg)</td><td>&lt;5</td><td>5–7</td></tr>
+      <tr><td>pH</td><td>&lt;7.25</td><td>7.35–7.45</td></tr>
+      <tr><td>PaO₂ (mmHg)</td><td>&lt;60</td><td>75–100</td></tr>
+      <tr><td>PaCO₂ (mmHg)</td><td>&gt;50</td><td>35–45</td></tr>
+    </table>
+  </div>
+
+  <!-- Weaning -->
+  <div class="card teal span2">
+    <h3>🔓 Weaning — الفطام عن التنفس الصناعي</h3>
+    <p class="ar">معايير الفطام الموضوعية: PaO₂/FiO₂>150 · PEEP 5-8 · FiO₂<50% · pH>7.25 · قدرة على بدء التنفس التلقائي</p>
+    <p class="en">Objective: PaO₂/FiO₂&gt;150–200 | PEEP 5–8 cmH₂O | FiO₂&lt;50% | pH&gt;7.25 | Ability to initiate spontaneous breaths</p>
+    <p class="en" style="margin-top:5px;"><strong>Failure signs:</strong> SaO₂&lt;85–90% | PaO₂&lt;50–60 | pH&lt;7.32 | RR&gt;30–35 | ↑ Work of breathing | Hemodynamic instability</p>
+    <p class="ar" style="margin-top:4px;">علامات فشل الفطام: انخفاض الأكسجين · ارتفاع معدل التنفس · عدم استقرار الدورة الدموية · تغير الوعي</p>
+  </div>
+
+  <!-- Complications -->
+  <div class="card orange span2">
+    <h3>⚠️ Complications — المضاعفات</h3>
+    <p class="ar">باروتراوما · مضاعفات قلبية وعائية · نزيف جهاز هضمي · التهاب مرتبط بالتنفس الصناعي VAP · اعتماد نفسي</p>
+    <ul class="dots o en">
+      <li><strong>Barotrauma</strong> — Pneumothorax, pneumomediastinum, subcutaneous emphysema</li>
+      <li><strong>Cardiovascular</strong> — ↓ Venous return, ↓ CO, hypotension</li>
+      <li><strong>GI</strong> — Stress ulcers, GI bleeding, paralytic ileus</li>
+      <li><strong>Infection</strong> — VAP (Ventilator-Associated Pneumonia)</li>
+      <li><strong>O₂ Toxicity</strong> — FiO₂ &gt;60% for prolonged periods</li>
+      <li><strong>Psychological</strong> — Anxiety, depression, dependence on ventilator</li>
+    </ul>
+  </div>
+
+  <!-- Alarms -->
+  <div class="card yellow">
+    <h3>🔔 Alarms — التنبيهات</h3>
+    <p class="ar">تنبيهات المنخفض: انقطاع التوصيل · فقدان حجم المد والجزر · تسريب | تنبيهات المرتفع: مفرزات · استرواح · تشنج قصبي</p>
+    <p class="en"><span class="badge g">Low Pressure</span> Disconnection · Loss of Vt · Leak · Extubation</p>
+    <p class="en" style="margin-top:4px;"><span class="badge r">High Pressure</span> Secretions · Pneumothorax · ARDS · Bronchospasm · Biting tube · H₂O in tubing</p>
+    <p class="en" style="margin-top:4px; font-weight:700; color:#f1c40f;">⚠ ALARMS MUST NEVER BE IGNORED!</p>
+  </div>
+
+  <!-- Patient Circuit -->
+  <div class="card">
+    <h3>🔗 Patient Circuit — دائرة المريض</h3>
+    <p class="ar">الدائرة التنفسية = ذراع الشهيق + مجرى المريض + ذراع الزفير</p>
+    <ul class="dots en">
+      <li><strong>Inspiratory limb</strong> — delivers blended gas to patient</li>
+      <li><strong>Inhalation filter</strong> — filters gas & protects machine</li>
+      <li><strong>Humidifier</strong> — adds moisture, heats gas to body temp</li>
+      <li><strong>Nebulizer</strong> — delivers medications</li>
+      <li><strong>Expiratory limb</strong> — returns exhaled gas</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Basic Mechanical Ventilator in Critical Care &nbsp;|&nbsp; التنفس الصناعي في العناية المركزة &nbsp;|&nbsp; Dr. Ghada Elsayed &nbsp;|&nbsp; Nursing Education
+  </div>
+
+</div>
+</body>
+</html>

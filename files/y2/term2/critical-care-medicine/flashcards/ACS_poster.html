@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acute Coronary Syndrome – Lecture Summary Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#080f0a;
+    font-family:'Open Sans',sans-serif;
+    color:#f0f0f0;
+    width:940px;
+    margin:0 auto;
+    padding:28px 18px 40px;
+  }
+
+  /* HEADER */
+  .hdr {
+    background:linear-gradient(135deg,#1a0808,#0f1a12,#1a0808);
+    border:2px solid #c0392b;
+    border-radius:16px;
+    padding:26px 34px;
+    margin-bottom:22px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hdr::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c,#c0392b);}
+  .hdr h1{font-family:'Montserrat',sans-serif;font-size:2.4rem;font-weight:900;
+    color:#e74c3c;letter-spacing:2px;text-transform:uppercase;}
+  .hdr h2{font-size:1rem;font-weight:700;color:#1abc9c;margin-top:4px;letter-spacing:1px;}
+  .hdr .ar{font-size:1.4rem;font-weight:700;color:#f39c12;margin-top:7px;direction:rtl;}
+  .hdr .sub{font-size:0.78rem;color:#7f8c8d;margin-top:7px;}
+
+  /* SECTION */
+  .sec{border-radius:14px;margin-bottom:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.07);}
+  .sh{display:flex;align-items:center;gap:12px;padding:12px 18px;}
+  .si{font-size:1.5rem;}
+  .sw{flex:1;}
+  .st{font-family:'Montserrat',sans-serif;font-size:.98rem;font-weight:900;
+    text-transform:uppercase;letter-spacing:1.5px;}
+  .sar{font-size:.83rem;font-weight:600;direction:rtl;margin-top:2px;opacity:.8;}
+  .sb{padding:14px 18px 18px;background:rgba(0,0,0,.42);}
+
+  /* COLORS */
+  .c1{background:linear-gradient(135deg,#1a0808,#0d0505);}
+  .c2{background:linear-gradient(135deg,#0a1a0a,#051005);}
+  .c3{background:linear-gradient(135deg,#0a0a1a,#050510);}
+  .c4{background:linear-gradient(135deg,#1a1200,#100c00);}
+  .c5{background:linear-gradient(135deg,#001a18,#00100f);}
+  .c6{background:linear-gradient(135deg,#180018,#0f000f);}
+  .c7{background:linear-gradient(135deg,#001018,#00080f);}
+  .c8{background:linear-gradient(135deg,#0f1a00,#0a1200);}
+
+  .t1{color:#e74c3c;} .ar1{color:#ff8080;}
+  .t2{color:#2ecc71;} .ar2{color:#80ffb0;}
+  .t3{color:#3498db;} .ar3{color:#80c8ff;}
+  .t4{color:#f39c12;} .ar4{color:#ffc870;}
+  .t5{color:#1abc9c;} .ar5{color:#70e8d0;}
+  .t6{color:#9b59b6;} .ar6{color:#c890e8;}
+  .t7{color:#5dade2;} .ar7{color:#90d0f0;}
+  .t8{color:#a9cce3;} .ar8{color:#d0e8f8;}
+
+  .a1{border-color:#e74c3c;} .a2{border-color:#2ecc71;}
+  .a3{border-color:#3498db;} .a4{border-color:#f39c12;}
+  .a5{border-color:#1abc9c;} .a6{border-color:#9b59b6;}
+  .a7{border-color:#5dade2;} .a8{border-color:#a9cce3;}
+
+  /* GRID */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;}
+  .g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;}
+
+  /* CARD */
+  .card{background:rgba(255,255,255,.05);border-radius:9px;padding:10px 12px;border-left:3px solid;}
+  .card .en{font-size:.78rem;font-weight:600;line-height:1.4;}
+  .card .ar{font-size:.72rem;direction:rtl;margin-top:4px;opacity:.8;line-height:1.4;}
+
+  /* LIST */
+  .lst{display:flex;flex-direction:column;gap:7px;}
+  .li{background:rgba(255,255,255,.05);border-radius:8px;padding:9px 12px;border-left:3px solid;}
+  .li .en{font-size:.78rem;font-weight:600;}
+  .li .ar{font-size:.72rem;direction:rtl;margin-top:3px;opacity:.8;}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;font-size:.75rem;}
+  .tbl th{padding:8px 10px;font-weight:700;text-align:left;border-bottom:1px solid rgba(255,255,255,.15);}
+  .tbl td{padding:7px 10px;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.4;}
+  .tbl tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+  .ar-sm{direction:rtl;font-size:.68rem;opacity:.75;display:block;margin-top:2px;}
+
+  /* LABEL */
+  .lbl{font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:1px;
+    margin-bottom:7px;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.1);}
+
+  /* BADGE */
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;
+    font-size:.7rem;margin-right:4px;}
+  .b-red{background:rgba(231,76,60,.25);color:#e74c3c;}
+  .b-teal{background:rgba(26,188,156,.25);color:#1abc9c;}
+  .b-blue{background:rgba(52,152,219,.25);color:#3498db;}
+  .b-gold{background:rgba(243,156,18,.25);color:#f39c12;}
+  .b-purple{background:rgba(155,89,182,.25);color:#9b59b6;}
+
+  /* FLOW */
+  .flow{display:flex;flex-direction:column;gap:4px;}
+  .fstep{background:rgba(255,255,255,.06);border-radius:7px;padding:8px 12px;
+    display:flex;align-items:flex-start;gap:9px;}
+  .fnum{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.95rem;
+    opacity:.35;min-width:20px;}
+  .farrow{text-align:center;color:#444;font-size:.85rem;}
+  .fstep .en{font-size:.77rem;font-weight:600;}
+  .fstep .ar{font-size:.7rem;direction:rtl;margin-top:3px;opacity:.8;}
+
+  /* COMPARISON TABLE */
+  .ctbl{width:100%;border-collapse:collapse;font-size:.74rem;}
+  .ctbl th{padding:8px 10px;font-weight:700;text-align:center;
+    border-bottom:2px solid rgba(255,255,255,.1);}
+  .ctbl td{padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.05);}
+  .ctbl .feat{text-align:left;color:#aaa;font-weight:600;}
+  .ctbl tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+
+  .mb8{margin-bottom:8px;}
+  .mt10{margin-top:10px;}
+
+  /* FOOTER */
+  .footer{text-align:center;margin-top:26px;padding:12px;
+    border-top:1px solid rgba(255,255,255,.07);color:#333;font-size:.7rem;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>Acute Coronary Syndrome (ACS)</h1>
+  <h2>STEMI · NSTEMI · Unstable Angina</h2>
+  <div class="ar">متلازمة الشريان التاجي الحادة – ملخص المحاضرة</div>
+  <div class="sub">DR. Abdelrahman Elzefzaf · Consultant in Intensive Care & Critical Care</div>
+</div>
+
+<!-- ══ 1. DEFINITION & CAUSES ══ -->
+<div class="sec">
+  <div class="sh c1">
+    <div class="si">❤️</div>
+    <div class="sw">
+      <div class="st t1">1 · Definition & Causes</div>
+      <div class="sar ar1">التعريف والأسباب</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g2 mb8">
+      <div class="li a1" style="border-left-width:4px;">
+        <div class="en"><strong>ACS</strong> = spectrum of clinical presentations from <strong>STEMI</strong> → <strong>NSTEMI</strong> → <strong>Unstable Angina</strong>. Almost always associated with rupture of an <strong>atherosclerotic plaque</strong> and partial or complete thrombosis of the infarct-related artery.</div>
+        <div class="ar">متلازمة الشريان التاجي الحادة: طيف من الحالات السريرية من احتشاء القلب مع ارتفاع ST (STEMI) وبدون ارتفاعه (NSTEMI) حتى الذبحة غير المستقرة. تنجم دائماً تقريباً عن تمزق لويحة تصلب الشرايين وتخثر جزئي أو كامل في الشريان المسبب للاحتشاء.</div>
+      </div>
+      <div>
+        <div class="lbl t1">Causes · الأسباب</div>
+        <div class="g2" style="gap:7px;">
+          <div class="card a1">
+            <div class="en">🔴 <strong>Atherosclerotic</strong> — most common cause</div>
+            <div class="ar">تصلب الشرايين: السبب الأكثر شيوعاً</div>
+          </div>
+          <div class="card a1">
+            <div class="en">⚪ <strong>Non-Atherosclerotic:</strong> Congenital anomalies, Embolus, Dissection, Spasm, Trauma, Arteritis, Metabolic disorders, Intimal proliferation, External compression, Thrombosis without plaque, Substance abuse, O₂ demand-supply mismatch, Small-vessel disease</div>
+            <div class="ar">غير تصلبي: شذوذات خلقية، صمة، انفصال، تشنج، صدمة، التهاب شرايين، اضطرابات استقلابية، تكاثر الطبقة الداخلية، ضغط خارجي، تخثر بدون لويحة، تعاطي المخدرات، اختلال نسبة إمداد الأكسجين</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lbl t1">Risk Factors · عوامل الخطر</div>
+      <div class="g2">
+        <div>
+          <div style="font-size:.72rem;font-weight:700;color:#e74c3c;margin-bottom:6px;">🔒 Non-Modifiable · لا يمكن تغييرها</div>
+          <div class="g2" style="gap:6px;">
+            <div class="card a1"><div class="en">👴 Age · العمر</div></div>
+            <div class="card a1"><div class="en">⚧ Gender · الجنس</div></div>
+            <div class="card a1"><div class="en">🌍 Ethnicity · العرق</div></div>
+            <div class="card a1"><div class="en">👨‍👩‍👧 Family history · التاريخ العائلي</div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.72rem;font-weight:700;color:#2ecc71;margin-bottom:6px;">✅ Modifiable · يمكن تغييرها</div>
+          <div class="g3" style="gap:6px;">
+            <div class="card a2"><div class="en">🚬 Smoking</div><div class="ar">التدخين</div></div>
+            <div class="card a2"><div class="en">📈 High BP</div><div class="ar">ارتفاع الضغط</div></div>
+            <div class="card a2"><div class="en">🍬 Diabetes</div><div class="ar">السكري</div></div>
+            <div class="card a2"><div class="en">🥓 High cholesterol</div><div class="ar">ارتفاع الكوليسترول</div></div>
+            <div class="card a2"><div class="en">😰 Psychosocial</div><div class="ar">نفسي اجتماعي</div></div>
+            <div class="card a2"><div class="en">🫃 Abdominal obesity</div><div class="ar">السمنة البطنية</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 2. PATHOPHYSIOLOGY & TYPES ══ -->
+<div class="sec">
+  <div class="sh c2">
+    <div class="si">🔬</div>
+    <div class="sw">
+      <div class="st t2">2 · Pathophysiology & Types of ACS</div>
+      <div class="sar ar2">الفيزيولوجيا المرضية وأنواع المتلازمة</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g2 mb8">
+      <div>
+        <div class="lbl t2">Pathophysiology · الفيزيولوجيا المرضية</div>
+        <div class="flow">
+          <div class="fstep"><div class="fnum">①</div><div><div class="en">Coronary artery plaque disruption</div><div class="ar">تمزق لويحة الشريان التاجي</div></div></div>
+          <div class="farrow">↓</div>
+          <div class="fstep"><div class="fnum">②</div><div><div class="en">Platelet activation / aggregation + coagulation cascade activation</div><div class="ar">تنشيط الصفائح الدموية وتفعيل سلسلة التخثر</div></div></div>
+          <div class="farrow">↓</div>
+          <div class="fstep"><div class="fnum">③</div><div><div class="en">Endothelial vasoconstriction → intraluminal thrombus/embolisation</div><div class="ar">تضيق وعائي بطاني → تخثر داخل التجويف / صمة</div></div></div>
+          <div class="farrow">↓</div>
+          <div class="fstep"><div class="fnum">④</div><div><div class="en">Obstruction → <strong>ACS</strong> (severity depends on degree of vessel obstruction & extent of myocardium involved)</div><div class="ar">انسداد → ACS (تعتمد الشدة على درجة الانسداد ومدى تورط عضلة القلب)</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl t2">ACS Types · أنواع المتلازمة</div>
+        <div class="lst">
+          <div class="li a2">
+            <div class="en">🟡 <strong>Stable Angina</strong> — fixed stenosis, demand-led ischaemia, predictable, ECG: normal or T changes only</div>
+            <div class="ar">الذبحة المستقرة: تضيق ثابت، نقص تروية مرتبط بالجهد، متوقع، ECG طبيعي</div>
+          </div>
+          <div class="li a2">
+            <div class="en">🟠 <strong>Unstable Angina / NSTEMI</strong> — cap rupture, supply-led ischaemia, symptoms at rest, unpredictable, ECG: ST depression / T-wave inversion, Troponin: negative (UA) or positive (NSTEMI)</div>
+            <div class="ar">الذبحة غير المستقرة / NSTEMI: تمزق الغطاء، نقص تروية في الراحة، ECG: انخفاض ST أو انقلاب موجة T، تروبونين سلبي (UA) أو إيجابي (NSTEMI)</div>
+          </div>
+          <div class="li a2">
+            <div class="en">🔴 <strong>STEMI</strong> — blood clot fully blocks artery, ECG: ST elevation, Troponin: elevated</div>
+            <div class="ar">STEMI: انسداد كامل، ECG: ارتفاع ST، التروبونين مرتفع</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lbl t2">Stable Angina vs ACS – Quick Comparison · مقارنة</div>
+      <table class="ctbl">
+        <tr>
+          <th class="feat" style="background:rgba(255,255,255,.05);">Feature</th>
+          <th style="background:rgba(26,188,156,.15);color:#1abc9c;">Stable Angina · ذبحة مستقرة</th>
+          <th style="background:rgba(231,76,60,.15);color:#e74c3c;">ACS · متلازمة الشريان التاجي</th>
+        </tr>
+        <tr><td class="feat">Pathophysiology</td><td style="color:#80f0d0;">Fixed stenosis, stable plaque</td><td style="color:#ff9090;">Dynamic stenosis, ruptured plaque</td></tr>
+        <tr><td class="feat">Ischaemia type</td><td style="color:#80f0d0;">Demand-led · مرتبط بالطلب</td><td style="color:#ff9090;">Supply-led · مرتبط بالإمداد</td></tr>
+        <tr><td class="feat">Onset</td><td style="color:#80f0d0;">With exertion · بالجهد</td><td style="color:#ff9090;">At rest · في الراحة</td></tr>
+        <tr><td class="feat">Predictable?</td><td style="color:#80f0d0;">Yes · نعم</td><td style="color:#ff9090;">Unpredictable · غير متوقع</td></tr>
+        <tr><td class="feat">Troponin</td><td style="color:#80f0d0;">Normal · طبيعي</td><td style="color:#ff9090;">Elevated (NSTEMI/STEMI) · مرتفع</td></tr>
+        <tr><td class="feat">ECG</td><td style="color:#80f0d0;">Normal / T changes</td><td style="color:#ff9090;">ST changes / elevation</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 3. DIAGNOSIS ══ -->
+<div class="sec">
+  <div class="sh c3">
+    <div class="si">🩺</div>
+    <div class="sw">
+      <div class="st t3">3 · Diagnosis & Workup</div>
+      <div class="sar ar3">التشخيص والفحوصات</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g3 mb8">
+      <div>
+        <div class="lbl t3">Symptoms · الأعراض</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">💔 Chest pain (central, tight/squeezing, radiates to jaw/neck/shoulder/arm)</div><div class="ar">ألم صدري مركزي ضاغط يشع للفك/الرقبة/الكتف/الذراع</div></div>
+          <div class="li a3"><div class="en">🫁 Shortness of breath (SOB)</div><div class="ar">ضيق في التنفس</div></div>
+          <div class="li a3"><div class="en">💓 Palpitation · 💧 Sweating · 🤢 Nausea & vomiting</div><div class="ar">خفقان · تعرق · غثيان وقيء</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl t3">Signs · العلامات</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">📊 Pulse, BP assessment</div><div class="ar">قياس النبض وضغط الدم</div></div>
+          <div class="li a3"><div class="en">🫀 JVP elevation (heart failure)</div><div class="ar">ارتفاع الضغط الوريدي الوداجي (قصور القلب)</div></div>
+          <div class="li a3"><div class="en">🫁 Precordium examination · Lung bases (crepitations)</div><div class="ar">فحص منطقة القلب · قاعدة الرئتين</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl t3">Investigations · الفحوصات</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">📈 <strong>ECG</strong> — first-line diagnostic tool (must be done within 10 min)</div><div class="ar">رسم القلب: أداة التشخيص الأولى (خلال 10 دقائق)</div></div>
+          <div class="li a3"><div class="en">🧪 <strong>Troponin I or T</strong> (cardiac biomarker), CK-MB, Myoglobin</div><div class="ar">التروبونين (المعلم القلبي الأساسي)، CK-MB، ميوغلوبين</div></div>
+          <div class="li a3"><div class="en">🫀 <strong>Echocardiography</strong> — wall motion abnormalities</div><div class="ar">الإيكو: اكتشاف اضطرابات حركة جدار القلب</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="g2">
+      <div>
+        <div class="lbl t3">Chest Pain Characterization · توصيف ألم الصدر</div>
+        <table class="tbl">
+          <tr><th style="color:#e74c3c;background:rgba(231,76,60,.15);">Ischaemic Cardiac · قلبي</th><th style="color:#3498db;background:rgba(52,152,219,.15);">Non-Cardiac · غير قلبي</th></tr>
+          <tr><td>Central, diffuse · مركزي منتشر</td><td>Peripheral, localised · محيطي موضعي</td></tr>
+          <tr><td>Jaw/neck/shoulder/arm radiation · إشعاع للفك والذراع</td><td>Other or no radiation · إشعاع آخر أو بلا</td></tr>
+          <tr><td>Tight, squeezing, choking · ضاغط خانق</td><td>Sharp, stabbing · حاد طعنة</td></tr>
+          <tr><td>With exertion/emotion · بالجهد</td><td>Spontaneous/posture · تلقائي/وضعي</td></tr>
+          <tr><td>Relieved by rest + nitrates</td><td>Not relieved by rest</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="lbl t3">Differential Diagnosis · التشخيص التفريقي</div>
+        <div class="g2" style="gap:7px;">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;color:#e74c3c;margin-bottom:5px;">🫀 Cardiac</div>
+            <div class="lst">
+              <div class="li a1"><div class="en">Aortic dissection</div><div class="ar">تشريح الأبهر</div></div>
+              <div class="li a1"><div class="en">Pericarditis</div><div class="ar">التهاب التأمور</div></div>
+              <div class="li a1"><div class="en">Myocarditis · Valvular disease</div><div class="ar">التهاب عضلة القلب · أمراض الصمامات</div></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:.7rem;font-weight:700;color:#3498db;margin-bottom:5px;">🫁 Non-Cardiac</div>
+            <div class="lst">
+              <div class="li a3"><div class="en">GI: esophageal spasm, peptic ulcer</div><div class="ar">هضمي: تشنج المريء، قرحة معدية</div></div>
+              <div class="li a3"><div class="en">Pulmonary: pneumonia, embolism, pneumothorax</div><div class="ar">رئوي: التهاب رئة، صمة، استرواح الصدر</div></div>
+              <div class="li a3"><div class="en">Neurological · Musculoskeletal</div><div class="ar">عصبي · عضلي هيكلي</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="li a4 mt10">
+          <div class="en">⚠️ <strong>Atypical ACS</strong> (epigastric pain, back pain, dizziness) frequent in young (25–40 yrs), elderly (>75 yrs) & women. <strong>Silent ischaemia</strong> common in diabetics.</div>
+          <div class="ar">ACS غير نمطي (ألم شرسوفي، ظهري، دوار) شائع عند الشباب والمسنين والنساء. نقص التروية الصامت شائع عند مرضى السكري.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 4. ECG CRITERIA ══ -->
+<div class="sec">
+  <div class="sh c4">
+    <div class="si">📈</div>
+    <div class="sw">
+      <div class="st t4">4 · ECG Criteria & Location of MI</div>
+      <div class="sar ar4">معايير رسم القلب وموقع الاحتشاء</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g2 mb8">
+      <div>
+        <div class="lbl t4">STEMI ECG Criteria · معايير STEMI</div>
+        <div class="lst">
+          <div class="li a4"><div class="en">📏 ST elevation ≥2mm in ≥2 contiguous precordial leads (men); ≥1.5mm (women)</div><div class="ar">ارتفاع ST ≥2 مم في تصريفين متجاورين على الأقل في الرجال (1.5 في النساء)</div></div>
+          <div class="li a4"><div class="en">📏 ≥1mm in other leads (2 contiguous)</div><div class="ar">≥1 مم في التصريفات الأخرى (2 متجاورتان)</div></div>
+          <div class="li a4"><div class="en">Q wave formation over hours to days → R wave reduced → Q wave deepens (ECG evolution)</div><div class="ar">تطور رسم القلب: تشكل موجة Q خلال ساعات–أيام ← تراجع موجة R ← تعمق موجة Q</div></div>
+          <div class="li a4"><div class="en">⚠️ <strong>A normal ECG does NOT exclude ACS!</strong></div><div class="ar">رسم القلب الطبيعي لا يستبعد ACS!</div></div>
+        </div>
+        <div class="lbl t4 mt10">NSTEMI ECG · معايير NSTEMI</div>
+        <div class="lst">
+          <div class="li a4"><div class="en">ST segment <strong>depression</strong> or T-wave inversion (subendocardial injury)</div><div class="ar">انخفاض ST أو انقلاب موجة T (إصابة تحت الشغاف)</div></div>
+          <div class="li a4"><div class="en">No persistent ST elevation — Troponin positive = NSTEMI; Troponin negative = Unstable Angina</div><div class="ar">لا ارتفاع ST مستمر. تروبونين إيجابي = NSTEMI، سلبي = ذبحة غير مستقرة</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl t4">Location of MI & ECG Leads · موقع الاحتشاء</div>
+        <table class="tbl">
+          <tr><th style="color:#f39c12;background:rgba(243,156,18,.15);">Location · الموقع</th><th style="color:#f39c12;background:rgba(243,156,18,.15);">ECG Leads · تصريفات</th></tr>
+          <tr><td>Anteroseptal · أمامي حاجزي</td><td>V1–V3</td></tr>
+          <tr><td>Anterolateral · أمامي جانبي</td><td>V1–V6</td></tr>
+          <tr><td>Anterior STEMI</td><td>Precordial + I, aVL (LAD)</td></tr>
+          <tr><td>Inferior wall · سفلي</td><td>II, III, aVF</td></tr>
+          <tr><td>Lateral wall · جانبي</td><td>I, aVL, V4–V6</td></tr>
+          <tr><td>Right ventricular · بطين أيمن</td><td>RV4, RV5</td></tr>
+          <tr><td>Posterior · خلفي</td><td>R/S >1 in V1 + T-wave inversion (reciprocal ST depression V1–V3)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="lbl t4">Biochemical Markers · المعلمات الكيميائية الحيوية</div>
+      <table class="tbl">
+        <tr>
+          <th style="color:#f39c12;background:rgba(243,156,18,.12);">Marker · المعلم</th>
+          <th style="color:#f39c12;background:rgba(243,156,18,.12);">Rise after MI (h) · الظهور</th>
+          <th style="color:#f39c12;background:rgba(243,156,18,.12);">Peak (h) · الذروة</th>
+          <th style="color:#f39c12;background:rgba(243,156,18,.12);">Normalise (days) · العودة</th>
+        </tr>
+        <tr><td>🩸 <strong>Cardiac Troponin I</strong> (gold standard)</td><td>3–8 h</td><td>12–24 h</td><td>7–10 days</td></tr>
+        <tr><td>🩸 <strong>Cardiac Troponin T</strong></td><td>3–8 h</td><td>12–24 h</td><td>7–10 days</td></tr>
+        <tr><td>CK-MB</td><td>2–6 h</td><td>12–24 h</td><td>2–3 days</td></tr>
+        <tr><td>Myoglobin</td><td>2–3 h</td><td>6–12 h</td><td>1–2 days</td></tr>
+      </table>
+      <div class="li a4 mt10">
+        <div class="en">⏱️ <strong>Repeated blood sampling</strong> required 6–12 h after admission and after any further episodes of severe chest pain</div>
+        <div class="ar">يجب تكرار سحب عينات الدم بعد 6–12 ساعة من الدخول وبعد أي نوبة ألم جديدة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 5. PROGNOSIS ══ -->
+<div class="sec">
+  <div class="sh c5">
+    <div class="si">📊</div>
+    <div class="sw">
+      <div class="st t5">5 · Prognosis: STEMI vs NSTE-ACS</div>
+      <div class="sar ar5">التشخيص: STEMI مقابل NSTE-ACS</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g3">
+      <div class="card a5">
+        <div class="en">🏥 <strong>Hospital mortality:</strong> STEMI > NSTE-ACS (7% vs 5%)</div>
+        <div class="ar">وفيات المستشفى: أعلى في STEMI (7% مقابل 5%)</div>
+      </div>
+      <div class="card a5">
+        <div class="en">📅 <strong>6-month mortality:</strong> Similar in both (12% vs 13%)</div>
+        <div class="ar">وفيات 6 أشهر: متقاربة في الحالتين (12% مقابل 13%)</div>
+      </div>
+      <div class="card a5">
+        <div class="en">📆 <strong>Long-term follow-up:</strong> Death rates higher in NSTE-ACS than STE-ACS</div>
+        <div class="ar">المتابعة طويلة الأمد: معدل الوفيات أعلى في NSTE-ACS على المدى البعيد</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 6. TREATMENT ══ -->
+<div class="sec">
+  <div class="sh c6">
+    <div class="si">💊</div>
+    <div class="sw">
+      <div class="st t6">6 · Treatment – Pre-hospital & In-hospital Management</div>
+      <div class="sar ar6">العلاج: الإدارة قبل وداخل المستشفى</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g2 mb8">
+      <div>
+        <div class="lbl t6">Pre-hospital Management · قبل المستشفى</div>
+        <div class="lst">
+          <div class="li a6">
+            <div class="en">💊 <strong>Antiplatelet loading:</strong><br>• Aspirin 300 mg<br>• Clopidogrel 600 mg OR Ticagrelor 180 mg OR Prasugrel 60 mg</div>
+            <div class="ar">مضادات الصفائح تحميل: أسبرين 300 مج + كلوبيدوغريل 600 مج أو تيكاغريلور 180 مج أو براسوغريل 60 مج</div>
+          </div>
+          <div class="li a6">
+            <div class="en">💉 <strong>Antithrombin therapy:</strong> Heparin 5,000–10,000 IU IV or enoxaparine</div>
+            <div class="ar">مضادات التخثر: هيبارين 5000–10000 وحدة وريدي أو إينوكساباريين</div>
+          </div>
+          <div class="li a6">
+            <div class="en">🎯 <strong>Others:</strong> Statin 20–80 mg · PPI</div>
+            <div class="ar">أخرى: ستاتين 20–80 مج · واقي المعدة</div>
+          </div>
+          <div class="li a6">
+            <div class="en">😌 <strong>Resolve pain:</strong> Analgesic drugs · Benzodiazepine</div>
+            <div class="ar">تسكين الألم: مسكنات · بنزوديازيبين</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="lbl t6">In-hospital Management · داخل المستشفى</div>
+        <div class="lst">
+          <div class="li a6">
+            <div class="en">🫁 <strong>Monitor vitals + ECG:</strong> O₂ inhalation, ECG monitor, watch for VF → cardioversion, CPR ready</div>
+            <div class="ar">مراقبة الوظائف الحيوية + رسم القلب، أكسجين، استعداد للتقويم الكهربائي وCPR</div>
+          </div>
+          <div class="li a6">
+            <div class="en">💊 <strong>Nitrates</strong> — vasodilation, pain relief</div>
+            <div class="ar">نيترات: توسع وعائي وتخفيف الألم</div>
+          </div>
+          <div class="li a6">
+            <div class="en">❤️ <strong>Beta-blockers</strong> (tachycardia/HTN): Metoprolol 25–50 mg oral or 2 mg IV</div>
+            <div class="ar">حاصرات بيتا: ميتوبرولول لعلاج التسارع وارتفاع الضغط</div>
+          </div>
+          <div class="li a6">
+            <div class="en">🩺 <strong>ACE inhibitors</strong> (HTN): Perindopril 5 mg oral</div>
+            <div class="ar">مثبطات ACE: بيريندوبريل لعلاج ارتفاع الضغط</div>
+          </div>
+          <div class="li a6">
+            <div class="en">💧 <strong>Diuretic</strong> (HF): Furosemide 20–40 mg IV</div>
+            <div class="ar">مدر البول (قصور القلب): فيوروسيميد وريدي</div>
+          </div>
+          <div class="li a6">
+            <div class="en">⚡ <strong>Anti-arrhythmic</strong> (no prophylaxis): Mesocain 1% 10mL IV OR Amiodarone 150 mg IV bolus</div>
+            <div class="ar">مضادات الاضطراب النظمي: ميسوكايين أو أميودارون عند الحاجة فقط (لا وقائياً)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEMI ALGORITHM -->
+    <div class="lbl t6">STEMI Treatment Algorithm · خوارزمية علاج STEMI</div>
+    <div class="g2 mb8">
+      <div class="card a6">
+        <div class="en">🏥 <strong>If at PCI-capable hospital:</strong><br>→ Send to cath lab for primary PCI<br>→ FMC-device time ≤ <strong>90 min</strong></div>
+        <div class="ar">في مستشفى قادر على PCI: إرسال فوري لقسم القسطرة. وقت الاتصال الأول بالجهاز ≤ 90 دقيقة</div>
+      </div>
+      <div class="card a6">
+        <div class="en">🚑 <strong>If at Non-PCI center:</strong><br>• Transfer time ≤120 min → Primary PCI<br>• Transfer time >120 min → <strong>Fibrinolysis</strong> within 10 min (lytic bolus)</div>
+        <div class="ar">في مستشفى غير قادر على PCI: إذا كان وقت النقل ≤120 دقيقة → PCI أولي. إذا >120 دقيقة → إعطاء حال التخثر خلال 10 دقائق</div>
+      </div>
+    </div>
+
+    <!-- NSTEMI ALGORITHM -->
+    <div class="lbl t6">NSTEMI Risk Stratification & Strategy · تصنيف الخطر في NSTEMI</div>
+    <div class="g4">
+      <div class="card a6">
+        <div class="en">🔴 <strong>Very High Risk</strong> → Immediate invasive (&lt;2h)</div>
+        <div class="ar">خطر عالٍ جداً: غزوي فوري &lt;2 ساعة</div>
+      </div>
+      <div class="card a6">
+        <div class="en">🟠 <strong>High Risk</strong> → Early invasive (&lt;24h)</div>
+        <div class="ar">خطر عالٍ: غزوي مبكر &lt;24 ساعة</div>
+      </div>
+      <div class="card a6">
+        <div class="en">🟡 <strong>Intermediate Risk</strong> → Invasive (&lt;72h)</div>
+        <div class="ar">خطر متوسط: غزوي &lt;72 ساعة</div>
+      </div>
+      <div class="card a6">
+        <div class="en">🟢 <strong>Low Risk</strong> → Non-invasive testing</div>
+        <div class="ar">خطر منخفض: اختبار غير غزوي</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 7. REPERFUSION ══ -->
+<div class="sec">
+  <div class="sh c7">
+    <div class="si">🔄</div>
+    <div class="sw">
+      <div class="st t7">7 · Reperfusion Options for STEMI</div>
+      <div class="sar ar7">خيارات إعادة التروية في STEMI</div>
+    </div>
+  </div>
+  <div class="sb">
+    <div class="g3">
+      <div class="card a7">
+        <div class="en">🏥 <strong>Primary PCI</strong> (Percutaneous Coronary Intervention)<br>• Best if FMC-to-device ≤90 min (PCI center) or ≤120 min (transfer)<br>• Diagnostic angiogram → PCI or CABG or medical therapy</div>
+        <div class="ar">PCI الأولي: الأفضل إذا كان وقت الاتصال بالجهاز ≤90 دقيقة أو ≤120 عند النقل</div>
+      </div>
+      <div class="card a7">
+        <div class="en">💉 <strong>Fibrinolysis</strong><br>• If PCI not achievable within 120 min<br>• Administer within 30 min of hospital arrival<br>• DIDO time ≤30 min if transferring</div>
+        <div class="ar">حال التخثر: إذا تعذر PCI خلال 120 دقيقة. يُعطى خلال 30 دقيقة من الوصول للمستشفى</div>
+      </div>
+      <div class="card a7">
+        <div class="en">🏥 <strong>CABG</strong> (Coronary Artery Bypass Graft)<br>• Option after diagnostic angiogram when anatomy unsuitable for PCI</div>
+        <div class="ar">جراحة المجازة: خيار بعد التصوير الوعائي عند عدم ملاءمة التشريح لـ PCI</div>
+      </div>
+    </div>
+    <div class="li a7 mt10">
+      <div class="en">⏱️ <strong>Time is muscle!</strong> Total ischaemic time = Patient delay + EMS delay + System delay. Minimise all delays. Goal: from symptom onset to reperfusion (wire crossing) as fast as possible.</div>
+      <div class="ar">الوقت = عضلة القلب! الوقت الكلي للنقص الوعائي = تأخر المريض + تأخر الإسعاف + تأخر النظام. الهدف: تقليل كل التأخيرات للوصول لإعادة التروية في أسرع وقت ممكن.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Acute Coronary Syndrome (ACS) · STEMI · NSTEMI · Unstable Angina · Nursing Education Summary Poster<br>
+  DR. Abdelrahman Elzefzaf · Consultant in Intensive Care & Critical Care
+</div>
+
+</body>
+</html>

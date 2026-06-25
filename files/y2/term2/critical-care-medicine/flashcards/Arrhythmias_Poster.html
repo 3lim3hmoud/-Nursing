@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arrhythmias - Cardiac Arrhythmias</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    font-family: 'Montserrat', sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 20px;
+  }
+  .download-btn {
+    margin: 15px auto; padding: 12px 32px;
+    background: linear-gradient(135deg, #1a6ed8, #0e4fa8);
+    color: white; border: none; border-radius: 30px;
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 15px rgba(26,110,216,0.5); transition: all 0.3s; letter-spacing: 1px;
+  }
+  .download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,110,216,0.7); }
+
+  /* POSTER */
+  #poster {
+    width: 1200px;
+    background: linear-gradient(160deg, #060b14, #0d1f3c, #0a1628);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0e3a7a 0%, #1a5cb8 50%, #0b2d5e 100%);
+    padding: 28px 40px; text-align: center; position: relative;
+    border-bottom: 4px solid #2e7df0;
+  }
+  .header-badge {
+    display: inline-block; background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25); border-radius: 30px;
+    padding: 4px 18px; font-size: 11px; color: #a8d4ff;
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  /* ECG line decoration */
+  .ecg-line {
+    width: 100%; height: 30px; margin: 8px 0 6px;
+    overflow: hidden; opacity: 0.35;
+  }
+  .ecg-line svg { width: 100%; height: 30px; }
+  .header h1 {
+    font-size: 44px; font-weight: 900; color: #fff;
+    text-transform: uppercase; letter-spacing: 5px; line-height: 1.1;
+    text-shadow: 0 0 20px rgba(46,125,240,0.8);
+  }
+  .header h1 span { color: #7bc4ff; }
+  .header-ar {
+    font-family: 'Cairo', sans-serif; font-size: 20px;
+    color: rgba(255,255,255,0.8); margin-top: 7px; direction: rtl;
+  }
+  .header-meta { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
+
+  /* GRID */
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; background: rgba(255,255,255,0.04); padding: 2px;
+  }
+  .card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    padding: 20px 18px; position: relative; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  }
+  .card.blue::before   { background: linear-gradient(180deg,#2e7df0,#1a5cb8); }
+  .card.cyan::before   { background: linear-gradient(180deg,#00b4d8,#0077a8); }
+  .card.green::before  { background: linear-gradient(180deg,#27ae60,#1e8449); }
+  .card.red::before    { background: linear-gradient(180deg,#e74c3c,#c0392b); }
+  .card.purple::before { background: linear-gradient(180deg,#9b59b6,#7d3c98); }
+  .card.orange::before { background: linear-gradient(180deg,#f39c12,#e67e22); }
+  .card.teal::before   { background: linear-gradient(180deg,#1abc9c,#148f77); }
+  .card.pink::before   { background: linear-gradient(180deg,#e91e8c,#c0185a); }
+  .card.yellow::before { background: linear-gradient(180deg,#f1c40f,#d4ac0d); }
+
+  .card-icon { font-size: 26px; margin-bottom: 8px; display: block; }
+  .card-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3px; }
+  .card-title-ar { font-family:'Cairo',sans-serif; font-size:12px; font-weight:700; direction:rtl; margin-bottom:10px; opacity:0.7; }
+
+  .card.blue .card-title    { color: #5da9f8; }
+  .card.cyan .card-title    { color: #48cae4; }
+  .card.green .card-title   { color: #52be80; }
+  .card.red .card-title     { color: #e74c3c; }
+  .card.purple .card-title  { color: #bb8fce; }
+  .card.orange .card-title  { color: #f5b041; }
+  .card.teal .card-title    { color: #48c9b0; }
+  .card.pink .card-title    { color: #f06292; }
+  .card.yellow .card-title  { color: #f7dc6f; }
+
+  .card.blue .card-title-ar    { color: #5da9f8; }
+  .card.cyan .card-title-ar    { color: #48cae4; }
+  .card.green .card-title-ar   { color: #52be80; }
+  .card.red .card-title-ar     { color: #e74c3c; }
+  .card.purple .card-title-ar  { color: #bb8fce; }
+  .card.orange .card-title-ar  { color: #f5b041; }
+  .card.teal .card-title-ar    { color: #48c9b0; }
+  .card.pink .card-title-ar    { color: #f06292; }
+  .card.yellow .card-title-ar  { color: #f7dc6f; }
+
+  .en-item {
+    font-size: 10.5px; color: rgba(255,255,255,0.85); margin-bottom: 4px;
+    padding-left: 11px; position: relative; line-height: 1.4; font-weight: 500;
+  }
+  .en-item::before { content:'▶'; position:absolute; left:0; font-size:6px; top:3px; opacity:0.55; }
+  .ar-item {
+    font-family:'Cairo',sans-serif; font-size:10.5px; color:rgba(255,255,255,0.6);
+    direction:rtl; text-align:right; margin-bottom:5px;
+    padding-right:11px; position:relative; line-height:1.5;
+  }
+  .ar-item::before { content:'◀'; position:absolute; right:0; font-size:6px; top:3px; opacity:0.45; }
+  .divider { border:none; border-top:1px solid rgba(255,255,255,0.09); margin:7px 0; }
+  .col-span-3 { grid-column: span 3; }
+  .col-span-2 { grid-column: span 2; }
+
+  /* CLASSIFICATION TABLE */
+  .class-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap:6px; margin-top:8px;
+  }
+  .class-box {
+    background: rgba(255,255,255,0.05); border-radius:7px; padding:8px;
+    border-top: 2px solid;
+  }
+  .class-box.s1 { border-color:#2e7df0; }
+  .class-box.s2 { border-color:#f39c12; }
+  .class-box.s3 { border-color:#e74c3c; }
+  .class-title { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-bottom:5px; }
+  .class-box.s1 .class-title { color:#5da9f8; }
+  .class-box.s2 .class-title { color:#f5b041; }
+  .class-box.s3 .class-title { color:#e74c3c; }
+  .class-ar { font-family:'Cairo',sans-serif; font-size:9px; direction:rtl; margin-bottom:4px; opacity:0.65; }
+  .class-box.s1 .class-ar { color:#5da9f8; }
+  .class-box.s2 .class-ar { color:#f5b041; }
+  .class-box.s3 .class-ar { color:#e74c3c; }
+  .sub-item { font-size:10px; color:rgba(255,255,255,0.8); margin-bottom:3px; padding-left:10px; position:relative; }
+  .sub-item::before { content:'•'; position:absolute; left:2px; color:rgba(255,255,255,0.4); }
+  .sub-ar { font-family:'Cairo',sans-serif; font-size:9.5px; color:rgba(255,255,255,0.5); direction:rtl; margin-bottom:3px; }
+
+  /* NORMAL ECG visual */
+  .ecg-strip {
+    background: rgba(0,180,150,0.08); border:1px solid rgba(0,180,150,0.2);
+    border-radius:6px; padding:6px 8px; margin-top:6px;
+    font-size:10px; color:rgba(255,255,255,0.7); text-align:center;
+  }
+  .ecg-vals { display:flex; gap:8px; justify-content:center; margin-top:4px; flex-wrap:wrap; }
+  .ecg-chip {
+    background:rgba(46,125,240,0.15); border:1px solid rgba(46,125,240,0.3);
+    border-radius:20px; padding:3px 9px; font-size:9.5px; color:#7bc4ff; font-weight:700;
+  }
+
+  /* TREATMENT GRID */
+  .tx-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px; margin-top:6px; }
+  .tx-box {
+    background:rgba(39,174,96,0.1); border:1px solid rgba(39,174,96,0.25);
+    border-radius:6px; padding:7px 8px;
+  }
+  .tx-name { font-size:10px; font-weight:700; color:#7dcea0; }
+  .tx-detail { font-size:9px; color:rgba(125,206,160,0.7); margin-top:2px; line-height:1.3; }
+  .tx-ar { font-family:'Cairo',sans-serif; font-size:9px; color:rgba(125,206,160,0.55); direction:rtl; margin-top:2px; }
+
+  /* SYMPTOMS CHIPS */
+  .sym-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:4px; margin-top:6px; }
+  .sym-chip {
+    background:rgba(155,89,182,0.1); border:1px solid rgba(155,89,182,0.25);
+    border-radius:6px; padding:5px 7px;
+    font-size:9.5px; color:#d2b4de; font-weight:600;
+  }
+  .sym-ar { font-family:'Cairo',sans-serif; font-size:9px; color:rgba(210,180,222,0.6); direction:rtl; margin-top:1px; }
+
+  /* AV BLOCKS */
+  .block-row { display:flex; gap:5px; margin-top:6px; flex-direction:column; }
+  .block-item {
+    background:rgba(231,76,60,0.08); border-left:3px solid;
+    padding:5px 8px; border-radius:0 5px 5px 0; font-size:10px; color:rgba(255,255,255,0.8);
+  }
+  .block-item.d1 { border-color:#3498db; }
+  .block-item.d2 { border-color:#f39c12; }
+  .block-item.d3 { border-color:#e74c3c; }
+  .block-label { font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:1px; }
+  .block-item.d1 .block-label { color:#5dade2; }
+  .block-item.d2 .block-label { color:#f5b041; }
+  .block-item.d3 .block-label { color:#e74c3c; }
+  .block-ar { font-family:'Cairo',sans-serif; font-size:9px; direction:rtl; color:rgba(255,255,255,0.5); margin-top:2px; }
+
+  /* FOOTER */
+  .footer {
+    background: rgba(0,0,0,0.5); padding:14px 40px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:2px solid rgba(46,125,240,0.4);
+  }
+  .footer-left { font-size:11px; color:rgba(255,255,255,0.35); letter-spacing:1px; }
+  .footer-mid  { font-size:13px; font-weight:700; color:#2e7df0; text-transform:uppercase; letter-spacing:3px; }
+  .footer-right { font-family:'Cairo',sans-serif; font-size:11px; color:rgba(255,255,255,0.35); direction:rtl; }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="downloadImage()">⬇ Download as Image / تحميل كصورة</button>
+
+<div id="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">Critical Care Nursing • تمريض الرعاية الحرجة</div>
+    <h1>Cardiac <span>Arrhythmias</span></h1>
+    <!-- ECG SVG line -->
+    <div class="ecg-line">
+      <svg viewBox="0 0 1200 30" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="0,15 60,15 70,15 75,5 80,25 85,3 90,25 95,15 160,15 170,15 175,5 180,25 185,3 190,25 195,15 260,15 270,15 275,5 280,25 285,3 290,25 295,15 360,15 370,15 375,5 380,25 385,3 390,25 395,15 460,15 470,15 475,5 480,25 485,3 490,25 495,15 560,15 570,15 575,5 580,25 585,3 590,25 595,15 660,15 670,15 675,5 680,25 685,3 690,25 695,15 760,15 770,15 775,5 780,25 785,3 790,25 795,15 860,15 870,15 875,5 880,25 885,3 890,25 895,15 960,15 970,15 975,5 980,25 985,3 990,25 995,15 1060,15 1070,15 1075,5 1080,25 1085,3 1090,25 1095,15 1200,15"
+          fill="none" stroke="#4fc3f7" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="header-ar">اضطرابات النظم القلبية — د. عبدالرحمن الزعفزاف</div>
+    <div class="header-meta">Dr. Abdelrahman Elzefzaf • Consultant Intensive & Critical Care</div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- 1. DEFINITION & NORMAL RHYTHM -->
+    <div class="card blue">
+      <span class="card-icon">❤️</span>
+      <div class="card-title">Definition & Normal Rhythm</div>
+      <div class="card-title-ar">التعريف والنظم الطبيعي</div>
+      <div class="en-item">Arrhythmia = any abnormal heart rate or rhythm</div>
+      <div class="ar-item">اضطراب النظم = أي معدل أو إيقاع قلبي غير طبيعي</div>
+      <div class="en-item">Normal HR: 60–100 bpm, from Sinus Node (SA)</div>
+      <div class="ar-item">معدل القلب الطبيعي: 60-100 ن/د من العقدة الجيبية</div>
+      <div class="en-item">Signal: SA node → AV node → Bundle of His → Ventricles</div>
+      <div class="ar-item">المسار: عقدة SA ← عقدة AV ← حزمة His ← البطينان</div>
+      <hr class="divider">
+      <div class="card-title" style="font-size:10px; color:#5da9f8; margin-bottom:3px;">Normal Cardiac Rhythm</div>
+      <div class="ecg-strip">
+        Normal ECG Values — قيم ECG الطبيعية
+        <div class="ecg-vals">
+          <span class="ecg-chip">PR: 0.12–0.20s</span>
+          <span class="ecg-chip">QRS: &lt;0.12s</span>
+          <span class="ecg-chip">HR: 60–100 bpm</span>
+          <span class="ecg-chip">Sinus Origin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ARRHYTHMIA FORMATION -->
+    <div class="card cyan">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">Arrhythmia Formation</div>
+      <div class="card-title-ar">آلية تكوّن اضطراب النظم</div>
+      <div class="en-item">Can arise from: Sinus node, Atrial cells, AV junction, Ventricular cells</div>
+      <div class="ar-item">يمكن أن ينشأ من: العقدة الجيبية، الخلايا الأذينية، وصلة AV، خلايا البطين</div>
+      <hr class="divider">
+      <div class="card-title" style="font-size:10px; color:#48cae4; margin-bottom:3px;">2 Main Mechanisms / آليتان رئيسيتان</div>
+      <div class="en-item"><b style="color:#48cae4;">Automaticity:</b> abnormal impulse formation in ectopic focus</div>
+      <div class="ar-item"><b>الأتوماتيكية:</b> تكوّن نبضة غير طبيعية في بؤرة خارج الرحم</div>
+      <div class="en-item"><b style="color:#48cae4;">Re-entry:</b> impulse loops back through abnormal circuit</div>
+      <div class="ar-item"><b>إعادة الدخول:</b> عودة النبضة عبر دائرة غير طبيعية</div>
+      <hr class="divider">
+      <div class="card-title" style="font-size:10px; color:#48cae4; margin-bottom:3px;">Sinus Bradycardia Causes</div>
+      <div class="en-item">Physiological: athletes, sleep</div>
+      <div class="ar-item">فسيولوجية: الرياضيون، النوم</div>
+      <div class="en-item">Pathological: hypothyroidism, hypothermia, beta-blockers, AMI, sick sinus</div>
+      <div class="ar-item">مرضية: قصور الغدة، انخفاض الحرارة، حاصرات بيتا، احتشاء، متلازمة العقدة المريضة</div>
+      <div class="en-item">Sinus Tachycardia causes: fever, hypovolemia, pain, infection, anxiety</div>
+      <div class="ar-item">تسرع الجيب: حمى، نقص حجم الدم، ألم، عدوى، قلق</div>
+    </div>
+
+    <!-- 3. CLASSIFICATION -->
+    <div class="card orange">
+      <span class="card-icon">📋</span>
+      <div class="card-title">Classification</div>
+      <div class="card-title-ar">التصنيف</div>
+      <div class="class-grid">
+        <div class="class-box s1">
+          <div class="class-title">Sinus</div>
+          <div class="class-ar">الجيبية</div>
+          <div class="sub-item">Bradycardia &lt;60</div>
+          <div class="sub-ar">بطء الجيب</div>
+          <div class="sub-item">Tachycardia &gt;100</div>
+          <div class="sub-ar">تسرع الجيب</div>
+          <div class="sub-item">Sick Sinus Syndrome</div>
+          <div class="sub-ar">متلازمة العقدة المريضة</div>
+        </div>
+        <div class="class-box s2">
+          <div class="class-title">Atrial</div>
+          <div class="class-ar">الأذينية</div>
+          <div class="sub-item">Atrial Tachycardia</div>
+          <div class="sub-ar">تسرع أذيني</div>
+          <div class="sub-item">SVT (140–240)</div>
+          <div class="sub-ar">تسرع فوق بطيني</div>
+          <div class="sub-item">Atrial Flutter (250–400)</div>
+          <div class="sub-ar">رفرفة أذينية</div>
+          <div class="sub-item">AFib (&gt;350)</div>
+          <div class="sub-ar">رجفان أذيني</div>
+        </div>
+        <div class="class-box s3">
+          <div class="class-title">Ventricular</div>
+          <div class="class-ar">البطينية</div>
+          <div class="sub-item">PVCs (Premature beats)</div>
+          <div class="sub-ar">انقباضات بطينية مبكرة</div>
+          <div class="sub-item">VT (Tachycardia)</div>
+          <div class="sub-ar">تسرع بطيني</div>
+          <div class="sub-item">VF (Fibrillation) ⚠️</div>
+          <div class="sub-ar">رجفان بطيني — طارئ!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ATRIAL ARRHYTHMIAS (spans 2 cols) -->
+    <div class="card teal col-span-2">
+      <span class="card-icon">🔄</span>
+      <div class="card-title">Atrial Arrhythmias — Details</div>
+      <div class="card-title-ar">اضطرابات النظم الأذينية — التفاصيل</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:6px;">
+        <div>
+          <div style="font-size:10px; font-weight:800; color:#48c9b0; margin-bottom:5px; text-transform:uppercase;">SVT</div>
+          <div class="en-item">Rate: 140–240 bpm</div>
+          <div class="ar-item">المعدل: 140-240 ن/د</div>
+          <div class="en-item">Re-entry in atria/AV node</div>
+          <div class="ar-item">إعادة دخول في الأذين/AV</div>
+          <div class="en-item">Predisposing: anxiety, caffeine, hyperthyroidism, alcohol</div>
+          <div class="ar-item">عوامل: قلق، كافيين، فرط الغدة، كحول</div>
+          <div class="en-item">Tx: Vagotonic maneuvers, beta-blockers, Ca-blockers, adenosine, ablation</div>
+          <div class="ar-item">علاج: مناورات فاغوتونية، حاصرات، أدينوزين، استئصال</div>
+        </div>
+        <div>
+          <div style="font-size:10px; font-weight:800; color:#48c9b0; margin-bottom:5px; text-transform:uppercase;">Atrial Flutter</div>
+          <div class="en-item">Rate: 250–400 bpm</div>
+          <div class="ar-item">المعدل: 250-400 ن/د</div>
+          <div class="en-item">Abnormal circuit in right atrium</div>
+          <div class="ar-item">دائرة غير طبيعية في الأذين الأيمن</div>
+          <div class="en-item">Electrical impulses move in circles (steady rhythm)</div>
+          <div class="ar-item">النبضات تتحرك دائرياً (إيقاع ثابت)</div>
+          <div class="en-item">ECG: Sawtooth flutter waves</div>
+          <div class="ar-item">ECG: موجات رفرفة على شكل منشار</div>
+        </div>
+        <div>
+          <div style="font-size:10px; font-weight:800; color:#48c9b0; margin-bottom:5px; text-transform:uppercase;">Atrial Fibrillation (AFib)</div>
+          <div class="en-item">Rate: &gt;350 bpm — chaotic</div>
+          <div class="ar-item">المعدل: أكثر من 350 ن/د — فوضوي</div>
+          <div class="en-item">Atria quiver instead of beating — blood pools → clots</div>
+          <div class="ar-item">الأذينان يرتجفان ← تجمع الدم ← جلطات</div>
+          <div class="en-item">Risk: age, HTN, valve disease, DM, heart failure</div>
+          <div class="ar-item">خطر: السن، ضغط، صمام، سكري، قصور قلب</div>
+          <div class="en-item">Tx: Rate control (β-blockers, diltiazem), cardioversion, amiodarone, ablation</div>
+          <div class="ar-item">علاج: تحكم بالمعدل، صدمة كهربائية، أميودارون</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. AV BLOCKS -->
+    <div class="card red">
+      <span class="card-icon">🚫</span>
+      <div class="card-title">Heart Blocks (A-V Blocks)</div>
+      <div class="card-title-ar">الحصارات القلبية (AV)</div>
+      <div class="block-row">
+        <div class="block-item d1">
+          <div class="block-label">1st Degree</div>
+          <div style="font-size:9.5px; color:rgba(255,255,255,0.75); margin-top:2px;">Signal delayed but reaches ventricles. Prolonged PR &gt;0.20s. No symptoms. No Tx needed.</div>
+          <div class="block-ar">تأخر الإشارة — PR طويل — بدون أعراض — لا علاج</div>
+        </div>
+        <div class="block-item d2">
+          <div class="block-label">2nd Degree</div>
+          <div style="font-size:9.5px; color:rgba(255,255,255,0.75); margin-top:2px;"><b>Mobitz I (Wenckebach):</b> progressive PR prolongation → dropped QRS<br><b>Mobitz II:</b> intermittent dropped QRS, may need pacemaker</div>
+          <div class="block-ar">موبيتز I: تطاول تدريجي PR ← سقوط QRS | موبيتز II: سقوط متقطع</div>
+        </div>
+        <div class="block-item d3">
+          <div class="block-label">3rd Degree (Complete)</div>
+          <div style="font-size:9.5px; color:rgba(255,255,255,0.75); margin-top:2px;">No signals reach ventricles. Atria & ventricles beat independently. P waves & QRS unrelated. → Permanent pacemaker</div>
+          <div class="block-ar">لا إشارات تصل البطين — استقلالية تامة — يحتاج جهاز تنظيم دائم</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. VENTRICULAR ARRHYTHMIAS -->
+    <div class="card purple">
+      <span class="card-icon">⚠️</span>
+      <div class="card-title">Ventricular Arrhythmias</div>
+      <div class="card-title-ar">اضطرابات النظم البطينية</div>
+      <div class="en-item"><b style="color:#bb8fce;">PVCs:</b> Extra heartbeat from abnormal ventricular activation before normal beat</div>
+      <div class="ar-item"><b>انقباض بطيني مبكر:</b> ضربة إضافية من تنشيط بطيني غير طبيعي</div>
+      <div class="en-item"><b style="color:#bb8fce;">VT (Ventricular Tachycardia):</b> Begins in right or left ventricle</div>
+      <div class="ar-item"><b>تسرع بطيني:</b> يبدأ في البطين الأيمن أو الأيسر</div>
+      <div class="en-item">Non-sustained VT: seconds, mild symptoms. Sustained VT: dangerous → progresses to VF</div>
+      <div class="ar-item">غير مستدام: ثواني، أعراض خفيفة. مستدام: خطير ← يتطور لـ VF</div>
+      <div class="en-item">Tx: Non-sustained: observe. Sustained: IV medications or defibrillation</div>
+      <div class="ar-item">علاج: مستدام: أدوية وريدية أو صدمة كهربائية</div>
+      <hr class="divider">
+      <div class="en-item"><b style="color:#e74c3c;">VF (Ventricular Fibrillation):</b> Cardiac EMERGENCY ⚠️ Ventricles quiver, no real heartbeat → unconsciousness, death within minutes</div>
+      <div class="ar-item"><b>رجفان بطيني:</b> طارئ قلبي — البطين يرتجف — لا ضربة حقيقية — وفاة خلال دقائق</div>
+      <div class="en-item">Tx: Immediate defibrillation (AED or manual) + CPR</div>
+      <div class="ar-item">علاج: صدمة كهربائية فورية (AED) + CPR</div>
+    </div>
+
+    <!-- 7. SYMPTOMS -->
+    <div class="card purple" style="background:linear-gradient(145deg,rgba(155,89,182,0.12),rgba(255,255,255,0.02));">
+      <span class="card-icon">🩺</span>
+      <div class="card-title">Symptoms by Type</div>
+      <div class="card-title-ar">الأعراض حسب النوع</div>
+      <div class="sym-grid">
+        <div class="sym-chip">
+          Sinus Dysfunction<div class="sym-ar">خلل الجيب: دوخة، إغماء، إرهاق شديد</div>
+        </div>
+        <div class="sym-chip">
+          SVT<div class="sym-ar">خفقان، انخفاض ضغط، إغماء</div>
+        </div>
+        <div class="sym-chip">
+          AFib<div class="sym-ar">خفقان، ضيق تنفس، دوار، ألم صدر</div>
+        </div>
+        <div class="sym-chip">
+          AV Block<div class="sym-ar">نبض بطيء/غير منتظم، إغماء (درجة 3)</div>
+        </div>
+        <div class="sym-chip">
+          VT Sustained<div class="sym-ar">دوار، فقدان وعي، قد يكون مميتاً</div>
+        </div>
+        <div class="sym-chip">
+          VF ⚠️<div class="sym-ar">غياب النبض، فقدان وعي، وفاة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. DIAGNOSIS -->
+    <div class="card yellow">
+      <span class="card-icon">🔬</span>
+      <div class="card-title">Diagnosis</div>
+      <div class="card-title-ar">التشخيص</div>
+      <div class="en-item"><b>History:</b> duration, triggers, relation to exercise/meals/stress, medications, family history</div>
+      <div class="ar-item"><b>الأنامنيز:</b> مدة، محرضات، الأدوية، التاريخ الأسري</div>
+      <div class="en-item"><b>12-lead ECG</b> & cardiac rhythm strip</div>
+      <div class="ar-item"><b>ECG 12 خيط</b> وشريط نظم القلب</div>
+      <div class="en-item"><b>Echocardiography</b> — CXR</div>
+      <div class="ar-item"><b>صدى القلب</b> — صدر شعاعي</div>
+      <div class="en-item"><b>Electrolytes:</b> K, Ca, Mg, glucose</div>
+      <div class="ar-item"><b>شوارد:</b> بوتاسيوم، كالسيوم، ماغنيسيوم، جلوكوز</div>
+      <div class="en-item"><b>ABGs,</b> CBC, Toxicology screen</div>
+      <div class="ar-item"><b>ABG,</b> صورة دم كاملة، فحص سموم</div>
+      <div class="en-item"><b>Holter Monitor:</b> 24-hour ambulatory ECG</div>
+      <div class="ar-item"><b>هولتر:</b> مراقبة ECG 24 ساعة متنقلة</div>
+      <div class="en-item"><b>Electrophysiology studies (EPS)</b></div>
+      <div class="ar-item"><b>دراسات الفيزيولوجيا الكهربائية</b></div>
+    </div>
+
+    <!-- 9. TREATMENT -->
+    <div class="card green col-span-3">
+      <span class="card-icon">💊</span>
+      <div class="card-title">Treatment Summary</div>
+      <div class="card-title-ar">ملخص العلاج</div>
+      <div class="tx-grid">
+        <div class="tx-box">
+          <div class="tx-name">Sinus Node Dysfunction</div>
+          <div class="tx-detail">Severe/frequent: Permanent Pacemaker. Acute bradycardia: Atropine 0.6mg IV. Temporary pacemaker if reversible cause.</div>
+          <div class="tx-ar">خلل العقدة الجيبية: جهاز تنظيم دائم | أتروبين 0.6 ملغ وريد للطارئ</div>
+        </div>
+        <div class="tx-box">
+          <div class="tx-name">SVT Treatment</div>
+          <div class="tx-detail">Vagotonic maneuvers (carotid massage, Valsalva, cold water face immersion). Medications: beta-blockers, Ca-channel blockers, digoxin, amiodarone. Radiofrequency catheter ablation.</div>
+          <div class="tx-ar">SVT: مناورات فاغوتونية ← حاصرات ← أميودارون ← استئصال بالتردد الراديوي</div>
+        </div>
+        <div class="tx-box">
+          <div class="tx-name">Atrial Fibrillation</div>
+          <div class="tx-detail">Rate control: β-blockers (atenolol/metoprolol), diltiazem, verapamil. Rhythm control: amiodarone, electrical cardioversion. Ablation. Treat underlying cause (thyroid, valve).</div>
+          <div class="tx-ar">رجفان أذيني: تحكم بالمعدل + تحكم بالإيقاع + صدمة كهربائية + علاج السبب</div>
+        </div>
+        <div class="tx-box">
+          <div class="tx-name">A-V Block</div>
+          <div class="tx-detail">1st degree: No treatment. 2nd degree: Monitor ± pacemaker. 3rd degree: Permanent pacemaker (almost always). Causes: cardiomyopathy, CAD, beta-blockers, digoxin.</div>
+          <div class="tx-ar">درجة 1: لا علاج | درجة 3: جهاز تنظيم دائم دائماً</div>
+        </div>
+        <div class="tx-box">
+          <div class="tx-name">VT Treatment</div>
+          <div class="tx-detail">Non-sustained, no structural damage: observe. Sustained VT: IV antiarrhythmics OR emergency electrical defibrillation to restore normal rhythm.</div>
+          <div class="tx-ar">VT مستدام: أدوية وريدية أو صدمة كهربائية طارئة لاستعادة الإيقاع</div>
+        </div>
+        <div class="tx-box">
+          <div class="tx-name">VF — EMERGENCY ⚠️</div>
+          <div class="tx-detail">Immediate defibrillation (AED or manual shock). CPR. Survivors + high-risk patients: Implantable Cardioverter Defibrillator (ICD) — similar to pacemaker under skin.</div>
+          <div class="tx-ar">VF: صدمة كهربائية فورية + CPR + جهاز ICD للناجين والمرضى عالي الخطورة</div>
+        </div>
+      </div>
+      <hr class="divider" style="margin-top:8px;">
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;">
+        <div style="background:rgba(255,255,255,0.06); border-radius:6px; padding:6px 10px; font-size:10px; color:rgba(255,255,255,0.7);">
+          <b style="color:#48c9b0;">Vagotonic Maneuvers / المناورات الفاغوتونية:</b> Carotid sinus massage • Valsalva maneuver • Facial immersion cold water • Breath holding • Head between knees
+          <span style="font-family:Cairo,sans-serif; direction:rtl; display:block; margin-top:3px; font-size:9.5px; color:rgba(255,255,255,0.5);">تدليك الجيب السباتي • مناورة فالسالفا • غمر الوجه بالماء البارد • حبس الأنفاس</span>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border-radius:6px; padding:6px 10px; font-size:10px; color:rgba(255,255,255,0.7);">
+          <b style="color:#48c9b0;">Exercise after Pacemaker/ICD:</b> Aerobic 150 min/week (3–5×/wk) + Strength training 2–3×/wk
+          <span style="font-family:Cairo,sans-serif; direction:rtl; display:block; margin-top:3px; font-size:9.5px; color:rgba(255,255,255,0.5);">تمارين بعد جهاز التنظيم: هوائي 150 دقيقة/أسبوع + مقاومة 2-3 مرات/أسبوع</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">Critical Care Nursing • Arrhythmias Lecture Summary</div>
+    <div class="footer-mid">ARRHYTHMIAS</div>
+    <div class="footer-right">د. عبدالرحمن الزعفزاف • ملخص المحاضرة</div>
+  </div>
+
+</div><!-- end poster -->
+
+<br>
+<button class="download-btn" onclick="downloadImage()">⬇ Download as Image / تحميل كصورة</button>
+
+<script>
+function downloadImage() {
+  const poster = document.getElementById('poster');
+  const btns = document.querySelectorAll('.download-btn');
+  btns.forEach(b => b.style.display = 'none');
+  html2canvas(poster, {
+    scale: 2, useCORS: true,
+    backgroundColor: '#060b14',
+    logging: false,
+    width: poster.offsetWidth,
+    height: poster.offsetHeight
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'Arrhythmias_Lecture_Poster.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    btns.forEach(b => b.style.display = '');
+  });
+}
+</script>
+</body>
+</html>

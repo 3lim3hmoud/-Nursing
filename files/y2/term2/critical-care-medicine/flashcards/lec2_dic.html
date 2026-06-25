@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>DIC Syndrome</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Montserrat:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1122px;
+    min-height: 794px;
+    background: linear-gradient(135deg, #1a0a0a 0%, #3d0b0b 40%, #2a1010 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    padding: 24px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 14px;
+  }
+  .header h1 { font-size: 26px; font-weight: 900; color: #e74c3c; text-transform: uppercase; letter-spacing: 1px; }
+  .header h2 { font-family: 'Tajawal', sans-serif; font-size: 18px; color: #f0c0c0; direction: rtl; margin-top: 4px; }
+  .header p { font-size: 11px; color: #c0a0a0; margin-top: 3px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 12px 14px;
+    border-left: 4px solid #e74c3c;
+    backdrop-filter: blur(4px);
+  }
+  .card.green  { border-left-color: #2ecc71; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.purple { border-left-color: #9b59b6; }
+  .card.teal   { border-left-color: #1abc9c; }
+  .card.yellow { border-left-color: #f1c40f; }
+  .card.blue   { border-left-color: #3498db; }
+  .card h3 { font-size: 12px; font-weight: 700; color: #e74c3c; text-transform: uppercase; margin-bottom: 7px; letter-spacing: 0.5px; }
+  .card.green  h3 { color: #2ecc71; }
+  .card.orange h3 { color: #e67e22; }
+  .card.purple h3 { color: #9b59b6; }
+  .card.teal   h3 { color: #1abc9c; }
+  .card.yellow h3 { color: #f1c40f; }
+  .card.blue   h3 { color: #3498db; }
+  .ar { font-family: 'Tajawal', sans-serif; font-size: 10.5px; color: #f0c0c0; direction: rtl; text-align: right; margin-bottom: 5px; line-height: 1.5; }
+  .en { font-size: 10px; color: #e8d0d0; line-height: 1.55; }
+  ul.dots { list-style: none; }
+  ul.dots li::before { content: "▸ "; font-size: 10px; }
+  ul.dots.r li::before { color: #e74c3c; }
+  ul.dots.g li::before { color: #2ecc71; }
+  ul.dots.o li::before { color: #e67e22; }
+  ul.dots.p li::before { color: #9b59b6; }
+  ul.dots.t li::before { color: #1abc9c; }
+  ul.dots.y li::before { color: #f1c40f; }
+  ul.dots.b li::before { color: #3498db; }
+  .span2 { grid-column: span 2; }
+  .span4 { grid-column: span 4; }
+  table.t { width:100%; font-size:9px; border-collapse:collapse; margin-top:4px; }
+  table.t th { background:rgba(231,76,60,0.25); padding:4px; text-align:center; }
+  table.t td { padding:3px 5px; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .badge { display:inline-block; border-radius:4px; padding:1px 5px; font-size:9px; margin:1px 2px; }
+  .badge.r { background:rgba(231,76,60,0.2); border:1px solid #e74c3c; }
+  .badge.g { background:rgba(46,204,113,0.2); border:1px solid #2ecc71; }
+  .badge.o { background:rgba(230,126,34,0.2); border:1px solid #e67e22; }
+  .flow { display:flex; gap:4px; flex-wrap:wrap; margin-top:6px; align-items:center; }
+  .flow-box { background:rgba(231,76,60,0.2); border:1px solid #e74c3c; border-radius:6px; padding:4px 8px; font-size:9px; text-align:center; }
+  .flow-arrow { color:#e74c3c; font-size:14px; }
+  .footer { grid-column:span 4; text-align:center; font-size:9px; color:#7a4040; margin-top:4px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1); font-family:'Tajawal',sans-serif; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Disseminated Intravascular Coagulation (DIC) Syndrome</h1>
+  <h2>متلازمة التخثر المنتشر داخل الأوعية الدموية</h2>
+  <p>Dr. Abdelrahman Elzefzaf — Consultant in Intensive Care &amp; Critical Care</p>
+</div>
+<div class="grid">
+
+  <!-- Definition -->
+  <div class="card span2">
+    <h3>📖 Definition — التعريف</h3>
+    <p class="ar">حالة تهدد الحياة تتميز بتفعيل منهجي لتخثر الدم مما يؤدي لتكوين جلطات فيبرينية في الأوعية الصغيرة في جميع أنحاء الجسم، مما يسبب تلف الأعضاء المتعددة وهبوط عوامل التخثر والصفائح الدموية، مما يتسبب في نزيف حاد.</p>
+    <p class="en">A life-threatening condition characterized by <strong>systemic activation of blood coagulation</strong>, resulting in fibrin clot formation in small blood vessels → multiple organ damage + depletion of clotting factors &amp; platelets → serious bleeding.</p>
+  </div>
+
+  <!-- Causes -->
+  <div class="card span2 orange">
+    <h3>🔍 Causes — الأسباب</h3>
+    <p class="ar">إنتان الدم · رضوض · مضاعفات التوليد · خباثة · أمراض الكبد الحادة · لدغات الثعابين · تفاعلات نقل الدم</p>
+    <ul class="dots o en">
+      <li><strong>Sepsis</strong> — especially gram-negative bacteria</li>
+      <li><strong>Trauma</strong> — head injury, burns</li>
+      <li><strong>Obstetric complications</strong> — amniotic fluid embolism, abruptio placentae</li>
+      <li><strong>Malignancy</strong> — acute promyelocytic leukemia</li>
+      <li><strong>Severe liver disease</strong></li>
+      <li><strong>Snake bites, Transfusion reactions</strong></li>
+    </ul>
+  </div>
+
+  <!-- Pathophysiology -->
+  <div class="card span4 purple">
+    <h3>🔄 Pathophysiology — الفيزيولوجيا المرضية</h3>
+    <p class="ar">حدث محرك ← تفعيل التخثر ← تكوين جلطات دقيقة واسعة ← استهلاك الصفائح وعوامل التخثر ← تفعيل الانحلال الليفي ← نزيف ← تجلط + نزيف + فشل الأعضاء</p>
+    <div class="flow">
+      <div class="flow-box">1. Triggering event<br>activates coagulation cascade<br><small style="font-family:'Tajawal',sans-serif;color:#f0c0c0;">حدث محرك يفعل التخثر</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box">2. Widespread<br>microvascular thrombi<br><small style="font-family:'Tajawal',sans-serif;color:#f0c0c0;">جلطات دقيقة واسعة</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box">3. Consumption of<br>platelets &amp; factors<br><small style="font-family:'Tajawal',sans-serif;color:#f0c0c0;">استهلاك الصفائح وعوامل التخثر</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box">4. Fibrinolysis<br>→ bleeding<br><small style="font-family:'Tajawal',sans-serif;color:#f0c0c0;">انحلال الفيبرين ← نزيف</small></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box" style="border-color:#e74c3c; background:rgba(231,76,60,0.3)">5. Result:<br>Thrombosis + Bleeding<br>+ Organ Failure<br><small style="font-family:'Tajawal',sans-serif;color:#f0c0c0;">تجلط + نزيف + فشل أعضاء</small></div>
+    </div>
+  </div>
+
+  <!-- Clinical Features -->
+  <div class="card span2">
+    <h3>🩺 Clinical Features — الأعراض والعلامات</h3>
+    <p class="ar">نزيف من مواقع الوريد · نمشات وكدمات · إقفار رقمي أو غرغرينا · هبوط ضغط وصدمة · علامات فشل متعدد الأعضاء</p>
+    <ul class="dots r en">
+      <li>Bleeding from venipuncture sites, mucosa</li>
+      <li>Petechiae and ecchymosis (bruising)</li>
+      <li>Digital ischemia or gangrene</li>
+      <li>Hypotension and shock</li>
+      <li>Signs of multiorgan dysfunction (renal, hepatic, CNS)</li>
+    </ul>
+  </div>
+
+  <!-- Diagnosis -->
+  <div class="card span2 teal">
+    <h3>🔬 Diagnosis — التشخيص</h3>
+    <p class="ar">نقص الصفائح · إطالة PT وaPTT · انخفاض الفيبرينوجين · ارتفاع D-dimer · وجود schistocytes · نظام تسجيل ISTH DIC</p>
+    <table class="t">
+      <tr><th>Test</th><th>DIC Finding</th><th>الفحص</th></tr>
+      <tr><td>Platelet count</td><td>↓ Low</td><td>نقص الصفائح</td></tr>
+      <tr><td>PT / aPTT</td><td>↑ Prolonged</td><td>إطالة زمن التخثر</td></tr>
+      <tr><td>Fibrinogen</td><td>↓ Low</td><td>انخفاض الفيبرينوجين</td></tr>
+      <tr><td>D-dimer</td><td>↑ Elevated</td><td>ارتفاع D-dimer</td></tr>
+      <tr><td>Peripheral smear</td><td>Schistocytes</td><td>كرات دم حمراء مشوهة</td></tr>
+    </table>
+  </div>
+
+  <!-- Management -->
+  <div class="card span2 green">
+    <h3>💊 Management — العلاج</h3>
+    <p class="ar">تحديد وعلاج السبب الأساسي · علاج داعم: نقل الصفائح والبلازما وكريات · الهيبارين في حالات الجلطة</p>
+    <ul class="dots g en">
+      <li><strong>1. Identify &amp; treat underlying cause</strong> (sepsis, trauma…)</li>
+      <li><strong>2. Supportive therapy:</strong>
+        <ul style="margin-left:12px; font-size:9px;">
+          <li>Platelet transfusion if &lt;20,000/µL or active bleeding</li>
+          <li>Fresh Frozen Plasma (FFP) for coagulation factor replacement</li>
+          <li>Cryoprecipitate for fibrinogen replacement</li>
+        </ul>
+      </li>
+      <li><strong>3. Heparin</strong> in selected cases where thrombosis predominates</li>
+    </ul>
+  </div>
+
+  <!-- Prognosis -->
+  <div class="card span2 yellow">
+    <h3>📊 Prognosis &amp; Summary — الخلاصة</h3>
+    <p class="ar">DIC ليس مرضًا أوليًا بل متلازمة ثانوية لحالات خطيرة · التشخيص المبكر والعلاج السريع أساسيان · التأخر يزيد الوفيات بشكل كبير</p>
+    <ul class="dots y en">
+      <li>Prognosis depends on <strong>timely diagnosis</strong> and treatment of the underlying cause</li>
+      <li>DIC is <strong>not a primary disease</strong> but a syndrome secondary to severe conditions</li>
+      <li>Prompt medical attention is <strong>crucial for patient survival</strong></li>
+    </ul>
+    <div style="margin-top:8px; background:rgba(241,196,15,0.1); border-radius:6px; padding:6px; font-size:9px;">
+      <span class="badge r">Remember</span> DIC = <strong>Thrombosis + Bleeding + Organ Failure</strong> simultaneously
+      <br><span style="font-family:'Tajawal',sans-serif; color:#f0c0c0;">DIC = تجلط + نزيف + فشل أعضاء في نفس الوقت</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    Disseminated Intravascular Coagulation (DIC) Syndrome &nbsp;|&nbsp; متلازمة التخثر المنتشر داخل الأوعية &nbsp;|&nbsp; Dr. Abdelrahman Elzefzaf &nbsp;|&nbsp; Critical Care
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTN Emergency – Summary Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    background: #0a0a1a;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    padding: 30px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #8B0000 0%, #c0392b 40%, #e74c3c 100%);
+    border-radius: 20px;
+    padding: 30px 40px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(231,76,60,0.4);
+    border: 2px solid rgba(255,200,0,0.3);
+  }
+  .header-left h1 {
+    font-size: 42px;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+  }
+  .header-left .ar { font-family: 'Cairo', sans-serif; font-size: 22px; color: #FFE680; margin-top: 4px; }
+  .header-right { text-align: right; font-size: 13px; color: #FFD700; opacity: 0.85; line-height: 1.8; }
+  .header-right .ar { font-family: 'Cairo', sans-serif; }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+  /* ── CARD ── */
+  .card {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent, #e74c3c);
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent, #e74c3c);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .card-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 12px;
+    color: var(--accent, #e74c3c);
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+  .card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .card p, .card li {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+  .card ul { padding-left: 14px; }
+  .card .ar-text {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 11.5px;
+    color: #aaa;
+    margin-top: 2px;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight { background: rgba(255,215,0,0.12); border-radius: 8px; padding: 8px 12px; margin: 8px 0; border-left: 3px solid #FFD700; }
+  .highlight p { color: #FFD700; font-weight: 600; font-size: 12px; }
+  .highlight .ar-text { color: #FFE680; }
+
+  .red-box { background: rgba(231,76,60,0.15); border-left: 3px solid #e74c3c; border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
+  .red-box p { color: #ff8888; font-size: 12px; }
+
+  .green-box { background: rgba(39,174,96,0.12); border-left: 3px solid #27ae60; border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
+  .green-box p { color: #88ff99; font-size: 12px; }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    background: var(--accent, #e74c3c);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 2px 3px 2px 0;
+  }
+  .badge-yellow { background: #c0a000; color: #000; }
+  .badge-green { background: #27ae60; }
+  .badge-blue { background: #2980b9; }
+  .badge-orange { background: #d35400; }
+
+  /* ── TABLE ── */
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  th { background: rgba(255,215,0,0.15); color: #FFD700; padding: 7px 8px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #bbb; }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+  td.drug { color: #FFD700; font-weight: 600; }
+  td.contra { color: #ff7777; font-size: 10px; }
+
+  /* ── NUMBER STAT ── */
+  .stat-row { display: flex; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+  .stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 8px 12px; flex: 1; text-align: center; }
+  .stat .num { font-size: 24px; font-weight: 900; color: #FFD700; }
+  .stat .label { font-size: 10px; color: #aaa; margin-top: 2px; }
+  .stat .ar-text { font-family: 'Cairo', sans-serif; font-size: 10px; color: #888; }
+
+  /* ── ARROW FLOW ── */
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  .flow-item { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 5px 10px; font-size: 11px; color: #ddd; }
+  .flow-arrow { color: #FFD700; font-size: 16px; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.2);
+    margin: 4px 0;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: linear-gradient(135deg, #8B0000, #c0392b);
+    border-radius: 16px;
+    padding: 18px 30px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer p { font-size: 11px; color: #FFD700; }
+  .footer .ar { font-family: 'Cairo', sans-serif; font-size: 12px; color: #FFE680; }
+
+  /* accent colors per card */
+  .c-red   { --accent: #e74c3c; }
+  .c-gold  { --accent: #f39c12; }
+  .c-blue  { --accent: #2980b9; }
+  .c-green { --accent: #27ae60; }
+  .c-purple{ --accent: #8e44ad; }
+  .c-teal  { --accent: #16a085; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<div class="header">
+  <div class="header-left">
+    <h1>🩺 HTN EMERGENCY</h1>
+    <div class="ar">طوارئ ارتفاع ضغط الدم — ملخص شامل</div>
+  </div>
+  <div class="header-right">
+    <div>Dr. Abdelrahman Elzefzaf</div>
+    <div>Consultant – Intensive &amp; Critical Care</div>
+    <div class="ar">د. عبدالرحمن الزيزف — استشاري العناية المركزة</div>
+  </div>
+</div>
+
+<!-- ══════════ ROW 1 : Definitions + Epidemiology + Classification ══════════ -->
+<div class="grid">
+
+  <!-- DEFINITIONS -->
+  <div class="card c-red">
+    <div class="card-title">🔴 Hypertensive Crisis</div>
+    <div class="card-title-ar">أزمة ارتفاع ضغط الدم</div>
+    <div class="highlight">
+      <p>⚡ EMERGENCY — End-organ damage PRESENT</p>
+      <p class="ar-text">طارئ — يوجد تلف في الأعضاء المستهدفة</p>
+    </div>
+    <ul>
+      <li>SBP &gt; 180–220 mmHg</li>
+      <li>DBP &gt; 120–130 mmHg</li>
+      <li>MAP &gt; 180 mmHg</li>
+      <li class="ar-text">ضغط انقباضي / ضغط انبساطي / متوسط الضغط</li>
+      <li>IV drugs · ICU care required</li>
+      <li class="ar-text">يحتاج أدوية وريدية وعناية مركزة</li>
+    </ul>
+    <div class="red-box" style="margin-top:10px;">
+      <p>⚠ URGENCY — No organ damage, BP &gt;180/120</p>
+      <p class="ar-text">حالة استعجال — لا تلف، لكن الضغط مرتفع جداً</p>
+    </div>
+    <ul style="margin-top:6px;">
+      <li>Oral drugs · BP ↓ within 24h · No ICU</li>
+      <li class="ar-text">أدوية فموية، تخفيض تدريجي خلال 24 ساعة</li>
+    </ul>
+  </div>
+
+  <!-- EPIDEMIOLOGY -->
+  <div class="card c-gold">
+    <div class="card-title">📊 Epidemiology</div>
+    <div class="card-title-ar">علم الأوبئة</div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="num">1%</div>
+        <div class="label">HTN pts develop crisis</div>
+        <div class="ar-text">من مرضى الضغط يصابون بأزمة</div>
+      </div>
+      <div class="stat">
+        <div class="num">2×</div>
+        <div class="label">Higher in Men</div>
+        <div class="ar-text">أعلى في الرجال</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="num" style="font-size:18px">1–2</div>
+        <div class="label">Cases / 100,000 pts/yr</div>
+        <div class="ar-text">حالة لكل 100,000 مريض سنوياً</div>
+      </div>
+    </div>
+    <div class="highlight">
+      <p>Higher rates: African Americans, Low SES, Developing countries</p>
+      <p class="ar-text">أعلى في: ذوي الدخل المنخفض والدول النامية</p>
+    </div>
+    <div style="margin-top:10px;">
+      <p style="font-size:11px; color:#FFD700; font-weight:700;">Most common cause:</p>
+      <p style="font-size:12px; color:#ccc; margin-top:2px;">Non-adherence to antihypertensive medication</p>
+      <p class="ar-text">السبب الأكثر شيوعاً: عدم الالتزام بالدواء</p>
+    </div>
+  </div>
+
+  <!-- END ORGAN DAMAGE -->
+  <div class="card c-blue">
+    <div class="card-title">🫀 Target Organ Damage</div>
+    <div class="card-title-ar">تلف الأعضاء المستهدفة</div>
+    <table>
+      <tr><th>Organ / العضو</th><th>Complication / المضاعفة</th></tr>
+      <tr><td>🧠 Brain</td><td>Encephalopathy, Stroke, Hemorrhage</td></tr>
+      <tr><td>🩸 Retina</td><td>Retinopathy (Grade 3–4)</td></tr>
+      <tr><td>❤️ Heart</td><td>ACS, Acute HF, MI, Angina</td></tr>
+      <tr><td>🩻 Aorta</td><td>Aortic Dissection</td></tr>
+      <tr><td>🫘 Kidney</td><td>AKI, Hematuria</td></tr>
+      <tr><td>🤰 Placenta</td><td>Eclampsia</td></tr>
+    </table>
+    <div style="margin-top:10px;">
+      <p style="font-size:10px; color:#888; font-style:italic;">Most common presentations (ESC/ESH 2013):</p>
+      <div class="stat-row" style="margin-top:6px;">
+        <div class="stat"><div class="num" style="font-size:16px">24%</div><div class="label">Cerebral infarction</div></div>
+        <div class="stat"><div class="num" style="font-size:16px">22%</div><div class="label">Pulm. edema</div></div>
+        <div class="stat"><div class="num" style="font-size:16px">16%</div><div class="label">HTN Enceph.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ ROW 2 : Pathophysiology + Clinical + Investigations ══════════ -->
+<div class="grid">
+
+  <!-- PATHOPHYSIOLOGY -->
+  <div class="card c-purple">
+    <div class="card-title">🔬 Pathophysiology</div>
+    <div class="card-title-ar">الفيزيولوجيا المرضية</div>
+    <div class="flow">
+      <div class="flow-item">Humoral Factors<br><span class="ar-text" style="font-size:9px">عوامل هرمونية</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">↑ SVR<br><span class="ar-text" style="font-size:9px">مقاومة وعائية</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">↑ BP<br><span class="ar-text" style="font-size:9px">ارتفاع الضغط</span></div>
+    </div>
+    <div class="flow">
+      <div class="flow-item">Mechanical Stress<br><span class="ar-text" style="font-size:9px">ضغط ميكانيكي</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">Endothelial Injury<br><span class="ar-text" style="font-size:9px">تلف بطانة الأوعية</span></div>
+    </div>
+    <div class="flow">
+      <div class="flow-item">RAAS Activation</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">IL-6 ↑</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item" style="background:rgba(231,76,60,0.2);color:#ff8888;">End-Organ Ischemia<br><span class="ar-text" style="font-size:9px">نقص تروية الأعضاء</span></div>
+    </div>
+    <div class="flow">
+      <div class="flow-item">↑ Permeability</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item">Fibrin Deposition</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-item" style="background:rgba(231,76,60,0.2);color:#ff8888;">Fibrinoid Necrosis<br><span class="ar-text" style="font-size:9px">نخر فيبريني</span></div>
+    </div>
+    <p style="font-size:10px; color:#888; margin-top:8px; font-style:italic;">Ref: Lancet 2000; 356:411</p>
+  </div>
+
+  <!-- CLINICAL ASSESSMENT -->
+  <div class="card c-teal">
+    <div class="card-title">🩺 Clinical Assessment</div>
+    <div class="card-title-ar">التقييم السريري</div>
+    <div style="margin-bottom:8px;">
+      <span class="badge badge-blue">History</span>
+      <span class="badge badge-blue">Exam</span>
+      <span class="badge badge-blue">Medications</span>
+    </div>
+    <table style="margin-bottom:10px;">
+      <tr><th>Symptom</th><th>Suggests</th></tr>
+      <tr><td>Chest pain</td><td>AMI / Aortic dissection</td></tr>
+      <tr><td>Back pain (ripping)</td><td>Aortic dissection</td></tr>
+      <tr><td>Dyspnea</td><td>Acute pulm. edema</td></tr>
+      <tr><td>Delirium / Seizures</td><td>HTN encephalopathy / Stroke</td></tr>
+    </table>
+    <p style="font-size:10px; color:#FFD700; font-weight:700; margin-bottom:4px;">⚠ Ask about:</p>
+    <ul>
+      <li>Compliance · OTC drugs · Illicit drugs</li>
+      <li class="ar-text">الالتزام بالدواء · الأدوية بدون وصفة · المخدرات</li>
+      <li>Duration of pre-existing HTN</li>
+      <li class="ar-text">مدة ارتفاع الضغط السابق</li>
+    </ul>
+  </div>
+
+  <!-- INVESTIGATIONS -->
+  <div class="card c-green">
+    <div class="card-title">🔭 Investigations</div>
+    <div class="card-title-ar">الفحوصات والتحاليل</div>
+    <div style="margin-bottom:8px;">
+      <span class="badge badge-green">Labs</span>
+      <span class="badge badge-green">Imaging</span>
+    </div>
+    <ul>
+      <li>Blood electrolytes — <span class="ar-text" style="font-size:10px">الكهارل</span></li>
+      <li>Creatinine + Urea nitrogen — <span class="ar-text" style="font-size:10px">وظائف الكلى</span></li>
+      <li>CBC + Blood smear (microangiopathic hemolysis) — <span class="ar-text" style="font-size:10px">تعداد الدم</span></li>
+      <li>ECG — <span class="ar-text" style="font-size:10px">تخطيط القلب</span></li>
+      <li>CXR — <span class="ar-text" style="font-size:10px">أشعة الصدر</span></li>
+      <li>CT Brain — <span class="ar-text" style="font-size:10px">سي تي للمخ</span></li>
+      <li>CT Chest / MRI (if dissection) — <span class="ar-text" style="font-size:10px">في حالة الانسلاخ الأبهري</span></li>
+    </ul>
+    <div class="red-box" style="margin-top:8px;">
+      <p>⚠ Malignant HTN = Severe HTN + Papilledema</p>
+      <p class="ar-text">الضغط الخبيث = ضغط شديد + وذمة حليمة العصب</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ ROW 3 : Management Goals + Drug Table ══════════ -->
+<div class="grid grid-2">
+
+  <!-- MANAGEMENT GOALS -->
+  <div class="card c-red">
+    <div class="card-title">⚕️ Management Goals</div>
+    <div class="card-title-ar">أهداف العلاج</div>
+    <div class="highlight">
+      <p>🎯 GOAL: Reduce MAP by NO MORE than 20–25%</p>
+      <p>↓ DBP to 100–110 mmHg within minutes to 2 hours</p>
+      <p class="ar-text">الهدف: تخفيض متوسط الضغط بـ 20-25% فقط خلال دقائق إلى ساعتين</p>
+    </div>
+    <div class="red-box">
+      <p>🚫 Normalization of BP is usually NOT recommended!</p>
+      <p class="ar-text">لا ينصح بتطبيع الضغط بالكامل بسرعة!</p>
+    </div>
+    <p style="font-size:11px; color:#ccc; margin:8px 0; line-height:1.6;">Sudden BP drop → <span style="color:#ff8888;">acute hypoperfusion</span> → MI, hemiplegia, acute renal failure</p>
+    <p class="ar-text">الانخفاض المفاجئ يسبب نقص التروية وقد يؤدي لاحتشاء أو شلل أو فشل كلوي</p>
+
+    <div style="margin-top:12px; display:flex; gap:10px;">
+      <div style="flex:1; background:rgba(231,76,60,0.12); border-radius:8px; padding:10px; border:1px solid rgba(231,76,60,0.3);">
+        <p style="font-size:11px; font-weight:700; color:#e74c3c; margin-bottom:4px;">🏃 AGGRESSIVE reduction for:</p>
+        <p style="font-size:11px; color:#ccc;">• Acute Pulmonary Edema</p>
+        <p style="font-size:11px; color:#ccc;">• Aortic Dissection</p>
+        <p class="ar-text">وذمة رئوية حادة · انسلاخ أبهري</p>
+      </div>
+      <div style="flex:1; background:rgba(39,174,96,0.1); border-radius:8px; padding:10px; border:1px solid rgba(39,174,96,0.3);">
+        <p style="font-size:11px; font-weight:700; color:#27ae60; margin-bottom:4px;">🐢 SLOW reduction for:</p>
+        <p style="font-size:11px; color:#ccc;">• Acute cerebrovascular damage</p>
+        <p style="font-size:11px; color:#ccc;">• Monitor neuro status closely</p>
+        <p class="ar-text">الأذى الوعائي الدماغي الحاد</p>
+      </div>
+    </div>
+
+    <div class="highlight" style="margin-top:10px;">
+      <p>💊 Constant IV infusion required — NO intermittent boluses / oral / sublingual drugs</p>
+      <p class="ar-text">تسريب وريدي مستمر — بدون جرعات متقطعة أو أدوية تحت اللسان</p>
+    </div>
+  </div>
+
+  <!-- DRUGS OF CHOICE TABLE -->
+  <div class="card c-blue">
+    <div class="card-title">💊 Drugs of Choice by Condition</div>
+    <div class="card-title-ar">الأدوية المُختارة حسب الحالة</div>
+    <table>
+      <tr><th>Condition / الحالة</th><th>Drug(s)</th><th>Avoid / تجنب</th></tr>
+      <tr><td>Acute Pulm. Edema<br><span class="ar-text">وذمة رئوية حادة</span></td><td class="drug">NTG + Loop diuretic<br>Nitroprusside</td><td class="contra">Beta-blockers, Verapamil</td></tr>
+      <tr><td>Acute Coronary Syndrome<br><span class="ar-text">متلازمة كورونارية حادة</span></td><td class="drug">NTG + Beta-blocker</td><td class="contra">Hydralazine</td></tr>
+      <tr><td>HTN Encephalopathy<br><span class="ar-text">اعتلال دماغي ضغطي</span></td><td class="drug">Nitroprusside, Labetalol, Nicardipine</td><td class="contra">Centrally acting agents</td></tr>
+      <tr><td>Aortic Dissection<br><span class="ar-text">انسلاخ أبهري</span></td><td class="drug">Nitroprusside + Beta-blocker</td><td class="contra">Pure vasodilators alone</td></tr>
+      <tr><td>Intracranial Hemorrhage<br><span class="ar-text">نزيف داخل القحف</span></td><td class="drug">Labetalol, Nicardipine</td><td class="contra">Nifedipine, Nitroprusside (caution)</td></tr>
+      <tr><td>Ischemic Stroke<br><span class="ar-text">سكتة دماغية إقفارية</span></td><td class="drug">Nitroprusside, Labetalol</td><td class="contra">Nifedipine</td></tr>
+      <tr><td>Acute Renal Impairment<br><span class="ar-text">قصور كلوي حاد</span></td><td class="drug">Fenoldopam, Nicardipine</td><td class="contra">Diuretics (caution)</td></tr>
+      <tr><td>Eclampsia<br><span class="ar-text">الارتعاج</span></td><td class="drug">MgSO₄, Hydralazine, Methyldopa</td><td class="contra">Nitroprusside, ACEi</td></tr>
+      <tr><td>Adrenergic Crisis / Pheo<br><span class="ar-text">ورم القواتم</span></td><td class="drug">Labetalol, Phentolamine</td><td class="contra">Beta-blocker monotherapy</td></tr>
+    </table>
+    <div class="red-box" style="margin-top:10px;">
+      <p>🚫 SL / Oral Nifedipine — NEVER USE in HTN emergency</p>
+      <p class="ar-text">نيفيديبين تحت اللسان أو الفموي — ممنوع مطلقاً في الطوارئ</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ ROW 4 : Parenteral Drugs + Eclampsia + Take Home ══════════ -->
+<div class="grid">
+
+  <!-- PARENTERAL DRUGS -->
+  <div class="card c-gold">
+    <div class="card-title">💉 Parenteral Drugs — Quick Ref</div>
+    <div class="card-title-ar">الأدوية الوريدية — مرجع سريع</div>
+    <table>
+      <tr><th>Drug</th><th>Dose</th><th>Onset</th><th>Duration</th></tr>
+      <tr><td class="drug">Nitroprusside</td><td>0.25–10 µg/kg/min IV</td><td>Immediate</td><td>1–2 min</td></tr>
+      <tr><td class="drug">Nicardipine</td><td>5–15 mg/h IV</td><td>5–10 min</td><td>15–30 min</td></tr>
+      <tr><td class="drug">Clevidipine ✨</td><td>1–2 mg/h → max 16 mg/h</td><td>1–2 min</td><td>5–15 min</td></tr>
+      <tr><td class="drug">Labetalol</td><td>20–80 mg IV bolus q10min<br>0.5–2 mg/min infusion</td><td>5–10 min</td><td>3–6 h</td></tr>
+      <tr><td class="drug">Esmolol</td><td>250–500 µg/kg/min</td><td>1–2 min</td><td>10–30 min</td></tr>
+      <tr><td class="drug">Nitroglycerin</td><td>5–100 µg/min IV</td><td>2–5 min</td><td>5–10 min</td></tr>
+      <tr><td class="drug">Hydralazine</td><td>10–20 mg IV</td><td>10–20 min</td><td>1–4 h</td></tr>
+      <tr><td class="drug">Phentolamine</td><td>5–15 mg IV bolus</td><td>1–2 min</td><td>10–30 min</td></tr>
+      <tr><td class="drug">Fenoldopam</td><td>0.1–0.3 µg/kg/min</td><td>&lt;5 min</td><td>30 min</td></tr>
+    </table>
+    <div class="highlight" style="margin-top:10px;">
+      <p>✨ Clevidipine = NEW approved drug for HTN emergencies</p>
+      <p class="ar-text">كليفيديبين = الدواء الجديد المعتمد لطوارئ الضغط</p>
+    </div>
+  </div>
+
+  <!-- ECLAMPSIA -->
+  <div class="card c-teal">
+    <div class="card-title">🤰 Eclampsia</div>
+    <div class="card-title-ar">الارتعاج — ارتفاع ضغط الحمل</div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="num">12%</div>
+        <div class="label">of pregnancies</div>
+        <div class="ar-text">من الحوامل</div>
+      </div>
+      <div class="stat">
+        <div class="num">18%</div>
+        <div class="label">maternal deaths</div>
+        <div class="ar-text">وفيات الأمهات</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;">
+      <p style="font-size:11px; color:#FFD700; font-weight:700;">Initiate treatment when:</p>
+      <p style="font-size:12px; color:#ccc;">SBP ≥ 155–160 mmHg  OR  DBP &gt; 105 mmHg</p>
+      <p class="ar-text">ابدأ العلاج عند وصول الضغط لهذه الأرقام</p>
+    </div>
+    <div class="green-box" style="margin-top:8px;">
+      <p>✅ MgSO₄ 4–6g/100mL over 15–20 min → 1–2 g/h (seizure prophylaxis)</p>
+      <p class="ar-text">كبريتات المغنيسيوم للوقاية من التشنجات</p>
+    </div>
+    <div class="green-box">
+      <p>✅ DOC: Methyldopa · Hydralazine · IV Labetalol · Nicardipine</p>
+      <p class="ar-text">الأدوية المُختارة في الحمل</p>
+    </div>
+    <div class="red-box">
+      <p>🚫 AVOID: Nitroprusside · ACEi · SL/Oral Nifedipine</p>
+      <p class="ar-text">ممنوع: نيتروبروسيد · مثبطات ACE · نيفيديبين فموي</p>
+    </div>
+    <div class="highlight" style="margin-top:6px;">
+      <p>⚠ ICH (Intracranial Hemorrhage) = devastating complication of eclampsia</p>
+      <p class="ar-text">النزيف داخل القحف من أخطر مضاعفات الارتعاج</p>
+    </div>
+  </div>
+
+  <!-- TAKE HOME MESSAGE -->
+  <div class="card c-green">
+    <div class="card-title">📌 Take Home Message</div>
+    <div class="card-title-ar">الرسائل الرئيسية للحفظ</div>
+
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div class="highlight">
+        <p>1️⃣ Most common cause of HTN crisis = Undiagnosed / Untreated / Inadequately treated HTN</p>
+        <p class="ar-text">السبب الأكثر شيوعاً: ضغط غير مُشخَّص أو غير مُعالَج</p>
+      </div>
+      <div class="highlight">
+        <p>2️⃣ Emergency vs Urgency = Presence vs ABSENCE of end-organ damage</p>
+        <p class="ar-text">الفرق: وجود أو غياب تلف الأعضاء المستهدفة</p>
+      </div>
+      <div class="highlight">
+        <p>3️⃣ Preferred drugs: IV Nicardipine · IV Labetalol · Clevidipine</p>
+        <p class="ar-text">الأدوية المُفضَّلة: نيكارديبين وريدي · لابيتالول وريدي · كليفيديبين</p>
+      </div>
+      <div class="red-box">
+        <p>4️⃣ SL / Oral Nifedipine = ABSOLUTELY CONTRAINDICATED</p>
+        <p class="ar-text">نيفيديبين تحت اللسان = ممنوع مطلقاً</p>
+      </div>
+      <div class="red-box">
+        <p>5️⃣ Never normalize BP too fast — autoregulation curve shifts right in chronic HTN</p>
+        <p class="ar-text">لا تُخفَّض الضغط بسرعة — الأوعية معتادة على الضغط المرتفع</p>
+      </div>
+      <div class="green-box">
+        <p>6️⃣ Always use continuous IV infusion — avoid intermittent boluses</p>
+        <p class="ar-text">دائماً تسريب وريدي مستمر — تجنب الجرعات المتقطعة</p>
+      </div>
+      <div class="green-box">
+        <p>7️⃣ Single organ involved in 83% of cases · Multi-organ in only 3%</p>
+        <p class="ar-text">83% من الحالات تمس عضو واحد فقط</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <p>📚 HTN Emergency — Complete Summary Poster</p>
+    <p class="ar">ملخص شامل لمحاضرة طوارئ ارتفاع ضغط الدم</p>
+  </div>
+  <div style="text-align:center;">
+    <p>References: ESC/ESH 2013 · Cardiol Clinics 2006;24:135-46 · Lancet 2000;356:411 · Am J Obst 2000:183:S1-S22</p>
+  </div>
+  <div style="text-align:right;">
+    <p>Dr. Abdelrahman Elzefzaf</p>
+    <p class="ar">د. عبدالرحمن الزيزف</p>
+  </div>
+</div>
+
+</body>
+</html>

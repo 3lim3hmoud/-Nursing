@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stroke – Bilingual Poster | ملخص محاضرة السكتة الدماغية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0d1b2a;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .poster {
+    width: 1200px;
+    background: linear-gradient(160deg, #0d2137 0%, #0a1628 40%, #061020 100%);
+    border: 2px solid #1e4a6e;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0,120,255,0.15);
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #0b3d6b 0%, #1565a0 50%, #0b3d6b 100%);
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #2e86de;
+  }
+  .header-left { flex: 1; }
+  .header-icon {
+    font-size: 72px;
+    line-height: 1;
+    filter: drop-shadow(0 0 20px rgba(255,100,100,0.6));
+  }
+  .header-title {
+    font-size: 52px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 6px;
+    text-shadow: 0 0 30px rgba(100,180,255,0.5);
+    line-height: 1;
+  }
+  .header-subtitle-en {
+    font-size: 16px;
+    color: #a8d4f5;
+    margin-top: 6px;
+    letter-spacing: 2px;
+  }
+  .header-subtitle-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    color: #ffd166;
+    margin-top: 4px;
+    letter-spacing: 0;
+    direction: rtl;
+    text-align: left;
+  }
+  .badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 12px 20px;
+    text-align: center;
+    color: #cce4ff;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .badge strong { display: block; font-size: 15px; color: #fff; }
+
+  /* ===== GRID ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .card {
+    border: 1px solid rgba(30,74,110,0.5);
+    padding: 20px 22px;
+    position: relative;
+  }
+  .card:hover { background: rgba(255,255,255,0.02); }
+
+  /* accent top bar */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .accent-blue::before  { background: #2e86de; }
+  .accent-red::before   { background: #e74c3c; }
+  .accent-green::before { background: #27ae60; }
+  .accent-orange::before{ background: #f39c12; }
+  .accent-purple::before{ background: #8e44ad; }
+  .accent-teal::before  { background: #16a085; }
+  .accent-pink::before  { background: #e91e8c; }
+  .accent-gold::before  { background: #f1c40f; }
+  .accent-cyan::before  { background: #00bcd4; }
+
+  .card-title-en {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #4fc3f7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .card-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffd166;
+    direction: rtl;
+    margin-bottom: 10px;
+  }
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 8px 0 10px;
+  }
+
+  /* content rows */
+  .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 7px;
+    align-items: flex-start;
+  }
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #2e86de;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .dot-red    { background: #e74c3c; }
+  .dot-green  { background: #27ae60; }
+  .dot-orange { background: #f39c12; }
+  .dot-purple { background: #8e44ad; }
+  .dot-teal   { background: #16a085; }
+  .dot-gold   { background: #f1c40f; }
+  .dot-cyan   { background: #00bcd4; }
+  .dot-pink   { background: #e91e8c; }
+
+  .text-en {
+    font-size: 12px;
+    color: #cde6ff;
+    line-height: 1.45;
+    flex: 1;
+  }
+  .text-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 12px;
+    color: #d4eaff;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #f39c12;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1px;
+  }
+  .label-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffd166;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 1px;
+  }
+  .highlight {
+    background: rgba(46,134,222,0.15);
+    border-left: 3px solid #2e86de;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 7px;
+  }
+  .highlight-red { border-left-color: #e74c3c; background: rgba(231,76,60,0.12); }
+  .highlight-green { border-left-color: #27ae60; background: rgba(39,174,96,0.12); }
+  .highlight-orange { border-left-color: #f39c12; background: rgba(243,156,18,0.12); }
+  .highlight-gold { border-left-color: #f1c40f; background: rgba(241,196,15,0.12); }
+
+  /* classification table */
+  .cls-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .cls-table th {
+    background: rgba(46,134,222,0.25);
+    color: #7ecfff;
+    font-size: 10.5px;
+    padding: 5px 8px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cls-table td {
+    padding: 5px 8px;
+    border: 1px solid rgba(255,255,255,0.07);
+    color: #cde6ff;
+    vertical-align: top;
+  }
+  .cls-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+  .cls-table td.ar { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; color: #d4eaff; }
+
+  /* tags */
+  .tag {
+    display: inline-block;
+    background: rgba(46,134,222,0.2);
+    border: 1px solid rgba(46,134,222,0.4);
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 10.5px;
+    color: #7ecfff;
+    margin: 2px 2px 2px 0;
+  }
+  .tag-red    { background: rgba(231,76,60,0.2); border-color: rgba(231,76,60,0.4); color: #ff8a80; }
+  .tag-green  { background: rgba(39,174,96,0.2); border-color: rgba(39,174,96,0.4); color: #69f0ae; }
+  .tag-orange { background: rgba(243,156,18,0.2); border-color: rgba(243,156,18,0.4); color: #ffd54f; }
+  .tag-teal   { background: rgba(22,160,133,0.2); border-color: rgba(22,160,133,0.4); color: #80cbc4; }
+
+  /* wide card (spans 2 cols) */
+  .card-wide { grid-column: span 2; }
+  .card-full { grid-column: span 3; }
+
+  /* two-col inside card */
+  .inner-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* FAST mnemonic */
+  .fast-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .fast-box {
+    background: rgba(231,76,60,0.15);
+    border: 1px solid rgba(231,76,60,0.35);
+    border-radius: 8px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+  .fast-letter { font-size: 22px; font-weight: 800; color: #ff8a80; line-height: 1; }
+  .fast-word-en { font-size: 10.5px; color: #ffcdd2; margin-top: 3px; }
+  .fast-word-ar { font-family: 'Cairo', sans-serif; font-size: 11px; color: #ffd4d4; direction: rtl; }
+
+  /* CBF flow */
+  .cbf-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .cbf-val {
+    background: rgba(46,134,222,0.2);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #4fc3f7;
+    white-space: nowrap;
+  }
+  .arrow { color: #5a7a9a; font-size: 14px; }
+  .cbf-desc { font-size: 11px; color: #aac8e0; }
+
+  /* percent bars */
+  .pct-bar-wrap { margin-bottom: 5px; }
+  .pct-label { display: flex; justify-content: space-between; font-size: 11px; color: #aac8e0; margin-bottom: 2px; }
+  .pct-label span:last-child { font-family: 'Cairo', sans-serif; direction: rtl; font-size: 11px; }
+  .pct-track { background: rgba(255,255,255,0.07); border-radius: 4px; height: 7px; }
+  .pct-fill { height: 7px; border-radius: 4px; }
+
+  /* footer */
+  .footer {
+    background: linear-gradient(135deg, #061020, #0b2a45);
+    border-top: 2px solid #1e4a6e;
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-en { font-size: 11px; color: #5a7a9a; }
+  .footer-ar { font-family: 'Cairo', sans-serif; font-size: 12px; color: #5a7a9a; direction: rtl; }
+
+  /* Print / screenshot helper */
+  @media print {
+    body { background: white; padding: 0; }
+    .poster { width: 100%; box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-title">STROKE</div>
+      <div class="header-subtitle-en">Cerebrovascular Accident (CVA) — Comprehensive One-Page Summary</div>
+      <div class="header-subtitle-ar">السكتة الدماغية — ملخص شامل في صفحة واحدة</div>
+    </div>
+    <div class="header-icon">🧠</div>
+    <div class="badge">
+      <strong>WHO Definition</strong>
+      Focal / global cerebral disturbance<br>
+      lasting ≥ 24 h · vascular origin<br>
+      <span style="font-family:'Cairo';direction:rtl;font-size:12px;color:#ffd166;">اضطراب دماغي بؤري أو عام ≥ ٢٤ ساعة</span>
+    </div>
+  </div>
+
+  <!-- ===== ROW 1 ===== -->
+  <div class="grid">
+
+    <!-- Definition & Types -->
+    <div class="card accent-blue">
+      <div class="card-title-en">🔵 Definition by Time Course</div>
+      <div class="card-title-ar">التعريف حسب المسار الزمني</div>
+      <div class="divider"></div>
+
+      <div class="highlight">
+        <div class="label">TIA</div>
+        <div class="label-ar">نوبة نقص تروية عابر</div>
+        <div class="text-en">Ischemic event ≤ 24 h — no permanent neurological deficit</div>
+        <div class="text-ar">حدث إقفاري أقل من ٢٤ ساعة — بدون عجز عصبي دائم</div>
+      </div>
+      <div class="highlight" style="border-left-color:#f39c12;background:rgba(243,156,18,0.1)">
+        <div class="label" style="color:#f39c12;">Stroke in Evolution</div>
+        <div class="label-ar">السكتة في التطور</div>
+        <div class="text-en">Progressive neurological deficits — widening ischemia</div>
+        <div class="text-ar">عجز عصبي تدريجي — توسع في منطقة الإقفار</div>
+      </div>
+      <div class="highlight highlight-red">
+        <div class="label" style="color:#ff8a80;">Completed Stroke</div>
+        <div class="label-ar">السكتة المكتملة</div>
+        <div class="text-en">Ischemic event with persistent / permanent deficit</div>
+        <div class="text-ar">حدث إقفاري مع عجز عصبي ثابت ودائم</div>
+      </div>
+    </div>
+
+    <!-- Epidemiology -->
+    <div class="card accent-red">
+      <div class="card-title-en">🌍 Epidemiology & Burden</div>
+      <div class="card-title-ar">الوبائيات والعبء العالمي</div>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div>
+          <div class="text-en"><strong>2nd leading cause</strong> of death worldwide</div>
+          <div class="text-ar">ثاني سبب للوفاة على مستوى العالم</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div>
+          <div class="text-en"><strong>15 million</strong> strokes / year — 5M deaths · 5M disabled (WHO)</div>
+          <div class="text-ar">١٥ مليون سكتة سنوياً — ٥م وفاة · ٥م إعاقة دائمة</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="dot dot-orange"></div>
+        <div>
+          <div class="text-en">"<strong>Time is Brain</strong>" — every minute matters for IV tPA &amp; thrombectomy</div>
+          <div class="text-ar">"الوقت هو الدماغ" — كل دقيقة تهم في العلاج</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div>
+          <div class="text-en">Hemorrhagic: BP control + neurocritical care crucial</div>
+          <div class="text-ar">النزفية: التحكم في ضغط الدم والعناية العصبية ضروريان</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classification -->
+    <div class="card accent-green">
+      <div class="card-title-en">📊 Classification</div>
+      <div class="card-title-ar">تصنيف السكتة الدماغية</div>
+      <div class="divider"></div>
+      <table class="cls-table">
+        <tr>
+          <th>Type (EN)</th>
+          <th>النوع (AR)</th>
+          <th>%</th>
+        </tr>
+        <tr>
+          <td><span class="tag">Thrombotic</span></td>
+          <td class="ar">خثارية</td>
+          <td style="color:#4fc3f7;font-weight:700">50%</td>
+        </tr>
+        <tr>
+          <td><span class="tag">Embolic</span></td>
+          <td class="ar">صمّية</td>
+          <td style="color:#4fc3f7;font-weight:700">30%</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">ICH</span></td>
+          <td class="ar">نزيف داخل المخ</td>
+          <td style="color:#ff8a80;font-weight:700">15%</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-red">SAH</span></td>
+          <td class="ar">نزيف تحت العنكبوتية</td>
+          <td style="color:#ff8a80;font-weight:700">5%</td>
+        </tr>
+      </table>
+      <div style="margin-top:10px">
+        <div class="pct-bar-wrap">
+          <div class="pct-label"><span>Ischemic (Primary)</span><span>إقفاري</span></div>
+          <div class="pct-track"><div class="pct-fill" style="width:80%;background:#2e86de;"></div></div>
+        </div>
+        <div class="pct-bar-wrap">
+          <div class="pct-label"><span>Hemorrhagic</span><span>نزفي</span></div>
+          <div class="pct-track"><div class="pct-fill" style="width:20%;background:#e74c3c;"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 1 -->
+
+  <!-- ===== ROW 2 ===== -->
+  <div class="grid">
+
+    <!-- Risk Factors -->
+    <div class="card accent-orange">
+      <div class="card-title-en">⚠️ Risk Factors</div>
+      <div class="card-title-ar">عوامل الخطر</div>
+      <div class="divider"></div>
+      <div class="inner-cols">
+        <div>
+          <div class="label" style="color:#4fc3f7;">Modifiable | قابلة للتعديل</div>
+          <div class="row" style="margin-top:5px">
+            <div class="dot dot-orange"></div>
+            <div class="text-en">Hypertension<div class="text-ar">ارتفاع ضغط الدم</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-orange"></div>
+            <div class="text-en">Diabetes<div class="text-ar">السكري</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-orange"></div>
+            <div class="text-en">Dyslipidemia<div class="text-ar">اضطراب الدهون</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-orange"></div>
+            <div class="text-en">Atrial Fibrillation<div class="text-ar">الرجفان الأذيني</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-orange"></div>
+            <div class="text-en">Smoking · Obesity<div class="text-ar">التدخين · السمنة</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="label" style="color:#ff8a80;">Non-Modifiable | غير قابلة</div>
+          <div class="row" style="margin-top:5px">
+            <div class="dot dot-red"></div>
+            <div class="text-en">Age<div class="text-ar">العمر</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-red"></div>
+            <div class="text-en">Sex<div class="text-ar">الجنس</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-red"></div>
+            <div class="text-en">Ethnicity<div class="text-ar">العرق</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-red"></div>
+            <div class="text-en">Prior Stroke<div class="text-ar">سكتة سابقة</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-red"></div>
+            <div class="text-en">Heredity<div class="text-ar">الوراثة</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pathophysiology -->
+    <div class="card accent-purple">
+      <div class="card-title-en">🔬 Pathophysiology</div>
+      <div class="card-title-ar">الفيزيولوجيا المرضية</div>
+      <div class="divider"></div>
+      <div class="label" style="color:#c39bd3;">Ischemic | إقفاري</div>
+      <div class="row" style="margin-top:4px">
+        <div class="dot dot-purple"></div>
+        <div class="text-en"><strong>Atherosclerosis/Thrombosis:</strong> HTN, DM, smoking → plaque → vessel occlusion<div class="text-ar">تصلب الشرايين: ارتفاع ضغط الدم، السكري، التدخين ← لويحة ← انسداد وعائي</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-purple"></div>
+        <div class="text-en"><strong>Embolic:</strong> cardiac emboli (AF, endocarditis) → cerebral artery blockage<div class="text-ar">صمة من القلب (رجفان أذيني) ← انسداد شريان دماغي</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-purple"></div>
+        <div class="text-en"><strong>Lacunar:</strong> lipohyalinosis of small vessels<div class="text-ar">تحلل شحمي هياليني للأوعية الصغيرة</div></div>
+      </div>
+      <div style="margin-top:6px">
+        <div class="label" style="color:#ff8a80;">Hemorrhagic | نزفي</div>
+        <div class="row" style="margin-top:4px">
+          <div class="dot dot-red"></div>
+          <div class="text-en"><strong>ICH:</strong> HTN weakens arteries → rupture → hematoma → ↑ICP<div class="text-ar">ارتفاع الضغط يضعف الشرايين → تمزق → ورم دموي → ↑الضغط داخل الجمجمة</div></div>
+        </div>
+        <div class="row">
+          <div class="dot dot-red"></div>
+          <div class="text-en"><strong>SAH:</strong> Berry aneurysm rupture → vasospasm, hydrocephalus<div class="text-ar">تمزق أم الدم التوتية → تشنج وعائي، استسقاء دماغي</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CBF Effects -->
+    <div class="card accent-teal">
+      <div class="card-title-en">⚡ Effects of Reduced CBF</div>
+      <div class="card-title-ar">تأثير تقليل تدفق الدم للمخ</div>
+      <div class="divider"></div>
+      <div class="cbf-row">
+        <div class="cbf-val">50–55</div>
+        <div class="arrow">▶</div>
+        <div class="cbf-desc">Normal ml/100g/min <span style="font-family:'Cairo';direction:rtl;font-size:11px;color:#80cbc4"> — طبيعي</span></div>
+      </div>
+      <div class="cbf-row">
+        <div class="cbf-val" style="background:rgba(243,156,18,0.2);color:#ffd54f;">25</div>
+        <div class="arrow">▶</div>
+        <div class="cbf-desc">Ischemia · Edema · ↑Lactate <span style="font-family:'Cairo';direction:rtl;"> — إقفار وتورم</span></div>
+      </div>
+      <div class="cbf-row">
+        <div class="cbf-val" style="background:rgba(255,100,50,0.2);color:#ff8a80;">20</div>
+        <div class="arrow">▶</div>
+        <div class="cbf-desc">Loss of electrical activity <span style="font-family:'Cairo';direction:rtl;"> — فقد النشاط الكهربي</span></div>
+      </div>
+      <div class="cbf-row">
+        <div class="cbf-val" style="background:rgba(231,76,60,0.3);color:#ff5252;">15</div>
+        <div class="arrow">▶</div>
+        <div class="cbf-desc">Na/K pump failure → Penumbra <span style="font-family:'Cairo';direction:rtl;"> — منطقة الظل</span></div>
+      </div>
+      <div class="cbf-row">
+        <div class="cbf-val" style="background:rgba(139,0,0,0.4);color:#ff1744;">&lt;10</div>
+        <div class="arrow">▶</div>
+        <div class="cbf-desc" style="color:#ff6b6b;font-weight:700;">Infarction · Cell Death <span style="font-family:'Cairo';direction:rtl;color:#ff8a80;"> — احتشاء ✕</span></div>
+      </div>
+    </div>
+
+  </div><!-- /row 2 -->
+
+  <!-- ===== ROW 3 ===== -->
+  <div class="grid">
+
+    <!-- Clinical Features -->
+    <div class="card accent-pink">
+      <div class="card-title-en">🚨 Warning Signs — FAST</div>
+      <div class="card-title-ar">علامات التحذير — أعراض السكتة</div>
+      <div class="divider"></div>
+      <div class="fast-grid">
+        <div class="fast-box">
+          <div class="fast-letter">F</div>
+          <div class="fast-word-en">Face drooping</div>
+          <div class="fast-word-ar">تدلي الوجه</div>
+        </div>
+        <div class="fast-box">
+          <div class="fast-letter">A</div>
+          <div class="fast-word-en">Arm weakness</div>
+          <div class="fast-word-ar">ضعف الذراع</div>
+        </div>
+        <div class="fast-box">
+          <div class="fast-letter">S</div>
+          <div class="fast-word-en">Speech difficulty</div>
+          <div class="fast-word-ar">صعوبة الكلام</div>
+        </div>
+        <div class="fast-box">
+          <div class="fast-letter">T</div>
+          <div class="fast-word-en">Time to call!</div>
+          <div class="fast-word-ar">الوقت للاتصال!</div>
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="row">
+          <div class="dot dot-pink"></div>
+          <div class="text-en">Sudden visual disturbance (one or both eyes)<div class="text-ar">اضطراب مفاجئ في الرؤية</div></div>
+        </div>
+        <div class="row">
+          <div class="dot dot-pink"></div>
+          <div class="text-en">Dizziness · vertigo · loss of coordination<div class="text-ar">دوخة وفقدان التوازن والتنسيق</div></div>
+        </div>
+        <div class="row">
+          <div class="dot dot-pink"></div>
+          <div class="text-en">Sudden severe headache (hemorrhagic stroke)<div class="text-ar">صداع شديد مفاجئ (السكتة النزفية)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diagnosis -->
+    <div class="card accent-gold">
+      <div class="card-title-en">🔍 Diagnosis & Investigations</div>
+      <div class="card-title-ar">التشخيص والتحقيقات</div>
+      <div class="divider"></div>
+      <div class="label" style="color:#ffd54f;">Neuroimaging | التصوير العصبي</div>
+      <div class="row" style="margin-top:4px">
+        <div class="dot dot-gold"></div>
+        <div class="text-en"><strong>NCCT Brain</strong> — 1st line · rules out hemorrhage · hyperdense = bleed · hypodense (24h) = infarct<div class="text-ar">CT بدون تباين — خط أول، كثيف = نزيف، خافت = احتشاء</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-gold"></div>
+        <div class="text-en"><strong>MRI-DWI</strong> — best for early ischemia &amp; posterior fossa<div class="text-ar">الرنين المغناطيسي — أفضل للتغيرات المبكرة والحفرة الخلفية</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-gold"></div>
+        <div class="text-en"><strong>CTA / MRA</strong> — large vessel occlusion or aneurysm<div class="text-ar">تصوير وعائي لانسداد الأوعية الكبيرة أو الأم الدم</div></div>
+      </div>
+      <div style="margin-top:6px">
+        <div class="label" style="color:#ffd54f;">Labs | المختبر</div>
+        <div class="text-en" style="margin-top:4px">CBC · electrolytes · RFT · cardiac enzymes · coagulation · blood glucose · ECG · Echo</div>
+        <div class="text-ar">صورة دم كاملة · شوارد · وظائف كلى · إنزيمات قلبية · تخثر · سكر · رسم قلب · إيكو</div>
+      </div>
+    </div>
+
+    <!-- Laterality -->
+    <div class="card accent-cyan">
+      <div class="card-title-en">🧩 Brain Laterality</div>
+      <div class="card-title-ar">أعراض حسب جانب الإصابة</div>
+      <div class="divider"></div>
+      <div class="inner-cols">
+        <div>
+          <div class="label" style="color:#80cbc4;">Right Brain Injury</div>
+          <div class="label-ar" style="color:#80cbc4;">إصابة الدماغ الأيمن</div>
+          <div class="row" style="margin-top:4px">
+            <div class="dot dot-cyan"></div>
+            <div class="text-en">Paralyzed Left Side<div class="text-ar">شلل جانب أيسر</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-cyan"></div>
+            <div class="text-en">Perceptual deficits<div class="text-ar">عجز إدراكي</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-cyan"></div>
+            <div class="text-en">Impulsive behavior<div class="text-ar">سلوك اندفاعي</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-cyan"></div>
+            <div class="text-en">Memory deficits<div class="text-ar">عجز في الذاكرة</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="label" style="color:#4fc3f7;">Left Brain Injury</div>
+          <div class="label-ar" style="color:#4fc3f7;">إصابة الدماغ الأيسر</div>
+          <div class="row" style="margin-top:4px">
+            <div class="dot dot-teal"></div>
+            <div class="text-en">Paralyzed Right Side<div class="text-ar">شلل جانب أيمن</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-teal"></div>
+            <div class="text-en">Speech/Language deficits<div class="text-ar">عجز لغوي وكلامي</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-teal"></div>
+            <div class="text-en">Slow cautious behavior<div class="text-ar">سلوك بطيء ومتحفظ</div></div>
+          </div>
+          <div class="row">
+            <div class="dot dot-teal"></div>
+            <div class="text-en">Memory deficits<div class="text-ar">عجز في الذاكرة</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 3 -->
+
+  <!-- ===== ROW 4 ===== -->
+  <div class="grid">
+
+    <!-- Ischemic Management -->
+    <div class="card accent-green">
+      <div class="card-title-en">💊 Ischemic Stroke Management</div>
+      <div class="card-title-ar">علاج السكتة الإقفارية</div>
+      <div class="divider"></div>
+      <div class="highlight highlight-green">
+        <div class="label" style="color:#69f0ae;">IV tPA (Alteplase)</div>
+        <div class="label-ar">حل الجلطة وريدياً (tPA)</div>
+        <div class="text-en">Within <strong>4.5 hours</strong> of onset · CI: bleeding risk, recent surgery, uncontrolled HTN</div>
+        <div class="text-ar">خلال ٤.٥ ساعة من البداية · موانع: خطر النزيف، جراحة حديثة، ضغط غير مسيطر عليه</div>
+      </div>
+      <div class="row">
+        <div class="dot dot-green"></div>
+        <div class="text-en"><strong>Endovascular Thrombectomy:</strong> large vessel occlusion — within 6–24 h<div class="text-ar">استئصال الجلطة داخل الأوعية: خلال ٦–٢٤ ساعة</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-green"></div>
+        <div class="text-en"><strong>Antiplatelet:</strong> Aspirin 150–300 mg/day + Clopidogrel (secondary prevention)<div class="text-ar">أسبرين + كلوبيدوجريل للوقاية الثانوية</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-green"></div>
+        <div class="text-en"><strong>Statins:</strong> Atorvastatin/Rosuvastatin 20–80 mg · BP &lt; 180/105 mmHg<div class="text-ar">ستاتينات لتقليل تصلب الشرايين · ضغط دم أقل من ١٨٠/١٠٥</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-green"></div>
+        <div class="text-en"><strong>Physiotherapy &amp; early mobilization</strong> prevents disability<div class="text-ar">العلاج الطبيعي والتعبئة المبكرة تمنع الإعاقة</div></div>
+      </div>
+    </div>
+
+    <!-- Hemorrhagic Management -->
+    <div class="card accent-red">
+      <div class="card-title-en">🩸 Hemorrhagic Stroke Management</div>
+      <div class="card-title-ar">علاج السكتة النزفية</div>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div class="text-en"><strong>BP Control:</strong> Target SBP &lt; 140 mmHg — IV Labetalol / Nicardipine<div class="text-ar">ضغط دم انقباضي أقل من ١٤٠ — لابيتالول / نيكارديبين وريدي</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div class="text-en"><strong>Surgical:</strong> Decompressive craniectomy for large hematomas<div class="text-ar">جراحة رفع ضغط للأورام الدموية الكبيرة</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div class="text-en"><strong>SAH:</strong> Aneurysm clipping or coiling<div class="text-ar">ربط أو سد أم الدم في نزيف تحت العنكبوتية</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div class="text-en"><strong>ICP Management:</strong> Mannitol or Hypertonic Saline for cerebral edema<div class="text-ar">مانيتول أو محلول ملحي مفرط الضغط لتورم المخ</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-red"></div>
+        <div class="text-en"><strong>Seizure Prophylaxis</strong> — lobar hemorrhage cases<div class="text-ar">الوقاية من التشنجات في نزيف الفص</div></div>
+      </div>
+    </div>
+
+    <!-- Prevention + Complications -->
+    <div class="card accent-teal">
+      <div class="card-title-en">🛡️ Prevention & Complications</div>
+      <div class="card-title-ar">الوقاية والمضاعفات</div>
+      <div class="divider"></div>
+      <div class="label" style="color:#80cbc4;">Prevention | الوقاية</div>
+      <div class="row" style="margin-top:4px">
+        <div class="dot dot-teal"></div>
+        <div class="text-en">Lifestyle: stop smoking · diet · exercise<div class="text-ar">نمط حياة: إقلاع عن التدخين · غذاء · رياضة</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-teal"></div>
+        <div class="text-en">Antihypertensives: ACEi / ARBs / CCBs<div class="text-ar">خافضات الضغط: مثبطات الإنزيم، حاصرات القنوات الكالسيومية</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-teal"></div>
+        <div class="text-en">Diabetes: HbA1c &lt; 7% · Lipids: LDL &lt; 70 mg/dL<div class="text-ar">سكر: هيموجلوبين سكري أقل من ٧٪ · دهون: LDL أقل من ٧٠</div></div>
+      </div>
+      <div class="row">
+        <div class="dot dot-teal"></div>
+        <div class="text-en">AF: Warfarin / DOACs (Apixaban, Rivaroxaban)<div class="text-ar">رجفان أذيني: وارفارين أو مضادات تخثر مباشرة</div></div>
+      </div>
+      <div style="margin-top:6px">
+        <div class="label" style="color:#ff8a80;">Complications | المضاعفات</div>
+        <div style="margin-top:4px">
+          <span class="tag tag-red">Acute: HTN 84%</span>
+          <span class="tag tag-red">Herniation 78%</span>
+          <span class="tag tag-red">Dysphagia 51%</span>
+          <span class="tag">Chronic: DVT 53%</span>
+          <span class="tag">Depression 50%</span>
+          <span class="tag">Pneumonia 35%</span>
+        </div>
+        <div style="font-family:'Cairo';direction:rtl;font-size:11px;color:#d4eaff;margin-top:5px;">
+          حادة: ارتفاع ضغط، فتق دماغي، بلع صعب | مزمنة: جلطة وريدية، اكتئاب، التهاب رئة
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 4 -->
+
+  <!-- ===== ROW 5 — Poor Prognosis + Differential ===== -->
+  <div class="grid">
+
+    <!-- Poor Prognosis -->
+    <div class="card accent-red">
+      <div class="card-title-en">⚠️ Poor Prognostic Factors</div>
+      <div class="card-title-ar">عوامل سوء التشخيص</div>
+      <div class="divider"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <span class="tag tag-red">Fever</span>
+        <span class="tag tag-red">Hypotension / Severe HTN</span>
+        <span class="tag tag-red">Low O₂ saturation</span>
+        <span class="tag tag-red">Hyper/Hypoglycemia</span>
+        <span class="tag tag-red">TACS (55% mortality)</span>
+        <span class="tag tag-red">Pontine Haemorrhage</span>
+        <span class="tag tag-red">Low GCS</span>
+        <span class="tag tag-red">Heart Failure</span>
+        <span class="tag tag-red">Severe Hemiparesis</span>
+      </div>
+      <div style="font-family:'Cairo';direction:rtl;font-size:11.5px;color:#ffb3b3;margin-top:10px;line-height:1.7;">
+        حمى · انخفاض أو ارتفاع شديد في الضغط · نقص الأكسجين · اضطرابات السكر · سكتة أمامية كاملة (وفاة ٥٥٪) · نزيف جسر المخ · GCS منخفض · قصور القلب · شلل نصفي شديد
+      </div>
+    </div>
+
+    <!-- Differential Diagnosis -->
+    <div class="card accent-purple">
+      <div class="card-title-en">🔄 Differential Diagnosis</div>
+      <div class="card-title-ar">التشخيص التفريقي</div>
+      <div class="divider"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <span class="tag">Ischemic vs Hemorrhagic</span>
+        <span class="tag tag-orange">Cranial Trauma</span>
+        <span class="tag tag-orange">Meningitis / Encephalitis</span>
+        <span class="tag tag-orange">Brain Tumor</span>
+        <span class="tag tag-orange">Subdural Hematoma</span>
+        <span class="tag">Seizure + neuro signs</span>
+        <span class="tag">Migraine + neuro signs</span>
+        <span class="tag tag-red">Hypoglycemia</span>
+        <span class="tag tag-red">Hyperglycemia (HONK)</span>
+        <span class="tag tag-red">Post-cardiac arrest</span>
+      </div>
+      <div style="font-family:'Cairo';direction:rtl;font-size:11.5px;color:#d4eaff;margin-top:10px;line-height:1.7;">
+        التمييز بين الإقفاري والنزفي · رضح الرأس · التهاب سحايا/دماغ · ورم المخ · ورم دموي تحت الجافية · نوبة صرع · صداع نصفي · نقص/ارتفاع سكر الدم · غيبوبة ما بعد السكتة القلبية
+      </div>
+    </div>
+
+    <!-- Key summary box -->
+    <div class="card accent-gold" style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="card-title-en">⭐ Key Takeaway</div>
+      <div class="card-title-ar">الخلاصة الأساسية</div>
+      <div class="divider"></div>
+      <div class="highlight highlight-gold">
+        <div class="text-en" style="font-size:13px;line-height:1.6;">
+          <strong>Ischemic (80%):</strong> Thrombolysis ≤ 4.5 h · Thrombectomy ≤ 24 h<br>
+          <strong>Hemorrhagic (20%):</strong> BP control · Surgery if needed<br>
+          <strong>Prevention:</strong> Control HTN · DM · Lipids · AF<br>
+          <strong>Every Minute Counts — "Time is Brain"</strong>
+        </div>
+        <div class="text-ar" style="font-size:13px;line-height:1.8;margin-top:8px;">
+          إقفاري ٨٠٪: حل الجلطة في ٤.٥ ساعة · استئصال الجلطة في ٢٤ ساعة<br>
+          نزفي ٢٠٪: تحكم في الضغط · جراحة عند الحاجة<br>
+          وقاية: السيطرة على الضغط والسكر والدهون والرجفان الأذيني<br>
+          كل دقيقة تهم — "الوقت هو الدماغ"
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 5 -->
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <div class="footer-en">Stroke — Comprehensive Bilingual Summary Poster · Al Ryada University · College of Nursing</div>
+    <div class="footer-ar">ملخص محاضرة السكتة الدماغية · جامعة الريادة · كلية التمريض</div>
+  </div>
+
+</div><!-- /poster -->
+</body>
+</html>

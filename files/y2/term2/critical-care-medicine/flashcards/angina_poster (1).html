@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angina Pectoris – Summary Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    min-height: 1697px;
+    background: #0b0f1a;
+    font-family: 'Inter', sans-serif;
+    color: #f0e8d5;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #c8963e 0%, #e8b84b 40%, #c8963e 100%);
+    padding: 36px 50px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: #0b0f1a;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .header-left .subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0b0f1a;
+    margin-top: 6px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .arabic-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b0f1a;
+    direction: rtl;
+    text-align: right;
+    opacity: 0.85;
+  }
+
+  /* Main grid */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+  .grid-2col { grid-column: span 2; }
+  .grid-3col { grid-column: span 3; }
+
+  /* Cards */
+  .card {
+    background: #131929;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid #1e2d45;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8963e, #e8b84b);
+  }
+  .card.accent-red::before { background: linear-gradient(90deg, #d44, #e87); }
+  .card.accent-teal::before { background: linear-gradient(90deg, #2a9d8f, #3dbcad); }
+  .card.accent-purple::before { background: linear-gradient(90deg, #7b5ea7, #a07bc5); }
+  .card.accent-blue::before { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #c8963e;
+    margin-bottom: 12px;
+  }
+  .card.accent-red .card-title { color: #e87; }
+  .card.accent-teal .card-title { color: #3dbcad; }
+  .card.accent-purple .card-title { color: #a07bc5; }
+  .card.accent-blue .card-title { color: #60a5fa; }
+
+  .card-arabic {
+    font-size: 10px;
+    color: #888;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+  }
+
+  /* Type pills */
+  .types-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .type-pill {
+    flex: 1;
+    min-width: 150px;
+    background: #0b1220;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid #1e2d45;
+  }
+  .type-pill .type-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e8b84b;
+    margin-bottom: 4px;
+  }
+  .type-pill .type-arabic {
+    font-size: 10px;
+    color: #888;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  .type-pill .type-desc {
+    font-size: 11px;
+    color: #bbb;
+    line-height: 1.5;
+  }
+  .type-pill .type-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+  .tag-stable { background: #1a3a2a; color: #4caf70; }
+  .tag-unstable { background: #3a1a1a; color: #e07070; }
+  .tag-variant { background: #2a1a3a; color: #b07ae0; }
+
+  /* List */
+  ul.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  ul.info-list li {
+    font-size: 12px;
+    color: #ccc;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  ul.info-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #c8963e;
+    font-size: 10px;
+    top: 2px;
+  }
+  ul.info-list li strong { color: #f0e8d5; font-weight: 600; }
+
+  /* Risk factors */
+  .risk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .risk-box {
+    background: #0b1220;
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid #1e2d45;
+  }
+  .risk-box .risk-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .risk-box.modifiable .risk-label { color: #e87; }
+  .risk-box.nonmod .risk-label { color: #60a5fa; }
+  .risk-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin: 2px 2px;
+    font-weight: 500;
+  }
+  .risk-box.modifiable .risk-tag { background: #3a1515; color: #e8a0a0; }
+  .risk-box.nonmod .risk-tag { background: #1a2540; color: #90b8f0; }
+
+  /* ECG / Ischemia table */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .compare-table th {
+    text-align: left;
+    padding: 7px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #2a3a50;
+    color: #888;
+  }
+  .compare-table td {
+    padding: 7px 10px;
+    color: #ccc;
+    border-bottom: 1px solid #1a2535;
+    line-height: 1.4;
+    vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child { color: #e8b84b; font-weight: 600; font-size: 11px; }
+
+  /* Treatment */
+  .mona-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .mona-chip {
+    flex: 1;
+    min-width: 80px;
+    background: #0b1220;
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .mona-chip .letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #e8b84b;
+    line-height: 1;
+  }
+  .mona-chip .word {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ccc;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+  .mona-chip .arabic-word {
+    font-size: 9px;
+    color: #666;
+    direction: rtl;
+    margin-top: 2px;
+  }
+
+  /* ACS table */
+  .acs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .acs-card {
+    background: #0b1220;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #1e2d45;
+  }
+  .acs-card .acs-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e8b84b;
+    margin-bottom: 2px;
+  }
+  .acs-card .acs-arabic {
+    font-size: 9px;
+    color: #666;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 6px;
+  }
+  .acs-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .acs-key { font-size: 10px; color: #888; }
+  .acs-val { font-size: 10px; color: #ccc; text-align: right; max-width: 60%; }
+
+  /* Drug table */
+  .drug-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+  }
+  .drug-table th {
+    background: #0d1828;
+    padding: 6px 10px;
+    text-align: left;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #2a3a50;
+  }
+  .drug-table td {
+    padding: 6px 10px;
+    color: #ccc;
+    border-bottom: 1px solid #141e2e;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  .drug-table tr:last-child td { border-bottom: none; }
+  .drug-table td:first-child { color: #e8b84b; font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    background: #0b0f1a;
+    border-top: 1px solid #1e2d45;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .footer-left {
+    font-size: 11px;
+    color: #555;
+  }
+  .footer-right {
+    font-size: 10px;
+    color: #444;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+  }
+  .badge-gold { background: #3a2800; color: #e8b84b; }
+  .badge-red { background: #3a1515; color: #e87; }
+  .badge-teal { background: #0f2a28; color: #3dbcad; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="subtitle">Critical Care Cardiology · Lecture Summary</div>
+    <h1>Angina Pectoris</h1>
+  </div>
+  <div class="arabic-title">ذبحة الصدر — ملخص المحاضرة</div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="grid">
+
+  <!-- Definition + Pathophysiology -->
+  <div class="card grid-2col">
+    <div class="card-title">Definition & Pathophysiology</div>
+    <div class="card-arabic">التعريف والفيزيولوجيا المرضية</div>
+    <ul class="info-list">
+      <li><strong>Angina pectoris</strong> = clinical syndrome caused by myocardial ischemia when O₂ demand exceeds supply during exertion</li>
+      <li><strong>Felt as:</strong> chest discomfort / tightness ± radiation to left arm, shoulder, or jaw</li>
+      <li><strong>Main cause:</strong> blockage of coronary arteries (coronary artery disease) by atherosclerotic plaque</li>
+      <li><strong>Ischemia types:</strong> <span class="badge badge-gold">Demand ischemia</span> (fixed stenosis) <span class="badge badge-red">Supply ischemia</span> (spasm / thrombus)</li>
+    </ul>
+  </div>
+
+  <!-- Key Numbers -->
+  <div class="card">
+    <div class="card-title">Key Numbers</div>
+    <div class="card-arabic">أرقام مهمة</div>
+    <ul class="info-list">
+      <li><strong>SaO₂ target:</strong> &gt; 90%</li>
+      <li><strong>O₂ dose:</strong> 2–4 L/min nasal cannula</li>
+      <li><strong>NTG sublingual:</strong> 0.3–0.4 mg × 3 q5 min</li>
+      <li><strong>NTG IV:</strong> 10 µg/min titrated</li>
+      <li><strong>Morphine IV:</strong> 2–4 mg push</li>
+      <li><strong>Fibrinolysis:</strong> within 30 min (STEMI)</li>
+      <li><strong>PCI:</strong> within 90 min (STEMI)</li>
+    </ul>
+  </div>
+
+  <!-- Types of Angina -->
+  <div class="card grid-3col accent-teal">
+    <div class="card-title">Types of Angina</div>
+    <div class="card-arabic">أنواع الذبحة الصدرية</div>
+    <div class="types-row">
+      <div class="type-pill">
+        <div class="type-name">Stable Angina</div>
+        <div class="type-arabic">ذبحة مستقرة</div>
+        <div class="type-desc">Pain only during exertion or extreme emotional stress. Disappears with rest. Fixed stenosis → demand ischemia.</div>
+        <span class="type-tag tag-stable">Demand Ischemia</span>
+      </div>
+      <div class="type-pill">
+        <div class="type-name">Unstable Angina (UA)</div>
+        <div class="type-arabic">ذبحة غير مستقرة</div>
+        <div class="type-desc">Pain at rest or minimal exertion, increasing frequency/severity. Partial/intermittent thrombus. Biomarkers NOT elevated.</div>
+        <span class="type-tag tag-unstable">Supply Ischemia</span>
+      </div>
+      <div class="type-pill">
+        <div class="type-name">Prinzmetal / Variant</div>
+        <div class="type-arabic">ذبحة برنزمتال</div>
+        <div class="type-desc">Occurs at rest, during sleep, or cold exposure. Caused by transient coronary artery spasm, not plaque.</div>
+        <span class="type-tag tag-variant">Vasospasm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk Factors -->
+  <div class="card accent-red">
+    <div class="card-title">Risk Factors</div>
+    <div class="card-arabic">عوامل الخطر</div>
+    <div class="risk-grid">
+      <div class="risk-box nonmod">
+        <div class="risk-label">Non-modifiable — غير قابلة للتعديل</div>
+        <span class="risk-tag">Age</span>
+        <span class="risk-tag">Sex (♂ &gt; ♀)</span>
+        <span class="risk-tag">Family Hx</span>
+        <span class="risk-tag">Ethnicity</span>
+        <span class="risk-tag">♂ &gt;45y</span>
+        <span class="risk-tag">♀ &gt;55y</span>
+      </div>
+      <div class="risk-box modifiable">
+        <div class="risk-label">Modifiable — قابلة للتعديل</div>
+        <span class="risk-tag">↑ LDL</span>
+        <span class="risk-tag">↓ HDL</span>
+        <span class="risk-tag">↑ TGs</span>
+        <span class="risk-tag">DM Type 2</span>
+        <span class="risk-tag">Smoking</span>
+        <span class="risk-tag">HTN</span>
+        <span class="risk-tag">Obesity</span>
+        <span class="risk-tag">Sedentary</span>
+        <span class="risk-tag">Stress</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACS Comparison -->
+  <div class="card grid-2col accent-purple">
+    <div class="card-title">ACS Spectrum Comparison</div>
+    <div class="card-arabic">مقارنة بين أنواع متلازمة الشريان التاجي الحادة</div>
+    <div class="acs-grid">
+      <div class="acs-card">
+        <div class="acs-name">Unstable Angina</div>
+        <div class="acs-arabic">ذبحة غير مستقرة</div>
+        <div class="acs-row"><span class="acs-key">Occlusion</span><span class="acs-val">Partial / intermittent</span></div>
+        <div class="acs-row"><span class="acs-key">ECG</span><span class="acs-val">ST↓ or T-wave inversion</span></div>
+        <div class="acs-row"><span class="acs-key">Biomarkers</span><span class="acs-val">NOT elevated</span></div>
+        <div class="acs-row"><span class="acs-key">Tx</span><span class="acs-val">MONA-BAH</span></div>
+      </div>
+      <div class="acs-card">
+        <div class="acs-name">NSTEMI</div>
+        <div class="acs-arabic">احتشاء بدون رفع ST</div>
+        <div class="acs-row"><span class="acs-key">Occlusion</span><span class="acs-val">Partial / intermittent</span></div>
+        <div class="acs-row"><span class="acs-key">ECG</span><span class="acs-val">ST↓ or T-wave inversion</span></div>
+        <div class="acs-row"><span class="acs-key">Biomarkers</span><span class="acs-val">ELEVATED ↑</span></div>
+        <div class="acs-row"><span class="acs-key">Tx</span><span class="acs-val">MONA-BAH + PCI</span></div>
+      </div>
+      <div class="acs-card" style="border-color:#5a3a1a;">
+        <div class="acs-name" style="color:#ff9944;">STEMI</div>
+        <div class="acs-arabic">احتشاء مع رفع ST</div>
+        <div class="acs-row"><span class="acs-key">Occlusion</span><span class="acs-val" style="color:#ff9944;">Complete</span></div>
+        <div class="acs-row"><span class="acs-key">ECG</span><span class="acs-val">ST elevation / LBBB</span></div>
+        <div class="acs-row"><span class="acs-key">Biomarkers</span><span class="acs-val">ELEVATED ↑</span></div>
+        <div class="acs-row"><span class="acs-key">Tx</span><span class="acs-val">TPA + MONA-BAH + PCI</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Treatment MONA-BAH -->
+  <div class="card grid-2col accent-blue">
+    <div class="card-title">Treatment Protocol — MONA-BAH</div>
+    <div class="card-arabic">بروتوكول العلاج — مونا-باه</div>
+    <div class="mona-row">
+      <div class="mona-chip"><div class="letter">M</div><div class="word">Morphine</div><div class="arabic-word">مورفين</div></div>
+      <div class="mona-chip"><div class="letter">O</div><div class="word">Oxygen</div><div class="arabic-word">أكسجين</div></div>
+      <div class="mona-chip"><div class="letter">N</div><div class="word">Nitro-glycerin</div><div class="arabic-word">نيتروجليسرين</div></div>
+      <div class="mona-chip"><div class="letter">A</div><div class="word">Aspirin</div><div class="arabic-word">أسبرين</div></div>
+      <div class="mona-chip"><div class="letter">B</div><div class="word">Beta-blockers</div><div class="arabic-word">حاصرات بيتا</div></div>
+      <div class="mona-chip"><div class="letter">A</div><div class="word">ACE Inhibitors</div><div class="arabic-word">مثبطات ACE</div></div>
+      <div class="mona-chip"><div class="letter">H</div><div class="word">Heparin</div><div class="arabic-word">هيبارين</div></div>
+    </div>
+    <div style="font-size:10px;color:#666;margin-top:4px;">+ Statins · Clopidogrel · GPIIb/IIIa inhibitors · PCI (when indicated) | + ستاتين · كلوبيدوجريل · مثبطات GPIIb/IIIa</div>
+  </div>
+
+  <!-- Drug table -->
+  <div class="card grid-3col">
+    <div class="card-title">Key Drug Dosing — جرعات الأدوية الرئيسية</div>
+    <table class="drug-table">
+      <thead>
+        <tr>
+          <th>Drug / الدواء</th>
+          <th>Dose / الجرعة</th>
+          <th>Nursing Consideration / اعتبارات التمريض</th>
+          <th>Contraindication / موانع</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Aspirin</td><td>162–325 mg PO (crushed/chewed) then 81–325 mg/day</td><td>Monitor GI bleeding</td><td>Active PUD, bleeding disorder, allergy</td></tr>
+        <tr><td>NTG Sublingual</td><td>0.3–0.4 mg q5 min × 3 doses</td><td>Hold if SBP &lt;90–100 mmHg</td><td>Hypotension, PDE5 inhibitor use</td></tr>
+        <tr><td>NTG IV</td><td>10 µg/min, titrate q3–5 min</td><td>Monitor BP continuously</td><td>Same as above</td></tr>
+        <tr><td>Morphine Sulfate</td><td>2–4 mg IV push q5–15 min</td><td>Monitor RR & BP</td><td>Use when NTG fails</td></tr>
+        <tr><td>Oxygen</td><td>2–4 L/min nasal cannula</td><td>Target SaO₂ &gt;90%</td><td>Avoid if SaO₂ normal (hyperoxia risk)</td></tr>
+        <tr><td>β-Blockers (metoprolol)</td><td>Oral within 24h of onset</td><td>Monitor HR, BP, glucose</td><td>HR &lt;60, SBP &lt;100, HF, asthma</td></tr>
+        <tr><td>Fibrinolytics (STEMI)</td><td>Alteplase: IV bolus + 90-min infusion (weight-based)</td><td>Monitor for bleeding</td><td>Active bleed, recent surgery/stroke</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Atherosclerosis stages -->
+  <div class="card grid-3col">
+    <div class="card-title">Atherosclerosis Progression — مراحل تصلب الشرايين</div>
+    <div style="display:flex;gap:0;align-items:stretch;">
+      <div style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #1e2d45;">
+        <div style="font-size:24px;margin-bottom:4px;">🔴</div>
+        <div style="font-size:10px;font-weight:700;color:#60a5fa;">Normal Artery</div>
+        <div style="font-size:9px;color:#666;margin-top:3px;">شريان طبيعي</div>
+        <div style="font-size:10px;color:#999;margin-top:5px;line-height:1.4;">Smooth lumen, unobstructed blood flow</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #1e2d45;">
+        <div style="font-size:24px;margin-bottom:4px;">🟡</div>
+        <div style="font-size:10px;font-weight:700;color:#e8b84b;">Early Stage</div>
+        <div style="font-size:9px;color:#666;margin-top:3px;">المرحلة المبكرة</div>
+        <div style="font-size:10px;color:#999;margin-top:5px;line-height:1.4;">Cholesterol entry → inflammation → plaque formation</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #1e2d45;">
+        <div style="font-size:24px;margin-bottom:4px;">🟠</div>
+        <div style="font-size:10px;font-weight:700;color:#e87;">Intermediate</div>
+        <div style="font-size:9px;color:#666;margin-top:3px;">المرحلة المتوسطة</div>
+        <div style="font-size:10px;color:#999;margin-top:5px;line-height:1.4;">Plaque build-up, arterial wall bulging, ↑ inflammation</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10px 6px;border-right:1px solid #1e2d45;">
+        <div style="font-size:24px;margin-bottom:4px;">🔶</div>
+        <div style="font-size:10px;font-weight:700;color:#e87;">Late Stage</div>
+        <div style="font-size:9px;color:#666;margin-top:3px;">المرحلة المتأخرة</div>
+        <div style="font-size:10px;color:#999;margin-top:5px;line-height:1.4;">Vulnerable plaque, limited blood flow, prone to rupture</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10px 6px;">
+        <div style="font-size:24px;margin-bottom:4px;">💥</div>
+        <div style="font-size:10px;font-weight:700;color:#f55;">Plaque Rupture</div>
+        <div style="font-size:9px;color:#666;margin-top:3px;">انفجار اللويحة</div>
+        <div style="font-size:10px;color:#999;margin-top:5px;line-height:1.4;">Clot → heart attack or stroke</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">DR. Abdelrahman Elzefzaf · Consultant ICU & Critical Care · Shebin El-Kom & Ismailia Medical Complex</div>
+  <div class="footer-right">د. عبدالرحمن الزيزفاف · استشاري رعاية مركزة وحرجة</div>
+</div>
+
+</body>
+</html>

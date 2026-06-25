@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>DKA - Diabetic Ketoacidosis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Montserrat:wght@400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1122px;
+    min-height: 794px;
+    background: linear-gradient(135deg, #0a2010 0%, #1a4020 40%, #0d3018 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    padding: 24px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #2ecc71;
+    padding-bottom: 14px;
+  }
+  .header h1 { font-size: 26px; font-weight: 900; color: #2ecc71; text-transform: uppercase; letter-spacing: 1px; }
+  .header h2 { font-family: 'Tajawal', sans-serif; font-size: 18px; color: #b0e8c0; direction: rtl; margin-top: 4px; }
+  .header p { font-size: 11px; color: #80b090; margin-top: 3px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 12px 14px;
+    border-left: 4px solid #2ecc71;
+    backdrop-filter: blur(4px);
+  }
+  .card.red    { border-left-color: #e74c3c; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.blue   { border-left-color: #3498db; }
+  .card.purple { border-left-color: #9b59b6; }
+  .card.teal   { border-left-color: #1abc9c; }
+  .card.yellow { border-left-color: #f1c40f; }
+  .card h3 { font-size: 12px; font-weight: 700; color: #2ecc71; text-transform: uppercase; margin-bottom: 7px; letter-spacing: 0.5px; }
+  .card.red    h3 { color: #e74c3c; }
+  .card.orange h3 { color: #e67e22; }
+  .card.blue   h3 { color: #3498db; }
+  .card.purple h3 { color: #9b59b6; }
+  .card.teal   h3 { color: #1abc9c; }
+  .card.yellow h3 { color: #f1c40f; }
+  .ar { font-family: 'Tajawal', sans-serif; font-size: 10.5px; color: #b0e8c0; direction: rtl; text-align: right; margin-bottom: 5px; line-height: 1.5; }
+  .en { font-size: 10px; color: #d0eed8; line-height: 1.55; }
+  ul.dots { list-style: none; }
+  ul.dots li::before { content: "▸ "; font-size: 10px; color: #2ecc71; }
+  ul.dots.r li::before { color: #e74c3c; }
+  ul.dots.o li::before { color: #e67e22; }
+  ul.dots.b li::before { color: #3498db; }
+  ul.dots.p li::before { color: #9b59b6; }
+  ul.dots.t li::before { color: #1abc9c; }
+  ul.dots.y li::before { color: #f1c40f; }
+  .span2 { grid-column: span 2; }
+  .span4 { grid-column: span 4; }
+  table.t { width:100%; font-size:9px; border-collapse:collapse; margin-top:4px; }
+  table.t th { background:rgba(46,204,113,0.25); padding:4px; text-align:center; }
+  table.t td { padding:3px 5px; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .badge { display:inline-block; border-radius:4px; padding:1px 5px; font-size:9px; margin:1px 2px; }
+  .badge.g { background:rgba(46,204,113,0.2); border:1px solid #2ecc71; }
+  .badge.r { background:rgba(231,76,60,0.2); border:1px solid #e74c3c; }
+  .badge.o { background:rgba(230,126,34,0.2); border:1px solid #e67e22; }
+  .badge.b { background:rgba(52,152,219,0.2); border:1px solid #3498db; }
+  .triad { display:flex; justify-content:space-around; margin:8px 0; }
+  .triad-item { text-align:center; background:rgba(46,204,113,0.15); border:2px solid #2ecc71; border-radius:8px; padding:6px 10px; font-size:10px; font-weight:700; }
+  .footer { grid-column:span 4; text-align:center; font-size:9px; color:#406050; margin-top:4px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1); font-family:'Tajawal',sans-serif; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Diabetic Ketoacidosis (DKA) — Diagnosis &amp; Treatment</h1>
+  <h2>الحماض الكيتوني السكري — التشخيص والعلاج</h2>
+  <p>Dr. Abdelrahman Elzefzaf — Consultant Intensive Care &amp; Critical Care</p>
+</div>
+<div class="grid">
+
+  <!-- Definition + Triad -->
+  <div class="card span2">
+    <h3>📖 Definition — التعريف</h3>
+    <p class="ar">حالة طارئة تهدد الحياة تحدث أساسًا في مرضى السكر من النوع الأول وتتميز بثلاثية: ارتفاع السكر + حماض كيتوني + كيتونات في البول</p>
+    <p class="en">An <strong>acute, life-threatening</strong> complication of diabetes (mainly Type 1, can occur in Type 2), characterized by:</p>
+    <div class="triad">
+      <div class="triad-item">HYPERGLYCEMIA<br><span style="font-family:'Tajawal',sans-serif; font-size:9px; color:#b0e8c0;">ارتفاع السكر</span></div>
+      <div class="triad-item">KETOSIS<br><span style="font-family:'Tajawal',sans-serif; font-size:9px; color:#b0e8c0;">الكيتوزيس</span></div>
+      <div class="triad-item">ACIDOSIS<br><span style="font-family:'Tajawal',sans-serif; font-size:9px; color:#b0e8c0;">الحماض</span></div>
+    </div>
+    <p class="en">High morbidity and mortality in paediatric patients.</p>
+  </div>
+
+  <!-- Precipitating Causes -->
+  <div class="card span2 orange">
+    <h3>⚡ Precipitating Causes — الأسباب المحفزة</h3>
+    <p class="ar">نقص الإنسولين أو عدم الالتزام بالجرعة · حالات الإجهاد: عدوى - جراحة - مرض حاد · حوادث قلبية وعائية · اضطرابات الغدد الصماء · الحمل · العقاقير</p>
+    <ul class="dots o en">
+      <li>Insulin non-adherence / inadequate dosage / 1st presentation</li>
+      <li>Infections — pneumonia, UTI, URI, meningitis, pancreatitis</li>
+      <li>Vascular disorders — MI, CVD</li>
+      <li>Endocrine disorders — hyperthyroidism, Cushing's, pheochromocytoma</li>
+      <li>Trauma, Pregnancy, Emotional stress, Drugs (cocaine)</li>
+    </ul>
+  </div>
+
+  <!-- Pathophysiology -->
+  <div class="card span2 purple">
+    <h3>🔄 Pathophysiology — الفيزيولوجيا المرضية</h3>
+    <p class="ar">نقص الإنسولين → ارتفاع الهرمونات المضادة للتنظيم (جلوكاجون، كورتيزول، كاتيكولامينات) → ارتفاع سكر الدم → إدرار بولي أوسموزي → جفاف واضطراب شوارد · تعبئة الدهون → أحماض دهنية حرة → كيتو-أحماض → حماض استقلابي · البوتاسيوم يتحول للخارج مع الماء ويُفقد في البول</p>
+    <ul class="dots p en">
+      <li>Insulin deficiency + ↑ counter-regulatory hormones (glucagon, cortisol, GH)</li>
+      <li>↑ Hepatic glucose → Hyperglycemia → Osmotic diuresis → Dehydration + electrolyte loss</li>
+      <li>Fat mobilization → ↑ FFA → Ketoacids → Metabolic acidosis</li>
+      <li>Hyperosmolality → K⁺ shifts extracellularly → lost in urine → Total body K⁺ deficit (serum K⁺ may be normal or ↑)</li>
+    </ul>
+  </div>
+
+  <!-- Signs & Symptoms -->
+  <div class="card span2 red">
+    <h3>🩺 Signs &amp; Symptoms — الأعراض والعلامات</h3>
+    <p class="ar">كثرة التبول والعطش · فقدان الوزن · غثيان وقيء · علامات نقص السوائل · ألم بطني · رائحة الأسيتون · تنفس كوسماول (تنفس عميق) · اضطرابات عصبية</p>
+    <table class="t">
+      <tr><th>Symptoms</th><th>Signs</th></tr>
+      <tr>
+        <td>Polyuria, Polydipsia<br>Weight loss<br>Nausea &amp; vomiting<br>Abdominal pain<br>Weakness, Blurred vision</td>
+        <td>Dehydration &amp; hypotension<br>Tachycardia<br><strong>Kussmaul respirations</strong><br>Fruity (acetone) breath<br>Confusion → Coma (10%)<br>Hypothermia, Hyporeflexia</td>
+      </tr>
+    </table>
+    <p class="ar" style="margin-top:4px;">تنفس كوسماول = تنفس عميق وسريع للتخلص من CO₂ وتعويض الحماض</p>
+  </div>
+
+  <!-- Biochemical Diagnosis -->
+  <div class="card span2 teal">
+    <h3>🔬 Biochemical Diagnosis — التشخيص المعملي</h3>
+    <p class="ar">الميزات الأساسية: جلوكوز بلازما >250 · pH شرياني <7.30 · بيكربونات <15 مليمول · كيتون >3 ملمول · كيتونات في البول >2+</p>
+    <table class="t">
+      <tr><th>Parameter</th><th>DKA Criteria</th><th>المعيار</th></tr>
+      <tr><td>Plasma glucose</td><td>&gt;250 mg/dL</td><td>ارتفاع السكر</td></tr>
+      <tr><td>Arterial pH</td><td>&lt;7.30</td><td>حماض</td></tr>
+      <tr><td>Serum bicarbonate</td><td>&lt;15 mEq/L</td><td>نقص البيكربونات</td></tr>
+      <tr><td>Hyperketonemia</td><td>&gt;3 mmol/L</td><td>كيتونات عالية</td></tr>
+      <tr><td>Ketonuria</td><td>&gt;2+ on urine sticks</td><td>كيتونات في البول</td></tr>
+      <tr><td>Osmolarity</td><td>&gt;290 mOsm/L</td><td>ارتفاع الأسمولالية</td></tr>
+    </table>
+  </div>
+
+  <!-- Management -->
+  <div class="card span4 blue">
+    <h3>💊 Management Principles — مبادئ العلاج</h3>
+    <p class="ar">العلاج على 5 محاور: تصحيح فقدان السوائل بمحلول ملحي عادي · تصحيح ارتفاع السكر بالإنسولين · تصحيح اضطراب الشوارد خصوصًا نقص البوتاسيوم · تصحيح الحماض الاستقلابي · علاج أي عدوى مصاحبة</p>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:8px;">
+      <div style="background:rgba(52,152,219,0.15); border:1px solid #3498db; border-radius:6px; padding:6px; font-size:9px;">
+        <strong style="color:#3498db;">1. FLUID REPLACEMENT</strong><br>
+        <span style="font-family:'Tajawal',sans-serif; color:#b0e8c0; font-size:9px;">تصحيح فقدان السوائل</span><br>
+        Normal Saline / Ringer's Lactate<br>
+        1–3 L in first hour<br>
+        Then 1L/h × 2h<br>
+        Then 1L/4h (based on dehydration)
+      </div>
+      <div style="background:rgba(52,152,219,0.15); border:1px solid #3498db; border-radius:6px; padding:6px; font-size:9px;">
+        <strong style="color:#3498db;">2. INSULIN THERAPY</strong><br>
+        <span style="font-family:'Tajawal',sans-serif; color:#b0e8c0; font-size:9px;">العلاج بالإنسولين</span><br>
+        Short-acting insulin (R)<br>
+        0.1 U/kg/h infusion<br>
+        Check glucose hourly<br>
+        ⚠ Hold if K⁺ &lt; 3.3 mmol/L
+      </div>
+      <div style="background:rgba(52,152,219,0.15); border:1px solid #3498db; border-radius:6px; padding:6px; font-size:9px;">
+        <strong style="color:#3498db;">3. POTASSIUM REPLACEMENT</strong><br>
+        <span style="font-family:'Tajawal',sans-serif; color:#b0e8c0; font-size:9px;">تعويض البوتاسيوم</span><br>
+        K⁺ &lt;3.3: hold insulin, give 40 mEq/L K⁺<br>
+        K⁺ 3.3–4.5: give 20 mEq/L<br>
+        K⁺ 4.5–6.0: add KCl 10 mEq/L<br>
+        Target K⁺: 3.5–5 mEq/L
+      </div>
+      <div style="background:rgba(52,152,219,0.15); border:1px solid #3498db; border-radius:6px; padding:6px; font-size:9px;">
+        <strong style="color:#3498db;">4. ACID-BASE CORRECTION</strong><br>
+        <span style="font-family:'Tajawal',sans-serif; color:#b0e8c0; font-size:9px;">تصحيح الحماض</span><br>
+        Usually corrects with fluid + insulin<br>
+        NaHCO₃ rarely needed<br>
+        Monitor ABG regularly<br>
+        Stop insulin when ketones negative
+      </div>
+      <div style="background:rgba(52,152,219,0.15); border:1px solid #3498db; border-radius:6px; padding:6px; font-size:9px;">
+        <strong style="color:#3498db;">5. TREAT INFECTION</strong><br>
+        <span style="font-family:'Tajawal',sans-serif; color:#b0e8c0; font-size:9px;">علاج العدوى</span><br>
+        Empiric antibiotics on suspicion<br>
+        Continue until culture results<br>
+        ABCs: Airway, Breathing, Circulation<br>
+        ICU / High dependency admission
+      </div>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="card span2 red">
+    <h3>⚠️ Complications of DKA — مضاعفات DKA</h3>
+    <p class="ar">مضاعفات استقلابية: حماض شديد · نقص بوتاسيوم · نقص سكر · نقص كالسيوم | مضاعفات غير استقلابية: عدوى · صدمة إنتانية · وذمة دماغية · جلطات وعائية · حماض لاكتيكي</p>
+    <ul class="dots r en">
+      <li><strong>Metabolic:</strong> Severe acidosis, hypokalemia, hypoglycemia, hypocalcemia</li>
+      <li><strong>Non-metabolic:</strong> Infection, septic shock, cerebral edema, vascular thrombosis, pulmonary edema, lactic acidosis</li>
+      <li><strong>Rebound ketoacidosis</strong> — premature cessation of insulin therapy</li>
+    </ul>
+  </div>
+
+  <!-- Monitoring -->
+  <div class="card span2 yellow">
+    <h3>📊 Monitoring — المتابعة</h3>
+    <p class="ar">متابعة مستمرة: سكر الدم كل ساعة · الشوارد والغازات الدموية كل 2-4 ساعات · الكيتونات في البول · قياسات ضغط الدم والنبض والوعي والإدرار البولي</p>
+    <ul class="dots y en">
+      <li>Blood glucose — every hour</li>
+      <li>Serum electrolytes (K⁺, Na⁺, bicarbonate) — every 2–4 hours</li>
+      <li>ABG / venous blood gas — every 2–4 hours</li>
+      <li>Urine ketones — hourly until negative</li>
+      <li>Vital signs, mental status, urine output — continuous</li>
+      <li>ECG if cardiac event suspected</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Diabetic Ketoacidosis (DKA) — Diagnosis &amp; Treatment &nbsp;|&nbsp; الحماض الكيتوني السكري — التشخيص والعلاج &nbsp;|&nbsp; Dr. Abdelrahman Elzefzaf &nbsp;|&nbsp; Critical Care
+  </div>
+</div>
+</body>
+</html>

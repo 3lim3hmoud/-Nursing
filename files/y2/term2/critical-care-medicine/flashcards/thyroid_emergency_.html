@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thyroid Emergency – Lecture Summary Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    font-family: 'Open Sans', sans-serif;
+    color: #f0f0f0;
+    width: 920px;
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a1200 0%, #2a1e00 50%, #1a1200 100%);
+    border: 2px solid #e8a020;
+    border-radius: 16px;
+    padding: 28px 36px;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #e8a020, #ff6020, #e8a020);
+  }
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem; font-weight: 900;
+    color: #e8a020;
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+  .header h2 {
+    font-size: 1rem; font-weight: 700;
+    color: #ff8040; margin-top: 4px; letter-spacing: 1px;
+  }
+  .header .ar-title {
+    font-size: 1.4rem; font-weight: 700;
+    color: #f0c060; margin-top: 8px; direction: rtl;
+  }
+  .header .subtitle {
+    font-size: 0.8rem; color: #a08040; margin-top: 8px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255,255,255,0.07);
+  }
+  .sec-hdr {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px;
+  }
+  .sec-icon { font-size: 1.5rem; }
+  .sec-tw { flex: 1; }
+  .sec-t {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 1.5px;
+  }
+  .sec-ar {
+    font-size: 0.85rem; font-weight: 600;
+    direction: rtl; margin-top: 2px; opacity: 0.8;
+  }
+  .sec-body {
+    padding: 14px 18px 18px;
+    background: rgba(0,0,0,0.45);
+  }
+
+  /* COLOR THEMES */
+  .c1 { background: linear-gradient(135deg,#2a1e00,#1a1200); }
+  .c2 { background: linear-gradient(135deg,#1a2a00,#0f1a00); }
+  .c3 { background: linear-gradient(135deg,#2a001a,#1a000f); }
+  .c4 { background: linear-gradient(135deg,#00182a,#000f1a); }
+  .c5 { background: linear-gradient(135deg,#1a001a,#0f000f); }
+  .c6 { background: linear-gradient(135deg,#001a1a,#000f0f); }
+  .c7 { background: linear-gradient(135deg,#1a1a00,#0f0f00); }
+  .c8 { background: linear-gradient(135deg,#2a0a00,#1a0500); }
+
+  .t1 { color: #e8a020; } .ar1 { color: #f0c060; }
+  .t2 { color: #80dd40; } .ar2 { color: #b0f070; }
+  .t3 { color: #ff6080; } .ar3 { color: #ff90a0; }
+  .t4 { color: #40c0ff; } .ar4 { color: #80d8ff; }
+  .t5 { color: #c060ff; } .ar5 { color: #d890ff; }
+  .t6 { color: #40e0d0; } .ar6 { color: #80f0e0; }
+  .t7 { color: #ffe040; } .ar7 { color: #fff080; }
+  .t8 { color: #ff8040; } .ar8 { color: #ffb080; }
+
+  .a1 { border-color: #e8a020; }
+  .a2 { border-color: #80dd40; }
+  .a3 { border-color: #ff6080; }
+  .a4 { border-color: #40c0ff; }
+  .a5 { border-color: #c060ff; }
+  .a6 { border-color: #40e0d0; }
+  .a7 { border-color: #ffe040; }
+  .a8 { border-color: #ff8040; }
+
+  /* GRID */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; }
+
+  /* CARD */
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 9px; padding: 10px 12px;
+    border-left: 3px solid;
+  }
+  .card .en { font-size: 0.79rem; font-weight: 600; line-height: 1.4; }
+  .card .ar { font-size: 0.73rem; direction: rtl; margin-top: 4px; opacity: 0.8; line-height: 1.4; }
+
+  /* LIST */
+  .lst { display: flex; flex-direction: column; gap: 8px; }
+  .li {
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px; padding: 9px 12px;
+    border-left: 3px solid;
+  }
+  .li .en { font-size: 0.79rem; font-weight: 600; }
+  .li .ar { font-size: 0.73rem; direction: rtl; margin-top: 3px; opacity: 0.8; }
+
+  /* FLOW */
+  .flow { display: flex; flex-direction: column; gap: 5px; }
+  .fstep {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 9px 12px;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .fnum { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1rem; opacity:0.35; min-width:20px; }
+  .farrow { text-align:center; color:#555; font-size:0.9rem; padding:1px 0; }
+  .fstep .en { font-size: 0.79rem; font-weight: 600; }
+  .fstep .ar { font-size: 0.73rem; direction: rtl; margin-top: 3px; opacity: 0.8; }
+
+  /* DRUG TABLE */
+  .dtable { width:100%; border-collapse:collapse; font-size:0.76rem; }
+  .dtable th {
+    background: rgba(232,160,32,0.25);
+    color: #e8a020; font-weight:700;
+    padding: 8px 10px; text-align:left;
+    border-bottom: 1px solid rgba(232,160,32,0.3);
+  }
+  .dtable td {
+    padding: 8px 10px; vertical-align:top;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.4;
+  }
+  .dtable tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+  .step-badge {
+    background: rgba(232,160,32,0.2);
+    color: #e8a020; font-weight:700;
+    border-radius:5px; padding:2px 7px;
+    font-size:0.73rem; white-space:nowrap;
+  }
+  .ar-small { direction:rtl; font-size:0.7rem; opacity:0.75; display:block; margin-top:3px; }
+
+  /* COMPARE TABLE */
+  .ctable { width:100%; border-collapse:collapse; font-size:0.77rem; }
+  .ctable th {
+    padding: 8px 10px; font-weight:700; text-align:center;
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+  }
+  .ctable .th-hypo { background: rgba(64,192,255,0.2); color:#40c0ff; }
+  .ctable .th-hyper { background: rgba(255,96,128,0.2); color:#ff6080; }
+  .ctable .th-feat { background: rgba(255,255,255,0.07); color:#aaa; }
+  .ctable td {
+    padding: 7px 10px; text-align:center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ctable .feat { text-align:left; color:#ccc; font-weight:600; }
+  .ctable .hypo-val { color:#80d8ff; }
+  .ctable .hyper-val { color:#ff90a0; }
+  .ctable tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  /* DIVIDER */
+  .divider {
+    text-align:center; padding: 8px 0 4px;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.7rem; font-weight:900;
+    letter-spacing:3px; opacity:0.35;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; margin-top: 28px; padding: 14px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #444; font-size: 0.72rem;
+  }
+
+  .mb8 { margin-bottom:8px; }
+  .label {
+    font-weight:700; font-size:0.75rem; text-transform:uppercase;
+    letter-spacing:1px; margin-bottom:8px; padding-bottom:4px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Thyroid Emergency</h1>
+  <h2>Thyroid Storm · Myxoedema Coma</h2>
+  <div class="ar-title">طوارئ الغدة الدرقية – العاصفة الدرقية وغيبوبة الوذمة المخاطية</div>
+  <div class="subtitle">DR. Abdelrahman Elzefzaf · Consultant in Intensive Care & Critical Care</div>
+</div>
+
+<!-- ════ 1. ANATOMY & PHYSIOLOGY ════ -->
+<div class="section">
+  <div class="sec-hdr c1">
+    <div class="sec-icon">🦋</div>
+    <div class="sec-tw">
+      <div class="sec-t t1">1 · Thyroid Anatomy & Hormone Physiology</div>
+      <div class="sec-ar ar1">تشريح الغدة الدرقية وفسيولوجيا الهرمون</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g2">
+      <div>
+        <div class="label t1">Anatomy · التشريح</div>
+        <div class="lst">
+          <div class="li a1">
+            <div class="en">One of the largest endocrine glands — two connected lobes in the neck, below the thyroid cartilage (Adam's apple)</div>
+            <div class="ar">من أكبر الغدد الصماء — فصان متصلان في العنق أسفل الغضروف الدرقي (تفاحة آدم)</div>
+          </div>
+          <div class="li a1">
+            <div class="en">Produces <strong>T3</strong> (triiodothyronine) and <strong>T4</strong> (thyroxine) — regulate growth, metabolism &amp; body function; also produces <strong>calcitonin</strong> for calcium homeostasis</div>
+            <div class="ar">تنتج T3 وT4 اللذين ينظمان النمو والتمثيل الغذائي ووظائف الجسم، وتنتج أيضاً كالسيتونين لتوازن الكالسيوم</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="label t1">Hormone Synthesis · تصنيع الهرمون</div>
+        <div class="lst">
+          <div class="li a1"><div class="en">① Iodide uptake via Na/I symporter</div><div class="ar">امتصاص اليود عبر ناقل Na/I</div></div>
+          <div class="li a1"><div class="en">② Organification: TPO + H₂O₂ → MIT/DIT</div><div class="ar">عملية العضوية بإنزيم بيروكسيداز الغدة الدرقية</div></div>
+          <div class="li a1"><div class="en">③ Coupling: DIT+DIT=T4 · DIT+MIT=T3</div><div class="ar">الاقتران: دييودوتيروسين + دييودوتيروسين = T4</div></div>
+          <div class="li a1"><div class="en">④ Storage as thyroglobulin → Release into blood</div><div class="ar">التخزين كثيروغلوبولين ثم الإفراز في الدم</div></div>
+          <div class="li a1"><div class="en">⑤ Regulation: Hypothalamus→TRH→Pituitary→TSH→Thyroid (negative feedback)</div><div class="ar">تنظيم: هيبوثلاموس→TRH→نخامية→TSH→الغدة (تغذية راجعة سلبية)</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="label t1">Functions by System · وظائف الهرمون بحسب الجهاز</div>
+      <div class="g4">
+        <div class="card a1"><div class="en">❤️ <strong>CVS</strong> — ↑HR, contractility, cardiac output; vasodilation</div><div class="ar">القلب: زيادة معدل ضربات القلب والنتاج القلبي والتوسع الوعائي</div></div>
+        <div class="card a1"><div class="en">🧠 <strong>CNS</strong> — mental status alteration; excitatory effect</div><div class="ar">الجهاز العصبي: تغيير الحالة الذهنية وتأثير تنشيطي</div></div>
+        <div class="card a1"><div class="en">🫁 <strong>Respiratory</strong> — increased respiration rate</div><div class="ar">التنفس: زيادة معدل التنفس</div></div>
+        <div class="card a1"><div class="en">🍽️ <strong>GI</strong> — increased GI motility<br>⚗️ <strong>Endocrine</strong> — ↑ need for other hormones</div><div class="ar">الجهاز الهضمي: زيادة حركية الأمعاء / الغدد الصماء: زيادة الحاجة لهرمونات أخرى</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 2. THYROID STORM ════ -->
+<div class="section">
+  <div class="sec-hdr c3">
+    <div class="sec-icon">⚡</div>
+    <div class="sec-tw">
+      <div class="sec-t t3">2 · Thyroid Storm (Thyrotoxic Crisis)</div>
+      <div class="sec-ar ar3">العاصفة الدرقية (أزمة التسمم الدرقي)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g2 mb8">
+      <div class="card a3" style="border-left-width:4px;">
+        <div class="en">⚠️ <strong>Definition:</strong> Sudden, severe, life-threatening exacerbation of hyperthyroidism with <strong>multiple organ decompensation</strong></div>
+        <div class="ar">تعريف: تفاقم حاد ومفاجئ وخطير لفرط نشاط الغدة الدرقية مع قصور متعدد الأجهزة</div>
+      </div>
+      <div class="card a3" style="border-left-width:4px;">
+        <div class="en">💀 <strong>Mortality rate: 20–50% → FATAL</strong> if not treated promptly in critical care</div>
+        <div class="ar">معدل الوفيات: 20–50% وهو مميت إذا لم يُعالج فوراً في العناية المركزة</div>
+      </div>
+    </div>
+    <div class="g3">
+      <div>
+        <div class="label t3">Etiology · الأسباب</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">Most cases secondary to <strong>Graves' disease</strong></div><div class="ar">معظم الحالات ثانوية لمرض جريفز</div></div>
+          <div class="li a3"><div class="en">Toxic multi-nodular goiter</div><div class="ar">الدراق العقيدي السام المتعدد</div></div>
+          <div class="li a3"><div class="en">Rare: malignancies · Very rare in children</div><div class="ar">نادر: أورام خبيثة · نادر جداً عند الأطفال</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t3">Precipitating Factors · العوامل المحرضة</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">🦠 Infection (esp. pneumonia)</div><div class="ar">العدوى (خاصة الالتهاب الرئوي)</div></div>
+          <div class="li a3"><div class="en">🧠 Cerebrovascular accident</div><div class="ar">الحوادث الوعائية الدماغية</div></div>
+          <div class="li a3"><div class="en">🩸 Diabetic ketoacidosis</div><div class="ar">الحماض الكيتوني السكري</div></div>
+          <div class="li a3"><div class="en">🔪 Major trauma / Recent surgery</div><div class="ar">الصدمات الكبرى / الجراحة الحديثة</div></div>
+          <div class="li a3"><div class="en">☢️ Iodine 131 or iodine contrast agents</div><div class="ar">اليود 131 أو عوامل التباين اليودية</div></div>
+          <div class="li a3"><div class="en">💊 Rapid withdrawal of anti-thyroid medications</div><div class="ar">التوقف المفاجئ عن أدوية قصور الدرقية</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t3">Clinical Presentation · الصورة السريرية</div>
+        <div class="lst">
+          <div class="li a3"><div class="en">🌡️ <strong>Fever</strong> → indicator of sepsis or thyroid storm consequence</div><div class="ar">حمى: دليل على الإنتان أو نتيجة للعاصفة الدرقية</div></div>
+          <div class="li a3"><div class="en">💓 <strong>Tachycardia</strong> → persists at rest/sleep</div><div class="ar">تسارع القلب حتى أثناء الراحة والنوم</div></div>
+          <div class="li a3"><div class="en">⚖️ Weight loss, tremors (thyrotoxic signs)</div><div class="ar">فقدان الوزن والرعشة (علامات التسمم الدرقي)</div></div>
+          <div class="li a3"><div class="en">🏥 <strong>Multiorgan dysfunction:</strong> CNS, GIT, CVS, Respiratory</div><div class="ar">قصور متعدد الأجهزة: الجهاز العصبي والهضمي والقلبي والتنفسي</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="label t3">Physical Examination Findings · نتائج الفحص السريري</div>
+      <div class="g4">
+        <div class="card a3"><div class="en">🌡️ Hyperpyrexia (underlying sepsis)</div><div class="ar">ارتفاع شديد في الحرارة (نتيجة إنتان)</div></div>
+        <div class="card a3"><div class="en">❤️ Systolic HTN/hypotension, HF, AF/flutter, tachycardia out of proportion to fever</div><div class="ar">ارتفاع/انخفاض ضغط، قصور قلب، رجفان أذيني، تسارع قلب غير متناسب مع الحرارة</div></div>
+        <div class="card a3"><div class="en">🧠 Altered mental status → delirium, agitation, stupor, coma</div><div class="ar">تغيير في الحالة الذهنية: هذيان، هياج، ذهول، غيبوبة</div></div>
+        <div class="card a3"><div class="en">👁️ Goitre, tremors, lid lag/retraction, myopathy · Volume depletion (fever + diarrhea)</div><div class="ar">دراق ورعشة وتراجع الجفن واعتلال عضلي · نقص حجم السوائل</div></div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="label t3">Differential Diagnosis · التشخيص التفريقي</div>
+      <div class="g3">
+        <div class="card a3"><div class="en">🩸 Hypoglycemia · 🫀 Hypoxia · 🦠 Sepsis</div><div class="ar">نقص سكر الدم · نقص الأكسجين · الإنتان</div></div>
+        <div class="card a3"><div class="en">🧠 Encephalitis / Meningitis</div><div class="ar">التهاب الدماغ / السحايا</div></div>
+        <div class="card a3"><div class="en">🍺 Alcohol withdrawal / Drug intoxication · ☀️ Heat stroke</div><div class="ar">انسحاب الكحول / تسمم دوائي · ضربة الشمس</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 3. THYROID STORM MANAGEMENT ════ -->
+<div class="section">
+  <div class="sec-hdr c4">
+    <div class="sec-icon">🏥</div>
+    <div class="sec-tw">
+      <div class="sec-t t4">3 · Management of Thyroid Storm</div>
+      <div class="sec-ar ar4">إدارة العاصفة الدرقية</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g2 mb8">
+      <div>
+        <div class="label t4">Immediate ICU Measures · الإجراءات الفورية</div>
+        <div class="lst">
+          <div class="li a4"><div class="en">🫁 High-flow O₂ / Venti mask · 📈 ECG monitoring</div><div class="ar">أكسجين عالي التدفق / قناع فينتوري · مراقبة تخطيط القلب</div></div>
+          <div class="li a4"><div class="en">⏱️ Vital signs every 10–15 min · SpO₂ monitoring</div><div class="ar">قياس العلامات الحيوية كل 10–15 دقيقة · مراقبة التشبع بالأكسجين</div></div>
+          <div class="li a4"><div class="en">💉 2 large-bore peripheral lines · IV fluids (correct volume depletion)</div><div class="ar">خطان وريديان عريضا التجويف · محاليل وريدية لتصحيح نقص الحجم</div></div>
+          <div class="li a4"><div class="en">🔬 Labs: FBC, RP, LFT, Electrolytes, Blood gases, TFT · CXR (heart failure/infection) · ECG (ischemia/dysrhythmia) · DXT</div><div class="ar">فحوصات: صورة دم كاملة، وظائف كلى وكبد، شوارد، غازات دم، وظائف الدرق · أشعة صدر · رسم قلب</div></div>
+          <div class="li a4"><div class="en">🌡️ Correct fever: Paracetamol + tepid sponging / cooling techniques</div><div class="ar">تصحيح الحمى: باراسيتامول + الإسفنج الفاتر / تقنيات التبريد</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t4">Three-Step Drug Therapy · العلاج الدوائي ثلاثي الخطوات</div>
+        <table class="dtable">
+          <tr>
+            <th>Step</th>
+            <th>Goal · الهدف</th>
+            <th>Drug · الدواء</th>
+          </tr>
+          <tr>
+            <td><span class="step-badge">Step 1</span></td>
+            <td>Block peripheral effect of thyroid hormone<span class="ar-small">تحصين الأنسجة من الهرمون</span></td>
+            <td>IV β-blocker (esmolol / propranolol)<span class="ar-small">حاصر بيتا وريدي</span></td>
+          </tr>
+          <tr>
+            <td><span class="step-badge">Step 2</span></td>
+            <td>Stop hormone production<span class="ar-small">إيقاف إنتاج الهرمون</span></td>
+            <td>PTU / Methimazole + Dexamethasone<span class="ar-small">بروبيل ثيوراسيل / ميثيمازول + ديكساميثازون</span></td>
+          </tr>
+          <tr>
+            <td><span class="step-badge">Step 3</span></td>
+            <td>Inhibit hormone release<span class="ar-small">تثبيط إطلاق الهرمون</span></td>
+            <td>Iodide (1–2h AFTER antithyroid med)<span class="ar-small">اليوديد بعد 1–2 ساعة من الدواء الضاد للدرق</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="label t4">Drug Doses · جرعات الأدوية</div>
+      <div class="g4">
+        <div class="card a4">
+          <div class="en">🫀 <strong>β-Blocker</strong><br>IV Esmolol 250μg/kg then 50μg/min<br>or IV Propranolol 1mg/5min<br>Oral: 60mg/4h or 80mg/8h</div>
+          <div class="ar">حاصر بيتا: إسمولول أو بروبرانولول وريدي ثم فموي</div>
+        </div>
+        <div class="card a4">
+          <div class="en">💊 <strong>PTU</strong><br>400–600mg PO stat then 200–300mg every 4h</div>
+          <div class="ar">بروبيل ثيوراسيل: جرعة فورية ثم كل 4 ساعات</div>
+        </div>
+        <div class="card a4">
+          <div class="en">☢️ <strong>Iodine</strong> (1–2h post PTU)<br>Lugol's 6–8 drops PO/8h<br>or IV sodium iodide 1g/500ml saline/12h</div>
+          <div class="ar">يوديد: لوغول فموياً أو صوديوم يوديد وريدياً بعد بروبيل ثيوراسيل</div>
+        </div>
+        <div class="card a4">
+          <div class="en">💉 <strong>Corticosteroid</strong><br>IV Hydrocortisone 100mg/8h<br>or IV Dexamethasone 2mg/6h</div>
+          <div class="ar">كورتيزون وريدي: هيدروكورتيزون أو ديكساميثازون</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 4. MYXOEDEMA COMA ════ -->
+<div class="section">
+  <div class="sec-hdr c6">
+    <div class="sec-icon">🥶</div>
+    <div class="sec-tw">
+      <div class="sec-t t6">4 · Myxoedema Coma (Hypothyroid Crisis)</div>
+      <div class="sec-ar ar6">غيبوبة الوذمة المخاطية (أزمة قصور الدرقية)</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g2 mb8">
+      <div class="card a6" style="border-left-width:4px;">
+        <div class="en">⚠️ <strong>Definition:</strong> End stage of improperly treated, neglected, or undiagnosed primary <strong>hypothyroidism</strong>. Occurs in ≤0.1% of hypothyroid cases. Very rare under age 50. 50% of cases emerge after hospital admission.</div>
+        <div class="ar">المرحلة النهائية لقصور الدرق غير المعالج أو المهمل. تحدث في ≤0.1% من حالات قصور الدرق. نادرة جداً تحت سن 50. 50% من الحالات تظهر بعد دخول المستشفى.</div>
+      </div>
+      <div class="card a6" style="border-left-width:4px;">
+        <div class="en">💀 <strong>Mortality:</strong> 100% if untreated · 50% even with treatment → Requires ICU admission</div>
+        <div class="ar">الوفيات: 100% بدون علاج · 50% حتى مع العلاج → تستلزم الدخول للعناية المركزة</div>
+      </div>
+    </div>
+    <div class="g3">
+      <div>
+        <div class="label t6">Etiology · الأسباب</div>
+        <div class="lst">
+          <div class="li a6"><div class="en">🦋 Primary hypothyroidism (thyroid disease): <strong>95%</strong></div><div class="ar">قصور درق أولي (مرض الغدة): 95%</div></div>
+          <div class="li a6"><div class="en">🧠 Secondary (pituitary): 4%</div><div class="ar">قصور ثانوي (النخامية): 4%</div></div>
+          <div class="li a6"><div class="en">⚙️ Tertiary (hypothalamus): &lt;1%</div><div class="ar">قصور ثلاثي (الهيبوثلاموس): أقل من 1%</div></div>
+          <div class="li a6"><div class="en">Can be associated with multiple endocrine failure syndromes</div><div class="ar">قد يترافق مع متلازمات قصور الغدد الصماء المتعدد</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t6">Clinical Manifestations · المظاهر السريرية</div>
+        <div class="lst">
+          <div class="li a6"><div class="en">🧠 <strong>Neurological:</strong> confusion, lethargy, psychosis (myxoedema madness), seizures</div><div class="ar">عصبية: ارتباك، خمول، ذهان (جنون الوذمة المخاطية)، تشنجات</div></div>
+          <div class="li a6"><div class="en">🥶 <strong>Hypothermia</strong> → impaired thermogenesis</div><div class="ar">انخفاض حرارة الجسم بسبب ضعف إنتاج الحرارة</div></div>
+          <div class="li a6"><div class="en">🧂 <strong>Hyponatraemia</strong> → renal impairment / SIADH</div><div class="ar">نقص صوديوم الدم: قصور كلوي / SIADH</div></div>
+          <div class="li a6"><div class="en">🫁 <strong>Hypoventilation</strong> → respiratory acidosis</div><div class="ar">نقص التهوية → حماض تنفسي</div></div>
+          <div class="li a6"><div class="en">🍬 <strong>Hypoglycaemia</strong> → decreased gluconeogenesis</div><div class="ar">نقص سكر الدم → ضعف تكوين الجلوكوز</div></div>
+          <div class="li a6"><div class="en">❤️ <strong>CVS:</strong> bradycardia, heart failure, pericardial effusion, hypotension</div><div class="ar">قلبية: بطء القلب، قصور القلب، انصباب التأمور، انخفاض الضغط</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t6">Physical Examination · الفحص السريري</div>
+        <div class="lst">
+          <div class="li a6"><div class="en">👤 <strong>General:</strong> altered mental status</div><div class="ar">المظهر العام: تغيير في الحالة الذهنية</div></div>
+          <div class="li a6"><div class="en">📊 <strong>Vitals:</strong> bradycardia, hypotension, hypothermia, hypoventilation</div><div class="ar">العلامات الحيوية: بطء القلب، انخفاض الضغط والحرارة، نقص التهوية</div></div>
+          <div class="li a6"><div class="en">❤️ <strong>CVS:</strong> muffled heart sounds, elevated JVP</div><div class="ar">القلب: أصوات قلب مكتومة، ارتفاع الضغط الوريدي الوداجي</div></div>
+          <div class="li a6"><div class="en">🧠 <strong>Neuro:</strong> focal deficits, tongue laceration (seizures), slow ankle reflexes</div><div class="ar">عصبية: عجز بؤري، جروح اللسان (تشنجات)، بطء منعكسات الكاحل</div></div>
+          <div class="li a6"><div class="en">🧴 <strong>Skin:</strong> puffy face, carotenemia<br>🔪 <strong>Others:</strong> thyroidectomy scar, sepsis signs</div><div class="ar">الجلد: وجه منتفخ، تصفر الجلد · أخرى: ندبة استئصال الدرق، علامات الإنتان</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="label t6">Clinical Features of Hypothyroidism · علامات قصور الدرقية</div>
+      <div class="g2">
+        <div class="lst">
+          <div class="li a6"><div class="en">😴 Fatigue, weakness, cold intolerance, constipation, weight gain, deepening of voice</div><div class="ar">تعب، ضعف، عدم تحمل البرد، إمساك، زيادة وزن، خشونة الصوت</div></div>
+          <div class="li a6"><div class="en">🧴 Cutaneous: dry, scaly, yellow skin; non-pitting waxy edema of face &amp; extremities (myxedema); thinning eyebrows</div><div class="ar">جلدية: جلد جاف ومتقشر ومصفر، وذمة شمعية غير نازة بالوجه والأطراف، ترقق الحاجبين</div></div>
+        </div>
+        <div class="lst">
+          <div class="li a6"><div class="en">🧠 CNS: confusion, lethargy, psychosis (myxoedema madness), seizures</div><div class="ar">الجهاز العصبي: ارتباك، خمول، ذهان، تشنجات</div></div>
+          <div class="li a6"><div class="en">🥶 Hypothermia → impaired thermogenesis (hallmark sign)</div><div class="ar">انخفاض حرارة الجسم: العلامة المميزة لقصور الدرق الشديد</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 5. MYXOEDEMA MANAGEMENT ════ -->
+<div class="section">
+  <div class="sec-hdr c7">
+    <div class="sec-icon">💊</div>
+    <div class="sec-tw">
+      <div class="sec-t t7">5 · Management of Myxoedema Coma</div>
+      <div class="sec-ar ar7">إدارة غيبوبة الوذمة المخاطية</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g3 mb8">
+      <div>
+        <div class="label t7">Investigations · الفحوصات</div>
+        <div class="lst">
+          <div class="li a7"><div class="en">🔬 Blood: FBC, RP, CK, ABG, TFT, Cortisol · DXT</div><div class="ar">تحاليل دم: صورة دم، كلى، CK، غازات دم، وظائف درق، كورتيزول · سكر عشوائي</div></div>
+          <div class="li a7"><div class="en">📷 CXR: cardiomegaly, effusion, pulmonary edema, pneumonia</div><div class="ar">أشعة صدر: تضخم قلب، انصباب، وذمة رئوية، التهاب رئة</div></div>
+          <div class="li a7"><div class="en">📈 ECG monitoring</div><div class="ar">تخطيط قلب مستمر</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t7">Supportive Management · الإدارة الداعمة</div>
+        <div class="lst">
+          <div class="li a7"><div class="en">📊 Vital sign monitoring (Temp, BP, HR, RR, SpO₂)</div><div class="ar">مراقبة العلامات الحيوية مستمرة</div></div>
+          <div class="li a7"><div class="en">💉 IV access + fluid resuscitation · Supplemental O₂</div><div class="ar">وريد وريدي + إنعاش سوائل · أكسجين تكميلي</div></div>
+          <div class="li a7"><div class="en">🔥 Warm with heating blanket (for hypothermia)</div><div class="ar">تدفئة ببطانية حرارية لعلاج انخفاض الحرارة</div></div>
+          <div class="li a7"><div class="en">💊 IV Hydrocortisone 100mg TDS</div><div class="ar">هيدروكورتيزون وريدي 100 ملغ ثلاث مرات يومياً</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="label t7">Thyroid Hormone Replacement · هرمون الغدة الدرقية</div>
+        <div class="lst">
+          <div class="li a7"><div class="en">🦋 T3 or T4 (IV/oral). <strong>T3 preferred</strong>: faster onset &amp; greater biological activity</div><div class="ar">T3 أو T4 (وريدي أو فموي). T3 مفضل لسرعة تأثيره وفاعليته البيولوجية الأكبر</div></div>
+          <div class="li a7"><div class="en">T3 dose: 2.5μg TDS → double every 2–3 days to target 30–40μg/day</div><div class="ar">جرعة T3: 2.5 ميكروغرام × 3 يومياً، مضاعفة كل 2–3 أيام حتى 30–40 ميكروغرام/يوم</div></div>
+          <div class="li a7"><div class="en">T4 dose: 25μg test dose → 500μg day 1 → 25–100μg/day maintenance</div><div class="ar">جرعة T4: 25 ميكروغرام اختبارية → 500 اليوم الأول → 25–100 ميكروغرام/يوم صيانة</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="label t7">Treat Precipitating Factors · علاج العوامل المحرضة</div>
+      <div class="g4">
+        <div class="card a7"><div class="en">🍬 Hypoglycaemia → dextrose saline</div><div class="ar">نقص السكر: محلول دكستروز ملحي</div></div>
+        <div class="card a7"><div class="en">🧂 Hyponatraemia → slow normal saline infusion</div><div class="ar">نقص الصوديوم: ضخ بطيء للمحلول الملحي</div></div>
+        <div class="card a7"><div class="en">❤️ Cardiac failure → diuretics + vasodilators</div><div class="ar">قصور القلب: مدرات بول وموسعات وعائية</div></div>
+        <div class="card a7"><div class="en">🦠 Sepsis → IV antibiotics (preferred)</div><div class="ar">الإنتان: مضادات حيوية وريدية</div></div>
+      </div>
+      <div style="margin-top:8px;" class="li a7">
+        <div class="en">🏥 <strong>Disposition:</strong> All cases must be admitted to High Dependency / ICU unit</div>
+        <div class="ar">التصرف: جميع الحالات تُدخل وحدة العناية المركزة أو الرعاية المتقدمة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 6. COMPARISON TABLE ════ -->
+<div class="section">
+  <div class="sec-hdr c5">
+    <div class="sec-icon">⚖️</div>
+    <div class="sec-tw">
+      <div class="sec-t t5">6 · Hypothyroidism vs Hyperthyroidism – Quick Comparison</div>
+      <div class="sec-ar ar5">مقارنة سريعة: قصور مقابل فرط نشاط الغدة الدرقية</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <table class="ctable">
+      <tr>
+        <th class="th-feat">Feature · السمة</th>
+        <th class="th-hypo">Hypothyroidism (Slow) · قصور الدرقية</th>
+        <th class="th-hyper">Hyperthyroidism (Fast) · فرط نشاط الدرقية</th>
+      </tr>
+      <tr><td class="feat">Thyroid Function · وظيفة الغدة</td><td class="hypo-val">Underactive · كسولة</td><td class="hyper-val">Overactive · مفرطة النشاط</td></tr>
+      <tr><td class="feat">Hormone Levels · مستوى الهرمون</td><td class="hypo-val">Low T3, T4 · منخفض</td><td class="hyper-val">High T3, T4 · مرتفع</td></tr>
+      <tr><td class="feat">Metabolism · الأيض</td><td class="hypo-val">Slow · بطيء</td><td class="hyper-val">Fast · سريع</td></tr>
+      <tr><td class="feat">Weight Changes · الوزن</td><td class="hypo-val">Weight gain · زيادة</td><td class="hyper-val">Weight loss · نقصان</td></tr>
+      <tr><td class="feat">Energy Levels · مستوى الطاقة</td><td class="hypo-val">Fatigue, sluggishness · إرهاق وخمول</td><td class="hyper-val">Hyperactivity, restlessness · فرط نشاط وقلق</td></tr>
+      <tr><td class="feat">Heart Rate · معدل القلب</td><td class="hypo-val">Slow pulse (bradycardia) · بطيء</td><td class="hyper-val">Rapid heartbeat (tachycardia) · سريع</td></tr>
+      <tr><td class="feat">Temperature Sensitivity · تحمل الحرارة</td><td class="hypo-val">Cold intolerance · عدم تحمل البرد</td><td class="hyper-val">Heat intolerance · عدم تحمل الحر</td></tr>
+      <tr><td class="feat">Mood Effects · التأثير النفسي</td><td class="hypo-val">Depression, brain fog · اكتئاب وضبابية ذهنية</td><td class="hyper-val">Anxiety, irritability · قلق وانفعالية</td></tr>
+      <tr><td class="feat">Crisis · الأزمة</td><td class="hypo-val">Myxoedema Coma · غيبوبة الوذمة المخاطية</td><td class="hyper-val">Thyroid Storm · العاصفة الدرقية</td></tr>
+      <tr><td class="feat">Mortality · الوفيات</td><td class="hypo-val">100% untreated · 50% treated</td><td class="hyper-val">20–50% even treated</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ════ 7. TAKE HOME MESSAGE ════ -->
+<div class="section">
+  <div class="sec-hdr c8">
+    <div class="sec-icon">🎯</div>
+    <div class="sec-tw">
+      <div class="sec-t t8">7 · Take Home Message</div>
+      <div class="sec-ar ar8">الرسالة الختامية</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="g3">
+      <div class="card a8">
+        <div class="en">🎭 Thyroid crises <strong>masquerade</strong> many illnesses — always consider in the differential of an acutely ill patient</div>
+        <div class="ar">أزمات الغدة الدرقية تتنكر في هيئة أمراض عديدة — فكر فيها دائماً ضمن التشخيص التفريقي</div>
+      </div>
+      <div class="card a8">
+        <div class="en">🔍 Clinical diagnosis is difficult and requires a <strong>high index of suspicion</strong></div>
+        <div class="ar">التشخيص السريري صعب ويتطلب درجة عالية من الشك والتنبه</div>
+      </div>
+      <div class="card a8">
+        <div class="en">⚡ <strong>Treat the predisposing cause</strong> alongside specific thyroid therapy — both are essential for survival</div>
+        <div class="ar">علاج السبب المحرض بالتوازي مع العلاج الدرقي المحدد — كلاهما ضروري للنجاة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Thyroid Emergency · Thyroid Storm & Myxoedema Coma · Nursing Education Summary Poster<br>
+  DR. Abdelrahman Elzefzaf · Consultant in Intensive Care & Critical Care
+</div>
+
+</body>
+</html>

@@ -1,0 +1,3206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Care Nursing — Final Exam MCQ Quiz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg1: #0f1729;
+    --bg2: #1a2744;
+    --accent: #6366f1;
+    --accent2: #8b5cf6;
+    --correct: #22c55e;
+    --wrong: #ef4444;
+    --card: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.1);
+  }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--bg1) 0%, #16213e 50%, var(--bg2) 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #f1f5f9;
+    padding: 16px;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; }
+
+  /* ===== Top Header ===== */
+  .top-header {
+    text-align: center;
+    padding: 22px 16px 18px;
+    margin-bottom: 18px;
+  }
+  .top-header h1 {
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 800;
+    background: linear-gradient(90deg, #818cf8, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+  }
+  .top-header .sub-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    font-size: clamp(14px, 2.6vw, 17px);
+    color: #c7d2fe;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .top-header .sub-en {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ===== Tabs ===== */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tab-btn {
+    flex: 1 1 auto;
+    min-width: 140px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #cbd5e1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+  .tab-btn .icon { font-size: 18px; }
+  .tab-btn .ar-name {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .tab-btn:hover {
+    background: rgba(255,255,255,0.09);
+    transform: translateY(-2px);
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(99,102,241,0.4);
+  }
+  .tab-btn.active .ar-name { color: #e0e7ff; }
+
+  /* ===== Progress Bar ===== */
+  .progress-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .progress-bar-bg {
+    flex: 1;
+    height: 9px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 6px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .score-pill {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e0e7ff;
+    white-space: nowrap;
+    background: rgba(99,102,241,0.18);
+    border: 1px solid rgba(99,102,241,0.4);
+    border-radius: 20px;
+    padding: 5px 12px;
+  }
+
+  /* ===== Lecture Panel ===== */
+  .panel { display: none; }
+  .panel.active { display: block; animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform: translateY(0); } }
+
+  .lecture-banner {
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .lecture-banner .ltitle { font-size: 15px; font-weight: 700; }
+  .lecture-banner .lar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .reset-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
+    color: #cbd5e1;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: rgba(255,255,255,0.15); }
+
+  /* ===== Question Card ===== */
+  .qcard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    transition: border-color 0.3s;
+  }
+  .qcard.answered-correct { border-color: rgba(34,197,94,0.5); }
+  .qcard.answered-wrong { border-color: rgba(239,68,68,0.4); }
+
+  .qhead {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .qnum {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(99,102,241,0.2);
+    border: 1px solid rgba(99,102,241,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #c7d2fe;
+  }
+  .qtext-block { flex: 1; }
+  .qtext-en {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f5f9;
+    line-height: 1.5;
+  }
+  .qtext-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-size: 13px;
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    text-align: left;
+  }
+  .opt:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+  .opt .letter {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+  }
+
+  .qcard.locked .opt { cursor: default; }
+  .qcard.locked .opt:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.09); }
+
+  .opt.correct-pick {
+    background: rgba(34,197,94,0.16);
+    border-color: var(--correct);
+  }
+  .opt.correct-pick .letter { background: var(--correct); color: #062b14; }
+  .opt.wrong-pick {
+    background: rgba(239,68,68,0.16);
+    border-color: var(--wrong);
+  }
+  .opt.wrong-pick .letter { background: var(--wrong); color: #2b0606; }
+  .opt.reveal-correct {
+    background: rgba(34,197,94,0.1);
+    border-color: rgba(34,197,94,0.4);
+  }
+  .opt.reveal-correct .letter { background: rgba(34,197,94,0.5); color: #06291a; }
+
+  .feedback {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .feedback.correct { color: #4ade80; }
+  .feedback.wrong { color: #f87171; }
+
+  /* ===== Results Summary ===== */
+  .results-card {
+    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+  .results-card.show { display: block; animation: fadeIn 0.4s ease; }
+  .results-card .big-score {
+    font-size: 38px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .results-card .label-en { font-size: 13px; color: #cbd5e1; margin-top: 4px; }
+  .results-card .label-ar {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  .footer-note {
+    text-align: center;
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  @media (max-width: 640px) {
+    .tab-btn { min-width: 100px; padding: 10px 8px; }
+    .qcard { padding: 14px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top-header">
+    <h1>Critical Care Nursing — Final Review MCQs</h1>
+    <div class="sub-ar">مراجعة أسئلة اختيار من متعدد — العناية المركزة</div>
+    <div class="sub-en">16 Lectures · 195+ Questions · Critical Care Nursing Final Review</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vent">
+      <span class="icon">🫁</span>
+      Ventilator
+      <span class="ar-name">التنفس الصناعي</span>
+    </button>
+    <button class="tab-btn" data-tab="dic">
+      <span class="icon">🩸</span>
+      DIC Syndrome
+      <span class="ar-name">التخثر المنتشر</span>
+    </button>
+    <button class="tab-btn" data-tab="dka">
+      <span class="icon">💉</span>
+      DKA
+      <span class="ar-name">الحماض الكيتوني</span>
+    </button>
+    <button class="tab-btn" data-tab="stroke">
+      <span class="icon">🧠</span>
+      Stroke
+      <span class="ar-name">السكتة الدماغية</span>
+    </button>
+    <button class="tab-btn" data-tab="thyroid">
+      <span class="icon">🦋</span>
+      Thyroid Emergency
+      <span class="ar-name">طوارئ الدرقية</span>
+    </button>
+    <button class="tab-btn" data-tab="htn">
+      <span class="icon">🩺</span>
+      HTN Emergency
+      <span class="ar-name">طوارئ الضغط</span>
+    </button>
+    <button class="tab-btn" data-tab="hepatic">
+      <span class="icon">🫘</span>
+      Hepatic Encephalopathy
+      <span class="ar-name">اعتلال الدماغ الكبدي</span>
+    </button>
+    <button class="tab-btn" data-tab="ards">
+      <span class="icon">🫁</span>
+      ARDS
+      <span class="ar-name">الضائقة التنفسية</span>
+    </button>
+    <button class="tab-btn" data-tab="acs">
+      <span class="icon">❤️</span>
+      ACS
+      <span class="ar-name">المتلازمة التاجية</span>
+    </button>
+    <button class="tab-btn" data-tab="angina">
+      <span class="icon">💔</span>
+      Angina
+      <span class="ar-name">ذبحة الصدر</span>
+    </button>
+    <button class="tab-btn" data-tab="icp">
+      <span class="icon">🧠</span>
+      Head Injury / ICP
+      <span class="ar-name">إصابة الرأس وICP</span>
+    </button>
+    <button class="tab-btn" data-tab="hemo">
+      <span class="icon">📈</span>
+      Hemodynamic Monitoring
+      <span class="ar-name">المراقبة الديناميكية</span>
+    </button>
+    <button class="tab-btn" data-tab="gib">
+      <span class="icon">🩹</span>
+      GIT Bleeding
+      <span class="ar-name">النزيف الهضمي</span>
+    </button>
+    <button class="tab-btn" data-tab="organ">
+      <span class="icon">🫀</span>
+      Organ Transplant
+      <span class="ar-name">زراعة الأعضاء</span>
+    </button>
+    <button class="tab-btn" data-tab="resp">
+      <span class="icon">🫁</span>
+      Respiratory Failure
+      <span class="ar-name">فشل التنفس</span>
+    </button>
+    <button class="tab-btn" data-tab="shock">
+      <span class="icon">⚡</span>
+      Shock
+      <span class="ar-name">الصدمة</span>
+    </button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+    <div class="score-pill" id="scorePill">0 / 0 answered</div>
+  </div>
+
+  <!-- ============ VENTILATOR PANEL ============ -->
+  <div class="panel active" id="panel-vent">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Basic Mechanical Ventilator in Critical Care</div>
+        <div class="lar">التنفس الصناعي في العناية المركزة</div>
+      </div>
+      <button class="reset-btn" data-reset="vent">↺ Reset</button>
+    </div>
+    <div id="questions-vent"></div>
+    <div class="results-card" id="results-vent">
+      <div class="big-score" id="score-vent">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ DIC PANEL ============ -->
+  <div class="panel" id="panel-dic">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Disseminated Intravascular Coagulation (DIC)</div>
+        <div class="lar">متلازمة التخثر المنتشر داخل الأوعية الدموية</div>
+      </div>
+      <button class="reset-btn" data-reset="dic">↺ Reset</button>
+    </div>
+    <div id="questions-dic"></div>
+    <div class="results-card" id="results-dic">
+      <div class="big-score" id="score-dic">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ DKA PANEL ============ -->
+  <div class="panel" id="panel-dka">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Diabetic Ketoacidosis (DKA)</div>
+        <div class="lar">الحماض الكيتوني السكري</div>
+      </div>
+      <button class="reset-btn" data-reset="dka">↺ Reset</button>
+    </div>
+    <div id="questions-dka"></div>
+    <div class="results-card" id="results-dka">
+      <div class="big-score" id="score-dka">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ STROKE PANEL ============ -->
+  <div class="panel" id="panel-stroke">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Stroke (Cerebrovascular Accident)</div>
+        <div class="lar">السكتة الدماغية</div>
+      </div>
+      <button class="reset-btn" data-reset="stroke">↺ Reset</button>
+    </div>
+    <div id="questions-stroke"></div>
+    <div class="results-card" id="results-stroke">
+      <div class="big-score" id="score-stroke">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ THYROID PANEL ============ -->
+  <div class="panel" id="panel-thyroid">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Thyroid Emergency — Storm & Myxoedema Coma</div>
+        <div class="lar">طوارئ الغدة الدرقية</div>
+      </div>
+      <button class="reset-btn" data-reset="thyroid">↺ Reset</button>
+    </div>
+    <div id="questions-thyroid"></div>
+    <div class="results-card" id="results-thyroid">
+      <div class="big-score" id="score-thyroid">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ HTN PANEL ============ -->
+  <div class="panel" id="panel-htn">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Hypertensive Emergency & Urgency</div>
+        <div class="lar">طوارئ ارتفاع ضغط الدم</div>
+      </div>
+      <button class="reset-btn" data-reset="htn">↺ Reset</button>
+    </div>
+    <div id="questions-htn"></div>
+    <div class="results-card" id="results-htn">
+      <div class="big-score" id="score-htn">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ HEPATIC ENCEPHALOPATHY PANEL ============ -->
+  <div class="panel" id="panel-hepatic">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Hepatic Encephalopathy</div>
+        <div class="lar">اعتلال الدماغ الكبدي</div>
+      </div>
+      <button class="reset-btn" data-reset="hepatic">↺ Reset</button>
+    </div>
+    <div id="questions-hepatic"></div>
+    <div class="results-card" id="results-hepatic">
+      <div class="big-score" id="score-hepatic">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ ARDS PANEL ============ -->
+  <div class="panel" id="panel-ards">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Acute Respiratory Distress Syndrome (ARDS)</div>
+        <div class="lar">متلازمة الضائقة التنفسية الحادة</div>
+      </div>
+      <button class="reset-btn" data-reset="ards">↺ Reset</button>
+    </div>
+    <div id="questions-ards"></div>
+    <div class="results-card" id="results-ards">
+      <div class="big-score" id="score-ards">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ ACS PANEL ============ -->
+  <div class="panel" id="panel-acs">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Acute Coronary Syndrome (STEMI / NSTEMI / UA)</div>
+        <div class="lar">متلازمة الشريان التاجي الحادة</div>
+      </div>
+      <button class="reset-btn" data-reset="acs">↺ Reset</button>
+    </div>
+    <div id="questions-acs"></div>
+    <div class="results-card" id="results-acs">
+      <div class="big-score" id="score-acs">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ ANGINA PANEL ============ -->
+  <div class="panel" id="panel-angina">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Angina Pectoris</div>
+        <div class="lar">ذبحة الصدر</div>
+      </div>
+      <button class="reset-btn" data-reset="angina">↺ Reset</button>
+    </div>
+    <div id="questions-angina"></div>
+    <div class="results-card" id="results-angina">
+      <div class="big-score" id="score-angina">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ HEAD INJURY / ICP PANEL ============ -->
+  <div class="panel" id="panel-icp">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Head Injury & Raised ICP</div>
+        <div class="lar">إصابة الرأس وارتفاع الضغط داخل الجمجمة</div>
+      </div>
+      <button class="reset-btn" data-reset="icp">↺ Reset</button>
+    </div>
+    <div id="questions-icp"></div>
+    <div class="results-card" id="results-icp">
+      <div class="big-score" id="score-icp">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ HEMODYNAMIC MONITORING PANEL ============ -->
+  <div class="panel" id="panel-hemo">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Hemodynamic Monitoring</div>
+        <div class="lar">المراقبة الديناميكية الدموية</div>
+      </div>
+      <button class="reset-btn" data-reset="hemo">↺ Reset</button>
+    </div>
+    <div id="questions-hemo"></div>
+    <div class="results-card" id="results-hemo">
+      <div class="big-score" id="score-hemo">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ GIT BLEEDING PANEL ============ -->
+  <div class="panel" id="panel-gib">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">GIT Bleeding — Upper & Lower</div>
+        <div class="lar">النزيف الهضمي العلوي والسفلي</div>
+      </div>
+      <button class="reset-btn" data-reset="gib">↺ Reset</button>
+    </div>
+    <div id="questions-gib"></div>
+    <div class="results-card" id="results-gib">
+      <div class="big-score" id="score-gib">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ ORGAN TRANSPLANTATION PANEL ============ -->
+  <div class="panel" id="panel-organ">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Organ Transplantation — Dr. Abdelrahman Elzefzaf</div>
+        <div class="lar">زراعة الأعضاء</div>
+      </div>
+      <button class="reset-btn" data-reset="organ">↺ Reset</button>
+    </div>
+    <div id="questions-organ"></div>
+    <div class="results-card" id="results-organ">
+      <div class="big-score" id="score-organ">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ RESPIRATORY FAILURE PANEL ============ -->
+  <div class="panel" id="panel-resp">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Acute Respiratory Failure (ARF) — Dr. Ghada Elsayed</div>
+        <div class="lar">فشل الجهاز التنفسي الحاد</div>
+      </div>
+      <button class="reset-btn" data-reset="resp">↺ Reset</button>
+    </div>
+    <div id="questions-resp"></div>
+    <div class="results-card" id="results-resp">
+      <div class="big-score" id="score-resp">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <!-- ============ SHOCK PANEL ============ -->
+  <div class="panel" id="panel-shock">
+    <div class="lecture-banner">
+      <div>
+        <div class="ltitle">Shock — Dr. Abdelrahman Elzefzaf</div>
+        <div class="lar">الصدمة وأنواعها</div>
+      </div>
+      <button class="reset-btn" data-reset="shock">↺ Reset</button>
+    </div>
+    <div id="questions-shock"></div>
+    <div class="results-card" id="results-shock">
+      <div class="big-score" id="score-shock">0%</div>
+      <div class="label-en">Final Score</div>
+      <div class="label-ar">النتيجة النهائية</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Critical Care Nursing Final Review &nbsp;|&nbsp; مراجعة نهائية لمقرر التمريض الحرج &nbsp;|&nbsp; For self-study purposes
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// QUESTION BANKS
+// ============================================================
+const QUESTIONS = {
+
+  vent: [
+    {
+      en: "What is the primary function of a mechanical ventilator?",
+      ar: "ما هي الوظيفة الأساسية للتنفس الصناعي؟",
+      options: [
+        "To inflate and deflate the lungs, replacing or supplementing natural breathing",
+        "To filter the patient's blood",
+        "To monitor heart rhythm only",
+        "To regulate body temperature"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is an indication for initiating mechanical ventilation based on arterial blood gas values?",
+      ar: "أي من الآتي يعتبر مؤشرًا لبدء التنفس الصناعي بناءً على تحليل غازات الدم الشرياني؟",
+      options: [
+        "pH ≤ 7.25 with PaCO₂ ≥ 50 mmHg",
+        "pH 7.40 with PaCO₂ 40 mmHg",
+        "PaO₂ 95 mmHg on room air",
+        "Respiratory rate of 16 breaths/min"
+      ],
+      correct: 0
+    },
+    {
+      en: "A patient on a ventilator is described as having spontaneous breaths fully assisted by the machine each time he initiates a breath. Which mode is this?",
+      ar: "مريض على جهاز التنفس الصناعي يقوم بمحاولات تنفس تلقائية والجهاز يساعده بالكامل في كل محاولة. أي وضع تنفسي هذا؟",
+      options: [
+        "AMV/AC (Assisted Mandatory Ventilation / Assist-Control)",
+        "CPAP",
+        "Iron lung negative pressure ventilation",
+        "BiPAP"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which ventilator mode combines mandatory breaths with the patient's own spontaneous breathing?",
+      ar: "أي وضع من أوضاع التنفس الصناعي يجمع بين الأنفاس الإلزامية وأنفاس المريض التلقائية؟",
+      options: [
+        "SIMV (Synchronized Intermittent Mandatory Ventilation)",
+        "CMV (Controlled Mandatory Ventilation)",
+        "Negative pressure ventilation",
+        "PSV alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the normal target range for tidal volume (Vt) setting on a ventilator?",
+      ar: "ما هو المعدل الطبيعي المستهدف لحجم المد والجزر (Vt) على جهاز التنفس الصناعي؟",
+      options: [
+        "6–8 ml/kg",
+        "20–25 ml/kg",
+        "1–2 ml/kg",
+        "15–18 ml/kg"
+      ],
+      correct: 0
+    },
+    {
+      en: "What does PEEP stand for and what is its normal range?",
+      ar: "ماذا يعني PEEP وما هو معداله الطبيعي؟",
+      options: [
+        "Positive End-Expiratory Pressure, normally 5–8 cmH₂O",
+        "Peak Expiratory Effort Pressure, normally 20 cmH₂O",
+        "Pulmonary End Expansion Pressure, normally 1 cmH₂O",
+        "Patient Exhalation Energy Point, no normal range"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which respiratory rate value would meet the criteria for instituting mechanical ventilation?",
+      ar: "أي معدل تنفس يستوفي معايير بدء التنفس الصناعي؟",
+      options: [
+        "Greater than 35 breaths/min",
+        "12 breaths/min",
+        "18 breaths/min",
+        "22 breaths/min"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is considered an objective weaning criterion before discontinuing mechanical ventilation?",
+      ar: "أي من الآتي يعتبر معيارًا موضوعيًا للفطام قبل إيقاف التنفس الصناعي؟",
+      options: [
+        "PaO₂/FiO₂ ratio greater than 150–200",
+        "FiO₂ greater than 80%",
+        "pH less than 7.20",
+        "PEEP greater than 15 cmH₂O"
+      ],
+      correct: 0
+    },
+    {
+      en: "Barotrauma, a recognized complication of mechanical ventilation, may present as which of the following?",
+      ar: "الباروتراوما، وهي من مضاعفات التنفس الصناعي المعروفة، قد تظهر كأي من الآتي؟",
+      options: [
+        "Pneumothorax and subcutaneous emphysema",
+        "Hyperglycemia",
+        "Renal failure",
+        "Anemia"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which cardiovascular effect is associated with positive pressure ventilation?",
+      ar: "أي تأثير على القلب والأوعية الدموية يرتبط بالتنفس الصناعي ذي الضغط الإيجابي؟",
+      options: [
+        "Decreased venous return leading to decreased cardiac output and hypotension",
+        "Increased venous return and hypertension",
+        "No effect on hemodynamics",
+        "Immediate bradycardia in all patients"
+      ],
+      correct: 0
+    },
+    {
+      en: "VAP, a major infectious complication of mechanical ventilation, stands for which of the following?",
+      ar: "VAP، وهو من أهم المضاعفات المعدية للتنفس الصناعي، يرمز لأي من الآتي؟",
+      options: [
+        "Ventilator-Associated Pneumonia",
+        "Vascular Access Procedure",
+        "Variable Airway Pressure",
+        "Ventilation Adjustment Protocol"
+      ],
+      correct: 0
+    },
+    {
+      en: "A high-pressure ventilator alarm is most likely triggered by which of the following?",
+      ar: "تنبيه الضغط المرتفع على جهاز التنفس الصناعي يحدث غالبًا بسبب أي من الآتي؟",
+      options: [
+        "Secretions, pneumothorax, or bronchospasm",
+        "Patient extubation",
+        "Tubing disconnection",
+        "Leak in the circuit"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the main role of the humidifier within the ventilator patient circuit?",
+      ar: "ما هو الدور الأساسي للمرطب (Humidifier) داخل دائرة المريض في جهاز التنفس الصناعي؟",
+      options: [
+        "To add moisture and heat the inspired gas to body temperature",
+        "To deliver nebulized medications only",
+        "To filter exhaled carbon dioxide",
+        "To measure tidal volume"
+      ],
+      correct: 0
+    },
+    {
+      en: "Prolonged exposure to FiO₂ greater than 60% can lead to which complication?",
+      ar: "التعرض المطول لتركيز أكسجين مستنشق أعلى من 60% قد يؤدي إلى أي مضاعفة؟",
+      options: [
+        "Oxygen toxicity",
+        "Hypoglycemia",
+        "Pulmonary embolism only",
+        "Improved lung function with no risk"
+      ],
+      correct: 0
+    }
+  ],
+
+  dic: [
+    {
+      en: "Which of the following best defines Disseminated Intravascular Coagulation (DIC)?",
+      ar: "أي مما يلي يصف بشكل أفضل متلازمة التخثر المنتشر داخل الأوعية الدموية (DIC)؟",
+      options: [
+        "A life-threatening condition with systemic activation of coagulation leading to widespread fibrin clots, organ damage, and depletion of clotting factors causing bleeding",
+        "A benign and self-limiting clotting disorder",
+        "A primary inherited bleeding disorder present from birth",
+        "An isolated platelet production disorder unrelated to coagulation factors"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following conditions is a recognized trigger for DIC, particularly involving gram-negative organisms?",
+      ar: "أي من الحالات الآتية يعتبر محفزًا معروفًا لـ DIC، خاصة المرتبط بالبكتيريا سالبة الجرام؟",
+      options: [
+        "Sepsis",
+        "Seasonal allergies",
+        "Mild dehydration",
+        "Common cold"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which obstetric complication is associated with the development of DIC?",
+      ar: "أي من مضاعفات الحمل والولادة يرتبط بتطور DIC؟",
+      options: [
+        "Amniotic fluid embolism and abruptio placentae",
+        "Mild morning sickness",
+        "Normal vaginal delivery without complications",
+        "Routine prenatal vitamin use"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the pathophysiology of DIC, what is the correct sequence of events following a triggering event?",
+      ar: "في الفيزيولوجيا المرضية لـ DIC، ما هو التسلسل الصحيح للأحداث بعد الحدث المحرك؟",
+      options: [
+        "Widespread microvascular thrombi → consumption of platelets and clotting factors → fibrinolysis → bleeding",
+        "Bleeding → thrombosis → full recovery without organ involvement",
+        "Platelet overproduction → resolution without intervention",
+        "Isolated vasodilation with no clotting cascade activation"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which clinical finding is consistent with DIC?",
+      ar: "أي من النتائج السريرية الآتية يتوافق مع DIC؟",
+      options: [
+        "Petechiae, ecchymosis, and bleeding from venipuncture sites",
+        "Isolated joint pain with no skin changes",
+        "Hypertension with bradycardia only",
+        "Localized rash without bleeding tendency"
+      ],
+      correct: 0
+    },
+    {
+      en: "Digital ischemia or gangrene may be observed in a patient with DIC due to which mechanism?",
+      ar: "قد يُلاحظ إقفار أو غرغرينا في الأطراف عند مريض DIC نتيجة لأي آلية؟",
+      options: [
+        "Widespread microvascular thrombosis obstructing blood flow to the extremities",
+        "Excessive vasodilation in peripheral vessels",
+        "Increased platelet production",
+        "Normal coagulation factor levels"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which laboratory finding is expected in a patient diagnosed with DIC?",
+      ar: "أي نتيجة معملية متوقعة عند مريض تم تشخيصه بـ DIC؟",
+      options: [
+        "Decreased platelet count with prolonged PT and aPTT",
+        "Increased platelet count with shortened PT and aPTT",
+        "Normal fibrinogen with decreased D-dimer",
+        "Normal coagulation studies with no abnormalities"
+      ],
+      correct: 0
+    },
+    {
+      en: "What does an elevated D-dimer level indicate in the context of suspected DIC?",
+      ar: "ماذا يدل ارتفاع مستوى D-dimer في سياق الاشتباه بـ DIC؟",
+      options: [
+        "Increased fibrin degradation, consistent with active clot formation and breakdown",
+        "Active red blood cell production",
+        "Normal hemostasis with no clotting activity",
+        "Decreased fibrinolytic activity"
+      ],
+      correct: 0
+    },
+    {
+      en: "Schistocytes seen on a peripheral blood smear in a DIC patient represent which of the following?",
+      ar: "خلايا Schistocytes الظاهرة في مسحة الدم المحيطية لمريض DIC تمثل أي مما يلي؟",
+      options: [
+        "Fragmented red blood cells damaged as they pass through fibrin clots in small vessels",
+        "Mature lymphocytes",
+        "Normal platelets",
+        "Eosinophils indicating an allergic reaction"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the first priority in the management of a patient with DIC?",
+      ar: "ما هي الأولوية الأولى في علاج مريض مصاب بـ DIC؟",
+      options: [
+        "Identify and treat the underlying cause (e.g., sepsis, trauma)",
+        "Administer high-dose corticosteroids regardless of cause",
+        "Begin chemotherapy immediately",
+        "Discharge the patient with oral medications"
+      ],
+      correct: 0
+    },
+    {
+      en: "A patient with DIC has a platelet count below 20,000/µL with active bleeding. Which supportive therapy is most appropriate?",
+      ar: "مريض DIC لديه عدد صفائح دموية أقل من 20,000/مايكروليتر مع نزيف نشط. ما هو العلاج الداعم الأنسب؟",
+      options: [
+        "Platelet transfusion",
+        "Withholding all blood products",
+        "Diuretic therapy only",
+        "Oral iron supplementation"
+      ],
+      correct: 0
+    },
+    {
+      en: "Fresh Frozen Plasma (FFP) is administered in DIC management primarily to achieve which goal?",
+      ar: "يُعطى البلازما الطازجة المجمدة (FFP) في علاج DIC أساسًا لتحقيق أي هدف؟",
+      options: [
+        "Replacement of depleted clotting factors",
+        "Lowering blood glucose",
+        "Increasing red blood cell mass",
+        "Treating infection directly"
+      ],
+      correct: 0
+    },
+    {
+      en: "In which clinical scenario of DIC might heparin therapy be considered?",
+      ar: "في أي سيناريو سريري لـ DIC يمكن أن يُؤخذ علاج الهيبارين في الاعتبار؟",
+      options: [
+        "Selected cases where thrombosis predominates over bleeding",
+        "All cases of DIC without exception",
+        "Only in patients with active uncontrolled hemorrhage",
+        "Never, as it is always contraindicated in DIC"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which statement best summarizes the nature of DIC as a clinical entity?",
+      ar: "أي عبارة تلخص بشكل أفضل طبيعة DIC كحالة سريرية؟",
+      options: [
+        "DIC is not a primary disease but a syndrome secondary to other severe underlying conditions",
+        "DIC is a standalone genetic disease unrelated to other illnesses",
+        "DIC always resolves spontaneously without treatment",
+        "DIC only affects the respiratory system"
+      ],
+      correct: 0
+    }
+  ],
+
+  dka: [
+    {
+      en: "Which triad of findings characterizes Diabetic Ketoacidosis (DKA)?",
+      ar: "أي ثلاثية من النتائج تميز الحماض الكيتوني السكري (DKA)؟",
+      options: [
+        "Hyperglycemia, ketosis, and acidosis",
+        "Hypoglycemia, alkalosis, and dehydration",
+        "Hypertension, bradycardia, and edema",
+        "Hypoglycemia, ketosis, and hypotension"
+      ],
+      correct: 0
+    },
+    {
+      en: "DKA most commonly occurs in patients with which type of diabetes, though it can also occur in others?",
+      ar: "يحدث DKA بشكل أكثر شيوعًا في مرضى أي نوع من السكري، مع إمكانية حدوثه في أنواع أخرى أيضًا؟",
+      options: [
+        "Type 1 diabetes mellitus",
+        "Gestational diabetes only",
+        "Diabetes insipidus",
+        "Steroid-induced hyperglycemia only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized precipitating cause of DKA?",
+      ar: "أي من الآتي يعتبر سببًا محفزًا معروفًا لحدوث DKA؟",
+      options: [
+        "Insulin non-adherence or infection (e.g., pneumonia, UTI)",
+        "Excessive water intake",
+        "Mild seasonal allergy",
+        "Routine exercise without illness"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the pathophysiology of DKA, insulin deficiency combined with increased counter-regulatory hormones leads to which initial result?",
+      ar: "في الفيزيولوجيا المرضية لـ DKA، يؤدي نقص الإنسولين مع زيادة الهرمونات المضادة للتنظيم إلى أي نتيجة أولية؟",
+      options: [
+        "Increased hepatic glucose production leading to hyperglycemia and osmotic diuresis",
+        "Decreased blood glucose and hypoglycemia",
+        "Immediate normalization of electrolytes",
+        "Decreased lipolysis and ketone production"
+      ],
+      correct: 0
+    },
+    {
+      en: "Fat mobilization during DKA leads to elevated free fatty acids, which are then converted into which substances responsible for metabolic acidosis?",
+      ar: "تعبئة الدهون خلال DKA تؤدي لارتفاع الأحماض الدهنية الحرة، والتي تتحول إلى أي مواد مسؤولة عن الحماض الاستقلابي؟",
+      options: [
+        "Ketoacids",
+        "Lactate exclusively",
+        "Bicarbonate",
+        "Glycogen"
+      ],
+      correct: 0
+    },
+    {
+      en: "Although total body potassium is depleted in DKA, why might the serum potassium level initially appear normal or even elevated?",
+      ar: "على الرغم من نقص البوتاسيوم الكلي بالجسم في DKA، فلماذا قد يظهر مستوى البوتاسيوم في الدم طبيعيًا أو مرتفعًا في البداية؟",
+      options: [
+        "Hyperosmolality causes potassium to shift extracellularly into the blood, even though it is being lost in urine",
+        "The kidneys retain all potassium during DKA",
+        "Insulin deficiency directly increases total body potassium",
+        "Dehydration has no effect on potassium distribution"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which respiratory pattern is classically associated with DKA as the body attempts to compensate for acidosis?",
+      ar: "أي نمط تنفسي يرتبط بشكل كلاسيكي بـ DKA كمحاولة من الجسم لتعويض الحماض؟",
+      options: [
+        "Kussmaul respirations",
+        "Cheyne-Stokes breathing",
+        "Apneustic breathing",
+        "Normal shallow breathing"
+      ],
+      correct: 0
+    },
+    {
+      en: "A fruity (acetone) odor on the breath of a patient with suspected DKA is due to which of the following?",
+      ar: "رائحة الأسيتون (رائحة الفاكهة) في نفس مريض يُشتبه إصابته بـ DKA تنتج عن أي مما يلي؟",
+      options: [
+        "Accumulation of ketone bodies in the blood",
+        "Excess glucose in saliva",
+        "Bacterial infection of the gums",
+        "Dehydration of the oral mucosa alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "According to the biochemical diagnostic criteria for DKA, which arterial pH value would support the diagnosis?",
+      ar: "بناءً على المعايير المعملية لتشخيص DKA، أي قيمة لـ pH الدم الشرياني تدعم التشخيص؟",
+      options: [
+        "pH less than 7.30",
+        "pH 7.45",
+        "pH 7.50",
+        "pH 7.38"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which plasma glucose threshold is typically used as part of the biochemical criteria for diagnosing DKA?",
+      ar: "أي حد لجلوكوز البلازما يُستخدم عادة كجزء من المعايير المعملية لتشخيص DKA؟",
+      options: [
+        "Greater than 250 mg/dL",
+        "Less than 70 mg/dL",
+        "100–140 mg/dL",
+        "Exactly 200 mg/dL with no variation"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the recommended initial fluid management approach in the first hour of treating a patient with DKA?",
+      ar: "ما هو نهج العلاج بالسوائل الموصى به في الساعة الأولى لعلاج مريض DKA؟",
+      options: [
+        "1–3 liters of normal saline or Ringer's lactate",
+        "No fluids until insulin is started",
+        "Only 5% dextrose in water at a slow rate",
+        "Oral fluids only"
+      ],
+      correct: 0
+    },
+    {
+      en: "When administering insulin therapy in DKA management, what precaution must be taken regarding serum potassium?",
+      ar: "عند إعطاء العلاج بالإنسولين في علاج DKA، ما هو الاحتياط الواجب اتخاذه بخصوص بوتاسيوم الدم؟",
+      options: [
+        "Insulin should be held if serum potassium is less than 3.3 mmol/L until potassium is replaced",
+        "Insulin should always be given regardless of potassium level",
+        "Potassium levels are irrelevant to insulin administration",
+        "Insulin should be doubled if potassium is low"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is sodium bicarbonate rarely needed in the correction of acid-base imbalance in DKA?",
+      ar: "لماذا نادرًا ما يُحتاج لبيكربونات الصوديوم في تصحيح اضطراب الحموضة في DKA؟",
+      options: [
+        "Acidosis usually corrects with adequate fluid replacement and insulin therapy alone",
+        "Bicarbonate is always the first-line treatment instead of insulin",
+        "Acidosis in DKA cannot be corrected by any means",
+        "Fluids and insulin have no effect on acid-base status"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is classified as a non-metabolic complication of DKA?",
+      ar: "أي من الآتي يصنف كمضاعفة غير استقلابية لـ DKA؟",
+      options: [
+        "Cerebral edema",
+        "Hypokalemia",
+        "Hypoglycemia",
+        "Hypocalcemia"
+      ],
+      correct: 0
+    },
+    {
+      en: "Premature discontinuation of insulin therapy during DKA treatment can lead to which complication?",
+      ar: "التوقف المبكر عن العلاج بالإنسولين خلال علاج DKA قد يؤدي إلى أي مضاعفة؟",
+      options: [
+        "Rebound ketoacidosis",
+        "Permanent cure with no relapse risk",
+        "Immediate normalization of glucose with no monitoring needed",
+        "Spontaneous resolution of all symptoms"
+      ],
+      correct: 0
+    }
+  ]
+,
+
+  stroke: [
+    {
+      en: "According to the WHO definition, a stroke is a focal or global cerebral disturbance of vascular origin lasting at least how long?",
+      ar: "بحسب تعريف منظمة الصحة العالمية، اضطراب دماغي بؤري أو عام من أصل وعائي يستمر على الأقل لمدة كم؟",
+      options: ["24 hours", "1 hour", "7 days", "48 hours"],
+      correct: 0
+    },
+    {
+      en: "A patient has an ischemic neurological event lasting less than 24 hours with no permanent deficit. What is this called?",
+      ar: "مريض لديه حدث عصبي إقفاري يستمر أقل من 24 ساعة بدون عجز دائم. ما اسم هذه الحالة؟",
+      options: [
+        "Transient Ischemic Attack (TIA)",
+        "Completed Stroke",
+        "Stroke in Evolution",
+        "Hemorrhagic Stroke"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which type of stroke accounts for approximately 80% of all strokes?",
+      ar: "أي نوع من السكتة الدماغية يمثل تقريبًا 80% من جميع حالات السكتة؟",
+      options: ["Ischemic stroke", "Hemorrhagic stroke", "Subarachnoid hemorrhage", "Lacunar stroke only"],
+      correct: 0
+    },
+    {
+      en: "Which mechanism best describes an embolic ischemic stroke?",
+      ar: "أي آلية تصف بشكل أفضل السكتة الدماغية الإقفارية الصمية؟",
+      options: [
+        "Cardiac emboli, such as from atrial fibrillation, traveling to block a cerebral artery",
+        "Rupture of a berry aneurysm causing vasospasm",
+        "Gradual plaque buildup with no embolic source",
+        "Lipohyalinosis of small vessels only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Rupture of a berry aneurysm leading to vasospasm and hydrocephalus is most characteristic of which condition?",
+      ar: "تمزق أم الدم التوتية المؤدي لتشنج وعائي واستسقاء دماغي هو الأكثر تميزًا لأي حالة؟",
+      options: [
+        "Subarachnoid hemorrhage (SAH)",
+        "Lacunar infarct",
+        "TIA",
+        "Thrombotic stroke"
+      ],
+      correct: 0
+    },
+    {
+      en: "At what cerebral blood flow level does loss of electrical activity in brain tissue typically occur?",
+      ar: "عند أي معدل لتدفق الدم الدماغي يحدث فقد النشاط الكهربي للنسيج الدماغي عادة؟",
+      options: [
+        "Approximately 20 ml/100g/min",
+        "Approximately 50 ml/100g/min (normal)",
+        "Approximately 35 ml/100g/min",
+        "Approximately 45 ml/100g/min"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the FAST mnemonic used to recognize stroke warning signs, what does the 'T' represent?",
+      ar: "في اختصار FAST المستخدم للتعرف على علامات تحذير السكتة، ماذا يرمز حرف 'T'؟",
+      options: [
+        "Time to call emergency services",
+        "Tremors",
+        "Temperature elevation",
+        "Tachycardia"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which imaging modality is the first-line investigation to rule out hemorrhage in a suspected stroke patient?",
+      ar: "أي وسيلة تصوير تعتبر الفحص الأول لاستبعاد النزيف عند الاشتباه في سكتة دماغية؟",
+      options: [
+        "Non-contrast CT brain (NCCT)",
+        "MRI-DWI",
+        "CT angiography",
+        "Carotid Doppler ultrasound"
+      ],
+      correct: 0
+    },
+    {
+      en: "A patient with right-sided brain injury would most likely present with which clinical finding?",
+      ar: "مريض بإصابة في الدماغ الأيمن يُتوقع أن يظهر عليه أي من النتائج السريرية الآتية؟",
+      options: [
+        "Paralysis of the left side of the body",
+        "Paralysis of the right side of the body",
+        "Speech and language deficits as the primary finding",
+        "No motor deficits at all"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the time window for administering IV tPA (Alteplase) in eligible ischemic stroke patients?",
+      ar: "ما هو الإطار الزمني لإعطاء حال الجلطة الوريدي (tPA) في مرضى السكتة الإقفارية المؤهلين؟",
+      options: [
+        "Within 4.5 hours of symptom onset",
+        "Within 24 hours of symptom onset",
+        "Within 30 minutes of symptom onset only",
+        "Within 7 days of symptom onset"
+      ],
+      correct: 0
+    },
+    {
+      en: "Endovascular thrombectomy for large vessel occlusion in ischemic stroke can be performed within which time window?",
+      ar: "يمكن إجراء استئصال الجلطة داخل الأوعية لانسداد الأوعية الكبيرة في السكتة الإقفارية خلال أي إطار زمني؟",
+      options: [
+        "6–24 hours from onset",
+        "Only within 1 hour from onset",
+        "Up to 7 days with no upper limit before that",
+        "Only after 24 hours have passed"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the management of hemorrhagic stroke, what is the general target for systolic blood pressure?",
+      ar: "في علاج السكتة النزفية، ما هو الهدف العام لضغط الدم الانقباضي؟",
+      options: [
+        "Less than 140 mmHg",
+        "Greater than 180 mmHg",
+        "Exactly 200 mmHg",
+        "No blood pressure control is needed"
+      ],
+      correct: 0
+    },
+    {
+      en: "Mannitol or hypertonic saline is used in hemorrhagic stroke management primarily to address which problem?",
+      ar: "يُستخدم المانيتول أو المحلول الملحي مفرط التوتر في علاج السكتة النزفية أساسًا لمعالجة أي مشكلة؟",
+      options: [
+        "Cerebral edema and elevated intracranial pressure",
+        "Hyperglycemia",
+        "Cardiac arrhythmia",
+        "Hypokalemia"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is classified as a modifiable risk factor for stroke?",
+      ar: "أي من الآتي يصنف كعامل خطر قابل للتعديل للسكتة الدماغية؟",
+      options: [
+        "Hypertension",
+        "Age",
+        "Sex",
+        "Heredity"
+      ],
+      correct: 0
+    },
+    {
+      en: "What does the phrase 'Time is Brain' emphasize in stroke care?",
+      ar: "ماذا تؤكد عبارة 'الوقت هو الدماغ' في رعاية السكتة الدماغية؟",
+      options: [
+        "Every minute of delay matters for treatments like thrombolysis and thrombectomy",
+        "Brain tissue can regenerate fully regardless of treatment timing",
+        "Stroke treatment has no time-sensitive component",
+        "Only hemorrhagic strokes are time-sensitive"
+      ],
+      correct: 0
+    }
+  ],
+
+  thyroid: [
+    {
+      en: "Thyroid storm is best described as which of the following?",
+      ar: "العاصفة الدرقية توصف بشكل أفضل كأي مما يلي؟",
+      options: [
+        "A sudden, severe, life-threatening exacerbation of hyperthyroidism with multiple organ decompensation",
+        "A mild and self-limiting increase in thyroid hormone with no systemic effect",
+        "A chronic stable form of hypothyroidism",
+        "An isolated skin manifestation of thyroid disease"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the approximate mortality rate of thyroid storm if not promptly treated in critical care?",
+      ar: "ما هو معدل الوفيات التقريبي للعاصفة الدرقية إذا لم تُعالج فورًا في العناية المركزة؟",
+      options: ["20–50%", "1–2%", "Less than 5%", "100% regardless of treatment"],
+      correct: 0
+    },
+    {
+      en: "Most cases of thyroid storm are secondary to which underlying condition?",
+      ar: "معظم حالات العاصفة الدرقية تكون ثانوية لأي حالة كامنة؟",
+      options: [
+        "Graves' disease",
+        "Hashimoto's thyroiditis",
+        "Primary hypothyroidism",
+        "Pituitary adenoma"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized precipitating factor for thyroid storm?",
+      ar: "أي من الآتي يعتبر عاملًا محرضًا معروفًا للعاصفة الدرقية؟",
+      options: [
+        "Rapid withdrawal of anti-thyroid medications",
+        "Mild seasonal cold",
+        "Routine annual checkup",
+        "Adequate long-term medication adherence"
+      ],
+      correct: 0
+    },
+    {
+      en: "Tachycardia that persists even during rest or sleep is a notable clinical feature of which condition?",
+      ar: "تسارع القلب المستمر حتى أثناء الراحة أو النوم هو علامة سريرية بارزة لأي حالة؟",
+      options: [
+        "Thyroid storm",
+        "Myxoedema coma",
+        "Normal physiological response",
+        "Hypoglycemia alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the three-step drug therapy approach for thyroid storm, what is the goal of Step 1?",
+      ar: "في نهج العلاج الدوائي ثلاثي الخطوات للعاصفة الدرقية، ما هو هدف الخطوة الأولى؟",
+      options: [
+        "Block the peripheral effect of thyroid hormone using an IV beta-blocker",
+        "Stop hormone production using PTU or methimazole",
+        "Inhibit hormone release using iodide",
+        "Provide thyroid hormone replacement"
+      ],
+      correct: 0
+    },
+    {
+      en: "When using iodide therapy in thyroid storm, when should it be administered relative to the antithyroid medication?",
+      ar: "عند استخدام علاج اليوديد في العاصفة الدرقية، متى يجب إعطاؤه بالنسبة لدواء مضاد الدرقية؟",
+      options: [
+        "1–2 hours after the antithyroid medication",
+        "Before the antithyroid medication",
+        "At the exact same time only, never separately",
+        "Iodide is never used in thyroid storm"
+      ],
+      correct: 0
+    },
+    {
+      en: "Myxoedema coma represents the end stage of which underlying condition?",
+      ar: "غيبوبة الوذمة المخاطية تمثل المرحلة النهائية لأي حالة كامنة؟",
+      options: [
+        "Improperly treated, neglected, or undiagnosed primary hypothyroidism",
+        "Untreated hyperthyroidism",
+        "Acute thyroiditis only",
+        "Thyroid cancer"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the approximate mortality rate of myxoedema coma even with treatment?",
+      ar: "ما هو معدل الوفيات التقريبي لغيبوبة الوذمة المخاطية حتى مع العلاج؟",
+      options: ["50%", "5%", "100% always", "Less than 1%"],
+      correct: 0
+    },
+    {
+      en: "Hypothermia in myxoedema coma occurs due to which mechanism?",
+      ar: "يحدث انخفاض حرارة الجسم في غيبوبة الوذمة المخاطية بسبب أي آلية؟",
+      options: [
+        "Impaired thermogenesis",
+        "Excessive sweating",
+        "Increased metabolic rate",
+        "Fever from infection only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Hypoglycemia in myxoedema coma is primarily explained by which mechanism?",
+      ar: "نقص سكر الدم في غيبوبة الوذمة المخاطية يُفسَّر أساسًا بأي آلية؟",
+      options: [
+        "Decreased gluconeogenesis",
+        "Excess insulin secretion",
+        "Increased glucagon release",
+        "Increased glycogenolysis"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which thyroid hormone is generally preferred in the treatment of myxoedema coma due to its faster onset of action?",
+      ar: "أي هرمون درقي يُفضَّل عمومًا في علاج غيبوبة الوذمة المخاطية بسبب سرعة بدء تأثيره؟",
+      options: ["T3 (triiodothyronine)", "T4 only, never T3", "Calcitonin", "TSH"],
+      correct: 0
+    },
+    {
+      en: "Which corticosteroid is commonly administered intravenously as part of myxoedema coma management?",
+      ar: "أي كورتيكوستيرويد يُعطى عادة وريديًا كجزء من علاج غيبوبة الوذمة المخاطية؟",
+      options: [
+        "Hydrocortisone",
+        "Prednisone orally only",
+        "No corticosteroids are used",
+        "Dexamethasone is contraindicated"
+      ],
+      correct: 0
+    },
+    {
+      en: "Comparing the two thyroid crises, which statement is correct?",
+      ar: "بالمقارنة بين الأزمتين الدرقيتين، أي عبارة صحيحة؟",
+      options: [
+        "Thyroid storm involves an overactive gland with high T3/T4 and tachycardia, while myxoedema coma involves an underactive gland with low T3/T4 and bradycardia",
+        "Both conditions present identically with the same hormone levels",
+        "Myxoedema coma always presents with tachycardia and fever",
+        "Thyroid storm always presents with hypothermia"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is a high index of suspicion emphasized when diagnosing thyroid emergencies?",
+      ar: "لماذا يتم التأكيد على درجة عالية من الشك عند تشخيص طوارئ الغدة الدرقية؟",
+      options: [
+        "Thyroid crises can masquerade as many other illnesses, making clinical diagnosis difficult",
+        "Thyroid emergencies are always obvious and easy to diagnose",
+        "Lab results are always immediately available and definitive",
+        "Thyroid crises never overlap with other conditions"
+      ],
+      correct: 0
+    }
+  ],
+
+  htn: [
+    {
+      en: "What distinguishes a hypertensive emergency from a hypertensive urgency?",
+      ar: "ما الذي يميز طارئة ارتفاع ضغط الدم عن حالة استعجال ارتفاع الضغط؟",
+      options: [
+        "The presence of end-organ damage in emergency, versus its absence in urgency",
+        "Emergency always has a lower blood pressure than urgency",
+        "Urgency always requires ICU admission while emergency does not",
+        "There is no clinical difference between the two terms"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the most common cause of hypertensive crisis?",
+      ar: "ما هو السبب الأكثر شيوعًا لأزمة ارتفاع ضغط الدم؟",
+      options: [
+        "Non-adherence to antihypertensive medication",
+        "Excessive fluid intake only",
+        "Hypoglycemia",
+        "Viral infection alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "In a hypertensive emergency, what is the recommended initial goal for reducing mean arterial pressure (MAP)?",
+      ar: "في طارئة ارتفاع ضغط الدم، ما هو الهدف الأولي الموصى به لتخفيض متوسط ضغط الدم (MAP)؟",
+      options: [
+        "Reduce MAP by no more than 20–25% within minutes to two hours",
+        "Normalize blood pressure completely within 10 minutes",
+        "Reduce blood pressure to below 90/60 mmHg immediately",
+        "No reduction is needed until 48 hours have passed"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is rapid normalization of blood pressure generally NOT recommended in hypertensive emergencies?",
+      ar: "لماذا لا يُنصح عمومًا بتطبيع ضغط الدم بسرعة في طوارئ ارتفاع الضغط؟",
+      options: [
+        "A sudden drop in BP can cause acute hypoperfusion leading to MI, hemiplegia, or acute renal failure",
+        "Rapid normalization always improves outcomes with no risk",
+        "Blood pressure cannot be lowered quickly with any available drug",
+        "It has no effect on organ perfusion"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which drug is absolutely contraindicated (never to be used) in the treatment of a hypertensive emergency?",
+      ar: "أي دواء ممنوع منعًا مطلقًا في علاج طارئة ارتفاع ضغط الدم؟",
+      options: [
+        "Sublingual or oral Nifedipine",
+        "IV Nicardipine",
+        "IV Labetalol",
+        "IV Nitroprusside"
+      ],
+      correct: 0
+    },
+    {
+      en: "For a patient presenting with acute pulmonary edema and severe hypertension, which drug combination is preferred?",
+      ar: "لمريض يعاني من وذمة رئوية حادة وارتفاع شديد في الضغط، أي مجموعة أدوية تُفضَّل؟",
+      options: [
+        "Nitroglycerin (NTG) plus a loop diuretic",
+        "Beta-blockers alone",
+        "Hydralazine alone",
+        "Verapamil"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which drugs are preferred for managing hypertensive emergency in the setting of intracranial hemorrhage?",
+      ar: "أي أدوية تُفضَّل لعلاج طارئة ارتفاع الضغط في حالة النزيف داخل القحف؟",
+      options: [
+        "Labetalol and Nicardipine",
+        "Nifedipine and Nitroprusside without caution",
+        "Beta-blockers alone with no other agents",
+        "Hydralazine alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why must IV antihypertensive drugs in a hypertensive emergency be given as a constant infusion rather than intermittent boluses?",
+      ar: "لماذا يجب إعطاء أدوية ضغط الدم الوريدية في طارئة ارتفاع الضغط كتسريب مستمر بدلًا من جرعات متقطعة؟",
+      options: [
+        "To allow precise, controlled, and titratable blood pressure reduction and avoid abrupt drops",
+        "Because intermittent boluses are always more effective",
+        "Because continuous infusion has no advantage over boluses",
+        "Because oral drugs work faster than IV drugs in this context"
+      ],
+      correct: 0
+    },
+    {
+      en: "Malignant hypertension is defined by which combination of findings?",
+      ar: "يُعرَّف الضغط الخبيث بأي مجموعة من النتائج؟",
+      options: [
+        "Severe hypertension with papilledema",
+        "Mild hypertension with normal fundoscopic exam",
+        "Hypotension with bradycardia",
+        "Normal blood pressure with headache"
+      ],
+      correct: 0
+    },
+    {
+      en: "In eclampsia, treatment should be initiated when blood pressure reaches which threshold?",
+      ar: "في الارتعاج، يجب بدء العلاج عندما يصل ضغط الدم لأي حد؟",
+      options: [
+        "SBP ≥ 155–160 mmHg or DBP > 105 mmHg",
+        "SBP ≥ 120 mmHg",
+        "Only when SBP exceeds 220 mmHg",
+        "Treatment is never indicated regardless of BP in pregnancy"
+      ],
+      correct: 0
+    },
+    {
+      en: "Magnesium sulfate is administered in eclampsia primarily for which purpose?",
+      ar: "يُعطى كبريتات المغنيسيوم في الارتعاج أساسًا لأي غرض؟",
+      options: [
+        "Seizure prophylaxis",
+        "Lowering blood glucose",
+        "Treating infection",
+        "Increasing platelet count"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following drugs should be AVOIDED in the management of hypertension during pregnancy/eclampsia?",
+      ar: "أي من الأدوية الآتية يجب تجنبها في علاج ارتفاع ضغط الدم خلال الحمل أو الارتعاج؟",
+      options: [
+        "Nitroprusside and ACE inhibitors",
+        "Methyldopa",
+        "Hydralazine",
+        "IV Labetalol"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which target organ is associated with aortic dissection as a complication of hypertensive crisis?",
+      ar: "أي عضو مستهدف يرتبط بالانسلاخ الأبهري كمضاعفة لأزمة ارتفاع الضغط؟",
+      options: ["Aorta", "Retina", "Placenta", "Kidney only"],
+      correct: 0
+    },
+    {
+      en: "A patient presenting with chest pain and a 'ripping' back pain during a hypertensive crisis should raise suspicion for which diagnosis?",
+      ar: "مريض يعاني من ألم صدري وألم ظهري 'تمزقي' خلال أزمة ضغط يجب أن يثير الشك في أي تشخيص؟",
+      options: [
+        "Aortic dissection",
+        "Simple muscle strain",
+        "Mild anxiety",
+        "Constipation"
+      ],
+      correct: 0
+    },
+    {
+      en: "According to the lecture, what percentage of hypertensive crisis cases involve a single target organ rather than multiple organs?",
+      ar: "بحسب المحاضرة، ما هي نسبة حالات أزمة ارتفاع الضغط التي تشمل عضوًا واحدًا فقط بدلًا من أعضاء متعددة؟",
+      options: ["83%", "3%", "50%", "10%"],
+      correct: 0
+    }
+  ],
+
+  hepatic: [
+    {
+      en: "Hepatic encephalopathy is primarily caused by which underlying mechanism?",
+      ar: "اعتلال الدماغ الكبدي ينتج أساسًا عن أي آلية كامنة؟",
+      options: [
+        "Profound liver failure with accumulation of ammonia and toxic metabolites in the blood",
+        "Excess production of insulin by the liver",
+        "Direct bacterial infection of brain tissue",
+        "Primary kidney failure unrelated to the liver"
+      ],
+      correct: 0
+    },
+    {
+      en: "Hepatic coma represents which stage of hepatic encephalopathy?",
+      ar: "الغيبوبة الكبدية تمثل أي مرحلة من اعتلال الدماغ الكبدي؟",
+      options: [
+        "The advanced, most severe stage",
+        "The mildest, earliest stage",
+        "A completely separate unrelated condition",
+        "A stage that occurs only before liver disease develops"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized precipitating factor for hepatic encephalopathy?",
+      ar: "أي من الآتي يعتبر عاملًا محرضًا معروفًا لاعتلال الدماغ الكبدي؟",
+      options: [
+        "Increased protein intake",
+        "Decreased protein intake",
+        "Excessive hydration",
+        "Diarrhea with no constipation"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the pathophysiology of hepatic encephalopathy, damaged liver cells fail to perform which critical function?",
+      ar: "في الفيزيولوجيا المرضية لاعتلال الدماغ الكبدي، خلايا الكبد التالفة تفشل في أداء أي وظيفة أساسية؟",
+      options: [
+        "Detoxifying and converting ammonia to urea",
+        "Producing red blood cells",
+        "Filtering glucose from urine",
+        "Regulating body temperature"
+      ],
+      correct: 0
+    },
+    {
+      en: "Asterixis, a classic clinical sign of hepatic encephalopathy, is best described as which of the following?",
+      ar: "رفرفة اليدين (Asterixis)، وهي علامة سريرية كلاسيكية لاعتلال الدماغ الكبدي، توصف بشكل أفضل كأي مما يلي؟",
+      options: [
+        "A flapping tremor of the hands",
+        "A persistent resting tremor of the legs",
+        "A fixed muscle contracture",
+        "A skin rash on the palms"
+      ],
+      correct: 0
+    },
+    {
+      en: "Fetor hepaticus refers to which clinical finding in hepatic encephalopathy?",
+      ar: "رائحة الفم الكبدية (Fetor hepaticus) تشير إلى أي نتيجة سريرية في اعتلال الدماغ الكبدي؟",
+      options: [
+        "A breath odor resembling mowed grass, acetone, or old wine",
+        "A sweet fruity smell from the skin",
+        "Absence of any breath odor",
+        "A strong ammonia smell from the urine only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which combination of medications is classically used to reduce ammonia production and absorption in hepatic encephalopathy?",
+      ar: "أي مزيج من الأدوية يُستخدم بشكل كلاسيكي لتقليل إنتاج وامتصاص الأمونيا في اعتلال الدماغ الكبدي؟",
+      options: [
+        "Neomycin and Lactulose",
+        "Insulin and Metformin",
+        "Aspirin and Clopidogrel",
+        "Furosemide and Spironolactone alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "How does Lactulose help reduce ammonia levels in patients with hepatic encephalopathy?",
+      ar: "كيف يساعد اللاكتيلوز في تقليل مستويات الأمونيا عند مرضى اعتلال الدماغ الكبدي؟",
+      options: [
+        "By acidifying the colon, which traps ammonia and promotes its excretion",
+        "By directly neutralizing ammonia in the bloodstream",
+        "By increasing protein absorption in the gut",
+        "By suppressing liver enzyme activity"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why does GI bleeding worsen hepatic encephalopathy?",
+      ar: "لماذا يؤدي نزيف الجهاز الهضمي إلى تفاقم اعتلال الدماغ الكبدي؟",
+      options: [
+        "Blood in the gut increases nitrogenous compounds, raising ammonia production",
+        "GI bleeding lowers ammonia levels directly",
+        "GI bleeding has no relationship to ammonia metabolism",
+        "GI bleeding only affects kidney function, not the brain"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which liver function test finding is consistent with hepatic encephalopathy?",
+      ar: "أي نتيجة من فحوصات وظائف الكبد تتوافق مع اعتلال الدماغ الكبدي؟",
+      options: [
+        "Elevated liver enzymes indicating liver stress or damage",
+        "Normal liver enzymes with no abnormalities",
+        "Decreased liver enzymes below normal range",
+        "Liver enzymes are not relevant to this diagnosis"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which nursing intervention is appropriate for a patient at risk of hepatic encephalopathy due to constipation?",
+      ar: "أي تدخل تمريضي مناسب لمريض معرض لخطر اعتلال الدماغ الكبدي بسبب الإمساك؟",
+      options: [
+        "Encourage bowel cleansing",
+        "Restrict all fluid intake",
+        "Encourage high-protein meals",
+        "Administer sedatives liberally"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why should sedation generally be avoided in patients with hepatic encephalopathy?",
+      ar: "لماذا يجب تجنب التهدئة عمومًا عند مرضى اعتلال الدماغ الكبدي؟",
+      options: [
+        "Sedatives can worsen altered mental status and mask neurological deterioration",
+        "Sedatives directly cure hepatic encephalopathy",
+        "Sedation has no effect on the nervous system in liver disease",
+        "Sedatives lower ammonia levels"
+      ],
+      correct: 0
+    },
+    {
+      en: "A nursing diagnosis of 'fluid volume deficit' in a hepatic encephalopathy patient is most likely related to which factors?",
+      ar: "تشخيص تمريضي بـ 'نقص حجم السوائل' عند مريض اعتلال الدماغ الكبدي يرتبط على الأرجح بأي عوامل؟",
+      options: [
+        "Bleeding, decreased intake, and ascites",
+        "Excessive protein intake only",
+        "Overhydration from IV fluids",
+        "Normal fluid balance with no deficit"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is a low-protein diet often promoted in the nursing management of hepatic encephalopathy?",
+      ar: "لماذا يُشجَّع غالبًا النظام الغذائي قليل البروتين في الإدارة التمريضية لاعتلال الدماغ الكبدي؟",
+      options: [
+        "Protein breakdown contributes to ammonia production, which worsens encephalopathy",
+        "Protein has no relationship to ammonia levels",
+        "High protein diets cure liver failure",
+        "Low protein diets increase liver enzyme production"
+      ],
+      correct: 0
+    }
+  ],
+
+  ards: [
+    {
+      en: "ARDS is best classified as which of the following?",
+      ar: "يُصنَّف ARDS بشكل أفضل كأي مما يلي؟",
+      options: [
+        "A syndrome — a group of signs and symptoms, not a primary disease",
+        "A single specific infectious disease",
+        "A genetic disorder present from birth",
+        "A type of chronic obstructive pulmonary disease"
+      ],
+      correct: 0
+    },
+    {
+      en: "The underlying pathological process in ARDS involves breakdown of which structure, leading to fluid leakage into the alveoli?",
+      ar: "العملية المرضية الكامنة في ARDS تتضمن انهيار أي بنية، مما يؤدي لتسرب السوائل إلى الحويصلات الهوائية؟",
+      options: [
+        "The alveolar-capillary membrane",
+        "The pleural membrane only",
+        "The tracheal cartilage",
+        "The diaphragm"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is considered a direct (pulmonary) cause of ARDS?",
+      ar: "أي من الآتي يعتبر سببًا مباشرًا (رئويًا) لـ ARDS؟",
+      options: [
+        "Aspiration of stomach contents",
+        "Sepsis",
+        "Pancreatitis",
+        "Drug overdose"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is considered an indirect (non-pulmonary) cause of ARDS?",
+      ar: "أي من الآتي يعتبر سببًا غير مباشر (غير رئوي) لـ ARDS؟",
+      options: [
+        "Sepsis from viral or bacterial infection",
+        "Massive chest trauma",
+        "Aspiration / near drowning",
+        "Fat embolism entering pulmonary circulation"
+      ],
+      correct: 0
+    },
+    {
+      en: "In ARDS pathophysiology, inactivation of surfactant leads to which immediate consequence?",
+      ar: "في الفيزيولوجيا المرضية لـ ARDS، يؤدي تعطل مادة التوتر السطحي إلى أي نتيجة مباشرة؟",
+      options: [
+        "Alveolar collapse and impaired gas exchange",
+        "Improved oxygenation",
+        "Increased lung compliance",
+        "Decreased capillary permeability"
+      ],
+      correct: 0
+    },
+    {
+      en: "Refractory hypoxemia in ARDS is best defined as which of the following?",
+      ar: "نقص الأكسجة المقاوم في ARDS يُعرَّف بشكل أفضل كأي مما يلي؟",
+      options: [
+        "Low PaO₂ that does not respond to increased FiO₂ therapy",
+        "Normal PaO₂ that improves with minimal oxygen",
+        "High PaO₂ unresponsive to any therapy",
+        "A condition that only occurs with normal lung tissue"
+      ],
+      correct: 0
+    },
+    {
+      en: "During which stage of ARDS does the chest X-ray typically appear normal, with patient symptoms limited to restlessness, dyspnea, and tachypnea?",
+      ar: "في أي مرحلة من ARDS يكون الصدر الشعاعي طبيعيًا غالبًا، مع أعراض محدودة بالقلق وضيق التنفس وتسرع التنفس؟",
+      options: [
+        "Injury phase (first 12 hours)",
+        "Fibrotic stage (>10 days)",
+        "Proliferative stage (2–10 days)",
+        "Exudative stage (24 hours)"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which arterial blood gas pattern is typically seen in the fibrotic stage of ARDS (>10 days)?",
+      ar: "أي نمط لغازات الدم الشرياني يُلاحظ عادة في المرحلة التليفية من ARDS (أكثر من 10 أيام)؟",
+      options: [
+        "Hypoxemia with hypercapnia",
+        "Respiratory alkalosis only",
+        "Normal ABG values",
+        "Metabolic alkalosis"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is echocardiography useful in the diagnostic workup of suspected ARDS?",
+      ar: "لماذا يكون تخطيط صدى القلب مفيدًا في تقييم تشخيص ARDS المشتبه به؟",
+      options: [
+        "A normal heart size helps rule out cardiac failure as the cause of pulmonary edema",
+        "It directly measures lung surfactant levels",
+        "It replaces the need for chest X-ray entirely",
+        "It is used only to assess kidney function"
+      ],
+      correct: 0
+    },
+    {
+      en: "PEEP therapy improves oxygenation in ARDS through which mechanism?",
+      ar: "يحسّن علاج PEEP الأكسجة في ARDS من خلال أي آلية؟",
+      options: [
+        "Decreasing intrapulmonary shunt",
+        "Increasing intrapulmonary shunt",
+        "Reducing alveolar recruitment",
+        "Eliminating the need for mechanical ventilation"
+      ],
+      correct: 0
+    },
+    {
+      en: "Prone positioning is used in ARDS management to achieve which therapeutic benefit?",
+      ar: "تُستخدم وضعية الانبطاح في علاج ARDS لتحقيق أي فائدة علاجية؟",
+      options: [
+        "Relieving atelectasis and improving perfusion",
+        "Increasing the work of breathing",
+        "Worsening ventilation-perfusion matching",
+        "Eliminating the need for oxygen therapy"
+      ],
+      correct: 0
+    },
+    {
+      en: "Inhaled nitric oxide is used in ARDS for which specific purpose?",
+      ar: "يُستخدم أكسيد النيتريك المستنشق في ARDS لأي غرض محدد؟",
+      options: [
+        "As a selective pulmonary vasodilator",
+        "As a systemic antihypertensive agent",
+        "As an antibiotic",
+        "As a sedative agent"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized complication of ARDS?",
+      ar: "أي من الآتي يعتبر مضاعفة معروفة لـ ARDS؟",
+      options: [
+        "Ventilator-associated pneumonia (VAP)",
+        "Improved renal function",
+        "Spontaneous resolution with no complications",
+        "Increased lung compliance"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why should enteral feeding be initiated early (within 24 hours) in ARDS nursing care?",
+      ar: "لماذا يجب بدء التغذية المعوية مبكرًا (خلال 24 ساعة) في الرعاية التمريضية لـ ARDS؟",
+      options: [
+        "To support nutritional status and prevent malnutrition, a recognized complication",
+        "To replace the need for mechanical ventilation",
+        "Early feeding has no benefit and should be avoided",
+        "To directly treat the underlying lung injury"
+      ],
+      correct: 0
+    }
+  ],
+
+  acs: [
+    {
+      en: "Acute Coronary Syndrome (ACS) is almost always associated with which underlying event?",
+      ar: "تترافق متلازمة الشريان التاجي الحادة (ACS) دائمًا تقريبًا مع أي حدث كامن؟",
+      options: [
+        "Rupture of an atherosclerotic plaque with thrombosis of the infarct-related artery",
+        "A purely congenital coronary anomaly with no plaque involvement",
+        "Viral myocarditis only",
+        "Isolated electrolyte imbalance"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which spectrum of conditions falls under the umbrella of ACS?",
+      ar: "أي مجموعة من الحالات تقع تحت مسمى ACS؟",
+      options: [
+        "STEMI, NSTEMI, and unstable angina",
+        "Stable angina only",
+        "Heart failure and valvular disease only",
+        "Pericarditis and myocarditis only"
+      ],
+      correct: 0
+    },
+    {
+      en: "In STEMI, what is the typical finding regarding coronary artery occlusion and troponin levels?",
+      ar: "في STEMI، ما هي النتيجة النموذجية بخصوص انسداد الشريان التاجي ومستويات التروبونين؟",
+      options: [
+        "Complete blockage of the artery with elevated troponin",
+        "Partial blockage with normal troponin",
+        "No blockage with elevated troponin",
+        "Complete blockage with normal troponin"
+      ],
+      correct: 0
+    },
+    {
+      en: "How does unstable angina differ from NSTEMI in terms of biomarkers?",
+      ar: "كيف تختلف الذبحة غير المستقرة عن NSTEMI من ناحية المعلمات الحيوية؟",
+      options: [
+        "Troponin is negative in unstable angina but positive in NSTEMI",
+        "Troponin is positive in unstable angina but negative in NSTEMI",
+        "Both have identical elevated troponin levels",
+        "Troponin is not used to distinguish between them"
+      ],
+      correct: 0
+    },
+    {
+      en: "Stable angina ischemia is typically described as which type, in contrast to ACS?",
+      ar: "يوصف نقص التروية في الذبحة المستقرة عادة بأي نوع، على عكس ACS؟",
+      options: [
+        "Demand-led ischemia (with exertion, predictable)",
+        "Supply-led ischemia (at rest, unpredictable)",
+        "No ischemia is present in stable angina",
+        "Ischemia identical to STEMI in all aspects"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which cardiac biomarker is considered the gold standard for diagnosing myocardial infarction?",
+      ar: "أي معلم قلبي حيوي يعتبر المعيار الذهبي لتشخيص احتشاء عضلة القلب؟",
+      options: [
+        "Cardiac Troponin I",
+        "Myoglobin",
+        "CK-MB exclusively",
+        "White blood cell count"
+      ],
+      correct: 0
+    },
+    {
+      en: "Approximately how soon after MI does cardiac troponin typically begin to rise?",
+      ar: "بعد كم تقريبًا يبدأ التروبونين القلبي بالارتفاع عادة بعد الاحتشاء؟",
+      options: ["3–8 hours", "24–48 hours", "Immediately within seconds", "7 days"],
+      correct: 0
+    },
+    {
+      en: "A normal ECG in a patient with chest pain suspicious for ACS means which of the following?",
+      ar: "رسم قلب طبيعي عند مريض يعاني من ألم صدري يُشتبه بـ ACS يعني أي مما يلي؟",
+      options: [
+        "A normal ECG does NOT exclude ACS",
+        "ACS is definitively ruled out",
+        "The patient requires no further evaluation",
+        "Troponin testing becomes unnecessary"
+      ],
+      correct: 0
+    },
+    {
+      en: "ST elevation seen in leads II, III, and aVF indicates infarction of which region of the heart?",
+      ar: "ارتفاع ST الظاهر في التصريفات II وIII وaVF يشير لاحتشاء أي منطقة في القلب؟",
+      options: [
+        "Inferior wall",
+        "Anteroseptal wall",
+        "Lateral wall",
+        "Posterior wall"
+      ],
+      correct: 0
+    },
+    {
+      en: "For a patient at a PCI-capable hospital with STEMI, what is the recommended first medical contact-to-device time goal?",
+      ar: "لمريض STEMI في مستشفى قادر على القسطرة، ما هو الهدف الموصى به لوقت الاتصال الأول بالجهاز؟",
+      options: [
+        "≤ 90 minutes",
+        "≤ 6 hours",
+        "≤ 24 hours",
+        "No time goal is specified"
+      ],
+      correct: 0
+    },
+    {
+      en: "If a patient with STEMI is at a non-PCI center and transfer time exceeds 120 minutes, what is the recommended treatment?",
+      ar: "إذا كان مريض STEMI في مستشفى غير قادر على القسطرة وتجاوز وقت النقل 120 دقيقة، ما هو العلاج الموصى به؟",
+      options: [
+        "Fibrinolysis within 10 minutes",
+        "Wait for transfer regardless of delay",
+        "No treatment until arrival at a PCI center",
+        "Surgical bypass immediately without diagnostics"
+      ],
+      correct: 0
+    },
+    {
+      en: "Comparing hospital mortality between STEMI and NSTE-ACS, which statement is correct?",
+      ar: "بالمقارنة بين وفيات المستشفى لـ STEMI و NSTE-ACS، أي عبارة صحيحة؟",
+      options: [
+        "Hospital mortality is higher in STEMI than in NSTE-ACS",
+        "Hospital mortality is identical in both conditions at all time points",
+        "NSTE-ACS always has higher hospital mortality than STEMI",
+        "Mortality data does not differ by type of ACS at any time point"
+      ],
+      correct: 0
+    },
+    {
+      en: "Atypical presentations of ACS, such as epigastric pain or dizziness, are particularly common in which patient groups?",
+      ar: "العروض غير النمطية لـ ACS، كألم شرسوفي أو دوار، تكون شائعة بشكل خاص في أي مجموعات من المرضى؟",
+      options: [
+        "Young patients, elderly patients, and women",
+        "Only middle-aged men",
+        "Only athletes",
+        "Patients with no risk factors at all"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is silent ischemia particularly common in diabetic patients with ACS?",
+      ar: "لماذا يكون نقص التروية الصامت شائعًا بشكل خاص عند مرضى السكري المصابين بـ ACS؟",
+      options: [
+        "Diabetic neuropathy can blunt typical pain perception, masking classic chest pain symptoms",
+        "Diabetics never experience coronary artery disease",
+        "Diabetic patients always have more severe chest pain than non-diabetics",
+        "Silent ischemia is unrelated to diabetes"
+      ],
+      correct: 0
+    }
+  ],
+
+  angina: [
+    {
+      en: "Angina pectoris occurs as a result of which underlying physiological imbalance?",
+      ar: "تحدث ذبحة الصدر نتيجة لأي اختلال فيزيولوجي كامن؟",
+      options: [
+        "Myocardial oxygen demand exceeding oxygen supply during exertion",
+        "Excess oxygen supply relative to demand at all times",
+        "A primary disorder of the lungs unrelated to the heart",
+        "An isolated electrolyte imbalance with no ischemic component"
+      ],
+      correct: 0
+    },
+    {
+      en: "Stable angina is most accurately described by which mechanism?",
+      ar: "تُوصف الذبحة المستقرة بدقة أكبر بأي آلية؟",
+      options: [
+        "Fixed coronary stenosis causing demand ischemia, predictable with exertion",
+        "Coronary artery spasm occurring only at rest",
+        "Complete coronary occlusion with elevated biomarkers",
+        "Unpredictable pain with increasing frequency and severity"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which type of angina occurs at rest, during sleep, or with cold exposure due to transient coronary artery spasm rather than plaque?",
+      ar: "أي نوع من الذبحة يحدث في الراحة أو النوم أو مع التعرض للبرد بسبب تشنج عابر للشريان التاجي بدلًا من اللويحة؟",
+      options: [
+        "Prinzmetal / Variant angina",
+        "Stable angina",
+        "NSTEMI",
+        "STEMI"
+      ],
+      correct: 0
+    },
+    {
+      en: "In unstable angina, what is the expected finding regarding cardiac biomarkers?",
+      ar: "في الذبحة غير المستقرة، ما هي النتيجة المتوقعة بخصوص المعلمات القلبية الحيوية؟",
+      options: [
+        "Biomarkers are NOT elevated",
+        "Biomarkers are always significantly elevated",
+        "Biomarkers are elevated only in men",
+        "Biomarkers cannot be measured in unstable angina"
+      ],
+      correct: 0
+    },
+    {
+      en: "What does the 'M' in the MONA-BAH treatment protocol for ACS represent?",
+      ar: "ماذا يرمز حرف 'M' في بروتوكول علاج ACS المعروف بـ MONA-BAH؟",
+      options: ["Morphine", "Metoprolol", "Magnesium", "Methyldopa"],
+      correct: 0
+    },
+    {
+      en: "What does the 'H' in the MONA-BAH treatment protocol represent?",
+      ar: "ماذا يرمز حرف 'H' في بروتوكول علاج MONA-BAH؟",
+      options: ["Heparin", "Hydralazine", "Hydrocortisone", "Hyoscine"],
+      correct: 0
+    },
+    {
+      en: "What is the recommended dosing regimen for sublingual nitroglycerin in the setting of angina?",
+      ar: "ما هو نظام الجرعات الموصى به للنيتروجليسرين تحت اللسان في حالة الذبحة؟",
+      options: [
+        "0.3–0.4 mg every 5 minutes, up to 3 doses",
+        "A single dose of 5 mg only",
+        "10 mg given once daily",
+        "Continuous infusion only, never sublingual"
+      ],
+      correct: 0
+    },
+    {
+      en: "Sublingual nitroglycerin should be held in a patient with which finding?",
+      ar: "يجب إيقاف النيتروجليسرين تحت اللسان عند مريض لديه أي نتيجة؟",
+      options: [
+        "Systolic blood pressure less than 90–100 mmHg",
+        "Systolic blood pressure greater than 160 mmHg",
+        "Heart rate of 80 beats per minute",
+        "Normal oxygen saturation"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the target oxygen saturation (SaO₂) goal when administering supplemental oxygen in angina/ACS management?",
+      ar: "ما هو هدف تشبع الأكسجين (SaO₂) المستهدف عند إعطاء الأكسجين التكميلي في علاج الذبحة/ACS؟",
+      options: ["Greater than 90%", "Greater than 99% at all times", "Below 85%", "No target is specified"],
+      correct: 0
+    },
+    {
+      en: "In the comparison between unstable angina, NSTEMI, and STEMI, which condition is characterized by complete coronary occlusion?",
+      ar: "في المقارنة بين الذبحة غير المستقرة وNSTEMI وSTEMI، أي حالة تتميز بانسداد كلي للشريان التاجي؟",
+      options: ["STEMI", "Unstable angina", "NSTEMI", "None of these involve occlusion"],
+      correct: 0
+    },
+    {
+      en: "Which contraindication should be assessed before administering aspirin in suspected ACS?",
+      ar: "أي مانع استخدام يجب تقييمه قبل إعطاء الأسبرين عند الاشتباه بـ ACS؟",
+      options: [
+        "Active peptic ulcer disease or bleeding disorder",
+        "Mild seasonal allergy",
+        "History of well-controlled hypertension",
+        "Normal renal function"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the recommended timing for fibrinolytic therapy administration in eligible STEMI patients?",
+      ar: "ما هو التوقيت الموصى به لإعطاء علاج حال الجلطة في مرضى STEMI المؤهلين؟",
+      options: ["Within 30 minutes", "Within 6 hours", "Within 24 hours", "Timing is not important"],
+      correct: 0
+    },
+    {
+      en: "Which stage of atherosclerosis progression is characterized by a vulnerable plaque prone to rupture with limited blood flow?",
+      ar: "أي مرحلة من تطور تصلب الشرايين تتميز بلويحة هشة معرضة للانفجار مع تدفق دم محدود؟",
+      options: ["Late stage", "Normal artery", "Early stage", "Intermediate stage only"],
+      correct: 0
+    },
+    {
+      en: "Which modifiable risk factor combination is associated with increased angina risk?",
+      ar: "أي مجموعة من عوامل الخطر القابلة للتعديل ترتبط بزيادة خطر الذبحة؟",
+      options: [
+        "High LDL, low HDL, smoking, and hypertension",
+        "Family history and ethnicity only",
+        "Age and sex only",
+        "None of the listed factors are modifiable"
+      ],
+      correct: 0
+    }
+  ],
+
+  icp: [
+    {
+      en: "Which of the following best describes an epidural hematoma?",
+      ar: "أي مما يلي يصف بشكل أفضل النزيف فوق الجافية؟",
+      options: [
+        "An arterial bleed between the dura and skull that forms rapidly and is a surgical emergency",
+        "A slow-forming venous bleed below the dura",
+        "A bleed into the subarachnoid space only",
+        "A condition with no risk of rapid deterioration"
+      ],
+      correct: 0
+    },
+    {
+      en: "A subdural hematoma typically results from which type of bleeding?",
+      ar: "ينتج النزيف تحت الجافية عادة عن أي نوع من النزيف؟",
+      options: [
+        "Venous bleeding from tears in bridging veins, forming slowly",
+        "Arterial bleeding from the meningeal artery, forming rapidly",
+        "Bleeding strictly confined to the subarachnoid space",
+        "No actual bleeding, only edema"
+      ],
+      correct: 0
+    },
+    {
+      en: "According to the key formula in neurocritical care, how is Cerebral Perfusion Pressure (CPP) calculated?",
+      ar: "بحسب المعادلة الأساسية في رعاية الأعصاب الحرجة، كيف يُحسب الضغط التروي للدماغ (CPP)؟",
+      options: [
+        "CPP = MAP − ICP",
+        "CPP = ICP − MAP",
+        "CPP = MAP + ICP",
+        "CPP = ICP ÷ MAP"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the generally accepted target value for Cerebral Perfusion Pressure (CPP)?",
+      ar: "ما هي القيمة المستهدفة المقبولة عمومًا للضغط التروي للدماغ (CPP)؟",
+      options: ["Greater than 70 mmHg", "Less than 30 mmHg", "Exactly 0 mmHg", "Greater than 200 mmHg"],
+      correct: 0
+    },
+    {
+      en: "In adults, an intracranial pressure (ICP) value above which threshold requires active treatment?",
+      ar: "عند البالغين، قيمة الضغط داخل الجمجمة (ICP) أعلى من أي حد تتطلب علاجًا فعليًا؟",
+      options: ["20 mmHg", "5 mmHg", "1 mmHg", "100 mmHg"],
+      correct: 0
+    },
+    {
+      en: "Which device is considered the gold standard for monitoring intracranial pressure?",
+      ar: "أي جهاز يعتبر المعيار الذهبي لمراقبة الضغط داخل الجمجمة؟",
+      options: [
+        "Intraventricular catheter (ventriculostomy)",
+        "Subarachnoid bolt only",
+        "Standard blood pressure cuff",
+        "Pulse oximeter"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is lumbar puncture contraindicated in a patient with raised intracranial pressure?",
+      ar: "لماذا يُمنع البزل القطني عند مريض يعاني من ارتفاع الضغط داخل الجمجمة؟",
+      options: [
+        "It carries a risk of brain herniation",
+        "It always lowers ICP safely",
+        "It has no risks in this setting",
+        "It is the preferred method for measuring ICP in these patients"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which preemptive measure is recommended to help control intracranial pressure?",
+      ar: "أي إجراء وقائي يُوصى به للمساعدة في التحكم بالضغط داخل الجمجمة؟",
+      options: [
+        "Elevating the head of bed to 30 degrees",
+        "Keeping the head of bed completely flat at all times",
+        "Encouraging vigorous coughing",
+        "Restricting all sedation"
+      ],
+      correct: 0
+    },
+    {
+      en: "Mannitol is used in the active treatment of raised ICP to achieve which effect?",
+      ar: "يُستخدم المانيتول في العلاج الفعلي لارتفاع الضغط داخل الجمجمة لتحقيق أي تأثير؟",
+      options: [
+        "Osmotic reduction of cerebral edema",
+        "Increasing cerebral blood volume",
+        "Treating infection",
+        "Lowering blood glucose"
+      ],
+      correct: 0
+    },
+    {
+      en: "Cushing's Triad is a recognized clinical manifestation of which condition?",
+      ar: "ثالوث كوشينج هو علامة سريرية معروفة لأي حالة؟",
+      options: [
+        "Raised intracranial pressure",
+        "Hypoglycemia",
+        "Normal neurological status",
+        "Mild dehydration"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why should morphine sulfate generally be avoided in patients with raised ICP?",
+      ar: "لماذا يجب تجنب كبريتات المورفين عمومًا عند مرضى ارتفاع الضغط داخل الجمجمة؟",
+      options: [
+        "It is a respiratory depressant that can increase CO₂ and worsen cerebral edema",
+        "It has no effect on respiratory drive",
+        "It directly lowers ICP in all patients",
+        "It is the preferred analgesic in raised ICP"
+      ],
+      correct: 0
+    },
+    {
+      en: "If clear drainage is noted from the nose or ears after a head injury, what should the nurse suspect and what action should be avoided?",
+      ar: "إذا لوحظ تصريف صافٍ من الأنف أو الأذن بعد إصابة الرأس، ماذا يجب أن يشتبه الممرض وما الإجراء الذي يجب تجنبه؟",
+      options: [
+        "Suspect CSF leakage; avoid suctioning or cleaning the nose",
+        "Suspect a common cold; suction the nose immediately",
+        "No action or suspicion is needed",
+        "Pack the nose tightly with gauze immediately"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why should patients with raised ICP be instructed to avoid coughing?",
+      ar: "لماذا يجب توجيه مرضى ارتفاع الضغط داخل الجمجمة لتجنب السعال؟",
+      options: [
+        "Coughing increases intracranial pressure",
+        "Coughing decreases intracranial pressure",
+        "Coughing has no relation to ICP",
+        "Coughing improves cerebral perfusion"
+      ],
+      correct: 0
+    },
+    {
+      en: "A concussion, as described in head injury classification, is best characterized by which feature?",
+      ar: "الارتجاج، كما يوصف في تصنيف إصابات الرأس، يتميز بشكل أفضل بأي خاصية؟",
+      options: [
+        "Temporary loss of consciousness with no structural brain damage",
+        "Permanent structural brain damage with arterial bleeding",
+        "Always requires emergency surgery",
+        "Involves a skull fracture with dura mater breach"
+      ],
+      correct: 0
+    }
+  ],
+
+  hemo: [
+    {
+      en: "Hemodynamic monitoring is defined as the measurement of which parameters within the cardiovascular system?",
+      ar: "تُعرَّف المراقبة الديناميكية الدموية بأنها قياس أي معايير داخل الجهاز القلبي الوعائي؟",
+      options: [
+        "Pressure, flow, and oxygenation",
+        "Only heart rate",
+        "Only blood glucose",
+        "Only body temperature"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is one of the seven core components of hemodynamic monitoring described in the lecture?",
+      ar: "أي من الآتي يعتبر أحد المكونات السبعة الأساسية للمراقبة الديناميكية الدموية الموضحة في المحاضرة؟",
+      options: [
+        "Cardiac output",
+        "Blood glucose level",
+        "Liver enzyme levels",
+        "Urinary protein level"
+      ],
+      correct: 0
+    },
+    {
+      en: "When measuring blood pressure with an indirect sphygmomanometer, what error results from using a cuff that is too small?",
+      ar: "عند قياس ضغط الدم بكفة غير مباشرة، أي خطأ ينتج عن استخدام كفة أصغر من المطلوب؟",
+      options: [
+        "A falsely HIGH blood pressure reading",
+        "A falsely LOW blood pressure reading",
+        "No effect on the reading at all",
+        "An immediate equipment malfunction only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which arterial site is generally preferred for invasive (direct) arterial blood pressure monitoring?",
+      ar: "أي موضع شرياني يُفضَّل عمومًا للمراقبة الغازية (المباشرة) لضغط الدم الشرياني؟",
+      options: ["Radial artery", "Brachial artery only", "Dorsalis pedis only", "Femoral artery only"],
+      correct: 0
+    },
+    {
+      en: "Why must an arterial line transducer be 'zeroed' before use?",
+      ar: "لماذا يجب 'تصفير' محول الضغط الشرياني قبل الاستخدام؟",
+      options: [
+        "To confirm the monitor reads zero when no pressure is applied, ensuring accurate readings",
+        "Zeroing has no clinical purpose",
+        "To increase the catheter's lifespan only",
+        "To prevent infection at the insertion site"
+      ],
+      correct: 0
+    },
+    {
+      en: "What is the normal range for central venous pressure (CVP)?",
+      ar: "ما هو المعدل الطبيعي للضغط الوريدي المركزي (CVP)؟",
+      options: ["2–6 mmHg (2–8 cmH₂O)", "20–30 mmHg", "50–70 mmHg", "0 mmHg always"],
+      correct: 0
+    },
+    {
+      en: "An elevated CVP (greater than 7 mmHg) is most consistent with which clinical picture?",
+      ar: "ارتفاع الضغط الوريدي المركزي (أكثر من 7 ملم زئبق) يتوافق بشكل أكبر مع أي صورة سريرية؟",
+      options: [
+        "Volume overload or heart failure",
+        "Hypovolemic shock",
+        "Normal euvolemic status",
+        "Severe dehydration only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized indication for inserting a central venous catheter (CVC)?",
+      ar: "أي من الآتي يعتبر مؤشرًا معروفًا لإدخال قسطرة وريدية مركزية (CVC)؟",
+      options: [
+        "Administration of vasopressor drug therapy",
+        "Routine oral medication administration",
+        "Simple peripheral blood draw",
+        "Measuring oral temperature"
+      ],
+      correct: 0
+    },
+    {
+      en: "The Swan-Ganz (pulmonary artery) catheter uses which technique to measure cardiac output?",
+      ar: "تستخدم قسطرة سوان-غانز (الشريان الرئوي) أي تقنية لقياس النتاج القلبي؟",
+      options: [
+        "Thermodilution technique",
+        "Direct visual estimation",
+        "Urinary output calculation",
+        "Pulse oximetry alone"
+      ],
+      correct: 0
+    },
+    {
+      en: "When measuring jugular venous pressure (JVP), at what angle should the patient be positioned?",
+      ar: "عند قياس الضغط الوريدي الوداجي (JVP)، بأي زاوية يجب وضع المريض؟",
+      options: ["45 degrees", "0 degrees (flat)", "90 degrees (fully upright)", "180 degrees"],
+      correct: 0
+    },
+    {
+      en: "In cardiogenic shock, hemodynamic monitoring would typically reveal which pattern?",
+      ar: "في الصدمة القلبية، المراقبة الديناميكية الدموية تظهر عادة أي نمط؟",
+      options: [
+        "Increased CVP with decreased cardiac output",
+        "Decreased CVP with decreased cardiac output",
+        "Decreased systemic vascular resistance with increased cardiac output",
+        "Normal CVP and normal cardiac output"
+      ],
+      correct: 0
+    },
+    {
+      en: "In hypovolemic shock, what hemodynamic pattern is typically observed?",
+      ar: "في الصدمة نقص الحجم، أي نمط ديناميكي دموي يُلاحظ عادة؟",
+      options: [
+        "Decreased CVP with decreased cardiac output",
+        "Increased CVP with decreased cardiac output",
+        "Decreased systemic vascular resistance with increased cardiac output",
+        "Increased CVP with increased cardiac output"
+      ],
+      correct: 0
+    },
+    {
+      en: "In distributive (septic) shock, which hemodynamic pattern is characteristic?",
+      ar: "في الصدمة التوزيعية (الإنتانية)، أي نمط ديناميكي دموي يعتبر مميزًا؟",
+      options: [
+        "Decreased systemic vascular resistance with increased cardiac output",
+        "Increased systemic vascular resistance with decreased cardiac output",
+        "Increased CVP with decreased cardiac output",
+        "No measurable hemodynamic changes occur"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is hemodynamic monitoring considered essential in critically ill ICU patients?",
+      ar: "لماذا تُعتبر المراقبة الديناميكية الدموية ضرورية لمرضى العناية المركزة الحرجين؟",
+      options: [
+        "It guides fluid resuscitation and vasoactive drug therapy",
+        "It has no role in guiding any treatment decisions",
+        "It is only used for documentation purposes",
+        "It replaces the need for any other vital sign monitoring"
+      ],
+      correct: 0
+    }
+  ],
+
+  gib: [
+    {
+      en: "Upper gastrointestinal bleeding (GIB) is defined as bleeding originating from which anatomical location?",
+      ar: "يُعرَّف النزيف الهضمي العلوي بأنه نزيف ينشأ من أي موقع تشريحي؟",
+      options: [
+        "Above the Ligament of Treitz",
+        "Below the Ligament of Treitz",
+        "Exclusively from the rectum",
+        "Exclusively from the colon"
+      ],
+      correct: 0
+    },
+    {
+      en: "Compared to lower GI bleeding, upper GI bleeding occurs with what relative frequency?",
+      ar: "بالمقارنة مع النزيف الهضمي السفلي، يحدث النزيف الهضمي العلوي بأي معدل نسبي؟",
+      options: [
+        "Approximately 4 times more common",
+        "Approximately 4 times less common",
+        "Exactly the same frequency",
+        "It never occurs in hospitalized patients"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a common cause of upper GI bleeding?",
+      ar: "أي من الآتي يعتبر سببًا شائعًا للنزيف الهضمي العلوي؟",
+      options: [
+        "Peptic ulcer disease",
+        "Diverticular disease",
+        "Hemorrhoids",
+        "Anal fissure"
+      ],
+      correct: 0
+    },
+    {
+      en: "Esophageal varices typically develop as a consequence of which underlying condition?",
+      ar: "تتطور دوالي المريء عادة كنتيجة لأي حالة كامنة؟",
+      options: [
+        "Portal hypertension",
+        "Systemic hypertension only",
+        "Hypoglycemia",
+        "Hyperthyroidism"
+      ],
+      correct: 0
+    },
+    {
+      en: "A Mallory-Weiss tear is most commonly caused by which mechanism?",
+      ar: "ينتج تمزق ملوري-فايس بشكل أكثر شيوعًا عن أي آلية؟",
+      options: [
+        "Repetitive forceful vomiting causing a longitudinal tear at the gastro-esophageal junction",
+        "Chronic constipation",
+        "Long-standing portal hypertension only",
+        "Bacterial infection of the esophagus"
+      ],
+      correct: 0
+    },
+    {
+      en: "Why is it clinically important to classify upper GI bleeding as variceal versus non-variceal?",
+      ar: "لماذا من المهم سريريًا تصنيف النزيف الهضمي العلوي كدوالي أو غير دوالي؟",
+      options: [
+        "Because management differs significantly between the two types",
+        "Because the classification has no impact on treatment",
+        "Because both types always require identical treatment",
+        "Because only variceal bleeding requires any treatment at all"
+      ],
+      correct: 0
+    },
+    {
+      en: "Melena, a clinical presentation of GI bleeding, is best described as which of the following?",
+      ar: "البراز الأسود (Melena)، أحد المظاهر السريرية للنزيف الهضمي، يوصف بشكل أفضل كأي مما يلي؟",
+      options: [
+        "Black, tarry stool",
+        "Bright red rectal bleeding only",
+        "Clear, watery stool",
+        "Normal-colored stool with no blood"
+      ],
+      correct: 0
+    },
+    {
+      en: "Hematochezia, often associated with lower GI bleeding, refers to which finding?",
+      ar: "البراز الدموي (Hematochezia)، المرتبط غالبًا بالنزيف الهضمي السفلي، يشير لأي نتيجة؟",
+      options: [
+        "Bright red blood passed in the stool",
+        "Black tarry stool only",
+        "Vomiting of blood",
+        "Absence of any visible blood"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which laboratory finding suggests a severe GI bleed even before significant hemoglobin drop is seen?",
+      ar: "أي نتيجة معملية تشير إلى نزيف هضمي شديد حتى قبل ظهور انخفاض كبير في الهيموغلوبين؟",
+      options: [
+        "Elevated blood urea",
+        "Decreased blood urea",
+        "Normal prothrombin time",
+        "Decreased white blood cell count"
+      ],
+      correct: 0
+    },
+    {
+      en: "In the initial resuscitation of a patient with active GI bleeding, what is the recommended first step?",
+      ar: "في الإنعاش الأولي لمريض يعاني من نزيف هضمي نشط، ما هي الخطوة الأولى الموصى بها؟",
+      options: [
+        "Assess and secure Airway, Breathing, and Circulation (ABC) along with vital signs",
+        "Immediately perform surgery without any assessment",
+        "Administer oral fluids only",
+        "Wait for endoscopy results before any intervention"
+      ],
+      correct: 0
+    },
+    {
+      en: "For a patient with active GI bleeding and hemodynamic instability, what is the recommended initial IV access?",
+      ar: "لمريض يعاني من نزيف هضمي نشط وعدم استقرار ديناميكي دموي، ما هو الوريد الموصى به مبدئيًا؟",
+      options: [
+        "Two wide-bore IV cannulas",
+        "A single small-gauge IV line",
+        "No IV access is needed initially",
+        "Only a central line, never peripheral access"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which medication is commonly used in the management of variceal bleeding to reduce portal pressure?",
+      ar: "أي دواء يُستخدم بشكل شائع في علاج النزيف الدوالي لتقليل ضغط الوريد البابي؟",
+      options: [
+        "IV Terlipressin",
+        "IV Insulin",
+        "Oral Metformin",
+        "IV Furosemide"
+      ],
+      correct: 0
+    },
+    {
+      en: "In non-variceal upper GI bleeding, which medication class is commonly administered as a high-dose IV bolus?",
+      ar: "في النزيف الهضمي العلوي غير الدوالي، أي فئة دوائية تُعطى بشكل شائع كجرعة وريدية عالية؟",
+      options: [
+        "Proton pump inhibitors (e.g., IV Omeprazole)",
+        "Beta-blockers",
+        "Insulin",
+        "Antihistamines"
+      ],
+      correct: 0
+    },
+    {
+      en: "Which of the following is a recognized cause of lower GI bleeding?",
+      ar: "أي من الآتي يعتبر سببًا معروفًا للنزيف الهضمي السفلي؟",
+      options: [
+        "Diverticular disease",
+        "Esophageal varices",
+        "Mallory-Weiss tear",
+        "Peptic ulcer disease"
+      ],
+      correct: 0
+    },
+    {
+      en: "Surgery is indicated for GI bleeding in which scenario?",
+      ar: "تكون الجراحة مؤشرة في النزيف الهضمي في أي سيناريو؟",
+      options: [
+        "Failure of medical treatment and endoscopic hemostasis with persistent hypotension",
+        "Any minor episode of GI bleeding regardless of severity",
+        "Whenever a patient is hemodynamically stable with resolved bleeding",
+        "Surgery is never indicated for GI bleeding"
+      ],
+      correct: 0
+    }
+  ],
+
+  // ═══════════════════ ORGAN TRANSPLANTATION ═══════════════════
+  organ: [
+    {
+      en: "Which type of transplantation is MOST common in human transplants?",
+      ar: "ما النوع الأكثر شيوعاً في زراعة الأعضاء البشرية؟",
+      options: ["Autograft", "Isograft", "Allograft", "Xenograft"],
+      correct: 2
+    },
+    {
+      en: "A patient receives a kidney from his identical twin. What type of transplant is this?",
+      ar: "مريض تلقى كلية من توأمه المتطابق — ما نوع هذا الزرع؟",
+      options: ["Autograft", "Isograft", "Allograft", "Xenograft"],
+      correct: 1
+    },
+    {
+      en: "A pig heart valve is transplanted into a human. This is classified as:",
+      ar: "صمام قلب خنزير تم زرعه في إنسان — كيف يُصنَّف هذا الإجراء؟",
+      options: ["Allograft", "Isograft", "Autograft", "Xenograft"],
+      correct: 3
+    },
+    {
+      en: "Hyper-acute graft rejection begins:",
+      ar: "الرفض الفائق الحدة يبدأ في أي وقت؟",
+      options: ["After 4–5 years", "After the first week", "Within minutes to hours", "After one month"],
+      correct: 2
+    },
+    {
+      en: "A transplanted heart shows progressive loss of function after 5 years. This is best described as:",
+      ar: "قلب مزروع يُظهر فقدان تدريجي للوظيفة بعد 5 سنوات — ما أفضل وصف لهذا؟",
+      options: ["Hyper-acute rejection", "Acute rejection", "Chronic rejection", "Graft tolerance"],
+      correct: 2
+    },
+    {
+      en: "What is the ONLY treatment for chronic graft rejection?",
+      ar: "ما العلاج الوحيد للرفض المزمن للطعم؟",
+      options: ["High-dose corticosteroids", "Removal of the graft", "Retransplantation", "Calcineurin inhibitors"],
+      correct: 2
+    },
+    {
+      en: "Which of the following is a Calcineurin inhibitor used in immunosuppressive therapy?",
+      ar: "أي الأدوية التالية هو مثبط الكالسينيورين المستخدم في العلاج المثبط للمناعة؟",
+      options: ["Hydrocortisone", "Mycophenolic acid", "Cyclosporine", "Azathioprine"],
+      correct: 2
+    },
+    {
+      en: "Which cells are considered 'Antigen Presenting Cells' in graft rejection?",
+      ar: "أي الخلايا تُعتبر 'خلايا مقدِّمة للمستضد' في رفض الطعم؟",
+      options: ["T-cells and B-cells only", "Dendritic cells, macrophages, activated B-cells", "Natural killer cells only", "Monocytes only"],
+      correct: 1
+    },
+    {
+      en: "A deceased donor's organs are kept viable using:",
+      ar: "كيف تُحافظ على حياة أعضاء المتبرع المتوفى؟",
+      options: ["Ice storage only", "Mechanical ventilators", "Antibiotic infusion", "Hypothermic perfusion alone"],
+      correct: 1
+    },
+    {
+      en: "Split transplantation of a deceased donor's organ specifically applies to which organ?",
+      ar: "الزرع المنقسم من متبرع متوفى يُطبَّق بشكل خاص على أي عضو؟",
+      options: ["Heart", "Kidney", "Liver", "Lung"],
+      correct: 2
+    },
+    {
+      en: "The FIRST entire face transplant was performed in the year:",
+      ar: "أجريت أول عملية زراعة وجه كامل في عام؟",
+      options: ["1967", "2005", "2008", "2013"],
+      correct: 3
+    },
+    {
+      en: "Acute graft rejection is treated by:",
+      ar: "كيف يُعالَج الرفض الحاد للطعم؟",
+      options: ["Retransplantation", "Removal of the graft or organ", "Increasing fluid intake", "Long-term antibiotics"],
+      correct: 1
+    },
+    {
+      en: "A living donor who donates a single kidney is an example of donating:",
+      ar: "متبرع حي يتبرع بكلية واحدة — ما نوع ما يتبرع به؟",
+      options: ["A non-renewable organ", "A renewable organ", "A tissue graft only", "A xenograft"],
+      correct: 1
+    },
+    {
+      en: "Hydrocortisone in immunosuppressive therapy belongs to which drug class?",
+      ar: "الهيدروكورتيزون في العلاج المثبط للمناعة ينتمي لأي فئة دوائية؟",
+      options: ["Anti-proliferatives", "Calcineurin inhibitors", "Corticosteroids", "Monoclonal antibodies"],
+      correct: 2
+    },
+    {
+      en: "Which transplant type transfers tissue from one site to another within the SAME individual?",
+      ar: "أي نوع من الزرع ينطوي على نقل نسيج من موضع لآخر داخل نفس الشخص؟",
+      options: ["Allograft", "Xenograft", "Isograft", "Autograft"],
+      correct: 3
+    }
+  ],
+
+  // ═══════════════════ RESPIRATORY FAILURE ═══════════════════
+  resp: [
+    {
+      en: "What is the ONLY diagnostic test that CONFIRMS the diagnosis of Acute Respiratory Failure (ARF)?",
+      ar: "ما الفحص التشخيصي الوحيد الذي يؤكد تشخيص فشل الجهاز التنفسي الحاد؟",
+      options: ["Chest X-ray", "Arterial Blood Gas (ABG)", "Pulmonary function tests", "V/Q scan"],
+      correct: 1
+    },
+    {
+      en: "A patient has PaO₂ of 55 mmHg with normal PaCO₂. This is classified as:",
+      ar: "مريض لديه PaO₂ = 55 مع PaCO₂ طبيعي — كيف يُصنَّف؟",
+      options: ["Type II (Hypercapnic) ARF", "Type I (Hypoxemic) ARF", "Compensated respiratory alkalosis", "Normal ABG values"],
+      correct: 1
+    },
+    {
+      en: "Type II Respiratory Failure is defined by which ABG pattern?",
+      ar: "أي نمط من ABG يُعرِّف فشل التنفس من النوع الثاني؟",
+      options: ["PaO₂ < 60, PaCO₂ < 35, pH > 7.45", "PaO₂ < 60, PaCO₂ > 50, pH ≤ 7.30", "PaO₂ normal, PaCO₂ > 50, pH normal", "PaO₂ > 80, PaCO₂ > 50, pH < 7.30"],
+      correct: 1
+    },
+    {
+      en: "The HALLMARK (cardinal sign) of Acute Respiratory Failure is:",
+      ar: "العلامة الأساسية لفشل الجهاز التنفسي الحاد هي؟",
+      options: ["Hypercapnia", "Hypoxemia", "Metabolic acidosis", "Tachycardia"],
+      correct: 1
+    },
+    {
+      en: "Blood passing through non-ventilated lung areas (atelectasis, pneumonia) causes which ARF mechanism?",
+      ar: "مرور الدم في مناطق الرئة غير المهواة كالانخماص والالتهاب الرئوي يسبب أي آلية من آليات ARF؟",
+      options: ["Alveolar hypoventilation", "V/Q mismatching", "Intrapulmonary shunting", "Dead space ventilation"],
+      correct: 2
+    },
+    {
+      en: "A patient with ARF has pH of 7.22. The most appropriate ventilation strategy is:",
+      ar: "مريض ARF لديه pH = 7.22 — ما استراتيجية التهوية الأنسب؟",
+      options: ["Non-invasive ventilation only", "Supplemental O₂ by mask", "Invasive MV, volume-controlled, assist/control mode", "Prone positioning only"],
+      correct: 2
+    },
+    {
+      en: "The SpO₂ target when providing supplemental oxygen in ARF is:",
+      ar: "ما المستهدف من SpO₂ عند إعطاء الأكسجين التكميلي في ARF؟",
+      options: ["> 85%", "> 90%", "> 95%", "100%"],
+      correct: 1
+    },
+    {
+      en: "Venous thromboembolism (VTE) in ARF patients is PREVENTED by:",
+      ar: "الوقاية من الانصمام الخثاري الوريدي في مرضى ARF تتم باستخدام؟",
+      options: ["IV antibiotics + diuretics", "Pneumatic compression + heparin (UFH/LMWH)", "High-dose corticosteroids", "Bronchodilators only"],
+      correct: 1
+    },
+    {
+      en: "Morning headache, disorientation, and muscle weakness in an ARF patient suggest:",
+      ar: "صداع صباحي وتشوش وضعف عضلي في مريض ARF يقترح؟",
+      options: ["Type I (Hypoxemic) ARF", "Type II (Hypercapnic) ARF", "Metabolic alkalosis", "Pulmonary embolism"],
+      correct: 1
+    },
+    {
+      en: "Which of the following is an EXTRAPULMONARY cause of ARF?",
+      ar: "أي من التالي يُعد سبباً خارج رئوي لـ ARF؟",
+      options: ["Severe pneumonia", "Asthma exacerbation", "Guillain-Barré syndrome", "Cardiac pulmonary edema"],
+      correct: 2
+    },
+    {
+      en: "GI bleeding in ARF patients is PREVENTED by:",
+      ar: "الوقاية من نزيف الجهاز الهضمي في مرضى ARF تتم باستخدام؟",
+      options: ["Nasogastric tube feeding only", "H₂ blockers, cytoprotective agents, PPIs", "IV antibiotics", "High fluid intake"],
+      correct: 1
+    },
+    {
+      en: "Alveolar hypoventilation as a cause of ARF results in:",
+      ar: "نقص التهوية السنخية كسبب لـ ARF يؤدي إلى؟",
+      options: ["Hypoxemia only", "Hypercapnia only", "Hypoxemia + Hypercapnia", "Respiratory alkalosis"],
+      correct: 2
+    },
+    {
+      en: "Cyanosis, tachycardia, arrhythmia, restlessness and inability to speak in ARF best matches which type?",
+      ar: "زرقة وتسرع قلب واضطراب نظم وهياج وعدم قدرة على الكلام في ARF يناسب أي نوع؟",
+      options: ["Type II — Hypercapnic", "Type I — Hypoxemic", "Mixed ARF", "Compensated failure"],
+      correct: 1
+    },
+    {
+      en: "What are the PRIMARY GOALS of ARF management?",
+      ar: "ما الأهداف الأساسية من إدارة فشل الجهاز التنفسي الحاد؟",
+      options: [
+        "Correct underlying cause + promote gas exchange + correct acidosis + prevent complications",
+        "Sedation + bed rest only",
+        "Diuresis + fluid restriction",
+        "Bronchodilators only"
+      ],
+      correct: 0
+    },
+    {
+      en: "Bronchodilators (β₂-agonists) in ARF management primarily aim to:",
+      ar: "موسعات القصبات في العلاج الدوائي لـ ARF تهدف أساساً إلى؟",
+      options: ["Reduce fluid in alveoli", "Relieve bronchospasm and open airways", "Sedate the patient", "Increase CO₂ excretion directly"],
+      correct: 1
+    }
+  ],
+
+  // ═══════════════════ SHOCK ═══════════════════
+  shock: [
+    {
+      en: "Shock is best defined as:",
+      ar: "أفضل تعريف للصدمة هو؟",
+      options: [
+        "Sudden drop in blood pressure below 90 mmHg",
+        "Inadequate tissue perfusion & O₂ delivery to meet cellular metabolic needs",
+        "Cardiac arrest with loss of consciousness",
+        "Severe dehydration causing tachycardia"
+      ],
+      correct: 1
+    },
+    {
+      en: "The HALLMARK that distinguishes Neurogenic Shock from other distributive shocks is:",
+      ar: "العلامة المميزة للصدمة العصبية عن غيرها من الصدمات التوزيعية هي؟",
+      options: ["High fever + high WBC", "Vasodilation + bradycardia", "Vasodilation + tachycardia", "Peripheral edema + cyanosis"],
+      correct: 1
+    },
+    {
+      en: "A patient develops shock after massive GI bleeding. What type of shock is this?",
+      ar: "مريض يصاب بصدمة بعد نزيف معوي حاد — ما نوع هذه الصدمة؟",
+      options: ["Cardiogenic shock", "Hypovolemic shock", "Distributive shock", "Obstructive shock"],
+      correct: 1
+    },
+    {
+      en: "First-line treatment for anaphylactic shock is:",
+      ar: "خط العلاج الأول للصدمة التأقية هو؟",
+      options: ["IV norepinephrine", "IM Epinephrine", "Broad-spectrum antibiotics", "IV fluid bolus only"],
+      correct: 1
+    },
+    {
+      en: "In the Irreversible Stage of shock WITHOUT intervention, the expected outcome is:",
+      ar: "في المرحلة اللارجعية من الصدمة بدون تدخل طبي، ما المتوقع؟",
+      options: ["Full recovery with supportive care", "Permanent organ failure requiring dialysis", "Multi-organ failure leading to death", "Spontaneous compensation by the body"],
+      correct: 2
+    },
+    {
+      en: "What is the NORMAL Central Venous Pressure (CVP) range?",
+      ar: "ما النطاق الطبيعي للضغط الوريدي المركزي (CVP)؟",
+      options: ["2–4 mmHg", "6–8 mmHg", "10–12 mmHg", "14–18 mmHg"],
+      correct: 1
+    },
+    {
+      en: "A patient has cardiogenic shock following an acute MI. The MOST appropriate initial pharmacological treatment is:",
+      ar: "مريض يعاني من صدمة قلبية بعد احتشاء حاد — ما أنسب علاج دوائي أولي؟",
+      options: ["Rapid IV fluids + vasodilators", "Inotropes (e.g., dobutamine) + diuretics", "Broad-spectrum antibiotics", "IM Epinephrine"],
+      correct: 1
+    },
+    {
+      en: "Septic shock is treated with:",
+      ar: "الصدمة الإنتانية تُعالَج بـ؟",
+      options: [
+        "IV fluids only",
+        "Broad-spectrum antibiotics + vasopressors (e.g., norepinephrine)",
+        "Epinephrine IM + antihistamines",
+        "Chest tube insertion"
+      ],
+      correct: 1
+    },
+    {
+      en: "During the Compensatory Stage of shock, the body responds by:",
+      ar: "خلال المرحلة التعويضية من الصدمة، يستجيب الجسم بـ؟",
+      options: ["Vasodilation + bradycardia", "Tachycardia + vasoconstriction + increased RR", "Oliguria only", "Metabolic alkalosis"],
+      correct: 1
+    },
+    {
+      en: "Pulmonary embolism causing shock is classified as:",
+      ar: "الانصمام الرئوي الذي يسبب صدمة يُصنَّف تحت؟",
+      options: ["Hypovolemic shock", "Cardiogenic shock", "Distributive shock", "Obstructive shock"],
+      correct: 3
+    },
+    {
+      en: "Normal oxygen saturation (SpO₂) according to normal vital signs is:",
+      ar: "ما النطاق الطبيعي لتشبع الأكسجين (SpO₂) حسب العلامات الحيوية الطبيعية؟",
+      options: ["> 88%", "> 90%", "> 96%", "> 99% only"],
+      correct: 2
+    },
+    {
+      en: "In the Initial Stage of shock, the cellular-level change that occurs is:",
+      ar: "في المرحلة الأولى من الصدمة، ما التغيير الذي يحدث على المستوى الخلوي؟",
+      options: ["Aerobic metabolism increases", "Shift to anaerobic metabolism → lactic acidosis", "Glycolysis stops completely", "Mitochondria become overactive"],
+      correct: 1
+    },
+    {
+      en: "Widespread vasodilation with decreased SVR and increased capillary permeability best describes:",
+      ar: "توسع واسع في الأوعية مع انخفاض المقاومة الوعائية الجهازية وزيادة نفاذية الشعيرات — يصف أي نوع صدمة؟",
+      options: ["Cardiogenic shock", "Hypovolemic shock", "Septic (distributive) shock", "Obstructive shock"],
+      correct: 2
+    },
+    {
+      en: "In neurogenic shock, the primary cause of hemodynamic instability is:",
+      ar: "في الصدمة العصبية، السبب الرئيسي لعدم استقرار الديناميكا الدموية هو؟",
+      options: ["Loss of blood volume", "Pump failure of the heart", "Loss of sympathetic tone → unopposed vagal activity", "Histamine-mediated vasodilation"],
+      correct: 2
+    },
+    {
+      en: "The general initial approach to ALL types of shock includes:",
+      ar: "الخطوات الأولية العامة لجميع أنواع الصدمة تشمل؟",
+      options: [
+        "Specific antibiotics only",
+        "Airway, Breathing, Circulation (ABCs) + O₂ + IV fluids + vitals monitoring",
+        "Immediate surgery for all cases",
+        "High-dose steroids for all types"
+      ],
+      correct: 1
+    }
+  ]
+};
+
+// ============================================================
+// STATE
+// ============================================================
+const state = {
+  vent: {},
+  dic: {},
+  dka: {},
+  stroke: {},
+  thyroid: {},
+  htn: {},
+  hepatic: {},
+  ards: {},
+  acs: {},
+  angina: {},
+  icp: {},
+  hemo: {},
+  gib: {},
+  organ: {},
+  resp: {},
+  shock: {}
+};
+
+// ============================================================
+// RENDER QUESTIONS
+// ============================================================
+function renderQuestions(lecKey) {
+  const container = document.getElementById('questions-' + lecKey);
+  const qs = QUESTIONS[lecKey];
+  container.innerHTML = '';
+
+  qs.forEach((q, qIdx) => {
+    const card = document.createElement('div');
+    card.className = 'qcard';
+    card.id = `qcard-${lecKey}-${qIdx}`;
+
+    const optionsHtml = q.options.map((opt, oIdx) => {
+      const letter = String.fromCharCode(65 + oIdx);
+      return `<div class="opt" data-lec="${lecKey}" data-q="${qIdx}" data-o="${oIdx}">
+                <span class="letter">${letter}</span>
+                <span class="opt-text">${opt}</span>
+              </div>`;
+    }).join('');
+
+    card.innerHTML = `
+      <div class="qhead">
+        <div class="qnum">${qIdx + 1}</div>
+        <div class="qtext-block">
+          <div class="qtext-en">${q.en}</div>
+          <div class="qtext-ar">${q.ar}</div>
+        </div>
+      </div>
+      <div class="options">${optionsHtml}</div>
+      <div class="feedback" id="feedback-${lecKey}-${qIdx}" style="display:none;"></div>
+    `;
+    container.appendChild(card);
+  });
+
+  // Attach click listeners
+  container.querySelectorAll('.opt').forEach(optEl => {
+    optEl.addEventListener('click', handleOptionClick);
+  });
+}
+
+// ============================================================
+// HANDLE ANSWER CLICK
+// ============================================================
+function handleOptionClick(e) {
+  const el = e.currentTarget;
+  const lec = el.dataset.lec;
+  const qIdx = parseInt(el.dataset.q);
+  const oIdx = parseInt(el.dataset.o);
+
+  // Already answered? Lock it.
+  if (state[lec][qIdx] !== undefined) return;
+
+  const q = QUESTIONS[lec][qIdx];
+  const isCorrect = oIdx === q.correct;
+  state[lec][qIdx] = { picked: oIdx, correct: isCorrect };
+
+  const card = document.getElementById(`qcard-${lec}-${qIdx}`);
+  card.classList.add('locked');
+  card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+  const allOpts = card.querySelectorAll('.opt');
+  allOpts.forEach((optEl, idx) => {
+    if (idx === q.correct) {
+      optEl.classList.add(isCorrect && idx === oIdx ? 'correct-pick' : 'reveal-correct');
+    }
+    if (idx === oIdx && !isCorrect) {
+      optEl.classList.add('wrong-pick');
+    }
+  });
+
+  const feedbackEl = document.getElementById(`feedback-${lec}-${qIdx}`);
+  feedbackEl.style.display = 'flex';
+  if (isCorrect) {
+    feedbackEl.className = 'feedback correct';
+    feedbackEl.innerHTML = '✅ Correct! — إجابة صحيحة';
+  } else {
+    feedbackEl.className = 'feedback wrong';
+    feedbackEl.innerHTML = `❌ Incorrect — إجابة خاطئة`;
+  }
+
+  updateProgress();
+}
+
+// ============================================================
+// PROGRESS / SCORE TRACKING
+// ============================================================
+function updateProgress() {
+  const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+  const qs = QUESTIONS[activeTab];
+  const answers = state[activeTab];
+  const answeredCount = Object.keys(answers).length;
+  const correctCount = Object.values(answers).filter(a => a.correct).length;
+  const total = qs.length;
+
+  document.getElementById('progressFill').style.width = total ? `${(answeredCount/total)*100}%` : '0%';
+  document.getElementById('scorePill').textContent = `${answeredCount} / ${total} answered — ${correctCount} correct`;
+
+  const resultsCard = document.getElementById(`results-${activeTab}`);
+  const scoreEl = document.getElementById(`score-${activeTab}`);
+  if (answeredCount === total && total > 0) {
+    const pct = Math.round((correctCount/total)*100);
+    scoreEl.textContent = `${pct}%`;
+    resultsCard.classList.add('show');
+    resultsCard.innerHTML = `
+      <div class="big-score">${pct}%</div>
+      <div class="label-en">${correctCount} / ${total} correct — Final Score</div>
+      <div class="label-ar">النتيجة النهائية: ${correctCount} من ${total} إجابة صحيحة</div>
+    `;
+  } else {
+    resultsCard.classList.remove('show');
+  }
+}
+
+// ============================================================
+// RESET
+// ============================================================
+function resetLecture(lecKey) {
+  state[lecKey] = {};
+  renderQuestions(lecKey);
+  updateProgress();
+}
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    updateProgress();
+  });
+});
+
+// ============================================================
+// RESET BUTTONS
+// ============================================================
+document.querySelectorAll('[data-reset]').forEach(btn => {
+  btn.addEventListener('click', () => resetLecture(btn.dataset.reset));
+});
+
+// ============================================================
+// INIT
+// ============================================================
+renderQuestions('vent');
+renderQuestions('dic');
+renderQuestions('dka');
+updateProgress();
+
+</script>
+</body>
+</html>

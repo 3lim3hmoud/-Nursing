@@ -1,0 +1,166 @@
+
+<style>
+  .quiz-wrap { padding: 1rem 0; font-family: var(--font-sans); }
+  .progress { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1rem; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
+  .q-type { font-size: 12px; font-weight: 500; color: var(--color-text-info); background: var(--color-background-info); padding: 3px 10px; border-radius: var(--border-radius-md); display: inline-block; margin-bottom: 0.75rem; }
+  .q-text { font-size: 15px; color: var(--color-text-primary); margin-bottom: 1rem; line-height: 1.6; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt-btn { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; text-align: left; font-size: 14px; color: var(--color-text-primary); cursor: pointer; transition: background 0.15s; }
+  .opt-btn:hover { background: var(--color-background-tertiary); }
+  .opt-btn.correct { background: var(--color-background-success); border-color: var(--color-border-success); color: var(--color-text-success); }
+  .opt-btn.wrong { background: var(--color-background-danger); border-color: var(--color-border-danger); color: var(--color-text-danger); }
+  .opt-btn:disabled { cursor: default; }
+  .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: var(--border-radius-md); font-size: 14px; line-height: 1.6; display: none; }
+  .feedback.show { display: block; }
+  .feedback.ok { background: var(--color-background-success); color: var(--color-text-success); }
+  .feedback.bad { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .next-btn { margin-top: 1rem; padding: 9px 20px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); cursor: pointer; font-size: 14px; display: none; }
+  .next-btn.show { display: inline-block; }
+  .essay-area { width: 100%; box-sizing: border-box; min-height: 120px; font-size: 14px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); padding: 10px; font-family: var(--font-sans); color: var(--color-text-primary); background: var(--color-background-secondary); resize: vertical; }
+  .submit-btn { margin-top: 0.75rem; padding: 9px 20px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); cursor: pointer; font-size: 14px; }
+  .score-box { text-align: center; padding: 2rem; }
+  .score-num { font-size: 42px; font-weight: 500; color: var(--color-text-primary); }
+  .score-label { font-size: 15px; color: var(--color-text-secondary); margin-top: 0.5rem; }
+  .retry-btn { margin-top: 1.5rem; padding: 9px 24px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); cursor: pointer; font-size: 14px; }
+  .rule-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; }
+</style>
+
+<div class="quiz-wrap">
+  <h2 class="sr-only">Insulin dose adjustment quiz for DKA management</h2>
+  <div class="rule-box">
+    <strong style="color: var(--color-text-primary);">Quick rule reminder:</strong><br>
+    Drop &lt; 50 → Increase (0.15 × weight) &nbsp;|&nbsp; Drop 50–80 → Same dose &nbsp;|&nbsp; Drop &gt; 80 → Decrease (0.05 × weight)
+  </div>
+  <div class="progress" id="progress">Question 1 of 4</div>
+  <div class="card" id="q-card"></div>
+</div>
+
+<script>
+const questions = [
+  {
+    type: "MCQ",
+    text: "A patient weighing 70 kg is started on insulin infusion for DKA. What is the correct starting dose?",
+    options: ["5 units/hour", "7 units/hour", "10 units/hour", "14 units/hour"],
+    answer: 1,
+    explanation: "Starting dose = 0.1 × weight. So 0.1 × 70 = 7 units/hour. This is always the first step."
+  },
+  {
+    type: "MCQ",
+    text: "Mary (60 kg) is on insulin infusion. Her glucose dropped from 400 to 370 mg/dL in one hour — a drop of 30. What should you do?",
+    options: [
+      "Decrease dose: 0.05 × 60 = 3 units/hour",
+      "Keep the same dose",
+      "Increase dose: 0.15 × 60 = 9 units/hour",
+      "Stop insulin immediately"
+    ],
+    answer: 2,
+    explanation: "Glucose dropped only 30 mg/dL — less than 50 → insulin is not working enough → INCREASE the dose. Formula: 0.15 × 60 = 9 units/hour."
+  },
+  {
+    type: "MCQ",
+    text: "After the dose change, Mary's glucose dropped from 370 to 305 mg/dL (dropped 65). What do you do now?",
+    options: [
+      "Increase dose: 0.15 × 60 = 9 units/hour",
+      "Decrease dose: 0.05 × 60 = 3 units/hour",
+      "Keep the same dose",
+      "Stop insulin, target reached"
+    ],
+    answer: 2,
+    explanation: "Glucose dropped 65 mg/dL — this is between 50 and 80 → perfect drop rate → KEEP the same dose. No change needed!"
+  },
+  {
+    type: "Essay",
+    text: "A patient weighing 80 kg has DKA with glucose 520.\n\n• Hour 1: glucose drops from 520 → 490 (drop = 30)\n• Hour 2: glucose drops from 490 → 415 (drop = 75)\n• Hour 3: glucose drops from 415 → 325 (drop = 90)\n\nFor each hour, state what dose you give and why.",
+    modelAnswer: "Start: 0.1 × 80 = 8 units/hour\n\nAfter hour 1: dropped 30 (less than 50) → INCREASE → 0.15 × 80 = 12 units/hour\n\nAfter hour 2: dropped 75 (between 50–80) → SAME DOSE → keep 12 units/hour\n\nAfter hour 3: dropped 90 (more than 80) → DECREASE → 0.05 × 80 = 4 units/hour"
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function render() {
+  const q = questions[current];
+  document.getElementById('progress').textContent = `Question ${current + 1} of ${questions.length}`;
+  const card = document.getElementById('q-card');
+
+  if (q.type === "MCQ") {
+    card.innerHTML = `
+      <span class="q-type">Multiple choice</span>
+      <p class="q-text">${q.text}</p>
+      <div class="options" id="opts">
+        ${q.options.map((o, i) => `<button class="opt-btn" onclick="pick(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}
+      </div>
+      <div class="feedback" id="fb"></div>
+      <button class="next-btn" id="nxt" onclick="next()">${current === questions.length - 1 ? 'See results' : 'Next question'} →</button>
+    `;
+  } else {
+    card.innerHTML = `
+      <span class="q-type">Short answer</span>
+      <p class="q-text">${q.text.replace(/\n/g,'<br>')}</p>
+      <textarea class="essay-area" id="essay" placeholder="Write your answer here..."></textarea><br>
+      <button class="submit-btn" onclick="showModel()">Show model answer</button>
+      <div class="feedback" id="fb"></div>
+      <button class="next-btn" id="nxt" onclick="next()">See results →</button>
+    `;
+  }
+  answered = false;
+}
+
+function pick(i) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const btns = document.querySelectorAll('.opt-btn');
+  const fb = document.getElementById('fb');
+  const nxt = document.getElementById('nxt');
+  btns.forEach(b => b.disabled = true);
+  btns[i].classList.add(i === q.answer ? 'correct' : 'wrong');
+  btns[q.answer].classList.add('correct');
+  if (i === q.answer) {
+    score++;
+    fb.className = 'feedback ok show';
+    fb.innerHTML = '<strong>Correct!</strong> ' + q.explanation;
+  } else {
+    fb.className = 'feedback bad show';
+    fb.innerHTML = '<strong>Not quite.</strong> ' + q.explanation;
+  }
+  nxt.className = 'next-btn show';
+}
+
+function showModel() {
+  const q = questions[current];
+  const fb = document.getElementById('fb');
+  const nxt = document.getElementById('nxt');
+  fb.className = 'feedback ok show';
+  fb.innerHTML = '<strong>Model answer:</strong><br>' + q.modelAnswer.replace(/\n/g,'<br>');
+  nxt.className = 'next-btn show';
+}
+
+function next() {
+  current++;
+  if (current >= questions.length) showScore();
+  else render();
+}
+
+function showScore() {
+  const mcqTotal = questions.filter(q => q.type === 'MCQ').length;
+  document.getElementById('progress').textContent = 'Quiz complete';
+  document.getElementById('q-card').innerHTML = `
+    <div class="score-box">
+      <div class="score-num">${score} / ${mcqTotal}</div>
+      <div class="score-label">MCQ score (essay is self-assessed)</div>
+      <br>
+      <button class="retry-btn" onclick="restart()">Try again</button>
+    </div>
+  `;
+}
+
+function restart() {
+  current = 0; score = 0;
+  render();
+}
+
+render();
+</script>

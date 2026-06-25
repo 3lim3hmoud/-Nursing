@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Care Nursing — Final Exam MCQ Bank</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d2e;
+    --card: #212438;
+    --border: #2e3250;
+    --accent-organ: #6c63ff;
+    --accent-resp: #00c9a7;
+    --accent-shock: #ff6b6b;
+    --text: #e8eaf6;
+    --muted: #8b90b8;
+    --correct: #22c55e;
+    --wrong: #ef4444;
+    --neutral: #3b4080;
+    --gold: #f5c542;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 24px 0;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  header p {
+    font-size: .82rem;
+    color: var(--muted);
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: .82rem;
+    font-weight: 600;
+    background: var(--surface);
+    color: var(--muted);
+    transition: all .2s;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    position: relative;
+    top: 1px;
+  }
+
+  .tab-btn.active-organ  { background: #2a2550; color: var(--accent-organ); border-color: var(--accent-organ); }
+  .tab-btn.active-resp   { background: #0d2a25; color: var(--accent-resp);  border-color: var(--accent-resp);  }
+  .tab-btn.active-shock  { background: #2a1515; color: var(--accent-shock); border-color: var(--accent-shock); }
+
+  .tab-btn .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+
+  /* ── PANELS ── */
+  .panel { display: none; padding: 28px 16px 60px; max-width: 860px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* ── PANEL HEADER ── */
+  .panel-header {
+    padding: 22px 24px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .panel-header h2 { font-size: 1.15rem; font-weight: 700; }
+  .panel-header p { font-size: .8rem; opacity: .75; margin-top: 3px; }
+
+  .score-badge {
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: rgba(255,255,255,.08);
+    white-space: nowrap;
+  }
+
+  .panel-organ .panel-header  { background: linear-gradient(135deg,#2a2550,#1a1d2e); border: 1px solid var(--accent-organ); }
+  .panel-resp  .panel-header  { background: linear-gradient(135deg,#0d2a25,#1a1d2e); border: 1px solid var(--accent-resp);  }
+  .panel-shock .panel-header  { background: linear-gradient(135deg,#2a1515,#1a1d2e); border: 1px solid var(--accent-shock); }
+
+  /* ── QUESTION CARD ── */
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+    transition: border-color .2s;
+  }
+
+  .q-num {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: .55;
+  }
+
+  .q-text-en {
+    font-size: .97rem;
+    font-weight: 600;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  .q-text-ar {
+    font-family: 'Amiri', serif;
+    font-size: .93rem;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.7;
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* ── OPTIONS ── */
+  .options { margin-top: 16px; display: grid; gap: 8px; }
+
+  .opt-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: .87rem;
+    color: var(--text);
+    text-align: left;
+    transition: all .18s;
+  }
+
+  .opt-btn:hover:not(:disabled) { border-color: var(--muted); background: #252844; }
+
+  .opt-key {
+    min-width: 26px; height: 26px;
+    border-radius: 7px;
+    background: rgba(255,255,255,.07);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .opt-btn.correct  { border-color: var(--correct); background: rgba(34,197,94,.12); }
+  .opt-btn.wrong    { border-color: var(--wrong);   background: rgba(239,68,68,.12);  }
+  .opt-btn.revealed { border-color: var(--correct); background: rgba(34,197,94,.07); }
+  .opt-btn:disabled { cursor: default; }
+
+  .opt-btn.correct .opt-key  { background: var(--correct); color: #000; }
+  .opt-btn.wrong   .opt-key  { background: var(--wrong);   color: #fff; }
+  .opt-btn.revealed .opt-key { background: var(--correct); color: #000; }
+
+  /* ── EXPLANATION ── */
+  .explanation {
+    display: none;
+    margin-top: 14px;
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: .83rem;
+    line-height: 1.6;
+    border-left: 3px solid;
+  }
+
+  .explanation.show { display: block; }
+  .explanation.correct-exp { border-color: var(--correct); background: rgba(34,197,94,.07); color: #86efac; }
+  .explanation.wrong-exp   { border-color: var(--wrong);   background: rgba(239,68,68,.07);  color: #fca5a5; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap { margin-bottom: 22px; }
+  .progress-info { display: flex; justify-content: space-between; font-size: .77rem; color: var(--muted); margin-bottom: 6px; }
+  .progress-bar { height: 5px; background: var(--surface); border-radius: 50px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 50px; transition: width .4s; }
+
+  /* ── RESET BTN ── */
+  .reset-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 11px 32px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: .87rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+
+  .reset-btn:hover { opacity: .8; }
+
+  .panel-organ .reset-btn  { background: var(--accent-organ); color: #fff; }
+  .panel-resp  .reset-btn  { background: var(--accent-resp);  color: #000; }
+  .panel-shock .reset-btn  { background: var(--accent-shock); color: #fff; }
+
+  /* ── RESULT BANNER ── */
+  .result-banner {
+    display: none;
+    text-align: center;
+    padding: 22px;
+    border-radius: 14px;
+    margin-top: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    animation: pop .3s ease;
+  }
+
+  .result-banner.show { display: block; }
+  @keyframes pop { from { transform: scale(.95); opacity:0; } to { transform: scale(1); opacity:1; } }
+
+  @media (max-width: 600px) {
+    .tab-btn { padding: 8px 14px; font-size: .75rem; }
+    .panel { padding: 18px 10px 50px; }
+    .q-text-en { font-size: .91rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏥 Critical Care Nursing — Final Exam MCQ Bank</h1>
+  <p>بنك أسئلة اختيارية للعناية المركزة — مستوى امتحان الفاينل</p>
+  <div class="tabs">
+    <button class="tab-btn active-organ" onclick="showTab('organ')" id="tab-organ">
+      <span class="dot" style="background:var(--accent-organ)"></span>Organ Transplantation
+    </button>
+    <button class="tab-btn" onclick="showTab('resp')" id="tab-resp">
+      <span class="dot" style="background:var(--accent-resp)"></span>Respiratory Failure
+    </button>
+    <button class="tab-btn" onclick="showTab('shock')" id="tab-shock">
+      <span class="dot" style="background:var(--accent-shock)"></span>Shock
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════ ORGAN TRANSPLANTATION ═══════════════════ -->
+<div class="panel panel-organ active" id="panel-organ">
+  <div class="panel-header">
+    <div>
+      <h2>🫀 Organ Transplantation</h2>
+      <p>زراعة الأعضاء — 15 Final-Style MCQs</p>
+    </div>
+    <div class="score-badge" id="score-organ">Score: 0 / 15</div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-info"><span>Progress</span><span id="prog-organ-txt">0 / 15 answered</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-organ" style="width:0%;background:var(--accent-organ)"></div></div>
+  </div>
+  <div id="qs-organ"></div>
+  <div class="result-banner" id="result-organ"></div>
+  <button class="reset-btn" onclick="resetPanel('organ')">🔄 Restart Quiz</button>
+</div>
+
+<!-- ═══════════════════ RESPIRATORY FAILURE ═══════════════════ -->
+<div class="panel panel-resp" id="panel-resp">
+  <div class="panel-header">
+    <div>
+      <h2>🫁 Respiratory Failure</h2>
+      <p>فشل الجهاز التنفسي — 15 Final-Style MCQs</p>
+    </div>
+    <div class="score-badge" id="score-resp">Score: 0 / 15</div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-info"><span>Progress</span><span id="prog-resp-txt">0 / 15 answered</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-resp" style="width:0%;background:var(--accent-resp)"></div></div>
+  </div>
+  <div id="qs-resp"></div>
+  <div class="result-banner" id="result-resp"></div>
+  <button class="reset-btn" onclick="resetPanel('resp')">🔄 Restart Quiz</button>
+</div>
+
+<!-- ═══════════════════ SHOCK ═══════════════════ -->
+<div class="panel panel-shock" id="panel-shock">
+  <div class="panel-header">
+    <div>
+      <h2>⚡ Shock</h2>
+      <p>الصدمة — 15 Final-Style MCQs</p>
+    </div>
+    <div class="score-badge" id="score-shock">Score: 0 / 15</div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-info"><span>Progress</span><span id="prog-shock-txt">0 / 15 answered</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-shock" style="width:0%;background:var(--accent-shock)"></div></div>
+  </div>
+  <div id="qs-shock"></div>
+  <div class="result-banner" id="result-shock"></div>
+  <button class="reset-btn" onclick="resetPanel('shock')">🔄 Restart Quiz</button>
+</div>
+
+<script>
+const DATA = {
+
+  organ: [
+    {
+      en: "Which type of transplantation is MOST common in human transplants?",
+      ar: "ما النوع الأكثر شيوعاً في زراعة الأعضاء البشرية؟",
+      options: ["Autograft", "Isograft", "Allograft", "Xenograft"],
+      correct: 2,
+      exp: "Allograft (between genetically different individuals of the same species) is the most common type in human transplantation."
+    },
+    {
+      en: "A patient receives a kidney from his identical twin. What type of transplant is this?",
+      ar: "مريض تلقى كلية من توأمه المتطابق — ما نوع هذا الزرع؟",
+      options: ["Autograft", "Isograft", "Allograft", "Xenograft"],
+      correct: 1,
+      exp: "Isograft is the transfer of tissue/organ between genetically identical individuals, such as identical twins."
+    },
+    {
+      en: "A pig heart valve is transplanted into a human. This is classified as:",
+      ar: "صمام قلب خنزير تم زرعه في إنسان — كيف يُصنَّف هذا الإجراء؟",
+      options: ["Allograft", "Isograft", "Autograft", "Xenograft"],
+      correct: 3,
+      exp: "Xenograft is transplantation of organ/tissue from one species to another (e.g., pig valve → human)."
+    },
+    {
+      en: "Hyper-acute graft rejection begins:",
+      ar: "الرفض الفائق الحدة يبدأ في أي وقت؟",
+      options: ["After 4–5 years", "After the first week", "Within minutes to hours", "After one month"],
+      correct: 2,
+      exp: "Hyper-acute rejection begins within minutes/hours after the host's blood vessels are anastomosed to graft vessels."
+    },
+    {
+      en: "A transplanted heart shows progressive loss of function after 5 years. This is best described as:",
+      ar: "قلب مزروع يُظهر فقدان تدريجي للوظيفة بعد 5 سنوات — ما أفضل وصف لهذا؟",
+      options: ["Hyper-acute rejection", "Acute rejection", "Chronic rejection", "Graft tolerance"],
+      correct: 2,
+      exp: "Chronic rejection occurs in solid organs (heart, lungs) with loss of graft function over a prolonged period, usually after 4–5 years."
+    },
+    {
+      en: "What is the ONLY treatment for chronic graft rejection?",
+      ar: "ما العلاج الوحيد للرفض المزمن للطعم؟",
+      options: ["High-dose corticosteroids", "Removal of the graft", "Retransplantation", "Calcineurin inhibitors"],
+      correct: 2,
+      exp: "Chronic rejection is considered irreversible and is treated only by retransplantation."
+    },
+    {
+      en: "Which of the following is a Calcineurin inhibitor used in immunosuppressive therapy?",
+      ar: "أي الأدوية التالية هو مثبط الكالسينيورين المستخدم في العلاج المثبط للمناعة؟",
+      options: ["Hydrocortisone", "Mycophenolic acid", "Cyclosporine", "Azathioprine"],
+      correct: 2,
+      exp: "Cyclosporine is a Calcineurin inhibitor used in immunosuppressive therapy after transplantation."
+    },
+    {
+      en: "Which immune cells are considered 'Antigen Presenting Cells' in graft rejection?",
+      ar: "أي الخلايا المناعية تُعتبر 'خلايا مقدِّمة للمستضد' في رفض الطعم؟",
+      options: ["T-cells and B-cells", "Dendritic cells, macrophages, activated B-cells", "Natural killer cells only", "Monocytes only"],
+      correct: 1,
+      exp: "Antigen Presenting Cells involved in rejection include dendritic cells, macrophages, and activated B-cells."
+    },
+    {
+      en: "A deceased donor's organs are kept viable using:",
+      ar: "كيف تُحافظ على حياة أعضاء المتبرع المتوفى؟",
+      options: ["Ice storage only", "Mechanical ventilators", "Antibiotic infusion", "Hypothermic perfusion alone"],
+      correct: 1,
+      exp: "Deceased donors are brain-dead individuals whose organs are kept viable by mechanical ventilators."
+    },
+    {
+      en: "Split transplantation of a deceased donor's organ specifically applies to which organ?",
+      ar: "الزرع المنقسم من متبرع متوفى يُطبَّق بشكل خاص على أي عضو؟",
+      options: ["Heart", "Kidney", "Liver", "Lung"],
+      correct: 2,
+      exp: "Split transplantation specifically involves the liver, which can be divided between two recipients (e.g., adult and child)."
+    },
+    {
+      en: "The FIRST entire face transplant was performed in the year:",
+      ar: "أجريت أول عملية زراعة وجه كامل في عام؟",
+      options: ["1967", "2005", "2008", "2013"],
+      correct: 3,
+      exp: "The first entire face transplant milestone was achieved in 2013."
+    },
+    {
+      en: "Acute graft rejection is treated by:",
+      ar: "كيف يُعالَج الرفض الحاد للطعم؟",
+      options: ["Retransplantation", "Removal of the graft or organ", "Increasing fluid intake", "Long-term antibiotics"],
+      correct: 1,
+      exp: "Both hyper-acute and acute rejection are treated by removal of the tissue/organ."
+    },
+    {
+      en: "A living donor who donates a single kidney is an example of donating:",
+      ar: "متبرع حي يتبرع بكلية واحدة — ما نوع ما يتبرع به؟",
+      options: ["A non-renewable organ", "A renewable organ", "A paired organ only", "A tissue graft"],
+      correct: 1,
+      exp: "Living donors donate renewable organs or parts of organs in which the remaining portion can regenerate (e.g., single kidney, partial liver)."
+    },
+    {
+      en: "Hydrocortisone used in immunosuppressive therapy belongs to which drug class?",
+      ar: "الهيدروكورتيزون المستخدم في العلاج المثبط للمناعة ينتمي لأي فئة دوائية؟",
+      options: ["Anti-proliferatives", "Calcineurin inhibitors", "Corticosteroids", "Monoclonal antibodies"],
+      correct: 2,
+      exp: "Hydrocortisone is a corticosteroid, given as high doses for a short period as part of immunosuppressive therapy."
+    },
+    {
+      en: "Which type of transplant involves transferring tissue from one site to another within the SAME individual?",
+      ar: "أي نوع من الزرع ينطوي على نقل نسيج من موضع لآخر داخل نفس الشخص؟",
+      options: ["Allograft", "Xenograft", "Isograft", "Autograft"],
+      correct: 3,
+      exp: "Autograft is the transfer of tissue/organ from one body site to another in the same individual."
+    },
+  ],
+
+  resp: [
+    {
+      en: "What is the ONLY diagnostic test that CONFIRMS the diagnosis of Acute Respiratory Failure (ARF)?",
+      ar: "ما الفحص التشخيصي الوحيد الذي يؤكد تشخيص فشل الجهاز التنفسي الحاد؟",
+      options: ["Chest X-ray", "Arterial Blood Gas (ABG)", "Pulmonary function tests", "V/Q scan"],
+      correct: 1,
+      exp: "ABG (Arterial Blood Gas) is the only test that confirms ARF — it determines PaO₂, PaCO₂, and pH."
+    },
+    {
+      en: "A patient has PaO₂ of 55 mmHg with normal PaCO₂. This is classified as:",
+      ar: "مريض لديه PaO₂ = 55 مع PaCO₂ طبيعي — كيف يُصنَّف؟",
+      options: ["Type II (Hypercapnic) ARF", "Type I (Hypoxemic) ARF", "Compensated respiratory alkalosis", "Normal ABG values"],
+      correct: 1,
+      exp: "Type I ARF (Hypoxemic): PaO₂ < 60 mmHg with normal or low PaCO₂ (≤40 mmHg)."
+    },
+    {
+      en: "Type II Respiratory Failure is defined by which ABG pattern?",
+      ar: "أي نمط من ABG يُعرِّف فشل التنفس من النوع الثاني؟",
+      options: ["PaO₂ < 60, PaCO₂ < 35, pH > 7.45", "PaO₂ < 60, PaCO₂ > 50, pH ≤ 7.30", "PaO₂ normal, PaCO₂ > 50, pH normal", "PaO₂ > 80, PaCO₂ > 50, pH < 7.30"],
+      correct: 1,
+      exp: "Type II (Hypercapnic) ARF: PaO₂ < 60 mmHg, PaCO₂ > 50 mmHg, pH ≤ 7.30 — due to inadequate alveolar ventilation."
+    },
+    {
+      en: "The HALLMARK (cardinal sign) of Acute Respiratory Failure is:",
+      ar: "العلامة الأساسية لفشل الجهاز التنفسي الحاد هي؟",
+      options: ["Hypercapnia", "Hypoxemia", "Metabolic acidosis", "Tachycardia"],
+      correct: 1,
+      exp: "Hypoxemia is the hallmark of ARF, caused by three mechanisms: alveolar hypoventilation, V/Q mismatch, and intrapulmonary shunting."
+    },
+    {
+      en: "Blood passing through non-ventilated lung areas (atelectasis, pneumonia) causes which ARF mechanism?",
+      ar: "مرور الدم في مناطق الرئة غير المهواة (كالانخماص والالتهاب الرئوي) يسبب أي آلية من آليات ARF؟",
+      options: ["Alveolar hypoventilation", "V/Q mismatching", "Intrapulmonary shunting", "Dead space ventilation"],
+      correct: 2,
+      exp: "Intrapulmonary shunting occurs when blood passes through non-ventilated lung areas (atelectasis, pneumonia, mucus plugging)."
+    },
+    {
+      en: "A patient with ARF has pH of 7.22. The most appropriate ventilation strategy is:",
+      ar: "مريض ARF لديه pH = 7.22 — ما استراتيجية التهوية الأنسب؟",
+      options: ["Non-invasive ventilation only", "Supplemental O₂ by mask", "Invasive MV, volume-controlled, assist/control mode", "Prone positioning only"],
+      correct: 2,
+      exp: "pH < 7.25 in ARF requires invasive mechanical ventilation, volume-controlled in assist/control mode."
+    },
+    {
+      en: "The SpO₂ target when providing supplemental oxygen in ARF is:",
+      ar: "ما المستهدف من SpO₂ عند إعطاء الأكسجين التكميلي في ARF؟",
+      options: ["> 85%", "> 90%", "> 95%", "100%"],
+      correct: 1,
+      exp: "Supplemental O₂ is given to keep SpO₂ > 90% without causing hypercapnia or O₂ toxicity."
+    },
+    {
+      en: "Venous thromboembolism (VTE) in ARF patients is PREVENTED by:",
+      ar: "الوقاية من الانصمام الخثاري الوريدي في مرضى ARF تتم باستخدام؟",
+      options: ["IV antibiotics + diuretics", "Pneumatic compression + heparin (UFH/LMWH)", "High-dose corticosteroids", "Bronchodilators only"],
+      correct: 1,
+      exp: "VTE is prevented with pneumatic compression devices combined with heparin (UFH or LMWH)."
+    },
+    {
+      en: "Morning headache, disorientation, and muscle weakness in an ARF patient suggest:",
+      ar: "صداع صباحي وتشوش وضعف عضلي في مريض ARF يقترح؟",
+      options: ["Type I (Hypoxemic) ARF", "Type II (Hypercapnic) ARF", "Metabolic alkalosis", "Pulmonary embolism"],
+      correct: 1,
+      exp: "Morning headache, disorientation, and muscle weakness/tremors are classic cerebral/neuromuscular manifestations of Type II (Hypercapnic) ARF."
+    },
+    {
+      en: "Which of the following is an EXTRAPULMONARY cause of ARF?",
+      ar: "أي من التالي يُعد سبباً خارج رئوي لـ ARF؟",
+      options: ["Severe pneumonia", "Asthma exacerbation", "Guillain-Barré syndrome", "Cardiac pulmonary edema"],
+      correct: 2,
+      exp: "Guillain-Barré syndrome affects peripheral nerves/spinal cord and is a classic extrapulmonary cause of ARF."
+    },
+    {
+      en: "GI bleeding in ARF patients is PREVENTED by:",
+      ar: "الوقاية من نزيف الجهاز الهضمي في مرضى ARF تتم باستخدام؟",
+      options: ["Nasogastric tube feeding only", "H₂ blockers, cytoprotective agents, PPIs", "IV antibiotics", "High fluid intake"],
+      correct: 1,
+      exp: "GI bleeding in ARF patients is prevented with H₂ blockers, cytoprotective agents, and proton pump inhibitors (PPIs)."
+    },
+    {
+      en: "The primary GOAL of management in ARF is:",
+      ar: "ما الهدف الأساسي من علاج فشل الجهاز التنفسي الحاد؟",
+      options: ["Correct underlying cause + promote gas exchange + correct acidosis", "Sedation + bed rest only", "Diuresis + fluid restriction", "Bronchodilators only"],
+      correct: 0,
+      exp: "Goals of ARF management: correct underlying cause, promote gas exchange, correct acidosis, provide nutrition support, and prevent complications."
+    },
+    {
+      en: "Alveolar hypoventilation as a cause of ARF results in:",
+      ar: "نقص التهوية السنخية كسبب لـ ARF يؤدي إلى؟",
+      options: ["Hypoxemia only", "Hypercapnia only", "Hypoxemia + Hypercapnia", "Respiratory alkalosis"],
+      correct: 2,
+      exp: "Alveolar hypoventilation: O₂ delivered to alveoli < metabolic need → hypoxemia + hypercapnia together."
+    },
+    {
+      en: "A patient has cyanosis, tachycardia, arrhythmia, restlessness, and inability to speak. This best describes ARF type:",
+      ar: "مريض لديه زرقة وتسرع قلب واضطراب نظم وهياج وعدم قدرة على الكلام — يصف نوع ARF؟",
+      options: ["Type II — Hypercapnic", "Type I — Hypoxemic", "Mixed ARF", "Compensated failure"],
+      correct: 1,
+      exp: "Type I (Hypoxemic) ARF: dyspnea, tachypnea, cyanosis (respiratory); restlessness, confusion (cerebral); tachycardia, arrhythmia (cardiac); inability to speak."
+    },
+    {
+      en: "Bronchodilators (β₂-agonists) in ARF pharmacological management primarily aim to:",
+      ar: "موسعات القصبات (منبهات بيتا-2) في العلاج الدوائي لـ ARF تهدف أساساً إلى؟",
+      options: ["Reduce fluid in alveoli", "Relieve bronchospasm and open airways", "Sedate the patient", "Increase CO₂ excretion directly"],
+      correct: 1,
+      exp: "Bronchodilators (β₂-agonists, anticholinergics) are used to relieve bronchospasm and open airways, improving ventilation."
+    },
+  ],
+
+  shock: [
+    {
+      en: "Shock is best defined as:",
+      ar: "أفضل تعريف للصدمة هو؟",
+      options: [
+        "Sudden drop in blood pressure below 90 mmHg",
+        "Inadequate tissue perfusion & O₂ delivery to meet cellular metabolic needs",
+        "Cardiac arrest with loss of consciousness",
+        "Severe dehydration causing tachycardia"
+      ],
+      correct: 1,
+      exp: "Shock = life-threatening condition with inadequate tissue perfusion & O₂ delivery to meet cellular metabolic needs → cellular & organ dysfunction."
+    },
+    {
+      en: "The HALLMARK that distinguishes Neurogenic Shock from other distributive shocks is:",
+      ar: "العلامة المميزة للصدمة العصبية عن غيرها من الصدمات التوزيعية هي؟",
+      options: ["High fever + high WBC", "Vasodilation + bradycardia", "Vasodilation + tachycardia", "Peripheral edema + cyanosis"],
+      correct: 1,
+      exp: "Neurogenic shock hallmark: vasodilation + BRADYCARDIA (unlike other distributive shocks which show tachycardia) — due to loss of sympathetic tone."
+    },
+    {
+      en: "A patient develops shock after massive GI bleeding. What type of shock is this?",
+      ar: "مريض يصاب بصدمة بعد نزيف معوي حاد — ما نوع هذه الصدمة؟",
+      options: ["Cardiogenic shock", "Hypovolemic shock", "Distributive shock", "Obstructive shock"],
+      correct: 1,
+      exp: "Hypovolemic shock cause: loss of blood/plasma volume (hemorrhage, dehydration, burns)."
+    },
+    {
+      en: "First-line treatment for anaphylactic shock is:",
+      ar: "خط العلاج الأول للصدمة التأقية هو؟",
+      options: ["IV norepinephrine", "IM Epinephrine", "Broad-spectrum antibiotics", "IV fluid bolus only"],
+      correct: 1,
+      exp: "Anaphylactic shock treatment: Epinephrine IM (first-line), followed by antihistamines and corticosteroids."
+    },
+    {
+      en: "In the Irreversible Stage of shock, the expected outcome WITHOUT intervention is:",
+      ar: "في المرحلة اللارجعية من الصدمة بدون تدخل طبي، ما المتوقع؟",
+      options: ["Full recovery with supportive care", "Permanent organ failure requiring dialysis", "Multi-organ failure leading to death", "Spontaneous compensation by the body"],
+      correct: 2,
+      exp: "Irreversible stage: severe cellular & organ damage → multi-organ failure. Death is inevitable without intervention."
+    },
+    {
+      en: "What is the NORMAL Central Venous Pressure (CVP) range?",
+      ar: "ما النطاق الطبيعي للضغط الوريدي المركزي (CVP)؟",
+      options: ["2–4 mmHg", "6–8 mmHg", "10–12 mmHg", "14–18 mmHg"],
+      correct: 1,
+      exp: "Normal CVP is 6–8 mmHg. It reflects right heart filling pressure and venous return."
+    },
+    {
+      en: "A patient has cardiogenic shock following an acute MI. Which is the MOST appropriate initial pharmacological treatment?",
+      ar: "مريض يعاني من صدمة قلبية بعد احتشاء حاد — ما أنسب علاج دوائي أولي؟",
+      options: ["Rapid IV fluids + vasodilators", "Inotropes (e.g., dobutamine) + diuretics", "Broad-spectrum antibiotics", "IM Epinephrine"],
+      correct: 1,
+      exp: "Cardiogenic shock treatment: Inotropes (e.g., dobutamine) to improve cardiac contractility, diuretics to reduce preload, revascularization if MI, manage arrhythmias."
+    },
+    {
+      en: "Septic shock is treated with:",
+      ar: "الصدمة الإنتانية تُعالَج بـ؟",
+      options: ["IV fluids only", "Broad-spectrum antibiotics + vasopressors (e.g., norepinephrine)", "Epinephrine IM + antihistamines", "Chest tube insertion"],
+      correct: 1,
+      exp: "Septic shock (distributive): broad-spectrum antibiotics to target infection + vasopressors (e.g., norepinephrine) to restore vascular tone."
+    },
+    {
+      en: "During the Compensatory Stage of shock, the body responds by:",
+      ar: "خلال المرحلة التعويضية من الصدمة، يستجيب الجسم بـ؟",
+      options: ["Vasodilation + bradycardia", "Tachycardia + vasoconstriction + increased RR", "Oliguria only", "Metabolic alkalosis"],
+      correct: 1,
+      exp: "Compensatory stage: SNS activation → tachycardia, vasoconstriction, increased RR. Blood is shunted to vital organs (brain, heart)."
+    },
+    {
+      en: "Pulmonary embolism causing shock is classified as:",
+      ar: "الانصمام الرئوي الذي يسبب صدمة يُصنَّف تحت؟",
+      options: ["Hypovolemic shock", "Cardiogenic shock", "Distributive shock", "Obstructive shock"],
+      correct: 3,
+      exp: "Obstructive shock cause: physical obstruction to blood flow — pulmonary embolism, cardiac tamponade, tension pneumothorax."
+    },
+    {
+      en: "Normal oxygen saturation (SpO₂) is:",
+      ar: "ما النطاق الطبيعي لتشبع الأكسجين (SpO₂)؟",
+      options: ["> 88%", "> 90%", "> 96%", "> 99% only"],
+      correct: 2,
+      exp: "Normal O₂ saturation (SpO₂) is > 96% according to normal vital signs reference."
+    },
+    {
+      en: "In the Initial Stage of shock, the cellular-level change that occurs is:",
+      ar: "في المرحلة الأولى من الصدمة، ما التغيير الذي يحدث على المستوى الخلوي؟",
+      options: ["Aerobic metabolism increases", "Shift to anaerobic metabolism → lactic acidosis", "Glycolysis stops completely", "Mitochondria become overactive"],
+      correct: 1,
+      exp: "Initial stage: ↓O₂ delivery → shift to anaerobic metabolism → lactic acidosis. Often subtle or no clinical signs at this stage."
+    },
+    {
+      en: "Widespread vasodilation with decreased SVR and increased capillary permeability best describes:",
+      ar: "توسع واسع في الأوعية مع انخفاض المقاومة الوعائية الجهازية وزيادة نفاذية الشعيرات — يصف أي نوع صدمة؟",
+      options: ["Cardiogenic shock", "Hypovolemic shock", "Septic (distributive) shock", "Obstructive shock"],
+      correct: 2,
+      exp: "Septic (distributive) shock: widespread vasodilation → ↓SVR → ↓BP & perfusion, with ↑capillary permeability and fluid leakage."
+    },
+    {
+      en: "In neurogenic shock, the primary cause of hemodynamic instability is:",
+      ar: "في الصدمة العصبية، السبب الرئيسي لعدم استقرار الديناميكا الدموية هو؟",
+      options: ["Loss of blood volume", "Pump failure of the heart", "Loss of sympathetic tone → unopposed vagal activity", "Histamine-mediated vasodilation"],
+      correct: 2,
+      exp: "Neurogenic shock: spinal cord injury → loss of sympathetic tone → unopposed vagal activity → vasodilation and bradycardia."
+    },
+    {
+      en: "The general initial approach to ALL types of shock includes:",
+      ar: "الخطوات الأولية العامة لجميع أنواع الصدمة تشمل؟",
+      options: [
+        "Specific antibiotics only",
+        "Airway, Breathing, Circulation (ABCs) + O₂ + IV fluids + vitals monitoring",
+        "Immediate surgery for all cases",
+        "High-dose steroids for all types"
+      ],
+      correct: 1,
+      exp: "General approach (all shock types): Airway, Breathing, Circulation (ABCs), oxygen therapy, IV fluid resuscitation, monitor vitals, urine output, and lactate levels."
+    },
+  ]
+};
+
+const STATE = { organ: {}, resp: {}, shock: {} };
+
+const KEYS = ['A','B','C','D'];
+const COLORS = { organ: 'var(--accent-organ)', resp: 'var(--accent-resp)', shock: 'var(--accent-shock)' };
+
+function buildPanel(id) {
+  const qs = DATA[id];
+  const container = document.getElementById('qs-' + id);
+  container.innerHTML = '';
+  STATE[id] = { answered: 0, score: 0, total: qs.length };
+
+  qs.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `card-${id}-${qi}`;
+
+    const opts = q.options.map((o, oi) => `
+      <button class="opt-btn" onclick="answer('${id}',${qi},${oi})" id="opt-${id}-${qi}-${oi}">
+        <span class="opt-key">${KEYS[oi]}</span>
+        <span>${o}</span>
+      </button>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="q-num">Question ${qi + 1} of ${qs.length}</div>
+      <div class="q-text-en">${q.en}</div>
+      <div class="q-text-ar">${q.ar}</div>
+      <div class="options">${opts}</div>
+      <div class="explanation" id="exp-${id}-${qi}"></div>
+    `;
+    container.appendChild(card);
+  });
+
+  updateScore(id);
+}
+
+function answer(id, qi, chosen) {
+  const q = DATA[id][qi];
+  if (document.getElementById(`opt-${id}-${qi}-0`).disabled) return;
+
+  const isCorrect = chosen === q.correct;
+  if (isCorrect) STATE[id].score++;
+  STATE[id].answered++;
+
+  // Disable all options
+  for (let i = 0; i < q.options.length; i++) {
+    const btn = document.getElementById(`opt-${id}-${qi}-${i}`);
+    btn.disabled = true;
+    if (i === q.correct && !isCorrect) btn.classList.add('revealed');
+  }
+
+  const chosenBtn = document.getElementById(`opt-${id}-${qi}-${chosen}`);
+  chosenBtn.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  const expDiv = document.getElementById(`exp-${id}-${qi}`);
+  expDiv.textContent = (isCorrect ? '✓ Correct! ' : '✗ Incorrect. ') + q.exp;
+  expDiv.className = `explanation show ${isCorrect ? 'correct-exp' : 'wrong-exp'}`;
+
+  const card = document.getElementById(`card-${id}-${qi}`);
+  card.style.borderColor = isCorrect ? 'var(--correct)' : 'var(--wrong)';
+
+  updateScore(id);
+}
+
+function updateScore(id) {
+  const s = STATE[id];
+  const pct = s.total > 0 ? (s.answered / s.total) * 100 : 0;
+
+  document.getElementById(`score-${id}`).textContent = `Score: ${s.score} / ${s.total}`;
+  document.getElementById(`prog-${id}`).style.width = pct + '%';
+  document.getElementById(`prog-${id}-txt`).textContent = `${s.answered} / ${s.total} answered`;
+
+  if (s.answered === s.total && s.total > 0) showResult(id);
+}
+
+function showResult(id) {
+  const s = STATE[id];
+  const pct = Math.round((s.score / s.total) * 100);
+  let emoji, msg, bg;
+
+  if (pct >= 87) {
+    emoji = '🏆'; msg = `Excellent! ${s.score}/${s.total} (${pct}%) — Outstanding performance!`;
+    bg = 'rgba(34,197,94,.15)'; color = '#86efac';
+  } else if (pct >= 67) {
+    emoji = '👍'; msg = `Good job! ${s.score}/${s.total} (${pct}%) — Keep reviewing the missed topics.`;
+    bg = 'rgba(245,197,66,.12)'; color = '#fde68a';
+  } else {
+    emoji = '📚'; msg = `${s.score}/${s.total} (${pct}%) — Review the lecture material and try again.`;
+    bg = 'rgba(239,68,68,.12)'; color = '#fca5a5';
+  }
+
+  const banner = document.getElementById(`result-${id}`);
+  banner.style.background = bg;
+  banner.style.color = color;
+  banner.style.border = `1px solid ${color}`;
+  banner.innerHTML = `${emoji} ${msg}`;
+  banner.classList.add('show');
+  banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetPanel(id) {
+  document.getElementById(`result-${id}`).classList.remove('show');
+  buildPanel(id);
+}
+
+function showTab(id) {
+  ['organ','resp','shock'].forEach(t => {
+    document.getElementById('panel-' + t).classList.remove('active');
+    const btn = document.getElementById('tab-' + t);
+    btn.className = 'tab-btn';
+  });
+
+  document.getElementById('panel-' + id).classList.add('active');
+  const map = { organ: 'active-organ', resp: 'active-resp', shock: 'active-shock' };
+  document.getElementById('tab-' + id).classList.add(map[id]);
+}
+
+// Init all panels
+buildPanel('organ');
+buildPanel('resp');
+buildPanel('shock');
+</script>
+</body>
+</html>

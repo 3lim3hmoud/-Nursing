@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barriers of Communication | حواجز التواصل</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@300;400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f8f5ef;
+    --gold: #c9a84c;
+    --rust: #c0392b;
+    --teal: #0e7c7b;
+    --lavender: #6c63ab;
+    --light-bg: #f0ece4;
+    --card-bg: #fffef9;
+    --border: #d4c9b0;
+    --text-muted: #6b6355;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', 'Tajawal', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white; }
+    .page-section { page-break-before: always; }
+    .hero { page-break-after: always; min-height: unset; padding: 40px; }
+    .quiz-section { page-break-before: always; }
+    .summary-section { page-break-before: always; }
+    .btn-check { display: none; }
+    .card { break-inside: avoid; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: white;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(201,168,76,0.04) 40px, rgba(201,168,76,0.04) 80px
+    );
+  }
+  .hero-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; line-height: 1.1;
+    color: white; margin-bottom: 10px;
+  }
+  .hero h2 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 700; color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .hero p { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+  /* ── NAV TABS ── */
+  .tab-nav {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;
+    padding: 24px 20px; background: var(--light-bg);
+    border-bottom: 2px solid var(--border); position: sticky; top: 0;
+    z-index: 100;
+  }
+  .tab-btn {
+    padding: 8px 20px; border: 2px solid var(--border);
+    background: white; color: var(--ink);
+    font-family: 'DM Sans', 'Tajawal', sans-serif;
+    font-size: 13px; font-weight: 500;
+    border-radius: 30px; cursor: pointer;
+    transition: all .2s; white-space: nowrap;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--ink); color: white; border-color: var(--ink);
+  }
+  .tab-btn.active { background: var(--teal); border-color: var(--teal); }
+
+  /* ── SECTIONS ── */
+  .section-wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── SECTION HEADING ── */
+  .section-title {
+    text-align: center; margin-bottom: 40px;
+  }
+  .section-title h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--ink);
+  }
+  .section-title p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.1rem; color: var(--text-muted); margin-top: 4px;
+  }
+  .section-title .line {
+    width: 60px; height: 3px; background: var(--gold);
+    margin: 12px auto 0;
+  }
+
+  /* ── INTRO BOX ── */
+  .intro-box {
+    background: var(--ink); color: white;
+    border-radius: 12px; padding: 28px 32px;
+    margin-bottom: 36px;
+    border-left: 5px solid var(--gold);
+  }
+  .intro-box h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 8px; }
+  .intro-box p { font-size: 14px; opacity: .85; margin-bottom: 6px; }
+  .intro-box .ar { font-family: 'Tajawal', sans-serif; direction: rtl; text-align: right; font-size: 14px; opacity: .75; }
+
+  /* ── BARRIER CARDS ── */
+  .barriers-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+
+  .card-head {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-num {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; flex-shrink: 0;
+    color: white;
+  }
+  .card-head h4 { font-weight: 600; font-size: 1rem; color: var(--ink); flex: 1; }
+  .card-head .ar-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.9rem; color: var(--text-muted); direction: rtl;
+  }
+
+  .card-body { padding: 18px 20px; }
+  .card-body p { font-size: 14px; color: #444; margin-bottom: 10px; }
+  .card-body .ar-text {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl; text-align: right;
+    font-size: 14px; color: var(--text-muted);
+    background: var(--light-bg);
+    border-radius: 8px; padding: 10px 14px;
+    border-right: 3px solid var(--gold);
+  }
+
+  /* Color variants */
+  .c1 .card-num { background: #c0392b; }
+  .c2 .card-num { background: #6c63ab; }
+  .c3 .card-num { background: #0e7c7b; }
+  .c4 .card-num { background: #2980b9; }
+  .c5 .card-num { background: #27ae60; }
+  .c6 .card-num { background: #e67e22; }
+
+  .c1 .card-head { border-left: 4px solid #c0392b; }
+  .c2 .card-head { border-left: 4px solid #6c63ab; }
+  .c3 .card-head { border-left: 4px solid #0e7c7b; }
+  .c4 .card-head { border-left: 4px solid #2980b9; }
+  .c5 .card-head { border-left: 4px solid #27ae60; }
+  .c6 .card-head { border-left: 4px solid #e67e22; }
+
+  /* ── SPECIFIC BARRIERS ── */
+  .specific-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px; margin-top: 10px;
+  }
+  .spec-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+    border-top: 3px solid var(--teal);
+  }
+  .spec-card .letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900; color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .spec-card h5 { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .spec-card p { font-size: 13px; color: #555; margin-bottom: 8px; }
+  .spec-card .ar { font-family: 'Tajawal', sans-serif; font-size: 13px; color: var(--text-muted); direction: rtl; text-align: right; }
+
+  /* ── OVERCOMING ── */
+  .overcome-list { list-style: none; display: grid; gap: 14px; }
+  .overcome-list li {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    display: grid; grid-template-columns: 36px 1fr;
+    gap: 14px; align-items: start;
+  }
+  .overcome-list li .num-badge {
+    width: 36px; height: 36px; background: var(--teal);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; color: white; font-weight: 700; font-size: 13px;
+    flex-shrink: 0;
+  }
+  .overcome-list li .content p { font-size: 14px; color: #444; margin-bottom: 6px; }
+  .overcome-list li .content .ar { font-family: 'Tajawal', sans-serif; font-size: 13px; color: var(--text-muted); direction: rtl; text-align: right; }
+
+  /* ── QUIZ ── */
+  .quiz-section { background: var(--light-bg); }
+  .quiz-wrap { max-width: 780px; margin: 0 auto; padding: 40px 20px; }
+
+  .quiz-intro {
+    text-align: center; margin-bottom: 32px;
+  }
+  .quiz-intro h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+  .quiz-intro p { font-family: 'Tajawal', sans-serif; color: var(--text-muted); margin-top: 4px; }
+
+  .question-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin-bottom: 20px;
+    position: relative;
+  }
+  .q-number {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 10px;
+  }
+  .q-text { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .q-ar { font-family: 'Tajawal', sans-serif; font-size: 14px; color: var(--text-muted); direction: rtl; text-align: right; margin-bottom: 16px; }
+
+  .options { display: grid; gap: 10px; }
+  .option {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; border: 2px solid var(--border);
+    border-radius: 8px; cursor: pointer;
+    transition: all .2s; font-size: 14px;
+    font-family: 'DM Sans', 'Tajawal', sans-serif;
+  }
+  .option:hover { border-color: var(--teal); background: rgba(14,124,123,0.04); }
+  .option input[type="radio"] { display: none; }
+  .option-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--light-bg); border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+    transition: all .2s;
+  }
+  .option.selected { border-color: var(--teal); background: rgba(14,124,123,0.06); }
+  .option.selected .option-letter { background: var(--teal); border-color: var(--teal); color: white; }
+  .option.correct { border-color: #27ae60; background: rgba(39,174,96,0.08); }
+  .option.correct .option-letter { background: #27ae60; border-color: #27ae60; color: white; }
+  .option.wrong { border-color: #c0392b; background: rgba(192,57,43,0.08); }
+  .option.wrong .option-letter { background: #c0392b; border-color: #c0392b; color: white; }
+
+  .feedback {
+    margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+    font-size: 13px; display: none;
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl; text-align: right;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct-fb { background: rgba(39,174,96,0.1); color: #1a6b3a; border-left: 3px solid #27ae60; }
+  .feedback.wrong-fb { background: rgba(192,57,43,0.1); color: #7a1a0e; border-left: 3px solid #c0392b; }
+
+  .btn-check {
+    display: block; margin: 30px auto 0;
+    padding: 14px 44px; background: var(--ink);
+    color: white; border: none; border-radius: 30px;
+    font-family: 'DM Sans', 'Tajawal', sans-serif;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: background .2s;
+  }
+  .btn-check:hover { background: var(--teal); }
+
+  .score-box {
+    text-align: center; padding: 28px; background: var(--ink);
+    color: white; border-radius: 12px; margin-top: 28px; display: none;
+  }
+  .score-box h4 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); }
+  .score-box p { opacity: .8; margin-top: 6px; font-family: 'Tajawal', sans-serif; }
+
+  /* ── SUMMARY ── */
+  .summary-section { background: var(--ink); color: white; }
+  .summary-wrap { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+
+  .summary-header { text-align: center; margin-bottom: 44px; }
+  .summary-header h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; }
+  .summary-header p { font-family: 'Tajawal', sans-serif; color: var(--gold); font-size: 1.1rem; }
+  .summary-header .line { width: 60px; height: 3px; background: var(--gold); margin: 14px auto 0; }
+
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+  @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+
+  .sum-card {
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px; padding: 20px;
+    border-top: 3px solid var(--gold);
+  }
+  .sum-card h5 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .sum-card ul { list-style: none; }
+  .sum-card ul li { font-size: 13px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); }
+  .sum-card ul li:last-child { border-bottom: none; }
+  .sum-card ul li::before { content: '→ '; color: var(--gold); }
+  .sum-card.ar ul { direction: rtl; font-family: 'Tajawal', sans-serif; font-size: 14px; }
+  .sum-card.ar ul li::before { content: '← '; }
+
+  .key-point {
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px; padding: 20px; margin-top: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  @media (max-width: 600px) { .key-point { grid-template-columns: 1fr; } }
+  .key-point p { font-size: 13px; color: rgba(255,255,255,0.85); }
+  .key-point .ar { font-family: 'Tajawal', sans-serif; direction: rtl; text-align: right; font-size: 14px; color: rgba(255,255,255,0.75); }
+
+  .print-btn {
+    display: block; margin: 30px auto 0;
+    padding: 13px 40px; background: var(--gold);
+    color: var(--ink); border: none; border-radius: 30px;
+    font-family: 'DM Sans', 'Tajawal', sans-serif;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: opacity .2s;
+  }
+  .print-btn:hover { opacity: .85; }
+
+  .emoji-icon { font-size: 1.3rem; }
+
+  @media (max-width: 600px) {
+    .specific-grid { grid-template-columns: 1fr; }
+    .card-head { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Lecture 3 — Communication Skills</div>
+  <h1>Barriers of Communication</h1>
+  <h2>حواجز التواصل</h2>
+  <p>A simplified bilingual study guide with quiz &amp; summary | دليل دراسة مبسط بالعربي والإنجليزي</p>
+</div>
+
+<!-- TABS -->
+<div class="tab-nav no-print">
+  <button class="tab-btn active" onclick="showTab('main-barriers')">📌 Main Barriers | الحواجز الرئيسية</button>
+  <button class="tab-btn" onclick="showTab('specific-barriers')">🔍 Specific Barriers | حواجز تفصيلية</button>
+  <button class="tab-btn" onclick="showTab('overcome')">✅ Overcoming | التغلب عليها</button>
+  <button class="tab-btn" onclick="showTab('quiz')">📝 Quiz | اختبار</button>
+  <button class="tab-btn" onclick="showTab('summary')">📋 Summary | الملخص</button>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TAB 1: MAIN BARRIERS -->
+<!-- ══════════════════════════════════════ -->
+<div id="main-barriers" class="tab-content active page-section">
+<div class="section-wrap">
+
+  <div class="intro-box">
+    <h4>What are Communication Barriers?</h4>
+    <p>Factors that cause problems for communication — they hinder the clear interpretation and reception of a message. They are sometimes called <strong>"blockers."</strong></p>
+    <p class="ar">الحواجز هي العوامل التي تتسبب في مشاكل التواصل وتعيق الفهم الواضح للرسالة. وتُعرف أحيانًا بـ "العوامل المُعيقة".</p>
+  </div>
+
+  <div class="section-title">
+    <h3>The 6 Main Barriers</h3>
+    <p>الحواجز الستة الرئيسية</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="barriers-grid">
+
+    <div class="card c1">
+      <div class="card-head">
+        <div class="card-num">1</div>
+        <div>
+          <h4>🗣️ Language Barriers</h4>
+          <div class="ar-title">حواجز اللغة</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>When terminology, jargon, or abbreviations are used that the receiver doesn't understand, communication breaks down. Even the same language can cause misinterpretation when expressions are used that seem offensive or confusing.</p>
+        <div class="ar-text">عندما تُستخدم مصطلحات أو اختصارات لا يفهمها المستقبل، ينقطع التواصل. حتى اللغة نفسها قد تسبب سوء فهم إذا استُخدمت تعبيرات مسيئة أو غامضة.</div>
+      </div>
+    </div>
+
+    <div class="card c2">
+      <div class="card-head">
+        <div class="card-num">2</div>
+        <div>
+          <h4>🧠 Psychological Barriers</h4>
+          <div class="ar-title">حواجز نفسية</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>The mental state of the receiver affects how they receive the message. Stress, anger, or low self-esteem can block communication. An angry person may say things they regret and misinterpret others. Someone with low self-esteem may be too shy to communicate openly.</p>
+        <div class="ar-text">الحالة النفسية للمستقبل تؤثر على كيفية استقباله للرسالة. الضغط النفسي والغضب وضعف الثقة بالنفس تُعيق التواصل. الغاضب قد يتكلم بما يندم عليه، وذو الثقة المنخفضة قد يتجنب التعبير عن نفسه.</div>
+      </div>
+    </div>
+
+    <div class="card c3">
+      <div class="card-head">
+        <div class="card-num">3</div>
+        <div>
+          <h4>💊 Physiological Barriers</h4>
+          <div class="ar-title">حواجز فسيولوجية</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>These result from the receiver's physical condition. For example, a person with reduced hearing may not fully grasp a spoken conversation, especially when there is background noise.</p>
+        <div class="ar-text">تنتج عن الحالة الجسدية للمستقبل. مثلاً: شخص يعاني من ضعف سمع قد لا يفهم المحادثة كاملة، خاصة في أماكن ذات ضوضاء.</div>
+      </div>
+    </div>
+
+    <div class="card c4">
+      <div class="card-head">
+        <div class="card-num">4</div>
+        <div>
+          <h4>🌍 Physical Barriers</h4>
+          <div class="ar-title">حواجز مادية</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>Geographic distance is a classic physical barrier. Communication is easier over shorter distances because more channels are available. Modern technology can help reduce this barrier, but each communication channel has its own advantages and disadvantages.</p>
+        <div class="ar-text">المسافة الجغرافية مثال كلاسيكي. التواصل أسهل عن قُرب لأن القنوات المتاحة أكثر. التكنولوجيا الحديثة تساعد لكن لكل قناة مزاياها وعيوبها.</div>
+      </div>
+    </div>
+
+    <div class="card c5">
+      <div class="card-head">
+        <div class="card-num">5</div>
+        <div>
+          <h4>🏢 Systematic Barriers</h4>
+          <div class="ar-title">حواجز منهجية</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>These exist in organisations with inefficient information systems or unclear communication roles. When people don't know their responsibilities in the communication process, they don't know what is expected of them.</p>
+        <div class="ar-text">توجد في المؤسسات ذات أنظمة المعلومات غير الكافية أو القنوات غير المناسبة. عندما لا يعرف الأفراد دورهم في عملية التواصل، يحدث الفشل.</div>
+      </div>
+    </div>
+
+    <div class="card c6">
+      <div class="card-head">
+        <div class="card-num">6</div>
+        <div>
+          <h4>😤 Attitudinal Barriers</h4>
+          <div class="ar-title">حواجز الموقف والتوجه</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>These are behaviours or perceptions that prevent effective communication. They may stem from personality conflicts, poor management, resistance to change, or lack of motivation. Effective communicators must work to overcome their own attitudinal barriers.</p>
+        <div class="ar-text">سلوكيات أو تصورات تمنع التواصل الفعال. قد تنشأ من صراعات الشخصية أو سوء الإدارة أو مقاومة التغيير أو انعدام الدافعية.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TAB 2: SPECIFIC BARRIERS -->
+<!-- ══════════════════════════════════════ -->
+<div id="specific-barriers" class="tab-content page-section">
+<div class="section-wrap">
+  <div class="section-title">
+    <h3>Specific Barriers to Effective Communication</h3>
+    <p>حواجز تفصيلية تعيق التواصل الفعال</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="specific-grid">
+
+    <div class="spec-card">
+      <div class="letter">A</div>
+      <h5>Differences in Perception</h5>
+      <p>People of different ages, cultures, education, sex, or status each see the world differently. This is often the root of many other barriers.</p>
+      <div class="ar">اختلاف الإدراك: الناس من خلفيات مختلفة يفهمون الأمور بطريقة مختلفة — وهو جذر كثير من الحواجز الأخرى.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">B</div>
+      <h5>Jumping to Conclusions</h5>
+      <p>Seeing/hearing what we expect rather than what is actually being said — instead of listening carefully.</p>
+      <div class="ar">القفز للاستنتاجات: نرى ونسمع ما نتوقعه وليس ما يُقال فعلاً.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">C</div>
+      <h5>Stereotyping</h5>
+      <p>Treating all people as if they were the same — e.g. judging an entire community based on one person's actions.</p>
+      <div class="ar">التنميط: التعامل مع كل الناس كأنهم سواء — مثل الحكم على مجتمع بأكمله بسبب فرد واحد.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">D</div>
+      <h5>Lack of Knowledge</h5>
+      <p>It is difficult to communicate effectively with someone whose background or knowledge of the subject differs greatly from yours.</p>
+      <div class="ar">نقص المعرفة: صعب التواصل مع شخص مختلف كثيرًا في خلفيته أو معرفته بالموضوع.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">E</div>
+      <h5>Lack of Interest</h5>
+      <p>The receiver may not be interested in your message. Don't assume everyone cares about your topic as much as you do.</p>
+      <div class="ar">انعدام الاهتمام: المستقبل قد لا يهتم برسالتك. لا تفترض أن الجميع مهتمون بموضوعك.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">F</div>
+      <h5>Difficulties in Self-Expression</h5>
+      <p>The communicator may struggle to find the right words — often linked to lack of confidence.</p>
+      <div class="ar">صعوبة التعبير عن الذات: المتحدث قد يجد صعوبة في إيجاد الكلمات المناسبة — مرتبط بضعف الثقة.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">G</div>
+      <h5>Emotions</h5>
+      <p>Any strong emotion — from either the sender or receiver — can be a serious barrier to communication.</p>
+      <div class="ar">المشاعر القوية: أي مشاعر حادة لدى المرسل أو المستقبل تُعيق التواصل بشكل كبير.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">H</div>
+      <h5>Personality Clashes</h5>
+      <p>"Clash of personalities" is one of the most common causes of communication failure — behaviour affects the other person's response.</p>
+      <div class="ar">تعارض الشخصيات: صراع الشخصيات من أشيع أسباب فشل التواصل — سلوكك يؤثر على الطرف الآخر.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">I</div>
+      <h5>Poor Listening Skills</h5>
+      <p>A receiver who cannot concentrate or sit still will miss the message, leading to inappropriate feedback.</p>
+      <div class="ar">ضعف مهارة الاستماع: من لا يستطيع التركيز يفوّت الرسالة ويُعطي ردود أفعال خاطئة.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">J</div>
+      <h5>Information Overload</h5>
+      <p>Giving too many details in a very short time means most of the message won't be absorbed.</p>
+      <div class="ar">الإغراق بالمعلومات: إعطاء تفاصيل كثيرة جدًا في وقت قصير يجعل معظم الرسالة لا تُستوعب.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">L</div>
+      <h5>Lack of Understanding</h5>
+      <p>Using "big" or unfamiliar words that the audience doesn't know, or words with multiple interpretations, leads to misunderstanding.</p>
+      <div class="ar">سوء الفهم: استخدام كلمات معقدة أو غامضة أو متعددة المعاني يؤدي إلى الفهم الخاطئ.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">M</div>
+      <h5>Poor Timing</h5>
+      <p>Messages must be delivered at the right time. Calling during lunch or on Friday afternoons may mean the person is unavailable.</p>
+      <div class="ar">سوء التوقيت: الرسالة يجب أن تُرسل في الوقت المناسب. الاتصال وقت الغداء أو يوم الجمعة قد يكون غير مناسب.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">N</div>
+      <h5>Noise</h5>
+      <p>Any unwanted sound or interference: <strong>Technical</strong> (phone interference), <strong>Physical</strong> (busy environment), or <strong>Psychological</strong> (anxiety).</p>
+      <div class="ar">الضجيج: أي تشويش أو اضطراب: تقني (تشويش الهاتف)، مادي (الضوضاء)، نفسي (القلق).</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">O</div>
+      <h5>Appearance</h5>
+      <p>A poorly dressed or untidy speaker may not receive a favourable response from a critical audience.</p>
+      <div class="ar">المظهر: المتحدث المُهمل في مظهره قد لا يلقى قبولاً من الجمهور الناقد.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">P</div>
+      <h5>Distraction</h5>
+      <p>Any disturbing factor affecting the human senses — such as strong light or strong smell — will hinder effective communication.</p>
+      <div class="ar">المشتتات: أي عامل مزعج للحواس كالضوء الساطع أو الرائحة القوية يعيق التواصل.</div>
+    </div>
+
+    <div class="spec-card">
+      <div class="letter">Q</div>
+      <h5>Mistrust</h5>
+      <p>When communicating parties don't trust each other and there is no goodwill, effective communication is impossible.</p>
+      <div class="ar">انعدام الثقة: إذا لم يثق الطرفان ببعضهما ولا توجد نوايا حسنة، يفشل التواصل.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TAB 3: OVERCOMING -->
+<!-- ══════════════════════════════════════ -->
+<div id="overcome" class="tab-content page-section">
+<div class="section-wrap">
+  <div class="section-title">
+    <h3>Overcoming Communication Barriers</h3>
+    <p>كيف نتغلب على حواجز التواصل؟</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="intro-box">
+    <h4>Key Principle | المبدأ الأساسي</h4>
+    <p>"Unless we overcome the barriers that make us not communicate, more barriers will be created."</p>
+    <p class="ar">"إذا لم نتغلب على حواجز التواصل، ستُخلق حواجز جديدة باستمرار."</p>
+  </div>
+
+  <ul class="overcome-list">
+
+    <li>
+      <div class="num-badge">i</div>
+      <div class="content">
+        <p><strong>Face-to-Face Communication</strong> — allows constant adjustment of the message to ensure it is received well.</p>
+        <div class="ar">التواصل وجهاً لوجه: يسمح بالتعديل المستمر للرسالة لضمان استقبالها بشكل صحيح.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">ii</div>
+      <div class="content">
+        <p><strong>Be Sensitive to Backgrounds</strong> — consider where the person grew up, their culture, tribe, language and education level.</p>
+        <div class="ar">الحساسية للخلفيات: ضع في اعتبارك بيئة الشخص، ثقافته، لغته ومستوى تعليمه.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">iii</div>
+      <div class="content">
+        <p><strong>Use Direct, Simple Language</strong> — avoid ambiguous words or words with symbolic meanings.</p>
+        <div class="ar">استخدم لغة بسيطة ومباشرة: تجنب الكلمات الغامضة أو ذات المعاني الرمزية.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">iv</div>
+      <div class="content">
+        <p><strong>Repetition &amp; Follow-up</strong> — use restatement and reinforcement to ensure the message is properly understood.</p>
+        <div class="ar">التكرار والمتابعة: أعد صياغة الرسالة وعزّزها للتأكد من فهمها بشكل صحيح.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">v</div>
+      <div class="content">
+        <p><strong>Be Supportive</strong> — counter any defensive attitude with continued support to help the communication process.</p>
+        <div class="ar">كن داعمًا: تغلب على أي موقف دفاعي بالدعم المستمر لتيسير عملية التواصل.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">vi</div>
+      <div class="content">
+        <p><strong>Be a Good Listener</strong> — this encourages the communicator to continue sharing their message.</p>
+        <div class="ar">كن مستمعًا جيدًا: هذا يشجّع المتحدث على مواصلة إيصال رسالته.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">vii</div>
+      <div class="content">
+        <p><strong>Remove Mistrust &amp; Prejudice</strong> — put aside bias and misunderstanding to communicate and interpret messages clearly.</p>
+        <div class="ar">أبعد الريبة والتحيز: تخلَّ عن التحيزات والسوء الفهم لتتواصل وتفسّر الرسائل بوضوح.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">viii</div>
+      <div class="content">
+        <p><strong>Appropriate Communication Channels</strong> — choose channels that minimise noise and interference.</p>
+        <div class="ar">القنوات المناسبة: اختر قنوات التواصل التي تقلل الضجيج والتشويش.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">ix</div>
+      <div class="content">
+        <p><strong>Develop Interest</strong> — be engaged with the subject and prepare yourself before communicating.</p>
+        <div class="ar">طوّر الاهتمام: كن منخرطًا في الموضوع وأعدّ نفسك قبل التواصل.</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="num-badge">x</div>
+      <div class="content">
+        <p><strong>Use Modern Technology</strong> — modern tools enable faster communication across great distances and geographic barriers.</p>
+        <div class="ar">استخدم التكنولوجيا الحديثة: الأدوات الحديثة تمكّن التواصل الأسرع عبر المسافات والحواجز الجغرافية.</div>
+      </div>
+    </li>
+
+  </ul>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TAB 4: QUIZ -->
+<!-- ══════════════════════════════════════ -->
+<div id="quiz" class="tab-content quiz-section">
+<div class="quiz-wrap">
+
+  <div class="quiz-intro">
+    <h3>📝 Multiple Choice Quiz</h3>
+    <p>اختبر معلوماتك عن المحاضرة | Test your knowledge on the lecture</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question-card" id="qcard-1">
+    <div class="q-number">QUESTION 01</div>
+    <div class="q-text">Which term is used for factors that prevent the clear reception and interpretation of a message?</div>
+    <div class="q-ar">ما المصطلح المستخدم للعوامل التي تمنع الاستقبال الواضح للرسالة وتفسيرها؟</div>
+    <div class="options" id="q1">
+      <label class="option" onclick="selectOption(this, 1, false)"><input type="radio" name="q1"><div class="option-letter">A</div> Encoders</label>
+      <label class="option" onclick="selectOption(this, 1, true)"><input type="radio" name="q1"><div class="option-letter">B</div> Blockers / Barriers</label>
+      <label class="option" onclick="selectOption(this, 1, false)"><input type="radio" name="q1"><div class="option-letter">C</div> Decoders</label>
+      <label class="option" onclick="selectOption(this, 1, false)"><input type="radio" name="q1"><div class="option-letter">D</div> Channels</label>
+    </div>
+    <div class="feedback" id="fb-1"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" id="qcard-2">
+    <div class="q-number">QUESTION 02</div>
+    <div class="q-text">Using specialist jargon that the receiver doesn't understand is an example of which type of barrier?</div>
+    <div class="q-ar">استخدام مصطلحات متخصصة لا يفهمها المستقبل مثال على أي نوع من الحواجز؟</div>
+    <div class="options" id="q2">
+      <label class="option" onclick="selectOption(this, 2, false)"><input type="radio" name="q2"><div class="option-letter">A</div> Physical Barrier</label>
+      <label class="option" onclick="selectOption(this, 2, false)"><input type="radio" name="q2"><div class="option-letter">B</div> Attitudinal Barrier</label>
+      <label class="option" onclick="selectOption(this, 2, true)"><input type="radio" name="q2"><div class="option-letter">C</div> Language Barrier</label>
+      <label class="option" onclick="selectOption(this, 2, false)"><input type="radio" name="q2"><div class="option-letter">D</div> Systematic Barrier</label>
+    </div>
+    <div class="feedback" id="fb-2"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" id="qcard-3">
+    <div class="q-number">QUESTION 03</div>
+    <div class="q-text">A person with reduced hearing failing to grasp a spoken conversation is an example of which barrier?</div>
+    <div class="q-ar">شخص يعاني من ضعف السمع ولا يفهم المحادثة — هذا مثال على أي نوع من الحواجز؟</div>
+    <div class="options" id="q3">
+      <label class="option" onclick="selectOption(this, 3, false)"><input type="radio" name="q3"><div class="option-letter">A</div> Language Barrier</label>
+      <label class="option" onclick="selectOption(this, 3, false)"><input type="radio" name="q3"><div class="option-letter">B</div> Psychological Barrier</label>
+      <label class="option" onclick="selectOption(this, 3, true)"><input type="radio" name="q3"><div class="option-letter">C</div> Physiological Barrier</label>
+      <label class="option" onclick="selectOption(this, 3, false)"><input type="radio" name="q3"><div class="option-letter">D</div> Attitudinal Barrier</label>
+    </div>
+    <div class="feedback" id="fb-3"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" id="qcard-4">
+    <div class="q-number">QUESTION 04</div>
+    <div class="q-text">Geographic distance between sender and receiver is an example of which barrier?</div>
+    <div class="q-ar">المسافة الجغرافية بين المرسل والمستقبل مثال على أي نوع من الحواجز؟</div>
+    <div class="options" id="q4">
+      <label class="option" onclick="selectOption(this, 4, false)"><input type="radio" name="q4"><div class="option-letter">A</div> Systematic Barrier</label>
+      <label class="option" onclick="selectOption(this, 4, true)"><input type="radio" name="q4"><div class="option-letter">B</div> Physical Barrier</label>
+      <label class="option" onclick="selectOption(this, 4, false)"><input type="radio" name="q4"><div class="option-letter">C</div> Psychological Barrier</label>
+      <label class="option" onclick="selectOption(this, 4, false)"><input type="radio" name="q4"><div class="option-letter">D</div> Physiological Barrier</label>
+    </div>
+    <div class="feedback" id="fb-4"></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" id="qcard-5">
+    <div class="q-number">QUESTION 05</div>
+    <div class="q-text">An organisation with unclear communication roles and inefficient information systems faces which type of barrier?</div>
+    <div class="q-ar">مؤسسة ذات أدوار تواصل غير واضحة وأنظمة معلومات غير كافية تواجه أي نوع من الحواجز؟</div>
+    <div class="options" id="q5">
+      <label class="option" onclick="selectOption(this, 5, false)"><input type="radio" name="q5"><div class="option-letter">A</div> Language Barrier</label>
+      <label class="option" onclick="selectOption(this, 5, false)"><input type="radio" name="q5"><div class="option-letter">B</div> Attitudinal Barrier</label>
+      <label class="option" onclick="selectOption(this, 5, false)"><input type="radio" name="q5"><div class="option-letter">C</div> Physical Barrier</label>
+      <label class="option" onclick="selectOption(this, 5, true)"><input type="radio" name="q5"><div class="option-letter">D</div> Systematic Barrier</label>
+    </div>
+    <div class="feedback" id="fb-5"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" id="qcard-6">
+    <div class="q-number">QUESTION 06</div>
+    <div class="q-text">Personality conflicts and resistance to change lead to which type of barrier?</div>
+    <div class="q-ar">صراعات الشخصية ومقاومة التغيير تؤدي إلى أي نوع من الحواجز؟</div>
+    <div class="options" id="q6">
+      <label class="option" onclick="selectOption(this, 6, true)"><input type="radio" name="q6"><div class="option-letter">A</div> Attitudinal Barrier</label>
+      <label class="option" onclick="selectOption(this, 6, false)"><input type="radio" name="q6"><div class="option-letter">B</div> Physical Barrier</label>
+      <label class="option" onclick="selectOption(this, 6, false)"><input type="radio" name="q6"><div class="option-letter">C</div> Language Barrier</label>
+      <label class="option" onclick="selectOption(this, 6, false)"><input type="radio" name="q6"><div class="option-letter">D</div> Systematic Barrier</label>
+    </div>
+    <div class="feedback" id="fb-6"></div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" id="qcard-7">
+    <div class="q-number">QUESTION 07</div>
+    <div class="q-text">Judging an entire community or religious group based on the actions of one member is called:</div>
+    <div class="q-ar">الحكم على مجتمع أو مجموعة دينية كاملة بسبب تصرف شخص واحد يُسمى:</div>
+    <div class="options" id="q7">
+      <label class="option" onclick="selectOption(this, 7, false)"><input type="radio" name="q7"><div class="option-letter">A</div> Jumping to Conclusions</label>
+      <label class="option" onclick="selectOption(this, 7, false)"><input type="radio" name="q7"><div class="option-letter">B</div> Information Overload</label>
+      <label class="option" onclick="selectOption(this, 7, true)"><input type="radio" name="q7"><div class="option-letter">C</div> Stereotyping</label>
+      <label class="option" onclick="selectOption(this, 7, false)"><input type="radio" name="q7"><div class="option-letter">D</div> Mistrust</label>
+    </div>
+    <div class="feedback" id="fb-7"></div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" id="qcard-8">
+    <div class="q-number">QUESTION 08</div>
+    <div class="q-text">Giving too many details in a short period of time is called:</div>
+    <div class="q-ar">إعطاء تفاصيل كثيرة جدًا في فترة قصيرة يُسمى:</div>
+    <div class="options" id="q8">
+      <label class="option" onclick="selectOption(this, 8, false)"><input type="radio" name="q8"><div class="option-letter">A</div> Poor Timing</label>
+      <label class="option" onclick="selectOption(this, 8, false)"><input type="radio" name="q8"><div class="option-letter">B</div> Noise</label>
+      <label class="option" onclick="selectOption(this, 8, true)"><input type="radio" name="q8"><div class="option-letter">C</div> Information Overload</label>
+      <label class="option" onclick="selectOption(this, 8, false)"><input type="radio" name="q8"><div class="option-letter">D</div> Lack of Understanding</label>
+    </div>
+    <div class="feedback" id="fb-8"></div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question-card" id="qcard-9">
+    <div class="q-number">QUESTION 09</div>
+    <div class="q-text">Which of the following is NOT a type of noise mentioned in the lecture?</div>
+    <div class="q-ar">أيٌّ مما يلي ليس نوعًا من الضجيج المذكور في المحاضرة؟</div>
+    <div class="options" id="q9">
+      <label class="option" onclick="selectOption(this, 9, false)"><input type="radio" name="q9"><div class="option-letter">A</div> Technical (e.g. phone interference)</label>
+      <label class="option" onclick="selectOption(this, 9, false)"><input type="radio" name="q9"><div class="option-letter">B</div> Physical (e.g. too much activity)</label>
+      <label class="option" onclick="selectOption(this, 9, false)"><input type="radio" name="q9"><div class="option-letter">C</div> Psychological (e.g. anxiety)</label>
+      <label class="option" onclick="selectOption(this, 9, true)"><input type="radio" name="q9"><div class="option-letter">D</div> Financial (e.g. budget constraints)</label>
+    </div>
+    <div class="feedback" id="fb-9"></div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="question-card" id="qcard-10">
+    <div class="q-number">QUESTION 10</div>
+    <div class="q-text">Which of the following is recommended as a way to overcome communication barriers?</div>
+    <div class="q-ar">أيٌّ مما يلي يُوصى به كطريقة للتغلب على حواجز التواصل؟</div>
+    <div class="options" id="q10">
+      <label class="option" onclick="selectOption(this, 10, false)"><input type="radio" name="q10"><div class="option-letter">A</div> Using complex technical vocabulary</label>
+      <label class="option" onclick="selectOption(this, 10, true)"><input type="radio" name="q10"><div class="option-letter">B</div> Being a good listener</label>
+      <label class="option" onclick="selectOption(this, 10, false)"><input type="radio" name="q10"><div class="option-letter">C</div> Ignoring feedback</label>
+      <label class="option" onclick="selectOption(this, 10, false)"><input type="radio" name="q10"><div class="option-letter">D</div> Avoiding face-to-face communication</label>
+    </div>
+    <div class="feedback" id="fb-10"></div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="question-card" id="qcard-11">
+    <div class="q-number">QUESTION 11</div>
+    <div class="q-text">The stress management skill is important because stress can affect our:</div>
+    <div class="q-ar">مهارة إدارة الضغط النفسي مهمة لأن التوتر يؤثر على:</div>
+    <div class="options" id="q11">
+      <label class="option" onclick="selectOption(this, 11, false)"><input type="radio" name="q11"><div class="option-letter">A</div> Technical knowledge</label>
+      <label class="option" onclick="selectOption(this, 11, true)"><input type="radio" name="q11"><div class="option-letter">B</div> Interpersonal relationships</label>
+      <label class="option" onclick="selectOption(this, 11, false)"><input type="radio" name="q11"><div class="option-letter">C</div> Writing speed</label>
+      <label class="option" onclick="selectOption(this, 11, false)"><input type="radio" name="q11"><div class="option-letter">D</div> Physical appearance</label>
+    </div>
+    <div class="feedback" id="fb-11"></div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="question-card" id="qcard-12">
+    <div class="q-number">QUESTION 12</div>
+    <div class="q-text">To ensure a message is clearly understood, the communicator should:</div>
+    <div class="q-ar">لضمان فهم الرسالة بوضوح، يجب على المتواصل أن:</div>
+    <div class="options" id="q12">
+      <label class="option" onclick="selectOption(this, 12, false)"><input type="radio" name="q12"><div class="option-letter">A</div> Speak very loudly</label>
+      <label class="option" onclick="selectOption(this, 12, false)"><input type="radio" name="q12"><div class="option-letter">B</div> Avoid asking questions</label>
+      <label class="option" onclick="selectOption(this, 12, true)"><input type="radio" name="q12"><div class="option-letter">C</div> Seek feedback from the receiver</label>
+      <label class="option" onclick="selectOption(this, 12, false)"><input type="radio" name="q12"><div class="option-letter">D</div> Use as many technical terms as possible</label>
+    </div>
+    <div class="feedback" id="fb-12"></div>
+  </div>
+
+  <button class="btn-check no-print" onclick="checkAll()">✅ Check Answers | تحقق من الإجابات</button>
+
+  <div class="score-box" id="score-box">
+    <h4 id="score-text">0 / 12</h4>
+    <p id="score-msg"></p>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TAB 5: SUMMARY -->
+<!-- ══════════════════════════════════════ -->
+<div id="summary" class="tab-content summary-section page-section">
+<div class="summary-wrap">
+
+  <div class="summary-header">
+    <h3>📋 Lecture Summary</h3>
+    <p>ملخص المحاضرة | Barriers of Communication — Lecture 3</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="summary-grid">
+
+    <div class="sum-card">
+      <h5>🔑 6 Main Barrier Types</h5>
+      <ul>
+        <li>Language — jargon, terminology</li>
+        <li>Psychological — stress, anger, self-esteem</li>
+        <li>Physiological — physical conditions</li>
+        <li>Physical — geographic distance</li>
+        <li>Systematic — poor org. structure</li>
+        <li>Attitudinal — perceptions, conflicts</li>
+      </ul>
+    </div>
+
+    <div class="sum-card ar">
+      <h5>🔑 الأنواع الستة الرئيسية</h5>
+      <ul>
+        <li>اللغة — المصطلحات والمفردات</li>
+        <li>النفسية — التوتر والغضب وثقة النفس</li>
+        <li>الفسيولوجية — الحالة الجسدية</li>
+        <li>المادية — البُعد الجغرافي</li>
+        <li>المنهجية — ضعف هيكل المؤسسة</li>
+        <li>الموقفية — التصورات والصراعات</li>
+      </ul>
+    </div>
+
+    <div class="sum-card">
+      <h5>⚠️ Specific Barriers (Key ones)</h5>
+      <ul>
+        <li>Differences in perception</li>
+        <li>Stereotyping &amp; jumping to conclusions</li>
+        <li>Emotions &amp; personality clashes</li>
+        <li>Information overload</li>
+        <li>Poor listening skills</li>
+        <li>Noise (technical/physical/psychological)</li>
+        <li>Mistrust &amp; distraction</li>
+        <li>Poor timing &amp; appearance</li>
+      </ul>
+    </div>
+
+    <div class="sum-card ar">
+      <h5>⚠️ الحواجز التفصيلية الأساسية</h5>
+      <ul>
+        <li>اختلاف الإدراك والتصورات</li>
+        <li>التنميط والقفز للاستنتاجات</li>
+        <li>المشاعر وتعارض الشخصيات</li>
+        <li>الإغراق بالمعلومات</li>
+        <li>ضعف مهارة الاستماع</li>
+        <li>الضجيج (تقني / مادي / نفسي)</li>
+        <li>انعدام الثقة والمشتتات</li>
+        <li>سوء التوقيت والمظهر</li>
+      </ul>
+    </div>
+
+    <div class="sum-card">
+      <h5>✅ Ways to Overcome Barriers</h5>
+      <ul>
+        <li>Prefer face-to-face communication</li>
+        <li>Be sensitive to cultural backgrounds</li>
+        <li>Use simple, clear language</li>
+        <li>Repeat &amp; follow up messages</li>
+        <li>Be a good, active listener</li>
+        <li>Remove mistrust &amp; prejudice</li>
+        <li>Use appropriate channels (less noise)</li>
+        <li>Leverage modern technology</li>
+      </ul>
+    </div>
+
+    <div class="sum-card ar">
+      <h5>✅ طرق التغلب على الحواجز</h5>
+      <ul>
+        <li>تفضيل التواصل وجهًا لوجه</li>
+        <li>الحساسية للخلفيات الثقافية</li>
+        <li>استخدام لغة بسيطة وواضحة</li>
+        <li>تكرار الرسائل والمتابعة</li>
+        <li>الاستماع الفعّال والجيد</li>
+        <li>إزالة انعدام الثقة والتحيز</li>
+        <li>استخدام قنوات مناسبة (ضجيج أقل)</li>
+        <li>الاستفادة من التكنولوجيا الحديثة</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="key-point">
+    <div>
+      <p style="color:var(--gold); font-weight:600; margin-bottom:8px;">💡 Core Conclusion</p>
+      <p>Communication is a far-from-perfect process. Both the sender and receiver must work to make conditions as satisfactory as possible so the message stands a chance of being effective. Seeking feedback is essential.</p>
+    </div>
+    <div>
+      <p style="color:var(--gold); font-weight:600; margin-bottom:8px; text-align:right; direction:rtl;">💡 الخلاصة الجوهرية</p>
+      <div class="ar">التواصل عملية غير مثالية. يجب على المرسل والمستقبل معًا السعي لجعل الظروف مناسبة قدر الإمكان حتى تنجح الرسالة في إيصال مضمونها. طلب التغذية الراجعة أمر أساسي.</div>
+    </div>
+  </div>
+
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Save / Print as PDF | احفظ كـ PDF</button>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  // Tabs
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Quiz
+  const answers = { 1:false, 2:false, 3:false, 4:false, 5:false, 6:false,
+                    7:false, 8:false, 9:false, 10:false, 11:false, 12:false };
+  const feedbacks = {
+    1: { c: "✅ صح! الحواجز تُعرف بـ 'blockers' لأنها تعيق استقبال الرسالة.", w: "❌ غلط. الإجابة الصحيحة: Blockers / Barriers — العوامل المُعيقة لاستقبال الرسالة." },
+    2: { c: "✅ صح! استخدام المصطلحات غير المفهومة هو حاجز لغوي.", w: "❌ غلط. الإجابة: Language Barrier — حاجز لغوي." },
+    3: { c: "✅ صح! ضعف السمع هو حاجز فسيولوجي (جسدي).", w: "❌ غلط. الإجابة: Physiological Barrier — الحاجز الفسيولوجي الناتج عن الحالة الجسدية." },
+    4: { c: "✅ صح! المسافة الجغرافية هي حاجز مادي.", w: "❌ غلط. الإجابة: Physical Barrier — الحاجز المادي." },
+    5: { c: "✅ صح! الأنظمة المؤسسية الضعيفة هي حواجز منهجية.", w: "❌ غلط. الإجابة: Systematic Barrier — الحاجز المنهجي." },
+    6: { c: "✅ صح! صراع الشخصيات ومقاومة التغيير تؤدي لحواجز موقفية.", w: "❌ غلط. الإجابة: Attitudinal Barrier — الحاجز الموقفي." },
+    7: { c: "✅ صح! الحكم على المجموعة كلها بسبب فرد واحد هو تنميط (Stereotyping).", w: "❌ غلط. الإجابة: Stereotyping — التنميط." },
+    8: { c: "✅ صح! كثرة المعلومات في وقت قصير هي Information Overload.", w: "❌ غلط. الإجابة: Information Overload — الإغراق بالمعلومات." },
+    9: { c: "✅ صح! 'Financial noise' غير مذكور في المحاضرة. الأنواع هي: تقني، مادي، نفسي.", w: "❌ غلط. الإجابة: Financial — هذا النوع غير موجود في المحاضرة. الأنواع هي التقني والمادي والنفسي." },
+    10: { c: "✅ صح! الاستماع الجيد من أهم طرق التغلب على حواجز التواصل.", w: "❌ غلط. الإجابة: Being a good listener — الاستماع الجيد." },
+    11: { c: "✅ صح! التوتر يؤثر على علاقاتنا الشخصية (interpersonal relationships).", w: "❌ غلط. الإجابة: Interpersonal relationships — العلاقات الشخصية." },
+    12: { c: "✅ صح! طلب التغذية الراجعة (feedback) يضمن وصول الرسالة.", w: "❌ غلط. الإجابة: Seek feedback — طلب التغذية الراجعة من المستقبل." }
+  };
+
+  function selectOption(el, qNum, isCorrect) {
+    const qDiv = document.getElementById('q' + qNum);
+    qDiv.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[qNum] = isCorrect;
+    el.setAttribute('data-correct', isCorrect);
+  }
+
+  function checkAll() {
+    let score = 0;
+    for (let i = 1; i <= 12; i++) {
+      const qDiv = document.getElementById('q' + i);
+      const selected = qDiv.querySelector('.option.selected');
+      const fb = document.getElementById('fb-' + i);
+
+      if (!selected) {
+        fb.textContent = '⚠️ لم تختر إجابة لهذا السؤال!';
+        fb.className = 'feedback show wrong-fb';
+        continue;
+      }
+
+      const isCorrect = selected.getAttribute('data-correct') === 'true';
+
+      qDiv.querySelectorAll('.option').forEach(opt => {
+        const c = opt.getAttribute('data-correct') === 'true';
+        opt.classList.remove('selected');
+        if (c) opt.classList.add('correct');
+        else if (opt === selected && !isCorrect) opt.classList.add('wrong');
+      });
+
+      if (isCorrect) {
+        score++;
+        fb.textContent = feedbacks[i].c;
+        fb.className = 'feedback show correct-fb';
+      } else {
+        fb.textContent = feedbacks[i].w;
+        fb.className = 'feedback show wrong-fb';
+      }
+    }
+
+    const box = document.getElementById('score-box');
+    box.style.display = 'block';
+    document.getElementById('score-text').textContent = score + ' / 12';
+    const pct = Math.round((score/12)*100);
+    let msg = '';
+    if (pct === 100) msg = '🏆 ممتاز! إجاباتك كلها صحيحة! | Perfect score!';
+    else if (pct >= 75) msg = '👍 جيد جداً! استمر في المراجعة | Great job!';
+    else if (pct >= 50) msg = '📚 مقبول، راجع المحاضرة مرة أخرى | Review the lecture.';
+    else msg = '❗ تحتاج لمراجعة أعمق | You need more review.';
+    document.getElementById('score-msg').textContent = msg;
+    box.scrollIntoView({behavior:'smooth'});
+  }
+</script>
+
+</body>
+</html>

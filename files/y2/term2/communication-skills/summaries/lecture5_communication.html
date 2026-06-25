@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 5 – Forms of Communication | أشكال التواصل</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --paper: #fdfaf4;
+    --ink: #1a1208;
+    --accent: #c0392b;
+    --accent2: #2c7a5a;
+    --accent3: #2563a8;
+    --gold: #c9963a;
+    --muted: #6b5c42;
+    --border: #d9cdb8;
+    --section-bg: #fff9ef;
+    --quiz-bg: #f0f7ff;
+    --correct: #e6f7ee;
+    --wrong: #fdecea;
+    --summary-bg: #1a1208;
+    --summary-fg: #f5f0e8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', 'Source Serif 4', serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  /* PRINT */
+  @media print {
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { background: white; font-size: 12pt; }
+    .card { break-inside: avoid; }
+    .hero { page-break-after: always; }
+    #quiz-section { page-break-before: always; }
+    #summary-section { page-break-before: always; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--ink);
+    color: var(--summary-fg);
+    padding: 70px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 30px,
+      rgba(201,150,58,0.04) 30px,
+      rgba(201,150,58,0.04) 31px
+    );
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero .subtitle {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+  }
+  .hero .desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .print-btn {
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    padding: 12px 28px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .print-btn:hover { background: #e0aa40; transform: translateY(-1px); }
+
+  /* ===== LAYOUT ===== */
+  .container { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-title .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    min-width: 60px;
+  }
+  .section-title .text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .section-title .text p {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 8px 0 0;
+  }
+
+  /* ===== CARDS ===== */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .card.red::before { background: var(--accent); }
+  .card.green::before { background: var(--accent2); }
+  .card.blue::before { background: var(--accent3); }
+  .card.gold::before { background: var(--gold); }
+  .card .icon { font-size: 28px; margin-bottom: 12px; }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .card .ar { font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
+  .card p { font-size: 14px; color: #3a3020; line-height: 1.7; }
+
+  /* ===== INFO BLOCK ===== */
+  .info-block {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .info-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .info-block .ar-title {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .info-block p { font-size: 14.5px; color: #3a3020; margin-bottom: 8px; }
+  .info-block ul { padding-right: 20px; }
+  .info-block li { font-size: 14.5px; color: #3a3020; margin-bottom: 6px; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 6px;
+    letter-spacing: 1px;
+  }
+  .tag.red { background: #fde8e8; color: var(--accent); }
+  .tag.green { background: #e6f5ef; color: var(--accent2); }
+  .tag.blue { background: #e8f0fb; color: var(--accent3); }
+  .tag.gold { background: #fdf3e0; color: var(--gold); }
+
+  /* Stats bar */
+  .stat-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .stat-bar .label { min-width: 120px; font-weight: 600; }
+  .stat-bar .bar-wrap { flex: 1; background: var(--border); border-radius: 4px; height: 10px; overflow: hidden; }
+  .stat-bar .bar { height: 100%; border-radius: 4px; transition: width 1s ease; }
+  .stat-bar .pct { min-width: 36px; text-align: right; font-weight: 700; color: var(--muted); }
+
+  /* Space zones */
+  .zones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .zone {
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    border-right: 4px solid;
+  }
+  .zone.z1 { background: #fde8e8; border-color: var(--accent); }
+  .zone.z2 { background: #e8f0fb; border-color: var(--accent3); }
+  .zone.z3 { background: #e6f5ef; border-color: var(--accent2); }
+  .zone.z4 { background: #fdf3e0; border-color: var(--gold); }
+  .zone .z-title { font-weight: 700; margin-bottom: 4px; }
+  .zone .z-dist { font-size: 12px; font-weight: 700; opacity: 0.7; }
+
+  /* Separator */
+  .sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* ===== QUIZ ===== */
+  #quiz-section {
+    background: #f8f4ff;
+    border-radius: 12px;
+    padding: 40px 32px;
+    margin-bottom: 48px;
+    border: 1px solid #ddd5f5;
+  }
+  #quiz-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  #quiz-section .quiz-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .q-block {
+    background: white;
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    border: 1px solid #e0d8f5;
+  }
+  .q-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #7c5cbf;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .q-text { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 14px; line-height: 1.6; }
+  .options { display: grid; gap: 8px; }
+  .option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1.5px solid #e0d8f5;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 14px;
+    background: #faf8ff;
+    text-align: right;
+  }
+  .option:hover { border-color: #7c5cbf; background: #f3efff; }
+  .option.correct { background: var(--correct); border-color: var(--accent2); color: #1a5c38; }
+  .option.wrong { background: var(--wrong); border-color: var(--accent); color: #8b1a1a; }
+  .option.disabled { pointer-events: none; }
+  .opt-letter {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 24px; height: 24px;
+    border-radius: 50%; border: 1.5px solid currentColor;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .feedback { font-size: 13px; margin-top: 10px; padding: 8px 12px; border-radius: 5px; font-weight: 500; }
+  .feedback.ok { background: var(--correct); color: #1a5c38; }
+  .feedback.bad { background: var(--wrong); color: #8b1a1a; }
+
+  .quiz-score {
+    display: none;
+    text-align: center;
+    margin-top: 28px;
+    padding: 28px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #7c5cbf;
+  }
+  .quiz-score .score-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: #7c5cbf;
+    line-height: 1;
+  }
+  .quiz-score p { font-size: 16px; color: var(--muted); margin-top: 8px; }
+
+  .quiz-submit {
+    margin-top: 24px;
+    background: #7c5cbf;
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    transition: background 0.2s;
+  }
+  .quiz-submit:hover { background: #6a4dab; }
+  .quiz-retry {
+    margin-top: 14px;
+    background: transparent;
+    color: #7c5cbf;
+    border: 2px solid #7c5cbf;
+    padding: 10px 28px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .quiz-retry:hover { background: #7c5cbf; color: white; }
+
+  /* ===== SUMMARY ===== */
+  #summary-section {
+    background: var(--summary-bg);
+    color: var(--summary-fg);
+    border-radius: 12px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  #summary-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg, transparent, transparent 20px,
+      rgba(201,150,58,0.03) 20px, rgba(201,150,58,0.03) 21px
+    );
+    pointer-events: none;
+  }
+  #summary-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  #summary-section .sum-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 36px;
+  }
+  .sum-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media(max-width:640px) { .sum-grid { grid-template-columns: 1fr; } .zones-grid { grid-template-columns: 1fr; } }
+  .sum-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .sum-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .sum-card .ar-h { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 12px; font-weight: 600; }
+  .sum-card ul { padding-right: 18px; }
+  .sum-card li { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 6px; line-height: 1.6; }
+  .sum-card li::marker { color: var(--gold); }
+
+  .sum-footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Communication Skills · Lecture 5</div>
+  <h1>Forms of <span>Communication</span></h1>
+  <div class="subtitle">أشكال التواصل</div>
+  <div class="desc">Simplified · Bilingual · Quiz Included</div>
+  <br>
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Save as PDF / حفظ كـ PDF</button>
+</div>
+
+<!-- =========================================================
+     PART 1: LEVELS
+     ========================================================= -->
+<div class="container">
+
+  <div class="section-title">
+    <div class="num">01</div>
+    <div class="text">
+      <h2>Levels of Communication</h2>
+      <p>مستويات التواصل</p>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card red">
+      <div class="icon">🧠</div>
+      <h3>Intrapersonal</h3>
+      <div class="ar">التواصل الداخلي (مع النفس)</div>
+      <p>Communication with <strong>yourself</strong> — self-talk, planning, inner monologue. Affects your self-esteem greatly.<br><br>
+      التحدث مع نفسك — التفكير، التخطيط، الحوار الداخلي. يؤثر بشدة على تقدير الذات.</p>
+    </div>
+    <div class="card green">
+      <div class="icon">🤝</div>
+      <h3>Interpersonal</h3>
+      <div class="ar">التواصل بين الأشخاص</div>
+      <p>Communication between <strong>people</strong>, ranging from impersonal to deeply personal. Shapes how relationships develop or end.<br><br>
+      التواصل بين الأشخاص، من الرسمي إلى الشخصي جداً. يؤثر على مآل العلاقات.</p>
+    </div>
+    <div class="card blue">
+      <div class="icon">🎤</div>
+      <h3>Public Communication</h3>
+      <div class="ar">التواصل العام</div>
+      <p>Speeches before an <strong>audience</strong>. Purposes: entertain, persuade, inform. Requires preparation; less back-and-forth than conversation.<br><br>
+      خطاب أمام جمهور. أهدافه: الترفيه، الإقناع، الإخبار. يحتاج تحضيراً أكثر.</p>
+    </div>
+    <div class="card gold">
+      <div class="icon">📡</div>
+      <h3>Mass Communication</h3>
+      <div class="ar">التواصل الجماهيري</div>
+      <p>Media reaching <strong>mass audiences</strong>: TV, radio, books, films, magazines, newspapers. Does NOT include one-on-one email.<br><br>
+      وسائل الإعلام كالتلفاز والراديو والكتب. لا يشمل البريد الفردي.</p>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <!-- =========================================================
+       PART 2: TYPES / FORMS
+       ========================================================= -->
+  <div class="section-title">
+    <div class="num">02</div>
+    <div class="text">
+      <h2>Types of Communication</h2>
+      <p>أنواع التواصل</p>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <!-- VERBAL -->
+  <div class="info-block">
+    <h3>🗣️ Verbal Communication <span class="tag red">Verbal</span></h3>
+    <div class="ar-title">التواصل اللفظي</div>
+    <p>Using <strong>speech</strong> to exchange information — meetings, interviews, conferences, phone calls. Most communication combines verbal <em>and</em> nonverbal cues (language + gestures).</p>
+    <p>استخدام الكلام لتبادل المعلومات. معظم التواصل يجمع بين اللفظي وغير اللفظي.</p>
+    <br>
+    <ul>
+      <li><strong>Vocal verbal:</strong> spoken language | <em>اللغة المنطوقة</em></li>
+      <li><strong>Non-vocal verbal:</strong> writing, sign language, Braille, finger spelling | <em>الكتابة، لغة الإشارة، طريقة برايل</em></li>
+    </ul>
+  </div>
+
+  <!-- PARALANGUAGE -->
+  <div class="info-block">
+    <h3>🎵 Paralanguage / Paraverbal Features <span class="tag blue">Paraverbal</span></h3>
+    <div class="ar-title">ملامح اللغة الموازية / شبه اللغوية</div>
+    <p>Aspects of speech that <strong>do not involve words</strong> but add emphasis and meaning. Examples: <strong>pitch, rate, volume, quality of voice, intonation, rhythm</strong>.</p>
+    <p>جوانب الكلام التي لا تشمل الكلمات ولكنها تضيف معنى. مثال: درجة الصوت، سرعة الكلام، الإيقاع.</p>
+    <br>
+    <p>Also includes: laughter, imitative speech, prosody (stress, inflection). Paralinguistic features are often <strong>culturally coded</strong> and operate at a <em>subconscious</em> level.</p>
+    <p>تشمل أيضاً: الضحك، الإيقاع، التنغيم. وكثيراً ما تكون ذات <strong>ترميز ثقافي</strong> وتعمل على مستوى اللاوعي.</p>
+  </div>
+
+  <!-- WRITTEN -->
+  <div class="info-block">
+    <h3>✍️ Written Communication <span class="tag green">Written</span></h3>
+    <div class="ar-title">التواصل الكتابي</div>
+    <p>Any interaction using the <strong>written word</strong>. It is the <strong>most common form of business communication</strong>. The information age has shifted emphasis toward writing over speaking.</p>
+    <p>أي تفاعل يستخدم الكلمة المكتوبة. هو الشكل الأكثر شيوعاً في التواصل التجاري. العصر الرقمي زاد الاعتماد على الكتابة.</p>
+  </div>
+
+  <!-- NON-VERBAL -->
+  <div class="info-block">
+    <h3>🤲 Non-Verbal Communication <span class="tag gold">Non-Verbal</span></h3>
+    <div class="ar-title">التواصل غير اللفظي</div>
+    <p>Uses <strong>gestures and body language</strong> instead of words. Often happens subconsciously. The acronym <strong>PEOPLE</strong> summarises its components:</p>
+    <p>يستخدم الإيماءات ولغة الجسد. غالباً يحدث بشكل لا شعوري. الاختصار <strong>PEOPLE</strong> يلخص مكوناته:</p>
+    <br>
+    <ul>
+      <li><strong>P</strong> — Postures & Gestures | <em>الأوضاع والإيماءات</em></li>
+      <li><strong>E</strong> — Eye Contact | <em>التواصل البصري</em></li>
+      <li><strong>O</strong> — Orientation | <em>التوجه الجسدي</em></li>
+      <li><strong>P</strong> — Presentation | <em>المظهر والتقديم</em></li>
+      <li><strong>L</strong> — Looks | <em>المظهر الخارجي</em></li>
+      <li><strong>E</strong> — Expressions of Emotion | <em>تعبيرات العاطفة</em></li>
+    </ul>
+  </div>
+
+  <!-- 7-38-55 RULE -->
+  <div class="info-block">
+    <h3>📊 The 7 – 38 – 55 Rule <span class="tag red">Key Fact</span></h3>
+    <div class="ar-title">قاعدة 7 – 38 – 55</div>
+    <p>In face-to-face communication, meaning comes from:</p>
+    <p>في التواصل وجهاً لوجه، المعنى يأتي من:</p>
+    <br>
+    <div class="stat-bar">
+      <span class="label">Words / الكلمات</span>
+      <div class="bar-wrap"><div class="bar" style="width:7%;background:var(--accent)"></div></div>
+      <span class="pct">7%</span>
+    </div>
+    <div class="stat-bar">
+      <span class="label">Tone of Voice / النبرة</span>
+      <div class="bar-wrap"><div class="bar" style="width:38%;background:var(--accent3)"></div></div>
+      <span class="pct">38%</span>
+    </div>
+    <div class="stat-bar">
+      <span class="label">Body Language / لغة الجسد</span>
+      <div class="bar-wrap"><div class="bar" style="width:55%;background:var(--accent2)"></div></div>
+      <span class="pct">55%</span>
+    </div>
+    <br>
+    <p>⚠️ When body language contradicts words, it can cause <strong>misunderstandings, communication failure, or conflicts</strong>.</p>
+    <p>⚠️ عندما تتعارض لغة الجسد مع الكلمات، تحدث <strong>سوء فهم أو فشل في التواصل أو نزاعات</strong>.</p>
+  </div>
+
+  <hr class="sep">
+
+  <!-- =========================================================
+       PART 3: BODY LANGUAGE DETAILS
+       ========================================================= -->
+  <div class="section-title">
+    <div class="num">03</div>
+    <div class="text">
+      <h2>Body Language in Detail</h2>
+      <p>لغة الجسد بالتفصيل</p>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card blue">
+      <div class="icon">👋</div>
+      <h3>Hand Gestures</h3>
+      <div class="ar">إيماءات اليدين</div>
+      <p>
+        • <strong>Lightly clenched</strong> = confident, positive<br>
+        • <strong>Tightly clenched</strong> = frustration / hostility<br>
+        • Rubbing arms, closed arms, clenched fists all send subconscious signals.<br><br>
+        • قبضة خفيفة = ثقة وإيجابية<br>
+        • قبضة شديدة = إحباط أو عدائية
+      </p>
+    </div>
+    <div class="card green">
+      <div class="icon">👁️</div>
+      <h3>Eye Contact & Facial Expressions</h3>
+      <div class="ar">التواصل البصري وتعابير الوجه</div>
+      <p>
+        Face = most observable area. Key expressions: Surprise, Anger, Fear, Disgust, Happiness, Contempt.<br><br>
+        • Eyes downcast + face away = <strong>shut out</strong><br>
+        • Sustained eye contact = <strong>engaged / weighing you</strong><br><br>
+        الوجه الأكثر تعبيراً. انخفاض العيون = الرفض. التواصل البصري = الانخراط.
+      </p>
+    </div>
+    <div class="card red">
+      <div class="icon">🧍</div>
+      <h3>Posture & Body Position</h3>
+      <div class="ar">الوضعية الجسدية</div>
+      <p>
+        How you sit, stand, cross legs, fold arms communicates attitude.<br>
+        • Leaning forward + gripping chair = wants to <strong>end the meeting</strong><br>
+        • Open gaze + smile + open palms = <strong>welcoming & confident</strong><br><br>
+        طريقة الجلوس والوقوف تعكس المشاعر. الانحناء للأمام وإمساك الكرسي = يريد الانتهاء.
+      </p>
+    </div>
+    <div class="card gold">
+      <div class="icon">📐</div>
+      <h3>Personal Space (Proxemics)</h3>
+      <div class="ar">المسافة الشخصية (علم القرب)</div>
+      <p>Introduced by <strong>Edward T. Hall</strong>. Four zones vary by culture and context.<br><br>
+      قدّمها العالم <strong>إدوارد هول</strong>. أربع مناطق تتفاوت حسب الثقافة والسياق.</p>
+    </div>
+  </div>
+
+  <!-- Space zones -->
+  <div class="info-block">
+    <h3>🎯 Edward T. Hall's Four Zones of Personal Space</h3>
+    <div class="ar-title">مناطق المسافة الشخصية الأربع لإدوارد هول</div>
+    <div class="zones-grid">
+      <div class="zone z1">
+        <div class="z-title">1. Intimate Space <span class="z-dist">0 – 18 in</span></div>
+        <div>المسافة الحميمة (0 – 45 سم)</div>
+        <div style="margin-top:6px;font-size:13px;">Family, romantic partners. Physical touch allowed. | العائلة والشركاء. يُسمح باللمس.</div>
+      </div>
+      <div class="zone z2">
+        <div class="z-title">2. Personal Space <span class="z-dist">1.5 – 4 ft</span></div>
+        <div>المسافة الشخصية (45 – 120 سم)</div>
+        <div style="margin-top:6px;font-size:13px;">Friends & acquaintances. Comfortable conversation. | الأصدقاء والمعارف.</div>
+      </div>
+      <div class="zone z3">
+        <div class="z-title">3. Social Space <span class="z-dist">4 – 12 ft</span></div>
+        <div>المسافة الاجتماعية (1.2 – 3.6 م)</div>
+        <div style="margin-top:6px;font-size:13px;">Business meetings, strangers. Respectful distance. | الأعمال والغرباء.</div>
+      </div>
+      <div class="zone z4">
+        <div class="z-title">4. Public Space <span class="z-dist">>12 ft</span></div>
+        <div>المسافة العامة (أكثر من 3.6 م)</div>
+        <div style="margin-top:6px;font-size:13px;">Speeches, crowds. Detached from others. | الخطابات والتجمعات.</div>
+      </div>
+    </div>
+    <br>
+    <p>⚠️ The more people in a communication situation, the <strong>more complex</strong> non-verbal interpretation becomes. Always read body language <strong>holistically</strong> and in context.</p>
+    <p>⚠️ كلما زاد عدد الأشخاص، زاد تعقيد تفسير لغة الجسد. اقرأها دائماً <strong>بشكل شامل</strong> وفي سياقها.</p>
+  </div>
+
+  <hr class="sep">
+
+  <!-- =========================================================
+       QUIZ
+       ========================================================= -->
+  <div id="quiz-section">
+    <h2>✏️ Quiz — Test Your Knowledge</h2>
+    <div class="quiz-sub">اختبر معلوماتك | Choose the best answer for each question</div>
+
+    <!-- Q1 -->
+    <div class="q-block" id="q1">
+      <div class="q-num">Question 1 / سؤال ١</div>
+      <div class="q-text">Which level of communication is also known as "self-talk"?<br>
+        <small style="color:var(--muted);">أي مستوى من التواصل يُعرف بـ "الحديث مع النفس"؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q1',false,'a')"><span class="opt-letter">أ</span> Interpersonal / بين الأشخاص</div>
+        <div class="option" onclick="answer(this,'q1',true,'b')"><span class="opt-letter">ب</span> Intrapersonal / داخلي</div>
+        <div class="option" onclick="answer(this,'q1',false,'c')"><span class="opt-letter">ج</span> Mass Communication / جماهيري</div>
+        <div class="option" onclick="answer(this,'q1',false,'d')"><span class="opt-letter">د</span> Public Communication / عام</div>
+      </div>
+      <div class="feedback" id="fb-q1" style="display:none"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-block" id="q2">
+      <div class="q-num">Question 2 / سؤال ٢</div>
+      <div class="q-text">What percentage of meaning in face-to-face communication comes from body language?<br>
+        <small style="color:var(--muted);">ما نسبة المعنى التي تأتي من لغة الجسد في التواصل وجهاً لوجه؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q2',false,'a')"><span class="opt-letter">أ</span> 7%</div>
+        <div class="option" onclick="answer(this,'q2',false,'b')"><span class="opt-letter">ب</span> 38%</div>
+        <div class="option" onclick="answer(this,'q2',true,'c')"><span class="opt-letter">ج</span> 55%</div>
+        <div class="option" onclick="answer(this,'q2',false,'d')"><span class="opt-letter">د</span> 70%</div>
+      </div>
+      <div class="feedback" id="fb-q2" style="display:none"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-block" id="q3">
+      <div class="q-num">Question 3 / سؤال ٣</div>
+      <div class="q-text">Public communication serves which of the following purposes?<br>
+        <small style="color:var(--muted);">يخدم التواصل العام أياً من الأهداف التالية؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q3',false,'a')"><span class="opt-letter">أ</span> Only to inform / للإخبار فقط</div>
+        <div class="option" onclick="answer(this,'q3',false,'b')"><span class="opt-letter">ب</span> Only to entertain / للترفيه فقط</div>
+        <div class="option" onclick="answer(this,'q3',true,'c')"><span class="opt-letter">ج</span> To entertain, persuade, and inform / الترفيه والإقناع والإخبار</div>
+        <div class="option" onclick="answer(this,'q3',false,'d')"><span class="opt-letter">د</span> To sell products / لبيع المنتجات</div>
+      </div>
+      <div class="feedback" id="fb-q3" style="display:none"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-block" id="q4">
+      <div class="q-num">Question 4 / سؤال ٤</div>
+      <div class="q-text">What does the "P" stand for in the non-verbal PEOPLE acronym?<br>
+        <small style="color:var(--muted);">ماذا يعني حرف "P" في اختصار PEOPLE للتواصل غير اللفظي؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q4',true,'a')"><span class="opt-letter">أ</span> Postures & Gestures / الأوضاع والإيماءات</div>
+        <div class="option" onclick="answer(this,'q4',false,'b')"><span class="opt-letter">ب</span> Pronunciation / النطق</div>
+        <div class="option" onclick="answer(this,'q4',false,'c')"><span class="opt-letter">ج</span> Proximity / القرب</div>
+        <div class="option" onclick="answer(this,'q4',false,'d')"><span class="opt-letter">د</span> Patience / الصبر</div>
+      </div>
+      <div class="feedback" id="fb-q4" style="display:none"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-block" id="q5">
+      <div class="q-num">Question 5 / سؤال ٥</div>
+      <div class="q-text">Which scholar first introduced the four zones of personal space?<br>
+        <small style="color:var(--muted);">من هو العالم الذي قدّم أولاً المناطق الأربع للمسافة الشخصية؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q5',false,'a')"><span class="opt-letter">أ</span> Sigmund Freud / سيغموند فرويد</div>
+        <div class="option" onclick="answer(this,'q5',false,'b')"><span class="opt-letter">ب</span> Albert Mehrabian / ألبرت ميهرابيان</div>
+        <div class="option" onclick="answer(this,'q5',true,'c')"><span class="opt-letter">ج</span> Edward T. Hall / إدوارد هول</div>
+        <div class="option" onclick="answer(this,'q5',false,'d')"><span class="opt-letter">د</span> Charles Darwin / تشارلز داروين</div>
+      </div>
+      <div class="feedback" id="fb-q5" style="display:none"></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-block" id="q6">
+      <div class="q-num">Question 6 / سؤال ٦</div>
+      <div class="q-text">Which of the following is NOT an example of mass communication?<br>
+        <small style="color:var(--muted);">أيٌّ مما يلي ليس مثالاً على التواصل الجماهيري؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q6',false,'a')"><span class="opt-letter">أ</span> Television / التلفاز</div>
+        <div class="option" onclick="answer(this,'q6',false,'b')"><span class="opt-letter">ب</span> Newspapers / الصحف</div>
+        <div class="option" onclick="answer(this,'q6',true,'c')"><span class="opt-letter">ج</span> One-on-one email / البريد الفردي</div>
+        <div class="option" onclick="answer(this,'q6',false,'d')"><span class="opt-letter">د</span> Radio / الراديو</div>
+      </div>
+      <div class="feedback" id="fb-q6" style="display:none"></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-block" id="q7">
+      <div class="q-num">Question 7 / سؤال ٧</div>
+      <div class="q-text">Paralanguage features include which of the following?<br>
+        <small style="color:var(--muted);">تشمل ملامح اللغة الموازية أياً مما يلي؟</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q7',false,'a')"><span class="opt-letter">أ</span> Grammar rules / قواعد النحو</div>
+        <div class="option" onclick="answer(this,'q7',true,'b')"><span class="opt-letter">ب</span> Pitch, rate, and intonation / درجة الصوت والسرعة والتنغيم</div>
+        <div class="option" onclick="answer(this,'q7',false,'c')"><span class="opt-letter">ج</span> Vocabulary choice / اختيار المفردات</div>
+        <div class="option" onclick="answer(this,'q7',false,'d')"><span class="opt-letter">د</span> Punctuation marks / علامات الترقيم</div>
+      </div>
+      <div class="feedback" id="fb-q7" style="display:none"></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-block" id="q8">
+      <div class="q-num">Question 8 / سؤال ٨</div>
+      <div class="q-text">Tightly clenched hands usually indicate:<br>
+        <small style="color:var(--muted);">القبضة الشديدة باليدين تدل عادةً على:</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q8',false,'a')"><span class="opt-letter">أ</span> Confidence / الثقة</div>
+        <div class="option" onclick="answer(this,'q8',true,'b')"><span class="opt-letter">ب</span> Frustration or hostile attitude / الإحباط أو العدائية</div>
+        <div class="option" onclick="answer(this,'q8',false,'c')"><span class="opt-letter">ج</span> Happiness / السعادة</div>
+        <div class="option" onclick="answer(this,'q8',false,'d')"><span class="opt-letter">د</span> Boredom / الملل</div>
+      </div>
+      <div class="feedback" id="fb-q8" style="display:none"></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-block" id="q9">
+      <div class="q-num">Question 9 / سؤال ٩</div>
+      <div class="q-text">Social Space (according to Hall) is approximately:<br>
+        <small style="color:var(--muted);">المسافة الاجتماعية (حسب هول) تبلغ تقريباً:</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q9',false,'a')"><span class="opt-letter">أ</span> 0 to 18 inches / 0 إلى 45 سم</div>
+        <div class="option" onclick="answer(this,'q9',false,'b')"><span class="opt-letter">ب</span> 1.5 to 4 feet / 45 – 120 سم</div>
+        <div class="option" onclick="answer(this,'q9',true,'c')"><span class="opt-letter">ج</span> 4 to 12 feet / 1.2 – 3.6 م</div>
+        <div class="option" onclick="answer(this,'q9',false,'d')"><span class="opt-letter">د</span> More than 12 feet / أكثر من 3.6 م</div>
+      </div>
+      <div class="feedback" id="fb-q9" style="display:none"></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-block" id="q10">
+      <div class="q-num">Question 10 / سؤال ١٠</div>
+      <div class="q-text">Written communication is considered the most common form of:<br>
+        <small style="color:var(--muted);">يُعدّ التواصل الكتابي الشكل الأكثر شيوعاً في:</small></div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q10',false,'a')"><span class="opt-letter">أ</span> Romantic relationships / العلاقات العاطفية</div>
+        <div class="option" onclick="answer(this,'q10',true,'b')"><span class="opt-letter">ب</span> Business communication / التواصل التجاري</div>
+        <div class="option" onclick="answer(this,'q10',false,'c')"><span class="opt-letter">ج</span> Public speeches / الخطب العامة</div>
+        <div class="option" onclick="answer(this,'q10',false,'d')"><span class="opt-letter">د</span> Intrapersonal communication / التواصل الداخلي</div>
+      </div>
+      <div class="feedback" id="fb-q10" style="display:none"></div>
+    </div>
+
+    <button class="quiz-submit no-print" onclick="submitQuiz()">✅ Submit Quiz / إرسال الإجابات</button>
+
+    <div class="quiz-score" id="quiz-result">
+      <div class="score-num" id="score-display">0/10</div>
+      <p id="score-msg"></p>
+      <button class="quiz-retry no-print" onclick="retryQuiz()">🔄 Retry / إعادة المحاولة</button>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <!-- =========================================================
+       SUMMARY PAGE
+       ========================================================= -->
+  <div id="summary-section">
+    <h2>📋 Final Summary</h2>
+    <div class="sum-sub">ملخص نهائي للمحاضرة الخامسة • Lecture 5 — Forms of Communication</div>
+
+    <div class="sum-grid">
+      <div class="sum-card">
+        <h4>4 Levels of Communication</h4>
+        <div class="ar-h">مستويات التواصل الأربع</div>
+        <ul>
+          <li><strong>Intrapersonal</strong> — self-talk; affects self-esteem | الحديث مع النفس</li>
+          <li><strong>Interpersonal</strong> — between people; shapes relationships | بين الأشخاص</li>
+          <li><strong>Public</strong> — speeches; entertain/persuade/inform | عام: ترفيه، إقناع، إخبار</li>
+          <li><strong>Mass</strong> — media (TV, radio, books); not one-on-one email | جماهيري</li>
+        </ul>
+      </div>
+
+      <div class="sum-card">
+        <h4>3 Types / Forms</h4>
+        <div class="ar-h">الأنواع الثلاثة</div>
+        <ul>
+          <li><strong>Verbal</strong> — spoken (vocal) or written/sign language (non-vocal) | لفظي</li>
+          <li><strong>Written</strong> — most common in business; info age has increased it | كتابي</li>
+          <li><strong>Non-Verbal</strong> — body language, gestures, PEOPLE acronym | غير لفظي</li>
+        </ul>
+      </div>
+
+      <div class="sum-card">
+        <h4>Paralanguage Key Points</h4>
+        <div class="ar-h">نقاط اللغة الموازية</div>
+        <ul>
+          <li>Does NOT involve words | لا تستخدم الكلمات</li>
+          <li>Includes pitch, rate, volume, intonation, rhythm | درجة الصوت والإيقاع</li>
+          <li>Culturally coded & subconscious | ترميز ثقافي ولاوعي</li>
+          <li>Prosody = rhythm, stress, inflection | النظم والتنغيم</li>
+        </ul>
+      </div>
+
+      <div class="sum-card">
+        <h4>7 – 38 – 55 Rule</h4>
+        <div class="ar-h">قاعدة 7-38-55</div>
+        <ul>
+          <li>Words = 7% of meaning | الكلمات 7%</li>
+          <li>Tone of voice = 38% | نبرة الصوت 38%</li>
+          <li>Body language = 55% | لغة الجسد 55%</li>
+          <li>Mismatch → misunderstanding/conflict | التعارض → سوء الفهم</li>
+        </ul>
+      </div>
+
+      <div class="sum-card">
+        <h4>Body Language Highlights</h4>
+        <div class="ar-h">أبرز لغة الجسد</div>
+        <ul>
+          <li>Kinesics = behavioral patterns of NVC | الحركيات</li>
+          <li>PEOPLE: Postures, Eye contact, Orientation, Presentation, Looks, Expressions | اختصار</li>
+          <li>Lightly clenched hands = confident; tightly = frustrated | القبضة</li>
+          <li>Eye-to-eye contact = real communication basis | العيون</li>
+        </ul>
+      </div>
+
+      <div class="sum-card">
+        <h4>Personal Space (Hall)</h4>
+        <div class="ar-h">المسافة الشخصية (هول)</div>
+        <ul>
+          <li>Intimate: 0–18 in → family/partners | حميمة</li>
+          <li>Personal: 1.5–4 ft → friends | شخصية</li>
+          <li>Social: 4–12 ft → business | اجتماعية</li>
+          <li>Public: 12+ ft → speeches | عامة</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sum-footer">
+      Communication Skills • Lecture 5 • Forms of Communication | أشكال التواصل — المحاضرة الخامسة
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+const answers = {};
+
+function answer(el, qId, isCorrect, opt) {
+  const block = document.getElementById(qId);
+  if (block.dataset.answered) return;
+  block.dataset.answered = 'true';
+  answers[qId] = isCorrect;
+
+  const opts = block.querySelectorAll('.option');
+  opts.forEach(o => o.classList.add('disabled'));
+
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  // Highlight correct if wrong
+  if (!isCorrect) {
+    opts.forEach(o => {
+      if (o.getAttribute('onclick') && o.getAttribute('onclick').includes('true')) {
+        o.classList.add('correct');
+      }
+    });
+  }
+
+  const fb = document.getElementById('fb-' + qId);
+  fb.style.display = 'block';
+  if (isCorrect) {
+    fb.className = 'feedback ok';
+    fb.textContent = '✅ Correct! | إجابة صحيحة!';
+  } else {
+    fb.className = 'feedback bad';
+    fb.textContent = '❌ Wrong. Review the content above. | خطأ. راجع المحتوى أعلاه.';
+  }
+}
+
+function submitQuiz() {
+  const qs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  let score = 0;
+  qs.forEach(q => {
+    if (answers[q]) score++;
+    // Mark unanswered
+    const block = document.getElementById(q);
+    if (!block.dataset.answered) {
+      block.dataset.answered = 'true';
+      const fb = document.getElementById('fb-' + q);
+      fb.style.display = 'block';
+      fb.className = 'feedback bad';
+      fb.textContent = '⚠️ Not answered | لم تُجب';
+      block.querySelectorAll('.option').forEach(o => {
+        o.classList.add('disabled');
+        if (o.getAttribute('onclick') && o.getAttribute('onclick').includes('true')) {
+          o.classList.add('correct');
+        }
+      });
+    }
+  });
+
+  const res = document.getElementById('quiz-result');
+  res.style.display = 'block';
+  document.getElementById('score-display').textContent = score + '/10';
+  const msgs = [
+    ['0-3', '💡 Keep studying! راجع المحاضرة مجدداً.'],
+    ['4-6', '📚 Good effort! Keep going. جيد! استمر.'],
+    ['7-8', '👏 Well done! أحسنت!'],
+    ['9-10', '🌟 Excellent! ممتاز جداً!']
+  ];
+  let msg = msgs[0][1];
+  if (score >= 9) msg = msgs[3][1];
+  else if (score >= 7) msg = msgs[2][1];
+  else if (score >= 4) msg = msgs[1][1];
+  document.getElementById('score-msg').textContent = msg;
+  res.scrollIntoView({ behavior: 'smooth' });
+}
+
+function retryQuiz() {
+  const qs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  qs.forEach(q => {
+    const block = document.getElementById(q);
+    delete block.dataset.answered;
+    block.querySelectorAll('.option').forEach(o => {
+      o.classList.remove('correct','wrong','disabled');
+    });
+    const fb = document.getElementById('fb-' + q);
+    fb.style.display = 'none';
+  });
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.getElementById('quiz-result').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

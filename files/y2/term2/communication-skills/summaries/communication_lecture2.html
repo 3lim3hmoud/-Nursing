@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elements of Communication – Lecture 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1a7a6e;
+    --teal-light: #26a99a;
+    --teal-pale: #e0f5f2;
+    --amber: #e08c2b;
+    --amber-light: #f5b95a;
+    --amber-pale: #fdf3e3;
+    --dark: #1a2332;
+    --mid: #3d5166;
+    --light: #f4f7f9;
+    --white: #ffffff;
+    --red: #c0392b;
+    --green: #1e8449;
+    --border: #d1dde8;
+    --shadow: 0 4px 24px rgba(26,42,50,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ─── PRINT / PDF ─── */
+  @media print {
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { background: white; font-size: 12px; }
+    .section { box-shadow: none; border: 1px solid #ccc; margin: 10px 0; }
+    .hero { background: var(--teal) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { break-inside: avoid; }
+  }
+
+  /* ─── PDF BUTTON ─── */
+  .pdf-btn {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: var(--amber);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(224,140,43,0.4);
+    z-index: 9999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pdf-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(224,140,43,0.5); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--teal) 0%, #0d4f48 60%, var(--dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 70px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: var(--amber-light);
+    margin-bottom: 18px;
+    direction: rtl;
+  }
+  .hero-sub {
+    font-size: 15px;
+    opacity: 0.75;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ─── NAV TABS ─── */
+  .nav-tabs {
+    display: flex;
+    gap: 0;
+    background: var(--dark);
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 14px 10px;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.55);
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .tab-btn:hover { color: white; background: rgba(255,255,255,0.06); }
+  .tab-btn.active { color: var(--amber-light); border-bottom-color: var(--amber); background: rgba(224,140,43,0.1); }
+
+  /* ─── PANELS ─── */
+  .panel { display: none; padding: 40px 20px; max-width: 980px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* ─── SECTION CARD ─── */
+  .section {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: white;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-header .icon { font-size: 26px; }
+  .section-header-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .section-header-text .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    direction: rtl;
+  }
+  .section-body { padding: 28px; }
+
+  /* ─── BILINGUAL GRID ─── */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media(max-width: 640px){ .bilingual { grid-template-columns: 1fr; } }
+  .lang-en { border-left: 4px solid var(--teal); padding-left: 16px; }
+  .lang-ar { border-right: 4px solid var(--amber); padding-right: 16px; direction: rtl; text-align: right; font-family: 'Cairo', sans-serif; }
+  .lang-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .lang-en .lang-label { color: var(--teal); }
+  .lang-ar .lang-label { color: var(--amber); }
+  .lang-en p, .lang-ar p { font-size: 14.5px; line-height: 1.75; color: var(--mid); }
+
+  /* ─── DEFINITION BOX ─── */
+  .def-box {
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    border: 1px solid transparent;
+  }
+  .def-box.teal { background: var(--teal-pale); border-color: #b0dfd9; }
+  .def-box.amber { background: var(--amber-pale); border-color: #f0d0a0; }
+  .def-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .def-box.teal h3 { color: var(--teal); }
+  .def-box.amber h3 { color: var(--amber); }
+  .def-box p { font-size: 13.5px; line-height: 1.7; color: var(--mid); }
+  .def-box.ar-style { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; }
+
+  /* ─── STAGE CARDS ─── */
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+  }
+  .stage-card {
+    background: var(--light);
+    border-radius: 14px;
+    padding: 20px 18px;
+    border-top: 5px solid var(--teal);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .stage-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .stage-num {
+    background: var(--teal);
+    color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .stage-card h3 { font-size: 13.5px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .stage-card .ar-name { font-family: 'Cairo', sans-serif; font-size: 13px; color: var(--amber); direction: rtl; margin-bottom: 8px; }
+  .stage-card p { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
+  .stage-card .ar-desc { font-family: 'Cairo', sans-serif; font-size: 12.5px; color: #5a6a7a; direction: rtl; text-align: right; margin-top: 6px; border-top: 1px solid #dde; padding-top: 6px; }
+
+  /* ─── ELEMENTS GRID ─── */
+  .elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .element-card {
+    text-align: center;
+    padding: 20px 14px;
+    border-radius: 14px;
+    background: white;
+    border: 2px solid var(--border);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .element-card:hover { border-color: var(--teal); background: var(--teal-pale); }
+  .element-card .e-icon { font-size: 30px; margin-bottom: 10px; }
+  .element-card h4 { font-size: 14px; font-weight: 700; color: var(--teal); margin-bottom: 3px; }
+  .element-card .ar-h { font-family: 'Cairo', sans-serif; font-size: 13px; color: var(--amber); direction: rtl; margin-bottom: 6px; }
+  .element-card p { font-size: 12px; color: var(--mid); line-height: 1.5; }
+  .element-card .ar-p { font-family: 'Cairo', sans-serif; font-size: 11.5px; color: #6a7a8a; direction: rtl; margin-top: 4px; }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13.5px; }
+  .compare-table th {
+    background: var(--dark);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .compare-table th:last-child { text-align: right; font-family: 'Cairo', sans-serif; direction: rtl; }
+  .compare-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: var(--light); }
+  .compare-table .ar-cell { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; }
+  .compare-table .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-teal { background: var(--teal-pale); color: var(--teal); }
+  .badge-amber { background: var(--amber-pale); color: var(--amber); }
+
+  /* ─── QUIZ ─── */
+  #quiz-panel { background: var(--light); }
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .quiz-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--dark);
+  }
+  .quiz-header p { color: var(--mid); margin-top: 6px; font-family: 'Cairo', sans-serif; }
+  .quiz-score-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .score-chip {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 22px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+  }
+  .q-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--teal);
+  }
+  .q-number { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .q-text { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; line-height: 1.5; }
+  .q-text-ar { font-family: 'Cairo', sans-serif; font-size: 14px; color: var(--mid); direction: rtl; text-align: right; margin-bottom: 16px; border-top: 1px solid #eee; padding-top: 8px; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt-btn {
+    background: var(--light);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .opt-btn:hover { border-color: var(--teal); background: var(--teal-pale); }
+  .opt-btn.correct { background: #d5f5e3; border-color: var(--green); color: var(--green); }
+  .opt-btn.wrong { background: #fde8e8; border-color: var(--red); color: var(--red); }
+  .opt-btn.disabled { cursor: not-allowed; opacity: 0.7; }
+  .opt-label { font-weight: 700; min-width: 22px; }
+  .opt-ar { font-family: 'Cairo', sans-serif; font-size: 12px; color: #888; margin-top: 2px; }
+  .q-feedback {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    display: none;
+  }
+  .q-feedback.show { display: block; }
+  .q-feedback.correct { background: #d5f5e3; color: var(--green); }
+  .q-feedback.wrong { background: #fde8e8; color: var(--red); }
+  .quiz-controls {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .btn-reset {
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-reset:hover { background: #0d4f48; }
+  .result-box {
+    display: none;
+    background: white;
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+  }
+  .result-box.show { display: block; }
+  .result-emoji { font-size: 60px; margin-bottom: 14px; }
+  .result-score { font-size: 48px; font-weight: 900; font-family: 'Playfair Display', serif; color: var(--teal); }
+  .result-msg { font-size: 16px; color: var(--mid); margin-top: 8px; }
+  .result-ar { font-family: 'Cairo', sans-serif; font-size: 15px; color: var(--amber); direction: rtl; margin-top: 6px; }
+
+  /* ─── SUMMARY PAGE ─── */
+  .summary-hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--teal) 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .summary-hero h2 { font-family: 'Playfair Display', serif; font-size: 2rem; }
+  .summary-hero .ar { font-family: 'Cairo', sans-serif; font-size: 1.2rem; color: var(--amber-light); direction: rtl; margin-top: 6px; }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  @media(max-width: 640px) { .summary-grid { grid-template-columns: 1fr; } }
+  .sum-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+  .sum-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--teal);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--teal-pale);
+  }
+  .sum-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .sum-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 5px; }
+  .sum-item-ar {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+  }
+  .sum-item-ar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex-shrink: 0; margin-top: 5px; }
+  .stages-mini {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 18px 0;
+  }
+  @media(max-width:600px){ .stages-mini { grid-template-columns: repeat(2,1fr); } }
+  .mini-stage {
+    background: var(--teal-pale);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .mini-stage .n { font-weight: 900; color: var(--teal); font-size: 18px; }
+  .mini-stage .en { font-weight: 700; color: var(--dark); margin: 3px 0; }
+  .mini-stage .ar { font-family: 'Cairo', sans-serif; color: var(--amber); font-size: 11.5px; }
+
+  /* ─── INFO STRIPS ─── */
+  .info-strip {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin: 14px 0;
+    font-size: 13.5px;
+  }
+  .info-strip.teal { background: var(--teal-pale); border-left: 4px solid var(--teal); }
+  .info-strip.amber { background: var(--amber-pale); border-left: 4px solid var(--amber); }
+  .info-strip .strip-icon { font-size: 22px; }
+  .info-strip p { color: var(--mid); line-height: 1.6; }
+  .info-strip .ar-text { font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; font-size: 13px; margin-top: 4px; }
+
+  /* NOISE */
+  .noise-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+  .noise-tag {
+    background: #fde8e8;
+    color: var(--red);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12.5px;
+    font-weight: 600;
+    border: 1px solid #f0c0c0;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 2px dashed var(--border);
+    margin: 24px 0;
+  }
+
+  /* TIPS */
+  .tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  @media(max-width:500px){ .tip-grid { grid-template-columns: 1fr; } }
+  .tip-box {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 16px;
+    border-top: 3px solid var(--teal);
+    font-size: 13px;
+    color: var(--mid);
+  }
+  .tip-box strong { color: var(--dark); display: block; margin-bottom: 4px; }
+  .tip-box .ar { font-family: 'Cairo', sans-serif; direction: rtl; color: var(--amber); font-size: 12px; margin-top: 3px; }
+
+  /* Scroll top */
+  .scroll-top {
+    position: fixed;
+    bottom: 90px; right: 28px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(26,122,110,0.35);
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .scroll-top.show { display: flex; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📡 Lecture 2</div>
+  <h1>Elements of Communication</h1>
+  <div class="hero-ar">عناصر التواصل</div>
+  <p class="hero-sub">A complete bilingual study guide with explanations, stages, quiz & summary</p>
+</div>
+
+<!-- TABS -->
+<div class="nav-tabs no-print">
+  <button class="tab-btn active" onclick="showPanel('intro')">📖 Intro / مقدمة</button>
+  <button class="tab-btn" onclick="showPanel('elements')">🔗 Elements / العناصر</button>
+  <button class="tab-btn" onclick="showPanel('stages')">📶 Stages / المراحل</button>
+  <button class="tab-btn" onclick="showPanel('feedback')">🔁 Feedback / التغذية</button>
+  <button class="tab-btn" onclick="showPanel('quiz')">❓ Quiz / اختبار</button>
+  <button class="tab-btn" onclick="showPanel('summary')">📋 Summary / ملخص</button>
+</div>
+
+<!-- ════════════════════════════════════════
+     PANEL 1 – INTRO
+════════════════════════════════════════ -->
+<div class="panel active" id="intro">
+
+  <!-- Communication vs Effective -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">⚖️</span>
+      <div class="section-header-text">
+        <h2>Communication vs. Effective Communication</h2>
+        <div class="ar">التواصل مقابل التواصل الفعّال</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <div class="def-box teal">
+            <h3>📤 Communication</h3>
+            <p>Simply the <strong>flow of information</strong> from sender to receiver — regardless of whether the recipient understands the message.</p>
+          </div>
+          <div class="def-box amber">
+            <h3>✅ Effective Communication</h3>
+            <p>Ensures the message is <strong>clearly understood</strong> by the recipient, leading to the <strong>desired response or action</strong>. It involves clarity, impact, and proper reception.</p>
+          </div>
+          <div class="info-strip teal">
+            <span class="strip-icon">💡</span>
+            <p><strong>Key difference:</strong> Communication = transmitting. Effective Communication = transmitting AND being understood.</p>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <div class="def-box teal ar-style">
+            <h3>📤 التواصل العادي</h3>
+            <p>هو ببساطة <strong>تدفق المعلومات</strong> من المُرسِل إلى المُستقبِل، بصرف النظر عمّا إذا كان المُستقبِل يفهم الرسالة أم لا.</p>
+          </div>
+          <div class="def-box amber ar-style">
+            <h3>✅ التواصل الفعّال</h3>
+            <p>يضمن أن تكون الرسالة <strong>مفهومة بوضوح</strong> من قِبَل المُستقبِل، ممّا يؤدي إلى <strong>الاستجابة أو الفعل المطلوب</strong>. يشمل الوضوح والتأثير والاستقبال الصحيح.</p>
+          </div>
+          <div class="info-strip amber">
+            <span class="strip-icon">💡</span>
+            <p style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;"><strong>الفرق الجوهري:</strong> التواصل = الإرسال فقط. التواصل الفعّال = الإرسال + الفَهم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What is Effective Communication -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🗣️</span>
+      <div class="section-header-text">
+        <h2>What is Effective Communication?</h2>
+        <div class="ar">ما هو التواصل الفعّال؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <p>Effective communication is a <strong>two-way process</strong> in which the sender conveys a message that the receiver readily receives and understands.</p>
+          <hr class="divider">
+          <p>It involves the use of:</p>
+          <div class="tip-grid" style="margin-top:10px;">
+            <div class="tip-box"><strong>👁️ Body Language</strong>Facial expressions & posture<div class="ar">لغة الجسد والتعابير</div></div>
+            <div class="tip-box"><strong>🤲 Gestures</strong>Physical movements & signs<div class="ar">الإيماءات والإشارات</div></div>
+            <div class="tip-box"><strong>👂 Listening Skills</strong>Active & attentive listening<div class="ar">مهارات الاستماع الفعّال</div></div>
+            <div class="tip-box"><strong>❤️ Emotional Awareness</strong>Understanding feelings<div class="ar">الوعي العاطفي والتعاطف</div></div>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <p>التواصل الفعّال هو <strong>عملية ثنائية الاتجاه</strong> يُوصِل فيها المُرسِل رسالةً يستقبلها المُستقبِل ويفهمها بسهولة.</p>
+          <hr class="divider">
+          <p>يتضمّن استخدام:</p>
+          <div class="tip-grid" style="margin-top:10px;">
+            <div class="tip-box" style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;"><strong>👁️ لغة الجسد</strong>تعابير الوجه والوقفة<div class="ar">Body language & posture</div></div>
+            <div class="tip-box" style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;"><strong>🤲 الإيماءات</strong>الحركات والإشارات الجسدية<div class="ar">Gestures & signs</div></div>
+            <div class="tip-box" style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;"><strong>👂 الاستماع</strong>الإصغاء الفعّال والمنتبه<div class="ar">Active listening</div></div>
+            <div class="tip-box" style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;"><strong>❤️ الوعي العاطفي</strong>فهم المشاعر والتعاطف<div class="ar">Emotional awareness</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Learn -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🎯</span>
+      <div class="section-header-text">
+        <h2>Why Learn Effective Communication?</h2>
+        <div class="ar">لماذا نتعلّم التواصل الفعّال؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <p>The ability to communicate effectively is an <strong>art</strong> that can be used in many areas of life:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+            <span style="background:#e8f4fd;color:#1a5f8a;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;">💼 Employment</span>
+            <span style="background:#e8f4fd;color:#1a5f8a;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;">📚 Education</span>
+            <span style="background:#e8f4fd;color:#1a5f8a;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;">👨‍👩‍👧 Parenting</span>
+            <span style="background:#e8f4fd;color:#1a5f8a;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;">❤️ Relationships</span>
+          </div>
+          <div class="info-strip teal" style="margin-top:16px;">
+            <span class="strip-icon">📌</span>
+            <p>An effective communicator always takes into account the <strong>audience</strong> receiving the message and adapts accordingly.</p>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <p>القدرة على التواصل الفعّال هي <strong>فنٌّ</strong> يمكن توظيفه في مجالات حياتية متعددة:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;direction:rtl;justify-content:flex-end;">
+            <span style="background:#fef9e7;color:#9a6800;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Cairo',sans-serif;">💼 العمل</span>
+            <span style="background:#fef9e7;color:#9a6800;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Cairo',sans-serif;">📚 التعليم</span>
+            <span style="background:#fef9e7;color:#9a6800;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Cairo',sans-serif;">👨‍👩‍👧 التربية</span>
+            <span style="background:#fef9e7;color:#9a6800;padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Cairo',sans-serif;">❤️ العلاقات</span>
+          </div>
+          <div class="info-strip amber" style="margin-top:16px;">
+            <span class="strip-icon">📌</span>
+            <p style="font-family:'Cairo',sans-serif;direction:rtl;text-align:right;">يأخذ المُتواصِل الفعّال دائماً <strong>المُستمِع</strong> بالحسبان ويُكيّف أسلوبه وفقاً لذلك.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to communicate -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">💬</span>
+      <div class="section-header-text">
+        <h2>How to Communicate Effectively?</h2>
+        <div class="ar">كيف تتواصل بفعالية؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="tip-grid">
+        <div class="tip-box">
+          <strong>1. Convey Your Message Clearly</strong>
+          Include visuals, auditory effects, and kinesthetic cues (body language) to appeal to diverse listeners.
+          <div class="ar">وضّح رسالتك: استخدم الصور والصوت ولغة الجسد لتصل للجميع.</div>
+        </div>
+        <div class="tip-box">
+          <strong>2. Know Your Audience</strong>
+          Research their age, interests, and background. This helps you tailor your message effectively.
+          <div class="ar">اعرف جمهورك: ادرس أعمارهم واهتماماتهم لتصوغ رسالتك بما يناسبهم.</div>
+        </div>
+        <div class="tip-box">
+          <strong>3. Pay Attention to Nonverbal Cues</strong>
+          Watch for eye contact, smiles, and nods — signs the receiver is listening.
+          <div class="ar">انتبه للغة الجسد: التواصل البصري والابتسام يعكسان الاهتمام.</div>
+        </div>
+        <div class="tip-box">
+          <strong>4. Remove Barriers</strong>
+          Focus entirely on the receiver. Leave distractions behind and deliver your message clearly.
+          <div class="ar">أزِل العوائق: ركّز على المُستقبِل وتجاهل المشتِّتات.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /intro -->
+
+<!-- ════════════════════════════════════════
+     PANEL 2 – ELEMENTS
+════════════════════════════════════════ -->
+<div class="panel" id="elements">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🔗</span>
+      <div class="section-header-text">
+        <h2>5 Elements of Communication</h2>
+        <div class="ar">العناصر الخمسة للتواصل</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="info-strip teal">
+        <span class="strip-icon">⚠️</span>
+        <p>For effective communication to take place, ALL five elements MUST be present.<br>
+        <span style="font-family:'Cairo',sans-serif;direction:rtl;display:block;margin-top:4px;">لكي يتمّ التواصل الفعّال، يجب أن تتوفّر <strong>جميع</strong> العناصر الخمسة.</span></p>
+      </div>
+      <div class="elements-grid">
+        <div class="element-card">
+          <div class="e-icon">✈️</div>
+          <h4>Sender</h4>
+          <div class="ar-h">المُرسِل</div>
+          <p>The person who initiates the communication.</p>
+          <div class="ar-p">الشخص الذي يبدأ عملية التواصل.</div>
+        </div>
+        <div class="element-card">
+          <div class="e-icon">💬</div>
+          <h4>Message</h4>
+          <div class="ar-h">الرسالة</div>
+          <p>The information or content the sender communicates to the receiver.</p>
+          <div class="ar-p">المعلومات أو المحتوى الذي يُوصِله المُرسِل.</div>
+        </div>
+        <div class="element-card">
+          <div class="e-icon">📡</div>
+          <h4>Channel</h4>
+          <div class="ar-h">القناة / الوسيلة</div>
+          <p>The means used to transmit the message from sender to receiver.</p>
+          <div class="ar-p">الوسيلة المُستخدَمة لنقل الرسالة.</div>
+        </div>
+        <div class="element-card">
+          <div class="e-icon">🎧</div>
+          <h4>Receiver</h4>
+          <div class="ar-h">المُستقبِل</div>
+          <p>The recipient of the message; the person the message is intended for.</p>
+          <div class="ar-p">مُتلقّي الرسالة والشخص المقصود بها.</div>
+        </div>
+        <div class="element-card">
+          <div class="e-icon">🔁</div>
+          <h4>Feedback</h4>
+          <div class="ar-h">التغذية الراجعة</div>
+          <p>The response the sender receives back from the receiver.</p>
+          <div class="ar-p">ردّ الفعل الذي يتلقّاه المُرسِل من المُستقبِل.</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Comparison Table -->
+      <h3 style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:14px;">📊 Elements Summary Table / جدول ملخّص العناصر</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Element (English)</th>
+            <th>Role</th>
+            <th class="ar-cell">العنصر (عربي)</th>
+            <th class="ar-cell">الدور</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-teal">1</span></td>
+            <td><strong>Sender</strong></td>
+            <td>Starts the communication</td>
+            <td class="ar-cell"><strong>المُرسِل</strong></td>
+            <td class="ar-cell">يبدأ التواصل</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">2</span></td>
+            <td><strong>Message</strong></td>
+            <td>The content being communicated</td>
+            <td class="ar-cell"><strong>الرسالة</strong></td>
+            <td class="ar-cell">المحتوى المُرسَل</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">3</span></td>
+            <td><strong>Channel</strong></td>
+            <td>The medium of transmission</td>
+            <td class="ar-cell"><strong>القناة</strong></td>
+            <td class="ar-cell">وسيلة النقل</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">4</span></td>
+            <td><strong>Receiver</strong></td>
+            <td>Receives and interprets the message</td>
+            <td class="ar-cell"><strong>المُستقبِل</strong></td>
+            <td class="ar-cell">يستقبل الرسالة ويفسّرها</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">5</span></td>
+            <td><strong>Feedback</strong></td>
+            <td>Response that completes the loop</td>
+            <td class="ar-cell"><strong>التغذية الراجعة</strong></td>
+            <td class="ar-cell">الاستجابة التي تُكمل الدورة</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Noise -->
+      <hr class="divider">
+      <h3 style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:10px;">🔇 Noise (Barriers) / الضوضاء (العوائق)</h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <p>Any interruption that <strong>distracts or distorts</strong> the message from being understood correctly is considered noise. It can interfere at the encoding or decoding stages.</p>
+          <div class="noise-list" style="margin-top:12px;">
+            <span class="noise-tag">🧥 Dressing</span>
+            <span class="noise-tag">🕌 Religious affiliations</span>
+            <span class="noise-tag">👃 Aroma / Stench</span>
+            <span class="noise-tag">🌍 Cultural differences</span>
+            <span class="noise-tag">📢 Loud environment</span>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <p>أيّ تدخّل <strong>يُشتّت أو يُشوّه</strong> الرسالة ويحول دون فهمها بشكل صحيح يُعدّ ضوضاء. يمكن أن تؤثّر على مراحل التشفير أو فكّ التشفير.</p>
+          <div class="noise-list" style="margin-top:12px;direction:rtl;">
+            <span class="noise-tag">🧥 المظهر والملبس</span>
+            <span class="noise-tag">🕌 الانتماءات الدينية</span>
+            <span class="noise-tag">👃 الروائح</span>
+            <span class="noise-tag">🌍 الفوارق الثقافية</span>
+            <span class="noise-tag">📢 البيئة الصاخبة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /elements -->
+
+<!-- ════════════════════════════════════════
+     PANEL 3 – STAGES
+════════════════════════════════════════ -->
+<div class="panel" id="stages">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📶</span>
+      <div class="section-header-text">
+        <h2>Stages in the Communication Process</h2>
+        <div class="ar">مراحل عملية التواصل</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="stages-grid">
+
+        <!-- Stage 1 -->
+        <div class="stage-card">
+          <div class="stage-num">1</div>
+          <h3>Conceiving the Message</h3>
+          <div class="ar-name">تكوين الرسالة</div>
+          <p>The sender decides to communicate. An idea, thought or feeling is formulated — sometimes as a quick impulse, sometimes as a deliberate decision.</p>
+          <div class="ar-desc">يقرّر المُرسِل التواصل. تتشكّل فكرة أو شعور في ذهنه — أحياناً كدافع سريع أو كقرار مدروس.</div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="stage-card">
+          <div class="stage-num">2</div>
+          <h3>Encoding the Message</h3>
+          <div class="ar-name">تشفير الرسالة</div>
+          <p>The message is put into a language: spoken word, written word, picture, symbol, gesture, or non-verbal expression. Clarity of purpose is essential.</p>
+          <div class="ar-desc">تُوضَع الرسالة في لغة مناسبة: شفهية، مكتوبة، صورة، رمز، أو إيماءة. الوضوح أمرٌ أساسي.</div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="stage-card">
+          <div class="stage-num">3</div>
+          <h3>Selecting the Channel</h3>
+          <div class="ar-name">اختيار القناة</div>
+          <p>Choose the best medium: face-to-face, telephone, letter, email, visual aids, etc. The right channel depends on the message type, audience, and urgency.</p>
+          <div class="ar-desc">اختر أفضل وسيلة: وجهاً لوجه، هاتف، رسالة، بريد إلكتروني. يعتمد الاختيار على نوع الرسالة والجمهور.</div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="stage-card">
+          <div class="stage-num">4</div>
+          <h3>Decoding the Message</h3>
+          <div class="ar-name">فكّ تشفير الرسالة</div>
+          <p>The receiver interprets the message. Failure happens when language, jargon, or cultural gaps prevent understanding. Read "between the lines."</p>
+          <div class="ar-desc">يفسّر المُستقبِل الرسالة. يحدث الفشل عند وجود فجوات لغوية أو ثقافية. اقرأ "بين السطور".</div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="stage-card">
+          <div class="stage-num">5</div>
+          <h3>Transmission</h3>
+          <div class="ar-name">الإرسال / النقل</div>
+          <p>The message is sent through the selected channel. At this stage "noise" can interfere and distort the message.</p>
+          <div class="ar-desc">تُرسَل الرسالة عبر القناة المختارة. في هذه المرحلة قد تتدخّل "الضوضاء" وتُشوّه الرسالة.</div>
+        </div>
+
+        <!-- Stage 6 -->
+        <div class="stage-card">
+          <div class="stage-num">6</div>
+          <h3>Reception</h3>
+          <div class="ar-name">الاستقبال</div>
+          <p>The physical act of receiving the message through any of the senses: hearing, touch, taste, sight, and smell.</p>
+          <div class="ar-desc">الفعل المادّي لاستقبال الرسالة عبر الحواس: السمع، اللمس، الذوق، البصر، الشم.</div>
+        </div>
+
+        <!-- Stage 7 -->
+        <div class="stage-card">
+          <div class="stage-num">7</div>
+          <h3>Interpretation</h3>
+          <div class="ar-name">التفسير</div>
+          <p>Reading between the lines — searching for the underlying or hidden meaning beyond the explicit words.</p>
+          <div class="ar-desc">قراءة ما بين السطور — البحث عن المعنى الكامن وراء الكلمات الصريحة.</div>
+        </div>
+
+        <!-- Stage 8 -->
+        <div class="stage-card" style="border-top-color: var(--amber);">
+          <div class="stage-num" style="background:var(--amber);">8</div>
+          <h3>Feedback</h3>
+          <div class="ar-name">التغذية الراجعة</div>
+          <p>The receiver encodes a response back to the sender. This completes the communication cycle. Only then is communication truly effective.</p>
+          <div class="ar-desc">يُشفّر المُستقبِل رداً للمُرسِل. هذا يُكمل دورة التواصل. عندها فقط يكون التواصل فعّالاً حقاً.</div>
+        </div>
+
+      </div>
+
+      <hr class="divider">
+      <!-- Channel Types -->
+      <h3 style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:14px;">📡 Types of Communication Channels / أنواع قنوات التواصل</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Type / النوع</th><th>Examples (EN)</th><th class="ar-cell">أمثلة (عربي)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-teal">Face-to-face</span></td>
+            <td>Meetings, interviews, presentations, informal discussions</td>
+            <td class="ar-cell">اجتماعات، مقابلات، عروض تقديمية</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">Oral</span></td>
+            <td>Telephone, cell phone, voice mail, answering machines</td>
+            <td class="ar-cell">الهاتف، البريد الصوتي</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">Written</span></td>
+            <td>Letters, memos, reports, email, fax, text messages</td>
+            <td class="ar-cell">الرسائل، المذكّرات، التقارير، البريد الإلكتروني</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-teal">Visual</span></td>
+            <td>Charts, tables, diagrams, slides, maps, notices</td>
+            <td class="ar-cell">المخطّطات، الجداول، الشرائح، الخرائط</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Receiver tips -->
+      <hr class="divider">
+      <h3 style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:14px;">🎧 As a Receiver — Best Practices / دور المُستقبِل</h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <div class="info-strip teal"><span class="strip-icon">1️⃣</span><p>Give the incoming message your <strong>full attention</strong>. Avoid being distracted.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">2️⃣</span><p>Check that the <strong>channel</strong> is appropriate for your needs. Inform the sender if it isn't.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">3️⃣</span><p>Ensure you <strong>fully comprehend</strong> the message. Ask for clarification if needed.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">4️⃣</span><p>Provide <strong>sufficient feedback</strong> so the sender knows you received and understood.</p></div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <div class="info-strip amber"><span class="strip-icon">1️⃣</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">أَوْلِ الرسالة الواردة <strong>اهتمامك الكامل</strong>. تجنّب التشتّت.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">2️⃣</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">تحقّق من أن <strong>القناة</strong> المختارة تناسب احتياجاتك. أبلغ المُرسِل إن لم تكن كذلك.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">3️⃣</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">تأكّد من <strong>الفهم الكامل</strong> للرسالة. اطلب توضيحاً عند الحاجة.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">4️⃣</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">قدّم <strong>تغذية راجعة كافية</strong> لتُطمئِن المُرسِل بأنّك استقبلت الرسالة وفهمتها.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /stages -->
+
+<!-- ════════════════════════════════════════
+     PANEL 4 – FEEDBACK
+════════════════════════════════════════ -->
+<div class="panel" id="feedback">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🔁</span>
+      <div class="section-header-text">
+        <h2>Importance of Feedback</h2>
+        <div class="ar">أهمية التغذية الراجعة</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <div class="info-strip teal"><span class="strip-icon">✅</span><p><strong>1.</strong> It completes the whole process of communication and makes it <strong>continuous</strong>.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">✅</span><p><strong>2.</strong> It <strong>sustains</strong> the communication process.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">✅</span><p><strong>3.</strong> It lets you know if you are <strong>making sense</strong> to the receiver.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">✅</span><p><strong>4.</strong> It is a basis for <strong>measuring effectiveness</strong> of communication.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">✅</span><p><strong>5.</strong> It is a basis for <strong>planning next steps</strong>, especially in reports.</p></div>
+          <div class="info-strip teal" style="border-color:var(--red);background:#fde8e8;"><span class="strip-icon">❌</span><p style="color:var(--red)"><strong>6.</strong> Communication is <strong>useless without feedback</strong>.</p></div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <div class="info-strip amber"><span class="strip-icon">✅</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>١.</strong> تُكمِل عملية التواصل وتجعلها <strong>مستمرّة</strong>.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">✅</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>٢.</strong> <strong>تُبقي</strong> عملية التواصل حيّة.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">✅</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>٣.</strong> تُعلِمك إن كان المُستقبِل <strong>يفهمك</strong> فعلاً.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">✅</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>٤.</strong> هي أساس <strong>قياس فعالية</strong> التواصل.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">✅</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>٥.</strong> هي أساس <strong>التخطيط للخطوات التالية</strong>، خاصةً في التقارير.</p></div>
+          <div class="info-strip amber" style="border-color:var(--red);background:#fde8e8;"><span class="strip-icon">❌</span><p style="color:var(--red);font-family:'Cairo';direction:rtl;text-align:right;"><strong>٦.</strong> التواصل <strong>بلا معنى بدون تغذية راجعة</strong>.</p></div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <h3 style="font-size:14px;font-weight:700;color:var(--red);margin-bottom:14px;">⚠️ Problems in the Communication Process / مشكلات عملية التواصل</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Problem (EN)</th><th class="ar-cell">المشكلة (عربي)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Message ill-conceived / vague / ambiguous</td><td class="ar-cell">رسالة سيّئة التصميم / غامضة / ملتبسة</td></tr>
+          <tr><td>Message encoded in wrong language / inappropriate tone</td><td class="ar-cell">الرسالة مُشفَّرة بلغة خاطئة / نبرة غير مناسبة</td></tr>
+          <tr><td>Use of wrong medium / time-wasting / no written record</td><td class="ar-cell">استخدام وسيلة خاطئة / مضيعة للوقت / لا سجلّ مكتوب</td></tr>
+          <tr><td>Receiver cannot comprehend — use of jargon</td><td class="ar-cell">المُستقبِل لا يفهم — استخدام مصطلحات غير مألوفة</td></tr>
+          <tr><td>Message wrongly interpreted / poor relationship</td><td class="ar-cell">تفسير الرسالة بشكل خاطئ / علاقة ضعيفة بين الطرفين</td></tr>
+          <tr><td>Feedback not given or interpreted wrongly</td><td class="ar-cell">التغذية الراجعة غير مُعطاة أو مفسَّرة بشكل خاطئ</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Decoding Failures -->
+      <hr class="divider">
+      <h3 style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:14px;">🔍 Reasons for Decoding Failure / أسباب فشل فكّ التشفير</h3>
+      <div class="bilingual">
+        <div class="lang-en">
+          <div class="lang-label">English</div>
+          <p style="margin-bottom:10px;font-size:13.5px;color:var(--mid);">A receiver may fail to decode a message because:</p>
+          <div class="info-strip teal"><span class="strip-icon">🚫</span><p>Does not share the sender's <strong>language</strong>.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">🚫</span><p>Sender's <strong>jargon</strong> is unknown to the receiver.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">🚫</span><p>Sender is a <strong>specialist</strong> while receiver is a layman.</p></div>
+          <div class="info-strip teal"><span class="strip-icon">🚫</span><p>Differences in <strong>education, culture, and outlook</strong> create a language block.</p></div>
+        </div>
+        <div class="lang-ar">
+          <div class="lang-label">العربية</div>
+          <p style="margin-bottom:10px;font-size:13.5px;color:var(--mid);font-family:'Cairo';direction:rtl;text-align:right;">قد يفشل المُستقبِل في فكّ تشفير الرسالة بسبب:</p>
+          <div class="info-strip amber"><span class="strip-icon">🚫</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">عدم مشاركته <strong>لغة</strong> المُرسِل.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">🚫</span><p style="font-family:'Cairo';direction:rtl;text-align:right;"><strong>مصطلحات</strong> المُرسِل غير مألوفة للمُستقبِل.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">🚫</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">المُرسِل <strong>متخصّص</strong> بينما المُستقبِل عامّي.</p></div>
+          <div class="info-strip amber"><span class="strip-icon">🚫</span><p style="font-family:'Cairo';direction:rtl;text-align:right;">الفوارق في <strong>التعليم والثقافة والتوجّهات</strong> تخلق حاجزاً لغوياً.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /feedback -->
+
+<!-- ════════════════════════════════════════
+     PANEL 5 – QUIZ
+════════════════════════════════════════ -->
+<div class="panel" id="quiz">
+  <div class="quiz-header">
+    <h2>📝 Quiz Time!</h2>
+    <p>اختبر معلوماتك — Test your knowledge on Lecture 2</p>
+  </div>
+  <div class="quiz-score-bar">
+    <div class="score-chip">Score: <span id="scoreDisplay">0</span> / <span id="totalDisplay">0</span></div>
+    <div class="score-chip" id="percentDisplay">—</div>
+  </div>
+
+  <div id="quiz-container"></div>
+
+  <div class="quiz-controls">
+    <button class="btn-reset" onclick="resetQuiz()">🔄 Restart Quiz / إعادة الاختبار</button>
+  </div>
+
+  <div class="result-box" id="result-box">
+    <div class="result-emoji" id="result-emoji">🎉</div>
+    <div class="result-score" id="result-score"></div>
+    <div class="result-msg" id="result-msg"></div>
+    <div class="result-ar" id="result-ar"></div>
+  </div>
+</div><!-- /quiz -->
+
+<!-- ════════════════════════════════════════
+     PANEL 6 – SUMMARY
+════════════════════════════════════════ -->
+<div class="panel" id="summary">
+
+  <div class="summary-hero">
+    <h2>📋 Complete Summary</h2>
+    <div class="ar">ملخّص شامل للمحاضرة</div>
+    <p style="opacity:0.7;font-size:13px;margin-top:8px;">Elements of Communication — Lecture 2</p>
+  </div>
+
+  <!-- Comparison -->
+  <div class="sum-card" style="margin-bottom:20px;">
+    <h3>⚖️ Communication vs Effective Communication / التواصل العادي مقابل الفعّال</h3>
+    <div class="bilingual">
+      <div>
+        <div class="sum-item"><div class="dot"></div><div><strong>Communication</strong> = just sending information, no guarantee of understanding.</div></div>
+        <div class="sum-item"><div class="dot"></div><div><strong>Effective Communication</strong> = two-way, message is received AND understood, leads to action.</div></div>
+        <div class="sum-item"><div class="dot"></div><div>Involves: body language, gestures, listening, emotional awareness.</div></div>
+      </div>
+      <div>
+        <div class="sum-item-ar"><div class="dot"></div><div><strong>التواصل العادي</strong> = إرسال المعلومات فقط، بدون ضمان الفهم.</div></div>
+        <div class="sum-item-ar"><div class="dot"></div><div><strong>التواصل الفعّال</strong> = ثنائي الاتجاه، تُستقبَل الرسالة وتُفهَم وتؤدّي إلى فعل.</div></div>
+        <div class="sum-item-ar"><div class="dot"></div><div>يشمل: لغة الجسد، الإيماءات، الاستماع، الوعي العاطفي.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 Elements -->
+  <div class="sum-card" style="margin-bottom:20px;">
+    <h3>🔗 5 Elements of Communication / العناصر الخمسة</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;">
+      <span style="background:var(--teal-pale);color:var(--teal);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;">✈️ Sender — المُرسِل</span>
+      <span style="background:var(--teal-pale);color:var(--teal);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;">💬 Message — الرسالة</span>
+      <span style="background:var(--teal-pale);color:var(--teal);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;">📡 Channel — القناة</span>
+      <span style="background:var(--teal-pale);color:var(--teal);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;">🎧 Receiver — المُستقبِل</span>
+      <span style="background:var(--amber-pale);color:var(--amber);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;">🔁 Feedback — التغذية الراجعة</span>
+    </div>
+  </div>
+
+  <!-- 8 Stages -->
+  <div class="sum-card" style="margin-bottom:20px;">
+    <h3>📶 8 Stages of the Process / المراحل الثماني</h3>
+    <div class="stages-mini">
+      <div class="mini-stage"><div class="n">1</div><div class="en">Conceiving</div><div class="ar">التكوين</div></div>
+      <div class="mini-stage"><div class="n">2</div><div class="en">Encoding</div><div class="ar">التشفير</div></div>
+      <div class="mini-stage"><div class="n">3</div><div class="en">Channel</div><div class="ar">القناة</div></div>
+      <div class="mini-stage"><div class="n">4</div><div class="en">Transmission</div><div class="ar">الإرسال</div></div>
+      <div class="mini-stage"><div class="n">5</div><div class="en">Reception</div><div class="ar">الاستقبال</div></div>
+      <div class="mini-stage"><div class="n">6</div><div class="en">Decoding</div><div class="ar">فكّ التشفير</div></div>
+      <div class="mini-stage"><div class="n">7</div><div class="en">Interpretation</div><div class="ar">التفسير</div></div>
+      <div class="mini-stage" style="background:var(--amber-pale);"><div class="n" style="color:var(--amber);">8</div><div class="en">Feedback</div><div class="ar">التغذية الراجعة</div></div>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <!-- Feedback importance -->
+    <div class="sum-card">
+      <h3>🔁 Why Feedback Matters / أهمية التغذية الراجعة</h3>
+      <div class="sum-item"><div class="dot"></div><div>Completes & sustains the communication process.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Confirms understanding and measures effectiveness.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Helps plan next steps.</div></div>
+      <div class="sum-item"><div class="dot"></div><div><strong>Without feedback, communication is useless.</strong></div></div>
+      <hr style="margin:10px 0;border-color:#eee;">
+      <div class="sum-item-ar"><div class="dot"></div><div>تُكمِل وتُبقي عملية التواصل.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>تُؤكّد الفهم وتقيس الفعالية.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>تساعد في التخطيط للخطوات التالية.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div><strong>التواصل بلا تغذية راجعة لا قيمة له.</strong></div></div>
+    </div>
+
+    <!-- Noise -->
+    <div class="sum-card">
+      <h3>🔇 Noise & Common Problems / الضوضاء والمشكلات</h3>
+      <div class="sum-item"><div class="dot"></div><div>Noise = anything that distorts or distracts from the message.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Can occur at encoding OR decoding stage.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Examples: jargon, cultural gaps, wrong medium, ambiguity.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Avoid: vagueness, inappropriate tone, wrong channel.</div></div>
+      <hr style="margin:10px 0;border-color:#eee;">
+      <div class="sum-item-ar"><div class="dot"></div><div>الضوضاء = أيّ شيء يُشوّه الرسالة أو يُشتّت عنها.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>تحدث في مرحلة التشفير أو فكّ التشفير.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>أمثلة: المصطلحات، الفوارق الثقافية، الوسيلة الخاطئة.</div></div>
+    </div>
+
+    <!-- How to communicate -->
+    <div class="sum-card">
+      <h3>💡 How to Communicate Effectively / كيف تتواصل فعّالياً</h3>
+      <div class="sum-item"><div class="dot"></div><div>Know your audience and tailor the message.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Use visuals, audio, and body language.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Watch nonverbal cues of the receiver.</div></div>
+      <div class="sum-item"><div class="dot"></div><div>Remove barriers & focus fully on the receiver.</div></div>
+      <hr style="margin:10px 0;border-color:#eee;">
+      <div class="sum-item-ar"><div class="dot"></div><div>اعرف جمهورك وصمّم الرسالة لهم.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>استخدم الصور والصوت ولغة الجسد.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>راقب ردود فعل المُستقبِل.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div>أزِل العوائق وركّز على المُستقبِل.</div></div>
+    </div>
+
+    <!-- Channel types -->
+    <div class="sum-card">
+      <h3>📡 Channel Types / أنواع القنوات</h3>
+      <div class="sum-item"><div class="dot"></div><div><strong>Face-to-face:</strong> meetings, interviews.</div></div>
+      <div class="sum-item"><div class="dot"></div><div><strong>Oral:</strong> phone, voicemail.</div></div>
+      <div class="sum-item"><div class="dot"></div><div><strong>Written:</strong> letter, email, report.</div></div>
+      <div class="sum-item"><div class="dot"></div><div><strong>Visual:</strong> charts, slides, diagrams.</div></div>
+      <div class="sum-item"><div class="dot" style="background:var(--red);"></div><div>Bad news = best delivered face-to-face.</div></div>
+      <hr style="margin:10px 0;border-color:#eee;">
+      <div class="sum-item-ar"><div class="dot"></div><div><strong>وجهاً لوجه:</strong> اجتماعات، مقابلات.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div><strong>شفهية:</strong> هاتف، بريد صوتي.</div></div>
+      <div class="sum-item-ar"><div class="dot"></div><div><strong>مكتوبة:</strong> رسالة، بريد إلكتروني، تقرير.</div></div>
+      <div class="sum-item-ar"><div class="dot" style="background:var(--red);"></div><div>الأخبار السيئة الأفضل إيصالها وجهاً لوجه.</div></div>
+    </div>
+  </div>
+
+  <!-- Final note -->
+  <div style="background:linear-gradient(135deg,var(--teal),var(--dark));color:white;border-radius:14px;padding:24px 28px;text-align:center;margin-top:4px;">
+    <div style="font-size:22px;margin-bottom:8px;">🎓</div>
+    <p style="font-size:14px;line-height:1.7;max-width:600px;margin:0 auto;">Communication is only <strong>truly effective</strong> when the full cycle is completed — from conception of the message all the way through feedback. Every stage matters.</p>
+    <p style="font-family:'Cairo',sans-serif;font-size:14px;direction:rtl;line-height:1.8;max-width:600px;margin:12px auto 0;color:var(--amber-light);">التواصل يكون <strong>فعّالاً حقاً</strong> فقط عند اكتمال الدورة الكاملة — من تكوين الرسالة وصولاً إلى التغذية الراجعة. كلّ مرحلة مهمّة.</p>
+  </div>
+
+</div><!-- /summary -->
+
+<!-- PDF BUTTON -->
+<button class="pdf-btn no-print" onclick="window.print()">🖨️ Save as PDF / حفظ PDF</button>
+<button class="scroll-top no-print" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ──────────────────────────────────────
+// TAB NAVIGATION
+// ──────────────────────────────────────
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['intro','elements','stages','feedback','quiz','summary'].indexOf(id);
+  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Scroll to top button
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTopBtn');
+  if(window.scrollY > 300) btn.classList.add('show');
+  else btn.classList.remove('show');
+});
+
+// ──────────────────────────────────────
+// QUIZ DATA
+// ──────────────────────────────────────
+const questions = [
+  {
+    en: "What is the main difference between communication and effective communication?",
+    ar: "ما الفرق الرئيسي بين التواصل العادي والتواصل الفعّال؟",
+    options: [
+      { en: "Communication uses technology; effective communication doesn't.", ar: "التواصل يستخدم التكنولوجيا، بينما الفعّال لا." },
+      { en: "Effective communication ensures the message is clearly understood and leads to a desired response.", ar: "التواصل الفعّال يضمن فهم الرسالة بوضوح ويؤدّي إلى الاستجابة المطلوبة." },
+      { en: "Effective communication is only verbal.", ar: "التواصل الفعّال شفهي فقط." },
+      { en: "Communication requires feedback; effective communication doesn't.", ar: "التواصل يتطلّب تغذية راجعة، بينما الفعّال لا." }
+    ],
+    correct: 1,
+    explanation: "Effective communication ensures the message is clearly understood by the recipient, leading to the desired response or action — unlike basic communication which only transfers information."
+  },
+  {
+    en: "Effective communication is described as a:",
+    ar: "يُوصَف التواصل الفعّال بأنّه:",
+    options: [
+      { en: "One-way process", ar: "عملية أحادية الاتجاه" },
+      { en: "Three-way process", ar: "عملية ثلاثية الاتجاه" },
+      { en: "Two-way process", ar: "عملية ثنائية الاتجاه" },
+      { en: "Zero-way process", ar: "عملية بدون اتجاه" }
+    ],
+    correct: 2,
+    explanation: "Effective communication is a two-way process — the sender conveys a message and the receiver responds with feedback."
+  },
+  {
+    en: "Which of the following is NOT one of the five elements of communication?",
+    ar: "أيّ من التالي ليس من العناصر الخمسة للتواصل؟",
+    options: [
+      { en: "Sender", ar: "المُرسِل" },
+      { en: "Noise", ar: "الضوضاء" },
+      { en: "Channel", ar: "القناة" },
+      { en: "Feedback", ar: "التغذية الراجعة" }
+    ],
+    correct: 1,
+    explanation: "The five essential elements are: Sender, Message, Channel, Receiver, and Feedback. Noise is a barrier, not one of the core elements."
+  },
+  {
+    en: "What is 'noise' in the communication process?",
+    ar: "ما هي 'الضوضاء' في عملية التواصل؟",
+    options: [
+      { en: "The volume of the sender's voice.", ar: "مستوى صوت المُرسِل." },
+      { en: "Any interruption that distracts or distorts the message from being understood.", ar: "أيّ تدخّل يُشتّت أو يُشوّه الرسالة ويحول دون فهمها." },
+      { en: "The feedback given by the receiver.", ar: "التغذية الراجعة التي يقدّمها المُستقبِل." },
+      { en: "The encoding stage of communication.", ar: "مرحلة التشفير في التواصل." }
+    ],
+    correct: 1,
+    explanation: "Noise refers to any interference — such as dressing, cultural affiliations, or aroma — that distracts or distorts the message from being correctly understood."
+  },
+  {
+    en: "In which stage does the sender put the message into an appropriate language or form?",
+    ar: "في أيّ مرحلة يضع المُرسِل الرسالة في لغة أو شكل مناسب؟",
+    options: [
+      { en: "Conceiving the message", ar: "تكوين الرسالة" },
+      { en: "Selecting the channel", ar: "اختيار القناة" },
+      { en: "Encoding the message", ar: "تشفير الرسالة" },
+      { en: "Decoding the message", ar: "فكّ تشفير الرسالة" }
+    ],
+    correct: 2,
+    explanation: "Stage 2 — Encoding — is when the sender translates the message into a suitable language: spoken word, written, pictures, symbols, or non-verbal expressions."
+  },
+  {
+    en: "Which type of channel would be most appropriate for delivering bad news?",
+    ar: "أيّ نوع من القنوات يُعدّ الأنسب لإيصال أخبار سيئة؟",
+    options: [
+      { en: "Text message", ar: "رسالة نصية" },
+      { en: "Email", ar: "بريد إلكتروني" },
+      { en: "Private face-to-face interview", ar: "مقابلة شخصية خاصة وجهاً لوجه" },
+      { en: "Public announcement", ar: "إعلان عام" }
+    ],
+    correct: 2,
+    explanation: "Bad news is much better broken in a private interview than more impersonally in a letter or public setting, as the effect on the receiver matters."
+  },
+  {
+    en: "What is the FIRST stage in the communication process?",
+    ar: "ما هي المرحلة الأولى في عملية التواصل؟",
+    options: [
+      { en: "Encoding the message", ar: "تشفير الرسالة" },
+      { en: "Selecting the channel", ar: "اختيار القناة" },
+      { en: "Conceiving the message", ar: "تكوين الرسالة" },
+      { en: "Providing feedback", ar: "تقديم التغذية الراجعة" }
+    ],
+    correct: 2,
+    explanation: "The first stage is conceiving the message — the sender makes the decision to communicate and formulates an idea or thought."
+  },
+  {
+    en: "Why might a receiver fail to decode a message successfully? Choose the BEST answer.",
+    ar: "لماذا قد يفشل المُستقبِل في فكّ تشفير الرسالة بنجاح؟ اختر الإجابة الأفضل.",
+    options: [
+      { en: "The message was sent too quickly.", ar: "أُرسِلت الرسالة بسرعة كبيرة." },
+      { en: "The receiver does not share the sender's language or the jargon used is unknown.", ar: "المُستقبِل لا يشارك لغة المُرسِل أو المصطلحات غير مألوفة له." },
+      { en: "The sender was too polite.", ar: "كان المُرسِل مؤدّباً جداً." },
+      { en: "Too much feedback was given.", ar: "قُدِّمت تغذية راجعة زائدة." }
+    ],
+    correct: 1,
+    explanation: "A receiver fails to decode when they don't share the sender's language, the jargon is unfamiliar, or there are cultural/educational differences creating a language block."
+  },
+  {
+    en: "What does 'interpretation' mean in the communication process?",
+    ar: "ماذا يعني 'التفسير' في عملية التواصل؟",
+    options: [
+      { en: "Choosing the right channel.", ar: "اختيار القناة الصحيحة." },
+      { en: "Translating a message into another language.", ar: "ترجمة الرسالة إلى لغة أخرى." },
+      { en: "Reading between the lines to find the underlying meaning.", ar: "قراءة ما بين السطور للبحث عن المعنى الكامن." },
+      { en: "Repeating the message louder.", ar: "تكرار الرسالة بصوت أعلى." }
+    ],
+    correct: 2,
+    explanation: "Interpretation means searching for the underlying or hidden meaning — reading between the lines — beyond what is explicitly stated."
+  },
+  {
+    en: "Which of the following is a reason why feedback is important in communication?",
+    ar: "أيّ من التالي سبب لأهمية التغذية الراجعة في التواصل؟",
+    options: [
+      { en: "It makes communication faster.", ar: "تجعل التواصل أسرع." },
+      { en: "It eliminates noise.", ar: "تُزيل الضوضاء." },
+      { en: "It completes the communication process and makes it continuous.", ar: "تُكمِل عملية التواصل وتجعلها مستمرّة." },
+      { en: "It replaces the message.", ar: "تحلّ محلّ الرسالة." }
+    ],
+    correct: 2,
+    explanation: "Feedback completes the whole communication process, sustains it, measures its effectiveness, and lets the sender know if the message was understood."
+  },
+  {
+    en: "When selecting a communication channel, which question should the sender ask?",
+    ar: "عند اختيار قناة التواصل، أيّ سؤال يجب على المُرسِل طرحه؟",
+    options: [
+      { en: "How long will the message take to write?", ar: "كم من الوقت سيستغرق كتابة الرسالة؟" },
+      { en: "Which medium would be most appreciated by the audience — written or spoken?", ar: "أيّ وسيلة ستكون أكثر ملاءمةً للجمهور — مكتوبة أم شفهية؟" },
+      { en: "How much does the channel cost?", ar: "ما تكلفة القناة؟" },
+      { en: "Is the receiver online?", ar: "هل المُستقبِل متصل بالإنترنت؟" }
+    ],
+    correct: 1,
+    explanation: "The sender should ask whether to use words or pictures, and which medium — written or spoken — would be most appropriate and appreciated by the audience."
+  },
+  {
+    en: "Which of the following is NOT a type of communication language listed in the lecture?",
+    ar: "أيّ من التالي ليس من أنواع لغات التواصل المذكورة في المحاضرة؟",
+    options: [
+      { en: "The spoken word", ar: "الكلمة الشفهية" },
+      { en: "The number", ar: "الرقم" },
+      { en: "The dream", ar: "الحلم" },
+      { en: "Non-verbal communication (gesture/posture)", ar: "التواصل غير اللفظي (إيماءة/وقفة)" }
+    ],
+    correct: 2,
+    explanation: "The lecture lists spoken word, written word, number, picture/symbol, and non-verbal communication. 'Dream' is not mentioned."
+  }
+];
+
+// ──────────────────────────────────────
+// QUIZ ENGINE
+// ──────────────────────────────────────
+let answered = [];
+let score = 0;
+
+function buildQuiz() {
+  answered = new Array(questions.length).fill(false);
+  score = 0;
+  document.getElementById('scoreDisplay').textContent = 0;
+  document.getElementById('totalDisplay').textContent = questions.length;
+  document.getElementById('percentDisplay').textContent = '0%';
+  document.getElementById('result-box').classList.remove('show');
+
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+
+  questions.forEach((q, qi) => {
+    const labels = ['A','B','C','D'];
+    const opts = q.options.map((o,oi) => `
+      <button class="opt-btn" id="opt-${qi}-${oi}" onclick="selectAnswer(${qi},${oi})">
+        <span class="opt-label">${labels[oi]}</span>
+        <span>
+          <div>${o.en}</div>
+          <div class="opt-ar">${o.ar}</div>
+        </span>
+      </button>
+    `).join('');
+
+    container.innerHTML += `
+      <div class="q-card" id="qcard-${qi}">
+        <div class="q-number">Question ${qi+1} of ${questions.length}</div>
+        <div class="q-text">${q.en}</div>
+        <div class="q-text-ar">${q.ar}</div>
+        <div class="options" id="opts-${qi}">${opts}</div>
+        <div class="q-feedback" id="feedback-${qi}"></div>
+      </div>
+    `;
+  });
+}
+
+function selectAnswer(qi, chosen) {
+  if(answered[qi]) return;
+  answered[qi] = true;
+
+  const q = questions[qi];
+  const isCorrect = chosen === q.correct;
+  if(isCorrect) score++;
+
+  // Style options
+  for(let i=0;i<q.options.length;i++){
+    const btn = document.getElementById(`opt-${qi}-${i}`);
+    btn.classList.add('disabled');
+    if(i === q.correct) btn.classList.add('correct');
+    else if(i === chosen && !isCorrect) btn.classList.add('wrong');
+  }
+
+  // Show feedback
+  const fb = document.getElementById(`feedback-${qi}`);
+  fb.textContent = (isCorrect ? '✅ Correct! — ' : '❌ Incorrect — ') + q.explanation;
+  fb.className = `q-feedback show ${isCorrect?'correct':'wrong'}`;
+
+  // Update score
+  document.getElementById('scoreDisplay').textContent = score;
+  const done = answered.filter(Boolean).length;
+  const pct = Math.round(done > 0 ? (score/done)*100 : 0);
+  document.getElementById('percentDisplay').textContent = `${score}/${done} correct`;
+
+  // Check all done
+  if(answered.every(Boolean)) showResult();
+}
+
+function showResult(){
+  const pct = Math.round((score/questions.length)*100);
+  const box = document.getElementById('result-box');
+  const emoji = pct>=80?'🏆':pct>=60?'👍':pct>=40?'📚':'💪';
+  const msg = pct>=80?'Excellent! Outstanding performance!':pct>=60?'Good job! Keep it up!':pct>=40?'Fair. Review the lecture and try again.':'Keep studying — you can do it!';
+  const ar = pct>=80?'ممتاز! أداء رائع!':pct>=60?'أحسنت! واصل الجهد!':pct>=40?'مقبول. راجع المحاضرة وأعد المحاولة.':'استمرّ في الدراسة — يمكنك التحسّن!';
+
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-score').textContent = `${score} / ${questions.length}  (${pct}%)`;
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('result-ar').textContent = ar;
+  box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth'});
+}
+
+function resetQuiz(){ buildQuiz(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+// Init
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 7 – Listening & Study Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #f8f4ee;
+    --amber: #e07b39;
+    --amber-light: #f5c49a;
+    --teal: #2a7c7c;
+    --teal-light: #e0f2f1;
+    --gold: #c9a84c;
+    --soft: #f0ebe3;
+    --white: #ffffff;
+    --border: #d8cfc4;
+    --correct: #2e7d32;
+    --wrong: #c62828;
+    --correct-bg: #e8f5e9;
+    --wrong-bg: #ffebee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { background: white; }
+    .section { box-shadow: none !important; border: 1px solid #ddd !important; }
+    nav { display: none; }
+    .hero { min-height: auto; padding: 40px 20px; }
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, var(--ink) 0%, #2c2c54 60%, #16213e 100%);
+    color: white;
+    text-align: center;
+    padding: 70px 30px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(224,123,57,.18) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(42,124,124,.15) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .hero h1 span { color: var(--amber); }
+  .hero-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,.7);
+    margin-top: 8px;
+    direction: rtl;
+  }
+  .hero-sub {
+    margin-top: 18px;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,.55);
+    letter-spacing: 1px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 99;
+    background: var(--ink);
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--amber);
+  }
+  nav a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all .2s;
+  }
+  nav a:hover { background: var(--amber); color: white; }
+
+  /* ── LAYOUT ── */
+  .wrapper { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* ── SECTION ── */
+  .section {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    margin-bottom: 36px;
+    overflow: hidden;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--soft);
+  }
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .icon-amber { background: #fef3e8; }
+  .icon-teal  { background: var(--teal-light); }
+  .icon-gold  { background: #fdf6e3; }
+  .section-title { flex: 1; }
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .section-title .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+    color: var(--amber);
+    direction: rtl;
+  }
+  .section-body { padding: 24px 28px; }
+
+  /* ── BILINGUAL CARD ── */
+  .bi-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 620px) { .bi-card { grid-template-columns: 1fr; } }
+  .bi-en, .bi-ar {
+    padding: 18px 20px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+  }
+  .bi-en {
+    background: var(--soft);
+    border-left: 3px solid var(--amber);
+  }
+  .bi-ar {
+    background: var(--teal-light);
+    border-right: 3px solid var(--teal);
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+  }
+  .bi-en strong, .bi-ar strong { display: block; margin-bottom: 6px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); }
+  .bi-ar strong { color: var(--teal); }
+
+  /* ── POINT LIST ── */
+  .point-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .point-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 16px;
+    background: var(--soft);
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+  .point-list li .num {
+    min-width: 26px; height: 26px;
+    background: var(--amber);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .point-list li .en { flex: 1; }
+  .point-list li .ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    color: var(--teal);
+    font-size: 0.85rem;
+    min-width: 160px;
+    text-align: right;
+  }
+
+  /* ── COMPONENTS GRID ── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .comp-card {
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: white;
+  }
+  .comp-card .comp-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+  .comp-card .comp-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    color: var(--teal);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 6px;
+  }
+  .comp-card p { font-size: 0.82rem; color: #555; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: linear-gradient(135deg, #fff8f0, #fffbf4);
+    border: 1px solid var(--amber-light);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-top: 18px;
+    font-size: 0.9rem;
+  }
+  .highlight .ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    color: var(--teal);
+    margin-top: 8px;
+    font-size: 0.88rem;
+    text-align: right;
+  }
+
+  /* ── TIPS GRID ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .tip-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+  }
+  .tip-card .tip-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--amber-light);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .tip-card p { font-size: 0.85rem; margin-bottom: 6px; }
+  .tip-card .ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    color: var(--teal);
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* ── STUDY PLANS ── */
+  .plan-card {
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    background: white;
+  }
+  .plan-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .plan-card .plan-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.88rem;
+    color: var(--teal);
+    margin-top: 10px;
+  }
+
+  /* ── QUIZ ── */
+  #quiz-section {
+    background: linear-gradient(135deg, var(--ink), #2c2c54);
+    color: white;
+    border-radius: 16px;
+    padding: 36px 30px;
+    margin-bottom: 36px;
+  }
+  .quiz-header { text-align: center; margin-bottom: 30px; }
+  .quiz-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--amber);
+  }
+  .quiz-header .ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    color: rgba(255,255,255,.7);
+    margin-top: 6px;
+    font-size: 1rem;
+  }
+
+  .q-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+  .q-card .q-num {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .q-card .q-text {
+    font-size: 0.97rem;
+    margin-bottom: 6px;
+  }
+  .q-card .q-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 16px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: all .2s;
+    text-align: left;
+    color: white;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .option:hover:not(.locked) { background: rgba(224,123,57,.25); border-color: var(--amber); }
+  .option.correct  { background: var(--correct-bg); border-color: var(--correct); color: var(--correct); }
+  .option.wrong    { background: var(--wrong-bg);   border-color: var(--wrong);   color: var(--wrong);   }
+  .option .opt-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    font-size: 0.82rem;
+    opacity: .75;
+  }
+  .option .opt-label { font-weight: 700; min-width: 20px; }
+
+  .feedback {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback.ok  { background: var(--correct-bg); color: var(--correct); }
+  .feedback.bad { background: var(--wrong-bg);   color: var(--wrong);   }
+
+  #quiz-submit {
+    display: block;
+    margin: 28px auto 0;
+    background: var(--amber);
+    color: white;
+    border: none;
+    padding: 14px 44px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: all .2s;
+  }
+  #quiz-submit:hover { background: #c96a28; transform: translateY(-1px); }
+
+  #quiz-result {
+    text-align: center;
+    margin-top: 24px;
+    padding: 22px;
+    background: rgba(255,255,255,.1);
+    border-radius: 14px;
+    display: none;
+  }
+  #quiz-result .score {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--amber);
+  }
+  #quiz-result p { font-size: .95rem; color: rgba(255,255,255,.8); margin-top: 6px; }
+  #quiz-result .ar { font-family: 'Cairo', sans-serif; direction: rtl; }
+
+  /* ── SUMMARY ── */
+  #summary {
+    background: linear-gradient(160deg, #fff8f2, #f0fafa);
+    border-radius: 16px;
+    border: 2px solid var(--amber-light);
+    overflow: hidden;
+  }
+  .summary-head {
+    background: var(--amber);
+    color: white;
+    text-align: center;
+    padding: 28px;
+  }
+  .summary-head h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+  .summary-head .ar { font-family: 'Cairo', sans-serif; direction: rtl; font-size: 1.1rem; margin-top: 4px; }
+
+  .summary-body { padding: 28px; }
+  .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 620px) { .sum-grid { grid-template-columns: 1fr; } }
+
+  .sum-block {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    border-top: 3px solid var(--amber);
+  }
+  .sum-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .sum-block ul { padding-left: 18px; font-size: 0.85rem; }
+  .sum-block ul li { margin-bottom: 5px; }
+  .sum-block .ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin-top: 12px;
+    border-top: 1px solid var(--soft);
+    padding-top: 10px;
+    font-size: 0.83rem;
+    color: var(--teal);
+  }
+  .sum-block .ar ul { padding-right: 18px; padding-left: 0; }
+
+  /* ── PDF BTN ── */
+  .pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .2s;
+    margin: 24px auto 0;
+    display: flex;
+    width: fit-content;
+  }
+  .pdf-btn:hover { background: var(--amber); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--border);
+    margin: 12px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Lecture 7 · Study Guide</div>
+  <h1>Listening &amp; <span>Study Skills</span></h1>
+  <div class="hero-ar">مهارات الاستماع والدراسة</div>
+  <div class="hero-sub">Simplified · Bilingual · Interactive</div>
+</div>
+
+<!-- NAV -->
+<nav class="no-print">
+  <a href="#listening">Listening</a>
+  <a href="#active">Active Listening</a>
+  <a href="#barriers">Barriers</a>
+  <a href="#tips-listen">Tips</a>
+  <a href="#study">Study Skills</a>
+  <a href="#timetable">Timetable</a>
+  <a href="#plans">Study Plans</a>
+  <a href="#quiz-section">Quiz ✏️</a>
+  <a href="#summary">Summary</a>
+</nav>
+
+<div class="wrapper">
+
+  <!-- ══════════════════════════════════
+       SECTION 1: WHAT IS LISTENING
+  ══════════════════════════════════ -->
+  <div class="section" id="listening">
+    <div class="section-head">
+      <div class="section-icon icon-amber">👂</div>
+      <div class="section-title">
+        <h2>What is Listening?</h2>
+        <div class="ar">ما هو الاستماع؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bi-card">
+        <div class="bi-en">
+          <strong>English</strong>
+          Listening is more than just hearing sounds. It is the brain's process of absorbing the meaning of words and sentences, leading to the understanding of facts and ideas. It requires <b>concentration</b> — focusing your thoughts on one thing despite distractions.
+        </div>
+        <div class="bi-ar">
+          <strong>العربية</strong>
+          الاستماع أكثر من مجرد سماع الأصوات. إنه العملية التي يقوم بها الدماغ لاستيعاب معنى الكلمات والجمل، مما يؤدي إلى فهم الحقائق والأفكار. يتطلب <b>التركيز</b> — أي تركيز أفكارك على شيء واحد رغم المشتتات.
+        </div>
+      </div>
+
+      <ul class="point-list">
+        <li>
+          <span class="num">1</span>
+          <span class="en">Listeners must first <b>hear</b> what is said.</span>
+          <span class="ar">يجب على المستمع أولاً سماع ما يُقال</span>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <span class="en">Identify relevant points that have <b>meaning</b>.</span>
+          <span class="ar">تحديد النقاط ذات المعنى</span>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <span class="en">Understand and hold information in <b>short-term memory</b>.</span>
+          <span class="ar">فهم المعلومات وحفظها في الذاكرة قصيرة المدى</span>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <span class="en">Store important information in <b>long-term memory</b>.</span>
+          <span class="ar">تخزين المعلومات المهمة في الذاكرة طويلة المدى</span>
+        </li>
+      </ul>
+
+      <div class="highlight">
+        💬 <i>"We were given two ears but only one mouth, because listening is twice as hard as talking."</i>
+        <div class="ar">💬 <i>"أُعطينا أذنان وفماً واحداً، لأن الاستماع أصعب من الكلام بمرتين."</i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 2: ACTIVE LISTENING
+  ══════════════════════════════════ -->
+  <div class="section" id="active">
+    <div class="section-head">
+      <div class="section-icon icon-teal">🎯</div>
+      <div class="section-title">
+        <h2>Active Listening — 6 Components</h2>
+        <div class="ar">الاستماع النشط — ٦ مكونات</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bi-card">
+        <div class="bi-en">
+          <strong>English</strong>
+          Active listening is a method of responding to another person that <b>encourages communication</b>. A person who combines listening with concentration is actively listening.
+        </div>
+        <div class="bi-ar">
+          <strong>العربية</strong>
+          الاستماع النشط هو أسلوب الاستجابة للشخص الآخر بما <b>يشجع التواصل</b>. الشخص الذي يجمع بين الاستماع والتركيز يستمع بشكل نشط.
+        </div>
+      </div>
+
+      <div class="comp-grid">
+        <div class="comp-card">
+          <div class="comp-title">① Hearing</div>
+          <div class="comp-ar">السماع</div>
+          <p>The physiological process of receiving sound and stimuli.</p>
+        </div>
+        <div class="comp-card">
+          <div class="comp-title">② Attending</div>
+          <div class="comp-ar">الانتباه</div>
+          <p>Consciously & unconsciously focusing on external stimuli.</p>
+        </div>
+        <div class="comp-card">
+          <div class="comp-title">③ Interpreting</div>
+          <div class="comp-ar">التفسير</div>
+          <p>Decoding the symbols or behaviour being attended to.</p>
+        </div>
+        <div class="comp-card">
+          <div class="comp-title">④ Evaluating</div>
+          <div class="comp-ar">التقييم</div>
+          <p>Deciding the value of the information to you as the receiver.</p>
+        </div>
+        <div class="comp-card">
+          <div class="comp-title">⑤ Remembering</div>
+          <div class="comp-ar">التذكر</div>
+          <p>Placing important information into short- or long-term storage.</p>
+        </div>
+        <div class="comp-card">
+          <div class="comp-title">⑥ Responding</div>
+          <div class="comp-ar">الاستجابة</div>
+          <p>Giving feedback to the speaker or other receivers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 3: BARRIERS
+  ══════════════════════════════════ -->
+  <div class="section" id="barriers">
+    <div class="section-head">
+      <div class="section-icon icon-amber">🚧</div>
+      <div class="section-title">
+        <h2>Barriers to Listening</h2>
+        <div class="ar">عوائق الاستماع</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="point-list">
+        <li><span class="num">1</span><span class="en">Sources of <b>noise</b></span><span class="ar">مصادر الضوضاء</span></li>
+        <li><span class="num">2</span><span class="en"><b>Jumping to conclusions</b> before understanding what is said</span><span class="ar">القفز إلى الاستنتاجات قبل الفهم</span></li>
+        <li><span class="num">3</span><span class="en"><b>Hearing only what you want</b> to hear</span><span class="ar">سماع ما تريد سماعه فقط</span></li>
+        <li><span class="num">4</span><span class="en">Being <b>inattentive</b> — thinking about something else</span><span class="ar">عدم الانتباه والتفكير في شيء آخر</span></li>
+        <li><span class="num">5</span><span class="en">Having a <b>closed mind</b></span><span class="ar">العقل المغلق</span></li>
+        <li><span class="num">6</span><span class="en">Feeling <b>anxious or self-conscious</b></span><span class="ar">القلق والخجل</span></li>
+        <li><span class="num">7</span><span class="en"><b>Judging the person</b> positively or negatively</span><span class="ar">الحكم على الشخص إيجاباً أو سلباً</span></li>
+        <li><span class="num">8</span><span class="en"><b>Cultural issues</b> e.g. focusing on accent instead of content</span><span class="ar">التركيز على اللهجة بدلاً من المحتوى</span></li>
+      </ul>
+      <div class="highlight">
+        ✅ <b>Key Takeaway:</b> By developing awareness of these barriers, we gain more control over the internal ones and can adopt more helpful listening behaviours.
+        <div class="ar">✅ <b>الفكرة الرئيسية:</b> من خلال الوعي بهذه العوائق، يمكننا التحكم في العوائق الداخلية واعتماد سلوكيات استماع أفضل.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 4: LISTENING TIPS
+  ══════════════════════════════════ -->
+  <div class="section" id="tips-listen">
+    <div class="section-head">
+      <div class="section-icon icon-gold">💡</div>
+      <div class="section-title">
+        <h2>Tips for Listening Effectively</h2>
+        <div class="ar">نصائح للاستماع الفعّال</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-num">01</div>
+          <p><b>Recognize how ideas are organized.</b> Learn your professor's lecture style.</p>
+          <div class="ar">تعرف على طريقة تنظيم الأفكار في المحاضرة.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-num">02</div>
+          <p><b>Be involved.</b> Constantly analyze what is being said.</p>
+          <div class="ar">كن منخرطاً وحلل ما يُقال باستمرار.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-num">03</div>
+          <p><b>Screen out distractions</b> — noise, accents, your inner voice.</p>
+          <div class="ar">تجاهل المشتتات: الضوضاء، اللهجات، صوتك الداخلي.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-num">04</div>
+          <p><b>Organize</b> statements into main points and supporting reasons.</p>
+          <div class="ar">نظّم ما تسمعه في نقاط رئيسية وأسباب داعمة.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-num">05</div>
+          <p><b>Discriminate</b> between relevant and irrelevant information.</p>
+          <div class="ar">ميّز بين المعلومات المهمة وغير المهمة.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-num">06</div>
+          <p><b>Maintain an active body state.</b> Keep eye-contact with the speaker.</p>
+          <div class="ar">حافظ على لغة جسد نشطة وتواصل بصري مع المتحدث.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 5: STUDY SKILLS
+  ══════════════════════════════════ -->
+  <div class="section" id="study">
+    <div class="section-head">
+      <div class="section-icon icon-teal">📚</div>
+      <div class="section-title">
+        <h2>What are Study Skills?</h2>
+        <div class="ar">ما هي مهارات الدراسة؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="bi-card">
+        <div class="bi-en">
+          <strong>English</strong>
+          Studying means revising lecture notes and reading textbooks to better understand what you are learning. Every student needs a <b>personal study plan</b> that works best for them in order to gain good grades.
+        </div>
+        <div class="bi-ar">
+          <strong>العربية</strong>
+          الدراسة تعني مراجعة ملاحظات المحاضرات وقراءة الكتب المدرسية لفهم أعمق. يحتاج كل طالب إلى <b>خطة دراسية شخصية</b> تناسبه للحصول على درجات جيدة.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 6: STUDY TIMETABLE
+  ══════════════════════════════════ -->
+  <div class="section" id="timetable">
+    <div class="section-head">
+      <div class="section-icon icon-amber">📅</div>
+      <div class="section-title">
+        <h2>Prepare a Study Timetable</h2>
+        <div class="ar">إعداد جدول زمني للدراسة</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <ul class="point-list">
+        <li><span class="num">1</span><span class="en">Draw up a timetable — include lectures, meals, travel. <b>Be realistic.</b></span><span class="ar">ضع جدولاً يشمل المحاضرات والوجبات والتنقل. كن واقعياً.</span></li>
+        <li><span class="num">2</span><span class="en">Work out your <b>most effective study times</b> (morning/evening?).</span><span class="ar">حدد أوقات دراستك الأفضل (صباحاً أم مساءً؟)</span></li>
+        <li><span class="num">3</span><span class="en">Estimate hours needed per subject and match to your weekly planner.</span><span class="ar">قدّر عدد الساعات اللازمة لكل مادة ووزّعها على الأسبوع.</span></li>
+        <li><span class="num">4</span><span class="en">Study in <b>2–4 hour blocks</b> with 5–10 min breaks every 40–50 mins.</span><span class="ar">ادرس في جلسات من ٢-٤ ساعات مع استراحة ٥-١٠ دقائق كل ٤٠-٥٠ دقيقة.</span></li>
+        <li><span class="num">5</span><span class="en">Start planning from <b>exam dates backwards</b>. Add social events too.</span><span class="ar">خطط من تاريخ الامتحان للخلف. أضف المناسبات الاجتماعية أيضاً.</span></li>
+        <li><span class="num">6</span><span class="en">Plan each session in detail: what topic? what to achieve?</span><span class="ar">خطط لكل جلسة بالتفصيل: أي موضوع؟ ماذا تريد تحقيقه؟</span></li>
+        <li><span class="num">7</span><span class="en">Use small pockets of time — on the bus, waiting in a queue.</span><span class="ar">استخدم أوقات الانتظار الصغيرة للمراجعة السريعة.</span></li>
+      </ul>
+      <div class="highlight">
+        🔑 <b>Prime Study Time (PST):</b> The time when your concentration is at its highest. Use your PST for difficult subjects. Remove clutter — books from other subjects are a distraction!
+        <div class="ar">🔑 <b>وقت الدراسة الذهبي (PST):</b> هو الوقت الذي يكون فيه تركيزك في أعلى مستوياته. استخدمه للمواد الصعبة. تخلص من الفوضى — كتب المواد الأخرى تشتت انتباهك!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 7: STUDY PLANS
+  ══════════════════════════════════ -->
+  <div class="section" id="plans">
+    <div class="section-head">
+      <div class="section-icon icon-teal">🗂️</div>
+      <div class="section-title">
+        <h2>Types of Study Plans</h2>
+        <div class="ar">أنواع خطط الدراسة</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="plan-card">
+        <h3>① Preview — المراجعة المسبقة</h3>
+        <p>Reading about the topic <b>before</b> the lecture. Use the course outline given to you. This gives you a head-start and helps you follow and retain what the lecturer says. Knowledge builds from <b>known → unknown</b>. You can also preview previous lecture notes to link them with the new content.</p>
+        <div class="plan-ar">القراءة عن الموضوع <b>قبل</b> المحاضرة. هذا يمنحك ميزة لأنك ستتمكن من متابعة الأستاذ وفهمه بسهولة. المعرفة تنطلق من المعلوم إلى المجهول. يمكنك أيضاً مراجعة ملاحظات المحاضرة السابقة لربطها بالجديدة.</div>
+      </div>
+
+      <div class="plan-card">
+        <h3>② Studying with Breaks (Spaced Study) — الدراسة مع استراحات</h3>
+        <p>Study for a period, then take a <b>short break</b>, then study again. Example: 2 hours study → 10 min break → 1 hour study. Breaks help <b>lock information into long-term memory (LTM)</b>. Breaks act as a <b>reward</b> — reflect on what you studied. Don't use breaks negatively!</p>
+        <div class="plan-ar">ادرس لفترة ثم خذ <b>استراحة قصيرة</b> ثم عد للدراسة. مثال: ساعتان دراسة → ١٠ دقائق استراحة → ساعة دراسة. الاستراحات تساعد على <b>ترسيخ المعلومات في الذاكرة طويلة المدى</b>. الاستراحات بمثابة <b>مكافأة</b> — فكر فيما درسته خلالها.</div>
+      </div>
+
+      <div class="plan-card">
+        <h3>③ Group Study — الدراسة الجماعية</h3>
+        <p>Studying with friends can be fun and rewarding. Choose group members wisely and follow rules. Groups should:</p>
+        <ul style="padding-left:18px; font-size:.88rem; margin-top:8px; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+          <li>Not be your only study method</li>
+          <li>Be a form of active learning</li>
+          <li>Not let one person dominate</li>
+          <li>Meet 2–3 times a week max</li>
+          <li>Share responsibilities equally</li>
+          <li>Have rules of respect</li>
+          <li>Exchange contact info</li>
+        </ul>
+        <div class="plan-ar">الدراسة مع الأصدقاء ممتعة ومفيدة. اختر أعضاء المجموعة بحكمة. يجب على المجموعات: ألا تكون الأسلوب الوحيد للدراسة، أن تكون شكلاً من أشكال التعلم النشط، ألا يسيطر شخص واحد، الاجتماع ٢-٣ مرات أسبوعياً كحد أقصى، تقسيم المهام، وضع قواعد للاحترام، وتبادل بيانات التواصل.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       QUIZ
+  ══════════════════════════════════ -->
+  <div id="quiz-section">
+    <div class="quiz-header">
+      <h2>📝 Test Yourself</h2>
+      <div class="ar">اختبر نفسك على محتوى المحاضرة</div>
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <button id="quiz-submit" onclick="submitQuiz()">Submit Answers · إرسال الإجابات</button>
+
+    <div id="quiz-result">
+      <div class="score" id="score-display"></div>
+      <p id="score-msg"></p>
+      <p class="ar" id="score-msg-ar"></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SUMMARY
+  ══════════════════════════════════ -->
+  <div id="summary" class="page-break">
+    <div class="summary-head">
+      <h2>📋 Full Lecture Summary</h2>
+      <div class="ar">ملخص كامل للمحاضرة</div>
+    </div>
+    <div class="summary-body">
+      <div class="sum-grid">
+
+        <div class="sum-block">
+          <h4>🎧 Listening Skills</h4>
+          <ul>
+            <li>Listening = hearing + understanding + remembering</li>
+            <li>Requires concentration despite distractions</li>
+            <li>Short-term memory → long-term memory</li>
+            <li>Speaking context helps decoding messages</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li>الاستماع = سماع + فهم + تذكر</li>
+              <li>يتطلب التركيز رغم المشتتات</li>
+              <li>ذاكرة قصيرة → ذاكرة طويلة المدى</li>
+              <li>السياق يسهّل فهم الرسالة</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sum-block">
+          <h4>🎯 Active Listening (6 Steps)</h4>
+          <ul>
+            <li>Hearing → Attending → Interpreting</li>
+            <li>Evaluating → Remembering → Responding</li>
+            <li>Combines listening with full concentration</li>
+            <li>Encourages communication</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li>سماع ← انتباه ← تفسير</li>
+              <li>تقييم ← تذكر ← استجابة</li>
+              <li>يجمع بين الاستماع والتركيز الكامل</li>
+              <li>يشجع التواصل</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sum-block">
+          <h4>🚧 8 Barriers to Listening</h4>
+          <ul>
+            <li>Noise, jumping to conclusions, closed mind</li>
+            <li>Hearing only what you want</li>
+            <li>Inattention, anxiety, judging the speaker</li>
+            <li>Cultural/accent-focused issues</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li>الضوضاء، القفز للاستنتاجات، العقل المغلق</li>
+              <li>سماع ما تريد فقط</li>
+              <li>عدم الانتباه، القلق، الحكم على المتحدث</li>
+              <li>مشاكل ثقافية/التركيز على اللهجة</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sum-block">
+          <h4>💡 Effective Listening Tips</h4>
+          <ul>
+            <li>Recognize lecture structure & style</li>
+            <li>Stay involved — analyze constantly</li>
+            <li>Screen out distractions</li>
+            <li>Organize into main points</li>
+            <li>Maintain eye-contact & alert body</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li>تعرف على هيكل المحاضرة</li>
+              <li>كن منخرطاً وحلّل باستمرار</li>
+              <li>تجاهل المشتتات</li>
+              <li>نظم المعلومات في نقاط رئيسية</li>
+              <li>حافظ على التواصل البصري</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sum-block">
+          <h4>📅 Study Timetable Tips (7 Steps)</h4>
+          <ul>
+            <li>Block all activities — be realistic</li>
+            <li>Know your Prime Study Time (PST)</li>
+            <li>Estimate hours per subject</li>
+            <li>2–4 hr blocks with regular breaks</li>
+            <li>Plan backwards from exams</li>
+            <li>Plan each session's goals</li>
+            <li>Use small pockets of time</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li>ضع جميع الأنشطة في الجدول</li>
+              <li>اعرف وقت دراستك الذهبي</li>
+              <li>قدّر ساعات كل مادة</li>
+              <li>جلسات ٢-٤ ساعات مع استراحات</li>
+              <li>خطط من الامتحان للخلف</li>
+              <li>حدد هدف كل جلسة</li>
+              <li>استغل أوقات الانتظار</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sum-block">
+          <h4>🗂️ 3 Study Plans</h4>
+          <ul>
+            <li><b>Preview:</b> Read topic before lecture</li>
+            <li><b>Spaced Study:</b> Study → break → study. Helps LTM.</li>
+            <li><b>Group Study:</b> Active learning with peers (2–3×/week)</li>
+            <li>All three can be used simultaneously</li>
+          </ul>
+          <div class="ar">
+            <ul>
+              <li><b>المراجعة المسبقة:</b> اقرأ قبل المحاضرة</li>
+              <li><b>الدراسة بالاستراحات:</b> تساعد على الحفظ طويل المدى</li>
+              <li><b>الدراسة الجماعية:</b> تعلم نشط مع الأقران</li>
+              <li>يمكن استخدام الثلاثة معاً في نفس الوقت</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF BUTTON -->
+  <button class="pdf-btn no-print" onclick="window.print()">
+    🖨️ Save / Print as PDF · حفظ كـ PDF
+  </button>
+
+</div><!-- /wrapper -->
+
+<script>
+const questions = [
+  {
+    en: "What is the definition of listening according to the lecture?",
+    ar: "ما هو تعريف الاستماع وفقاً للمحاضرة؟",
+    options: [
+      { en: "Only hearing sounds around you", ar: "سماع الأصوات فقط" },
+      { en: "The brain's absorption of the meanings of words and sentences", ar: "استيعاب الدماغ لمعاني الكلمات والجمل" },
+      { en: "Speaking clearly to others", ar: "التحدث بوضوح للآخرين" },
+      { en: "Writing down what you hear", ar: "كتابة ما تسمعه" }
+    ],
+    correct: 1
+  },
+  {
+    en: "How many components does Active Listening have?",
+    ar: "كم عدد مكونات الاستماع النشط؟",
+    options: [
+      { en: "4", ar: "٤" },
+      { en: "5", ar: "٥" },
+      { en: "6", ar: "٦" },
+      { en: "7", ar: "٧" }
+    ],
+    correct: 2
+  },
+  {
+    en: "Which of the following is a barrier to effective listening?",
+    ar: "أي مما يلي يُعدّ عائقاً للاستماع الفعّال؟",
+    options: [
+      { en: "Maintaining eye-contact", ar: "الحفاظ على التواصل البصري" },
+      { en: "Taking notes", ar: "تدوين الملاحظات" },
+      { en: "Jumping to conclusions before fully understanding", ar: "القفز للاستنتاجات قبل الفهم الكامل" },
+      { en: "Asking questions", ar: "طرح الأسئلة" }
+    ],
+    correct: 2
+  },
+  {
+    en: "What does PST stand for in study skills?",
+    ar: "ماذا يرمز اختصار PST في مهارات الدراسة؟",
+    options: [
+      { en: "Personal Study Topic", ar: "موضوع الدراسة الشخصي" },
+      { en: "Prime Study Time", ar: "وقت الدراسة الذهبي" },
+      { en: "Planned Study Timeline", ar: "جدول الدراسة المخطط" },
+      { en: "Practice Study Test", ar: "اختبار الدراسة التدريبي" }
+    ],
+    correct: 1
+  },
+  {
+    en: "Spaced study (studying with breaks) helps lock information into:",
+    ar: "تساعد الدراسة بالاستراحات على ترسيخ المعلومات في:",
+    options: [
+      { en: "Short-term memory", ar: "الذاكرة قصيرة المدى" },
+      { en: "Working memory", ar: "الذاكرة العاملة" },
+      { en: "Long-term memory (LTM)", ar: "الذاكرة طويلة المدى" },
+      { en: "Visual memory", ar: "الذاكرة البصرية" }
+    ],
+    correct: 2
+  },
+  {
+    en: "How often should a study group meet per week?",
+    ar: "كم مرة يجب أن تجتمع مجموعة الدراسة في الأسبوع؟",
+    options: [
+      { en: "Every day", ar: "كل يوم" },
+      { en: "No more than 2–3 times", ar: "لا أكثر من ٢-٣ مرات" },
+      { en: "Once a week", ar: "مرة واحدة في الأسبوع" },
+      { en: "4–5 times", ar: "٤-٥ مرات" }
+    ],
+    correct: 1
+  },
+  {
+    en: "What is 'Preview' as a study plan?",
+    ar: "ما هي 'المراجعة المسبقة' كخطة دراسية؟",
+    options: [
+      { en: "Reviewing notes after the exam", ar: "مراجعة الملاحظات بعد الامتحان" },
+      { en: "Reading about the topic before the lecture", ar: "القراءة عن الموضوع قبل المحاضرة" },
+      { en: "Summarizing what you studied after the lecture", ar: "تلخيص ما درسته بعد المحاضرة" },
+      { en: "Watching videos about the topic", ar: "مشاهدة مقاطع فيديو عن الموضوع" }
+    ],
+    correct: 1
+  },
+  {
+    en: "Which step of Active Listening involves giving feedback to the speaker?",
+    ar: "أي خطوة من خطوات الاستماع النشط تتضمن تقديم تغذية راجعة للمتحدث؟",
+    options: [
+      { en: "Hearing", ar: "السماع" },
+      { en: "Evaluating", ar: "التقييم" },
+      { en: "Remembering", ar: "التذكر" },
+      { en: "Responding", ar: "الاستجابة" }
+    ],
+    correct: 3
+  },
+  {
+    en: "What does 'clutter' mean in the context of studying?",
+    ar: "ماذا تعني 'الفوضى' في سياق الدراسة؟",
+    options: [
+      { en: "A messy desk with no books", ar: "مكتب فوضوي بدون كتب" },
+      { en: "Anything that distracts you from your scheduled reading", ar: "أي شيء يشتت انتباهك عن القراءة المجدولة" },
+      { en: "Too many notes on one topic", ar: "ملاحظات كثيرة جداً عن موضوع واحد" },
+      { en: "Studying multiple subjects at once", ar: "دراسة عدة مواد في وقت واحد" }
+    ],
+    correct: 1
+  },
+  {
+    en: "According to the lecture, effective listening requires:",
+    ar: "وفقاً للمحاضرة، يتطلب الاستماع الفعّال:",
+    options: [
+      { en: "Writing everything down word for word", ar: "كتابة كل شيء كلمة بكلمة" },
+      { en: "Concentration — focusing thoughts on one problem", ar: "التركيز — تركيز الأفكار على مشكلة واحدة" },
+      { en: "Agreeing with everything the speaker says", ar: "الموافقة على كل ما يقوله المتحدث" },
+      { en: "Staying silent at all times", ar: "التزام الصمت في جميع الأوقات" }
+    ],
+    correct: 1
+  }
+];
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  questions.forEach((q, i) => {
+    const labels = ['A','B','C','D'];
+    const opts = q.options.map((o, j) => `
+      <button class="option" onclick="selectOption(this, ${i}, ${j})" data-q="${i}" data-o="${j}">
+        <span class="opt-label">${labels[j]}</span>
+        <span>${o.en}<br><span class="opt-ar">${o.ar}</span></span>
+      </button>
+    `).join('');
+    container.innerHTML += `
+      <div class="q-card" id="q${i}">
+        <div class="q-num">Question ${i+1} / ${questions.length}</div>
+        <div class="q-text">${q.en}</div>
+        <div class="q-ar">${q.ar}</div>
+        <div class="options" id="opts${i}">${opts}</div>
+        <div class="feedback" id="fb${i}"></div>
+      </div>
+    `;
+  });
+}
+
+const userAnswers = {};
+
+function selectOption(btn, qIdx, oIdx) {
+  const opts = document.querySelectorAll(`[data-q="${qIdx}"]`);
+  const anyLocked = [...opts].some(b => b.classList.contains('locked'));
+  if (anyLocked) return;
+  opts.forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  userAnswers[qIdx] = oIdx;
+}
+
+function submitQuiz() {
+  let correct = 0;
+  questions.forEach((q, i) => {
+    const opts = document.querySelectorAll(`[data-q="${i}"]`);
+    opts.forEach(b => b.classList.add('locked'));
+    const fb = document.getElementById(`fb${i}`);
+    if (userAnswers[i] === undefined) {
+      fb.className = 'feedback show bad';
+      fb.textContent = '⚠️ Not answered · لم تُجب على هذا السؤال';
+      return;
+    }
+    if (userAnswers[i] === q.correct) {
+      correct++;
+      opts[q.correct].classList.add('correct');
+      fb.className = 'feedback show ok';
+      fb.textContent = '✅ Correct! · إجابة صحيحة!';
+    } else {
+      opts[userAnswers[i]].classList.add('wrong');
+      opts[q.correct].classList.add('correct');
+      fb.className = 'feedback show bad';
+      fb.textContent = `❌ Wrong. Correct answer: ${String.fromCharCode(65+q.correct)} · إجابة خاطئة. الصحيحة: ${['أ','ب','ج','د'][q.correct]}`;
+    }
+  });
+
+  const pct = Math.round(correct / questions.length * 100);
+  const result = document.getElementById('quiz-result');
+  document.getElementById('score-display').textContent = `${correct} / ${questions.length}`;
+  let msg, msgAr;
+  if (pct >= 90)      { msg = '🏆 Excellent! You mastered the lecture!'; msgAr = 'ممتاز! أتقنت المحاضرة!'; }
+  else if (pct >= 70) { msg = '👍 Good job! Review the missed points.';  msgAr = 'عمل جيد! راجع النقاط التي فاتتك.'; }
+  else if (pct >= 50) { msg = '📖 Fair. Give the material another read.'; msgAr = 'مقبول. اقرأ المحتوى مرة أخرى.'; }
+  else                { msg = '💪 Keep studying — you can do it!';        msgAr = 'واصل الدراسة — أنت تستطيع!'; }
+  document.getElementById('score-msg').textContent = msg;
+  document.getElementById('score-msg-ar').textContent = msgAr;
+  result.style.display = 'block';
+  document.getElementById('quiz-submit').style.display = 'none';
+  result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

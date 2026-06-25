@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Skills – UNC04 | مهارات التواصل</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue:   #1a5fa8;
+  --teal:   #0891b2;
+  --orange: #ea580c;
+  --green:  #16a34a;
+  --gold:   #b45309;
+  --bg:     #f8f9fc;
+  --white:  #ffffff;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --border: #e2e8f0;
+  --r:      12px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── PRINT BUTTON ── */
+.print-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 10px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.site-label { font-weight: 700; color: var(--blue); font-size: .9rem; letter-spacing: .5px; }
+.pdf-btn {
+  background: var(--blue); color: #fff; border: none;
+  padding: 9px 26px; border-radius: 30px; font-size: .88rem; font-weight: 600;
+  cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: background .2s;
+}
+.pdf-btn:hover { background: #1548a0; }
+
+/* ── MAIN WRAPPER ── */
+.page { max-width: 960px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+  border-radius: 20px;
+  padding: 52px 48px;
+  color: #fff;
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; right: -60px; top: -60px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: rgba(255,255,255,.07);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.35);
+  padding: 4px 16px; border-radius: 20px; font-size: .75rem; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.hero-titles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; align-items: start; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 2rem; line-height: 1.2; margin-bottom: 4px; }
+.hero h1.ar { font-family: 'Amiri', serif; font-size: 2.1rem; text-align: right; direction: rtl; }
+.hero-sub { opacity: .85; font-size: .9rem; }
+.hero-sub.ar { font-family: 'Amiri', serif; text-align: right; direction: rtl; font-size: 1rem; }
+
+/* grade pills */
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.pill {
+  background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3);
+  border-radius: 10px; padding: 10px 18px; text-align: center; min-width: 100px;
+}
+.pill-pct { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
+.pill-lbl { font-size: .72rem; opacity: .85; line-height: 1.3; margin-top: 2px; }
+.pill-lbl.ar { font-family: 'Amiri', serif; direction: rtl; font-size: .85rem; }
+
+/* ── SECTION CARD ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+/* section header */
+.sec-head {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--border);
+}
+.sec-icon { font-size: 1.6rem; flex-shrink: 0; }
+.sec-titles { flex: 1; }
+.sec-en { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blue); font-weight: 700; }
+.sec-ar { font-family: 'Amiri', serif; font-size: 1.25rem; color: var(--blue); direction: rtl; text-align: right; margin-top: 2px; }
+
+/* bilingual rows */
+.bi-row {
+  display: grid; grid-template-columns: 1fr 1px 1fr;
+  gap: 0 24px; margin-bottom: 16px;
+  align-items: start;
+}
+.bi-row:last-child { margin-bottom: 0; }
+.bi-divider { background: var(--border); border-radius: 1px; }
+.bi-en { font-size: .92rem; color: var(--text); line-height: 1.65; }
+.bi-ar { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-size: 1.05rem; color: var(--text); line-height: 1.8; }
+
+/* numbered list */
+.def-list { display: flex; flex-direction: column; gap: 14px; }
+.def-item { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0 24px; }
+.def-cell { display: flex; gap: 10px; }
+.def-num { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--teal); min-width: 26px; opacity: .7; padding-top: 1px; }
+.def-text { font-size: .91rem; line-height: 1.65; }
+.def-cell.ar { direction: rtl; justify-content: flex-end; }
+.def-cell.ar .def-text { font-family: 'Amiri', serif; font-size: 1.04rem; line-height: 1.8; }
+.def-cell.ar .def-num { order: 2; }
+
+/* highlight */
+.hl {
+  background: #eff6ff; border-left: 4px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px; margin: 24px 0 0;
+}
+.hl-title-en { font-weight: 600; color: var(--blue); font-size: .82rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.hl-title-ar { font-family: 'Amiri', serif; font-weight: 700; color: var(--blue); font-size: .95rem; direction: rtl; text-align: right; }
+.hl .bi-row { margin: 12px 0 0; }
+
+/* categories */
+.cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cat-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; background: var(--bg);
+}
+.cat-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.cat-name-en { font-weight: 600; color: var(--orange); font-size: .9rem; margin-bottom: 2px; }
+.cat-name-ar { font-family: 'Amiri', serif; font-weight: 700; color: var(--orange); direction: rtl; text-align: right; font-size: 1rem; }
+.cat-desc-en { font-size: .84rem; color: var(--muted); line-height: 1.55; }
+.cat-desc-ar { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-size: .97rem; color: var(--muted); line-height: 1.7; }
+
+/* objectives */
+.obj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.obj-item {
+  display: flex; gap: 8px; align-items: flex-start;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+}
+.obj-item .dot { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.obj-en { font-size: .88rem; }
+.obj-ar { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-size: 1rem; }
+
+/* ── QUIZ ── */
+.quiz-card { background: #fff8f0; border: 1px solid #fed7aa; }
+.quiz-header { background: var(--orange); color: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; }
+.quiz-header-titles { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+.quiz-header h2.ar { font-family: 'Amiri', serif; text-align: right; direction: rtl; font-size: 1.5rem; }
+.quiz-header p { font-size: .82rem; opacity: .9; margin-top: 4px; }
+.quiz-header p.ar { font-family: 'Amiri', serif; text-align: right; direction: rtl; font-size: .95rem; }
+
+.q-block { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px dashed #fed7aa; }
+.q-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.q-num-label { font-size: .72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 8px; }
+.q-texts { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 32px; margin-bottom: 14px; }
+.q-text-en { font-weight: 600; font-size: .93rem; color: var(--text); line-height: 1.45; }
+.q-text-ar { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-weight: 700; font-size: 1.05rem; color: var(--text); line-height: 1.5; }
+
+.opts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.opt {
+  display: flex; align-items: center; gap: 10px;
+  background: #fff; border: 1.5px solid #e2e8f0;
+  border-radius: 8px; padding: 10px 14px; cursor: pointer;
+  transition: all .2s;
+}
+.opt:hover { border-color: var(--orange); background: #fff7ed; }
+.opt.correct { border-color: var(--green) !important; background: #f0fdf4 !important; }
+.opt.wrong   { border-color: #dc2626 !important; background: #fef2f2 !important; }
+.opt-letter {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: #f1f5f9; display: flex; align-items: center; justify-content: center;
+  font-size: .75rem; font-weight: 700; color: var(--muted); flex-shrink: 0;
+}
+.opt.correct .opt-letter { background: var(--green); color: #fff; }
+.opt.wrong   .opt-letter { background: #dc2626; color: #fff; }
+.opt-texts { flex: 1; }
+.opt-en { font-size: .83rem; color: var(--text); line-height: 1.35; }
+.opt-ar { font-family: 'Amiri', serif; direction: rtl; text-align: right; font-size: .95rem; color: var(--muted); line-height: 1.4; }
+
+.fb {
+  margin-top: 10px; padding: 10px 14px; border-radius: 8px;
+  font-size: .85rem; display: none;
+}
+.fb.show { display: block; }
+.fb.ok  { background: #f0fdf4; color: var(--green); border: 1px solid #bbf7d0; }
+.fb.bad { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.fb .fb-ar { font-family: 'Amiri', serif; font-size: 1rem; }
+
+/* quiz result */
+.q-result {
+  display: none; text-align: center;
+  background: #fff; border: 1px solid #fed7aa; border-radius: 14px;
+  padding: 36px; margin-top: 28px;
+}
+.score-big { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--orange); }
+.score-msg { color: var(--muted); margin: 8px 0 20px; font-size: .92rem; }
+.score-msg-ar { font-family: 'Amiri', serif; direction: rtl; font-size: 1.05rem; }
+.retry-btn {
+  background: var(--orange); color: #fff; border: none;
+  padding: 12px 32px; border-radius: 30px; font-size: .9rem; font-weight: 600;
+  cursor: pointer; transition: background .2s;
+}
+.retry-btn:hover { background: #c2410c; }
+
+/* ── SUMMARY ── */
+.summary-card { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sum-box { background: #fff; border: 1px solid #d1fae5; border-radius: 12px; padding: 20px 22px; }
+.sum-full { grid-column: 1 / -1; background: linear-gradient(135deg,#fffbeb,#ecfdf5); border-color: #a7f3d0; }
+.sum-box h3 { font-size: .88rem; font-weight: 700; color: var(--green); margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+.sum-en li, .sum-ar li { font-size: .85rem; line-height: 1.6; color: var(--text); margin-bottom: 6px; list-style: none; padding-left: 16px; position: relative; }
+.sum-en li::before { content: '→'; position: absolute; left: 0; color: var(--teal); }
+.sum-ar { direction: rtl; }
+.sum-ar li { font-family: 'Amiri', serif; font-size: 1rem; line-height: 1.75; padding-left: 0; padding-right: 16px; }
+.sum-ar li::before { left: auto; right: 0; }
+.sum-label-en { font-size: .72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; }
+.sum-label-ar { font-family: 'Amiri', serif; font-size: .85rem; color: var(--muted); direction: rtl; text-align: right; margin-bottom: 4px; }
+.sum-divider { width: 1px; background: #d1fae5; }
+.sum-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0 20px; }
+
+/* footer */
+footer { text-align: center; padding: 32px; color: var(--muted); font-size: .78rem; }
+
+/* ── PRINT STYLES ── */
+@media print {
+  .print-bar { display: none !important; }
+  body { background: #fff; font-size: 13px; }
+  .page { padding: 20px 16px; max-width: 100%; }
+  .hero { border-radius: 10px; padding: 32px; }
+  .card, .quiz-card, .summary-card { break-inside: avoid; page-break-inside: avoid; box-shadow: none; }
+  .q-block { break-inside: avoid; }
+  .opt:hover { border-color: #e2e8f0; background: #fff; }
+  footer { padding: 16px; }
+}
+
+@media (max-width: 640px) {
+  .hero-titles, .bi-row, .def-item, .q-texts, .cat-grid, .obj-grid, .opts-grid, .sum-grid, .sum-inner { grid-template-columns: 1fr; }
+  .bi-divider, .def-divider, .sum-divider { display: none; }
+  .hero { padding: 32px 24px; }
+  .card { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PRINT BAR -->
+<div class="print-bar">
+  <span class="site-label">UNC04 · Communication Skills | مهارات التواصل</span>
+  <button class="pdf-btn" onclick="window.print()">🖨️ Save as PDF / حفظ PDF</button>
+</div>
+
+<div class="page">
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="hero-badge">Course UNC04 · كورس UNC04</div>
+  <div class="hero-titles">
+    <div>
+      <h1>An Introduction to<br>Communication Skills</h1>
+      <p class="hero-sub">Your complete simplified bilingual study guide.</p>
+    </div>
+    <div>
+      <h1 class="ar">مقدمة في<br>مهارات التواصل</h1>
+      <p class="hero-sub ar">دليل دراستك الكامل المبسط باللغتين.</p>
+    </div>
+  </div>
+
+  <div class="pills">
+    <div class="pill">
+      <div class="pill-pct">50%</div>
+      <div class="pill-lbl">Final Exam</div>
+      <div class="pill-lbl ar">الامتحان النهائي</div>
+    </div>
+    <div class="pill">
+      <div class="pill-pct">20%</div>
+      <div class="pill-lbl">Mid-term Exam</div>
+      <div class="pill-lbl ar">منتصف الترم</div>
+    </div>
+    <div class="pill">
+      <div class="pill-pct">20%</div>
+      <div class="pill-lbl">Final Assignment</div>
+      <div class="pill-lbl ar">التكليف النهائي</div>
+    </div>
+    <div class="pill">
+      <div class="pill-pct">10%</div>
+      <div class="pill-lbl">Online Quiz (LMS)</div>
+      <div class="pill-lbl ar">كويز أونلاين</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SECTION 1: WHAT IS COMMUNICATION ════════ -->
+<div class="card">
+  <div class="sec-head">
+    <div class="sec-icon">💬</div>
+    <div class="sec-titles">
+      <div class="sec-en">What Is Communication?</div>
+      <div class="sec-ar">ما هو التواصل؟</div>
+    </div>
+  </div>
+
+  <div class="def-list">
+    <div class="def-item">
+      <div class="def-cell">
+        <div class="def-num">1</div>
+        <div class="def-text">An exchange of facts, ideas, opinions or emotions by two or more persons. <em style="color:var(--muted)">(W.H. Norman &amp; Summer)</em></div>
+      </div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar">
+        <div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">تبادل الحقائق والأفكار والآراء أو المشاعر بين شخصين أو أكثر. <em style="color:var(--muted)">(نورمان وسامر)</em></div>
+        <div class="def-num">١</div>
+      </div>
+    </div>
+
+    <div class="def-item">
+      <div class="def-cell"><div class="def-num">2</div><div class="def-text">Common understanding through communion of minds and hearts.</div></div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar"><div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">الفهم المشترك من خلال التوافق بين العقول والقلوب.</div><div class="def-num">٢</div></div>
+    </div>
+
+    <div class="def-item">
+      <div class="def-cell"><div class="def-num">3</div><div class="def-text">Derived from the Latin word <strong style="color:var(--teal)">"communis"</strong> meaning <strong style="color:var(--teal)">"common"</strong>.</div></div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar"><div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">مشتقة من الكلمة اللاتينية <strong style="color:var(--teal)">"communis"</strong> وتعني <strong style="color:var(--teal)">"مشترك"</strong>.</div><div class="def-num">٣</div></div>
+    </div>
+
+    <div class="def-item">
+      <div class="def-cell"><div class="def-num">4</div><div class="def-text">The sharing of information.</div></div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar"><div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">مشاركة المعلومات.</div><div class="def-num">٤</div></div>
+    </div>
+
+    <div class="def-item">
+      <div class="def-cell"><div class="def-num">5</div><div class="def-text">The giving and receiving of messages.</div></div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar"><div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">إرسال واستقبال الرسائل.</div><div class="def-num">٥</div></div>
+    </div>
+
+    <div class="def-item">
+      <div class="def-cell"><div class="def-num">6</div><div class="def-text">The transfer of information from one or more people to one or more other people.</div></div>
+      <div class="bi-divider"></div>
+      <div class="def-cell ar"><div class="def-text" style="font-family:'Amiri',serif;direction:rtl;text-align:right;font-size:1.03rem;line-height:1.8">نقل المعلومات من شخص أو أكثر إلى شخص أو أكثر آخرين.</div><div class="def-num">٦</div></div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <div class="bi-row" style="margin-top:0">
+      <div>
+        <div class="hl-title-en">🔑 Key Principle</div>
+        <p class="bi-en">Communication requires a <strong>sender</strong>, a <strong>message</strong>, and an <strong>intended recipient</strong>. The receiver doesn't need to be present. The process is complete only once the receiver <em>understands</em> the message. The communicating parties must also share a common area — communicative commonality.</p>
+      </div>
+      <div class="bi-divider"></div>
+      <div>
+        <div class="hl-title-ar">المبدأ الأساسي 🔑</div>
+        <p class="bi-ar">التواصل يحتاج إلى <strong>مرسِل</strong> و<strong>رسالة</strong> و<strong>مستقبِل مقصود</strong>. لا يشترط وجود المستقبِل. تكتمل العملية فقط حين يفهم المستقبِل الرسالة. يجب أيضاً أن يشترك الطرفان في أرضية مشتركة من التواصل.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SECTION 2: CATEGORIES ════════ -->
+<div class="card">
+  <div class="sec-head">
+    <div class="sec-icon">🗂️</div>
+    <div class="sec-titles">
+      <div class="sec-en">Categories of Communication</div>
+      <div class="sec-ar">أنواع التواصل</div>
+    </div>
+  </div>
+
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-icon">🗣️</div>
+      <div class="cat-name-en">Spoken / Verbal</div>
+      <div class="cat-name-ar">اللفظي / الشفهي</div>
+      <div class="cat-desc-en">Face-to-face, telephone, radio, television and other media.</div>
+      <div class="cat-desc-ar">وجهاً لوجه، الهاتف، الراديو، التلفزيون وغيرها.</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🤝</div>
+      <div class="cat-name-en">Non-Verbal</div>
+      <div class="cat-name-ar">غير اللفظي</div>
+      <div class="cat-desc-en">Body language, gestures, how we dress or act.</div>
+      <div class="cat-desc-ar">لغة الجسد، الإيماءات، طريقة اللباس والتصرف.</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">✍️</div>
+      <div class="cat-name-en">Written</div>
+      <div class="cat-name-ar">الكتابي</div>
+      <div class="cat-desc-en">Letters, e-mails, books, magazines, the Internet and other media.</div>
+      <div class="cat-desc-ar">الرسائل، الإيميل، الكتب، المجلات، الإنترنت وغيرها.</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">📊</div>
+      <div class="cat-name-en">Visualizations</div>
+      <div class="cat-name-ar">المرئيات</div>
+      <div class="cat-desc-en">Graphs, charts, maps, logos and other visuals that communicate messages.</div>
+      <div class="cat-desc-ar">الرسوم البيانية، الخرائط، الشعارات وغيرها من المرئيات.</div>
+    </div>
+  </div>
+
+  <div class="hl" style="border-left-color:var(--orange); background:#fff7ed; margin-top:24px;">
+    <div class="bi-row" style="margin-top:0">
+      <div>
+        <div class="hl-title-en" style="color:var(--orange)">📍 Context</div>
+        <p class="bi-en">Communication is always affected by the <strong>context</strong> in which it takes place — physical, social, chronological, or cultural. Every communication proceeds within a context, and the sender chooses the message accordingly.</p>
+      </div>
+      <div class="bi-divider"></div>
+      <div>
+        <div class="hl-title-ar" style="color:var(--orange)">السياق 📍</div>
+        <p class="bi-ar">يتأثر التواصل دائماً بالسياق — مادياً أو اجتماعياً أو زمنياً أو ثقافياً. كل تواصل يسير في سياق معين، والمرسِل يختار رسالته بناءً عليه.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SECTION 3: EFFECTIVE COMMUNICATION ════════ -->
+<div class="card">
+  <div class="sec-head">
+    <div class="sec-icon">⚡</div>
+    <div class="sec-titles">
+      <div class="sec-en">Effective Communication</div>
+      <div class="sec-ar">التواصل الفعّال</div>
+    </div>
+  </div>
+
+  <div class="bi-row">
+    <div>
+      <p class="bi-en"><strong style="color:#dc2626">⚠️ Important:</strong> "Communication" and "<strong>effective communication</strong>" are distinctly different. One can communicate without effectively communicating the message.</p>
+      <p class="bi-en" style="margin-top:10px">The <strong>main goal</strong> of communication is to ensure that communication is <em>effective</em> — meaning the message is truly understood by the receiver.</p>
+    </div>
+    <div class="bi-divider"></div>
+    <div>
+      <p class="bi-ar"><strong style="color:#dc2626">⚠️ مهم:</strong> "التواصل" و"<strong>التواصل الفعّال</strong>" مختلفان تماماً. يمكنك التواصل دون نقل الرسالة بفعالية.</p>
+      <p class="bi-ar" style="margin-top:10px"><strong>الهدف الرئيسي</strong> من التواصل هو ضمان أن يكون التواصل <em>فعّالاً</em> — أي أن الرسالة مفهومة فعلاً من المستقبِل.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SECTION 4: OBJECTIVES ════════ -->
+<div class="card">
+  <div class="sec-head">
+    <div class="sec-icon">🎯</div>
+    <div class="sec-titles">
+      <div class="sec-en">Why Communication Skills Matter</div>
+      <div class="sec-ar">لماذا مهارات التواصل مهمة؟</div>
+    </div>
+  </div>
+
+  <p style="color:var(--muted);margin-bottom:18px;font-size:.88rem">
+    <span>Effective communication enables you to: &nbsp;|&nbsp;</span>
+    <span style="font-family:'Amiri',serif;font-size:1rem">التواصل الفعّال يمكّنك من:</span>
+  </p>
+
+  <div class="obj-grid">
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Get the job you want</div><div class="obj-ar">الحصول على الوظيفة التي تريدها</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Boost your chances for promotion</div><div class="obj-ar">رفع فرصك في الترقي</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Help others get things done</div><div class="obj-ar">مساعدة الآخرين على إنجاز الأمور</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Benefit your business</div><div class="obj-ar">تطوير وتنمية أعمالك</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Improve your grades</div><div class="obj-ar">تحسين درجاتك الدراسية</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Advance socially</div><div class="obj-ar">التقدم والارتقاء اجتماعياً</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Ensure a bright future</div><div class="obj-ar">ضمان مستقبل مشرق</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Enhance other skills</div><div class="obj-ar">تعزيز وتطوير مهاراتك الأخرى</div></div></div>
+    <div class="obj-item"><span class="dot">✦</span><div><div class="obj-en">Help others get ahead</div><div class="obj-ar">مساعدة الآخرين على التقدم</div></div></div>
+  </div>
+</div>
+
+<!-- ════════ QUIZ ════════ -->
+<div class="card quiz-card">
+  <div class="quiz-header">
+    <div class="quiz-header-titles">
+      <div>
+        <h2>Test Your Knowledge 🎯</h2>
+        <p>10 multiple-choice questions. Click to answer.</p>
+      </div>
+      <div>
+        <h2 class="ar">اختبر معلوماتك 🎯</h2>
+        <p class="ar">١٠ أسئلة اختيارية. اضغط للإجابة.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-body"></div>
+
+  <div class="q-result" id="quiz-result">
+    <div class="score-big" id="score-num">0/10</div>
+    <div class="score-msg" id="score-msg-en"></div>
+    <div class="score-msg score-msg-ar" id="score-msg-ar"></div>
+    <button class="retry-btn" onclick="buildQuiz()">🔄 Try Again | حاول مرة أخرى</button>
+  </div>
+</div>
+
+<!-- ════════ SUMMARY ════════ -->
+<div class="card summary-card">
+  <div class="sec-head">
+    <div class="sec-icon">📋</div>
+    <div class="sec-titles">
+      <div class="sec-en" style="color:var(--green)">One-Page Summary</div>
+      <div class="sec-ar" style="color:var(--green)">ملخص في صفحة واحدة</div>
+    </div>
+  </div>
+
+  <div class="sum-grid">
+
+    <!-- Definition -->
+    <div class="sum-box">
+      <h3 style="color:var(--teal)">📌 Definition | التعريف</h3>
+      <div class="sum-inner">
+        <ul class="sum-en">
+          <li>Transfer of information between people</li>
+          <li>From Latin "communis" = common</li>
+          <li>Needs: sender + message + recipient</li>
+          <li>Complete when receiver understands</li>
+        </ul>
+        <div class="sum-divider"></div>
+        <ul class="sum-ar">
+          <li>نقل المعلومات بين الناس</li>
+          <li>من اللاتينية "communis" = مشترك</li>
+          <li>يحتاج: مرسِل + رسالة + مستقبِل</li>
+          <li>يكتمل حين يفهم المستقبِل</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="sum-box">
+      <h3 style="color:var(--orange)">🗂️ 4 Categories | الأنواع الأربعة</h3>
+      <div class="sum-inner">
+        <ul class="sum-en">
+          <li>Verbal — face-to-face, phone, TV</li>
+          <li>Non-Verbal — body language</li>
+          <li>Written — letters, email, internet</li>
+          <li>Visualizations — charts, maps, logos</li>
+        </ul>
+        <div class="sum-divider"></div>
+        <ul class="sum-ar">
+          <li>اللفظي — وجهاً لوجه، هاتف</li>
+          <li>غير اللفظي — لغة الجسد</li>
+          <li>الكتابي — رسائل، إيميل</li>
+          <li>المرئيات — رسوم، خرائط، شعارات</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Key distinctions -->
+    <div class="sum-box">
+      <h3 style="color:var(--blue)">⚡ Key Points | نقاط مهمة</h3>
+      <div class="sum-inner">
+        <ul class="sum-en">
+          <li>Communication ≠ Effective Communication</li>
+          <li>Context shapes every message</li>
+          <li>Context: physical, social, time, cultural</li>
+          <li>Goal = receiver truly understands</li>
+        </ul>
+        <div class="sum-divider"></div>
+        <ul class="sum-ar">
+          <li>التواصل ≠ التواصل الفعّال</li>
+          <li>السياق يشكّل كل رسالة</li>
+          <li>السياق: مادي، اجتماعي، زمني، ثقافي</li>
+          <li>الهدف = أن يفهم المستقبِل فعلاً</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Grades -->
+    <div class="sum-box">
+      <h3 style="color:var(--gold)">📊 Course Grades | توزيع الدرجات</h3>
+      <div class="sum-inner">
+        <ul class="sum-en">
+          <li>50% — Final Exam</li>
+          <li>20% — Mid-term Exam</li>
+          <li>20% — Final Assignment</li>
+          <li>10% — Online Quiz (LMS)</li>
+        </ul>
+        <div class="sum-divider"></div>
+        <ul class="sum-ar">
+          <li>٥٠٪ — الامتحان النهائي</li>
+          <li>٢٠٪ — امتحان منتصف الترم</li>
+          <li>٢٠٪ — التكليف النهائي</li>
+          <li>١٠٪ — كويز أونلاين</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Golden rule -->
+    <div class="sum-box sum-full">
+      <h3>⭐ Golden Rule | القاعدة الذهبية</h3>
+      <div class="sum-inner">
+        <ul class="sum-en">
+          <li>Effective communication = the most important of ALL life skills</li>
+          <li>Can be: vocal · written · visual · non-verbal</li>
+          <li>Quality = how well the message is transmitted AND received</li>
+          <li>Always communicate within context — it matters!</li>
+        </ul>
+        <div class="sum-divider"></div>
+        <ul class="sum-ar">
+          <li>التواصل الفعّال = أهم مهارة في الحياة على الإطلاق</li>
+          <li>يكون: شفهياً · كتابياً · مرئياً · غير لفظي</li>
+          <li>الجودة = مدى جودة إرسال الرسالة واستقبالها معاً</li>
+          <li>تواصل دائماً في سياق — السياق مهم جداً!</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>UNC04 · Communication Skills | مهارات التواصل · Bilingual Study Guide</footer>
+</div><!-- end .page -->
+
+<script>
+const QS = [
+  {
+    en: "The word 'communication' is derived from which Latin word?",
+    ar: "من أي كلمة لاتينية مشتقة كلمة 'communication'؟",
+    opts: [
+      { en: "Commune", ar: "Commune" },
+      { en: "Communis", ar: "Communis" },
+      { en: "Communico", ar: "Communico" },
+      { en: "Communicare", ar: "Communicare" }
+    ],
+    ans: 1,
+    expEn: '"Communis" is Latin for "common" — the root of communication.',
+    expAr: '"Communis" باللاتينية تعني "مشترك" — أصل كلمة communication.'
+  },
+  {
+    en: "According to W.H. Norman & Summer, communication is:",
+    ar: "وفقاً لنورمان وسامر، التواصل هو:",
+    opts: [
+      { en: "Only the transfer of data", ar: "نقل البيانات فقط" },
+      { en: "An exchange of facts, ideas, opinions or emotions", ar: "تبادل الحقائق والأفكار والآراء أو المشاعر" },
+      { en: "A one-way flow of information", ar: "تدفق أحادي الاتجاه" },
+      { en: "Writing messages only", ar: "كتابة الرسائل فقط" }
+    ],
+    ans: 1,
+    expEn: "Norman & Summer defined it as an exchange involving facts, ideas, opinions, or emotions.",
+    expAr: "عرّفه نورمان وسامر بأنه تبادل يشمل الحقائق والأفكار والآراء والمشاعر."
+  },
+  {
+    en: "The communication process is complete when:",
+    ar: "تكتمل عملية التواصل عندما:",
+    opts: [
+      { en: "The sender sends the message", ar: "يرسل المرسِل الرسالة" },
+      { en: "The message is written down", ar: "تُكتب الرسالة" },
+      { en: "The receiver has understood the message", ar: "يفهم المستقبِل الرسالة" },
+      { en: "Both parties meet in person", ar: "يلتقي الطرفان شخصياً" }
+    ],
+    ans: 2,
+    expEn: "The process is only complete once the receiver has understood the message.",
+    expAr: "تكتمل العملية فقط حين يفهم المستقبِل الرسالة فعلاً."
+  },
+  {
+    en: "Which of the following is an example of NON-VERBAL communication?",
+    ar: "أي من التالي مثال على التواصل غير اللفظي؟",
+    opts: [
+      { en: "Sending an email", ar: "إرسال إيميل" },
+      { en: "Speaking on the phone", ar: "التحدث بالهاتف" },
+      { en: "Using body language and gestures", ar: "استخدام لغة الجسد والإيماءات" },
+      { en: "Writing a letter", ar: "كتابة رسالة" }
+    ],
+    ans: 2,
+    expEn: "Non-verbal communication includes body language, gestures and how we dress or act.",
+    expAr: "التواصل غير اللفظي يشمل لغة الجسد والإيماءات وطريقة اللباس والتصرف."
+  },
+  {
+    en: "How many categories of communication are mentioned in the lecture?",
+    ar: "كم عدد أنواع التواصل المذكورة في المحاضرة؟",
+    opts: [
+      { en: "2", ar: "٢" },
+      { en: "3", ar: "٣" },
+      { en: "4", ar: "٤" },
+      { en: "5", ar: "٥" }
+    ],
+    ans: 2,
+    expEn: "The 4 categories are: Verbal, Non-Verbal, Written, and Visualizations.",
+    expAr: "الأنواع الأربعة هي: اللفظي، غير اللفظي، الكتابي، والمرئيات."
+  },
+  {
+    en: "Context in communication can be:",
+    ar: "السياق في التواصل يمكن أن يكون:",
+    opts: [
+      { en: "Physical only", ar: "مادياً فقط" },
+      { en: "Cultural only", ar: "ثقافياً فقط" },
+      { en: "Physical, social, chronological or cultural", ar: "مادياً أو اجتماعياً أو زمنياً أو ثقافياً" },
+      { en: "Social and cultural only", ar: "اجتماعياً وثقافياً فقط" }
+    ],
+    ans: 2,
+    expEn: "Context may be physical, social, chronological or cultural.",
+    expAr: "السياق قد يكون مادياً أو اجتماعياً أو زمنياً أو ثقافياً."
+  },
+  {
+    en: "What percentage is the final exam worth in UNC04?",
+    ar: "كم نسبة الامتحان النهائي في مادة UNC04؟",
+    opts: [
+      { en: "20%", ar: "٢٠٪" },
+      { en: "30%", ar: "٣٠٪" },
+      { en: "40%", ar: "٤٠٪" },
+      { en: "50%", ar: "٥٠٪" }
+    ],
+    ans: 3,
+    expEn: "The final exam is worth 50% of the total course grade.",
+    expAr: "الامتحان النهائي يمثّل ٥٠٪ من إجمالي درجات المادة."
+  },
+  {
+    en: "Which is TRUE about 'communication' vs 'effective communication'?",
+    ar: "أي عبارة صحيحة بخصوص 'التواصل' مقابل 'التواصل الفعّال'؟",
+    opts: [
+      { en: "They mean exactly the same thing", ar: "لهما نفس المعنى تماماً" },
+      { en: "You can communicate without effectively communicating the message", ar: "يمكنك التواصل دون نقل الرسالة بفعالية" },
+      { en: "Effective communication is less important", ar: "التواصل الفعّال أقل أهمية" },
+      { en: "Effective means sending the message quickly", ar: "الفعّال يعني إرسال الرسالة بسرعة" }
+    ],
+    ans: 1,
+    expEn: "They are distinctly different. You can send a message that the receiver doesn't truly understand.",
+    expAr: "هما مختلفان تماماً. يمكنك إرسال رسالة لا يفهمها المستقبِل فعلاً."
+  },
+  {
+    en: "Graphs, charts, maps and logos are examples of which communication type?",
+    ar: "الرسوم البيانية والخرائط والشعارات مثال على أي نوع تواصل؟",
+    opts: [
+      { en: "Verbal", ar: "اللفظي" },
+      { en: "Written", ar: "الكتابي" },
+      { en: "Non-Verbal", ar: "غير اللفظي" },
+      { en: "Visualizations", ar: "المرئيات" }
+    ],
+    ans: 3,
+    expEn: "Visualizations include graphs, charts, maps, logos and other visual tools.",
+    expAr: "المرئيات تشمل الرسوم البيانية والخرائط والشعارات وغيرها من الأدوات البصرية."
+  },
+  {
+    en: "According to the lecture, effective communication is considered:",
+    ar: "وفقاً للمحاضرة، يُعتبر التواصل الفعّال:",
+    opts: [
+      { en: "A professional skill only", ar: "مهارة مهنية فقط" },
+      { en: "The most important of all life skills", ar: "أهم مهارة في الحياة على الإطلاق" },
+      { en: "Less important than technical skills", ar: "أقل أهمية من المهارات التقنية" },
+      { en: "Only useful in business", ar: "مفيد في الأعمال التجارية فقط" }
+    ],
+    ans: 1,
+    expEn: "Being able to communicate effectively is described as the most important of all life skills.",
+    expAr: "القدرة على التواصل الفعّال وُصفت بأنها أهم مهارة في الحياة على الإطلاق."
+  }
+];
+
+let answered = [];
+let score = 0;
+
+function buildQuiz() {
+  answered = new Array(QS.length).fill(false);
+  score = 0;
+  document.getElementById('quiz-result').style.display = 'none';
+  const letters = ['A','B','C','D'];
+  let html = '';
+  QS.forEach((q, qi) => {
+    const optsHtml = q.opts.map((o, oi) => `
+      <div class="opt" id="opt-${qi}-${oi}" onclick="pick(${qi},${oi})">
+        <div class="opt-letter">${letters[oi]}</div>
+        <div class="opt-texts">
+          <div class="opt-en">${o.en}</div>
+          <div class="opt-ar">${o.ar}</div>
+        </div>
+      </div>`).join('');
+    html += `<div class="q-block" id="qb-${qi}">
+      <div class="q-num-label">Q${qi+1} · السؤال ${qi+1}</div>
+      <div class="q-texts">
+        <div class="q-text-en">${q.en}</div>
+        <div class="q-text-ar">${q.ar}</div>
+      </div>
+      <div class="opts-grid">${optsHtml}</div>
+      <div class="fb" id="fb-${qi}"></div>
+    </div>`;
+  });
+  document.getElementById('quiz-body').innerHTML = html;
+}
+
+function pick(qi, oi) {
+  if (answered[qi]) return;
+  answered[qi] = true;
+  const correct = QS[qi].ans;
+  document.querySelectorAll(`#qb-${qi} .opt`).forEach(el => el.style.cursor = 'default');
+  document.getElementById(`opt-${qi}-${correct}`).classList.add('correct');
+  const fb = document.getElementById(`fb-${qi}`);
+  if (oi === correct) {
+    score++;
+    fb.innerHTML = `✅ Correct! | صحيح! &nbsp;—&nbsp; <em>${QS[qi].expEn} · ${QS[qi].expAr}</em>`;
+    fb.className = 'fb show ok';
+  } else {
+    document.getElementById(`opt-${qi}-${oi}`).classList.add('wrong');
+    const cl = ['A','B','C','D'][correct];
+    fb.innerHTML = `❌ Wrong | خطأ. Correct: ${cl} &nbsp;—&nbsp; <em>${QS[qi].expEn} · ${QS[qi].expAr}</em>`;
+    fb.className = 'fb show bad';
+  }
+  if (answered.every(Boolean)) setTimeout(showResult, 700);
+}
+
+function showResult() {
+  const pct = score * 10;
+  document.getElementById('score-num').textContent = score + '/10';
+  const enMsgs = ['📚 Review the lecture again.','👍 Good! Review missed sections.','🌟 Excellent work!'];
+  const arMsgs = ['📚 راجع المحاضرة مرة أخرى.','👍 جيد! راجع الأجزاء التي أخطأت فيها.','🌟 ممتاز!'];
+  const idx = pct >= 80 ? 2 : pct >= 60 ? 1 : 0;
+  document.getElementById('score-msg-en').textContent = enMsgs[idx];
+  document.getElementById('score-msg-ar').textContent = arMsgs[idx];
+  const res = document.getElementById('quiz-result');
+  res.style.display = 'block';
+  res.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

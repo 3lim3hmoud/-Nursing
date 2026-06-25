@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture 4 – Characteristics of Communication</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4A017;
+    --dark: #1a1a2e;
+    --mid: #16213e;
+    --accent: #0f3460;
+    --teal: #00b4d8;
+    --light: #f0f4f8;
+    --white: #ffffff;
+    --green: #2d936c;
+    --red: #c0392b;
+    --text-ar: 'Cairo', sans-serif;
+    --text-en: 'Lato', sans-serif;
+    --display: 'Playfair Display', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: var(--text-en);
+    line-height: 1.7;
+  }
+
+  /* ===== PRINT / PDF ===== */
+  @media print {
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { background: white; color: #111; }
+    .card, .section-block { background: #f9f9f9 !important; box-shadow: none !important; border: 1px solid #ddd !important; }
+    .hero { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { padding: 20px 10px !important; }
+    .tab-content { display: block !important; }
+    .tab-btn { display: none; }
+    .quiz-section { background: #f0f8ff !important; border: 1px solid #aaa !important; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 60%, var(--mid) 100%);
+    text-align: center;
+    padding: 60px 20px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(212,160,23,0.15) 0%, transparent 60%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .hero h2 {
+    font-family: var(--text-ar);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .hero p { color: rgba(255,255,255,0.7); font-size: 1rem; }
+
+  /* ===== PRINT BUTTON ===== */
+  .print-btn {
+    display: block;
+    margin: 20px auto 0;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: var(--text-ar);
+  }
+  .print-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(212,160,23,0.4); }
+
+  /* ===== NAV TABS ===== */
+  .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px 20px 10px;
+    background: var(--mid);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid rgba(212,160,23,0.3);
+  }
+  .tab-btn {
+    background: transparent;
+    border: 2px solid rgba(212,160,23,0.4);
+    color: rgba(255,255,255,0.7);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-family: var(--text-ar);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: none;
+  }
+  section.active { display: block; }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-title-ar {
+    font-family: var(--text-ar);
+    font-size: 1.4rem;
+    color: rgba(212,160,23,0.7);
+    margin-bottom: 30px;
+    direction: rtl;
+  }
+  .divider {
+    width: 60px; height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-bottom: 30px;
+  }
+
+  /* ===== BILINGUAL CARD ===== */
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 22px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(212,160,23,0.5); }
+  .card-num {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .card h3 { font-size: 1.05rem; color: var(--white); margin-bottom: 5px; }
+  .card .ar {
+    font-family: var(--text-ar);
+    direction: rtl;
+    text-align: right;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* ===== GRID CARDS ===== */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+
+  /* ===== HIGHLIGHT BOX ===== */
+  .highlight {
+    background: linear-gradient(135deg, rgba(0,180,216,0.15), rgba(212,160,23,0.1));
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+  }
+  .highlight.rtl { border-left: none; border-right: 4px solid var(--gold); direction: rtl; text-align: right; font-family: var(--text-ar); }
+  .highlight h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 8px; }
+  .highlight.rtl h4 { color: var(--gold); }
+
+  /* ===== MODEL CARDS ===== */
+  .model-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-top: 4px solid var(--gold);
+  }
+  .model-card h3 { font-family: var(--display); font-size: 1.4rem; color: var(--gold); margin-bottom: 14px; }
+  .model-card .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    background: rgba(212,160,23,0.2);
+    color: var(--gold);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .flaw { color: #ff6b6b; font-size: 0.9rem; margin-top: 12px; }
+
+  /* ===== C TABLE ===== */
+  .cs-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .cs-table th {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  .cs-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    vertical-align: top;
+  }
+  .cs-table tr:hover td { background: rgba(255,255,255,0.04); }
+  .cs-table .arabic { font-family: var(--text-ar); direction: rtl; text-align: right; color: rgba(255,255,255,0.7); }
+  .cs-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 2px 10px;
+    border-radius: 8px;
+  }
+
+  /* ===== QUIZ ===== */
+  .quiz-section {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,160,23,0.25);
+    border-radius: 20px;
+    padding: 36px;
+    margin-bottom: 30px;
+  }
+  .quiz-section h2 {
+    font-family: var(--display);
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .quiz-section h2.ar { font-family: var(--text-ar); font-size: 1.3rem; color: rgba(212,160,23,0.7); direction: rtl; }
+  .q-item { margin: 28px 0; }
+  .q-text { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+  .q-text .qnum { color: var(--gold); margin-right: 6px; }
+  .q-text .ar { font-family: var(--text-ar); direction: rtl; display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 4px; font-weight: 400; }
+  .options { display: grid; gap: 10px; }
+  .option {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .option:hover { border-color: var(--gold); background: rgba(212,160,23,0.1); }
+  .option.correct { background: rgba(45,147,108,0.25) !important; border-color: var(--green) !important; color: #7dffb6; }
+  .option.wrong { background: rgba(192,57,43,0.2) !important; border-color: var(--red) !important; color: #ff8a80; }
+  .option .letter {
+    display: inline-block;
+    background: rgba(212,160,23,0.2);
+    color: var(--gold);
+    width: 26px; height: 26px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .opt-text .opt-ar { font-family: var(--text-ar); direction: rtl; display: block; font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+  .feedback { margin-top: 10px; font-size: 0.88rem; padding: 10px 14px; border-radius: 8px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.ok { background: rgba(45,147,108,0.2); color: #7dffb6; }
+  .feedback.bad { background: rgba(192,57,43,0.15); color: #ff8a80; }
+  .feedback .ar { font-family: var(--text-ar); direction: rtl; display: block; margin-top: 4px; }
+
+  .score-box {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(212,160,23,0.15), rgba(0,180,216,0.1));
+    border-radius: 16px;
+    margin-top: 30px;
+    display: none;
+  }
+  .score-box.show { display: block; }
+  .score-num { font-family: var(--display); font-size: 3.5rem; color: var(--gold); }
+  .score-label { font-family: var(--text-ar); font-size: 1.1rem; color: rgba(255,255,255,0.7); }
+  .reset-btn {
+    margin-top: 16px;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--text-ar);
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  .reset-btn:hover { transform: scale(1.05); }
+
+  /* ===== SUMMARY ===== */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media(max-width:640px){ .summary-grid { grid-template-columns: 1fr; } }
+  .sum-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,160,23,0.25);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .sum-box h4 { color: var(--gold); font-size: 1rem; margin-bottom: 12px; font-family: var(--display); }
+  .sum-box ul { list-style: none; }
+  .sum-box ul li { padding: 5px 0; font-size: 0.88rem; color: rgba(255,255,255,0.8); }
+  .sum-box ul li::before { content: '▶ '; color: var(--gold); font-size: 0.7rem; }
+  .sum-box.rtl { direction: rtl; text-align: right; font-family: var(--text-ar); }
+  .sum-box.rtl ul li::before { content: '◀ '; }
+
+  .page-break-hint {
+    text-align: center;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.75rem;
+    margin: 30px 0 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Progress bar for quiz */
+  .quiz-progress { margin-bottom: 20px; }
+  .quiz-progress p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .progress-bar-bg { background: rgba(255,255,255,0.1); border-radius: 10px; height: 6px; }
+  .progress-bar-fill { height: 6px; border-radius: 10px; background: var(--gold); width: 0%; transition: width 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Lecture 4</div>
+  <h1>Characteristics of Communication</h1>
+  <h2>خصائص التواصل</h2>
+  <p>A bilingual interactive study guide &nbsp;|&nbsp; دليل دراسي تفاعلي ثنائي اللغة</p>
+  <button class="print-btn no-print" onclick="window.print()">🖨️ حفظ / طباعة كـ PDF</button>
+</div>
+
+<!-- TABS NAV -->
+<nav class="tabs-nav no-print">
+  <button class="tab-btn active" onclick="showTab('def')">📖 Definition تعريف</button>
+  <button class="tab-btn" onclick="showTab('chars')">⚙️ Characteristics خصائص</button>
+  <button class="tab-btn" onclick="showTab('functions')">🎯 Functions وظائف</button>
+  <button class="tab-btn" onclick="showTab('models')">🔄 Models نماذج</button>
+  <button class="tab-btn" onclick="showTab('7cs')">✅ 7 Cs السبعة مبادئ</button>
+  <button class="tab-btn" onclick="showTab('quiz')">🧠 Quiz اختبار</button>
+  <button class="tab-btn" onclick="showTab('summary')">📋 Summary ملخص</button>
+</nav>
+
+<!-- ============================================================ -->
+<!-- TAB 1: DEFINITION -->
+<!-- ============================================================ -->
+<section id="def" class="active">
+  <div class="section-title">What is Communication?</div>
+  <div class="section-title-ar">ما هو التواصل؟</div>
+  <div class="divider"></div>
+
+  <div class="highlight">
+    <h4>Etymology | الأصل اللغوي</h4>
+    <p>The word <strong>Communication</strong> comes from the Latin <em>communis</em> / <em>commūnicāre</em> — meaning <strong>"to make common"</strong> or <strong>"to share"</strong>.</p>
+  </div>
+  <div class="highlight rtl">
+    <h4>الأصل اللغوي</h4>
+    <p>كلمة <strong>Communication</strong> مشتقة من اللاتينية <em>communis</em> ومعناها <strong>"أن تجعل الشيء مشتركاً"</strong> أو <strong>"أن تُشارك"</strong>.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-num">1</div>
+    <h3>Act of conveying meaning — فعل نقل المعنى</h3>
+    <p>Communication is the act of conveying <strong>intended meaning</strong> to another person through mutually understood <strong>signs and language</strong>.</p>
+    <div class="ar">التواصل هو فعل نقل <strong>المعنى المقصود</strong> إلى شخص آخر عن طريق <strong>إشارات ولغة</strong> مفهومة من كلا الطرفين.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">2</div>
+    <h3>Art of transmitting ideas — فن نقل الأفكار</h3>
+    <p>Communication is the art of transmitting <strong>information, ideas and attitudes</strong> — a process of meaningful interaction among human beings.</p>
+    <div class="ar">التواصل هو فن نقل <strong>المعلومات والأفكار والمواقف</strong> — وهو عملية تفاعل ذات معنى بين البشر.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">3</div>
+    <h3>Basic Steps of Communication — خطوات التواصل الأساسية</h3>
+    <ol style="margin: 10px 0 0 20px; color: rgba(255,255,255,0.85); font-size:0.95rem; line-height:2;">
+      <li>Forming communicative intent — تكوين النية التواصلية</li>
+      <li>Message composition — صياغة الرسالة</li>
+      <li>Message encoding — ترميز الرسالة</li>
+      <li>Transmission of signal — إرسال الإشارة</li>
+      <li>Reception of signal — استقبال الإشارة</li>
+      <li>Message decoding — فك ترميز الرسالة</li>
+      <li>Interpretation by recipient — تفسير المستقبِل للرسالة</li>
+    </ol>
+    <div class="ar">هذه هي الخطوات السبع الأساسية لأي عملية تواصل ناجحة.</div>
+  </div>
+
+  <!-- Communication Loop Diagram (CSS) -->
+  <div class="card" style="text-align:center;">
+    <h3 style="margin-bottom:20px;">Communication Loop — حلقة التواصل</h3>
+    <div style="display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div style="background:rgba(212,160,23,0.2);border:2px solid var(--gold);border-radius:10px;padding:16px 22px;min-width:130px;">
+        <div style="font-weight:700;color:var(--gold);">Sender (Encoder)</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);">المُرسِل</div>
+        <div style="font-size:0.78rem;margin-top:6px;color:rgba(255,255,255,0.5);">Attitude · Experience<br>Chooses medium & encodes</div>
+      </div>
+      <div style="font-size:2rem;color:var(--gold);">→</div>
+      <div style="background:rgba(0,180,216,0.15);border:2px solid var(--teal);border-radius:10px;padding:16px 22px;min-width:130px;text-align:center;">
+        <div style="font-weight:700;color:var(--teal);">Channel / Medium</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);">القناة / الوسيلة</div>
+        <div style="font-size:0.78rem;margin-top:6px;color:rgba(255,255,255,0.5);">Verbal / Non-verbal</div>
+      </div>
+      <div style="font-size:2rem;color:var(--gold);">→</div>
+      <div style="background:rgba(212,160,23,0.2);border:2px solid var(--gold);border-radius:10px;padding:16px 22px;min-width:130px;">
+        <div style="font-weight:700;color:var(--gold);">Receiver (Decoder)</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);">المُستقبِل</div>
+        <div style="font-size:0.78rem;margin-top:6px;color:rgba(255,255,255,0.5);">Attitude · Experience<br>Decodes & interprets</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;font-size:0.85rem;color:var(--teal);">↺ Feedback loop goes back to Sender — الاسترجاع يعود للمُرسِل</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 2: CHARACTERISTICS -->
+<!-- ============================================================ -->
+<section id="chars">
+  <div class="section-title">Characteristics of Communication</div>
+  <div class="section-title-ar">خصائص التواصل</div>
+  <div class="divider"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-num">1</div>
+      <h3>Process — عملية</h3>
+      <p>A 2-way process: <strong>receiving</strong> (listening) + <strong>sending</strong> (expressing).</p>
+      <div class="ar">عملية ثنائية: <strong>استقبال</strong> (الاستماع) + <strong>إرسال</strong> (التعبير).</div>
+    </div>
+    <div class="card">
+      <div class="card-num">2</div>
+      <h3>Dynamic — ديناميكي</h3>
+      <p>Ever-changing depending on the variables involved.</p>
+      <div class="ar">يتغير باستمرار بناءً على المتغيرات المختلفة.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">3</div>
+      <h3>Complex — معقد</h3>
+      <p>Communication involves multiple layers and components.</p>
+      <div class="ar">ينطوي على طبقات ومكونات متعددة.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">4</div>
+      <h3>Two-Way — ثنائي الاتجاه</h3>
+      <p>Participants not only exchange info but also <strong>create and share meaning</strong>.</p>
+      <div class="ar">المشاركون لا يتبادلون المعلومات فقط، بل <strong>يخلقون ويتشاركون المعنى</strong>.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">5</div>
+      <h3>Uses a Code — يستخدم شفرة</h3>
+      <p>Information is shared using a mutually understood code (language, signs).</p>
+      <div class="ar">المعلومات تُشارَك عبر شفرة مفهومة (لغة، إشارات).</div>
+    </div>
+    <div class="card">
+      <div class="card-num">6</div>
+      <h3>Between Beings — بين كائنات</h3>
+      <p>Occurs between <strong>people</strong> and sometimes <strong>animals</strong>.</p>
+      <div class="ar">يحدث بين <strong>البشر</strong> وأحياناً <strong>الحيوانات</strong>.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">7</div>
+      <h3>Irreversible — لا يمكن إلغاؤه</h3>
+      <p>Once communicated, a message <strong>cannot be recalled</strong>.</p>
+      <div class="ar">بمجرد التواصل، لا يمكن <strong>استرجاع</strong> الرسالة.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">8</div>
+      <h3>A System — نظام</h3>
+      <p>Communication operates as an interconnected <strong>system</strong>.</p>
+      <div class="ar">التواصل يعمل كـ<strong>نظام</strong> مترابط.</div>
+    </div>
+    <div class="card">
+      <div class="card-num">9</div>
+      <h3>Has Elements — له عناصر</h3>
+      <p><strong>Source · Receiver · Channel · Message · Noise · Feedback</strong></p>
+      <div class="ar"><strong>مصدر · مستقبِل · قناة · رسالة · ضوضاء · استرجاع</strong></div>
+    </div>
+    <div class="card">
+      <div class="card-num">10</div>
+      <h3>Verbal / Non-verbal / Visual</h3>
+      <p>Communication can take many forms.</p>
+      <div class="ar">التواصل يأخذ أشكالاً متعددة: لفظي / غير لفظي / بصري.</div>
+    </div>
+    <div class="card" style="grid-column: 1 / -1;">
+      <div class="card-num">11</div>
+      <h3>Can be Accidental — قد يكون عرضياً</h3>
+      <p>Especially in <strong>non-verbal</strong> communication (e.g. body language sending an unintended message).</p>
+      <div class="ar">خاصةً في <strong>التواصل غير اللفظي</strong> مثل لغة الجسد التي قد تُرسل رسالة غير مقصودة.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 3: FUNCTIONS -->
+<!-- ============================================================ -->
+<section id="functions">
+  <div class="section-title">Functions & Importance of Communication</div>
+  <div class="section-title-ar">وظائف وأهمية التواصل</div>
+  <div class="divider"></div>
+
+  <div class="highlight">
+    <h4>Why do we communicate? | لماذا نتواصل؟</h4>
+    <p>Human beings communicate for a wide variety of reasons — from changing behavior to establishing deep relationships.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card"><h3>1. Change Behavior — تغيير السلوك</h3><div class="ar">التواصل يُحدث تغييرات في طريقة تصرف الآخرين.</div></div>
+    <div class="card"><h3>2. Influence Others — التأثير على الآخرين</h3><div class="ar">التأثير على آراء وقرارات الآخرين.</div></div>
+    <div class="card"><h3>3. Express Thoughts & Emotions — التعبير عن الأفكار والمشاعر</h3><div class="ar">التعبير عن أفكارنا ومشاعرنا بالكلمات والأفعال.</div></div>
+    <div class="card"><h3>4. Control & Motivate — التحكم والتحفيز</h3><div class="ar">التواصل أداة للتحكم في الناس وتحفيزهم.</div></div>
+    <div class="card"><h3>5. Social & Emotional Process — عملية اجتماعية وعاطفية</h3><div class="ar">التواصل يُشبع الحاجات الاجتماعية والعاطفية.</div></div>
+    <div class="card"><h3>6. Build Self-Confidence — بناء الثقة بالنفس</h3><div class="ar">التواصل يُعزز الثقة بالنفس.</div></div>
+    <div class="card"><h3>7. Entertain — الترفيه</h3><div class="ar">التواصل وسيلة للترفيه والمتعة.</div></div>
+    <div class="card"><h3>8. Educate — التعليم</h3><div class="ar">نقل المعرفة والتعليم.</div></div>
+    <div class="card"><h3>9. Establish Relationships — إقامة العلاقات</h3><div class="ar">بناء وتطوير العلاقات الإنسانية.</div></div>
+    <div class="card"><h3>10. Inform — الإعلام</h3><div class="ar">نشر وتبادل المعلومات.</div></div>
+    <div class="card"><h3>11. Solve Problems — حل المشكلات</h3><div class="ar">التواصل ضروري لحل المشكلات.</div></div>
+    <div class="card"><h3>12 & 13. Make Orders & Give Directions — إعطاء الأوامر والتوجيهات</h3><div class="ar">إصدار الأوامر وإعطاء التعليمات.</div></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 4: MODELS -->
+<!-- ============================================================ -->
+<section id="models">
+  <div class="section-title">Models of Communication</div>
+  <div class="section-title-ar">نماذج التواصل</div>
+  <div class="divider"></div>
+
+  <div class="highlight">
+    <h4>Purpose | الغرض</h4>
+    <p>A model offers a <strong>visual representation</strong> of a concept to facilitate understanding. The first major model came in <strong>1949 by Shannon & Warren Weaver</strong>. There are 3 standard models: <strong>Linear, Interactive, Transactional</strong>.</p>
+  </div>
+  <div class="highlight rtl">
+    <h4>الغرض من النماذج</h4>
+    <p>النموذج يُقدم <strong>تمثيلاً بصرياً</strong> لعملية التواصل. أول نموذج ظهر عام <strong>1949</strong>. هناك 3 نماذج: <strong>الخطي، التفاعلي، التبادلي</strong>.</p>
+  </div>
+
+  <!-- LINEAR -->
+  <div class="model-card">
+    <div class="tag">Model 1 | النموذج الأول</div>
+    <h3>📡 Linear Model — النموذج الخطي</h3>
+    <p>Proposed by <strong>Lasswell (1948)</strong>. Views communication as a <strong>one-way</strong> process. Based on five questions:</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;align-items:center;">
+      <span style="background:rgba(0,180,216,0.2);border:1px solid var(--teal);padding:6px 14px;border-radius:8px;font-size:0.85rem;">Who (said)</span>
+      <span style="color:var(--gold);">→</span>
+      <span style="background:rgba(0,180,216,0.2);border:1px solid var(--teal);padding:6px 14px;border-radius:8px;font-size:0.85rem;">What</span>
+      <span style="color:var(--gold);">→</span>
+      <span style="background:rgba(0,180,216,0.2);border:1px solid var(--teal);padding:6px 14px;border-radius:8px;font-size:0.85rem;">In what channel</span>
+      <span style="color:var(--gold);">→</span>
+      <span style="background:rgba(0,180,216,0.2);border:1px solid var(--teal);padding:6px 14px;border-radius:8px;font-size:0.85rem;">To whom</span>
+      <span style="color:var(--gold);">=</span>
+      <span style="background:rgba(212,160,23,0.2);border:1px solid var(--gold);padding:6px 14px;border-radius:8px;font-size:0.85rem;">With what effect?</span>
+    </div>
+    <div class="flaw">⚠️ Flaw: Depicts communication as one-way — speakers only speak, listeners only listen. No feedback.<br><span style="font-family:var(--text-ar);direction:rtl;display:block;">عيبه: يُصور التواصل كاتجاه واحد فقط، ولا يوجد استرجاع (feedback).</span></div>
+  </div>
+
+  <!-- ONE-WAY -->
+  <div class="model-card" style="border-top-color:var(--teal);">
+    <div class="tag" style="color:var(--teal);background:rgba(0,180,216,0.15);">One-Way Communication | التواصل أحادي الاتجاه</div>
+    <h3 style="color:var(--teal);">📨 One-Way Communication</h3>
+    <p>Information flows in <strong>one direction only</strong>. No opportunity for receiver to give feedback. Used for factual info or to persuade.</p>
+    <div style="margin:14px 0;padding:14px;background:rgba(255,255,255,0.04);border-radius:10px;font-family:monospace;font-size:0.9rem;">
+      Sender (Bob) ──────→ Message (Order lunch) ──────→ Receiver (Secretary)
+    </div>
+    <p style="font-family:var(--text-ar);direction:rtl;color:rgba(255,255,255,0.7);margin-top:8px;">المعلومات تنتقل في اتجاه واحد فقط. المستقبِل لا يستطيع إعطاء رد فعل.</p>
+    <div class="flaw">⚠️ Disadvantages: Lack of feedback · Harms employee morale · Stifles ideas<br><span style="font-family:var(--text-ar);direction:rtl;display:block;">العيوب: لا يوجد استرجاع، يضر بمعنويات الموظفين، يُخمد الأفكار.</span></div>
+  </div>
+
+  <!-- INTERACTIVE -->
+  <div class="model-card" style="border-top-color:#a29bfe;">
+    <div class="tag" style="color:#a29bfe;background:rgba(162,155,254,0.15);">Model 2 | النموذج الثاني</div>
+    <h3 style="color:#a29bfe;">🔁 Interactive Model — النموذج التفاعلي</h3>
+    <p>Proposed by <strong>Schramm (1955)</strong>. The receiver provides <strong>feedback</strong> to the sender. Both take turns speaking and listening.</p>
+    <ul style="margin:12px 0 0 20px;color:rgba(255,255,255,0.8);line-height:2;font-size:0.92rem;">
+      <li>Feedback is verbal or non-verbal</li>
+      <li>Better communication when there are <strong>overlapping fields of experience</strong></li>
+    </ul>
+    <div class="flaw">⚠️ Drawback: Does NOT show simultaneous sending & receiving. Fails to show communication is dynamic.<br><span style="font-family:var(--text-ar);direction:rtl;display:block;">عيبه: لا يُظهر إمكانية الإرسال والاستقبال في نفس الوقت، ولا يُظهر الطابع الديناميكي للتواصل.</span></div>
+  </div>
+
+  <!-- TRANSACTIONAL -->
+  <div class="model-card" style="border-top-color:var(--green);">
+    <div class="tag" style="color:var(--green);background:rgba(45,147,108,0.15);">Model 3 | النموذج الثالث</div>
+    <h3 style="color:var(--green);">⚡ Transactional Model — النموذج التبادلي</h3>
+    <p>Elements are <strong>interdependent</strong>. Each person is <strong>simultaneously</strong> a sender AND a receiver. Accounts for noise, time, and shared/personal experience fields.</p>
+    <div class="grid-2" style="margin-top:16px;">
+      <div style="background:rgba(45,147,108,0.1);padding:14px;border-radius:10px;">
+        <strong style="color:var(--green);">i. Ongoing Process</strong>
+        <p style="font-size:0.88rem;margin-top:6px;">Communication is always changing — you, others, and the environment.</p>
+        <p style="font-family:var(--text-ar);direction:rtl;font-size:0.82rem;color:rgba(255,255,255,0.6);">التواصل عملية مستمرة ومتغيرة دائماً.</p>
+      </div>
+      <div style="background:rgba(45,147,108,0.1);padding:14px;border-radius:10px;">
+        <strong style="color:var(--green);">ii. Interdependent Elements</strong>
+        <p style="font-size:0.88rem;margin-top:6px;">Each element exists in relation to all other elements.</p>
+        <p style="font-family:var(--text-ar);direction:rtl;font-size:0.82rem;color:rgba(255,255,255,0.6);">كل عنصر مرتبط بالعناصر الأخرى.</p>
+      </div>
+      <div style="background:rgba(45,147,108,0.1);padding:14px;border-radius:10px;grid-column:1/-1;">
+        <strong style="color:var(--green);">iii. Personal Factors</strong>
+        <p style="font-size:0.88rem;margin-top:6px;">Reactions depend on <strong>background, prior experiences, attitudes, cultural beliefs, self-esteem</strong>.</p>
+        <p style="font-family:var(--text-ar);direction:rtl;font-size:0.82rem;color:rgba(255,255,255,0.6);">ردود الأفعال تعتمد على الخلفية، التجارب، المعتقدات الثقافية، وتقدير الذات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 5: 7 Cs -->
+<!-- ============================================================ -->
+<section id="7cs">
+  <div class="section-title">The 7 Cs of Communication</div>
+  <div class="section-title-ar">مبادئ التواصل السبعة</div>
+  <div class="divider"></div>
+  <div class="highlight">
+    <h4>Purpose | الغرض</h4>
+    <p>The 7 Cs provide a <strong>checklist</strong> for making sure your communication (meetings, emails, reports, presentations) is well constructed and clear.</p>
+  </div>
+
+  <table class="cs-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>C</th>
+        <th>Meaning (English)</th>
+        <th>المعنى (عربي)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="cs-badge">1</span></td>
+        <td><strong style="color:var(--gold);">Clear</strong></td>
+        <td>Be clear about your goal/message. Minimize ideas per sentence. No "reading between the lines."</td>
+        <td class="arabic">كن واضحاً في هدفك. قلّل الأفكار في كل جملة. لا يجب أن يخمّن المستقبِل المقصود.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">2</span></td>
+        <td><strong style="color:var(--gold);">Concise</strong></td>
+        <td>Stick to the point. Keep it brief. Don't use six sentences when three will do.</td>
+        <td class="arabic">الإيجاز والتركيز. لا تستخدم ست جمل إذا كانت ثلاث كافية.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">3</span></td>
+        <td><strong style="color:var(--gold);">Concrete</strong></td>
+        <td>Give the audience a clear picture with details and vivid facts. Solid, specific message.</td>
+        <td class="arabic">اعطِ صورة واضحة بتفاصيل وحقائق ملموسة. رسالة محددة وقوية.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">4</span></td>
+        <td><strong style="color:var(--gold);">Correct</strong></td>
+        <td>Fits the audience. Error-free communication.</td>
+        <td class="arabic">مناسب للجمهور. خالٍ من الأخطاء.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">5</span></td>
+        <td><strong style="color:var(--gold);">Coherent</strong></td>
+        <td>Logical flow. All points connected to the main topic. Consistent tone and flow.</td>
+        <td class="arabic">منطقي ومتماسك. كل النقاط مرتبطة بالموضوع. نبرة ومسار متسقان.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">6</span></td>
+        <td><strong style="color:var(--gold);">Complete</strong></td>
+        <td>Audience has everything needed to be informed and act. Includes call-to-action & all relevant info.</td>
+        <td class="arabic">المستقبِل يحصل على كل ما يحتاجه. يتضمن دعوة للعمل وكل المعلومات ذات الصلة.</td>
+      </tr>
+      <tr>
+        <td><span class="cs-badge">7</span></td>
+        <td><strong style="color:var(--gold);">Courteous</strong></td>
+        <td>Friendly, open, honest. No hidden insults. Empathetic. Put yourself in the receiver's shoes.</td>
+        <td class="arabic">ودود، صريح، صادق. لا توجد إهانات مخفية. تعاطف مع الآخر. ضع نفسك مكانه.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 6: QUIZ -->
+<!-- ============================================================ -->
+<section id="quiz">
+  <div class="quiz-section">
+    <h2>Knowledge Quiz</h2>
+    <h2 class="ar">اختبار المعرفة</h2>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.88rem;margin:6px 0 20px;">Test your understanding of Lecture 4 | اختبر فهمك للمحاضرة الرابعة</p>
+
+    <div class="quiz-progress">
+      <p id="progress-text">Question 1 of 15 | السؤال 1 من 15</p>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-item" id="q1">
+      <div class="q-text"><span class="qnum">Q1.</span> The word "communication" is derived from the Latin word meaning:
+        <span class="ar">كلمة "communication" مشتقة من اللاتينية ومعناها:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q1','wrong')"><span class="letter">A</span><span class="opt-text">To speak loudly<span class="opt-ar">التحدث بصوت عالٍ</span></span></div>
+        <div class="option" onclick="answer(this,'q1','correct')"><span class="letter">B</span><span class="opt-text">To make common / to share<span class="opt-ar">جعل الشيء مشتركاً / المشاركة</span></span></div>
+        <div class="option" onclick="answer(this,'q1','wrong')"><span class="letter">C</span><span class="opt-text">To transmit signals<span class="opt-ar">نقل الإشارات</span></span></div>
+        <div class="option" onclick="answer(this,'q1','wrong')"><span class="letter">D</span><span class="opt-text">To encode messages<span class="opt-ar">ترميز الرسائل</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q1"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-item" id="q2">
+      <div class="q-text"><span class="qnum">Q2.</span> Which of these is the LAST step in the basic communication process?
+        <span class="ar">ما هي الخطوة الأخيرة في عملية التواصل الأساسية؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q2','wrong')"><span class="letter">A</span><span class="opt-text">Message encoding<span class="opt-ar">ترميز الرسالة</span></span></div>
+        <div class="option" onclick="answer(this,'q2','wrong')"><span class="letter">B</span><span class="opt-text">Transmission of signal<span class="opt-ar">إرسال الإشارة</span></span></div>
+        <div class="option" onclick="answer(this,'q2','wrong')"><span class="letter">C</span><span class="opt-text">Message decoding<span class="opt-ar">فك ترميز الرسالة</span></span></div>
+        <div class="option" onclick="answer(this,'q2','correct')"><span class="letter">D</span><span class="opt-text">Interpretation by the recipient<span class="opt-ar">تفسير المستقبِل للرسالة</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q2"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-item" id="q3">
+      <div class="q-text"><span class="qnum">Q3.</span> Which characteristic means a sent message CANNOT be taken back?
+        <span class="ar">أي خاصية تعني أن الرسالة المُرسَلة لا يمكن استرجاعها؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q3','wrong')"><span class="letter">A</span><span class="opt-text">Dynamic<span class="opt-ar">ديناميكي</span></span></div>
+        <div class="option" onclick="answer(this,'q3','wrong')"><span class="letter">B</span><span class="opt-text">Complex<span class="opt-ar">معقد</span></span></div>
+        <div class="option" onclick="answer(this,'q3','correct')"><span class="letter">C</span><span class="opt-text">Irreversible<span class="opt-ar">لا يمكن إلغاؤه</span></span></div>
+        <div class="option" onclick="answer(this,'q3','wrong')"><span class="letter">D</span><span class="opt-text">Accidental<span class="opt-ar">عرضي</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q3"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-item" id="q4">
+      <div class="q-text"><span class="qnum">Q4.</span> The required elements of communication are: Source, Receiver, Channel, Message, _____, Feedback.
+        <span class="ar">عناصر التواصل هي: المصدر، المستقبِل، القناة، الرسالة، _____، الاسترجاع.</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q4','wrong')"><span class="letter">A</span><span class="opt-text">Code<span class="opt-ar">الشفرة</span></span></div>
+        <div class="option" onclick="answer(this,'q4','correct')"><span class="letter">B</span><span class="opt-text">Noise<span class="opt-ar">الضوضاء</span></span></div>
+        <div class="option" onclick="answer(this,'q4','wrong')"><span class="letter">C</span><span class="opt-text">Attitude<span class="opt-ar">الموقف</span></span></div>
+        <div class="option" onclick="answer(this,'q4','wrong')"><span class="letter">D</span><span class="opt-text">Experience<span class="opt-ar">الخبرة</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q4"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-item" id="q5">
+      <div class="q-text"><span class="qnum">Q5.</span> Who proposed the first major model of communication in 1949?
+        <span class="ar">من اقترح أول نموذج رئيسي للتواصل عام 1949؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q5','wrong')"><span class="letter">A</span><span class="opt-text">Schramm<span class="opt-ar">شرام</span></span></div>
+        <div class="option" onclick="answer(this,'q5','wrong')"><span class="letter">B</span><span class="opt-text">Lasswell<span class="opt-ar">لاسويل</span></span></div>
+        <div class="option" onclick="answer(this,'q5','correct')"><span class="letter">C</span><span class="opt-text">Shannon & Warren Weaver<span class="opt-ar">شانون وووارن ويفر</span></span></div>
+        <div class="option" onclick="answer(this,'q5','wrong')"><span class="letter">D</span><span class="opt-text">Aristotle<span class="opt-ar">أرسطو</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q5"></div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-item" id="q6">
+      <div class="q-text"><span class="qnum">Q6.</span> The Linear Model is based on Lasswell's 5 questions. Which is NOT one of them?
+        <span class="ar">النموذج الخطي مبني على 5 أسئلة. أيها ليس من بينها؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q6','wrong')"><span class="letter">A</span><span class="opt-text">Who said?<span class="opt-ar">من قال؟</span></span></div>
+        <div class="option" onclick="answer(this,'q6','wrong')"><span class="letter">B</span><span class="opt-text">In what channel?<span class="opt-ar">في أي قناة؟</span></span></div>
+        <div class="option" onclick="answer(this,'q6','correct')"><span class="letter">C</span><span class="opt-text">Why was it said?<span class="opt-ar">لماذا قِيل؟</span></span></div>
+        <div class="option" onclick="answer(this,'q6','wrong')"><span class="letter">D</span><span class="opt-text">With what effect?<span class="opt-ar">بأي تأثير؟</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q6"></div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-item" id="q7">
+      <div class="q-text"><span class="qnum">Q7.</span> The Interactive Model was proposed by:
+        <span class="ar">النموذج التفاعلي اقترحه:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q7','wrong')"><span class="letter">A</span><span class="opt-text">Shannon<span class="opt-ar">شانون</span></span></div>
+        <div class="option" onclick="answer(this,'q7','correct')"><span class="letter">B</span><span class="opt-text">Schramm (1955)<span class="opt-ar">شرام 1955</span></span></div>
+        <div class="option" onclick="answer(this,'q7','wrong')"><span class="letter">C</span><span class="opt-text">Lasswell<span class="opt-ar">لاسويل</span></span></div>
+        <div class="option" onclick="answer(this,'q7','wrong')"><span class="letter">D</span><span class="opt-text">Weaver<span class="opt-ar">ويفر</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q7"></div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-item" id="q8">
+      <div class="q-text"><span class="qnum">Q8.</span> Which model shows that both parties can SIMULTANEOUSLY send and receive messages?
+        <span class="ar">أي نموذج يُظهر أن الطرفين يستطيعان الإرسال والاستقبال في نفس الوقت؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q8','wrong')"><span class="letter">A</span><span class="opt-text">Linear Model<span class="opt-ar">النموذج الخطي</span></span></div>
+        <div class="option" onclick="answer(this,'q8','wrong')"><span class="letter">B</span><span class="opt-text">Interactive Model<span class="opt-ar">النموذج التفاعلي</span></span></div>
+        <div class="option" onclick="answer(this,'q8','correct')"><span class="letter">C</span><span class="opt-text">Transactional Model<span class="opt-ar">النموذج التبادلي</span></span></div>
+        <div class="option" onclick="answer(this,'q8','wrong')"><span class="letter">D</span><span class="opt-text">One-Way Model<span class="opt-ar">نموذج أحادي الاتجاه</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q8"></div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-item" id="q9">
+      <div class="q-text"><span class="qnum">Q9.</span> In the 7 Cs, "Concise" means:
+        <span class="ar">في مبادئ السبعة، "Concise" تعني:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q9','wrong')"><span class="letter">A</span><span class="opt-text">Being error-free<span class="opt-ar">خالياً من الأخطاء</span></span></div>
+        <div class="option" onclick="answer(this,'q9','correct')"><span class="letter">B</span><span class="opt-text">Sticking to the point and being brief<span class="opt-ar">التركيز والإيجاز</span></span></div>
+        <div class="option" onclick="answer(this,'q9','wrong')"><span class="letter">C</span><span class="opt-text">Being friendly and empathetic<span class="opt-ar">أن تكون ودوداً ومتعاطفاً</span></span></div>
+        <div class="option" onclick="answer(this,'q9','wrong')"><span class="letter">D</span><span class="opt-text">Providing vivid details<span class="opt-ar">تقديم تفاصيل واضحة</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q9"></div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-item" id="q10">
+      <div class="q-text"><span class="qnum">Q10.</span> Which "C" means the message is logical and all points are connected to the main topic?
+        <span class="ar">أي "C" تعني أن الرسالة منطقية وكل النقاط مرتبطة بالموضوع الرئيسي؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q10','wrong')"><span class="letter">A</span><span class="opt-text">Correct<span class="opt-ar">صحيح</span></span></div>
+        <div class="option" onclick="answer(this,'q10','wrong')"><span class="letter">B</span><span class="opt-text">Complete<span class="opt-ar">كامل</span></span></div>
+        <div class="option" onclick="answer(this,'q10','correct')"><span class="letter">C</span><span class="opt-text">Coherent<span class="opt-ar">متماسك</span></span></div>
+        <div class="option" onclick="answer(this,'q10','wrong')"><span class="letter">D</span><span class="opt-text">Concrete<span class="opt-ar">ملموس</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q10"></div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q-item" id="q11">
+      <div class="q-text"><span class="qnum">Q11.</span> One-Way communication is suitable when:
+        <span class="ar">التواصل أحادي الاتجاه مناسب عندما:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q11','wrong')"><span class="letter">A</span><span class="opt-text">Feedback is critical<span class="opt-ar">الاسترجاع ضروري</span></span></div>
+        <div class="option" onclick="answer(this,'q11','correct')"><span class="letter">B</span><span class="opt-text">Sender wants to give factual information or persuade<span class="opt-ar">المُرسِل يريد إعطاء معلومات واقعية أو الإقناع</span></span></div>
+        <div class="option" onclick="answer(this,'q11','wrong')"><span class="letter">C</span><span class="opt-text">Both parties need to negotiate<span class="opt-ar">كلا الطرفين يحتاجان للتفاوض</span></span></div>
+        <div class="option" onclick="answer(this,'q11','wrong')"><span class="letter">D</span><span class="opt-text">Employee morale is the priority<span class="opt-ar">معنويات الموظفين هي الأولوية</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q11"></div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="q-item" id="q12">
+      <div class="q-text"><span class="qnum">Q12.</span> The "Courteous" C in communication means:
+        <span class="ar">مبدأ "Courteous" في التواصل يعني:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q12','wrong')"><span class="letter">A</span><span class="opt-text">Using formal language only<span class="opt-ar">استخدام اللغة الرسمية فقط</span></span></div>
+        <div class="option" onclick="answer(this,'q12','wrong')"><span class="letter">B</span><span class="opt-text">Keeping messages short<span class="opt-ar">الإبقاء على الرسائل قصيرة</span></span></div>
+        <div class="option" onclick="answer(this,'q12','correct')"><span class="letter">C</span><span class="opt-text">Being friendly, open, honest, and empathetic to the receiver<span class="opt-ar">أن تكون ودوداً وصريحاً ومتعاطفاً مع المستقبِل</span></span></div>
+        <div class="option" onclick="answer(this,'q12','wrong')"><span class="letter">D</span><span class="opt-text">Providing a complete call-to-action<span class="opt-ar">تقديم دعوة كاملة للعمل</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q12"></div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="q-item" id="q13">
+      <div class="q-text"><span class="qnum">Q13.</span> The Transactional Model accounts for:
+        <span class="ar">النموذج التبادلي يأخذ بعين الاعتبار:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q13','wrong')"><span class="letter">A</span><span class="opt-text">Only verbal communication<span class="opt-ar">التواصل اللفظي فقط</span></span></div>
+        <div class="option" onclick="answer(this,'q13','wrong')"><span class="letter">B</span><span class="opt-text">One-directional message flow<span class="opt-ar">تدفق الرسائل في اتجاه واحد</span></span></div>
+        <div class="option" onclick="answer(this,'q13','correct')"><span class="letter">C</span><span class="opt-text">Noise, time factor, and shared/personal experience fields<span class="opt-ar">الضوضاء وعامل الوقت ومجالات التجربة المشتركة والشخصية</span></span></div>
+        <div class="option" onclick="answer(this,'q13','wrong')"><span class="letter">D</span><span class="opt-text">Sequential turn-taking only<span class="opt-ar">التناوب المتسلسل فقط</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q13"></div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="q-item" id="q14">
+      <div class="q-text"><span class="qnum">Q14.</span> Two-way communication is also referred to as:
+        <span class="ar">التواصل ثنائي الاتجاه يُسمى أيضاً:</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q14','wrong')"><span class="letter">A</span><span class="opt-text">Mass communication<span class="opt-ar">التواصل الجماهيري</span></span></div>
+        <div class="option" onclick="answer(this,'q14','wrong')"><span class="letter">B</span><span class="opt-text">Non-verbal communication<span class="opt-ar">التواصل غير اللفظي</span></span></div>
+        <div class="option" onclick="answer(this,'q14','correct')"><span class="letter">C</span><span class="opt-text">Interpersonal communication<span class="opt-ar">التواصل الشخصي</span></span></div>
+        <div class="option" onclick="answer(this,'q14','wrong')"><span class="letter">D</span><span class="opt-text">Visual communication<span class="opt-ar">التواصل البصري</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q14"></div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="q-item" id="q15">
+      <div class="q-text"><span class="qnum">Q15.</span> Which of the following is NOT a function of communication?
+        <span class="ar">أيٌّ من التالي ليس وظيفة من وظائف التواصل؟</span>
+      </div>
+      <div class="options">
+        <div class="option" onclick="answer(this,'q15','wrong')"><span class="letter">A</span><span class="opt-text">Educate<span class="opt-ar">التعليم</span></span></div>
+        <div class="option" onclick="answer(this,'q15','wrong')"><span class="letter">B</span><span class="opt-text">Solve problems<span class="opt-ar">حل المشكلات</span></span></div>
+        <div class="option" onclick="answer(this,'q15','correct')"><span class="letter">C</span><span class="opt-text">Encode signals automatically<span class="opt-ar">ترميز الإشارات تلقائياً</span></span></div>
+        <div class="option" onclick="answer(this,'q15','wrong')"><span class="letter">D</span><span class="opt-text">Establish relationships<span class="opt-ar">إقامة العلاقات</span></span></div>
+      </div>
+      <div class="feedback" id="fb-q15"></div>
+    </div>
+
+    <!-- SCORE -->
+    <div class="score-box" id="score-box">
+      <div class="score-num" id="score-num">0/15</div>
+      <div class="score-label" id="score-label">احسبت درجتك</div>
+      <br>
+      <button class="reset-btn" onclick="resetQuiz()">🔄 إعادة الاختبار | Reset Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 7: SUMMARY -->
+<!-- ============================================================ -->
+<section id="summary">
+  <div class="section-title">Final Summary</div>
+  <div class="section-title-ar">الملخص النهائي</div>
+  <div class="divider"></div>
+
+  <div class="summary-grid">
+    <!-- Definition -->
+    <div class="sum-box">
+      <h4>📖 Definition</h4>
+      <ul>
+        <li>From Latin: "to make common / share"</li>
+        <li>Act of conveying intended meaning</li>
+        <li>Requires mutually understood signs & language</li>
+        <li>7 basic steps from intent to interpretation</li>
+      </ul>
+    </div>
+    <div class="sum-box rtl">
+      <h4>📖 التعريف</h4>
+      <ul>
+        <li>من اللاتينية: "أن تُشارك / تجعل مشتركاً"</li>
+        <li>نقل المعنى المقصود إلى الآخر</li>
+        <li>يتطلب إشارات ولغة مفهومة</li>
+        <li>7 خطوات أساسية من النية إلى التفسير</li>
+      </ul>
+    </div>
+
+    <!-- Characteristics -->
+    <div class="sum-box">
+      <h4>⚙️ 11 Characteristics</h4>
+      <ul>
+        <li>Process (2-way: send & receive)</li>
+        <li>Dynamic (ever-changing)</li>
+        <li>Complex</li>
+        <li>Two-way (creates shared meaning)</li>
+        <li>Uses a code</li>
+        <li>Between people/animals</li>
+        <li>Irreversible</li>
+        <li>A system with elements</li>
+        <li>Verbal / Non-verbal / Visual</li>
+        <li>Can be accidental</li>
+      </ul>
+    </div>
+    <div class="sum-box rtl">
+      <h4>⚙️ 11 خصيصة للتواصل</h4>
+      <ul>
+        <li>عملية (ثنائية: إرسال واستقبال)</li>
+        <li>ديناميكي (متغير باستمرار)</li>
+        <li>معقد</li>
+        <li>ثنائي (يخلق معنى مشتركاً)</li>
+        <li>يستخدم شفرة</li>
+        <li>بين البشر وأحياناً الحيوانات</li>
+        <li>لا يمكن إلغاؤه</li>
+        <li>نظام بعناصر محددة</li>
+        <li>لفظي / غير لفظي / بصري</li>
+        <li>قد يكون عرضياً</li>
+      </ul>
+    </div>
+
+    <!-- Models -->
+    <div class="sum-box">
+      <h4>🔄 3 Communication Models</h4>
+      <ul>
+        <li><strong>Linear (Lasswell 1948):</strong> One-way, no feedback</li>
+        <li><strong>Interactive (Schramm 1955):</strong> Feedback exists, turn-taking</li>
+        <li><strong>Transactional:</strong> Simultaneous send/receive, noise, dynamic</li>
+      </ul>
+    </div>
+    <div class="sum-box rtl">
+      <h4>🔄 3 نماذج للتواصل</h4>
+      <ul>
+        <li><strong>الخطي (لاسويل 1948):</strong> اتجاه واحد، لا استرجاع</li>
+        <li><strong>التفاعلي (شرام 1955):</strong> استرجاع وتناوب</li>
+        <li><strong>التبادلي:</strong> إرسال واستقبال متزامن، ضوضاء، ديناميكي</li>
+      </ul>
+    </div>
+
+    <!-- 7 Cs -->
+    <div class="sum-box">
+      <h4>✅ The 7 Cs</h4>
+      <ul>
+        <li><strong>Clear:</strong> One idea, no ambiguity</li>
+        <li><strong>Concise:</strong> Brief, to the point</li>
+        <li><strong>Concrete:</strong> Vivid facts & details</li>
+        <li><strong>Correct:</strong> Error-free, audience-appropriate</li>
+        <li><strong>Coherent:</strong> Logical, consistent flow</li>
+        <li><strong>Complete:</strong> All info + call to action</li>
+        <li><strong>Courteous:</strong> Friendly, empathetic, no insults</li>
+      </ul>
+    </div>
+    <div class="sum-box rtl">
+      <h4>✅ المبادئ السبعة</h4>
+      <ul>
+        <li><strong>واضح:</strong> فكرة واحدة، لا غموض</li>
+        <li><strong>مُوجَز:</strong> مختصر ومركّز</li>
+        <li><strong>ملموس:</strong> حقائق وتفاصيل واضحة</li>
+        <li><strong>صحيح:</strong> خالٍ من الأخطاء ومناسب للجمهور</li>
+        <li><strong>متماسك:</strong> منطقي ومتدفق باتساق</li>
+        <li><strong>كامل:</strong> كل المعلومات + دعوة للعمل</li>
+        <li><strong>مؤدَّب:</strong> ودود، متعاطف، لا إهانات</li>
+      </ul>
+    </div>
+
+    <!-- Functions -->
+    <div class="sum-box" style="grid-column:1/-1;">
+      <h4>🎯 13 Functions of Communication | 13 وظيفة للتواصل</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;">
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.8);">
+          1. Change behavior | تغيير السلوك<br>
+          2. Influence others | التأثير على الآخرين<br>
+          3. Express thoughts & emotions | التعبير عن الأفكار والمشاعر<br>
+          4. Control & motivate | التحكم والتحفيز<br>
+          5. Social & emotional process | عملية اجتماعية وعاطفية<br>
+          6. Build self-confidence | بناء الثقة بالنفس<br>
+          7. Entertain | الترفيه
+        </div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.8);">
+          8. Educate | التعليم<br>
+          9. Establish relationships | إقامة العلاقات<br>
+          10. Inform | الإعلام<br>
+          11. Solve problems | حل المشكلات<br>
+          12. Make orders | إعطاء الأوامر<br>
+          13. Give directions | إعطاء التوجيهات
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:40px;padding:20px;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:12px;">
+    <p style="color:var(--gold);font-family:var(--display);font-size:1.2rem;">Good luck in your exams! 🎓</p>
+    <p style="font-family:var(--text-ar);color:rgba(255,255,255,0.6);margin-top:6px;">بالتوفيق في الامتحانات</p>
+    <button class="print-btn no-print" onclick="window.print()" style="margin-top:16px;">🖨️ احفظ كـ PDF</button>
+  </div>
+</section>
+
+<script>
+  // ===== TABS =====
+  function showTab(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const btns = document.querySelectorAll('.tab-btn');
+    btns.forEach(b => { if(b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active'); });
+    window.scrollTo({top:0, behavior:'smooth'});
+    if(id==='quiz') updateProgress();
+  }
+
+  // ===== QUIZ =====
+  let scores = {};
+  const total = 15;
+  const explanations = {
+    q1: { ok:'✅ Correct! | صحيح! The Latin root means "to make common" or "to share".', bad:'❌ Wrong | خطأ — The answer is B: "to make common / to share" (communis / commūnicāre).'},
+    q2: { ok:'✅ Correct! | صحيح! Interpretation by the recipient is the final step.', bad:'❌ Wrong | خطأ — The last step is D: Interpretation by the recipient.'},
+    q3: { ok:'✅ Correct! | صحيح! Irreversible means once communicated, it cannot be recalled.', bad:'❌ Wrong | خطأ — The answer is C: Irreversible (لا يمكن إلغاؤه).'},
+    q4: { ok:'✅ Correct! | صحيح! Noise is the missing element.', bad:'❌ Wrong | خطأ — The answer is B: Noise (الضوضاء).'},
+    q5: { ok:'✅ Correct! | صحيح! Shannon & Warren Weaver proposed the first model in 1949.', bad:'❌ Wrong | خطأ — The answer is C: Shannon & Warren Weaver (1949).'},
+    q6: { ok:'✅ Correct! | صحيح! "Why" is not one of Lasswell\'s 5 questions.', bad:'❌ Wrong | خطأ — The answer is C: "Why was it said?" is NOT one of the 5 questions.'},
+    q7: { ok:'✅ Correct! | صحيح! Schramm (1955) proposed the Interactive Model.', bad:'❌ Wrong | خطأ — The answer is B: Schramm (1955).'},
+    q8: { ok:'✅ Correct! | صحيح! The Transactional Model allows simultaneous sending and receiving.', bad:'❌ Wrong | خطأ — The answer is C: Transactional Model.'},
+    q9: { ok:'✅ Correct! | صحيح! Concise means sticking to the point and being brief.', bad:'❌ Wrong | خطأ — The answer is B: Sticking to the point and being brief.'},
+    q10:{ ok:'✅ Correct! | صحيح! Coherent means logical and all points connected.', bad:'❌ Wrong | خطأ — The answer is C: Coherent (متماسك).'},
+    q11:{ ok:'✅ Correct! | صحيح! One-way communication is used to give factual info or persuade.', bad:'❌ Wrong | خطأ — The answer is B.'},
+    q12:{ ok:'✅ Correct! | صحيح! Courteous means friendly, open, honest, and empathetic.', bad:'❌ Wrong | خطأ — The answer is C.'},
+    q13:{ ok:'✅ Correct! | صحيح! The Transactional Model accounts for noise, time, and experience fields.', bad:'❌ Wrong | خطأ — The answer is C.'},
+    q14:{ ok:'✅ Correct! | صحيح! Two-way communication is also called interpersonal communication.', bad:'❌ Wrong | خطأ — The answer is C: Interpersonal communication.'},
+    q15:{ ok:'✅ Correct! | صحيح! "Encode signals automatically" is not a function of communication.', bad:'❌ Wrong | خطأ — The answer is C: "Encode signals automatically" is not a function.'},
+  };
+
+  function answer(el, qId, result) {
+    if(scores[qId] !== undefined) return;
+    scores[qId] = result === 'correct' ? 1 : 0;
+    const opts = el.closest('.options').querySelectorAll('.option');
+    opts.forEach(o => { o.style.pointerEvents = 'none'; o.style.cursor = 'default'; });
+    el.classList.add(result === 'correct' ? 'correct' : 'wrong');
+    if(result === 'wrong') {
+      opts.forEach(o => { if(o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct'); });
+    }
+    const fb = document.getElementById('fb-' + qId);
+    fb.classList.add('show', result === 'correct' ? 'ok' : 'bad');
+    fb.innerHTML = result === 'correct'
+      ? explanations[qId].ok
+      : explanations[qId].bad;
+    updateProgress();
+    if(Object.keys(scores).length === total) showScore();
+  }
+
+  function updateProgress() {
+    const answered = Object.keys(scores).length;
+    document.getElementById('progress-text').textContent =
+      `Answered: ${answered} / ${total} | تم الإجابة: ${answered} من ${total}`;
+    document.getElementById('progress-fill').style.width = (answered / total * 100) + '%';
+  }
+
+  function showScore() {
+    const s = Object.values(scores).reduce((a,b)=>a+b,0);
+    const box = document.getElementById('score-box');
+    box.classList.add('show');
+    document.getElementById('score-num').textContent = s + ' / ' + total;
+    let msg = '';
+    if(s >= 13) msg = '🏆 Excellent! ممتاز';
+    else if(s >= 10) msg = '👍 Good! جيد';
+    else if(s >= 7) msg = '📚 Keep studying! استمر في الدراسة';
+    else msg = '💪 Review the lecture again! راجع المحاضرة مرة أخرى';
+    document.getElementById('score-label').textContent = msg;
+    box.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function resetQuiz() {
+    scores = {};
+    document.querySelectorAll('.option').forEach(o => {
+      o.classList.remove('correct','wrong');
+      o.style.pointerEvents = '';
+      o.style.cursor = '';
+    });
+    document.querySelectorAll('.feedback').forEach(f => {
+      f.classList.remove('show','ok','bad');
+      f.innerHTML = '';
+    });
+    document.getElementById('score-box').classList.remove('show');
+    updateProgress();
+    document.querySelector('.quiz-section').scrollIntoView({behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

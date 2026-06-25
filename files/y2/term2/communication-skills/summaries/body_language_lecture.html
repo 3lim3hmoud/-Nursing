@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Language & Public Speaking | لغة الجسد والتحدث أمام الجمهور</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #faf7f0;
+    --sage: #4a7c6f;
+    --sage-light: #e8f4f0;
+    --coral: #d4614a;
+    --coral-light: #fdf0ee;
+    --purple: #5b3fa6;
+    --purple-light: #ede8f9;
+    --slate: #4a5568;
+    --muted: #8a8fa8;
+    --border: #e2ddd4;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #1a3a2e 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(201,168,76,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 70%, rgba(75,124,111,0.15) 0%, transparent 60%);
+  }
+
+  .cover-grid {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .cover-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 40px 20px;
+    max-width: 900px;
+  }
+
+  .cover-tag {
+    display: inline-block;
+    font-size: 11px; letter-spacing: 4px;
+    color: var(--gold); text-transform: uppercase;
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 6px 20px; border-radius: 50px;
+    margin-bottom: 30px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .cover-en-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900; color: white;
+    line-height: 1.1; margin-bottom: 16px;
+  }
+
+  .cover-en-title span { color: var(--gold); }
+
+  .cover-divider {
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--sage));
+    margin: 24px auto; border-radius: 2px;
+  }
+
+  .cover-ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 900; color: rgba(255,255,255,0.9);
+    direction: rtl; margin-bottom: 16px;
+  }
+
+  .cover-subtitle {
+    font-size: 16px; color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .cover-subtitle-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; color: rgba(255,255,255,0.5);
+    direction: rtl;
+  }
+
+  .cover-icons {
+    display: flex; gap: 20px; justify-content: center;
+    margin-top: 50px; flex-wrap: wrap;
+  }
+
+  .cover-icon {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+
+  /* ===== NAVIGATION ===== */
+  .toc-page {
+    min-height: 100vh;
+    padding: 80px 40px;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    page-break-after: always;
+  }
+
+  .toc-inner { max-width: 900px; width: 100%; }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px; font-weight: 900;
+    color: var(--border); line-height: 1;
+  }
+
+  .section-title-block { flex: 1; }
+
+  .section-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: var(--ink); line-height: 1.2;
+  }
+
+  .section-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 22px; color: var(--muted);
+    direction: rtl; text-align: right;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .toc-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .toc-item:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+  .toc-num {
+    width: 32px; height: 32px;
+    background: var(--ink); color: white;
+    border-radius: 8px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .toc-text { flex: 1; }
+  .toc-en { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .toc-ar { font-size: 12px; color: var(--muted); font-family: 'Cairo', sans-serif; direction: rtl; text-align: right; }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content-page {
+    min-height: 100vh;
+    padding: 60px 40px;
+    display: flex; align-items: flex-start; justify-content: center;
+    page-break-after: always;
+  }
+
+  .content-page.bg-cream { background: var(--cream); }
+  .content-page.bg-white { background: var(--white); }
+  .content-page.bg-sage { background: var(--sage-light); }
+  .content-page.bg-coral { background: var(--coral-light); }
+  .content-page.bg-purple { background: var(--purple-light); }
+
+  .content-inner { max-width: 900px; width: 100%; }
+
+  .page-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 32px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .page-label::before {
+    content: ''; width: 24px; height: 1px; background: var(--muted);
+  }
+
+  .bilingual-heading {
+    margin-bottom: 40px;
+  }
+
+  .en-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700; color: var(--ink);
+    line-height: 1.2; margin-bottom: 8px;
+  }
+
+  .ar-heading {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700; color: var(--slate);
+    direction: rtl; text-align: right;
+  }
+
+  /* ===== BILINGUAL CARD ===== */
+  .bi-card {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; border-radius: 20px;
+    overflow: hidden; border: 1px solid var(--border);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .bi-en {
+    padding: 32px; background: var(--white);
+    border-right: 1px solid var(--border);
+  }
+
+  .bi-ar {
+    padding: 32px; background: #fdfcfa;
+    direction: rtl; text-align: right;
+  }
+
+  .bi-lang-tag {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px; display: block;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .bi-en p {
+    font-size: 15px; line-height: 1.7; color: var(--slate);
+  }
+
+  .bi-ar p {
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px; line-height: 1.9; color: var(--slate);
+  }
+
+  /* ===== ELEMENT CARDS ===== */
+  .elements-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px; margin-bottom: 32px;
+  }
+
+  .element-card {
+    border-radius: 16px; padding: 28px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .element-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+
+  .element-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+  }
+
+  .element-card.c1::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .element-card.c2::before { background: linear-gradient(90deg, var(--sage), #6eb5a0); }
+  .element-card.c3::before { background: linear-gradient(90deg, var(--coral), #e88a75); }
+  .element-card.c4::before { background: linear-gradient(90deg, var(--purple), #8b6fd4); }
+  .element-card.c5::before { background: linear-gradient(90deg, #3a7bd5, #6fa8ea); }
+
+  .element-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900;
+    color: var(--border); line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .element-en-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--ink); margin-bottom: 4px;
+  }
+
+  .element-ar-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px; color: var(--muted);
+    direction: rtl; text-align: right;
+    margin-bottom: 16px;
+  }
+
+  .element-desc-en {
+    font-size: 13px; line-height: 1.6; color: var(--slate);
+    margin-bottom: 8px;
+  }
+
+  .element-desc-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px; line-height: 1.8; color: var(--muted);
+    direction: rtl; text-align: right;
+  }
+
+  /* ===== DO / DON'T TABLE ===== */
+  .dos-donts {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .dos-donts-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+
+  .dd-head {
+    padding: 16px 24px; font-size: 13px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .dd-head.do-head {
+    background: var(--sage); color: white;
+  }
+
+  .dd-head.dont-head {
+    background: var(--coral); color: white;
+    text-align: right;
+  }
+
+  .dd-body {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--white);
+  }
+
+  .dd-col { padding: 24px; }
+  .dd-col.dont-col { border-left: 1px solid var(--border); }
+
+  .dd-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 14px; font-size: 14px;
+    line-height: 1.6; color: var(--slate);
+  }
+
+  .dd-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+
+  .dd-item-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; text-align: right;
+    flex-direction: row-reverse;
+  }
+
+  /* ===== QUIZ SECTION ===== */
+  .quiz-page {
+    min-height: 100vh;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 100%);
+    display: flex; align-items: flex-start; justify-content: center;
+    page-break-after: always;
+  }
+
+  .quiz-inner { max-width: 900px; width: 100%; }
+
+  .quiz-header-block {
+    text-align: center; margin-bottom: 48px;
+  }
+
+  .quiz-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900;
+    color: var(--white); margin-bottom: 8px;
+  }
+
+  .quiz-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 28px; color: var(--gold);
+    direction: rtl;
+  }
+
+  .quiz-score-bar {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px; padding: 20px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .score-label { color: rgba(255,255,255,0.7); font-size: 14px; }
+  .score-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; color: var(--gold); font-weight: 700;
+  }
+
+  .progress-bar {
+    flex: 1; height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px; margin: 0 20px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%; background: var(--gold);
+    border-radius: 3px; transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .quiz-question {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 32px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+  }
+
+  .quiz-question.answered { border-color: rgba(201,168,76,0.4); }
+  .quiz-question.correct-q { border-color: rgba(74,124,111,0.6); background: rgba(74,124,111,0.08); }
+  .quiz-question.wrong-q { border-color: rgba(212,97,74,0.6); background: rgba(212,97,74,0.08); }
+
+  .q-num {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px; display: block;
+  }
+
+  .q-text-en {
+    font-size: 16px; font-weight: 500; color: white;
+    line-height: 1.6; margin-bottom: 8px;
+  }
+
+  .q-text-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px; color: rgba(255,255,255,0.7);
+    direction: rtl; text-align: right; line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .options-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .option-btn {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px; line-height: 1.5;
+    cursor: pointer; text-align: left;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .option-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.12);
+    border-color: var(--gold);
+    color: white;
+  }
+
+  .option-btn.selected { border-color: var(--gold); background: rgba(201,168,76,0.15); }
+  .option-btn.correct { border-color: var(--sage) !important; background: rgba(74,124,111,0.2) !important; color: #7dd4c0 !important; }
+  .option-btn.wrong { border-color: var(--coral) !important; background: rgba(212,97,74,0.2) !important; color: #f0a090 !important; }
+  .option-btn:disabled { cursor: default; }
+
+  .feedback {
+    margin-top: 14px; padding: 12px 16px;
+    border-radius: 10px; font-size: 13px;
+    display: none; line-height: 1.6;
+  }
+
+  .feedback.correct-fb {
+    background: rgba(74,124,111,0.2);
+    border: 1px solid rgba(74,124,111,0.4);
+    color: #7dd4c0; display: block;
+  }
+
+  .feedback.wrong-fb {
+    background: rgba(212,97,74,0.2);
+    border: 1px solid rgba(212,97,74,0.4);
+    color: #f0a090; display: block;
+  }
+
+  .feedback-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl; text-align: right; display: block;
+    margin-top: 4px; opacity: 0.85;
+  }
+
+  .quiz-result-banner {
+    border-radius: 20px; padding: 40px;
+    text-align: center; margin-top: 32px;
+    display: none;
+  }
+
+  .quiz-result-banner.show { display: block; }
+
+  .result-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px; font-weight: 900;
+    color: var(--gold); line-height: 1;
+  }
+
+  .result-text-en { color: white; font-size: 22px; margin: 12px 0 8px; font-weight: 500; }
+  .result-text-ar {
+    font-family: 'Cairo', sans-serif;
+    color: rgba(255,255,255,0.7); font-size: 18px;
+    direction: rtl;
+  }
+
+  .restart-btn {
+    margin-top: 24px; padding: 14px 36px;
+    border-radius: 50px;
+    background: var(--gold); color: var(--ink);
+    border: none; font-size: 15px; font-weight: 600;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+  }
+
+  /* ===== SUMMARY PAGE ===== */
+  .summary-page {
+    min-height: 100vh;
+    padding: 60px 40px;
+    background: var(--white);
+    display: flex; align-items: flex-start; justify-content: center;
+    page-break-before: always;
+  }
+
+  .summary-inner { max-width: 900px; width: 100%; }
+
+  .summary-title-block {
+    text-align: center; margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .summary-en-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900;
+    color: var(--ink); margin-bottom: 8px;
+  }
+
+  .summary-ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 28px; color: var(--muted);
+    direction: rtl;
+  }
+
+  .summary-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-bottom: 32px;
+  }
+
+  .summary-card {
+    border-radius: 16px; padding: 28px;
+    border: 1px solid var(--border);
+  }
+
+  .summary-card.en-card { background: #f8f9fe; }
+  .summary-card.ar-card { background: #fefaf5; direction: rtl; }
+
+  .summary-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--ink); margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+
+  .summary-card.ar-card .summary-card-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+  }
+
+  .summary-point {
+    display: flex; gap: 10px;
+    margin-bottom: 12px; font-size: 13px;
+    line-height: 1.6; color: var(--slate);
+    align-items: flex-start;
+  }
+
+  .summary-point.ar-pt {
+    font-family: 'Cairo', sans-serif;
+    flex-direction: row-reverse; text-align: right;
+    font-size: 13px;
+  }
+
+  .sp-bullet {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--gold); color: var(--ink);
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  .summary-elements-row {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 12px; margin-bottom: 24px;
+  }
+
+  .se-item {
+    border-radius: 12px; padding: 16px 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .se-item.c1 { background: #fffbf0; border-color: #f0d080; }
+  .se-item.c2 { background: #f0faf7; border-color: #a0d4c8; }
+  .se-item.c3 { background: #fdf2f0; border-color: #f0a090; }
+  .se-item.c4 { background: #f5f0fe; border-color: #c4b0e8; }
+  .se-item.c5 { background: #f0f5fe; border-color: #a0b8e8; }
+
+  .se-icon { font-size: 24px; display: block; margin-bottom: 8px; }
+  .se-en { font-size: 11px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .se-ar { font-family: 'Cairo', sans-serif; font-size: 11px; color: var(--muted); direction: rtl; }
+
+  .print-btn {
+    display: block; margin: 0 auto 40px;
+    padding: 14px 36px; border-radius: 50px;
+    background: var(--ink); color: white;
+    border: none; font-size: 15px; font-weight: 600;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .print-btn:hover {
+    background: var(--gold); color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  /* ===== ACCENT BOXES ===== */
+  .accent-box {
+    border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .accent-box.sage-box {
+    border-left-color: var(--sage);
+    background: rgba(74,124,111,0.06);
+  }
+
+  .accent-box-en { font-size: 14px; line-height: 1.7; color: var(--slate); margin-bottom: 8px; }
+  .accent-box-ar { font-family: 'Cairo', sans-serif; font-size: 14px; line-height: 1.9; color: var(--muted); direction: rtl; text-align: right; }
+
+  /* ===== DECORATIVE ===== */
+  .page-num {
+    text-align: center; margin-top: 48px;
+    font-size: 12px; color: var(--muted);
+    letter-spacing: 2px;
+  }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    .print-btn, .restart-btn { display: none !important; }
+    .option-btn { cursor: default !important; }
+    .quiz-page {
+      background: #1a1a2e !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .cover {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+
+  @media (max-width: 680px) {
+    .bi-card { grid-template-columns: 1fr; }
+    .bi-en { border-right: none; border-bottom: 1px solid var(--border); }
+    .toc-list { grid-template-columns: 1fr; }
+    .elements-grid { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .summary-elements-row { grid-template-columns: repeat(3, 1fr); }
+    .options-grid { grid-template-columns: 1fr; }
+    .dos-donts-header, .dd-body { grid-template-columns: 1fr; }
+    .dd-col.dont-col { border-left: none; border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<section class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <span class="cover-tag">Beyond Australia · Educational Lecture</span>
+    <h1 class="cover-en-title">Body Language &<br><span>Public Speaking</span></h1>
+    <div class="cover-divider"></div>
+    <h2 class="cover-ar-title">لغة الجسد والتحدث أمام الجمهور</h2>
+    <p class="cover-subtitle">A Complete Bilingual Guide to Presentation Skills</p>
+    <p class="cover-subtitle-ar">دليل ثنائي اللغة الكامل لمهارات العرض التقديمي</p>
+    <div class="cover-icons">
+      <div class="cover-icon">🧍</div>
+      <div class="cover-icon">👁️</div>
+      <div class="cover-icon">🤲</div>
+      <div class="cover-icon">😊</div>
+      <div class="cover-icon">🎤</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<section class="toc-page">
+  <div class="toc-inner">
+    <div class="section-header">
+      <div class="section-number">00</div>
+      <div class="section-title-block">
+        <div class="section-en">What's Inside</div>
+        <div class="section-ar">محتوى المحاضرة</div>
+      </div>
+    </div>
+    <ul class="toc-list">
+      <li class="toc-item"><div class="toc-num">01</div><div class="toc-text"><div class="toc-en">What is Body Language?</div><div class="toc-ar">ما هي لغة الجسد؟</div></div></li>
+      <li class="toc-item"><div class="toc-num">02</div><div class="toc-text"><div class="toc-en">5 Key Elements</div><div class="toc-ar">٥ عناصر أساسية</div></div></li>
+      <li class="toc-item"><div class="toc-num">03</div><div class="toc-text"><div class="toc-en">Posture</div><div class="toc-ar">الوضعية / الهيئة</div></div></li>
+      <li class="toc-item"><div class="toc-num">04</div><div class="toc-text"><div class="toc-en">Hand Gestures</div><div class="toc-ar">حركات اليدين</div></div></li>
+      <li class="toc-item"><div class="toc-num">05</div><div class="toc-text"><div class="toc-en">Eye Contact</div><div class="toc-ar">التواصل البصري</div></div></li>
+      <li class="toc-item"><div class="toc-num">06</div><div class="toc-text"><div class="toc-en">Facial Expressions</div><div class="toc-ar">تعبيرات الوجه</div></div></li>
+      <li class="toc-item"><div class="toc-num">07</div><div class="toc-text"><div class="toc-en">Proximity to Audience</div><div class="toc-ar">القرب من الجمهور</div></div></li>
+      <li class="toc-item"><div class="toc-num">08</div><div class="toc-text"><div class="toc-en">Voice & Speech</div><div class="toc-ar">الصوت والكلام</div></div></li>
+      <li class="toc-item"><div class="toc-num">09</div><div class="toc-text"><div class="toc-en">Quiz — Test Yourself</div><div class="toc-ar">اختبر معلوماتك</div></div></li>
+      <li class="toc-item"><div class="toc-num">10</div><div class="toc-text"><div class="toc-en">Summary Page</div><div class="toc-ar">صفحة الملخص</div></div></li>
+    </ul>
+    <div class="page-num">· Contents ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 01: What is Body Language ===== -->
+<section class="content-page bg-white">
+  <div class="content-inner">
+    <span class="page-label">Section 01</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">What is Body Language?</div>
+      <div class="ar-heading">ما هي لغة الجسد؟</div>
+    </div>
+
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>Body language is <strong>non-verbal communication</strong> expressed through physical movements — including gestures, posture, and facial expressions. It is a powerful form of communication that typically <strong>enhances</strong> the words we speak, and often conveys emotions, attitudes, intentions, and sometimes unspoken thoughts.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;">لغة الجسد هي <strong>التواصل غير اللفظي</strong> الذي يُعبَّر عنه من خلال الحركات الجسدية — كالإيماءات، والوضعية، وتعبيرات الوجه. وهي وسيلة تواصل قوية تُعزّز الكلمات التي نقولها عادةً، وكثيرًا ما تُعبّر عن المشاعر والمواقف والنوايا، بل وأحيانًا عن الأفكار غير المُعلنة.</p>
+      </div>
+    </div>
+
+    <div class="accent-box">
+      <div class="accent-box-en">💡 <strong>Why does it matter?</strong> Whether you're preparing for a group presentation, joining the Debate Team, or simply want to convince someone of your point of view — mastering body language helps you engage and persuade your audience more effectively.</div>
+      <div class="accent-box-ar">💡 <strong>لماذا تهمنا؟</strong> سواء كنت تستعد لعرض جماعي، أو تنضم لفريق النقاش، أو تريد إقناع شخص ما بوجهة نظرك — فإن إتقان لغة الجسد يساعدك على التأثير في جمهورك وإقناعه بشكل أفضل.</div>
+    </div>
+
+    <div class="page-num">· 01 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 02: 5 Key Elements ===== -->
+<section class="content-page bg-cream">
+  <div class="content-inner">
+    <span class="page-label">Section 02</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">5 Key Elements of Body Language</div>
+      <div class="ar-heading">٥ عناصر أساسية في لغة الجسد</div>
+    </div>
+    <div class="elements-grid">
+      <div class="element-card c1">
+        <div class="element-num">01</div>
+        <div class="element-en-name">Posture</div>
+        <div class="element-ar-name">الوضعية / الهيئة</div>
+        <div class="element-desc-en">How you stand tells the audience how confident you are as a speaker.</div>
+        <div class="element-desc-ar">طريقة وقوفك تُخبر الجمهور بمدى ثقتك بنفسك.</div>
+      </div>
+      <div class="element-card c2">
+        <div class="element-num">02</div>
+        <div class="element-en-name">Hand Gestures</div>
+        <div class="element-ar-name">حركات اليدين</div>
+        <div class="element-desc-en">Use gestures to emphasise points and maintain audience interest.</div>
+        <div class="element-desc-ar">استخدم حركات اليدين للتأكيد على النقاط والحفاظ على اهتمام الجمهور.</div>
+      </div>
+      <div class="element-card c3">
+        <div class="element-num">03</div>
+        <div class="element-en-name">Eye Contact</div>
+        <div class="element-ar-name">التواصل البصري</div>
+        <div class="element-desc-en">Creates a connection between you and your audience.</div>
+        <div class="element-desc-ar">يخلق تواصلًا وارتباطًا بينك وبين جمهورك.</div>
+      </div>
+      <div class="element-card c4">
+        <div class="element-num">04</div>
+        <div class="element-en-name">Facial Expressions</div>
+        <div class="element-ar-name">تعبيرات الوجه</div>
+        <div class="element-desc-en">Show your passion and build empathy with the audience.</div>
+        <div class="element-desc-ar">أظهر شغفك وابنِ تعاطفًا مع الجمهور.</div>
+      </div>
+      <div class="element-card c5">
+        <div class="element-num">05</div>
+        <div class="element-en-name">Proximity</div>
+        <div class="element-ar-name">القرب من الجمهور</div>
+        <div class="element-desc-en">Understanding your space helps you control voice and engagement.</div>
+        <div class="element-desc-ar">فهم المساحة يساعدك على التحكم في صوتك ومستوى التفاعل.</div>
+      </div>
+    </div>
+    <div class="page-num">· 02 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 03: Posture ===== -->
+<section class="content-page bg-white">
+  <div class="content-inner">
+    <span class="page-label">Section 03</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">1. Posture</div>
+      <div class="ar-heading">١. الوضعية / الهيئة</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>Posture is very important when public speaking because it tells the audience how <strong>confident</strong> you are as a speaker. When you appear confident, the words you speak are likely to be seen as more <strong>credible</strong>.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;">الوضعية الجسدية مهمة جداً أثناء التحدث أمام الجمهور، لأنها تُخبره بمدى <strong>ثقتك بنفسك</strong> كمتحدث. وحين تبدو واثقًا من نفسك، تبدو كلماتك أكثر <strong>مصداقية</strong> في عيون الجمهور.</p>
+      </div>
+    </div>
+    <div class="dos-donts">
+      <div class="dos-donts-header">
+        <div class="dd-head do-head">✅ Do — افعل</div>
+        <div class="dd-head dont-head">❌ Don't — لا تفعل</div>
+      </div>
+      <div class="dd-body">
+        <div class="dd-col">
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Stand tall and still with your chin up</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">✅</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">قف باستقامة وثبات مع رفع الذقن</span></div>
+        </div>
+        <div class="dd-col dont-col">
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Fidget, rock back and forth, or slouch</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">❌</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">لا تتململ أو تتأرجح أو تنحني للأمام</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-num">· 03 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 04: Hand Gestures ===== -->
+<section class="content-page bg-sage">
+  <div class="content-inner">
+    <span class="page-label">Section 04</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">2. Hand Gestures</div>
+      <div class="ar-heading">٢. حركات اليدين</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>You don't want to fidget nervously, but you also don't want to stand completely still and lose your audience's interest. Use hand gestures to <strong>emphasise points</strong>, maintain your audience's interest, and reinforce your own confidence as a speaker.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;">لا تريد أن تتلاعب بيديك بعصبية، لكنك أيضًا لا تريد أن تقف ساكنًا تمامًا فتفقد اهتمام الجمهور. استخدم حركات اليدين <strong>للتأكيد على النقاط</strong> المهمة والحفاظ على تركيز جمهورك وتعزيز ثقتك بنفسك.</p>
+      </div>
+    </div>
+    <div class="dos-donts">
+      <div class="dos-donts-header">
+        <div class="dd-head do-head">✅ Do — افعل</div>
+        <div class="dd-head dont-head">❌ Don't — لا تفعل</div>
+      </div>
+      <div class="dd-body">
+        <div class="dd-col">
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Count key points on your fingers</span></div>
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Open your palms upwards to the audience</span></div>
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Point where necessary</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">✅</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">افتح راحتيك للأعلى نحو الجمهور</span></div>
+        </div>
+        <div class="dd-col dont-col">
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Tap nervously on the podium/table</span></div>
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Scratch your body or touch your face</span></div>
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Put your hands on your hips</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">❌</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">لا تضع يديك على خصرك أو تلمس وجهك</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-num">· 04 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 05: Eye Contact ===== -->
+<section class="content-page bg-coral">
+  <div class="content-inner">
+    <span class="page-label">Section 05</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">3. Eye Contact</div>
+      <div class="ar-heading">٣. التواصل البصري</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>Eye contact <strong>creates a connection</strong> between you and the audience. It shows you care about what you say and how this information is being received. It also shows that you <strong>value</strong> your audience's interest and input.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;">التواصل البصري <strong>يخلق رابطًا</strong> بينك وبين الجمهور. فهو يُظهر اهتمامك بما تقوله وكيفية استقباله. كما يُظهر أنك <strong>تُقدّر</strong> اهتمام الجمهور ومشاركته.</p>
+      </div>
+    </div>
+    <div class="dos-donts">
+      <div class="dos-donts-header">
+        <div class="dd-head do-head">✅ Do — افعل</div>
+        <div class="dd-head dont-head">❌ Don't — لا تفعل</div>
+      </div>
+      <div class="dd-body">
+        <div class="dd-col">
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Hold eye contact with each member for <strong>3–5 seconds</strong></span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">✅</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">حافظ على التواصل البصري مع كل شخص لمدة <strong>٣-٥ ثوانٍ</strong></span></div>
+        </div>
+        <div class="dd-col dont-col">
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Flick your eyes around the room</span></div>
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Stare at the ceiling or floor</span></div>
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Rely on your notes throughout your presentation</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">❌</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">لا تحدق في السقف أو الأرض أو تعتمد كليًا على ملاحظاتك</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-num">· 05 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 06: Facial Expressions ===== -->
+<section class="content-page bg-purple">
+  <div class="content-inner">
+    <span class="page-label">Section 06</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">4. Facial Expressions</div>
+      <div class="ar-heading">٤. تعبيرات الوجه</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>Your <strong>passion</strong> for a topic should show through your facial expressions — whether enthusiastic, saddened, angry or enlightened. Facial expressions also <strong>engage</strong> the audience and can even build <strong>empathy</strong> between you and them.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;"><strong>شغفك</strong> بالموضوع يجب أن يظهر من خلال تعبيرات وجهك — سواء كانت حماسًا أو حزنًا أو غضبًا أو إلهامًا. كما تُسهم هذه التعبيرات في <strong>إشراك</strong> الجمهور وبناء <strong>التعاطف</strong> بينك وبينهم.</p>
+      </div>
+    </div>
+    <div class="dos-donts">
+      <div class="dos-donts-header">
+        <div class="dd-head do-head">✅ Do — افعل</div>
+        <div class="dd-head dont-head">❌ Don't — لا تفعل</div>
+      </div>
+      <div class="dd-body">
+        <div class="dd-col">
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Smile and raise your eyebrows where necessary</span></div>
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Match your expression to what you're saying</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">✅</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">ابتسم وارفع حاجبيك عند الحاجة</span></div>
+        </div>
+        <div class="dd-col dont-col">
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Speak with a blank stare</span></div>
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Mismatch your expressions (e.g. smile while discussing something upsetting)</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">❌</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">لا تتكلم بنظرة جامدة أو تعبير لا يتناسب مع الموضوع</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-num">· 06 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 07: Proximity ===== -->
+<section class="content-page bg-cream">
+  <div class="content-inner">
+    <span class="page-label">Section 07</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">5. Proximity to Audience</div>
+      <div class="ar-heading">٥. القرب من الجمهور</div>
+    </div>
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">English</span>
+        <p>Understanding the space you've been given helps you: <strong>control your voice projection</strong> according to distance, <strong>use space effectively</strong> for pacing or moving closer/further from the audience for effect, and <strong>improve your ability</strong> to engage and persuade.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">عربي</span>
+        <p style="font-family:'Cairo',sans-serif;">فهم المساحة المتاحة لك يساعدك على: <strong>التحكم في قوة صوتك</strong> بحسب المسافة، و<strong>استخدام المساحة بفعالية</strong> للتنقل أو الاقتراب/الابتعاد عن الجمهور، و<strong>تحسين قدرتك</strong> على التفاعل والإقناع.</p>
+      </div>
+    </div>
+    <div class="dos-donts">
+      <div class="dos-donts-header">
+        <div class="dd-head do-head">✅ Do — افعل</div>
+        <div class="dd-head dont-head">❌ Don't — لا تفعل</div>
+      </div>
+      <div class="dd-body">
+        <div class="dd-col">
+          <div class="dd-item"><span class="dd-icon">✅</span><span>Move closer to your audience to build trust</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">✅</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">اقترب من جمهورك لبناء الثقة</span></div>
+        </div>
+        <div class="dd-col dont-col">
+          <div class="dd-item"><span class="dd-icon">❌</span><span>Stand behind a podium for too long unless the setting requires it</span></div>
+          <div class="dd-item dd-item-ar"><span class="dd-icon">❌</span><span style="font-family:'Cairo',sans-serif;direction:rtl;">لا تقف خلف المنصة لفترة طويلة إلا إذا كان الموقف يستدعي ذلك</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="page-num">· 07 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 08: Voice & Speech ===== -->
+<section class="content-page bg-white">
+  <div class="content-inner">
+    <span class="page-label">Section 08</span>
+    <div class="bilingual-heading">
+      <div class="en-heading">Voice Projection & Speech</div>
+      <div class="ar-heading">قوة الصوت وأسلوب الكلام</div>
+    </div>
+
+    <div class="accent-box">
+      <div class="accent-box-en">🎙️ <strong>Voice Projection:</strong> Being in control of your voice volume ensures your audience hears you clearly, captivates attention, and shows confidence. In a large space, ask if people at the back can hear you — this helps gauge your volume from the start.</div>
+      <div class="accent-box-ar">🎙️ <strong>قوة الصوت:</strong> التحكم في مستوى صوتك يضمن سماعه بوضوح، ويُشدّ انتباه الجمهور ويُظهر الثقة. في الأماكن الكبيرة، اسأل إذا كان الجالسون في الخلف يسمعونك — وهذا يساعدك على تحديد مستوى الصوت المناسب منذ البداية.</div>
+    </div>
+
+    <div class="accent-box sage-box">
+      <div class="accent-box-en">🗣️ <strong>Slow Your Speech:</strong> Taking the time to speak slowly and purposefully makes it easier for your audience to hear and <strong>remember</strong> the information you share. Speaking too fast makes it difficult to retain information. Practise your speech ahead of time so you aren't rushing.</div>
+      <div class="accent-box-ar">🗣️ <strong>أبطئ كلامك:</strong> التحدث ببطء وهدوء يُسهّل على جمهورك سماع المعلومات و<strong>تذكّرها</strong>. التسرع في الكلام يجعل من الصعب استيعاب المعلومات. تدرّب على كلامك مسبقًا حتى لا تكون في سباق مع الوقت.</div>
+    </div>
+
+    <div class="bi-card">
+      <div class="bi-en">
+        <span class="bi-lang-tag">Remember</span>
+        <p><strong>Don't assume</strong> your audience isn't interested! They want their time used effectively. Slow down, articulate clearly, and make sure they take something valuable away from your presentation.</p>
+      </div>
+      <div class="bi-ar">
+        <span class="bi-lang-tag">تذكّر</span>
+        <p style="font-family:'Cairo',sans-serif;"><strong>لا تفترض</strong> أن جمهورك غير مهتم! فهو يريد أن يُستثمر وقته بشكل فعّال. أبطئ كلامك، وانطق بوضوح، وتأكد من أنهم يغادرون بفائدة حقيقية من عرضك.</p>
+      </div>
+    </div>
+
+    <div class="page-num">· 08 ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 09: QUIZ ===== -->
+<section class="quiz-page" id="quiz-section">
+  <div class="quiz-inner">
+    <div class="quiz-header-block">
+      <div class="quiz-title-en">Test Yourself 📝</div>
+      <div class="quiz-title-ar">اختبر معلوماتك</div>
+    </div>
+
+    <div class="quiz-score-bar">
+      <div>
+        <div class="score-label">Score / النتيجة</div>
+        <div class="score-value" id="score-display">0 / 10</div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+      <div>
+        <div class="score-label">Answered / أُجيب</div>
+        <div class="score-value" id="answered-display">0</div>
+      </div>
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <div class="quiz-result-banner" id="result-banner" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);">
+      <div class="result-score" id="final-score">—</div>
+      <div class="result-text-en" id="result-msg-en"></div>
+      <div class="result-text-ar" id="result-msg-ar"></div>
+      <button class="restart-btn" onclick="restartQuiz()">🔄 Try Again | حاول مجددًا</button>
+    </div>
+
+    <div class="page-num" style="color:rgba(255,255,255,0.3);">· Quiz ·</div>
+  </div>
+</section>
+
+<!-- ===== PAGE 10: SUMMARY ===== -->
+<section class="summary-page">
+  <div class="summary-inner">
+    <div class="summary-title-block">
+      <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF | طباعة / حفظ PDF</button>
+      <div class="summary-en-title">Lecture Summary</div>
+      <div class="summary-ar-title">ملخص المحاضرة</div>
+    </div>
+
+    <div class="summary-elements-row">
+      <div class="se-item c1"><span class="se-icon">🧍</span><span class="se-en">Posture</span><span class="se-ar">الوضعية</span></div>
+      <div class="se-item c2"><span class="se-icon">🤲</span><span class="se-en">Hand Gestures</span><span class="se-ar">حركات اليدين</span></div>
+      <div class="se-item c3"><span class="se-icon">👁️</span><span class="se-en">Eye Contact</span><span class="se-ar">التواصل البصري</span></div>
+      <div class="se-item c4"><span class="se-icon">😊</span><span class="se-en">Facial Expressions</span><span class="se-ar">تعبيرات الوجه</span></div>
+      <div class="se-item c5"><span class="se-icon">📍</span><span class="se-en">Proximity</span><span class="se-ar">القرب</span></div>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card en-card">
+        <span class="summary-card-title">Key Points — English</span>
+        <div class="summary-point"><span class="sp-bullet">1</span><span><strong>Body language</strong> is non-verbal communication via gestures, posture, and facial expressions. It enhances spoken words and conveys emotions.</span></div>
+        <div class="summary-point"><span class="sp-bullet">2</span><span><strong>Posture</strong> signals confidence. Stand tall, still, chin up. Avoid fidgeting and slouching.</span></div>
+        <div class="summary-point"><span class="sp-bullet">3</span><span><strong>Hand gestures</strong> emphasise points and keep audience engaged. Open palms = openness and confidence.</span></div>
+        <div class="summary-point"><span class="sp-bullet">4</span><span><strong>Eye contact</strong> (3–5 sec per person) builds connection and shows you value your audience. Don't stare at notes.</span></div>
+        <div class="summary-point"><span class="sp-bullet">5</span><span><strong>Facial expressions</strong> should match your message. Show passion — smile, raise eyebrows. Avoid a blank stare.</span></div>
+        <div class="summary-point"><span class="sp-bullet">6</span><span><strong>Proximity</strong> — move closer to build trust. Use space for pacing and effect.</span></div>
+        <div class="summary-point"><span class="sp-bullet">7</span><span><strong>Voice projection</strong> — match volume to room size. Ask the back row if they can hear you.</span></div>
+        <div class="summary-point"><span class="sp-bullet">8</span><span><strong>Slow your speech</strong> — speak deliberately. Practise beforehand so you're not rushing.</span></div>
+      </div>
+
+      <div class="summary-card ar-card">
+        <span class="summary-card-title">النقاط الرئيسية — عربي</span>
+        <div class="summary-point ar-pt"><span class="sp-bullet">١</span><span><strong>لغة الجسد</strong> هي التواصل غير اللفظي عبر الإيماءات والوضعية وتعبيرات الوجه. تُعزّز الكلمات وتُعبّر عن المشاعر.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٢</span><span><strong>الوضعية</strong> تعكس الثقة. قف باستقامة وثبات وارفع ذقنك. تجنّب التململ والانحناء.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٣</span><span><strong>حركات اليدين</strong> تُؤكّد النقاط وتبقي الجمهور مُنتبهًا. راحتا اليد للأعلى = الانفتاح والثقة.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٤</span><span><strong>التواصل البصري</strong> (٣-٥ ثوانٍ لكل شخص) يبني الارتباط ويُظهر أنك تُقدّر جمهورك. لا تحدّق في ملاحظاتك.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٥</span><span><strong>تعبيرات الوجه</strong> يجب أن تتوافق مع رسالتك. أظهر شغفك — ابتسم وارفع حاجبيك. تجنّب التعبير الجامد.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٦</span><span><strong>القرب من الجمهور</strong> — اقترب منه لبناء الثقة. استخدم المساحة في التنقل والتأثير.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٧</span><span><strong>قوة الصوت</strong> — اجعل مستوى الصوت مناسبًا لحجم الغرفة. اسأل الصفوف الخلفية إذا كانوا يسمعونك.</span></div>
+        <div class="summary-point ar-pt"><span class="sp-bullet">٨</span><span><strong>أبطئ كلامك</strong> — تحدث بوعي وتأنٍّ. تدرّب مسبقًا حتى لا تتسرع.</span></div>
+      </div>
+    </div>
+
+    <div style="border-radius:16px;padding:24px 28px;background:linear-gradient(135deg,#1a1a2e,#2d1b69);color:white;text-align:center;">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:8px;">Good Luck! 🌟 بالتوفيق!</div>
+      <div style="font-size:13px;opacity:0.7;margin-bottom:4px;">Keeping these tips in mind, you will improve your chances of persuading an audience with your knowledge, confidence and charisma.</div>
+      <div style="font-family:'Cairo',sans-serif;font-size:13px;opacity:0.6;direction:rtl;">بتطبيق هذه النصائح، ستتحسن قدرتك على إقناع الجمهور بمعرفتك وثقتك وكاريزماتك في عرضك القادم.</div>
+    </div>
+
+    <div class="page-num">· Summary / ملخص ·</div>
+  </div>
+</section>
+
+<script>
+const questions = [
+  {
+    en: "What is body language?",
+    ar: "ما هي لغة الجسد؟",
+    options: [
+      { en: "Speaking loudly to the audience", ar: "التحدث بصوت عالٍ للجمهور" },
+      { en: "Non-verbal communication through gestures, posture, and facial expressions", ar: "التواصل غير اللفظي عبر الإيماءات والوضعية وتعبيرات الوجه" },
+      { en: "Writing notes during a speech", ar: "كتابة ملاحظات أثناء الخطاب" },
+      { en: "Using visual aids and slides", ar: "استخدام الوسائل البصرية والشرائح" }
+    ],
+    correct: 1,
+    fb_en: "Correct! Body language is non-verbal communication through physical movements.",
+    fb_ar: "صحيح! لغة الجسد هي التواصل غير اللفظي من خلال الحركات الجسدية."
+  },
+  {
+    en: "Why is good posture important when public speaking?",
+    ar: "لماذا تُعدّ الوضعية الجيدة مهمة عند التحدث أمام الجمهور؟",
+    options: [
+      { en: "It makes you look taller", ar: "تجعلك تبدو أطول قامة" },
+      { en: "It tells the audience how confident you are, making your words more credible", ar: "تُخبر الجمهور بمدى ثقتك، مما يجعل كلامك أكثر مصداقية" },
+      { en: "It helps you remember your notes", ar: "تساعدك على تذكّر ملاحظاتك" },
+      { en: "It keeps you from moving around", ar: "تمنعك من التحرك" }
+    ],
+    correct: 1,
+    fb_en: "Correct! Confident posture makes your words appear more credible to the audience.",
+    fb_ar: "صحيح! الوضعية الواثقة تجعل كلامك يبدو أكثر مصداقية للجمهور."
+  },
+  {
+    en: "Which of these is a recommended hand gesture while presenting?",
+    ar: "أيّ من حركات اليدين التالية يُنصح بها أثناء العرض؟",
+    options: [
+      { en: "Tapping nervously on the podium", ar: "النقر بعصبية على المنصة" },
+      { en: "Putting both hands on your hips", ar: "وضع كلتا يديك على خصرك" },
+      { en: "Opening your palms upwards to the audience", ar: "فتح راحتيك للأعلى نحو الجمهور" },
+      { en: "Touching your face frequently", ar: "لمس وجهك بشكل متكرر" }
+    ],
+    correct: 2,
+    fb_en: "Correct! Open palms upward signal openness and confidence.",
+    fb_ar: "صحيح! فتح الراحتين للأعلى يُعبّر عن الانفتاح والثقة."
+  },
+  {
+    en: "How long should you ideally maintain eye contact with each audience member?",
+    ar: "كم من الوقت يجب أن تحافظ على التواصل البصري مع كل فرد من الجمهور؟",
+    options: [
+      { en: "10–15 seconds", ar: "١٠-١٥ ثانية" },
+      { en: "3–5 seconds", ar: "٣-٥ ثوانٍ" },
+      { en: "Less than 1 second", ar: "أقل من ثانية واحدة" },
+      { en: "Until they look away", ar: "حتى يصرفوا نظرهم" }
+    ],
+    correct: 1,
+    fb_en: "Correct! 3–5 seconds per person is the recommended duration.",
+    fb_ar: "صحيح! ٣-٥ ثوانٍ لكل شخص هي المدة الموصى بها."
+  },
+  {
+    en: "What does eye contact show to your audience?",
+    ar: "ماذا يُظهر التواصل البصري لجمهورك؟",
+    options: [
+      { en: "That you have memorised your speech", ar: "أنك حفظت خطابك" },
+      { en: "That you are nervous", ar: "أنك متوتر" },
+      { en: "That you care and value their interest and input", ar: "أنك مهتم وتُقدّر اهتمامهم ومشاركتهم" },
+      { en: "That you don't need notes", ar: "أنك لا تحتاج إلى ملاحظات" }
+    ],
+    correct: 2,
+    fb_en: "Correct! Eye contact shows you care about your message and your audience.",
+    fb_ar: "صحيح! التواصل البصري يُظهر اهتمامك برسالتك وبجمهورك."
+  },
+  {
+    en: "What is a key benefit of facial expressions during a speech?",
+    ar: "ما الفائدة الرئيسية من تعبيرات الوجه أثناء الخطاب؟",
+    options: [
+      { en: "They replace the need to speak", ar: "تحل محل الحاجة إلى الكلام" },
+      { en: "They build empathy and engage the audience", ar: "تبني التعاطف وتُشرك الجمهور" },
+      { en: "They help you remember your script", ar: "تساعدك على تذكّر النص" },
+      { en: "They show the audience you are nervous", ar: "تُظهر للجمهور أنك متوتر" }
+    ],
+    correct: 1,
+    fb_en: "Correct! Facial expressions build empathy and engage the audience as a form of subtle entertainment.",
+    fb_ar: "صحيح! تعبيرات الوجه تبني التعاطف وتُشرك الجمهور بشكل غير مباشر."
+  },
+  {
+    en: "What should you NOT do with facial expressions?",
+    ar: "ما الذي يجب ألّا تفعله بتعبيرات وجهك؟",
+    options: [
+      { en: "Smile when talking about something positive", ar: "الابتسام عند الحديث عن شيء إيجابي" },
+      { en: "Mismatch your expressions to what you're saying (e.g. smile when discussing something upsetting)", ar: "عدم التناسق بين تعبيراتك وما تقوله (كالابتسام عند الحديث عن شيء مؤلم)" },
+      { en: "Look concerned when sharing difficult news", ar: "إظهار القلق عند مشاركة أخبار صعبة" },
+      { en: "Raise your eyebrows to emphasise a point", ar: "رفع الحاجبين للتأكيد على نقطة ما" }
+    ],
+    correct: 1,
+    fb_en: "Correct! Mismatching expressions to your content confuses the audience and breaks trust.",
+    fb_ar: "صحيح! عدم تناسق التعبيرات مع المحتوى يُربك الجمهور ويكسر الثقة."
+  },
+  {
+    en: "What is one benefit of understanding proximity to audience?",
+    ar: "ما إحدى فوائد فهم مبدأ القرب من الجمهور؟",
+    options: [
+      { en: "You can avoid looking at your audience", ar: "يمكنك تجنّب النظر إلى جمهورك" },
+      { en: "You can control voice projection based on distance", ar: "يمكنك التحكم في قوة الصوت بناءً على المسافة" },
+      { en: "You can stay at the podium the whole time", ar: "يمكنك البقاء خلف المنصة طوال الوقت" },
+      { en: "You can read from your notes more easily", ar: "يمكنك القراءة من ملاحظاتك بسهولة أكبر" }
+    ],
+    correct: 1,
+    fb_en: "Correct! Knowing your space helps you adjust voice projection effectively.",
+    fb_ar: "صحيح! معرفة مساحتك تساعدك على ضبط قوة صوتك بشكل فعّال."
+  },
+  {
+    en: "What is a good tip for voice projection in a large space?",
+    ar: "ما نصيحة جيدة لقوة الصوت في مكان كبير؟",
+    options: [
+      { en: "Always shout as loud as possible", ar: "اصرخ بأعلى صوت ممكن دائمًا" },
+      { en: "Speak in a whisper to seem mysterious", ar: "تحدث همسًا لتبدو غامضًا" },
+      { en: "Ask the people at the back if they can hear you clearly", ar: "اسأل الجالسين في الخلف إذا كانوا يسمعونك بوضوح" },
+      { en: "Let the microphone do all the work", ar: "دع الميكروفون يقوم بكل العمل" }
+    ],
+    correct: 2,
+    fb_en: "Correct! Asking the back row is a great way to gauge your volume from the start.",
+    fb_ar: "صحيح! سؤال الصفوف الخلفية طريقة رائعة لتحديد مستوى صوتك منذ البداية."
+  },
+  {
+    en: "Why should you speak slowly and purposefully?",
+    ar: "لماذا يجب أن تتحدث ببطء وهدوء؟",
+    options: [
+      { en: "To show the audience you don't know your material", ar: "لتُظهر للجمهور أنك لا تعرف مادتك" },
+      { en: "To make the presentation longer", ar: "لإطالة وقت العرض" },
+      { en: "So the audience can hear and remember the information better", ar: "لكي يسمع الجمهور المعلومات ويتذكّرها بشكل أفضل" },
+      { en: "Because it takes more effort", ar: "لأنه يتطلب جهدًا أكبر" }
+    ],
+    correct: 2,
+    fb_en: "Correct! Speaking slowly and clearly helps the audience retain information effectively.",
+    fb_ar: "صحيح! التحدث ببطء ووضوح يساعد الجمهور على استيعاب المعلومات وتذكّرها."
+  }
+];
+
+let score = 0;
+let answered = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  questions.forEach((q, idx) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    div.id = 'q-' + idx;
+    div.innerHTML = `
+      <span class="q-num">Question ${idx + 1} of ${questions.length} · السؤال ${idx + 1} من ${questions.length}</span>
+      <div class="q-text-en">${q.en}</div>
+      <div class="q-text-ar">${q.ar}</div>
+      <div class="options-grid">
+        ${q.options.map((opt, i) => `
+          <button class="option-btn" onclick="selectAnswer(${idx}, ${i})" id="opt-${idx}-${i}">
+            <span style="color:var(--gold);font-weight:700;margin-right:6px;">${String.fromCharCode(65+i)}.</span>
+            ${opt.en}<br><span style="font-family:'Cairo',sans-serif;font-size:12px;opacity:0.75;direction:rtl;display:block;text-align:right;margin-top:4px;">${opt.ar}</span>
+          </button>`).join('')}
+      </div>
+      <div class="feedback" id="fb-${idx}"></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function selectAnswer(qIdx, optIdx) {
+  const q = questions[qIdx];
+  const qDiv = document.getElementById('q-' + qIdx);
+  if (qDiv.classList.contains('answered')) return;
+
+  qDiv.classList.add('answered');
+  answered++;
+
+  for (let i = 0; i < q.options.length; i++) {
+    document.getElementById('opt-' + qIdx + '-' + i).disabled = true;
+  }
+
+  const fb = document.getElementById('fb-' + qIdx);
+
+  if (optIdx === q.correct) {
+    score++;
+    document.getElementById('opt-' + qIdx + '-' + optIdx).classList.add('correct');
+    qDiv.classList.add('correct-q');
+    fb.className = 'feedback correct-fb';
+    fb.innerHTML = `✅ ${q.fb_en}<span class="feedback-ar">${q.fb_ar}</span>`;
+  } else {
+    document.getElementById('opt-' + qIdx + '-' + optIdx).classList.add('wrong');
+    document.getElementById('opt-' + qIdx + '-' + q.correct).classList.add('correct');
+    qDiv.classList.add('wrong-q');
+    fb.className = 'feedback wrong-fb';
+    fb.innerHTML = `❌ Incorrect. The correct answer is <strong>${q.options[q.correct].en}</strong><span class="feedback-ar">الجواب الصحيح: ${q.options[q.correct].ar}</span>`;
+  }
+
+  document.getElementById('score-display').textContent = score + ' / ' + questions.length;
+  document.getElementById('answered-display').textContent = answered;
+  document.getElementById('progress').style.width = (answered / questions.length * 100) + '%';
+
+  if (answered === questions.length) {
+    setTimeout(showResult, 800);
+  }
+}
+
+function showResult() {
+  const banner = document.getElementById('result-banner');
+  const pct = Math.round(score / questions.length * 100);
+  document.getElementById('final-score').textContent = score + '/' + questions.length;
+
+  let msgEn, msgAr;
+  if (pct >= 90) { msgEn = "Outstanding! You've mastered body language! 🌟"; msgAr = "ممتاز! لقد أتقنت لغة الجسد! 🌟"; }
+  else if (pct >= 70) { msgEn = "Great work! A little more practice and you'll be perfect! 💪"; msgAr = "عمل رائع! قليل من الممارسة وستصل للكمال! 💪"; }
+  else if (pct >= 50) { msgEn = "Good effort! Review the sections and try again. 📖"; msgAr = "جهد جيد! راجع الأقسام وحاول مجددًا. 📖"; }
+  else { msgEn = "Keep studying! Go back and review all the key points. 📚"; msgAr = "واصل الدراسة! عُد وراجع جميع النقاط الرئيسية. 📚"; }
+
+  document.getElementById('result-msg-en').textContent = msgEn;
+  document.getElementById('result-msg-ar').textContent = msgAr;
+  banner.classList.add('show');
+}
+
+function restartQuiz() {
+  score = 0; answered = 0;
+  document.getElementById('score-display').textContent = '0 / ' + questions.length;
+  document.getElementById('answered-display').textContent = '0';
+  document.getElementById('progress').style.width = '0%';
+  document.getElementById('result-banner').classList.remove('show');
+  buildQuiz();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

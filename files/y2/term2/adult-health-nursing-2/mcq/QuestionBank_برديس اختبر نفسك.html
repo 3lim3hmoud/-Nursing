@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Bank — د. برديس</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface2: #f7fafc;
+  --primary: #2d4a7a;
+  --primary-light: #4a72b0;
+  --accent: #38b2ac;
+  --correct: #276749;
+  --correct-bg: #c6f6d5;
+  --wrong: #9b2335;
+  --wrong-bg: #fed7d7;
+  --reveal-bg: #ebf8ff;
+  --reveal-border: #4a72b0;
+  --text: #1a202c;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --tab-h: 52px;
+  --r: 10px;
+  --shadow: 0 2px 10px rgba(45,74,122,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* HEADER */
+header{background:linear-gradient(120deg,#1e3a5f,#2d7d9a);color:#fff;padding:22px 24px 18px;text-align:center;}
+header h1{font-size:1.5rem;font-weight:700;letter-spacing:.3px;}
+header p{margin-top:5px;font-size:.85rem;opacity:.85;font-family:'Cairo',sans-serif;}
+.chip{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 14px;font-size:.75rem;margin-top:8px;letter-spacing:.8px;}
+
+/* TOP TAB BAR */
+.top-tabs{background:var(--primary);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:200;box-shadow:0 3px 8px rgba(0,0,0,.2);}
+.top-tabs::-webkit-scrollbar{display:none;}
+.ttab{flex-shrink:0;background:transparent;border:none;color:rgba(255,255,255,.6);padding:0 18px;height:var(--tab-h);font-size:.8rem;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .18s;}
+.ttab:hover{color:#fff;background:rgba(255,255,255,.07);}
+.ttab.active{color:#fff;border-bottom-color:var(--accent);background:rgba(255,255,255,.1);font-weight:600;}
+
+/* PANEL */
+.panel{display:none;max-width:880px;margin:0 auto;padding:24px 16px 40px;}
+.panel.active{display:block;}
+
+/* TOPIC HEADER */
+.topic-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--accent);}
+.topic-head .icon{font-size:1.4rem;}
+.topic-head h2{font-size:1.1rem;color:var(--primary);font-weight:700;}
+.topic-head .sub{font-size:.8rem;color:var(--text-muted);font-family:'Cairo',sans-serif;}
+
+/* SCORE BAR */
+.score-bar{background:var(--surface);border-radius:var(--r);padding:12px 16px;margin-bottom:18px;box-shadow:var(--shadow);border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.score-bar .label{font-size:.82rem;color:var(--text-muted);font-weight:600;}
+.score-bar .nums{font-size:1rem;font-weight:700;color:var(--primary);}
+.prog-bg{flex:1;background:var(--bg);border-radius:8px;height:7px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--primary-light));border-radius:8px;transition:width .35s;}
+
+/* MCQ CARD */
+.q-card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.q-top{padding:12px 16px;background:var(--primary);display:flex;gap:10px;align-items:flex-start;}
+.q-num{background:rgba(255,255,255,.2);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:1px;}
+.q-text{color:#fff;font-size:.9rem;line-height:1.55;font-weight:500;}
+.q-body{padding:12px 14px;}
+.opt{display:block;width:100%;text-align:left;background:var(--surface2);border:1.5px solid var(--border);border-radius:7px;padding:9px 14px;font-size:.86rem;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;margin-bottom:7px;transition:all .15s;line-height:1.45;}
+.opt:last-child{margin-bottom:0;}
+.opt:hover:not(:disabled){background:#e8f0fe;border-color:var(--primary-light);}
+.opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);font-weight:600;}
+.opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong);}
+.opt:disabled{cursor:default;}
+
+/* ESSAY CARD */
+.e-card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.e-top{background:var(--primary);padding:12px 16px;display:flex;gap:10px;align-items:flex-start;}
+.e-num{background:rgba(255,255,255,.2);color:#fff;border-radius:6px;padding:2px 8px;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.e-q{color:#fff;font-size:.88rem;line-height:1.55;font-weight:500;}
+.e-body{padding:12px 16px;}
+.show-ans-btn{background:var(--primary);color:#fff;border:none;border-radius:20px;padding:7px 18px;font-size:.8rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;transition:background .15s;}
+.show-ans-btn:hover{background:var(--primary-light);}
+.show-ans-btn.shown{background:#2f7a55;}
+.ans-box{display:none;margin-top:10px;background:var(--reveal-bg);border-left:4px solid var(--reveal-border);border-radius:6px;padding:12px 14px;}
+.ans-box.visible{display:block;}
+.ans-box ul{padding-left:18px;}
+.ans-box li{font-size:.87rem;line-height:1.65;margin-bottom:4px;}
+.ans-box p{font-size:.87rem;line-height:1.65;margin-bottom:5px;}
+.ans-box strong{color:var(--primary);}
+
+/* TABLE IN ANS */
+.diff-table{width:100%;border-collapse:collapse;font-size:.83rem;margin-top:6px;}
+.diff-table th{background:var(--primary);color:#fff;padding:8px 10px;text-align:left;}
+.diff-table td{padding:8px 10px;border-bottom:1px solid var(--border);}
+.diff-table tr:nth-child(even) td{background:var(--surface2);}
+
+/* SECTION DIVIDER */
+.sec-div{display:flex;align-items:center;gap:8px;margin:20px 0 14px;font-size:.78rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
+.sec-div::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ORAL TAB */
+.oral-card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.oral-top{background:linear-gradient(90deg,#1e3a5f,#2d7d9a);padding:12px 16px;display:flex;gap:10px;align-items:flex-start;}
+.oral-num{background:rgba(255,255,255,.2);color:#fff;border-radius:6px;padding:3px 10px;font-size:.78rem;font-weight:700;flex-shrink:0;}
+.oral-q{color:#fff;font-size:.9rem;font-weight:600;line-height:1.5;}
+.oral-body{padding:12px 16px;}
+
+/* RESET BTN */
+.reset-btn{background:var(--surface);color:var(--primary);border:1.5px solid var(--primary);border-radius:20px;padding:7px 18px;font-size:.8rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;transition:all .15s;margin-bottom:18px;}
+.reset-btn:hover{background:var(--primary);color:#fff;}
+
+footer{text-align:center;padding:14px;color:var(--text-muted);font-size:.75rem;border-top:1px solid var(--border);font-family:'Cairo',sans-serif;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Question Bank — د. برديس</h1>
+  <p>بنك الأسئلة — اضغط على الإجابة لتعرف إذا كانت صح أم غلط</p>
+  <span class="chip">ORTHO · GIT · NEURO · ORAL</span>
+</header>
+
+<div class="top-tabs" id="topTabs">
+  <button class="ttab active" onclick="showPanel('ortho1',this)">🦴 Fracture</button>
+  <button class="ttab" onclick="showPanel('ortho2',this)">🦵 Hip Replace</button>
+  <button class="ttab" onclick="showPanel('ortho3',this)">🤲 Rheumatoid</button>
+  <button class="ttab" onclick="showPanel('ortho4',this)">🦠 Osteo</button>
+  <button class="ttab" onclick="showPanel('git1',this)">🫀 Peptic Ulcer</button>
+  <button class="ttab" onclick="showPanel('git2',this)">💛 Gallbladder</button>
+  <button class="ttab" onclick="showPanel('git3',this)">🫀 Cirrhosis</button>
+  <button class="ttab" onclick="showPanel('git4',this)">🟡 Hepatitis</button>
+  <button class="ttab" onclick="showPanel('neuro1',this)">🧠 Disc Prolapse</button>
+  <button class="ttab" onclick="showPanel('neuro2',this)">💆 Fibromyalgia</button>
+  <button class="ttab" onclick="showPanel('neuro3',this)">⚡ Epilepsy</button>
+  <button class="ttab" onclick="showPanel('oral',this)">🗣️ Oral Q</button>
+</div>
+
+<!-- ══════════ ORTHO 1: FRACTURE ══════════ -->
+<div class="panel active" id="panel-ortho1">
+  <div class="topic-head"><span class="icon">🦴</span><div><h2>Ortho 1 — Fracture</h2><div class="sub">الكسور</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('ortho1')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-ortho1" style="width:0%"></div></div><span class="nums" id="score-ortho1">0/14</span></div>
+  <div id="mcq-ortho1"></div>
+
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-ortho1"></div>
+</div>
+
+<!-- ══════════ ORTHO 2: HIP REPLACEMENT ══════════ -->
+<div class="panel" id="panel-ortho2">
+  <div class="topic-head"><span class="icon">🦵</span><div><h2>Ortho 2 — Hip Replacement</h2><div class="sub">استبدال مفصل الورك</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('ortho2')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-ortho2" style="width:0%"></div></div><span class="nums" id="score-ortho2">0/16</span></div>
+  <div id="mcq-ortho2"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-ortho2"></div>
+</div>
+
+<!-- ══════════ ORTHO 3: RHEUMATOID ══════════ -->
+<div class="panel" id="panel-ortho3">
+  <div class="topic-head"><span class="icon">🤲</span><div><h2>Ortho 3 — Rheumatoid Arthritis</h2><div class="sub">التهاب المفاصل الروماتويدي</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('ortho3')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-ortho3" style="width:0%"></div></div><span class="nums" id="score-ortho3">0/12</span></div>
+  <div id="mcq-ortho3"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-ortho3"></div>
+</div>
+
+<!-- ══════════ ORTHO 4 ══════════ -->
+<div class="panel" id="panel-ortho4">
+  <div class="topic-head"><span class="icon">🦠</span><div><h2>Ortho 4 — Osteomyelitis &amp; Osteoporosis</h2><div class="sub">التهاب العظم وهشاشة العظام</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('ortho4')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-ortho4" style="width:0%"></div></div><span class="nums" id="score-ortho4">0/15</span></div>
+  <div id="mcq-ortho4"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-ortho4"></div>
+</div>
+
+<!-- ══════════ GIT 1 ══════════ -->
+<div class="panel" id="panel-git1">
+  <div class="topic-head"><span class="icon">🫀</span><div><h2>GIT 1 — Peptic Ulcer</h2><div class="sub">القرحة الهضمية</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('git1')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-git1" style="width:0%"></div></div><span class="nums" id="score-git1">0/17</span></div>
+  <div id="mcq-git1"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-git1"></div>
+</div>
+
+<!-- ══════════ GIT 2 ══════════ -->
+<div class="panel" id="panel-git2">
+  <div class="topic-head"><span class="icon">💛</span><div><h2>GIT 2 — Cholelithiasis &amp; Cholecystitis</h2><div class="sub">حصوات وتهاب المرارة</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('git2')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-git2" style="width:0%"></div></div><span class="nums" id="score-git2">0/14</span></div>
+  <div id="mcq-git2"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-git2"></div>
+</div>
+
+<!-- ══════════ GIT 3 ══════════ -->
+<div class="panel" id="panel-git3">
+  <div class="topic-head"><span class="icon">🍂</span><div><h2>GIT 3 — Liver Cirrhosis &amp; Esophageal Varices</h2><div class="sub">تليف الكبد ودوالي المريء</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('git3')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-git3" style="width:0%"></div></div><span class="nums" id="score-git3">0/14</span></div>
+  <div id="mcq-git3"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-git3"></div>
+</div>
+
+<!-- ══════════ GIT 4 ══════════ -->
+<div class="panel" id="panel-git4">
+  <div class="topic-head"><span class="icon">🟡</span><div><h2>GIT 4 — Hepatitis</h2><div class="sub">التهاب الكبد الفيروسي</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('git4')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-git4" style="width:0%"></div></div><span class="nums" id="score-git4">0/8</span></div>
+  <div id="mcq-git4"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-git4"></div>
+</div>
+
+<!-- ══════════ NEURO 1 ══════════ -->
+<div class="panel" id="panel-neuro1">
+  <div class="topic-head"><span class="icon">🧠</span><div><h2>Neuro 1 — Disc Prolapse</h2><div class="sub">انزلاق الغضروف</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('neuro1')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-neuro1" style="width:0%"></div></div><span class="nums" id="score-neuro1">0/20</span></div>
+  <div id="mcq-neuro1"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-neuro1"></div>
+</div>
+
+<!-- ══════════ NEURO 2 ══════════ -->
+<div class="panel" id="panel-neuro2">
+  <div class="topic-head"><span class="icon">💆</span><div><h2>Neuro 2 — Fibromyalgia</h2><div class="sub">الألم العضلي الليفي</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('neuro2')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-neuro2" style="width:0%"></div></div><span class="nums" id="score-neuro2">0/17</span></div>
+  <div id="mcq-neuro2"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-neuro2"></div>
+</div>
+
+<!-- ══════════ NEURO 3 ══════════ -->
+<div class="panel" id="panel-neuro3">
+  <div class="topic-head"><span class="icon">⚡</span><div><h2>Neuro 3 — Epilepsy</h2><div class="sub">الصرع</div></div></div>
+  <button class="reset-btn" onclick="resetPanel('neuro3')">🔄 Reset All Answers</button>
+  <div class="score-bar"><span class="label">Score</span><div class="prog-bg"><div class="prog-fill" id="prog-neuro3" style="width:0%"></div></div><span class="nums" id="score-neuro3">0/14</span></div>
+  <div id="mcq-neuro3"></div>
+  <div class="sec-div">Essay / List Questions</div>
+  <div id="essay-neuro3"></div>
+</div>
+
+<!-- ══════════ ORAL QUESTIONS ══════════ -->
+<div class="panel" id="panel-oral">
+  <div class="topic-head"><span class="icon">🗣️</span><div><h2>Oral Questions</h2><div class="sub">أسئلة الأورال مع الإجابات — اضغط لإظهار الإجابة</div></div></div>
+  <div id="oral-container"></div>
+</div>
+
+<footer>Question Bank — د. برديس | Al Ryada University for Science and Technology</footer>
+
+<script>
+// ════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════
+
+const data = {
+
+ortho1: {
+  mcq: [
+    {q:"Which type of fracture occurs when the bone is broken into more than two fragments?", opts:["Comminuted fracture","Greenstick fracture","Oblique fracture","Transverse fracture"], ans:0},
+    {q:"Which type of fracture occurs when bone breaks into two parts that are completely separated?", opts:["Comminuted fracture","Greenstick fracture","Complete fracture","Incomplete fracture"], ans:2},
+    {q:"Which type of fracture occurs with no break in the skin?", opts:["Complete fracture","Incomplete fracture","Closed fracture","Open fracture"], ans:2},
+    {q:"Which type of fracture involves a break where the bone pierces the skin?", opts:["Closed fracture","Greenstick fracture","Open fracture","Impacted fracture"], ans:2},
+    {q:"A fracture in which the bone bends and cracks but does not completely break is called:", opts:["Comminuted fracture","Spiral fracture","Greenstick fracture","Transverse fracture"], ans:2},
+    {q:"What is the most common cause of fractures?", opts:["Infection","Trauma or injury","Cancer","Genetic mutation"], ans:1},
+    {q:"Which fracture occurs due to repeated stress over time?", opts:["Open fracture","Stress fracture","Impacted fracture","Pathological fracture"], ans:1},
+    {q:"What is the first step in managing a suspected fracture?", opts:["Massage the area","Apply heat","Immobilize the limb","Give antibiotics"], ans:2},
+    {q:"Which of the following is NOT a sign of fracture?", opts:["Pain","Swelling","Deformity","Increased mobility without pain"], ans:3},
+    {q:"Which of the following is a complication of fractures?", opts:["Hypertension","Fat embolism","Diabetes","Asthma"], ans:1},
+    {q:"The term 'closed fracture' means:", opts:["Bone is shattered","Skin over the fracture is intact","Bone is infected","Bone is bent"], ans:1},
+    {q:"Which of the following is a sign of an open fracture?", opts:["Swelling only","Bruising","Bone visible through the skin","Mild pain"], ans:2},
+    {q:"What does 'reduction' mean in fracture treatment?", opts:["Breaking the bone further","Aligning the bone fragments","Removing the bone","Strengthening muscles"], ans:1},
+    {q:"What is the main goal of fracture management?", opts:["Eliminate pain only","Restore normal function","Increase bone size","Prevent movement permanently"], ans:1},
+  ],
+  essay: [
+    {q:"List signs and symptoms of fractures.", ans:`<ul><li>Pain</li><li>Swelling</li><li>Tenderness</li><li>Deformity</li><li>Ecchymoses (bruising)</li><li>Loss of function</li><li>Crepitation with any movement</li></ul>`},
+    {q:"List the care of patient with traction (T.R.A.C.T.I.O.N mnemonic).", ans:`<ul><li><strong>T</strong> — Traction</li><li><strong>R</strong> — Rope hangs free</li><li><strong>A</strong> — Alignment</li><li><strong>C</strong> — Check circulation</li><li><strong>T</strong> — Type and location of traction</li><li><strong>I</strong> — Increase fluid intake</li><li><strong>O</strong> — Overhead trapeze</li><li><strong>N</strong> — No weight on bed or floor</li></ul>`},
+    {q:"List Complications of Fractures.", ans:`<ul><li>Hemorrhagic shock</li><li>Damage to nerves from fragments of bone</li><li>Fat emboli</li><li>External pressure from dressings or casts that are too tight</li><li>Infection</li></ul>`},
+    {q:"List 6 P's of neurovascular assessment of patient with fracture.", ans:`<ul><li>Pain</li><li>Pulse</li><li>Paresthesia</li><li>Pallor</li><li>Paralysis</li><li>Pressure</li></ul>`},
+    {q:"List nursing management for patient with fracture.", ans:`<ul><li>Put patient in a high Fowler's position</li><li>Establish a peripheral IV line for fluids</li><li>Elevation of the affected part to prevent swelling (toes should be higher than the trunk)</li><li>If a cast is in place, it may be bivalved (split through all layers)</li><li>Wash hands and use aseptic technique when caring for wound</li><li>Report excessive drainage or inflammation to physician</li><li>Culture drainage</li><li>Frequent monitoring of temperature</li></ul>`},
+  ]
+},
+
+ortho2: {
+  mcq: [
+    {q:"The most common indication for hip replacement is:", opts:["Fracture of arm","Osteoarthritis","Asthma","Migraine"], ans:1},
+    {q:"Which part of the hip is replaced in total hip replacement?", opts:["Only femur","Only pelvis","Both femoral head and acetabulum","Only cartilage"], ans:2},
+    {q:"The artificial hip joint is usually made of:", opts:["Wood","Plastic only","Metal and plastic/ceramic","Glass"], ans:2},
+    {q:"Which of the following is a goal of hip replacement surgery?", opts:["Increase bone length","Relieve pain and improve mobility","Stop blood flow","Cure infection"], ans:1},
+    {q:"What is 'total hip arthroplasty'?", opts:["Partial repair","Complete replacement of hip joint","Muscle surgery","Bone cutting only"], ans:1},
+    {q:"Which condition may require hip replacement?", opts:["Rheumatoid arthritis","Common cold","Hypertension","Gastritis"], ans:0},
+    {q:"What is a key part of recovery after surgery?", opts:["Bed rest only","Physiotherapy","Avoid movement completely","No follow-up"], ans:1},
+    {q:"Which age group most commonly undergoes hip replacement?", opts:["Children","Young adults only","Older adults","Infants"], ans:2},
+    {q:"Which of the following is an early complication?", opts:["Implant wear","Deep vein thrombosis (DVT)","Prosthesis loosening after years","Bone remodeling"], ans:1},
+    {q:"What is the purpose of physiotherapy after surgery?", opts:["Prevent infection","Strengthen muscles and restore movement","Replace the implant","Stop blood circulation"], ans:1},
+    {q:"Which symptom may indicate hip prosthesis infection?", opts:["Better sleep","Improved mobility","Fever and persistent pain","Increased appetite"], ans:2},
+    {q:"Which type of hip replacement involves only the femoral head being replaced?", opts:["Total hip replacement","Hip Resurfacing","Hip arthroplasty","Partial hip replacement"], ans:3},
+    {q:"Avascular Necrosis is:", opts:["Complication of hip replacement","Side effect of hip replacement","Cause of hip replacement","Type of hip replacement"], ans:2},
+    {q:"Ankle and calf pumping exercises are done post orthopedic surgery to:", opts:["Increase pain","Increase swelling","Enhance circulation","Decrease tissue perfusion"], ans:2},
+    {q:"Homan's sign is:", opts:["Abdominal pain on deep palpation","Swelling of the hand when the arm is elevated","Chest pain during deep breathing","Calf pain on dorsiflexion of the foot"], ans:3},
+    {q:"What is the purpose of early mobilization after surgery?", opts:["Increase pain","Delay healing","Prevent complications like DVT","Increase dislocation"], ans:2},
+  ],
+  essay: [
+    {q:"List nursing diagnoses for patient post orthopedic surgery.", ans:`<ul><li>Pain related to the surgical procedure</li><li>Impaired physical mobility related to pain and swelling</li><li>Altered body image and self-esteem related to impact of musculoskeletal problems</li><li>High risk for altered peripheral tissue perfusion related to swelling and impaired circulation</li><li>High risk for fluid volume deficit related to excessive losses from surgery</li><li>High risk for infection related to traumatized tissues</li></ul>`},
+    {q:"List common causes of hip replacement.", ans:`<ul><li>Osteoarthritis</li><li>Rheumatoid Arthritis</li><li>Hip Fracture</li><li>Avascular Necrosis</li></ul>`},
+    {q:"List nursing interventions to decrease pain for patients post orthopedic surgery.", ans:`<ul><li>Analgesic as prescribed to control pain (used as a preventive)</li><li>Elevation of the operative extremity and application of cold compresses (if prescribed) to control edema</li><li>Portable suction of the wound to decrease fluid accumulation and hematoma formation</li><li>After 3–4 days, most patients require only oral analgesia</li></ul>`},
+  ]
+},
+
+ortho3: {
+  mcq: [
+    {q:"What type of disease is rheumatoid arthritis?", opts:["Degenerative disease","Autoimmune disease","Infectious disease","Metabolic disease"], ans:1},
+    {q:"What is a characteristic symptom of rheumatoid arthritis?", opts:["Morning stiffness lasting less than 10 minutes","Pain only at night","Morning stiffness lasting more than 1 hour","Sudden paralysis"], ans:2},
+    {q:"What is the main pathological process in RA?", opts:["Bone fracture","Muscle rupture","Synovial inflammation (synovitis)","Nerve compression"], ans:2},
+    {q:"Which lab finding is commonly elevated in active RA?", opts:["ESR and CRP","Platelets only","Sodium","Potassium"], ans:0},
+    {q:"What is the primary goal of RA treatment?", opts:["Cure infection","Increase weight","Improve vision","Control inflammation and prevent joint damage"], ans:3},
+    {q:"Which joint involvement pattern is typical in RA?", opts:["Symmetrical small joints","Asymmetrical joints","Spine only","Lower limb only"], ans:0},
+    {q:"Which imaging finding suggests early RA?", opts:["Bone fracture","Complete joint destruction","Soft tissue swelling","Dislocation"], ans:2},
+    {q:"Which feature suggests RA has become more severe?", opts:["Decreased pain","Normal ESR","Increased appetite","Increased joint swelling and stiffness"], ans:3},
+    {q:"A 35-year-old female presents with symmetrical joint pain in hands for 3 months, morning stiffness >1 hour, and fatigue. What is the MOST likely diagnosis?", opts:["Osteoarthritis","Rheumatoid arthritis","Gout","Fibromyalgia"], ans:1},
+    {q:"A long-standing RA patient presents with deformity of fingers (ulnar deviation). What caused this?", opts:["Trauma","Chronic synovial inflammation","Infection","Nerve injury"], ans:1},
+    {q:"Which of the following is NOT a cause of RA?", opts:["Obesity","Advanced age","Genetic factors","Helicobacter pylori infection"], ans:3},
+    {q:"Which of the following is a manifestation NOT related to joints of RA?", opts:["Joint pain","Swelling of joint","Warm joint","Dry eye and mouth"], ans:3},
+  ],
+  essay: [
+    {q:"List JOINT manifestations of Rheumatoid Arthritis.", ans:`<ul><li>Joint pain and tenderness</li><li>Red joint</li><li>Joint swelling</li><li>Joint stiffness</li><li>Numbness of hand and feet</li></ul>`},
+    {q:"List manifestations of RA NOT including joints.", ans:`<ul><li>Disturbed sleep</li><li>Low grade fever</li><li>Fatigue</li><li>Depression and mood change</li><li>Dry eye and mouth</li><li>Weight loss</li></ul>`},
+    {q:"List nursing management of Rheumatoid Arthritis.", ans:`<ul><li>Pain relief measures</li><li>Relief of fatigue</li><li>Increasing mobility</li><li>Monitoring for potential complications</li><li>Increase knowledge of disease</li><li>Promoting self-care</li></ul>`},
+  ]
+},
+
+ortho4: {
+  mcq: [
+    {q:"What is the most common cause of osteomyelitis?", opts:["Viral infection","Fungal infection only","Bacterial infection","Autoimmune reaction"], ans:2},
+    {q:"The most common organism causing osteomyelitis is:", opts:["E. coli","Staphylococcus aureus","Pseudomonas","Streptococcus pneumoniae"], ans:1},
+    {q:"Which route of infection is most common in osteomyelitis?", opts:["Direct trauma only","Hematogenous spread","Food contamination","Airborne spread"], ans:1},
+    {q:"Which of the following is NOT a manifestation of Osteomyelitis?", opts:["Drainage of pus from affected bone","Bone pain","Swelling of affected area","Heart burn"], ans:3},
+    {q:"A classic symptom of osteomyelitis is:", opts:["Local bone pain with fever","Headache","Chest pain","Abdominal pain"], ans:0},
+    {q:"Which complication may result from untreated osteomyelitis?", opts:["Stroke","Cataract","Gastritis","Bone necrosis and chronic infection"], ans:3},
+    {q:"Osteoporosis is characterized by:", opts:["Increased bone mass","Decreased bone density and strength","Bone infection","Joint inflammation"], ans:1},
+    {q:"The most common complication of osteoporosis is:", opts:["Infection","Paralysis","Fracture","Tumor"], ans:2},
+    {q:"Which population is most at risk of osteoporosis?", opts:["Young males","Postmenopausal women","Children","Athletes"], ans:1},
+    {q:"A major nursing intervention in osteoporosis is:", opts:["Bed rest only","Fall prevention","Fluid restriction","Oxygen therapy"], ans:1},
+    {q:"Which medication increases bone resorption and leads to osteoporosis?", opts:["Long-term corticosteroids","Antibiotics","Antacids","Insulin"], ans:0},
+    {q:"Which hormone helps protect bone density?", opts:["Estrogen","Adrenaline","Insulin","Prolactin"], ans:0},
+    {q:"What is the main goal of osteoporosis treatment?", opts:["Cure infection","Prevent fractures","Increase fever","Improve vision"], ans:1},
+    {q:"Which vitamin deficiency is strongly linked to osteoporosis?", opts:["Vitamin A","Vitamin B12","Vitamin D","Vitamin K only"], ans:2},
+    {q:"What is the main principle of hyperbaric oxygen therapy?", opts:["Delivering oxygen at normal atmospheric pressure only","Providing pure oxygen at higher-than-normal atmospheric pressure in a closed chamber","Reducing oxygen supply to tissues","Using carbon dioxide to improve breathing"], ans:1},
+  ],
+  essay: [
+    {q:"List clinical manifestations of osteomyelitis.", ans:`<ul><li>Bone pain</li><li>Fever and chills</li><li>Redness and swelling of affected part</li><li>Lack of energy</li><li>Irritability</li><li>Drainage of pus from affected bone</li><li>Inability to move affected limb</li></ul>`},
+    {q:"List nursing diagnoses of osteomyelitis.", ans:`<ul><li>Acute pain related to infection</li><li>Impaired physical mobility related to pain</li><li>Risk for sepsis</li><li>Risk for impaired skin integrity</li></ul>`},
+    {q:"List nursing management of osteoporosis.", ans:`<ul><li>Fall prevention</li><li>Administer medications as prescribed</li><li>Encourage calcium-rich diet and exercise</li><li>Educate on medication adherence</li></ul>`},
+  ]
+},
+
+git1: {
+  mcq: [
+    {q:"The most common cause of peptic ulcer disease is:", opts:["Stress only","Helicobacter pylori infection","High calcium diet","Viral infection"], ans:1},
+    {q:"Another important cause of peptic ulcer disease is:", opts:["Antihypertensives","NSAIDs use","Antibiotics","Insulin"], ans:1},
+    {q:"A common symptom of peptic ulcer is:", opts:["Burning epigastric pain","Chest pain only","Leg pain","Headache"], ans:0},
+    {q:"Pain of duodenal ulcer is typically:", opts:["Worse after eating","Only at night always","Relieved by eating","Not related to food"], ans:2},
+    {q:"Which complication is most dangerous in peptic ulcer?", opts:["Hair loss","Perforation","Diarrhea","Constipation"], ans:1},
+    {q:"The diagnostic test of choice for peptic ulcer is:", opts:["Endoscopy","ECG","MRI brain","X-ray chest"], ans:0},
+    {q:"Which drug is commonly used to reduce gastric acid?", opts:["Antibiotics only","Antiviral drugs","Proton pump inhibitors (PPIs)","Insulin"], ans:2},
+    {q:"A complication of long-term NSAID use is:", opts:["Peptic ulcer","Asthma","Hypertension","Cataract"], ans:0},
+    {q:"A key nursing advice for peptic ulcer patients is:", opts:["Skip meals","Avoid NSAIDs and spicy food","Increase smoking","Bed rest only"], ans:1},
+    {q:"Which type of ulcer is more likely to cause weight loss?", opts:["Duodenal ulcer","Gastric ulcer","Both equally","Neither"], ans:1},
+    {q:"A patient with peptic ulcer has sudden severe abdominal pain and rigid abdomen. What is the most likely complication?", opts:["Gastritis","Constipation","Appendicitis","Perforation"], ans:3},
+    {q:"Which sign may indicate GIT bleeding in peptic ulcer?", opts:["Hematuria","Melena","Jaundice","Rash"], ans:1},
+    {q:"Which of the following increases risk of peptic ulcer?", opts:["Regular exercise","High water intake","Smoking","Fruit diet"], ans:2},
+    {q:"The main action of proton pump inhibitors is:", opts:["Increase acid secretion","Block gastric acid production","Kill bacteria directly","Increase digestion speed"], ans:1},
+    {q:"Which symptom is more typical in gastric ulcer than duodenal ulcer?", opts:["Pain worsened by food","Pain relieved by food","No pain at all","Only night pain"], ans:0},
+    {q:"A patient with peptic ulcer is vomiting blood. This condition is called:", opts:["Hemoptysis","Hematemesis","Hematuria","Melena"], ans:1},
+    {q:"Which bacteria test confirms H. pylori infection?", opts:["ECG","EEG","MRI","Stool antigen test"], ans:3},
+  ],
+  essay: [
+    {q:"Differentiate between Gastric Ulcer and Duodenal Ulcer in relation to pain.", ans:`<table class="diff-table"><thead><tr><th>Duodenal Ulcer</th><th>Gastric Ulcer</th></tr></thead><tbody><tr><td>Pain relieved by meal</td><td>Pain increased by meal</td></tr><tr><td>Occurs 2–3 hrs after meal</td><td>Occurs 30 min–1 hr after meal</td></tr><tr><td>Most common type</td><td>Not as common</td></tr><tr><td>Dark, tarry stools (Melena) occur</td><td>Vomiting occurs</td></tr></tbody></table>`},
+    {q:"List complications of peptic ulcer.", ans:`<ul><li>Bleeding (Gastrointestinal hemorrhage)</li><li>Perforation (hole in the wall of the stomach or duodenum)</li><li>Obstruction (blocking the passage of food through the digestive tract)</li></ul>`},
+    {q:"List nursing interventions for patient teaching about peptic ulcer.", ans:`<ul><li>Instruct patient about importance of continuing medication even after symptoms have decreased</li><li>Avoid smoking</li><li>Rest and stress reduction</li><li>Awareness of complications</li><li>Follow-up care</li></ul>`},
+  ]
+},
+
+git2: {
+  mcq: [
+    {q:"Cholelithiasis means:", opts:["Infection of liver","Gallstones in the gallbladder","Kidney stones","Pancreatic inflammation"], ans:1},
+    {q:"The most common type of gallstones is:", opts:["Calcium stones","Protein stones","Iron stones","Cholesterol stones"], ans:3},
+    {q:"The classic symptom of gallstones is:", opts:["Right upper quadrant pain after fatty meals","Left chest pain","Headache","Knee pain"], ans:0},
+    {q:"Cholecystitis is:", opts:["Liver infection","Inflammation of the gallbladder","Kidney infection","Stomach ulcer"], ans:1},
+    {q:"The best diagnostic tool for gallstones is:", opts:["X-ray chest","Abdominal ultrasound","ECG","MRI brain"], ans:1},
+    {q:"A diet that increases gallstone symptoms is:", opts:["High fat diet","High fiber diet","Low fat diet","Water diet"], ans:0},
+    {q:"Treatment of choice for symptomatic gallstones is:", opts:["Antibiotics only","Cholecystectomy","Insulin","Chemotherapy"], ans:1},
+    {q:"Which organ is affected in cholecystitis?", opts:["Liver","Gallbladder","Stomach","Pancreas"], ans:1},
+    {q:"Which condition increases risk of gallstones?", opts:["Obesity","Anemia","Asthma","Hypertension"], ans:0},
+    {q:"Which of the following is NOT a risk factor for gallstones?", opts:["Obesity","Fasting","Rapid weight loss","High fiber diet"], ans:3},
+    {q:"Radiation of gallbladder pain is commonly to:", opts:["Left arm","Right shoulder/scapula","Left leg","Neck only"], ans:1},
+    {q:"A patient with cholecystitis may present with:", opts:["Fever and nausea","Rash only","Chest pain only","Vision loss"], ans:0},
+    {q:"Which complication can occur if gallstone blocks common bile duct?", opts:["Jaundice","Asthma","Diabetes","Migraine"], ans:0},
+    {q:"A 40-year-old obese female presents with RUQ pain after fatty meals. What is the diagnosis?", opts:["Hepatitis","Cholelithiasis","Pancreatitis","Gastritis"], ans:1},
+  ],
+  essay: [
+    {q:"List causes of gallbladder stones.", ans:`<ul><li>Obesity</li><li>Cholesterol lowering drugs</li><li>Diabetes</li><li>Rapid weight loss</li><li>Fasting</li><li>Estrogen</li></ul>`},
+    {q:"List post-operative nursing interventions for gallbladder stones.", ans:`<ul><li>Relieving pain</li><li>Improving respiratory status</li><li>Maintaining skin integrity &amp; promoting biliary drainage</li><li>Improving nutritional status</li><li>Monitoring and managing complications</li><li>General health teaching</li></ul>`},
+  ]
+},
+
+git3: {
+  mcq: [
+    {q:"Liver cirrhosis is defined as:", opts:["Acute liver inflammation","Chronic liver damage with fibrosis and nodules","Liver infection only","Increased liver size only"], ans:1},
+    {q:"The most common cause of liver cirrhosis worldwide is:", opts:["Trauma","Chronic viral hepatitis","Asthma","Kidney disease"], ans:1},
+    {q:"Another major cause of cirrhosis is:", opts:["Alcohol abuse","Exercise","Low salt diet","Vitamin deficiency"], ans:0},
+    {q:"Common complication of cirrhosis is:", opts:["Asthma","Migraine","Diabetes","Portal hypertension"], ans:3},
+    {q:"Portal hypertension can lead to:", opts:["Hypertension only","Diabetes","Esophageal varices","Pneumonia"], ans:2},
+    {q:"Esophageal varices are:", opts:["Gastric ulcers","Dilated veins in the esophagus","Liver tumors","Intestinal obstruction"], ans:1},
+    {q:"The most dangerous complication of esophageal varices is:", opts:["Hematemesis","Constipation","Fever","Headache"], ans:0},
+    {q:"Patient with cirrhosis presents with abdominal distension due to fluid. This is:", opts:["Edema","Ascites","Tumor","Obesity"], ans:1},
+    {q:"Late complication of cirrhosis affecting brain function is:", opts:["Stroke","Migraine","Hepatic encephalopathy","Seizures only"], ans:2},
+    {q:"What causes esophageal varices in cirrhosis?", opts:["Increased portal pressure","Infection","Low sugar","High calcium"], ans:0},
+    {q:"Which substance accumulates in hepatic encephalopathy?", opts:["Glucose","Ammonia","Calcium","Oxygen"], ans:1},
+    {q:"Which sign indicates severe liver disease?", opts:["Mild fatigue","Mild pain","Headache","Jaundice &amp; ascites"], ans:3},
+    {q:"A patient with cirrhosis should avoid:", opts:["Alcohol","Water","Fruits","Walking"], ans:0},
+    {q:"Which of the following is NOT a complication of liver cirrhosis?", opts:["Hepatic encephalopathy","Portal hypertension","Melena","Bone necrosis"], ans:3},
+  ],
+  essay: [
+    {q:"List clinical manifestations of liver cirrhosis.", ans:`<ul><li>Ascites</li><li>Jaundice</li><li>Weight loss</li><li>Epistaxis (nosebleed)</li><li>Clubbing fingers</li><li>Fever</li></ul>`},
+    {q:"List complications of liver cirrhosis.", ans:`<ul><li>Recurrent infection</li><li>Hepatic encephalopathy</li><li>Lower limb edema</li><li>Ascites</li><li>Portal hypertension</li><li>Jaundice</li><li>Liver cancer</li></ul>`},
+    {q:"List nursing interventions for patient with liver cirrhosis.", ans:`<ul><li>Promoting rest</li><li>Improving nutritional status</li><li>Providing skin care</li><li>Reducing risk of injury</li><li>Teaching patients self-care</li></ul>`},
+    {q:"List nursing interventions for patient with esophageal varices.", ans:`<ul><li>Monitor vital signs every 15–30 minutes</li><li>Maintain NPO status until cleared</li><li>Establish large-bore IV access for fluids/blood transfusion</li><li>Administer blood products as ordered</li><li>Position patient in high Fowler's or side-lying to reduce aspiration risk</li><li>Administer medications: <strong>vasopressin</strong> to reduce portal pressure; <strong>lactulose</strong> if hepatic encephalopathy is present</li><li>Prepare for emergency endoscopy</li><li>Monitor for signs of hypovolemic shock: ↓ BP, ↑ HR, cold/clammy skin</li></ul>`},
+  ]
+},
+
+git4: {
+  mcq: [
+    {q:"Which type of Hepatitis is transmitted through blood?", opts:["Hepatitis A","Hepatitis B","Hepatitis E","Hepatitis A and E"], ans:1},
+    {q:"Which of the following is a common symptom of Hepatitis?", opts:["Headache only","Chronic cough","Yellowing of the skin and eyes","Ear pain"], ans:2},
+    {q:"Which type of Hepatitis is commonly transmitted through contaminated food or water?", opts:["Hepatitis B","Hepatitis C","Hepatitis A","Hepatitis D"], ans:2},
+    {q:"What is the primary mode of transmission of Hepatitis A?", opts:["Fecal-oral route","Blood transfusion","Sexual contact","Airborne droplets"], ans:0},
+    {q:"Which of the following Hepatitis viruses has a vaccine available?", opts:["Hepatitis A only","Hepatitis B only","Hepatitis A and B","Hepatitis C"], ans:2},
+    {q:"Which Hepatitis virus is most likely to cause acute, self-limited infection?", opts:["Hepatitis A","Hepatitis B","Hepatitis C","Hepatitis D"], ans:0},
+    {q:"Which of the following is a common route of Hepatitis B transmission?", opts:["Contaminated water","Blood and body fluids","Airborne spread","Insect bites"], ans:1},
+    {q:"Serious complication of chronic Hepatitis is:", opts:["Asthma","Diabetes","Liver cirrhosis","Hypertension"], ans:2},
+  ],
+  essay: [
+    {q:"List 3 modes of transmission of Hepatitis A.", ans:`<ul><li>Fecal-oral route</li><li>Contaminated foods or water</li><li>Hands or other objects contaminated with infected feces</li><li>Sexual intercourse (oral–anal)</li><li>Undercooked shellfish like oysters, mussels, and clams</li></ul>`},
+    {q:"List 4 manifestations of Hepatitis B.", ans:`<ul><li>Loss of appetite</li><li>Jaundice</li><li>Fever</li><li>Dark urine</li><li>Pale stool</li><li>Nausea and vomiting</li><li>Headache and fatigue</li><li>Joint pain</li></ul>`},
+    {q:"List 4 modes of transmission of Hepatitis B and C.", ans:`<ul><li>Infected blood</li><li>Unsafe infected syringe</li><li>Unprotected sexual contact</li><li>From mother to baby during childbirth</li></ul>`},
+  ]
+},
+
+neuro1: {
+  mcq: [
+    {q:"Which part of the spine is most commonly affected in disc prolapse?", opts:["Cervical spine","Thoracic spine","Lumbar spine","Sacral spine"], ans:2},
+    {q:"What is the main cause of disc prolapse?", opts:["Viral infection","Trauma and degeneration","Poor diet","Allergy"], ans:1},
+    {q:"Which symptom is most common in disc prolapse?", opts:["Cough","Radiating limb pain","Skin rash","Fever"], ans:1},
+    {q:"Sciatica is associated with:", opts:["Lumbar disc prolapse","Cervical disc prolapse","Thoracic disc prolapse","Sacral fracture"], ans:0},
+    {q:"Which nerve is commonly affected in lumbar disc prolapse?", opts:["Facial nerve","Sciatic nerve","Vagus nerve","Optic nerve"], ans:1},
+    {q:"What is a common risk factor for disc prolapse?", opts:["Regular exercise","Physical trauma","Adequate sleep","Hydration"], ans:1},
+    {q:"Which of the following is part of conservative treatment?", opts:["Bed rest and physiotherapy","Antibiotics","Insulin","Antivirals"], ans:0},
+    {q:"When is surgery indicated?", opts:["Mild pain","No symptoms","Severe neurological deficit","Headache"], ans:2},
+    {q:"Which part of the intervertebral disc herniates in disc prolapse?", opts:["Annulus fibrosus","Nucleus pulposus","Vertebral body","Spinal ligament"], ans:1},
+    {q:"Which level is most commonly affected in lumbar disc prolapse?", opts:["L1–L2","C1–C2","L4–L5","T12–L1"], ans:2},
+    {q:"Straight Leg Raise (SLR) test is used to detect:", opts:["Cervical prolapse","Lumbar nerve root irritation","Shoulder injury","Hip fracture"], ans:1},
+    {q:"What is the role of physiotherapy?", opts:["Worsens condition","Strengthens muscles and reduces pain","Causes infection","Replaces surgery completely"], ans:1},
+    {q:"Which drug class is commonly used for pain relief in disc prolapse?", opts:["Antibiotics","Antivirals","Antifungals","NSAIDs"], ans:3},
+    {q:"Which clinical sign is positive in lumbar disc herniation?", opts:["Murphy's sign","Kernig's sign","Straight Leg Raise test","Tinel's sign"], ans:2},
+    {q:"Which investigation is most sensitive for diagnosis of disc prolapse?", opts:["CT scan","X-ray","MRI","Ultrasound"], ans:2},
+    {q:"Which surgical procedure is commonly performed for disc prolapse?", opts:["Appendectomy","Discectomy","Cholecystectomy","Nephrectomy"], ans:1},
+    {q:"Which symptom indicates urgent surgical need?", opts:["Mild pain","Intermittent discomfort","Progressive neurological deficit","Occasional stiffness"], ans:2},
+    {q:"Which preventive measure is most effective for disc prolapse?", opts:["Proper posture and exercise","Heavy lifting","Smoking","Prolonged sitting"], ans:0},
+    {q:"Which surgical procedure involves removal of part of the vertebral bone?", opts:["Discectomy","Removal of the herniated disc","Endoscopic discectomy","Laminectomy"], ans:3},
+    {q:"Which surgical procedure involves removal of the herniated portion of the disc using an endoscope?", opts:["Discectomy","Endoscopic discectomy","Laminectomy","Open surgery to remove disc"], ans:1},
+  ],
+  essay: [
+    {q:"List 4 causes of disc prolapse.", ans:`<ul><li>Degenerative disc disease (age-related wear and tear)</li><li>Trauma or injury (e.g., lifting heavy objects improperly)</li><li>Repetitive strain or twisting motions</li><li>Obesity (increased spinal load)</li><li>Poor posture</li><li>Sedentary lifestyle</li><li>Genetic predisposition</li></ul>`},
+    {q:"List 3 manifestations of cervical disc prolapse.", ans:`<ul><li>Neck pain</li><li>Shoulder radiation</li><li>Numbness and tingling in upper limb</li></ul>`},
+    {q:"List 3 manifestations of thoracic disc prolapse.", ans:`<ul><li>Pain in mid back and chest</li><li>Abdominal pain</li><li>Numbness and sensory loss around trunk</li></ul>`},
+    {q:"List 4 manifestations of lumbar disc prolapse.", ans:`<ul><li>Low back pain</li><li>Numbness and tingling in lower limb</li><li>Loss of bladder control</li><li>Sciatica (leg pain)</li></ul>`},
+    {q:"List items assessed during neurological examination for patient with lumbar disc prolapse.", ans:`<ul><li>Reflexes</li><li>Muscle strength</li><li>Sensory deficits</li><li>Straight Leg Raise test</li></ul>`},
+    {q:"List 5 non-surgical management for disc prolapse.", ans:`<ul><li>Bed rest (short-term) — avoid prolonged immobility</li><li>NSAIDs (e.g., ibuprofen)</li><li>Muscle relaxants</li><li>Oral steroids or epidural steroid injections</li><li>Hot/cold compresses</li><li>Activity modification (avoid lifting, bending)</li><li>Physiotherapy: core strengthening, stretching exercises and postural training</li></ul>`},
+    {q:"Enumerate 5 nursing assessment for patient with disc prolapse.", ans:`<ul><li>Assess signs &amp; symptoms; complete assessment of pain</li><li>Observe for numbness, tingling, muscle weakness</li><li>Monitor gait and mobility</li><li>Check for signs of bowel/bladder dysfunction</li><li>Assess impact on ADLs (activities of daily living)</li></ul>`},
+    {q:"List 4 nursing diagnoses of disc prolapse.", ans:`<ul><li>Acute Pain related to nerve compression</li><li>Impaired physical mobility related to pain and discomfort</li><li>Anxiety related to limited mobility</li><li>Deficient knowledge related to condition and self-care</li><li>Risk for injury related to muscle weakness or sensory deficits</li></ul>`},
+    {q:"Enumerate 5 nursing management for patient with disc prolapse.", ans:`<p><strong>Pain Management:</strong></p><ul><li>Apply hot/cold compresses</li><li>Encourage use of firm mattress or back support</li><li>Position patient with knees slightly bent (lumbar cases)</li><li>Administer analgesics, NSAIDs, muscle relaxants as prescribed</li></ul><p><strong>Mobility Support:</strong></p><ul><li>Encourage mobilization as tolerated</li><li>Assist with physical therapy</li><li>Teach log-rolling technique when turning in bed</li><li>Use braces or lumbar support belts if prescribed</li></ul><p><strong>Reduce Anxiety:</strong></p><ul><li>Allow patient to express feelings</li><li>Explain diagnosis, treatment, and medication</li><li>Encourage family to participate in care and emotional support</li></ul><p><strong>General Education:</strong></p><ul><li>Teach proper body mechanics: bend at knees, not waist</li><li>Avoid heavy lifting, prolonged sitting, or twisting</li><li>Encourage weight loss if overweight</li><li>Emphasize importance of exercise and core strengthening</li></ul>`},
+  ]
+},
+
+neuro2: {
+  mcq: [
+    {q:"What is fibromyalgia characterized by?", opts:["Joint inflammation","Widespread musculoskeletal pain","Bone fractures","Muscle rupture"], ans:1},
+    {q:"Fibromyalgia is more common in:", opts:["Men","Women","Children only","Elderly men only"], ans:1},
+    {q:"Which of the following is a common symptom of fibromyalgia?", opts:["High fever","Bleeding","Fatigue","Rash"], ans:2},
+    {q:"Fibromyalgia pain is typically:", opts:["Widespread","Localized","Only in joints","Only in bones"], ans:0},
+    {q:"Which of the following is associated with fibromyalgia?", opts:["Improved sleep","Sleep disturbances","Increased appetite","Hair loss"], ans:1},
+    {q:"Which condition commonly coexists with fibromyalgia?", opts:["Diabetes","Depression","Asthma","Hypertension"], ans:1},
+    {q:"How is fibromyalgia diagnosed?", opts:["Blood test","X-ray","Clinical criteria","Biopsy"], ans:2},
+    {q:"Which medication is commonly used in fibromyalgia?", opts:["Antibiotics","NSAIDs only","Antidepressants","Antivirals"], ans:2},
+    {q:"Which lifestyle change helps management of fibromyalgia?", opts:["Complete rest","Regular exercise","Smoking","High sugar diet"], ans:1},
+    {q:"Which symptom worsens fibromyalgia pain?", opts:["Regular exercise","Stress","Good sleep","Hydration"], ans:1},
+    {q:"Which of the following is commonly normal in fibromyalgia?", opts:["MRI","ESR","CRP","All of the above"], ans:3},
+    {q:"Which diagnostic tool is used along with Widespread Pain Index (WPI)?", opts:["ESR","Symptom Severity Scale (SSS)","X-ray","CT scan"], ans:1},
+    {q:"Which of the following is TRUE about lab findings in fibromyalgia?", opts:["Elevated CRP","Positive rheumatoid factor","Normal lab results","High WBC count"], ans:2},
+    {q:"Which symptom cluster defines fibromyalgia besides pain?", opts:["Fever and rash","Fatigue, sleep disturbance, cognitive dysfunction","Bleeding and bruising","Paralysis"], ans:1},
+    {q:"Which patient description fits fibromyalgia best?", opts:["Local joint swelling with redness","Chronic widespread pain with normal labs","Acute infection with fever","Bone deformities"], ans:1},
+    {q:"Which management principle is essential in fibromyalgia?", opts:["Focus on cure only","Patient education and self-management","Immediate surgery","Antibiotics"], ans:1},
+    {q:"Which environmental factor can trigger flares in fibromyalgia?", opts:["Warm weather","Emotional stress","Balanced diet","Exercise"], ans:1},
+  ],
+  essay: [
+    {q:"List causes of fibromyalgia.", ans:`<ul><li>Sleep disturbance</li><li>Hormonal imbalance</li><li>Genetic factors</li><li>Psychological factors</li><li>Infection</li><li>Physical stress</li><li>Emotional stress</li></ul>`},
+    {q:"Enumerate diagnostic criteria for fibromyalgia.", ans:`<ol style="padding-left:18px"><li>Generalized pain in 4 or 5 regions of body</li><li>Symptoms at similar level for at least 3 months</li><li>Widespread Pain Index &gt; 7 and severity of symptoms &gt; 5</li></ol>`},
+    {q:"List non-pharmacological management for fibromyalgia.", ans:`<ul><li>Physical therapy: exercise programs; avoid overexertion — balance activity and rest</li><li>Stress management techniques: deep breathing, meditation</li><li>Massage, warm bath, heat therapy</li><li>Encourage regular bedtime routine</li><li>Limit caffeine and electronics before bed; provide information on sleep hygiene</li><li>Provide reassurance and active listening</li><li>Refer to mental health services if needed</li><li>Encourage support group participation</li><li>Educate on chronic nature of disease and need for lifestyle changes</li><li>Reinforce importance of stress reduction</li><li>Discuss medication side effects and adherence</li></ul>`},
+  ]
+},
+
+neuro3: {
+  mcq: [
+    {q:"What is a seizure?", opts:["Sudden increase in heart rate","Abnormal electrical activity in the brain","Muscle growth","Bone fracture"], ans:1},
+    {q:"Which of the following is a common symptom of a generalized seizure?", opts:["Loss of consciousness","Hair loss","Increased appetite","Sneezing"], ans:0},
+    {q:"Which type of seizure involves only one part of the brain?", opts:["Generalized seizure","Focal seizure","Febrile seizure","Tonic seizure"], ans:1},
+    {q:"What is an aura in epilepsy?", opts:["A type of medication","A warning sign before a seizure","A cure for epilepsy","A surgical procedure"], ans:1},
+    {q:"Which of the following can trigger seizures in some people with epilepsy?", opts:["Sleep deprivation","Flashing lights","Stress","All of the above"], ans:3},
+    {q:"What is the most common treatment for epilepsy?", opts:["Antibiotics","Antiepileptic drugs","Painkillers","Vitamins"], ans:1},
+    {q:"What should you do if someone is having a seizure?", opts:["Put something in their mouth","Hold them down tightly","Turn them on their side and keep them safe","Give them water immediately"], ans:2},
+    {q:"Which imaging modality is most useful for identifying structural brain abnormalities in epilepsy?", opts:["X-ray","CT scan","MRI","Ultrasound"], ans:2},
+    {q:"Which of the following is NOT a common cause of epilepsy?", opts:["Head trauma","Genetic factors","Brain tumors","Hypertension alone"], ans:3},
+    {q:"Which seizure type involves sudden muscle stiffening?", opts:["Clonic seizure","Atonic seizure","Tonic seizure","Absence seizure"], ans:2},
+    {q:"Which seizure type is associated with sudden loss of muscle tone and falls?", opts:["Tonic seizure","Clonic seizure","Atonic seizure","Myoclonic seizure"], ans:2},
+    {q:"Which surgical option may be considered for drug-resistant epilepsy?", opts:["Appendectomy","Lobectomy","Nephrectomy","Thyroidectomy"], ans:1},
+    {q:"Which of the following should the nurse NOT do during a seizure?", opts:["Place the patient in a side-lying position","Clear the area of harmful objects","Restrain the patient","Monitor breathing and skin color"], ans:2},
+    {q:"Which of the following should the nurse NOT do during/after a seizure?", opts:["Maintain airway and keep patient in side-lying position","Check vital signs","Allow the patient to rest or sleep","Give oral fluid to patient"], ans:3},
+  ],
+  essay: [
+    {q:"List 5 risk factors for epilepsy in adults.", ans:`<ul><li>Trauma</li><li>Brain tumors</li><li>Stroke</li><li>Infections</li><li>Neurodegenerative diseases</li></ul>`},
+    {q:"List three types of generalized epilepsy.", ans:`<ul><li>Tonic</li><li>Atonic</li><li>Tonic-clonic</li><li>Myoclonic</li></ul>`},
+    {q:"List nursing interventions for the AURA phase of a seizure.", ans:`<ul><li>Observe for early warning signs (dizziness, unusual smells, anxiety, visual changes)</li><li>Help the patient sit or lie down in a safe place</li><li>Remove nearby dangerous objects (sharp or hard items)</li><li>Loosen tight clothing, especially around the neck</li><li>Stay with the patient (do not leave them alone)</li><li>Prepare emergency equipment (oxygen, suction)</li><li>Provide reassurance and reduce anxiety</li></ul>`},
+    {q:"List nursing interventions DURING a seizure.", ans:`<ul><li>Ensure patient safety first</li><li>Place the patient in a side-lying position (recovery position) to prevent aspiration</li><li>Clear the area of harmful objects</li><li><strong>Do NOT restrain the patient</strong></li><li><strong>Do NOT put anything in the patient's mouth</strong></li><li>Time the duration of the seizure</li><li>Monitor breathing and skin color (watch for cyanosis)</li><li>Do not give food or fluids during the seizure</li></ul>`},
+    {q:"List nursing interventions AFTER a seizure.", ans:`<ul><li>Maintain airway and keep patient in the side-lying position</li><li>Check vital signs (pulse, respiration, blood pressure)</li><li>Assess level of consciousness (confusion and drowsiness are common)</li><li>Reassure and reorient the patient</li><li>Check for injuries (tongue biting, head trauma)</li><li>Allow the patient to rest or sleep</li><li>Document: Duration of seizure, type of movements, presence of aura</li><li>Administer prescribed medications if ordered (e.g., Diazepam)</li><li>Clear secretions if needed (suction if necessary)</li></ul>`},
+    {q:"List 5 signs of the aura phase of a seizure.", ans:`<ul><li>Strange or unusual smells (e.g., burning rubber)</li><li>Odd tastes in the mouth</li><li>Tingling sensation</li><li>Visual disturbances (flashing lights, blurred vision)</li><li>Hearing unusual sounds (buzzing, ringing)</li><li>Sudden fear or anxiety</li><li>Sweating</li><li>Palpitations</li><li>Dizziness</li><li>Sudden confusion or difficulty speaking</li></ul>`},
+  ]
+},
+
+};
+
+// ══════ ORAL QUESTIONS ══════
+const oralQA = [
+  {
+    q: "Give the rationale for: Presence of jaundice in patient with gallbladder stone",
+    a: `A stone obstructs the outflow of bile from the gallbladder into the common bile duct. When bile cannot flow normally, it backs up into the bloodstream as bilirubin, causing jaundice (yellowing of skin and eyes).`
+  },
+  {
+    q: "Give the rationale for: Presence of dark urine in patient with gallbladder stone",
+    a: `When a gallstone obstructs the bile duct, bilirubin accumulates in the blood and is excreted through the kidneys into the urine, giving it a dark (tea-colored) appearance. This is a sign of bile duct obstruction that must be reported to a physician.`
+  },
+  {
+    q: "Give the rationale for: Presence of pale stool in patient with gallbladder stone",
+    a: `Bile normally gives stool its brown color. When a gallstone blocks the bile duct, bile cannot reach the intestines, resulting in pale/clay-colored stools. This is a sign of biliary obstruction that must be reported to a physician.`
+  },
+  {
+    q: "Give the rationale for: Presence of dark stool (Melena) in patient with peptic ulcer",
+    a: `Dark stool is known as Melena (black, tarry stools). It is a sign of gastrointestinal bleeding from the upper GI tract (stomach or duodenum). Blood from the peptic ulcer is digested as it passes through the GI tract, turning the stool black and tarry.`
+  },
+  {
+    q: "Give the rationale for: Giving Vitamin B12 and Iron for patient with peptic ulcer",
+    a: `These are prescribed as dietary supplements because the patient may develop anemia due to gastrointestinal bleeding from the ulcer. Iron deficiency anemia results from blood loss, and Vitamin B12 may be deficient due to impaired absorption from gastric mucosal damage.`
+  },
+  {
+    q: "Discuss the complications of peptic ulcer.",
+    a: `<strong>Main complications:</strong><ul style="padding-left:18px;margin-top:6px"><li><strong>Bleeding (Hemorrhage):</strong> Most common complication. Presents as hematemesis (vomiting blood) or melena (black tarry stool). Can lead to hemorrhagic shock.</li><li><strong>Perforation:</strong> A hole forms through the wall of the stomach or duodenum. Presents as sudden severe abdominal pain, rigid abdomen. It is a surgical emergency.</li><li><strong>Obstruction:</strong> Scarring from repeated ulcers can block the passage of food through the stomach outlet (pyloric obstruction), causing vomiting and weight loss.</li></ul>`
+  },
+  {
+    q: "Discuss hyperbaric oxygen therapy in patient with osteomyelitis.",
+    a: `Hyperbaric Oxygen Therapy (HBOT) involves providing <strong>pure oxygen at higher-than-normal atmospheric pressure in a closed chamber</strong>. This increases the amount of oxygen dissolved in the blood, allowing blood to deliver <strong>10 to 15 times more oxygen</strong> and nutrients to the body including the bones. Benefits in osteomyelitis:<ul style="padding-left:18px;margin-top:6px"><li>Helps heal the bone infection by enhancing the killing ability of white blood cells</li><li>Promotes new blood vessel formation (angiogenesis)</li><li>Can prevent bone death (necrosis)</li><li>Enhances the effect of antibiotics</li></ul>`
+  },
+  {
+    q: "Manifestations of Rheumatoid Arthritis (RA).",
+    a: `<strong>Joint Manifestations:</strong><ul style="padding-left:18px"><li>Joint pain and tenderness</li><li>Red, warm joint</li><li>Joint swelling</li><li>Morning stiffness &gt;1 hour</li><li>Symmetrical small joint involvement</li><li>Numbness of hands and feet</li><li>Ulnar deviation (in severe/long-standing RA)</li></ul><strong>Extra-articular Manifestations:</strong><ul style="padding-left:18px"><li>Disturbed sleep</li><li>Low grade fever</li><li>Fatigue</li><li>Depression and mood changes</li><li>Dry eye and mouth (Sjögren's-like)</li><li>Weight loss</li></ul>`
+  },
+  {
+    q: "What is Homan's sign in patient with hip replacement?",
+    a: `Homan's sign is <strong>calf pain elicited on dorsiflexion of the foot</strong> (bending the foot upward). It is used as a clinical test to detect possible Deep Vein Thrombosis (DVT) in the calf. In hip replacement patients, DVT is a serious early complication due to immobility and venous stasis. A positive Homan's sign (pain with dorsiflexion) suggests possible DVT and requires further investigation such as Doppler ultrasound. <em>Note: Homan's sign alone has low sensitivity and specificity; it is used alongside other assessments.</em>`
+  },
+  {
+    q: "Nursing interventions for disc prolapse.",
+    a: `<strong>Pain Management:</strong><ul style="padding-left:18px"><li>Apply hot/cold compresses</li><li>Encourage use of firm mattress or back support</li><li>Position patient with knees slightly bent (lumbar cases)</li><li>Administer analgesics, NSAIDs, muscle relaxants as prescribed</li></ul><strong>Mobility Support:</strong><ul style="padding-left:18px"><li>Encourage mobilization as tolerated</li><li>Assist with physical therapy (core strengthening, stretching)</li><li>Teach log-rolling technique when turning in bed</li></ul><strong>Reduce Anxiety:</strong><ul style="padding-left:18px"><li>Allow patient to express feelings</li><li>Explain diagnosis, treatment, and medication</li><li>Encourage family participation</li></ul><strong>Patient Education:</strong><ul style="padding-left:18px"><li>Teach proper body mechanics: bend at knees, not waist</li><li>Avoid heavy lifting, prolonged sitting, or twisting</li><li>Encourage weight loss if overweight</li><li>Emphasize exercise and core strengthening</li></ul>`
+  },
+  {
+    q: "What are the neurological tests for patient with disc prolapse?",
+    a: `<strong>Neurological assessment includes:</strong><ul style="padding-left:18px"><li><strong>Straight Leg Raise (SLR) test:</strong> Patient lies supine; the leg is raised while keeping the knee straight. Pain radiating down the leg (sciatica) before 60° is a positive sign indicating lumbar nerve root irritation.</li><li><strong>Reflexes:</strong> Assessment of deep tendon reflexes (e.g., knee jerk, ankle jerk) — may be diminished or absent with nerve compression</li><li><strong>Muscle strength:</strong> Assess for weakness in lower or upper limbs depending on level</li><li><strong>Sensory deficits:</strong> Check for numbness, tingling, or reduced sensation in the affected dermatome</li><li><strong>Bowel/bladder dysfunction:</strong> Check for signs of cauda equina syndrome (urgent surgical emergency)</li><li><strong>Gait assessment:</strong> Monitor for abnormalities in walking</li></ul>`
+  },
+  {
+    q: "Discuss the diagnostic criteria for fibromyalgia.",
+    a: `According to clinical diagnostic criteria, fibromyalgia is diagnosed when:<ol style="padding-left:18px"><li><strong>Generalized pain</strong> is present in 4 or 5 body regions</li><li><strong>Symptoms have been present at a similar level for at least 3 months</strong></li><li><strong>Widespread Pain Index (WPI) &gt; 7</strong> AND <strong>Symptom Severity Scale (SSS) score &gt; 5</strong> — OR WPI 4–6 with SSS ≥ 9</li></ol><p style="margin-top:6px"><strong>Key points:</strong> Laboratory tests (ESR, CRP, rheumatoid factor) are <strong>typically NORMAL</strong> in fibromyalgia. Fibromyalgia is diagnosed clinically, not by blood tests or imaging. Common coexisting conditions include depression, anxiety, irritable bowel syndrome, and sleep disorders.</p>`
+  }
+];
+
+// ════════════════════════════════════════
+// RENDER FUNCTIONS
+// ════════════════════════════════════════
+
+const state = {}; // state[panelId] = {answered: [], correct: 0}
+
+function initState(id, total) {
+  if (!state[id]) state[id] = {answered: new Array(total).fill(false), correct: 0};
+}
+
+function renderPanel(id) {
+  const d = data[id];
+  if (!d) return;
+  const total = d.mcq.length;
+  initState(id, total);
+
+  const mcqContainer = document.getElementById('mcq-' + id);
+  const essayContainer = document.getElementById('essay-' + id);
+  if (!mcqContainer) return;
+
+  mcqContainer.innerHTML = '';
+  d.mcq.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = `qc-${id}-${qi}`;
+    const opts = q.opts.map((o, oi) =>
+      `<button class="opt" id="opt-${id}-${qi}-${oi}" onclick="selectOpt('${id}',${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`
+    ).join('');
+    card.innerHTML = `<div class="q-top"><div class="q-num">${qi+1}</div><div class="q-text">${q.q}</div></div><div class="q-body">${opts}</div>`;
+    mcqContainer.appendChild(card);
+  });
+
+  if (essayContainer && d.essay) {
+    essayContainer.innerHTML = '';
+    d.essay.forEach((e, ei) => {
+      const card = document.createElement('div');
+      card.className = 'e-card';
+      card.innerHTML = `<div class="e-top"><div class="e-num">Q${ei+1}</div><div class="e-q">${e.q}</div></div>
+        <div class="e-body">
+          <button class="show-ans-btn" id="ebtn-${id}-${ei}" onclick="toggleEssay('${id}',${ei})">👁 Show Answer</button>
+          <div class="ans-box" id="eans-${id}-${ei}">${e.ans}</div>
+        </div>`;
+      essayContainer.appendChild(card);
+    });
+  }
+  updateScore(id);
+}
+
+function selectOpt(id, qi, chosen) {
+  if (state[id].answered[qi]) return;
+  state[id].answered[qi] = true;
+  const q = data[id].mcq[qi];
+  const total = data[id].mcq.length;
+  for (let oi = 0; oi < q.opts.length; oi++) {
+    const btn = document.getElementById(`opt-${id}-${qi}-${oi}`);
+    btn.disabled = true;
+    if (oi === q.ans) btn.classList.add('correct');
+    else if (oi === chosen) btn.classList.add('wrong');
+  }
+  if (chosen === q.ans) state[id].correct++;
+  updateScore(id);
+}
+
+function toggleEssay(id, ei) {
+  const box = document.getElementById(`eans-${id}-${ei}`);
+  const btn = document.getElementById(`ebtn-${id}-${ei}`);
+  const shown = box.classList.toggle('visible');
+  btn.classList.toggle('shown', shown);
+  btn.textContent = shown ? '🙈 Hide Answer' : '👁 Show Answer';
+}
+
+function updateScore(id) {
+  const s = state[id];
+  const total = data[id].mcq.length;
+  const done = s.answered.filter(Boolean).length;
+  const pct = total > 0 ? (s.correct / total * 100) : 0;
+  const scoreEl = document.getElementById('score-' + id);
+  const progEl = document.getElementById('prog-' + id);
+  if (scoreEl) scoreEl.textContent = `${s.correct}/${total}`;
+  if (progEl) progEl.style.width = pct + '%';
+}
+
+function resetPanel(id) {
+  const total = data[id].mcq.length;
+  state[id] = {answered: new Array(total).fill(false), correct: 0};
+  renderPanel(id);
+}
+
+// Render oral
+function renderOral() {
+  const cont = document.getElementById('oral-container');
+  cont.innerHTML = '';
+  oralQA.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'oral-card';
+    card.innerHTML = `
+      <div class="oral-top">
+        <div class="oral-num">Q${i+1}</div>
+        <div class="oral-q">${item.q}</div>
+      </div>
+      <div class="oral-body">
+        <button class="show-ans-btn" id="oral-btn-${i}" onclick="toggleOral(${i})">👁 Show Answer</button>
+        <div class="ans-box" id="oral-ans-${i}">${item.a}</div>
+      </div>`;
+    cont.appendChild(card);
+  });
+}
+
+function toggleOral(i) {
+  const box = document.getElementById(`oral-ans-${i}`);
+  const btn = document.getElementById(`oral-btn-${i}`);
+  const shown = box.classList.toggle('visible');
+  btn.classList.toggle('shown', shown);
+  btn.textContent = shown ? '🙈 Hide Answer' : '👁 Show Answer';
+}
+
+// Tab switching
+function showPanel(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ttab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  el.classList.add('active');
+  if (id !== 'oral' && !state[id]) renderPanel(id);
+}
+
+// ════════ INIT ════════
+Object.keys(data).forEach(id => renderPanel(id));
+renderOral();
+</script>
+</body>
+</html>

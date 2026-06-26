@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Care Nursing – Study Guide | مذكرة التمريض الحرج</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0d1b2a;
+    --teal:   #1a8fa0;
+    --gold:   #e8b84b;
+    --light:  #f0f4f8;
+    --white:  #ffffff;
+    --text:   #1e2d3d;
+    --muted:  #5a7080;
+    --card:   #ffffff;
+    --border: #dde6ee;
+    --en-accent: #1a8fa0;
+    --ar-accent: #c0392b;
+    --tag-bg: #e8f5f7;
+    --tag-color: #0d7080;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--navy);
+    padding: 28px 32px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0,0,0,.35);
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    letter-spacing: .5px;
+  }
+  header .subtitle { color: #8fa8bc; font-size: .85rem; margin-top: 3px; font-family: 'Noto Naskh Arabic', serif; }
+
+  /* ── Tab Bar ── */
+  .tab-bar {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 18px 32px 0;
+    background: var(--navy);
+    border-bottom: 3px solid var(--teal);
+  }
+  .tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.18);
+    color: #a0bfcc;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .82rem;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { background: rgba(26,143,160,.25); color: #fff; }
+  .tab-btn.active {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+    font-weight: 600;
+  }
+
+  /* ── Main Content ── */
+  main { padding: 30px 32px; max-width: 1200px; margin: 0 auto; }
+
+  .topic { display: none; animation: fadeIn .3s ease; }
+  .topic.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* ── Section Card ── */
+  .section-card {
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 22px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  }
+  .section-title {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+    color: var(--gold);
+    padding: 14px 22px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .icon { font-size: 1.3rem; }
+
+  /* ── Bilingual Block ── */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .lang-en, .lang-ar {
+    padding: 20px 22px;
+  }
+  .lang-en { border-right: 2px solid var(--border); }
+  .lang-ar {
+    direction: rtl;
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+
+  .lang-label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .lang-en .lang-label { background: var(--tag-bg); color: var(--tag-color); }
+  .lang-ar .lang-label { background: #fdecea; color: var(--ar-accent); font-family: 'Noto Naskh Arabic', serif; font-size: .8rem; }
+
+  /* ── Items ── */
+  .item { margin-bottom: 14px; }
+  .item-head {
+    font-weight: 700;
+    font-size: .95rem;
+    margin-bottom: 5px;
+    color: var(--teal);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .lang-ar .item-head { color: var(--ar-accent); }
+  .item p, .item li { font-size: .9rem; color: #374f63; line-height: 1.65; }
+  .item ul { padding-left: 18px; }
+  .lang-ar .item ul { padding-left: 0; padding-right: 18px; }
+  .item li { margin-bottom: 3px; }
+
+  /* ── Tags / Pills ── */
+  .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: .78rem;
+    font-weight: 600;
+    margin: 2px;
+    background: var(--tag-bg);
+    color: var(--tag-color);
+  }
+  .pill.danger { background: #fdecea; color: #c0392b; }
+  .pill.warn   { background: #fef9e7; color: #9b6b00; }
+  .pill.success{ background: #eafaf1; color: #1e8449; }
+
+  /* ── Table ── */
+  .mini-table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 8px; }
+  .mini-table th {
+    background: var(--teal);
+    color: #fff;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .mini-table td { padding: 7px 12px; border-bottom: 1px solid var(--border); }
+  .mini-table tr:last-child td { border-bottom: none; }
+  .mini-table tr:nth-child(even) td { background: #f7fbfc; }
+
+  /* ── Definition Box ── */
+  .def-box {
+    background: linear-gradient(135deg, #e8f7fa, #f0fbfd);
+    border-left: 4px solid var(--teal);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+  .lang-ar .def-box { border-left: none; border-right: 4px solid var(--ar-accent); background: linear-gradient(135deg, #fef5f4, #fff8f7); }
+
+  /* ── Number Badge ── */
+  .num { display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; background: var(--teal); color: #fff;
+    border-radius: 50%; font-size: .72rem; font-weight: 700; flex-shrink: 0; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .bilingual { grid-template-columns: 1fr; }
+    .lang-en { border-right: none; border-bottom: 2px solid var(--border); }
+    header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .tab-bar { padding: 12px 16px 0; }
+    main { padding: 16px; }
+  }
+
+  /* ── Score Box ── */
+  .score-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .score-item {
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: .82rem;
+    text-align: center;
+    min-width: 100px;
+  }
+  .score-item .val { font-size: 1.2rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+  .score-item .lbl { font-size: .72rem; color: #8fa8bc; margin-top: 2px; }
+
+  .topic-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+  }
+  .topic-header .topic-icon {
+    font-size: 2.2rem;
+    background: var(--teal);
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .topic-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+  }
+  .topic-header .topic-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    color: var(--muted);
+    font-size: 1rem;
+    direction: rtl;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Critical Care Nursing — Study Guide</h1>
+    <div class="subtitle">مذكرة مراجعة تمريض العناية المركزة — Part 2</div>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="show('mv')">🫁 Mechanical Ventilation</button>
+  <button class="tab-btn" onclick="show('trach')">🔵 Tracheostomy</button>
+  <button class="tab-btn" onclick="show('acls')">❤️ ACLS</button>
+  <button class="tab-btn" onclick="show('art')">🩸 Arterial Catheter</button>
+  <button class="tab-btn" onclick="show('pul')">💉 Pulmonary Catheter</button>
+  <button class="tab-btn" onclick="show('tpn')">🍼 TPN</button>
+  <button class="tab-btn" onclick="show('score')">📊 ICU Scoring</button>
+  <button class="tab-btn" onclick="show('bundle')">🛡️ Bundles of Care</button>
+  <button class="tab-btn" onclick="show('meds')">💊 ICU Medications</button>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     1. MECHANICAL VENTILATION
+══════════════════════════════════════════ -->
+<div id="mv" class="topic active">
+  <div class="topic-header">
+    <div class="topic-icon">🫁</div>
+    <div>
+      <h2>Mechanical Ventilation</h2>
+      <div class="topic-ar">التهوية الميكانيكية</div>
+    </div>
+  </div>
+
+  <!-- Definition -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition & Purpose</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">
+          A <strong>mechanical ventilator</strong> is a positive or negative pressure breathing device that can maintain ventilation and oxygen delivery for a prolonged period.
+        </div>
+        <div class="item" style="margin-top:12px">
+          <div class="item-head">Why do we use it? (9 Purposes)</div>
+          <ul>
+            <li>Maintain adequate oxygenation</li>
+            <li>Maintain adequate ventilation</li>
+            <li>Remove carbon dioxide (CO₂)</li>
+            <li>Prevent respiratory muscle fatigue</li>
+            <li>Support gas exchange</li>
+            <li>Allow sedation when needed</li>
+            <li>Permit lung healing</li>
+            <li>Maintain airway patency</li>
+            <li>Prevent aspiration</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">
+          <strong>جهاز التنفس الصناعي</strong> هو جهاز تنفس يعمل بضغط إيجابي أو سلبي، يستطيع الحفاظ على التهوية وإيصال الأكسجين لفترة طويلة.
+        </div>
+        <div class="item" style="margin-top:12px">
+          <div class="item-head">لماذا نستخدمه؟ (9 أهداف)</div>
+          <ul>
+            <li>الحفاظ على مستوى كافٍ من الأكسجين</li>
+            <li>الحفاظ على تهوية كافية</li>
+            <li>إزالة ثاني أكسيد الكربون</li>
+            <li>منع إجهاد عضلات التنفس</li>
+            <li>دعم تبادل الغازات</li>
+            <li>السماح بالتخدير عند الحاجة</li>
+            <li>السماح للرئتين بالتعافي</li>
+            <li>الحفاظ على انفتاح مجرى الهواء</li>
+            <li>منع الاستنشاق (الشفط)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Types -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🔄</span> Types of Ventilation</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Invasive</div><p>Tube inserted into airway — endotracheal tube (ETT) or tracheostomy tube. Used for sicker patients who cannot protect their airway.</p></div>
+        <div class="item"><div class="item-head">Non-Invasive (NIV)</div><p>Mask placed over nose/mouth. Includes BiPAP and CPAP. No tube needed. Used for less severe cases.</p></div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">غازية (Invasive)</div><p>أنبوب يُدخل في مجرى الهواء — أنبوب الرغامى (ETT) أو أنبوب الفتحة الرغامية. تُستخدم للمرضى الأشد مرضاً.</p></div>
+        <div class="item"><div class="item-head">غير غازية (Non-Invasive)</div><p>قناع يوضع على الأنف والفم. يشمل BiPAP وCPAP. لا يحتاج أنبوباً. تُستخدم للحالات الأقل خطورة.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indications -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">✅</span> Indications — متى نستخدمه؟</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Respiratory Failure</div>
+          <ul>
+            <li><strong>Hypoxemic</strong>: Low O₂ — PaO₂ &lt; 60 mmHg on room air</li>
+            <li><strong>Hypercapnic</strong>: High CO₂ — PaCO₂ &gt; 50 mmHg with acidosis</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Clinical Conditions</div>
+          <ul>
+            <li>ARDS, severe pneumonia, COPD exacerbation</li>
+            <li>Severe asthma, pulmonary edema</li>
+            <li>Airway protection: GCS &lt; 8</li>
+            <li>Trauma: chest / head injury</li>
+            <li>Post-operative (major surgery)</li>
+            <li>Neuromuscular disorders (Guillain-Barré, myasthenia gravis)</li>
+            <li>Cardiac arrest (post-resuscitation)</li>
+            <li>Severe shock (septic or cardiogenic)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">فشل تنفسي</div>
+          <ul>
+            <li><strong>نقص الأكسجين:</strong> PaO₂ أقل من 60 ملم زئبق في الهواء الطبيعي</li>
+            <li><strong>ارتفاع CO₂:</strong> PaCO₂ أكثر من 50 مع حماض</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">حالات سريرية</div>
+          <ul>
+            <li>ARDS، التهاب رئة شديد، انتكاسة COPD</li>
+            <li>ربو شديد، وذمة رئوية</li>
+            <li>حماية مجرى الهواء: GCS أقل من 8</li>
+            <li>صدمة: إصابة صدر أو رأس</li>
+            <li>بعد العمليات الكبرى</li>
+            <li>أمراض عصبية عضلية (متلازمة غيان باريه)</li>
+            <li>بعد توقف القلب</li>
+            <li>صدمة شديدة (إنتانية أو قلبية)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modes -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚙️</span> Modes of Ventilation — أوضاع التهوية</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Volume Modes — الحجم ثابت</div>
+          <ul>
+            <li><strong>A/C (Assist-Control):</strong> Ventilator delivers set breaths; if patient tries to breathe, it assists with full breath. Every breath gets full tidal volume. <span class="pill">Best for: very sick / post-intubation</span></li>
+            <li><strong>SIMV:</strong> Set breaths delivered but patient can breathe extra breaths on their own. <span class="pill success">Best for: weaning</span></li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Pressure Modes — الضغط ثابت</div>
+          <ul>
+            <li><strong>Pressure Control (PC):</strong> Set pressure delivered, volume varies. Protects lungs from barotrauma. <span class="pill warn">Best for: ARDS</span></li>
+            <li><strong>Pressure Support (PS):</strong> Patient starts each breath; ventilator supports with set pressure. <span class="pill success">Best for: weaning</span></li>
+            <li><strong>CPAP:</strong> Constant positive pressure; patient breathes spontaneously. No ventilator breaths. <span class="pill">Used for: sleep apnea, mild distress</span></li>
+            <li><strong>BiPAP:</strong> TWO pressures — IPAP (higher, helps inhale) + EPAP (lower, helps exhale). Non-invasive. <span class="pill warn">Best for: COPD, respiratory failure</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">أوضاع الحجم الثابت</div>
+          <ul>
+            <li><strong>A/C:</strong> الجهاز يعطي عدد أنفاس محدد. لو المريض حاول يتنفس الجهاز بيساعده بنفس كامل. كل نفس يأخذ نفس الحجم. <span class="pill">للمريض شديد الحالة</span></li>
+            <li><strong>SIMV:</strong> الجهاز بيعطي أنفاس محددة والمريض ممكن يتنفس بنفسه زيادة. <span class="pill success">للفطام من الجهاز</span></li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">أوضاع الضغط الثابت</div>
+          <ul>
+            <li><strong>Pressure Control:</strong> الضغط ثابت والحجم بيتغير. يحمي الرئة من الضغط الزائد. <span class="pill warn">لـ ARDS</span></li>
+            <li><strong>Pressure Support:</strong> المريض يبدأ كل نفس والجهاز يساعده. <span class="pill success">للفطام</span></li>
+            <li><strong>CPAP:</strong> ضغط إيجابي ثابت والمريض يتنفس وحده. <span class="pill">انقطاع النفس أثناء النوم</span></li>
+            <li><strong>BiPAP:</strong> ضغطان: IPAP (أعلى للشهيق) + EPAP (أقل للزفير). غير غازي. <span class="pill warn">COPD، فشل تنفسي</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Parameters -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🎛️</span> Key Parameters — الإعدادات المهمة</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Parameter</th><th>Normal Range</th><th>Why?</th></tr>
+          <tr><td><strong>Tidal Volume (VT)</strong></td><td>6–8 mL/kg</td><td>Prevents lung injury (lower in ARDS)</td></tr>
+          <tr><td><strong>Respiratory Rate (RR)</strong></td><td>12–20/min</td><td>Maintains ventilation &amp; CO₂ removal</td></tr>
+          <tr><td><strong>FiO₂</strong></td><td>Start 100%, wean to &lt;60%</td><td>High FiO₂ can cause oxygen toxicity</td></tr>
+          <tr><td><strong>PEEP</strong></td><td>5–20 cmH₂O (usually 5–10)</td><td>Prevents alveolar collapse</td></tr>
+          <tr><td><strong>I:E Ratio</strong></td><td>1:2</td><td>Allows adequate exhalation time</td></tr>
+          <tr><td><strong>Peak Pressure (PIP)</strong></td><td>&lt;35 cmH₂O</td><td>High pressure = lung injury</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الإعداد</th><th>المعدل الطبيعي</th><th>لماذا؟</th></tr>
+          <tr><td><strong>حجم المد (VT)</strong></td><td>6–8 مل/كجم</td><td>يمنع إصابة الرئة (أقل في ARDS)</td></tr>
+          <tr><td><strong>معدل التنفس</strong></td><td>12–20/دقيقة</td><td>يحافظ على التهوية وإزالة CO₂</td></tr>
+          <tr><td><strong>FiO₂</strong></td><td>يبدأ 100%، ينزل أقل من 60%</td><td>الأكسجين الزائد ضار (تسمم أكسجين)</td></tr>
+          <tr><td><strong>PEEP</strong></td><td>5–20 سم ماء</td><td>يمنع انهيار الحويصلات الهوائية</td></tr>
+          <tr><td><strong>نسبة الشهيق:الزفير</strong></td><td>1:2</td><td>يعطي وقتاً كافياً للزفير</td></tr>
+          <tr><td><strong>ذروة الضغط (PIP)</strong></td><td>أقل من 35 سم ماء</td><td>الضغط العالي يسبب إصابة الرئة</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complications -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚠️</span> Complications — المضاعفات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item">
+          <div class="item-head">Main Complications &amp; Prevention</div>
+          <ul>
+            <li><span class="pill danger">VAP</span> Most common complication → Prevent: HOB 30–45°, oral care, chlorhexidine</li>
+            <li><span class="pill danger">Barotrauma</span> High pressure ruptures alveoli → Monitor airway pressures</li>
+            <li><span class="pill danger">Pressure Ulcers</span> Immobility → Turn every 2 hours</li>
+            <li><span class="pill danger">DVT/PE</span> Immobility + critical illness → Sequential compression devices</li>
+            <li><span class="pill danger">Stress Ulcers</span> Critical illness → H2 blockers / PPIs</li>
+            <li><span class="pill danger">Muscle Weakness</span> Prolonged immobility → Early mobility</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item">
+          <div class="item-head">المضاعفات الرئيسية والوقاية</div>
+          <ul>
+            <li><span class="pill danger">VAP</span> الأكثر شيوعاً → الوقاية: رفع السرير 30-45°، العناية بالفم، كلوروهيكسيدين</li>
+            <li><span class="pill danger">باروترومة</span> الضغط يفجر الحويصلات → مراقبة ضغط مجرى الهواء</li>
+            <li><span class="pill danger">قرح الضغط</span> عدم الحركة → التقليب كل ساعتين</li>
+            <li><span class="pill danger">DVT/PE</span> عدم الحركة → ضغاطات متتالية</li>
+            <li><span class="pill danger">قرح الإجهاد</span> المرض الحرج → حاصرات H2 / مثبطات مضخة البروتون</li>
+            <li><span class="pill danger">ضعف العضلات</span> طول الفترة → التعبئة المبكرة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weaning -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🎯</span> Weaning Criteria — معايير الفطام</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><p>Patient is ready to wean when:</p>
+          <ul>
+            <li>Underlying cause is improving</li>
+            <li>SpO₂ &gt; 90% on FiO₂ ≤ 40% and PEEP ≤ 5–8</li>
+            <li>Hemodynamically stable (no/low vasopressors)</li>
+            <li>Can protect airway (gag &amp; cough reflex present)</li>
+            <li>Alert and follows commands</li>
+            <li>Passes spontaneous breathing trial (30–120 min)</li>
+          </ul>
+          <div style="margin-top:10px"><strong>STOP weaning if:</strong> <span class="pill danger">RR &gt;35</span> <span class="pill danger">SpO₂ &lt;90%</span> <span class="pill danger">HR &gt;140</span> <span class="pill danger">BP instability</span></div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><p>المريض جاهز للفطام لما:</p>
+          <ul>
+            <li>السبب الأصلي بيتحسن</li>
+            <li>SpO₂ أكثر من 90% على FiO₂ أقل من 40% و PEEP أقل من 8</li>
+            <li>ضغط الدم ومعدل القلب مستقران</li>
+            <li>قادر على حماية مجرى الهواء (عنده بلع وسعال)</li>
+            <li>واعٍ ويتبع الأوامر</li>
+            <li>نجح في اختبار التنفس التلقائي (30–120 دقيقة)</li>
+          </ul>
+          <div style="margin-top:10px"><strong>وقّف الفطام لو:</strong> <span class="pill danger">RR &gt;35</span> <span class="pill danger">تشبع &lt;90%</span> <span class="pill danger">HR &gt;140</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     2. TRACHEOSTOMY
+══════════════════════════════════════════ -->
+<div id="trach" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">🔵</div>
+    <div><h2>Tracheostomy Care</h2><div class="topic-ar">العناية بفتحة الرغامى</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">A tracheostomy is a <strong>surgical opening through the neck into the trachea</strong>. A tracheostomy tube is inserted to maintain an open airway. The aim is to bypass upper airway obstructions and aid assisted ventilation.</div>
+        <div class="item" style="margin-top:10px"><p>The surgical incision (stoma) is created <strong>below the cricoid cartilage</strong> in the OR or at bedside under general anesthesia.</p></div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">الفغر الرغامي هو <strong>فتحة جراحية عبر الرقبة إلى القصبة الهوائية</strong>. يُدخل أنبوب للحفاظ على مجرى الهواء مفتوحاً. الهدف: تجاوز انسداد مجرى الهواء العلوي ومساعدة التنفس الصناعي.</div>
+        <div class="item" style="margin-top:10px"><p>الشق الجراحي يُصنع <strong>أسفل الغضروف الحلقي</strong> في غرفة العمليات أو عند السرير تحت تخدير عام.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">✅</span> Indications — المؤشرات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <ol style="padding-left:18px;font-size:.9rem;line-height:1.9">
+          <li>Upper airway obstruction (trauma, foreign body, tumor/cancerous larynx)</li>
+          <li>Difficulty clearing secretions (copious secretions)</li>
+          <li>Prolonged mechanical ventilation <strong>(&gt; 14 days)</strong> — prevents vocal cord damage</li>
+          <li>Inability to perform endotracheal intubation</li>
+        </ol>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <ol style="padding-right:18px;font-size:.9rem;line-height:1.9;direction:rtl">
+          <li>انسداد مجرى الهواء العلوي (صدمة، جسم غريب، ورم)</li>
+          <li>صعوبة تنظيف الإفرازات (كثرة الإفرازات)</li>
+          <li>تنفس صناعي مطوّل <strong>(أكثر من 14 يوم)</strong> — لمنع تلف الحبال الصوتية</li>
+          <li>استحالة التنبيب الرغامي</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🔲</span> Types of Tracheostomy — أنواع الفغر</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">By Duration</div>
+          <ul>
+            <li><strong>Temporary</strong>: Elective — e.g., during major head &amp; neck surgery</li>
+            <li><strong>Permanent</strong>: Total laryngectomy (removal of larynx)</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">By Tube Type</div>
+          <ul>
+            <li><strong>Cuffed Tube</strong>: Has an inflatable cuff — creates a closed circuit for mechanical ventilation. <span class="pill warn">Used for: ventilated patients</span></li>
+            <li><strong>Cuffless Tube</strong>: No cuff — single or double tube. <span class="pill success">Used for: patients ready for decannulation</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">حسب المدة</div>
+          <ul>
+            <li><strong>مؤقت:</strong> اختياري — مثل جراحات الرأس والرقبة الكبرى</li>
+            <li><strong>دائم:</strong> استئصال الحنجرة الكلي</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">حسب نوع الأنبوب</div>
+          <ul>
+            <li><strong>الأنبوب ذو الكفة:</strong> له كفة قابلة للنفخ — يصنع دائرة مغلقة للتنفس الصناعي. <span class="pill warn">للمرضى على الجهاز</span></li>
+            <li><strong>الأنبوب بدون كفة:</strong> بدون كفة. <span class="pill success">للمرضى المستعدين لإزالة الأنبوب</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚠️</span> Complications — المضاعفات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <ul style="font-size:.9rem;padding-left:18px;line-height:1.9">
+          <li><span class="pill danger">Tube Dislodgement</span> — Loss of airway (emergency!)</li>
+          <li><span class="pill danger">Skin Breakdown</span> — Around stoma site</li>
+          <li><span class="pill danger">Tracheoesophageal Fistula</span> — Abnormal connection to esophagus</li>
+          <li><span class="pill danger">Infection</span> — At stoma site or systemic</li>
+          <li><span class="pill danger">Hemorrhage</span> — Bleeding around site</li>
+          <li><span class="pill danger">Airway Obstruction</span> — Secretion plugging or tube displacement</li>
+        </ul>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <ul style="font-size:.9rem;padding-right:18px;line-height:1.9;direction:rtl">
+          <li><span class="pill danger">خروج الأنبوب</span> — فقدان مجرى الهواء (طارئ!)</li>
+          <li><span class="pill danger">تكسّر الجلد</span> — حول موضع الفتحة</li>
+          <li><span class="pill danger">ناسور رغامي مريئي</span> — اتصال غير طبيعي بالمريء</li>
+          <li><span class="pill danger">عدوى</span> — موضعية أو جهازية</li>
+          <li><span class="pill danger">نزيف</span> — حول الموضع</li>
+          <li><span class="pill danger">انسداد مجرى الهواء</span> — سدادة إفرازات أو تحرك الأنبوب</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     3. ACLS
+══════════════════════════════════════════ -->
+<div id="acls" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">❤️</div>
+    <div><h2>Advanced Cardiac Life Support (ACLS)</h2><div class="topic-ar">دعم الحياة القلبي المتقدم</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition & Purpose</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">ACLS is a set of <strong>evidence-based clinical protocols</strong> designed for managing adults with cardiac arrest, life-threatening arrhythmias, or cardiopulmonary emergencies. It combines: CPR + advanced airway + rhythm recognition + defibrillation + medications + post-arrest care.</div>
+        <div class="item" style="margin-top:10px"><div class="item-head">Purpose</div><p>Restore spontaneous circulation (ROSC) and minimize neurological injury.</p></div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">ACLS هو مجموعة من <strong>البروتوكولات السريرية المبنية على الدليل</strong> المصممة لإدارة الكبار الذين يعانون من توقف القلب، أو اضطرابات النظم المهددة للحياة، أو الطوارئ القلبية الرئوية. يجمع: الإنعاش + مجرى الهواء المتقدم + التعرف على النظم + الصدمة الكهربائية + الأدوية + رعاية ما بعد التوقف.</div>
+        <div class="item" style="margin-top:10px"><div class="item-head">الهدف</div><p>استعادة الدورة الدموية التلقائية (ROSC) وتقليل الأذى العصبي.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">✅</span> Indications — متى يُستخدم ACLS؟</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head"><span class="num">1</span> Cardiac Arrest</div><p>Patient is unresponsive, not breathing normally, pulseless. Includes: VF, pulseless VT, Asystole, PEA.</p></div>
+        <div class="item"><div class="item-head"><span class="num">2</span> Hemodynamically Unstable Arrhythmias</div><p>Arrhythmias causing poor perfusion <em>before</em> full arrest: symptomatic bradycardia, tachyarrhythmias with hypotension/shock/altered mental status.</p></div>
+        <div class="item"><div class="item-head"><span class="num">3</span> Acute Coronary Syndromes (STEMI/Non-STEMI)</div></div>
+        <div class="item"><div class="item-head"><span class="num">4</span> Respiratory Arrest or Failure</div><p>Patient apneic or has inadequate oxygenation/ventilation → to prevent cardiac arrest.</p></div>
+        <div class="item"><div class="item-head"><span class="num">5</span> Shock States</div><p>Systolic BP &lt; 90 mmHg with organ hypoperfusion → needs vasopressors, fluids, monitoring.</p></div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head"><span class="num">1</span> توقف القلب</div><p>المريض لا يستجيب، لا يتنفس طبيعياً، لا يوجد نبض. يشمل: VF، VT بدون نبض، Asystole، PEA.</p></div>
+        <div class="item"><div class="item-head"><span class="num">2</span> اضطرابات نظم غير مستقرة</div><p>اضطرابات تسبب ضعف التروية <em>قبل</em> التوقف الكامل: بطء قلب عرضي، سرعة قلب مع انخفاض ضغط/صدمة.</p></div>
+        <div class="item"><div class="item-head"><span class="num">3</span> متلازمات كورونارية حادة (STEMI)</div></div>
+        <div class="item"><div class="item-head"><span class="num">4</span> توقف أو فشل تنفسي</div><p>المريض لا يتنفس أو تأكسجه/تهويته غير كافية → لمنع توقف القلب.</p></div>
+        <div class="item"><div class="item-head"><span class="num">5</span> حالات الصدمة</div><p>ضغط الدم الانقباضي أقل من 90 مع ضعف تروية الأعضاء.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">💊</span> Key ACLS Medications — الأدوية الرئيسية</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Drug</th><th>Dose</th><th>Used For</th><th>Action</th></tr>
+          <tr><td><strong>Epinephrine</strong></td><td>1 mg IV/IO q3–5 min</td><td>ALL arrest rhythms</td><td>↑ BP &amp; perfusion to heart/brain</td></tr>
+          <tr><td><strong>Amiodarone</strong></td><td>300 mg → 150 mg IV</td><td>Refractory VF/pVT</td><td>Stabilizes heart rhythm</td></tr>
+          <tr><td><strong>Lidocaine</strong></td><td>1–1.5 mg/kg IV</td><td>Alternative for VF/pVT</td><td>Suppresses abnormal beats</td></tr>
+          <tr><td><strong>Atropine</strong></td><td>1 mg q3–5 min (max 3mg)</td><td>Symptomatic bradycardia</td><td>↑ HR by blocking vagus nerve</td></tr>
+          <tr><td><strong>Magnesium</strong></td><td>1–2 g IV</td><td>Torsades de pointes</td><td>Stops this special arrhythmia</td></tr>
+          <tr><td><strong>Adenosine</strong></td><td>6 mg → 12 mg rapid IV</td><td>SVT (narrow regular QRS)</td><td>Stops AV nodal re-entry</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الدواء</th><th>الجرعة</th><th>يُستخدم لـ</th><th>التأثير</th></tr>
+          <tr><td><strong>إبينفرين</strong></td><td>1 ملجم كل 3-5 دقائق</td><td>كل أنواع توقف القلب</td><td>يرفع الضغط ويحسّن تروية القلب والمخ</td></tr>
+          <tr><td><strong>أميودارون</strong></td><td>300 ملجم ثم 150 ملجم</td><td>VF/pVT المستعصي</td><td>يثبّت نظم القلب</td></tr>
+          <tr><td><strong>ليدوكايين</strong></td><td>1-1.5 ملجم/كجم</td><td>بديل لـ VF/pVT</td><td>يثبّط الضربات غير الطبيعية</td></tr>
+          <tr><td><strong>أتروبين</strong></td><td>1 ملجم (حتى 3 ملجم)</td><td>بطء قلب عرضي</td><td>يرفع معدل القلب</td></tr>
+          <tr><td><strong>مغنيسيوم</strong></td><td>1-2 جم IV</td><td>Torsades de pointes</td><td>يوقف هذا النوع الخاص</td></tr>
+          <tr><td><strong>أدينوزين</strong></td><td>6 ملجم سريع ثم 12</td><td>SVT منتظم ضيق</td><td>يوقف الدوامة الأذينية البطينية</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📋</span> Reversible Causes — الأسباب القابلة للعلاج (Hs &amp; Ts)</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div><div class="item-head" style="margin-bottom:8px">The H's</div>
+            <ul style="font-size:.88rem;line-height:1.9;padding-left:16px">
+              <li>Hypoxia</li><li>Hypovolemia</li><li>Hydrogen ion (Acidosis)</li>
+              <li>Hypo/Hyperkalemia</li><li>Hypothermia</li>
+            </ul>
+          </div>
+          <div><div class="item-head" style="margin-bottom:8px">The T's</div>
+            <ul style="font-size:.88rem;line-height:1.9;padding-left:16px">
+              <li>Tension pneumothorax</li><li>Tamponade (cardiac)</li>
+              <li>Toxins</li><li>Thrombosis (coronary)</li><li>Thrombosis (pulmonary)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" dir="rtl">
+          <div><div class="item-head" style="margin-bottom:8px">الـ H's</div>
+            <ul style="font-size:.88rem;line-height:1.9;padding-right:16px">
+              <li>نقص أكسجين</li><li>نقص حجم</li><li>حماض</li>
+              <li>خلل بوتاسيوم</li><li>انخفاض حرارة</li>
+            </ul>
+          </div>
+          <div><div class="item-head" style="margin-bottom:8px">الـ T's</div>
+            <ul style="font-size:.88rem;line-height:1.9;padding-right:16px">
+              <li>استرواح صدري توتري</li><li>دكاك قلبي</li>
+              <li>سموم</li><li>جلطة تاجية</li><li>جلطة رئوية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">👥</span> Team Dynamics — ديناميكيات الفريق</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><p><strong>High-performance team coordination improves outcomes.</strong></p>
+          <ul>
+            <li><strong>Team Leader</strong> — assigns roles, monitors performance, stands at foot of bed</li>
+            <li><strong>Airway Provider</strong> — manages airway, oxygenation, ventilation</li>
+            <li><strong>Medication Provider</strong> — IV/IO access, drugs and fluids</li>
+            <li><strong>Monitor/Defibrillator Operator</strong> — applies pads, reads rhythm, delivers shocks</li>
+            <li><strong>Compressor</strong> — high-quality CPR, rotates every 2 min</li>
+            <li><strong>Recorder</strong> — documents events, times, prompts epinephrine</li>
+            <li>All members use <strong>closed-loop communication</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><p><strong>تنسيق الفريق يحسّن نتائج الإنعاش.</strong></p>
+          <ul>
+            <li><strong>قائد الفريق</strong> — يوزع الأدوار، يراقب الأداء، يقف عند قدم السرير</li>
+            <li><strong>مسؤول مجرى الهواء</strong> — يدير الهواء والتأكسج والتهوية</li>
+            <li><strong>مسؤول الأدوية</strong> — يُنشئ وصول وريدي/عظمي، يعطي الأدوية</li>
+            <li><strong>مشغّل المراقب/المزيل</strong> — يضع مسريات، يقرأ النظم، يعطي الصدمات</li>
+            <li><strong>الضاغط</strong> — CPR عالي الجودة، يتناوب كل دقيقتين</li>
+            <li><strong>المسجّل</strong> — يوثّق الأحداث والأوقات والأدوية</li>
+            <li>الجميع يستخدم <strong>التواصل المغلق</strong> (تأكيد الأوامر)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     4. ARTERIAL CATHETER
+══════════════════════════════════════════ -->
+<div id="art" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">🩸</div>
+    <div><h2>Arterial Catheter Care</h2><div class="topic-ar">رعاية القسطرة الشريانية</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition & Indications</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">A thin tube inserted into an <strong>artery</strong>, used in ICU and anesthesia for <strong>continuous blood pressure monitoring</strong> and <strong>arterial blood sampling</strong>.</div>
+        <div class="item" style="margin-top:12px"><div class="item-head">Indications</div>
+          <ul>
+            <li><strong>Frequent Blood Sampling:</strong> ABG monitoring (respiratory conditions), bleeding or metabolic problems, monitoring serum levels during therapies</li>
+            <li><strong>Continuous BP Monitoring:</strong> Hypotension / hypertension / all types of shock, patients on vasopressors, mechanical cardiovascular support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">أنبوب رفيع يُدخل في <strong>شريان</strong>، يُستخدم في العناية المركزة للتخدير لـ<strong>مراقبة ضغط الدم بشكل مستمر</strong> و<strong>أخذ عينات الدم الشرياني</strong>.</div>
+        <div class="item" style="margin-top:12px"><div class="item-head">المؤشرات</div>
+          <ul>
+            <li><strong>أخذ عينات دم متكررة:</strong> مراقبة ABG، اضطرابات التمثيل الغذائي، مراقبة مستويات مصل الدم</li>
+            <li><strong>مراقبة ضغط الدم بشكل مستمر:</strong> انخفاض/ارتفاع ضغط الدم، جميع أنواع الصدمة، المرضى على ضاغطات الأوعية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📍</span> Insertion Sites — مواضع الإدخال</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Site</th><th>Preference</th><th>Notes</th></tr>
+          <tr><td><strong>Radial Artery</strong></td><td><span class="pill success">Most Preferred</span></td><td>Superficial &amp; stable. Needs modified Allen's test / Doppler</td></tr>
+          <tr><td><strong>Brachial Artery</strong></td><td><span class="pill warn">Less Preferred</span></td><td>Deeper, no collateral circulation → higher risk</td></tr>
+          <tr><td><strong>Femoral Artery</strong></td><td><span class="pill warn">Emergency Use</span></td><td>Risk of hemorrhage, infection, venous puncture</td></tr>
+          <tr><td><strong>Dorsalis Pedis / Tibial</strong></td><td><span class="pill danger">Least Preferred</span></td><td>High dislodgment risk</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الموضع</th><th>التفضيل</th><th>ملاحظات</th></tr>
+          <tr><td><strong>الشريان الكعبري</strong></td><td><span class="pill success">الأكثر تفضيلاً</span></td><td>سطحي ومستقر. يحتاج اختبار ألن</td></tr>
+          <tr><td><strong>الشريان العضدي</strong></td><td><span class="pill warn">أقل تفضيلاً</span></td><td>أعمق، لا دوران جانبي → خطر أعلى</td></tr>
+          <tr><td><strong>الشريان الفخذي</strong></td><td><span class="pill warn">للطوارئ</span></td><td>خطر نزيف، عدوى، ثقب وريد</td></tr>
+          <tr><td><strong>الشريان الظهري القدمي</strong></td><td><span class="pill danger">الأقل تفضيلاً</span></td><td>خطر خروج الأنبوب عالٍ</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📈</span> Arterial Waveform — موجة الضغط الشرياني</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item">
+          <ul>
+            <li><strong>Ascending limb (anacrotic):</strong> Blood ejected from left ventricle into aorta → pressure rises</li>
+            <li><strong>Peak = Systolic pressure:</strong> Normal &lt; 120 mmHg</li>
+            <li><strong>Dicrotic notch:</strong> Aortic valve closes → small rebound wave</li>
+            <li><strong>Descending limb (diastolic downslope):</strong> Aortic wall recoils, propels blood forward</li>
+            <li><strong>Diastolic pressure:</strong> Lowest point &lt; 80 mmHg</li>
+            <li><strong>Pulse pressure:</strong> Systolic – Diastolic = ~40 mmHg (normal)</li>
+          </ul>
+        </div>
+        <div class="def-box"><strong>MAP formula:</strong> MAP = (Systolic + Diastolic × 2) ÷ 3<br>MAP = driving force for blood flow through cardiovascular system. Normal: 70–100 mmHg</div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item">
+          <ul>
+            <li><strong>الذراع الصاعدة:</strong> الدم يُضخ من البطين الأيسر إلى الأورطي → يرتفع الضغط</li>
+            <li><strong>القمة = الضغط الانقباضي:</strong> طبيعي أقل من 120 ملم زئبق</li>
+            <li><strong>النقرة الثنائية:</strong> الصمام الأورطي يغلق → موجة ارتداد صغيرة</li>
+            <li><strong>الذراع الهابطة:</strong> جدار الأورطي يعود لشكله ويدفع الدم للأمام</li>
+            <li><strong>الضغط الانبساطي:</strong> أدنى نقطة أقل من 80 ملم زئبق</li>
+            <li><strong>ضغط النبض:</strong> الانقباضي – الانبساطي ≈ 40 ملم (طبيعي)</li>
+          </ul>
+        </div>
+        <div class="def-box"><strong>معادلة MAP:</strong> MAP = (الانقباضي + الانبساطي × 2) ÷ 3<br>MAP = قوة الدفع للدم في الجهاز القلبي الوعائي. طبيعي: 70–100 ملم زئبق</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚠️</span> Complications — المضاعفات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="score-row">
+          <div class="score-item"><div class="val">Pain</div><div class="lbl">ألم</div></div>
+          <div class="score-item"><div class="val">Vasospasm</div><div class="lbl">تشنج وعائي</div></div>
+          <div class="score-item"><div class="val">Hematoma</div><div class="lbl">ورم دموي</div></div>
+          <div class="score-item"><div class="val">Thrombosis</div><div class="lbl">تخثر</div></div>
+          <div class="score-item"><div class="val">Hemorrhage</div><div class="lbl">نزيف</div></div>
+          <div class="score-item"><div class="val">Ischemia</div><div class="lbl">نقص تروية</div></div>
+          <div class="score-item"><div class="val">Infection</div><div class="lbl">عدوى</div></div>
+        </div>
+        <p style="margin-top:10px;font-size:.85rem;color:var(--muted)">⚠️ Femoral site has the highest infection risk</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <p style="font-size:.9rem;line-height:1.9">ألم، تشنج وعائي، ورم دموي، تخثر، انصمام، نزيف، نقص تروية، إصابة عصبية، عدوى، قصور وعائي. <br><strong>⚠️ الموضع الفخذي له أعلى خطر عدوى.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     5. PULMONARY CATHETER
+══════════════════════════════════════════ -->
+<div id="pul" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">💉</div>
+    <div><h2>Pulmonary Artery Catheter Care</h2><div class="topic-ar">رعاية قسطرة الشريان الرئوي</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition & Mechanism</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">A <strong>balloon-tipped, flow-directed catheter</strong> inserted through a central vein and advanced into the pulmonary artery to measure cardiac and pulmonary hemodynamic parameters.</div>
+        <div class="item" style="margin-top:10px"><div class="item-head">How It Works</div>
+          <ul>
+            <li>Inserted through central vein → right atrium → right ventricle → pulmonary artery</li>
+            <li>Balloon inflation allows catheter to <strong>float with blood flow</strong></li>
+            <li>Pressure transducers measure intracardiac pressures</li>
+            <li>PCWP (pulmonary capillary wedge pressure) reflects <strong>left ventricular preload</strong></li>
+            <li>Cardiac output measured using <strong>thermodilution technique</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">قسطرة <strong>موجّهة بتدفق الدم، مزودة ببالون</strong> تُدخل عبر وريد مركزي وتتقدم إلى الشريان الرئوي لقياس معايير ديناميكيات القلب والرئة.</div>
+        <div class="item" style="margin-top:10px"><div class="item-head">كيف تعمل</div>
+          <ul>
+            <li>تُدخل عبر وريد مركزي ← الأذين الأيمن ← البطين الأيمن ← الشريان الرئوي</li>
+            <li>نفخ البالون يسمح للقسطرة <strong>بالطفو مع تدفق الدم</strong></li>
+            <li>محوّلات الضغط تقيس ضغوط داخل القلب</li>
+            <li>PCWP يعكس <strong>الحمل المسبق للبطين الأيسر</strong></li>
+            <li>النتاج القلبي يُقاس بتقنية <strong>التخفيف الحراري</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📊</span> Normal Pressures — الضغوط الطبيعية</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="score-row">
+          <div class="score-item"><div class="val">2–8</div><div class="lbl">RAP/CVP (mmHg)</div></div>
+          <div class="score-item"><div class="val">15–30 / 2–8</div><div class="lbl">RVP Sys/Dias</div></div>
+          <div class="score-item"><div class="val">15–30 / 4–12</div><div class="lbl">PAP Sys/Dias</div></div>
+          <div class="score-item"><div class="val">10–20</div><div class="lbl">Mean PAP (mmHg)</div></div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>القياس</th><th>المعدل الطبيعي</th></tr>
+          <tr><td>ضغط الأذين الأيمن (RAP/CVP)</td><td>2–8 ملم زئبق</td></tr>
+          <tr><td>ضغط البطين الأيمن (انقباضي/انبساطي)</td><td>15–30 / 2–8 ملم</td></tr>
+          <tr><td>ضغط الشريان الرئوي (انقباضي/انبساطي)</td><td>15–30 / 4–12 ملم</td></tr>
+          <tr><td>متوسط ضغط الشريان الرئوي</td><td>10–20 ملم زئبق</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">✅</span> Indications & Contraindications</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Indications</div>
+          <ul>
+            <li>Hemodynamic monitoring in critically ill patients</li>
+            <li>Shock (cardiogenic, septic, hypovolemic)</li>
+            <li>Severe heart failure</li>
+            <li>Acute MI with complications</li>
+            <li>ARDS, major cardiac/thoracic surgery</li>
+            <li>Severe pulmonary hypertension</li>
+            <li>Assessment of fluid status and cardiac output</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Absolute Contraindications</div>
+          <ul>
+            <li>Pulmonary artery rupture</li>
+            <li>Right atrial or ventricular tumor</li>
+            <li>Infection at insertion site</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Relative Contraindications</div>
+          <ul><li>Coagulopathy, severe arrhythmias, pulmonary hypertension, tricuspid/pulmonary valve disease</li></ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">المؤشرات</div>
+          <ul>
+            <li>مراقبة ديناميكيات القلب في المرضى الحرجين</li>
+            <li>الصدمة (قلبية، إنتانية، نقص حجم)</li>
+            <li>فشل قلبي شديد</li>
+            <li>احتشاء عضلة القلب مع مضاعفات</li>
+            <li>ARDS، جراحة قلبية/صدرية كبرى</li>
+            <li>ارتفاع ضغط رئوي شديد</li>
+            <li>تقييم حالة السوائل والنتاج القلبي</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">موانع مطلقة</div>
+          <ul>
+            <li>تمزق الشريان الرئوي</li>
+            <li>ورم في الأذين أو البطين الأيمن</li>
+            <li>عدوى في موضع الإدخال</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">موانع نسبية</div>
+          <ul><li>اضطراب تخثر، اضطرابات نظم شديدة، مرض الصمام ثلاثي الشرف</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚠️</span> Complications — المضاعفات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <ul style="font-size:.9rem;padding-left:18px;line-height:1.9">
+          <li><span class="pill danger">Cardiac arrhythmias</span></li>
+          <li><span class="pill danger">Pulmonary artery rupture or infarction</span></li>
+          <li><span class="pill danger">Thrombosis and embolism</span></li>
+          <li><span class="pill danger">CLABSI (bloodstream infection)</span></li>
+          <li><span class="pill danger">Pneumothorax during insertion</span></li>
+          <li><span class="pill danger">Air embolism</span></li>
+          <li><span class="pill danger">Balloon rupture or catheter knotting</span></li>
+        </ul>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <ul style="font-size:.9rem;padding-right:18px;line-height:1.9;direction:rtl">
+          <li><span class="pill danger">اضطرابات نظم القلب</span></li>
+          <li><span class="pill danger">تمزق الشريان الرئوي أو احتشائه</span></li>
+          <li><span class="pill danger">تخثر وانصمام</span></li>
+          <li><span class="pill danger">عدوى مجرى الدم (CLABSI)</span></li>
+          <li><span class="pill danger">استرواح صدري أثناء الإدخال</span></li>
+          <li><span class="pill danger">انصمام هوائي</span></li>
+          <li><span class="pill danger">تمزق البالون أو تعقد القسطرة</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     6. TPN
+══════════════════════════════════════════ -->
+<div id="tpn" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">🍼</div>
+    <div><h2>Total Parenteral Nutrition (TPN)</h2><div class="topic-ar">التغذية الوريدية الكاملة</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> Definition</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">TPN is the <strong>intravenous administration of complete nutrition</strong> to patients who cannot eat or absorb nutrients through the GI tract. It provides <strong>all macronutrients</strong> (carbs, protein, fat) and <strong>micronutrients</strong> (electrolytes, vitamins, trace elements). It bypasses the GI tract completely and is typically given through a <strong>central venous catheter</strong>.</div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box">TPN هو <strong>إعطاء التغذية الكاملة عن طريق الوريد</strong> للمرضى الذين لا يستطيعون الأكل أو امتصاص المغذيات عبر الجهاز الهضمي. يوفر <strong>كل المغذيات الكبرى</strong> (كربوهيدرات، بروتين، دهون) و<strong>المغذيات الدقيقة</strong> (شوارد، فيتامينات، عناصر أثرية). يتجاوز الجهاز الهضمي كلياً ويُعطى عادةً عبر <strong>قسطرة وريدية مركزية</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">✅</span> Indications — متى نستخدمه؟</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <p style="margin-bottom:8px;font-size:.88rem"><em>Used when the GI tract is non-functional or unsafe:</em></p>
+        <div class="score-row">
+          <div class="score-item"><div class="val" style="font-size:.8rem">Severe Malnutrition</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Bowel Obstruction</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Short Bowel Syndrome</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Severe Pancreatitis</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Crohn's Flare</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Peritonitis</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Severe Burns</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Post-Op (can't feed)</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Chemotherapy</div></div>
+          <div class="score-item"><div class="val" style="font-size:.8rem">Coma</div></div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <p style="margin-bottom:8px;font-size:.9rem"><em>يُستخدم عندما يكون الجهاز الهضمي غير وظيفي أو غير آمن:</em></p>
+        <ul style="font-size:.9rem;padding-right:18px;line-height:1.9;direction:rtl">
+          <li>سوء تغذية شديد</li>
+          <li>انسداد معوي</li>
+          <li>متلازمة القولون القصير</li>
+          <li>التهاب بنكرياس شديد</li>
+          <li>انتكاسة كرون</li>
+          <li>التهاب بريتوان</li>
+          <li>حروق شديدة أو صدمة</li>
+          <li>بعد العمليات (تعذّر التغذية الهضمية)</li>
+          <li>مرضى العلاج الكيماوي أو الجراحة</li>
+          <li>غيبوبة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🧪</span> Components — المكونات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Macronutrients</div>
+          <ul>
+            <li><strong>Carbohydrates</strong> — as dextrose (main energy source)</li>
+            <li><strong>Proteins</strong> — as amino acids (tissue repair &amp; maintenance)</li>
+            <li><strong>Fats</strong> — as lipid emulsions (essential fatty acids &amp; calories)</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Micronutrients</div>
+          <ul>
+            <li><strong>Electrolytes:</strong> Na, K, Ca, Mg, Phosphate, Cl</li>
+            <li><strong>Vitamins:</strong> Water-soluble (B-complex, C) + Fat-soluble (A, D, E, K)</li>
+            <li><strong>Trace elements:</strong> Zinc, copper, selenium, manganese, chromium</li>
+            <li><strong>Fluids:</strong> Hydration and volume replacement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">المغذيات الكبرى</div>
+          <ul>
+            <li><strong>الكربوهيدرات</strong> — كـ دكستروز (المصدر الرئيسي للطاقة)</li>
+            <li><strong>البروتينات</strong> — كـ أحماض أمينية (إصلاح وصيانة الأنسجة)</li>
+            <li><strong>الدهون</strong> — كـ مستحلبات دهنية (أحماض دهنية أساسية وسعرات)</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">المغذيات الدقيقة</div>
+          <ul>
+            <li><strong>شوارد:</strong> صوديوم، بوتاسيوم، كالسيوم، مغنيسيوم، فوسفات، كلوريد</li>
+            <li><strong>فيتامينات:</strong> ذائبة في الماء (ب، ج) + ذائبة في الدهن (أ، د، هـ، ك)</li>
+            <li><strong>عناصر أثرية:</strong> زنك، نحاس، سيلينيوم، منجنيز، كروم</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🛤️</span> Route & Key Rules — طريقة التعطي والقواعد المهمة</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">Routes</div>
+          <ul>
+            <li><strong>CVC (Central Venous Catheter)</strong> — most common (subclavian, internal jugular) — needed because high dextrose irritates peripheral veins</li>
+            <li><strong>PPN (Peripheral Parenteral Nutrition)</strong> — lower concentration, for short-term/partial support only</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Critical Rules ⚠️</div>
+          <ul>
+            <li>Use <strong>aseptic technique</strong> always</li>
+            <li>Use a <strong>dedicated lumen</strong> — do NOT mix with other IV drugs</li>
+            <li>Change tubing <strong>every 24 hours</strong></li>
+            <li><strong>Never stop TPN abruptly</strong> — causes hypoglycemia → taper gradually</li>
+            <li>Refrigerate until use; warm to room temperature before infusion</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">طرق التعطي</div>
+          <ul>
+            <li><strong>قسطرة وريدية مركزية (CVC)</strong> — الأكثر شيوعاً — لأن تركيز السكر العالي يهيج الأوردة المحيطية</li>
+            <li><strong>PPN</strong> — تركيز أقل، للدعم قصير المدى أو الجزئي فقط</li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">قواعد مهمة ⚠️</div>
+          <ul>
+            <li>استخدم <strong>التقنية المعقمة</strong> دائماً</li>
+            <li>استخدم <strong>تجويفاً مخصصاً</strong> — لا تخلطها مع أدوية وريدية أخرى</li>
+            <li>غيّر التوصيل <strong>كل 24 ساعة</strong></li>
+            <li><strong>لا توقفها فجأة</strong> — يسبب نقص سكر → قلّل تدريجياً</li>
+            <li>احفظها في الثلاجة وسخّنها لدرجة حرارة الغرفة قبل الإعطاء</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">⚠️</span> Complications — المضاعفات</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Type</th><th>Complication</th></tr>
+          <tr><td><span class="pill danger">Infectious</span></td><td>CLABSI (Central Line-Associated Bloodstream Infection)</td></tr>
+          <tr><td rowspan="3"><span class="pill warn">Metabolic</span></td><td>Hyperglycemia or hypoglycemia</td></tr>
+          <tr><td>Electrolyte imbalances (hypokalemia, hypophosphatemia)</td></tr>
+          <tr><td><strong>Refeeding Syndrome</strong> — dangerous electrolyte shifts when feeding starved patient too fast; Liver dysfunction (fatty liver)</td></tr>
+          <tr><td><span class="pill">Mechanical</span></td><td>Catheter blockage, displacement, thrombosis, air embolism</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>النوع</th><th>المضاعفة</th></tr>
+          <tr><td><span class="pill danger">معدية</span></td><td>عدوى مجرى الدم المرتبطة بالخط المركزي (CLABSI)</td></tr>
+          <tr><td rowspan="3"><span class="pill warn">استقلابية</span></td><td>ارتفاع أو انخفاض سكر الدم</td></tr>
+          <tr><td>اختلال الشوارد (نقص بوتاسيوم، فوسفات)</td></tr>
+          <tr><td><strong>متلازمة إعادة التغذية</strong> — اضطراب خطير بالشوارد عند إطعام مريض جائع بسرعة؛ خلل كبدي</td></tr>
+          <tr><td><span class="pill">ميكانيكية</span></td><td>انسداد القسطرة، تحركها، تخثر، انصمام هوائي</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     7. ICU SCORING
+══════════════════════════════════════════ -->
+<div id="score" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">📊</div>
+    <div><h2>ICU Scoring Systems</h2><div class="topic-ar">أنظمة تقييم العناية المركزة</div></div>
+  </div>
+
+  <!-- GCS -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🧠</span> Glasgow Coma Scale (GCS)</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">Measures level of consciousness. Score: <strong>3–15</strong>. Low score = worse.</div>
+        <table class="mini-table">
+          <tr><th>Component</th><th>Best Response</th><th>Score</th></tr>
+          <tr><td><strong>Eye (E)</strong></td><td>Spontaneous</td><td>4</td></tr>
+          <tr><td><strong>Verbal (V)</strong></td><td>Oriented</td><td>5</td></tr>
+          <tr><td><strong>Motor (M)</strong></td><td>Obeys Commands</td><td>6</td></tr>
+        </table>
+        <div class="score-row" style="margin-top:10px">
+          <div class="score-item"><div class="val">13–15</div><div class="lbl">Mild Injury</div></div>
+          <div class="score-item"><div class="val">9–12</div><div class="lbl">Moderate</div></div>
+          <div class="score-item"><div class="val">3–8</div><div class="lbl">Severe → Intubate</div></div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">يقيس مستوى الوعي. الدرجة: <strong>3–15</strong>. الدرجة الأقل = أسوأ.</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>المكون</th><th>أفضل استجابة</th><th>الدرجة</th></tr>
+          <tr><td><strong>فتح العينين (E)</strong></td><td>تلقائي</td><td>4</td></tr>
+          <tr><td><strong>الاستجابة اللفظية (V)</strong></td><td>موجّه</td><td>5</td></tr>
+          <tr><td><strong>الاستجابة الحركية (M)</strong></td><td>يطيع الأوامر</td><td>6</td></tr>
+        </table>
+        <div class="score-row" style="margin-top:10px">
+          <div class="score-item"><div class="val">13–15</div><div class="lbl">إصابة طفيفة</div></div>
+          <div class="score-item"><div class="val">9–12</div><div class="lbl">معتدلة</div></div>
+          <div class="score-item"><div class="val">3–8</div><div class="lbl">شديدة → تنبيب</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pain -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">😣</span> Pain Assessment Scales — مقاييس تقييم الألم</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="item"><div class="item-head">NRS (Numeric Rating Scale) — For conscious patients</div>
+          <div class="score-row">
+            <div class="score-item"><div class="val">0</div><div class="lbl">No Pain</div></div>
+            <div class="score-item"><div class="val">1–3</div><div class="lbl">Mild</div></div>
+            <div class="score-item"><div class="val">4–6</div><div class="lbl">Moderate</div></div>
+            <div class="score-item"><div class="val">7–9</div><div class="lbl">Severe</div></div>
+            <div class="score-item"><div class="val">10</div><div class="lbl">Worst</div></div>
+          </div>
+        </div>
+        <div class="item" style="margin-top:10px"><div class="item-head">BPS (Behavioral Pain Scale) — For unconscious / ventilated patients</div>
+          <ul>
+            <li>Scores facial expression, upper limb movement, compliance with ventilation</li>
+            <li>Total: 3–12. <strong>&gt;5 = unacceptable pain</strong></li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Wong-Baker FACES Scale — For children or those who can't communicate verbally</div><p>Uses facial pictures from happy (0) to crying (10).</p></div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="item"><div class="item-head">NRS (مقياس التقدير العددي) — للمرضى الواعين</div>
+          <ul style="font-size:.9rem;line-height:1.9;padding-right:16px">
+            <li>0 = لا ألم، 1-3 = خفيف، 4-6 = متوسط، 7-9 = شديد، 10 = أشد ألم</li>
+          </ul>
+        </div>
+        <div class="item" style="margin-top:10px"><div class="item-head">BPS (مقياس الألم السلوكي) — للمرضى فاقدي الوعي/على التنفس</div>
+          <ul>
+            <li>يقيم: تعبير الوجه، حركة الطرف العلوي، التناسق مع الجهاز</li>
+            <li>المجموع: 3–12. <strong>أكثر من 5 = ألم غير مقبول</strong></li>
+          </ul>
+        </div>
+        <div class="item"><div class="item-head">Wong-Baker FACES — للأطفال أو من لا يستطيعون التعبير اللفظي</div><p>يستخدم صور وجوه من سعيد (0) إلى باكٍ (10).</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Braden -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🛏️</span> Braden Scale — خطر قرح الضغط</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">Predicts risk of pressure ulcers. Score: <strong>6–23</strong>. Lower = higher risk.</div>
+        <div class="item"><div class="item-head">6 Parameters (each scored 1–4)</div>
+          <ul>
+            <li><strong>Sensory Perception</strong> — can patient feel and respond to discomfort?</li>
+            <li><strong>Moisture</strong> — how often is skin exposed to moisture?</li>
+            <li><strong>Activity</strong> — degree of physical activity</li>
+            <li><strong>Mobility</strong> — ability to change/control position</li>
+            <li><strong>Nutrition</strong> — usual food intake pattern</li>
+            <li><strong>Friction &amp; Shear</strong> — does movement cause friction?</li>
+          </ul>
+        </div>
+        <div class="score-row">
+          <div class="score-item"><div class="val">≤9</div><div class="lbl">Very High Risk</div></div>
+          <div class="score-item"><div class="val">10–12</div><div class="lbl">High Risk</div></div>
+          <div class="score-item"><div class="val">13–14</div><div class="lbl">Moderate</div></div>
+          <div class="score-item"><div class="val">15–18</div><div class="lbl">Mild Risk</div></div>
+          <div class="score-item"><div class="val">19–23</div><div class="lbl">No Risk</div></div>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">يتنبأ بخطر قرح الضغط. الدرجة: <strong>6–23</strong>. الأقل = خطر أعلى.</div>
+        <div class="item"><div class="item-head">6 معايير (كل واحدة 1–4 درجات)</div>
+          <ul>
+            <li><strong>الإحساس</strong> — هل يشعر المريض بالانزعاج؟</li>
+            <li><strong>الرطوبة</strong> — كم مرة يتعرض الجلد للرطوبة؟</li>
+            <li><strong>النشاط</strong> — درجة النشاط البدني</li>
+            <li><strong>الحركة</strong> — القدرة على تغيير الوضع</li>
+            <li><strong>التغذية</strong> — نمط تناول الطعام المعتاد</li>
+            <li><strong>الاحتكاك والتقص</strong> — هل تسبب الحركة احتكاكاً؟</li>
+          </ul>
+        </div>
+        <div class="score-row">
+          <div class="score-item"><div class="val">≤9</div><div class="lbl">خطر جداً عالٍ</div></div>
+          <div class="score-item"><div class="val">10–12</div><div class="lbl">خطر عالٍ</div></div>
+          <div class="score-item"><div class="val">13–14</div><div class="lbl">متوسط</div></div>
+          <div class="score-item"><div class="val">15–18</div><div class="lbl">خطر خفيف</div></div>
+          <div class="score-item"><div class="val">19–23</div><div class="lbl">لا خطر</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RASS -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">💤</span> RASS — Richmond Agitation-Sedation Scale</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">Measures level of sedation and agitation. Range: <strong>+4 (combative) to –5 (unarousable)</strong>. Target in ICU: <strong>0 to –2</strong>.</div>
+        <table class="mini-table">
+          <tr><th>Score</th><th>Term</th><th>Description</th></tr>
+          <tr><td>+4</td><td>Combative</td><td>Violent, danger to staff</td></tr>
+          <tr><td>+3</td><td>Very Agitated</td><td>Pulls tubes, aggressive</td></tr>
+          <tr><td>+2</td><td>Agitated</td><td>Fights ventilator</td></tr>
+          <tr><td>+1</td><td>Restless</td><td>Anxious, not aggressive</td></tr>
+          <tr><td>0</td><td><strong>Alert &amp; Calm</strong></td><td>Ideal awake state</td></tr>
+          <tr><td>-1</td><td>Drowsy</td><td>Sustained awakening to voice ≥10 sec</td></tr>
+          <tr><td>-2</td><td>Light Sedation</td><td>Briefly wakes to voice &lt;10 sec</td></tr>
+          <tr><td>-3</td><td>Moderate Sedation</td><td>Opens eyes to voice, no contact</td></tr>
+          <tr><td>-4</td><td>Deep Sedation</td><td>No response to voice, responds to touch</td></tr>
+          <tr><td>-5</td><td>Unarousable</td><td>No response at all</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">يقيس مستوى التخدير والإثارة. المدى: <strong>+4 (عنيف) إلى –5 (لا يستجيب)</strong>. الهدف في العناية: <strong>0 إلى –2</strong>.</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الدرجة</th><th>المصطلح</th><th>الوصف</th></tr>
+          <tr><td>+4</td><td>عدواني</td><td>عنيف، خطر على الطاقم</td></tr>
+          <tr><td>+3</td><td>مثار جداً</td><td>يسحب الأنابيب، عدواني</td></tr>
+          <tr><td>+2</td><td>مثار</td><td>يقاوم الجهاز</td></tr>
+          <tr><td>+1</td><td>قلق</td><td>قلق، غير عدواني</td></tr>
+          <tr><td>0</td><td><strong>يقظ وهادئ</strong></td><td>الحالة المثالية</td></tr>
+          <tr><td>-1</td><td>نعسان</td><td>يستيقظ للصوت ≥10 ثانية</td></tr>
+          <tr><td>-2</td><td>تخدير خفيف</td><td>يستيقظ قليلاً للصوت</td></tr>
+          <tr><td>-3</td><td>تخدير متوسط</td><td>يفتح عينيه للصوت فقط</td></tr>
+          <tr><td>-4</td><td>تخدير عميق</td><td>لا يستجيب للصوت، للمس فقط</td></tr>
+          <tr><td>-5</td><td>لا يستجيب</td><td>لا استجابة نهائياً</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Morse Fall -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🚶</span> Morse Fall Scale — مقياس موريس للسقوط</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <p style="font-size:.88rem;margin-bottom:8px">6 factors scored. Total determines risk level:</p>
+        <div class="score-row">
+          <div class="score-item"><div class="val">0–24</div><div class="lbl">Low Risk</div></div>
+          <div class="score-item"><div class="val">25–50</div><div class="lbl">Moderate Risk</div></div>
+          <div class="score-item"><div class="val">≥51</div><div class="lbl">High Risk</div></div>
+        </div>
+        <p style="margin-top:10px;font-size:.87rem">Factors: history of falling (25), secondary diagnosis (15), ambulatory aid, IV access (20), gait (0–20), mental status (0–15).</p>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <p style="font-size:.9rem;margin-bottom:8px">6 عوامل تُحتسب. المجموع يحدد درجة الخطر:</p>
+        <div class="score-row">
+          <div class="score-item"><div class="val">0–24</div><div class="lbl">خطر منخفض</div></div>
+          <div class="score-item"><div class="val">25–50</div><div class="lbl">متوسط</div></div>
+          <div class="score-item"><div class="val">≥51</div><div class="lbl">خطر عالٍ</div></div>
+        </div>
+        <p style="margin-top:10px;font-size:.9rem">العوامل: تاريخ سقوط (25)، تشخيص ثانوي (15)، مساعدات مشي، خط وريدي (20)، طريقة المشي (0-20)، الحالة الذهنية (0-15).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     8. BUNDLES
+══════════════════════════════════════════ -->
+<div id="bundle" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">🛡️</div>
+    <div><h2>Bundles of Care</h2><div class="topic-ar">حزم الرعاية للمرضى الحرجين</div></div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📖</span> What is a Bundle? — ما هي حزمة الرعاية؟</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box">A <strong>care bundle</strong> is a set of evidence-based interventions that, when performed together consistently, improve patient outcomes significantly more than any single intervention alone. The goal is to <strong>prevent hospital-acquired infections</strong> in ICU patients.</div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box"><strong>حزمة الرعاية</strong> هي مجموعة تدخلات مبنية على الدليل العلمي تحسّن نتائج المريض بشكل أكبر بكثير عند تطبيقها معاً بشكل متسق، مقارنةً بأي تدخل منفرد. الهدف: <strong>منع العدوى المكتسبة في المستشفى</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VAP -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🫁</span> VAP Bundle — الالتهاب الرئوي المرتبط بالمنفسة</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">VAP = Ventilator-Associated Pneumonia. <strong>Most common ventilator complication.</strong></div>
+        <div class="item"><div class="item-head">VAP Bundle Checklist ✅</div>
+          <ul>
+            <li>🛏️ Head of bed elevated <strong>30–45°</strong></li>
+            <li>💊 Daily sedation vacation + daily extubation assessment</li>
+            <li>🦷 Oral care with <strong>chlorhexidine</strong> every 2–4 hours</li>
+            <li>🩸 DVT prophylaxis</li>
+            <li>💊 Peptic ulcer prophylaxis (H2 blockers / PPIs)</li>
+            <li>🔍 Verify ET tube position and cuff pressure (20–30 cmH₂O)</li>
+            <li>✂️ Suction only when needed (not routinely)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">VAP = التهاب رئوي مرتبط بالمنفسة. <strong>أكثر مضاعفات الجهاز شيوعاً.</strong></div>
+        <div class="item"><div class="item-head">قائمة حزمة VAP ✅</div>
+          <ul>
+            <li>🛏️ رفع رأس السرير <strong>30–45 درجة</strong></li>
+            <li>💊 إجازة تخدير يومية + تقييم يومي للفطام</li>
+            <li>🦷 العناية بالفم بـ<strong>كلوروهيكسيدين</strong> كل 2–4 ساعات</li>
+            <li>🩸 الوقاية من التخثر الوريدي العميق</li>
+            <li>💊 الوقاية من قرح الإجهاد (حاصرات H2 / PPIs)</li>
+            <li>🔍 التحقق من موضع الأنبوب وضغط الكفة (20–30 سم ماء)</li>
+            <li>✂️ الشفط فقط عند الحاجة (ليس بشكل روتيني)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAUTI -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">🚽</span> CAUTI Bundle — عدوى البول المرتبطة بالقسطرة</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">CAUTI = Catheter-Associated Urinary Tract Infection.</div>
+        <div class="item"><div class="item-head">CAUTI Bundle Checklist ✅</div>
+          <ul>
+            <li>📋 Insert catheter <strong>only if indicated</strong> — daily assess need for removal</li>
+            <li>🧤 Use <strong>sterile insertion technique</strong></li>
+            <li>🔒 Maintain <strong>closed drainage system</strong> — never open</li>
+            <li>⬇️ Keep drainage bag <strong>below bladder level</strong> always (prevent backflow)</li>
+            <li>🔗 Secure catheter to prevent movement (reduces urethral trauma)</li>
+            <li>🧼 Perform perineal hygiene every shift</li>
+            <li>🗑️ Empty bag regularly — do not touch spout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">CAUTI = عدوى المسالك البولية المرتبطة بالقسطرة.</div>
+        <div class="item"><div class="item-head">قائمة حزمة CAUTI ✅</div>
+          <ul>
+            <li>📋 ضع القسطرة <strong>فقط عند الإشارة</strong> — قيّم الحاجة يومياً للإزالة</li>
+            <li>🧤 استخدم <strong>تقنية إدخال معقمة</strong></li>
+            <li>🔒 احتفظ بنظام تصريف <strong>مغلق</strong> — لا تفتحه أبداً</li>
+            <li>⬇️ احتفظ بكيس التصريف <strong>أسفل مستوى المثانة</strong> دائماً</li>
+            <li>🔗 ثبّت القسطرة لمنع الحركة</li>
+            <li>🧼 العناية بالمنطقة التناسلية كل وردية</li>
+            <li>🗑️ أفرغ الكيس بانتظام — لا تلمس الفوهة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLABSI -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">💉</span> CLABSI Bundle — عدوى مجرى الدم المرتبطة بالخط المركزي</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">CLABSI = Central Line-Associated Bloodstream Infection.</div>
+        <div class="item"><div class="item-head">CLABSI Bundle Checklist ✅</div>
+          <ul>
+            <li>🧤 <strong>Maximal sterile barrier</strong> precautions during insertion</li>
+            <li>🧴 <strong>Chlorhexidine skin prep &gt;0.5%</strong> — best antiseptic</li>
+            <li>📍 Select <strong>optimal site</strong> — subclavian preferred, avoid femoral</li>
+            <li>📋 Daily review: does patient <strong>still need the line?</strong></li>
+            <li>🙌 Hand hygiene before accessing line every time</li>
+            <li>🕐 <strong>Scrub the hub 15 seconds</strong> before access (reduces biofilm)</li>
+            <li>🩹 Dressing clean, dry, intact; change transparent dressing every 5–7 days</li>
+            <li>🔄 Change needleless connectors per protocol</li>
+            <li>🔬 Review labs daily for signs of infection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">CLABSI = عدوى مجرى الدم المرتبطة بالخط المركزي.</div>
+        <div class="item"><div class="item-head">قائمة حزمة CLABSI ✅</div>
+          <ul>
+            <li>🧤 <strong>أقصى حواجز معقمة</strong> أثناء الإدخال</li>
+            <li>🧴 <strong>كلوروهيكسيدين &gt;0.5%</strong> لتنظيف الجلد — أفضل مطهر</li>
+            <li>📍 اختر <strong>الموضع الأمثل</strong> — تحت الترقوة مفضّل، تجنّب الفخذ</li>
+            <li>📋 مراجعة يومية: هل المريض <strong>لا يزال يحتاج الخط؟</strong></li>
+            <li>🙌 نظافة اليدين قبل الوصول للخط في كل مرة</li>
+            <li>🕐 <strong>فرك المحور 15 ثانية</strong> قبل الوصول</li>
+            <li>🩹 الضمادة نظيفة وجافة وسليمة؛ غيّر الشفاف كل 5-7 أيام</li>
+            <li>🔄 غيّر الموصلات الخالية من الإبر حسب البروتوكول</li>
+            <li>🔬 راجع المختبرات يومياً لعلامات العدوى</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     9. ICU MEDICATIONS
+══════════════════════════════════════════ -->
+<div id="meds" class="topic">
+  <div class="topic-header">
+    <div class="topic-icon">💊</div>
+    <div><h2>Common ICU Medications</h2><div class="topic-ar">أدوية العناية المركزة الشائعة</div></div>
+  </div>
+
+  <!-- Sedatives -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">💤</span> Sedatives & Analgesics — المهدئات ومسكنات الألم</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Drug</th><th>Action / Use</th><th>Key Nursing Points</th></tr>
+          <tr>
+            <td><strong>Propofol (Diprivan)</strong></td>
+            <td>Fast-acting sedative; used for MV, procedures, seizures</td>
+            <td>Monitor BP (causes ↓BP); check lipids (milky white); change tubing q12h; daily wake-up test</td>
+          </tr>
+          <tr>
+            <td><strong>Midazolam (Versed)</strong></td>
+            <td>Short-acting, causes amnesia; sedation, seizures, anxiety</td>
+            <td>Monitor respiratory rate; have Flumazenil (reversal) ready; can cause tolerance</td>
+          </tr>
+          <tr>
+            <td><strong>Fentanyl</strong></td>
+            <td>Powerful opioid pain relief; pain on vent</td>
+            <td>Monitor respiratory depression; have Narcan ready; check BP and HR</td>
+          </tr>
+          <tr>
+            <td><strong>Dexmedetomidine (Precedex)</strong></td>
+            <td>Sedates WITHOUT stopping breathing; allows patient to wake easier</td>
+            <td>Monitor HR (causes bradycardia); check BP; good for weaning; patient can be awake but calm</td>
+          </tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الدواء</th><th>التأثير / الاستخدام</th><th>نقاط تمريضية مهمة</th></tr>
+          <tr>
+            <td><strong>بروبوفول (ديبريفان)</strong></td>
+            <td>مهدئ سريع المفعول؛ للتنفس الصناعي، الإجراءات، النوبات</td>
+            <td>راقب ضغط الدم (يسبب انخفاضه)؛ راقب الدهون (سائل أبيض حليبي)؛ غيّر التوصيل كل 12 ساعة؛ اختبار إيقاظ يومي</td>
+          </tr>
+          <tr>
+            <td><strong>ميدازولام (فيرسيد)</strong></td>
+            <td>مهدئ قصير المفعول يسبب فقدان الذاكرة؛ للتهدئة والنوبات</td>
+            <td>راقب التنفس؛ احتفظ بفلوماسينيل (مضاد) جاهزاً؛ يمكن أن يسبب تحمّلاً</td>
+          </tr>
+          <tr>
+            <td><strong>فنتانيل</strong></td>
+            <td>مسكن ألم أفيوني قوي؛ للألم على الجهاز</td>
+            <td>راقب الاكتئاب التنفسي؛ احتفظ بنالوكسون جاهزاً؛ راقب ضغط الدم والنبض</td>
+          </tr>
+          <tr>
+            <td><strong>ديكسميديتوميدين (بريسيدكس)</strong></td>
+            <td>مهدئ <strong>بدون إيقاف التنفس</strong>؛ المريض يستيقظ بسهولة</td>
+            <td>راقب النبض (يسبب بطء القلب)؛ جيد للفطام؛ المريض يكون صاحياً وهادئاً</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vasopressors -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">📈</span> Vasopressors — ضاغطات الأوعية</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <div class="def-box" style="margin-bottom:10px">Used to raise blood pressure in shock states. Usually require a <strong>central line</strong>.</div>
+        <table class="mini-table">
+          <tr><th>Drug</th><th>Action</th><th>Used For</th><th>Key Point</th></tr>
+          <tr><td><strong>Norepinephrine (Levophed)</strong></td><td>Squeezes vessels → ↑ BP</td><td>Septic shock (1st line)</td><td>Titrate to MAP &gt;65; check extremities (necrosis risk)</td></tr>
+          <tr><td><strong>Epinephrine (Adrenaline)</strong></td><td>Stronger heart + tight vessels</td><td>Cardiac arrest, anaphylaxis</td><td>Watch arrhythmias; check glucose (raises it)</td></tr>
+          <tr><td><strong>Dopamine</strong></td><td>Low dose: kidneys; High dose: ↑ BP</td><td>Shock, low urine output</td><td>Dose-dependent; less used now</td></tr>
+          <tr><td><strong>Dobutamine</strong></td><td>Makes heart squeeze stronger</td><td>Heart failure, cardiogenic shock</td><td>May drop BP; watch arrhythmias</td></tr>
+        </table>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <div class="def-box" style="margin-bottom:10px">تُستخدم لرفع ضغط الدم في حالات الصدمة. تحتاج عادةً <strong>خطاً مركزياً</strong>.</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الدواء</th><th>التأثير</th><th>للـ</th><th>نقطة مهمة</th></tr>
+          <tr><td><strong>نورإبينفرين (ليفوفيد)</strong></td><td>يضيّق الأوعية → يرفع الضغط</td><td>صدمة إنتانية (خط أول)</td><td>اضبطه لـ MAP &gt;65؛ راقب الأطراف (خطر نخر)</td></tr>
+          <tr><td><strong>إبينفرين (أدرينالين)</strong></td><td>قلب أقوى + أوعية ضيقة</td><td>توقف القلب، الحساسية الحادة</td><td>راقب اضطرابات النظم؛ يرفع السكر</td></tr>
+          <tr><td><strong>دوبامين</strong></td><td>جرعة منخفضة: كلى؛ جرعة عالية: يرفع ضغط</td><td>صدمة، قلة البول</td><td>تأثيره حسب الجرعة؛ أقل استخداماً الآن</td></tr>
+          <tr><td><strong>دوبوتامين</strong></td><td>يقوي انقباض القلب</td><td>فشل قلبي، صدمة قلبية</td><td>قد يخفض الضغط؛ راقب اضطرابات النظم</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anticoagulants -->
+  <div class="section-card">
+    <div class="section-title"><span class="icon">💉</span> Anticoagulants — مضادات التخثر</div>
+    <div class="bilingual">
+      <div class="lang-en">
+        <div class="lang-label">English</div>
+        <table class="mini-table">
+          <tr><th>Drug</th><th>Action</th><th>Used For</th><th>Key Nursing Points</th></tr>
+          <tr>
+            <td><strong>Heparin</strong></td>
+            <td>Prevents blood clots (IV)</td>
+            <td>DVT, PE, stroke, heart attack</td>
+            <td>Monitor aPTT every 6h; check platelets (HIT risk); have protamine (reversal) ready; watch for bleeding</td>
+          </tr>
+          <tr>
+            <td><strong>Enoxaparin (Clexane)</strong></td>
+            <td>Prevents clots (longer-acting, SC injection)</td>
+            <td>DVT prevention/treatment</td>
+            <td>Give in abdomen; don't rub site; watch for bleeding; adjust dose for renal failure</td>
+          </tr>
+        </table>
+        <div class="def-box" style="margin-top:10px"><strong>HIT (Heparin-Induced Thrombocytopenia):</strong> Dangerous complication of heparin — paradoxically causes thrombosis → monitor platelets!</div>
+      </div>
+      <div class="lang-ar">
+        <div class="lang-label">العربية</div>
+        <table class="mini-table" dir="rtl">
+          <tr><th>الدواء</th><th>التأثير</th><th>للـ</th><th>نقاط تمريضية</th></tr>
+          <tr>
+            <td><strong>هيبارين</strong></td>
+            <td>يمنع تخثر الدم (وريدي)</td>
+            <td>DVT، PE، جلطة قلبية</td>
+            <td>راقب aPTT كل 6 ساعات؛ راقب الصفائح (خطر HIT)؛ احتفظ ببروتامين جاهزاً؛ راقب النزيف</td>
+          </tr>
+          <tr>
+            <td><strong>إينوكسابارين (كلكسان)</strong></td>
+            <td>يمنع التخثر (أطول مفعولاً، حقن تحت الجلد)</td>
+            <td>منع/علاج DVT</td>
+            <td>أعطِه في البطن؛ لا تفركه؛ راقب النزيف؛ اضبط الجرعة لقصور الكلى</td>
+          </tr>
+        </table>
+        <div class="def-box" style="margin-top:10px"><strong>HIT:</strong> مضاعفة خطيرة للهيبارين — يسبب تناقضياً تخثراً → راقب الصفائح الدموية!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.topic').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

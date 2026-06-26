@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICU Procedures Guide | دليل إجراءات العناية المركزة</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f7f9;
+    --surface: #ffffff;
+    --surface-2: #eef2f5;
+    --border: #dce4ea;
+    --accent: #3a7ca5;
+    --accent-light: #e8f2f9;
+    --accent-2: #5aaa8a;
+    --accent-2-light: #e6f5ef;
+    --warn: #c0705a;
+    --warn-light: #fdf0ed;
+    --gold: #b07d3a;
+    --gold-light: #fdf5e8;
+    --text: #2c3e50;
+    --text-muted: #6b7f8e;
+    --text-light: #95a5b5;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #2c4a6e 0%, #3a7ca5 60%, #4a9aba 100%);
+    color: white;
+    padding: 28px 32px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+  }
+  .header h1 {
+    font-family: 'Lora', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    position: relative;
+  }
+  .header h1 span {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    display: block;
+    font-size: 1.3rem;
+    opacity: 0.88;
+    margin-top: 4px;
+  }
+  .header p {
+    margin-top: 8px;
+    font-size: 0.88rem;
+    opacity: 0.7;
+    position: relative;
+  }
+
+  /* TAB NAV */
+  .tab-nav-wrapper {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tab-nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 16px;
+    gap: 2px;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 14px 16px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Source Sans 3', 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    line-height: 1.3;
+  }
+  .tab-btn .ar { font-family: 'Cairo', sans-serif; font-size: 0.78rem; font-weight: 400; opacity: 0.8; }
+  .tab-btn:hover { color: var(--accent); background: var(--accent-light); }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: var(--accent-light);
+  }
+  .tab-btn.questions-btn.active {
+    color: #7c4daa;
+    border-bottom-color: #7c4daa;
+    background: #f5eeff;
+  }
+  .tab-btn.questions-btn:hover { color: #7c4daa; background: #f5eeff; }
+
+  /* CONTENT */
+  .content-area { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* BILINGUAL SECTION */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .lang-col {
+    padding: 24px 26px;
+  }
+  .lang-col.ar {
+    direction: rtl;
+    text-align: right;
+    background: #fafcfe;
+    border-left: 1px solid var(--border);
+    font-family: 'Cairo', sans-serif;
+  }
+  .lang-col.en { font-family: 'Source Sans 3', sans-serif; }
+
+  .lang-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .lang-col.ar .lang-label { flex-direction: row-reverse; }
+  .lang-col.ar .lang-label::before { order: 1; }
+
+  /* SECTION HEADER (inside content) */
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .section-title-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.2px;
+  }
+  .card-header .icon { font-size: 1.1rem; }
+  .card-header.blue { background: var(--accent-light); color: var(--accent); }
+  .card-header.green { background: var(--accent-2-light); color: #2d7a5e; }
+  .card-header.red { background: var(--warn-light); color: var(--warn); }
+  .card-header.gold { background: var(--gold-light); color: var(--gold); }
+  .card-header.purple { background: #f3eeff; color: #6a3daa; }
+  .card-body { padding: 18px 20px; }
+
+  /* TEXT ELEMENTS */
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 16px 0 8px;
+  }
+  h3:first-child { margin-top: 0; }
+  p { font-size: 0.88rem; line-height: 1.7; color: var(--text); margin-bottom: 8px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 18px; margin: 6px 0 10px; }
+  .lang-col.ar ul, .lang-col.ar ol { padding-left: 0; padding-right: 18px; }
+  li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 3px; }
+  li strong { color: var(--text); }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    margin: 10px 0;
+  }
+  .data-table th {
+    background: var(--accent);
+    color: white;
+    padding: 9px 13px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+  }
+  .lang-col.ar .data-table th { text-align: right; }
+  .data-table td {
+    padding: 8px 13px;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: #f8fafb; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 2px;
+  }
+  .badge-blue { background: var(--accent-light); color: var(--accent); }
+  .badge-green { background: var(--accent-2-light); color: #2d7a5e; }
+  .badge-red { background: var(--warn-light); color: var(--warn); }
+  .badge-gold { background: var(--gold-light); color: var(--gold); }
+
+  /* ALERT BOX */
+  .alert {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .alert.info { background: var(--accent-light); border-left: 3px solid var(--accent); }
+  .alert.warn { background: var(--warn-light); border-left: 3px solid var(--warn); }
+  .alert.success { background: var(--accent-2-light); border-left: 3px solid var(--accent-2); }
+  .alert.gold { background: var(--gold-light); border-left: 3px solid var(--gold); }
+  .lang-col.ar .alert { border-left: none; border-right: 3px solid var(--accent); }
+  .lang-col.ar .alert.warn { border-right-color: var(--warn); border-left: none; }
+  .lang-col.ar .alert.success { border-right-color: var(--accent-2); border-left: none; }
+  .lang-col.ar .alert.gold { border-right-color: var(--gold); border-left: none; }
+
+  /* HS AND TS */
+  .ht-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .ht-box {
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .ht-box.h-box { background: var(--accent-light); }
+  .ht-box.t-box { background: var(--warn-light); }
+  .ht-box h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--accent);
+  }
+  .ht-box.t-box h4 { color: var(--warn); }
+  .ht-box ul { padding-left: 14px; }
+  .lang-col.ar .ht-box ul { padding-left: 0; padding-right: 14px; }
+  .ht-box li { font-size: 0.83rem; margin-bottom: 2px; }
+
+  /* WAVEFORM VISUAL */
+  .waveform-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  /* SCORING VISUAL */
+  .score-bar {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 8px 0;
+    height: 28px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .score-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    color: white;
+    flex: 1;
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  /* QUESTIONS TAB */
+  .questions-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+  }
+  .questions-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.7rem;
+    color: #5a2d8a;
+  }
+  .questions-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; }
+
+  .q-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .q-section-header {
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #5a2d8a, #7c4daa);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .q-section-header .num {
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+  }
+  .q-section-header .ar-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 1px;
+  }
+
+  .q-list { padding: 6px 20px 14px; }
+  .q-item {
+    border-bottom: 1px dashed var(--border);
+    padding: 14px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .q-item:last-child { border-bottom: none; }
+  .q-item:hover { padding-left: 6px; }
+
+  .q-num {
+    display: inline-block;
+    background: #f0e8ff;
+    color: #7c4daa;
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .q-text { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 5px; display: flex; align-items: flex-start; gap: 0; }
+  .q-text-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    direction: rtl;
+    text-align: right;
+    padding-right: 34px;
+    margin-top: 3px;
+  }
+  .q-answer {
+    display: none;
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: #f5eeff;
+    border-radius: 8px;
+    border-left: 3px solid #7c4daa;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .q-answer.visible { display: block; }
+  .q-answer-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #c9a8f0;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+  }
+  .show-ans-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 14px;
+    background: #f0e8ff;
+    color: #7c4daa;
+    border: 1px solid #c9a8f0;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Source Sans 3', 'Cairo', sans-serif;
+  }
+  .show-ans-btn:hover { background: #7c4daa; color: white; }
+
+  /* TOP STRIP of procedure tab */
+  .proc-intro {
+    background: linear-gradient(135deg, var(--accent) 0%, #4a9aba 100%);
+    color: white;
+    padding: 20px 26px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-md);
+  }
+  .proc-intro h2 { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 700; }
+  .proc-intro .ar { font-family: 'Cairo', sans-serif; font-size: 1.1rem; opacity: 0.88; margin-top: 2px; }
+  .proc-intro p { font-size: 0.85rem; opacity: 0.8; margin-top: 6px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .bilingual { grid-template-columns: 1fr; }
+    .lang-col.ar { border-left: none; border-top: 1px solid var(--border); }
+    .ht-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.4rem; }
+    .tab-btn { padding: 12px 12px 10px; font-size: 0.76rem; }
+    .content-area { padding: 16px 12px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ICU Procedures Reference Guide <span>دليل إجراءات العناية المركزة</span></h1>
+  <p>Critical Care Nursing · مرجع شامل لطلاب وممارسي التمريض الحرج</p>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav-wrapper">
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-btn active" onclick="showTab('vent')">Mechanical Ventilation<span class="ar">التنفس الاصطناعي</span></button>
+    <button class="tab-btn" onclick="showTab('trach')">Tracheostomy<span class="ar">أنبوب الرغامى</span></button>
+    <button class="tab-btn" onclick="showTab('acls')">ACLS<span class="ar">الإنعاش القلبي</span></button>
+    <button class="tab-btn" onclick="showTab('art')">Arterial Catheter<span class="ar">القسطرة الشريانية</span></button>
+    <button class="tab-btn" onclick="showTab('pac')">Pulmonary Artery Cath.<span class="ar">قسطرة الشريان الرئوي</span></button>
+    <button class="tab-btn" onclick="showTab('tpn')">TPN<span class="ar">التغذية الوريدية</span></button>
+    <button class="tab-btn" onclick="showTab('scores')">ICU Scoring<span class="ar">مقاييس التقييم</span></button>
+    <button class="tab-btn" onclick="showTab('bundles')">Bundles of Care<span class="ar">حزم الرعاية</span></button>
+    <button class="tab-btn" onclick="showTab('meds')">ICU Medications<span class="ar">أدوية العناية</span></button>
+    <button class="tab-btn questions-btn" onclick="showTab('questions')">📝 Self-Test<span class="ar">أسئلة مراجعة</span></button>
+  </nav>
+</div>
+
+<div class="content-area">
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 1: MECHANICAL VENTILATION -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content active" id="tab-vent">
+  <div class="proc-intro">
+    <h2>Mechanical Ventilation</h2>
+    <div class="ar">التنفس الاصطناعي الميكانيكي</div>
+    <p>Positive or negative pressure breathing device maintaining ventilation for prolonged periods</p>
+  </div>
+
+  <!-- Definition -->
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Definition</h3>
+      <p>A positive or negative pressure breathing device that can maintain ventilation and oxygen delivery for a prolonged period.</p>
+      <h3>Primary Purposes</h3>
+      <ul>
+        <li>Maintain adequate <strong>oxygenation and ventilation</strong></li>
+        <li>Remove CO₂ and support gas exchange</li>
+        <li>Prevent respiratory muscle fatigue and permit lung healing</li>
+        <li>Maintain airway patency and prevent aspiration</li>
+        <li>Allow for necessary sedation</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>التعريف</h3>
+      <p>جهاز تنفس بضغط موجب أو سالب يمكنه المحافظة على التهوية وتوصيل الأكسجين لفترة مطولة.</p>
+      <h3>الأهداف الأساسية</h3>
+      <ul>
+        <li>الحفاظ على <strong>أكسجة وتهوية كافية</strong></li>
+        <li>إزالة ثاني أكسيد الكربون ودعم تبادل الغازات</li>
+        <li>منع إجهاد عضلات التنفس والسماح بتعافي الرئتين</li>
+        <li>الحفاظ على سالكية مجرى الهواء ومنع الاستنشاق</li>
+        <li>السماح بالتخدير اللازم</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Types & Indications -->
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Types</h3>
+      <ul>
+        <li><strong>Invasive:</strong> Tube inserted into airway (ET tube or tracheostomy)</li>
+        <li><strong>Non-invasive:</strong> Mask over nose/mouth — CPAP or BiPAP</li>
+      </ul>
+      <h3>Indications</h3>
+      <ul>
+        <li><strong>Hypoxemic failure:</strong> PaO₂ &lt; 60 mmHg</li>
+        <li><strong>Hypercapnic failure:</strong> PaCO₂ &gt; 50 mmHg with acidosis</li>
+        <li>ARDS, severe pneumonia, COPD exacerbation, severe asthma, pulmonary edema</li>
+        <li>Airway protection: GCS &lt; 8</li>
+        <li>Neuromuscular disorders, cardiac arrest, shock, head/chest trauma</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>الأنواع</h3>
+      <ul>
+        <li><strong>غازي:</strong> أنبوب يُدخل في مجرى الهواء (أنبوب القصبة أو فغر الرغامى)</li>
+        <li><strong>غير غازي:</strong> قناع على الأنف/الفم — CPAP أو BiPAP</li>
+      </ul>
+      <h3>المؤشرات</h3>
+      <ul>
+        <li><strong>فشل نقص الأكسجة:</strong> PaO₂ أقل من 60 ملم زئبق</li>
+        <li><strong>فشل احتباس ثاني أكسيد الكربون:</strong> PaCO₂ أكثر من 50 مع حموضة</li>
+        <li>متلازمة ARDS، الالتهاب الرئوي الشديد، تفاقم COPD، الربو الشديد، الوذمة الرئوية</li>
+        <li>حماية مجرى الهواء: مقياس GCS أقل من 8</li>
+        <li>الاضطرابات العصبية العضلية، السكتة القلبية، الصدمة، رضوض الصدر/الرأس</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modes -->
+  <div class="card">
+    <div class="card-header blue"><span class="icon">⚙️</span> Modes of Ventilation | أوضاع التهوية</div>
+    <div class="card-body">
+      <div class="bilingual" style="border:none;box-shadow:none;margin:0;border-radius:0;">
+        <div class="lang-col en" style="padding:0 16px 0 0;">
+          <h3>Volume Modes</h3>
+          <p>Ventilator delivers a <strong>set volume</strong>. Pressure varies based on lung resistance.</p>
+          <ul><li>Volume Control (VC)</li><li>Assist-Control (AC-VC)</li><li>SIMV-Volume</li></ul>
+          <h3 style="margin-top:14px;">Pressure Modes</h3>
+          <p>Ventilator delivers air at a <strong>set pressure</strong>. Volume varies with lung compliance.</p>
+          <ul><li>Pressure Control (PC)</li><li>Pressure Support (PS)</li><li>CPAP, BiPAP</li></ul>
+        </div>
+        <div class="lang-col ar" style="padding:0 16px 0 0; border:none; background:transparent; border-right: 1px solid var(--border);">
+          <h3>أوضاع الحجم</h3>
+          <p>الجهاز يُسلّم <strong>حجمًا محددًا</strong>. الضغط يتغير بناءً على مقاومة الرئة.</p>
+          <ul><li>التحكم بالحجم (VC)</li><li>المساعدة-التحكم (AC-VC)</li><li>SIMV-حجم</li></ul>
+          <h3 style="margin-top:14px;">أوضاع الضغط</h3>
+          <p>الجهاز يُسلّم الهواء بـ<strong>ضغط محدد</strong>. الحجم يتغير مع امتثال الرئة.</p>
+          <ul><li>التحكم بالضغط (PC)</li><li>دعم الضغط (PS)</li><li>CPAP وBiPAP</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Parameters -->
+  <div class="card">
+    <div class="card-header green"><span class="icon">🎚️</span> Ventilator Parameters | إعدادات الجهاز</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Parameter</th><th>المعامل</th><th>Normal Range / المعدل الطبيعي</th></tr>
+        <tr><td><strong>Tidal Volume (Vt)</strong></td><td>حجم المد الجزري</td><td>6–8 mL/kg</td></tr>
+        <tr><td><strong>Respiratory Rate (RR)</strong></td><td>معدل التنفس</td><td>12–20 breath/min</td></tr>
+        <tr><td><strong>FiO₂</strong></td><td>نسبة الأكسجين المستنشق</td><td>21%–100%</td></tr>
+        <tr><td><strong>PEEP</strong></td><td>الضغط الإيجابي في نهاية الزفير</td><td>يمنع انهيار الحويصلات</td></tr>
+        <tr><td><strong>I:E Ratio</strong></td><td>نسبة الشهيق للزفير</td><td>1:2 (طبيعي)</td></tr>
+        <tr><td><strong>Sensitivity</strong></td><td>الحساسية</td><td>سهولة تشغيل نفس من المريض</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Alarms -->
+  <div class="card">
+    <div class="card-header red"><span class="icon">🚨</span> Alarms & Nursing Response | الأجهزة التنبيهية والاستجابة التمريضية</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Alarm / التنبيه</th><th>Causes / الأسباب</th><th>Action / الإجراء التمريضي</th></tr>
+        <tr><td><strong>High Pressure ⬆️</strong></td><td>Coughing, biting tube, secretions, kinked tubing | السعال، عض الأنبوب، إفرازات، انثناء الأنبوب</td><td>Assess, suction, check kinks | تقييم، شفط، فحص الانثناء</td></tr>
+        <tr><td><strong>Low Pressure ⬇️</strong></td><td>Disconnection, cuff leak | انفصال، تسرب الكفة</td><td>Check ALL connections immediately | فحص جميع الوصلات فوراً</td></tr>
+        <tr><td><strong>High RR</strong></td><td>Pain, anxiety, hypoxemia | ألم، قلق، نقص أكسجة</td><td>Assess cause and treat | تقييم السبب والعلاج</td></tr>
+        <tr><td><strong>Apnea 😴</strong></td><td>Over-sedation, malfunction | إفراط في التخدير، عطل</td><td>Assess, manual ventilation | تقييم، تهوية يدوية</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Complications & Weaning -->
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Complications & Prevention</h3>
+      <ul>
+        <li><strong>VAP:</strong> HOB 30–45°, chlorhexidine oral care, daily extubation assessment</li>
+        <li><strong>Barotrauma:</strong> Monitor airway pressures, lung-protective strategy</li>
+        <li><strong>Stress Ulcers:</strong> H₂ blockers or PPIs prophylaxis</li>
+        <li><strong>DVT/PE:</strong> SCDs + anticoagulation</li>
+        <li><strong>Muscle Weakness:</strong> Early mobility + PT</li>
+      </ul>
+      <h3 style="margin-top:14px;">Weaning Readiness ✅</h3>
+      <ul>
+        <li>Underlying cause resolving</li>
+        <li>Hemodynamically stable</li>
+        <li>SpO₂ &gt; 90% on FiO₂ ≤ 40%</li>
+        <li>Alert and cooperative</li>
+      </ul>
+      <h3 style="margin-top:14px;">Weaning Failure Signs 🛑</h3>
+      <ul>
+        <li>RR &gt;35 or &lt;8, use of accessory muscles</li>
+        <li>SpO₂ &lt; 90% or cyanosis</li>
+        <li>HR &gt;140, BP &gt;180 or &lt;90, new arrhythmias</li>
+        <li>Confusion, diaphoresis, agitation</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>المضاعفات والوقاية</h3>
+      <ul>
+        <li><strong>VAP:</strong> رفع رأس السرير 30–45°، رعاية الفم بالكلوروهيكسيدين، تقييم يومي للفطام</li>
+        <li><strong>الرضح الضغطي:</strong> مراقبة ضغط مجرى الهواء، استراتيجية حماية الرئة</li>
+        <li><strong>قرحة الإجهاد:</strong> وقاية بـ H₂ blockers أو PPIs</li>
+        <li><strong>DVT/PE:</strong> أجهزة الضغط التسلسلي + مضادات التخثر</li>
+        <li><strong>ضعف العضلات:</strong> التحرك المبكر + العلاج الطبيعي</li>
+      </ul>
+      <h3 style="margin-top:14px;">جاهزية الفطام ✅</h3>
+      <ul>
+        <li>السبب الأساسي في تحسن</li>
+        <li>مستقر ديناميكياً دموياً</li>
+        <li>SpO₂ أكثر من 90% على FiO₂ لا يتجاوز 40%</li>
+        <li>يقظ ومتعاون</li>
+      </ul>
+      <h3 style="margin-top:14px;">علامات فشل الفطام 🛑</h3>
+      <ul>
+        <li>معدل تنفس أكثر من 35 أو أقل من 8، استخدام عضلات مساعدة</li>
+        <li>SpO₂ أقل من 90% أو زُرقة</li>
+        <li>نبض أكثر من 140، ضغط أكثر من 180 أو أقل من 90، أعراض قلبية جديدة</li>
+        <li>تشوش، تعرق، هياج</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end tab-vent -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 2: TRACHEOSTOMY -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-trach">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #2d7a5e, #5aaa8a);">
+    <h2>Tracheostomy Tube</h2>
+    <div class="ar">أنبوب الرغامى (فغر القصبة الهوائية)</div>
+    <p>Surgical airway created through the neck into the trachea for airway management</p>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Definition</h3>
+      <p>A surgical opening created through the neck into the trachea. A tracheostomy tube is inserted into this opening to maintain an open airway.</p>
+      <h3>Purposes</h3>
+      <ul>
+        <li>Bypass upper airway obstructions</li>
+        <li>Provide route for mechanical ventilation</li>
+        <li>Facilitate removal of secretions from the lungs</li>
+      </ul>
+      <h3 style="margin-top:14px;">Indications</h3>
+      <ul>
+        <li><strong>Airway obstruction:</strong> trauma, foreign bodies, tumors</li>
+        <li><strong>Secretion management:</strong> copious or thick secretions</li>
+        <li><strong>Prolonged ventilation:</strong> &gt;14 days (to protect vocal cords)</li>
+        <li><strong>Intubation failure:</strong> when ET intubation is impossible</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>التعريف</h3>
+      <p>فتحة جراحية تُنشأ عبر الرقبة إلى القصبة الهوائية. يُدخل الأنبوب في هذه الفتحة للحفاظ على مجرى هواء مفتوح.</p>
+      <h3>الأهداف</h3>
+      <ul>
+        <li>تجاوز انسدادات مجرى الهواء العلوي</li>
+        <li>توفير طريق للتنفس الاصطناعي</li>
+        <li>تسهيل إزالة الإفرازات من الرئتين</li>
+      </ul>
+      <h3 style="margin-top:14px;">المؤشرات</h3>
+      <ul>
+        <li><strong>انسداد مجرى الهواء:</strong> الرضوح، الأجسام الغريبة، الأورام</li>
+        <li><strong>إدارة الإفرازات:</strong> إفرازات غزيرة أو سميكة</li>
+        <li><strong>التنفس الاصطناعي المطوّل:</strong> أكثر من 14 يوماً (لحماية الحبال الصوتية)</li>
+        <li><strong>فشل التنبيب:</strong> عندما يستحيل التنبيب الرغامي التقليدي</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Types of Tracheostomy</h3>
+      <ul>
+        <li><strong>Temporary:</strong> Elective during major head/neck surgeries</li>
+        <li><strong>Permanent:</strong> After total laryngectomy</li>
+      </ul>
+      <h3 style="margin-top:14px;">Types of Tracheostomy Tubes</h3>
+      <ul>
+        <li><strong>Cuffed Tube:</strong> Inflatable balloon → closed circuit for mechanical ventilation</li>
+        <li><strong>Cuffless Tube:</strong> Used when ready for decannulation; single or double tube</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>أنواع فغر الرغامى</h3>
+      <ul>
+        <li><strong>مؤقت:</strong> اختياري أثناء عمليات الرأس والرقبة الكبرى</li>
+        <li><strong>دائم:</strong> بعد استئصال الحنجرة الكلي</li>
+      </ul>
+      <h3 style="margin-top:14px;">أنواع أنابيب الرغامى</h3>
+      <ul>
+        <li><strong>أنبوب مكفوف (Cuffed):</strong> بالون قابل للنفخ → دائرة مغلقة للتنفس الاصطناعي</li>
+        <li><strong>أنبوب بلا كفة (Cuffless):</strong> يُستخدم عند الاستعداد لإزالة الأنبوب؛ أنبوب واحد أو مزدوج</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header red"><span class="icon">⚠️</span> Potential Complications | المضاعفات المحتملة</div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <ul>
+            <li>🔴 <strong>Tube Dislodgement</strong> — انزياح الأنبوب → loss of airway</li>
+            <li>🔴 <strong>Airway Obstruction</strong> — انسداد بإفرازات أو نزوح</li>
+            <li>🔴 <strong>Hemorrhage</strong> — نزيف في موقع العملية</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>🟡 <strong>Infection</strong> — عدوى في الفوهة أو المجاري التنفسية</li>
+            <li>🟡 <strong>Skin Breakdown</strong> — تهتك الجلد حول الفتحة</li>
+            <li>🟡 <strong>Tracheoesophageal Fistula</strong> — ناسور بين القصبة والمريء</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end tab-trach -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 3: ACLS -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-acls">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #8b2e2e, #c05a5a);">
+    <h2>Advanced Cardiovascular Life Support (ACLS)</h2>
+    <div class="ar">الإنعاش القلبي الرئوي المتقدم</div>
+    <p>Evidence-based protocols for managing cardiac arrest and life-threatening arrhythmias</p>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Indications for ACLS</h3>
+      <ul>
+        <li><strong>Cardiac Arrest:</strong> VF, pVT, Asystole, PEA</li>
+        <li><strong>Unstable Arrhythmias:</strong> bradycardia or tachyarrhythmias causing hypotension/shock</li>
+        <li><strong>ACS (STEMI):</strong> requiring continuous monitoring</li>
+        <li><strong>Respiratory Arrest/Failure</strong></li>
+        <li><strong>Shock States:</strong> systolic BP &lt; 90 mmHg</li>
+      </ul>
+      <h3 style="margin-top:14px;">Purposes</h3>
+      <ul>
+        <li>Prompt evidence-based intervention</li>
+        <li>Restore spontaneous circulation (ROSC)</li>
+        <li>Minimize neurological injury</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>مؤشرات الإنعاش المتقدم</h3>
+      <ul>
+        <li><strong>السكتة القلبية:</strong> VF، pVT، توقف القلب، PEA</li>
+        <li><strong>اضطرابات نظم غير مستقرة:</strong> بطء أو سرعة مسببة لانخفاض الضغط أو الصدمة</li>
+        <li><strong>ACS (احتشاء بارتفاع ST):</strong> يحتاج مراقبة مستمرة</li>
+        <li><strong>توقف التنفس أو فشله</strong></li>
+        <li><strong>حالات الصدمة:</strong> ضغط انقباضي أقل من 90 ملم زئبق</li>
+      </ul>
+      <h3 style="margin-top:14px;">الأهداف</h3>
+      <ul>
+        <li>تدخل سريع مبني على أدلة</li>
+        <li>استعادة الدوران التلقائي (ROSC)</li>
+        <li>تقليل الإصابة العصبية</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header red"><span class="icon">💊</span> Key ACLS Medications | الأدوية الأساسية</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Drug / الدواء</th><th>Use / الاستخدام</th><th>Action / الآلية</th></tr>
+        <tr><td><strong>Epinephrine</strong></td><td>All cardiac arrest rhythms / جميع إيقاعات السكتة</td><td>Increases BP & perfusion to heart/brain | يرفع الضغط والتروية</td></tr>
+        <tr><td><strong>Amiodarone</strong></td><td>Refractory VF/pVT / حالات مقاومة</td><td>Stabilizes heart rhythm | يثبت نظم القلب</td></tr>
+        <tr><td><strong>Atropine</strong></td><td>Symptomatic bradycardia / بطء قلب عرضي</td><td>Blocks vagus nerve → ↑HR</td></tr>
+        <tr><td><strong>Adenosine</strong></td><td>SVT (narrow QRS)</td><td>Stops AV nodal re-entry to reset rhythm | يوقف إعادة الدخول AV</td></tr>
+        <tr><td><strong>Dopamine</strong></td><td>Bradycardia if atropine fails</td><td>Infusion → ↑HR and BP</td></tr>
+        <tr><td><strong>Magnesium</strong></td><td>Torsades de pointes</td><td>Protects heart cells | يحمي خلايا القلب</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header blue"><span class="icon">📊</span> Algorithms | الخوارزميات</div>
+    <div class="card-body">
+      <div class="bilingual" style="border:none;box-shadow:none;margin:0;border-radius:0;">
+        <div class="lang-col en" style="padding:0 16px 0 0;">
+          <h3>🫀 Cardiac Arrest</h3>
+          <p><strong>Shockable (VF/pVT):</strong> Defibrillation → 2-min CPR cycles → Epinephrine + Amiodarone</p>
+          <p><strong>Non-shockable (Asystole/PEA):</strong> High-quality CPR + Epinephrine q3–5 min + treat H's & T's</p>
+          <h3 style="margin-top:12px;">🩺 Bradycardia</h3>
+          <p>Atropine → pacing → vasopressor infusion if unstable</p>
+          <h3 style="margin-top:12px;">⚡ Tachycardia</h3>
+          <p><strong>Unstable:</strong> Synchronized cardioversion immediately</p>
+          <p><strong>Stable:</strong> Vagal maneuvers, Adenosine, Beta-blockers based on QRS width</p>
+          <h3 style="margin-top:12px;">🌟 Post-ROSC Care</h3>
+          <p>SpO₂ 90–98%, MAP ≥ 65 mmHg, consider targeted temperature management</p>
+        </div>
+        <div class="lang-col ar" style="padding:0 16px 0 0; border:none; background:transparent; border-right: 1px solid var(--border);">
+          <h3>🫀 السكتة القلبية</h3>
+          <p><strong>قابل للصدمة (VF/pVT):</strong> إزالة الرجفان → دورات إنعاش 2 دقيقة → إبينفرين + أميودارون</p>
+          <p><strong>غير قابل للصدمة (Asystole/PEA):</strong> إنعاش عالي الجودة + إبينفرين كل 3–5 دقائق + علاج H's & T's</p>
+          <h3 style="margin-top:12px;">🩺 بطء القلب</h3>
+          <p>أتروبين → تحفيز الناظم → مسكب وعائي ضاغط إذا كان غير مستقر</p>
+          <h3 style="margin-top:12px;">⚡ تسرع القلب</h3>
+          <p><strong>غير مستقر:</strong> تقويم النظم المتزامن فوراً</p>
+          <p><strong>مستقر:</strong> مناورات مبهمية، أدينوزين، حاصرات بيتا حسب عرض QRS</p>
+          <h3 style="margin-top:12px;">🌟 رعاية ما بعد ROSC</h3>
+          <p>SpO₂ 90–98%، MAP لا يقل عن 65 ملم زئبق، إدارة درجة الحرارة</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- H's and T's -->
+  <div class="card">
+    <div class="card-header gold"><span class="icon">🔍</span> Reversible Causes — H's & T's | الأسباب القابلة للعلاج</div>
+    <div class="card-body">
+      <div class="ht-grid">
+        <div class="ht-box h-box">
+          <h4>💧 The H's</h4>
+          <ul>
+            <li>Hypovolemia — نقص حجم الدم</li>
+            <li>Hypoxia — نقص الأكسجة</li>
+            <li>Hydrogen ion (acidosis) — حموضة</li>
+            <li>Hypo/Hyperkalemia — اضطراب بوتاسيوم</li>
+            <li>Hypothermia — انخفاض حرارة الجسم</li>
+          </ul>
+        </div>
+        <div class="ht-box t-box">
+          <h4>⚡ The T's</h4>
+          <ul>
+            <li>Tension pneumothorax — استرواح الصدر التوتري</li>
+            <li>Tamponade (cardiac) — دكاك القلب</li>
+            <li>Toxins — السموم</li>
+            <li>Thrombosis (pulmonary/coronary) — تخثر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Team Roles in Resuscitation</h3>
+      <ul>
+        <li>🎯 <strong>Team Leader:</strong> Assigns roles, monitors performance, directs effort</li>
+        <li>🫁 <strong>Airway provider:</strong> Manages airway and ventilation</li>
+        <li>💊 <strong>Medication provider:</strong> Prepares and administers drugs</li>
+        <li>🖥️ <strong>Monitor/Defibrillator:</strong> Operates equipment and calls rhythm</li>
+        <li>📋 <strong>Recorder:</strong> Documents time and interventions</li>
+        <li>💪 <strong>Compressor:</strong> Rotates every 2 minutes to prevent fatigue</li>
+        <li>📢 <strong>Communication:</strong> Closed-loop — confirm + complete orders</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>أدوار الفريق في الإنعاش</h3>
+      <ul>
+        <li>🎯 <strong>قائد الفريق:</strong> يوزع الأدوار ويوجه الجهد</li>
+        <li>🫁 <strong>مسؤول مجرى الهواء:</strong> يدير التهوية</li>
+        <li>💊 <strong>مسؤول الأدوية:</strong> يحضر ويعطي الأدوية</li>
+        <li>🖥️ <strong>مراقب / مزيل الرجفان:</strong> يشغّل الجهاز ويقرأ النظم</li>
+        <li>📋 <strong>المسجل:</strong> يوثق الأوقات والتدخلات</li>
+        <li>💪 <strong>الضاغط:</strong> يتناوب كل دقيقتين لمنع الإجهاد</li>
+        <li>📢 <strong>التواصل:</strong> الحلقة المغلقة — تأكيد + إتمام الأوامر</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end tab-acls -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 4: ARTERIAL CATHETER -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-art">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #6a3030, #a05060);">
+    <h2>Arterial Catheter (Arterial Line)</h2>
+    <div class="ar">القسطرة الشريانية (خط الشريان)</div>
+    <p>Continuous beat-to-beat blood pressure monitoring and repeated blood sampling</p>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Purposes</h3>
+      <ul>
+        <li>Continuous real-time blood pressure monitoring</li>
+        <li>Frequent blood sampling (ABGs) without repeated needle sticks</li>
+      </ul>
+      <h3 style="margin-top:14px;">Indications</h3>
+      <ul>
+        <li>Frequent ABG monitoring (respiratory management)</li>
+        <li>Hemodynamic instability: severe hypotension, hypertension, shock</li>
+        <li>Vasopressor or mechanical cardiovascular support</li>
+        <li>Metabolic monitoring and specific therapies</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>الأهداف</h3>
+      <ul>
+        <li>مراقبة مستمرة للضغط الشرياني في الوقت الفعلي</li>
+        <li>سحب عينات دم متكررة (ABGs) بدون وخز متعدد</li>
+      </ul>
+      <h3 style="margin-top:14px;">المؤشرات</h3>
+      <ul>
+        <li>مراقبة ABG متكررة (إدارة التنفس)</li>
+        <li>عدم استقرار الدورة الدموية: انخفاض/ارتفاع شديد في الضغط، الصدمة</li>
+        <li>استخدام مضيقات الأوعية أو دعم القلب الميكانيكي</li>
+        <li>مراقبة استقلابية وعلاجات خاصة</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header blue"><span class="icon">📍</span> Insertion Sites | مواقع الإدخال</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Site / الموقع</th><th>Key Notes / ملاحظات</th><th>Risk / الخطر</th></tr>
+        <tr><td><strong>Radial Artery ⭐ Most preferred</strong></td><td>Superficial & stable. Requires modified Allen's test or Doppler | يتطلب اختبار ألن المعدّل</td><td>🟢 Low</td></tr>
+        <tr><td><strong>Brachial Artery</strong></td><td>Deeper, no collateral circulation | أعمق، لا دوران جانبي</td><td>🟡 Higher</td></tr>
+        <tr><td><strong>Femoral Artery</strong></td><td>Emergency use | للطوارئ فقط</td><td>🔴 High infection + hemorrhage</td></tr>
+        <tr><td><strong>Dorsalis Pedis / Posterior Tibial</strong></td><td>Least preferred | الأقل تفضيلاً</td><td>🔴 High dislodgement risk</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header green"><span class="icon">📈</span> Arterial Waveform Components | مكونات موجة الشريان</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Component / المكون</th><th>Meaning / المعنى</th><th>Normal / الطبيعي</th></tr>
+        <tr><td><strong>Anacrotic Limb</strong> — الذراع الصاعد</td><td>Ventricular ejection / الطرد البطيني</td><td>—</td></tr>
+        <tr><td><strong>Peak Systolic Pressure</strong> — ذروة الانقباض</td><td>Highest ejection point / أعلى نقطة طرد</td><td>&lt; 120 mmHg</td></tr>
+        <tr><td><strong>Dicrotic Notch</strong> — النقرة الثنائية</td><td>Aortic valve closure / إغلاق الصمام الأبهري</td><td>—</td></tr>
+        <tr><td><strong>Diastolic Downslope</strong> — الهبوط الانبساطي</td><td>Diastole / الانبساط</td><td>&lt; 80 mmHg</td></tr>
+        <tr><td><strong>MAP</strong> — الضغط الشرياني المتوسط</td><td>Average perfusion pressure to organs / متوسط تروية الأعضاء</td><td>70–100 mmHg</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Key Nursing Care</h3>
+      <ul>
+        <li>🎯 <strong>Zero the system</strong> and level transducer at the <strong>phlebostatic axis</strong></li>
+        <li>👁️ Continuous monitoring of skin color, pulse, temperature <strong>distal to site</strong></li>
+        <li>💧 Maintain pressure bag at <strong>300 mmHg</strong> to prevent backflow and clots</li>
+        <li>🫧 Ensure tubing is free of <strong>air bubbles</strong> (prevent embolism)</li>
+        <li>🔍 Regular inspection of site: redness, swelling, bleeding</li>
+      </ul>
+      <h3 style="margin-top:14px;">Complications</h3>
+      <ul>
+        <li>Vasospasm, thrombosis, embolism, vascular insufficiency</li>
+        <li>Hemorrhage, hematoma, ischemia, nerve injury</li>
+        <li>Infection (higher risk at femoral site)</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>الرعاية التمريضية الأساسية</h3>
+      <ul>
+        <li>🎯 <strong>ضبط الصفر</strong> ومستوى المحوّل عند <strong>المحور الفلبوستاتي</strong></li>
+        <li>👁️ مراقبة مستمرة للون الجلد والنبض والحرارة <strong>أسفل الموقع</strong></li>
+        <li>💧 الحفاظ على كيس الضغط عند <strong>300 ملم زئبق</strong> لمنع الارتداد والجلطات</li>
+        <li>🫧 التأكد من خلو الأنبوب من <strong>فقاعات الهواء</strong> (منع الصمة الهوائية)</li>
+        <li>🔍 فحص منتظم للموقع: احمرار، تورم، نزيف</li>
+      </ul>
+      <h3 style="margin-top:14px;">المضاعفات</h3>
+      <ul>
+        <li>تشنج وعائي، تخثر، صمة، قصور وعائي</li>
+        <li>نزيف، ورم دموي، نقص تروية، إصابة عصبية</li>
+        <li>عدوى (خطر أعلى في الموقع الفخذي)</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end tab-art -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 5: PULMONARY ARTERY CATHETER -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-pac">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #1a4a6e, #2a6898);">
+    <h2>Pulmonary Artery Catheter (Swan-Ganz)</h2>
+    <div class="ar">قسطرة الشريان الرئوي (Swan-Ganz)</div>
+    <p>Balloon-tipped, flow-directed catheter advanced into the pulmonary artery for hemodynamic monitoring</p>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Purposes — Measures:</h3>
+      <ul>
+        <li>Pulmonary artery pressure</li>
+        <li>PCWP — reflects left ventricular preload</li>
+        <li>Cardiac output (thermodilution technique)</li>
+        <li>Overall fluid status assessment</li>
+      </ul>
+      <h3 style="margin-top:14px;">Indications</h3>
+      <ul>
+        <li>Critically ill requiring precise cardiovascular tracking</li>
+        <li>Cardiogenic, septic, or hypovolemic shock</li>
+        <li>Severe heart failure, AMI with complications</li>
+        <li>Major cardiac/thoracic surgery</li>
+        <li>ARDS or severe pulmonary hypertension</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>الأهداف — تقيس:</h3>
+      <ul>
+        <li>ضغط الشريان الرئوي</li>
+        <li>PCWP — يعكس الضغط الأمامي للبطين الأيسر</li>
+        <li>النتاج القلبي (بتقنية التخفيف الحراري)</li>
+        <li>تقييم وضع السوائل</li>
+      </ul>
+      <h3 style="margin-top:14px;">المؤشرات</h3>
+      <ul>
+        <li>المرضى الحرجين الذين يحتاجون تتبعاً دقيقاً للقلب والأوعية</li>
+        <li>صدمة قلبية، إنتانية، أو نقص حجمية</li>
+        <li>فشل قلبي شديد، احتشاء عضلة القلب مع مضاعفات</li>
+        <li>جراحة قلبية/صدرية كبرى</li>
+        <li>ARDS أو ارتفاع ضغط رئوي شديد</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header blue"><span class="icon">📊</span> Normal Hemodynamic Ranges | القيم الطبيعية</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Measurement / القياس</th><th>Normal Range (mmHg) / المعدل الطبيعي</th></tr>
+        <tr><td><strong>Right Atrial Pressure (RAP/CVP)</strong> — الضغط الأذيني الأيمن</td><td>2 – 8</td></tr>
+        <tr><td><strong>Right Ventricular Pressure (RVP)</strong> — ضغط البطين الأيمن</td><td>Systolic: 15–30 / Diastolic: 2–8</td></tr>
+        <tr><td><strong>Pulmonary Artery Pressure (PAP)</strong> — ضغط الشريان الرئوي</td><td>Systolic: 15–30 / Diastolic: 4–12 / Mean: 10–20</td></tr>
+        <tr><td><strong>PCWP</strong> — ضغط الإسفين الرئوي</td><td>6 – 12</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Contraindications</h3>
+      <p><strong>Absolute:</strong> PA rupture, right atrial/ventricular tumors, infection at insertion site</p>
+      <p><strong>Relative:</strong> Coagulopathy, severe arrhythmias, tricuspid/pulmonary valve disease</p>
+      <h3 style="margin-top:14px;">Complications</h3>
+      <ul>
+        <li>Cardiac arrhythmias</li>
+        <li>Pulmonary artery rupture or infarction</li>
+        <li>Pneumothorax (during insertion)</li>
+        <li>Thrombosis, air embolism, CLABSI</li>
+        <li>Balloon rupture or catheter knotting</li>
+      </ul>
+      <h3 style="margin-top:14px;">Key Nursing Care</h3>
+      <ul>
+        <li>Level transducer at <strong>phlebostatic axis</strong>, zero the system</li>
+        <li><strong>Balloon:</strong> inflate ONLY for PCWP → deflate immediately after</li>
+        <li>Continuous ECG monitoring for arrhythmias</li>
+        <li>Flush lumens as prescribed to maintain patency</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>موانع الاستخدام</h3>
+      <p><strong>مطلقة:</strong> تمزق الشريان الرئوي، أورام الأذين/البطين الأيمن، عدوى في موقع الإدخال</p>
+      <p><strong>نسبية:</strong> اضطراب تخثر، اضطرابات نظم شديدة، مرض صمام ثلاثي/رئوي</p>
+      <h3 style="margin-top:14px;">المضاعفات</h3>
+      <ul>
+        <li>اضطرابات نظم القلب</li>
+        <li>تمزق أو احتشاء الشريان الرئوي</li>
+        <li>استرواح الصدر (أثناء الإدخال)</li>
+        <li>تخثر، صمة هوائية، CLABSI</li>
+        <li>تمزق البالون أو تعقد القسطرة</li>
+      </ul>
+      <h3 style="margin-top:14px;">الرعاية التمريضية الأساسية</h3>
+      <ul>
+        <li>مستوى المحوّل عند <strong>المحور الفلبوستاتي</strong>، ضبط الصفر</li>
+        <li><strong>البالون:</strong> ينفخ فقط لقياس PCWP → يُفرغ فوراً بعده</li>
+        <li>مراقبة مستمرة لـECG للكشف عن اضطرابات النظم</li>
+        <li>ري تجاويف القسطرة حسب الأوامر للحفاظ على سالكيتها</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end tab-pac -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 6: TPN -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-tpn">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #3a6e2e, #5aaa4a);">
+    <h2>Total Parenteral Nutrition (TPN)</h2>
+    <div class="ar">التغذية الوريدية الكاملة</div>
+    <p>Complete IV nutrition bypassing the GI tract for patients who cannot eat or absorb nutrients</p>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Indications (When GI is unsafe/non-functional)</h3>
+      <ul>
+        <li>Severe malnutrition, bowel obstruction</li>
+        <li>Short bowel syndrome, peritonitis</li>
+        <li>Severe pancreatitis, Crohn's disease flare</li>
+        <li>Severe burns, trauma, major surgery</li>
+        <li>Cancer intensive therapy</li>
+        <li>Coma / unconscious state</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>المؤشرات (حين تكون القناة الهضمية غير صالحة)</h3>
+      <ul>
+        <li>سوء تغذية شديد، انسداد معوي</li>
+        <li>متلازمة القولون القصير، التهاب الصفاق</li>
+        <li>التهاب البنكرياس الشديد، تفاقم مرض كرون</li>
+        <li>حروق شديدة، رضوح، جراحة كبرى</li>
+        <li>علاج كثيف للسرطان</li>
+        <li>الغيبوبة أو فقدان الوعي</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header green"><span class="icon">🧪</span> Components of TPN | مكونات محلول التغذية</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Component / المكون</th><th>Substance / المادة</th><th>Role / الدور</th></tr>
+        <tr><td><strong>Carbohydrates</strong> — كربوهيدرات</td><td>Dextrose / سكر العنب</td><td>Energy / طاقة</td></tr>
+        <tr><td><strong>Proteins</strong> — بروتينات</td><td>Amino acids / أحماض أمينية</td><td>Tissue repair / إصلاح الأنسجة</td></tr>
+        <tr><td><strong>Fats</strong> — دهون</td><td>Lipid emulsions / مستحلبات دهنية</td><td>Essential fatty acids + calories / أحماض دهنية أساسية + سعرات</td></tr>
+        <tr><td><strong>Electrolytes</strong> — شوارد</td><td>Na, K, Mg, Ca, Phos</td><td>Fluid balance / توازن السوائل</td></tr>
+        <tr><td><strong>Vitamins & Trace elements</strong> — فيتامينات وعناصر نادرة</td><td>Zinc, copper, etc.</td><td>Metabolic processes / عمليات استقلابية</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Routes of Administration</h3>
+      <ul>
+        <li><strong>Central Venous Catheter (CVC):</strong> Most common — subclavian or internal jugular. High dextrose is too irritating for peripheral veins.</li>
+        <li><strong>Peripheral (PPN):</strong> Short-term / partial support with lower concentrations</li>
+      </ul>
+      <h3 style="margin-top:14px;">Key Nursing Care</h3>
+      <ul>
+        <li>🔒 <strong>Dedicated lumen ONLY for TPN</strong> — no other medications</li>
+        <li>🧤 Strict aseptic technique; change tubing every <strong>24 hours</strong></li>
+        <li>🩸 Monitor blood glucose every <strong>4–6 hours</strong></li>
+        <li>⚠️ <strong>NEVER stop TPN abruptly</strong> → taper gradually (rebound hypoglycemia)</li>
+        <li>🔬 Daily labs: electrolytes, liver/renal function</li>
+        <li>⚖️ Daily weights + intake/output monitoring</li>
+        <li>👁️ Inspect bag before hanging: cloudiness, separation, particles</li>
+      </ul>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>طرق الإعطاء</h3>
+      <ul>
+        <li><strong>القسطرة الوريدية المركزية (CVC):</strong> الأكثر شيوعاً — تحت الترقوة أو الوريد الوداجي الداخلي. التركيز العالي من الجلوكوز مهيّج جداً للأوردة المحيطية.</li>
+        <li><strong>محيطي (PPN):</strong> دعم قصير الأمد/جزئي بتركيزات أقل</li>
+      </ul>
+      <h3 style="margin-top:14px;">الرعاية التمريضية الأساسية</h3>
+      <ul>
+        <li>🔒 <strong>تجويف مخصص فقط للتغذية الوريدية</strong> — لا أدوية أخرى</li>
+        <li>🧤 تقنية معقمة صارمة؛ تغيير الأنبوب كل <strong>24 ساعة</strong></li>
+        <li>🩸 مراقبة سكر الدم كل <strong>4–6 ساعات</strong></li>
+        <li>⚠️ <strong>لا تُوقف التغذية فجأة أبداً</strong> → قلّل تدريجياً (انخفاض مرتد للسكر)</li>
+        <li>🔬 مختبرات يومية: شوارد، وظائف كبد/كلى</li>
+        <li>⚖️ وزن يومي + مراقبة الوارد والصادر</li>
+        <li>👁️ فحص الكيس قبل تعليقه: عكورة، تفصّل، جسيمات</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header red"><span class="icon">⚠️</span> Complications | المضاعفات</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Type / النوع</th><th>Complication / المضاعفة</th></tr>
+        <tr><td><strong>🦠 Infectious</strong></td><td>CLABSI (Central Line-Associated Bloodstream Infection) — عدوى مجرى الدم المرتبطة بالخط المركزي</td></tr>
+        <tr><td><strong>⚗️ Metabolic</strong></td><td>Hyperglycemia/Hypoglycemia — ارتفاع/انخفاض السكر<br>Electrolyte imbalances — اختلال الشوارد<br><strong>Refeeding Syndrome</strong> ⚠️ — متلازمة إعادة التغذية (تحوّل خطير للشوارد)<br>Liver dysfunction — خلل وظائف الكبد</td></tr>
+        <tr><td><strong>⚙️ Mechanical</strong></td><td>Catheter blockage, displacement, thrombosis, air embolism — انسداد القسطرة، نزوح، تخثر، صمة هوائية</td></tr>
+      </table>
+    </div>
+  </div>
+</div><!-- end tab-tpn -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 7: ICU SCORING -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-scores">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #4a3a6e, #7a5aaa);">
+    <h2>ICU Scoring Systems & Assessment Scales</h2>
+    <div class="ar">أنظمة التقييم ومقاييس العناية المركزة</div>
+    <p>Standardized tools for assessing consciousness, pain, sedation, and fall/pressure ulcer risk</p>
+  </div>
+
+  <!-- GCS -->
+  <div class="card">
+    <div class="card-header purple"><span class="icon">🧠</span> Glasgow Coma Scale (GCS) | مقياس غلاسكو للغيبوبة</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Component / المكون</th><th>Score Range / النطاق</th><th>Best Response / أفضل استجابة</th></tr>
+        <tr><td><strong>Eye Opening</strong> — فتح العينين</td><td>1–4</td><td>4 = Spontaneous / تلقائي</td></tr>
+        <tr><td><strong>Verbal Response</strong> — الاستجابة اللفظية</td><td>1–5</td><td>5 = Oriented / موجّه</td></tr>
+        <tr><td><strong>Motor Response</strong> — الاستجابة الحركية</td><td>1–6</td><td>6 = Obeys commands / يمتثل للأوامر</td></tr>
+      </table>
+      <div style="margin-top:14px;">
+        <p style="font-weight:700;margin-bottom:8px;">Total Score Interpretation / تفسير المجموع الكلي (3–15):</p>
+        <div class="score-bar">
+          <div class="score-seg" style="background:#c0705a; flex:1;">3–8 Severe / شديد</div>
+          <div class="score-seg" style="background:#b07d3a; flex:1;">9–12 Moderate / متوسط</div>
+          <div class="score-seg" style="background:#3a7ca5; flex:1;">13–15 Mild / خفيف</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pain -->
+  <div class="card">
+    <div class="card-header red"><span class="icon">😣</span> Pain Assessment Scales | مقاييس تقييم الألم</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Scale / المقياس</th><th>Used For / يُستخدم لـ</th><th>How / الطريقة</th></tr>
+        <tr><td><strong>NRS</strong> — Numeric Rating Scale</td><td>Conscious patients / مرضى واعون</td><td>0 (no pain) → 10 (worst) / 0 لا ألم ← 10 أسوأ</td></tr>
+        <tr><td><strong>Wong-Baker FACES</strong></td><td>Children, visual patients / أطفال، بصريين</td><td>Visual faces 0–10 / وجوه بصرية 0–10</td></tr>
+        <tr><td><strong>BPS</strong> — Behavioral Pain Scale</td><td>Non-verbal / ventilated / مرضى على تنفس صناعي</td><td>Facial expression + limb movement + ventilator compliance. Score &gt;5 = unacceptable pain / أكثر من 5 = ألم غير مقبول</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Fall Risk & Braden -->
+  <div class="bilingual">
+    <div class="lang-col en">
+      <div class="lang-label">English</div>
+      <h3>Morse Fall Scale</h3>
+      <p>Evaluates: history of falling, secondary diagnosis, ambulation, IV/heparin lock, gait, mental status</p>
+      <div class="score-bar" style="margin-top:8px;">
+        <div class="score-seg" style="background:#3a7ca5; flex:1;">0–24 Low Risk</div>
+        <div class="score-seg" style="background:#b07d3a; flex:1;">25–50 Moderate</div>
+        <div class="score-seg" style="background:#c0705a; flex:1;">≥51 High Risk</div>
+      </div>
+      <h3 style="margin-top:18px;">Braden Scale (Pressure Ulcer Risk)</h3>
+      <p>Assesses: sensory perception, moisture, activity, mobility, nutrition, friction/shear</p>
+      <div class="alert warn" style="margin-top:8px;">
+        <span class="alert-icon">⚠️</span>
+        <span>Score ≤9 = Very High Risk for pressure ulcers | درجة 9 أو أقل = خطر مرتفع جداً</span>
+      </div>
+    </div>
+    <div class="lang-col ar">
+      <div class="lang-label">عربي</div>
+      <h3>مقياس مورس للسقوط</h3>
+      <p>يقيّم: تاريخ السقوط، التشخيص الثانوي، المشي، الخط الوريدي، نمط المشية، الحالة الذهنية</p>
+      <div class="score-bar" style="margin-top:8px;">
+        <div class="score-seg" style="background:#3a7ca5; flex:1;">0–24 خطر منخفض</div>
+        <div class="score-seg" style="background:#b07d3a; flex:1;">25–50 متوسط</div>
+        <div class="score-seg" style="background:#c0705a; flex:1;">51+ خطر مرتفع</div>
+      </div>
+      <h3 style="margin-top:18px;">مقياس برادن (خطر قرحة الضغط)</h3>
+      <p>يقيّم: الإحساس، الرطوبة، النشاط، الحركة، التغذية، الاحتكاك والانزلاق</p>
+      <div class="alert warn" style="margin-top:8px;">
+        <span class="alert-icon">⚠️</span>
+        <span>درجة 9 أو أقل = خطر مرتفع جداً لقرحة الضغط</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RASS -->
+  <div class="card">
+    <div class="card-header blue"><span class="icon">💤</span> Richmond Agitation-Sedation Scale (RASS) | مقياس ريتشموند للهياج-التخدير</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Score / الدرجة</th><th>Level / المستوى</th><th>Description / الوصف</th></tr>
+        <tr><td style="color:#c0705a;font-weight:700;">+4</td><td>Combative / مقاتل</td><td>Violent, immediate danger to staff / عنيف، خطر فوري على الطاقم</td></tr>
+        <tr><td style="color:#b07d3a;font-weight:700;">+3</td><td>Very Agitated / هائج جداً</td><td>Pulls tubes, aggressive / يشد الأنابيب، عدواني</td></tr>
+        <tr><td style="color:#b07d3a;font-weight:700;">+2</td><td>Agitated / هائج</td><td>Frequent non-purposeful movement / حركات غير هادفة متكررة</td></tr>
+        <tr><td style="color:#3a7ca5;font-weight:700;">+1</td><td>Restless / قلق</td><td>Anxious, not aggressive / قلق لكن غير عدواني</td></tr>
+        <tr><td style="color:#2d7a5e;font-weight:700; font-size:1rem;">0</td><td>Alert & Calm ✅ / يقظ وهادئ</td><td><strong>Target level / المستوى المستهدف</strong></td></tr>
+        <tr><td style="color:#6a3daa;font-weight:700;">-1</td><td>Drowsy / نعسان</td><td>Not fully alert, sustained awakening &gt;10 sec / استيقاظ أكثر من 10 ث</td></tr>
+        <tr><td style="color:#6a3daa;font-weight:700;">-2</td><td>Light Sedation / تخدير خفيف</td><td>Brief awakening &lt;10 sec / استيقاظ أقل من 10 ث</td></tr>
+        <tr><td style="color:#6a3daa;font-weight:700;">-3</td><td>Moderate Sedation / تخدير متوسط</td><td>Movement to voice only / حركة عند الصوت فقط</td></tr>
+        <tr><td style="color:#4a2070;font-weight:700;">-4</td><td>Deep Sedation / تخدير عميق</td><td>No response to voice, moves to touch / استجابة للمس فقط</td></tr>
+        <tr><td style="color:#4a2070;font-weight:700;">-5</td><td>Unarousable / لا يستيقظ</td><td>No response to physical stimulation / لا استجابة لأي منبه</td></tr>
+      </table>
+    </div>
+  </div>
+</div><!-- end tab-scores -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 8: BUNDLES OF CARE -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-bundles">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #2d5a3a, #4a8a5a);">
+    <h2>Bundles of Care</h2>
+    <div class="ar">حزم الرعاية القائمة على الأدلة</div>
+    <p>Evidence-based interventions that together produce better outcomes than individually</p>
+  </div>
+
+  <!-- VAP -->
+  <div class="card">
+    <div class="card-header blue"><span class="icon">🫁</span> VAP Bundle | حزمة الوقاية من الالتهاب الرئوي بالمنفسة</div>
+    <div class="card-body">
+      <div class="bilingual" style="border:none;box-shadow:none;margin:0;border-radius:0;">
+        <div class="lang-col en" style="padding:0 16px 0 0;">
+          <ul>
+            <li>🛏️ Elevate Head of Bed (HOB) to <strong>30–45°</strong></li>
+            <li>💤 Daily sedation vacation + assess readiness for extubation</li>
+            <li>🦷 Oral care with <strong>chlorhexidine 0.12%</strong> every 2–4 hours</li>
+            <li>💊 Peptic ulcer prophylaxis (H₂ blockers/PPIs)</li>
+            <li>🩸 DVT prophylaxis (SCDs + anticoagulation)</li>
+          </ul>
+        </div>
+        <div class="lang-col ar" style="padding:0 16px 0 0; border:none; background:transparent; border-right:1px solid var(--border);">
+          <ul>
+            <li>🛏️ رفع رأس السرير (HOB) إلى <strong>30–45°</strong></li>
+            <li>💤 إجازة يومية من التخدير + تقييم جاهزية الفطام</li>
+            <li>🦷 عناية الفم بـ<strong>كلوروهيكسيدين 0.12%</strong> كل 2–4 ساعات</li>
+            <li>💊 وقاية من قرحة المعدة (H₂ blockers/PPIs)</li>
+            <li>🩸 وقاية من DVT (أجهزة ضغط + مضادات تخثر)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAUTI -->
+  <div class="card">
+    <div class="card-header green"><span class="icon">🪣</span> CAUTI Bundle | حزمة الوقاية من التهاب المسالك بالقسطرة</div>
+    <div class="card-body">
+      <div class="bilingual" style="border:none;box-shadow:none;margin:0;border-radius:0;">
+        <div class="lang-col en" style="padding:0 16px 0 0;">
+          <ul>
+            <li>🧤 Use <strong>sterile technique</strong> + smallest appropriate catheter size</li>
+            <li>🔒 Maintain a <strong>closed drainage system</strong></li>
+            <li>⬇️ Keep collection bag <strong>below bladder level</strong> at all times</li>
+            <li>📋 Daily assessment for catheter removal necessity</li>
+          </ul>
+        </div>
+        <div class="lang-col ar" style="padding:0 16px 0 0; border:none; background:transparent; border-right:1px solid var(--border);">
+          <ul>
+            <li>🧤 تقنية <strong>معقمة</strong> + أصغر حجم مناسب للقسطرة</li>
+            <li>🔒 الحفاظ على <strong>نظام صرف مغلق</strong></li>
+            <li>⬇️ كيس التجميع <strong>أسفل مستوى المثانة</strong> دائماً</li>
+            <li>📋 تقييم يومي لضرورة إزالة القسطرة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLABSI -->
+  <div class="card">
+    <div class="card-header red"><span class="icon">🩸</span> CLABSI Bundle | حزمة الوقاية من عدوى مجرى الدم بالخط المركزي</div>
+    <div class="card-body">
+      <div class="bilingual" style="border:none;box-shadow:none;margin:0;border-radius:0;">
+        <div class="lang-col en" style="padding:0 16px 0 0;">
+          <ul>
+            <li>🛡️ Maximal sterile barrier precautions during insertion</li>
+            <li>🧴 Chlorhexidine skin prep <strong>&gt;0.5%</strong></li>
+            <li>🚫 Avoid <strong>femoral site</strong> if possible</li>
+            <li>🔄 Scrub the hub for <strong>15 seconds</strong> before accessing the line</li>
+            <li>📋 Review line necessity <strong>daily</strong> — remove ASAP</li>
+          </ul>
+        </div>
+        <div class="lang-col ar" style="padding:0 16px 0 0; border:none; background:transparent; border-right:1px solid var(--border);">
+          <ul>
+            <li>🛡️ احتياطات الحاجز المعقم الأقصى أثناء الإدخال</li>
+            <li>🧴 تحضير الجلد بالكلوروهيكسيدين <strong>أكثر من 0.5%</strong></li>
+            <li>🚫 تجنب <strong>الموقع الفخذي</strong> قدر الإمكان</li>
+            <li>🔄 فرك رأس القسطرة لمدة <strong>15 ثانية</strong> قبل الدخول</li>
+            <li>📋 مراجعة ضرورة الخط <strong>يومياً</strong> — إزالة في أقرب وقت</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end tab-bundles -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 9: ICU MEDICATIONS -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-meds">
+  <div class="proc-intro" style="background: linear-gradient(135deg, #1a3050, #2a5080);">
+    <h2>Common ICU Medications</h2>
+    <div class="ar">الأدوية الشائعة في العناية المركزة</div>
+    <p>Sedatives, analgesics, vasopressors, and anticoagulants used in critical care</p>
+  </div>
+
+  <!-- Sedatives -->
+  <div class="card">
+    <div class="card-header purple"><span class="icon">💤</span> Sedatives & Analgesics | المهدئات ومسكنات الألم</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Drug / الدواء</th><th>Use / الاستخدام</th><th>Monitor / الرقابة</th><th>Special Notes / ملاحظات</th></tr>
+        <tr>
+          <td><strong>Propofol (Diprivan)</strong></td>
+          <td>Rapid sedation / تخدير سريع</td>
+          <td>BP (hypotension) / ضغط الدم</td>
+          <td>Change tubing every <strong>12 hours</strong> / تغيير الأنبوب كل 12 ساعة</td>
+        </tr>
+        <tr>
+          <td><strong>Midazolam (Versed)</strong></td>
+          <td>Short-acting sedation + amnesia / تخدير قصير + فقدان ذاكرة</td>
+          <td>Respiratory rate / معدل التنفس</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Fentanyl</strong></td>
+          <td>Powerful analgesia / مسكن قوي</td>
+          <td>Respiratory depression / اكتئاب تنفسي</td>
+          <td>Opioid — reversal: Naloxone / مضاد: نالوكسون</td>
+        </tr>
+        <tr>
+          <td><strong>Dexmedetomidine (Precedex)</strong></td>
+          <td>Sedation without stopping breathing / تخدير بدون إيقاف تنفس</td>
+          <td>Bradycardia / بطء القلب</td>
+          <td>Ideal for <strong>weaning</strong> / مثالي للفطام من التنفس الصناعي</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Vasopressors -->
+  <div class="card">
+    <div class="card-header red"><span class="icon">💉</span> Vasopressors | مضيقات الأوعية</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Drug / الدواء</th><th>Use / الاستخدام</th><th>Monitor / الرقابة</th><th>Special Notes / ملاحظات</th></tr>
+        <tr>
+          <td><strong>Norepinephrine (Levophed)</strong></td>
+          <td>1st line: <strong>Septic shock</strong> / الصدمة الإنتانية</td>
+          <td>MAP target &gt;65 / MAP أكثر من 65</td>
+          <td>⚠️ <strong>Central line ONLY</strong> / وريد مركزي فقط</td>
+        </tr>
+        <tr>
+          <td><strong>Epinephrine (Adrenaline)</strong></td>
+          <td>Cardiac arrest, severe shock / سكتة قلبية، صدمة شديدة</td>
+          <td>Arrhythmias, glucose / اضطرابات نظم، سكر</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Dopamine</strong></td>
+          <td>Raises BP + HR / يرفع الضغط والنبض</td>
+          <td>Arrhythmias / اضطرابات نظم</td>
+          <td>Less commonly used now / نادر الاستخدام حالياً</td>
+        </tr>
+        <tr>
+          <td><strong>Dobutamine</strong></td>
+          <td>Increases cardiac output / يزيد النتاج القلبي</td>
+          <td>HR, BP</td>
+          <td>Heart failure, cardiogenic shock / فشل قلبي، صدمة قلبية</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Anticoagulants -->
+  <div class="card">
+    <div class="card-header gold"><span class="icon">🩸</span> Anticoagulants | مضادات التخثر</div>
+    <div class="card-body">
+      <table class="data-table">
+        <tr><th>Drug / الدواء</th><th>Use / الاستخدام</th><th>Monitor / الرقابة</th><th>Reversal / الترياق</th></tr>
+        <tr>
+          <td><strong>Heparin (UFH)</strong></td>
+          <td>DVT/PE prevention & treatment / وقاية وعلاج DVT/PE</td>
+          <td>aPTT every <strong>6 hours</strong> / كل 6 ساعات</td>
+          <td><strong>Protamine sulfate</strong> / كبريتات البروتامين</td>
+        </tr>
+        <tr>
+          <td><strong>Enoxaparin (Clexane)</strong></td>
+          <td>DVT prophylaxis / وقاية من DVT</td>
+          <td>Anti-Xa levels</td>
+          <td>Subcutaneous injection in abdomen / حقن تحت الجلد في البطن</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div><!-- end tab-meds -->
+
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TAB 10: QUESTIONS -->
+<!-- ══════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-questions">
+  <div class="questions-header">
+    <h2>📝 Self-Test Questions | أسئلة المراجعة الذاتية</h2>
+    <p>Click on any question to reveal the model answer | اضغط على أي سؤال لإظهار الإجابة النموذجية</p>
+  </div>
+
+  <!-- Section 1: Mechanical Ventilation -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">1</div>
+      <div><div>Mechanical Ventilation</div><div class="ar-title">التنفس الاصطناعي الميكانيكي</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> What are the two main criteria for diagnosing respiratory failure requiring mechanical ventilation?</div>
+        <div class="q-text-ar">ما هما المعياران الرئيسيان لتشخيص الفشل التنفسي الذي يستوجب التنفس الاصطناعي؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> (1) <em>Hypoxemic failure</em>: PaO₂ &lt; 60 mmHg — the blood is not being oxygenated adequately. (2) <em>Hypercapnic failure</em>: PaCO₂ &gt; 50 mmHg with acidosis — CO₂ is accumulating due to inadequate ventilation.
+          <div class="q-answer-ar">الإجابة: (1) فشل نقص الأكسجة: PaO₂ أقل من 60 ملم زئبق — الدم لا يتأكسج بشكل كافٍ. (2) فشل احتباس ثاني أكسيد الكربون: PaCO₂ أكثر من 50 مع حموضة — يتراكم CO₂ بسبب تهوية غير كافية.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> A high-pressure alarm sounds on a ventilated patient. What are the most common causes and what should the nurse do first?</div>
+        <div class="q-text-ar">يُسمع تنبيه ضغط مرتفع لمريض على التنفس الاصطناعي. ما أكثر الأسباب شيوعاً وماذا تفعل الممرضة أولاً؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Common causes: coughing, biting the ET tube, secretions in the airway, or kinked tubing. The nurse should: (1) assess the patient immediately, (2) suction if secretions are suspected, (3) check all tubing for kinks, (4) if patient is biting — consider bite block or sedation adjustment.
+          <div class="q-answer-ar">الإجابة: الأسباب الشائعة: السعال، عض الأنبوب، إفرازات في مجرى الهواء، أو انثناء الأنبوب. يجب على الممرضة: (1) تقييم المريض فوراً، (2) الشفط إذا اشتُبه بإفرازات، (3) فحص الأنابيب للانثناء، (4) إذا كان يعض — النظر في استخدام عاضة أو تعديل التخدير.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> What are the signs that indicate weaning failure and the ventilator should NOT be removed?</div>
+        <div class="q-text-ar">ما العلامات التي تدل على فشل الفطام وأن الجهاز يجب ألا يُزال؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Stop weaning if: RR &gt;35 or &lt;8, use of accessory muscles (neck/chest), SpO₂ &lt;90% or cyanosis, HR &gt;140, BP &gt;180 or &lt;90 mmHg, new arrhythmias, or neurological signs: confusion, diaphoresis (heavy sweating), or agitation.
+          <div class="q-answer-ar">الإجابة: أوقف الفطام عند: معدل التنفس أكثر من 35 أو أقل من 8، استخدام عضلات مساعدة، SpO₂ أقل من 90% أو زُرقة، نبض أكثر من 140، ضغط أكثر من 180 أو أقل من 90، أعراض قلبية جديدة، أو تشوش وتعرق وهياج.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">4</span> What is PEEP and why is it important in mechanically ventilated patients?</div>
+        <div class="q-text-ar">ما هو PEEP ولماذا هو مهم في مرضى التنفس الاصطناعي؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> PEEP (Positive End-Expiratory Pressure) is a positive pressure maintained in the airways at the end of expiration. It prevents alveolar collapse between breaths, improving oxygenation by keeping the alveoli open. It is especially critical in conditions like ARDS where alveoli tend to collapse.
+          <div class="q-answer-ar">الإجابة: PEEP هو ضغط إيجابي يُحافظ على فتح مجاري الهواء في نهاية الزفير. يمنع انهيار الحويصلات الهوائية بين الأنفاس، مما يحسن الأكسجة بإبقاء الحويصلات مفتوحة. هو بالغ الأهمية في حالات مثل ARDS حيث تميل الحويصلات للانهيار.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">5</span> List at least 4 nursing interventions in the VAP prevention bundle.</div>
+        <div class="q-text-ar">اذكر 4 تدخلات تمريضية على الأقل في حزمة الوقاية من VAP.</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> (1) Elevate HOB 30–45° continuously. (2) Daily sedation vacation and assessment for extubation readiness. (3) Oral care with chlorhexidine 0.12% every 2–4 hours. (4) Peptic ulcer prophylaxis (H₂ blockers or PPIs). (5) DVT prophylaxis with SCDs and anticoagulation.
+          <div class="q-answer-ar">الإجابة: (1) رفع رأس السرير 30–45° باستمرار. (2) إجازة يومية من التخدير وتقييم جاهزية الفطام. (3) رعاية الفم بالكلوروهيكسيدين 0.12% كل 2–4 ساعات. (4) وقاية من قرحة المعدة. (5) وقاية من DVT بالأجهزة ومضادات التخثر.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 2: Tracheostomy -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">2</div>
+      <div><div>Tracheostomy Tube</div><div class="ar-title">أنبوب الرغامى</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> Why is a tracheostomy preferred over prolonged endotracheal intubation (more than 14 days)?</div>
+        <div class="q-text-ar">لماذا يُفضَّل فغر الرغامى على التنبيب الرغامي المطوّل الذي يتجاوز 14 يوماً؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Prolonged ET intubation causes pressure injury and damage to the vocal cords. A tracheostomy bypasses the larynx entirely, protecting the vocal cords from trauma, improving patient comfort, facilitating weaning, and making oral care easier.
+          <div class="q-answer-ar">الإجابة: التنبيب الرغامي المطوّل يسبب إصابات ضغطية وتلفاً للحبال الصوتية. فغر الرغامى يتجاوز الحنجرة كلياً، مما يحمي الحبال الصوتية من الرضح، ويحسّن راحة المريض، ويسهّل الفطام، ويجعل رعاية الفم أسهل.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> What is the difference between a cuffed and a cuffless tracheostomy tube? When is each used?</div>
+        <div class="q-text-ar">ما الفرق بين أنبوب الرغامى المكفوف وغير المكفوف؟ متى يُستخدم كل منهما؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> A <em>cuffed tube</em> has an inflatable balloon that seals the trachea, creating a closed circuit — used for patients on mechanical ventilation to prevent air leak. A <em>cuffless tube</em> has no balloon — used when the patient is ready for decannulation (tube removal), as they no longer need mechanical ventilation support and can protect their own airway.
+          <div class="q-answer-ar">الإجابة: الأنبوب المكفوف به بالون قابل للنفخ يُغلق القصبة الهوائية مشكّلاً دائرة مغلقة — يُستخدم مع التنفس الاصطناعي لمنع تسرب الهواء. الأنبوب غير المكفوف لا يحتوي بالوناً — يُستخدم عندما يكون المريض جاهزاً لإزالة الأنبوب، أي لا يحتاج دعماً تنفسياً ويستطيع حماية مجرى هوائه.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> Name 3 serious complications of tracheostomy tubes that require immediate nursing attention.</div>
+        <div class="q-text-ar">اذكر 3 مضاعفات خطيرة لأنابيب الرغامى تستوجب تدخلاً تمريضياً فورياً.</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> (1) <em>Tube dislodgement</em> — accidental removal causes immediate loss of airway — requires emergency reinsertion or bag-mask ventilation. (2) <em>Airway obstruction</em> — blocked by secretions — requires immediate suctioning. (3) <em>Hemorrhage</em> — active bleeding at the stoma — requires immediate pressure and physician notification.
+          <div class="q-answer-ar">الإجابة: (1) انزياح الأنبوب — إزالة عرضية تسبب فقدان فورياً لمجرى الهواء — يستوجب إعادة إدخال طارئة أو تهوية بالكيس والقناع. (2) انسداد مجرى الهواء — بإفرازات — يستوجب شفطاً فورياً. (3) النزيف — نزيف نشط عند الفوهة — يستوجب ضغطاً فورياً وإخطار الطبيب.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 3: ACLS -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">3</div>
+      <div><div>ACLS — Advanced Cardiovascular Life Support</div><div class="ar-title">الإنعاش القلبي الرئوي المتقدم</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> What is the difference in management between shockable (VF/pVT) and non-shockable (Asystole/PEA) cardiac arrest rhythms?</div>
+        <div class="q-text-ar">ما الفرق في إدارة إيقاعات السكتة القلبية القابلة للصدمة (VF/pVT) مقابل غير القابلة للصدمة (Asystole/PEA)؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> <em>Shockable (VF/pVT):</em> Immediate defibrillation is the priority, followed by 2-minute CPR cycles, then epinephrine and amiodarone after the 3rd shock. <em>Non-shockable (Asystole/PEA):</em> Defibrillation has NO role. Focus is on high-quality CPR, epinephrine every 3–5 minutes, and identifying and treating reversible causes (H's & T's).
+          <div class="q-answer-ar">الإجابة: القابل للصدمة (VF/pVT): إزالة الرجفان فورية هي الأولوية، ثم دورات إنعاش 2 دقيقة، ثم إبينفرين وأميودارون بعد الصدمة الثالثة. غير القابل للصدمة (Asystole/PEA): إزالة الرجفان لا دور لها. التركيز على إنعاش عالي الجودة وإبينفرين كل 3–5 دقائق وعلاج الأسباب القابلة للعلاج (H's & T's).</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> List all 5 H's and 4 T's (reversible causes of cardiac arrest).</div>
+        <div class="q-text-ar">اذكر جميع الـ5 H's والـ4 T's (الأسباب القابلة للعلاج في السكتة القلبية).</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>H's:</strong> Hypovolemia (نقص حجم الدم), Hypoxia (نقص الأكسجة), Hydrogen ion/Acidosis (حموضة), Hypo/Hyperkalemia (اضطراب البوتاسيوم), Hypothermia (انخفاض الحرارة).<br>
+          <strong>T's:</strong> Tension pneumothorax (استرواح الصدر التوتري), Tamponade cardiac (دكاك القلب), Toxins (السموم), Thrombosis pulmonary or coronary (تخثر رئوي أو إكليلي).
+          <div class="q-answer-ar">الإجابة كما مذكور أعلاه بالعربي.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> A patient develops symptomatic bradycardia with BP 80/50. What is the first drug of choice and what is the next step if it fails?</div>
+        <div class="q-text-ar">مريض يعاني من بطء قلب عرضي مع ضغط 80/50. ما هو الدواء الأول المختار وما الخطوة التالية في حالة فشله؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> First drug: <em>Atropine</em> (0.5 mg IV, repeat every 3–5 min, max 3 mg). If atropine fails: proceed to transcutaneous pacing OR dopamine infusion OR epinephrine infusion. Always identify and treat the underlying cause.
+          <div class="q-answer-ar">الإجابة: الدواء الأول: أتروبين (0.5 ملغ وريدي، كل 3–5 دقائق، الجرعة القصوى 3 ملغ). إذا فشل الأتروبين: اللجوء للتحفيز الخارجي عبر الجلد أو مسكب دوبامين أو إبينفرين. دائماً حدّد وعالج السبب الأساسي.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">4</span> Describe the role of each team member during a cardiac arrest resuscitation.</div>
+        <div class="q-text-ar">صف دور كل عضو في الفريق خلال إنعاش السكتة القلبية.</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Team Leader: directs, assigns roles, makes decisions. Airway provider: manages ventilation. Medication provider: prepares and gives drugs. Monitor/Defibrillator operator: reads rhythm, operates AED/defibrillator. Recorder: documents timing of CPR, drugs, shocks. Compressor: performs chest compressions, rotates every 2 minutes to maintain quality. All use closed-loop communication: repeat back orders to confirm.
+          <div class="q-answer-ar">الإجابة: قائد الفريق: يوجه ويوزع الأدوار ويتخذ القرارات. مسؤول مجرى الهواء: يدير التهوية. مسؤول الأدوية: يحضر ويعطي الأدوية. مشغّل الجهاز: يقرأ النظم ويشغّل المزيل. المسجّل: يوثّق توقيت الإنعاش والأدوية والصدمات. الضاغط: يجري الضغطات ويتناوب كل دقيقتين. الجميع يستخدم التواصل بالحلقة المغلقة.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 4: Arterial Catheter -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">4</div>
+      <div><div>Arterial Catheter</div><div class="ar-title">القسطرة الشريانية</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> Why is the radial artery the most preferred site for arterial catheter insertion? What test must be done before insertion?</div>
+        <div class="q-text-ar">لماذا يُعدّ الشريان الكعبري الموقع المفضّل لإدخال القسطرة الشريانية؟ وما الاختبار الذي يجب إجراؤه قبله؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> The radial artery is preferred because it is superficial, stable, and has collateral circulation (via the ulnar artery). This means if thrombosis occurs, the hand can still receive blood. Before insertion, the <em>modified Allen's test</em> (or Doppler confirmation) must be performed to verify adequate collateral circulation from the ulnar artery.
+          <div class="q-answer-ar">الإجابة: يُفضَّل الشريان الكعبري لأنه سطحي ومستقر ولديه دوران جانبي (عبر الشريان الزندي). هذا يعني أنه إذا حدث تخثر، فاليد لا تزال تتلقى الدم. قبل الإدخال، يجب إجراء اختبار ألن المعدّل (أو تأكيد دوبلر) للتحقق من كفاية الدوران الجانبي من الشريان الزندي.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> What is the "phlebostatic axis" and why is it important for arterial line readings?</div>
+        <div class="q-text-ar">ما هو "المحور الفلبوستاتي" ولماذا هو مهم لقراءات خط الشريان؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> The phlebostatic axis is the anatomical reference point located at the 4th intercostal space at the midaxillary line — it corresponds approximately to the level of the right atrium. The transducer must be leveled at this point to ensure accurate pressure readings. If placed too high → falsely low readings; too low → falsely high readings. The system must also be "zeroed" to eliminate the effect of atmospheric pressure.
+          <div class="q-answer-ar">الإجابة: المحور الفلبوستاتي هو نقطة مرجعية تشريحية تقع عند المسافة الوربية الرابعة على الخط الإبطي المتوسط — تقابل تقريباً مستوى الأذين الأيمن. يجب مستوى المحوّل عند هذه النقطة لضمان قراءات دقيقة. إذا كان مرتفعاً جداً → قراءات منخفضة كاذبة؛ منخفضاً جداً → قراءات مرتفعة كاذبة. يجب أيضاً ضبط الصفر لإزالة تأثير الضغط الجوي.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> Why must the pressure bag in an arterial line system be maintained at 300 mmHg?</div>
+        <div class="q-text-ar">لماذا يجب الحفاظ على كيس الضغط في نظام الخط الشرياني عند 300 ملم زئبق؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Maintaining the pressure bag at 300 mmHg (above normal systolic BP) creates enough pressure to continuously flush the arterial line with a slow, steady flow of saline. This prevents blood from backing up into the tubing, which would cause clot formation and catheter occlusion. It also prevents inaccurate readings from dampened waveforms.
+          <div class="q-answer-ar">الإجابة: الحفاظ على كيس الضغط عند 300 ملم زئبق (أعلى من الضغط الانقباضي الطبيعي) يخلق ضغطاً كافياً لتدفق مستمر وبطيء لمحلول ملحي في الخط الشرياني. هذا يمنع ارتداد الدم إلى الأنبوب مما قد يسبب تجلطاً وانسداداً للقسطرة. كما يمنع القراءات الغير دقيقة من موجات مخفّتة.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 5: PAC -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">5</div>
+      <div><div>Pulmonary Artery Catheter</div><div class="ar-title">قسطرة الشريان الرئوي</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> What is PCWP and what does it reflect clinically? Why must the balloon be deflated immediately after measurement?</div>
+        <div class="q-text-ar">ما هو PCWP وماذا يعكس سريرياً؟ ولماذا يجب إفراغ البالون فوراً بعد القياس؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> PCWP (Pulmonary Capillary Wedge Pressure) is measured by inflating the balloon to "wedge" it in a small pulmonary artery branch, blocking blood flow temporarily. This allows measurement of downstream left atrial and left ventricular end-diastolic pressure — reflecting <em>left ventricular preload</em> and fluid status. Normal: 6–12 mmHg. The balloon MUST be deflated immediately after because leaving it inflated blocks blood flow to lung tissue, causing pulmonary infarction.
+          <div class="q-answer-ar">الإجابة: PCWP يُقاس بنفخ البالون ليُسدَّ في فرع صغير من الشريان الرئوي، مما يوقف التدفق مؤقتاً. هذا يسمح بقياس ضغط الأذين الأيسر والضغط الانبساطي النهائي للبطين الأيسر — يعكس الضغط الأمامي للبطين الأيسر ووضع السوائل. الطبيعي: 6–12. البالون يجب إفراغه فوراً لأن تركه منفوخاً يوقف تدفق الدم لأنسجة الرئة مسبباً احتشاءً رئوياً.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> What are the normal pressure values for the right atrium, right ventricle, and pulmonary artery?</div>
+        <div class="q-text-ar">ما هي قيم الضغط الطبيعية للأذين الأيمن، البطين الأيمن، والشريان الرئوي؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> RAP/CVP: 2–8 mmHg. RVP: Systolic 15–30 / Diastolic 2–8 mmHg. PAP: Systolic 15–30 / Diastolic 4–12 / Mean 10–20 mmHg. PCWP: 6–12 mmHg.
+          <div class="q-answer-ar">الإجابة: RAP/CVP: 2–8. RVP: انقباضي 15–30 / انبساطي 2–8. PAP: انقباضي 15–30 / انبساطي 4–12 / متوسط 10–20. PCWP: 6–12. (جميع القيم بملم زئبق)</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 6: TPN -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">6</div>
+      <div><div>Total Parenteral Nutrition (TPN)</div><div class="ar-title">التغذية الوريدية الكاملة</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> What is Refeeding Syndrome and how can nurses prevent it?</div>
+        <div class="q-text-ar">ما هي متلازمة إعادة التغذية وكيف يمكن للممرض/ة الوقاية منها؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Refeeding Syndrome is a life-threatening metabolic complication that occurs when nutrition is restarted too rapidly in a severely malnourished or starved patient. Rapid feeding causes a surge of insulin, driving glucose, potassium, phosphate, and magnesium into cells — leading to dangerously low serum levels and potentially fatal cardiac arrhythmias, respiratory failure, or seizures. Prevention: start TPN slowly and gradually increase over several days; closely monitor electrolytes (especially phosphate, potassium, magnesium) before and during refeeding.
+          <div class="q-answer-ar">الإجابة: متلازمة إعادة التغذية هي مضاعفة استقلابية تهدد الحياة تحدث عند استئناف التغذية بسرعة كبيرة لمريض سوء تغذية شديد. الإطعام السريع يسبب ارتفاعاً في الإنسولين مما يدفع الجلوكوز والبوتاسيوم والفوسفات والمغنيسيوم إلى الخلايا — مما يؤدي إلى انخفاض خطير في مستوياتها في الدم وربما اضطرابات نظم قاتلة أو فشل تنفسي أو تشنجات. الوقاية: ابدأ التغذية ببطء وزدها تدريجياً؛ راقب الشوارد عن كثب خاصة الفوسفات والبوتاسيوم والمغنيسيوم.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> Why should TPN never be stopped abruptly? What metabolic problem can occur?</div>
+        <div class="q-text-ar">لماذا لا يجب إيقاف التغذية الوريدية الكاملة فجأة؟ ما المشكلة الاستقلابية التي قد تحدث؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> TPN contains high concentrations of dextrose, which causes the body to increase insulin secretion to handle the glucose load. If TPN is stopped abruptly, insulin levels remain elevated while glucose suddenly disappears — causing <em>rebound hypoglycemia</em>, which can lead to loss of consciousness, seizures, or brain damage. TPN must always be tapered gradually (reduce rate by 50% for 1–2 hours before stopping).
+          <div class="q-answer-ar">الإجابة: التغذية الوريدية تحتوي على تركيزات عالية من الجلوكوز مما يجعل الجسم يزيد إفراز الإنسولين. إذا أُوقفت فجأة، تبقى مستويات الإنسولين مرتفعة بينما يختفي الجلوكوز فجأة — مسببةً انخفاضاً مرتداً في السكر قد يؤدي لفقدان الوعي أو التشنجات أو تلف الدماغ. يجب دائماً تقليل الجرعة تدريجياً (تخفيض المعدل 50% لمدة 1–2 ساعة قبل الإيقاف).</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> Why must TPN be administered through a central venous catheter rather than a peripheral vein?</div>
+        <div class="q-text-ar">لماذا يجب إعطاء التغذية الوريدية عبر قسطرة وريدية مركزية بدلاً من الوريد المحيطي؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> TPN contains very high concentrations of dextrose (typically 20–70%) which is extremely hyperosmolar and caustic. Peripheral veins have a small diameter and thin walls — they cannot tolerate this concentration and would quickly develop phlebitis (vein inflammation), thrombosis, or chemical burn of the vessel wall. Central veins (subclavian, internal jugular) are large with high blood flow, which rapidly dilutes the TPN solution, preventing vascular damage.
+          <div class="q-answer-ar">الإجابة: التغذية الوريدية تحتوي على تركيزات عالية جداً من الجلوكوز (عادةً 20–70%) وهي شديدة الأسمولارية وكاوية. الأوردة المحيطية صغيرة الحجم وجدرانها رقيقة — لا تتحمل هذا التركيز وستصاب بالتهاب الوريد أو التخثر أو الحرق الكيميائي بسرعة. الأوردة المركزية كبيرة ذات تدفق دموي عالٍ يخفف محلول التغذية بسرعة ويمنع تلف الأوعية.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 7: Scores -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">7</div>
+      <div><div>ICU Scoring Systems</div><div class="ar-title">مقاييس التقييم في العناية المركزة</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> A patient scores GCS 7. What does this mean and what nursing/clinical action is typically indicated?</div>
+        <div class="q-text-ar">مريض حصل على درجة 7 في مقياس غلاسكو. ماذا يعني ذلك وما الإجراء التمريضي/السريري المطلوب؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> A GCS of 7 falls in the severe category (3–8), indicating severely impaired consciousness. The patient cannot protect their own airway reliably. A GCS &lt;8 is the threshold for airway protection — this patient likely requires immediate endotracheal intubation to secure the airway, prevent aspiration, and potentially require mechanical ventilation. The nurse should notify the physician immediately and prepare for intubation.
+          <div class="q-answer-ar">الإجابة: درجة 7 تقع في الفئة الشديدة (3–8)، مما يعني ضعفاً شديداً في الوعي. المريض لا يستطيع حماية مجرى هوائه بشكل موثوق. GCS أقل من 8 هو الحد لحماية مجرى الهواء — هذا المريض يحتاج غالباً لتنبيب رغامي فوري لتأمين مجرى الهواء ومنع الاستنشاق. يجب على الممرضة إخطار الطبيب فوراً والتحضير للتنبيب.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> A ventilated patient gets a BPS score of 6. What does this mean and what should the nurse do?</div>
+        <div class="q-text-ar">مريض على التنفس الاصطناعي حصل على درجة BPS = 6. ماذا يعني ذلك وماذا يجب على الممرضة فعله؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> A BPS score &gt;5 indicates unacceptable pain in a non-verbal/ventilated patient. The nurse should: (1) assess for the source of pain, (2) reposition the patient, (3) report to the physician and administer prescribed analgesics (e.g., fentanyl), (4) re-assess the BPS after the intervention to confirm pain reduction. Document all findings and interventions.
+          <div class="q-answer-ar">الإجابة: درجة BPS أكثر من 5 تدل على ألم غير مقبول لمريض غير ناطق/على التنفس الاصطناعي. يجب على الممرضة: (1) تقييم مصدر الألم، (2) إعادة تغيير وضع المريض، (3) الإبلاغ للطبيب وإعطاء مسكنات الألم المقررة (مثل فنتانيل)، (4) إعادة تقييم BPS بعد التدخل للتأكد من تراجع الألم. توثيق جميع النتائج والتدخلات.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> What is the RASS target for most ICU patients on mechanical ventilation? Why is over-sedation harmful?</div>
+        <div class="q-text-ar">ما هو الهدف المطلوب من RASS لمعظم مرضى التنفس الاصطناعي في العناية المركزة؟ ولماذا يكون الإفراط في التخدير ضاراً؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Target RASS: 0 (Alert and Calm) to -2 (Light Sedation) for most ventilated patients. Over-sedation (deep RASS -4 or -5) is harmful because: it delays weaning from the ventilator, increases risk of VAP, causes prolonged ICU stays, leads to muscle weakness and deconditioning, increases risk of delirium, and masks important neurological changes. Daily sedation vacations help avoid over-sedation.
+          <div class="q-answer-ar">الإجابة: الهدف: RASS 0 (يقظ وهادئ) إلى -2 (تخدير خفيف) لمعظم مرضى التنفس الاصطناعي. الإفراط في التخدير (RASS -4 أو -5) ضارٌ لأنه: يعيق الفطام من الجهاز، يزيد خطر VAP، يطيل الإقامة في ICU، يؤدي لضعف العضلات، يزيد خطر الهذيان، ويخفي تغيرات عصبية مهمة. الإجازات اليومية من التخدير تساعد في تجنب الإفراط.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 8: Medications -->
+  <div class="q-section">
+    <div class="q-section-header">
+      <div class="num">8</div>
+      <div><div>ICU Medications & Bundles</div><div class="ar-title">أدوية العناية المركزة وحزم الرعاية</div></div>
+    </div>
+    <div class="q-list">
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">1</span> Why must Norepinephrine (Levophed) be given ONLY through a central line? What happens if it infiltrates peripheral tissue?</div>
+        <div class="q-text-ar">لماذا يجب إعطاء النورإبينفرين (ليفوفيد) فقط عبر وريد مركزي؟ ماذا يحدث لو تسرّب للنسيج المحيطي؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Norepinephrine is a potent vasopressor — it causes extreme vasoconstriction. If it infiltrates peripheral tissue, it causes severe, localized vasoconstriction that cuts off blood supply to the surrounding tissue, leading to tissue ischemia, necrosis, and skin death (gangrene). A central line ensures the drug enters a large, high-flow vessel where it is rapidly diluted, preventing tissue damage.
+          <div class="q-answer-ar">الإجابة: النورإبينفرين مضيّق وعائي قوي — يسبب تضيقاً وعائياً شديداً. إذا تسرّب للنسيج المحيطي، يسبب تضيقاً موضعياً شديداً يقطع إمداد الدم عن الأنسجة المحيطة، مؤدياً لنقص التروية ونخر النسيج وموت الجلد (الغنغرينا). الوريد المركزي يضمن دخول الدواء لوعاء كبير ذي تدفق عالٍ يخففه بسرعة ويمنع الأذى النسيجي.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">2</span> Compare Propofol and Dexmedetomidine (Precedex). When would you choose one over the other?</div>
+        <div class="q-text-ar">قارن بين البروبوفول والديكسميديتوميدين (بريسيدكس). متى تختار الواحد على الآخر؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> <em>Propofol</em>: rapid onset/offset, deep sedation, but causes hypotension and stops breathing — used for deep sedation during procedures or when respiratory drive must be controlled. Tubing must be changed every 12h. <em>Dexmedetomidine</em>: sedates without suppressing respiratory drive — patient can breathe spontaneously — ideal for weaning from the ventilator, short-term light sedation, and reduces delirium. Main risk: bradycardia. Choose Precedex when planning extubation or needing a cooperative, arousable patient.
+          <div class="q-answer-ar">الإجابة: البروبوفول: بداية وانتهاء سريع، تخدير عميق، لكنه يسبب انخفاض الضغط ويوقف التنفس — يُستخدم للتخدير العميق أثناء الإجراءات. يستوجب تغيير الأنبوب كل 12 ساعة. الديكسميديتوميدين: يخدّر دون قمع دافع التنفس — المريض يتنفس تلقائياً — مثالي لفطام التنفس الاصطناعي والتخدير الخفيف. الخطر الرئيسي: بطء القلب. اختر بريسيدكس عند التخطيط للفطام أو حين تحتاج مريضاً قادراً على التجاوب.</div>
+        </div>
+      </div>
+
+      <div class="q-item" onclick="toggleAnswer(this)">
+        <div class="q-text"><span class="q-num">3</span> What is the reversal agent for heparin and when is it used? What monitoring is required for patients on heparin infusion?</div>
+        <div class="q-text-ar">ما هو الترياق للهيبارين ومتى يُستخدم؟ وما المراقبة المطلوبة للمرضى على مسكب الهيبارين؟</div>
+        <button class="show-ans-btn">Show Answer / أظهر الإجابة</button>
+        <div class="q-answer">
+          <strong>Answer:</strong> Reversal agent: <em>Protamine sulfate</em> — used when there is life-threatening bleeding or when rapid reversal of anticoagulation is needed (e.g., before emergency surgery). Monitoring for heparin infusion: <em>aPTT (activated partial thromboplastin time)</em> every 6 hours — the target therapeutic range is typically 60–100 seconds (1.5–2.5× control). Also monitor for signs of bleeding (hematuria, petechiae, unusual bruising, decreased Hb) and platelet count for HIT (heparin-induced thrombocytopenia).
+          <div class="q-answer-ar">الإجابة: الترياق: كبريتات البروتامين — يُستخدم عند نزيف مهدد للحياة أو عند الحاجة لعكس تأثير مضاد التخثر بسرعة (مثل قبل جراحة طارئة). مراقبة مسكب الهيبارين: aPTT كل 6 ساعات — النطاق العلاجي المستهدف عادةً 60–100 ثانية. كذلك مراقبة علامات النزيف وعدد الصفائح الدموية للكشف المبكر عن نقص الصفائح المستحث بالهيبارين (HIT).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end tab-questions -->
+
+</div><!-- end content-area -->
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    const btns = document.querySelectorAll('.tab-btn');
+    const tabMap = { vent:0, trach:1, acls:2, art:3, pac:4, tpn:5, scores:6, bundles:7, meds:8, questions:9 };
+    if (tabMap[id] !== undefined) btns[tabMap[id]].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleAnswer(item) {
+    const answer = item.querySelector('.q-answer');
+    const btn = item.querySelector('.show-ans-btn');
+    if (!answer) return;
+    const isVisible = answer.classList.contains('visible');
+    answer.classList.toggle('visible');
+    btn.textContent = isVisible ? 'Show Answer / أظهر الإجابة' : 'Hide Answer / أخفِ الإجابة';
+  }
+</script>
+
+</body>
+</html>

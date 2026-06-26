@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACLS Performance Checklist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Cairo', 'Roboto', sans-serif;
+    background: #f0f4f8;
+    color: #1a1a2e;
+    padding: 20px;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #0a2342 0%, #1565c0 100%);
+    color: white;
+    padding: 24px 32px;
+    text-align: center;
+  }
+  .header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .header h2 { font-size: 1.1rem; font-weight: 600; opacity: 0.85; }
+  .header .grade { display: inline-block; background: #ffd600; color: #0a2342; border-radius: 20px; padding: 2px 18px; font-weight: 700; font-size: 1rem; margin-top: 8px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  thead tr { background: #1565c0; color: white; }
+  thead th {
+    padding: 10px 8px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #1048a0;
+    white-space: nowrap;
+  }
+
+  tbody tr { border-bottom: 1px solid #dde3ef; }
+  tbody tr:nth-child(even) { background: #f5f8fd; }
+  tbody tr:hover { background: #e8f0fe; }
+
+  td {
+    padding: 10px 10px;
+    vertical-align: top;
+    border: 1px solid #dde3ef;
+  }
+
+  .td-step {
+    text-align: center;
+    font-weight: 700;
+    color: #1565c0;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    width: 46px;
+  }
+
+  .td-action { width: 38%; }
+  .td-do     { width: 34%; background: #fffde7 !important; }
+  .td-score  { text-align: center; width: 60px; font-weight: 700; }
+
+  .en {
+    font-family: 'Roboto', sans-serif;
+    color: #0a2342;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .ar {
+    color: #1565c0;
+    font-size: 0.87rem;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    border-top: 1px dashed #b0bec5;
+    padding-top: 5px;
+    margin-top: 2px;
+  }
+
+  .do-text {
+    color: #5d4037;
+    font-size: 0.87rem;
+    line-height: 1.65;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .score-2 { color: #2e7d32; }
+  .score-1 { color: #f57c00; }
+  .score-0 { color: #c62828; }
+
+  .section-row td {
+    background: #e3f2fd !important;
+    font-weight: 700;
+    color: #0a2342;
+    text-align: center;
+    font-size: 0.92rem;
+    padding: 6px 10px;
+    border: 1px solid #90caf9;
+  }
+
+  .hs-ts { margin: 0; padding-right: 14px; }
+  .hs-ts li { margin-bottom: 2px; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+    thead { display: table-header-group; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <h1>Performance ACLS Checklist for Evaluation</h1>
+    <h2>قائمة تقييم أداء الإنعاش القلبي الرئوي المتقدم (ACLS)</h2>
+    <span class="grade">10 درجات</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>الإجراء / Action<br><small>(EN ثم AR)</small></th>
+        <th>🩺 أنا بعمل إيه في الخطوة دي؟</th>
+        <th>✅<br>صح<br>(2)</th>
+        <th>⚠️<br>غلط<br>(1)</th>
+        <th>❌<br>مش<br>عمل<br>(0)</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- SECTION 1 -->
+      <tr class="section-row">
+        <td colspan="6">1. Immediate Recognition and Activation — التعرف الفوري وتفعيل الاستجابة الطارئة</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">1</td>
+        <td class="td-action">
+          <div class="en">Ensure scene safety.<br>
+          Assess unresponsiveness: Tap and shout.<br>
+          Call for help, activate emergency response team / code blue.<br>
+          Simultaneously check for breathing and carotid pulse (max 10 seconds).<br>
+          If no pulse, initiate high-quality CPR immediately.</div>
+          <div class="ar">التأكد من سلامة المكان.<br>
+          تقييم عدم الاستجابة: النقر والنداء.<br>
+          طلب المساعدة وتفعيل فريق الطوارئ / الكود الأزرق.<br>
+          التحقق من التنفس ونبض الشريان السباتي في آنٍ واحد (أقصى 10 ثوانٍ).<br>
+          إن لم يكن هناك نبض، ابدأ الإنعاش القلبي الرئوي عالي الجودة فورًا.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأتأكد إن المكان آمن، وبنقر على كتف المريض وأناديه بصوت عالٍ. لو مفيش استجابة، بنادي بصوت عالي وبفعّل الكود الأزرق. وفي نفس الوقت بشوف هل في تنفس أو نبض سباتي في خلال 10 ثواني. لو مفيش نبض، بأبدأ الإنعاش على طول.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 2 -->
+      <tr class="section-row">
+        <td colspan="6">2. Start High-Quality CPR — بدء الإنعاش القلبي الرئوي عالي الجودة</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">2</td>
+        <td class="td-action">
+          <div class="en">Begin chest compressions: depth 5–6 cm, rate 100–120/min, full recoil.<br>
+          Use 30:2 compression-to-ventilation ratio if no advanced airway.</div>
+          <div class="ar">بدء ضغطات الصدر: عمق 5–6 سم، معدل 100–120/دقيقة، مع إعادة الارتداد الكامل للصدر.<br>
+          استخدام نسبة 30:2 بين الضغطات والتنفس إذا لم يُوضع مجرى هواء متقدم.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأبدأ ضغطات الصدر بعمق 5-6 سم ومعدل 100-120 ضغطة في الدقيقة، وبأتأكد إن الصدر بيرجع كامل بعد كل ضغطة. بستخدم نسبة 30 ضغطة على 2 تنفسة لو مفيش مجرى هواء متقدم.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">3</td>
+        <td class="td-action">
+          <div class="en">Rotate compressors every 2 minutes.</div>
+          <div class="ar">تبديل القائم على الضغطات كل دقيقتين.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأتفق مع زميلي إننا نتبادل كل دقيقتين عشان الضغطات تفضل بجودة عالية ومحدنا ما يتعب.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 3 -->
+      <tr class="section-row">
+        <td colspan="6">3. Rhythm Analysis and Defibrillation — تحليل النظم وإزالة الرجفان</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">4</td>
+        <td class="td-action">
+          <div class="en">Attach defibrillator / monitor as soon as available.</div>
+          <div class="ar">توصيل جهاز إزالة الرجفان / الشاشة فور توفره.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأوصّل الإلكترودات وجهاز الديفيبريلاتور أو المونيتور فور ما يكون متاح، وبأحلل النظم القلبي بسرعة.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">5</td>
+        <td class="td-action">
+          <div class="en">Shockable rhythm (VF/pVT):<br>
+          Deliver 1 shock (200 J biphasic).<br>
+          Say "CLEAR!" before shocking; ensure no contact.<br>
+          Then resume CPR immediately for 2 minutes.</div>
+          <div class="ar">نظم قابل للصدمة (VF/pVT):<br>
+          إعطاء صدمة واحدة (200 جول ثنائي الطور).<br>
+          قول "ابتعدوا!" قبل الصدمة والتأكد من عدم ملامسة أحد للمريض.<br>
+          ثم استئناف الإنعاش فورًا لمدة دقيقتين.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">لو النظم VF أو pVT، بأشحن الجهاز على 200 جول وبأصيح "ابتعدوا!" وبأتأكد إن محدش بيلمس المريض، وبعدين بأعطي الصدمة وبأرجع للإنعاش فورًا لمدة دقيقتين.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">6</td>
+        <td class="td-action">
+          <div class="en">Non-shockable rhythm (PEA/Asystole): Continue CPR, do not shock.</div>
+          <div class="ar">نظم غير قابل للصدمة (PEA/Asystole): الاستمرار في الإنعاش، لا تعطِ صدمة.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">لو النظم PEA أو Asystole، بأكمل الإنعاش من غير ما أعطي صدمة، لأن الصدمة مش مفيدة في الحالة دي.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">7</td>
+        <td class="td-action">
+          <div class="en">Reassess rhythm every 2 minutes.</div>
+          <div class="ar">إعادة تقييم النظم كل دقيقتين.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">كل دقيقتين بأوقف الإنعاش لثواني بس وبأشوف النظم على الشاشة وبأقرر الخطوة الجاية (صدمة ولا أكمل).</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 4 -->
+      <tr class="section-row">
+        <td colspan="6">Airway and Breathing — مجرى الهواء والتنفس</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">8</td>
+        <td class="td-action">
+          <div class="en">Open airway using jaw-thrust or head-tilt-chin-lift.<br>
+          Provide bag-valve-mask ventilation with 100% oxygen.</div>
+          <div class="ar">فتح مجرى الهواء بتقنية دفع الفك أو إمالة الرأس ورفع الذقن.<br>
+          توفير التهوية بالكيس والقناع (BVM) بأكسجين 100%.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأفتح مجرى الهواء إما بدفع الفك لو في إصابة رقبة أو إمالة الرأس ورفع الذقن، وبأركب الماسك صح على وجه المريض وبأضغط على الكيس عشان أديه تنفسة كاملة بأكسجين 100%.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">9</td>
+        <td class="td-action">
+          <div class="en">Place advanced airway (ETT or supraglottic) when trained provider available.<br>
+          After airway placement, ventilate at 1 breath every 6 seconds (10/min), continue chest compressions.</div>
+          <div class="ar">وضع مجرى هواء متقدم (أنبوب تنبيب رغامي أو فوق لساني المزمار) عند توفر مختص مدرّب.<br>
+          بعد وضع مجرى الهواء، التهوية بمعدل نفس كل 6 ثوانٍ (10/دقيقة) مع الاستمرار في ضغطات الصدر بدون توقف.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأساعد المختص في وضع الأنبوب وبأتأكد من مكانه الصح، وبعد كده بأهوّي بنفسة كل 6 ثواني (يعني 10 تنفسات في الدقيقة) بدون ما أوقف ضغطات الصدر.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">10</td>
+        <td class="td-action">
+          <div class="en">Monitor ETCO₂; aim for &gt;10 mmHg during CPR.</div>
+          <div class="ar">مراقبة ثاني أكسيد الكربون في الزفير (ETCO₂)؛ استهداف أكثر من 10 ملم زئبق أثناء الإنعاش.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأشوف قراءة ETCO₂ على الشاشة وبأتأكد إنها فوق 10 ملم زئبق، لأن لو أقل ده بيدل إن الإنعاش مش كافي أو المريض اتعافى.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 5 -->
+      <tr class="section-row">
+        <td colspan="6">IV/IO Access and Medication Administration — الوصول الوريدي/العظمي وإعطاء الأدوية</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">11</td>
+        <td class="td-action">
+          <div class="en">Establish IV or IO access.<br>
+          Epinephrine 1 mg IV/IO every 3–5 minutes.</div>
+          <div class="ar">تأسيس وصول وريدي (IV) أو عظمي (IO).<br>
+          إعطاء الإبينفرين 1 مجم وريديًا/عظميًا كل 3–5 دقائق.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأعمل كانيولا وريدية أو وصول عظمي لو الوريد صعب، وبأعطي الإبينفرين 1 مجم كل 3-5 دقائق وبأسجّل توقيت كل جرعة.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">12</td>
+        <td class="td-action">
+          <div class="en">For VF/pVT: Give Amiodarone 300 mg IV push (2nd dose: 150 mg) or Lidocaine alternative.<br>
+          Flush line after each drug with 20 mL saline.</div>
+          <div class="ar">لنظم VF/pVT: إعطاء الأميودارون 300 مجم وريديًا سريعًا (الجرعة الثانية: 150 مجم) أو الليدوكائين كبديل.<br>
+          شطف الخط بـ 20 مل محلول ملحي بعد كل دواء.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">لو النظم VF أو pVT ومجاوبتش على الصدمة، بأعطي أميودارون 300 مجم IV سريع، والجرعة التانية 150 مجم. بعد كل دواء بأشطف الخط بـ 20 مل محلول ملحي عشان أضمن وصول الدواء.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 6 -->
+      <tr class="section-row">
+        <td colspan="6">6. Identify and Treat Reversible Causes (Hs &amp; Ts) — تحديد وعلاج الأسباب القابلة للعلاج</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">13</td>
+        <td class="td-action">
+          <div class="en">
+            <b>H's:</b>
+            <ol class="hs-ts">
+              <li>Hypoxia</li>
+              <li>Hypovolemia</li>
+              <li>Hydrogen ion (acidosis)</li>
+              <li>Hypo-/Hyperkalemia</li>
+              <li>Hypothermia</li>
+            </ol>
+            <b>T's:</b>
+            <ol class="hs-ts" start="6">
+              <li>Tension pneumothorax</li>
+              <li>Tamponade (cardiac)</li>
+              <li>Toxins</li>
+              <li>Thrombosis (coronary or pulmonary)</li>
+            </ol>
+          </div>
+          <div class="ar">
+            <b>H's:</b>
+            <ol class="hs-ts" style="padding-right:18px">
+              <li>نقص الأكسجين</li>
+              <li>نقص حجم الدم</li>
+              <li>الحماض (زيادة أيونات الهيدروجين)</li>
+              <li>انخفاض / ارتفاع البوتاسيوم</li>
+              <li>انخفاض حرارة الجسم</li>
+            </ol>
+            <b>T's:</b>
+            <ol class="hs-ts" start="6" style="padding-right:18px">
+              <li>استرواح الصدر التوتري</li>
+              <li>دكاك القلب (Cardiac Tamponade)</li>
+              <li>السموم</li>
+              <li>جلطة (تاجية أو رئوية)</li>
+            </ol>
+          </div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأفكر في كل أسباب الـ H's &amp; T's وبأحاول أحددها وأعالجها:<br>
+          • نقص الأكسجين → أزيد الأكسجين<br>
+          • نقص حجم الدم → سوائل<br>
+          • حماض → بيكربونات لو محتاج<br>
+          • اضطراب البوتاسيوم → تصحيح الاختلال<br>
+          • برودة → تدفئة<br>
+          • استرواح توتري → تصريف<br>
+          • دكاك → إبرة للتحرير<br>
+          • سموم → ترياق<br>
+          • جلطة → أدوية أو تدخل</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <!-- SECTION 7 -->
+      <tr class="section-row">
+        <td colspan="6">Return of Spontaneous Circulation (ROSC) — عودة الدورة الدموية التلقائية</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">14</td>
+        <td class="td-action">
+          <div class="en">Check for pulse and spontaneous breathing.</div>
+          <div class="ar">التحقق من النبض والتنفس التلقائي.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأراقب الشاشة والمريض عشان ألاحظ علامات عودة الدورة: نبض ظاهر، حركة، ارتفاع في ضغط الدم، أو ارتفاع في ETCO₂.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">15</td>
+        <td class="td-action">
+          <div class="en">Optimize oxygenation: Maintain SpO₂ 94–99%.</div>
+          <div class="ar">تحسين الأكسجة: الحفاظ على SpO₂ بين 94–99%.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأراقب الـ SpO₂ وبأضبط تدفق الأكسجين عشان يفضل بين 94 و99%. مش لازم يكون 100% لأن فرط الأكسجين ضار بعد الإنعاش.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">16</td>
+        <td class="td-action">
+          <div class="en">Monitor BP; consider fluids or vasopressors.<br>
+          Obtain 12-lead ECG.</div>
+          <div class="ar">مراقبة ضغط الدم؛ النظر في إعطاء سوائل أو مقويات الأوعية الدموية.<br>
+          أخذ تخطيط قلب 12 اتجاه.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأقيس ضغط الدم ولو كان منخفض بأفكر في سوائل أو دوبامين/نوريبينفرين. وبعدين بأعمل تخطيط قلب 12 اتجاه عشان أشوف لو في احتشاء (STEMI) يحتاج تدخل.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">17</td>
+        <td class="td-action">
+          <div class="en">Consider Targeted Temperature Management (TTM) 32–36°C for 24 hours.</div>
+          <div class="ar">النظر في إدارة درجة الحرارة المستهدفة (TTM) بين 32–36°م لمدة 24 ساعة.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">لو المريض مش واعي بعد عودة الدورة، بأبلّغ الطبيب عشان يقرر تطبيق بروتوكول التبريد (TTM) ويحافظ على الحرارة بين 32-36 درجة لمدة 24 ساعة لحماية المخ.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+      <tr>
+        <td class="td-step">18</td>
+        <td class="td-action">
+          <div class="en">Transfer to ICU for further post-arrest care.<br>
+          Documentation and Communication.</div>
+          <div class="ar">نقل المريض إلى وحدة العناية المركزة للرعاية التالية للإنعاش.<br>
+          التوثيق والتواصل.</div>
+        </td>
+        <td class="td-do">
+          <div class="do-text">بأرتب نقل المريض لـ ICU مع كل المعلومات الضرورية (SBAR). وبأوثّق كل اللي حصل: وقت بدء الكود، الأدوية وتوقيتها، عدد الصدمات، ووقت ROSC. وبأبلّغ الفريق والأسرة.</div>
+        </td>
+        <td class="td-score score-2">2</td>
+        <td class="td-score score-1">1</td>
+        <td class="td-score score-0">0</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div style="padding:16px 24px; text-align:center; color:#555; font-size:0.82rem; border-top:1px solid #dde3ef;">
+    Total Score: ____ / 10 &nbsp;|&nbsp; الدرجة الكلية: ____ / 10
+  </div>
+</div>
+</body>
+</html>

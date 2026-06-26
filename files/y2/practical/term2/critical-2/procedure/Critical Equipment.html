@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursing Procedures Equipment</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --panel: #112236;
+    --card: #162d44;
+    --teal: #17c3b2;
+    --teal-dim: rgba(23,195,178,0.12);
+    --amber: #f9a825;
+    --amber-dim: rgba(249,168,37,0.12);
+    --white: #f0f6ff;
+    --muted: #7a9ab8;
+    --cat-bg: rgba(23,195,178,0.08);
+    --border: rgba(23,195,178,0.18);
+    --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── TOP HEADER ── */
+  .top-header {
+    background: linear-gradient(135deg, #0a1e30 0%, #112a40 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 28px 14px;
+    text-align: center;
+  }
+  .top-header h1 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+  }
+  .top-header h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-shrink: 0;
+  }
+  .nav-wrap::-webkit-scrollbar { display: none; }
+
+  .nav-tabs {
+    display: flex;
+    min-width: max-content;
+    padding: 0 16px;
+    gap: 4px;
+  }
+
+  .tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 12px 20px 10px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+    position: relative;
+  }
+  .tab-btn .tab-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.22s;
+  }
+  .tab-btn .tab-en {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+    transition: color 0.22s;
+  }
+  .tab-btn .tab-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.65rem;
+    color: rgba(122,154,184,0.6);
+    transition: color 0.22s;
+  }
+  .tab-btn:hover .tab-en { color: var(--white); }
+  .tab-btn:hover .tab-num { background: var(--teal-dim); color: var(--teal); }
+
+  .tab-btn.active {
+    border-bottom-color: var(--teal);
+  }
+  .tab-btn.active .tab-en { color: var(--teal); }
+  .tab-btn.active .tab-ar { color: rgba(23,195,178,0.7); }
+  .tab-btn.active .tab-num { background: var(--teal); color: var(--bg); }
+
+  /* ── MAIN CONTENT ── */
+  .content-area {
+    flex: 1;
+    padding: 28px 24px 48px;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .proc-section { display: none; }
+  .proc-section.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .proc-header {
+    margin-bottom: 28px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, var(--card), rgba(23,195,178,0.05));
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .proc-header::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(23,195,178,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .proc-header .ph-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .proc-header .ph-en {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .proc-header .ph-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-top: 6px;
+    direction: rtl;
+  }
+
+  /* ── CATEGORY ── */
+  .category {
+    margin-bottom: 24px;
+  }
+  .cat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 16px;
+    background: var(--cat-bg);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 12px;
+  }
+  .cat-title .ct-en {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .cat-title .ct-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(23,195,178,0.7);
+    direction: rtl;
+  }
+  .cat-title .divider {
+    width: 1px; height: 14px;
+    background: rgba(23,195,178,0.3);
+  }
+
+  /* ── TOOL CARD ── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .tool-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity 0.18s;
+  }
+  .tool-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(23,195,178,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .tool-card:hover::after { opacity: 1; }
+
+  .tool-en {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .tool-ar {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--teal);
+    direction: rtl;
+    line-height: 1.4;
+    padding-top: 6px;
+    border-top: 1px solid rgba(23,195,178,0.15);
+    margin-bottom: 10px;
+  }
+  .tool-use {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--muted);
+    direction: rtl;
+    line-height: 1.55;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+
+  /* ── FOOTER NAV ── */
+  .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+    gap: 12px;
+  }
+  .fnav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--teal);
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .fnav-btn:hover { background: var(--teal-dim); border-color: var(--teal); }
+  .fnav-btn:disabled { opacity: 0.25; cursor: not-allowed; pointer-events: none; }
+  .fnav-btn .arrow { font-size: 1rem; }
+
+  .page-indicator {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .page-indicator span { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Nursing Procedure Equipment Reference</h1>
+  <h2>مرجع أدوات الإجراءات التمريضية</h2>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav-tabs" id="navTabs">
+    <button class="tab-btn active" onclick="showProc(0)">
+      <div class="tab-num">1</div>
+      <div class="tab-en">MV Care</div>
+      <div class="tab-ar">التنفس الصناعي</div>
+    </button>
+    <button class="tab-btn" onclick="showProc(1)">
+      <div class="tab-num">2</div>
+      <div class="tab-en">Tracheostomy</div>
+      <div class="tab-ar">أنبوب الرغامى</div>
+    </button>
+    <button class="tab-btn" onclick="showProc(2)">
+      <div class="tab-num">3</div>
+      <div class="tab-en">ACLS</div>
+      <div class="tab-ar">إنعاش القلب</div>
+    </button>
+    <button class="tab-btn" onclick="showProc(3)">
+      <div class="tab-num">4</div>
+      <div class="tab-en">TPN</div>
+      <div class="tab-ar">التغذية الوريدية</div>
+    </button>
+    <button class="tab-btn" onclick="showProc(4)">
+      <div class="tab-num">5</div>
+      <div class="tab-en">Arterial Cath.</div>
+      <div class="tab-ar">القسطرة الشريانية</div>
+    </button>
+    <button class="tab-btn" onclick="showProc(5)">
+      <div class="tab-num">6</div>
+      <div class="tab-en">Pulmonary Cath.</div>
+      <div class="tab-ar">قسطرة الشريان الرئوي</div>
+    </button>
+  </div>
+</div>
+
+<div class="content-area">
+
+  <!-- ══════════ 1. MV ══════════ -->
+  <div class="proc-section active" id="proc-0">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 01</div>
+      <div class="ph-en">Mechanical Ventilation (MV) Care Equipment</div>
+      <div class="ph-ar">أدوات رعاية التنفس الصناعي</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Main Devices</span><div class="divider"></div><span class="ct-ar">الأجهزة الرئيسية</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Mechanical Ventilator</div>
+          <div class="tool-ar">جهاز التنفس الصناعي</div>
+          <div class="tool-use">يتحكم في التنفس الآلي للمريض ويضبط معدل التنفس والضغط ونسبة الأكسجين</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Endotracheal Tube (ETT)</div>
+          <div class="tool-ar">أنبوب القصبة الهوائية</div>
+          <div class="tool-use">يُدخل عبر الفم أو الأنف لتأمين مجرى هواء مفتوح وربط الجهاز بالرئتين</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Tracheostomy Tube</div>
+          <div class="tool-ar">أنبوب الرغامى</div>
+          <div class="tool-use">يُدخل عبر فتحة جراحية في الرقبة لتأمين مجرى هواء بديل طويل الأمد</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Intubation & Support</span><div class="divider"></div><span class="ct-ar">التنبيب والدعم</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Laryngoscope + Blades (Macintosh / Miller)</div>
+          <div class="tool-ar">منظار الحنجرة + الشفرات</div>
+          <div class="tool-use">يُستخدم لرؤية الحبال الصوتية وتوجيه الأنبوب أثناء عملية التنبيب</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Stylet (rigid guide)</div>
+          <div class="tool-ar">الدليل الصلب</div>
+          <div class="tool-use">يُدخل داخل الأنبوب لتصليبه وتشكيله لتسهيل إدخاله في مجرى الهواء</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Syringe (10–20 mL for cuff)</div>
+          <div class="tool-ar">حقنة 10–20 مل لنفخ الكفة</div>
+          <div class="tool-use">لنفخ كفة الأنبوب لإحكام إغلاق مجرى الهواء ومنع التسريب</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Manual Resuscitation Bag (Ambu Bag)</div>
+          <div class="tool-ar">كيس الإنعاش اليدوي (أمبو باج)</div>
+          <div class="tool-use">للتهوية اليدوية الطارئة عند انقطاع الجهاز أو أثناء نقل المريض</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Circuit Components</span><div class="divider"></div><span class="ct-ar">مكونات الدائرة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Water Trap</div>
+          <div class="tool-ar">مصيدة المياه</div>
+          <div class="tool-use">لتجميع تكاثف الرطوبة داخل الدائرة ومنع وصوله للمريض</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Bacterial / Viral Filter</div>
+          <div class="tool-ar">فلتر بكتيري / فيروسي</div>
+          <div class="tool-use">لمنع انتقال الميكروبات بين الجهاز والمريض وحماية كليهما</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Heated Humidifier</div>
+          <div class="tool-ar">مرطب الهواء الساخن</div>
+          <div class="tool-use">لترطيب وتدفئة الهواء قبل وصوله للرئتين تجنبًا لجفاف الأغشية المخاطية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Water</div>
+          <div class="tool-ar">ماء معقم</div>
+          <div class="tool-use">يُملأ به المرطب لتوليد البخار الرطب اللازم للتهوية</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Gas Supply</span><div class="divider"></div><span class="ct-ar">مصادر الغاز</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Oxygen Supply (Wall Outlet / Cylinder)</div>
+          <div class="tool-ar">مصدر الأكسجين (حائط أو أسطوانة)</div>
+          <div class="tool-use">لتوفير الأكسجين اللازم لعملية التهوية الصناعية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Medical Air Supply</div>
+          <div class="tool-ar">الهواء الطبي</div>
+          <div class="tool-use">يُخلط مع الأكسجين للتحكم في نسبة FiO₂ المُعطاة للمريض</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Oxygen Flowmeter</div>
+          <div class="tool-ar">مقياس تدفق الأكسجين</div>
+          <div class="tool-use">لضبط وقياس معدل تدفق الأكسجين بدقة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Monitoring</span><div class="divider"></div><span class="ct-ar">المراقبة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Pulse Oximeter + Probe</div>
+          <div class="tool-ar">جهاز قياس الأكسجين + مسبار</div>
+          <div class="tool-use">لمراقبة تشبع الأكسجين في الدم (SpO₂) بشكل مستمر وغير جراحي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Stethoscope</div>
+          <div class="tool-ar">سماعة طبية</div>
+          <div class="tool-use">للتحقق من أصوات التنفس والتأكد من صحة موضع الأنبوب في الرئتين</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Maintenance & Hygiene</span><div class="divider"></div><span class="ct-ar">الصيانة والنظافة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Suction Catheter</div>
+          <div class="tool-ar">قسطرة الشفط</div>
+          <div class="tool-use">لشفط الإفرازات والمخاط من مجرى الهواء والأنبوب</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Suction Apparatus</div>
+          <div class="tool-ar">جهاز الشفط</div>
+          <div class="tool-use">يولد قوة الشفط السلبية اللازمة لسحب الإفرازات</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gloves</div>
+          <div class="tool-ar">قفازات معقمة</div>
+          <div class="tool-use">للحفاظ على التعقيم أثناء الشفط وأي إجراء يمس مجرى الهواء</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Saline</div>
+          <div class="tool-ar">محلول ملحي معقم</div>
+          <div class="tool-use">لتليين الإفرازات الجافة قبل الشفط وتنظيف المجرى</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Oral Care Supplies (swabs / toothbrush)</div>
+          <div class="tool-ar">مستلزمات العناية بالفم</div>
+          <div class="tool-use">للحفاظ على نظافة الفم والحد من خطر الالتهاب الرئوي المرتبط بالتنفس الصناعي (VAP)</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Tape or ETT Holder</div>
+          <div class="tool-ar">لاصق أو حامل الأنبوب</div>
+          <div class="tool-use">لتثبيت الأنبوب في مكانه ومنع تحركه أو خروجه بشكل غير مقصود</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Personal Protection</span><div class="divider"></div><span class="ct-ar">الحماية الشخصية</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">PPE (gloves, mask, goggles)</div>
+          <div class="tool-ar">معدات الوقاية الشخصية</div>
+          <div class="tool-use">لحماية الممرض من التعرض للإفرازات والعدوى أثناء الإجراء</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" disabled><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>1</span> / 6</div>
+      <button class="fnav-btn" onclick="showProc(1)">Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- ══════════ 2. TRACHEOSTOMY ══════════ -->
+  <div class="proc-section" id="proc-1">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 02</div>
+      <div class="ph-en">Tracheostomy Tube Care Equipment</div>
+      <div class="ph-ar">أدوات رعاية أنبوب الرغامى</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">General Supplies</span><div class="divider"></div><span class="ct-ar">المستلزمات العامة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gloves</div>
+          <div class="tool-ar">قفازات معقمة</div>
+          <div class="tool-use">للحفاظ على التعقيم التام أثناء تنظيف الكانيولا والقسطرة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Clean Gloves</div>
+          <div class="tool-ar">قفازات نظيفة</div>
+          <div class="tool-use">تُستخدم في الخطوات غير المعقمة كإزالة الضمادة القديمة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">PPE</div>
+          <div class="tool-ar">معدات الوقاية الشخصية</div>
+          <div class="tool-use">لحماية الممرض من الإفرازات والعدوى أثناء الرعاية</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Cleaning & Dressing</span><div class="divider"></div><span class="ct-ar">التنظيف والضمادة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Sterile Tracheostomy Dressing</div>
+          <div class="tool-ar">ضمادة الرغامى المعقمة</div>
+          <div class="tool-use">توضع حول فتحة الرغامى لامتصاص الإفرازات وحماية الجلد</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gauze</div>
+          <div class="tool-ar">شاش معقم</div>
+          <div class="tool-use">لتنظيف الجلد حول فتحة الرغامى وتجفيفه</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Normal Saline</div>
+          <div class="tool-ar">محلول ملحي طبيعي</div>
+          <div class="tool-use">لتنظيف الكانيولا الداخلية والجلد من الإفرازات الجافة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Hydrogen Peroxide (if policy allows)</div>
+          <div class="tool-ar">ماء أوكسجين (حسب السياسة)</div>
+          <div class="tool-use">لإذابة الإفرازات المتكلسة الصعبة من الكانيولا الداخلية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Cotton-Tipped Applicators</div>
+          <div class="tool-ar">مسحات قطنية معقمة</div>
+          <div class="tool-use">لتنظيف الزوايا والمناطق الضيقة حول فتحة الرغامى بدقة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Airway Management</span><div class="divider"></div><span class="ct-ar">إدارة مجرى الهواء</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Suction Catheter</div>
+          <div class="tool-ar">قسطرة الشفط</div>
+          <div class="tool-use">لشفط الإفرازات من داخل أنبوب الرغامى والمجرى الهوائي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Suction Apparatus</div>
+          <div class="tool-ar">جهاز الشفط</div>
+          <div class="tool-use">يولد قوة الشفط السلبية لسحب الإفرازات بأمان</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Oxygen Source</div>
+          <div class="tool-ar">مصدر الأكسجين</div>
+          <div class="tool-use">لتعويض الأكسجين أثناء وبعد إجراءات الشفط والتغيير</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Pulse Oximeter</div>
+          <div class="tool-ar">جهاز قياس الأكسجين</div>
+          <div class="tool-use">لمراقبة مستوى تشبع الأكسجين في الدم أثناء الإجراء</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Securing</span><div class="divider"></div><span class="ct-ar">التثبيت</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">New Tracheostomy Ties or Velcro Holder</div>
+          <div class="tool-ar">أربطة أو حامل فيلكرو جديد</div>
+          <div class="tool-use">لتثبيت أنبوب الرغامى بأمان ومنع سقوطه أو تحركه</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Scissors</div>
+          <div class="tool-ar">مقص</div>
+          <div class="tool-use">لقطع الأربطة القديمة المراد تغييرها</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Inner Cannula Care</span><div class="divider"></div><span class="ct-ar">رعاية الكانيولا الداخلية</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">New Prepackaged Inner Cannula (disposable)</div>
+          <div class="tool-ar">كانيولا داخلية جاهزة (للاستخدام مرة واحدة)</div>
+          <div class="tool-use">تُستبدل بالكانيولا المستخدمة للحفاظ على نظافة مجرى الهواء</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Small Brush + Pipe Cleaner (non-disposable)</div>
+          <div class="tool-ar">فرشاة صغيرة + منظف الأنابيب</div>
+          <div class="tool-use">لتنظيف الكانيولا الداخلية القابلة لإعادة الاستخدام</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Oxygen Delivery</span><div class="divider"></div><span class="ct-ar">توصيل الأكسجين</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Tracheostomy Collar (Mask)</div>
+          <div class="tool-ar">قناع الرغامى</div>
+          <div class="tool-use">لإعطاء الأكسجين المرطب مباشرةً عبر فتحة الرغامى</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">T-Tube</div>
+          <div class="tool-ar">أنبوب على شكل T</div>
+          <div class="tool-use">يُستخدم بديلاً للقناع لتوصيل الأكسجين أو دعم التنفس</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Skin Care</span><div class="divider"></div><span class="ct-ar">العناية بالجلد</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Lubricant / Skin Barrier Cream</div>
+          <div class="tool-ar">مرطب / كريم حماية الجلد</div>
+          <div class="tool-use">لحماية الجلد حول فتحة الرغامى من التهيج والقرح الناتجة عن الإفرازات</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" onclick="showProc(0)"><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>2</span> / 6</div>
+      <button class="fnav-btn" onclick="showProc(2)">Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- ══════════ 3. ACLS ══════════ -->
+  <div class="proc-section" id="proc-2">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 03</div>
+      <div class="ph-en">Advanced Cardiac Life Support (ACLS) Equipment</div>
+      <div class="ph-ar">أدوات دعم الحياة القلبي المتقدم</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Airway & Ventilation</span><div class="divider"></div><span class="ct-ar">مجرى الهواء والتهوية</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Bag-Valve-Mask (BVM) with reservoir</div>
+          <div class="tool-ar">كيس صمام القناع (BVM) مع خزان</div>
+          <div class="tool-use">للتهوية اليدوية وإعطاء أكسجين عالي التركيز أثناء الإنعاش</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Oxygen Supply with regulator / tubing</div>
+          <div class="tool-ar">مصدر أكسجين مع منظم وأنابيب</div>
+          <div class="tool-use">لتوفير الأكسجين اللازم للتهوية وعمليات الإنعاش</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Suction Device with Catheters</div>
+          <div class="tool-ar">جهاز شفط مع قساطر</div>
+          <div class="tool-use">لإزالة الإفرازات والقيء من مجرى الهواء بسرعة أثناء الطوارئ</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Oropharyngeal Airway (OPA)</div>
+          <div class="tool-ar">مجرى الهواء الفموي البلعومي</div>
+          <div class="tool-use">يُدخل في الفم لمنع انسداد مجرى الهواء باللسان لدى المريض فاقد الوعي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Nasopharyngeal Airway (NPA)</div>
+          <div class="tool-ar">مجرى الهواء الأنفي البلعومي</div>
+          <div class="tool-use">يُدخل عبر الأنف لتأمين مجرى هواء لدى المريض شبه الواعي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Endotracheal Tubes (ETT)</div>
+          <div class="tool-ar">أنابيب القصبة الهوائية</div>
+          <div class="tool-use">لتأمين مجرى هواء محكم أثناء التنبيب في الطوارئ</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Laryngoscope with Blades</div>
+          <div class="tool-ar">منظار الحنجرة مع الشفرات</div>
+          <div class="tool-use">لتصوير مجرى الهواء وتوجيه الأنبوب أثناء التنبيب الطارئ</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Video Laryngoscope</div>
+          <div class="tool-ar">منظار الحنجرة بالكاميرا</div>
+          <div class="tool-use">يوفر رؤية مباشرة محسنة لمجرى الهواء في الحالات الصعبة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Stylet or Bougie</div>
+          <div class="tool-ar">دليل صلب أو بوجي</div>
+          <div class="tool-use">لتوجيه الأنبوب في حالات التنبيب الصعب</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Capnography (ETCO₂ Monitor)</div>
+          <div class="tool-ar">جهاز قياس ثاني أكسيد الكربون</div>
+          <div class="tool-use">للتأكد من الموضع الصحيح للأنبوب ومراقبة فعالية الإنعاش</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Circulation & Defibrillation</span><div class="divider"></div><span class="ct-ar">الدورة الدموية والصدمة الكهربائية</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Cardiac Monitor / Defibrillator</div>
+          <div class="tool-ar">جهاز مراقبة القلب / الصدمة الكهربائية</div>
+          <div class="tool-use">لرصد نظم القلب وإعطاء الصدمة الكهربائية عند الحاجة لتصحيح اضطرابات الإيقاع</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">ECG Leads and Electrodes</div>
+          <div class="tool-ar">أسلاك وأقطاب تخطيط القلب</div>
+          <div class="tool-use">لتسجيل النشاط الكهربائي للقلب وتشخيص النوع المحدد من الاضطراب</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Defibrillator Pads (adult / pediatric)</div>
+          <div class="tool-ar">لاصقات الصدمة (بالغين / أطفال)</div>
+          <div class="tool-use">توضع على الصدر لإيصال الصدمة الكهربائية بأمان وفعالية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">External Pacemaker (transcutaneous)</div>
+          <div class="tool-ar">ناظم الخطى الخارجي عبر الجلد</div>
+          <div class="tool-use">لتحفيز القلب كهربائيًا عند حدوث البطء الشديد أو الانسداد الكامل</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Vascular Access</span><div class="divider"></div><span class="ct-ar">الوصول الوريدي</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">IV Cannulas (various sizes)</div>
+          <div class="tool-ar">إبر الكانيولا الوريدية</div>
+          <div class="tool-use">لتأسيس وصول وريدي سريع لإعطاء الأدوية والسوائل أثناء الإنعاش</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Intraosseous (IO) Needle and Drill</div>
+          <div class="tool-ar">إبرة وحفار العظام (IO)</div>
+          <div class="tool-use">للوصول إلى نخاع العظم لإعطاء الأدوية عند فشل الوصول الوريدي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Normal Saline or Ringer's Lactate</div>
+          <div class="tool-ar">محلول ملحي أو رينجر لاكتات</div>
+          <div class="tool-use">لتعويض السوائل وتمييع الأدوية ودعم الدورة الدموية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">IV Tubing and Extension Sets</div>
+          <div class="tool-ar">أنابيب وإضافات التسريب الوريدي</div>
+          <div class="tool-use">لنقل السوائل والأدوية من الكيس إلى وريد المريض</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Syringes / Needles</div>
+          <div class="tool-ar">حقن وإبر</div>
+          <div class="tool-use">لتحضير وحقن الأدوية الطارئة مثل الأدرينالين والأميودارون</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Saline Flushes</div>
+          <div class="tool-ar">شطف ملحي</div>
+          <div class="tool-use">للتأكد من وصول الدواء للوريد وعدم ترسبه في الخط</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Monitoring & Miscellaneous</span><div class="divider"></div><span class="ct-ar">المراقبة والمتفرقات</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Blood Pressure Monitor</div>
+          <div class="tool-ar">جهاز قياس ضغط الدم</div>
+          <div class="tool-use">لمراقبة ضغط الدم باستمرار وتقييم مدى استجابة المريض للإنعاش</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Pulse Oximeter</div>
+          <div class="tool-ar">جهاز قياس الأكسجين</div>
+          <div class="tool-use">لمراقبة تشبع الأكسجين وكشف أي تدهور في الحالة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Thermometer</div>
+          <div class="tool-ar">ميزان الحرارة</div>
+          <div class="tool-use">لقياس درجة حرارة المريض لاكتشاف انخفاض الحرارة أو الحمى</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Glucometer</div>
+          <div class="tool-ar">جهاز قياس السكر</div>
+          <div class="tool-use">للتحقق من مستوى السكر في الدم كأحد أسباب الإغماء والسكتة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Emergency Crash Cart</div>
+          <div class="tool-ar">عربة الطوارئ</div>
+          <div class="tool-use">تحتوي على جميع أدوية وأدوات الإنعاش المنظمة في مكان واحد</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Trauma Shears / Scissors</div>
+          <div class="tool-ar">مقص الطوارئ</div>
+          <div class="tool-use">لقص ملابس المريض بسرعة للوصول للصدر والعروق</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Clock or Timer</div>
+          <div class="tool-ar">ساعة أو مؤقت</div>
+          <div class="tool-use">لتسجيل توقيت الجرعات وضغطات القلب وعمليات الإنعاش بدقة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Documentation Forms</div>
+          <div class="tool-ar">نماذج التوثيق</div>
+          <div class="tool-use">لتسجيل جميع الإجراءات والأدوية والاستجابات أثناء الإنعاش</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">PPE</div>
+          <div class="tool-ar">معدات الوقاية الشخصية</div>
+          <div class="tool-use">لحماية الفريق الطبي من الإفرازات والدماء أثناء الإنعاش</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" onclick="showProc(1)"><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>3</span> / 6</div>
+      <button class="fnav-btn" onclick="showProc(3)">Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- ══════════ 4. TPN ══════════ -->
+  <div class="proc-section" id="proc-3">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 04</div>
+      <div class="ph-en">Total Parenteral Nutrition (TPN) Equipment</div>
+      <div class="ph-ar">أدوات التغذية الوريدية الكاملة</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Infusion Needs</span><div class="divider"></div><span class="ct-ar">مستلزمات التسريب</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">TPN Solution Bag (custom-made)</div>
+          <div class="tool-ar">كيس محلول التغذية الوريدية (مُعد خصيصًا)</div>
+          <div class="tool-use">يحتوي على الجلوكوز والأحماض الأمينية والدهون والفيتامينات لتغذية المريض وريديًا</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Infusion Pump (for rate control)</div>
+          <div class="tool-ar">مضخة التسريب</div>
+          <div class="tool-use">لإعطاء محلول التغذية بمعدل دقيق ومتحكم به لتجنب الارتفاع المفاجئ في السكر</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">IV Tubing with In-Line Filter</div>
+          <div class="tool-ar">أنبوب تسريب مع فلتر مدمج</div>
+          <div class="tool-use">لنقل المحلول للمريض مع تصفيته من أي جسيمات أو ميكروبات</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Access</span><div class="divider"></div><span class="ct-ar">الوصول الوريدي المركزي</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Central Venous Access Device (PICC / Tunneled Catheter)</div>
+          <div class="tool-ar">جهاز الوصول الوريدي المركزي (PICC / قسطرة مُنفقة)</div>
+          <div class="tool-use">لإعطاء محلول التغذية المركزة بأمان في وريد كبير لتجنب تهيج الأوردة الصغيرة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Site Care</span><div class="divider"></div><span class="ct-ar">العناية بموضع القسطرة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Dressing Supplies (for catheter site)</div>
+          <div class="tool-ar">مستلزمات ضمادة موضع القسطرة</div>
+          <div class="tool-use">لتغطية وحماية موضع القسطرة من التلوث والعدوى</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Alcohol Wipes</div>
+          <div class="tool-ar">مناديل كحول</div>
+          <div class="tool-use">لتطهير المنافذ والموصلات قبل الاستخدام لمنع العدوى</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Monitoring</span><div class="divider"></div><span class="ct-ar">المراقبة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Blood Sampling Supplies</div>
+          <div class="tool-ar">مستلزمات سحب الدم</div>
+          <div class="tool-use">لأخذ عينات دورية لمراقبة الجلوكوز والشوارد والكبد والكلى وتعديل التغذية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">PPE</div>
+          <div class="tool-ar">معدات الوقاية الشخصية</div>
+          <div class="tool-use">لحماية الممرض عند تحضير المحلول وتغيير الضمادة والتعامل مع القسطرة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" onclick="showProc(2)"><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>4</span> / 6</div>
+      <button class="fnav-btn" onclick="showProc(4)">Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- ══════════ 5. ARTERIAL CATHETER ══════════ -->
+  <div class="proc-section" id="proc-4">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 05</div>
+      <div class="ph-en">Arterial Catheter Care Equipment</div>
+      <div class="ph-ar">أدوات رعاية القسطرة الشريانية</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Monitoring System</span><div class="divider"></div><span class="ct-ar">نظام المراقبة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Arterial Catheter</div>
+          <div class="tool-ar">القسطرة الشريانية</div>
+          <div class="tool-use">تُدخل في الشريان لقياس الضغط الشرياني المستمر وسحب عينات الدم</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Pressure Transducer</div>
+          <div class="tool-ar">محول الضغط</div>
+          <div class="tool-use">يحول إشارة الضغط الشرياني إلى إشارة كهربائية تظهر على شاشة المراقبة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Hemodynamic Monitoring System</div>
+          <div class="tool-ar">نظام مراقبة الديناميكا الدموية</div>
+          <div class="tool-use">يعرض ويسجل منحنى الضغط الشرياني والقيم باستمرار لمتابعة حالة المريض</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Pressure Maintenance</span><div class="divider"></div><span class="ct-ar">الحفاظ على الضغط</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Pressure Bag (maintained at 300 mmHg)</div>
+          <div class="tool-ar">كيس الضغط (مضبوط على 300 ملم زئبق)</div>
+          <div class="tool-use">يضغط على كيس المحلول الملحي لضمان تدفق مستمر يمنع رجوع الدم في الخط</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Flush System</div>
+          <div class="tool-ar">نظام الشطف</div>
+          <div class="tool-use">يشطف الخط بمحلول ملحي باستمرار لمنع التجلط وانسداد القسطرة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Supplies</span><div class="divider"></div><span class="ct-ar">المستلزمات</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Sterile Tubing (free from air bubbles)</div>
+          <div class="tool-ar">أنابيب معقمة (خالية من فقاعات الهواء)</div>
+          <div class="tool-use">لتوصيل القسطرة بمحول الضغط دون انسداد أو إدخال هواء للدورة الدموية</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Dressing Supplies</div>
+          <div class="tool-ar">مستلزمات ضمادة معقمة</div>
+          <div class="tool-use">لتغطية موضع إدخال القسطرة وحمايته من التلوث</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Antiseptic (for site cleaning)</div>
+          <div class="tool-ar">مطهر لتنظيف الموضع</div>
+          <div class="tool-use">لتعقيم الجلد حول موضع القسطرة ومنع الإنتان</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" onclick="showProc(3)"><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>5</span> / 6</div>
+      <button class="fnav-btn" onclick="showProc(5)">Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- ══════════ 6. PULMONARY ARTERY CATHETER ══════════ -->
+  <div class="proc-section" id="proc-5">
+    <div class="proc-header">
+      <div class="ph-num">Procedure 06</div>
+      <div class="ph-en">Pulmonary Artery Catheter Care Equipment</div>
+      <div class="ph-ar">أدوات رعاية قسطرة الشريان الرئوي</div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">The Kit</span><div class="divider"></div><span class="ct-ar">طقم القسطرة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Pulmonary Artery Catheter Kit</div>
+          <div class="tool-ar">طقم قسطرة الشريان الرئوي</div>
+          <div class="tool-use">قسطرة متخصصة متعددة الفتحات تُدخل حتى الشريان الرئوي لقياس الضغوط داخل القلب والرئتين</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Syringe (1–1.5 mL) for balloon inflation</div>
+          <div class="tool-ar">حقنة 1–1.5 مل لنفخ البالون</div>
+          <div class="tool-use">لنفخ البالون الصغير في طرف القسطرة لتطفو بالدم وتصل للشريان الرئوي</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Sterility</span><div class="divider"></div><span class="ct-ar">التعقيم</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gloves</div>
+          <div class="tool-ar">قفازات معقمة</div>
+          <div class="tool-use">لضمان التعقيم التام أثناء إدخال القسطرة وتغيير الضمادة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gown</div>
+          <div class="tool-ar">روب معقم</div>
+          <div class="tool-use">لحماية المريض من التلوث وحماية الفريق أثناء الإجراء الغازي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Chlorhexidine Antiseptic Solution</div>
+          <div class="tool-ar">محلول الكلوريكسيدين المطهر</div>
+          <div class="tool-use">لتعقيم موضع الإدخال وتقليل خطر الإنتان المرتبط بالقسطرة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Monitoring</span><div class="divider"></div><span class="ct-ar">المراقبة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Pressure Transducer and Monitoring System</div>
+          <div class="tool-ar">محول الضغط ونظام المراقبة</div>
+          <div class="tool-use">لعرض وتسجيل ضغوط الشريان الرئوي والضغط الإسفيني (PCWP) والناتج القلبي</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">ECG Monitor</div>
+          <div class="tool-ar">جهاز مراقبة القلب</div>
+          <div class="tool-use">لرصد أي اضطرابات في نظم القلب قد تحدث أثناء إدخال القسطرة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Hemodynamic Monitor</div>
+          <div class="tool-ar">جهاز مراقبة الديناميكا الدموية</div>
+          <div class="tool-use">لعرض مؤشرات الدورة الدموية الدقيقة لتقييم وظيفة القلب وتوجيه العلاج</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title"><span class="ct-en">Maintenance</span><div class="divider"></div><span class="ct-ar">الصيانة</span></div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-en">Normal Saline or Heparinized Saline</div>
+          <div class="tool-ar">محلول ملحي أو ملحي بالهيبارين</div>
+          <div class="tool-use">لشطف قنوات القسطرة باستمرار لمنع التجلط وانسدادها</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Transparent Dressing</div>
+          <div class="tool-ar">ضمادة شفافة معقمة</div>
+          <div class="tool-use">لتغطية موضع القسطرة مع إمكانية المراقبة البصرية دون إزالة الضمادة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Sterile Gauze</div>
+          <div class="tool-ar">شاش معقم</div>
+          <div class="tool-use">لتجفيف الموضع وتنظيفه عند تغيير الضمادة</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-en">Waste Disposal Bag</div>
+          <div class="tool-ar">كيس التخلص من النفايات</div>
+          <div class="tool-use">للتخلص الآمن من المواد الملوثة والمستخدمة وفق بروتوكولات مكافحة العدوى</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="fnav-btn" onclick="showProc(4)"><span class="arrow">←</span> Previous</button>
+      <div class="page-indicator"><span>6</span> / 6</div>
+      <button class="fnav-btn" disabled>Next <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+</div><!-- end content-area -->
+
+<script>
+  const total = 6;
+  function showProc(idx) {
+    document.querySelectorAll('.proc-section').forEach((s, i) => {
+      s.classList.toggle('active', i === idx);
+    });
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === idx);
+    });
+    // Scroll tab into view
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

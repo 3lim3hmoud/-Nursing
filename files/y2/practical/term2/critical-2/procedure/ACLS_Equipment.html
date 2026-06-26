@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACLS Equipment Table</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Cairo','Roboto',sans-serif; background: #f0f4f8; color: #1a1a2e; padding: 20px; }
+
+  .page { max-width: 1100px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.10); overflow: hidden; }
+
+  .header { background: linear-gradient(135deg,#0a2342 0%,#1565c0 100%); color: white; padding: 22px 32px; text-align: center; }
+  .header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .header h2 { font-size: 1.05rem; font-weight: 600; opacity: .85; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+
+  thead tr { background: #1565c0; color: white; }
+  thead th { padding: 10px 8px; text-align: center; font-weight: 700; border: 1px solid #1048a0; }
+
+  td { padding: 9px 10px; vertical-align: top; border: 1px solid #dde3ef; }
+  tbody tr:nth-child(even) { background: #f5f8fd; }
+  tbody tr:hover { background: #e8f0fe; }
+
+  .td-cat {
+    width: 14%;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 700;
+    font-size: .85rem;
+  }
+  .td-item { width: 38%; }
+  .td-do   { width: 34%; background: #fffde7 !important; }
+
+  .en { font-family: 'Roboto',sans-serif; color: #0a2342; font-size: .85rem; line-height: 1.55; margin-bottom: 5px; }
+  .ar { color: #1565c0; font-size: .87rem; line-height: 1.6; direction: rtl; text-align: right; border-top: 1px dashed #b0bec5; padding-top: 4px; margin-top: 2px; }
+  .cat-en { font-family: 'Roboto',sans-serif; color: #0a2342; font-size: .84rem; font-weight: 700; }
+  .cat-ar { color: #1565c0; font-size: .87rem; font-weight: 700; direction: rtl; }
+
+  .do-text { color: #5d4037; font-size: .87rem; line-height: 1.65; direction: rtl; text-align: right; }
+
+  /* category color bars */
+  .cat-1 { border-left: 5px solid #1565c0; background: #e3f2fd; }
+  .cat-2 { border-left: 5px solid #2e7d32; background: #e8f5e9; }
+  .cat-3 { border-left: 5px solid #e65100; background: #fff3e0; }
+  .cat-4 { border-left: 5px solid #7b1fa2; background: #f3e5f5; }
+  .cat-5 { border-left: 5px solid #c62828; background: #ffebee; }
+
+  .cat-1 .cat-ar, .cat-1 .cat-en { color: #1565c0; }
+  .cat-2 .cat-ar, .cat-2 .cat-en { color: #2e7d32; }
+  .cat-3 .cat-ar, .cat-3 .cat-en { color: #e65100; }
+  .cat-4 .cat-ar, .cat-4 .cat-en { color: #7b1fa2; }
+  .cat-5 .cat-ar, .cat-5 .cat-en { color: #c62828; }
+
+  @media print { body { background: white; padding: 0; } .page { box-shadow: none; border-radius: 0; } thead { display: table-header-group; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <h1>ACLS Equipment — جدول أدوات الإنعاش القلبي الرئوي المتقدم</h1>
+    <h2>الأدوات مرتبة حسب الاستخدام أثناء الإنعاش</h2>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category<br>الفئة</th>
+        <th>Equipment Items (EN ثم AR)</th>
+        <th>🩺 أنا بعمل إيه بالأداة دي؟</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- ===== AIRWAY ===== -->
+      <tr>
+        <td class="td-cat cat-1" rowspan="9">
+          <div class="cat-en">Airway &amp;<br>Ventilation</div>
+          <div class="cat-ar">مجرى الهواء<br>والتهوية</div>
+        </td>
+        <td class="td-item">
+          <div class="en">Bag-valve-mask (BVM) with oxygen reservoir</div>
+          <div class="ar">كيس التنفس الصناعي (BVM) مع خزان الأكسجين</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأمسك الماسك صح على وجه المريض بإيدي وبأضغط الكيس بالإيد التانية عشان أديه تنفسة كاملة بأكسجين 100%.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Oxygen supply with regulator</div>
+          <div class="ar">مصدر الأكسجين مع منظم الضغط</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأتأكد إن الأكسجين متصل صح ومنظم الضغط شغال قبل ما أبدأ الإنعاش.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Suction device with catheters</div>
+          <div class="ar">جهاز الشفط مع الكاتيترات</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأشغّل جهاز الشفط وبأشفط أي إفرازات أو قيء من فم ولسان المريض عشان أضمن مجرى هواء مفتوح.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Oropharyngeal (OPA) and Nasopharyngeal (NPA) airways</div>
+          <div class="ar">مجرى هواء بلعومي فموي (OPA) وأنفي (NPA)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأحط الـ OPA للمريض فاقد الوعي اللي مالوش gag reflex، والـ NPA لو عنده استجابة أو صعب أحط OPA.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Endotracheal tubes (ETT) of various sizes</div>
+          <div class="ar">أنابيب التنبيب الرغامي (ETT) بأحجام مختلفة</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأجهّز الأنبوب بالحجم المناسب وبأملاه بالهواء أولاً عشان أتأكد إن البالونة سليمة، وبعدين بأديه للمختص.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Laryngoscope with blades</div>
+          <div class="ar">المنظار الحنجري مع الشفرات</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأتأكد إن ضوء المنظار شغال وبأختار الشفرة المناسبة وبأديه للمختص عشان يشوف الحبال الصوتية ويدخل الأنبوب.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Stylet</div>
+          <div class="ar">دليل الأنبوب (Stylet)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأحطه جوه الأنبوب قبل التنبيب عشان أعمله شكل منحني يسهّل إدخاله، وبأسحبه بعد ما الأنبوب يتحكم.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Capnography or end-tidal CO₂ monitor</div>
+          <div class="ar">جهاز قياس ثاني أكسيد الكربون في الزفير (Capnography / ETCO₂)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأوصّله بعد التنبيب وبأتأكد إن الـ ETCO₂ &gt;10 ملم زئبق أثناء الإنعاش، وارتفاعه فجأة بيدل على ROSC.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Mechanical ventilator</div>
+          <div class="ar">جهاز التنفس الصناعي (Ventilator)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأضبط إعدادات الـ ventilator بعد تثبيت الأنبوب وبأراقب ضغط الهواء والـ SpO₂ والـ ETCO₂.</div></td>
+      </tr>
+
+      <!-- ===== CIRCULATION ===== -->
+      <tr>
+        <td class="td-cat cat-2" rowspan="6">
+          <div class="cat-en">Circulation &amp;<br>Monitoring</div>
+          <div class="cat-ar">الدورة الدموية<br>والمراقبة</div>
+        </td>
+        <td class="td-item">
+          <div class="en">Cardiac monitor / defibrillator (with pacing capabilities)</div>
+          <div class="ar">مونيتور القلب / جهاز إزالة الرجفان (مع إمكانية التنظيم الكهربائي)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأوصّل الجهاز فور ما يكون متاح، وبأحلل النظم كل دقيقتين وبأعطي الصدمة لو في VF أو pVT.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">ECG leads and electrodes</div>
+          <div class="ar">أسلاك وأقطاب تخطيط القلب</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأوصّل الأسلاك على الصدر صح (RA, LA, RL, LL + V1-V6) عشان تخطيط القلب يطلع واضح بدون تشويش.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Defibrillator pads</div>
+          <div class="ar">لاصقات جهاز إزالة الرجفان</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأحط لاصقة تحت الترقوة اليمين وتانية على الجنب الأيسر (apex)، وبأتأكد إنهم ملصقين صح عشان الصدمة توصل.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">External pacemaker</div>
+          <div class="ar">جهاز تنظيم ضربات القلب الخارجي (External Pacemaker)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأساعد في توصيله لو في بطء شديد في القلب (Bradycardia) ما استجابش للأتروبين.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Blood pressure monitor</div>
+          <div class="ar">جهاز قياس ضغط الدم</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأقيس ضغط الدم بانتظام بعد ROSC وبأبلّغ الطبيب لو منخفض عشان نقرر سوائل أو مقويات وعائية.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Pulse oximeter</div>
+          <div class="ar">جهاز قياس الأكسجين في الدم (Pulse Oximeter)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأراقب الـ SpO₂ وبأتأكد إنها بين 94-99% بعد ROSC. مش بحاول أوصلها 100% عشان فرط الأكسجين ضار بالمخ.</div></td>
+      </tr>
+
+      <!-- ===== VASCULAR ===== -->
+      <tr>
+        <td class="td-cat cat-3" rowspan="6">
+          <div class="cat-en">Vascular<br>Access</div>
+          <div class="cat-ar">الوصول<br>الوريدي</div>
+        </td>
+        <td class="td-item">
+          <div class="en">IV cannulas (various sizes)</div>
+          <div class="ar">إبر الكانيولا الوريدية بأحجام مختلفة</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعمل كانيولا في أكبر وريد متاح (مفضل antecubital) وبأثبتها صح وبأتأكد إنها شغالة قبل ما أعطي أي دواء.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Intraosseous (IO) needles and drill</div>
+          <div class="ar">إبر وحفّار الوصول العظمي (IO)</div>
+        </td>
+        <td class="td-do"><div class="do-text">لو الوريد صعب أو فضلت 2 محاولات فاشلة، بأعمل وصول عظمي في عظمة القصبة (tibia) باستخدام الحفّار وبأتأكد من مكانه بالشفط.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Normal saline or Ringer's lactate fluids</div>
+          <div class="ar">محلول ملحي طبيعي (Normal Saline) أو رينجر لاكتات</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأستخدمه لشطف الخط بعد كل دواء أو لو في نقص حجم دم (Hypovolemia) من ضمن أسباب الـ H's &amp; T's.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">IV tubing and extension sets</div>
+          <div class="ar">أنابيب السيروم وامتداداتها</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأجهّز الخط وبأخرج منه الهواء وبأوصّله على الكانيولا، وبستخدم الامتداد عشان أقدر أعطي الأدوية بدون ما أوقف الإنعاش.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Syringes and needles</div>
+          <div class="ar">حقن وإبر</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأسحب الدواء بالجرعة الصحيحة في الحقنة وبأعطيه IV بسرعة (IV push) حسب بروتوكول ACLS.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Saline flushes</div>
+          <div class="ar">محاليل شطف الخط الوريدي</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأشطف الخط بـ 20 مل محلول ملحي بعد كل دواء عشان أضمن إن الدواء وصل للدورة الدموية بالكامل.</div></td>
+      </tr>
+
+      <!-- ===== MEDICATIONS ===== -->
+      <tr>
+        <td class="td-cat cat-4" rowspan="7">
+          <div class="cat-en">Resuscitation<br>Medications</div>
+          <div class="cat-ar">أدوية<br>الإنعاش</div>
+        </td>
+        <td class="td-item">
+          <div class="en">Epinephrine</div>
+          <div class="ar">إبينفرين (أدرينالين)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه 1 مجم IV/IO كل 3-5 دقائق في كل أنواع توقف القلب (شوكابل ومش شوكابل)، وبأسجّل وقت كل جرعة.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Amiodarone</div>
+          <div class="ar">أميودارون</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه 300 مجم IV push لـ VF/pVT اللي مجاوبتش على الصدمات، والجرعة التانية 150 مجم. بأشطف الخط بعديه.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Lidocaine</div>
+          <div class="ar">ليدوكائين</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأستخدمه كبديل للأميودارون في VF/pVT لو الأميودارون مش متاح أو في contraindication.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Atropine</div>
+          <div class="ar">أتروبين</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه للبطء الشديد (Symptomatic Bradycardia) بجرعة 0.5 مجم IV، ممكن تتكرر كل 3-5 دقائق لحد 3 مجم.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Adenosine</div>
+          <div class="ar">أدينوزين</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه للـ SVT (Supraventricular Tachycardia) المستقرة — 6 مجم IV push سريع جداً مع شطف سريع بـ 20 مل سالاين.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Magnesium sulfate</div>
+          <div class="ar">كبريتات المغنيسيوم</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه خصوصاً لـ Torsades de Pointes أو لو في نقص مغنيسيوم مثبّت — 1-2 جم IV على 15 دقيقة.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Sodium bicarbonate</div>
+          <div class="ar">بيكربونات الصوديوم</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأعطيه لو في حماض شديد (Acidosis) أو فرط بوتاسيوم — مش بستخدمه روتيني في كل الحالات.</div></td>
+      </tr>
+
+      <!-- ===== SUPPORTIVE ===== -->
+      <tr>
+        <td class="td-cat cat-5" rowspan="5">
+          <div class="cat-en">Supportive<br>Equipment</div>
+          <div class="cat-ar">المعدات<br>الداعمة</div>
+        </td>
+        <td class="td-item">
+          <div class="en">Emergency crash cart</div>
+          <div class="ar">عربة الطوارئ (Crash Cart)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأتأكد قبل أي شيفت إن الكراش كارت موجودة ومرتبة وكل حاجة في مكانها، وبأجيبها فور إعلان الكود الأزرق.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Personal protective equipment (PPE: gloves, masks, eye protection)</div>
+          <div class="ar">معدات الوقاية الشخصية (PPE: جوانتي، كمامة، واقي عينين)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بألبس الجوانتي والكمامة وواقي العينين قبل ما ألمس المريض عشان أحمي نفسي وأحمي المريض.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Scissors</div>
+          <div class="ar">مقص</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأقص هدوم المريض بسرعة من أسفل لفوق عشان أكشف الصدر وأقدر أوصّل الإلكترودات واللاصقات بسهولة.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Clock or timer (to track compressions and drug timing)</div>
+          <div class="ar">ساعة أو مؤقت (لمتابعة توقيت الضغطات والأدوية)</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأسجّل وقت بدء الكود، ووقت كل جرعة دواء، وكل دقيقتين عشان أتذكر إني أقيّم النظم وأبدّل اللي بيضغط.</div></td>
+      </tr>
+      <tr>
+        <td class="td-item">
+          <div class="en">Documentation forms</div>
+          <div class="ar">نماذج التوثيق</div>
+        </td>
+        <td class="td-do"><div class="do-text">بأوثّق كل حاجة أثناء الكود وبعده: وقت البدء، الأدوية وجرعاتها، عدد الصدمات، وقت ROSC، وحالة المريض عند النقل.</div></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

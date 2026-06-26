@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Critical Care Nursing II — Procedures</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo','Roboto',sans-serif;background:#eef2f7;color:#1a1a2e;font-size:.88rem}
+
+.header{background:linear-gradient(135deg,#0a2342,#1565c0);color:#fff;padding:18px 28px;text-align:center}
+.header h1{font-size:1.25rem;font-weight:700;letter-spacing:.5px}
+.header h2{font-size:.95rem;opacity:.85;margin-top:4px}
+.header p{font-size:.82rem;opacity:.7;margin-top:4px}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;background:#0d3b7a;gap:2px;padding:6px 8px}
+.tab-btn{
+  padding:7px 13px;background:#1a5499;color:#cfe0ff;border:none;border-radius:6px;
+  cursor:pointer;font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:600;
+  transition:background .2s;white-space:nowrap
+}
+.tab-btn:hover{background:#2471c8}
+.tab-btn.active{background:#ffd600;color:#0a2342}
+
+/* PANELS */
+.panel{display:none;padding:16px}
+.panel.active{display:block}
+
+/* TABLE */
+.proc-title{
+  background:linear-gradient(90deg,#1565c0,#1e88e5);
+  color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;
+  font-size:1rem;font-weight:700;margin-bottom:0
+}
+.proc-sub{color:#90caf9;font-size:.82rem;font-weight:400}
+
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:0 0 8px 8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.09)}
+thead tr{background:#1565c0;color:#fff}
+thead th{padding:9px 8px;text-align:center;font-weight:700;border:1px solid #0d4b9f;font-size:.83rem}
+tbody td{padding:9px 10px;vertical-align:top;border:1px solid #dde4ef}
+tbody tr:nth-child(even){background:#f5f8fd}
+tbody tr:hover{background:#e8f0fe}
+
+.td-num{width:38px;text-align:center;font-weight:700;color:#1565c0;font-size:1rem}
+.td-step{width:30%}
+.td-how{width:28%;background:#fffde7!important}
+.td-rat{width:28%}
+
+.en{font-family:'Roboto',sans-serif;color:#0a2342;line-height:1.55;margin-bottom:5px}
+.ar{color:#1565c0;line-height:1.65;direction:rtl;text-align:right;border-top:1px dashed #b0bec5;padding-top:4px;margin-top:3px}
+.how-text{color:#5d4037;line-height:1.65;direction:rtl;text-align:right}
+.rat-en{font-family:'Roboto',sans-serif;color:#1b5e20;line-height:1.5;margin-bottom:5px;font-size:.83rem}
+.rat-ar{color:#2e7d32;line-height:1.65;direction:rtl;text-align:right;border-top:1px dashed #a5d6a7;padding-top:4px;margin-top:3px;font-size:.84rem}
+
+/* section rows */
+.sec-row td{background:#e3f2fd!important;font-weight:700;color:#0a2342;text-align:center;padding:6px;border:1px solid #90caf9;font-size:.85rem}
+
+/* bundles */
+.time-badge{display:inline-block;background:#1565c0;color:#fff;border-radius:12px;padding:2px 10px;font-size:.75rem;font-family:'Roboto',sans-serif;margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Clinical Critical Care Nursing II — Procedures Reference</h1>
+  <h2>مرجع الإجراءات التمريضية — الرعاية الحرجة السريرية II</h2>
+  <p>Course Code: CLN2424 &nbsp;|&nbsp; الخطوات · كيفية التنفيذ · الأساس العلمي</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="show('mv',this)">MV Care<br><small>رعاية المنفسة</small></button>
+  <button class="tab-btn" onclick="show('trach',this)">Tracheostomy<br><small>قنية الرغامى</small></button>
+  <button class="tab-btn" onclick="show('acls',this)">ACLS<br><small>إنعاش متقدم</small></button>
+  <button class="tab-btn" onclick="show('tpn',this)">TPN<br><small>تغذية وريدية</small></button>
+  <button class="tab-btn" onclick="show('art',this)">Arterial Cath.<br><small>كاتيتر شرياني</small></button>
+  <button class="tab-btn" onclick="show('pa',this)">PA Catheter<br><small>كاتيتر رئوي</small></button>
+  <button class="tab-btn" onclick="show('vap',this)">VAP Bundle<br><small>حزمة VAP</small></button>
+  <button class="tab-btn" onclick="show('cauti',this)">CAUTI Bundle<br><small>حزمة CAUTI</small></button>
+  <button class="tab-btn" onclick="show('clabsi',this)">CLABSI Bundle<br><small>حزمة CLABSI</small></button>
+</div>
+
+<!-- ===================== MV CARE ===================== -->
+<div id="mv" class="panel active">
+<div class="proc-title">Performance MV (Mechanical Ventilator) Care <span class="proc-sub">— رعاية جهاز التنفس الصناعي</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Step<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟<br><small>AR فقط</small></th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td>
+<td class="td-step"><div class="en">Perform Hand Hygiene &amp; Wear PPE (gloves, mask, goggles)</div><div class="ar">غسل اليدين وارتداء معدات الوقاية الشخصية (جوانتي، كمامة، واقي عينين)</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي صح بالماء والصابون أو المطهر الكحولي، وبألبس جوانتي وكمامة وواقي عينين قبل أي تعامل مع المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Prevents cross-contamination and protects both patient and nurse from infection transmission.</div><div class="rat-ar">يمنع انتقال العدوى ويحمي المريض والممرضة من التلوث المتبادل.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><div class="en">Gather Equipment (suction catheter, sterile gloves, sterile saline, oral care supplies, tape/holder, stethoscope, Ambu bag)</div><div class="ar">تجميع الأدوات (قسطرة شفط، جوانتي معقمة، سالاين معقم، أدوات العناية بالفم، لاصق/حامل، سماعة، أمبو باج)</div></td>
+<td class="td-how"><div class="how-text">بأجهّز كل الأدوات المطلوبة قبل ما أبدأ الإجراء عشان ما تنقطعش أثناء الشغل.</div></td>
+<td class="td-rat"><div class="rat-en">Ensures all supplies are available before starting, preventing interruptions and maintaining procedural safety.</div><div class="rat-ar">يضمن توفر كل المستلزمات قبل البدء ويمنع الانقطاع ويحافظ على سلامة الإجراء.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><div class="en">Explain Procedure to Patient, Position Patient (semi-Fowler's 30–45°)</div><div class="ar">شرح الإجراء للمريض ووضعه في وضعية شبه الجلوس (30–45 درجة)</div></td>
+<td class="td-how"><div class="how-text">بأشرح للمريض إيه اللي هعمله حتى لو على المنفسة، وبأرفع السرير لزاوية 30-45 درجة وبأتحقق منها بشكل منتظم.</div></td>
+<td class="td-rat"><div class="rat-en">Explanation reduces anxiety and promotes cooperation. Semi-Fowler's reduces aspiration risk and VAP incidence.</div><div class="rat-ar">الشرح يقلل القلق ويعزز التعاون. وضعية شبه الجلوس تقلل خطر الاستنشاق والالتهاب الرئوي المرتبط بالمنفسة.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><div class="en">Assess Patient (vital signs, SpO₂, breath sounds, respiratory effort)</div><div class="ar">تقييم المريض (العلامات الحيوية، SpO₂، أصوات التنفس، مجهود التنفس)</div></td>
+<td class="td-how"><div class="how-text">بأقيس العلامات الحيوية والـ SpO₂، وبأسمع أصوات التنفس بالسماعة على الجانبين، وبأشوف مجهود التنفس وأي علامات ضيق.</div></td>
+<td class="td-rat"><div class="rat-en">Establishes baseline data to detect changes and evaluate patient response to care interventions.</div><div class="rat-ar">يوفر بيانات أساسية للكشف عن التغيرات وتقييم استجابة المريض للتدخلات.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><div class="en">Pre-oxygenate Patient (increase FiO₂ by 10–20% or 100% for 30–60 seconds)</div><div class="ar">تأكسج المريض مسبقاً (زيادة FiO₂ بنسبة 10–20% أو لـ 100% لمدة 30–60 ثانية)</div></td>
+<td class="td-how"><div class="how-text">بأزود نسبة الأكسجين على المنفسة بمقدار 10-20% أو لـ 100% وبأنتظر 30-60 ثانية قبل ما أبدأ الشفط.</div></td>
+<td class="td-rat"><div class="rat-en">Increases oxygen reserves to prevent hypoxia during suctioning, which temporarily interrupts ventilation.</div><div class="rat-ar">يزيد مخزون الأكسجين لمنع نقص الأكسجين أثناء الشفط الذي يقاطع التهوية مؤقتاً.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><div class="en">Perform Endotracheal Suctioning (insert catheter without suction, apply suction while withdrawing, limit to 10–15 seconds). Assess Breath Sounds bilaterally.</div><div class="ar">إجراء الشفط الرغامي (إدخال القسطرة بدون شفط، تطبيق الشفط أثناء السحب، تحديد بـ 10–15 ثانية). تقييم أصوات التنفس على الجانبين.</div></td>
+<td class="td-how"><div class="how-text">بأدخل القسطرة بدون شفط، وبأطبق الشفط وأنا بسحبها في حركة دائرية. مش بأكمل أكتر من 10-15 ثانية. وبعدين بأسمع أصوات التنفس على الجانبين.</div></td>
+<td class="td-rat"><div class="rat-en">Inserting without suction prevents mucosal trauma. Time limit prevents hypoxia. Bilateral auscultation confirms ETT position and airway clearance effectiveness.</div><div class="rat-ar">الإدخال بدون شفط يمنع صدمة الغشاء المخاطي. تحديد الوقت يمنع نقص الأكسجين. السماع الثنائي يؤكد موضع الأنبوب وفاعلية التنظيف.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><div class="en">Check ETT Position (verify cm marking) and Cuff Pressure (maintain 20–30 cmH₂O)</div><div class="ar">التحقق من موضع أنبوب التنبيب (علامة السم) وضغط البالونة (20–30 سم ماء)</div></td>
+<td class="td-how"><div class="how-text">بأتحقق من علامة السم عند الشفاه وبأسجّلها، وبأقيس ضغط البالونة بالمانوميتر وبأتأكد إنه بين 20-30 cmH₂O وبأضيف أو بأفرّغ هواء لو لازم.</div></td>
+<td class="td-rat"><div class="rat-en">Correct ETT position ensures bilateral lung ventilation. Proper cuff pressure prevents aspiration while avoiding tracheal ischemia from over-inflation.</div><div class="rat-ar">الموضع الصحيح يضمن تهوية الرئتين. الضغط المناسب يمنع الاستنشاق مع تجنب نقص تروية القصبة من الضخ الزائد.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><div class="en">Secure ETT (replace tape/holder if soiled; ensure firm but not tight) and Provide Oral Care (clean mouth, teeth, tongue with oral swabs/toothbrush)</div><div class="ar">تثبيت أنبوب التنبيب (تغيير اللاصق/الحامل لو متوسخ) والعناية بالفم (تنظيف الفم والأسنان واللسان)</div></td>
+<td class="td-how"><div class="how-text">بأغير اللاصق أو الحامل لو متوسخ وبأتأكد إنه ثابت ومش ضايق. وبعدين بأنظف الفم والأسنان واللسان بأسواب الفم أو الفرشة الصغيرة.</div></td>
+<td class="td-rat"><div class="rat-en">Proper securing prevents accidental extubation. Oral care reduces oral bacterial colonization, the main source of VAP pathogens.</div><div class="rat-ar">التثبيت الصحيح يمنع الخلع غير المقصود. العناية بالفم تقلل تكاثر البكتيريا الفموية المصدر الرئيسي لمسببات الالتهاب الرئوي.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><div class="en">Inspect Skin (check corners of mouth, lips, nares for pressure areas)</div><div class="ar">فحص الجلد (زوايا الفم، الشفاه، فتحتي الأنف لوجود مناطق ضغط)</div></td>
+<td class="td-how"><div class="how-text">بأفحص زوايا الفم والشفاه وفتحتي الأنف عشان أشوف لو في احمرار أو كدمات أو جروح ناتجة عن الضغط وبأوثّق ما شفته.</div></td>
+<td class="td-rat"><div class="rat-en">Early detection of pressure injuries allows timely intervention to prevent skin breakdown and ulceration.</div><div class="rat-ar">الكشف المبكر عن إصابات الضغط يسمح بالتدخل في الوقت المناسب لمنع تدهور الجلد والتقرح.</div></td></tr>
+
+<tr><td class="td-num">10</td>
+<td class="td-step"><div class="en">Reposition ETT (move tube to opposite side of mouth if appropriate)</div><div class="ar">إعادة تموضع أنبوب التنبيب (تحريكه للجهة التانية من الفم لو مناسب)</div></td>
+<td class="td-how"><div class="how-text">بأحرك الأنبوب للجهة التانية من الفم إذا كان مناسباً، وبأسجّل العلامة الجديدة وبأتأكد من ثبات التثبيت بعد التحريك.</div></td>
+<td class="td-rat"><div class="rat-en">Repositioning distributes pressure, prevents localized tissue damage, and reduces risk of pressure ulcers at the mouth corners.</div><div class="rat-ar">إعادة التموضع توزع الضغط وتمنع تلف الأنسجة الموضعي وتقلل خطر قرح الضغط عند زوايا الفم.</div></td></tr>
+
+<tr><td class="td-num">11</td>
+<td class="td-step"><div class="en">Reassess Patient (vital signs, SpO₂, breathing pattern, comfort level)</div><div class="ar">إعادة تقييم المريض (العلامات الحيوية، SpO₂، نمط التنفس، مستوى الراحة)</div></td>
+<td class="td-how"><div class="how-text">بأقيس العلامات الحيوية والـ SpO₂ من جديد وبأشوف نمط التنفس ومستوى راحة المريض وبأقارن بالقياسات السابقة.</div></td>
+<td class="td-rat"><div class="rat-en">Post-procedure assessment detects complications such as hypoxia, arrhythmia, or agitation that may have resulted from the intervention.</div><div class="rat-ar">التقييم بعد الإجراء يكشف المضاعفات كنقص الأكسجين أو اضطراب النظم أو الهياج الناتجة عن التدخل.</div></td></tr>
+
+<tr><td class="td-num">12</td>
+<td class="td-step"><div class="en">Return FiO₂ to Baseline (if increased for suctioning) and Ensure Patient Comfort (reposition patient, provide communication method)</div><div class="ar">إعادة FiO₂ للمستوى الأساسي وضمان راحة المريض (إعادة التموضع، توفير وسيلة تواصل)</div></td>
+<td class="td-how"><div class="how-text">بأرجع الـ FiO₂ لنسبته الأصلية لو كنت زودته للشفط. وبأعيد تموضع المريض وبأوفرله لوح أو تطبيق تواصل لو عنده وعي.</div></td>
+<td class="td-rat"><div class="rat-en">Prolonged hyperoxia causes oxidative damage. Communication methods reduce patient anxiety and improve cooperation with care.</div><div class="rat-ar">فرط الأكسجين المطوّل يسبب ضرراً تأكسدياً. وسائل التواصل تقلل قلق المريض وتحسن تعاونه مع الرعاية.</div></td></tr>
+
+<tr><td class="td-num">13</td>
+<td class="td-step"><div class="en">Perform Hand Hygiene and Documentation (date/time, ETT position/cm marking, cuff pressure, secretion characteristics, breath sounds, patient tolerance, complications)</div><div class="ar">غسل اليدين والتوثيق (التاريخ/الوقت، موضع الأنبوب/علامة السم، ضغط البالونة، طبيعة الإفرازات، أصوات التنفس، تحمّل المريض، المضاعفات)</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي وبأوثّق كل التفاصيل: التاريخ والوقت، علامة الأنبوب، ضغط البالونة، لون وقوام الإفرازات، أصوات التنفس، وأي مضاعفات حدثت.</div></td>
+<td class="td-rat"><div class="rat-en">Hand hygiene prevents post-procedure infection spread. Accurate documentation ensures care continuity, monitors trends, and provides legal protection.</div><div class="rat-ar">غسل اليدين يمنع انتشار العدوى بعد الإجراء. التوثيق الدقيق يضمن استمرارية الرعاية ويراقب التغيرات ويوفر الحماية القانونية.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== TRACHEOSTOMY ===================== -->
+<div id="trach" class="panel">
+<div class="proc-title">Performance Tracheostomy Tube Care <span class="proc-sub">— رعاية قنية الرغامى</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Step<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td>
+<td class="td-step"><div class="en">Wash Hands and Wear PPE</div><div class="ar">غسل اليدين وارتداء معدات الوقاية الشخصية</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي صح وبألبس جوانتي وكمامة وواقي عينين قبل ما أقرب من المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Standard precautions prevent cross-contamination and protect both the patient and healthcare worker from infection.</div><div class="rat-ar">احتياطات المعيار تمنع التلوث المتبادل وتحمي المريض والعاملين الصحيين من العدوى.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><div class="en">Hyperoxygenation and suction the trachea and pharynx as needed</div><div class="ar">التأكسج الزائد والشفط من القصبة والبلعوم عند الحاجة</div></td>
+<td class="td-how"><div class="how-text">بأزود الأكسجين لـ 100% لمدة 30-60 ثانية وبأعمل شفط للقصبة والبلعوم لو في إفرازات قبل ما أبدأ تغيير القنية.</div></td>
+<td class="td-rat"><div class="rat-en">Pre-oxygenation prevents hypoxia during cannula change. Suctioning clears the airway and reduces infection risk from pooled secretions.</div><div class="rat-ar">التأكسج المسبق يمنع نقص الأكسجين أثناء تغيير القنية. الشفط يفتح مجرى الهواء ويقلل خطر العدوى من الإفرازات المتجمعة.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><div class="en">Remove and discard soiled tracheostomy dressing. Remove gloves, wash hands, and wear another pair of gloves.</div><div class="ar">إزالة الضمادة المتسخة والتخلص منها. خلع الجوانتي وغسل اليدين وارتداء جوانتي جديدة.</div></td>
+<td class="td-how"><div class="how-text">بأشيل الضمادة القديمة وبأرميها في الكيس الطبي. وبعدين بأخلع الجوانتي وبأغسل إيدي وبألبس جوانتي جديدة نظيفة.</div></td>
+<td class="td-rat"><div class="rat-en">Changing gloves between contaminated and clean steps is essential to prevent self-contamination and maintain aseptic technique.</div><div class="rat-ar">تغيير الجوانتي بين الخطوات الملوثة والنظيفة ضروري لمنع التلوث الذاتي والحفاظ على تقنية التعقيم.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><div class="en">For disposable inner cannulas: Open prepackaged cannula → Remove soiled cannula → Replace with new cannula. For non-disposable: Prepare sterile field → Apply sterile gloves → Remove cannula and place in sterile saline/water.</div><div class="ar">للقنية القابلة للتخلص: فتح العبوة → إزالة القديمة → تركيب الجديدة. لغير القابلة: تجهيز حقل معقم → جوانتي معقمة → إزالة القنية ووضعها في سالاين/ماء معقم.</div></td>
+<td class="td-how"><div class="how-text">للقابلة: بأفتح العبوة الجديدة وبأشيل القديمة وبأركب الجديدة مباشرةً. لغير القابلة: بأجهّز أدوات معقمة وبأشيل القنية وأنظفها في السالاين المعقم.</div></td>
+<td class="td-rat"><div class="rat-en">Regular inner cannula care prevents secretion buildup and encrustation, maintains airway patency, and significantly reduces infection risk.</div><div class="rat-ar">العناية المنتظمة بالقنية الداخلية تمنع تراكم الإفرازات وتحافظ على مجرى هواء مفتوح وتقلل بشكل كبير خطر العدوى.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><div class="en">Place tracheostomy collar, T-tube, or ventilator oxygen source over/near the outer cannula. Clean inner cannula with small brush and rinse it.</div><div class="ar">وضع مصدر الأكسجين فوق أو قريب من القنية الخارجية. تنظيف القنية الداخلية بالفرشة الصغيرة وشطفها.</div></td>
+<td class="td-how"><div class="how-text">بأحط مصدر الأكسجين قريب من القنية الخارجية عشان ما ينقطعش الأكسجين، وبأنظف القنية بالفرشة في السالاين المعقم وبأشطفها كويس.</div></td>
+<td class="td-rat"><div class="rat-en">Maintaining oxygen during cleaning prevents hypoxia. Thorough brushing removes biofilm and secretions that promote bacterial growth.</div><div class="rat-ar">الحفاظ على الأكسجين أثناء التنظيف يمنع نقص الأكسجين. التنظيف الشامل يزيل الغشاء الحيوي والإفرازات التي تعزز نمو البكتيريا.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><div class="en">Insert the inner cannula and lock it into place.</div><div class="ar">إدخال القنية الداخلية وتثبيتها في مكانها.</div></td>
+<td class="td-how"><div class="how-text">بأدخل القنية الداخلية بلطف وبأدورها في اتجاه الساعة عشان تتقفل في مكانها الصح وبأتأكد إنها ثابتة.</div></td>
+<td class="td-rat"><div class="rat-en">Proper locking prevents accidental displacement of the inner cannula, ensuring a secure and patent airway.</div><div class="rat-ar">القفل الصحيح يمنع إزاحة القنية الداخلية غير المقصودة ويضمن مجرى هواء آمن ومفتوح.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><div class="en">Dry the skin around the stoma by patting it dry and place a gauze pad between the stoma and tracheostomy.</div><div class="ar">تجفيف الجلد حول الفتحة بالتربيت ووضع شاش بين الفتحة والقنية.</div></td>
+<td class="td-how"><div class="how-text">بأجفف الجلد حول الفتحة بالتربيت (مش الفرك) وبأحط شاش نظيف مقصوص بين الفتحة والقنية عشان يمتص الإفرازات.</div></td>
+<td class="td-rat"><div class="rat-en">Moisture causes skin maceration and increases infection risk. Gauze absorbs secretions and protects peristomal skin integrity.</div><div class="rat-ar">الرطوبة تسبب تمزق الجلد وتزيد خطر العدوى. الشاش يمتص الإفرازات ويحمي سلامة الجلد حول الفتحة.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><div class="en">Change tracheostomy tie and reassess the patient's respiratory status (O₂ level, RR, and depth).</div><div class="ar">تغيير رباط القنية وإعادة تقييم الحالة التنفسية (مستوى الأكسجين، معدل التنفس، عمقه).</div></td>
+<td class="td-how"><div class="how-text">بأغير الرباط القديم بجديد وبأتأكد إنه بيدخل إصبعين تحته (مش ضايق ومش مرخي). وبعدين بأقيس الـ SpO₂ ومعدل وعمق التنفس.</div></td>
+<td class="td-rat"><div class="rat-en">Secure ties prevent accidental decannulation (life-threatening). Post-procedure reassessment detects complications like hypoxia or displacement.</div><div class="rat-ar">الرباط الثابت يمنع الخلع غير المقصود (مهدد للحياة). إعادة التقييم تكشف المضاعفات كنقص الأكسجين أو الإزاحة.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><div class="en">Discard used supplies and remove personal protective equipment.</div><div class="ar">التخلص من المستلزمات المستخدمة وخلع معدات الوقاية الشخصية.</div></td>
+<td class="td-how"><div class="how-text">بأرمي كل المستلزمات المستخدمة في الكيس الطبي المخصص وبأخلع الجوانتي والكمامة وواقي العينين بالطريقة الصحيحة.</div></td>
+<td class="td-rat"><div class="rat-en">Proper disposal of contaminated materials prevents environmental contamination and reduces the risk of infection transmission.</div><div class="rat-ar">التخلص الصحيح من المواد الملوثة يمنع التلوث البيئي ويقلل خطر انتقال العدوى.</div></td></tr>
+
+<tr><td class="td-num">10</td>
+<td class="td-step"><div class="en">Wash hands and document the procedure (cannula type, skin condition, secretion characteristics, respiratory status, patient tolerance).</div><div class="ar">غسل اليدين وتوثيق الإجراء (نوع القنية، حالة الجلد، طبيعة الإفرازات، الحالة التنفسية، تحمّل المريض).</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي وبأوثّق: نوع القنية، حالة الجلد حول الفتحة، لون وقوام الإفرازات، الـ SpO₂ ومعدل التنفس، وأي مضاعفات.</div></td>
+<td class="td-rat"><div class="rat-en">Hand hygiene prevents post-procedure infection spread. Documentation ensures care continuity and monitors for developing complications.</div><div class="rat-ar">غسل اليدين يمنع انتشار العدوى. التوثيق يضمن استمرارية الرعاية ويراقب ظهور المضاعفات.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== ACLS ===================== -->
+<div id="acls" class="panel">
+<div class="proc-title">Performance ACLS Checklist <span class="proc-sub">— الإنعاش القلبي الرئوي المتقدم</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Action<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr class="sec-row"><td colspan="4">1. Immediate Recognition &amp; Activation — التعرف الفوري وتفعيل الاستجابة الطارئة</td></tr>
+<tr><td class="td-num">1</td>
+<td class="td-step"><div class="en">Ensure scene safety. Assess unresponsiveness (tap &amp; shout). Call for help / activate code blue. Simultaneously check breathing and carotid pulse (max 10 sec). If no pulse → initiate high-quality CPR immediately.</div><div class="ar">التأكد من سلامة المكان. تقييم الاستجابة (نقر ونداء). طلب المساعدة / تفعيل الكود الأزرق. التحقق من التنفس ونبض السباتي في آنٍ واحد (أقصى 10 ثوانٍ). إن لم يكن هناك نبض → ابدأ الإنعاش فوراً.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن المكان آمن، وبنقر على الكتف وأنادي بصوت عالٍ. لو مفيش استجابة، بنادي بصوت لطلب المساعدة وبفعّل الكود الأزرق. وفي نفس الوقت بشوف التنفس والنبض في 10 ثواني. لو مفيش نبض، بأبدأ الإنعاش فوراً.</div></td>
+<td class="td-rat"><div class="rat-en">Every minute without CPR reduces survival by 10%. Simultaneous pulse and breathing check saves time and enables faster initiation of resuscitation.</div><div class="rat-ar">كل دقيقة بدون إنعاش تقلل البقاء على الحياة بنسبة 10%. التحقق المتزامن يوفر الوقت ويسرع بدء الإنعاش.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">2. High-Quality CPR — الإنعاش القلبي الرئوي عالي الجودة</td></tr>
+<tr><td class="td-num">2</td>
+<td class="td-step"><div class="en">Begin chest compressions: depth 5–6 cm, rate 100–120/min, full recoil. Use 30:2 ratio if no advanced airway.</div><div class="ar">بدء ضغطات الصدر: عمق 5–6 سم، معدل 100–120/دقيقة، مع الارتداد الكامل. نسبة 30:2 إن لم يكن هناك مجرى هواء متقدم.</div></td>
+<td class="td-how"><div class="how-text">بأبدأ ضغطات الصدر بعمق 5-6 سم ومعدل 100-120 في الدقيقة، وبأتأكد إن الصدر بيرجع كامل بعد كل ضغطة. بستخدم 30 ضغطة على 2 تنفسة.</div></td>
+<td class="td-rat"><div class="rat-en">Adequate depth and rate generate sufficient cardiac output. Full chest recoil allows cardiac refilling. The 30:2 ratio balances compressions with ventilation.</div><div class="rat-ar">العمق والمعدل الكافيان يولدان ناتجاً قلبياً كافياً. الارتداد الكامل يسمح بملء القلب. نسبة 30:2 توازن بين الضغطات والتهوية.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><div class="en">Rotate compressors every 2 minutes.</div><div class="ar">تبديل القائم على الضغطات كل دقيقتين.</div></td>
+<td class="td-how"><div class="how-text">بأتفق مع زميلي على التبادل كل دقيقتين عشان الضغطات تفضل بجودة عالية ومحدنا ما يتعب.</div></td>
+<td class="td-rat"><div class="rat-en">Compressor fatigue leads to inadequate depth and rate within 2 minutes, reducing CPR quality and survival outcomes.</div><div class="rat-ar">إرهاق القائم على الضغطات يؤدي لعمق ومعدل غير كافيين في خلال دقيقتين مما يقلل جودة الإنعاش وفرص البقاء.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">3. Rhythm Analysis &amp; Defibrillation — تحليل النظم وإزالة الرجفان</td></tr>
+<tr><td class="td-num">4</td>
+<td class="td-step"><div class="en">Attach defibrillator/monitor as soon as available.</div><div class="ar">توصيل جهاز إزالة الرجفان / الشاشة فور توفره.</div></td>
+<td class="td-how"><div class="how-text">بأوصّل الإلكترودات وجهاز الديفيبريلاتور فور ما يكون متاح وبأحلل النظم القلبي بسرعة.</div></td>
+<td class="td-rat"><div class="rat-en">Early rhythm analysis identifies shockable rhythms (VF/pVT) where immediate defibrillation dramatically improves survival.</div><div class="rat-ar">التحليل المبكر للنظم يحدد النظم القابلة للصدمة حيث تحسّن إزالة الرجفان الفورية البقاء على الحياة بشكل كبير.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><div class="en">Shockable rhythm (VF/pVT): Deliver 1 shock (200 J biphasic). Say "CLEAR!" before shocking; ensure no contact. Resume CPR immediately for 2 minutes.</div><div class="ar">نظم قابل للصدمة (VF/pVT): صدمة واحدة (200 جول ثنائي الطور). قول "ابتعدوا!" والتأكد من عدم الملامسة. استئناف الإنعاش فوراً لدقيقتين.</div></td>
+<td class="td-how"><div class="how-text">لو النظم VF أو pVT، بأشحن 200 جول وبأصيح "ابتعدوا!" وبأتأكد محدش بيلمس المريض، وبعدين بأعطي الصدمة وبأرجع للإنعاش فوراً.</div></td>
+<td class="td-rat"><div class="rat-en">Early defibrillation terminates VF/pVT. Immediate post-shock CPR supports coronary perfusion until spontaneous rhythm restores.</div><div class="rat-ar">إزالة الرجفان المبكرة تُنهي VF/pVT. الإنعاش الفوري بعد الصدمة يدعم تروية الشريان التاجي حتى عودة النظم التلقائي.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><div class="en">Non-shockable rhythm (PEA/Asystole): Continue CPR, do not shock.</div><div class="ar">نظم غير قابل للصدمة (PEA/Asystole): الاستمرار في الإنعاش، لا تعطِ صدمة.</div></td>
+<td class="td-how"><div class="how-text">لو النظم PEA أو Asystole، بأكمل الإنعاش من غير ما أعطي صدمة وبأركز على تحديد وعلاج الأسباب القابلة للعلاج.</div></td>
+<td class="td-rat"><div class="rat-en">PEA and asystole are non-shockable; defibrillation is ineffective and wastes time. Treatment focuses on CPR and reversible causes.</div><div class="rat-ar">PEA والـ Asystole غير قابلان للصدمة؛ إزالة الرجفان غير فعالة وتضيع الوقت. يركز العلاج على الإنعاش والأسباب القابلة للعلاج.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><div class="en">Reassess rhythm every 2 minutes.</div><div class="ar">إعادة تقييم النظم كل دقيقتين.</div></td>
+<td class="td-how"><div class="how-text">كل دقيقتين بأوقف الإنعاش لثواني فقط وبأشوف النظم على الشاشة وبأقرر: صدمة ولا أكمل إنعاش.</div></td>
+<td class="td-rat"><div class="rat-en">Regular rhythm checks allow timely identification of rhythm changes and appropriate intervention adjustments throughout resuscitation.</div><div class="rat-ar">الفحص المنتظم للنظم يتيح التعرف في الوقت المناسب على تغيرات النظم وتعديل التدخلات طوال فترة الإنعاش.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">Airway &amp; Breathing — مجرى الهواء والتنفس</td></tr>
+<tr><td class="td-num">8</td>
+<td class="td-step"><div class="en">Open airway using jaw-thrust or head-tilt-chin-lift. Provide BVM ventilation with 100% oxygen.</div><div class="ar">فتح مجرى الهواء بدفع الفك أو إمالة الرأس ورفع الذقن. توفير التهوية بالكيس والقناع بأكسجين 100%.</div></td>
+<td class="td-how"><div class="how-text">بأفتح مجرى الهواء بالتقنية المناسبة (دفع الفك لو في إصابة رقبة)، وبأركب الماسك صح على الوجه وبأضغط الكيس عشان أديه تنفسة كاملة.</div></td>
+<td class="td-rat"><div class="rat-en">An open airway is essential for oxygenation. 100% O₂ via BVM maximizes oxygen delivery during resuscitation.</div><div class="rat-ar">مجرى الهواء المفتوح ضروري للأكسجة. 100% أكسجين عبر BVM يعظّم إيصال الأكسجين أثناء الإنعاش.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><div class="en">Place advanced airway (ETT or supraglottic) when trained provider available. After placement: ventilate 1 breath every 6 seconds (10/min), continue chest compressions without pause.</div><div class="ar">وضع مجرى هواء متقدم (ETT أو فوق لساني المزمار) عند توفر مختص. بعد الوضع: تهوية بنفس كل 6 ثوانٍ (10/دقيقة) مع الاستمرار في الضغطات بدون توقف.</div></td>
+<td class="td-how"><div class="how-text">بأساعد المختص في وضع الأنبوب وبأتأكد من مكانه الصح. وبعدين بأهوّي بنفسة كل 6 ثواني بدون ما أوقف ضغطات الصدر.</div></td>
+<td class="td-rat"><div class="rat-en">Advanced airway secures ventilation more reliably. Asynchronous ventilation (10/min) with continuous compressions maximizes coronary and cerebral perfusion pressure.</div><div class="rat-ar">مجرى الهواء المتقدم يؤمّن التهوية بشكل أكثر موثوقية. التهوية غير المتزامنة مع الضغطات المستمرة تعظّم ضغط التروية التاجية والدماغية.</div></td></tr>
+
+<tr><td class="td-num">10</td>
+<td class="td-step"><div class="en">Monitor ETCO₂; aim for &gt;10 mmHg during CPR.</div><div class="ar">مراقبة ETCO₂؛ استهداف أكثر من 10 ملم زئبق أثناء الإنعاش.</div></td>
+<td class="td-how"><div class="how-text">بأشوف قراءة ETCO₂ على الشاشة وبأتأكد إنها فوق 10 ملم زئبق. ارتفاعها المفاجئ فوق 40 بيدل على ROSC.</div></td>
+<td class="td-rat"><div class="rat-en">ETCO₂ reflects cardiac output during CPR. Values &lt;10 mmHg indicate poor CPR quality; sudden rise &gt;40 indicates ROSC.</div><div class="rat-ar">ETCO₂ يعكس الناتج القلبي أثناء الإنعاش. قيم أقل من 10 تدل على جودة ضعيفة للإنعاش؛ الارتفاع المفاجئ فوق 40 يدل على ROSC.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">IV/IO Access &amp; Medications — الوصول الوريدي/العظمي والأدوية</td></tr>
+<tr><td class="td-num">11</td>
+<td class="td-step"><div class="en">Establish IV or IO access. Epinephrine 1 mg IV/IO every 3–5 minutes.</div><div class="ar">تأسيس وصول وريدي أو عظمي. إبينفرين 1 مجم وريدياً/عظمياً كل 3–5 دقائق.</div></td>
+<td class="td-how"><div class="how-text">بأعمل كانيولا وريدية أو وصول عظمي لو الوريد صعب، وبأعطي الإبينفرين 1 مجم كل 3-5 دقائق وبأسجّل وقت كل جرعة.</div></td>
+<td class="td-rat"><div class="rat-en">Epinephrine increases coronary and cerebral perfusion pressure via vasoconstriction, improving the likelihood of ROSC in both shockable and non-shockable rhythms.</div><div class="rat-ar">الإبينفرين يزيد ضغط التروية التاجية والدماغية عبر تضييق الأوعية، مما يحسن احتمالية عودة الدورة الدموية.</div></td></tr>
+
+<tr><td class="td-num">12</td>
+<td class="td-step"><div class="en">For VF/pVT: Amiodarone 300 mg IV push (2nd dose: 150 mg) or Lidocaine alternative. Flush line with 20 mL saline after each drug.</div><div class="ar">لـ VF/pVT: أميودارون 300 مجم وريدياً سريعاً (الجرعة الثانية: 150 مجم) أو ليدوكائين كبديل. شطف الخط بـ 20 مل سالاين بعد كل دواء.</div></td>
+<td class="td-how"><div class="how-text">لو النظم VF أو pVT ومجاوبتش على الصدمات، بأعطي أميودارون 300 مجم IV سريع. الجرعة التانية 150 مجم. وبأشطف الخط بـ 20 مل سالاين بعد كل دواء.</div></td>
+<td class="td-rat"><div class="rat-en">Amiodarone stabilizes cardiac membranes and suppresses ventricular arrhythmias. Flushing ensures the full drug dose reaches central circulation.</div><div class="rat-ar">الأميودارون يثبّت أغشية القلب ويقمع اضطرابات النظم البطيني. الشطف يضمن وصول الجرعة الكاملة للدورة الدموية المركزية.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">Reversible Causes (H's &amp; T's) — الأسباب القابلة للعلاج</td></tr>
+<tr><td class="td-num">13</td>
+<td class="td-step"><div class="en">Identify and treat: Hypoxia · Hypovolemia · Hydrogen ion (acidosis) · Hypo/Hyperkalemia · Hypothermia · Tension pneumothorax · Tamponade · Toxins · Thrombosis (coronary/pulmonary)</div><div class="ar">تحديد وعلاج: نقص الأكسجين · نقص حجم الدم · الحماض · اضطراب البوتاسيوم · انخفاض الحرارة · استرواح الصدر التوتري · دكاك القلب · السموم · الجلطة (تاجية/رئوية)</div></td>
+<td class="td-how"><div class="how-text">بأفكر في كل سبب وبتعامل معاه: أكسجين للنقص، سوائل للنقص الحجمي، بيكربونات للحماض، تصريف للاسترواح، إبرة للدكاك، ترياق للسموم، أدوية/تدخل للجلطة.</div></td>
+<td class="td-rat"><div class="rat-en">Cardiac arrest from reversible causes is treatable. Identifying and correcting H's &amp; T's is the key to restoring spontaneous circulation when rhythm interventions alone are insufficient.</div><div class="rat-ar">توقف القلب من أسباب قابلة للعلاج يمكن علاجه. تحديد H's &amp; T's وتصحيحها هو مفتاح استعادة الدورة عندما لا تكفي تدخلات النظم وحدها.</div></td></tr>
+
+<tr class="sec-row"><td colspan="4">ROSC — عودة الدورة الدموية التلقائية</td></tr>
+<tr><td class="td-num">14</td><td class="td-step"><div class="en">Check for pulse and spontaneous breathing.</div><div class="ar">التحقق من النبض والتنفس التلقائي.</div></td>
+<td class="td-how"><div class="how-text">بأراقب الشاشة والمريض لعلامات ROSC: نبض ملموس، حركة، ارتفاع في ETCO₂ أو ضغط الدم.</div></td>
+<td class="td-rat"><div class="rat-en">Early recognition of ROSC prevents unnecessary continuation of CPR and allows immediate transition to post-resuscitation care.</div><div class="rat-ar">التعرف المبكر على ROSC يمنع الاستمرار غير الضروري في الإنعاش ويسمح بالانتقال الفوري لرعاية ما بعد الإنعاش.</div></td></tr>
+
+<tr><td class="td-num">15</td><td class="td-step"><div class="en">Optimize oxygenation: Maintain SpO₂ 94–99%.</div><div class="ar">تحسين الأكسجة: الحفاظ على SpO₂ بين 94–99%.</div></td>
+<td class="td-how"><div class="how-text">بأراقب الـ SpO₂ وبأضبط تدفق الأكسجين عشان يفضل بين 94-99%. مش 100% لأن فرط الأكسجين ضار بالمخ.</div></td>
+<td class="td-rat"><div class="rat-en">Hyperoxia (SpO₂ 100%) causes free radical injury to the reperfused brain. Targeting 94–99% optimizes cerebral protection.</div><div class="rat-ar">فرط الأكسجين يسبب إصابة جذور حرة للمخ المعاد تروّيه. استهداف 94-99% يحسّن حماية الدماغ.</div></td></tr>
+
+<tr><td class="td-num">16</td><td class="td-step"><div class="en">Monitor BP; consider fluids or vasopressors. Obtain 12-lead ECG.</div><div class="ar">مراقبة ضغط الدم؛ النظر في سوائل أو مقويات وعائية. أخذ تخطيط قلب 12 اتجاه.</div></td>
+<td class="td-how"><div class="how-text">بأقيس ضغط الدم ولو منخفض بأعطي سوائل أو دوبامين/نوريبينفرين. وبأعمل تخطيط 12 اتجاه للكشف عن STEMI.</div></td>
+<td class="td-rat"><div class="rat-en">Hemodynamic support maintains organ perfusion post-ROSC. 12-lead ECG identifies STEMI requiring emergency PCI.</div><div class="rat-ar">الدعم الديناميكي يحافظ على تروية الأعضاء بعد ROSC. تخطيط 12 اتجاه يحدد STEMI الذي يتطلب تدخل طارئ بالقسطرة.</div></td></tr>
+
+<tr><td class="td-num">17</td><td class="td-step"><div class="en">Consider Targeted Temperature Management (TTM) 32–36°C for 24 hours.</div><div class="ar">النظر في إدارة درجة الحرارة المستهدفة (TTM) 32–36°م لمدة 24 ساعة.</div></td>
+<td class="td-how"><div class="how-text">لو المريض مش واعي بعد ROSC، بأبلّغ الطبيب عشان يقرر تطبيق بروتوكول TTM ويحافظ على الحرارة بين 32-36 درجة لـ 24 ساعة.</div></td>
+<td class="td-rat"><div class="rat-en">TTM reduces cerebral metabolic demand and limits neurological damage from post-cardiac-arrest brain injury.</div><div class="rat-ar">TTM يقلل الطلب الأيضي الدماغي ويحدّ من الضرر العصبي الناتج عن إصابة الدماغ بعد توقف القلب.</div></td></tr>
+
+<tr><td class="td-num">18</td><td class="td-step"><div class="en">Transfer to ICU for post-arrest care. Documentation and Communication.</div><div class="ar">نقل المريض لوحدة العناية المركزة لرعاية ما بعد الإنعاش. التوثيق والتواصل.</div></td>
+<td class="td-how"><div class="how-text">بأرتب نقل المريض للـ ICU مع تقرير SBAR. وبأوثّق: وقت البدء، الأدوية وتوقيتها، عدد الصدمات، وقت ROSC، وحالة المريض عند النقل.</div></td>
+<td class="td-rat"><div class="rat-en">ICU care provides intensive monitoring and management of post-arrest complications. Documentation ensures legal accountability and continuity of care.</div><div class="rat-ar">رعاية الـ ICU توفر مراقبة مكثفة وإدارة مضاعفات ما بعد الإنعاش. التوثيق يضمن المساءلة القانونية واستمرارية الرعاية.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== TPN ===================== -->
+<div id="tpn" class="panel">
+<div class="proc-title">Performance TPN Checklist <span class="proc-sub">— التغذية الوريدية الكاملة</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Step<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr class="sec-row"><td colspan="4">A. Nursing Preparation — التحضير التمريضي قبل الإعطاء</td></tr>
+<tr><td class="td-num">1</td>
+<td class="td-step"><div class="en">Verify the physician's TPN order. Perform hand hygiene and don PPE.</div><div class="ar">التحقق من أمر الطبيب الخاص بالـ TPN. غسل اليدين وارتداء معدات الوقاية الشخصية.</div></td>
+<td class="td-how"><div class="how-text">بأراجع الأمر الطبي: اسم المريض، نوع المحلول، المعدل، التاريخ. وبأغسل إيدي وبألبس الجوانتي والكمامة.</div></td>
+<td class="td-rat"><div class="rat-en">Verification using the "5 Rights" prevents medication errors. PPE reduces infection risk during central line manipulation.</div><div class="rat-ar">التحقق باستخدام "5 حقوق الدواء" يمنع أخطاء الأدوية. PPE يقلل خطر العدوى أثناء التعامل مع الخط المركزي.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><div class="en">Inspect TPN bag for integrity, clarity, expiration, and label accuracy. Allow TPN solution to warm to room temperature if refrigerated.</div><div class="ar">فحص كيس TPN للسلامة، الشفافية، الانتهاء، ودقة البطاقة. السماح للمحلول بالوصول لدرجة حرارة الغرفة إذا كان مبرداً.</div></td>
+<td class="td-how"><div class="how-text">بأفحص الكيس جيداً: سلامته، شفافيته، تاريخ الانتهاء، ودقة البطاقة. وبأتركه يوصل لحرارة الغرفة لو كان في التلاجة.</div></td>
+<td class="td-rat"><div class="rat-en">Detecting cloudiness, particles, or damage prevents administering contaminated solution. Cold solutions cause vein irritation and hypothermia.</div><div class="rat-ar">اكتشاف العكورة أو الجسيمات أو التلف يمنع إعطاء محلول ملوث. المحاليل الباردة تسبب تهيج الأوردة وانخفاض الحرارة.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><div class="en">Assess the central line site and patency. Label a dedicated lumen for TPN use only.</div><div class="ar">تقييم موضع الخط المركزي وسلامته. تحديد تجويف مخصص للـ TPN فقط.</div></td>
+<td class="td-how"><div class="how-text">بأفحص موضع الخط للاحمرار والتورم والإفرازات، وبأتأكد من سلامته بالشفط. وبأحط بطاقة "TPN فقط" على التجويف المخصص.</div></td>
+<td class="td-rat"><div class="rat-en">Site assessment detects early infection. A dedicated lumen prevents drug incompatibility reactions and maintains TPN integrity.</div><div class="rat-ar">تقييم الموضع يكشف العدوى مبكراً. التجويف المخصص يمنع تفاعلات عدم التوافق الدوائي ويحافظ على تكامل الـ TPN.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><div class="en">Gather equipment: infusion pump, IV tubing, inline filter, alcohol wipes.</div><div class="ar">تجميع الأدوات: مضخة التسريب، أنابيب السيروم، فلتر الخط، المناديل الكحولية.</div></td>
+<td class="td-how"><div class="how-text">بأجهّز المضخة الوريدية وأنابيب السيروم والفلتر والمناديل الكحولية قبل البدء.</div></td>
+<td class="td-rat"><div class="rat-en">Preparation prevents interruptions during the procedure and maintains sterility of the setup.</div><div class="rat-ar">التحضير يمنع الانقطاعات أثناء الإجراء ويحافظ على معايير التعقيم.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><div class="en">Prime the tubing with TPN solution using aseptic technique.</div><div class="ar">تجهيز الأنبوب بمحلول TPN باستخدام التقنية المعقمة.</div></td>
+<td class="td-how"><div class="how-text">بأملأ الأنبوب بمحلول الـ TPN وبأخرج كل الهواء منه بالكامل قبل التوصيل.</div></td>
+<td class="td-rat"><div class="rat-en">Air in IV tubing can cause potentially fatal air embolism. Aseptic priming maintains solution sterility.</div><div class="rat-ar">الهواء في أنبوب السيروم قد يسبب انصماماً هوائياً مميتاً. التجهيز المعقم يحافظ على سلامة المحلول.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><div class="en">Connect tubing to central line using sterile technique. Start infusion at prescribed rate using infusion pump.</div><div class="ar">توصيل الأنبوب بالخط المركزي بالتقنية المعقمة. بدء التسريب بالمعدل المحدد باستخدام مضخة التسريب.</div></td>
+<td class="td-how"><div class="how-text">بأنظف رأس الخط بمنديل كحولي وبأوصّل الأنبوب بالتقنية المعقمة، وبأبدأ التسريب بالمعدل المحدد على المضخة.</div></td>
+<td class="td-rat"><div class="rat-en">Sterile connection prevents CLABSI. Infusion pump ensures accurate delivery rate, preventing complications of under- or over-infusion.</div><div class="rat-ar">التوصيل المعقم يمنع CLABSI. مضخة التسريب تضمن معدل إعطاء دقيق ويمنع مضاعفات زيادة أو نقص التسريب.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><div class="en">Monitor blood glucose every 4–6 hours. Monitor for complications: infection, fluid overload, electrolyte imbalance, refeeding syndrome.</div><div class="ar">مراقبة سكر الدم كل 4–6 ساعات. مراقبة المضاعفات: العدوى، زيادة السوائل، اضطراب الكهارل، متلازمة إعادة التغذية.</div></td>
+<td class="td-how"><div class="how-text">بأقيس سكر الدم كل 4-6 ساعات وبأراقب: الحمى والاحمرار في موضع الخط، وزن الجسم، ضيق التنفس، وقيم الكهارل.</div></td>
+<td class="td-rat"><div class="rat-en">TPN causes hyperglycemia (requiring insulin) and metabolic complications. Early detection and correction prevents serious harm.</div><div class="rat-ar">الـ TPN يسبب ارتفاع سكر الدم (يتطلب أنسولين) ومضاعفات استقلابية. الكشف والتصحيح المبكران يمنعان الأذى الخطير.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><div class="en">Assess and document central line site every shift.</div><div class="ar">تقييم وتوثيق موضع الخط المركزي كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأفحص موضع الخط كل وردية وبأوثّق أي احمرار أو تورم أو إفرازات أو ألم عند اللمس.</div></td>
+<td class="td-rat"><div class="rat-en">Central line sites are high-risk for CLABSI; early detection and prompt removal prevents bacteremia and sepsis.</div><div class="rat-ar">مواضع الخطوط المركزية عالية الخطر لـ CLABSI؛ الكشف المبكر والإزالة الفورية تمنعان الجرثومية والإنتان.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><div class="en">Check and record intake/output and daily weight. Review daily labs: electrolytes, liver/renal function, glucose, triglycerides.</div><div class="ar">متابعة المدخلات والمخرجات والوزن اليومي. مراجعة التحاليل اليومية: الكهارل، وظائف الكبد/الكلى، الجلوكوز، الدهون الثلاثية.</div></td>
+<td class="td-how"><div class="how-text">بأسجّل المدخلات والمخرجات بدقة وبأقيس الوزن يومياً. وبأراجع نتائج التحاليل وبأبلّغ الطبيب عن أي تغيرات.</div></td>
+<td class="td-rat"><div class="rat-en">Daily monitoring detects fluid imbalance, electrolyte disorders, hepatic dysfunction, and hypertriglyceridemia early, enabling formula adjustments.</div><div class="rat-ar">المراقبة اليومية تكشف مبكراً اختلال السوائل واضطرابات الكهارل وخلل الكبد وارتفاع الدهون الثلاثية لتعديل الوصفة.</div></td></tr>
+
+<tr><td class="td-num">10</td>
+<td class="td-step"><div class="en">Document all interventions, assessments, and patient responses. If discontinuing TPN, taper gradually and flush the line.</div><div class="ar">توثيق كل التدخلات والتقييمات واستجابات المريض. عند إيقاف TPN، التقليل التدريجي وشطف الخط.</div></td>
+<td class="td-how"><div class="how-text">بأوثّق كل حاجة: معدل التسريب، قراءات السكر، حالة الموضع، واستجابة المريض. لو بنوقف، بأقلل المعدل تدريجياً وبأشطف الخط.</div></td>
+<td class="td-rat"><div class="rat-en">Documentation ensures care continuity. Gradual tapering prevents rebound hypoglycemia from sudden discontinuation of the high-glucose infusion.</div><div class="rat-ar">التوثيق يضمن استمرارية الرعاية. التقليل التدريجي يمنع هبوط السكر المفاجئ من الإيقاف المباشر للتسريب عالي الجلوكوز.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== ARTERIAL CATHETER ===================== -->
+<div id="art" class="panel">
+<div class="proc-title">Performance Arterial Catheter Checklist <span class="proc-sub">— رعاية القسطرة الشريانية</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Step<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td><td class="td-step"><div class="en">Verify physician order and explain procedure to patient.</div><div class="ar">التحقق من الأمر الطبي وشرح الإجراء للمريض.</div></td>
+<td class="td-how"><div class="how-text">بأراجع الأمر الطبي وبأشرح للمريض وظيفة القسطرة الشريانية وأهميتها.</div></td>
+<td class="td-rat"><div class="rat-en">Verification prevents errors. Patient education reduces anxiety, promotes cooperation, and fulfills informed consent requirements.</div><div class="rat-ar">التحقق يمنع الأخطاء. تثقيف المريض يقلل القلق ويعزز التعاون ويفي بمتطلبات الموافقة المستنيرة.</div></td></tr>
+
+<tr><td class="td-num">2</td><td class="td-step"><div class="en">Perform hand hygiene and use aseptic technique.</div><div class="ar">غسل اليدين واستخدام التقنية المعقمة.</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي وبألبس جوانتي معقمة وبأتبع التقنية المعقمة في كل التعامل مع الخط الشرياني.</div></td>
+<td class="td-rat"><div class="rat-en">Arterial line infections can rapidly progress to septicemia; aseptic technique is essential for all access and dressing changes.</div><div class="rat-ar">عدوى الخط الشرياني يمكن أن تتطور بسرعة إلى إنتان الدم؛ التقنية المعقمة ضرورية لكل وصول وتغيير ضمادة.</div></td></tr>
+
+<tr><td class="td-num">3</td><td class="td-step"><div class="en">Assess insertion site for redness, swelling, bleeding, or infection.</div><div class="ar">تقييم موضع الإدخال للاحمرار والتورم والنزيف أو العدوى.</div></td>
+<td class="td-how"><div class="how-text">بأفحص موضع الخط للاحمرار والتورم والنزيف وأي إفرازات وبأسجّل ما لاحظته.</div></td>
+<td class="td-rat"><div class="rat-en">Early site assessment detects local infection or hematoma before progression to systemic complications.</div><div class="rat-ar">التقييم المبكر للموضع يكشف العدوى الموضعية أو الورم الدموي قبل التطور إلى مضاعفات جهازية.</div></td></tr>
+
+<tr><td class="td-num">4</td><td class="td-step"><div class="en">Check arterial waveform and blood pressure accuracy.</div><div class="ar">التحقق من الموجة الشريانية ودقة قياس ضغط الدم.</div></td>
+<td class="td-how"><div class="how-text">بأشوف شكل الموجة الشريانية على الشاشة وبأتأكد إنها صح وبأقارنها بقياس ضغط الدم بالكفة.</div></td>
+<td class="td-rat"><div class="rat-en">A normal arterial waveform confirms catheter patency. Comparison with cuff BP validates reading accuracy for clinical decision-making.</div><div class="rat-ar">الموجة الشريانية الطبيعية تؤكد سلامة الكاتيتر. المقارنة مع كفة ضغط الدم تتحقق من دقة القراءة لاتخاذ القرارات السريرية.</div></td></tr>
+
+<tr><td class="td-num">5</td><td class="td-step"><div class="en">Maintain pressure bag at 300 mmHg.</div><div class="ar">الحفاظ على كيس الضغط عند 300 ملم زئبق.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن كيس الضغط مضخوخ لـ 300 ملم زئبق عشان يضمن تدفق 3 مل/ساعة مستمر في الخط.</div></td>
+<td class="td-rat"><div class="rat-en">Maintains continuous 3 mL/hr flush, preventing blood backflow and clot formation in the arterial catheter.</div><div class="rat-ar">يحافظ على شطف مستمر بـ 3 مل/ساعة، يمنع ارتداد الدم وتكوين الجلطات في القسطرة الشريانية.</div></td></tr>
+
+<tr><td class="td-num">6</td><td class="td-step"><div class="en">Ensure tubing is free from air bubbles.</div><div class="ar">التأكد من خلو الأنابيب من فقاعات الهواء.</div></td>
+<td class="td-how"><div class="how-text">بأفحص الأنابيب كلها وبأشيل أي فقاعات هواء بالطريقة المناسبة (طرد عبر صنبور الثلاثة اتجاهات).</div></td>
+<td class="td-rat"><div class="rat-en">Air bubbles can cause arterial emboli or distort the waveform, leading to inaccurate pressure readings and potential harm.</div><div class="rat-ar">فقاعات الهواء قد تسبب انصمامات شريانية أو تشوه الموجة مما يؤدي إلى قراءات ضغط غير دقيقة وضرر محتمل.</div></td></tr>
+
+<tr><td class="td-num">7</td><td class="td-step"><div class="en">Zero and level transducer at phlebostatic axis.</div><div class="ar">معايرة ومستوى المحول عند المحور الوريدي الثابت.</div></td>
+<td class="td-how"><div class="how-text">بأحط المحول على مستوى الفراغ الرابع الضلعي عند منتصف الصدر (المحور الوريدي الثابت) وبأعمل له معايرة Zero.</div></td>
+<td class="td-rat"><div class="rat-en">Zeroing at the phlebostatic axis eliminates hydrostatic pressure effects and ensures accurate blood pressure measurements.</div><div class="rat-ar">المعايرة عند المحور الوريدي الثابت تزيل تأثيرات الضغط الهيدروستاتيكي وتضمن قياسات ضغط دم دقيقة.</div></td></tr>
+
+<tr><td class="td-num">8</td><td class="td-step"><div class="en">Monitor circulation distal to insertion site (color, pulse, temperature).</div><div class="ar">مراقبة الدورة الدموية في الجزء البعيد عن موضع الإدخال (اللون، النبض، الحرارة).</div></td>
+<td class="td-how"><div class="how-text">بأراقب لون وحرارة ونبض اليد أو القدم الأبعد عن موضع الخط وبأقارنها بالجهة التانية.</div></td>
+<td class="td-rat"><div class="rat-en">Arterial catheters can cause distal ischemia from thrombosis or spasm; early detection prevents limb-threatening complications.</div><div class="rat-ar">القسطرات الشريانية قد تسبب نقص تروية بعيدة من الجلطة أو التشنج؛ الكشف المبكر يمنع المضاعفات المهددة للطرف.</div></td></tr>
+
+<tr><td class="td-num">9</td><td class="td-step"><div class="en">Change dressing per hospital protocol using sterile technique.</div><div class="ar">تغيير الضمادة حسب بروتوكول المستشفى بالتقنية المعقمة.</div></td>
+<td class="td-how"><div class="how-text">بأغير الضمادة الشفافة كل 5-7 أيام وضمادة الشاش كل 24-48 ساعة، كلاهما بالتقنية المعقمة الكاملة.</div></td>
+<td class="td-rat"><div class="rat-en">Regular sterile dressing changes maintain a protective barrier against infection while allowing visual site inspection.</div><div class="rat-ar">تغيير الضمادة المعقمة المنتظم يحافظ على حاجز واقٍ ضد العدوى مع إتاحة الفحص البصري للموضع.</div></td></tr>
+
+<tr><td class="td-num">10</td><td class="td-step"><div class="en">Document assessments, readings, and patient response.</div><div class="ar">توثيق التقييمات وقراءات الضغط واستجابة المريض.</div></td>
+<td class="td-how"><div class="how-text">بأوثّق كل تقييمات الموضع، قراءات الضغط الشرياني، حالة الدورة البعيدة، وأي تغيرات في حالة المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Accurate documentation allows trend monitoring of hemodynamic status and ensures continuity of critical care management.</div><div class="rat-ar">التوثيق الدقيق يسمح بمراقبة اتجاهات الحالة الديناميكية ويضمن استمرارية إدارة الرعاية الحرجة.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== PA CATHETER ===================== -->
+<div id="pa" class="panel">
+<div class="proc-title">Performance Pulmonary Artery Catheter Checklist <span class="proc-sub">— رعاية قسطرة الشريان الرئوي</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Step<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td><td class="td-step"><div class="en">Perform hand hygiene and apply sterile gloves.</div><div class="ar">غسل اليدين وارتداء الجوانتي المعقمة.</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي بالمطهر الكحولي أو الماء والصابون وبألبس الجوانتي المعقمة.</div></td>
+<td class="td-rat"><div class="rat-en">PA catheters are invasive central devices; strict hand hygiene and sterile gloves are mandatory to prevent bloodstream infection.</div><div class="rat-ar">قسطرات PA أجهزة مركزية غازية؛ نظافة اليدين الصارمة والجوانتي المعقمة إلزامية لمنع عدوى مجرى الدم.</div></td></tr>
+
+<tr><td class="td-num">2</td><td class="td-step"><div class="en">Assess catheter insertion site.</div><div class="ar">تقييم موضع إدخال الكاتيتر.</div></td>
+<td class="td-how"><div class="how-text">بأفحص موضع الإدخال للاحمرار والتورم والإفرازات أو الألم عند الضغط.</div></td>
+<td class="td-rat"><div class="rat-en">Early detection of phlebitis or infection at the insertion site allows prompt intervention before systemic spread.</div><div class="rat-ar">الكشف المبكر عن التهاب الوريد أو العدوى يتيح التدخل السريع قبل الانتشار الجهازي.</div></td></tr>
+
+<tr><td class="td-num">3</td><td class="td-step"><div class="en">Ensure catheter is secured properly.</div><div class="ar">التأكد من تثبيت الكاتيتر بشكل صحيح.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن الكاتيتر مثبت باللاصق أو الخيط في مكانه ومش بيتحرك.</div></td>
+<td class="td-rat"><div class="rat-en">Catheter migration can cause arrhythmias, pulmonary infarction, or vessel perforation; secure fixation prevents these serious complications.</div><div class="rat-ar">تحرك الكاتيتر قد يسبب اضطرابات نظم أو احتشاء رئوي أو انثقاب الأوعية؛ التثبيت الآمن يمنع هذه المضاعفات الخطيرة.</div></td></tr>
+
+<tr><td class="td-num">4</td><td class="td-step"><div class="en">Clean insertion site with chlorhexidine.</div><div class="ar">تنظيف موضع الإدخال بالكلورهيكسيدين.</div></td>
+<td class="td-how"><div class="how-text">بأنظف موضع الإدخال بالكلورهيكسيدين بحركة دائرية للخارج وبأتركه يجف تماماً قبل وضع الضمادة.</div></td>
+<td class="td-rat"><div class="rat-en">Chlorhexidine has superior bactericidal activity compared to other antiseptics, significantly reducing CLABSI risk.</div><div class="rat-ar">الكلورهيكسيدين له نشاط قاتل للبكتيريا متفوق مقارنةً بالمطهرات الأخرى، مما يقلل بشكل كبير من خطر CLABSI.</div></td></tr>
+
+<tr><td class="td-num">5</td><td class="td-step"><div class="en">Apply sterile transparent dressing.</div><div class="ar">وضع الضمادة الشفافة المعقمة.</div></td>
+<td class="td-how"><div class="how-text">بأضع الضمادة الشفافة المعقمة على موضع الإدخال بشكل محكم وبأسجّل تاريخ التغيير عليها.</div></td>
+<td class="td-rat"><div class="rat-en">Transparent dressings maintain a sterile barrier while allowing continuous visual monitoring of the site without removal.</div><div class="rat-ar">الضمادات الشفافة تحافظ على حاجز معقم مع إتاحة المراقبة البصرية المستمرة دون الحاجة للإزالة.</div></td></tr>
+
+<tr><td class="td-num">6</td><td class="td-step"><div class="en">Level transducer at phlebostatic axis.</div><div class="ar">مستوى المحول عند المحور الوريدي الثابت.</div></td>
+<td class="td-how"><div class="how-text">بأحط المحول على مستوى الفراغ الرابع الضلعي عند منتصف الصدر (المحور الوريدي الثابت).</div></td>
+<td class="td-rat"><div class="rat-en">Correct transducer positioning eliminates gravitational errors and ensures accurate hemodynamic pressure measurements.</div><div class="rat-ar">الوضع الصحيح للمحول يزيل أخطاء الجاذبية ويضمن قياسات الضغط الديناميكي الدقيقة.</div></td></tr>
+
+<tr><td class="td-num">7</td><td class="td-step"><div class="en">Zero the transducer system.</div><div class="ar">معايرة نظام المحول (Zeroing).</div></td>
+<td class="td-how"><div class="how-text">بأوصّل المحول للهواء الطلق وبأضغط على زر Zero في الشاشة ثم أوصّله للمريض تاني.</div></td>
+<td class="td-rat"><div class="rat-en">Zeroing eliminates atmospheric pressure effects and establishes the reference point for accurate hemodynamic measurements.</div><div class="rat-ar">المعايرة تزيل تأثيرات الضغط الجوي وتؤسس نقطة مرجعية لقياسات ديناميكية دقيقة.</div></td></tr>
+
+<tr><td class="td-num">8</td><td class="td-step"><div class="en">Monitor pulmonary artery pressures.</div><div class="ar">مراقبة ضغوط الشريان الرئوي.</div></td>
+<td class="td-how"><div class="how-text">بأراقب قراءات ضغط الشريان الرئوي (systolic/diastolic/mean) وبأسجّلها وبأبلّغ عن أي تغيرات غير طبيعية.</div></td>
+<td class="td-rat"><div class="rat-en">PA pressures reflect right heart function and pulmonary vascular resistance, guiding fluid and vasopressor management.</div><div class="rat-ar">ضغوط PA تعكس وظيفة القلب الأيمن ومقاومة الأوعية الرئوية، مما يوجّه إدارة السوائل والمقويات الوعائية.</div></td></tr>
+
+<tr><td class="td-num">9</td><td class="td-step"><div class="en">Inflate balloon only during PCWP measurement.</div><div class="ar">نفخ البالونة فقط أثناء قياس ضغط الإسفين الرئوي (PCWP).</div></td>
+<td class="td-how"><div class="how-text">بأنفخ البالونة بهواء لا يتجاوز 1.5 مل فقط أثناء قياس الـ PCWP وبأتأكد من ظهور موجة الإسفين على الشاشة.</div></td>
+<td class="td-rat"><div class="rat-en">Balloon inflation only during PCWP measurement prevents prolonged occlusion that can cause pulmonary artery rupture or infarction.</div><div class="rat-ar">نفخ البالونة فقط أثناء قياس PCWP يمنع الانسداد المطوّل الذي قد يسبب تمزق الشريان الرئوي أو الاحتشاء.</div></td></tr>
+
+<tr><td class="td-num">10</td><td class="td-step"><div class="en">Deflate balloon immediately after reading.</div><div class="ar">تفريغ البالونة فوراً بعد القراءة.</div></td>
+<td class="td-how"><div class="how-text">بأفرّغ البالونة فوراً بعد قراءة الـ PCWP وبأتأكد إن هواء البالونة رجع في المحقنة وبأرى موجة PA على الشاشة.</div></td>
+<td class="td-rat"><div class="rat-en">Leaving the balloon inflated occludes a pulmonary artery branch, causing ischemia and potentially fatal pulmonary infarction.</div><div class="rat-ar">ترك البالونة منفوخة يسد فرع الشريان الرئوي مما يسبب نقص التروية واحتشاء رئوي مميت محتمل.</div></td></tr>
+
+<tr><td class="td-num">11</td><td class="td-step"><div class="en">Flush catheter lumens as prescribed.</div><div class="ar">شطف تجاويف الكاتيتر حسب التعليمات الطبية.</div></td>
+<td class="td-how"><div class="how-text">بأشطف التجاويف بالسالاين حسب بروتوكول المستشفى عشان أحافظ على سلامتها وأمنع الجلطات.</div></td>
+<td class="td-rat"><div class="rat-en">Regular flushing prevents thrombus formation within the catheter lumens, maintaining patency for accurate pressure monitoring.</div><div class="rat-ar">الشطف المنتظم يمنع تكوين الجلطات داخل تجاويف الكاتيتر ويحافظ على سلامتها لمراقبة الضغط الدقيقة.</div></td></tr>
+
+<tr><td class="td-num">12</td><td class="td-step"><div class="en">Monitor ECG and vital signs continuously.</div><div class="ar">المراقبة المستمرة للـ ECG والعلامات الحيوية.</div></td>
+<td class="td-how"><div class="how-text">بأراقب الـ ECG والعلامات الحيوية بشكل مستمر وبأبلّغ فوراً عن أي اضطرابات في النظم أو تغيرات في الضغط.</div></td>
+<td class="td-rat"><div class="rat-en">PA catheters can trigger ventricular arrhythmias; continuous ECG monitoring enables rapid detection and treatment.</div><div class="rat-ar">قسطرات PA قد تسبب اضطرابات نظم بطينية؛ المراقبة المستمرة للـ ECG تتيح الكشف السريع والعلاج.</div></td></tr>
+
+<tr><td class="td-num">13</td><td class="td-step"><div class="en">Document all findings and patient response.</div><div class="ar">توثيق كل النتائج واستجابة المريض.</div></td>
+<td class="td-how"><div class="how-text">بأوثّق كل قراءات الضغط وحالة الموضع والضمادة وأي تغيرات في الحالة الديناميكية أو أي اضطرابات نظم.</div></td>
+<td class="td-rat"><div class="rat-en">Comprehensive documentation supports hemodynamic trend analysis, clinical decision-making, and ensures legal accountability.</div><div class="rat-ar">التوثيق الشامل يدعم تحليل اتجاهات الديناميكية واتخاذ القرارات السريرية ويضمن المساءلة القانونية.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== VAP ===================== -->
+<div id="vap" class="panel">
+<div class="proc-title">VAP Bundle — Daily Assessment Schedule <span class="proc-sub">— حزمة منع الالتهاب الرئوي المرتبط بالمنفسة</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Intervention<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Assess readiness for extubation.</div><div class="ar">تقييم الاستعداد للفطام من المنفسة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأقيّم: هل المريض واعٍ ومستجيب؟ هل قادر على التنفس مستقلاً؟ هل الإفرازات قليلة؟ وبأبلّغ الطبيب بنتائجي.</div></td>
+<td class="td-rat"><div class="rat-en">Daily assessment reduces mechanical ventilation duration, lowering VAP risk and ICU mortality.</div><div class="rat-ar">التقييم اليومي يقلل مدة التنفس الصناعي مما يخفض خطر VAP والوفيات في الـ ICU.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Elevate head of bed 30–45°.</div><div class="ar">رفع رأس السرير 30–45 درجة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأرفع رأس السرير للزاوية المطلوبة وبأتحقق منها بشكل دوري أثناء الوردية، خاصةً بعد أي إجراء يغير وضعية المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Elevation prevents gastric reflux and microaspiration of oropharyngeal secretions, significantly reducing VAP incidence.</div><div class="rat-ar">الرفع يمنع ارتجاع المعدة والاستنشاق الدقيق للإفرازات البلعومية مما يقلل بشكل كبير من حدوث VAP.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Assess sedation level and daily sedation vacation.</div><div class="ar">تقييم مستوى التخدير وإجازة التخدير اليومية.</div></td>
+<td class="td-how"><div class="how-text">بأقيس مستوى التخدير بمقياس RASS كل ساعة وبأوقف أدوية التخدير يومياً بإذن الطبيب عشان أقيّم وعي المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Minimizing sedation reduces ventilator days, ICU stay, delirium, and neuromuscular weakness while improving extubation success.</div><div class="rat-ar">تقليل التخدير يقلل أيام المنفسة والإقامة في ICU والهذيان وضعف العضلات مع تحسين نجاح الفطام.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><span class="time-badge">Every 2–4 Hours</span><div class="en">Oral care with chlorhexidine 0.12%.</div><div class="ar">العناية بالفم بالكلورهيكسيدين 0.12% كل 2–4 ساعات.</div></td>
+<td class="td-how"><div class="how-text">بأنظف الفم والأسنان واللسان بفرشة أو أسواب مبللة بالكلورهيكسيدين 0.12% كل 2-4 ساعات وبأشفط الإفرازات بعدها.</div></td>
+<td class="td-rat"><div class="rat-en">Chlorhexidine reduces oral bacterial colonization, the primary source of VAP pathogens in ventilated patients.</div><div class="rat-ar">الكلورهيكسيدين يقلل التوطن البكتيري الفموي، المصدر الرئيسي لمسببات VAP في المرضى على المنفسة.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><span class="time-badge">Every 4 Hours</span><div class="en">Suction only when needed (not routine).</div><div class="ar">الشفط عند الحاجة فقط وليس بشكل روتيني (كل 4 ساعات تقييم).</div></td>
+<td class="td-how"><div class="how-text">بأشفط فقط لو في إفرازات ظاهرة أو أصوات تنفس غير طبيعية أو زيادة في ضغط المنفسة. مش بشفط بشكل روتيني.</div></td>
+<td class="td-rat"><div class="rat-en">Unnecessary suctioning causes mucosal trauma, hypoxia, bronchospasm, and increased infection risk; indication-based suctioning is safer.</div><div class="rat-ar">الشفط غير الضروري يسبب صدمة للغشاء المخاطي ونقص الأكسجين وتشنج القصبات وزيادة خطر العدوى.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Check ET tube cuff pressure (20–30 cmH₂O).</div><div class="ar">التحقق من ضغط بالونة أنبوب التنبيب (20–30 سم ماء) كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأقيس ضغط البالونة بالمانوميتر كل وردية وبأتأكد إنها بين 20-30 cmH₂O وبأعدّل لو لازم.</div></td>
+<td class="td-rat"><div class="rat-en">Adequate cuff pressure prevents microaspiration of subglottic secretions (VAP source) while pressures &gt;30 cmH₂O cause tracheal ischemia.</div><div class="rat-ar">الضغط المناسب يمنع الاستنشاق الدقيق للإفرازات تحت المزمار (مصدر VAP) بينما الضغط فوق 30 يسبب نقص تروية القصبة.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><span class="time-badge">Daily</span><div class="en">Spontaneous breathing trial (if appropriate).</div><div class="ar">اختبار التنفس التلقائي يومياً (إذا كان مناسباً).</div></td>
+<td class="td-how"><div class="how-text">بأقلل دعم المنفسة لمدة 30-120 دقيقة وبأراقب مدى قدرة المريض على التنفس مستقلاً وبأوثّق النتيجة.</div></td>
+<td class="td-rat"><div class="rat-en">Daily SBT is the most effective method to reduce ventilator duration and facilitate safe, timely extubation.</div><div class="rat-ar">اختبار التنفس التلقائي اليومي هو الأسلوب الأكثر فاعلية لتقليل مدة التنفس الصناعي وتسهيل الفطام الآمن.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">DVT prophylaxis.</div><div class="ar">الوقاية من الجلطات الوريدية العميقة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأطبق الجوارب الضاغطة أو الضغط الهوائي المتقطع وبأتأكد من إعطاء الهيبارين لو مقرر من الطبيب.</div></td>
+<td class="td-rat"><div class="rat-en">Immobile ventilated patients are at high DVT and pulmonary embolism risk; prophylaxis significantly reduces thromboembolic events.</div><div class="rat-ar">المرضى المتنفسين صناعياً الغير متحركين في خطر عالٍ لجلطات وريدية عميقة وانصمام رئوي؛ الوقاية تقلل الأحداث الانصمامية الخثارية.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Peptic ulcer prophylaxis.</div><div class="ar">الوقاية من قرحة المعدة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد من إعطاء الأدوية المقررة للوقاية من قرحة الضغط (مثبطات مضخة البروتون مثل أوميبرازول أو مضادات H2).</div></td>
+<td class="td-rat"><div class="rat-en">Critically ill ventilated patients are at high risk for stress-related mucosal disease and GI bleeding; prophylaxis prevents life-threatening hemorrhage.</div><div class="rat-ar">المرضى الحرجين على المنفسة في خطر عالٍ لأمراض الغشاء المخاطي المرتبطة بالضغط والنزيف الهضمي.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== CAUTI ===================== -->
+<div id="cauti" class="panel">
+<div class="proc-title">CAUTI Bundle — Daily Assessment Schedule <span class="proc-sub">— حزمة منع عدوى المسالك البولية المرتبطة بالقسطرة</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Intervention<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td>
+<td class="td-step"><span class="time-badge">At Insertion</span><div class="en">Use sterile technique for insertion.</div><div class="ar">استخدام تقنية التعقيم عند الإدخال.</div></td>
+<td class="td-how"><div class="how-text">بأستخدم مجموعة القسطرة المعقمة وبألبس الجوانتي المعقمة وبأنظف المنطقة التناسلية بالكلورهيكسيدين قبل الإدخال.</div></td>
+<td class="td-rat"><div class="rat-en">Sterile insertion technique is the primary measure to prevent bacteria from entering the bladder during catheterization.</div><div class="rat-ar">تقنية الإدخال المعقمة هي الإجراء الأساسي لمنع دخول البكتيريا للمثانة أثناء التقطير البولي.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><span class="time-badge">At Insertion</span><div class="en">Use smallest appropriate catheter size.</div><div class="ar">استخدام أصغر حجم مناسب للقسطرة.</div></td>
+<td class="td-how"><div class="how-text">بأختار أصغر حجم قسطرة يضمن التصريف الكافي للبول دون إعاقة.</div></td>
+<td class="td-rat"><div class="rat-en">Smaller catheters cause less urethral trauma and periurethral irritation, reducing the risk of colonization and infection.</div><div class="rat-ar">القسطرة الأصغر تسبب صدمة أقل للإحليل وتهيجاً حول الإحليل مما يقلل خطر الاستعمار والعدوى.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Assess continued need for catheter.</div><div class="ar">تقييم الحاجة المستمرة للقسطرة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأسأل يومياً: هل القسطرة لا تزال ضرورية؟ وبأبلّغ الطبيب عشان نقرر الإزالة لو ممكن وبأوثّق المبرر.</div></td>
+<td class="td-rat"><div class="rat-en">CAUTI risk increases each day the catheter remains; prompt removal when no longer indicated is the most effective prevention strategy.</div><div class="rat-ar">خطر CAUTI يزداد كل يوم تبقى فيه القسطرة؛ الإزالة الفورية عند انتهاء الحاجة هي الاستراتيجية الأكثر فاعلية.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Maintain closed drainage system.</div><div class="ar">الحفاظ على نظام التصريف المغلق كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن كل التوصيلات محكمة وما فيش انفصال في النظام وبأحافظ على إغلاقه طول الوقت.</div></td>
+<td class="td-rat"><div class="rat-en">Opening the closed system allows environmental bacteria to enter the urinary system, significantly increasing CAUTI risk.</div><div class="rat-ar">فتح النظام المغلق يسمح للبكتيريا البيئية بالدخول للجهاز البولي مما يزيد بشكل كبير من خطر CAUTI.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Keep drainage bag below bladder level.</div><div class="ar">الإبقاء على كيس التصريف تحت مستوى المثانة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن كيس البول دايماً أسفل مستوى المثانة وبعيد عن الأرض وبأنبّه الفريق لو تغيرت وضعية المريض.</div></td>
+<td class="td-rat"><div class="rat-en">Positioning above bladder level causes urine backflow, introducing bacteria from the bag into the bladder and causing infection.</div><div class="rat-ar">وضع الكيس فوق مستوى المثانة يسبب ارتداد البول مما يدخل بكتيريا من الكيس للمثانة ويسبب عدوى.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Secure catheter to prevent movement.</div><div class="ar">تثبيت القسطرة لمنع الحركة كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأثبت القسطرة على فخذ المريض بلاصق خاص وبأتأكد إنها مش شايلة ذيل طويل يتعلق.</div></td>
+<td class="td-rat"><div class="rat-en">Unsecured catheters cause urethral trauma from movement, creating microlesions that facilitate ascending bacterial infection.</div><div class="rat-ar">القسطرة غير المثبتة تسبب صدمة للإحليل من الحركة مما يخلق تشققات صغيرة تسهّل العدوى البكتيرية الصاعدة.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Perform perineal hygiene.</div><div class="ar">النظافة التناسلية كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأنظف المنطقة التناسلية بالماء والصابون من الأمام للخلف كل وردية وبعد كل إفراز، مع الانتباه لتنظيف حول مدخل القسطرة.</div></td>
+<td class="td-rat"><div class="rat-en">Perineal hygiene removes periurethral bacteria and soiling, reducing the bacterial load that can ascend along the catheter.</div><div class="rat-ar">النظافة التناسلية تزيل البكتيريا حول الإحليل والإفرازات مما يقلل الحمل البكتيري الذي قد يصعد على طول القسطرة.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Empty drainage bag regularly; do not touch spout.</div><div class="ar">تفريغ كيس التصريف بانتظام دون لمس الصنبور كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأفرّغ الكيس كل وردية أو لما يمتلئ لـ 2/3، ومش بالمس صنبور التفريغ بأي سطح وبأستخدم وعاء قياس نظيف.</div></td>
+<td class="td-rat"><div class="rat-en">Overfilling causes backflow into the bladder. Contamination of the drain spout is a major route for bacterial entry into the closed system.</div><div class="rat-ar">الامتلاء الزائد يسبب الارتداد للمثانة. تلوث صنبور التفريغ هو طريق رئيسي لدخول البكتيريا في النظام المغلق.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><span class="time-badge">Daily</span><div class="en">Document indication for catheter.</div><div class="ar">توثيق مبرر استخدام القسطرة يومياً.</div></td>
+<td class="td-how"><div class="how-text">بأوثّق السبب الطبي لبقاء القسطرة كل يوم في ملف المريض (مثل: متابعة دقيقة للمخرجات، انسداد بولي، إلخ).</div></td>
+<td class="td-rat"><div class="rat-en">Daily documentation promotes clinical accountability and drives daily review of catheter necessity, facilitating earlier removal.</div><div class="rat-ar">التوثيق اليومي يعزز المساءلة السريرية ويدفع لمراجعة يومية لضرورة القسطرة مما يسهّل الإزالة المبكرة.</div></td></tr>
+</tbody></table>
+</div>
+
+<!-- ===================== CLABSI ===================== -->
+<div id="clabsi" class="panel">
+<div class="proc-title">CLABSI Bundle <span class="proc-sub">— حزمة منع عدوى مجرى الدم المرتبطة بالخط المركزي</span></div>
+<table>
+<thead><tr><th>#</th><th>الخطوة / Intervention<br><small>EN ثم AR</small></th><th>🩺 أنا بعمل إيه؟</th><th>📖 Rationale<br><small>EN ثم AR</small></th></tr></thead>
+<tbody>
+<tr><td class="td-num">1</td>
+<td class="td-step"><span class="time-badge">At Insertion</span><div class="en">Use maximal sterile barrier precautions.</div><div class="ar">استخدام أقصى احتياطات الحاجز المعقم عند الإدخال.</div></td>
+<td class="td-how"><div class="how-text">بأتأكد إن الطبيب يلبس قبعة ومريلة وجوانتي معقمة وكمامة، والمريض مغطى بملاءة معقمة كاملة.</div></td>
+<td class="td-rat"><div class="rat-en">Maximal sterile barrier precautions reduce CLABSI incidence by up to 6-fold compared to minimal precautions during insertion.</div><div class="rat-ar">احتياطات الحاجز الأقصى تقلل حدوث CLABSI بما يصل إلى 6 أضعاف مقارنةً بالاحتياطات الدنيا أثناء الإدخال.</div></td></tr>
+
+<tr><td class="td-num">2</td>
+<td class="td-step"><span class="time-badge">At Insertion</span><div class="en">Use chlorhexidine skin antisepsis.</div><div class="ar">تطهير الجلد بالكلورهيكسيدين عند الإدخال.</div></td>
+<td class="td-how"><div class="how-text">بأنظف موضع الإدخال بالكلورهيكسيدين 2% بحركات دائرية للخارج وبأتركه يجف تماماً (30 ثانية على الأقل) قبل الإدخال.</div></td>
+<td class="td-rat"><div class="rat-en">Chlorhexidine has superior persistent antimicrobial activity and is more effective than povidone-iodine in preventing CLABSI.</div><div class="rat-ar">الكلورهيكسيدين له نشاط مضاد للميكروبات مستمر ومتفوق وأكثر فاعلية من البوفيدون اليود في منع CLABSI.</div></td></tr>
+
+<tr><td class="td-num">3</td>
+<td class="td-step"><span class="time-badge">At Insertion</span><div class="en">Select optimal catheter site (avoid femoral).</div><div class="ar">اختيار أفضل موضع للكاتيتر وتجنب الوريد الفخذي.</div></td>
+<td class="td-how"><div class="how-text">بأفضّل الوريد تحت الترقوة أو الوريد الوداجي الداخلي على الوريد الفخذي وبأبلّغ الطبيب بالأفضلية المدعومة بالدليل.</div></td>
+<td class="td-rat"><div class="rat-en">Femoral sites have the highest infection risk due to proximity to perineal flora and difficulty maintaining sterility.</div><div class="rat-ar">المواضع الفخذية لها أعلى خطر للعدوى بسبب قربها من بكتيريا منطقة العجان وصعوبة الحفاظ على التعقيم.</div></td></tr>
+
+<tr><td class="td-num">4</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Assess continued need for central line.</div><div class="ar">تقييم الحاجة المستمرة للخط المركزي كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأسأل يومياً: هل يمكن إزالة الخط أو الاستعاضة عنه بخط محيطي؟ وبأوثّق المبرر الطبي للبقاء.</div></td>
+<td class="td-rat"><div class="rat-en">CLABSI risk increases daily; removing the central line as soon as clinically appropriate is the most effective prevention.</div><div class="rat-ar">خطر CLABSI يزداد يومياً؛ إزالة الخط المركزي فور الاستطاعة السريرية هو أكثر الوقايات فاعلية.</div></td></tr>
+
+<tr><td class="td-num">5</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Perform hand hygiene before accessing line.</div><div class="ar">غسل اليدين قبل الوصول للخط كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأغسل إيدي بالماء والصابون أو المطهر الكحولي قبل كل وصول للخط المركزي بدون استثناء.</div></td>
+<td class="td-rat"><div class="rat-en">Hand hygiene is the single most cost-effective intervention to prevent all healthcare-associated infections including CLABSI.</div><div class="rat-ar">غسل اليدين هو التدخل الأكثر فاعلية من حيث التكلفة لمنع جميع العدوى المرتبطة بالرعاية الصحية بما فيها CLABSI.</div></td></tr>
+
+<tr><td class="td-num">6</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Inspect insertion site.</div><div class="ar">فحص موضع الإدخال كل وردية.</div></td>
+<td class="td-how"><div class="how-text">بأفحص الموضع للاحمرار والتورم والإفرازات وبأبلّغ فوراً عن أي علامات عدوى وبأوثّق ما لاحظته.</div></td>
+<td class="td-rat"><div class="rat-en">Early site infection detection enables prompt line removal and antibiotic initiation before bacteremia and sepsis develop.</div><div class="rat-ar">الكشف المبكر عن عدوى الموضع يتيح إزالة الخط الفورية وبدء المضادات الحيوية قبل تطور جرثومية الدم والإنتان.</div></td></tr>
+
+<tr><td class="td-num">7</td>
+<td class="td-step"><span class="time-badge">Every Shift</span><div class="en">Scrub the hub 15 seconds before access.</div><div class="ar">تنظيف (فرك) رأس الخط 15 ثانية قبل كل وصول.</div></td>
+<td class="td-how"><div class="how-text">بأفرك رأس الخط (Hub) بمنديل كحول أو كلورهيكسيدين لمدة 15 ثانية كاملة وبأتركه يجف قبل الاستخدام.</div></td>
+<td class="td-rat"><div class="rat-en">"Scrub the hub" removes biofilm and bacteria from the needleless connector, preventing intraluminal contamination — a major CLABSI pathway.</div><div class="rat-ar">"فرك الرأس" يزيل الغشاء الحيوي والبكتيريا من الموصل مما يمنع التلوث داخل التجويف — وهو المسار الرئيسي لـ CLABSI.</div></td></tr>
+
+<tr><td class="td-num">8</td>
+<td class="td-step"><span class="time-badge">Every 5–7 Days</span><div class="en">Change transparent dressing.</div><div class="ar">تغيير الضمادة الشفافة كل 5–7 أيام.</div></td>
+<td class="td-how"><div class="how-text">بأغير الضمادة الشفافة كل 5-7 أيام أو فور ما تتسخ أو تنشلخ أو تتلف بالتقنية المعقمة الكاملة.</div></td>
+<td class="td-rat"><div class="rat-en">Transparent dressings maintain an adequate sterile barrier for 5–7 days; more frequent changes increase unnecessary site manipulation risk.</div><div class="rat-ar">الضمادات الشفافة تحافظ على حاجز معقم كافٍ لـ 5-7 أيام؛ التغيير الأكثر تكراراً يزيد خطر التلاعب غير الضروري بالموضع.</div></td></tr>
+
+<tr><td class="td-num">9</td>
+<td class="td-step"><span class="time-badge">Every 24 Hours</span><div class="en">Change gauze dressing.</div><div class="ar">تغيير ضمادة الشاش كل 24 ساعة.</div></td>
+<td class="td-how"><div class="how-text">بأغير ضمادة الشاش كل 24 ساعة لأنها بتمتص الرطوبة بسرعة مما يجعلها أقل فاعلية كحاجز واقٍ.</div></td>
+<td class="td-rat"><div class="rat-en">Gauze dressings absorb moisture rapidly, losing barrier function quickly; daily changes maintain adequate protection.</div><div class="rat-ar">ضمادات الشاش تمتص الرطوبة بسرعة وتفقد وظيفتها الواقية بسرعة؛ التغيير اليومي يحافظ على الحماية الكافية.</div></td></tr>
+
+<tr><td class="td-num">10</td>
+<td class="td-step"><span class="time-badge">Per Protocol</span><div class="en">Change needleless connectors per protocol.</div><div class="ar">تغيير الموصلات بدون إبرة حسب البروتوكول.</div></td>
+<td class="td-how"><div class="how-text">بأغير الموصلات حسب بروتوكول المستشفى (عادة كل 72-96 ساعة) مع تطهير الرأس قبل كل وصول.</div></td>
+<td class="td-rat"><div class="rat-en">Needleless connectors accumulate biofilm over time; regular replacement according to protocol minimizes intraluminal bacterial contamination.</div><div class="rat-ar">الموصلات بدون إبرة تتراكم عليها الأغشية الحيوية مع الوقت؛ الاستبدال المنتظم يقلل التلوث البكتيري داخل التجويف.</div></td></tr>
+
+<tr><td class="td-num">11</td>
+<td class="td-step"><span class="time-badge">Every 24–96 Hours</span><div class="en">Change IV tubing per protocol.</div><div class="ar">تغيير أنابيب السيروم حسب البروتوكول (كل 24–96 ساعة).</div></td>
+<td class="td-how"><div class="how-text">بأغير أنابيب السيروم حسب جدول المستشفى: أنابيب الدم والدهون كل 24 ساعة، والأنابيب العادية كل 72-96 ساعة.</div></td>
+<td class="td-rat"><div class="rat-en">Lipid-containing solutions support bacterial growth, requiring more frequent tubing changes. Regular replacement prevents biofilm accumulation.</div><div class="rat-ar">المحاليل المحتوية على دهون تدعم نمو البكتيريا مما يتطلب تغيير متكرر. الاستبدال المنتظم يمنع تراكم الأغشية الحيوية.</div></td></tr>
+
+<tr><td class="td-num">12</td>
+<td class="td-step"><span class="time-badge">Daily</span><div class="en">Review labs for signs of infection.</div><div class="ar">مراجعة التحاليل يومياً لعلامات العدوى.</div></td>
+<td class="td-how"><div class="how-text">بأراجع يومياً: CBC، CRP، PCT، وزراعات الدم وبأبلّغ الطبيب فوراً عن أي ارتفاع في مؤشرات العدوى.</div></td>
+<td class="td-rat"><div class="rat-en">Lab monitoring enables early detection of CLABSI before clinical deterioration, allowing prompt line removal and antibiotic therapy.</div><div class="rat-ar">مراقبة التحاليل تتيح الكشف المبكر عن CLABSI قبل التدهور السريري مما يتيح إزالة الخط الفورية والعلاج بالمضادات الحيوية.</div></td></tr>
+</tbody></table>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

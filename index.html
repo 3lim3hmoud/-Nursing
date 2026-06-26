@@ -322,7 +322,78 @@
   }
   .dash-signout-btn:hover { background: #fdecea; border-color: rgba(192,57,43,0.4); }
 
-  h1, h2, h3, .section-title, .year-card h2 {
+  /* ─── DETAILED ANALYSIS (file-by-file breakdown inside dashboard) ─── */
+  .dash-analysis-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; padding: 11px 10px; border-radius: 10px;
+    background: var(--teal-50); border: 1px solid rgba(29,158,117,0.2);
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600; color: var(--teal-600);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dash-analysis-toggle svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+  .dash-analysis-toggle.open svg { transform: rotate(180deg); }
+
+  .dash-analysis-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .dash-analysis-body.open { max-height: 3000px; }
+
+  .analysis-year-block { margin-top: 12px; }
+  .analysis-year-head {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; color: var(--ink);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 6px 2px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .analysis-year-head .ay-pct { margin-left: auto; color: var(--teal-600); font-weight: 700; }
+  .analysis-year-head svg { width: 13px; height: 13px; transition: transform 0.2s ease; flex-shrink: 0; }
+  .analysis-year-head.open svg { transform: rotate(90deg); }
+  .analysis-year-body { display: none; padding-left: 4px; }
+  .analysis-year-body.open { display: block; }
+
+  .analysis-subject-block { margin: 6px 0; border: 1px solid rgba(28,43,37,0.08); border-radius: 10px; overflow: hidden; }
+  .analysis-subject-head {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 10px; cursor: pointer; background: #fafaf7;
+    font-size: 12.5px; font-weight: 600; color: var(--ink-soft);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .analysis-subject-head .as-icon { font-size: 14px; }
+  .analysis-subject-head .as-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .analysis-subject-head .as-badge {
+    font-size: 10px; font-weight: 700; color: var(--teal-600); background: var(--teal-50);
+    border-radius: 100px; padding: 2px 7px; flex-shrink: 0;
+  }
+  .analysis-subject-head .as-badge.done { color: #0F6E56; background: #d4f4e6; }
+  .analysis-subject-head svg { width: 12px; height: 12px; transition: transform 0.2s ease; flex-shrink: 0; }
+  .analysis-subject-head.open svg { transform: rotate(90deg); }
+  .analysis-subject-body { display: none; padding: 4px 10px 8px; }
+  .analysis-subject-body.open { display: block; }
+
+  .analysis-restype { margin-top: 6px; }
+  .analysis-restype-label {
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    color: rgba(28,43,37,0.4); margin-bottom: 3px; margin-top: 6px;
+  }
+  .analysis-file-row {
+    display: flex; align-items: center; gap: 7px;
+    padding: 4px 2px; font-size: 12px; color: rgba(28,43,37,0.75);
+  }
+  .analysis-file-row .af-dot {
+    width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(28,43,37,0.08); color: transparent;
+  }
+  .analysis-file-row.seen .af-dot { background: var(--teal-400); color: #fff; }
+  .analysis-file-row .af-dot svg { width: 9px; height: 9px; }
+  .analysis-file-row.seen { color: var(--ink-soft); }
+  .analysis-file-row .af-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .analysis-empty-note { font-size: 11px; color: rgba(28,43,37,0.4); padding: 8px 2px; }
+
+
     letter-spacing: -0.01em;
   }
 
@@ -1354,14 +1425,29 @@
   }
 
   .file-list a.visited {
-    opacity: 0.72;
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(29,158,117,0.22), rgba(29,158,117,0.14));
+    border-left-color: #0F6E56;
+    color: #0F6E56;
+  }
+
+  .file-list a.visited span.f-title {
+    font-weight: 600;
+  }
+
+  .file-list a.visited::after {
+    content: '';
   }
 
   .file-list a .f-check {
     flex-shrink: 0;
-    width: 14px;
-    height: 14px;
-    color: #0F6E56;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    background: #1D9E75;
+    border-radius: 50%;
+    padding: 3px;
+    box-shadow: 0 2px 6px rgba(15,110,86,0.4);
     display: none;
   }
 
@@ -1763,6 +1849,15 @@
     <div class="dashboard-section">
       <div class="dashboard-section-title">Progress by Year</div>
       <div id="dashYearProgress"></div>
+    </div>
+    <div class="dashboard-section">
+      <button class="dash-analysis-toggle" id="analysisToggleBtn" onclick="toggleDetailedAnalysis()">
+        <span>Detailed File Analysis</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dash-analysis-body" id="analysisBody">
+        <div id="analysisContent"></div>
+      </div>
     </div>
     <button class="dash-signout-btn" onclick="signOutUser()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
@@ -3017,6 +3112,8 @@ function toggleUserPopover() {
 }
 function openDashboard() {
   if (window._authUpdateStats) window._authUpdateStats();
+  const analysisBody = document.getElementById('analysisBody');
+  if (analysisBody && analysisBody.classList.contains('open')) renderDetailedAnalysis();
   document.getElementById('dashboardPanel').classList.add('open');
 }
 function closeDashboard() {
@@ -3215,4 +3312,111 @@ function updateStats() {
   }
 }
 window._authUpdateStats = updateStats;
+
+/* ══════════════════════ DETAILED FILE-BY-FILE ANALYSIS ══════════════════════ */
+const RES_TYPE_LABELS = {
+  lectures: 'Lectures', summaries: 'Summaries', flashcards: 'Flashcards', mcq: 'MCQ Bank',
+  lecture: 'Lectures', procedure: 'Procedures', video: 'Videos'
+};
+
+function analysisFileRowHtml(basePath, resKey, f) {
+  const url = `${basePath}/${resKey}/${f.file}`;
+  const seen = window.getViewedSet ? window.getViewedSet().has(url) : false;
+  return `
+    <div class="analysis-file-row ${seen ? 'seen' : ''}">
+      <span class="af-dot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+      </span>
+      <span class="af-name">${f.title || f.file}</span>
+    </div>`;
+}
+
+function analysisSubjectHtml(s, basePath, idPrefix) {
+  const files = s.files || {};
+  const resKeys = Object.keys(files).filter(k => (files[k] || []).length);
+  let seen = 0, total = 0;
+  resKeys.forEach(k => {
+    (files[k] || []).forEach(f => {
+      total++;
+      const url = `${basePath}/${k}/${f.file}`;
+      if (window.getViewedSet && window.getViewedSet().has(url)) seen++;
+    });
+  });
+  if (!total) return ''; // skip subjects with no files yet ("coming soon")
+
+  const subjId = `${idPrefix}-${s.slug}`;
+  const body = resKeys.map(k => `
+    <div class="analysis-restype">
+      <div class="analysis-restype-label">${RES_TYPE_LABELS[k] || k}</div>
+      ${(files[k] || []).map(f => analysisFileRowHtml(basePath, k, f)).join('')}
+    </div>`).join('');
+
+  return `
+    <div class="analysis-subject-block">
+      <div class="analysis-subject-head" onclick="toggleAnalysisNode(this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>
+        <span class="as-icon">${s.icon || '📚'}</span>
+        <span class="as-name">${s.name}</span>
+        <span class="as-badge ${seen === total ? 'done' : ''}">${seen}/${total}</span>
+      </div>
+      <div class="analysis-subject-body" id="${subjId}">${body}</div>
+    </div>`;
+}
+
+function toggleAnalysisNode(headEl) {
+  headEl.classList.toggle('open');
+  const body = headEl.nextElementSibling;
+  if (body) body.classList.toggle('open');
+}
+
+function renderDetailedAnalysis() {
+  const container = document.getElementById('analysisContent');
+  if (!container || !window.years) return;
+
+  const yLabels = { y1: 'First Year', y2: 'Second Year', y3: 'Third Year' };
+  const html = Object.keys(window.years).map(yk => {
+    let yearHtml = '';
+    let seen = 0, total = 0;
+
+    ['term1', 'term2'].forEach(term => {
+      (window.years[yk].terms[term] || []).forEach(s => {
+        const basePath = `files/${yk}/${term}/${s.slug}`;
+        const p = window.subjectProgress ? window.subjectProgress(s, basePath) : {seen:0,total:0};
+        seen += p.seen; total += p.total;
+        yearHtml += analysisSubjectHtml(s, basePath, `${yk}-${term}`);
+      });
+      ((window.practicalSubjects[yk] || {})[term] || []).forEach(s => {
+        const basePath = `files/${yk}/practical/${term}/${s.slug}`;
+        const p = window.subjectProgress ? window.subjectProgress(s, basePath) : {seen:0,total:0};
+        seen += p.seen; total += p.total;
+        yearHtml += analysisSubjectHtml(s, basePath, `${yk}-${term}-practical`);
+      });
+    });
+
+    const pct = total ? Math.round((seen / total) * 100) : 0;
+    const yearId = `analysis-year-${yk}`;
+    return `
+      <div class="analysis-year-block">
+        <div class="analysis-year-head" onclick="toggleAnalysisNode(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>
+          <span>${yLabels[yk] || yk}</span>
+          <span class="ay-pct">${pct}%</span>
+        </div>
+        <div class="analysis-year-body" id="${yearId}">
+          ${yearHtml || '<div class="analysis-empty-note">No files yet</div>'}
+        </div>
+      </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+}
+
+function toggleDetailedAnalysis() {
+  const btn = document.getElementById('analysisToggleBtn');
+  const body = document.getElementById('analysisBody');
+  const opening = !body.classList.contains('open');
+  btn.classList.toggle('open', opening);
+  body.classList.toggle('open', opening);
+  if (opening) renderDetailedAnalysis();
+}
 </script>

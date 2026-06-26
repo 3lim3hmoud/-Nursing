@@ -35,13 +35,19 @@
     --gray-400: #888780;
     --gray-600: #5F5E5A;
     --gray-800: #444441;
+    --ink: #0E1C16;
+    --ink-soft: #1c2b25;
   }
 
   html, body {
     font-family: 'Inter', sans-serif;
-    color: #20302a;
+    color: var(--ink);
     min-height: 100vh;
     background: transparent;
+  }
+
+  h1, h2, h3, .section-title, .year-card h2 {
+    letter-spacing: -0.01em;
   }
 
   #bg-video {
@@ -83,7 +89,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(15,25,20,0.18) 0%, rgba(15,25,20,0.1) 40%, rgba(20,35,28,0.32) 100%);
+    background: linear-gradient(to bottom, rgba(6,14,11,0.5) 0%, rgba(8,16,13,0.28) 28%, rgba(10,20,16,0.22) 55%, rgba(14,26,21,0.5) 100%);
     z-index: 1;
   }
 
@@ -93,11 +99,191 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex: 1;
     width: 100%;
-    padding: 3rem 1.5rem 1.5rem;
+    padding: 7rem 1.5rem 1.5rem;
     text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FEBC9;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: rgba(159,235,201,0.55);
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.45);
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-headline span {
+    color: #6CE3B4;
+  }
+
+  .hero-tagline {
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: rgba(255,255,255,0.82);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+  }
+
+  /* ─── SEARCH ─── */
+  .search-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto 2.8rem;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.32);
+    border-radius: 100px;
+    padding: 13px 20px;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    transition: all 0.2s ease;
+  }
+
+  .search-box:focus-within {
+    background: rgba(255,255,255,0.22);
+    border-color: rgba(255,255,255,0.55);
+    box-shadow: 0 10px 34px rgba(0,0,0,0.22);
+  }
+
+  .search-box svg {
+    width: 17px;
+    height: 17px;
+    color: rgba(255,255,255,0.75);
+    flex-shrink: 0;
+  }
+
+  .search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+  }
+
+  .search-box input::placeholder {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .search-clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.6);
+    display: none;
+    padding: 2px;
+    line-height: 0;
+  }
+
+  .search-clear.show { display: inline-flex; }
+  .search-clear svg { width: 14px; height: 14px; }
+
+  .search-results {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 16px;
+    box-shadow: 0 16px 44px rgba(10,20,16,0.28);
+    max-height: 340px;
+    overflow-y: auto;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: all 0.18s ease;
+    z-index: 30;
+  }
+
+  .search-results.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(28,43,37,0.07);
+    transition: background 0.15s;
+  }
+
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: rgba(29,158,117,0.1); }
+
+  .search-result-icon {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .search-result-text { flex: 1; min-width: 0; }
+
+  .search-result-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-result-meta {
+    font-size: 11px;
+    color: rgba(28,43,37,0.5);
+    margin-top: 1px;
+  }
+
+  .search-empty {
+    padding: 18px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(28,43,37,0.5);
   }
 
   /* ─── PROFILE (top-corner, collapsed) ─── */
@@ -264,10 +450,11 @@
   .section-title {
     text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    color: #1c2b25;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    color: var(--ink);
     margin-bottom: 3rem;
     font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   /* ─── YEAR CARDS ─── */
@@ -341,23 +528,60 @@
   .y3 .year-badge { background: rgba(216,90,48,0.18); color: #B14C26; }
 
   .year-card h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #1c2b25;
+    color: var(--ink);
     margin-bottom: 0.4rem;
     font-family: 'Playfair Display', serif;
   }
 
   .year-card-simple {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 140px;
+    min-height: 150px;
     text-align: center;
+    gap: 0.6rem;
   }
 
   .year-card-simple h2 {
     margin-bottom: 0;
+  }
+
+  .year-progress-ring {
+    width: 14px;
+    height: 14px;
+  }
+
+  .year-card-progress {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+
+  .year-card-progress-track {
+    width: 100%;
+    height: 4px;
+    border-radius: 100px;
+    background: rgba(28,43,37,0.1);
+    overflow: hidden;
+  }
+
+  .year-card-progress-fill {
+    height: 100%;
+    border-radius: 100px;
+    transition: width 0.5s ease;
+  }
+
+  .y1 .year-card-progress-fill { background: #1D9E75; }
+  .y2 .year-card-progress-fill { background: #378ADD; }
+  .y3 .year-card-progress-fill { background: #D85A30; }
+
+  .year-card-progress-label {
+    font-size: 10px;
+    color: rgba(28,43,37,0.5);
+    margin-top: 5px;
+    letter-spacing: 0.04em;
   }
 
   .year-card p {
@@ -442,21 +666,64 @@
 
   .back-btn svg { width: 16px; height: 16px; }
 
+  /* ─── BREADCRUMB ─── */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 12.5px;
+    margin-bottom: 1.4rem;
+    color: rgba(28,43,37,0.5);
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .breadcrumb-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(28,43,37,0.55);
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .breadcrumb-link:hover { color: #0F6E56; }
+
+  .breadcrumb-current {
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+
+  .breadcrumb-sep {
+    color: rgba(28,43,37,0.3);
+    font-size: 11px;
+  }
+
   .year-view-header {
     margin-bottom: 2.5rem;
   }
 
   .year-view-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    color: #1c2b25;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    color: var(--ink);
     font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .year-view-header p {
-    font-size: 13px;
-    color: rgba(28,43,37,0.55);
+    font-size: 13.5px;
+    color: rgba(28,43,37,0.6);
     margin-top: 0.4rem;
+    line-height: 1.5;
   }
 
   /* ─── TERM TABS ─── */
@@ -538,18 +805,36 @@
 
   .subject-card h3 {
     font-size: 14px;
-    font-weight: 600;
-    color: #1c2b25;
+    font-weight: 700;
+    color: var(--ink-soft);
     margin-bottom: 0.3rem;
     line-height: 1.3;
   }
 
   .subject-card p {
     font-size: 11px;
-    color: rgba(28,43,37,0.5);
+    color: rgba(28,43,37,0.55);
     margin-bottom: 1rem;
     line-height: 1.4;
   }
+
+  .subject-progress-track {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background: rgba(28,43,37,0.09);
+    overflow: hidden;
+    margin-top: 0.8rem;
+  }
+
+  .subject-progress-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: #1D9E75;
+    transition: width 0.4s ease;
+  }
+
+  .subject-card.practical-card .subject-progress-track { background: rgba(255,255,255,0.16); }
 
   .resource-types {
     display: flex;
@@ -774,6 +1059,30 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  .file-list a.visited {
+    opacity: 0.72;
+  }
+
+  .file-list a .f-check {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    color: #0F6E56;
+    display: none;
+  }
+
+  .file-list a.visited .f-check { display: inline-flex; }
+
+  .resource-card .res-progress-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(28,43,37,0.4);
+    flex-shrink: 0;
+  }
+
+  .resource-card .res-progress-badge.done { color: #0F6E56; }
 
   .resource-card .resource-toggle-hint {
     margin-top: auto;
@@ -1082,6 +1391,21 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div id="homeSection" class="home-section">
+      <p class="hero-eyebrow">Faculty of Nursing</p>
+      <h1 class="hero-headline">Your study hub,<br><span>organized by year</span></h1>
+      <p class="hero-tagline">Lectures, summaries, flashcards &amp; MCQ banks for every subject — all in one place.</p>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="globalSearch" placeholder="Search any subject…" autocomplete="off" oninput="handleSearch(this.value)" onfocus="if(this.value) handleSearch(this.value)">
+          <button class="search-clear" id="searchClearBtn" onclick="clearSearch()" aria-label="Clear search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
       <p class="section-label">Select your year</p>
       <h2 class="section-title">Choose Your Academic Year</h2>
 
@@ -1089,16 +1413,19 @@
         <!-- YEAR 1 -->
         <div class="year-card y1 year-card-simple" onclick="openYear('y1')">
           <h2>First Year</h2>
+          <div class="year-card-progress" id="yearProgress-y1"></div>
         </div>
 
         <!-- YEAR 2 -->
         <div class="year-card y2 year-card-simple" onclick="openYear('y2')">
           <h2>Second Year</h2>
+          <div class="year-card-progress" id="yearProgress-y2"></div>
         </div>
 
         <!-- YEAR 3 -->
         <div class="year-card y3 year-card-simple" onclick="openYear('y3')">
           <h2>Third Year</h2>
+          <div class="year-card-progress" id="yearProgress-y3"></div>
         </div>
       </div>
     </div>
@@ -1110,10 +1437,7 @@
 
   <!-- ── YEAR VIEWS ── -->
   <div id="yearView" class="year-view">
-    <button class="back-btn" onclick="goHome()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Back to Years
-    </button>
+    <nav class="breadcrumb" id="yearBreadcrumb"></nav>
 
     <div class="year-view-header">
       <div id="yearBadge" class="year-badge" style="display:inline-block; margin-bottom:0.75rem;"></div>
@@ -1128,10 +1452,7 @@
 
   <!-- ── PRACTICAL VIEW (Adult Practical / Critical Practical 1 & 2) ── -->
   <div id="practicalView" class="year-view">
-    <button class="back-btn" id="practicalBackBtn" onclick="backToYearFromPractical()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Back to Subjects
-    </button>
+    <nav class="breadcrumb" id="practicalBreadcrumb"></nav>
 
     <div class="year-view-header">
       <h2 id="practicalTitle">Practical Subjects</h2>
@@ -1143,10 +1464,7 @@
 
   <!-- ── SUBJECT VIEW ── -->
   <div id="subjectView" class="subject-view">
-    <button class="back-btn" id="subjectBackBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Back to Subjects
-    </button>
+    <nav class="breadcrumb" id="subjectBreadcrumb"></nav>
 
     <div class="year-view-header">
       <h2 id="subjectTitle"></h2>
@@ -1710,6 +2028,104 @@ const practicalSubjects = {
   }
 };
 
+/* ══════════════════════ GLOBAL SEARCH ══════════════════════ */
+function buildSearchIndex() {
+  const index = [];
+  Object.keys(years).forEach(yearKey => {
+    const y = years[yearKey];
+    ['term1', 'term2'].forEach(term => {
+      (y.terms[term] || []).forEach(s => {
+        index.push({
+          name: s.name, icon: s.icon, color: y.color,
+          yearKey, term, yearTitle: y.title,
+          termLabel: (y.termLabels && y.termLabels[term]) || (term === 'term1' ? 'Term 1' : 'Term 2'),
+          type: 'subject', slug: s.slug,
+        });
+      });
+    });
+    const yp = practicalSubjects[yearKey] || {};
+    ['term1', 'term2'].forEach(term => {
+      (yp[term] || []).forEach(s => {
+        index.push({
+          name: s.name, icon: s.icon, color: 'rgba(8,18,15,0.55)',
+          yearKey, term, yearTitle: y.title,
+          termLabel: (y.termLabels && y.termLabels[term]) || (term === 'term1' ? 'Term 1' : 'Term 2'),
+          type: 'practical', slug: s.slug,
+        });
+      });
+    });
+  });
+  return index;
+}
+
+let searchIndexCache = null;
+function getSearchIndex() {
+  if (!searchIndexCache) searchIndexCache = buildSearchIndex();
+  return searchIndexCache;
+}
+
+function handleSearch(query) {
+  const resultsEl = document.getElementById('searchResults');
+  const clearBtn = document.getElementById('searchClearBtn');
+  clearBtn.classList.toggle('show', query.length > 0);
+
+  const q = query.trim().toLowerCase();
+  if (!q) {
+    resultsEl.classList.remove('open');
+    resultsEl.innerHTML = '';
+    return;
+  }
+
+  const matches = getSearchIndex().filter(item => item.name.toLowerCase().includes(q)).slice(0, 8);
+
+  if (!matches.length) {
+    const safeQuery = query.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    resultsEl.innerHTML = `<div class="search-empty">No subjects match "${safeQuery}"</div>`;
+  } else {
+    resultsEl.innerHTML = matches.map(m => `
+      <div class="search-result-item" onclick="goToSearchResult('${m.yearKey}','${m.term}','${m.type}','${escapeForJs(m.slug)}')">
+        <div class="search-result-icon" style="background:${m.color};">${m.icon}</div>
+        <div class="search-result-text">
+          <div class="search-result-name">${m.name}</div>
+          <div class="search-result-meta">${m.yearTitle} · ${m.termLabel}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+  resultsEl.classList.add('open');
+}
+
+function goToSearchResult(yearKey, term, type, slug) {
+  clearSearch();
+  openYear(yearKey, term);
+  // wait a tick so renderSubjects() / practical grid have rendered
+  setTimeout(() => {
+    if (type === 'practical') {
+      const list = (practicalSubjects[yearKey] || {})[term] || [];
+      const idx = list.findIndex(s => s.slug === slug);
+      if (idx > -1) openPracticalSubject(idx);
+    } else {
+      const list = years[yearKey].terms[term] || [];
+      const idx = list.findIndex(s => s.slug === slug);
+      if (idx > -1) openSubject(idx);
+    }
+  }, 0);
+}
+
+function clearSearch() {
+  const input = document.getElementById('globalSearch');
+  input.value = '';
+  document.getElementById('searchClearBtn').classList.remove('show');
+  document.getElementById('searchResults').classList.remove('open');
+  document.getElementById('searchResults').innerHTML = '';
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.search-wrap')) {
+    document.getElementById('searchResults').classList.remove('open');
+  }
+});
+
 function openPractical() {
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectView').classList.remove('active');
@@ -1720,7 +2136,9 @@ function openPractical() {
   document.getElementById('practicalTitle').textContent = 'Practical Subjects — ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2');
   document.getElementById('practicalDesc').textContent = 'Practical sessions for ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2') + ' — lectures, procedures & instructional videos';
 
-  document.getElementById('practicalGrid').innerHTML = list.map((s, i) => `
+  document.getElementById('practicalGrid').innerHTML = list.map((s, i) => {
+    const prog = subjectProgress(s, `files/${currentYear}/practical/${currentTerm}/${s.slug}`);
+    return `
     <div class="subject-card" onclick="openPracticalSubject(${i})">
       <div class="subject-icon" style="background:rgba(255,255,255,0.5); font-size:20px;">${s.icon}</div>
       <h3>${s.name}</h3>
@@ -1730,8 +2148,15 @@ function openPractical() {
         <span class="res-tag procedure">Procedure</span>
         <span class="res-tag video">Video</span>
       </div>
-    </div>
-  `).join('');
+      ${progressBarHtml(prog)}
+    </div>`;
+  }).join('');
+
+  renderBreadcrumb('practicalBreadcrumb', [
+    { label: 'Home', action: 'goHome()' },
+    { label: years[currentYear].title, action: `openYear('${currentYear}','${currentTerm}')` },
+    { label: 'Practical Subjects' },
+  ]);
 
   document.getElementById('practicalView').classList.add('active');
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
@@ -1739,6 +2164,12 @@ function openPractical() {
 
 function backToYearFromPractical() {
   document.getElementById('practicalView').classList.remove('active');
+  document.getElementById('yearView').classList.add('active');
+}
+
+let subjectBackAction = backToYearFromPracticalDefault;
+function backToYearFromPracticalDefault() {
+  document.getElementById('subjectView').classList.remove('active');
   document.getElementById('yearView').classList.add('active');
 }
 
@@ -1751,10 +2182,17 @@ function openPracticalSubject(idx) {
   document.getElementById('subjectTitle').textContent = s.name;
   document.getElementById('subjectDesc').textContent = years[currentYear].title + ' · Practical · ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2') + ' · ' + s.desc;
 
-  document.getElementById('subjectBackBtn').onclick = () => {
+  subjectBackAction = () => {
     document.getElementById('subjectView').classList.remove('active');
     openPractical();
   };
+
+  renderBreadcrumb('subjectBreadcrumb', [
+    { label: 'Home', action: 'goHome()' },
+    { label: years[currentYear].title, action: `openYear('${currentYear}','${currentTerm}')` },
+    { label: 'Practical Subjects', action: 'subjectBackAction()' },
+    { label: s.name },
+  ]);
 
   const resources = [
     { key: 'lecture', icon: '📖', label: 'Lecture', desc: 'Explanatory lecture for the practical topic', color: '#1D9E75' },
@@ -1763,22 +2201,7 @@ function openPracticalSubject(idx) {
   ];
 
   const basePath = `files/${currentYear}/practical/${currentTerm}/${s.slug}`;
-
-  document.getElementById('resourceGrid').innerHTML = resources.map(r => {
-    const fileList = (s.files && s.files[r.key]) ? s.files[r.key] : [];
-    const filesHtml = fileList.length
-      ? `<ul class="file-list">${fileList.map(f => `
-          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">${f.title || f.file}</a></li>
-        `).join('')}</ul>`
-      : `<span class="coming-soon">Coming soon</span>`;
-    return `
-    <div class="resource-card" ${fileList.length ? 'onclick="toggleResourceCard(this)"' : ''}>
-      <div class="resource-icon" style="background:${r.color}22;">${r.icon}</div>
-      <h3>${r.label}</h3>
-      <p>${r.desc}</p>
-      ${filesHtml}
-    </div>`;
-  }).join('');
+  renderResourceGrid(resources, s, basePath);
 
   document.getElementById('subjectView').classList.add('active');
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
@@ -1801,6 +2224,11 @@ function openYear(yearKey, term) {
     <button class="term-tab ${currentTerm === 'term1' ? 'active' : ''}" onclick="switchTerm('term1')">${(y.termLabels && y.termLabels.term1) || 'Term 1'}</button>
     <button class="term-tab ${currentTerm === 'term2' ? 'active' : ''}" onclick="switchTerm('term2')">${(y.termLabels && y.termLabels.term2) || 'Term 2'}</button>
   `;
+
+  renderBreadcrumb('yearBreadcrumb', [
+    { label: 'Home', action: 'goHome()' },
+    { label: y.title },
+  ]);
 
   renderSubjects();
 
@@ -1826,7 +2254,9 @@ function renderSubjects() {
   const subjects = y.terms[currentTerm];
   const grid = document.getElementById('subjectsGrid');
 
-  let html = subjects.map((s, i) => `
+  let html = subjects.map((s, i) => {
+    const prog = subjectProgress(s, `files/${currentYear}/${currentTerm}/${s.slug}`);
+    return `
     <div class="subject-card" onclick="openSubject(${i})">
       <div class="subject-icon" style="background:${y.color}; font-size:20px;">${s.icon}</div>
       <h3>${s.name}</h3>
@@ -1837,13 +2267,19 @@ function renderSubjects() {
         <span class="res-tag flashcards">Flashcards</span>
         <span class="res-tag mcq">MCQ Bank</span>
       </div>
-    </div>
-  `).join('');
+      ${progressBarHtml(prog)}
+    </div>`;
+  }).join('');
 
   // "Practical Subjects" hub — shown first, before all subjects, in both terms
   const yearPractical = practicalSubjects[currentYear] || {};
   const termPractical = yearPractical[currentTerm] || [];
   if (termPractical.length) {
+    let practicalSeen = 0, practicalTotal = 0;
+    termPractical.forEach(s => {
+      const p = subjectProgress(s, `files/${currentYear}/practical/${currentTerm}/${s.slug}`);
+      practicalSeen += p.seen; practicalTotal += p.total;
+    });
     const practicalCard = `
       <div class="subject-card practical-card" onclick="openPractical()">
         <div class="subject-icon" style="font-size:20px;">🧪</div>
@@ -1854,6 +2290,7 @@ function renderSubjects() {
           <span class="res-tag procedure">Procedure</span>
           <span class="res-tag video">Video</span>
         </div>
+        ${progressBarHtml({ seen: practicalSeen, total: practicalTotal })}
       </div>`;
     html = practicalCard + html;
   }
@@ -1869,10 +2306,16 @@ function openSubject(idx) {
   document.getElementById('subjectTitle').textContent = s.name;
   document.getElementById('subjectDesc').textContent = y.title + ' · ' + ((y.termLabels && y.termLabels[currentTerm]) || (currentTerm === 'term1' ? 'Term 1' : 'Term 2')) + ' · ' + s.desc;
 
-  document.getElementById('subjectBackBtn').onclick = () => {
+  subjectBackAction = () => {
     document.getElementById('subjectView').classList.remove('active');
     document.getElementById('yearView').classList.add('active');
   };
+
+  renderBreadcrumb('subjectBreadcrumb', [
+    { label: 'Home', action: 'goHome()' },
+    { label: y.title, action: `openYear('${currentYear}','${currentTerm}')` },
+    { label: s.name },
+  ]);
 
   const resources = [
     { key: 'lectures', icon: '📖', label: 'Lectures', desc: 'Full lecture slides and notes', color: '#1D9E75' },
@@ -1882,25 +2325,35 @@ function openSubject(idx) {
   ];
 
   const basePath = `files/${currentYear}/${currentTerm}/${s.slug}`;
+  renderResourceGrid(resources, s, basePath, true);
 
+  document.getElementById('subjectView').classList.add('active');
+  window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
+}
+
+function renderResourceGrid(resources, s, basePath, withTypeClass) {
   document.getElementById('resourceGrid').innerHTML = resources.map(r => {
     const list = (s.files && s.files[r.key]) ? s.files[r.key] : [];
+    const seenCount = list.filter(f => isFileViewed(`${basePath}/${r.key}/${f.file}`)).length;
     const filesHtml = list.length
-      ? `<ul class="file-list">${list.map(f => `
-          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">${f.title || f.file}</a></li>
-        `).join('')}</ul>`
+      ? `<ul class="file-list">${list.map(f => {
+          const url = `${basePath}/${r.key}/${f.file}`;
+          const visited = isFileViewed(url);
+          return `
+          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(url)}', this)">
+            <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="f-title">${f.title || f.file}</span>
+          </a></li>
+        `}).join('')}</ul>`
       : `<span class="coming-soon">Coming soon</span>`;
     return `
-    <div class="resource-card ${r.key}" ${list.length ? 'onclick="toggleResourceCard(this)"' : ''}>
+    <div class="resource-card ${withTypeClass ? r.key : ''}" ${list.length ? 'onclick="toggleResourceCard(this)"' : ''}>
       <div class="resource-icon" style="background:${r.color}22;">${r.icon}</div>
-      <h3>${r.label}</h3>
+      <h3>${r.label}${list.length ? `<span class="res-progress-badge ${seenCount === list.length ? 'done' : ''}">${seenCount}/${list.length}</span>` : ''}</h3>
       <p>${r.desc}</p>
       ${filesHtml}
     </div>`;
   }).join('');
-
-  document.getElementById('subjectView').classList.add('active');
-  window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
 }
 
 function toggleResourceCard(card) {
@@ -1915,12 +2368,120 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('.file-list')) e.stopPropagation();
 }, true);
 
+/* ══════════════════════ BREADCRUMB ══════════════════════ */
+function renderBreadcrumb(containerId, items) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = items.map((item, i) => {
+    const isLast = i === items.length - 1;
+    const sep = i > 0 ? `<span class="breadcrumb-sep">›</span>` : '';
+    const piece = isLast || !item.action
+      ? `<span class="breadcrumb-current">${item.label}</span>`
+      : `<button class="breadcrumb-link" onclick="${item.action}">${item.label}</button>`;
+    return `<span class="breadcrumb-item">${sep}${piece}</span>`;
+  }).join('');
+}
+
+/* ══════════════════════ PROGRESS TRACKING (localStorage) ══════════════════════ */
+const PROGRESS_KEY = 'nurseverse_viewed_files_v1';
+
+function getViewedSet() {
+  try {
+    const raw = localStorage.getItem(PROGRESS_KEY);
+    return raw ? new Set(JSON.parse(raw)) : new Set();
+  } catch (e) { return new Set(); }
+}
+
+function isFileViewed(url) {
+  return getViewedSet().has(url);
+}
+
+function markFileViewed(url, linkEl) {
+  try {
+    const set = getViewedSet();
+    set.add(url);
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set]));
+  } catch (e) {}
+  if (linkEl) linkEl.classList.add('visited');
+  // refresh progress badges/bars without losing scroll/expanded state
+  refreshProgressUI();
+}
+
+function escapeForJs(str) {
+  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
+function subjectProgress(s, basePath) {
+  let seen = 0, total = 0;
+  if (s.files) {
+    Object.keys(s.files).forEach(key => {
+      (s.files[key] || []).forEach(f => {
+        total++;
+        if (isFileViewed(`${basePath}/${key}/${f.file}`)) seen++;
+      });
+    });
+  }
+  return { seen, total };
+}
+
+function progressBarHtml(prog) {
+  if (!prog.total) return '';
+  const pct = Math.round((prog.seen / prog.total) * 100);
+  return `
+    <div class="subject-progress-track" title="${prog.seen} of ${prog.total} files opened">
+      <div class="subject-progress-fill" style="width:${pct}%;"></div>
+    </div>`;
+}
+
+function yearProgressHtml(yearKey) {
+  const y = years[yearKey];
+  let seen = 0, total = 0;
+  ['term1', 'term2'].forEach(term => {
+    (y.terms[term] || []).forEach(s => {
+      const p = subjectProgress(s, `files/${yearKey}/${term}/${s.slug}`);
+      seen += p.seen; total += p.total;
+    });
+    const yp = practicalSubjects[yearKey] || {};
+    (yp[term] || []).forEach(s => {
+      const p = subjectProgress(s, `files/${yearKey}/practical/${term}/${s.slug}`);
+      seen += p.seen; total += p.total;
+    });
+  });
+  if (!total) return '';
+  const pct = Math.round((seen / total) * 100);
+  return `
+    <div class="year-card-progress-track"><div class="year-card-progress-fill" style="width:${pct}%;"></div></div>
+    <div class="year-card-progress-label">${pct}% reviewed</div>`;
+}
+
+function refreshProgressUI() {
+  ['y1', 'y2', 'y3'].forEach(yk => {
+    const el = document.getElementById('yearProgress-' + yk);
+    if (el) el.innerHTML = yearProgressHtml(yk);
+  });
+  if (document.getElementById('yearView').classList.contains('active')) renderSubjects();
+
+  // Update "x/y" badges + checkmarks live inside an open subject view,
+  // without re-rendering (which would collapse any expanded resource card).
+  document.querySelectorAll('#resourceGrid .resource-card').forEach(card => {
+    const badge = card.querySelector('.res-progress-badge');
+    if (!badge) return;
+    const links = card.querySelectorAll('.file-list a');
+    const total = links.length;
+    let seen = 0;
+    links.forEach(a => { if (a.classList.contains('visited')) seen++; });
+    badge.textContent = `${seen}/${total}`;
+    badge.classList.toggle('done', seen === total);
+  });
+}
+
 function goHome() {
   currentYear = null;
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectView').classList.remove('active');
   document.getElementById('practicalView').classList.remove('active');
   document.getElementById('homeSection').classList.remove('hidden');
+  refreshProgressUI();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1980,6 +2541,10 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
   });
 }
+
+// Paint year-card progress bars on first load
+refreshProgressUI();
+
 
 // Ensure background video plays (fallback against autoplay restrictions)
 (function ensureVideoPlays() {

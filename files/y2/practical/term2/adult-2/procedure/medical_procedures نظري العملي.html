@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Procedures | الإجراءات الطبية</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6f4;
+    --surface: #ffffff;
+    --primary: #3d7a6e;
+    --primary-light: #e8f2f0;
+    --primary-mid: #5a9d8f;
+    --accent: #c0845a;
+    --accent-light: #fdf3ec;
+    --text: #2c3e35;
+    --text-muted: #6b8078;
+    --border: #d4e3df;
+    --shadow: rgba(61,122,110,0.10);
+    --en-bg: #f0f7f5;
+    --ar-bg: #fdf8f3;
+    --tag-green: #e3f2ed;
+    --tag-red: #fdecea;
+    --tag-blue: #e8f0f7;
+    --tag-yellow: #fdf7e3;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--primary);
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 16px var(--shadow);
+  }
+  .site-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .site-header .ar-title {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    direction: rtl;
+  }
+
+  /* TAB NAV */
+  .tab-nav-wrapper {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-mid) var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .tab-nav {
+    display: inline-flex;
+    padding: 0 16px;
+    gap: 2px;
+  }
+  .tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    min-width: 110px;
+  }
+  .tab-btn .tab-en {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tab-btn .tab-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    direction: rtl;
+  }
+  .tab-btn:hover {
+    background: var(--primary-light);
+    border-bottom-color: var(--primary-mid);
+  }
+  .tab-btn:hover .tab-en,
+  .tab-btn:hover .tab-ar { color: var(--primary); }
+
+  .tab-btn.active {
+    background: var(--primary-light);
+    border-bottom-color: var(--primary);
+  }
+  .tab-btn.active .tab-en,
+  .tab-btn.active .tab-ar {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .tab-btn.quiz-tab .tab-en { color: var(--accent); }
+  .tab-btn.quiz-tab .tab-ar { color: var(--accent); }
+  .tab-btn.quiz-tab.active {
+    background: var(--accent-light);
+    border-bottom-color: var(--accent);
+  }
+
+  /* CONTENT */
+  .content-area {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 20px 60px;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  /* PROCEDURE CARD */
+  .proc-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--border);
+  }
+  .proc-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--primary);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .proc-titles { flex: 1; }
+  .proc-titles h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.45rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .proc-titles .ar-h2 {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1.2rem;
+    color: var(--primary-mid);
+    font-weight: 600;
+    direction: rtl;
+    margin-top: 2px;
+  }
+
+  /* BILINGUAL SECTION */
+  .bi-section {
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .bi-section-header {
+    background: var(--primary);
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bi-section-header .sec-title-en {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .bi-section-header .sec-title-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    direction: rtl;
+  }
+  .bi-section-header.accent-hdr { background: var(--accent); }
+  .bi-section-header.soft-hdr { background: var(--primary-mid); }
+
+  .bi-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 660px) { .bi-cols { grid-template-columns: 1fr; } }
+
+  .col-en {
+    background: var(--en-bg);
+    padding: 18px 20px;
+    border-right: 1px solid var(--border);
+  }
+  .col-ar {
+    background: var(--ar-bg);
+    padding: 18px 20px;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .col-en p, .col-ar p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .col-ar p { font-family: 'Noto Naskh Arabic', serif; font-size: 1rem; line-height: 1.9; }
+
+  /* TAGS / BADGES */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .tag-green { background: var(--tag-green); color: #2d7a5a; }
+  .tag-red { background: var(--tag-red); color: #c0392b; }
+  .tag-blue { background: var(--tag-blue); color: #2471a3; }
+  .tag-yellow { background: var(--tag-yellow); color: #9a7d0a; }
+
+  /* ITEM LIST */
+  .item-list { list-style: none; padding: 0; margin: 0; }
+  .item-list li {
+    padding: 7px 0 7px 18px;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    color: var(--text);
+  }
+  .item-list li:last-child { border-bottom: none; }
+  .item-list li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+  }
+  .item-list.ar-list { padding-right: 18px; padding-left: 0; }
+  .item-list.ar-list li { padding-right: 18px; padding-left: 0; font-family: 'Noto Naskh Arabic', serif; font-size: 1rem; }
+  .item-list.ar-list li::before { right: 4px; left: auto; }
+
+  .item-list li strong { color: var(--primary); }
+  .item-list.ar-list li strong { color: var(--primary); }
+
+  /* CLASSIFICATION GRID */
+  .classify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    padding: 16px;
+  }
+  .classify-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    border-top: 3px solid var(--primary);
+  }
+  .classify-card h4 {
+    font-family: 'Lora', serif;
+    font-size: 0.92rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .classify-card .ar-h4 {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 0.95rem;
+    color: var(--primary-mid);
+    direction: rtl;
+    margin-bottom: 6px;
+  }
+  .classify-card p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
+  .classify-card .ar-p { font-family: 'Noto Naskh Arabic', serif; font-size: 0.9rem; direction: rtl; text-align: right; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
+
+  /* STOMA TABLE */
+  .stoma-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .stoma-table th {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .stoma-table th.ar-th { text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 0.9rem; text-transform: none; letter-spacing: 0; direction: rtl; }
+  .stoma-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .stoma-table td.ar-td { text-align: right; font-family: 'Noto Naskh Arabic', serif; font-size: 0.92rem; direction: rtl; }
+  .stoma-table tr:nth-child(even) td { background: var(--en-bg); }
+  .stoma-table tr:hover td { background: var(--primary-light); }
+
+  /* ALERT BOX */
+  .alert-box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .alert-box.warning { background: #fff8e1; border-left: 4px solid #f9a825; }
+  .alert-box.danger { background: #fdecea; border-left: 4px solid #e53935; }
+  .alert-box.info { background: var(--primary-light); border-left: 4px solid var(--primary); }
+  .alert-box .alert-icon { font-size: 1.2rem; margin-top: 1px; }
+  .alert-box .alert-text { font-size: 0.88rem; line-height: 1.65; }
+  .alert-box .alert-text .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; direction: rtl; display: block; margin-top: 4px; }
+
+  /* QUIZ SECTION */
+  .quiz-intro {
+    background: var(--accent-light);
+    border: 1px solid #e8c4a0;
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .quiz-intro h2 { font-family: 'Lora', serif; color: var(--accent); font-size: 1.5rem; }
+  .quiz-intro .ar { font-family: 'Noto Naskh Arabic', serif; direction: rtl; color: var(--accent); font-size: 1.2rem; margin-top: 4px; }
+  .quiz-intro p { color: var(--text-muted); font-size: 0.92rem; margin-top: 8px; }
+
+  .quiz-group {
+    background: var(--surface);
+    border-radius: 14px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 10px var(--shadow);
+  }
+  .quiz-group-header {
+    background: var(--primary-light);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .quiz-group-header h3 {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .quiz-group-header .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.98rem; color: var(--primary-mid); direction: rtl; }
+
+  .quiz-item {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+  }
+  .quiz-item:last-child { border-bottom: none; }
+  .quiz-q {
+    display: flex;
+    gap: 14px;
+    cursor: pointer;
+  }
+  .quiz-num {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .quiz-text { flex: 1; }
+  .quiz-text .en { font-size: 0.92rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+  .quiz-text .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 1rem; direction: rtl; color: var(--text-muted); display: block; margin-top: 4px; line-height: 1.7; }
+
+  .quiz-answer {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    background: var(--en-bg);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary);
+  }
+  .quiz-answer.show { display: block; animation: fadeIn 0.2s ease; }
+  .quiz-answer p { font-size: 0.88rem; line-height: 1.7; color: var(--text); }
+  .quiz-answer .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.95rem; direction: rtl; display: block; margin-top: 8px; line-height: 1.9; color: var(--text); }
+
+  .show-answer-btn {
+    margin-top: 10px;
+    background: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .show-answer-btn:hover { background: var(--primary); color: #fff; }
+  .show-answer-btn .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 0.8rem; }
+
+  /* HEALTHY STOMA CARD */
+  .stoma-healthy {
+    background: linear-gradient(135deg, #e8f5e9, #f0f7f5);
+    border: 1px solid #a5d6a7;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 14px 16px;
+  }
+  .stoma-healthy h4 { color: #2e7d32; font-family: 'Lora', serif; font-size: 0.95rem; margin-bottom: 4px; }
+  .stoma-healthy .ar-h4 { font-family: 'Noto Naskh Arabic', serif; direction: rtl; color: #388e3c; }
+  .stoma-healthy p { font-size: 0.88rem; color: #388e3c; line-height: 1.6; }
+  .stoma-healthy .ar-p { font-family: 'Noto Naskh Arabic', serif; direction: rtl; font-size: 0.93rem; }
+
+  /* TYPES BAND */
+  .types-band {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .type-pill {
+    background: var(--primary-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    flex: 1;
+    min-width: 180px;
+  }
+  .type-pill h5 { font-size: 0.85rem; font-weight: 700; color: var(--primary); }
+  .type-pill .ar-h5 { font-family: 'Noto Naskh Arabic', serif; font-size: 0.9rem; color: var(--primary-mid); direction: rtl; margin-bottom: 4px; }
+  .type-pill p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-top: 3px; }
+  .type-pill .ar-p { font-family: 'Noto Naskh Arabic', serif; font-size: 0.85rem; direction: rtl; color: var(--text-muted); }
+
+  /* CSF TABLE */
+  .csf-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .csf-table th { background: var(--primary); color: #fff; padding: 9px 14px; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .csf-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+  .csf-table tr:nth-child(even) td { background: var(--en-bg); }
+  .csf-table .val { font-weight: 700; color: var(--primary); }
+
+  /* SCROLLBAR */
+  .tab-nav-wrapper::-webkit-scrollbar { height: 4px; }
+  .tab-nav-wrapper::-webkit-scrollbar-track { background: var(--border); }
+  .tab-nav-wrapper::-webkit-scrollbar-thumb { background: var(--primary-mid); border-radius: 2px; }
+
+  /* PRINT */
+  @media print { .tab-nav-wrapper { display: none; } .tab-panel { display: block !important; page-break-after: always; } }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>Medical Procedures — Nursing Study Guide</h1>
+  <div class="ar-title">مرشد دراسة الإجراءات التمريضية</div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav-wrapper">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('colostomy',this)">
+      <span class="tab-en">Colostomy</span>
+      <span class="tab-ar">فغرة القولون</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('liver-dialysis',this)">
+      <span class="tab-en">Liver Dialysis</span>
+      <span class="tab-ar">غسيل الكبد</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('liver-biopsy',this)">
+      <span class="tab-en">Liver Biopsy</span>
+      <span class="tab-ar">خزعة الكبد</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('paracentesis',this)">
+      <span class="tab-en">Paracentesis</span>
+      <span class="tab-ar">بزل البطن</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('endoscopy',this)">
+      <span class="tab-en">Endoscopy</span>
+      <span class="tab-ar">المناظير</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('cast',this)">
+      <span class="tab-en">Cast Care</span>
+      <span class="tab-ar">العناية بالجبس</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('traction',this)">
+      <span class="tab-en">Traction</span>
+      <span class="tab-ar">الشد والجذب</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('burn',this)">
+      <span class="tab-en">Burn Care</span>
+      <span class="tab-ar">عناية الحروق</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('lp',this)">
+      <span class="tab-en">Lumbar Puncture</span>
+      <span class="tab-ar">البزل القطني</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('renal',this)">
+      <span class="tab-en">Renal</span>
+      <span class="tab-ar">الكلى</span>
+    </button>
+    <button class="tab-btn quiz-tab" onclick="showTab('quiz',this)">
+      <span class="tab-en">📝 Quiz</span>
+      <span class="tab-ar">أسئلة مقالية</span>
+    </button>
+  </div>
+</div>
+
+<div class="content-area">
+
+<!-- ==================== 1. COLOSTOMY ==================== -->
+<div id="colostomy" class="tab-panel active">
+  <div class="proc-header">
+    <div class="proc-icon">🩺</div>
+    <div class="proc-titles">
+      <h2>Colostomy</h2>
+      <div class="ar-h2">فغرة القولون (كولوستومي)</div>
+    </div>
+  </div>
+
+  <!-- DEFINITION -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition</span>
+      <span class="sec-title-ar">التعريف</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en"><p>A surgically created opening of the colon (large intestine) that results in an artificial opening called a <strong>stoma</strong> on the abdominal wall.</p></div>
+      <div class="col-ar"><p>فتحة يتم إنشاؤها جراحيًا في القولون (الأمعاء الغليظة) مما يؤدي إلى ظهور فتحة اصطناعية تُسمى <strong>الفُغرة (الستوما)</strong> على جدار البطن.</p></div>
+    </div>
+  </div>
+
+  <!-- INDICATIONS -->
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Indications</span>
+      <span class="sec-title-ar">المؤشرات / الأسباب</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Intestinal blockage or injury</li>
+          <li>Crohn's disease &amp; Ulcerative Colitis (IBD)</li>
+          <li>Colorectal cancer &amp; colonic polyps</li>
+          <li>Diverticulitis</li>
+          <li>Imperforate anus (congenital)</li>
+          <li>Irritable Bowel Syndrome (IBS)</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>انسداد أو إصابة معوية</li>
+          <li>مرض كرون والتهاب القولون التقرحي</li>
+          <li>سرطان القولون والمستقيم والأورام الحميدة</li>
+          <li>التهاب الرتوج (Diverticulitis)</li>
+          <li>رتق الشرج (خلقي)</li>
+          <li>متلازمة القولون العصبي (IBS)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSIFICATION BY SITE -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Classification by Site</span>
+      <span class="sec-title-ar">التصنيف حسب الموقع</span>
+    </div>
+    <div class="classify-grid">
+      <div class="classify-card">
+        <h4>Ascending Colostomy</h4>
+        <div class="ar-h4">فغرة القولون الصاعد</div>
+        <p>Right side of abdomen. Very liquid discharge → needs drainable pouch.</p>
+        <div class="ar-p">يمين البطن. إفراز سائل جدًا ← يحتاج كيسًا قابلًا للتفريغ.</div>
+      </div>
+      <div class="classify-card">
+        <h4>Transverse Colostomy</h4>
+        <div class="ar-h4">فغرة القولون العرضي</div>
+        <p>Upper abdomen. Semi-solid &amp; unpredictable. Usually <em>temporary</em>.</p>
+        <div class="ar-p">أعلى البطن. شبه صلب وغير منتظم. عادةً <em>مؤقتة</em>.</div>
+      </div>
+      <div class="classify-card">
+        <h4>Descending / Sigmoid</h4>
+        <div class="ar-h4">فغرة القولون النازل / السيني</div>
+        <p>Lower left abdomen. Firmer stool, no caustic enzymes. Can be regulated.</p>
+        <div class="ar-p">أسفل يسار البطن. براز متماسك. يمكن تنظيمه بشكل منتظم.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSIFICATION BY TIME -->
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Classification by Time</span>
+      <span class="sec-title-ar">التصنيف حسب المدة الزمنية</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Permanent:</strong> Rectum/anus is nonfunctional or removed. Lifelong — will never be closed.</li>
+          <li><strong>Temporary:</strong> Allows bowel to heal after trauma or inflammation. Closed after weeks/months restoring normal continuity.</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li><strong>دائمة:</strong> عندما يكون المستقيم أو الشرج غير وظيفي أو تم استئصاله. مدى الحياة.</li>
+          <li><strong>مؤقتة:</strong> تُنشأ لتتيح للأمعاء التعافي بعد إصابة أو التهاب. تُغلق بعد أسابيع/أشهر.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPES OF STOMAS -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Types of Stomas</span>
+      <span class="sec-title-ar">أنواع الفغرات</span>
+    </div>
+    <div class="types-band">
+      <div class="type-pill">
+        <div class="ar-h5">فغرة نهائية (End Stoma)</div>
+        <h5>End Stoma</h5>
+        <p>One stoma, one opening. End of bowel folded over &amp; sutured to abdominal wall.</p>
+        <div class="ar-p">فغرة واحدة بفتحة واحدة. نهاية الأمعاء تُثنى وتُخاط في جدار البطن.</div>
+      </div>
+      <div class="type-pill">
+        <div class="ar-h5">فغرة حلقية (Loop Stoma)</div>
+        <h5>Loop Stoma</h5>
+        <p>One stoma, <em>two openings</em>: proximal for stool, distal for mucus.</p>
+        <div class="ar-p">فغرة واحدة بـ<em>فتحتين</em>: قريبة للبراز، وبعيدة للمخاط.</div>
+      </div>
+      <div class="type-pill">
+        <div class="ar-h5">فغرة مزدوجة (Double-Barrel)</div>
+        <h5>Double-Barrel Ostomy</h5>
+        <p>Two separate end stomas. Proximal = functional; distal = mucus fistula.</p>
+        <div class="ar-p">فغرتان نهائيتان منفصلتان. القريبة للبراز؛ البعيدة ناسور مخاطي.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTHY STOMA -->
+  <div class="stoma-healthy" style="margin:0 0 20px;">
+    <h4>✅ Healthy Stoma Characteristics</h4>
+    <div class="ar-h4">✅ خصائص الفغرة السليمة</div>
+    <p>Pink-red and moist. May bleed slightly when rubbed (no nerve endings → no touch sensation). Stool is involuntary. Initial swelling decreases over months.</p>
+    <div class="ar-p">وردية-حمراء ورطبة. قد تنزف قليلًا عند الحك (لا أعصاب ← لا إحساس باللمس). البراز لاإرادي. الانتفاخ الأولي يتراجع خلال أشهر.</div>
+  </div>
+
+  <!-- COMPLICATIONS -->
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">⚠️ Complications</span>
+      <span class="sec-title-ar">⚠️ المضاعفات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Stomal Ischemia</strong> — Lack of blood supply</li>
+          <li><strong>Stomal Stricture/Stenosis</strong> — Narrowing of the stoma</li>
+          <li><strong>Stomal Prolapse</strong> — Protrusion outward</li>
+          <li><strong>Peristomal Hernia</strong> — Hernia around the stoma</li>
+          <li><strong>Peristomal Skin Breakdown</strong> — From fecal leakage, allergy, or infection</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li><strong>نقص تروية الفغرة</strong> — نقص إمداد الدم</li>
+          <li><strong>تضيق الفغرة</strong> — ضيق الفتحة</li>
+          <li><strong>تدلي الفغرة</strong> — بروز للخارج</li>
+          <li><strong>فتق حول الفغرة</strong></li>
+          <li><strong>تهتك جلد الفغرة</strong> — من تسرب البراز أو الحساسية أو العدوى</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- IRRIGATION -->
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Colostomy Irrigation</span>
+      <span class="sec-title-ar">ري الفغرة القولونية</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p><strong>Definition:</strong> Flushing the colon with water through a tube inserted into the stoma to trigger emptying.</p>
+        <br><p><strong>Purposes:</strong></p>
+        <ul class="item-list" style="margin-top:6px">
+          <li>Clean the colon of feces, gas, and mucus</li>
+          <li>Establish a regular pattern of evacuation</li>
+          <li>Prevent constipation</li>
+          <li>Give patient better control over bowel movements</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <p><strong>التعريف:</strong> غسل القولون بالماء عبر أنبوب يُدخل في الفغرة لتحفيز التفريغ.</p>
+        <br><p><strong>الأهداف:</strong></p>
+        <ul class="item-list ar-list" style="margin-top:6px">
+          <li>تنظيف القولون من البراز والغازات والمخاط</li>
+          <li>ترسيخ نمط منتظم للإخراج</li>
+          <li>منع الإمساك</li>
+          <li>منح المريض تحكمًا أفضل</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 2. LIVER DIALYSIS ==================== -->
+<div id="liver-dialysis" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🫀</div>
+    <div class="proc-titles">
+      <h2>Liver Dialysis</h2>
+      <div class="ar-h2">غسيل الكبد (ديال الكبد)</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition & Purpose</span>
+      <span class="sec-title-ar">التعريف والغرض</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>A <strong>temporary, artificial, extracorporeal detoxification</strong> treatment for severe liver failure. It cleans the blood of toxic protein-bound substances (bilirubin, bile acids) and ammonia when the liver cannot.</p>
+        <br><p>Acts as a <strong>"bridge"</strong> until the liver regenerates naturally or a transplant becomes available. Also improves <strong>Hepatic Encephalopathy</strong>.</p>
+      </div>
+      <div class="col-ar">
+        <p>علاج <strong>إزالة سموم خارج الجسم مؤقت واصطناعي</strong> لحالات الفشل الكبدي الحاد. ينظّف الدم من المواد السامة المرتبطة بالبروتين (البيليروبين، أحماض الصفراء) والأمونيا حين يعجز الكبد.</p>
+        <br><p>يعمل كـ<strong>"جسر"</strong> حتى يتجدد الكبد أو يتوفر المتبرع. يُحسّن <strong>الاعتلال الدماغي الكبدي</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Types</span>
+      <span class="sec-title-ar">الأنواع</span>
+    </div>
+    <div class="types-band">
+      <div class="type-pill">
+        <div class="ar-h5">MARS — نظام التدوير الجزيئي</div>
+        <h5>MARS</h5>
+        <p>Molecular Adsorbent Recirculating System. Two separate dialysis circuits — <strong>highly effective</strong> but costly.</p>
+        <div class="ar-p">دائرتا ديال منفصلتان. <strong>فعّال جدًا</strong> لكن مكلف.</div>
+      </div>
+      <div class="type-pill">
+        <div class="ar-h5">SPAD — ديال الألبومين أحادي المرور</div>
+        <h5>SPAD</h5>
+        <p>Single Pass Albumin Dialysis. Simpler technique using standard renal replacement therapy machines.</p>
+        <div class="ar-p">أبسط تقنيًا ويستخدم ماكينات الديال الكلوي المعتادة.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">⚠️ Common Complications</span>
+      <span class="sec-title-ar">⚠️ المضاعفات الشائعة</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Hypotension</strong> — Drop in blood pressure</li>
+          <li><strong>Bleeding</strong> — At catheter site, gums, or nose</li>
+          <li><strong>Machine-related issues</strong> — Air bubbles or clotting in circuit</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li><strong>انخفاض ضغط الدم</strong></li>
+          <li><strong>نزيف</strong> — في موقع القسطرة أو اللثة أو الأنف</li>
+          <li><strong>مشاكل الجهاز</strong> — فقاعات هواء أو تجلط في الدائرة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 3. LIVER BIOPSY ==================== -->
+<div id="liver-biopsy" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🔬</div>
+    <div class="proc-titles">
+      <h2>Liver Biopsy</h2>
+      <div class="ar-h2">خزعة الكبد</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition</span>
+      <span class="sec-title-ar">التعريف</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en"><p>A <strong>diagnostic test</strong> involving the removal of a small tissue sample from the liver for microscopic examination.</p></div>
+      <div class="col-ar"><p><strong>اختبار تشخيصي</strong> يتضمن أخذ عينة نسيجية صغيرة من الكبد للفحص المجهري.</p></div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Indications</span>
+      <span class="sec-title-ar">المؤشرات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Staging chronic hepatitis</li>
+          <li>Identifying intrahepatic masses</li>
+          <li>Evaluating drug-induced liver injury</li>
+          <li>Checking for transplant rejection</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>تحديد مرحلة التهاب الكبد المزمن</li>
+          <li>تحديد الكتل داخل الكبد</li>
+          <li>تقييم الإصابة الكبدية بسبب الأدوية</li>
+          <li>الكشف عن رفض زراعة الكبد</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">Contraindications</span>
+      <span class="sec-title-ar">الموانع</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-red">Absolute</span>
+        <ul class="item-list">
+          <li>Unexplained bleeding history</li>
+          <li>Platelet count &lt; 60,000/mm³</li>
+          <li>Lack of blood transfusion support</li>
+        </ul>
+        <br><span class="tag tag-yellow">Relative</span>
+        <ul class="item-list">
+          <li>Ascites</li>
+          <li>Right pleural cavity infections</li>
+          <li>Morbid obesity</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-red">مطلقة</span>
+        <ul class="item-list ar-list">
+          <li>تاريخ نزيف غير مُفسَّر</li>
+          <li>صفائح دموية أقل من 60,000/مم³</li>
+          <li>غياب دعم نقل الدم</li>
+        </ul>
+        <br><span class="tag tag-yellow">نسبية</span>
+        <ul class="item-list ar-list">
+          <li>الاستسقاء</li>
+          <li>التهابات التجويف الجنبي الأيمن</li>
+          <li>السمنة المفرطة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-box info">
+    <div class="alert-icon">📍</div>
+    <div class="alert-text">
+      <strong>Biopsy Site:</strong> Usually the <strong>7th or 8th intercostal space</strong> in the mid-axillary line.
+      <span class="ar"><strong>موقع الخزعة:</strong> عادةً الفضاء الوربي <strong>السابع أو الثامن</strong> على الخط الإبطي الأوسط.</span>
+    </div>
+  </div>
+
+  <div class="bi-section" style="margin-top:14px">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">⚠️ Potential Complications</span>
+      <span class="sec-title-ar">⚠️ المضاعفات المحتملة</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Bile peritonitis</li>
+          <li>Severe bleeding (hemorrhage)</li>
+          <li>Sepsis</li>
+          <li>Accidental injury to surrounding organs</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>التهاب الصفاق الصفراوي</li>
+          <li>نزيف شديد</li>
+          <li>الإنتان</li>
+          <li>إصابة الأعضاء المجاورة بالخطأ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 4. PARACENTESIS ==================== -->
+<div id="paracentesis" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">💧</div>
+    <div class="proc-titles">
+      <h2>Paracentesis</h2>
+      <div class="ar-h2">بزل البطن (الباراسنتيسيس)</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition</span>
+      <span class="sec-title-ar">التعريف</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en"><p>A procedure performed to <strong>obtain a sample of</strong> or <strong>drain ascitic fluid</strong> from the peritoneal cavity for diagnostic or therapeutic reasons.</p></div>
+      <div class="col-ar"><p>إجراء يُنجز لـ<strong>أخذ عينة</strong> أو <strong>تصريف السائل الاستسقائي</strong> من التجويف البريتوني لأغراض تشخيصية أو علاجية.</p></div>
+    </div>
+  </div>
+
+  <div class="alert-box info" style="margin-bottom:14px">
+    <div class="alert-icon">🔑</div>
+    <div class="alert-text">
+      <strong>SAAG Marker:</strong> Serum-Ascitic Albumin Gradient. SAAG <strong>&gt; 1.1 g/dL</strong> indicates <strong>portal hypertension</strong> as the cause.
+      <span class="ar"><strong>مؤشر SAAG:</strong> تدرج ألبومين مصل الدم والسائل الاستسقائي. SAAG <strong>&gt; 1.1 جم/ديسيلتر</strong> يدل على <strong>ارتفاع ضغط الباب</strong> كسبب للاستسقاء.</span>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Indications</span>
+      <span class="sec-title-ar">المؤشرات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Relieving abdominal pressure from ascites</li>
+          <li>Diagnosing spontaneous bacterial peritonitis (SBP)</li>
+          <li>Metastatic cancer investigation</li>
+          <li>Trauma-related bleeding in peritoneum</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>تخفيف ضغط البطن من الاستسقاء</li>
+          <li>تشخيص التهاب الصفاق الجرثومي التلقائي (SBP)</li>
+          <li>التحقيق في السرطان النقيلي</li>
+          <li>نزيف الغشاء البريتوني المرتبط بالصدمة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">Contraindications & Complications</span>
+      <span class="sec-title-ar">الموانع والمضاعفات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-red">Contraindications</span>
+        <ul class="item-list">
+          <li>Severe thrombocytopenia</li>
+          <li>DIC (disseminated intravascular coagulation)</li>
+          <li>Acute abdomen requiring surgery</li>
+        </ul>
+        <br><span class="tag tag-yellow">Complications</span>
+        <ul class="item-list">
+          <li>Persistent fluid leakage</li>
+          <li>Hypotension (especially if &gt;5–6 liters removed)</li>
+          <li>Abdominal hematoma</li>
+          <li>Infection</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-red">الموانع</span>
+        <ul class="item-list ar-list">
+          <li>نقص الصفيحات الشديد</li>
+          <li>التخثر المنتشر داخل الأوعية (DIC)</li>
+          <li>البطن الحاد الذي يستلزم الجراحة</li>
+        </ul>
+        <br><span class="tag tag-yellow">المضاعفات</span>
+        <ul class="item-list ar-list">
+          <li>تسرب السائل المستمر</li>
+          <li>انخفاض ضغط الدم (خاصة إذا سُحب أكثر من 5–6 لتر)</li>
+          <li>ورم دموي بطني</li>
+          <li>العدوى</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 5. ENDOSCOPY ==================== -->
+<div id="endoscopy" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🔭</div>
+    <div class="proc-titles">
+      <h2>Endoscopic Procedures</h2>
+      <div class="ar-h2">الإجراءات التنظيرية (المناظير)</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition</span>
+      <span class="sec-title-ar">التعريف</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en"><p>Direct visualization of the GI tract mucosal lining using <strong>rigid or flexible scopes</strong> equipped with a light and camera.</p></div>
+      <div class="col-ar"><p>رؤية مباشرة لبطانة الغشاء المخاطي للجهاز الهضمي باستخدام <strong>مناظير صلبة أو مرنة</strong> مزودة بضوء وكاميرا.</p></div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Common Types</span>
+      <span class="sec-title-ar">الأنواع الشائعة</span>
+    </div>
+    <div class="classify-grid">
+      <div class="classify-card">
+        <h4>EGD</h4>
+        <div class="ar-h4">تنظير المريء والمعدة والاثني عشر</div>
+        <p>Esophagogastroduodenoscopy — Visualizes esophagus, stomach, and duodenum.</p>
+        <div class="ar-p">يُشاهد المريء والمعدة والاثني عشر.</div>
+      </div>
+      <div class="classify-card">
+        <h4>Fiberoptic Colonoscopy</h4>
+        <div class="ar-h4">تنظير القولون بالألياف الضوئية</div>
+        <p>Inspects the entire large intestine from anus to ascending colon.</p>
+        <div class="ar-p">يفحص القولون بالكامل من الشرج للقولون الصاعد.</div>
+      </div>
+      <div class="classify-card">
+        <h4>Anoscopy & Sigmoidoscopy</h4>
+        <div class="ar-h4">تنظير الشرج والسيني</div>
+        <p>Focused examination of the anus, rectum, and lower colon.</p>
+        <div class="ar-p">فحص موجّه للشرج والمستقيم والقولون السفلي.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Purposes</span>
+      <span class="sec-title-ar">الأغراض</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-blue">Diagnostic</span>
+        <ul class="item-list">
+          <li>Screening for cancer &amp; polyps</li>
+          <li>Evaluating GI motility</li>
+          <li>Collecting tissue biopsies</li>
+        </ul>
+        <br><span class="tag tag-green">Therapeutic</span>
+        <ul class="item-list">
+          <li>Removing stones or polyps</li>
+          <li>Dilating strictures</li>
+          <li>Treating bleeding varices</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-blue">تشخيصية</span>
+        <ul class="item-list ar-list">
+          <li>فحص السرطان والأورام الحميدة</li>
+          <li>تقييم حركية الجهاز الهضمي</li>
+          <li>أخذ خزعات نسيجية</li>
+        </ul>
+        <br><span class="tag tag-green">علاجية</span>
+        <ul class="item-list ar-list">
+          <li>إزالة الحصوات والأورام الحميدة</li>
+          <li>توسيع التضيقات</li>
+          <li>علاج الدوالي النازفة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">⚠️ Potential Complications</span>
+      <span class="sec-title-ar">⚠️ المضاعفات المحتملة</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Bowel perforation</li>
+          <li>Vasovagal reactions</li>
+          <li>Cardiac dysrhythmias</li>
+          <li>Respiratory depression from sedation</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>انثقاب الأمعاء</li>
+          <li>تفاعلات المبهم الوعائي</li>
+          <li>اضطرابات نظم القلب</li>
+          <li>اكتئاب الجهاز التنفسي من التخدير</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 6. CAST CARE ==================== -->
+<div id="cast" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🦴</div>
+    <div class="proc-titles">
+      <h2>Cast Care</h2>
+      <div class="ar-h2">العناية بالجبس</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition & Purposes</span>
+      <span class="sec-title-ar">التعريف والأغراض</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>A <strong>rigid external immobilizing device</strong> made of layers of bandages molded to body contours.</p>
+        <br><ul class="item-list">
+          <li>Immobilize bone fragments in reduction for healing</li>
+          <li>Apply uniform compression to soft tissues</li>
+          <li>Support and stabilize weak joints</li>
+          <li>Correct/prevent deformities &amp; permit early mobilization</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <p><strong>جهاز تثبيت خارجي صلب</strong> مصنوع من طبقات ضمادات مُشكَّلة على ملامح الجسم.</p>
+        <br><ul class="item-list ar-list">
+          <li>تثبيت شظايا العظام في وضع الاختزال للشفاء</li>
+          <li>تطبيق ضغط منتظم على الأنسجة الرخوة</li>
+          <li>دعم وتثبيت المفاصل الضعيفة</li>
+          <li>تصحيح/منع التشوهات والسماح بالتحرك المبكر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAST TYPES TABLE -->
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Types of Casts</span>
+      <span class="sec-title-ar">أنواع الجبائر</span>
+    </div>
+    <div style="padding:14px; overflow-x:auto;">
+      <table class="stoma-table">
+        <thead>
+          <tr>
+            <th>Type (EN)</th>
+            <th>Location</th>
+            <th class="ar-th">النوع (عربي)</th>
+            <th class="ar-th">الاستخدام</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Short Arm Cast</strong></td>
+            <td>Below elbow → palm</td>
+            <td class="ar-td"><strong>جبس الذراع القصير</strong></td>
+            <td class="ar-td">كسور اليد والرسغ</td>
+          </tr>
+          <tr>
+            <td><strong>Long Arm Cast</strong></td>
+            <td>Axillary fold → palm</td>
+            <td class="ar-td"><strong>جبس الذراع الطويل</strong></td>
+            <td class="ar-td">كسور الساعد والكوع والعضد</td>
+          </tr>
+          <tr>
+            <td><strong>Short Leg Cast</strong></td>
+            <td>Below knee → base of toes</td>
+            <td class="ar-td"><strong>جبس الساق القصير</strong></td>
+            <td class="ar-td">كسور القدم والكاحل</td>
+          </tr>
+          <tr>
+            <td><strong>Long Leg Cast</strong></td>
+            <td>Mid thigh → toes</td>
+            <td class="ar-td"><strong>جبس الساق الطويل</strong></td>
+            <td class="ar-td">كسور الفخذ البعيد والركبة</td>
+          </tr>
+          <tr>
+            <td><strong>Body Cast</strong></td>
+            <td>Encircles trunk</td>
+            <td class="ar-td"><strong>جبس الجذع</strong></td>
+            <td class="ar-td">إصابات العمود الفقري</td>
+          </tr>
+          <tr>
+            <td><strong>Shoulder Spica</strong></td>
+            <td>Trunk, shoulder &amp; elbow</td>
+            <td class="ar-td"><strong>سبيكا الكتف</strong></td>
+            <td class="ar-td">الجذع والكتف والكوع</td>
+          </tr>
+          <tr>
+            <td><strong>Hip Spica</strong></td>
+            <td>Trunk &amp; lower extremity/ies</td>
+            <td class="ar-td"><strong>سبيكا الورك</strong></td>
+            <td class="ar-td">كسور الفخذ والحوض</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MATERIALS -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Cast Materials</span>
+      <span class="sec-title-ar">مواد الجبس</span>
+    </div>
+    <div class="types-band">
+      <div class="type-pill">
+        <div class="ar-h5">الفايبرجلاس (غير الجبسي)</div>
+        <h5>Non-Plaster (Fiberglass)</h5>
+        <p>Lightweight, strong, water-resistant. Dries in <strong>10–15 min</strong>. Can bear weight after <strong>30 min</strong>.</p>
+        <div class="ar-p">خفيف، قوي، مقاوم للماء. يجف في <strong>10–15 دقيقة</strong>. يتحمل الوزن بعد <strong>30 دقيقة</strong>.</div>
+      </div>
+      <div class="type-pill">
+        <div class="ar-h5">جبس باريس (التقليدي)</div>
+        <h5>Plaster of Paris</h5>
+        <p>Traditional &amp; inexpensive. Molds smoothly. Dries in <strong>24–72 hours</strong>. Gives off heat during initial crystallizing.</p>
+        <div class="ar-p">تقليدي وغير مكلف. يُشكَّل بسلاسة. يجف في <strong>24–72 ساعة</strong>. يُولّد حرارة أثناء التبلور.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 7. TRACTION ==================== -->
+<div id="traction" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">⚙️</div>
+    <div class="proc-titles">
+      <h2>Traction Care</h2>
+      <div class="ar-h2">الشد والجذب (Traction)</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition & Purposes</span>
+      <span class="sec-title-ar">التعريف والأغراض</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>Force applied in a specific direction to overcome natural forces on a body part.</p>
+        <br><ul class="item-list">
+          <li>Regain normal length and alignment of bones; reduce fractures</li>
+          <li>Decrease muscle spasms and relieve nerve pressure (especially spinal)</li>
+          <li>Prevent skeletal deformities and contractures</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <p>قوة تُطبَّق في اتجاه محدد للتغلب على القوى الطبيعية على جزء من الجسم.</p>
+        <br><ul class="item-list ar-list">
+          <li>استعادة الطول الطبيعي ومحاذاة العظام وتخفيض الكسور</li>
+          <li>تقليل تشنجات العضلات وتخفيف ضغط الأعصاب (خاصة الشوكية)</li>
+          <li>منع التشوهات الهيكلية والتقلصات</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Principles of Effective Traction</span>
+      <span class="sec-title-ar">مبادئ الشد الفعّال</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Counter-traction</strong> (opposing force) must always be used</li>
+          <li>Traction must be <strong>continuous</strong> — never interrupted (unless prescribed)</li>
+          <li>Weights must <strong>hang free</strong> — not rest on bed or floor</li>
+          <li>Ropes must be unobstructed; knots must NOT touch the pulley or foot of bed</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>يجب دائمًا استخدام <strong>القوة المضادة (Counter-traction)</strong></li>
+          <li>الشد يجب أن يكون <strong>متواصلًا</strong> — لا يُقاطَع (إلا بوصفة طبية)</li>
+          <li>الأثقال يجب أن <strong>تتدلى بحرية</strong> — لا ترتكز على السرير أو الأرض</li>
+          <li>الحبال يجب أن تكون خالية من العوائق؛ العُقد لا تلمس البكرة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Types of Traction</span>
+      <span class="sec-title-ar">أنواع الشد</span>
+    </div>
+    <div class="types-band">
+      <div class="type-pill">
+        <div class="ar-h5">الشد الجلدي (Skin Traction)</div>
+        <h5>Skin Traction</h5>
+        <p>Applied to skin via adhesive strips/boots (e.g., Buck's traction). Non-invasive. Limited to <strong>5–10 lb (2.5–4.5 kg)</strong> to prevent skin injury.</p>
+        <div class="ar-p">يُطبَّق على الجلد عبر شرائط لاصقة (مثل شد باك). غير جراحي. يقتصر على <strong>5–10 رطل</strong> لمنع إصابة الجلد.</div>
+      </div>
+      <div class="type-pill">
+        <div class="ar-h5">الشد الهيكلي (Skeletal Traction)</div>
+        <h5>Skeletal Traction</h5>
+        <p>Applied directly to bone via metal pins/wires. Allows strong, steady pull with heavier weights: <strong>15–30 lb (7–14 kg)</strong>.</p>
+        <div class="ar-p">يُطبَّق مباشرة على العظم عبر دبابيس معدنية. يسمح بشد قوي مستمر بأثقال أكبر: <strong>15–30 رطل</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Methods of Application</span>
+      <span class="sec-title-ar">طرق التطبيق</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Straight / Running Traction:</strong> Pulling force in a straight line; body part rests on bed.</li>
+          <li><strong>Balanced Suspension Traction:</strong> Supports the affected limb off the bed, allowing some patient movement without disrupting the pull.</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li><strong>الشد المستقيم / الجاري:</strong> قوة السحب في خط مستقيم؛ جزء الجسم يرتكز على السرير.</li>
+          <li><strong>الشد التعليقي المتوازن:</strong> يرفع الطرف المصاب عن السرير مما يُتيح بعض الحركة دون إخلال بخط الشد.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 8. BURN WOUND CARE ==================== -->
+<div id="burn" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🔥</div>
+    <div class="proc-titles">
+      <h2>Burn Wound Care</h2>
+      <div class="ar-h2">العناية بجروح الحروق</div>
+    </div>
+  </div>
+
+  <!-- HYDROTHERAPY -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">1. Hydrotherapy — العلاج المائي</span>
+      <span class="sec-title-ar">١. العلاج المائي</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>Treatment using <strong>warm, running water</strong> to assist burn healing.</p>
+        <br><ul class="item-list">
+          <li>Facilitate removal of old dressings and non-viable tissue</li>
+          <li>Clean the wound and promote healing</li>
+          <li>Allow range of motion exercises</li>
+          <li>Thorough wound assessment &amp; patient comfort</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <p>علاج يستخدم <strong>ماءً دافئًا متدفقًا</strong> لمساعدة شفاء الحروق.</p>
+        <br><ul class="item-list ar-list">
+          <li>تسهيل إزالة الضمادات القديمة والأنسجة الميتة</li>
+          <li>تنظيف الجرح وتعزيز الشفاء</li>
+          <li>السماح بتمارين نطاق الحركة</li>
+          <li>تقييم شامل للجرح وراحة المريض</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert-box warning" style="margin-top:0">
+      <div class="alert-icon">🌡️</div>
+      <div class="alert-text">
+        Water temp: <strong>37.8°C (100°F)</strong> | Room temp: <strong>26.6°C – 29.4°C</strong> to prevent hypothermia.
+        <span class="ar">حرارة الماء: <strong>37.8°م</strong> | حرارة الغرفة: <strong>26.6°م – 29.4°م</strong> لمنع انخفاض حرارة الجسم.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEBRIDEMENT -->
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">2. Wound Debridement — إزالة الأنسجة الميتة</span>
+      <span class="sec-title-ar">٢. إزالة الأنسجة الميتة (الديبريدمان)</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p><strong>Goals:</strong> Remove bacteria/foreign-body-contaminated tissue; remove devitalized tissue (eschar) to prepare wound for grafting.</p>
+      </div>
+      <div class="col-ar">
+        <p><strong>الأهداف:</strong> إزالة الأنسجة الملوثة بالبكتيريا/الأجسام الغريبة؛ إزالة الأنسجة الميتة (الإسكار) لتجهيز الجرح للترقيع.</p>
+      </div>
+    </div>
+    <div style="padding:14px; overflow-x:auto;">
+      <table class="stoma-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>How It Works (EN)</th>
+            <th class="ar-th">النوع</th>
+            <th class="ar-th">الآلية (عربي)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Natural (Autolytic)</strong></td>
+            <td>Body's own enzymes liquefy dead tissue; separates over 1–2 weeks.</td>
+            <td class="ar-td"><strong>الطبيعي (الذاتي)</strong></td>
+            <td class="ar-td">إنزيمات الجسم تُسيِّل الأنسجة الميتة؛ تنفصل خلال 1–2 أسبوع.</td>
+          </tr>
+          <tr>
+            <td><strong>Mechanical</strong></td>
+            <td>Surgical instruments (scissors, scalpels) remove eschar during dressing changes.</td>
+            <td class="ar-td"><strong>الميكانيكي</strong></td>
+            <td class="ar-td">أدوات جراحية تزيل الإسكار أثناء تغيير الضمادات.</td>
+          </tr>
+          <tr>
+            <td><strong>Chemical (Enzymatic)</strong></td>
+            <td>Topical enzymes slough off necrotic tissue. Needs concurrent antibacterials.</td>
+            <td class="ar-td"><strong>الكيميائي (الإنزيمي)</strong></td>
+            <td class="ar-td">إنزيمات موضعية تُقشِّر الأنسجة النخرية. تحتاج مضادات جرثومية مصاحبة.</td>
+          </tr>
+          <tr>
+            <td><strong>Surgical</strong></td>
+            <td>Operative excision of full skin thickness down to fascia or until viable bleeding tissue.</td>
+            <td class="ar-td"><strong>الجراحي</strong></td>
+            <td class="ar-td">استئصال جراحي كامل السماكة حتى اللفافة أو الأنسجة الحيّة النازفة.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DRESSING -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">3. Burn Wound Dressing — ضمادات الحروق</span>
+      <span class="sec-title-ar">٣. ضمادات جروح الحروق</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-blue">Open Method</span>
+        <p style="margin-top:4px">Topical agents applied WITHOUT a dressing. Allows continuous observation. Used for: <strong>face, neck, perineum</strong>.</p>
+        <br>
+        <span class="tag tag-green">Closed Method</span>
+        <p style="margin-top:4px">Occlusive dressings (thin gauze with antimicrobials) over the wound. Used over new skin grafts — removed every <strong>3–5 days</strong>.</p>
+        <br>
+        <div class="alert-box danger" style="margin:0">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-text">Never wrap dressings <strong>too tightly</strong>! Check peripheral pulses frequently. Always wrap from <strong>distal → proximal</strong>.</div>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-blue">الطريقة المفتوحة</span>
+        <p style="margin-top:4px; font-family:'Noto Naskh Arabic',serif; direction:rtl">عوامل موضعية تُطبَّق بدون ضماد. تتيح الملاحظة المستمرة. تُستخدم للـ<strong>وجه، الرقبة، العجان</strong>.</p>
+        <br>
+        <span class="tag tag-green">الطريقة المغلقة</span>
+        <p style="margin-top:4px; font-family:'Noto Naskh Arabic',serif; direction:rtl">ضمادات انسدادية (شاش رقيق مع مضادات جرثومية) فوق الجرح. تُزال كل <strong>3–5 أيام</strong>.</p>
+        <br>
+        <div class="alert-box danger" style="margin:0">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-text"><span class="ar" style="margin:0">لا تلف الضمادات بإحكام شديد! تحقق من النبض المحيطي بانتظام. دائمًا من <strong>البعيد ← القريب</strong>.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 9. LUMBAR PUNCTURE ==================== -->
+<div id="lp" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">💉</div>
+    <div class="proc-titles">
+      <h2>Lumbar Puncture (Spinal Tap)</h2>
+      <div class="ar-h2">البزل القطني (البزل الشوكي)</div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Definition</span>
+      <span class="sec-title-ar">التعريف</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en"><p>An invasive procedure where a hollow needle is inserted into the <strong>lumbar subarachnoid space</strong>, typically between <strong>L3–L4</strong>.</p></div>
+      <div class="col-ar"><p>إجراء غازي يُدخَل فيه إبرة مجوفة في <strong>الفضاء تحت العنكبوتي القطني</strong>، عادةً بين <strong>L3–L4</strong>.</p></div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Purposes & Indications</span>
+      <span class="sec-title-ar">الأغراض والمؤشرات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Obtain CSF for laboratory examination</li>
+          <li>Measure cerebrospinal pressure &amp; detect obstructions</li>
+          <li>Determine presence of blood in spinal fluid</li>
+          <li>Administer medications intrathecally (antibiotics, chemo)</li>
+          <li>Diagnose: meningitis, SAH, tumors, brain abscesses</li>
+          <li><strong>Indications:</strong> Fever, malaise, CNS irritability</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>الحصول على السائل الدماغي الشوكي (CSF) للفحص</li>
+          <li>قياس ضغط السائل الشوكي وكشف الانسدادات</li>
+          <li>تحديد وجود دم في السائل الشوكي</li>
+          <li>إعطاء أدوية داخل القناة الشوكية (مضادات حيوية، كيماوي)</li>
+          <li>تشخيص: التهاب السحايا، نزيف تحت العنكبوت، الأورام</li>
+          <li><strong>المؤشرات:</strong> الحمى، التوعك، تهيج الجهاز العصبي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CSF NORMAL VALUES -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">Normal CSF Values</span>
+      <span class="sec-title-ar">قيم السائل الدماغي الشوكي الطبيعية</span>
+    </div>
+    <div style="padding:14px; overflow-x:auto;">
+      <table class="csf-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Normal Value</th>
+            <th>المعامل</th>
+            <th>القيمة الطبيعية</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Pressure</td><td class="val">50–175 mm H₂O</td><td>الضغط</td><td class="val">50–175 مم ماء</td></tr>
+          <tr><td>Appearance</td><td class="val">Clear & Colorless</td><td>المظهر</td><td class="val">شفاف وعديم اللون</td></tr>
+          <tr><td>pH</td><td class="val">7.30–7.40</td><td>الأس الهيدروجيني</td><td class="val">7.30–7.40</td></tr>
+          <tr><td>Fasting Glucose</td><td class="val">40–80 mg/dL</td><td>جلوكوز الصيام</td><td class="val">40–80 مجم/ديسيلتر</td></tr>
+          <tr><td>White Blood Cells</td><td class="val">0–5 lymphocytes/mm³</td><td>كريات الدم البيضاء</td><td class="val">0–5 لمفاويات/مم³</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert-box warning" style="margin-top:0">
+      <div class="alert-icon">🩸</div>
+      <div class="alert-text">
+        <strong>Bloody CSF</strong> may indicate <strong>subarachnoid hemorrhage</strong> or a <strong>traumatic puncture</strong> during the procedure.
+        <span class="ar">السائل الدماغي الدموي قد يدل على <strong>نزيف تحت العنكبوت</strong> أو <strong>ثقب رضحي</strong> أثناء الإجراء.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">Contraindications & Complications</span>
+      <span class="sec-title-ar">الموانع والمضاعفات</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-red">Contraindications</span>
+        <ul class="item-list">
+          <li>Lumbar skin infection at puncture site</li>
+          <li>Raised intracranial pressure (risk of brain herniation)</li>
+          <li>Suspected spinal/intracranial mass lesions</li>
+          <li>Platelet count &lt; 50,000/μL (coagulopathy)</li>
+          <li>Spinal deformities / lack of cooperation</li>
+        </ul>
+        <br><span class="tag tag-yellow">Complications</span>
+        <ul class="item-list">
+          <li>Severe headache (most common)</li>
+          <li>Brain herniation (sudden pressure drop)</li>
+          <li>Accidental spinal cord puncture</li>
+          <li>Meningitis (bacterial introduction)</li>
+          <li>Temporary voiding problems</li>
+          <li>Back/leg pain or paresthesia</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-red">الموانع</span>
+        <ul class="item-list ar-list">
+          <li>عدوى جلدية قطنية في موقع الثقب</li>
+          <li>ارتفاع ضغط الدماغ (خطر الفتق الدماغي)</li>
+          <li>اشتباه كتلة في النخاع الشوكي أو داخل الجمجمة</li>
+          <li>صفائح دموية أقل من 50,000/ميكرولتر</li>
+          <li>تشوهات العمود الفقري / عدم التعاون</li>
+        </ul>
+        <br><span class="tag tag-yellow">المضاعفات</span>
+        <ul class="item-list ar-list">
+          <li>صداع شديد (الأكثر شيوعًا)</li>
+          <li>فتق دماغي (انخفاض مفاجئ في الضغط)</li>
+          <li>ثقب عرضي للنخاع الشوكي</li>
+          <li>التهاب السحايا (إدخال بكتيريا)</li>
+          <li>مشاكل تبول مؤقتة</li>
+          <li>ألم ظهر/ساق أو تنميل</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Prevention of Post-LP Headache</span>
+      <span class="sec-title-ar">الوقاية من الصداع بعد البزل القطني</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li>Use a <strong>small-gauge needle</strong></li>
+          <li>Maintain <strong>prone position</strong> for at least <strong>2 hours</strong> post-procedure</li>
+          <li>If &gt;20 mL removed: prone 2h → flat side-lying 2–3h → prone/supine 6h</li>
+          <li>Ensure adequate <strong>oral/parenteral hydration</strong> to replace CSF</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li>استخدام إبرة بـ<strong>قياس صغير (رفيعة)</strong></li>
+          <li>الاستلقاء على <strong>البطن</strong> لمدة <strong>ساعتين على الأقل</strong> بعد الإجراء</li>
+          <li>إذا أُخذ أكثر من 20 مل: بطن 2س ← مستوٍ جانبي 2-3س ← بطن/ظهر 6س</li>
+          <li>ضمان ترطيب كافٍ <strong>فمويًا/وريديًا</strong> لتعويض السائل الشوكي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 10. RENAL ==================== -->
+<div id="renal" class="tab-panel">
+  <div class="proc-header">
+    <div class="proc-icon">🫘</div>
+    <div class="proc-titles">
+      <h2>Renal Procedures</h2>
+      <div class="ar-h2">الإجراءات الكلوية</div>
+    </div>
+  </div>
+
+  <!-- DIALYSIS -->
+  <div class="bi-section">
+    <div class="bi-section-header">
+      <span class="sec-title-en">1. Renal Dialysis — الديال الكلوي</span>
+      <span class="sec-title-ar">١. الديال الكلوي (غسيل الكلى)</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>A life-sustaining treatment for <strong>end-stage kidney failure</strong> that removes waste, toxins, and excess fluid when kidneys fail.</p>
+        <br><span class="tag tag-blue">Hemodialysis</span>
+        <p style="margin-top:4px">Blood is pumped out, filtered through a dialyzer machine, and returned. Typically <strong>3×/week for 3–5 hours</strong>.</p>
+        <br><span class="tag tag-green">Peritoneal Dialysis</span>
+        <p style="margin-top:4px">Dialysate infused into abdominal cavity via catheter; waste filtered directly inside the body.</p>
+      </div>
+      <div class="col-ar">
+        <p>علاج مُنقذ للحياة في <strong>الفشل الكلوي النهائي</strong>. يُزيل الفضلات والسموم والسوائل الزائدة.</p>
+        <br><span class="tag tag-blue">الهيموديال (الديال الدموي)</span>
+        <p style="margin-top:4px; font-family:'Noto Naskh Arabic',serif; direction:rtl">يُضخ الدم خارجًا ويُصفَّى عبر جهاز الكلية الاصطناعية ثم يعود. عادةً <strong>3 مرات أسبوعيًا لمدة 3–5 ساعات</strong>.</p>
+        <br><span class="tag tag-green">الديال البريتوني</span>
+        <p style="margin-top:4px; font-family:'Noto Naskh Arabic',serif; direction:rtl">محلول الديال يُحقن في التجويف البطني عبر قسطرة؛ الفضلات تُصفَّى داخل الجسم مباشرة.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header soft-hdr">
+      <span class="sec-title-en">Indications & Contraindications (Hemodialysis)</span>
+      <span class="sec-title-ar">المؤشرات والموانع (الهيموديال)</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <span class="tag tag-green">Indications</span>
+        <ul class="item-list">
+          <li>Acute kidney injury</li>
+          <li>Uremic encephalopathy &amp; pericarditis</li>
+          <li>Life-threatening hyperkalemia</li>
+          <li>Hypervolemia causing pulmonary edema</li>
+        </ul>
+        <br><span class="tag tag-red">Contraindications</span>
+        <ul class="item-list">
+          <li><strong>Absolute:</strong> Inability to secure vascular access</li>
+          <li><strong>Relative:</strong> Difficult access, needle phobia, cardiac failure, coagulopathy</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <span class="tag tag-green">المؤشرات</span>
+        <ul class="item-list ar-list">
+          <li>الإصابة الكلوية الحادة</li>
+          <li>الاعتلال الدماغي البولي والتهاب التامور</li>
+          <li>فرط بوتاسيوم الدم المهدد للحياة</li>
+          <li>فرط الحجم المسبب لوذمة الرئة</li>
+        </ul>
+        <br><span class="tag tag-red">الموانع</span>
+        <ul class="item-list ar-list">
+          <li><strong>مطلقة:</strong> عدم القدرة على الوصول الوعائي</li>
+          <li><strong>نسبية:</strong> وصول صعب، خوف الإبر، فشل قلبي، اضطراب تخثر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-section">
+    <div class="bi-section-header accent-hdr">
+      <span class="sec-title-en">⚠️ Dialysis Complications</span>
+      <span class="sec-title-ar">⚠️ مضاعفات الديال</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <ul class="item-list">
+          <li><strong>Intradialytic hypotension</strong></li>
+          <li><strong>Dialysis Disequilibrium Syndrome:</strong> Neurologic deterioration, restlessness, confusion, headache → coma</li>
+          <li>Hemolysis &amp; air embolism</li>
+          <li>Leg cramps &amp; cardiac dysrhythmias</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <ul class="item-list ar-list">
+          <li><strong>انخفاض ضغط الدم أثناء الجلسة</strong></li>
+          <li><strong>متلازمة عدم التوازن:</strong> تدهور عصبي، قلق، ارتباك، صداع → غيبوبة</li>
+          <li>انحلال الدم وانسداد هوائي</li>
+          <li>تقلصات الساق واضطرابات نظم القلب</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RENAL BIOPSY -->
+  <div class="bi-section" style="margin-top:24px">
+    <div class="bi-section-header">
+      <span class="sec-title-en">2. Renal Biopsy — خزعة الكلى</span>
+      <span class="sec-title-ar">٢. خزعة الكلى</span>
+    </div>
+    <div class="bi-cols">
+      <div class="col-en">
+        <p>Removal of a small kidney tissue sample for microscopic examination to diagnose disease or evaluate transplant function.</p>
+        <br><span class="tag tag-green">Indications</span>
+        <ul class="item-list">
+          <li>Unexplained renal failure</li>
+          <li>Acute nephritic/nephrotic syndrome</li>
+          <li>Glomerular hematuria &amp; renal masses</li>
+          <li>Transplant rejection or dysfunction evaluation</li>
+        </ul>
+        <br><span class="tag tag-red">Contraindications</span>
+        <ul class="item-list">
+          <li>Bleeding disorders (platelet abnormalities)</li>
+          <li>Uncontrolled hypertension</li>
+          <li>Active pyelonephritis or tumor</li>
+          <li>Shrunken kidney</li>
+        </ul>
+      </div>
+      <div class="col-ar">
+        <p>إزالة عينة نسيجية صغيرة للفحص المجهري لتشخيص المرض أو تقييم وظيفة زراعة الكلى.</p>
+        <br><span class="tag tag-green">المؤشرات</span>
+        <ul class="item-list ar-list">
+          <li>الفشل الكلوي غير المُفسَّر</li>
+          <li>المتلازمة الكلائية/الكلوية الحادة</li>
+          <li>البيلة الدموية الكبيبية والكتل الكلوية</li>
+          <li>رفض أو خلل وظيفة زرع الكلى</li>
+        </ul>
+        <br><span class="tag tag-red">الموانع</span>
+        <ul class="item-list ar-list">
+          <li>اضطرابات النزيف (شذوذات الصفائح)</li>
+          <li>ارتفاع ضغط الدم غير المسيطر عليه</li>
+          <li>التهاب الحويضة والكلية النشط أو الورم</li>
+          <li>الكلية المتضخمة (المنكمشة)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert-box warning">
+      <div class="alert-icon">🩸</div>
+      <div class="alert-text">
+        Hematuria is <strong>expected for the first 24 hours</strong> but is concerning if it persists. Acute blood loss occurs in ~10% of cases.
+        <span class="ar">البيلة الدموية <strong>متوقعة في أول 24 ساعة</strong> لكن تُثير القلق إذا استمرت. فقدان الدم الحاد يحدث في ~10% من الحالات.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QUIZ ==================== -->
+<div id="quiz" class="tab-panel">
+  <div class="quiz-intro">
+    <h2>📝 Essay Questions Quiz</h2>
+    <div class="ar">أسئلة مقالية — اختبر نفسك</div>
+    <p>Click "Show Answer" to reveal the model answer after you've tried to answer.</p>
+  </div>
+
+  <!-- COLOSTOMY QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>🩺 Colostomy — فغرة القولون</h3>
+      <span class="ar">فغرة القولون</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">1</div>
+        <div class="quiz-text">
+          <span class="en">Define colostomy and list FOUR indications for its surgical creation.</span>
+          <span class="ar">عرّف فغرة القولون واذكر أربعة مؤشرات لإجرائها جراحيًا.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Definition:</strong> A colostomy is a surgically created opening in the colon (large intestine) that results in a stoma on the abdominal wall, allowing fecal matter to exit the body through an artificial route.</p>
+        <p><strong>Four Indications:</strong> (1) Colorectal cancer, (2) Crohn's disease or ulcerative colitis, (3) Intestinal blockage or trauma, (4) Diverticulitis.</p>
+        <span class="ar"><strong>التعريف:</strong> فغرة القولون هي فتحة اصطناعية تُنشأ جراحيًا في القولون تُفضي إلى ستوما على جدار البطن تتيح خروج البراز بطريق بديل.<br><strong>أربعة مؤشرات:</strong> (١) سرطان القولون والمستقيم، (٢) مرض كرون أو التهاب القولون التقرحي، (٣) انسداد أو صدمة معوية، (٤) التهاب الرتوج.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">2</div>
+        <div class="quiz-text">
+          <span class="en">Compare the three types of colostomy classified by site, focusing on location, stool consistency, and clinical management.</span>
+          <span class="ar">قارن بين أنواع فغرة القولون الثلاثة حسب الموقع من حيث المكان وقوام البراز والإدارة السريرية.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Ascending (right abdomen):</strong> Very liquid stool → requires drainable pouch; difficult to regulate.</p>
+        <p><strong>Transverse (upper abdomen):</strong> Semi-solid, unpredictable stool; usually temporary, allows bowel distal rest.</p>
+        <p><strong>Descending/Sigmoid (lower left):</strong> Firm stool with no caustic enzymes; can be regulated at predictable intervals, often via irrigation.</p>
+        <span class="ar"><strong>الصاعدة (يمين البطن):</strong> براز سائل جدًا ← يحتاج كيسًا قابلًا للتفريغ؛ يصعب تنظيمه.<br><strong>العرضية (أعلى البطن):</strong> براز شبه صلب وغير منتظم؛ عادةً مؤقتة.<br><strong>النازل/السيني (أسفل اليسار):</strong> براز متماسك بلا إنزيمات كاوية؛ يمكن تنظيمه في أوقات منتظمة، غالبًا عبر الري.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">3</div>
+        <div class="quiz-text">
+          <span class="en">Describe the characteristics of a healthy stoma and list THREE potential complications of colostomy.</span>
+          <span class="ar">صف خصائص الفغرة السليمة واذكر ثلاثة مضاعفات محتملة لفغرة القولون.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Healthy stoma:</strong> Pink-red and moist; may bleed slightly when rubbed; no sensation of touch (no nerve endings); stool expulsion is involuntary; initial swelling decreases over months.</p>
+        <p><strong>Three complications:</strong> (1) Stomal ischemia — inadequate blood supply, (2) Stomal stricture/stenosis — narrowing of the opening, (3) Peristomal skin breakdown — from fecal contamination, allergy, or infection.</p>
+        <span class="ar"><strong>الفغرة السليمة:</strong> وردية-حمراء ورطبة؛ قد تنزف قليلًا عند الحك؛ لا إحساس باللمس (لا أعصاب)؛ خروج البراز لاإرادي؛ الانتفاخ الأولي يتراجع خلال أشهر.<br><strong>ثلاثة مضاعفات:</strong> (١) نقص تروية الفغرة، (٢) تضيق الفغرة، (٣) تهتك جلد الفغرة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVER QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>🫀 Liver Procedures — إجراءات الكبد</h3>
+      <span class="ar">غسيل الكبد وخزعة الكبد</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">4</div>
+        <div class="quiz-text">
+          <span class="en">Explain the purpose of liver dialysis and compare MARS with SPAD.</span>
+          <span class="ar">اشرح الغرض من غسيل الكبد وقارن بين نظام MARS وSPAD.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Purpose:</strong> Liver dialysis is a temporary extracorporeal detoxification that removes protein-bound toxins (bilirubin, bile acids) and ammonia from the blood in severe liver failure. It acts as a "bridge" until liver regeneration or transplantation and improves hepatic encephalopathy.</p>
+        <p><strong>MARS:</strong> Two separate dialysis circuits; highly effective but expensive and complex.</p>
+        <p><strong>SPAD:</strong> Single pass albumin dialysis; simpler, uses standard renal replacement machines; less costly.</p>
+        <span class="ar"><strong>الغرض:</strong> غسيل الكبد إزالة سموم خارج الجسم مؤقتة تُزيل السموم المرتبطة بالبروتين والأمونيا في الفشل الكبدي. يعمل كجسر حتى تجدد الكبد أو الزراعة ويُحسّن الاعتلال الدماغي الكبدي.<br><strong>MARS:</strong> دائرتا ديال منفصلتان؛ فعّال جدًا لكن مكلف ومعقد.<br><strong>SPAD:</strong> أبسط؛ يستخدم ماكينات الديال الكلوي المعتادة؛ أقل تكلفة.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">5</div>
+        <div class="quiz-text">
+          <span class="en">List the absolute contraindications to liver biopsy and describe the standard biopsy site.</span>
+          <span class="ar">اذكر الموانع المطلقة لخزعة الكبد وصف الموقع المعياري للخزعة.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Absolute contraindications:</strong> (1) Unexplained history of bleeding, (2) Platelet count &lt;60,000/mm³, (3) Lack of blood transfusion support.</p>
+        <p><strong>Biopsy site:</strong> 7th or 8th intercostal space in the mid-axillary line.</p>
+        <span class="ar"><strong>الموانع المطلقة:</strong> (١) تاريخ نزيف غير مُفسَّر، (٢) صفائح دموية أقل من 60,000/مم³، (٣) غياب دعم نقل الدم.<br><strong>موقع الخزعة:</strong> الفضاء الوربي السابع أو الثامن على الخط الإبطي الأوسط.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARACENTESIS / ENDOSCOPY QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>💧 Paracentesis & Endoscopy — البزل والتنظير</h3>
+      <span class="ar">بزل البطن والمناظير</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">6</div>
+        <div class="quiz-text">
+          <span class="en">What is the SAAG marker and what does a result greater than 1.1 g/dL indicate?</span>
+          <span class="ar">ما هو مؤشر SAAG وماذا يعني ارتفاعه فوق 1.1 جم/ديسيلتر؟</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p>SAAG (Serum-Ascitic Albumin Gradient) is calculated by subtracting the ascitic fluid albumin from the serum albumin. A SAAG &gt;1.1 g/dL indicates that the cause of ascites is <strong>portal hypertension</strong> (e.g., liver cirrhosis, heart failure). A SAAG &lt;1.1 g/dL suggests non-portal hypertension causes (e.g., malignancy, tuberculosis).</p>
+        <span class="ar">SAAG = ألبومين المصل − ألبومين سائل البطن. قيمة تزيد على 1.1 جم/ديسيلتر تدل على أن سبب الاستسقاء هو <strong>ارتفاع ضغط الباب</strong> (مثل تشمع الكبد، فشل القلب). ما دون 1.1 يدل على أسباب غير بابية (مثل الأورام الخبيثة، السل).</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">7</div>
+        <div class="quiz-text">
+          <span class="en">Differentiate between the diagnostic and therapeutic purposes of endoscopic procedures, giving examples for each.</span>
+          <span class="ar">فرّق بين الأغراض التشخيصية والعلاجية للمناظير مع إعطاء أمثلة على كل منهما.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Diagnostic purposes:</strong> Cancer/polyp screening, GI motility evaluation, tissue biopsy collection — e.g., using EGD to detect a gastric ulcer and take a biopsy.</p>
+        <p><strong>Therapeutic purposes:</strong> Removing stones or polyps, dilating strictures, treating bleeding varices — e.g., using colonoscopy to remove a polyp before it becomes malignant.</p>
+        <span class="ar"><strong>الأغراض التشخيصية:</strong> فحص السرطان والأورام، تقييم الحركية، أخذ خزعات — مثل: استخدام EGD لاكتشاف قرحة معدية وأخذ خزعة.<br><strong>الأغراض العلاجية:</strong> إزالة حصوات وأورام، توسيع تضيقات، علاج دوالي نازفة — مثل: استخدام تنظير القولون لاستئصال ورم حميد قبل تحوله خبيثًا.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAST & TRACTION QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>🦴 Cast & Traction — الجبس والشد</h3>
+      <span class="ar">العناية بالجبس والشد والجذب</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">8</div>
+        <div class="quiz-text">
+          <span class="en">Compare plaster of Paris with fiberglass casts in terms of drying time, weight-bearing, and key properties.</span>
+          <span class="ar">قارن بين جبس باريس والفايبرجلاس من حيث وقت الجفاف وتحمل الوزن والخصائص الرئيسية.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Plaster of Paris:</strong> Traditional &amp; inexpensive; molds smoothly; drying time 24–72 hours; not water-resistant; generates heat during crystallization.</p>
+        <p><strong>Fiberglass:</strong> Lightweight, strong, water-resistant; dries in 10–15 minutes; can bear weight after 30 minutes; more durable.</p>
+        <span class="ar"><strong>جبس باريس:</strong> تقليدي وغير مكلف؛ يُشكَّل بسلاسة؛ يجف في 24–72 ساعة؛ ليس مقاومًا للماء؛ يُولّد حرارة أثناء التبلور.<br><strong>الفايبرجلاس:</strong> خفيف وقوي ومقاوم للماء؛ يجف في 10–15 دقيقة؛ يتحمل الوزن بعد 30 دقيقة؛ أكثر متانة.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">9</div>
+        <div class="quiz-text">
+          <span class="en">List the FOUR principles of effective traction and explain why weights must hang free.</span>
+          <span class="ar">اذكر المبادئ الأربعة للشد الفعّال واشرح لماذا يجب أن تتدلى الأثقال بحرية.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Four principles:</strong> (1) Counter-traction must always be used, (2) Traction must be continuous — never interrupted, (3) Weights must hang free, (4) Ropes must be unobstructed and knots must not touch the pulley.</p>
+        <p><strong>Why weights hang free:</strong> If weights rest on the bed/floor, the pulling force is reduced to zero, making the traction ineffective and failing to achieve bone alignment or reduce muscle spasm.</p>
+        <span class="ar"><strong>المبادئ الأربعة:</strong> (١) القوة المضادة يجب استخدامها دائمًا، (٢) الشد يجب أن يكون متواصلًا، (٣) الأثقال يجب أن تتدلى بحرية، (٤) الحبال يجب أن تكون خالية والعُقد لا تلمس البكرة.<br><strong>لماذا تتدلى الأثقال:</strong> إذا ارتكزت على السرير/الأرض انعدمت قوة الشد وأصبح الإجراء غير فعّال وفشل في محاذاة العظام أو تخفيف التشنج.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BURN QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>🔥 Burn Wound Care — عناية جروح الحروق</h3>
+      <span class="ar">العناية بجروح الحروق</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">10</div>
+        <div class="quiz-text">
+          <span class="en">Describe the four types of wound debridement, including the mechanism of each.</span>
+          <span class="ar">صف الأنواع الأربعة لإزالة الأنسجة الميتة مع آلية كل منها.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>(1) Natural (Autolytic):</strong> Body's own enzymes/moisture liquefy dead tissue; spontaneous separation over 1–2 weeks.</p>
+        <p><strong>(2) Mechanical:</strong> Surgical instruments (scissors, scalpels, forceps) during daily dressing changes.</p>
+        <p><strong>(3) Chemical (Enzymatic):</strong> Topical chemical enzymes slough off necrotic tissue; requires concurrent antibacterials as they lack antimicrobial properties.</p>
+        <p><strong>(4) Surgical:</strong> Operative excision of full skin thickness to fascia, or shaving burned layers until viable, freely-bleeding tissue is reached.</p>
+        <span class="ar"><strong>(١) الطبيعي (الذاتي):</strong> إنزيمات الجسم تُسيِّل الأنسجة الميتة؛ تنفصل تلقائيًا خلال 1–2 أسبوع.<br><strong>(٢) الميكانيكي:</strong> أدوات جراحية أثناء تغيير الضمادات اليومي.<br><strong>(٣) الكيميائي:</strong> إنزيمات موضعية تُقشِّر الأنسجة النخرية؛ تحتاج مضادات جرثومية مصاحبة لأنها تفتقر إلى خاصية مضادة للجراثيم.<br><strong>(٤) الجراحي:</strong> استئصال كامل السماكة الجلدية حتى اللفافة أو تقشير الطبقات المحروقة حتى الأنسجة الحيّة النازفة.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">11</div>
+        <div class="quiz-text">
+          <span class="en">Compare the open and closed methods of burn wound dressing and specify when each is preferred.</span>
+          <span class="ar">قارن بين الطريقة المفتوحة والمغلقة لضمادات الحروق وحدد متى يُفضَّل كل منهما.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Open Method:</strong> Topical agents applied without a dressing; allows continuous observation and assessment. Preferred for burns on the <strong>face, neck, and perineum</strong>.</p>
+        <p><strong>Closed Method:</strong> Occlusive dressings (thin gauze impregnated with antimicrobial agents) over the wound. Used over new skin grafts; removed every 3–5 days. Provides protection from physical damage and microorganisms.</p>
+        <span class="ar"><strong>الطريقة المفتوحة:</strong> عوامل موضعية بدون ضماد؛ تتيح الملاحظة المستمرة. تُفضَّل للوجه والرقبة والعجان.<br><strong>الطريقة المغلقة:</strong> ضمادات انسدادية (شاش رقيق مشبّع بمضادات جرثومية) فوق الجرح. تُستخدم فوق الجلد المرقّع الجديد؛ تُزال كل 3–5 أيام. توفر حماية من التلف والجراثيم.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LP & RENAL QUESTIONS -->
+  <div class="quiz-group">
+    <div class="quiz-group-header">
+      <h3>💉 Lumbar Puncture & Renal — البزل القطني والكلى</h3>
+      <span class="ar">البزل القطني والإجراءات الكلوية</span>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">12</div>
+        <div class="quiz-text">
+          <span class="en">List the normal CSF values and explain what bloody spinal fluid may indicate.</span>
+          <span class="ar">اذكر القيم الطبيعية للسائل الدماغي الشوكي واشرح ماذا يعني السائل الدموي.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Normal CSF values:</strong> Pressure 50–175 mm H₂O; Appearance: clear and colorless; pH 7.30–7.40; Fasting Glucose 40–80 mg/dL; WBCs 0–5 small lymphocytes/mm³.</p>
+        <p><strong>Bloody CSF</strong> may indicate: (1) Subarachnoid hemorrhage — pathological bleeding around the brain, or (2) Traumatic puncture — accidental vessel injury during the procedure (can be differentiated by clearing of blood in subsequent tubes).</p>
+        <span class="ar"><strong>القيم الطبيعية:</strong> الضغط 50–175 مم ماء؛ المظهر: شفاف وعديم اللون؛ pH 7.30–7.40؛ جلوكوز الصيام 40–80 مجم/ديسيلتر؛ كريات بيض 0–5 لمفاويات/مم³.<br><strong>السائل الدموي</strong> يدل على: (١) نزيف تحت العنكبوت — نزيف مرضي حول الدماغ، أو (٢) ثقب رضحي — إصابة وعائية عرضية أثناء الإجراء (يمكن التمييز بتصفية الدم في الأنابيب التالية).</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">13</div>
+        <div class="quiz-text">
+          <span class="en">Describe the nursing measures to prevent post-lumbar puncture headache.</span>
+          <span class="ar">صف الإجراءات التمريضية للوقاية من الصداع بعد البزل القطني.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p>(1) Use a <strong>small-gauge (thin) needle</strong> during the procedure to minimize the dural puncture hole.</p>
+        <p>(2) Maintain the patient in a <strong>prone (face-down) position for at least 2 hours</strong> post-procedure.</p>
+        <p>(3) If more than 20 mL CSF is removed: prone 2h → flat side-lying 2–3h → prone or supine for additional 6h.</p>
+        <p>(4) Ensure adequate <strong>hydration</strong> (oral or IV fluids) to facilitate CSF replacement.</p>
+        <span class="ar">(١) استخدام إبرة <strong>رفيعة (قياس صغير)</strong> لتصغير حجم ثقب الجافية.<br>(٢) إبقاء المريض في وضع <strong>الاستلقاء على البطن لمدة ساعتين على الأقل</strong>.<br>(٣) إذا سُحب أكثر من 20 مل: على البطن 2س ← مستوٍ جانبي 2–3س ← بطن أو ظهر 6س إضافية.<br>(٤) ضمان <strong>الترطيب الكافي</strong> فمويًا أو وريديًا لتعويض السائل الشوكي.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">14</div>
+        <div class="quiz-text">
+          <span class="en">What is Dialysis Disequilibrium Syndrome? List its clinical manifestations.</span>
+          <span class="ar">ما هي متلازمة عدم التوازن في الديال؟ اذكر مظاهرها السريرية.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Dialysis Disequilibrium Syndrome</strong> is a neurological complication that occurs during or after hemodialysis, caused by a rapid shift of fluid and solutes (especially urea) between the blood and the brain, leading to cerebral edema.</p>
+        <p><strong>Clinical manifestations:</strong> Neurologic deterioration, restlessness, confusion/disorientation, headache, nausea/vomiting, and in severe cases — seizures or coma.</p>
+        <span class="ar"><strong>متلازمة عدم التوازن:</strong> مضاعفة عصبية تحدث أثناء الهيموديال أو بعده، ناجمة عن إعادة توزيع سريعة للسوائل والمذابات (خاصة اليوريا) بين الدم والدماغ مما يسبب وذمة دماغية.<br><strong>المظاهر السريرية:</strong> تدهور عصبي، قلق، ارتباك/توهان، صداع، غثيان/قيء، وفي الحالات الشديدة — نوبات صرعية أو غيبوبة.</span>
+      </div>
+    </div>
+
+    <div class="quiz-item">
+      <div class="quiz-q">
+        <div class="quiz-num">15</div>
+        <div class="quiz-text">
+          <span class="en">Compare hemodialysis and peritoneal dialysis in terms of mechanism, frequency, and key differences.</span>
+          <span class="ar">قارن بين الهيموديال والديال البريتوني من حيث الآلية والتكرار والفروق الرئيسية.</span>
+        </div>
+      </div>
+      <button class="show-answer-btn" onclick="toggleAnswer(this)">▶ Show Answer <span class="ar">/ أظهر الإجابة</span></button>
+      <div class="quiz-answer">
+        <p><strong>Hemodialysis:</strong> Blood is pumped externally through a dialyzer (artificial kidney) machine that filters waste; typically 3 sessions/week, 3–5 hours each; requires vascular access (fistula/catheter); performed in hospital or dialysis center.</p>
+        <p><strong>Peritoneal Dialysis:</strong> Dialysate solution is instilled into the peritoneal cavity via a catheter; the peritoneum acts as a natural filter; waste crosses into the dialysate and is drained; can be done at home; more continuous but slower.</p>
+        <span class="ar"><strong>الهيموديال:</strong> يُضخ الدم خارجيًا عبر ماكينة الكلية الاصطناعية؛ 3 جلسات أسبوعيًا مدة 3–5 ساعات؛ يحتاج وصولًا وعائيًا؛ يُنجز في المستشفى أو مركز الديال.<br><strong>الديال البريتوني:</strong> محلول الديال يُحقن في التجويف البريتوني عبر قسطرة؛ الغشاء البريتوني يعمل كمصفاة طبيعية؛ الفضلات تعبر إلى المحلول الذي يُستنزف؛ يمكن إجراؤه في المنزل؛ أكثر استمرارية لكن أبطأ.</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end quiz panel -->
+
+</div><!-- end content-area -->
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleAnswer(btn) {
+  const answer = btn.nextElementSibling;
+  if (answer.classList.contains('show')) {
+    answer.classList.remove('show');
+    btn.innerHTML = '▶ Show Answer <span class="ar">/ أظهر الإجابة</span>';
+  } else {
+    answer.classList.add('show');
+    btn.innerHTML = '▼ Hide Answer <span class="ar">/ أخفِ الإجابة</span>';
+  }
+}
+</script>
+</body>
+</html>

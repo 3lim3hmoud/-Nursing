@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Adult Nursing II — Procedures</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef3f7;
+    --card: #ffffff;
+    --primary: #1e5f7a;
+    --primary-light: #2d7a9a;
+    --secondary: #3a8c78;
+    --accent: #d6eaf5;
+    --accent2: #d4ede7;
+    --text: #1c2d3a;
+    --text-mid: #4a6070;
+    --text-light: #7a96a8;
+    --border: #ccdde8;
+    --row-odd: #f5f9fc;
+    --row-even: #ffffff;
+    --header-bg: #1e5f7a;
+    --tab-active: #1e5f7a;
+    --tab-hover: #e6f0f6;
+    --shadow: 0 2px 12px rgba(30,95,122,0.10);
+    --radius: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: linear-gradient(135deg, #14435c 0%, #1e5f7a 55%, #2d8a74 100%);
+    color: #fff;
+    padding: 28px 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(14,50,70,0.25);
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+  }
+  .site-header p {
+    font-size: .95rem;
+    opacity: .8;
+    font-weight: 300;
+    letter-spacing: .3px;
+  }
+
+  /* ─── LAYOUT ─── */
+  .app-wrap { display: flex; gap: 0; min-height: calc(100vh - 100px); }
+
+  /* ─── SIDEBAR (procedure tabs) ─── */
+  .sidebar {
+    width: 220px;
+    min-width: 200px;
+    background: var(--card);
+    border-right: 1.5px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    gap: 2px;
+    box-shadow: 2px 0 10px rgba(30,95,122,0.07);
+    overflow-y: auto;
+  }
+  .sidebar-label {
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0 16px 8px;
+    margin-top: 4px;
+  }
+  .proc-tab {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all .2s;
+    font-size: .88rem;
+    color: var(--text-mid);
+    user-select: none;
+    line-height: 1.35;
+  }
+  .proc-tab:hover { background: var(--tab-hover); color: var(--primary); }
+  .proc-tab.active {
+    border-left-color: var(--primary);
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .proc-tab .tab-en { display: block; }
+  .proc-tab .tab-ar { display: block; font-size: .78rem; color: var(--text-light); margin-top: 1px; }
+  .proc-tab.active .tab-ar { color: var(--primary-light); }
+
+  /* ─── CONTENT ─── */
+  .content-area {
+    flex: 1;
+    padding: 24px 28px;
+    overflow-y: auto;
+  }
+
+  .proc-content { display: none; }
+  .proc-content.active { display: block; }
+
+  .content-title {
+    margin-bottom: 18px;
+  }
+  .content-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  .content-title p {
+    font-size: .9rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* ─── SUB-TABS ─── */
+  .sub-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0;
+  }
+  .sub-tab {
+    padding: 8px 22px;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all .2s;
+    user-select: none;
+  }
+  .sub-tab:hover { color: var(--primary); }
+  .sub-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    font-weight: 700;
+  }
+
+  .sub-content { display: none; }
+  .sub-content.active { display: block; }
+
+  /* ─── PROCEDURE TABLE ─── */
+  .proc-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1.5px solid var(--border);
+  }
+
+  .proc-table {
+    width: 100%;
+    border-collapse: collapse;
+    direction: rtl;
+    font-size: .88rem;
+  }
+
+  .proc-table thead tr {
+    background: var(--header-bg);
+    color: #fff;
+  }
+  .proc-table thead th {
+    padding: 13px 16px;
+    text-align: right;
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .3px;
+    white-space: nowrap;
+  }
+  .proc-table thead th:first-child { width: 52px; text-align: center; }
+
+  .proc-table tbody tr:nth-child(odd) { background: var(--row-odd); }
+  .proc-table tbody tr:nth-child(even) { background: var(--row-even); }
+  .proc-table tbody tr { transition: background .15s; vertical-align: top; }
+  .proc-table tbody tr:hover { background: #e0eff8; }
+
+  .proc-table td {
+    padding: 12px 16px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .proc-table td:first-child {
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: .9rem;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary);
+    width: 52px;
+  }
+
+  .cell-en {
+    display: block;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .cell-ar {
+    display: block;
+    color: var(--text-light);
+    font-size: .83rem;
+    margin-top: 3px;
+    line-height: 1.55;
+  }
+
+  .rationale-cell .cell-en { color: var(--secondary); font-weight: 500; font-style: italic; }
+  .rationale-cell .cell-ar { color: #7ab0a0; }
+
+  /* substeps */
+  .substeps { margin: 5px 0 0; padding-right: 14px; list-style: none; }
+  .substeps li {
+    position: relative;
+    padding-right: 14px;
+    margin-bottom: 4px;
+    font-size: .86rem;
+  }
+  .substeps li::before {
+    content: '◈';
+    position: absolute;
+    right: 0;
+    color: var(--primary-light);
+    font-size: .65rem;
+    top: 4px;
+  }
+  .substeps li .cell-ar { font-size: .8rem; }
+
+  /* ─── EQUIPMENT LIST ─── */
+  .equip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+  }
+  .equip-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin: 20px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .equip-item {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    box-shadow: 0 1px 5px rgba(30,95,122,0.06);
+    transition: box-shadow .2s;
+  }
+  .equip-item:hover { box-shadow: 0 3px 14px rgba(30,95,122,0.13); }
+  .equip-icon {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .equip-text { flex: 1; }
+  .equip-text .en { font-weight: 500; font-size: .88rem; color: var(--text); line-height: 1.4; }
+  .equip-text .ar { font-size: .8rem; color: var(--text-light); margin-top: 2px; }
+
+  .no-checklist-note {
+    background: #fff8e8;
+    border: 1.5px solid #f0c870;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    font-size: .9rem;
+    color: #8a6a00;
+  }
+  .no-checklist-note span { display: block; color: #a07800; font-size: .82rem; margin-top: 3px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width: 720px){
+    .app-wrap { flex-direction: column; }
+    .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1.5px solid var(--border); padding: 10px; }
+    .proc-tab { border-left: none; border-bottom: 3px solid transparent; padding: 7px 10px; font-size: .8rem; }
+    .proc-tab.active { border-bottom-color: var(--primary); border-left: none; background: var(--accent); }
+    .sidebar-label { display: none; }
+    .content-area { padding: 14px; }
+    .equip-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Clinical Adult Nursing II</h1>
+  <p>Medical Surgical Nursing Department — Al Ryada University &nbsp;|&nbsp; قسم تمريض الباطنة والجراحة</p>
+</header>
+
+<div class="app-wrap">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-label">Procedures / الإجراءات</div>
+    <!-- Tabs rendered by JS -->
+  </nav>
+
+  <main class="content-area" id="contentArea">
+    <!-- Content rendered by JS -->
+  </main>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════════════ */
+const procedures = [
+
+  /* ─── 1. CAST CARE ─── */
+  {
+    id: 'cast',
+    name: { en: 'Cast Care', ar: 'رعاية الجبس' },
+    steps: [
+      {
+        action: { en: 'Wash hands, wear gloves and apron', ar: 'اغسل يديك، ارتدِ قفازات ومريلة' },
+        rationale: { en: 'Prevents cross-infection between nurse and patient', ar: 'يمنع انتقال العدوى بين الممرض والمريض' }
+      },
+      {
+        action: { en: 'Support the body part to be casted and position it in normal anatomical position', ar: 'ادعم الجزء المراد تجبيسه وضعه في وضعه التشريحي الطبيعي' },
+        rationale: { en: 'Ensures correct alignment for proper healing and function', ar: 'يضمن المحاذاة الصحيحة للشفاء السليم' }
+      },
+      {
+        action: { en: 'Drape the patient', ar: 'غطِّ المريض' },
+        rationale: { en: 'Provides privacy and protects from cold', ar: 'يوفر الخصوصية ويحمي من البرد' }
+      },
+      {
+        action: { en: 'Wash and dry the part to be casted', ar: 'اغسل وجفف الجزء المراد تجبيسه' },
+        rationale: { en: 'Clean, dry skin prevents infection beneath the cast', ar: 'الجلد النظيف الجاف يمنع العدوى تحت الجبس' }
+      },
+      {
+        action: { en: 'Place knitted (stockinette) material over the part, allowing extra length at edges', ar: 'ضع مادة شبكية (ستوكينيت) فوق الجزء مع ترك حافة إضافية' },
+        rationale: { en: 'Protects skin from direct contact with casting material', ar: 'يحمي الجلد من الاحتكاك المباشر بمادة الجبس' }
+      },
+      {
+        action: { en: 'Wrap soft, nonwoven roll padding smoothly and evenly; add extra padding at bony prominences', ar: 'لفّ الحشوة اللينة بانتظام وبشكل أملس؛ أضف حشوة إضافية فوق البروزات العظمية' },
+        rationale: { en: 'Prevents pressure sores and neurovascular compromise over bony areas', ar: 'يمنع قرح الضغط والضغط على الأوعية والأعصاب فوق البروزات العظمية' }
+      },
+      {
+        action: { en: 'Apply plaster or non-plaster casting material evenly on the body part', ar: 'ضع مادة الجبس بالتساوي على الجزء المصاب' },
+        rationale: { en: 'Uniform application ensures even cast strength and support', ar: 'التطبيق المنتظم يضمن قوة ودعمًا متساويًا للجبس' }
+      },
+      {
+        action: { en: 'Choose the appropriate width bandage for the area being casted', ar: 'اختر عرض الضمادة المناسب للمنطقة المراد تجبيسها' },
+        rationale: { en: 'Correct width ensures proper coverage and moulding', ar: 'العرض الصحيح يضمن التغطية والتشكيل الصحيح' }
+      },
+      {
+        action: { en: 'Overlap each preceding turn by half the width of the bandage', ar: 'تداخل كل لفة مع السابقة بمقدار نصف عرض الضمادة' },
+        rationale: { en: 'Creates a double-layered, strong and uniform cast', ar: 'يوفر جبسًا مزدوج الطبقات قويًا ومتماسكًا' }
+      },
+      {
+        action: { en: 'Apply additional casting material (splints) at joints and stress points', ar: 'أضف مواد تجبيس إضافية (جبائر) عند المفاصل ونقاط الإجهاد' },
+        rationale: { en: 'Reinforces areas prone to cracking under movement stress', ar: 'يعزز المناطق المعرضة للكسر تحت ضغط الحركة' }
+      },
+      {
+        action: { en: 'Finish cast: smooth edges, trim and reshape with cast cutter if needed', ar: 'أنهِ الجبس: جملّد الحواف، قص وأعد التشكيل بالمنشار إذا لزم' },
+        rationale: { en: 'Prevents skin injury from sharp or rough cast edges', ar: 'يمنع إصابة الجلد من حواف الجبس الخشنة أو الحادة' }
+      },
+      {
+        action: { en: 'Remove particles of casting material from the patient\'s skin', ar: 'أزل جزيئات مادة الجبس من جلد المريض' },
+        rationale: { en: 'Prevents skin irritation and breakdown', ar: 'يمنع تهيج الجلد والتقرحات' }
+      },
+      {
+        action: { en: 'Handle hardening casts with palms of hands; support on a firm, smooth surface', ar: 'تعامل مع الجبس وهو يتصلب بباطن الكفين؛ ادعمه على سطح مستوٍ صلب' },
+        rationale: { en: 'Finger indentations create pressure points that cause sores inside the cast', ar: 'الضغط بالأصابع يصنع نقاط ضغط تسبب قرحًا داخل الجبس' }
+      },
+      {
+        action: { en: 'Do not rest cast on hard or sharp surfaces; avoid pressure on it', ar: 'لا تضع الجبس على أسطح صلبة أو حادة؛ تجنب الضغط عليه' },
+        rationale: { en: 'Prevents cast deformity while still soft', ar: 'يمنع تشوه الجبس أثناء مرحلة الصلابة' }
+      },
+      {
+        action: { en: 'Promote drying of the cast', ar: 'شجع على جفاف الجبس بشكل كامل' },
+        rationale: { en: 'A fully dried cast provides maximum structural support', ar: 'الجبس الجاف تمامًا يوفر أقصى قدر من الدعم الهيكلي' }
+      },
+      {
+        action: { en: 'Leave cast uncovered until completely dry', ar: 'اترك الجبس بدون غطاء حتى يجف تمامًا' },
+        rationale: { en: 'Air circulation speeds drying and prevents moisture buildup', ar: 'تدوير الهواء يسرع الجفاف ويمنع تراكم الرطوبة' }
+      },
+      {
+        action: { en: 'Clean the equipment used, return to usual places, and discard used materials', ar: 'نظف الأدوات المستخدمة وأعدها لأماكنها، وتخلص من المواد المستعملة' },
+        rationale: { en: 'Maintains a safe, organized clinical environment', ar: 'يحافظ على بيئة سريرية آمنة ومنظمة' }
+      },
+      {
+        action: { en: 'Wash hands and complete documentation', ar: 'اغسل يديك وأكمل التوثيق' },
+        rationale: { en: 'Prevents cross-infection; documentation ensures legal record and continuity of care', ar: 'يمنع العدوى؛ التوثيق يضمن السجل القانوني واستمرارية الرعاية' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Cast Application / تطبيق الجبس',
+          items: [
+            { en: 'Cast materials (appropriate size & quantity)', ar: 'مواد الجبس (الحجم والكمية المناسبة)' },
+            { en: 'Cast padding or stockinette', ar: 'بطانة الجبس أو الستوكينيت' },
+            { en: 'Pail of water', ar: 'دلو ماء' },
+            { en: 'Gloves and apron', ar: 'قفازات ومريلة' },
+            { en: 'Plastic drapes or sheets', ar: 'أغطية بلاستيكية' },
+            { en: 'Scissors', ar: 'مقص' },
+            { en: 'Cart, chair, or fracture table', ar: 'عربة أو كرسي أو طاولة كسور' }
+          ]
+        },
+        {
+          title: 'Cast Removal / إزالة الجبس',
+          items: [
+            { en: 'Cast cutter (cast saw)', ar: 'منشار الجبس' },
+            { en: 'Cast spreader', ar: 'موسع الجبس' },
+            { en: 'Scissors and skin lotion', ar: 'مقص ولوشن للجلد' },
+            { en: 'Basin, water, washcloths, and towels', ar: 'حوض وماء وفوط غسيل ومناشف' },
+            { en: 'Appropriate supportive device (e.g., elastic stocking)', ar: 'وسيلة دعم مناسبة (مثل جورب ضاغط)' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 2. SKIN TRACTION ─── */
+  {
+    id: 'traction',
+    name: { en: 'Skin Traction', ar: 'جر الجلد' },
+    steps: [
+      {
+        action: { en: 'Wash hands and explain the procedure to the client', ar: 'اغسل يديك واشرح الإجراء للمريض' },
+        rationale: { en: 'Reduces infection risk and patient anxiety; promotes cooperation', ar: 'يقلل خطر العدوى ويخفف قلق المريض ويعزز التعاون' }
+      },
+      {
+        action: { en: 'Prepare the client and the area of the body to be placed in traction', ar: 'جهز المريض ومنطقة الجسم التي ستوضع في الجر' },
+        rationale: { en: 'Proper preparation ensures accurate and comfortable traction placement', ar: 'التحضير السليم يضمن تطبيق الجر بشكل صحيح ومريح' }
+      },
+      {
+        action: {
+          en: 'Position client as requested by physician — or apply halter, strips, or elastic bandages while physician and assistants hold client\'s tissues in the desired position',
+          ar: 'ضع المريض كما طلب الطبيب — أو ضع الحزام والشرائط أو الضمادات المرنة بينما يمسك الطبيب والمساعدون أنسجة المريض في الوضع المطلوب'
+        },
+        rationale: { en: 'Maintains correct anatomical alignment during traction application', ar: 'يحافظ على المحاذاة التشريحية الصحيحة أثناء تطبيق الجر' }
+      },
+      {
+        action: { en: 'Assist with application of the traction equipment', ar: 'ساعد في تطبيق معدات الجر' },
+        rationale: { en: 'Teamwork ensures correct, safe, and efficient equipment placement', ar: 'العمل الجماعي يضمن وضع المعدات بشكل صحيح وآمن وفعال' }
+      },
+      {
+        action: {
+          en: 'Assist with attachment of spreader bars, ropes, and pulleys. Ropes are tied securely in knots and passed through the grooves of pulleys to the weights',
+          ar: 'ساعد في تركيب قضبان التوزيع والحبال والبكر. تُربط الحبال بإحكام وتمر في أخاديد البكر حتى الأثقال'
+        },
+        rationale: { en: 'Proper attachment distributes traction force evenly and prevents equipment failure', ar: 'التركيب الصحيح يوزع قوة الجر بالتساوي ويمنع فشل المعدات' }
+      },
+      {
+        action: {
+          en: 'When all materials and spreader bars are in place, place weights on the weight holder, hook to the rope loop, and lower slowly and gently until rope is taut',
+          ar: 'عند اكتمال التركيب، ضع الأثقال على الحامل وعلّقها في حلقة الحبل ثم أنزلها ببطء وبرفق حتى يصبح الحبل مشدودًا'
+        },
+        rationale: { en: 'Gradual lowering prevents sudden pull that could cause pain or injury', ar: 'الإنزال التدريجي يمنع الشد المفاجئ الذي قد يسبب الألم أو الإصابة' }
+      },
+      {
+        action: { en: 'Ask client how traction affects the injured tissues and raise side rails as appropriate', ar: 'اسأل المريض عن تأثير الجر على الأنسجة المصابة وارفع حواجز السرير حسب الحاجة' },
+        rationale: { en: 'Monitors therapeutic effectiveness and ensures patient safety', ar: 'يراقب فعالية العلاج ويضمن سلامة المريض' }
+      },
+      {
+        action: { en: 'Gather unused materials, return to storage areas, and wash hands', ar: 'اجمع المواد غير المستخدمة وأعدها لأماكن التخزين، ثم اغسل يديك' },
+        rationale: { en: 'Maintains clean environment and prevents infection transmission', ar: 'يحافظ على بيئة نظيفة ويمنع انتقال العدوى' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Skin Traction / جر الجلد',
+          items: [
+            { en: 'Bed frame (or portable attachment frame)', ar: 'إطار السرير أو إطار تثبيت محمول' },
+            { en: 'Ropes, pulleys, weights, and weight holder', ar: 'حبال وبكر وأثقال وحامل الأثقال' },
+            { en: 'Spreader bars', ar: 'قضبان التوزيع' },
+            { en: 'Heel or elbow protectors', ar: 'واقيات الكعب أو الكوع' },
+            { en: 'Boots or straps (for Buck\'s traction)', ar: 'أحذية أو أربطة (لجر بَك)' },
+            { en: 'Pelvic strap or belt (for pelvic traction)', ar: 'حزام الحوض (لجر الحوض)' },
+            { en: 'Elastic bandages and adhesive strips', ar: 'أربطة مرنة ولاصقات' }
+          ]
+        },
+        {
+          title: 'Skeletal Traction / الجر الهيكلي',
+          items: [
+            { en: 'Overhead frame', ar: 'إطار علوي' },
+            { en: 'Ropes, pulleys, weights, and weight holder', ar: 'حبال وبكر وأثقال وحامل الأثقال' },
+            { en: 'Pearson attachment', ar: 'وصلة بيرسون' },
+            { en: 'Thomas splint', ar: 'جبيرة توماس' },
+            { en: 'Foot support and heel protectors', ar: 'دعامة القدم وواقيات الكعب' },
+            { en: 'Pin/wire tray (opened using aseptic technique)', ar: 'صينية دبابيس أو أسلاك (تفتح بطريقة معقمة)' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 3. BURN WOUND CARE ─── */
+  {
+    id: 'burn',
+    name: { en: 'Burn Wound Care', ar: 'رعاية جروح الحروق' },
+    steps: [
+      {
+        action: { en: 'Explain the procedure to the patient and ensure adequate analgesia is administered as ordered', ar: 'اشرح الإجراء للمريض وتأكد من إعطاء المسكنات الكافية حسب الأوامر' },
+        rationale: { en: 'Reduces pain and anxiety during dressing, promotes patient cooperation', ar: 'يقلل الألم والقلق أثناء تغيير الضماد ويعزز تعاون المريض' }
+      },
+      {
+        action: { en: 'The nurse performing wound care must be aware of and adhere to infection control principles', ar: 'يجب أن يكون الممرض المسؤول عن الجرح على دراية بمبادئ مكافحة العدوى والالتزام بها' },
+        rationale: { en: 'Burns are highly susceptible to infection; sepsis is a leading cause of mortality in burn patients', ar: 'الحروق معرضة جدًا للعدوى؛ الإنتان هو السبب الرئيسي للوفاة في مرضى الحروق' }
+      },
+      {
+        action: { en: 'Set up all supplies using sterile technique', ar: 'جهز جميع المستلزمات باستخدام أسلوب معقم', },
+        rationale: { en: 'Prevents introduction of pathogens to the wound', ar: 'يمنع إدخال مسببات الأمراض إلى الجرح' },
+        substeps: [
+          { en: 'A — Clean the wound thoroughly', ar: 'أ — نظّف الجرح جيدًا' },
+          { en: 'B — Remove old dressing if present', ar: 'ب — أزل الضماد القديم إن وجد' }
+        ]
+      },
+      {
+        action: { en: 'Once dressings are removed, gently cleanse the burn wound with gauze pads then assess it', ar: 'بعد إزالة الضمادات، نظّف جرح الحرق بلطف بشاش وقيّم حالته' },
+        rationale: { en: 'Gentle cleansing removes debris without damaging fragile new tissue', ar: 'التنظيف اللطيف يزيل الفضلات دون إتلاف الأنسجة الجديدة الهشة' }
+      },
+      {
+        action: { en: 'Remove any loose skin or eschar; debride with gauze, scissors, or forceps; wash unburned surrounding areas', ar: 'أزل الجلد المتقشر أو الجلد الميت؛ انزع باستخدام شاش أو مقص أو ملاقط؛ اغسل المناطق غير المحترقة المحيطة' },
+        rationale: { en: 'Debridement removes dead tissue that harbors bacteria and blocks healing', ar: 'التقشير يزيل الأنسجة الميتة التي تحتضن البكتيريا وتعيق الشفاء' }
+      },
+      {
+        action: { en: 'After wound cleaning, pat the burned area dry; apply prescribed topical agent; apply circumferential dressings from distal to proximal', ar: 'بعد التنظيف، جففّ المنطقة المحترقة بالتربيت؛ ضع العامل الموضعي الموصوف؛ ضع الضمادات المحيطية من البعيد إلى القريب' },
+        rationale: { en: 'Topical agents prevent infection; distal-to-proximal dressing promotes venous return and reduces edema', ar: 'العوامل الموضعية تمنع العدوى؛ الضمادة من البعيد للقريب تعزز عودة الدم الوريدي وتقلل الوذمة' }
+      },
+      {
+        action: { en: 'Record all observations about the wound and inform the doctor about any abnormal findings', ar: 'سجّل جميع الملاحظات حول الجرح وأبلغ الطبيب بأي نتائج غير طبيعية' },
+        rationale: { en: 'Ensures continuity of care and timely medical intervention for complications', ar: 'يضمن استمرارية الرعاية والتدخل الطبي في الوقت المناسب عند حدوث مضاعفات' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'General / Hydrotherapy Supplies / المستلزمات العامة',
+          items: [
+            { en: 'Clean and sterile gloves', ar: 'قفازات نظيفة ومعقمة' },
+            { en: 'Clean scissors', ar: 'مقص نظيف' },
+            { en: 'Liquid antibacterial soap', ar: 'صابون سائل مضاد للبكتيريا' },
+            { en: 'Water (sterile, saline, or hose source)', ar: 'ماء (معقم أو محلول ملحي أو مصدر ماء)' },
+            { en: 'Sterile container and sterile field', ar: 'وعاء معقم وحقل معقم' },
+            { en: 'Gauze (4×4 inch)', ar: 'شاش (4×4 بوصة)' },
+            { en: 'Antimicrobial cream or ointment', ar: 'كريم أو مرهم مضاد للميكروبات' },
+            { en: 'Mesh roll gauze', ar: 'لفافات شاش شبكي' }
+          ]
+        },
+        {
+          title: 'Dressing Materials / مواد الضماد',
+          items: [
+            { en: 'Sterile fine mesh gauze', ar: 'شاش شبكي ناعم معقم' },
+            { en: '1% Silver sulfadiazine', ar: 'سلفاديازين فضي 1%' },
+            { en: 'Antibiotic ointment (e.g., Neosporin)', ar: 'مرهم مضاد حيوي (مثل نيوسبورين)' },
+            { en: 'Non-adhering dressing', ar: 'ضماد غير لاصق' },
+            { en: 'Transparent wound dressing', ar: 'ضماد شفاف للجرح' },
+            { en: 'Hair cap, mask, and sterile gown for the nurse', ar: 'غطاء رأس وكمامة وجاون معقم للممرض' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 4. RENAL BIOPSY ─── */
+  {
+    id: 'renal',
+    name: { en: 'Renal Biopsy', ar: 'خزعة الكلى' },
+    steps: [
+      {
+        action: { en: 'Make sure that informed consent is signed by the patient', ar: 'تأكد من توقيع المريض على نموذج الموافقة المستنيرة' },
+        rationale: { en: 'Patient\'s legal and ethical right; protects patient and healthcare team', ar: 'حق قانوني وأخلاقي للمريض؛ يحمي المريض وفريق الرعاية الصحية' }
+      },
+      {
+        action: { en: 'Patient lies in prone position on a firm table with cushioning under the abdomen for support', ar: 'يستلقي المريض على بطنه على طاولة صلبة مع وسادة تدعيمية أسفل البطن' },
+        rationale: { en: 'Prone position brings the kidney closer to the surface for easier needle access', ar: 'وضع الانبطاح يقرّب الكلية من السطح لتسهيل الوصول بالإبرة' }
+      },
+      {
+        action: { en: 'Locate the kidney with ultrasound or CT scan', ar: 'حدّد موقع الكلية بالموجات فوق الصوتية أو الأشعة المقطعية' },
+        rationale: { en: 'Accurate localization ensures correct needle placement and reduces risk of complications', ar: 'التحديد الدقيق يضمن وضع الإبرة بشكل صحيح ويقلل خطر المضاعفات' }
+      },
+      {
+        action: { en: 'Mark the biopsy site over the right kidney', ar: 'ضع علامة على موقع الخزعة فوق الكلية اليمنى' },
+        rationale: { en: 'Right kidney is preferred as it is lower, more accessible, and less mobile', ar: 'الكلية اليمنى مفضلة لأنها أسفل وأكثر سهولة في الوصول وأقل حركة' }
+      },
+      {
+        action: { en: 'Inject local anesthetic (1–2% Lignocaine) from the skin down to the renal capsule', ar: 'احقن مخدرًا موضعيًا (ليجنوكايين 1–2%) من الجلد حتى كبسولة الكلية' },
+        rationale: { en: 'Minimizes pain during needle insertion without systemic sedation risks', ar: 'يقلل الألم أثناء إدخال الإبرة دون مخاطر التخدير الجهازي' }
+      },
+      {
+        action: { en: 'Once the area is numb, use ultrasound to guide a spring-loaded biopsy needle into the kidney; the needle removes 5–15 glomeruli; 2–3 samples are usually required', ar: 'بعد التخدير، استخدم الموجات الصوتية لتوجيه إبرة خزعة نابضة إلى الكلية؛ تأخذ الإبرة 5–15 كبيبة؛ عادةً 2–3 عينات' },
+        rationale: { en: 'Ultrasound guidance ensures precision; multiple samples improve diagnostic accuracy', ar: 'التوجيه بالصوت يضمن الدقة؛ عينات متعددة تحسّن دقة التشخيص' }
+      },
+      {
+        action: { en: 'After extracting tissue samples, apply pressure to the site for 2–5 minutes to slow bleeding, then place a bandage', ar: 'بعد سحب العينات، اضغط على المنطقة 2–5 دقائق لإبطاء النزيف، ثم ضع ضمادة' },
+        rationale: { en: 'Controls post-biopsy bleeding; bandage protects the wound from infection', ar: 'يتحكم في النزيف بعد الخزعة؛ الضمادة تحمي الجرح من العدوى' }
+      },
+      {
+        action: { en: 'Document procedure: date, time, site, observations, and signature', ar: 'وثّق الإجراء: التاريخ والوقت والموقع والملاحظات والتوقيع' },
+        rationale: { en: 'Provides legal record and ensures continuity of post-procedure care', ar: 'يوفر سجلًا قانونيًا ويضمن استمرارية الرعاية بعد الإجراء' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Renal Biopsy Equipment / معدات خزعة الكلى',
+          items: [
+            { en: 'Marker pen', ar: 'قلم تحديد' },
+            { en: 'Sterile field sheet and fenestrated drapes', ar: 'غطاء حقل معقم وأغطية بها فتحة' },
+            { en: 'Sterile gloves', ar: 'قفازات معقمة' },
+            { en: 'Syringe (10 cc)', ar: 'سرنجة (10 سم³)' },
+            { en: 'Antiseptic solution (Betadine)', ar: 'محلول مطهر (بيتادين)' },
+            { en: 'KY gel (lubricant)', ar: 'جل KY (مزلق)' },
+            { en: 'Sterile gauze, dressings, and sponges', ar: 'شاش وضمادات وإسفنجات معقمة' },
+            { en: 'Forceps and adhesive tape', ar: 'ملاقط ولاصق طبي' },
+            { en: 'Kidney basin', ar: 'طبق كلوي' },
+            { en: 'Needle set (usually 18G core biopsy needle)', ar: 'طقم إبرة خزعة (عادة 18G)' },
+            { en: '1% Lidocaine / Lignocaine', ar: 'ليدوكايين 1%' },
+            { en: 'Midazolam (for sedation in select cases)', ar: 'ميدازولام (للتخدير في بعض الحالات)' },
+            { en: 'Histopathology specimen pots', ar: 'عبوات قسم الباثولوجيا' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 5. LUMBAR PUNCTURE ─── */
+  {
+    id: 'lumbar',
+    name: { en: 'Lumbar Puncture', ar: 'البزل القطني' },
+    steps: [
+      {
+        action: { en: 'Ask the patient to empty the urinary bladder and bowel; explain procedure to patient', ar: 'اطلب من المريض إفراغ المثانة والأمعاء؛ اشرح الإجراء' },
+        rationale: { en: 'Prevents discomfort and urge during the procedure; reduces anxiety and promotes cooperation', ar: 'يمنع الانزعاج والرغبة في التبول أثناء الإجراء؛ يقلل القلق ويعزز التعاون' }
+      },
+      {
+        action: { en: 'Position patient laterally with a small pillow under head and a pillow between legs on a firm surface', ar: 'ضع المريض جانبيًا مع وسادة صغيرة تحت الرأس ووسادة بين الركبتين على سطح صلب' },
+        rationale: { en: 'Flexed lateral position opens the intervertebral spaces, facilitating needle insertion', ar: 'الوضع الجانبي المنحني يفتح المسافات بين الفقرات مما يسهل إدخال الإبرة' }
+      },
+      {
+        action: { en: 'Prepare skin with antiseptic solution; infiltrate the skin and subcutaneous spaces with local anesthetic', ar: 'جهز الجلد بمحلول مطهر؛ حقن الجلد والأنسجة تحت الجلدية بمخدر موضعي' },
+        rationale: { en: 'Antiseptic prevents meningitis risk; local anesthetic minimizes procedural pain', ar: 'المطهر يمنع خطر التهاب السحايا؛ المخدر الموضعي يقلل ألم الإجراء' }
+      },
+      {
+        action: { en: 'Introduce spinal needle at L3–L4 interspace; once in subarachnoid space, help patient slowly straighten legs', ar: 'أدخل الإبرة الشوكية في المسافة L3–L4؛ بعد الدخول إلى الفضاء تحت العنكبوتية، ساعد المريض على مد ساقيه ببطء' },
+        rationale: { en: 'L3–L4 is below the spinal cord end (conus medullaris), preventing cord injury; straightening reduces CSF pressure artifact', ar: 'L3–L4 تقع أسفل نهاية الحبل الشوكي مما يمنع إصابته؛ مد الساقين يقلل التأثير على قراءة الضغط' }
+      },
+      {
+        action: { en: 'Instruct the patient to breathe quietly and not to talk during the procedure', ar: 'اطلب من المريض التنفس بهدوء وعدم الكلام أثناء الإجراء' },
+        rationale: { en: 'Talking and movement change intrathoracic pressure, affecting CSF pressure readings', ar: 'الكلام والحركة يغيران الضغط داخل الصدر مما يؤثر على قراءات ضغط السائل الدماغي الشوكي' }
+      },
+      {
+        action: { en: 'Obtain the initial CSF pressure reading by measuring the level of the fluid column after it comes to rest', ar: 'خذ قراءة الضغط الأولي للسائل الدماغي الشوكي بقياس مستوى عمود السائل بعد استقراره' },
+        rationale: { en: 'Baseline pressure helps diagnose conditions like meningitis, hydrocephalus, or pseudotumor cerebri', ar: 'الضغط الأساسي يساعد في تشخيص حالات كالتهاب السحايا والاستسقاء الدماغي' }
+      },
+      {
+        action: { en: 'Place about 2–3 ml of spinal fluid in each of three test tubes for laboratory analysis', ar: 'ضع حوالي 2–3 مل من السائل الشوكي في كل من ثلاث أنابيب اختبار للتحليل المخبري' },
+        rationale: { en: 'Multiple tubes allow different lab tests (cell count, protein, glucose, culture) with separate samples', ar: 'أنابيب متعددة تسمح بإجراء فحوصات مختلفة (خلايا، بروتين، جلوكوز، مزرعة) بعينات منفصلة' }
+      },
+      {
+        action: { en: 'Measure closing CSF pressure after the specimen is collected', ar: 'قس الضغط الختامي للسائل الدماغي الشوكي بعد أخذ العينة' },
+        rationale: { en: 'Compares with opening pressure to assess CSF dynamics and detect blockages', ar: 'يقارن مع الضغط الافتتاحي لتقييم ديناميكيات السائل واكتشاف أي انسداد' }
+      },
+      {
+        action: { en: 'After the procedure, instruct patient to remain in prone position without a pillow for about 2 hours', ar: 'بعد الإجراء، اطلب من المريض البقاء على بطنه بدون وسادة لمدة ساعتين تقريبًا' },
+        rationale: { en: 'Prone position reduces CSF leakage through the needle puncture site, preventing post-LP headache', ar: 'وضع الانبطاح يقلل تسرب السائل الشوكي من موقع الإبرة مما يمنع الصداع بعد البزل' }
+      },
+      {
+        action: { en: 'Ensure adequate hydration with oral or parenteral fluids', ar: 'تأكد من ترطيب كافٍ بالسوائل الفموية أو الوريدية' },
+        rationale: { en: 'Hydration promotes CSF production to replace the fluid removed during the procedure', ar: 'الترطيب يعزز إنتاج السائل الدماغي الشوكي لتعويض ما أُخذ أثناء الإجراء' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Lumbar Puncture Equipment / معدات البزل القطني',
+          items: [
+            { en: 'Spinal needle (20 and 22-gauge)', ar: 'إبرة شوكية (مقاس 20 و22)' },
+            { en: 'Manometer (pressure gauge)', ar: 'جهاز قياس الضغط' },
+            { en: 'Three-way stopcock', ar: 'صمام ثلاثي الاتجاه' },
+            { en: 'Sterile drapes', ar: 'أغطية معقمة' },
+            { en: 'Xylocaine 1%–2% (local anesthetic)', ar: 'زيلوكايين 1%–2% (مخدر موضعي)' },
+            { en: 'Skin antiseptic solution', ar: 'محلول مطهر للجلد' },
+            { en: 'Adhesive dressing', ar: 'لاصق طبي' },
+            { en: 'Sponges (10×10 cm)', ar: 'إسفنجات (10×10 سم)' },
+            { en: 'Sterile gloves and mask', ar: 'قفازات ومغطى وجه معقمة' },
+            { en: 'CSF specimen collection bottles (×3)', ar: 'عبوات جمع السائل الدماغي الشوكي (×3)' },
+            { en: '22– to 23–gauge needle', ar: 'إبرة مقاس 22–23' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 6. HEMODIALYSIS ─── */
+  {
+    id: 'hemo',
+    name: { en: 'Hemodialysis', ar: 'غسيل الكلى الدموي' },
+    steps: [
+      {
+        action: { en: 'Assess vital signs and lab investigations before starting', ar: 'قيّم العلامات الحيوية والتحاليل المخبرية قبل البدء' },
+        rationale: { en: 'Provides baseline data to compare with readings during and after dialysis to detect complications early', ar: 'يوفر بيانات أساسية للمقارنة أثناء وبعد الغسيل للكشف المبكر عن المضاعفات' }
+      },
+      {
+        action: { en: 'Check whether any antihypertensive medications should be held before the session', ar: 'تحقق من الأدوية الخافضة للضغط التي يجب إيقافها قبل الجلسة' },
+        rationale: { en: 'Blood pressure drops naturally during dialysis; antihypertensives can cause dangerous hypotension', ar: 'ينخفض ضغط الدم طبيعيًا أثناء الغسيل؛ الأدوية الخافضة قد تسبب انخفاضًا خطيرًا' }
+      },
+      {
+        action: { en: 'Observe the vascular access site for any abnormalities: swelling or redness', ar: 'افحص موقع الوصول الوعائي لأي تشوهات: تورم أو احمرار' },
+        rationale: { en: 'Early detection of infection, thrombosis, or aneurysm at the access site', ar: 'الكشف المبكر عن العدوى أو الجلطة أو الأم الدموية في موقع الوصول' }
+      },
+      {
+        action: { en: 'Prepare the hemodialysis machine, dialyzer, dialysate, and all necessary supplies', ar: 'جهز جهاز الغسيل والفلتر وسائل الغسيل وجميع المستلزمات اللازمة' },
+        rationale: { en: 'Ensures equipment is functional and ready; reduces procedure delays', ar: 'يضمن جاهزية الجهاز ويقلل التأخير في الإجراء' }
+      },
+      {
+        action: { en: 'Perform hand hygiene and put on gloves', ar: 'اغسل يديك وارتدِ القفازات' },
+        rationale: { en: 'Prevents infection at the vascular access site, which is a major complication in dialysis patients', ar: 'يمنع العدوى في موقع الوصول الوعائي وهو مضاعفة رئيسية في مرضى الغسيل' }
+      },
+      {
+        action: { en: 'Insert needles into the vascular access to establish the blood circuit', ar: 'أدخل الإبر في الوصول الوعائي لتأسيس دوائر الدم' },
+        rationale: { en: 'Establishes the extracorporeal blood circuit necessary for dialysis', ar: 'يؤسس دائرة الدم الخارجية الضرورية لعملية الغسيل' }
+      },
+      {
+        action: { en: 'Keep the vascular access site uncovered and visible during the hemodialysis session', ar: 'ابقِ موقع الوصول الوعائي مكشوفًا ومرئيًا طوال جلسة الغسيل' },
+        rationale: { en: 'Allows continuous visual monitoring for complications such as bleeding or needle dislodgement', ar: 'يتيح المراقبة البصرية المستمرة للمضاعفات كالنزيف أو انزلاق الإبرة' }
+      },
+      {
+        action: { en: 'Instruct patient not to sleep on the access arm during the session', ar: 'اطلب من المريض عدم النوم على ذراع الوصول أثناء الجلسة' },
+        rationale: { en: 'Prevents compression of the access which can cause clotting or needle dislodgement', ar: 'يمنع ضغط الوصول الذي يمكن أن يسبب جلطة أو إزاحة الإبرة' }
+      },
+      {
+        action: { en: 'Avoid using the dialysis access arm for IV medications, blood pressure measurement, or blood sampling', ar: 'تجنب استخدام ذراع الوصول لأي دواء وريدي أو قياس ضغط أو سحب دم' },
+        rationale: { en: 'Protects the patency and longevity of the arteriovenous access, which is the patient\'s "lifeline"', ar: 'يحمي سالكية الوصول الشرياني الوريدي واستمراريته وهو "شريان الحياة" للمريض' }
+      },
+      {
+        action: { en: 'Assess vital signs, especially blood pressure, every 30 minutes throughout the session', ar: 'قيّم العلامات الحيوية وخاصة ضغط الدم كل 30 دقيقة طوال الجلسة' },
+        rationale: { en: 'Hypotension is the most common complication of hemodialysis; early detection allows prompt intervention', ar: 'انخفاض ضغط الدم هو المضاعفة الأكثر شيوعًا؛ الكشف المبكر يتيح التدخل السريع' }
+      },
+      {
+        action: { en: 'Post-dialysis: reassess vital signs and monitor lab investigations', ar: 'بعد الغسيل: أعد تقييم العلامات الحيوية وراقب التحاليل المخبرية' },
+        rationale: { en: 'Evaluates the effectiveness of the dialysis session and patient\'s stability', ar: 'يقيّم فعالية جلسة الغسيل واستقرار حالة المريض' }
+      },
+      {
+        action: { en: 'Instruct the patient on access care at home', ar: 'علّم المريض كيفية العناية بالوصول الوعائي في المنزل' },
+        substeps: [
+          { en: 'Avoid wearing tight clothes at the vascular access arm', ar: 'تجنب ارتداء الملابس الضيقة على ذراع الوصول' },
+          { en: 'Avoid carrying heavy weight at the vascular access arm', ar: 'تجنب حمل الأوزان الثقيلة على ذراع الوصول' },
+          { en: 'Avoid measuring blood pressure from the vascular access arm', ar: 'تجنب قياس ضغط الدم من ذراع الوصول' },
+          { en: 'Avoid lying on the vascular access arm', ar: 'تجنب الاستلقاء على ذراع الوصول' }
+        ],
+        rationale: { en: 'Protects the access from compression, trauma, and clotting, preserving it for future sessions', ar: 'يحمي الوصول من الضغط والصدمة والجلطة مما يحافظ عليه للجلسات المستقبلية' }
+      },
+      {
+        action: { en: 'Discard all equipment and supplies in designated special places', ar: 'تخلص من جميع المعدات والمستلزمات في الأماكن المخصصة' },
+        rationale: { en: 'Prevents cross-contamination and exposure to bloodborne pathogens', ar: 'يمنع التلوث المتقاطع والتعرض لمسببات الأمراض المنقولة بالدم' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Hemodialysis Equipment / معدات غسيل الكلى',
+          items: [
+            { en: 'Hemodialysis machine', ar: 'جهاز الغسيل الكلوي' },
+            { en: 'Dialyzer (artificial kidney / filter)', ar: 'الفلتر (الكلية الصناعية)' },
+            { en: 'Dialysate (cleaning solution)', ar: 'سائل الغسيل (محلول التنقية)' },
+            { en: 'Personal Protective Equipment (PPE)', ar: 'معدات الوقاية الشخصية' },
+            { en: 'Skin antiseptic solution', ar: 'محلول مطهر للجلد' },
+            { en: 'Sterile needles for vascular access', ar: 'إبر معقمة للوصول الوعائي' },
+            { en: 'Sterile dressing and gauze', ar: 'ضماد وشاش معقم' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 7. COLOSTOMY CARE ─── */
+  {
+    id: 'colostomy',
+    name: { en: 'Colostomy Care', ar: 'رعاية القولستومي' },
+    steps: [
+      {
+        action: { en: 'Have patient assume a relaxed position and provide privacy', ar: 'اطلب من المريض اتخاذ وضعية مريحة ووفّر له الخصوصية' },
+        rationale: { en: 'Promotes patient comfort and dignity during an intimate procedure', ar: 'يعزز راحة المريض وكرامته أثناء إجراء حميم' }
+      },
+      {
+        action: { en: 'Remove the pouching system', ar: 'أزل جهاز الكيس' },
+        substeps: [
+          { en: 'a. Wear non-sterile gloves', ar: 'أ. ارتدِ قفازات غير معقمة' },
+          { en: 'b. Push down gently on the skin while lifting up on the wafer', ar: 'ب. اضغط الجلد برفق للأسفل بينما ترفع الشريحة للأعلى' },
+          { en: 'c. Discard the soiled pouch and wafer in an odor-proof plastic bag', ar: 'ج. تخلص من الكيس والشريحة الملوثَين في كيس بلاستيكي مانع للرائحة' }
+        ],
+        rationale: { en: 'Gloves prevent infection; correct removal technique prevents skin trauma and peristomal skin damage', ar: 'القفازات تمنع العدوى؛ أسلوب الإزالة الصحيح يمنع أذى الجلد حول الفتحة' }
+      },
+      {
+        action: { en: 'Clean the peristomal skin', ar: 'نظّف جلد المنطقة المحيطة بالفتحة' },
+        substeps: [
+          { en: 'a. Use toilet tissue to remove feces from stoma and skin if needed', ar: 'أ. استخدم ورق التواليت لإزالة البراز من الفتحة والجلد إذا لزم' },
+          { en: 'b. Clean stoma and peristomal skin with a soft cloth and water (soap optional); clip or shave peristomal hair if appropriate', ar: 'ب. نظّف الفتحة والجلد المحيط بقطعة قماش ناعمة وماء (صابون اختياري)؛ قص أو احلق شعر المنطقة إن لزم' },
+          { en: 'c. Rinse and thoroughly dry skin after cleansing', ar: 'ج. اشطف وجفف الجلد جيدًا بعد التنظيف' }
+        ],
+        rationale: { en: 'Moist or contaminated peristomal skin causes wafer failure and skin breakdown', ar: 'الجلد الرطب أو الملوث يتسبب في فشل لصق الشريحة وتلف الجلد' }
+      },
+      {
+        action: { en: 'Apply the wafer', ar: 'ضع الشريحة (الواجهة)' },
+        substeps: [
+          { en: 'a. Use a measuring guide to determine the exact stoma size', ar: 'أ. استخدم أداة القياس لتحديد حجم الفتحة بدقة' },
+          { en: 'b. Trace the correct size onto the back of the wafer and cut to stoma size', ar: 'ب. ارسم الحجم الصحيح على ظهر الشريحة واقطع بحجم الفتحة' },
+          { en: 'c. Apply a line of skin barrier paste around the stoma or on the tip of the wafer opening', ar: 'ج. ضع خطًا من معجون حاجز الجلد حول الفتحة أو على حافة فتحة الشريحة' },
+          { en: 'd. Remove paper backing from the wafer, center over stoma, and press down firmly onto peristomal skin', ar: 'د. أزل الغطاء الورقي للشريحة، ومركزها فوق الفتحة، ثم اضغطها بإحكام على الجلد' }
+        ],
+        rationale: { en: 'Proper fit and sealing prevent leakage and protect peristomal skin from stool damage', ar: 'الملاءمة والإحكام الصحيحان يمنعان التسرب ويحميان الجلد من ضرر البراز' }
+      },
+      {
+        action: { en: 'Snap the pouch onto the flange of the wafer according to manufacturer\'s directions', ar: 'ثبّت الكيس على حافة الشريحة حسب تعليمات الشركة المصنّعة' },
+        rationale: { en: 'Secure attachment creates a leak-proof seal between pouch and wafer', ar: 'التثبيت المحكم يخلق ختمًا محكمًا بين الكيس والشريحة' }
+      },
+      {
+        action: { en: 'Apply the tail closure to the bottom of the pouch', ar: 'أغلق الطرف السفلي للكيس بالقفل' },
+        rationale: { en: 'Prevents stool from leaking from the bottom of the pouch', ar: 'يمنع خروج البراز من أسفل الكيس' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Colostomy Care Equipment / معدات رعاية القولستومي',
+          items: [
+            { en: 'Duplicate wafer and pouch', ar: 'شريحة وكيس احتياطيان' },
+            { en: 'Washcloth and towel', ar: 'فوطة غسيل ومنشفة' },
+            { en: 'Tail closure', ar: 'قفل طرف الكيس' },
+            { en: 'Mild non-oily soap (optional)', ar: 'صابون خفيف غير دهني (اختياري)' },
+            { en: 'Non-sterile gloves', ar: 'قفازات غير معقمة' },
+            { en: 'Odor-proof plastic bag for disposal', ar: 'كيس بلاستيك مانع للروائح للتخلص من النفايات' },
+            { en: 'Toilet tissue', ar: 'ورق تواليت' },
+            { en: 'Measuring guide to determine stoma size', ar: 'أداة قياس لتحديد حجم الفتحة' },
+            { en: 'Skin barrier paste', ar: 'معجون حاجز للجلد' },
+            { en: 'Accessory products prescribed for patient', ar: 'منتجات إضافية موصوفة للمريض' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 8. COLOSTOMY IRRIGATION ─── */
+  {
+    id: 'irrigation',
+    name: { en: 'Colostomy Irrigation', ar: 'ري القولستومي' },
+    steps: [
+      {
+        action: { en: 'Explain the procedure to the patient or caregiver', ar: 'اشرح الإجراء للمريض أو مقدم الرعاية' },
+        rationale: { en: 'Reduces anxiety, promotes informed cooperation, and improves technique adherence', ar: 'يقلل القلق ويعزز التعاون الواعي ويحسّن الالتزام بالأسلوب الصحيح' }
+      },
+      {
+        action: { en: 'Assist the patient to sit on the toilet or in a chair facing the toilet', ar: 'ساعد المريض على الجلوس على المرحاض أو على كرسي مواجه له' },
+        rationale: { en: 'Gravity-assisted position promotes downward drainage of irrigation fluid and feces', ar: 'الوضع المدعوم بالجاذبية يعزز صرف سائل الري والبراز للأسفل' }
+      },
+      {
+        action: { en: 'Fill the irrigation bag with 500 to 1000 ml of lukewarm water', ar: 'امل كيس الري بـ 500 إلى 1000 مل من الماء الدافئ' },
+        rationale: { en: 'Adequate volume stimulates colonic emptying; lukewarm temperature prevents cramping and discomfort', ar: 'الحجم الكافي ينبّه القولون للإفراغ؛ درجة الحرارة الدافئة تمنع التشنجات' }
+      },
+      {
+        action: { en: 'Flush the tubing with water to empty it of air before connecting', ar: 'ادفع الماء عبر الأنبوبة لإخراج الهواء قبل التوصيل' },
+        rationale: { en: 'Air entering the colon causes discomfort, bloating, and cramping', ar: 'الهواء الداخل للقولون يسبب الانتفاخ والانزعاج والتشنجات' }
+      },
+      {
+        action: { en: 'Hang the irrigation bag on a bathroom door hook, or raise the bag 18 inches above the stoma before irrigation', ar: 'علّق كيس الري على خطاف باب الحمام، أو ارفع الكيس 18 بوصة فوق الفتحة قبل البدء' },
+        rationale: { en: 'Correct height creates appropriate gravity pressure for safe, effective water flow', ar: 'الارتفاع الصحيح يخلق ضغط جاذبية مناسبًا لتدفق الماء بأمان وفعالية' }
+      },
+      {
+        action: { en: 'Remove the pouch and the soiled colostomy bag', ar: 'أزل الكيس والكيس الملوث' },
+        rationale: { en: 'Clears the stoma for placement of the irrigation sleeve', ar: 'يكشف الفتحة لوضع كُم الري' }
+      },
+      {
+        action: { en: 'Remove any stool or drainage from the stoma using toilet paper', ar: 'أزل أي براز أو تصريف من الفتحة باستخدام ورق التواليت' },
+        rationale: { en: 'Ensures clear visual access to stoma for safe sleeve placement', ar: 'يضمن رؤية واضحة للفتحة لوضع الكم بأمان' }
+      },
+      {
+        action: { en: 'Gently clean the stoma and surrounding skin with soap and warm water as needed', ar: 'نظّف الفتحة والجلد المحيط بها بلطف بالصابون والماء الدافئ حسب الحاجة' },
+        rationale: { en: 'Removes residual stool and maintains peristomal skin integrity', ar: 'يزيل بقايا البراز ويحافظ على سلامة الجلد المحيط بالفتحة' }
+      },
+      {
+        action: { en: 'Place the ring and irrigation sleeve over the stoma and adjust the belt for a snug fit', ar: 'ضع الحلقة وكُم الري فوق الفتحة واضبط الحزام لملاءمة مريحة' },
+        rationale: { en: 'Properly fitted sleeve directs all irrigation return into the toilet without leakage', ar: 'الكم الملائم يوجّه كل ماء الري والبراز إلى المرحاض دون تسرب' }
+      },
+      {
+        action: { en: 'Put the bottom of the irrigation sleeve into the toilet', ar: 'ضع الطرف السفلي للكم داخل المرحاض' },
+        rationale: { en: 'Directs effluent directly into the toilet for hygienic disposal', ar: 'يوجّه ما يخرج مباشرة إلى المرحاض للتخلص منه بشكل صحي' }
+      },
+      {
+        action: { en: 'Attach the cone tip to the irrigation tubing and lubricate it', ar: 'وصّل الطرف المخروطي بأنبوبة الري وشحمه' },
+        rationale: { en: 'Cone prevents water backflow; lubrication prevents stoma trauma during insertion', ar: 'المخروط يمنع ارتداد الماء؛ التشحيم يمنع صدمة الفتحة أثناء الإدخال' }
+      },
+      {
+        action: { en: 'Gently insert the cone into the stoma for a snug fit. If resistance is met, perform a lubricated digital exam to remove feces. NEVER use force — this could perforate the bowel', ar: 'أدخل المخروط برفق في الفتحة حتى تشعر بتثبيت مناسب. إن وجدت مقاومة، أجرِ فحصًا رقميًا مشحمًا لإزالة البراز. لا تستخدم القوة أبدًا — قد تثقب الأمعاء' },
+        rationale: { en: 'Gentle insertion prevents stoma perforation; forcing the cone can cause life-threatening bowel perforation', ar: 'الإدخال اللطيف يمنع انثقاب الفتحة؛ القوة قد تسبب انثقاب الأمعاء وهو حالة مهددة للحياة' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Colostomy Irrigation Equipment / معدات ري القولستومي',
+          items: [
+            { en: 'Irrigating sleeve with belt', ar: 'كُم الري مع الحزام' },
+            { en: 'Water-soluble lubricant', ar: 'مزلق قابل للذوبان في الماء' },
+            { en: 'Plastic garbage bag', ar: 'كيس قمامة بلاستيكي' },
+            { en: 'Colostomy appliance (pouch system)', ar: 'جهاز القولستومي (الكيس)' },
+            { en: 'Bedpan or large bowl (if patient is bedbound)', ar: 'طشت أو وعاء كبير (إذا كان المريض طريح الفراش)' },
+            { en: 'Soap, warm water, basin, washcloths, and towels', ar: 'صابون وماء دافئ وحوض وفوط غسيل ومناشف' },
+            { en: 'Disposable non-sterile gloves and disposable apron', ar: 'قفازات غير معقمة للاستعمال مرة واحدة ومريلة' },
+            { en: 'Irrigation bag (filled with 500–1000 ml of water)', ar: 'كيس الري (مملوء بـ 500–1000 مل ماء)' },
+            { en: 'Cone tip attached to the irrigation tubing', ar: 'طرف مخروطي متصل بأنبوبة الري' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 9. PARACENTESIS ─── */
+  {
+    id: 'para',
+    name: { en: 'Paracentesis', ar: 'بزل البطن' },
+    steps: [
+      {
+        action: { en: 'Check the patient\'s coagulation profile and vital signs', ar: 'افحص ملف تخثر المريض والعلامات الحيوية' },
+        rationale: { en: 'Coagulopathy increases bleeding risk; baseline vitals allow monitoring for complications', ar: 'اضطرابات التخثر تزيد خطر النزيف؛ العلامات الأساسية تتيح مراقبة المضاعفات' }
+      },
+      {
+        action: { en: 'Explain the procedure to the patient', ar: 'اشرح الإجراء للمريض' },
+        rationale: { en: 'Reduces anxiety and promotes informed consent and cooperation', ar: 'يقلل القلق ويعزز الموافقة المستنيرة والتعاون' }
+      },
+      {
+        action: { en: 'Instruct the patient to void (empty the bladder) before the procedure', ar: 'اطلب من المريض إفراغ المثانة قبل الإجراء' },
+        rationale: { en: 'Empty bladder reduces risk of accidental bladder puncture during needle insertion', ar: 'المثانة الفارغة تقلل خطر ثقبها عن طريق الخطأ أثناء إدخال الإبرة' }
+      },
+      {
+        action: { en: 'Place patient in an upright sitting position at the edge of the bed; drape, exposing the abdomen', ar: 'ضع المريض في وضع الجلوس المستقيم على حافة السرير؛ غطِّه مع كشف البطن' },
+        rationale: { en: 'Upright position shifts ascites fluid downward to the most dependent area for easier aspiration', ar: 'الوضع المستقيم يحرك سائل الاستسقاء للأسفل إلى أكثر منطقة متحركة لتسهيل الشفط' }
+      },
+      {
+        action: { en: 'Prepare the skin with antiseptic solution', ar: 'جهز الجلد بمحلول مطهر' },
+        rationale: { en: 'Prevents peritonitis (infection of the peritoneum) — a serious complication', ar: 'يمنع التهاب الصفاق وهو مضاعفة خطيرة' }
+      },
+      {
+        action: { en: 'Have the collection bottle and tubing readily available', ar: 'ضع زجاجة التجميع والأنابيب في متناول اليد' },
+        rationale: { en: 'Immediate availability allows efficient drainage once access is established', ar: 'التوافر الفوري يسمح بصرف فعال بمجرد تأسيس الوصول' }
+      },
+      {
+        action: { en: 'Physician administers local anesthesia and introduces the needle or trocar into the abdomen', ar: 'يحقن الطبيب مخدرًا موضعيًا ويُدخل الإبرة أو المبزل إلى البطن' },
+        rationale: { en: 'Local anesthesia minimizes pain; physician performs this invasive step as per scope of practice', ar: 'المخدر الموضعي يقلل الألم؛ الطبيب يجري هذه الخطوة الغازية وفق اختصاصه' }
+      },
+      {
+        action: { en: 'After the procedure, assist the patient to a comfortable position', ar: 'بعد الإجراء، ساعد المريض للوصول إلى وضع مريح' },
+        rationale: { en: 'Promotes rest and recovery; reduces discomfort post-procedure', ar: 'يعزز الراحة والتعافي ويقلل الانزعاج بعد الإجراء' }
+      },
+      {
+        action: { en: 'Record the amount and characteristics of the fluid removed, the number of specimens sent to the laboratory, and the patient\'s condition during treatment', ar: 'سجّل كمية السائل المُزال وخصائصه، وعدد العينات المرسلة للمختبر، وحالة المريض أثناء العلاج' },
+        rationale: { en: 'Documents the procedure; tracks fluid balance; provides data for assessing complications', ar: 'يوثق الإجراء ويتتبع توازن السوائل ويوفر بيانات لتقييم المضاعفات' }
+      },
+      {
+        action: { en: 'Check blood pressure and vital signs every 30 min for 2 hours, every hour for 4 hours, then every 4 hours for 24 hours', ar: 'افحص ضغط الدم والعلامات الحيوية كل 30 دقيقة لساعتين، ثم كل ساعة لـ 4 ساعات، ثم كل 4 ساعات لـ 24 ساعة' },
+        rationale: { en: 'Monitors for post-paracentesis circulatory dysfunction and hypovolemia, especially after large-volume removal', ar: 'يراقب اضطراب الدورة الدموية بعد البزل ونقص حجم الدم خاصة بعد إزالة كميات كبيرة' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Paracentesis Equipment / معدات بزل البطن',
+          items: [
+            { en: 'Antiseptic swab sticks', ar: 'أعواد مسحات مطهرة' },
+            { en: 'Sterile drape', ar: 'غطاء معقم' },
+            { en: 'Lidocaine 1%', ar: 'ليدوكايين 1%' },
+            { en: 'Syringes (10 ml and 60 ml)', ar: 'سرنجات (10 مل و60 مل)' },
+            { en: 'Injection needles (22–25 gauge)', ar: 'إبر حقن (22–25)' },
+            { en: '8-French catheter with 3-way stopcock, self-sealing valve, and 5-ml luer-lock syringe', ar: 'قسطرة 8 فرنش مع صمام ثلاثي وصمام ذاتي الغلق وسرنجة 5 مل' },
+            { en: 'Introducer needle (20 gauge)', ar: 'إبرة إدخال (مقاس 20)' },
+            { en: 'Adhesive dressing', ar: 'لاصق طبي' },
+            { en: 'Tubing set with roller clamp', ar: 'طقم أنابيب مع مشبك دوار' },
+            { en: 'Collection bottle (vacuum)', ar: 'زجاجة تجميع (بتفريغ هواء)' },
+            { en: 'Specimen bottles and laboratory forms', ar: 'عبوات عينات ونماذج مخبرية' },
+            { en: 'Gauze (4×4 inch)', ar: 'شاش (4×4 بوصة)' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 10. LIVER DIALYSIS ─── */
+  {
+    id: 'liverdialysis',
+    name: { en: 'Liver Dialysis', ar: 'غسيل الكبد' },
+    steps: [
+      {
+        action: { en: 'Check the patient\'s coagulation profile, neurological status, and vascular access', ar: 'تحقق من ملف التخثر والحالة العصبية ووضع الوصول الوعائي' },
+        rationale: { en: 'Liver failure causes coagulopathy and encephalopathy; baseline assessment guides safe procedure initiation', ar: 'فشل الكبد يسبب اضطرابات التخثر والاعتلال الدماغي؛ التقييم الأساسي يوجّه البدء الآمن بالإجراء' }
+      },
+      {
+        action: { en: 'Prepare and check the main circuits (blood, albumin, and dialysis circuits) and explain the procedure to the patient', ar: 'جهز وافحص الدوائر الرئيسية (دائرة الدم والألبومين والغسيل) واشرح الإجراء للمريض' },
+        rationale: { en: 'Ensures all circuits are patent and functional before start; explanation reduces patient anxiety', ar: 'يضمن سلامة وعمل جميع الدوائر قبل البدء؛ الشرح يقلل قلق المريض' }
+      },
+      {
+        action: { en: 'Continuous monitoring throughout the session: blood pressure, heart rate, oxygen saturation, level of consciousness, and complications', ar: 'المراقبة المستمرة طوال الجلسة: ضغط الدم، معدل القلب، تشبع الأكسجين، مستوى الوعي، والمضاعفات' },
+        rationale: { en: 'Liver failure patients are hemodynamically unstable; early detection of deterioration allows prompt intervention', ar: 'مرضى فشل الكبد غير مستقرين ديناميكيًا؛ الكشف المبكر عن التدهور يتيح التدخل السريع' }
+      },
+      {
+        action: { en: 'Post-dialysis reassessment', ar: 'إعادة التقييم بعد الغسيل' },
+        substeps: [
+          { en: 'Vital signs: blood pressure, heart rate, temperature', ar: 'العلامات الحيوية: الضغط والنبض والحرارة' },
+          { en: 'Mental status improvement', ar: 'تحسّن الحالة العقلية' },
+          { en: 'Catheter site inspection', ar: 'فحص موقع القسطرة' }
+        ],
+        rationale: { en: 'Evaluates clinical response to treatment and detects post-procedure complications', ar: 'يقيّم الاستجابة السريرية للعلاج ويكتشف المضاعفات بعد الإجراء' }
+      },
+      {
+        action: { en: 'Documentation', ar: 'التوثيق' },
+        substeps: [
+          { en: 'Duration of session', ar: 'مدة الجلسة' },
+          { en: 'Any complications encountered', ar: 'أي مضاعفات حدثت' },
+          { en: 'Patient response to treatment', ar: 'استجابة المريض للعلاج' }
+        ],
+        rationale: { en: 'Provides legal record and enables evaluation of treatment effectiveness over multiple sessions', ar: 'يوفر سجلًا قانونيًا ويتيح تقييم فعالية العلاج عبر جلسات متعددة' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Liver Dialysis Equipment / معدات غسيل الكبد',
+          items: [
+            { en: 'Specialized machine (e.g., MARS or standard renal replacement machine for SPAD)', ar: 'جهاز متخصص (مثل MARS أو جهاز بديل للكلى لنظام SPAD)' },
+            { en: 'Albumin-rich dialysate', ar: 'سائل غسيل غني بالألبومين' },
+            { en: 'Vascular access: large-bore double-lumen catheter (usually internal jugular)', ar: 'وصول وعائي: قسطرة مزدوجة واسعة (غالبًا في الوريد الوداجي الداخلي)' },
+            { en: 'Blood circuit', ar: 'دائرة الدم' },
+            { en: 'Albumin circuit', ar: 'دائرة الألبومين' },
+            { en: 'Dialysate circuit', ar: 'دائرة سائل الغسيل' },
+            { en: 'MARS FLUX dialyzer (if using MARS system)', ar: 'فلتر MARS FLUX (عند استخدام نظام MARS)' },
+            { en: 'Anionic exchanger (e.g., diaMARS E250 adsorber)', ar: 'مبادل أيوني سالب (مثل diaMARS E250)' },
+            { en: 'Activated carbon/charcoal adsorber (e.g., diaMARS AC250)', ar: 'ممتص كربوني نشط (مثل diaMARS AC250)' },
+            { en: 'diaFLUX dialyzer', ar: 'فلتر diaFLUX' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 11. LIVER BIOPSY ─── */
+  {
+    id: 'liverbiopsy',
+    name: { en: 'Liver Biopsy', ar: 'خزعة الكبد' },
+    steps: [
+      {
+        action: { en: 'Check the patient\'s coagulation profile and vital signs', ar: 'افحص ملف التخثر والعلامات الحيوية للمريض' },
+        rationale: { en: 'Liver disease impairs clotting factors; abnormal coagulation must be corrected before biopsy to prevent hemorrhage', ar: 'أمراض الكبد تضعف عوامل التخثر؛ يجب تصحيح اضطرابات التخثر قبل الخزعة لمنع النزيف' }
+      },
+      {
+        action: { en: 'Check for signed informed consent and explain the procedure to the patient', ar: 'تحقق من توقيع الموافقة المستنيرة واشرح الإجراء للمريض' },
+        rationale: { en: 'Patient\'s legal and ethical right; explanation reduces anxiety and promotes cooperation', ar: 'حق قانوني وأخلاقي للمريض؛ الشرح يقلل القلق ويعزز التعاون' }
+      },
+      {
+        action: { en: 'Expose the right side of the patient\'s upper abdomen (right hypochondria)', ar: 'اكشف الجانب الأيمن من الجزء العلوي لبطن المريض (المراق الأيمن)' },
+        rationale: { en: 'The right lobe of the liver is the accessible site for percutaneous biopsy', ar: 'الفص الأيمن للكبد هو الموقع المناسب للخزعة عبر الجلد' }
+      },
+      {
+        action: { en: 'Instruct patient to inhale and exhale deeply several times, then finally to exhale and hold breath at end of expiration', ar: 'اطلب من المريض الشهيق والزفير العميق عدة مرات، ثم الزفير والحبس في نهاية الزفير' },
+        rationale: { en: 'Breath-holding at expiration fixes the diaphragm and liver in place, preventing laceration during needle insertion', ar: 'حبس النفس عند الزفير يثبّت الحجاب الحاجز والكبد مما يمنع التمزق أثناء إدخال الإبرة' }
+      },
+      {
+        action: { en: 'Immediately after the biopsy, assist the patient to lie on the right side and place a pillow under the costal margin', ar: 'فور انتهاء الخزعة، ساعد المريض للاستلقاء على جانبه الأيمن وضع وسادة تحت حافة القفص الصدري' },
+        rationale: { en: 'Right-lateral positioning with pressure on the biopsy site controls bleeding by tamponade effect', ar: 'الاستلقاء على اليمين مع الضغط على موقع الخزعة يتحكم في النزيف بتأثير الانضغاط' }
+      },
+      {
+        action: { en: 'Instruct the patient to avoid coughing or straining after the procedure', ar: 'اطلب من المريض تجنب السعال أو الإجهاد بعد الإجراء' },
+        rationale: { en: 'Coughing and straining increase intra-abdominal pressure, risking bleeding from the biopsy site', ar: 'السعال والإجهاد يرفعان الضغط داخل البطن مما يزيد خطر النزيف من موقع الخزعة' }
+      },
+      {
+        action: { en: 'Remeasure and monitor vital signs closely', ar: 'أعد قياس ومراقبة العلامات الحيوية عن كثب' },
+        rationale: { en: 'Detects post-biopsy hemorrhage early — hypotension and tachycardia are warning signs', ar: 'يكشف مبكرًا عن النزيف بعد الخزعة — انخفاض الضغط وتسارع القلب علامات تحذيرية' }
+      },
+      {
+        action: { en: 'Instruct the patient to avoid heavy lifting and strenuous physical activity for 1 week', ar: 'اطلب من المريض تجنب رفع الأثقال والنشاط البدني الشاق لمدة أسبوع' },
+        rationale: { en: 'Strenuous activity increases blood pressure and intra-abdominal pressure, risking delayed re-bleeding', ar: 'النشاط الشديد يرفع ضغط الدم والضغط داخل البطن مما يزيد خطر النزيف المتأخر' }
+      }
+    ],
+    equipment: {
+      sections: [
+        {
+          title: 'Liver Biopsy Equipment / معدات خزعة الكبد',
+          items: [
+            { en: 'Sterile gloves', ar: 'قفازات معقمة' },
+            { en: 'Dressing kit', ar: 'طقم غيار' },
+            { en: 'Antiseptic solution', ar: 'محلول مطهر' },
+            { en: 'Local anesthetic', ar: 'مخدر موضعي' },
+            { en: 'Biopsy needle', ar: 'إبرة خزعة' },
+            { en: 'Needle and syringe', ar: 'إبرة وسرنجة' },
+            { en: 'Specimen container with formalin', ar: 'وعاء عينة يحتوي على فورمالين' }
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ─── 12. ENDOSCOPIC PROCEDURES (Equipment only) ─── */
+  {
+    id: 'endo',
+    name: { en: 'Endoscopic Procedures', ar: 'إجراءات التنظير' },
+    equipmentOnly: true,
+    equipment: {
+      sections: [
+        {
+          title: 'Upper GI Fibroscopy (EGD) / تنظير الجهاز الهضمي العلوي',
+          items: [
+            { en: 'Lighted endoscope (gastroscope)', ar: 'منظار مضيء (منظار المعدة)' },
+            { en: 'Local anesthetic gargle or spray', ar: 'مخدر موضعي غرغرة أو بخاخ' },
+            { en: 'Midazolam (Versed) — for sedation', ar: 'ميدازولام — للتخدير الخفيف' },
+            { en: 'Atropine — to reduce secretions', ar: 'أتروبين — لتقليل الإفرازات' },
+            { en: 'Glucagon — to reduce GI motility', ar: 'جلوكاجون — لتقليل حركة الجهاز الهضمي' }
+          ]
+        },
+        {
+          title: 'Fiberoptic Colonoscopy / تنظير القولون بالألياف الضوئية',
+          items: [
+            { en: 'Flexible fiberoptic colonoscope', ar: 'منظار قولون مرن بالألياف الضوئية' },
+            { en: 'Snare and cautery (for polypectomy)', ar: 'حلقة قطع وكي (لإزالة الزوائد)' },
+            { en: 'Bipolar/unipolar coagulators', ar: 'أجهزة كي ثنائي أو أحادي' },
+            { en: 'Heater probes', ar: 'مجسات حرارية' },
+            { en: 'Laser-compatible scopes', ar: 'مناظير متوافقة مع الليزر' },
+            { en: 'Bowel cleansing agents (polyethylene glycol, laxatives, or sodium phosphate tablets)', ar: 'أدوية تنظيف الأمعاء (بوليثيلين جليكول أو ملينات أو أقراص فوسفات الصوديوم)' }
+          ]
+        },
+        {
+          title: 'Anoscopy / Proctoscopy / Sigmoidoscopy',
+          items: [
+            { en: 'Warm tap water or Fleet\'s enema', ar: 'ماء دافئ أو حقنة شرجية' }
+          ]
+        }
+      ]
+    }
+  }
+];
+
+/* ═══════════════════════════════════════════════════════
+   RENDER
+═══════════════════════════════════════════════════════ */
+const sidebar = document.getElementById('sidebar');
+const contentArea = document.getElementById('contentArea');
+
+procedures.forEach((proc, idx) => {
+  /* Sidebar tab */
+  const tab = document.createElement('div');
+  tab.className = 'proc-tab' + (idx === 0 ? ' active' : '');
+  tab.innerHTML = `<span class="tab-en">${proc.name.en}</span><span class="tab-ar">${proc.name.ar}</span>`;
+  tab.addEventListener('click', () => selectProc(idx));
+  sidebar.appendChild(tab);
+
+  /* Content panel */
+  const panel = document.createElement('div');
+  panel.className = 'proc-content' + (idx === 0 ? ' active' : '');
+  panel.id = 'panel-' + idx;
+
+  let html = `<div class="content-title">
+    <h2>${proc.name.en}</h2>
+    <p>${proc.name.ar}</p>
+  </div>`;
+
+  if (proc.equipmentOnly) {
+    /* Equipment-only notice */
+    html += `<div class="no-checklist-note">
+      ℹ️ No performance checklist is available for this procedure. Equipment list is provided below.
+      <span>لا يوجد قائمة أداء لهذا الإجراء. يُعرض أدناه قائمة المعدات فقط.</span>
+    </div>`;
+    html += renderEquipment(proc.equipment);
+  } else {
+    /* Sub-tabs */
+    html += `<div class="sub-tabs">
+      <div class="sub-tab active" data-panel="proc-${idx}">📋 Procedure / الإجراء</div>
+      <div class="sub-tab" data-panel="equip-${idx}">🧰 Equipment / المعدات</div>
+    </div>`;
+
+    /* Procedure sub-content */
+    html += `<div class="sub-content active" id="proc-${idx}">`;
+    html += renderProcedureTable(proc.steps);
+    html += `</div>`;
+
+    /* Equipment sub-content */
+    html += `<div class="sub-content" id="equip-${idx}">`;
+    html += renderEquipment(proc.equipment);
+    html += `</div>`;
+  }
+
+  panel.innerHTML = html;
+  contentArea.appendChild(panel);
+
+  /* Sub-tab events */
+  panel.querySelectorAll('.sub-tab').forEach(st => {
+    st.addEventListener('click', () => {
+      panel.querySelectorAll('.sub-tab').forEach(x => x.classList.remove('active'));
+      panel.querySelectorAll('.sub-content').forEach(x => x.classList.remove('active'));
+      st.classList.add('active');
+      document.getElementById(st.dataset.panel).classList.add('active');
+    });
+  });
+});
+
+function selectProc(idx) {
+  document.querySelectorAll('.proc-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+  document.querySelectorAll('.proc-content').forEach((p, i) => p.classList.toggle('active', i === idx));
+}
+
+function renderProcedureTable(steps) {
+  let rows = '';
+  steps.forEach((step, i) => {
+    let actionHtml = `<span class="cell-en">${step.action.en}</span><span class="cell-ar">${step.action.ar}</span>`;
+    if (step.substeps && step.substeps.length) {
+      actionHtml += `<ul class="substeps">`;
+      step.substeps.forEach(s => {
+        actionHtml += `<li><span class="cell-en">${s.en}</span><span class="cell-ar">${s.ar}</span></li>`;
+      });
+      actionHtml += `</ul>`;
+    }
+    rows += `<tr>
+      <td>${i + 1}</td>
+      <td>${actionHtml}</td>
+      <td class="rationale-cell">
+        <span class="cell-en">${step.rationale.en}</span>
+        <span class="cell-ar">${step.rationale.ar}</span>
+      </td>
+    </tr>`;
+  });
+  return `<div class="proc-table-wrap">
+    <table class="proc-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nursing Action / الإجراء التمريضي</th>
+          <th>Rationale / الأساس العلمي</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderEquipment(equipment) {
+  let html = '';
+  equipment.sections.forEach(sec => {
+    html += `<h3 class="equip-section-title">${sec.title}</h3>`;
+    html += `<div class="equip-grid">`;
+    sec.items.forEach(item => {
+      html += `<div class="equip-item">
+        <div class="equip-icon">⚕</div>
+        <div class="equip-text">
+          <div class="en">${item.en}</div>
+          <div class="ar">${item.ar}</div>
+        </div>
+      </div>`;
+    });
+    html += `</div>`;
+  });
+  return html;
+}
+</script>
+</body>
+</html>

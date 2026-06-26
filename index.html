@@ -54,6 +54,274 @@
     background: transparent;
   }
 
+  /* ─── AUTH BUTTON (top-right corner) ─── */
+  .auth-corner {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .auth-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.38);
+    border-radius: 100px;
+    padding: 9px 18px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .auth-btn:hover {
+    background: rgba(255,255,255,0.28);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-1px);
+  }
+  .auth-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* user avatar when logged in */
+  .user-avatar-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(20,40,35,0.25);
+    transition: transform 0.2s ease;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+  }
+  .user-avatar-btn:hover { transform: scale(1.06); }
+  .user-avatar-btn img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eef3f1;
+    display: block;
+  }
+  .user-avatar-btn .user-initials {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: #1D9E75;
+    border: 2px solid #eef3f1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; color: #fff;
+  }
+
+  /* user popover */
+  .user-popover {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background: rgba(255,255,255,1);
+    border: 1px solid rgba(220,225,222,0.9);
+    border-radius: 14px;
+    padding: 0;
+    width: 220px;
+    box-shadow: 0 12px 32px rgba(20,40,35,0.22);
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+    pointer-events: none;
+    transition: all 0.2s ease;
+    overflow: hidden;
+  }
+  .user-popover.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .user-popover-header {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid rgba(28,43,37,0.08);
+  }
+  .user-popover-name {
+    font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .user-popover-email {
+    font-size: 11px; color: rgba(28,43,37,0.5);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .user-popover-stats {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(28,43,37,0.08);
+    display: flex; gap: 12px;
+  }
+  .user-stat {
+    flex: 1; text-align: center;
+  }
+  .user-stat-num {
+    font-size: 18px; font-weight: 700; color: var(--teal-600); display: block;
+  }
+  .user-stat-label {
+    font-size: 10px; color: rgba(28,43,37,0.5); letter-spacing: 0.04em;
+  }
+  .user-popover-actions { padding: 8px; }
+  .user-action-btn {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; padding: 9px 10px; border-radius: 8px;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-soft);
+    transition: background 0.15s; text-align: left;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .user-action-btn:hover { background: var(--teal-50); }
+  .user-action-btn svg { width: 15px; height: 15px; color: var(--teal-600); flex-shrink: 0; }
+  .user-action-btn.danger { color: #c0392b; }
+  .user-action-btn.danger svg { color: #c0392b; }
+  .user-action-btn.danger:hover { background: #fdecea; }
+
+  /* ─── AUTH MODAL ─── */
+  .auth-modal-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(6,14,11,0.65);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .auth-modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .auth-modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2.2rem 2rem 2rem;
+    width: min(420px, 92vw);
+    box-shadow: 0 24px 60px rgba(6,14,11,0.3);
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.25s ease;
+    text-align: center;
+  }
+  .auth-modal-overlay.open .auth-modal { transform: translateY(0) scale(1); }
+  .auth-modal-logo {
+    width: 52px; height: 52px; margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .auth-modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--ink); margin-bottom: 0.4rem;
+  }
+  .auth-modal p {
+    font-size: 13px; color: rgba(28,43,37,0.6); line-height: 1.55; margin-bottom: 1.6rem;
+  }
+  .auth-divider {
+    display: flex; align-items: center; gap: 12px; margin: 1.2rem 0;
+    font-size: 12px; color: rgba(28,43,37,0.4);
+  }
+  .auth-divider::before, .auth-divider::after {
+    content: ''; flex: 1; height: 1px; background: rgba(28,43,37,0.12);
+  }
+  .google-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 13px 20px; border-radius: 100px;
+    border: 1.5px solid rgba(28,43,37,0.15);
+    background: #fff; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .google-btn:hover { border-color: var(--teal-400); box-shadow: 0 4px 14px rgba(29,158,117,0.15); transform: translateY(-1px); }
+  .google-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .google-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .auth-skip {
+    margin-top: 1rem; font-size: 12px; color: rgba(28,43,37,0.45);
+    cursor: pointer; background: none; border: none;
+    font-family: 'Inter', sans-serif; text-decoration: underline;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .auth-skip:hover { color: rgba(28,43,37,0.7); }
+
+  /* ─── STUDENT DASHBOARD PANEL ─── */
+  .dashboard-panel {
+    position: fixed; inset: 0; z-index: 150;
+    background: rgba(6,14,11,0.55);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: flex-start; justify-content: flex-end;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .dashboard-panel.open { opacity: 1; pointer-events: auto; }
+  .dashboard-drawer {
+    background: #fff;
+    width: min(380px, 100vw);
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+    box-shadow: -8px 0 40px rgba(6,14,11,0.2);
+  }
+  .dashboard-panel.open .dashboard-drawer { transform: translateX(0); }
+  .dashboard-header {
+    padding: 1.4rem 1.4rem 1rem;
+    border-bottom: 1px solid rgba(28,43,37,0.08);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .dashboard-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
+    overflow: hidden;
+  }
+  .dashboard-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .dashboard-name { font-size: 15px; font-weight: 600; color: var(--ink); }
+  .dashboard-email { font-size: 11px; color: rgba(28,43,37,0.5); margin-top: 1px; }
+  .dashboard-close {
+    margin-left: auto; background: none; border: none; cursor: pointer;
+    color: rgba(28,43,37,0.4); padding: 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dashboard-close:hover { color: var(--ink); }
+  .dashboard-close svg { width: 20px; height: 20px; display: block; }
+  .dashboard-section { padding: 1.2rem 1.4rem; border-bottom: 1px solid rgba(28,43,37,0.07); }
+  .dashboard-section-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(28,43,37,0.4); margin-bottom: 0.9rem;
+  }
+  .dash-stat-row { display: flex; gap: 10px; }
+  .dash-stat {
+    flex: 1; background: var(--teal-50); border-radius: 12px; padding: 12px 10px; text-align: center;
+  }
+  .dash-stat-n { font-size: 22px; font-weight: 700; color: var(--teal-600); display: block; }
+  .dash-stat-l { font-size: 10px; color: rgba(28,43,37,0.5); letter-spacing: 0.04em; }
+  .dash-progress-item {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .dash-progress-icon { font-size: 18px; flex-shrink: 0; }
+  .dash-progress-info { flex: 1; min-width: 0; }
+  .dash-progress-name { font-size: 13px; font-weight: 500; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dash-progress-bar-wrap { height: 5px; background: rgba(28,43,37,0.1); border-radius: 100px; margin-top: 4px; overflow: hidden; }
+  .dash-progress-bar { height: 100%; background: var(--teal-400); border-radius: 100px; transition: width 0.5s ease; }
+  .dash-progress-pct { font-size: 11px; font-weight: 600; color: var(--teal-600); flex-shrink: 0; }
+  .dash-signout-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 12px; border-radius: 12px;
+    border: 1.5px solid rgba(192,57,43,0.25); background: none; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #c0392b;
+    transition: all 0.2s ease; -webkit-tap-highlight-color: transparent;
+    margin: 1rem 1.4rem 1.4rem; width: calc(100% - 2.8rem);
+  }
+  .dash-signout-btn:hover { background: #fdecea; border-color: rgba(192,57,43,0.4); }
+
   h1, h2, h3, .section-title, .year-card h2 {
     letter-spacing: -0.01em;
   }
@@ -334,15 +602,15 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(220,225,222,0.9);
     border-radius: 12px;
     padding: 0.6rem 0.9rem;
     width: 190px;
     text-align: left;
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
-    box-shadow: 0 10px 30px rgba(20,40,35,0.18);
+    box-shadow: 0 12px 32px rgba(20,40,35,0.28);
     opacity: 0;
     transform: translateY(-8px) scale(0.96);
     pointer-events: none;
@@ -1399,6 +1667,107 @@
     </form>
 
     <div class="contact-status" id="contactStatus"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ AUTH CORNER (top-right) ══════════════════════ -->
+<div class="auth-corner" id="authCorner">
+  <button class="auth-btn" id="signInBtn" onclick="openAuthModal()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+    Sign In
+  </button>
+  <div style="position:relative; display:none;" id="userAvatarWrap">
+    <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserPopover()">
+      <div class="user-initials" id="userInitials">?</div>
+    </button>
+    <div class="user-popover" id="userPopover">
+      <div class="user-popover-header">
+        <div class="user-popover-name" id="popoverName">—</div>
+        <div class="user-popover-email" id="popoverEmail">—</div>
+      </div>
+      <div class="user-popover-stats">
+        <div class="user-stat">
+          <span class="user-stat-num" id="popoverFilesCount">0</span>
+          <span class="user-stat-label">FILES OPENED</span>
+        </div>
+        <div class="user-stat">
+          <span class="user-stat-num" id="popoverPctCount">0%</span>
+          <span class="user-stat-label">OVERALL</span>
+        </div>
+      </div>
+      <div class="user-popover-actions">
+        <button class="user-action-btn" onclick="openDashboard(); toggleUserPopover();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          My Dashboard
+        </button>
+        <button class="user-action-btn danger" onclick="signOutUser()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ AUTH MODAL ══════════════════════ -->
+<div class="auth-modal-overlay" id="authModalOverlay" onclick="handleAuthOverlayClick(event)">
+  <div class="auth-modal">
+    <div class="auth-modal-logo">🎓</div>
+    <h2>Welcome to the Hub</h2>
+    <p>Sign in to track your progress, sync across devices, and unlock your personal study dashboard.</p>
+    <button class="google-btn" id="googleSignInBtn" onclick="signInWithGoogle()">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      Continue with Google
+    </button>
+    <div class="auth-divider">or</div>
+    <p style="font-size:12px; color:rgba(28,43,37,0.45); margin-bottom:0.4rem;">The hub works perfectly without an account.<br>Sign in only adds personal progress tracking.</p>
+    <button class="auth-skip" onclick="closeAuthModal()">Continue without signing in</button>
+  </div>
+</div>
+
+<!-- ══════════════════════ STUDENT DASHBOARD DRAWER ══════════════════════ -->
+<div class="dashboard-panel" id="dashboardPanel" onclick="handleDashboardOverlayClick(event)">
+  <div class="dashboard-drawer">
+    <div class="dashboard-header">
+      <div class="dashboard-avatar" id="dashAvatar">?</div>
+      <div>
+        <div class="dashboard-name" id="dashName">—</div>
+        <div class="dashboard-email" id="dashEmail">—</div>
+      </div>
+      <button class="dashboard-close" onclick="closeDashboard()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dashboard-section">
+      <div class="dashboard-section-title">Your Progress</div>
+      <div class="dash-stat-row">
+        <div class="dash-stat">
+          <span class="dash-stat-n" id="dashFilesOpened">0</span>
+          <span class="dash-stat-l">FILES OPENED</span>
+        </div>
+        <div class="dash-stat">
+          <span class="dash-stat-n" id="dashOverallPct">0%</span>
+          <span class="dash-stat-l">OVERALL</span>
+        </div>
+        <div class="dash-stat">
+          <span class="dash-stat-n" id="dashSyncStatus">✓</span>
+          <span class="dash-stat-l">SYNCED</span>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-section">
+      <div class="dashboard-section-title">Progress by Year</div>
+      <div id="dashYearProgress"></div>
+    </div>
+    <button class="dash-signout-btn" onclick="signOutUser()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sign Out
+    </button>
   </div>
 </div>
 
@@ -2632,6 +3001,218 @@ refreshProgressUI();
   vid.addEventListener('error', tryPlay);
 })();
 
+/* ── Auth UI Controls ── */
+function openAuthModal() {
+  document.getElementById('authModalOverlay').classList.add('open');
+}
+function closeAuthModal() {
+  document.getElementById('authModalOverlay').classList.remove('open');
+}
+function handleAuthOverlayClick(e) {
+  if (e.target === document.getElementById('authModalOverlay')) closeAuthModal();
+}
+function toggleUserPopover() {
+  document.getElementById('userPopover').classList.toggle('open');
+  if (window._authUpdateStats) window._authUpdateStats();
+}
+function openDashboard() {
+  if (window._authUpdateStats) window._authUpdateStats();
+  document.getElementById('dashboardPanel').classList.add('open');
+}
+function closeDashboard() {
+  document.getElementById('dashboardPanel').classList.remove('open');
+}
+function handleDashboardOverlayClick(e) {
+  if (e.target === document.getElementById('dashboardPanel')) closeDashboard();
+}
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#userAvatarWrap'))
+    document.getElementById('userPopover').classList.remove('open');
+});
+window.getViewedSet = getViewedSet;
+window.refreshProgressUI = refreshProgressUI;
+window.subjectProgress = subjectProgress;
+window.years = years;
+window.practicalSubjects = practicalSubjects;
+
 </script>
 </body>
 </html>
+
+<script type="module">
+/* ══════════════════════ FIREBASE AUTH ══════════════════════ */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp }
+  from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBJGf-9KbQF-aCi3iH9rDxmF4xxgrpc_UI",
+  authDomain: "nursing-hub-bb7e9.firebaseapp.com",
+  projectId: "nursing-hub-bb7e9",
+  storageBucket: "nursing-hub-bb7e9.firebasestorage.app",
+  messagingSenderId: "484923512052",
+  appId: "1:484923512052:web:738ee4a6762b5895b93aa1"
+};
+
+const fbApp = initializeApp(firebaseConfig);
+const auth  = getAuth(fbApp);
+const db    = getFirestore(fbApp);
+const provider = new GoogleAuthProvider();
+
+let currentUser = null;
+
+/* ─── Sign In ─── */
+window.signInWithGoogle = async function() {
+  const btn = document.getElementById('googleSignInBtn');
+  btn.disabled = true; btn.textContent = 'Signing in…';
+  try {
+    await signInWithPopup(auth, provider);
+    window.closeAuthModal();
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = 'Try again — popup was blocked';
+  }
+};
+
+/* ─── Sign Out ─── */
+window.signOutUser = async function() {
+  await signOut(auth);
+  document.getElementById('userPopover').classList.remove('open');
+  document.getElementById('dashboardPanel').classList.remove('open');
+};
+
+/* ─── Auth State ─── */
+onAuthStateChanged(auth, async (user) => {
+  currentUser = user;
+  if (user) {
+    document.getElementById('signInBtn').style.display = 'none';
+    document.getElementById('userAvatarWrap').style.display = 'block';
+    const name = user.displayName || user.email || '?';
+    const initials = name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+    document.getElementById('userInitials').textContent = initials;
+    document.getElementById('popoverName').textContent = name;
+    document.getElementById('popoverEmail').textContent = user.email || '';
+    await syncProgress(user.uid);
+    updateStats();
+  } else {
+    document.getElementById('signInBtn').style.display = '';
+    document.getElementById('userAvatarWrap').style.display = 'none';
+  }
+});
+
+/* ─── Sync progress localStorage ↔ Firestore ─── */
+async function syncProgress(uid) {
+  const local = window.getViewedSet ? window.getViewedSet() : new Set();
+  const ref = doc(db, 'students', uid);
+  try {
+    const snap = await getDoc(ref);
+    if (snap.exists()) {
+      const remote = new Set(snap.data().viewedFiles || []);
+      const merged = new Set([...remote, ...local]);
+      await updateDoc(ref, {
+        viewedFiles: [...merged],
+        lastSeen: serverTimestamp(),
+        displayName: auth.currentUser.displayName || '',
+        email: auth.currentUser.email || '',
+      });
+      localStorage.setItem('nurseverse_viewed_files_v1', JSON.stringify([...merged]));
+      if (window.refreshProgressUI) window.refreshProgressUI();
+    } else {
+      await setDoc(ref, {
+        viewedFiles: [...local],
+        displayName: auth.currentUser.displayName || '',
+        email: auth.currentUser.email || '',
+        joinedAt: serverTimestamp(),
+        lastSeen: serverTimestamp(),
+      });
+    }
+    document.getElementById('dashSyncStatus').textContent = '✓';
+  } catch(e) {
+    document.getElementById('dashSyncStatus').textContent = '!';
+  }
+}
+
+/* ─── Intercept markFileViewed to also sync ─── */
+const _orig = window.markFileViewed;
+window.markFileViewed = function(url, linkEl) {
+  if (_orig) _orig(url, linkEl);
+  if (currentUser) {
+    const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
+    const ref = doc(db, 'students', currentUser.uid);
+    updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
+    updateStats();
+  }
+};
+
+/* ─── Stats ─── */
+function updateStats() {
+  const viewed = window.getViewedSet ? window.getViewedSet() : new Set();
+  let total = 0;
+  if (window.years) {
+    Object.keys(window.years).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        (window.years[yk].terms[term] || []).forEach(s => {
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+        });
+      });
+    });
+  }
+  if (window.practicalSubjects) {
+    Object.keys(window.practicalSubjects).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        ((window.practicalSubjects[yk] || {})[term] || []).forEach(s => {
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+        });
+      });
+    });
+  }
+  const pct = total ? Math.round((viewed.size / total) * 100) : 0;
+
+  document.getElementById('popoverFilesCount').textContent = viewed.size;
+  document.getElementById('popoverPctCount').textContent   = pct + '%';
+  document.getElementById('dashFilesOpened').textContent   = viewed.size;
+  document.getElementById('dashOverallPct').textContent    = pct + '%';
+
+  if (currentUser) {
+    const name = currentUser.displayName || 'Student';
+    document.getElementById('dashName').textContent  = name;
+    document.getElementById('dashEmail').textContent = currentUser.email || '';
+    document.getElementById('dashAvatar').textContent =
+      name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+  }
+
+  // per-year bars
+  if (window.years && window.practicalSubjects && window.subjectProgress) {
+    const yData = [
+      { key:'y1', label:'First Year',  icon:'🟢' },
+      { key:'y2', label:'Second Year', icon:'🔵' },
+      { key:'y3', label:'Third Year',  icon:'🟠' },
+    ];
+    document.getElementById('dashYearProgress').innerHTML = yData.map(y => {
+      let seen=0, tot=0;
+      ['term1','term2'].forEach(term => {
+        (window.years[y.key].terms[term]||[]).forEach(s => {
+          const p = window.subjectProgress(s, `files/${y.key}/${term}/${s.slug}`);
+          seen+=p.seen; tot+=p.total;
+        });
+        ((window.practicalSubjects[y.key]||{})[term]||[]).forEach(s => {
+          const p = window.subjectProgress(s, `files/${y.key}/practical/${term}/${s.slug}`);
+          seen+=p.seen; tot+=p.total;
+        });
+      });
+      const p = tot ? Math.round((seen/tot)*100) : 0;
+      return `<div class="dash-progress-item">
+        <span class="dash-progress-icon">${y.icon}</span>
+        <div class="dash-progress-info">
+          <div class="dash-progress-name">${y.label}</div>
+          <div class="dash-progress-bar-wrap"><div class="dash-progress-bar" style="width:${p}%"></div></div>
+        </div>
+        <span class="dash-progress-pct">${p}%</span>
+      </div>`;
+    }).join('');
+  }
+}
+window._authUpdateStats = updateStats;
+</script>

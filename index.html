@@ -569,6 +569,27 @@
   .res-tag.summaries { background: rgba(55,138,221,0.18); color: #185FA5; }
   .res-tag.flashcards { background: rgba(186,117,23,0.22); color: #95650F; }
   .res-tag.mcq { background: rgba(212,83,126,0.18); color: #A23961; }
+  .res-tag.procedure { background: rgba(186,117,23,0.22); color: #95650F; }
+  .res-tag.video { background: rgba(212,83,126,0.18); color: #A23961; }
+
+  /* ─── PRACTICAL (dark/glass) CARD ─── */
+  .subject-card.practical-card {
+    background: rgba(8, 18, 15, 0.55);
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+  .subject-card.practical-card:hover {
+    background: rgba(8, 18, 15, 0.7);
+    border-color: rgba(255,255,255,0.3);
+  }
+  .subject-card.practical-card h3 { color: #eef3f1; }
+  .subject-card.practical-card p { color: rgba(238,243,241,0.6); }
+  .subject-card.practical-card .subject-icon { background: rgba(255,255,255,0.14) !important; }
+  .subject-card.practical-card .res-tag.lectures,
+  .subject-card.practical-card .res-tag.procedure,
+  .subject-card.practical-card .res-tag.video {
+    background: rgba(255,255,255,0.14);
+    color: #eef3f1;
+  }
 
   /* ─── SUBJECT DETAIL VIEW ─── */
   .subject-view {
@@ -595,26 +616,59 @@
   }
 
   .resource-card {
-    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    background: rgba(255, 255, 255, 0.32);
     border: 1px solid rgba(255,255,255,0.55);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 1.5rem 1.25rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.25s cubic-bezier(.2,.8,.2,1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     box-shadow: 0 6px 22px rgba(20,40,35,0.1);
+    overflow: hidden;
   }
 
-  .resource-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.46); }
+  .resource-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(29,158,117,0), rgba(29,158,117,0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: background 0.3s ease;
+    pointer-events: none;
+  }
 
-  .resource-card.lectures:hover { border-color: #1D9E75; }
-  .resource-card.summaries:hover { border-color: #378ADD; }
-  .resource-card.flashcards:hover { border-color: #BA7517; }
-  .resource-card.mcq:hover { border-color: #D4537E; }
+  .resource-card:hover {
+    transform: translateY(-5px) scale(1.015);
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 14px 32px rgba(20,40,35,0.18);
+  }
+
+  .resource-card.lectures:hover { border-color: #1D9E75; box-shadow: 0 14px 34px rgba(29,158,117,0.28); }
+  .resource-card.summaries:hover { border-color: #378ADD; box-shadow: 0 14px 34px rgba(55,138,221,0.28); }
+  .resource-card.flashcards:hover { border-color: #BA7517; box-shadow: 0 14px 34px rgba(186,117,23,0.28); }
+  .resource-card.mcq:hover { border-color: #D4537E; box-shadow: 0 14px 34px rgba(212,83,126,0.28); }
+
+  .resource-card.expanded {
+    background: rgba(255,255,255,0.55);
+    box-shadow: 0 16px 38px rgba(20,40,35,0.22);
+  }
+  .resource-card.lectures.expanded { border-color: #1D9E75; box-shadow: 0 16px 38px rgba(29,158,117,0.32); }
+  .resource-card.summaries.expanded { border-color: #378ADD; box-shadow: 0 16px 38px rgba(55,138,221,0.32); }
+  .resource-card.flashcards.expanded { border-color: #BA7517; box-shadow: 0 16px 38px rgba(186,117,23,0.32); }
+  .resource-card.mcq.expanded { border-color: #D4537E; box-shadow: 0 16px 38px rgba(212,83,126,0.32); }
+
+  .resource-card.expanded .resource-icon {
+    transform: scale(1.12) rotate(-4deg);
+  }
 
   .resource-icon {
     width: 44px; height: 44px;
@@ -622,6 +676,7 @@
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1rem;
     font-size: 22px;
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
   }
 
   .resource-card h3 {
@@ -629,6 +684,22 @@
     font-weight: 600;
     color: #1c2b25;
     margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .resource-card h3::after {
+    content: '›';
+    margin-left: auto;
+    font-size: 16px;
+    color: rgba(28,43,37,0.35);
+    transition: transform 0.3s ease;
+  }
+
+  .resource-card.expanded h3::after {
+    transform: rotate(90deg);
   }
 
   .resource-card p {
@@ -647,23 +718,71 @@
   }
 
   .file-list {
-    margin-top: auto;
-    padding-top: 1rem;
+    margin-top: 0;
+    padding-top: 0;
     list-style: none;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease, padding-top 0.3s ease;
   }
-  .file-list li { margin-bottom: 6px; }
+  .resource-card.expanded .file-list {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    max-height: 1000px;
+    opacity: 1;
+  }
+  .file-list li { margin-bottom: 8px; }
   .file-list a {
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 13px;
-    color: #185FA5;
+    font-weight: 500;
+    color: #0C447C;
     text-decoration: none;
-    background: rgba(55,138,221,0.1);
-    padding: 6px 10px;
-    border-radius: 8px;
-    transition: background 0.15s ease;
+    background: linear-gradient(135deg, rgba(55,138,221,0.12), rgba(29,158,117,0.08));
+    padding: 9px 12px 9px 14px;
+    border-radius: 10px;
+    border-left: 3px solid #378ADD;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    overflow: hidden;
   }
-  .file-list a:hover { background: rgba(55,138,221,0.2); }
+  .file-list a::before {
+    content: '📄';
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .file-list a::after {
+    content: '↗';
+    margin-left: auto;
+    font-size: 12px;
+    opacity: 0;
+    transform: translate(-4px, 2px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .file-list a:hover {
+    background: linear-gradient(135deg, rgba(55,138,221,0.24), rgba(29,158,117,0.16));
+    border-left-color: #1D9E75;
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(20,40,35,0.12);
+  }
+  .file-list a span.f-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .resource-card .resource-toggle-hint {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 10px;
+    color: rgba(28,43,37,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
   /* ─── FOOTER ─── */
   .footer {
@@ -1007,6 +1126,21 @@
     <div class="subjects-grid" id="subjectsGrid"></div>
   </div>
 
+  <!-- ── PRACTICAL VIEW (Adult Practical / Critical Practical 1 & 2) ── -->
+  <div id="practicalView" class="year-view">
+    <button class="back-btn" id="practicalBackBtn" onclick="backToYearFromPractical()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Subjects
+    </button>
+
+    <div class="year-view-header">
+      <h2 id="practicalTitle">Practical Subjects</h2>
+      <p id="practicalDesc">Adult Health Nursing &amp; Critical Care Nursing practical sessions — lectures, procedures &amp; instructional videos (covers both terms)</p>
+    </div>
+
+    <div class="subjects-grid" id="practicalGrid"></div>
+  </div>
+
   <!-- ── SUBJECT VIEW ── -->
   <div id="subjectView" class="subject-view">
     <button class="back-btn" id="subjectBackBtn">
@@ -1063,16 +1197,29 @@ const years = {
     color: 'rgba(29,158,117,0.18)',
     terms: {
       term1: [
-        { name: 'Subject 1', slug: 'subject-1', desc: 'To be added', icon: '🔬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 2', slug: 'subject-2', desc: 'To be added', icon: '🫀', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 3', slug: 'subject-3', desc: 'To be added', icon: '🧬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 4', slug: 'subject-4', desc: 'To be added', icon: '💊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Fundamental Nursing 1 (Practice)', slug: 'fundamental-nursing-1-practice', desc: 'Practical sessions for fundamental nursing skills', icon: '🩹', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Health Assessment (Laboratory)', slug: 'health-assessment-laboratory', desc: 'Practical health assessment skills lab', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Anatomy - Laboratory', slug: 'anatomy-laboratory', desc: 'Practical anatomy lab sessions', icon: '🦴', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Anatomy - Theory', slug: 'anatomy-theory', desc: 'Theoretical foundations of human anatomy', icon: '🧠', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Physiology', slug: 'physiology', desc: 'Foundations of human body function', icon: '🫁', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Fundamental Nursing 1 (Theory)', slug: 'fundamental-nursing-1-theory', desc: 'Core theoretical concepts of fundamental nursing', icon: '📘', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Health Assessment (Theory)', slug: 'health-assessment-theory', desc: 'Theoretical foundations of health assessment', icon: '📋', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Professional Ethics and Legislation', slug: 'professional-ethics-and-legislation', desc: 'Nursing ethics, laws, and professional conduct', icon: '⚖️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Medical Terminology', slug: 'medical-terminology', desc: 'Terminology used in medical and nursing practice', icon: '🔤', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'English', slug: 'english-1', desc: 'English language skills for nursing students', icon: '🗣️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Information Technology', slug: 'information-technology', desc: 'Basic computing and IT skills', icon: '💻', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ],
       term2: [
-        { name: 'Subject 5', slug: 'subject-5', desc: 'To be added', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 6', slug: 'subject-6', desc: 'To be added', icon: '📋', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 7', slug: 'subject-7', desc: 'To be added', icon: '🧪', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 8', slug: 'subject-8', desc: 'To be added', icon: '📚', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Fundamental Nursing 2 (Practical)', slug: 'fundamental-nursing-2-practical', desc: 'Practical sessions for fundamental nursing skills', icon: '🩹', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Microbiology and Infection Control', slug: 'microbiology-and-infection-control', desc: 'Microorganisms and infection prevention principles', icon: '🦠', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Biochemistry and Nutrition', slug: 'biochemistry-and-nutrition', desc: 'Biochemical processes and nutritional science', icon: '🧪', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Fundamental Nursing 2 (Theory)', slug: 'fundamental-nursing-2-theory', desc: 'Core theoretical concepts of fundamental nursing', icon: '📘', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Holistic Nursing Care', slug: 'holistic-nursing-care', desc: 'Comprehensive, patient-centered approach to care', icon: '🌿', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Basics of Quality and Safety in Health Care', slug: 'basics-of-quality-and-safety-in-health-care', desc: 'Foundations of healthcare quality and patient safety', icon: '✅', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Communication Skill in Nursing', slug: 'communication-skill-in-nursing', desc: 'Therapeutic communication and interpersonal skills', icon: '🗨️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'English (1)', slug: 'english-2', desc: 'English language skills for nursing students', icon: '🗣️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Community Issues', slug: 'community-issues', desc: 'Community health concepts and challenges', icon: '🏘️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Critical Thinking', slug: 'critical-thinking', desc: 'Clinical reasoning and critical thinking skills', icon: '🧩', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ]
     }
   },
@@ -1274,7 +1421,7 @@ const years = {
             { title: 'Hepatitis', file: '3- Hepatitis.pdf' },
             { title: 'Rheumatoid Arthritis', file: '3- Rheumatoid arthritis.pdf' },
             { title: 'Liver Cirrhosis & Esophageal Varices', file: '4- Liver cirrhosis esophageal varices.pdf' },
-            { title: 'Osteomyelitis & Osteoporosis', file: '4- Osteomyelitis Osteoporosis.pdf' },
+            { title: 'Osteomyelitis and Osteoporosis', file: 'Osteomyelitis and Osteoporosis.pdf' },
             { title: 'Burns', file: 'burn second term.pdf' },
             { title: 'Disc Prolapse', file: 'Disc prolapse.pdf' },
             { title: 'Endocrine - Dr. Zinab 1', file: 'endocrine dr zinab1.pdf' },
@@ -1289,7 +1436,7 @@ const years = {
             { title: 'Urology System Disorders 3', file: 'urology system disorders3.pdf' },
             { title: 'Peptic Ulcer', file: '1- Peptic ulcer.pdf' },
             { title: 'Fracture', file: '1-Fracture.pdf' },
-            { title: 'Cholecystitis & Cholelithiasis', file: '2- Cholecystitis Cholelithiasis.pdf' },
+            { title: 'Cholecystitis and Cholelithiasis', file: 'Cholecystitisa and Cholelithiasis.pdf' },
             { title: 'Hip Replacement', file: '2-Hip replacement.pdf' },
           ], summaries: [
             { title: 'Endocrine & Diabetes', file: 'endocrine_diabetes_lecture.html' },
@@ -1461,18 +1608,25 @@ const years = {
     badgeStyle: 'background:rgba(216,90,48,0.18);color:#B14C26;',
     desc: 'Advanced clinical practice, specializations, and nursing research',
     color: 'rgba(216,90,48,0.18)',
+    termLabels: { term1: 'Maternity & Obstetric Nursing', term2: 'Pediatric Nursing' },
     terms: {
       term1: [
-        { name: 'Subject 1', slug: 'subject-1', desc: 'To be added', icon: '🧠', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 2', slug: 'subject-2', desc: 'To be added', icon: '❤️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 3', slug: 'subject-3', desc: 'To be added', icon: '🫀', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 4', slug: 'subject-4', desc: 'To be added', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Maternal Health Nursing 1 (Theoretical)', slug: 'maternal-health-nursing-1-theoretical', desc: 'Theoretical foundations of maternal and antenatal nursing care', icon: '🤰', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Maternal Health Nursing 1 (Practical)', slug: 'maternal-health-nursing-1-practical', desc: 'Practical sessions for maternal and antenatal nursing care', icon: '🩺', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Obstetric Medicine and Midwifery', slug: 'obstetric-medicine-and-midwifery', desc: 'Medical and midwifery aspects of pregnancy and childbirth', icon: '👶', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Informatics and Technology in Nursing', slug: 'informatics-and-technology-in-nursing', desc: 'Use of informatics and technology in nursing practice', icon: '💻', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Scientific Research in Nursing', slug: 'scientific-research-in-nursing', desc: 'Research methods and methodology applied to nursing', icon: '🔬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Principles of Statistics', slug: 'principles-of-statistics', desc: 'Foundations of statistics for healthcare research', icon: '📊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'English Writing', slug: 'english-writing-3', desc: 'Theoretical English writing skills', icon: '✍️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ],
       term2: [
-        { name: 'Subject 5', slug: 'subject-5', desc: 'To be added', icon: '📑', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 6', slug: 'subject-6', desc: 'To be added', icon: '💊', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 7', slug: 'subject-7', desc: 'To be added', icon: '🔬', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
-        { name: 'Subject 8', slug: 'subject-8', desc: 'To be added', icon: '📖', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pediatric Nursing (Theoretical)', slug: 'pediatric-nursing-theoretical', desc: 'Theoretical foundations of pediatric nursing care', icon: '🧒', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pediatric Nursing (Practical)', slug: 'pediatric-nursing-practical', desc: 'Practical sessions for pediatric nursing care', icon: '🩹', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pediatric Medicine', slug: 'pediatric-medicine', desc: 'Medical management of pediatric patients', icon: '💉', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Pediatric Surgery', slug: 'pediatric-surgery', desc: 'Surgical conditions and care in pediatric patients', icon: '🔪', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Evidence-Based Nursing Practice', slug: 'evidence-based-nursing-practice', desc: 'Applying research evidence to nursing practice', icon: '📑', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'Advanced English Writing', slug: 'advanced-english-writing', desc: 'Advanced theoretical English writing skills', icon: '✍️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
+        { name: 'University Requirement', slug: 'university-requirement', desc: 'University-mandated general requirement course', icon: '🏛️', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
       ]
     }
   }
@@ -1481,12 +1635,162 @@ const years = {
 let currentYear = null;
 let currentTerm = 'term1';
 
+// ─── PRACTICAL SUBJECTS (separate per term) ───
+// Each subject has 3 resource types: lecture (شرح), procedure (الإجراء), video (فيديو تعليمي)
+// Files live under: files/<yearKey>/practical/<termKey>/<subject-slug>/<lecture|procedure|video>/yourfile
+const practicalSubjects = {
+  y2: {
+    term1: [
+      { name: 'Adult 1', slug: 'adult-1', desc: 'Practical training for Adult Health Nursing 1', icon: '🩺', files: { lecture: [
+          { title: 'Med-Surg I Clinical Book 2025', file: 'Med-Surg I clinical book 2025.pdf' },
+          { title: 'Labs Summary Table', file: '🧪 LAPS SUMMARY TABLE.pdf' },
+          { title: 'Oral Questions', file: 'اسئله oral.pdf' },
+          { title: 'Equipment', file: 'equipment.pdf' },
+        ], procedure: [
+          { title: 'ECG', file: 'ECG.pdf' },
+          { title: 'Blood Transfusion', file: 'Blood transfusion.pdf' },
+          { title: 'Surgical Hand Washing', file: 'Surgical hand washing.pdf' },
+          { title: 'IV Infusion', file: 'IV infusion.pdf' },
+        ], video: [] } },
+      { name: 'Critical 1', slug: 'critical-1', desc: 'Practical training for Critical Care Nursing 1', icon: '❤️‍🔥', files: { lecture: [
+          { title: 'Critical Care and Emergency Clinical Book (Last Version)', file: 'Critical care and Emergency clinical book last version.pdf' },
+          { title: 'Oral Practical Questions', file: 'اسئله oral عملي.pdf' },
+          { title: 'Chest Tube', file: 'Chest tube.pdf' },
+        ], procedure: [
+          { title: 'Central Venous Pressure (CVP)', file: 'Central Venous Pressure CVP.pdf' },
+          { title: 'Chest Tube Dressing Care', file: 'Chest Tube Dressing Care.pdf' },
+          { title: 'Chest Tube', file: 'Chest tube.pdf' },
+          { title: 'Equipment', file: 'equipment.pdf' },
+          { title: 'D.C Shock', file: 'd.c shock.pdf' },
+          { title: 'Oropharyngeal Airway', file: 'Oropharyngeal Airway.pdf' },
+          { title: 'ABG', file: 'ABG.pdf' },
+          { title: 'BLS', file: 'BLS.pdf' },
+        ], video: [] } },
+    ],
+    term2: [
+      { name: 'Adult 2', slug: 'adult-2', desc: 'Practical training for Adult Health Nursing 2', icon: '🩺', files: { lecture: [
+          { title: 'Medical Surgical Second Term Clinical Book', file: 'medical surgical second term clinical book (1)rst (1).pdf' },
+          { title: 'Medical Surgical Second Term Clinical Book (2)', file: 'medical surgical second term clinical book (1)rst (1) (1).pdf' },
+          { title: 'Hemodialysis & Liver Dialysis', file: 'hemodialysis & liver dialysis.pdf' },
+          { title: 'Check Lists Adult II — All Procedures', file: 'check lists adult II all procedures.pdf' },
+          { title: 'Renal Biopsy', file: 'Renal Biopsy.pdf' },
+          { title: 'Lumbar Puncture', file: 'Lumbar Puncture.pdf' },
+          { title: 'Traction Care', file: 'Traction Care.pdf' },
+          { title: 'Colostomy Care and Colostomy Irrigation', file: 'Colostomy Care and Colostomy Irrigation.pdf' },
+          { title: 'Cast Care', file: 'Cast Care.pdf' },
+          { title: 'Burn Wound Care', file: 'Burn Wound Care.pdf' },
+        ], procedure: [
+          { title: 'Check List Adult', file: 'Check List adult.pdf' },
+          { title: 'Equipment', file: 'equipment.pdf' },
+          { title: 'Adult Procedures Photos', file: 'صور الادالت عملي .pdf' },
+          { title: 'Medical Procedures — Theory & Practical', file: 'medical_procedures نظري العملي.html' },
+          { title: 'Nursing Procedures Equipment', file: 'nursing_procedures_equipment.html' },
+        ], video: [] } },
+      { name: 'Critical 2', slug: 'critical-2', desc: 'Practical training for Critical Care Nursing 2', icon: '❤️‍🔥', files: { lecture: [
+          { title: 'Critical Care Nursing — Explanation', file: 'Critical Care Nursingشرح.html' },
+          { title: 'Critical — Theory & Practical', file: 'critical نظري العملي.html' },
+          { title: 'Critical 2 Checklist', file: 'critical 2 checklist.pdf' },
+          { title: 'Critical Care and Emergency Clinical Book — Part 1', file: 'Critical care and Emergency clinical book part one last version.pdf' },
+          { title: 'Critical Care Nursing Practice — Part 2', file: 'Critical Care Nursing Practice part 2 final version.pdf' },
+          { title: 'Mechanical Ventilator', file: 'Mechanical Ventilator.pdf' },
+          { title: 'Total Parenteral Nutrition', file: 'Total Parenteral Nutrition.pdf' },
+          { title: 'Tracheostomy Care', file: 'Tracheostomy Care.pdf' },
+          { title: 'Bundles of Care of Critically Ill Patients', file: 'Bundles of Care of Critically Ill Patients.pdf' },
+        ], procedure: [
+          { title: 'Critical Equipment', file: 'Critical Equipment.html' },
+          { title: 'Critical Procedures', file: 'Critical procedures.html' },
+          { title: 'ACLS Checklist', file: 'ACLS_Checklist.html' },
+          { title: 'ACLS Equipment', file: 'ACLS_Equipment.html' },
+          { title: 'Critical Procedures Photos', file: 'صور كريتيكال عملي .pdf' },
+          { title: 'Photos', file: 'صور.pdf' },
+          { title: 'Equipment', file: 'equipment.pdf' },
+          { title: 'Critical 2 Checklist', file: 'critical 2 checklist.pdf' },
+        ], video: [] } },
+    ]
+  }
+};
+
+function openPractical() {
+  document.getElementById('yearView').classList.remove('active');
+  document.getElementById('subjectView').classList.remove('active');
+
+  const yearPractical = practicalSubjects[currentYear] || {};
+  const list = yearPractical[currentTerm] || [];
+
+  document.getElementById('practicalTitle').textContent = 'Practical Subjects — ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2');
+  document.getElementById('practicalDesc').textContent = 'Practical sessions for ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2') + ' — lectures, procedures & instructional videos';
+
+  document.getElementById('practicalGrid').innerHTML = list.map((s, i) => `
+    <div class="subject-card" onclick="openPracticalSubject(${i})">
+      <div class="subject-icon" style="background:rgba(255,255,255,0.5); font-size:20px;">${s.icon}</div>
+      <h3>${s.name}</h3>
+      <p>${s.desc}</p>
+      <div class="resource-types">
+        <span class="res-tag lectures">Lecture</span>
+        <span class="res-tag procedure">Procedure</span>
+        <span class="res-tag video">Video</span>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('practicalView').classList.add('active');
+  window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
+}
+
+function backToYearFromPractical() {
+  document.getElementById('practicalView').classList.remove('active');
+  document.getElementById('yearView').classList.add('active');
+}
+
+function openPracticalSubject(idx) {
+  const yearPractical = practicalSubjects[currentYear] || {};
+  const list = yearPractical[currentTerm] || [];
+  const s = list[idx];
+
+  document.getElementById('practicalView').classList.remove('active');
+  document.getElementById('subjectTitle').textContent = s.name;
+  document.getElementById('subjectDesc').textContent = years[currentYear].title + ' · Practical · ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2') + ' · ' + s.desc;
+
+  document.getElementById('subjectBackBtn').onclick = () => {
+    document.getElementById('subjectView').classList.remove('active');
+    openPractical();
+  };
+
+  const resources = [
+    { key: 'lecture', icon: '📖', label: 'Lecture', desc: 'Explanatory lecture for the practical topic', color: '#1D9E75' },
+    { key: 'procedure', icon: '🛠️', label: 'Procedure', desc: 'Step-by-step procedure / skill checklist', color: '#BA7517' },
+    { key: 'video', icon: '🎥', label: 'Video', desc: 'Instructional video for the procedure', color: '#D4537E' },
+  ];
+
+  const basePath = `files/${currentYear}/practical/${currentTerm}/${s.slug}`;
+
+  document.getElementById('resourceGrid').innerHTML = resources.map(r => {
+    const fileList = (s.files && s.files[r.key]) ? s.files[r.key] : [];
+    const filesHtml = fileList.length
+      ? `<ul class="file-list">${fileList.map(f => `
+          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">${f.title || f.file}</a></li>
+        `).join('')}</ul>`
+      : `<span class="coming-soon">Coming soon</span>`;
+    return `
+    <div class="resource-card" ${fileList.length ? 'onclick="toggleResourceCard(this)"' : ''}>
+      <div class="resource-icon" style="background:${r.color}22;">${r.icon}</div>
+      <h3>${r.label}</h3>
+      <p>${r.desc}</p>
+      ${filesHtml}
+    </div>`;
+  }).join('');
+
+  document.getElementById('subjectView').classList.add('active');
+  window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
+}
+
 function openYear(yearKey, term) {
   currentYear = yearKey;
   currentTerm = term || 'term1';
   const y = years[yearKey];
   document.getElementById('homeSection').classList.add('hidden');
   document.getElementById('subjectView').classList.remove('active');
+  document.getElementById('practicalView').classList.remove('active');
 
   document.getElementById('yearBadge').textContent = y.badge;
   document.getElementById('yearBadge').style.cssText = y.badgeStyle + 'font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;';
@@ -1494,8 +1798,8 @@ function openYear(yearKey, term) {
   document.getElementById('yearDesc').textContent = y.desc;
 
   document.getElementById('termTabs').innerHTML = `
-    <button class="term-tab ${currentTerm === 'term1' ? 'active' : ''}" onclick="switchTerm('term1')">Term 1</button>
-    <button class="term-tab ${currentTerm === 'term2' ? 'active' : ''}" onclick="switchTerm('term2')">Term 2</button>
+    <button class="term-tab ${currentTerm === 'term1' ? 'active' : ''}" onclick="switchTerm('term1')">${(y.termLabels && y.termLabels.term1) || 'Term 1'}</button>
+    <button class="term-tab ${currentTerm === 'term2' ? 'active' : ''}" onclick="switchTerm('term2')">${(y.termLabels && y.termLabels.term2) || 'Term 2'}</button>
   `;
 
   renderSubjects();
@@ -1510,8 +1814,8 @@ function switchTerm(term) {
 
   document.querySelectorAll('.term-tab').forEach(btn => btn.classList.remove('active'));
   document.getElementById('termTabs').innerHTML = `
-    <button class="term-tab ${currentTerm === 'term1' ? 'active' : ''}" onclick="switchTerm('term1')">Term 1</button>
-    <button class="term-tab ${currentTerm === 'term2' ? 'active' : ''}" onclick="switchTerm('term2')">Term 2</button>
+    <button class="term-tab ${currentTerm === 'term1' ? 'active' : ''}" onclick="switchTerm('term1')">${(y.termLabels && y.termLabels.term1) || 'Term 1'}</button>
+    <button class="term-tab ${currentTerm === 'term2' ? 'active' : ''}" onclick="switchTerm('term2')">${(y.termLabels && y.termLabels.term2) || 'Term 2'}</button>
   `;
 
   renderSubjects();
@@ -1521,7 +1825,8 @@ function renderSubjects() {
   const y = years[currentYear];
   const subjects = y.terms[currentTerm];
   const grid = document.getElementById('subjectsGrid');
-  grid.innerHTML = subjects.map((s, i) => `
+
+  let html = subjects.map((s, i) => `
     <div class="subject-card" onclick="openSubject(${i})">
       <div class="subject-icon" style="background:${y.color}; font-size:20px;">${s.icon}</div>
       <h3>${s.name}</h3>
@@ -1534,6 +1839,26 @@ function renderSubjects() {
       </div>
     </div>
   `).join('');
+
+  // "Practical Subjects" hub — shown first, before all subjects, in both terms
+  const yearPractical = practicalSubjects[currentYear] || {};
+  const termPractical = yearPractical[currentTerm] || [];
+  if (termPractical.length) {
+    const practicalCard = `
+      <div class="subject-card practical-card" onclick="openPractical()">
+        <div class="subject-icon" style="font-size:20px;">🧪</div>
+        <h3>Practical Subjects</h3>
+        <p>${currentTerm === 'term1' ? 'Adult 1 & Critical 1' : 'Adult 2 & Critical 2'} practical sessions</p>
+        <div class="resource-types">
+          <span class="res-tag lectures">Lecture</span>
+          <span class="res-tag procedure">Procedure</span>
+          <span class="res-tag video">Video</span>
+        </div>
+      </div>`;
+    html = practicalCard + html;
+  }
+
+  grid.innerHTML = html;
 }
 
 function openSubject(idx) {
@@ -1542,7 +1867,7 @@ function openSubject(idx) {
 
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectTitle').textContent = s.name;
-  document.getElementById('subjectDesc').textContent = y.title + ' · ' + (currentTerm === 'term1' ? 'Term 1' : 'Term 2') + ' · ' + s.desc;
+  document.getElementById('subjectDesc').textContent = y.title + ' · ' + ((y.termLabels && y.termLabels[currentTerm]) || (currentTerm === 'term1' ? 'Term 1' : 'Term 2')) + ' · ' + s.desc;
 
   document.getElementById('subjectBackBtn').onclick = () => {
     document.getElementById('subjectView').classList.remove('active');
@@ -1562,11 +1887,11 @@ function openSubject(idx) {
     const list = (s.files && s.files[r.key]) ? s.files[r.key] : [];
     const filesHtml = list.length
       ? `<ul class="file-list">${list.map(f => `
-          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">📄 ${f.title || f.file}</a></li>
+          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener">${f.title || f.file}</a></li>
         `).join('')}</ul>`
       : `<span class="coming-soon">Coming soon</span>`;
     return `
-    <div class="resource-card ${r.key}">
+    <div class="resource-card ${r.key}" ${list.length ? 'onclick="toggleResourceCard(this)"' : ''}>
       <div class="resource-icon" style="background:${r.color}22;">${r.icon}</div>
       <h3>${r.label}</h3>
       <p>${r.desc}</p>
@@ -1578,10 +1903,23 @@ function openSubject(idx) {
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
 }
 
+function toggleResourceCard(card) {
+  const wasExpanded = card.classList.contains('expanded');
+  card.parentElement.querySelectorAll('.resource-card.expanded').forEach(c => {
+    if (c !== card) c.classList.remove('expanded');
+  });
+  card.classList.toggle('expanded', !wasExpanded);
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.file-list')) e.stopPropagation();
+}, true);
+
 function goHome() {
   currentYear = null;
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectView').classList.remove('active');
+  document.getElementById('practicalView').classList.remove('active');
   document.getElementById('homeSection').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

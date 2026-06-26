@@ -2,7 +2,7 @@
    غيّر رقم VERSION كل ما ترفع تحديث جديد
    مثلاً: v1 → v2 → v3 ...
 */
-const VERSION = 'v27';
+const VERSION = 'v28';
 const CACHE = 'nursing-hub-' + VERSION;
 
 const ASSETS = [

@@ -95,10 +95,13 @@
   }
 
   .hero-overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(to bottom, rgba(6,14,11,0.5) 0%, rgba(8,16,13,0.28) 28%, rgba(10,20,16,0.22) 55%, rgba(14,26,21,0.5) 100%);
     z-index: 1;
+    pointer-events: none;
   }
 
   .hero-content {

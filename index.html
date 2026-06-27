@@ -1695,7 +1695,244 @@
   .contact-status.ok { color: #0F6E56; }
   .contact-status.err { color: #B14C26; }
 
-  .contact-form.hidden-after-send { display: none; }
+  /* ══════════════════════ NOTIFICATIONS ══════════════════════ */
+  .notif-bell-btn {
+    position: relative;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.38);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .notif-bell-btn:hover { background: rgba(255,255,255,0.28); transform: translateY(-1px); }
+  .notif-badge {
+    position: absolute;
+    top: -4px; right: -4px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 10px; font-weight: 700;
+    min-width: 18px; height: 18px;
+    border-radius: 100px;
+    padding: 0 4px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(14,28,22,0.7);
+    animation: badgePop 0.3s cubic-bezier(.36,.07,.19,.97);
+  }
+  @keyframes badgePop {
+    0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); }
+  }
+
+  /* Notification Panel Overlay */
+  .notif-panel-overlay {
+    position: fixed; inset: 0; z-index: 160;
+    background: rgba(6,14,11,0.45);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: flex-start; justify-content: flex-end;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .notif-panel-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .notif-panel {
+    background: #fff;
+    width: min(380px, 100vw);
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+    box-shadow: -8px 0 40px rgba(6,14,11,0.2);
+    display: flex; flex-direction: column;
+  }
+  .notif-panel-overlay.open .notif-panel { transform: translateX(0); }
+
+  .notif-panel-header {
+    padding: 1.2rem 1.2rem 1rem;
+    border-bottom: 1px solid rgba(28,43,37,0.08);
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: #fff; z-index: 1;
+  }
+  .notif-panel-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .notif-close-btn {
+    background: none; border: none; cursor: pointer;
+    color: rgba(28,43,37,0.4); padding: 4px; display: flex;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .notif-close-btn:hover { color: var(--ink); }
+  .notif-markall-btn {
+    font-size: 11px; font-weight: 600; color: var(--teal-600);
+    background: var(--teal-50); border: none; border-radius: 100px;
+    padding: 4px 10px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .notif-markall-btn:hover { background: var(--teal-100); }
+
+  .notif-list { flex: 1; padding: 0.8rem; }
+  .notif-empty {
+    text-align: center; font-size: 13px; color: rgba(28,43,37,0.4);
+    padding: 2rem 1rem;
+  }
+
+  .notif-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 10px; border-radius: 12px;
+    margin-bottom: 8px;
+    background: rgba(29,158,117,0.06);
+    border: 1px solid rgba(29,158,117,0.12);
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+  }
+  .notif-item.read {
+    background: rgba(28,43,37,0.03);
+    border-color: rgba(28,43,37,0.07);
+  }
+  .notif-item:hover { background: rgba(29,158,117,0.1); }
+  .notif-item.read:hover { background: rgba(28,43,37,0.06); }
+
+  .notif-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal-400); flex-shrink: 0; margin-top: 5px;
+    transition: background 0.2s;
+  }
+  .notif-item.read .notif-dot { background: rgba(28,43,37,0.2); }
+
+  .notif-icon { font-size: 22px; flex-shrink: 0; }
+  .notif-content { flex: 1; min-width: 0; }
+  .notif-title {
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    margin-bottom: 3px; line-height: 1.4;
+  }
+  .notif-item.read .notif-title { font-weight: 500; color: rgba(28,43,37,0.65); }
+  .notif-body {
+    font-size: 12px; color: rgba(28,43,37,0.6); line-height: 1.5;
+    margin-bottom: 5px;
+  }
+  .notif-time {
+    font-size: 10px; color: rgba(28,43,37,0.38); font-weight: 500;
+  }
+
+  /* Toast notification */
+  .notif-toast {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+    z-index: 300;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 14px;
+    padding: 12px 20px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+    min-width: 260px; max-width: 340px;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(.36,.07,.19,.97);
+    cursor: pointer;
+  }
+  .notif-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .notif-toast-icon { font-size: 20px; flex-shrink: 0; }
+  .notif-toast-title { font-size: 13px; font-weight: 600; }
+  .notif-toast-body { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* Admin Panel */
+  .admin-overlay {
+    position: fixed; inset: 0; z-index: 170;
+    background: rgba(6,14,11,0.55);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .admin-overlay.open { opacity: 1; pointer-events: auto; }
+  .admin-panel {
+    background: #fff; border-radius: 20px;
+    width: min(420px, 94vw);
+    box-shadow: 0 24px 60px rgba(6,14,11,0.3);
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.25s ease;
+    overflow: hidden;
+  }
+  .admin-overlay.open .admin-panel { transform: translateY(0) scale(1); }
+  .admin-field { margin-bottom: 1rem; }
+  .admin-field label {
+    display: block; font-size: 11.5px; font-weight: 600;
+    color: rgba(28,43,37,0.7); margin-bottom: 0.3rem; letter-spacing: 0.02em;
+  }
+  .admin-field input, .admin-field textarea, .admin-field select {
+    width: 100%; padding: 10px 12px; border-radius: 10px;
+    border: 1px solid rgba(28,43,37,0.18);
+    background: rgba(255,255,255,0.8);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--ink);
+    outline: none; transition: border-color 0.15s;
+  }
+  .admin-field input:focus, .admin-field textarea:focus, .admin-field select:focus {
+    border-color: var(--teal-400);
+  }
+  .admin-field textarea { resize: vertical; font-family: 'Inter', sans-serif; }
+  .admin-send-btn {
+    width: 100%; padding: 12px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    color: #fff; font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: opacity 0.15s, transform 0.15s;
+    margin-top: 0.3rem;
+  }
+  .admin-send-btn:hover { transform: translateY(-1px); }
+  .admin-send-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .admin-target-tabs {
+    display: flex; gap: 8px; margin-bottom: 1.2rem;
+  }
+  .admin-tab {
+    flex: 1; padding: 9px 10px; border-radius: 10px;
+    border: 1.5px solid rgba(28,43,37,0.15);
+    background: none; font-family: 'Inter', sans-serif;
+    font-size: 12.5px; font-weight: 600; color: rgba(28,43,37,0.55);
+    cursor: pointer; transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .admin-tab.active {
+    background: var(--teal-50); border-color: var(--teal-400);
+    color: var(--teal-600);
+  }
+  .admin-tab:hover:not(.active) { background: rgba(28,43,37,0.05); }
+
+  .admin-students-list {
+    max-height: 160px; overflow-y: auto;
+    border: 1px solid rgba(28,43,37,0.1); border-radius: 10px;
+    margin-bottom: 0.8rem;
+  }
+  .admin-student-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; cursor: pointer;
+    border-bottom: 1px solid rgba(28,43,37,0.06);
+    transition: background 0.12s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .admin-student-item:last-child { border-bottom: none; }
+  .admin-student-item:hover { background: var(--teal-50); }
+  .admin-student-item.selected { background: rgba(29,158,117,0.12); }
+  .admin-student-avatar {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .admin-student-info { flex: 1; min-width: 0; }
+  .admin-student-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .admin-student-email { font-size: 11px; color: rgba(28,43,37,0.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .admin-selected-student {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(29,158,117,0.1); border: 1px solid rgba(29,158,117,0.25);
+    border-radius: 10px; padding: 8px 12px; margin-bottom: 1rem;
+    font-size: 13px; font-weight: 600; color: var(--teal-600);
+  }
+
 </style>
 </head>
 <body>
@@ -1783,6 +2020,13 @@
 
 <!-- ══════════════════════ AUTH CORNER (top-right) ══════════════════════ -->
 <div class="auth-corner" id="authCorner">
+  <!-- 🔔 Notification Bell -->
+  <div style="position:relative;" id="notifWrap">
+    <button class="notif-bell-btn" id="notifBellBtn" onclick="toggleNotifPanel()" title="Notifications">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span class="notif-badge" id="notifBadge" style="display:none;">0</span>
+    </button>
+  </div>
   <button class="auth-btn" id="signInBtn" onclick="openAuthModal()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
     Sign In
@@ -1890,6 +2134,99 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Sign Out
     </button>
+    <!-- Admin button — only shown to admin user -->
+    <div id="adminBtnWrap" style="display:none; padding: 0 1.4rem 1.4rem;">
+      <button onclick="closeDashboard(); openAdminPanel()" style="width:100%;padding:11px;border-radius:12px;border:1.5px solid rgba(29,158,117,0.3);background:rgba(29,158,117,0.08);color:var(--teal-600);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+        إرسال إشعار للطلبة
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ NOTIFICATIONS PANEL ══════════════════════ -->
+<div class="notif-panel-overlay" id="notifPanelOverlay" onclick="if(event.target===this) closeNotifPanel()">
+  <div class="notif-panel" id="notifPanel">
+    <div class="notif-panel-header">
+      <span class="notif-panel-title">🔔 الإشعارات</span>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="notif-markall-btn" onclick="markAllNotifsRead()" title="تحديد الكل كمقروء">✓ الكل مقروء</button>
+        <button class="notif-close-btn" onclick="closeNotifPanel()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="notif-list" id="notifList">
+      <p class="notif-empty">لا توجد إشعارات بعد</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN PANEL ══════════════════════ -->
+<div class="admin-overlay" id="adminOverlay" onclick="if(event.target===this) closeAdminPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">⚙️ لوحة الإشعارات</span>
+      <button class="notif-close-btn" onclick="closeAdminPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+
+      <!-- Target selector tabs -->
+      <div class="admin-target-tabs">
+        <button class="admin-tab active" id="tabAll" onclick="switchAdminTab('all')">📢 إرسال للكل</button>
+        <button class="admin-tab" id="tabOne" onclick="switchAdminTab('one')">👤 إرسال لشخص</button>
+      </div>
+
+      <!-- Target: one student -->
+      <div id="adminTargetOne" style="display:none; margin-bottom:1rem;">
+        <div class="admin-field">
+          <label>ابحث عن طالب</label>
+          <input type="text" id="adminStudentSearch" placeholder="اكتب الاسم أو الإيميل..." oninput="filterStudentsList(this.value)">
+        </div>
+        <div id="adminStudentsList" class="admin-students-list">
+          <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري تحميل قائمة الطلبة...</p>
+        </div>
+        <div id="adminSelectedStudent" style="display:none;" class="admin-selected-student">
+          <span id="adminSelectedName">—</span>
+          <button onclick="clearSelectedStudent()" style="background:none;border:none;cursor:pointer;color:#c0392b;font-size:13px;">✕</button>
+        </div>
+      </div>
+
+      <!-- Notification content -->
+      <div class="admin-field">
+        <label>عنوان الإشعار</label>
+        <input type="text" id="adminNotifTitle" placeholder="مثال: تم إضافة ملفات جديدة 🎉">
+      </div>
+      <div class="admin-field">
+        <label>نص الإشعار</label>
+        <textarea id="adminNotifBody" rows="3" placeholder="تفاصيل الإشعار..."></textarea>
+      </div>
+      <div class="admin-field">
+        <label>نوع الإشعار</label>
+        <select id="adminNotifType">
+          <option value="update">📢 تحديث</option>
+          <option value="new_file">📁 ملف جديد</option>
+          <option value="exam">📝 امتحان</option>
+          <option value="info">ℹ️ معلومة</option>
+        </select>
+      </div>
+
+      <button class="admin-send-btn" id="adminSendBtn" onclick="sendAdminNotif()">إرسال للكل 🚀</button>
+      <div id="adminSendStatus" style="margin-top:0.7rem;font-size:13px;text-align:center;"></div>
+
+      <!-- Students list section -->
+      <div style="margin-top:1.4rem; border-top:1px solid rgba(28,43,37,0.08); padding-top:1rem;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);margin-bottom:0.7rem;">
+          👥 الطلبة المسجلين (<span id="studentsCount">0</span>)
+        </div>
+        <div id="adminAllStudentsList" class="admin-students-list" style="max-height:200px;">
+          <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -3357,7 +3694,257 @@ document.addEventListener('click', (e) => {
   if (!e.target.closest('#userAvatarWrap'))
     document.getElementById('userPopover').classList.remove('open');
 });
-window.getViewedSet = getViewedSet;
+/* ══════════════════════ NOTIFICATIONS (client-side) ══════════════════════ */
+const NOTIF_KEY = 'nurseverse_notifications_v1';
+const NOTIF_READ_KEY = 'nurseverse_notif_read_v1';
+
+function getNotifications() {
+  try { return JSON.parse(localStorage.getItem(NOTIF_KEY) || '[]'); } catch(e) { return []; }
+}
+function saveNotifications(list) {
+  try { localStorage.setItem(NOTIF_KEY, JSON.stringify(list)); } catch(e) {}
+}
+function getReadSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(NOTIF_READ_KEY) || '[]')); } catch(e) { return new Set(); }
+}
+function saveReadSet(s) {
+  try { localStorage.setItem(NOTIF_READ_KEY, JSON.stringify([...s])); } catch(e) {}
+}
+
+const NOTIF_TYPE_ICONS = { update:'📢', new_file:'📁', exam:'📝', info:'ℹ️', auto:'🆕' };
+
+function countUnread() {
+  const read = getReadSet();
+  return getNotifications().filter(n => !read.has(n.id)).length;
+}
+
+function updateNotifBadge() {
+  const n = countUnread();
+  const badge = document.getElementById('notifBadge');
+  if (!badge) return;
+  if (n > 0) {
+    badge.textContent = n > 99 ? '99+' : n;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function renderNotifList() {
+  const el = document.getElementById('notifList');
+  if (!el) return;
+  const notifs = getNotifications();
+  if (!notifs.length) {
+    el.innerHTML = '<p class="notif-empty">لا توجد إشعارات بعد 🔔</p>';
+    return;
+  }
+  const read = getReadSet();
+  el.innerHTML = notifs.slice().reverse().map(n => {
+    const isRead = read.has(n.id);
+    const icon = NOTIF_TYPE_ICONS[n.type] || '🔔';
+    const time = timeAgo(n.ts);
+    return `<div class="notif-item ${isRead ? 'read' : ''}" onclick="markNotifRead('${n.id}', this)">
+      <span class="notif-dot"></span>
+      <span class="notif-icon">${icon}</span>
+      <div class="notif-content">
+        <div class="notif-title">${n.title}</div>
+        ${n.body ? `<div class="notif-body">${n.body}</div>` : ''}
+        <div class="notif-time">${time}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function markNotifRead(id, el) {
+  const read = getReadSet();
+  read.add(id);
+  saveReadSet(read);
+  if (el) { el.classList.add('read'); el.querySelector('.notif-dot').style.background = 'rgba(28,43,37,0.2)'; }
+  updateNotifBadge();
+}
+
+function markAllNotifsRead() {
+  const read = getReadSet();
+  getNotifications().forEach(n => read.add(n.id));
+  saveReadSet(read);
+  renderNotifList();
+  updateNotifBadge();
+}
+
+function toggleNotifPanel() {
+  const overlay = document.getElementById('notifPanelOverlay');
+  const isOpen = overlay.classList.contains('open');
+  if (isOpen) { closeNotifPanel(); }
+  else {
+    renderNotifList();
+    overlay.classList.add('open');
+    // mark all as read after 2 seconds of viewing
+    setTimeout(() => markAllNotifsRead(), 2000);
+  }
+}
+function closeNotifPanel() {
+  document.getElementById('notifPanelOverlay').classList.remove('open');
+}
+
+/* Add a new notification locally and show toast */
+function pushNotification(notif) {
+  const list = getNotifications();
+  // avoid duplicates by id
+  if (list.find(n => n.id === notif.id)) return;
+  list.push(notif);
+  // keep max 50
+  if (list.length > 50) list.splice(0, list.length - 50);
+  saveNotifications(list);
+  updateNotifBadge();
+  showNotifToast(notif);
+  // browser push notification
+  requestAndShowBrowserNotif(notif);
+}
+
+function showNotifToast(notif) {
+  let toast = document.getElementById('notifToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'notifToast';
+    toast.className = 'notif-toast';
+    toast.onclick = () => { closeNotifToast(); toggleNotifPanel(); };
+    document.body.appendChild(toast);
+  }
+  const icon = NOTIF_TYPE_ICONS[notif.type] || '🔔';
+  toast.innerHTML = `<span class="notif-toast-icon">${icon}</span>
+    <div><div class="notif-toast-title">${notif.title}</div>${notif.body ? `<div class="notif-toast-body">${notif.body}</div>` : ''}</div>`;
+  toast.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(closeNotifToast, 5000);
+}
+
+function closeNotifToast() {
+  const t = document.getElementById('notifToast');
+  if (t) t.classList.remove('show');
+}
+
+function requestAndShowBrowserNotif(notif) {
+  if (!('Notification' in window)) return;
+  const show = () => {
+    if (Notification.permission === 'granted') {
+      new Notification(notif.title, { body: notif.body || '', icon: './icon-192.png' });
+    }
+  };
+  if (Notification.permission === 'default') {
+    Notification.requestPermission().then(show);
+  } else { show(); }
+}
+
+/* Admin panel */
+let adminTarget = 'all'; // 'all' or 'one'
+let selectedStudentUid = null;
+let selectedStudentName = '';
+let allStudents = [];
+
+function openAdminPanel() {
+  document.getElementById('adminOverlay').classList.add('open');
+  if (window._loadStudentsList) window._loadStudentsList();
+}
+function closeAdminPanel() {
+  document.getElementById('adminOverlay').classList.remove('open');
+}
+
+function switchAdminTab(tab) {
+  adminTarget = tab;
+  document.getElementById('tabAll').classList.toggle('active', tab === 'all');
+  document.getElementById('tabOne').classList.toggle('active', tab === 'one');
+  document.getElementById('adminTargetOne').style.display = tab === 'one' ? 'block' : 'none';
+  document.getElementById('adminSendBtn').textContent = tab === 'all' ? 'إرسال للكل 🚀' : 'إرسال للشخص ده 📨';
+}
+
+function filterStudentsList(q) {
+  const filtered = q
+    ? allStudents.filter(s => (s.displayName||'').toLowerCase().includes(q.toLowerCase()) || (s.email||'').toLowerCase().includes(q.toLowerCase()))
+    : allStudents;
+  renderStudentsListIn('adminStudentsList', filtered, true);
+}
+
+function renderStudentsListIn(elId, students, selectable) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  if (!students.length) { el.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">لا يوجد طلبة</p>'; return; }
+  el.innerHTML = students.map(s => {
+    const initials = (s.displayName||s.email||'?').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+    const isSelected = s.uid === selectedStudentUid;
+    return `<div class="admin-student-item ${isSelected ? 'selected' : ''}" ${selectable ? `onclick="selectStudent('${s.uid}','${escAdm(s.displayName||s.email)}')"` : ''}>
+      <div class="admin-student-avatar">${initials}</div>
+      <div class="admin-student-info">
+        <div class="admin-student-name">${s.displayName || '—'}</div>
+        <div class="admin-student-email">${s.email || ''}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function escAdm(str) { return String(str||'').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
+
+function selectStudent(uid, name) {
+  selectedStudentUid = uid;
+  selectedStudentName = name;
+  document.getElementById('adminSelectedStudent').style.display = 'flex';
+  document.getElementById('adminSelectedName').textContent = '👤 ' + name;
+  filterStudentsList(document.getElementById('adminStudentSearch').value);
+}
+
+function clearSelectedStudent() {
+  selectedStudentUid = null;
+  selectedStudentName = '';
+  document.getElementById('adminSelectedStudent').style.display = 'none';
+  filterStudentsList(document.getElementById('adminStudentSearch').value);
+}
+
+function sendAdminNotif() {
+  const title = document.getElementById('adminNotifTitle').value.trim();
+  const body = document.getElementById('adminNotifBody').value.trim();
+  const type = document.getElementById('adminNotifType').value;
+  const status = document.getElementById('adminSendStatus');
+  if (!title) { status.textContent = '⚠️ اكتب عنوان الإشعار أول'; status.style.color='#c0392b'; return; }
+  if (adminTarget === 'one' && !selectedStudentUid) { status.textContent = '⚠️ اختار طالب الأول'; status.style.color='#c0392b'; return; }
+
+  if (window._sendAdminNotifToFirestore) {
+    const btn = document.getElementById('adminSendBtn');
+    btn.disabled = true; btn.textContent = 'جاري الإرسال...';
+    const targetUid = adminTarget === 'one' ? selectedStudentUid : null;
+    window._sendAdminNotifToFirestore({ title, body, type, targetUid }).then(() => {
+      status.textContent = targetUid ? `✅ وصلت لـ ${selectedStudentName}!` : '✅ وصلت للجميع!';
+      status.style.color = '#0F6E56';
+      document.getElementById('adminNotifTitle').value = '';
+      document.getElementById('adminNotifBody').value = '';
+      btn.disabled = false;
+      btn.textContent = adminTarget === 'all' ? 'إرسال للكل 🚀' : 'إرسال للشخص ده 📨';
+      clearSelectedStudent();
+    }).catch(() => {
+      status.textContent = '⚠️ حصل خطأ، حاول تاني'; status.style.color='#c0392b';
+      btn.disabled = false;
+      btn.textContent = adminTarget === 'all' ? 'إرسال للكل 🚀' : 'إرسال للشخص ده 📨';
+    });
+  }
+}
+
+window.toggleNotifPanel = toggleNotifPanel;
+window.closeNotifPanel = closeNotifPanel;
+window.markAllNotifsRead = markAllNotifsRead;
+window.markNotifRead = markNotifRead;
+window.pushNotification = pushNotification;
+window.updateNotifBadge = updateNotifBadge;
+window.openAdminPanel = openAdminPanel;
+window.closeAdminPanel = closeAdminPanel;
+window.sendAdminNotif = sendAdminNotif;
+window.switchAdminTab = switchAdminTab;
+window.filterStudentsList = filterStudentsList;
+window.selectStudent = selectStudent;
+window.clearSelectedStudent = clearSelectedStudent;
+window.renderStudentsListIn = renderStudentsListIn;
+
+// init badge on load
+updateNotifBadge();
+
+
 window.refreshProgressUI = refreshProgressUI;
 window.subjectProgress = subjectProgress;
 window.years = years;
@@ -3381,7 +3968,7 @@ window.trackRecent = trackRecent;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp }
+import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -3629,6 +4216,73 @@ function updateStats() {
   }
 }
 window._authUpdateStats = updateStats;
+
+/* ══════════════════════ NOTIFICATIONS (Firestore) ══════════════════════ */
+
+const ADMIN_EMAIL = 'kimoali426@gmail.com';
+
+/* Listen for new notifications — shows global ones + ones targeted to this user */
+function startNotifListener(uid) {
+  const q = query(collection(db, 'notifications'), orderBy('ts', 'desc'), limit(50));
+  onSnapshot(q, (snap) => {
+    snap.docChanges().forEach(change => {
+      if (change.type === 'added') {
+        const data = change.doc.data();
+        if (!data.targetUid || data.targetUid === uid) {
+          const notif = {
+            id: change.doc.id,
+            title: data.title || '',
+            body: data.body || '',
+            type: data.type || 'info',
+            ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
+          };
+          if (window.pushNotification) window.pushNotification(notif);
+        }
+      }
+    });
+  });
+}
+
+/* Admin: send notification — targetUid=null means send to everyone */
+window._sendAdminNotifToFirestore = async function({ title, body, type, targetUid }) {
+  const { getDocs } = await import("https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js");
+  await addDoc(collection(db, 'notifications'), {
+    title, body, type,
+    targetUid: targetUid || null,
+    ts: serverTimestamp(),
+    sentBy: auth.currentUser?.email || '',
+  });
+};
+
+/* Admin: load all registered students */
+window._loadStudentsList = async function() {
+  try {
+    const { getDocs } = await import("https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js");
+    const snap = await getDocs(collection(db, 'students'));
+    const students = [];
+    snap.forEach(d => {
+      const data = d.data();
+      students.push({ uid: d.id, displayName: data.displayName||'', email: data.email||'' });
+    });
+    students.sort((a,b) => (a.displayName||'').localeCompare(b.displayName||''));
+    window.allStudents = students;
+    const countEl = document.getElementById('studentsCount');
+    if (countEl) countEl.textContent = students.length;
+    if (window.renderStudentsListIn) {
+      window.renderStudentsListIn('adminStudentsList', students, true);
+      window.renderStudentsListIn('adminAllStudentsList', students, false);
+    }
+  } catch(e) { console.error('load students failed', e); }
+};
+
+/* Show admin button only to the admin user */
+onAuthStateChanged(auth, (user) => {
+  const adminWrap = document.getElementById('adminBtnWrap');
+  if (adminWrap) {
+    adminWrap.style.display = (user && user.email === ADMIN_EMAIL) ? 'block' : 'none';
+  }
+  if (user) startNotifListener(user.uid);
+});
 </script>
 
 </body>

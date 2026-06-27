@@ -2507,8 +2507,13 @@
 
       <!-- Students list section -->
       <div style="margin-top:1.4rem; border-top:1px solid rgba(28,43,37,0.08); padding-top:1rem;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);margin-bottom:0.7rem;">
-          👥 الطلبة المسجلين (<span id="studentsCount">0</span>)
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);">
+            👥 الطلبة المسجلين (<span id="studentsCount">0</span>)
+          </div>
+          <button id="exportStudentsBtn" onclick="exportStudentsToExcel()" style="font-size:11px;font-weight:600;color:#0F6E56;background:rgba(29,158,117,0.1);border:none;border-radius:8px;padding:5px 10px;cursor:pointer;white-space:nowrap;">
+            📤 تصدير لإكسل
+          </button>
         </div>
         <div id="adminAllStudentsList" class="admin-students-list" style="max-height:200px;">
           <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
@@ -5131,6 +5136,62 @@ window._loadAdminStats = async function() {
     if (loadingEl) loadingEl.textContent = 'حصل خطأ في تحميل الإحصائيات — حاول تاني.';
   }
 };
+
+/* Lazily loads the SheetJS library (only admins ever trigger this, so we don't
+   make every visitor download ~900KB they'll never use). */
+function _ensureXlsxLibLoaded() {
+  return new Promise((resolve, reject) => {
+    if (window.XLSX) { resolve(); return; }
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('تعذّر تحميل مكتبة الإكسل — تأكد من اتصالك بالإنترنت'));
+    document.head.appendChild(script);
+  });
+}
+
+/* Admin: export every registered student's profile + progress into an .xlsx file */
+window._exportStudentsToExcel = async function() {
+  const btn = document.getElementById('exportStudentsBtn');
+  const originalLabel = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ جاري التجهيز...'; }
+  try {
+    await _ensureXlsxLibLoaded();
+    const totalFiles = _getTotalFilesCount();
+    const snap = await getDocs(collection(db, 'students'));
+    const rows = [];
+    snap.forEach(d => {
+      const data = d.data();
+      const viewedCount = Array.isArray(data.viewedFiles) ? data.viewedFiles.length : 0;
+      const pct = totalFiles ? Math.round((viewedCount / totalFiles) * 100) : 0;
+      const joined = data.joinedAt?.toDate ? data.joinedAt.toDate() : null;
+      const lastSeen = data.lastSeen?.toDate ? data.lastSeen.toDate() : null;
+      rows.push({
+        'الاسم': data.displayName || '',
+        'الإيميل': data.email || '',
+        'عدد الملفات المفتوحة': viewedCount,
+        'نسبة التقدم %': pct,
+        'تاريخ التسجيل': joined ? joined.toLocaleDateString('ar-EG') : '',
+        'آخر ظهور': lastSeen ? lastSeen.toLocaleString('ar-EG') : '',
+      });
+    });
+    rows.sort((a, b) => a['الاسم'].localeCompare(b['الاسم']));
+
+    const ws = window.XLSX.utils.json_to_sheet(rows);
+    ws['!cols'] = [{ wch: 24 }, { wch: 28 }, { wch: 18 }, { wch: 14 }, { wch: 16 }, { wch: 20 }];
+    const wb = window.XLSX.utils.book_new();
+    window.XLSX.utils.book_append_sheet(wb, ws, 'الطلبة');
+    const dateStamp = new Date().toISOString().slice(0, 10);
+    window.XLSX.writeFile(wb, `students-${dateStamp}.xlsx`);
+  } catch (e) {
+    console.error('export students failed', e);
+    alert('حصل خطأ في تصدير البيانات: ' + (e && e.message ? e.message : e));
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = originalLabel || '📤 تصدير لإكسل'; }
+  }
+};
+function exportStudentsToExcel() { window._exportStudentsToExcel(); }
+window.exportStudentsToExcel = exportStudentsToExcel;
 
 /* Show admin tools only to the admin user */
 let _myConvUnsub = null;

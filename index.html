@@ -3370,8 +3370,6 @@ window.renderDashboardRecents = renderDashboardRecents;
 window.renderFavoritesView = renderFavoritesView;
 
 </script>
-</body>
-</html>
 
 <script type="module">
 /* ══════════════════════ FIREBASE AUTH ══════════════════════ */
@@ -3519,44 +3517,43 @@ function flushPendingSyncs(uid) {
   }
 }
 
-/* ─── Intercept markFileViewed to also sync ─── */
-const _orig = window.markFileViewed;
-window.markFileViewed = function(url, linkEl) {
-  if (_orig) _orig(url, linkEl);
-  if (currentUser) {
-    const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
-    const ref = doc(db, 'students', currentUser.uid);
-    updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
-    updateStats();
-  } else {
-    pendingViewedSync = true;
-  }
-};
+/* ─── Intercept markFileViewed / toggleFavorite / trackRecent ─── */
+/* Wrapped in a function called immediately so the original functions on
+   window are guaranteed to be set (this module script now lives inside
+   <body>, after the non-module scripts that define them). */
+function installInterceptors() {
+  const _orig = window.markFileViewed;
+  window.markFileViewed = function(url, linkEl) {
+    if (_orig) _orig(url, linkEl);
+    if (currentUser) {
+      const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
+      const ref = doc(db, 'students', currentUser.uid);
+      updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
+      updateStats();
+    } else { pendingViewedSync = true; }
+  };
 
-/* ─── Intercept toggleFavorite / trackRecent to also sync ─── */
-const _origToggleFavorite = window.toggleFavorite;
-window.toggleFavorite = function(metaJson, btnEl) {
-  if (_origToggleFavorite) _origToggleFavorite(metaJson, btnEl);
-  if (currentUser) {
-    const favorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
-    const ref = doc(db, 'students', currentUser.uid);
-    updateDoc(ref, { favorites, lastSeen: serverTimestamp() }).catch(()=>{});
-  } else {
-    pendingFavoritesSync = true;
-  }
-};
+  const _origToggleFavorite = window.toggleFavorite;
+  window.toggleFavorite = function(metaJson, btnEl) {
+    if (_origToggleFavorite) _origToggleFavorite(metaJson, btnEl);
+    if (currentUser) {
+      const favorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
+      const ref = doc(db, 'students', currentUser.uid);
+      updateDoc(ref, { favorites, lastSeen: serverTimestamp() }).catch(()=>{});
+    } else { pendingFavoritesSync = true; }
+  };
 
-const _origTrackRecent = window.trackRecent;
-window.trackRecent = function(metaJson) {
-  if (_origTrackRecent) _origTrackRecent(metaJson);
-  if (currentUser) {
-    const recentFiles = window.getRecentList ? window.getRecentList() : [];
-    const ref = doc(db, 'students', currentUser.uid);
-    updateDoc(ref, { recentFiles, lastSeen: serverTimestamp() }).catch(()=>{});
-  } else {
-    pendingRecentSync = true;
-  }
-};
+  const _origTrackRecent = window.trackRecent;
+  window.trackRecent = function(metaJson) {
+    if (_origTrackRecent) _origTrackRecent(metaJson);
+    if (currentUser) {
+      const recentFiles = window.getRecentList ? window.getRecentList() : [];
+      const ref = doc(db, 'students', currentUser.uid);
+      updateDoc(ref, { recentFiles, lastSeen: serverTimestamp() }).catch(()=>{});
+    } else { pendingRecentSync = true; }
+  };
+}
+installInterceptors();
 
 /* ─── Stats ─── */
 function updateStats() {
@@ -3628,3 +3625,6 @@ function updateStats() {
 }
 window._authUpdateStats = updateStats;
 </script>
+
+</body>
+</html>

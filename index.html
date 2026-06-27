@@ -122,6 +122,14 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 14px; font-weight: 700; color: #fff;
   }
+  /* badge shown directly on the avatar circle — used for admin's unread student messages */
+  .avatar-msg-badge {
+    position: absolute; top: -4px; right: -4px;
+    background: #c0392b; color: #fff; font-size: 10px; font-weight: 700;
+    border-radius: 100px; min-width: 18px; height: 18px; padding: 0 4px;
+    display: none; align-items: center; justify-content: center;
+    border: 2px solid #fff; z-index: 1;
+  }
 
   /* user popover */
   .user-popover {
@@ -185,6 +193,21 @@
   .user-action-btn.danger { color: #c0392b; }
   .user-action-btn.danger svg { color: #c0392b; }
   .user-action-btn.danger:hover { background: #fdecea; }
+
+  /* admin-only section inside the popover: conversations + send notification */
+  .admin-popover-section {
+    padding: 8px;
+    border-top: 1px solid rgba(28,43,37,0.08);
+  }
+  .admin-popover-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(28,43,37,0.4); padding: 4px 10px 6px;
+  }
+  .user-action-btn.admin-action { position: relative; color: var(--teal-600); font-weight: 600; }
+  .user-action-btn.admin-action svg { color: var(--teal-600); }
+  .user-action-btn.admin-action .chat-entry-badge {
+    margin-right: auto; position: static;
+  }
 
   /* ─── AUTH MODAL ─── */
   .auth-modal-overlay {
@@ -2094,6 +2117,21 @@
   .chat-bubble-row.from-me .chat-bubble-time { color: rgba(255,255,255,0.85); text-align: right; }
   .chat-bubble-row.from-them .chat-bubble-time { color: rgba(28,43,37,0.4); }
 
+  .chat-bubble-wrap { position: relative; max-width: 78%; }
+  .chat-bubble-del-btn {
+    position: absolute; top: -8px; width: 22px; height: 22px; border-radius: 50%;
+    background: #fff; border: 1px solid rgba(28,43,37,0.15); color: #c0392b;
+    display: none; align-items: center; justify-content: center; cursor: pointer;
+    font-size: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.12); z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .chat-bubble-row.from-me .chat-bubble-del-btn { left: -8px; }
+  .chat-bubble-row.from-them .chat-bubble-del-btn { right: -8px; }
+  .chat-bubble-wrap:hover .chat-bubble-del-btn { display: flex; }
+  @media (hover: none) {
+    .chat-bubble-del-btn { display: flex; opacity: 0.55; }
+  }
+
   .chat-input-row {
     display: flex; gap: 8px; padding: 0.8rem 1rem;
     border-top: 1px solid rgba(28,43,37,0.08); flex-shrink: 0; background: #fff;
@@ -2241,8 +2279,9 @@
     Sign In
   </button>
   <div style="position:relative; display:none;" id="userAvatarWrap">
-    <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserPopover()">
+    <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserPopover()" style="position:relative;">
       <div class="user-initials" id="userInitials">?</div>
+      <span id="adminAvatarBadge" class="avatar-msg-badge">0</span>
     </button>
     <div class="user-popover" id="userPopover">
       <div class="user-popover-header">
@@ -2258,6 +2297,19 @@
           <span class="user-stat-num" id="popoverPctCount">0%</span>
           <span class="user-stat-label">OVERALL</span>
         </div>
+      </div>
+      <!-- Admin-only: conversations + send notification (hidden for regular students) -->
+      <div id="adminPopoverSection" class="admin-popover-section" style="display:none;">
+        <div class="admin-popover-label">⚙️ أدوات الأدمن</div>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminConversationsPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          المحادثات
+          <span id="adminConvBadge" class="chat-entry-badge" style="display:none;">0</span>
+        </button>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+          إرسال إشعار للطلبة
+        </button>
       </div>
       <div class="user-popover-actions">
         <button class="user-action-btn" onclick="openDashboard(); toggleUserPopover();">
@@ -2343,13 +2395,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Sign Out
     </button>
-    <!-- Admin button — only shown to admin user -->
-    <div id="adminBtnWrap" style="display:none; padding: 0 1.4rem 1.4rem;">
-      <button onclick="closeDashboard(); openAdminPanel()" style="width:100%;padding:11px;border-radius:12px;border:1.5px solid rgba(29,158,117,0.3);background:rgba(29,158,117,0.08);color:var(--teal-600);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
-        إرسال إشعار للطلبة
-      </button>
-    </div>
   </div>
 </div>
 
@@ -2402,11 +2447,11 @@
   </div>
 </div>
 
-<!-- ══════════════════════ ADMIN PANEL ══════════════════════ -->
+<!-- ══════════════════════ ADMIN PANEL — SEND NOTIFICATION ══════════════════════ -->
 <div class="admin-overlay" id="adminOverlay" onclick="if(event.target===this) closeAdminPanel()">
   <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
     <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
-      <span class="notif-panel-title">⚙️ لوحة الإشعارات</span>
+      <span class="notif-panel-title">📢 إرسال إشعار للطلبة</span>
       <button class="notif-close-btn" onclick="closeAdminPanel()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
@@ -2466,18 +2511,23 @@
         </div>
       </div>
 
-      <!-- Conversations: WhatsApp-style list -->
-      <div style="margin-top:1.4rem; border-top:1px solid rgba(28,43,37,0.08); padding-top:1rem;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);">
-            💬 المحادثات (<span id="inboxUnreadCount">0</span> جديد)
-          </div>
-        </div>
-        <div id="adminConversationsList" style="max-height:360px;overflow-y:auto;">
-          <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ══════════════════════ ADMIN PANEL — CONVERSATIONS (separate from notifications) ══════════════════════ -->
+<div class="admin-overlay" id="adminConvOverlay" onclick="if(event.target===this) closeAdminConversationsPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">💬 المحادثات (<span id="inboxUnreadCount">0</span> جديد)</span>
+      <button class="notif-close-btn" onclick="closeAdminConversationsPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+      <div id="adminConversationsList" style="max-height:70vh;overflow-y:auto;">
+        <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+      </div>
     </div>
   </div>
 </div>
@@ -4013,8 +4063,14 @@ function countUnread() {
   return getNotifications().filter(n => !read.has(n.id)).length;
 }
 
+/* Unread chat count (separate from normal notifications), kept in sync by:
+   - student: updateMyChatPreview() when their conversation doc changes
+   - admin:   renderConversationsList() when the live conversations list changes
+   Combined with normal notifications into the single bell badge. */
+window._unreadChatCount = 0;
+
 function updateNotifBadge() {
-  const n = countUnread();
+  const n = countUnread() + (window._unreadChatCount || 0);
   const badge = document.getElementById('notifBadge');
   if (!badge) return;
   if (n > 0) {
@@ -4023,7 +4079,25 @@ function updateNotifBadge() {
   } else {
     badge.style.display = 'none';
   }
+  updateAvatarMsgBadge();
 }
+
+/* Badge shown directly on the avatar circle: reflects unread student↔admin messages only
+   (not regular notifications), so the admin can spot new messages without opening anything.
+   Admin-only — students don't get a badge on their own avatar for this. */
+function updateAvatarMsgBadge() {
+  const badge = document.getElementById('adminAvatarBadge');
+  if (!badge) return;
+  const isAdmin = window._currentUserEmail === (window.ADMIN_EMAIL_REF || '');
+  const n = isAdmin ? (window._unreadChatCount || 0) : 0;
+  if (n > 0) {
+    badge.textContent = n > 99 ? '99+' : n;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+window.updateAvatarMsgBadge = updateAvatarMsgBadge;
 
 function renderNotifList() {
   const el = document.getElementById('notifList');
@@ -4144,6 +4218,16 @@ function closeAdminPanel() {
   document.getElementById('adminOverlay').classList.remove('open');
 }
 
+/* Separate panel: admin's student conversations (kept apart from "send notification") */
+function openAdminConversationsPanel() {
+  document.getElementById('adminConvOverlay').classList.add('open');
+}
+function closeAdminConversationsPanel() {
+  document.getElementById('adminConvOverlay').classList.remove('open');
+}
+window.openAdminConversationsPanel = openAdminConversationsPanel;
+window.closeAdminConversationsPanel = closeAdminConversationsPanel;
+
 function switchAdminTab(tab) {
   adminTarget = tab;
   document.getElementById('tabAll').classList.toggle('active', tab === 'all');
@@ -4247,13 +4331,22 @@ function escChat(str) {
   return div.innerHTML;
 }
 
-function chatBubbleHtml(messages) {
+function chatBubbleHtml(messages, opts) {
+  opts = opts || {};
   if (!messages.length) return '<p class="chat-empty">لسه مفيش رسايل. ابعت أول رسالة! 👋</p>';
   return messages.map(m => {
     const fromMe = m.sender === 'student';
     const time = new Date(m.ts || Date.now()).toLocaleString('ar-EG', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
+    // who is allowed to delete this specific bubble in this view
+    const canDelete = opts.isAdmin ? true : (m.sender === 'student');
+    const delBtn = (canDelete && m.id)
+      ? `<button class="chat-bubble-del-btn" title="حذف الرسالة" onclick="event.stopPropagation(); ${opts.deleteFn}('${m.id}')">🗑</button>`
+      : '';
     return `<div class="chat-bubble-row ${fromMe ? 'from-me' : 'from-them'}">
-      <div class="chat-bubble">${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+      <div class="chat-bubble-wrap">
+        ${delBtn}
+        <div class="chat-bubble">${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+      </div>
     </div>`;
   }).join('');
 }
@@ -4273,12 +4366,19 @@ function openMyChat() {
   inputRow.style.display = 'flex';
   if (window._listenMyConversation) {
     window._listenMyConversation((messages) => {
-      msgsEl.innerHTML = chatBubbleHtml(messages);
+      msgsEl.innerHTML = chatBubbleHtml(messages, { isAdmin: false, deleteFn: 'deleteMyMessage' });
       msgsEl.scrollTop = msgsEl.scrollHeight;
     });
   }
   if (window._markMyChatRead) window._markMyChatRead();
 }
+
+function deleteMyMessage(msgId) {
+  if (!window._deleteMyMessage) return;
+  if (!confirm('تمسح الرسالة دي؟')) return;
+  window._deleteMyMessage(msgId).catch(() => {});
+}
+window.deleteMyMessage = deleteMyMessage;
 
 function closeMyChat() {
   document.getElementById('myChatView').classList.remove('open');
@@ -4304,6 +4404,8 @@ function updateMyChatPreview(lastMessage, unread) {
     if (unread > 0) { badge.style.display = 'flex'; badge.textContent = unread > 9 ? '9+' : unread; }
     else badge.style.display = 'none';
   }
+  window._unreadChatCount = unread > 0 ? 1 : 0;
+  if (window.updateNotifBadge) window.updateNotifBadge();
 }
 
 window.openMyChat = openMyChat;
@@ -4319,6 +4421,7 @@ function renderConversationsList(list) {
   if (!el) return;
   if (!list.length) {
     el.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">لسه مفيش محادثات</p>';
+    _applyAdminConvUnreadCount(0);
     return;
   }
   let totalUnread = 0;
@@ -4339,8 +4442,21 @@ function renderConversationsList(list) {
       </div>
     </div>`;
   }).join('');
+  _applyAdminConvUnreadCount(totalUnread);
+}
+
+/* Push the admin's total unread-conversation count into the inbox label,
+   the dashboard-drawer badge, and the global bell badge. */
+function _applyAdminConvUnreadCount(totalUnread) {
   const countEl = document.getElementById('inboxUnreadCount');
   if (countEl) countEl.textContent = totalUnread;
+  const bellBadge = document.getElementById('adminConvBadge');
+  if (bellBadge) {
+    if (totalUnread > 0) { bellBadge.style.display = 'flex'; bellBadge.textContent = totalUnread > 9 ? '9+' : totalUnread; }
+    else bellBadge.style.display = 'none';
+  }
+  window._unreadChatCount = totalUnread;
+  if (window.updateNotifBadge) window.updateNotifBadge();
 }
 
 function openAdminConversation(uid, name, email) {
@@ -4353,12 +4469,19 @@ function openAdminConversation(uid, name, email) {
   msgsEl.innerHTML = '<p class="chat-empty">جاري تحميل المحادثة...</p>';
   if (window._listenAdminConversation) {
     window._listenAdminConversation(uid, (messages) => {
-      msgsEl.innerHTML = chatBubbleHtml(messages);
+      msgsEl.innerHTML = chatBubbleHtml(messages, { isAdmin: true, deleteFn: 'deleteAdminChatMessage' });
       msgsEl.scrollTop = msgsEl.scrollHeight;
     });
   }
   if (window._markConversationReadByAdmin) window._markConversationReadByAdmin(uid);
 }
+
+function deleteAdminChatMessage(msgId) {
+  if (!_adminChatUid || !window._deleteAdminMessage) return;
+  if (!confirm('تمسح الرسالة دي؟')) return;
+  window._deleteAdminMessage(_adminChatUid, msgId).catch(() => {});
+}
+window.deleteAdminChatMessage = deleteAdminChatMessage;
 
 function closeAdminChat() {
   document.getElementById('adminChatView').classList.remove('open');
@@ -4409,7 +4532,7 @@ window.trackRecent = trackRecent;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit, getDocs }
+import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit, getDocs }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 import { getMessaging, getToken, onMessage }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging.js";
@@ -4697,6 +4820,7 @@ window._authUpdateStats = updateStats;
 /* ══════════════════════ NOTIFICATIONS (Firestore) ══════════════════════ */
 
 const ADMIN_EMAIL = 'kimoali426@gmail.com';
+window.ADMIN_EMAIL_REF = ADMIN_EMAIL;
 
 /* Listen for new notifications — shows global ones + ones targeted to this user */
 function startNotifListener(uid) {
@@ -4750,19 +4874,24 @@ window._loadStudentsList = async function() {
   } catch(e) { console.error('load students failed', e); }
 };
 
-/* Show admin button only to the admin user */
+/* Show admin tools only to the admin user */
 let _myConvUnsub = null;
 onAuthStateChanged(auth, (user) => {
-  const adminWrap = document.getElementById('adminBtnWrap');
+  const adminWrap = document.getElementById('adminPopoverSection');
   if (adminWrap) {
     adminWrap.style.display = (user && user.email === ADMIN_EMAIL) ? 'block' : 'none';
   }
   if (user) {
     window._currentUserUid = user.uid;
     window._currentUserName = user.displayName || user.email || '?';
+    window._currentUserEmail = user.email || '';
     startNotifListener(user.uid);
     listenForMyConversationPreview(user.uid);
     if (user.email === ADMIN_EMAIL) listenAllConversations();
+  } else {
+    window._currentUserEmail = '';
+    window._unreadChatCount = 0;
+    if (window.updateAvatarMsgBadge) window.updateAvatarMsgBadge();
   }
 });
 
@@ -4795,7 +4924,7 @@ window._listenMyConversation = function(callback) {
     const messages = [];
     snap.forEach(d => {
       const m = d.data();
-      messages.push({ text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+      messages.push({ id: d.id, text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
     });
     callback(messages);
   });
@@ -4855,7 +4984,7 @@ window._listenAdminConversation = function(uid, callback) {
     const messages = [];
     snap.forEach(d => {
       const m = d.data();
-      messages.push({ text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+      messages.push({ id: d.id, text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
     });
     callback(messages);
   });
@@ -4880,6 +5009,39 @@ window._sendAdminChatMessage = async function(uid, text) {
 /* Admin: mark a conversation as read on my side (when I open it) */
 window._markConversationReadByAdmin = async function(uid) {
   try { await updateDoc(doc(db, 'conversations', uid), { unreadByAdmin: false }); } catch(e) {}
+};
+
+/* Shared helper: after a message is deleted, refresh the parent conversation doc's
+   lastMessage/lastTs so previews (notif panel, admin list) don't keep showing
+   text that no longer exists. If no messages remain, clears the preview fields. */
+async function _refreshConversationPreview(uid) {
+  try {
+    const q = query(collection(db, 'conversations', uid, 'messages'), orderBy('ts', 'desc'), limit(1));
+    const snap = await getDocs(q);
+    if (snap.empty) {
+      await updateDoc(doc(db, 'conversations', uid), { lastMessage: '', lastTs: serverTimestamp() });
+    } else {
+      const last = snap.docs[0].data();
+      await updateDoc(doc(db, 'conversations', uid), {
+        lastMessage: last.text || '',
+        lastTs: last.ts || serverTimestamp(),
+      });
+    }
+  } catch (e) { /* non-critical — preview will just lag until next message */ }
+}
+
+/* Student: delete one of MY OWN messages */
+window._deleteMyMessage = async function(msgId) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) return;
+  await deleteDoc(doc(db, 'conversations', uid, 'messages', msgId));
+  await _refreshConversationPreview(uid);
+};
+
+/* Admin: delete any message in any conversation */
+window._deleteAdminMessage = async function(uid, msgId) {
+  await deleteDoc(doc(db, 'conversations', uid, 'messages', msgId));
+  await _refreshConversationPreview(uid);
 };
 </script>
 

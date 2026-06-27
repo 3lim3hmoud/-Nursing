@@ -3368,6 +3368,10 @@ window.saveRecentList = saveRecentList;
 window.renderDashboardFavorites = renderDashboardFavorites;
 window.renderDashboardRecents = renderDashboardRecents;
 window.renderFavoritesView = renderFavoritesView;
+/* ── expose core action functions so the Firebase module can intercept them ── */
+window.markFileViewed = markFileViewed;
+window.toggleFavorite = toggleFavorite;
+window.trackRecent = trackRecent;
 
 </script>
 

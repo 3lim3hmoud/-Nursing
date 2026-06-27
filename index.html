@@ -2955,7 +2955,28 @@ function markFileViewed(url, linkEl) {
 }
 
 function escapeForJs(str) {
-  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  // Escape for a single-quoted JS string literal, then HTML-escape the
+  // result — every call site embeds this directly inside a double-quoted
+  // onclick="..." attribute. Without the HTML-escape step, a raw " (e.g.
+  // from a JSON.stringify'd meta object) terminates the attribute early
+  // and a raw & gets parsed as an HTML entity, silently breaking the
+  // handler (it throws a SyntaxError on click, so nothing inside
+  // onclick runs at all — not just the part after the broken character).
+  const jsEscaped = String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  return escapeForHtmlAttr(jsEscaped);
+}
+
+/* Escapes a string so it's safe to embed inside a double-quoted HTML
+   attribute (e.g. onclick="..."). Must be applied AFTER escapeForJs()
+   whenever the value can contain raw double quotes (like a JSON string),
+   otherwise an embedded " breaks the attribute and the whole handler
+   throws a SyntaxError silently on click. */
+function escapeForHtmlAttr(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 /* ══════════════════════ FAVORITES (localStorage) ══════════════════════ */

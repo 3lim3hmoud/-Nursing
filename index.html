@@ -297,6 +297,39 @@
     font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; color: rgba(28,43,37,0.4); margin-bottom: 0.9rem;
   }
+  .dash-fav-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dash-fav-viewall {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #BA7517;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dash-fav-viewall:hover { text-decoration: underline; }
+  .dash-fav-list .file-list-item { margin-bottom: 8px; }
+  .dash-fav-empty { padding: 0.5rem 0; text-align: left; font-size: 12.5px; }
+  .dash-fav-more {
+    font-size: 11px;
+    color: rgba(28,43,37,0.45);
+    margin-top: 4px;
+  }
+  .dash-recent-time {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(28,43,37,0.4);
+    white-space: nowrap;
+  }
+
   .dash-stat-row { display: flex; gap: 10px; }
   .dash-stat {
     flex: 1; background: var(--teal-50); border-radius: 12px; padding: 12px 10px; text-align: center;
@@ -1367,6 +1400,84 @@
 
   .file-list a.visited .f-check { display: inline-flex; }
 
+  .file-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .file-list-item a { flex: 1; min-width: 0; }
+
+  .fav-star {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(28,43,37,0.06);
+    color: rgba(28,43,37,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .fav-star svg { width: 16px; height: 16px; }
+  .fav-star:hover {
+    background: rgba(186,117,23,0.16);
+    color: #BA7517;
+    transform: scale(1.08);
+  }
+  .fav-star.active {
+    background: rgba(186,117,23,0.18);
+    color: #BA7517;
+  }
+
+  .my-favorites-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.75rem;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.34);
+    border-radius: 100px;
+    padding: 7px 16px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .my-favorites-btn:hover {
+    background: rgba(255,255,255,0.26);
+    border-color: rgba(255,255,255,0.55);
+    transform: translateY(-1px);
+  }
+
+  .favorites-list {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    margin-top: 1rem;
+  }
+
+  .favorites-empty {
+    font-size: 14px;
+    color: rgba(28,43,37,0.55);
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .fav-meta {
+    color: rgba(28,43,37,0.45);
+    font-weight: 400;
+  }
+
+
   .resource-card .res-progress-badge {
     margin-left: auto;
     font-size: 10px;
@@ -1764,6 +1875,17 @@
       <div class="dashboard-section-title">Progress by Year</div>
       <div id="dashYearProgress"></div>
     </div>
+    <div class="dashboard-section">
+      <div class="dashboard-section-title dash-fav-title">
+        My Favorites
+        <button class="dash-fav-viewall" type="button" onclick="closeDashboard(); openFavorites();">View all</button>
+      </div>
+      <div id="dashFavoritesPreview"></div>
+    </div>
+    <div class="dashboard-section">
+      <div class="dashboard-section-title">Recently Viewed</div>
+      <div id="dashRecentsPreview"></div>
+    </div>
     <button class="dash-signout-btn" onclick="signOutUser()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Sign Out
@@ -1876,6 +1998,18 @@
     </div>
 
     <div class="resource-grid" id="resourceGrid"></div>
+  </div>
+
+  <!-- ── FAVORITES VIEW ── -->
+  <div id="favoritesView" class="subject-view">
+    <nav class="breadcrumb" id="favoritesBreadcrumb"></nav>
+
+    <div class="year-view-header">
+      <h2>My Favorites</h2>
+      <p>All the files you've starred, in one place</p>
+    </div>
+
+    <div id="favoritesGrid"></div>
   </div>
 
 </main>
@@ -2743,11 +2877,19 @@ function renderResourceGrid(resources, s, basePath, withTypeClass) {
       ? `<ul class="file-list">${list.map(f => {
           const url = `${basePath}/${r.key}/${f.file}`;
           const visited = isFileViewed(url);
+          const favorited = isFavorited(url);
+          const title = f.title || f.file;
+          const meta = escapeForJs(JSON.stringify({ url, title, subject: s.name, resource: r.label }));
           return `
-          <li><a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(url)}', this)">
-            <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="f-title">${f.title || f.file}</span>
-          </a></li>
+          <li class="file-list-item">
+            <a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(url)}', this); trackRecent('${meta}')">
+              <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              <span class="f-title">${title}</span>
+            </a>
+            <button class="fav-star ${favorited ? 'active' : ''}" type="button" title="${favorited ? 'Remove from favorites' : 'Add to favorites'}" onclick="event.stopPropagation(); toggleFavorite('${meta}', this)">
+              <svg viewBox="0 0 24 24" fill="${favorited ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </li>
         `}).join('')}</ul>`
       : `<span class="coming-soon">Coming soon</span>`;
     return `
@@ -2815,6 +2957,145 @@ function markFileViewed(url, linkEl) {
 function escapeForJs(str) {
   return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
 }
+
+/* ══════════════════════ FAVORITES (localStorage) ══════════════════════ */
+const FAVORITES_KEY = 'nurseverse_favorites_v1';
+
+function getFavoritesMap() {
+  try {
+    const raw = localStorage.getItem(FAVORITES_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) { return {}; }
+}
+
+function saveFavoritesMap(map) {
+  try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(map)); } catch (e) {}
+}
+
+function isFavorited(url) {
+  return !!getFavoritesMap()[url];
+}
+
+function toggleFavorite(metaJson, btnEl) {
+  let meta;
+  try { meta = JSON.parse(metaJson); } catch (e) { return; }
+  const map = getFavoritesMap();
+  if (map[meta.url]) {
+    delete map[meta.url];
+  } else {
+    map[meta.url] = meta;
+  }
+  saveFavoritesMap(map);
+  if (btnEl) {
+    const nowFav = !!map[meta.url];
+    btnEl.classList.toggle('active', nowFav);
+    btnEl.title = nowFav ? 'Remove from favorites' : 'Add to favorites';
+    const svg = btnEl.querySelector('svg');
+    if (svg) svg.setAttribute('fill', nowFav ? 'currentColor' : 'none');
+  }
+  if (document.getElementById('favoritesView') && document.getElementById('favoritesView').classList.contains('active')) {
+    renderFavoritesView();
+  }
+  if (document.getElementById('dashboardPanel') && document.getElementById('dashboardPanel').classList.contains('open')) {
+    renderDashboardFavorites();
+  }
+}
+
+/* ══════════════════════ RECENTLY VIEWED (localStorage) ══════════════════════ */
+const RECENTS_KEY = 'nurseverse_recent_files_v1';
+const RECENTS_MAX = 30;
+
+function getRecentList() {
+  try {
+    const raw = localStorage.getItem(RECENTS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) { return []; }
+}
+
+function saveRecentList(list) {
+  try { localStorage.setItem(RECENTS_KEY, JSON.stringify(list)); } catch (e) {}
+}
+
+function trackRecent(metaJson) {
+  let meta;
+  try { meta = JSON.parse(metaJson); } catch (e) { return; }
+  let list = getRecentList().filter(m => m.url !== meta.url);
+  meta.ts = Date.now();
+  list.unshift(meta);
+  if (list.length > RECENTS_MAX) list = list.slice(0, RECENTS_MAX);
+  saveRecentList(list);
+  if (document.getElementById('dashboardPanel') && document.getElementById('dashboardPanel').classList.contains('open')) {
+    renderDashboardRecents();
+  }
+}
+
+function timeAgo(ts) {
+  const diff = Math.max(0, Date.now() - ts);
+  const min = Math.floor(diff / 60000);
+  if (min < 1) return 'just now';
+  if (min < 60) return min + 'm ago';
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return hr + 'h ago';
+  const day = Math.floor(hr / 24);
+  if (day < 7) return day + 'd ago';
+  return new Date(ts).toLocaleDateString();
+}
+
+function renderDashboardRecents() {
+  const el = document.getElementById('dashRecentsPreview');
+  if (!el) return;
+  const items = getRecentList().slice(0, 5);
+  if (!items.length) {
+    el.innerHTML = `<p class="favorites-empty dash-fav-empty">No recent files yet — open anything and it'll show up here.</p>`;
+    return;
+  }
+  el.innerHTML = `<ul class="file-list favorites-list dash-fav-list dash-recent-list">${items.map(meta => `
+    <li class="file-list-item">
+      <a href="${meta.url}" target="_blank" rel="noopener" onclick="markFileViewed('${escapeForJs(meta.url)}', this); trackRecent('${escapeForJs(JSON.stringify(meta))}')">
+        <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+        <span class="f-title">${meta.title}<small class="fav-meta"> · ${meta.subject || ''}</small></span>
+      </a>
+      <span class="dash-recent-time">${timeAgo(meta.ts)}</span>
+    </li>`).join('')}</ul>`;
+}
+
+function openFavorites() {
+  document.getElementById('homeSection').classList.add('hidden');
+  document.getElementById('yearView').classList.remove('active');
+  document.getElementById('subjectView').classList.remove('active');
+  document.getElementById('practicalView').classList.remove('active');
+  document.getElementById('favoritesView').classList.add('active');
+  renderBreadcrumb('favoritesBreadcrumb', [
+    { label: 'Home', action: 'goHome()' },
+    { label: 'My Favorites' },
+  ]);
+  renderFavoritesView();
+  window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
+}
+
+function renderFavoritesView() {
+  const map = getFavoritesMap();
+  const items = Object.values(map);
+  const grid = document.getElementById('favoritesGrid');
+  if (!items.length) {
+    grid.innerHTML = `<p class="favorites-empty">No favorites yet — tap the ★ next to any file to save it here.</p>`;
+    return;
+  }
+  grid.innerHTML = `<ul class="file-list favorites-list">${items.map(meta => {
+    const visited = isFileViewed(meta.url);
+    return `
+    <li class="file-list-item">
+      <a href="${meta.url}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(meta.url)}', this); trackRecent('${escapeForJs(JSON.stringify(meta))}')">
+        <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+        <span class="f-title">${meta.title}<small class="fav-meta"> · ${meta.subject || ''}${meta.resource ? ' · ' + meta.resource : ''}</small></span>
+      </a>
+      <button class="fav-star active" type="button" title="Remove from favorites" onclick="event.stopPropagation(); toggleFavorite('${escapeForJs(JSON.stringify(meta))}', this)">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
+    </li>`;
+  }).join('')}</ul>`;
+}
+
 
 function subjectProgress(s, basePath) {
   let seen = 0, total = 0;
@@ -2891,6 +3172,7 @@ function goHome() {
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectView').classList.remove('active');
   document.getElementById('practicalView').classList.remove('active');
+  document.getElementById('favoritesView').classList.remove('active');
   document.getElementById('homeSection').classList.remove('hidden');
   refreshProgressUI();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3015,8 +3297,32 @@ function toggleUserPopover() {
   document.getElementById('userPopover').classList.toggle('open');
   if (window._authUpdateStats) window._authUpdateStats();
 }
+function renderDashboardFavorites() {
+  const el = document.getElementById('dashFavoritesPreview');
+  if (!el) return;
+  const items = Object.values(getFavoritesMap());
+  if (!items.length) {
+    el.innerHTML = `<p class="favorites-empty dash-fav-empty">No favorites yet — tap ★ on any file to save it here.</p>`;
+    return;
+  }
+  const preview = items.slice(-4).reverse();
+  el.innerHTML = `<ul class="file-list favorites-list dash-fav-list">${preview.map(meta => `
+    <li class="file-list-item">
+      <a href="${meta.url}" target="_blank" rel="noopener" onclick="markFileViewed('${escapeForJs(meta.url)}', this); trackRecent('${escapeForJs(JSON.stringify(meta))}')">
+        <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+        <span class="f-title">${meta.title}<small class="fav-meta"> · ${meta.subject || ''}</small></span>
+      </a>
+      <button class="fav-star active" type="button" title="Remove from favorites" onclick="event.stopPropagation(); toggleFavorite('${escapeForJs(JSON.stringify(meta))}', this)">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
+    </li>`).join('')}</ul>
+    ${items.length > 4 ? `<p class="dash-fav-more">+${items.length - 4} more in your favorites</p>` : ''}`;
+}
+
 function openDashboard() {
   if (window._authUpdateStats) window._authUpdateStats();
+  renderDashboardFavorites();
+  renderDashboardRecents();
   document.getElementById('dashboardPanel').classList.add('open');
 }
 function closeDashboard() {
@@ -3034,6 +3340,13 @@ window.refreshProgressUI = refreshProgressUI;
 window.subjectProgress = subjectProgress;
 window.years = years;
 window.practicalSubjects = practicalSubjects;
+window.getFavoritesMap = getFavoritesMap;
+window.saveFavoritesMap = saveFavoritesMap;
+window.getRecentList = getRecentList;
+window.saveRecentList = saveRecentList;
+window.renderDashboardFavorites = renderDashboardFavorites;
+window.renderDashboardRecents = renderDashboardRecents;
+window.renderFavoritesView = renderFavoritesView;
 
 </script>
 </body>
@@ -3105,23 +3418,48 @@ onAuthStateChanged(auth, async (user) => {
 /* ─── Sync progress localStorage ↔ Firestore ─── */
 async function syncProgress(uid) {
   const local = window.getViewedSet ? window.getViewedSet() : new Set();
+  const localFavorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
+  const localRecents = window.getRecentList ? window.getRecentList() : [];
   const ref = doc(db, 'students', uid);
   try {
     const snap = await getDoc(ref);
     if (snap.exists()) {
-      const remote = new Set(snap.data().viewedFiles || []);
+      const data = snap.data();
+      const remote = new Set(data.viewedFiles || []);
       const merged = new Set([...remote, ...local]);
+
+      const remoteFavorites = data.favorites || {};
+      const mergedFavorites = { ...remoteFavorites, ...localFavorites };
+
+      const recentsByUrl = new Map();
+      [...(data.recentFiles || []), ...localRecents].forEach(m => {
+        const existing = recentsByUrl.get(m.url);
+        if (!existing || (m.ts || 0) > (existing.ts || 0)) recentsByUrl.set(m.url, m);
+      });
+      const mergedRecents = [...recentsByUrl.values()]
+        .sort((a, b) => (b.ts || 0) - (a.ts || 0))
+        .slice(0, 30);
+
       await updateDoc(ref, {
         viewedFiles: [...merged],
+        favorites: mergedFavorites,
+        recentFiles: mergedRecents,
         lastSeen: serverTimestamp(),
         displayName: auth.currentUser.displayName || '',
         email: auth.currentUser.email || '',
       });
       localStorage.setItem('nurseverse_viewed_files_v1', JSON.stringify([...merged]));
+      if (window.saveFavoritesMap) window.saveFavoritesMap(mergedFavorites);
+      if (window.saveRecentList) window.saveRecentList(mergedRecents);
       if (window.refreshProgressUI) window.refreshProgressUI();
+      if (window.renderDashboardFavorites) window.renderDashboardFavorites();
+      if (window.renderDashboardRecents) window.renderDashboardRecents();
+      if (window.renderFavoritesView) window.renderFavoritesView();
     } else {
       await setDoc(ref, {
         viewedFiles: [...local],
+        favorites: localFavorites,
+        recentFiles: localRecents,
         displayName: auth.currentUser.displayName || '',
         email: auth.currentUser.email || '',
         joinedAt: serverTimestamp(),
@@ -3143,6 +3481,27 @@ window.markFileViewed = function(url, linkEl) {
     const ref = doc(db, 'students', currentUser.uid);
     updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
     updateStats();
+  }
+};
+
+/* ─── Intercept toggleFavorite / trackRecent to also sync ─── */
+const _origToggleFavorite = window.toggleFavorite;
+window.toggleFavorite = function(metaJson, btnEl) {
+  if (_origToggleFavorite) _origToggleFavorite(metaJson, btnEl);
+  if (currentUser) {
+    const favorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
+    const ref = doc(db, 'students', currentUser.uid);
+    updateDoc(ref, { favorites, lastSeen: serverTimestamp() }).catch(()=>{});
+  }
+};
+
+const _origTrackRecent = window.trackRecent;
+window.trackRecent = function(metaJson) {
+  if (_origTrackRecent) _origTrackRecent(metaJson);
+  if (currentUser) {
+    const recentFiles = window.getRecentList ? window.getRecentList() : [];
+    const ref = doc(db, 'students', currentUser.uid);
+    updateDoc(ref, { recentFiles, lastSeen: serverTimestamp() }).catch(()=>{});
   }
 };
 

@@ -5886,6 +5886,54 @@ window._deleteAdminMessage = async function(uid, msgId) {
     return null;
   }
 
+  /* ── Get current subject's data object (slug, files, etc) ── */
+  function getCurrentSubjectObj() {
+    try {
+      if (typeof currentYear === 'undefined' || typeof currentTerm === 'undefined' || typeof years === 'undefined') return null;
+      const subjectView = document.getElementById('subjectView');
+      if (!subjectView || !subjectView.classList.contains('active')) return null;
+      const subjectTitle = document.getElementById('subjectTitle');
+      if (!subjectTitle) return null;
+      const name = subjectTitle.textContent.trim();
+      const subjects = years[currentYear]?.terms[currentTerm] || [];
+      return subjects.find(x => x.name === name) || null;
+    } catch(e) { return null; }
+  }
+
+  /* ── Fetch real lecture text (.txt extracted from PDFs) for the open subject ──
+     نتائج كل مادة بتتخزن في الكاش عشان مانكررش الـ fetch في كل رسالة */
+  const lectureTextCache = {};
+  const MAX_CHARS_PER_LECTURE = 1400;   // حد أقصى لكل محاضرة عشان نوفر التوكينز
+  const MAX_TOTAL_CHARS       = 6000;   // حد أقصى لمجموع محتوى المادة كله
+
+  async function getSubjectLectureTexts() {
+    const s = getCurrentSubjectObj();
+    if (!s) return '';
+
+    if (lectureTextCache[s.slug] !== undefined) return lectureTextCache[s.slug];
+
+    const basePath = `files/${currentYear}/${currentTerm}/${s.slug}`;
+    const lectures = (s.files?.lectures || []);
+    let combined = '';
+
+    for (const f of lectures) {
+      if (combined.length >= MAX_TOTAL_CHARS) break;
+      const txtFile = f.file.replace(/\.pdf$/i, '.txt');
+      const url = `${basePath}/lectures/${txtFile}`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        let text = await res.text();
+        text = text.slice(0, MAX_CHARS_PER_LECTURE);
+        combined += `\n\n--- ${f.title} ---\n${text}`;
+      } catch (e) { /* الملف مش موجود لسه، تخطّاه عادي */ }
+    }
+
+    combined = combined.slice(0, MAX_TOTAL_CHARS);
+    lectureTextCache[s.slug] = combined;
+    return combined;
+  }
+
   /* ── Get lecture titles from current open subject ── */
   function getLectureTitles() {
     try {
@@ -5919,7 +5967,7 @@ window._deleteAdminMessage = async function(uid, msgId) {
   }
 
   /* ── Build system prompt ── */
-  function buildSystemPrompt() {
+  async function buildSystemPrompt() {
     const ctx    = getPageContext();
     const files  = getLectureTitles();
 
@@ -5938,7 +5986,14 @@ window._deleteAdminMessage = async function(uid, msgId) {
       if (files.mcq && files.mcq.length) {
         contextBlock += `\n\nأسئلة MCQ المتاحة:\n- ${files.mcq.join('\n- ')}`;
       }
-      contextBlock += `\n\nلما الطالب يسأل سؤال عام، افترض إنه عن المادة دي وعن موضوعاتها. لو سألك عن موضوع من المحاضرات دي، اشرحه بالتفصيل.`;
+
+      /* ── محتوى المحاضرات الفعلي (مستخرج بـ OCR من PDF) ── */
+      const lectureText = await getSubjectLectureTexts();
+      if (lectureText) {
+        contextBlock += `\n\nمحتوى حقيقي من المحاضرات (نص مستخرج، ممكن فيه أخطاء OCR بسيطة، استخدمه عشان تجاوب بدقة بناءً على المحتوى الفعلي):${lectureText}`;
+      }
+
+      contextBlock += `\n\nلما الطالب يسأل سؤال عام، افترض إنه عن المادة دي وعن موضوعاتها. لو سألك عن موضوع من المحاضرات دي، استخدم المحتوى الفعلي المذكور فوق لو موجود، واشرحه بالتفصيل.`;
     } else if (ctx && ctx.type === 'year') {
       contextBlock = `\nالطالب في ${ctx.name}. ساعده في مواد السنة دي.`;
     }
@@ -5992,7 +6047,7 @@ ${contextBlock}`;
 
     const body = {
       messages: [
-        { role: 'system', content: buildSystemPrompt() },
+        { role: 'system', content: await buildSystemPrompt() },
         ...aiHistory.slice(-16)
       ],
       max_tokens: 1024,

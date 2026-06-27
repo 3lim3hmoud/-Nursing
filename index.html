@@ -2310,6 +2310,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
           إرسال إشعار للطلبة
         </button>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminStatsPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          📊 لوحة الإحصائيات
+        </button>
       </div>
       <div class="user-popover-actions">
         <button class="user-action-btn" onclick="openDashboard(); toggleUserPopover();">
@@ -2527,6 +2531,64 @@
     <div style="padding:1.2rem;">
       <div id="adminConversationsList" style="max-height:70vh;overflow-y:auto;">
         <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN PANEL — STATS DASHBOARD ══════════════════════ -->
+<div class="admin-overlay" id="adminStatsOverlay" onclick="if(event.target===this) closeAdminStatsPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">📊 لوحة الإحصائيات</span>
+      <button class="notif-close-btn" onclick="closeAdminStatsPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+
+      <div id="adminStatsLoading" style="font-size:13px;color:rgba(28,43,37,0.5);text-align:center;padding:2rem 0;">
+        جاري حساب الإحصائيات...
+      </div>
+
+      <div id="adminStatsContent" style="display:none;">
+
+        <!-- Top summary cards -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1.2rem;">
+          <div style="background:rgba(29,158,117,0.08);border-radius:14px;padding:0.9rem;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#0F6E56;" id="statTotalStudents">0</div>
+            <div style="font-size:11px;color:rgba(28,43,37,0.55);margin-top:2px;">👥 طالب مسجّل</div>
+          </div>
+          <div style="background:rgba(55,138,221,0.08);border-radius:14px;padding:0.9rem;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#185FA5;" id="statAvgProgress">0%</div>
+            <div style="font-size:11px;color:rgba(28,43,37,0.55);margin-top:2px;">📈 متوسط التقدم</div>
+          </div>
+          <div style="background:rgba(243,156,18,0.1);border-radius:14px;padding:0.9rem;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#b9770e;" id="statActiveWeek">0</div>
+            <div style="font-size:11px;color:rgba(28,43,37,0.55);margin-top:2px;">🟢 نشطين آخر 7 أيام</div>
+          </div>
+          <div style="background:rgba(192,57,43,0.08);border-radius:14px;padding:0.9rem;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#c0392b;" id="statTotalOpens">0</div>
+            <div style="font-size:11px;color:rgba(28,43,37,0.55);margin-top:2px;">📂 إجمالي مرات الفتح</div>
+          </div>
+        </div>
+
+        <!-- Most opened subjects -->
+        <div style="margin-bottom:1.2rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);margin-bottom:0.6rem;">
+            🔥 أكتر المواد بتتفتح
+          </div>
+          <div id="adminTopSubjectsList"></div>
+        </div>
+
+        <!-- Progress per year -->
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);margin-bottom:0.6rem;">
+            📚 متوسط التقدم لكل سنة
+          </div>
+          <div id="adminYearProgressList"></div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -4228,6 +4290,19 @@ function closeAdminConversationsPanel() {
 window.openAdminConversationsPanel = openAdminConversationsPanel;
 window.closeAdminConversationsPanel = closeAdminConversationsPanel;
 
+/* Stats dashboard panel (kept apart from "send notification" and "conversations") */
+function openAdminStatsPanel() {
+  document.getElementById('adminStatsOverlay').classList.add('open');
+  document.getElementById('adminStatsLoading').style.display = 'block';
+  document.getElementById('adminStatsContent').style.display = 'none';
+  if (window._loadAdminStats) window._loadAdminStats();
+}
+function closeAdminStatsPanel() {
+  document.getElementById('adminStatsOverlay').classList.remove('open');
+}
+window.openAdminStatsPanel = openAdminStatsPanel;
+window.closeAdminStatsPanel = closeAdminStatsPanel;
+
 function switchAdminTab(tab) {
   adminTarget = tab;
   document.getElementById('tabAll').classList.toggle('active', tab === 'all');
@@ -4261,6 +4336,59 @@ function renderStudentsListIn(elId, students, selectable) {
 }
 
 function escAdm(str) { return String(str||'').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
+
+/* Renders the data computed by window._loadAdminStats() into the stats overlay */
+function renderAdminStats(stats) {
+  document.getElementById('adminStatsLoading').style.display = 'none';
+  document.getElementById('adminStatsContent').style.display = 'block';
+
+  document.getElementById('statTotalStudents').textContent = stats.totalStudents;
+  document.getElementById('statAvgProgress').textContent   = stats.avgProgress + '%';
+  document.getElementById('statActiveWeek').textContent    = stats.activeThisWeek;
+  document.getElementById('statTotalOpens').textContent    = stats.totalOpens;
+
+  const topEl = document.getElementById('adminTopSubjectsList');
+  if (!stats.topSubjects.length) {
+    topEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.8rem;">لسه مفيش بيانات كفاية</p>';
+  } else {
+    const maxCount = stats.topSubjects[0].count || 1;
+    topEl.innerHTML = stats.topSubjects.map(x => {
+      const pct = Math.round((x.count / maxCount) * 100);
+      return `<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.55rem;">
+        <span style="font-size:16px;flex-shrink:0;">${x.info.icon}</span>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:2px;">
+            <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escAdm(x.info.name)}</span>
+            <span style="color:rgba(28,43,37,0.5);flex-shrink:0;margin-right:6px;">${x.count}</span>
+          </div>
+          <div style="background:rgba(28,43,37,0.08);border-radius:6px;height:6px;overflow:hidden;">
+            <div style="background:#0F6E56;height:100%;width:${pct}%;"></div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  const yearLabels = { y1: { label: 'First Year', icon: '🟢' }, y2: { label: 'Second Year', icon: '🔵' }, y3: { label: 'Third Year', icon: '🟠' } };
+  const yearEl = document.getElementById('adminYearProgressList');
+  yearEl.innerHTML = Object.keys(yearLabels).map(yk => {
+    const agg = stats.yearAgg[yk] || { seen: 0, total: 0 };
+    const pct = agg.total ? Math.round((agg.seen / agg.total) * 100) : 0;
+    return `<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.55rem;">
+      <span style="font-size:16px;flex-shrink:0;">${yearLabels[yk].icon}</span>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:2px;">
+          <span>${yearLabels[yk].label}</span>
+          <span style="color:rgba(28,43,37,0.5);">${pct}%</span>
+        </div>
+        <div style="background:rgba(28,43,37,0.08);border-radius:6px;height:6px;overflow:hidden;">
+          <div style="background:#185FA5;height:100%;width:${pct}%;"></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+window._renderAdminStats = renderAdminStats;
 
 function selectStudent(uid, name) {
   selectedStudentUid = uid;
@@ -4882,6 +5010,126 @@ window._loadStudentsList = async function() {
       window.renderStudentsListIn('adminAllStudentsList', students, false);
     }
   } catch(e) { console.error('load students failed', e); }
+};
+
+/* ─── Admin stats dashboard: aggregate every student doc into useful numbers ─── */
+
+/* slug -> { name, icon, year, term } lookup, built once from the static catalog */
+function _buildSubjectLookup() {
+  const map = {};
+  if (window.years) {
+    Object.keys(window.years).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        (window.years[yk].terms[term] || []).forEach(s => {
+          let total = 0;
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+          map[s.slug] = { name: s.name, icon: s.icon || '📘', year: yk, term, total };
+        });
+      });
+    });
+  }
+  if (window.practicalSubjects) {
+    Object.keys(window.practicalSubjects).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        ((window.practicalSubjects[yk] || {})[term] || []).forEach(s => {
+          let total = 0;
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+          map[s.slug] = { name: s.name, icon: s.icon || '🧪', year: yk, term, total };
+        });
+      });
+    });
+  }
+  return map;
+}
+
+/* total number of files in the whole catalog (same logic as the per-student updateStats()) */
+function _getTotalFilesCount() {
+  let total = 0;
+  if (window.years) {
+    Object.keys(window.years).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        (window.years[yk].terms[term] || []).forEach(s => {
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+        });
+      });
+    });
+  }
+  if (window.practicalSubjects) {
+    Object.keys(window.practicalSubjects).forEach(yk => {
+      ['term1','term2'].forEach(term => {
+        ((window.practicalSubjects[yk] || {})[term] || []).forEach(s => {
+          Object.values(s.files || {}).forEach(arr => { total += arr.length; });
+        });
+      });
+    });
+  }
+  return total;
+}
+
+/* extracts the subject slug out of a stored file URL like "files/y2/term1/adult-1/lecture/foo.pdf" */
+function _slugFromFileUrl(url) {
+  const parts = String(url || '').split('/').filter(Boolean);
+  // parts[0] === 'files', parts[1] = year, parts[2] = term, parts[3] = slug
+  return parts.length >= 4 ? parts[3] : null;
+}
+
+window._loadAdminStats = async function() {
+  try {
+    const snap = await getDocs(collection(db, 'students'));
+    const totalFiles = _getTotalFilesCount();
+    const subjectLookup = _buildSubjectLookup();
+    const subjectOpenCounts = {}; // slug -> count of (student, file) opens
+
+    let totalStudents = 0;
+    let progressSum = 0;
+    let activeThisWeek = 0;
+    let totalOpens = 0;
+    const weekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+
+    // per-year aggregation: { y1: { seen: 0, total: 0 }, ... }
+    const yearAgg = { y1: { seen: 0, total: 0 }, y2: { seen: 0, total: 0 }, y3: { seen: 0, total: 0 } };
+
+    snap.forEach(d => {
+      const data = d.data();
+      totalStudents++;
+      const viewed = Array.isArray(data.viewedFiles) ? data.viewedFiles : [];
+      totalOpens += viewed.length;
+      if (totalFiles) progressSum += (viewed.length / totalFiles) * 100;
+
+      const lastSeenMs = data.lastSeen?.toMillis ? data.lastSeen.toMillis() : 0;
+      if (lastSeenMs && lastSeenMs >= weekAgo) activeThisWeek++;
+
+      viewed.forEach(url => {
+        const slug = _slugFromFileUrl(url);
+        if (!slug) return;
+        subjectOpenCounts[slug] = (subjectOpenCounts[slug] || 0) + 1;
+        const info = subjectLookup[slug];
+        if (info && yearAgg[info.year]) yearAgg[info.year].seen++;
+      });
+    });
+
+    // year totals come straight from the catalog (independent of any student data)
+    Object.keys(subjectLookup).forEach(slug => {
+      const info = subjectLookup[slug];
+      if (yearAgg[info.year]) yearAgg[info.year].total += info.total;
+    });
+
+    const avgProgress = totalStudents ? Math.round(progressSum / totalStudents) : 0;
+
+    const topSubjects = Object.entries(subjectOpenCounts)
+      .map(([slug, count]) => ({ slug, count, info: subjectLookup[slug] }))
+      .filter(x => x.info)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 8);
+
+    if (window._renderAdminStats) {
+      window._renderAdminStats({ totalStudents, avgProgress, activeThisWeek, totalOpens, topSubjects, yearAgg });
+    }
+  } catch (e) {
+    console.error('load admin stats failed', e);
+    const loadingEl = document.getElementById('adminStatsLoading');
+    if (loadingEl) loadingEl.textContent = 'حصل خطأ في تحميل الإحصائيات — حاول تاني.';
+  }
 };
 
 /* Show admin tools only to the admin user */

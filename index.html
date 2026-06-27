@@ -5849,10 +5849,8 @@ window._deleteAdminMessage = async function(uid, msgId) {
    ════════════════════════════════════════════ */
 (function () {
 
-  /* ⚠️  ضع الـ API Key هنا على جهازك — لا ترفعه على GitHub */
-  const GROQ_KEY   = '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';
-  const GROQ_URL   = 'https://api.groq.com/openai/v1/chat/completions';
-  const GROQ_MODEL = 'llama-3.3-70b-versatile';
+  /* المفتاح بقى مخفي في Cloudflare Worker، الموقع بيكلم الـ Worker بس */
+  const GROQ_URL = 'https://nurseverse-ai.kimoali426.workers.dev';
 
   let aiOpen    = false;
   let aiLoading = false;
@@ -5993,7 +5991,6 @@ ${contextBlock}`;
     aiHistory.push({ role: 'user', content: userText });
 
     const body = {
-      model: GROQ_MODEL,
       messages: [
         { role: 'system', content: buildSystemPrompt() },
         ...aiHistory.slice(-16)
@@ -6004,7 +6001,7 @@ ${contextBlock}`;
 
     const res = await fetch(GROQ_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + GROQ_KEY },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
 

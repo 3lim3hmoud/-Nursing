@@ -3,20 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1f18" media="(prefers-color-scheme: dark)">
+<meta http-equiv="x-dns-prefetch-control" content="on">
 <title>Faculty of Nursing — Study Hub</title>
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#1D9E75">
 <link rel="icon" href="./icon-192.png">
+<link rel="preload" href="./icon-192.png" as="image">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPYJ7FB5T3"></script>
+<!-- Google Analytics (deferred — doesn't block render) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-PPYJ7FB5T3');
+  gtag('config', 'G-PPYJ7FB5T3', { send_page_view: false });
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PPYJ7FB5T3';
+    s.async = true;
+    s.onload = function(){ gtag('event', 'page_view'); };
+    document.head.appendChild(s);
+  });
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://firestore.googleapis.com">
+<link rel="dns-prefetch" href="https://firebaseapp.com">
+<link rel="dns-prefetch" href="https://identitytoolkit.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,6 +45,24 @@
     -webkit-user-select: none;
   }
 
+  /* Mobile fallback when video is hidden */
+  body.no-video {
+    background: linear-gradient(135deg, #0a1f18 0%, #0d2235 55%, #0a1a14 100%) fixed;
+  }
+  /* Reduce heavy backdrop-filter on mobile for performance */
+  @media (max-width: 767px) {
+    .search-box, .search-results {
+      backdrop-filter: blur(8px) saturate(120%);
+      -webkit-backdrop-filter: blur(8px) saturate(120%);
+    }
+    .auth-btn {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(6,14,11,0.6) 0%, rgba(8,16,13,0.35) 30%, rgba(10,20,16,0.3) 60%, rgba(14,26,21,0.6) 100%);
+    }
+  }
   :root {
     --teal-50: #E1F5EE;
     --teal-100: #9FE1CB;
@@ -280,6 +315,7 @@
     display: flex; align-items: flex-start; justify-content: flex-end;
     opacity: 0; pointer-events: none;
     transition: opacity 0.2s ease;
+    contain: layout style;
   }
   .dashboard-panel.open { opacity: 1; pointer-events: auto; }
   .dashboard-drawer {
@@ -2062,6 +2098,7 @@
     display: flex; flex-direction: column;
     transform: translateX(100%);
     transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+    contain: layout style;
   }
   .chat-view.open { transform: translateX(0); }
   .chat-header {
@@ -2213,18 +2250,37 @@
   .splash-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.02em;margin-top:.4rem;}
   .splash-sub{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#6CE3B4;}
   .splash-bar{margin-top:1.6rem;width:140px;height:3px;background:rgba(255,255,255,.1);border-radius:100px;overflow:hidden;}
-  .splash-fill{height:100%;width:0%;background:linear-gradient(90deg,#1D9E75,#378ADD);border-radius:100px;animation:fillBar 1.6s ease forwards;animation-delay:.3s;}
+  .splash-fill{height:100%;width:0%;background:linear-gradient(90deg,#1D9E75,#378ADD);border-radius:100px;animation:fillBar 1.2s ease forwards;animation-delay:.2s;will-change:width;}
   @keyframes fillBar{from{width:0%}to{width:100%}}
 </style>
 <script>
-  window.addEventListener("load",function(){setTimeout(function(){document.getElementById("splash").classList.add("hide");},2100);});
+  window.addEventListener("load",function(){
+  var t = performance.now() > 800 ? 400 : 1200;
+  setTimeout(function(){document.getElementById("splash").classList.add("hide");}, t);
+});
 </script>
 
 
 <!-- ══════════════════════ VIDEO BACKGROUND ══════════════════════ -->
-<video id="bg-video" autoplay muted loop playsinline preload="auto">
+<video id="bg-video" muted loop playsinline preload="none" poster="bg-poster.jpg">
   <source src="bg.mp4" type="video/mp4">
 </video>
+<script>
+(function(){
+  var vid = document.getElementById('bg-video');
+  if (!vid) return;
+  // On mobile (narrow screen or touch) skip video entirely — use CSS gradient fallback
+  var isMobile = window.innerWidth < 768 || ('ontouchstart' in window && window.innerWidth < 1024);
+  if (isMobile) {
+    vid.style.display = 'none';
+    document.body.classList.add('no-video');
+  } else {
+    // Desktop: start playing after page interactive
+    if (document.readyState === 'complete') { vid.play(); }
+    else { window.addEventListener('load', function(){ setTimeout(function(){ vid.play(); }, 200); }); }
+  }
+})();
+</script>
 
 <!-- ══════════════════════ CONTACT / FEEDBACK ══════════════════════ -->
 <button class="contact-fab" onclick="openMyChat()">
@@ -3665,12 +3721,16 @@ function renderBreadcrumb(containerId, items) {
 /* ══════════════════════ PROGRESS TRACKING (localStorage) ══════════════════════ */
 const PROGRESS_KEY = 'nurseverse_viewed_files_v1';
 
+let _viewedSetCache = null;
 function getViewedSet() {
+  if (_viewedSetCache) return _viewedSetCache;
   try {
     const raw = localStorage.getItem(PROGRESS_KEY);
-    return raw ? new Set(JSON.parse(raw)) : new Set();
-  } catch (e) { return new Set(); }
+    _viewedSetCache = raw ? new Set(JSON.parse(raw)) : new Set();
+    return _viewedSetCache;
+  } catch (e) { _viewedSetCache = new Set(); return _viewedSetCache; }
 }
+function _invalidateViewedCache() { _viewedSetCache = null; }
 
 function isFileViewed(url) {
   return getViewedSet().has(url);
@@ -3681,6 +3741,7 @@ function markFileViewed(url, linkEl) {
     const set = getViewedSet();
     set.add(url);
     localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set]));
+    _invalidateViewedCache();
   } catch (e) {}
   if (linkEl) linkEl.classList.add('visited');
   // Defer the progress recalculation so it never competes with the browser
@@ -4671,7 +4732,9 @@ window.trackRecent = trackRecent;
 </script>
 
 <script type="module">
-/* ══════════════════════ FIREBASE AUTH ══════════════════════ */
+/* ══════════════════════ FIREBASE AUTH (lazy-loaded) ══════════════════════ */
+/* Firebase imports remain here — the ES module system handles them.
+   However we defer ALL Firestore listeners until after the page is interactive. */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";

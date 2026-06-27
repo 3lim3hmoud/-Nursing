@@ -1933,6 +1933,80 @@
     font-size: 13px; font-weight: 600; color: var(--teal-600);
   }
 
+  /* ── Reply box inside notif item ── */
+  .notif-reply-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-top: 7px; padding: 4px 10px; border-radius: 100px;
+    border: 1px solid rgba(29,158,117,0.35);
+    background: rgba(29,158,117,0.07); color: var(--teal-600);
+    font-size: 11px; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.15s;
+  }
+  .notif-reply-btn:hover { background: rgba(29,158,117,0.15); }
+
+  .notif-reply-box {
+    display: none; margin-top: 8px;
+  }
+  .notif-reply-box.open { display: flex; gap: 6px; }
+  .notif-reply-input {
+    flex: 1; padding: 7px 10px; border-radius: 8px;
+    border: 1px solid rgba(28,43,37,0.18);
+    font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink);
+    outline: none; background: #fff;
+  }
+  .notif-reply-input:focus { border-color: var(--teal-400); }
+  .notif-reply-send {
+    padding: 7px 12px; border-radius: 8px; border: none;
+    background: var(--teal-400); color: #fff;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.15s;
+  }
+  .notif-reply-send:hover { background: var(--teal-600); }
+  .notif-reply-send:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .notif-admin-reply {
+    margin-top: 7px; padding: 7px 10px; border-radius: 8px;
+    background: rgba(29,158,117,0.1); border-left: 3px solid var(--teal-400);
+    font-size: 12px; color: var(--ink-soft); line-height: 1.5;
+  }
+  .notif-admin-reply-label {
+    font-size: 10px; font-weight: 700; color: var(--teal-600);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 3px;
+  }
+
+  /* ── Admin inbox panel ── */
+  .admin-inbox-item {
+    padding: 12px; border-radius: 12px; margin-bottom: 8px;
+    background: rgba(28,43,37,0.03); border: 1px solid rgba(28,43,37,0.08);
+  }
+  .admin-inbox-item.unread { background: rgba(29,158,117,0.06); border-color: rgba(29,158,117,0.18); }
+  .admin-inbox-meta { font-size: 11px; color: rgba(28,43,37,0.45); margin-bottom: 4px; display:flex; justify-content:space-between; }
+  .admin-inbox-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+  .admin-inbox-notif { font-size: 11px; color: rgba(28,43,37,0.5); margin-bottom: 6px; font-style: italic; }
+  .admin-inbox-msg { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 8px; }
+  .admin-inbox-reply-row { display: flex; gap: 6px; }
+  .admin-inbox-reply-input {
+    flex: 1; padding: 7px 10px; border-radius: 8px;
+    border: 1px solid rgba(28,43,37,0.18);
+    font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink);
+    outline: none;
+  }
+  .admin-inbox-reply-input:focus { border-color: var(--teal-400); }
+  .admin-inbox-reply-btn {
+    padding: 7px 12px; border-radius: 8px; border: none;
+    background: var(--teal-400); color: #fff;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .admin-inbox-unread-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal-400); display: inline-block; margin-right: 5px;
+  }
+
 </style>
 </head>
 <body>
@@ -1978,41 +2052,38 @@
 
 <!-- ══════════════════════ CONTACT / FEEDBACK ══════════════════════ -->
 <button class="contact-fab" onclick="openContact()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-  <span>Contact / Feedback</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span>Message Ali</span>
 </button>
 
 <div class="contact-overlay" id="contactOverlay">
   <div class="contact-modal">
     <button class="contact-close" onclick="closeContact()">✕</button>
-    <h3>Get in Touch</h3>
-    <p class="contact-sub">Got feedback, a question, or a missing file to report? Send a message and Ali will get it directly.</p>
 
-    <form class="contact-form" id="contactForm">
-      <div class="contact-field">
-        <label for="cName">Name</label>
-        <input type="text" id="cName" name="name" placeholder="Your name" required>
+    <!-- Header -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:1.2rem;">
+      <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1D9E75,#378ADD);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0;">A</div>
+      <div>
+        <h3 style="margin:0;font-size:17px;font-weight:700;color:var(--ink);">Message Ali Mahmoud</h3>
+        <p style="margin:0;font-size:12px;color:rgba(28,43,37,0.5);">Founder · Faculty of Nursing · Al-Riyadah University</p>
       </div>
+    </div>
+
+    <p class="contact-sub">Got a question, feedback, or something missing? Send Ali a direct message — he'll get it instantly and can reply back to you.</p>
+
+    <div id="contactFormWrap">
       <div class="contact-field">
-        <label for="cContact">Email or WhatsApp number</label>
-        <input type="text" id="cContact" name="contact_info" placeholder="So Ali can reply to you" required>
+        <label>Your Message</label>
+        <textarea id="msgText" placeholder="Write your message here..." rows="4" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(28,43,37,0.18);font-family:'Inter',sans-serif;font-size:13.5px;color:var(--ink);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
       </div>
-      <div class="contact-field">
-        <label for="cType">Subject</label>
-        <select id="cType" name="subject_type">
-          <option value="Feedback">Feedback / Suggestion</option>
-          <option value="Missing or broken file">Missing or broken file</option>
-          <option value="Bug report">Bug report</option>
-          <option value="Question">Question</option>
-          <option value="Other">Other</option>
-        </select>
+      <div class="contact-field" id="guestNameWrap">
+        <label>Your Name <span style="font-weight:400;color:rgba(28,43,37,0.45);">(so Ali knows who you are)</span></label>
+        <input type="text" id="msgSenderName" placeholder="Your name..." style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(28,43,37,0.18);font-family:'Inter',sans-serif;font-size:13.5px;color:var(--ink);outline:none;box-sizing:border-box;">
       </div>
-      <div class="contact-field">
-        <label for="cMsg">Message</label>
-        <textarea id="cMsg" name="message" placeholder="Write your message here..." required></textarea>
-      </div>
-      <button type="submit" class="contact-submit" id="contactSubmitBtn">Send Message</button>
-    </form>
+      <button class="contact-submit" id="msgSendBtn" onclick="sendMessageToAli()">
+        Send Message 🚀
+      </button>
+    </div>
 
     <div class="contact-status" id="contactStatus"></div>
   </div>
@@ -2226,6 +2297,19 @@
         </div>
       </div>
 
+      <!-- Inbox: student replies -->
+      <div style="margin-top:1.4rem; border-top:1px solid rgba(28,43,37,0.08); padding-top:1rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);">
+            💬 ردود الطلبة (<span id="inboxUnreadCount">0</span> جديد)
+          </div>
+          <button onclick="loadAdminInbox()" style="font-size:11px;font-weight:600;color:var(--teal-600);background:none;border:none;cursor:pointer;">تحديث ↻</button>
+        </div>
+        <div id="adminInboxList" style="max-height:320px;overflow-y:auto;">
+          <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -2352,7 +2436,7 @@
 </main>
 
 <footer class="footer">
-  <strong>Ali Mahmoud</strong> · 3rd Year Student, Faculty of Nursing · Al-Riyadah University of Science and Technology · Founder &amp; Creator
+  Built with ❤️ by <strong>Ali Mahmoud</strong> — 3rd Year Nursing Student &amp; Founder of NurseVerse · Al-Riyadah University of Science and Technology
 </footer>
 
 <script>
@@ -3544,7 +3628,19 @@ function goHome() {
 const CONTACT_FORM_ENDPOINT = 'https://formspree.io/f/xvzjkqwz';
 
 function openContact() {
-  document.getElementById('contactOverlay').classList.add('open');
+  const overlay = document.getElementById('contactOverlay');
+  overlay.classList.add('open');
+  // hide name field if user is logged in
+  const guestWrap = document.getElementById('guestNameWrap');
+  if (guestWrap) guestWrap.style.display = window._currentUserUid ? 'none' : 'block';
+  // reset form
+  document.getElementById('msgText').value = '';
+  if (document.getElementById('msgSenderName')) document.getElementById('msgSenderName').value = '';
+  const status = document.getElementById('contactStatus');
+  status.classList.remove('show','ok','err');
+  status.textContent = '';
+  const wrap = document.getElementById('contactFormWrap');
+  if (wrap) wrap.style.display = 'block';
 }
 
 function closeContact() {
@@ -3555,42 +3651,50 @@ document.getElementById('contactOverlay').addEventListener('click', (e) => {
   if (e.target.id === 'contactOverlay') closeContact();
 });
 
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('contactSubmitBtn');
+async function sendMessageToAli() {
+  const text = document.getElementById('msgText').value.trim();
   const status = document.getElementById('contactStatus');
-
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  status.classList.remove('show', 'ok', 'err');
-
-  try {
-    const formData = new FormData(form);
-    const res = await fetch(CONTACT_FORM_ENDPOINT, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (res.ok) {
-      form.classList.add('hidden-after-send');
-      status.textContent = '✅ Message sent! Ali will get back to you soon.';
-      status.classList.add('show', 'ok');
-    } else {
-      throw new Error('Request failed');
-    }
-  } catch (err) {
-    status.textContent = '⚠️ Something went wrong. Please try again, or message Ali directly.';
-    status.classList.add('show', 'err');
-    btn.disabled = false;
-    btn.textContent = 'Send Message';
+  const btn = document.getElementById('msgSendBtn');
+  if (!text) {
+    status.textContent = '⚠️ Write your message first.';
+    status.classList.add('show','err'); return;
   }
-});
+  btn.disabled = true; btn.textContent = 'Sending...';
+  status.classList.remove('show','ok','err');
+
+  // get sender info
+  let senderName = window._currentUserName || '';
+  let senderEmail = '';
+  if (!window._currentUserUid) {
+    senderName = (document.getElementById('msgSenderName')?.value.trim()) || 'Anonymous';
+  }
+  // build a reply object and send to Firestore via Firebase module
+  if (window._sendStudentMessageToAli) {
+    try {
+      await window._sendStudentMessageToAli({ text, senderName, senderEmail });
+      document.getElementById('contactFormWrap').style.display = 'none';
+      status.textContent = '✅ Message sent! Ali will get back to you soon.';
+      status.classList.add('show','ok');
+    } catch(e) {
+      status.textContent = '⚠️ Something went wrong. Try again.';
+      status.classList.add('show','err');
+      btn.disabled = false; btn.textContent = 'Send Message 🚀';
+    }
+  } else {
+    // fallback: not logged in to Firebase yet, show a helpful message
+    status.textContent = '⚠️ Please sign in first so Ali can reply to you.';
+    status.classList.add('show','err');
+    btn.disabled = false; btn.textContent = 'Send Message 🚀';
+  }
+}
+window.openContact = openContact;
+window.closeContact = closeContact;
+window.sendMessageToAli = sendMessageToAli;
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js');
+    // FCM service worker is registered inside requestFCMToken()
   });
 }
 
@@ -3743,6 +3847,18 @@ function renderNotifList() {
     const isRead = read.has(n.id);
     const icon = NOTIF_TYPE_ICONS[n.type] || '🔔';
     const time = timeAgo(n.ts);
+    const adminReplyHtml = n.adminReply
+      ? `<div class="notif-admin-reply"><div class="notif-admin-reply-label">✍️ رد الأدمن</div>${n.adminReply}</div>`
+      : '';
+    // only show reply btn if user is logged in (checked at render time via window._currentUserUid)
+    const canReply = !!window._currentUserUid;
+    const replyBtn = canReply
+      ? `<button class="notif-reply-btn" onclick="event.stopPropagation(); toggleReplyBox('${n.id}')">💬 رد</button>
+         <div class="notif-reply-box" id="replyBox-${n.id}">
+           <input class="notif-reply-input" id="replyInput-${n.id}" placeholder="اكتب ردك..." onkeydown="if(event.key==='Enter') submitReply('${n.id}')">
+           <button class="notif-reply-send" onclick="submitReply('${n.id}')">إرسال</button>
+         </div>`
+      : '';
     return `<div class="notif-item ${isRead ? 'read' : ''}" onclick="markNotifRead('${n.id}', this)">
       <span class="notif-dot"></span>
       <span class="notif-icon">${icon}</span>
@@ -3750,9 +3866,43 @@ function renderNotifList() {
         <div class="notif-title">${n.title}</div>
         ${n.body ? `<div class="notif-body">${n.body}</div>` : ''}
         <div class="notif-time">${time}</div>
+        ${adminReplyHtml}
+        ${replyBtn}
       </div>
     </div>`;
   }).join('');
+}
+
+function toggleReplyBox(notifId) {
+  const box = document.getElementById('replyBox-' + notifId);
+  if (!box) return;
+  box.classList.toggle('open');
+  if (box.classList.contains('open')) {
+    const input = document.getElementById('replyInput-' + notifId);
+    if (input) setTimeout(() => input.focus(), 50);
+  }
+}
+
+function submitReply(notifId) {
+  const input = document.getElementById('replyInput-' + notifId);
+  if (!input) return;
+  const text = input.value.trim();
+  if (!text) return;
+  input.disabled = true;
+  const sendBtn = input.nextElementSibling;
+  if (sendBtn) sendBtn.disabled = true;
+  if (window._submitReplyToFirestore) {
+    window._submitReplyToFirestore(notifId, text).then(() => {
+      input.value = '';
+      input.disabled = false;
+      if (sendBtn) sendBtn.disabled = false;
+      const box = document.getElementById('replyBox-' + notifId);
+      if (box) box.classList.remove('open');
+    }).catch(() => {
+      input.disabled = false;
+      if (sendBtn) sendBtn.disabled = false;
+    });
+  }
 }
 
 function markNotifRead(id, el) {
@@ -3940,6 +4090,12 @@ window.filterStudentsList = filterStudentsList;
 window.selectStudent = selectStudent;
 window.clearSelectedStudent = clearSelectedStudent;
 window.renderStudentsListIn = renderStudentsListIn;
+window.toggleReplyBox = toggleReplyBox;
+window.submitReply = submitReply;
+window.renderNotifList = renderNotifList;
+window.getNotifications = getNotifications;
+window.saveNotifications = saveNotifications;
+window.showNotifToast = showNotifToast;
 
 // init badge on load
 updateNotifBadge();
@@ -3968,8 +4124,10 @@ window.trackRecent = trackRecent;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit }
+import { getFirestore, doc, getDoc, setDoc, updateDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit, getDocs }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+import { getMessaging, getToken, onMessage }
+  from "https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJGf-9KbQF-aCi3iH9rDxmF4xxgrpc_UI",
@@ -3984,6 +4142,38 @@ const fbApp = initializeApp(firebaseConfig);
 const auth  = getAuth(fbApp);
 const db    = getFirestore(fbApp);
 const provider = new GoogleAuthProvider();
+
+/* ─── FCM Messaging ─── */
+const VAPID_KEY = 'BGXT7Av6C-wndzNt_C7cbz5uCc_rd-o96WMYsfiVNH46GvajdNHKw3OliVd0JeBrpgylIZa6u_HYAUmOfPxqe0c';
+let messaging = null;
+try { messaging = getMessaging(fbApp); } catch(e) {}
+
+async function requestFCMToken(uid) {
+  if (!messaging) return;
+  try {
+    // Register the FCM service worker first
+    const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: '/' });
+    const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
+    if (token) {
+      // Save token to Firestore under students/{uid}
+      await setDoc(doc(db, 'students', uid), { fcmToken: token }, { merge: true });
+    }
+  } catch(e) { console.warn('FCM token error:', e); }
+}
+
+// Handle foreground messages (app is open)
+if (messaging) {
+  onMessage(messaging, (payload) => {
+    const notif = {
+      id: payload.messageId || Date.now().toString(),
+      title: payload.notification?.title || payload.data?.title || '🔔 إشعار جديد',
+      body:  payload.notification?.body  || payload.data?.body  || '',
+      type:  payload.data?.type || 'info',
+      ts: Date.now(),
+    };
+    if (window.pushNotification) window.pushNotification(notif);
+  });
+}
 
 let currentUser = null;
 /* Flags so any favorite/recent/viewed action taken before Firebase
@@ -4026,6 +4216,8 @@ onAuthStateChanged(auth, async (user) => {
     await syncProgress(user.uid);
     flushPendingSyncs(user.uid);
     updateStats();
+    // Request FCM push token and save it
+    requestFCMToken(user.uid);
   } else {
     document.getElementById('signInBtn').style.display = '';
     document.getElementById('userAvatarWrap').style.display = 'none';
@@ -4245,7 +4437,6 @@ function startNotifListener(uid) {
 
 /* Admin: send notification — targetUid=null means send to everyone */
 window._sendAdminNotifToFirestore = async function({ title, body, type, targetUid }) {
-  const { getDocs } = await import("https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js");
   await addDoc(collection(db, 'notifications'), {
     title, body, type,
     targetUid: targetUid || null,
@@ -4257,7 +4448,6 @@ window._sendAdminNotifToFirestore = async function({ title, body, type, targetUi
 /* Admin: load all registered students */
 window._loadStudentsList = async function() {
   try {
-    const { getDocs } = await import("https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js");
     const snap = await getDocs(collection(db, 'students'));
     const students = [];
     snap.forEach(d => {
@@ -4281,8 +4471,132 @@ onAuthStateChanged(auth, (user) => {
   if (adminWrap) {
     adminWrap.style.display = (user && user.email === ADMIN_EMAIL) ? 'block' : 'none';
   }
-  if (user) startNotifListener(user.uid);
+  if (user) {
+    window._currentUserUid = user.uid;
+    window._currentUserName = user.displayName || user.email || '?';
+    startNotifListener(user.uid);
+    listenForAdminReplies(user.uid);
+    if (user.email === ADMIN_EMAIL) loadAdminInbox();
+  }
 });
+
+/* Student sends a direct message to Ali (shows in admin inbox) */
+window._sendStudentMessageToAli = async function({ text, senderName, senderEmail }) {
+  await addDoc(collection(db, 'replies'), {
+    notifId: 'direct-message',
+    text,
+    senderUid: auth.currentUser?.uid || 'guest',
+    senderName: senderName || auth.currentUser?.displayName || auth.currentUser?.email || 'Anonymous',
+    senderEmail: senderEmail || auth.currentUser?.email || '',
+    ts: serverTimestamp(),
+    readByAdmin: false,
+  });
+};
+
+/* Student submits a reply to a notification */
+window._submitReplyToFirestore = async function(notifId, text) {
+  await addDoc(collection(db, 'replies'), {
+    notifId,
+    text,
+    senderUid: auth.currentUser.uid,
+    senderName: auth.currentUser.displayName || auth.currentUser.email || '?',
+    senderEmail: auth.currentUser.email || '',
+    ts: serverTimestamp(),
+    readByAdmin: false,
+  });
+};
+
+/* Student listens for admin replies to their own messages */
+function listenForAdminReplies(uid) {
+  const q = query(
+    collection(db, 'adminReplies'),
+    orderBy('ts', 'desc'),
+    limit(20)
+  );
+  onSnapshot(q, (snap) => {
+    snap.docChanges().forEach(change => {
+      if (change.type === 'added') {
+        const data = change.doc.data();
+        if (data.targetUid === uid) {
+          // update the notification in localStorage with the admin reply
+          const list = window.getNotifications ? window.getNotifications() : [];
+          const notif = list.find(n => n.id === data.notifId);
+          if (notif) {
+            notif.adminReply = data.text;
+            if (window.saveNotifications) window.saveNotifications(list);
+            if (window.renderNotifList) window.renderNotifList();
+            // show toast for admin reply
+            if (window.showNotifToast) window.showNotifToast({
+              type: 'info', title: '✍️ رد من الأدمن', body: data.text
+            });
+          }
+        }
+      }
+    });
+  });
+}
+
+/* Admin: load inbox of student replies */
+window.loadAdminInbox = async function() {
+  const el = document.getElementById('adminInboxList');
+  const countEl = document.getElementById('inboxUnreadCount');
+  if (!el) return;
+  try {
+    const q = query(collection(db, 'replies'), orderBy('ts', 'desc'), limit(50));
+    const snap = await getDocs(q);
+    let unread = 0;
+    if (snap.empty) {
+      el.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">لا توجد ردود بعد</p>';
+      if (countEl) countEl.textContent = '0';
+      return;
+    }
+    const items = [];
+    snap.forEach(d => items.push({ id: d.id, ...d.data() }));
+    unread = items.filter(r => !r.readByAdmin).length;
+    if (countEl) countEl.textContent = unread;
+    el.innerHTML = items.map(r => {
+      const ts = r.ts?.toMillis ? r.ts.toMillis() : 0;
+      return `<div class="admin-inbox-item ${r.readByAdmin ? '' : 'unread'}" id="inbox-${r.id}">
+        <div class="admin-inbox-meta">
+          <span>${r.readByAdmin ? '' : '<span class="admin-inbox-unread-dot"></span>'}${timeAgo(ts)}</span>
+        </div>
+        <div class="admin-inbox-name">${r.senderName || '?'} <span style="font-weight:400;font-size:11px;color:rgba(28,43,37,0.45);">${r.senderEmail||''}</span></div>
+        <div class="admin-inbox-notif" style="font-size:11px;color:rgba(28,43,37,0.5);margin-bottom:5px;font-style:italic;">رداً على إشعار</div>
+        <div class="admin-inbox-msg">${r.text}</div>
+        <div class="admin-inbox-reply-row">
+          <input class="admin-inbox-reply-input" id="adminReply-${r.id}" placeholder="رد على ${r.senderName||'الطالب'}..." onkeydown="if(event.key==='Enter') sendAdminReplyToStudent('${r.id}','${r.senderUid||''}','${r.notifId||''}')">
+          <button class="admin-inbox-reply-btn" onclick="sendAdminReplyToStudent('${r.id}','${r.senderUid||''}','${r.notifId||''}')">رد ↩</button>
+        </div>
+      </div>`;
+    }).join('');
+    // mark all as read by admin
+    items.filter(r => !r.readByAdmin).forEach(r => {
+      updateDoc(doc(db, 'replies', r.id), { readByAdmin: true }).catch(()=>{});
+    });
+  } catch(e) { el.innerHTML = '<p style="color:#c0392b;font-size:12px;padding:1rem;">خطأ في التحميل</p>'; }
+};
+
+/* Admin replies to a student */
+window.sendAdminReplyToStudent = async function(replyDocId, targetUid, notifId) {
+  const input = document.getElementById('adminReply-' + replyDocId);
+  if (!input) return;
+  const text = input.value.trim();
+  if (!text) return;
+  input.disabled = true;
+  try {
+    await addDoc(collection(db, 'adminReplies'), {
+      notifId, targetUid, text,
+      ts: serverTimestamp(),
+      sentBy: auth.currentUser?.email || '',
+    });
+    input.value = '';
+    input.placeholder = '✅ تم الإرسال';
+    input.disabled = false;
+  } catch(e) {
+    input.disabled = false;
+    input.placeholder = '⚠️ فشل الإرسال';
+  }
+};
 </script>
 
 </body>

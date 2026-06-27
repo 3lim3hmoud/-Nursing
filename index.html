@@ -5845,17 +5845,18 @@ window._deleteAdminMessage = async function(uid, msgId) {
 
 <script>
 /* ════════════════════════════════════════════
-   AI NURSING CHAT — Gemini + Subject Context
+   AI NURSING CHAT — Groq (OpenAI-compatible) + Subject Context
    ════════════════════════════════════════════ */
 (function () {
 
   /* ⚠️  ضع الـ API Key هنا على جهازك — لا ترفعه على GitHub */
-  const GEMINI_KEY = 'AQ.Ab8RN6ISKj6wiDl6owuhzwrnhH4yIAXWVYYwspejCo_yTtz2Ig';
-  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+  const GROQ_KEY   = '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';
+  const GROQ_URL   = 'https://api.groq.com/openai/v1/chat/completions';
+  const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
   let aiOpen    = false;
   let aiLoading = false;
-  let aiHistory = [];   /* { role:'user'|'model', parts:[{text}] }[] */
+  let aiHistory = [];   /* { role:'user'|'assistant', content:string }[] */
 
   /* ── DOM helpers ── */
   const $  = id => document.getElementById(id);
@@ -5987,19 +5988,23 @@ ${contextBlock}`;
     msgs.scrollTop = msgs.scrollHeight;
   }
 
-  /* ── Call Gemini API ── */
+  /* ── Call Groq API ── */
   async function callGemini(userText) {
-    aiHistory.push({ role: 'user', parts: [{ text: userText }] });
+    aiHistory.push({ role: 'user', content: userText });
 
     const body = {
-      system_instruction: { parts: [{ text: buildSystemPrompt() }] },
-      contents: aiHistory.slice(-16),
-      generationConfig: { maxOutputTokens: 1024, temperature: 0.7 },
+      model: GROQ_MODEL,
+      messages: [
+        { role: 'system', content: buildSystemPrompt() },
+        ...aiHistory.slice(-16)
+      ],
+      max_tokens: 1024,
+      temperature: 0.7,
     };
 
-    const res = await fetch(GEMINI_URL, {
+    const res = await fetch(GROQ_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_KEY },
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + GROQ_KEY },
       body: JSON.stringify(body),
     });
 
@@ -6009,8 +6014,8 @@ ${contextBlock}`;
     }
 
     const data  = await res.json();
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || '...';
-    aiHistory.push({ role: 'model', parts: [{ text: reply }] });
+    const reply = data.choices?.[0]?.message?.content || '...';
+    aiHistory.push({ role: 'assistant', content: reply });
     return reply;
   }
 
@@ -6041,7 +6046,7 @@ ${contextBlock}`;
       if (!aiOpen) $('aiFabBadge').classList.add('show');
     } catch(e) {
       typing.classList.remove('show');
-      const msg = e.message.includes('API_KEY_INVALID') || e.message.includes('400')
+      const msg = e.message.includes('Invalid API Key') || e.message.includes('401')
         ? '⚠️ الـ API Key مش صح. اتأكد إنك حطيت الـ Key الصح في الكود.'
         : `⚠️ حصل خطأ: ${e.message}`;
       appendMsg('model', `<p>${msg}</p>`);

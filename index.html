@@ -4005,7 +4005,7 @@ window.sendMessageToAli = sendMessageToAli;
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js');
+    // sw.js مدمج في firebase-messaging-sw.js — التسجيل يتم في requestFCMToken()
     // FCM service worker is registered inside requestFCMToken()
   });
 }

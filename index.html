@@ -2007,6 +2007,144 @@
     background: var(--teal-400); display: inline-block; margin-right: 5px;
   }
 
+  /* ══════════════════════ CHAT SYSTEM (student <-> admin) ══════════════════════ */
+
+  /* button inside the notif panel that opens "my conversation" */
+  .chat-entry-btn {
+    display: flex; align-items: center; gap: 10px;
+    margin: 0.8rem 0.8rem 0.4rem; padding: 12px 14px;
+    border-radius: 14px; cursor: pointer;
+    background: linear-gradient(135deg, rgba(29,158,117,0.1), rgba(55,138,221,0.1));
+    border: 1px solid rgba(29,158,117,0.25);
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+  }
+  .chat-entry-btn:hover { background: linear-gradient(135deg, rgba(29,158,117,0.16), rgba(55,138,221,0.16)); }
+  .chat-entry-icon { font-size: 20px; flex-shrink: 0; }
+  .chat-entry-text { flex: 1; min-width: 0; }
+  .chat-entry-title { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .chat-entry-sub { font-size: 11px; color: rgba(28,43,37,0.55); margin-top: 1px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chat-entry-badge {
+    background: #c0392b; color: #fff; font-size: 10px; font-weight: 700;
+    border-radius: 100px; min-width: 18px; height: 18px; padding: 0 5px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  /* full chat view (used both for the student thread and inside admin conversation) */
+  .chat-view {
+    position: fixed; inset: 0; z-index: 250;
+    background: #fff;
+    display: flex; flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+  }
+  .chat-view.open { transform: translateX(0); }
+  .chat-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 1rem 1.1rem; border-bottom: 1px solid rgba(28,43,37,0.08);
+    flex-shrink: 0; background: #fff;
+  }
+  .chat-back-btn {
+    background: none; border: none; cursor: pointer; color: var(--ink);
+    padding: 4px; display: flex; flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .chat-header-avatar {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #fff;
+  }
+  .chat-header-info { flex: 1; min-width: 0; }
+  .chat-header-name { font-size: 14px; font-weight: 700; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chat-header-sub { font-size: 11px; color: rgba(28,43,37,0.5); }
+
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 1rem;
+    display: flex; flex-direction: column; gap: 8px;
+    background: #F7F6F2;
+  }
+  .chat-empty {
+    text-align: center; font-size: 13px; color: rgba(28,43,37,0.4);
+    padding: 2.5rem 1rem;
+  }
+  .chat-bubble-row { display: flex; }
+  .chat-bubble-row.from-me { justify-content: flex-end; }
+  .chat-bubble-row.from-them { justify-content: flex-start; }
+  .chat-bubble {
+    max-width: 78%; padding: 9px 13px; border-radius: 16px;
+    font-size: 13.5px; line-height: 1.5; color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    word-wrap: break-word; white-space: pre-wrap;
+  }
+  .chat-bubble-row.from-me .chat-bubble {
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    color: #fff; border-bottom-right-radius: 4px;
+  }
+  .chat-bubble-row.from-them .chat-bubble {
+    background: #fff; border: 1px solid rgba(28,43,37,0.08);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-bubble-time {
+    font-size: 9.5px; margin-top: 4px; opacity: 0.7;
+  }
+  .chat-bubble-row.from-me .chat-bubble-time { color: rgba(255,255,255,0.85); text-align: right; }
+  .chat-bubble-row.from-them .chat-bubble-time { color: rgba(28,43,37,0.4); }
+
+  .chat-input-row {
+    display: flex; gap: 8px; padding: 0.8rem 1rem;
+    border-top: 1px solid rgba(28,43,37,0.08); flex-shrink: 0; background: #fff;
+  }
+  .chat-input {
+    flex: 1; padding: 10px 14px; border-radius: 100px;
+    border: 1px solid rgba(28,43,37,0.18); font-family: 'Inter', sans-serif;
+    font-size: 13.5px; color: var(--ink); outline: none; background: #F7F6F2;
+  }
+  .chat-input:focus { border-color: var(--teal-400); }
+  .chat-send-btn {
+    width: 40px; height: 40px; border-radius: 50%; border: none; flex-shrink: 0;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.15s; -webkit-tap-highlight-color: transparent;
+  }
+  .chat-send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .chat-signin-prompt {
+    text-align: center; padding: 2.5rem 1.5rem; color: rgba(28,43,37,0.6); font-size: 13px;
+  }
+  .chat-signin-prompt button {
+    margin-top: 1rem; padding: 10px 20px; border-radius: 100px; border: none;
+    background: var(--teal-400); color: #fff; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 13px;
+  }
+
+  /* ── Admin: conversations list (WhatsApp style) ── */
+  .conv-list-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 8px; border-radius: 12px; cursor: pointer;
+    border-bottom: 1px solid rgba(28,43,37,0.06);
+    transition: background 0.12s; position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .conv-list-item:hover { background: var(--teal-50); }
+  .conv-list-item .admin-student-avatar { width: 38px; height: 38px; font-size: 14px; }
+  .conv-list-info { flex: 1; min-width: 0; }
+  .conv-list-name { font-size: 13.5px; font-weight: 700; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .conv-list-last { font-size: 12px; color: rgba(28,43,37,0.55);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .conv-list-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+  .conv-list-time { font-size: 10px; color: rgba(28,43,37,0.4); }
+  .conv-unread-dot {
+    background: #1D9E75; color: #fff; font-size: 10px; font-weight: 700;
+    border-radius: 100px; min-width: 17px; height: 17px; padding: 0 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .conv-list-item.unread .conv-list-name { color: var(--ink); }
+  .conv-list-item.unread .conv-list-last { color: var(--ink-soft); font-weight: 600; }
+
 </style>
 </head>
 <body>
@@ -2051,7 +2189,7 @@
 </video>
 
 <!-- ══════════════════════ CONTACT / FEEDBACK ══════════════════════ -->
-<button class="contact-fab" onclick="openContact()">
+<button class="contact-fab" onclick="openMyChat()">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   <span>Message Ali</span>
 </button>
@@ -2227,9 +2365,40 @@
         </button>
       </div>
     </div>
+    <div class="chat-entry-btn" onclick="openMyChat()">
+      <span class="chat-entry-icon">💬</span>
+      <div class="chat-entry-text">
+        <div class="chat-entry-title">محادثتي مع علي</div>
+        <div class="chat-entry-sub" id="myChatPreview">ابعت رسالتك وهيردّ عليك هنا مباشرة</div>
+      </div>
+      <span class="chat-entry-badge" id="myChatBadge" style="display:none;">0</span>
+    </div>
     <div class="notif-list" id="notifList">
       <p class="notif-empty">لا توجد إشعارات بعد</p>
     </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ MY CHAT (student <-> admin) ══════════════════════ -->
+<div class="chat-view" id="myChatView">
+  <div class="chat-header">
+    <button class="chat-back-btn" onclick="closeMyChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="chat-header-avatar">AM</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">علي محمود</div>
+      <div class="chat-header-sub">Founder &amp; Creator — NurseVerse</div>
+    </div>
+  </div>
+  <div class="chat-messages" id="myChatMessages">
+    <p class="chat-empty">سجّل دخولك الأول عشان تتواصل مع علي 👇</p>
+  </div>
+  <div class="chat-input-row" id="myChatInputRow" style="display:none;">
+    <input type="text" class="chat-input" id="myChatInput" placeholder="اكتب رسالتك هنا..." onkeydown="if(event.key==='Enter') sendMyChatMessage()">
+    <button class="chat-send-btn" id="myChatSendBtn" onclick="sendMyChatMessage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
   </div>
 </div>
 
@@ -2297,20 +2466,42 @@
         </div>
       </div>
 
-      <!-- Inbox: student replies -->
+      <!-- Conversations: WhatsApp-style list -->
       <div style="margin-top:1.4rem; border-top:1px solid rgba(28,43,37,0.08); padding-top:1rem;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;">
           <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,43,37,0.4);">
-            💬 ردود الطلبة (<span id="inboxUnreadCount">0</span> جديد)
+            💬 المحادثات (<span id="inboxUnreadCount">0</span> جديد)
           </div>
-          <button onclick="loadAdminInbox()" style="font-size:11px;font-weight:600;color:var(--teal-600);background:none;border:none;cursor:pointer;">تحديث ↻</button>
         </div>
-        <div id="adminInboxList" style="max-height:320px;overflow-y:auto;">
+        <div id="adminConversationsList" style="max-height:360px;overflow-y:auto;">
           <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
         </div>
       </div>
 
     </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN CHAT (one conversation, full screen) ══════════════════════ -->
+<div class="chat-view" id="adminChatView">
+  <div class="chat-header">
+    <button class="chat-back-btn" onclick="closeAdminChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="chat-header-avatar" id="adminChatAvatar">?</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name" id="adminChatName">—</div>
+      <div class="chat-header-sub" id="adminChatEmail"></div>
+    </div>
+  </div>
+  <div class="chat-messages" id="adminChatMessages">
+    <p class="chat-empty">جاري تحميل المحادثة...</p>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" class="chat-input" id="adminChatInput" placeholder="اكتب ردك هنا..." onkeydown="if(event.key==='Enter') sendAdminChatMessage()">
+    <button class="chat-send-btn" id="adminChatSendBtn" onclick="sendAdminChatMessage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
   </div>
 </div>
 
@@ -3847,18 +4038,6 @@ function renderNotifList() {
     const isRead = read.has(n.id);
     const icon = NOTIF_TYPE_ICONS[n.type] || '🔔';
     const time = timeAgo(n.ts);
-    const adminReplyHtml = n.adminReply
-      ? `<div class="notif-admin-reply"><div class="notif-admin-reply-label">✍️ رد الأدمن</div>${n.adminReply}</div>`
-      : '';
-    // only show reply btn if user is logged in (checked at render time via window._currentUserUid)
-    const canReply = !!window._currentUserUid;
-    const replyBtn = canReply
-      ? `<button class="notif-reply-btn" onclick="event.stopPropagation(); toggleReplyBox('${n.id}')">💬 رد</button>
-         <div class="notif-reply-box" id="replyBox-${n.id}">
-           <input class="notif-reply-input" id="replyInput-${n.id}" placeholder="اكتب ردك..." onkeydown="if(event.key==='Enter') submitReply('${n.id}')">
-           <button class="notif-reply-send" onclick="submitReply('${n.id}')">إرسال</button>
-         </div>`
-      : '';
     return `<div class="notif-item ${isRead ? 'read' : ''}" onclick="markNotifRead('${n.id}', this)">
       <span class="notif-dot"></span>
       <span class="notif-icon">${icon}</span>
@@ -3866,43 +4045,9 @@ function renderNotifList() {
         <div class="notif-title">${n.title}</div>
         ${n.body ? `<div class="notif-body">${n.body}</div>` : ''}
         <div class="notif-time">${time}</div>
-        ${adminReplyHtml}
-        ${replyBtn}
       </div>
     </div>`;
   }).join('');
-}
-
-function toggleReplyBox(notifId) {
-  const box = document.getElementById('replyBox-' + notifId);
-  if (!box) return;
-  box.classList.toggle('open');
-  if (box.classList.contains('open')) {
-    const input = document.getElementById('replyInput-' + notifId);
-    if (input) setTimeout(() => input.focus(), 50);
-  }
-}
-
-function submitReply(notifId) {
-  const input = document.getElementById('replyInput-' + notifId);
-  if (!input) return;
-  const text = input.value.trim();
-  if (!text) return;
-  input.disabled = true;
-  const sendBtn = input.nextElementSibling;
-  if (sendBtn) sendBtn.disabled = true;
-  if (window._submitReplyToFirestore) {
-    window._submitReplyToFirestore(notifId, text).then(() => {
-      input.value = '';
-      input.disabled = false;
-      if (sendBtn) sendBtn.disabled = false;
-      const box = document.getElementById('replyBox-' + notifId);
-      if (box) box.classList.remove('open');
-    }).catch(() => {
-      input.disabled = false;
-      if (sendBtn) sendBtn.disabled = false;
-    });
-  }
 }
 
 function markNotifRead(id, el) {
@@ -4090,12 +4235,152 @@ window.filterStudentsList = filterStudentsList;
 window.selectStudent = selectStudent;
 window.clearSelectedStudent = clearSelectedStudent;
 window.renderStudentsListIn = renderStudentsListIn;
-window.toggleReplyBox = toggleReplyBox;
-window.submitReply = submitReply;
 window.renderNotifList = renderNotifList;
 window.getNotifications = getNotifications;
 window.saveNotifications = saveNotifications;
 window.showNotifToast = showNotifToast;
+
+/* ══════════════════════ CHAT (student-facing UI) ══════════════════════ */
+function escChat(str) {
+  const div = document.createElement('div');
+  div.textContent = str == null ? '' : String(str);
+  return div.innerHTML;
+}
+
+function chatBubbleHtml(messages) {
+  if (!messages.length) return '<p class="chat-empty">لسه مفيش رسايل. ابعت أول رسالة! 👋</p>';
+  return messages.map(m => {
+    const fromMe = m.sender === 'student';
+    const time = new Date(m.ts || Date.now()).toLocaleString('ar-EG', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
+    return `<div class="chat-bubble-row ${fromMe ? 'from-me' : 'from-them'}">
+      <div class="chat-bubble">${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function openMyChat() {
+  closeNotifPanel();
+  closeContact();
+  document.getElementById('myChatView').classList.add('open');
+  const inputRow = document.getElementById('myChatInputRow');
+  const msgsEl = document.getElementById('myChatMessages');
+  if (!window._currentUserUid) {
+    inputRow.style.display = 'none';
+    msgsEl.innerHTML = `<div class="chat-signin-prompt">سجّل دخولك الأول عشان تتواصل مع علي وتفضل المحادثة محفوظة ليك<br>
+      <button onclick="closeMyChat(); document.getElementById('signInBtn').click();">سجّل دخول</button></div>`;
+    return;
+  }
+  inputRow.style.display = 'flex';
+  if (window._listenMyConversation) {
+    window._listenMyConversation((messages) => {
+      msgsEl.innerHTML = chatBubbleHtml(messages);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+    });
+  }
+  if (window._markMyChatRead) window._markMyChatRead();
+}
+
+function closeMyChat() {
+  document.getElementById('myChatView').classList.remove('open');
+}
+
+function sendMyChatMessage() {
+  const input = document.getElementById('myChatInput');
+  const text = input.value.trim();
+  if (!text || !window._sendMyMessage) return;
+  const btn = document.getElementById('myChatSendBtn');
+  input.disabled = true; btn.disabled = true;
+  window._sendMyMessage(text).then(() => {
+    input.value = ''; input.disabled = false; btn.disabled = false; input.focus();
+  }).catch(() => { input.disabled = false; btn.disabled = false; });
+}
+
+/* update the small badge/preview in the notif panel "my chat" entry */
+function updateMyChatPreview(lastMessage, unread) {
+  const sub = document.getElementById('myChatPreview');
+  const badge = document.getElementById('myChatBadge');
+  if (sub && lastMessage) sub.textContent = lastMessage.length > 38 ? lastMessage.slice(0,38)+'…' : lastMessage;
+  if (badge) {
+    if (unread > 0) { badge.style.display = 'flex'; badge.textContent = unread > 9 ? '9+' : unread; }
+    else badge.style.display = 'none';
+  }
+}
+
+window.openMyChat = openMyChat;
+window.closeMyChat = closeMyChat;
+window.sendMyChatMessage = sendMyChatMessage;
+window.updateMyChatPreview = updateMyChatPreview;
+
+/* ══════════════════════ CHAT (admin-facing UI) ══════════════════════ */
+let _adminChatUid = null;
+
+function renderConversationsList(list) {
+  const el = document.getElementById('adminConversationsList');
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">لسه مفيش محادثات</p>';
+    return;
+  }
+  let totalUnread = 0;
+  el.innerHTML = list.map(c => {
+    const initials = (c.studentName || c.studentEmail || '?').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+    const unread = !!c.unreadByAdmin;
+    if (unread) totalUnread++;
+    const time = c.lastTs ? timeAgo(c.lastTs) : '';
+    return `<div class="conv-list-item ${unread ? 'unread' : ''}" onclick="openAdminConversation('${c.uid}','${escAdm(c.studentName||c.studentEmail||'؟')}','${escAdm(c.studentEmail||'')}')">
+      <div class="admin-student-avatar">${initials}</div>
+      <div class="conv-list-info">
+        <div class="conv-list-name">${c.studentName || '—'}</div>
+        <div class="conv-list-last">${escChat(c.lastMessage || '')}</div>
+      </div>
+      <div class="conv-list-meta">
+        <span class="conv-list-time">${time}</span>
+        ${unread ? `<span class="conv-unread-dot">●</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  const countEl = document.getElementById('inboxUnreadCount');
+  if (countEl) countEl.textContent = totalUnread;
+}
+
+function openAdminConversation(uid, name, email) {
+  _adminChatUid = uid;
+  document.getElementById('adminChatName').textContent = name;
+  document.getElementById('adminChatEmail').textContent = email;
+  document.getElementById('adminChatAvatar').textContent = (name||'?').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+  document.getElementById('adminChatView').classList.add('open');
+  const msgsEl = document.getElementById('adminChatMessages');
+  msgsEl.innerHTML = '<p class="chat-empty">جاري تحميل المحادثة...</p>';
+  if (window._listenAdminConversation) {
+    window._listenAdminConversation(uid, (messages) => {
+      msgsEl.innerHTML = chatBubbleHtml(messages);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+    });
+  }
+  if (window._markConversationReadByAdmin) window._markConversationReadByAdmin(uid);
+}
+
+function closeAdminChat() {
+  document.getElementById('adminChatView').classList.remove('open');
+  if (window._stopAdminConversationListener) window._stopAdminConversationListener();
+  _adminChatUid = null;
+}
+
+function sendAdminChatMessage() {
+  const input = document.getElementById('adminChatInput');
+  const text = input.value.trim();
+  if (!text || !_adminChatUid || !window._sendAdminChatMessage) return;
+  const btn = document.getElementById('adminChatSendBtn');
+  input.disabled = true; btn.disabled = true;
+  window._sendAdminChatMessage(_adminChatUid, text).then(() => {
+    input.value = ''; input.disabled = false; btn.disabled = false; input.focus();
+  }).catch(() => { input.disabled = false; btn.disabled = false; });
+}
+
+window.renderConversationsList = renderConversationsList;
+window.openAdminConversation = openAdminConversation;
+window.closeAdminChat = closeAdminChat;
+window.sendAdminChatMessage = sendAdminChatMessage;
 
 // init badge on load
 updateNotifBadge();
@@ -4466,6 +4751,7 @@ window._loadStudentsList = async function() {
 };
 
 /* Show admin button only to the admin user */
+let _myConvUnsub = null;
 onAuthStateChanged(auth, (user) => {
   const adminWrap = document.getElementById('adminBtnWrap');
   if (adminWrap) {
@@ -4475,127 +4761,125 @@ onAuthStateChanged(auth, (user) => {
     window._currentUserUid = user.uid;
     window._currentUserName = user.displayName || user.email || '?';
     startNotifListener(user.uid);
-    listenForAdminReplies(user.uid);
-    if (user.email === ADMIN_EMAIL) loadAdminInbox();
+    listenForMyConversationPreview(user.uid);
+    if (user.email === ADMIN_EMAIL) listenAllConversations();
   }
 });
 
-/* Student sends a direct message to Ali (shows in admin inbox) */
-window._sendStudentMessageToAli = async function({ text, senderName, senderEmail }) {
-  await addDoc(collection(db, 'replies'), {
-    notifId: 'direct-message',
-    text,
-    senderUid: auth.currentUser?.uid || 'guest',
-    senderName: senderName || auth.currentUser?.displayName || auth.currentUser?.email || 'Anonymous',
-    senderEmail: senderEmail || auth.currentUser?.email || '',
-    ts: serverTimestamp(),
-    readByAdmin: false,
-  });
-};
+/* ══════════════════════ CHAT / CONVERSATIONS (Firestore) ══════════════════════ */
+/* Data model:
+   conversations/{studentUid}         -> { studentName, studentEmail, lastMessage, lastTs,
+                                            unreadByAdmin, unreadByStudent }
+   conversations/{studentUid}/messages/{id} -> { text, sender: 'student'|'admin', ts }          */
 
-/* Student submits a reply to a notification */
-window._submitReplyToFirestore = async function(notifId, text) {
-  await addDoc(collection(db, 'replies'), {
-    notifId,
-    text,
-    senderUid: auth.currentUser.uid,
-    senderName: auth.currentUser.displayName || auth.currentUser.email || '?',
-    senderEmail: auth.currentUser.email || '',
-    ts: serverTimestamp(),
-    readByAdmin: false,
-  });
-};
-
-/* Student listens for admin replies to their own messages */
-function listenForAdminReplies(uid) {
-  const q = query(
-    collection(db, 'adminReplies'),
-    orderBy('ts', 'desc'),
-    limit(20)
-  );
-  onSnapshot(q, (snap) => {
-    snap.docChanges().forEach(change => {
-      if (change.type === 'added') {
-        const data = change.doc.data();
-        if (data.targetUid === uid) {
-          // update the notification in localStorage with the admin reply
-          const list = window.getNotifications ? window.getNotifications() : [];
-          const notif = list.find(n => n.id === data.notifId);
-          if (notif) {
-            notif.adminReply = data.text;
-            if (window.saveNotifications) window.saveNotifications(list);
-            if (window.renderNotifList) window.renderNotifList();
-            // show toast for admin reply
-            if (window.showNotifToast) window.showNotifToast({
-              type: 'info', title: '✍️ رد من الأدمن', body: data.text
-            });
-          }
-        }
-      }
-    });
+/* Student: get a live preview (badge/last message) for the notif-panel entry, even before
+   the chat view itself is opened. */
+function listenForMyConversationPreview(uid) {
+  const ref = doc(db, 'conversations', uid);
+  onSnapshot(ref, (snap) => {
+    if (!snap.exists()) return;
+    const data = snap.data();
+    if (window.updateMyChatPreview) {
+      window.updateMyChatPreview(data.lastMessage || '', data.unreadByStudent ? 1 : 0);
+    }
   });
 }
 
-/* Admin: load inbox of student replies */
-window.loadAdminInbox = async function() {
-  const el = document.getElementById('adminInboxList');
-  const countEl = document.getElementById('inboxUnreadCount');
-  if (!el) return;
-  try {
-    const q = query(collection(db, 'replies'), orderBy('ts', 'desc'), limit(50));
-    const snap = await getDocs(q);
-    let unread = 0;
-    if (snap.empty) {
-      el.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">لا توجد ردود بعد</p>';
-      if (countEl) countEl.textContent = '0';
-      return;
-    }
-    const items = [];
-    snap.forEach(d => items.push({ id: d.id, ...d.data() }));
-    unread = items.filter(r => !r.readByAdmin).length;
-    if (countEl) countEl.textContent = unread;
-    el.innerHTML = items.map(r => {
-      const ts = r.ts?.toMillis ? r.ts.toMillis() : 0;
-      return `<div class="admin-inbox-item ${r.readByAdmin ? '' : 'unread'}" id="inbox-${r.id}">
-        <div class="admin-inbox-meta">
-          <span>${r.readByAdmin ? '' : '<span class="admin-inbox-unread-dot"></span>'}${timeAgo(ts)}</span>
-        </div>
-        <div class="admin-inbox-name">${r.senderName || '?'} <span style="font-weight:400;font-size:11px;color:rgba(28,43,37,0.45);">${r.senderEmail||''}</span></div>
-        <div class="admin-inbox-notif" style="font-size:11px;color:rgba(28,43,37,0.5);margin-bottom:5px;font-style:italic;">رداً على إشعار</div>
-        <div class="admin-inbox-msg">${r.text}</div>
-        <div class="admin-inbox-reply-row">
-          <input class="admin-inbox-reply-input" id="adminReply-${r.id}" placeholder="رد على ${r.senderName||'الطالب'}..." onkeydown="if(event.key==='Enter') sendAdminReplyToStudent('${r.id}','${r.senderUid||''}','${r.notifId||''}')">
-          <button class="admin-inbox-reply-btn" onclick="sendAdminReplyToStudent('${r.id}','${r.senderUid||''}','${r.notifId||''}')">رد ↩</button>
-        </div>
-      </div>`;
-    }).join('');
-    // mark all as read by admin
-    items.filter(r => !r.readByAdmin).forEach(r => {
-      updateDoc(doc(db, 'replies', r.id), { readByAdmin: true }).catch(()=>{});
+/* Student: open a live listener on my own messages thread */
+window._listenMyConversation = function(callback) {
+  const uid = auth.currentUser?.uid;
+  if (!uid) return;
+  if (_myConvUnsub) _myConvUnsub();
+  const q = query(collection(db, 'conversations', uid, 'messages'), orderBy('ts', 'asc'), limit(200));
+  _myConvUnsub = onSnapshot(q, (snap) => {
+    const messages = [];
+    snap.forEach(d => {
+      const m = d.data();
+      messages.push({ text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
     });
-  } catch(e) { el.innerHTML = '<p style="color:#c0392b;font-size:12px;padding:1rem;">خطأ في التحميل</p>'; }
+    callback(messages);
+  });
 };
 
-/* Admin replies to a student */
-window.sendAdminReplyToStudent = async function(replyDocId, targetUid, notifId) {
-  const input = document.getElementById('adminReply-' + replyDocId);
-  if (!input) return;
-  const text = input.value.trim();
-  if (!text) return;
-  input.disabled = true;
-  try {
-    await addDoc(collection(db, 'adminReplies'), {
-      notifId, targetUid, text,
-      ts: serverTimestamp(),
-      sentBy: auth.currentUser?.email || '',
+/* Student: send a message — creates the conversation doc if it doesn't exist yet */
+window._sendMyMessage = async function(text) {
+  const user = auth.currentUser;
+  if (!user) return;
+  const ref = doc(db, 'conversations', user.uid);
+  await setDoc(ref, {
+    studentName: user.displayName || user.email || '?',
+    studentEmail: user.email || '',
+    lastMessage: text,
+    lastTs: serverTimestamp(),
+    unreadByAdmin: true,
+    unreadByStudent: false,
+  }, { merge: true });
+  await addDoc(collection(db, 'conversations', user.uid, 'messages'), {
+    text, sender: 'student', ts: serverTimestamp(),
+  });
+};
+
+/* Student: mark conversation as read on my side (e.g. when opening the chat) */
+window._markMyChatRead = async function() {
+  const uid = auth.currentUser?.uid;
+  if (!uid) return;
+  try { await updateDoc(doc(db, 'conversations', uid), { unreadByStudent: false }); } catch(e) {}
+};
+
+/* Admin: live list of all conversations, newest first */
+function listenAllConversations() {
+  const q = query(collection(db, 'conversations'), orderBy('lastTs', 'desc'), limit(100));
+  onSnapshot(q, (snap) => {
+    const list = [];
+    snap.forEach(d => {
+      const c = d.data();
+      list.push({
+        uid: d.id,
+        studentName: c.studentName || '',
+        studentEmail: c.studentEmail || '',
+        lastMessage: c.lastMessage || '',
+        lastTs: c.lastTs?.toMillis ? c.lastTs.toMillis() : 0,
+        unreadByAdmin: !!c.unreadByAdmin,
+      });
     });
-    input.value = '';
-    input.placeholder = '✅ تم الإرسال';
-    input.disabled = false;
-  } catch(e) {
-    input.disabled = false;
-    input.placeholder = '⚠️ فشل الإرسال';
-  }
+    if (window.renderConversationsList) window.renderConversationsList(list);
+  });
+}
+
+/* Admin: open one conversation's messages, live */
+let _adminConvUnsub = null;
+window._listenAdminConversation = function(uid, callback) {
+  if (_adminConvUnsub) _adminConvUnsub();
+  const q = query(collection(db, 'conversations', uid, 'messages'), orderBy('ts', 'asc'), limit(200));
+  _adminConvUnsub = onSnapshot(q, (snap) => {
+    const messages = [];
+    snap.forEach(d => {
+      const m = d.data();
+      messages.push({ text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+    });
+    callback(messages);
+  });
+};
+window._stopAdminConversationListener = function() {
+  if (_adminConvUnsub) { _adminConvUnsub(); _adminConvUnsub = null; }
+};
+
+/* Admin: send a message into a student's conversation */
+window._sendAdminChatMessage = async function(uid, text) {
+  await updateDoc(doc(db, 'conversations', uid), {
+    lastMessage: text,
+    lastTs: serverTimestamp(),
+    unreadByStudent: true,
+    unreadByAdmin: false,
+  });
+  await addDoc(collection(db, 'conversations', uid, 'messages'), {
+    text, sender: 'admin', ts: serverTimestamp(),
+  });
+};
+
+/* Admin: mark a conversation as read on my side (when I open it) */
+window._markConversationReadByAdmin = async function(uid) {
+  try { await updateDoc(doc(db, 'conversations', uid), { unreadByAdmin: false }); } catch(e) {}
 };
 </script>
 

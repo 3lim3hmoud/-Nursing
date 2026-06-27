@@ -2546,6 +2546,10 @@
   <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
     <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
       <span class="notif-panel-title">📊 لوحة الإحصائيات</span>
+      <button id="exportDetailedBtn" onclick="exportDetailedStatsToExcel()" style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1D9E75,#0F6E56);color:#fff;border:none;border-radius:100px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:0 2px 8px rgba(29,158,117,0.35);transition:all 0.2s;font-family:'Inter',sans-serif;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 14px rgba(29,158,117,0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(29,158,117,0.35)'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        تصدير إكسل
+      </button>
       <button class="notif-close-btn" onclick="closeAdminStatsPanel()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
@@ -4796,10 +4800,21 @@ async function syncProgress(uid) {
         .sort((a, b) => (b.ts || 0) - (a.ts || 0))
         .slice(0, 30);
 
+      // Merge fileOpenLog: combine remote + local, keep earliest ts per URL
+      const remoteTimesMap = window.fileOpenLogToMap ? window.fileOpenLogToMap(data.fileOpenLog) : {};
+      const localTimesMap  = window.getFileOpenTimesMap ? window.getFileOpenTimesMap() : {};
+      const mergedTimesMap = { ...remoteTimesMap };
+      Object.entries(localTimesMap).forEach(([url, ts]) => {
+        if (!mergedTimesMap[url] || ts < mergedTimesMap[url]) mergedTimesMap[url] = ts;
+      });
+      if (window.saveFileOpenTimesMap) window.saveFileOpenTimesMap(mergedTimesMap);
+      const fileOpenLog = window.fileOpenMapToLog ? window.fileOpenMapToLog(mergedTimesMap) : [];
+
       await updateDoc(ref, {
         viewedFiles: [...merged],
         favorites: mergedFavorites,
         recentFiles: mergedRecents,
+        fileOpenLog,
         lastSeen: serverTimestamp(),
         displayName: auth.currentUser.displayName || '',
         email: auth.currentUser.email || '',
@@ -4812,10 +4827,12 @@ async function syncProgress(uid) {
       if (window.renderDashboardRecents) window.renderDashboardRecents();
       if (window.renderFavoritesView) window.renderFavoritesView();
     } else {
+      const initFileOpenLog = window.fileOpenMapToLog ? window.fileOpenMapToLog(window.getFileOpenTimesMap()) : [];
       await setDoc(ref, {
         viewedFiles: [...local],
         favorites: localFavorites,
         recentFiles: localRecents,
+        fileOpenLog: initFileOpenLog,
         displayName: auth.currentUser.displayName || '',
         email: auth.currentUser.email || '',
         joinedAt: serverTimestamp(),
@@ -4833,7 +4850,8 @@ function flushPendingSyncs(uid) {
   const ref = doc(db, 'students', uid);
   if (pendingViewedSync) {
     const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
-    updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
+    const fileOpenLog = window.fileOpenMapToLog ? window.fileOpenMapToLog(window.getFileOpenTimesMap()) : [];
+    updateDoc(ref, { viewedFiles: viewed, fileOpenLog, lastSeen: serverTimestamp() }).catch(()=>{});
     pendingViewedSync = false;
   }
   if (pendingFavoritesSync) {
@@ -4848,6 +4866,33 @@ function flushPendingSyncs(uid) {
   }
 }
 
+/* ─── File Open Times — first-open timestamp per file ─── */
+/* Stored locally as { [url]: timestampMs } and synced to Firestore
+   as fileOpenLog: [{url, ts}] so the admin export can show "opened at". */
+const FILE_OPEN_TIMES_KEY = 'nurseverse_file_open_times_v1';
+window.getFileOpenTimesMap = function() {
+  try { return JSON.parse(localStorage.getItem(FILE_OPEN_TIMES_KEY) || '{}'); } catch(e) { return {}; }
+};
+window.saveFileOpenTimesMap = function(map) {
+  try { localStorage.setItem(FILE_OPEN_TIMES_KEY, JSON.stringify(map)); } catch(e) {}
+};
+/* [{url, ts}] Firestore array  →  {url: ms} plain map */
+window.fileOpenLogToMap = function(arr) {
+  const map = {};
+  if (!Array.isArray(arr)) return map;
+  arr.forEach(entry => {
+    if (!entry || !entry.url) return;
+    const ms = entry.ts?.toMillis ? entry.ts.toMillis()
+              : (typeof entry.ts === 'number' ? entry.ts : 0);
+    if (!map[entry.url] || ms < map[entry.url]) map[entry.url] = ms;
+  });
+  return map;
+};
+/* {url: ms} map  →  [{url, ts}] array for Firestore */
+window.fileOpenMapToLog = function(map) {
+  return Object.entries(map || {}).map(([url, ts]) => ({ url, ts }));
+};
+
 /* ─── Intercept markFileViewed / toggleFavorite / trackRecent ─── */
 /* Wrapped in a function called immediately so the original functions on
    window are guaranteed to be set (this module script now lives inside
@@ -4856,10 +4901,17 @@ function installInterceptors() {
   const _orig = window.markFileViewed;
   window.markFileViewed = function(url, linkEl) {
     if (_orig) _orig(url, linkEl);
+    // Record first-open timestamp locally (only on first visit)
+    const times = window.getFileOpenTimesMap();
+    if (!times[url]) {
+      times[url] = Date.now();
+      window.saveFileOpenTimesMap(times);
+    }
     if (currentUser) {
       const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
+      const fileOpenLog = window.fileOpenMapToLog(window.getFileOpenTimesMap());
       const ref = doc(db, 'students', currentUser.uid);
-      updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
+      updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp(), fileOpenLog }).catch(()=>{});
       updateStats();
     } else { pendingViewedSync = true; }
   };
@@ -5192,6 +5244,155 @@ window._exportStudentsToExcel = async function() {
 };
 function exportStudentsToExcel() { window._exportStudentsToExcel(); }
 window.exportStudentsToExcel = exportStudentsToExcel;
+
+/* Admin: export detailed 3-sheet analytics workbook from the stats dashboard */
+window._exportDetailedStatsToExcel = async function() {
+  const btn = document.getElementById('exportDetailedBtn');
+  const origHTML = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> جاري التجهيز...';
+  }
+  try {
+    await _ensureXlsxLibLoaded();
+    const totalFiles = _getTotalFilesCount();
+    const subjectLookup = _buildSubjectLookup();
+    const snap = await getDocs(collection(db, 'students'));
+
+    const summaryRows   = [];   // Sheet 1: one row per student
+    const subjectStats  = {};   // slug -> { students: Set, filesCount: 0 }
+    const detailRows    = [];   // Sheet 3: one row per (student × file)
+    const totalStudents = snap.size || 1;
+
+    snap.forEach(d => {
+      const data = d.data();
+      const viewed  = Array.isArray(data.viewedFiles) ? data.viewedFiles : [];
+      const cnt     = viewed.length;
+      const pct     = totalFiles ? Math.round((cnt / totalFiles) * 100) : 0;
+      const joined  = data.joinedAt?.toDate  ? data.joinedAt.toDate()  : null;
+      const lastSeen= data.lastSeen?.toDate  ? data.lastSeen.toDate()  : null;
+
+      // Build URL → first-open-timestamp map from Firestore fileOpenLog
+      const openTimesMap = window.fileOpenLogToMap ? window.fileOpenLogToMap(data.fileOpenLog) : {};
+
+      // per-year/term file counts for this student
+      const byYear = { y1: 0, y2: 0, y3: 0 };
+
+      viewed.forEach(url => {
+        // URL pattern: files/{year}/{term}/{slug}/{type}/{filename}
+        const parts = String(url || '').split('/').filter(Boolean);
+        const year     = parts[1] || '';
+        const term     = parts[2] || '';
+        const slug     = parts[3] || '';
+        const fileType = parts[4] || '';
+        let   filename = parts.slice(5).join('/');
+        try { filename = decodeURIComponent(filename); } catch(e) {}
+
+        if (byYear[year] !== undefined) byYear[year]++;
+
+        // aggregate for subject stats sheet
+        if (slug) {
+          if (!subjectStats[slug]) subjectStats[slug] = { students: new Set(), filesCount: 0 };
+          subjectStats[slug].students.add(data.email || d.id);
+          subjectStats[slug].filesCount++;
+        }
+
+        const subj = subjectLookup[slug] || {};
+        const yearLabel = year === 'y1' ? 'الأولى' : year === 'y2' ? 'الثانية' : year === 'y3' ? 'الثالثة' : year;
+        const termLabel = term === 'term1' ? 'الأول' : term === 'term2' ? 'الثاني' : term;
+        const typeLabel = { lecture: 'محاضرة', summary: 'ملخص', quiz: 'كويز', practical: 'تطبيقي', book: 'كتاب' }[fileType] || fileType;
+
+        // First-open timestamp for this specific file
+        const openedAtMs = openTimesMap[url];
+        const openedAt   = openedAtMs ? new Date(openedAtMs).toLocaleString('ar-EG') : '—';
+
+        detailRows.push({
+          'الطالب':      data.displayName || data.email || '',
+          'الإيميل':     data.email       || '',
+          'المادة':      subj.name        || slug || '—',
+          'السنة':       yearLabel,
+          'الترم':       termLabel,
+          'نوع الملف':   typeLabel,
+          'اسم الملف':   filename         || url,
+          'تاريخ أول فتح': openedAt,
+        });
+      });
+
+      summaryRows.push({
+        'الاسم':                    data.displayName || '',
+        'الإيميل':                   data.email       || '',
+        'إجمالي الملفات المفتوحة':   cnt,
+        'نسبة التقدم الكلي %':       pct,
+        'ملفات السنة الأولى':        byYear.y1,
+        'ملفات السنة الثانية':       byYear.y2,
+        'ملفات السنة الثالثة':       byYear.y3,
+        'تاريخ التسجيل':             joined   ? joined.toLocaleDateString('ar-EG')   : '',
+        'آخر نشاط':                  lastSeen ? lastSeen.toLocaleString('ar-EG')      : '',
+      });
+    });
+
+    // sort summary by most files opened (desc)
+    summaryRows.sort((a, b) => b['إجمالي الملفات المفتوحة'] - a['إجمالي الملفات المفتوحة']);
+
+    // sort details by student name then subject
+    detailRows.sort((a, b) => {
+      const nc = a['الطالب'].localeCompare(b['الطالب']);
+      return nc !== 0 ? nc : a['المادة'].localeCompare(b['المادة']);
+    });
+
+    // build subject stats rows
+    const subjectRows = Object.entries(subjectStats).map(([slug, st]) => {
+      const subj  = subjectLookup[slug] || {};
+      const total = subj.total || 0;
+      const yearLabel = subj.year === 'y1' ? 'الأولى' : subj.year === 'y2' ? 'الثانية' : subj.year === 'y3' ? 'الثالثة' : (subj.year || '');
+      const termLabel = subj.term === 'term1' ? 'الأول' : subj.term === 'term2' ? 'الثاني' : (subj.term || '');
+      return {
+        'المادة':                         subj.name || slug,
+        'السنة':                          yearLabel,
+        'الترم':                          termLabel,
+        'عدد الطلبة اللي فتحوها':         st.students.size,
+        'إجمالي مرات فتح ملفاتها':        st.filesCount,
+        'إجمالي ملفات المادة':            total,
+        'نسبة إقبال الطلبة %':            totalStudents ? Math.round((st.students.size / totalStudents) * 100) : 0,
+      };
+    }).sort((a, b) => b['عدد الطلبة اللي فتحوها'] - a['عدد الطلبة اللي فتحوها']);
+
+    // ── build workbook ──
+    const wb = window.XLSX.utils.book_new();
+
+    const ws1 = window.XLSX.utils.json_to_sheet(summaryRows);
+    ws1['!cols'] = [
+      { wch: 26 }, { wch: 30 }, { wch: 22 }, { wch: 18 },
+      { wch: 20 }, { wch: 20 }, { wch: 20 }, { wch: 18 }, { wch: 24 }
+    ];
+    window.XLSX.utils.book_append_sheet(wb, ws1, 'ملخص الطلبة');
+
+    const ws2 = window.XLSX.utils.json_to_sheet(subjectRows);
+    ws2['!cols'] = [
+      { wch: 30 }, { wch: 12 }, { wch: 10 },
+      { wch: 22 }, { wch: 24 }, { wch: 20 }, { wch: 18 }
+    ];
+    window.XLSX.utils.book_append_sheet(wb, ws2, 'اكتر المواد بتتفتح');
+
+    const ws3 = window.XLSX.utils.json_to_sheet(detailRows);
+    ws3['!cols'] = [
+      { wch: 26 }, { wch: 30 }, { wch: 28 },
+      { wch: 12 }, { wch: 10 }, { wch: 14 }, { wch: 40 }, { wch: 22 }
+    ];
+    window.XLSX.utils.book_append_sheet(wb, ws3, 'تفاصيل الملفات');
+
+    const dateStamp = new Date().toISOString().slice(0, 10);
+    window.XLSX.writeFile(wb, `nursing-hub-stats-${dateStamp}.xlsx`);
+
+  } catch (e) {
+    console.error('detailed export failed', e);
+    alert('حصل خطأ في التصدير: ' + (e && e.message ? e.message : e));
+  } finally {
+    if (btn) { btn.disabled = false; btn.innerHTML = origHTML; }
+  }
+};
+function exportDetailedStatsToExcel() { window._exportDetailedStatsToExcel(); }
+window.exportDetailedStatsToExcel = exportDetailedStatsToExcel;
 
 /* Show admin tools only to the admin user */
 let _myConvUnsub = null;

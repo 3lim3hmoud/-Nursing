@@ -4376,7 +4376,10 @@ function openMyChat() {
 function deleteMyMessage(msgId) {
   if (!window._deleteMyMessage) return;
   if (!confirm('تمسح الرسالة دي؟')) return;
-  window._deleteMyMessage(msgId).catch(() => {});
+  window._deleteMyMessage(msgId).catch((e) => {
+    console.error('deleteMyMessage failed:', e);
+    alert('مش قادر أمسح الرسالة دلوقتي: ' + (e && e.message ? e.message : e));
+  });
 }
 window.deleteMyMessage = deleteMyMessage;
 
@@ -4479,7 +4482,10 @@ function openAdminConversation(uid, name, email) {
 function deleteAdminChatMessage(msgId) {
   if (!_adminChatUid || !window._deleteAdminMessage) return;
   if (!confirm('تمسح الرسالة دي؟')) return;
-  window._deleteAdminMessage(_adminChatUid, msgId).catch(() => {});
+  window._deleteAdminMessage(_adminChatUid, msgId).catch((e) => {
+    console.error('deleteAdminChatMessage failed:', e);
+    alert('مش قادر أمسح الرسالة دلوقتي: ' + (e && e.message ? e.message : e));
+  });
 }
 window.deleteAdminChatMessage = deleteAdminChatMessage;
 

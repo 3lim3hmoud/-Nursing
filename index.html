@@ -3375,6 +3375,11 @@ const db    = getFirestore(fbApp);
 const provider = new GoogleAuthProvider();
 
 let currentUser = null;
+/* Flags so any favorite/recent/viewed action taken before Firebase
+   confirms the signed-in user still gets synced once it does. */
+let pendingFavoritesSync = false;
+let pendingRecentSync = false;
+let pendingViewedSync = false;
 
 /* ─── Sign In ─── */
 window.signInWithGoogle = async function() {
@@ -3408,6 +3413,7 @@ onAuthStateChanged(auth, async (user) => {
     document.getElementById('popoverName').textContent = name;
     document.getElementById('popoverEmail').textContent = user.email || '';
     await syncProgress(user.uid);
+    flushPendingSyncs(user.uid);
     updateStats();
   } else {
     document.getElementById('signInBtn').style.display = '';
@@ -3472,6 +3478,26 @@ async function syncProgress(uid) {
   }
 }
 
+/* ─── Flush actions that happened before auth confirmed ─── */
+function flushPendingSyncs(uid) {
+  const ref = doc(db, 'students', uid);
+  if (pendingViewedSync) {
+    const viewed = window.getViewedSet ? [...window.getViewedSet()] : [];
+    updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
+    pendingViewedSync = false;
+  }
+  if (pendingFavoritesSync) {
+    const favorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
+    updateDoc(ref, { favorites, lastSeen: serverTimestamp() }).catch(()=>{});
+    pendingFavoritesSync = false;
+  }
+  if (pendingRecentSync) {
+    const recentFiles = window.getRecentList ? window.getRecentList() : [];
+    updateDoc(ref, { recentFiles, lastSeen: serverTimestamp() }).catch(()=>{});
+    pendingRecentSync = false;
+  }
+}
+
 /* ─── Intercept markFileViewed to also sync ─── */
 const _orig = window.markFileViewed;
 window.markFileViewed = function(url, linkEl) {
@@ -3481,6 +3507,8 @@ window.markFileViewed = function(url, linkEl) {
     const ref = doc(db, 'students', currentUser.uid);
     updateDoc(ref, { viewedFiles: viewed, lastSeen: serverTimestamp() }).catch(()=>{});
     updateStats();
+  } else {
+    pendingViewedSync = true;
   }
 };
 
@@ -3492,6 +3520,8 @@ window.toggleFavorite = function(metaJson, btnEl) {
     const favorites = window.getFavoritesMap ? window.getFavoritesMap() : {};
     const ref = doc(db, 'students', currentUser.uid);
     updateDoc(ref, { favorites, lastSeen: serverTimestamp() }).catch(()=>{});
+  } else {
+    pendingFavoritesSync = true;
   }
 };
 
@@ -3502,6 +3532,8 @@ window.trackRecent = function(metaJson) {
     const recentFiles = window.getRecentList ? window.getRecentList() : [];
     const ref = doc(db, 'students', currentUser.uid);
     updateDoc(ref, { recentFiles, lastSeen: serverTimestamp() }).catch(()=>{});
+  } else {
+    pendingRecentSync = true;
   }
 };
 

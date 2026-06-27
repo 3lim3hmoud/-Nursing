@@ -2911,7 +2911,8 @@ function toggleResourceCard(card) {
 }
 
 document.addEventListener('click', (e) => {
-  if (e.target.closest('.file-list')) e.stopPropagation();
+  // Only block propagation on the list container itself — NOT on links or buttons inside it
+  if (e.target.classList.contains('file-list')) e.stopPropagation();
 }, true);
 
 /* ══════════════════════ BREADCRUMB ══════════════════════ */

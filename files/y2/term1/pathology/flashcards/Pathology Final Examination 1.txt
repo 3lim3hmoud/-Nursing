@@ -1,0 +1,103 @@
+Pathology Final Examination 
+First Lecture: Inflammation 
+ 
+Part I: Multiple Choice Questions (MCQs) 
+1. Which of the following is considered a non-living chemical irritant that can cause 
+inflammation? 
+A) Bacteria and their toxins 
+B) Viruses and fungi 
+✔ C) Concentrated acids and poisons 
+D) Parasites 
+ 
+2. Which cell type is mainly responsible for phagocytosis and forms the majority of pus 
+cells? 
+A) Lymphocytes 
+✔ B) Neutrophils 
+C) Plasma cells 
+D) Eosinophils 
+ 
+3. In chronic inflammation, the cellular infiltrate mainly consists of: 
+A) Neutrophils and mast cells 
+✔ B) Lymphocytes and plasma cells 
+C) Eosinophils only 
+D) RBCs and platelets
+
+4. All of the following are cardinal signs of inflammation EXCEPT: 
+A) Pain 
+B) Heat and redness 
+✔ C) Pallor 
+D) Swelling and loss of function 
+ 
+5. The correct sequence of vascular events in acute inflammation is: 
+A) Stasis → Vasodilatation → Vasoconstriction 
+✔ B) Vasodilatation → Increased vascular permeability → Stasis 
+C) Exudation → Vasodilatation → Chemotaxis 
+D) Adhesion → Stasis → Vasodilatation 
+ 
+6. The correct order of neutrophil extravasation is: 
+A) Rolling → Adhesion → Margination → Transmigration 
+✔ B) Margination → Rolling → Adhesion → Transmigration (Diapedesis) 
+C) Diapedesis → Chemotaxis → Rolling → Adhesion 
+D) Adhesion → Margination → Diapedesis → Rolling 
+ 
+7. Chemotaxis means: 
+A) Ingestion of bacteria 
+✔ B) Directed movement of inflammatory cells toward the irritant 
+C) Formation of endothelial gaps 
+D) Fibrin formation 
+ 
+8. The ingestion and destruction of bacteria and necrotic tissue is called: 
+A) Opsonization
+
+B) Diapedesis 
+✔ C) Phagocytosis 
+D) Chemotaxis 
+ 
+9. During phagocytosis, wrapping of the cell membrane around the particle is called: 
+✔ A) Engulfment 
+B) Recognition 
+C) Killing 
+D) Degradation 
+ 
+10. Acute non-suppurative inflammation affecting mucous membranes with excess 
+mucus (e.g. rhinitis) is: 
+A) Serous inflammation 
+✔ B) Catarrhal inflammation 
+C) Allergic inflammation 
+D) Haemorrhagic inflammation 
+ 
+Part II: Comparison & Short Essay Questions 
+Q1. Compare between Acute and Chronic Inflammation 
+Feature Acute Inflammation Chronic Inflammation 
+Onset Rapid (minutes–hours) Slow (days) 
+Cells Neutrophils Macrophages & lymphocytes 
+Tissue injury Mild, self-limited Severe, progressive
+
+Feature Acute Inflammation Chronic Inflammation 
+Signs Prominent Less prominent 
+ 
+Q2. Define Suppurative Inflammation 
+Answer: 
+Suppurative inflammation is an acute inflammation characterized by pus formation. 
+It may be localized (abscess) or diffuse (cellulitis). 
+ 
+Q3. Define Abscess with cause and mechanism 
+Answer: 
+An abscess is a localized acute suppurative inflammation forming a cavity filled with 
+pus. 
+• Causative organism: Staphylococcus 
+• Mechanism: Production of coagulase enzyme → excess fibrin → localization of 
+infection 
+ 
+Q4. Define Boil (Furuncle) 
+Answer: 
+A boil is a small abscess arising from a hair follicle or sebaceous gland. 
+ 
+Q5. Compare between Abscess and Cellulitis
+
+Feature Abscess Cellulitis 
+Definition Localized suppurative inflammation Diffuse suppurative inflammation 
+Organism Staphylococcus Streptococcus 
+Mechanism Excess fibrin (coagulase) Fibrinolysin & hyaluronidase 
+Pus Thick yellow Thin sanguinous 
+Spread Limited Common

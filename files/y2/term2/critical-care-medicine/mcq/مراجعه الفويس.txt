@@ -1,0 +1,717 @@
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+🏥 ICU Critical Care 
+Final Exam Study Guide 
+High Yield Notes + Practice MCQs 
+ملاحظات مركزة + أسئلة تدريبية اختيارية 
+ 
+ 
+❤️  PART 1: Cardiac & Respiratory Emergencies 
+ 
+1. Acute Coronary Syndrome (ACS) 
+ACS is a spectrum of conditions caused by reduced blood flow to the heart muscle, ranging from unstable angina 
+to complete blockage (STEMI). 
+مجموعة حالات ناتجة عن نقص التروية في القلب، من الذبحة غير المستقرة حتى الاحتشاء الكامل 
+ 
+Types of ACS 
+Stable Angina Chest pain with exertion → relieved by rest or nitroglycerin. No plaque 
+rupture. 
+ 
+Unstable Angina Plaque rupture → chest pain at rest. More dangerous than stable 
+angina. 
+ 
+NSTEMI Partial coronary occlusion → troponin elevated, no ST elevation on 
+ECG. 
+ 
+STEMI Complete occlusion by clot → ST elevation on ECG. Requires urgent 
+PCI or thrombolysis. 
+ 
+⭐ Key Clinical Points 
+• Chest pain radiating to the shoulder → FIRST do: ECG (رسم قلب)  
+• Before hospital: Aspirin 300 mg (4 tablets) + Clopidogrel (Plavix) 4 tablets  
+• PCI = Percutaneous Coronary Intervention (cardiac catheterization to open artery)  
+• STEMI Treatment: PCI OR Thrombolytic Therapy 
+•      NEVER give Nitroglycerin if patient took Viagra → severe hypotension! 
+ 
+ACS Symptoms 
+• Chest Pain — Shortness of Breath — Palpitations
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+• Sweating — Nausea — Vomiting 
+ 
+Diagnosis Tools 
+• ECG — Troponin — CK-MB — Echocardiography 
+ 
+ 
+2. Stroke 
+A stroke occurs when blood supply to part of the brain is cut off (ischemic) or a blood vessel bursts (hemorrhagic).  
+جلطة الدماغ: إما انسداد وعاء (إقفاري) أو نزيف (نزفي 
+ 
+Types of Stroke 
+Ischemic Stroke Thrombotic or Embolic. Most common type. 
+ 
+Hemorrhagic Stroke Intracerebral Hemorrhage OR Subarachnoid Hemorrhage 
+ 
+⭐ Stroke Management — Step by Step 
+• Patient with arm/leg weakness (suspected stroke) → FIRST step: Non-Contrast CT Brain 
+• Why CT first? To differentiate Ischemic vs Hemorrhagic — treatment differs! 
+•     Do NOT give Aspirin or Heparin before CT result 
+• Ischemic stroke may NOT appear on CT in first 24–48 hours 
+• If CT normal + still suspicious → repeat CT after 48 hours OR do MRI with Diffusion  
+• MRI with Diffusion = best test for EARLY detection of ischemic stroke  
+ 
+Blood Pressure Targets in Stroke 
+Ischemic Stroke (first 24–
+48 h) 
+Maintain BP < 180/105 mmHg (do NOT lower aggressively — preserve 
+penumbra) 
+ 
+Hemorrhagic Stroke Target Systolic BP < 140 mmHg 
+ 
+Penumbra   =الأنسجة القابلة للإنقاذ حول الجلطة—  لذلك نحافظ على الضغط مرتفعاً نسبياً في الجلطة الإقفارية  
+Stroke Risk Factors 
+• Hypertension — Diabetes — Dyslipidemia 
+• Atrial Fibrillation (AF) — Carotid Stenosis     
+ 
+Stroke Complications 
+• Aspiration Pneumonia — most common cause of DEATH in stroke patients     
+• DVT — Fever — Septicemia
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+3. Cardiac Arrhythmias 
+ 
+Bradycardia Heart Rate < 60 bpm. Causes: Athletes, sleep, Beta Blockers 
+ 
+Tachycardia Heart Rate > 100 bpm. Causes: Fever, Shock, Pain, Anxiety, Exercise 
+ 
+Atrial Flutter Presence of F-waves (sawtooth) on ECG 
+ 
+Atrial Fibrillation (AF) No P-waves on ECG. Biggest risk: Ischemic Stroke     
+ 
+Ventricular Fibrillation Immediately life-threatening → TREATMENT: DC Shock        
+ 
+Pulseless VT Ventricular Tachycardia without a pulse → TREATMENT: DC Shock 
+ 
+SVT Vagal Maneuvers (to slow heart) 
+• Carotid Sinus Massage 
+• Valsalva Maneuver 
+• Cold Water on Face 
+• Breath Holding 
+• Pressure on Eyes 
+ 
+ 
+4. Respiratory Failure & COPD 
+ 
+SpO₂ Normal > 95% 
+ 
+COPD Target SpO₂ 88–92%     Do NOT exceed this! 
+ 
+⭐ Why NOT give high O₂ in COPD? 
+COPD patients rely on HYPOXIA as their breathing drive. If you raise SpO ₂ to 99%, they may stop breathing → 
+Apnea → Respiratory Arrest! 
+مرضىCOPD يعتمدون على نقص الأكسجين كمحفز للتنفس. رفع الأكسجين كثيراً يوقف التنفس 
+ 
+CO₂ Monitoring ABG (Arterial Blood Gas) OR Capnogram device
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+🧠  PART 2: Neurological & ICU Monitoring 
+ 
+5. Intracranial Pressure (ICP) & CPP 
+ 
+Normal ICP < 15 mmHg 
+ 
+Target CPP > 70 mmHg 
+ 
+Formula CPP = MAP − ICP 
+ 
+How to Raise CPP? 
+• Lower the ICP — OR — Raise MAP (blood pressure) 
+ 
+Nursing Care to REDUCE ICP 
+• Elevate Head of Bed: 30–45° 
+• Keep neck straight (Straight Neck) — improves venous drainage from brain 
+• Maintain CPP > 70 mmHg 
+• Keep all Vital Signs normal 
+• Seizure Prophylaxis 
+ 
+ 
+6. Glasgow Coma Scale (GCS) 
+ 
+Full Score 15 points (Eye 4 + Verbal 5 + Motor 6) 
+ 
+Score Eye (E) /4 Verbal (V) /5 Motor (M) /6 
+4 Spontaneous Oriented Obeys Commands 
+3 To Voice Confused Localizes Pain 
+2 To Pain Words Withdraws 
+1 None Sounds Abnormal Flexion 
+— — None (1) Abnormal Extension 
+— — — None (1) 
+ 
+⭐ GCS < 8 → Perform Endotracheal Intubation (patient cannot protect airway)  
+GCS أقل من8 = يحتاج تنبيب لأنه لا يستطيع حماية مجرى الهواء
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+7. Hemodynamic Monitoring — Normal Values 
+ 
+Parameter Normal Range Notes 
+MAP (Mean Arterial Pressure) > 65 mmHg Minimum acceptable 
+Heart Rate (Pulse) 60–100 bpm Tachy>100, Brady<60 
+Temperature 36.5–37.2 °C Fever in ICU > 38.5°C     
+Respiratory Rate 12–20 / min  
+SpO₂ (Oxygen Saturation) > 95% COPD: 88–92%     
+Urine Output 0.5–1 ml/kg/hr 70kg patient = 35–70 ml/hr 
+Fasting Blood Sugar < 120–125 mg/dL  
+Post-meal Blood Sugar (2h) < 180 mg/dL  
+ 
+⭐ First test for any ICU admission: Random Blood Sugar (RBS) 
+ 
+ 
+💊  PART 3: VAP Bundle, Shock & DKA 
+ 
+8. VAP Bundle (Ventilator-Associated Pneumonia Prevention) 
+The VAP Bundle is a set of 5 interventions that MUST ALL be applied together to prevent pneumonia in ventilated 
+patients. 
+مجموعة5 إجراءات لازم تتطبق كلها مع بعض لمنع الالتهاب الرئوي في المريض على جهاز التنفس 
+ 
+# Intervention Details 
+1 Elevation of Head of Bed Keep at > 45° (reduces aspiration risk)     
+2 Oral Care Regular mouth hygiene to reduce bacterial load 
+3 Daily Sedation Vacation Stop sedation daily to assess readiness for extubation 
+4 DVT Prophylaxis Heparin / Enoxaparin (Clexane) / Pneumatic 
+Compression Pump 
+5 Stress Ulcer Prophylaxis Use PPI (Proton Pump Inhibitor) 
+ 
+ 
+9. Shock — Types & Management 
+ 
+Hypovolemic Cardiogenic Obstructive Distributive 
+Hemorrhage 
+Gastroenteritis 
+Dehydration 
+Heart pump failure May 
+cause Bradycardia 
+PE Pneumothorax 
+Cardiac Tamponade     
+Septic Neurogenic 
+(Warm!) Anaphylactic
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+•     ALL shock types → Tachycardia EXCEPT: Cardiogenic Shock & Neurogenic Shock (may cause 
+Bradycardia) 
+• Distributive Shock → patient is WARM (due to vasodilation + increased capillary permeability)  
+ 
+ 
+10. DKA — Diabetic Ketoacidosis 
+ 
+Diagnostic Triad ⭐ 
+Hyperglycemia Random Blood Sugar > 250 mg/dL 
+ 
+Ketosis Ketones present in blood/urine 
+ 
+Acidosis pH < 7.3 AND HCO₃ < 15 
+ 
+DKA Management 
+• Insulin dose: 0.1 unit/kg/hour IV infusion (e.g. 80 kg patient → 8 units/hr) 
+• Target glucose drop: 50–80 mg/dL per hour (gradual!) 
+• Most important electrolyte to monitor: POTASSIUM     
+•     Most dangerous complication of DKA: HYPOGLYCEMIA (dropping sugar too fast)  
+ 
+Classic Diabetes Symptoms 
+• Polyuria (frequent urination) 
+• Polydipsia (excessive thirst) 
+• Weight Loss 
+ 
+ 
+🩺  PART 4: Hepatic Encephalopathy, Hypertension & GI Bleeding 
+ 
+11. Hepatic Encephalopathy 
+ 
+Brain dysfunction caused by liver failure and accumulation of ammonia in the blood.  
+اضطراب في وظائف المخ ناتج عن فشل الكبد وتراكم الأمونيا في الدم 
+ 
+Precipitating Factors (causes of episodes) 
+• Infection — Constipation — Dehydration 
+• High Protein Intake (↑ ammonia production) 
+• Diuretics — GI Bleeding
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+Stages of Consciousness Deterioration 
+• Stage 1: Poor Concentration 
+• Stage 2: Delirium 
+• Stage 3: Drowsiness 
+• Stage 4: Coma 
+ 
+Treatment ⭐ 
+• Decrease Protein Intake 
+• Lactulose — prevents ammonia absorption        
+• Gastrobiotic (Rifaximin) 
+• Enema (bowel cleaning)     — Doctor emphasized this strongly 
+• Treat underlying infection 
+ 
+DVT Prevention in Hepatic Patients 
+• Use: Pneumatic Compression Pump     
+•     AVOID anticoagulants — these patients have low platelets + high INR 
+ 
+ 
+12. Hypertensive Crisis 
+ 
+Hypertensive Emergency BP > 180/120 + TARGET ORGAN DAMAGE → lower BP 
+GRADUALLY 
+ 
+Hypertensive Urgency BP > 180/120, NO organ damage (e.g. Epistaxis = nosebleed)     
+ 
+Eclampsia (special) BP > 160/105 in pregnant women → Emergency     
+ 
+Target Organ Damage includes: 
+• Hypertensive Encephalopathy — Stroke — Pulmonary Edema 
+• ACS — Acute Renal Failure — Aortic Dissection — Eclampsia 
+ 
+ 
+13. Upper GI Bleeding 
+ 
+Hematemesis Melena Hematochezia Occult Blood 
+Vomiting Blood 
+قيء دم 
+Black Tarry Stool 
+براز أسود 
+Fresh Blood Per Rectum 
+دم أحمر من الشرج 
+Hidden Blood in Stool 
+دم خفي 
+ 
+Common Causes of GI Bleeding
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+• Peptic Ulcer — Erosions — Mallory-Weiss Syndrome — Tumors 
+ 
+Drugs that Cause GI Bleeding 
+• Aspirin — NSAIDs — Heparin — Warfarin — Clopidogrel 
+ 
+ 
+⚖️  PART 5: Thyroid Emergencies 
+ 
+14. Thyroid Disorders 
+ Hypothyroidism (↓ function) Hyperthyroidism (↑ function) 
+TSH ↑ (high) ↓ (low) 
+Weight ↑ Weight gain ↓ Weight loss 
+Metabolism Everything slows ↓ Everything speeds ↑ 
+Heart Rate Slow / Brady Fast / Tachy 
+Temperature Cold intolerance Heat intolerance 
+ 
+ 
+ 
+⭐  QUICK REFERENCE — Most Tested Values 
+ 
+ICP Normal < 15 mmHg 
+ 
+CPP Target > 70 mmHg 
+ 
+CPP Formula CPP = MAP − ICP 
+ 
+MAP Minimum > 65 mmHg 
+ 
+SpO₂ Normal > 95% 
+ 
+COPD SpO₂ Target 88–92% 
+ 
+ICU Fever Definition > 38.5 °C 
+ 
+Urine Output 0.5–1 ml/kg/hr
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+ 
+GCS Full Score 15 (E4+V5+M6) 
+ 
+GCS → Intubation GCS < 8 
+ 
+VAP HOB Angle > 45° 
+ 
+ICP Nursing HOB 30–45° 
+ 
+DKA Sugar Cutoff > 250 mg/dL 
+ 
+DKA pH < 7.3 
+ 
+DKA HCO₃ < 15 mEq/L 
+ 
+HTN Emergency BP > 180/120 + Organ Damage 
+ 
+HTN Urgency BP > 180/120, NO organ damage 
+ 
+Eclampsia BP > 160/105 
+ 
+STEMI Treatment PCI or Thrombolysis 
+ 
+VF Treatment DC Shock        
+ 
+ 
+ 
+📝  FINAL EXAM — MCQ Practice Questions (50 Questions) 
+ 
+Answer all questions. The correct answer is marked in green after each question.  
+اجب على كل الأسئلة. الإجابة الصحيحة مكتوبة باللون الأخضر تحت كل سؤال 
+ 
+1. A patient presents with chest pain radiating to the left shoulder. What is the FIRST thing to do?  
+A) Give Aspirin immediately 
+B) Perform ECG 
+C) Give Nitroglycerin 
+D) Start oxygen
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+Answer: B) Perform ECG 
+ 
+2. What is the normal range for Intracranial Pressure (ICP)? 
+A) > 20 mmHg 
+B) < 15 mmHg 
+C) 15–25 mmHg 
+D) < 10 mmHg 
+Answer: B) < 15 mmHg 
+ 
+3. What is the CPP formula? 
+A) CPP = MAP + ICP 
+B) CPP = HR × MAP 
+C) CPP = MAP − ICP 
+D) CPP = ICP − MAP 
+Answer: C) CPP = MAP − ICP 
+ 
+4. What is the target CPP in ICU patients? 
+A) > 50 mmHg 
+B) > 60 mmHg 
+C) > 70 mmHg 
+D) > 80 mmHg 
+Answer: C) > 70 mmHg 
+ 
+5. The VAP Bundle head elevation angle is: 
+A) 15–20° 
+B) 30° 
+C) 30–45° 
+D) > 45° 
+Answer: D) > 45° 
+ 
+6. Which of these is NOT part of the VAP Bundle? 
+A) Oral Care 
+B) Daily Sedation Vacation 
+C) Stress Ulcer Prophylaxis 
+D) Chest Physiotherapy 
+Answer: D) Chest Physiotherapy 
+ 
+7. What is Daily Sedation Vacation? 
+A) Giving sedation every day 
+B) Stopping sedation daily to assess readiness to wean ventilator 
+C) Changing the sedation drug daily 
+D) Giving sedation only at night 
+Answer: B) Stopping sedation daily to assess readiness to wean ventilator 
+ 
+8. Which drug is used for DVT Prophylaxis? 
+A) Aspirin 
+B) Metoprolol 
+C) Enoxaparin (Clexane) 
+D) Furosemide 
+Answer: C) Enoxaparin (Clexane)
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+9. How do we prevent Stress Ulcers in ICU? 
+A) H2 blockers only 
+B) PPI (Proton Pump Inhibitor) 
+C) Antibiotics 
+D) Steroids 
+Answer: B) PPI (Proton Pump Inhibitor) 
+ 
+10. The full GCS score is: 
+A) 10 
+B) 12 
+C) 15 
+D) 20 
+Answer: C) 15 
+ 
+11. GCS Motor Response 'Localizes Pain' scores: 
+A) 6 
+B) 5 
+C) 4 
+D) 3 
+Answer: B) 5 
+ 
+12. At what GCS level should Endotracheal Intubation be performed? 
+A) GCS < 12 
+B) GCS < 10 
+C) GCS < 8 
+D) GCS < 6 
+Answer: C) GCS < 8 
+ 
+13. The minimum acceptable MAP in ICU is: 
+A) > 55 mmHg 
+B) > 60 mmHg 
+C) > 65 mmHg 
+D) > 75 mmHg 
+Answer: C) > 65 mmHg 
+ 
+14. The target SpO₂ in COPD patients is: 
+A) 95–99% 
+B) 90–94% 
+C) 88–92% 
+D) 85–89% 
+Answer: C) 88–92% 
+ 
+15. Why do we NOT give high oxygen to COPD patients? 
+A) It causes infection 
+B) Hypoxia is their breathing drive; high O₂ can cause apnea 
+C) They are allergic to oxygen 
+D) It raises blood pressure 
+Answer: B) Hypoxia is their breathing drive; high O₂ can cause apnea 
+ 
+16. Normal Urine Output in ICU is: 
+A) 0.1–0.3 ml/kg/hr 
+B) 0.5–1 ml/kg/hr
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+C) 1–2 ml/kg/hr 
+D) 2–3 ml/kg/hr 
+Answer: B) 0.5–1 ml/kg/hr 
+ 
+17. For a 70 kg patient, what is the normal hourly urine output? 
+A) 10–20 ml/hr 
+B) 20–35 ml/hr 
+C) 35–70 ml/hr 
+D) 70–140 ml/hr 
+Answer: C) 35–70 ml/hr 
+ 
+18. The first test to order when a STEMI is suspected: 
+A) Troponin 
+B) Echocardiography 
+C) ECG 
+D) Chest X-ray 
+Answer: C) ECG 
+ 
+19. Treatment for STEMI is: 
+A) Aspirin only 
+B) Heparin drip 
+C) PCI or Thrombolytic therapy 
+D) Beta blockers 
+Answer: C) PCI or Thrombolytic therapy 
+ 
+20. Which drug combination is DANGEROUS together due to severe hypotension?  
+A) Aspirin + Heparin 
+B) Nitroglycerin + Viagra 
+C) Clopidogrel + Aspirin 
+D) Metoprolol + Atenolol 
+Answer: B) Nitroglycerin + Viagra 
+ 
+21. A patient with suspected stroke presents with arm weakness. What is the FIRST step?  
+A) Give Aspirin 
+B) Give Heparin 
+C) Non-Contrast CT Brain 
+D) MRI Brain 
+Answer: C) Non-Contrast CT Brain 
+ 
+22. Why do we do a CT scan before any treatment in stroke? 
+A) It's faster than MRI 
+B) To differentiate ischemic from hemorrhagic stroke 
+C) To measure ICP 
+D) To check for DVT 
+Answer: B) To differentiate ischemic from hemorrhagic stroke 
+ 
+23. Which is the BEST early test to detect Ischemic Stroke? 
+A) Non-contrast CT 
+B) MRI with Diffusion 
+C) CT with contrast 
+D) Angiography 
+Answer: B) MRI with Diffusion
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+ 
+24. Target BP in Hemorrhagic Stroke: 
+A) SBP < 180 
+B) SBP < 160 
+C) SBP < 140 
+D) SBP < 120 
+Answer: C) SBP < 140 
+ 
+25. The most common cause of DEATH in stroke patients is: 
+A) DVT 
+B) Aspiration Pneumonia 
+C) Renal failure 
+D) Cardiac arrest 
+Answer: B) Aspiration Pneumonia 
+ 
+26. Atrial Fibrillation is characterized by: 
+A) F-waves (sawtooth) 
+B) No P-waves 
+C) Widened QRS 
+D) ST elevation 
+Answer: B) No P-waves 
+ 
+27. The most dangerous complication of Atrial Fibrillation is: 
+A) Ventricular Fibrillation 
+B) Ischemic Stroke 
+C) Heart Block 
+D) Pulmonary Embolism 
+Answer: B) Ischemic Stroke 
+ 
+28. Treatment for Ventricular Fibrillation is: 
+A) Atropine IV 
+B) Amiodarone 
+C) DC Shock 
+D) CPR alone 
+Answer: C) DC Shock 
+ 
+29. Which type of Shock has WARM extremities? 
+A) Hypovolemic Shock 
+B) Cardiogenic Shock 
+C) Obstructive Shock 
+D) Distributive Shock 
+Answer: D) Distributive Shock 
+ 
+30. Which Shock types can cause BRADYCARDIA instead of Tachycardia?  
+A) Hypovolemic and Septic 
+B) Cardiogenic and Neurogenic 
+C) Anaphylactic and Obstructive 
+D) Distributive and Hypovolemic 
+Answer: B) Cardiogenic and Neurogenic 
+ 
+31. What are the causes of Obstructive Shock?
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+A) Hemorrhage, dehydration, vomiting 
+B) PE, Pneumothorax, Cardiac Tamponade 
+C) Sepsis, anaphylaxis, neurogenic 
+D) Heart failure, arrhythmia 
+Answer: B) PE, Pneumothorax, Cardiac Tamponade 
+ 
+32. DKA Diagnostic Triad includes: 
+A) Hypoglycemia + Alkalosis + Ketonuria 
+B) Hyperglycemia + Ketosis + Acidosis 
+C) Hyperglycemia + Hypokalemia + Alkalosis 
+D) Hypoglycemia + Ketosis + Acidosis 
+Answer: B) Hyperglycemia + Ketosis + Acidosis 
+ 
+33. Blood sugar level for DKA diagnosis is: 
+A) > 100 mg/dL 
+B) > 150 mg/dL 
+C) > 200 mg/dL 
+D) > 250 mg/dL 
+Answer: D) > 250 mg/dL 
+ 
+34. Insulin dose in DKA: 
+A) 0.01 unit/kg/hr 
+B) 0.05 unit/kg/hr 
+C) 0.1 unit/kg/hr 
+D) 0.5 unit/kg/hr 
+Answer: C) 0.1 unit/kg/hr 
+ 
+35. Most dangerous electrolyte to monitor in DKA: 
+A) Sodium 
+B) Potassium 
+C) Calcium 
+D) Magnesium 
+Answer: B) Potassium 
+ 
+36. Most dangerous complication of DKA treatment: 
+A) Hypernatremia 
+B) Hypoglycemia 
+C) Alkalosis 
+D) Hyperkalemia 
+Answer: B) Hypoglycemia 
+ 
+37. What prevents Hepatic Encephalopathy most effectively? 
+A) High protein diet 
+B) Lactulose 
+C) Antibiotics only 
+D) Diuretics 
+Answer: B) Lactulose 
+ 
+38. The most emphasized nursing intervention in Hepatic Encephalopathy:  
+A) IV fluids 
+B) Enema (bowel cleaning) 
+C) Nasogastric feeding
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+D) Oxygen therapy 
+Answer: B) Enema (bowel cleaning) 
+ 
+39. Why does HIGH protein intake cause Hepatic Encephalopathy? 
+A) It damages the liver directly 
+B) It increases ammonia production 
+C) It causes hyponatremia 
+D) It reduces albumin 
+Answer: B) It increases ammonia production 
+ 
+40. DVT prevention in Hepatic patients should use: 
+A) Heparin injection 
+B) Warfarin 
+C) Pneumatic Compression Pump 
+D) Aspirin 
+Answer: C) Pneumatic Compression Pump 
+ 
+41. Hypertensive Emergency is defined as: 
+A) BP > 140/90 with symptoms 
+B) BP > 160/100 without organ damage 
+C) BP > 180/120 with target organ damage 
+D) BP > 200/100 always 
+Answer: C) BP > 180/120 with target organ damage 
+ 
+42. Epistaxis (nosebleed) with BP 185/115 is classified as: 
+A) Hypertensive Emergency 
+B) Hypertensive Urgency 
+C) Normal variant 
+D) Hypertensive Crisis requiring IV drugs 
+Answer: B) Hypertensive Urgency 
+ 
+43. Eclampsia is defined as Hypertensive Emergency when: 
+A) BP > 140/90 
+B) BP > 160/105 
+C) BP > 180/120 
+D) BP > 200/110 
+Answer: B) BP > 160/105 
+ 
+44. Hematemesis means: 
+A) Blood in urine 
+B) Vomiting blood 
+C) Black stools 
+D) Blood in sputum 
+Answer: B) Vomiting blood 
+ 
+45. Melena is: 
+A) Bright red rectal bleeding 
+B) Vomiting blood 
+C) Black tarry stool 
+D) Occult blood in stool 
+Answer: C) Black tarry stool
+
+ICU Critical Care — Final Exam Study Guide  |  High Yield Notes 
+46. In Hypothyroidism, TSH is: 
+A) Low (↓) 
+B) Normal 
+C) High (↑) 
+D) Absent 
+Answer: C) High (↑) 
+ 
+47. In Hyperthyroidism, body weight: 
+A) Increases 
+B) Stays the same 
+C) Decreases 
+D) Fluctuates 
+Answer: C) Decreases 
+ 
+48. Which maneuver helps convert SVT (Supraventricular Tachycardia)?  
+A) Breathing deeply and fast 
+B) Valsalva Maneuver 
+C) Jumping jacks 
+D) Drinking hot water 
+Answer: B) Valsalva Maneuver 
+ 
+49. Penumbra in Ischemic Stroke refers to: 
+A) The core dead tissue 
+B) Salvageable tissue around the clot 
+C) The hemorrhagic area 
+D) Cerebrospinal fluid 
+Answer: B) Salvageable tissue around the clot 
+ 
+50. The first test to order for ANY new ICU patient is: 
+A) ABG 
+B) ECG 
+C) Random Blood Sugar 
+D) Complete Blood Count 
+Answer: C) Random Blood Sugar 
+ 
+ 
+ 
+🏆 Good Luck in Your Final Exam! بالتوفيق في  الامتحان  🏆

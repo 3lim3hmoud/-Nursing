@@ -1,0 +1,351 @@
+Pain Management
+Prepared by 
+Dr : Ghada Elasyed
+
+Intended Learning Outcomes (ILOs) 
+• Define Pain  
+• Differentiate between different  types of pain  
+• Explain physiology of pain 
+• Explain tools for pain assessment  
+• Discuss different type of pain management
+
+pre test 
+• Mention types of pain
+• Mention how to assess pain for mechanical ventilated 
+patients
+
+Definition of Pain  
+• Pain is described as an unpleasant sensory and 
+emotional experience associated with actual or potential 
+tissue damage.
+
+Types of Pain 
+Acute Pain 
+Chronic Pain 
+Nociceptive Pain 
+Neuropathic Pain
+
+Acute Pain 
+• Sudden onset 
+• Acute pain has a short duration 
+• Acute pain usually corresponds to the healing process 
+(30 days), but should not exceed 6 months. 
+• It implies tissue damage that is usually from an 
+identifiable cause.  
+• If under treated, acute pain may bring a prolonged 
+stress response and lead to permanent damage to the 
+patient’s nervous system.
+
+Chronic Pain 
+• It develops when the healing process is incomplete or 
+when acute pain is poorly managed 
+• Long term (more than 6 months), after the healing 
+process from the original injury.  
+• It may or may not be associated with an illness.   
+• Both acute and chronic pain can have a nociceptive or 
+neuropathic origin.
+
+• Nociceptive Pain 
+• *Nociceptive pain arises from activation of nociceptors   
+• *It can be somatic or visceral.  
+• Somatic pain involves superficial tissues, such as the 
+skin, muscles, joints, and bones. Its location is well 
+defined
+• Visceral pain involves organs such as the heart, 
+stomach, and liver.
+
+Neuropathic Pain 
+• Neuropathic pain arises from a lesion or disease 
+affecting the somatosensory system  
+• The origin of neuropathic pain may be peripheral or 
+central.  
+• Neuralgia and neuropathy are examples related to 
+peripheral neuropathic pain treatments)
+
+Central neuropathic pain
+•  involves the central somatosensory cortex and can be 
+experienced by patients after a cerebral stroke.  
+• Neuropathic pain can be difficult to manage and frequently 
+requires a multimodal approach
+•  (i.e., the combinations of several pharmacologic and/none 
+pharmacologic
+
+Physiology of Pain 
+• Four processes are involved in nociception: 
+• Transduction (stimulus triggered)  
+• Transmission (the pain impulse moves from the spinal 
+cord to the brain) 
+• Perception (represent the subjective interpretation of pain) 
+• Modulation (neurons from brain stem release neuro 
+transmitters that block the pain impulse.
+
+Pain Assessment  
+– Pain assessment is an integral part of nursing care. It is a prerequisite 
+for adequate pain control and relief. 
+– Because pain is recognized as a subjective experience, the patient’s 
+self report is considered the most valid measure for pain.  
+– Unfortunately in critical care, many factors such as the administration 
+of sedative agents, the use of mechanical ventilation, and altered 
+levels of consciousness may impact communication with patients.
+
+– Many mechanically ventilated patients can communicate that 
+they are in pain by using head nodding, hand motions or by 
+seeking attention with other movements. 
+– In such a situation, use of appropriate communication 
+methods may reduce patients’ distress associated with the 
+presence of the endotracheal tube by enabling them to 
+report the presence of pain or discomfort in a 
+comprehensive way.
+
+The Major Components of Pain Assessment: 
+• Non observable or subjective  
+• Observable or objective  
+• The Subjective Component  
+• Pain is known as a subjective experience.
+•  The subjective component of pain assessment refers to 
+the patient’s self-report about his/her sensorial, affective, 
+and cognitive experience of pain.
+
+• *Mechanical ventilation should 
+not be a barrier for nurses to 
+document patients’ self-reports 
+of pain.
+•  Many mechanically ventilated 
+patients can communicate that 
+they have pain or can use pain 
+scales by pointing to numbers 
+or symbols on the scale.
+
+• The patient’s self-report of pain can also obtained 
+by questioning the patient using the mnemonic 
+PQRSTU 
+• P: provocative and palliative or aggravating factors  
+• Q: quality  
+• R: region or location, radiation  
+• S: severity and other symptoms  
+• T: timing  
+• U: understanding
+
+The Observable  or Objective Component of Pain 
+Assessment 
+• When the patient’s self-report is impossible to obtain, nurses can 
+rely on the observation of behavioral indicators.
+•  Patients who experienced pain during nociceptive procedures 
+were three times more likely to have increased behavioral 
+responses such as facial expressions, muscle rigidity, and 
+vocalization than patients without pain.
+
+Tools to Tested Pain in the Critical Care Setting: 
+• Behavior Pain Scale (BPS)  
+• Critical-Care Pain including Observation Tool (CPOT)  
+• Non Verbal Pain Scale (NVPS) 
+• Pain Behavioral Assessment Tool (PBAT) 
+• Pain Assessment and Intervention Notation (PAIN) 
+Algorithm
+
+Behavioral Pain Scale (BPS) 
+• It was tested mostly in nonverbal mechanically ventilated 
+patients with altered levels of consciousness.
+•  The total scores ranges from 3 to 12. A cut-off score 
+greater than 5 indicates the presence of pain.
+
+ITEM DESCRIPTION SCORE 
+Facial Expression 
+ 
+*Relaxed  
+*Partially tightened e.g., 
+brow lowering)  
+*Fully tightened (e.g., 
+eyelid closing)  
+*Grimacing  
+1 
+2 
+ 
+3 
+4 
+Upper Limbs *No movement  
+*Partially bent  
+*Fully bent with finger flexion  
+*Permanently retracted 
+1 
+2 
+3 
+4 
+Compliance 
+Ventilation 
+ 
+ 
+*Tolerating movement  
+*Coughing but tolerating 
+ventilation for most of the time  
+*Fighting ventilator 
+ *Unable to control ventilation 
+1 
+2 
+ 
+3 
+4
+
+• The BPS can be used quickly, it takes 2 to 5 minutes to complete, and 
+most clinicians were satisfied with its ease of use.
+• For instance, 
+• scores of 3 (i.e., fighting ventilator) 
+• 4 (i.e., unable to control ventilation) for compliance with the ventilator 
+category may be ambiguous.
+•  Similarly, movements with upper limbs category may be confused with 
+muscle tension.
+
+Critical-Care Pain Observation Tool  
+• It was tested in verbal and 
+nonverbal, critically ill adult 
+patients.  
+• Indicator Score  
+• Facial Expression 
+•   Relaxed         0 
+•    Tense            1 
+•   Grimacing     2
+
+Body Movements 
+•  Absence of movements or normal position     0  
+• Protection                                                               1 
+• Restlessness /Agitation                                          2
+Compliance with the Ventilator (intubated patients)  
+• Tolerating ventilator or movement                     0 
+• Coughing but tolerating                                        1  
+• Fighting ventilator                                                2
+
+• Vocalization (non intubated patients) 
+• Talking in normal tone or no sound                    0 
+• Sighing, moaning                                                1 
+• Crying out, sobbing                                             2  
+• Muscle tension 
+• Relaxed                                                                 0 
+• Tense, rigid                                                           I  
+• Very tense or rigid                                                2
+
+Pain Management 
+The control of pain can be 
+pharmacologic, non pharmacologic
+pharmacological pain management 
+is divided into three categories of action: opioid 
+agonists,  nonopioids,     and adjuvants. 
+1-Opioid Analgesics 
+The opioids most commonly used and recommended as 
+first line analgesics are the agonists.
+These opioids bind to mu receptors (transmission 
+process) which appear to be responsible for pain relief.  
+Opioids should be used as first line therapy 
+for treatment of non-neuropathic pain.
+
+Morphine  
+Morphine is the most commonly prescribed opioid in 
+the critical care unit.
+Because of its water solubility, morphine has a 
+slower onset of action and a longer duration 
+compared with the lipid-soluble opioids (e.g., 
+fentanyl).  
+Morphine has two main metabolites:  
+morphine-3-glucuronide (M3G, inactive) and 
+morphine-6-glucuronide (M6G, active). 
+Morphine is indicated for severe pain.
+
+• Side Effects of Morphine 
+• The hypotensive effect can be 
+particularly problematic in the 
+hypovolemic patient.  
+• The respiratory depressant effect is 
+the most serious side effect which 
+requiring thorough monitoring.  
+• Opioids may stimulate histamine 
+release from mast cells, resulting in 
+cardiac instability and allergic 
+reactions.
+• Dosage 
+• 1-4 mg IV bolus or 1-10 mg IV 
+infusion.
+
+Fentanyl 
+Fentanyl is a synthetic opioid preferred for critically ill 
+patients with hemodynamic instability or morphine 
+allergy.
+It is a lipid-soluble agent that has a more rapid onset 
+than morphine and a shorter duration.  
+Transdermal delivery requires 12 to 16 hours for 
+onset of action, and it has duration of 72 hours.
+
+• Fentanyl is available in intravenous, intraspinal, and 
+transdermal forms. 
+• The transdermal form is commonly referred to as the 
+Duragesic patch or the 72-hour patch.
+•  When fentanyl is given by rapid administration and at 
+higher doses, it has been associated with the additional 
+hazard of bradycardia and rigidity in the chest wall 
+muscles. 
+• Dosage 
+• 25-100 mcg IV bolus 
+• 25-200 mcg IV infusion
+
+• Hydromorphone 
+• Analgesia, anti anxiety  
+•  Dosage 
+• 0.2 -1 mg IV bolus 
+• 0.2 -2 mg IV infusion  
+• Side Effect of Hydromorphone:  
+• Hydromorphone has the same side effects as 
+Morphine.
+
+• Meperidine (Demerol)  
+• It is considered the weakest of the opioids, and it must 
+be administered in large doses to be equivalent in 
+action to Morphine. 
+• A major concern with this medication, which is a Center 
+Nervous System (CNS) neurotoxic agent.  
+• At high doses in patients with kidney failure or liver 
+dysfunction or in older adult patients, it may induce 
+CNS toxicity, including irritability, muscle spasticity, 
+tremors, agitation, and seizures.
+
+Codeine 
+Codeine has limited use in the management of severe pain.
+It is rarely used in the critical care unit.
+It provides analgesia for mild to moderate pain. 
+available only through oral, intramuscular, and subcutaneous routes, 
+Dosage:15 - 20 mg IM, SC 
+Side Effects of Codeine:
+the most common side effect of Codeine are lightheadedness, dizziness, 
+shortness of breath, sedation, nausea, and vomiting.
+
+Methadone 
+Methadone is a synthetic opioid with morphine- like 
+properties but less sedation 
+Dosage: 5-10 mg IV. The maximum dose is 4 g/day. 
+Prolongation of the QT interval, which can lead to 
+torsades de pointes, has been reported with its use.
+
+Opioid Reversal:
+Critical respiratory depression can he readily 
+reversed with the administration of the opiate 
+antagonist Naloxone. The usual dose is 0.4 mg, which is mixed with 10 mL 
+of normal saline 
+Naloxone can be discontinued as soon as the patient 
+is responsive to physical stimulation and able to take 
+deep breaths.
+
+2-Nonopioid Analgesics 
+Acetaminophen 
+It is an analgesic used to treat mild to moderate pain. 
+It inhibits the synthesis of neurotransmitter prostaglandins in the CNS, 
+and this is why it has no anti-inflammatory properties.  
+Dosage: 650 mg. the maximum dose is 4 g/day 
+Analgesic, Antipyretic 
+acetaminophen total dose should not exceed 2 
+g/day. Side Effect: hepatotoxicity
+
+Non Steroidal Anti-inflammatory Drugs:  
+The use of NSAIDs in combination with opioids is 
+indicated in the patient with acute musculoskeletal 
+and soft tissue inflammation.The mechanism of action of NSAIDs is to block the 
+action of cyclooxygenase (COX, which has two 
+forms: COX- I and COX-2), the enzyme that converts 
+arachidonic acid to prostaglandins.
+This inhibits the production of prostaglandins.

@@ -1,0 +1,123 @@
+LearningObjectives
+By the end of this lecture, students will be able to:
+Define what an arrhythmia is.
+Describe normal cardiac conduction and rhythm.
+Identify common types of arrhythmias.
+Recognize signs, symptoms, and risk factors.
+Discuss nursing assessment and management for patients 
+with arrhythmias.
+
+Definition
+An arrhythmia is an abnormality in the 
+rate, rhythm, or sequence of cardiac 
+electrical impulses.
+Normal heart rate: 60–100 beats per 
+minute (bpm)
+Normal rhythm: Sinus rhythm — impulse 
+originates from the sinoatrial (SA) node
+
+Normal Cardiac Conduction System 
+Pathway:
+SA node → AV node → Bundle of His → Right & 
+Left Bundle Branches → Purkinje fibers
+Key concept:
+Electrical activity triggers mechanical contraction
+of the heart. Disturbance in this system = 
+arrhythmia.
+
+Type Example Heart Rate Description
+Bradyarrhythmias Sinus bradycardia, 
+AV block <60 bpm Slow rhythm
+Tachyarrhythmias Sinus tachycardia, 
+SVT , VT >100 bpm Fast rhythm
+Irregularrhythms Atrial fibrillation, 
+PVCs Variable Irregular beat 
+pattern
+
+Common Arrhythmias and ECG Features
+A. Sinus Bradycardia
+•HR < 60 bpm, regular rhythm
+•Often normal in athletes or during sleep
+•Causes: Vagal stimulation, medications (beta-
+blockers, digoxin)
+•Treatment: If symptomatic → Atropine, oxygen, 
+IV fluids
+
+B. Sinus Tachycardia
+•HR > 100 bpm, regular rhythm
+•Causes: Fever, pain, anxiety, 
+dehydration, heart failure
+•Treatment:Treat the underlying cause
+
+C. Atrial Fibrillation (AFib)
+•Irregularly irregular rhythm, no P waves
+•Risk: Stroke, thromboembolism
+•Symptoms: Palpitations, fatigue, shortness of breath
+•Management:
+• Rate control: Beta-blockers, calcium channel blockers
+• Anticoagulation: Warfarin, DOACs
+• Cardioversion if indicated
+
+D. Atrial Flutter
+•“Sawtooth” pattern on ECG
+•Often regular, 250–350 bpm atrial 
+rate
+•Management:Similar to AFib
+
+E. Ventricular Tachycardia (VT)
+•Wide QRS complexes, rate >100 bpm
+•Life-threatening!
+•Causes: Myocardial infarction, electrolyte imbalance
+•Treatment:
+• With pulse: Amiodarone, synchronized 
+cardioversion
+• Pulseless: CPR + Defibrillation
+
+F . Ventricular Fibrillation (VF)
+•Chaotic, no organized rhythm or 
+cardiac output
+•Emergency!
+•Management:CPR, Defibrillation 
+immediately
+
+G. Asystole
+•Flat line (no electrical activity)
+•Management:CPR, Epinephrine, treat 
+reversible causes (H’s & T’s)
+
+5. 
+ Nursing Assessment
+•Monitor vital signs and ECG rhythm strips
+•Assess for signs of decreased cardiac output:
+• Hypotension
+• Dizziness
+• Chest pain
+• Shortness of breath
+• Altered mental status
+•Check medications, electrolytes, and oxygen levels
+
+6. 
+ Nursing Management & Interventions
+1.Maintain airway, breathing, circulation (ABCs)
+2.Apply oxygenas ordered
+3.Continuous ECG monitoring
+4.Administer antiarrhythmic drugsas prescribed
+5.Prepare for emergency procedures:
+1.Defibrillation
+2.Cardioversion
+3.Temporary pacing
+
+7. 
+ Complications
+Decreased cardiac output
+Thromboembolism (especially in AFib)
+Sudden cardiac arrest
+Heart failure
+
+8. 
+ Summary
+•Arrhythmias are disturbances in heart rhythm.
+•ECG interpretation is key to diagnosis.
+•Prompt recognition and intervention save lives.
+•Nurses play a crucial role in monitoring, 
+treatment, and patient education.

@@ -1,0 +1,261 @@
+Bacterial 
+meningitis
+Prepared by /
+Dr:  Ghada Elsayed
+
+Outlines 
+• Definition of the meningitis 
+• Pathophysiology of the meningitis
+• Risk factors of the meningitis
+• Clinical Presentation of the meningitis
+• Complications of the meningitis 
+• Diagnostic Tests of the meningitis
+• Management of the meningitis
+
+Pre test
+Mention causes of 
+bacterial meningitis
+Mention 
+diagnostics test for 
+bacterial meningitis
+
+Definition 
+Bacterial meningitis is an inflammation 
+that involves the arachnoid and pia 
+mater of the brain, the subarachnoid 
+space, and the CSF .
+Meningitis is a life-threatening disorder 
+that is most often caused by bacteria 
+or viruses.
+
+Causes of bacterial meningitis 
+Meningitis can be caused by infectious and non-infectious 
+processes (autoimmune disorders, cancer/paraneoplastic 
+syndromes, drug reactions).
+The infectious etiologic agents of meningitis include bacteria, 
+viruses, fungi, and less commonly parasites.
+
+Risk Factors
+• Risk factors for meningitis include:
+• Chronic medical disorders (renal failure, diabetes, 
+adrenal insufficiency, cystic fibrosis)
+• Extremes of age
+• Under vaccination
+• Immunosuppressed states (iatrogenic, transplant 
+recipients, congenital immunodeficiencies, AIDS)
+• Living in crowded conditions
+• Alcohol use disorder
+• Presence of ventriculoperitoneal (VP) shunt
+• Presence of external ventricular drain
+• Penetrating head injury
+• Lumbar puncture
+• Cranial or spinal surgeries involving the opening of the 
+dura
+• Bacterial endocarditis
+
+Pathophysiology 
+■ Bacteria enter the CNS through the 
+bloodstream and cross the blood-brain 
+barrier or directly enter the bloodstream via 
+penetrating trauma, invasive procedures, 
+cancer, certain drugs, or ruptured cerebral 
+abscess. 
+An upper respiratory infection → bacteria in 
+nasopharynx → bloodstream → CSF 
+subarachnoid space and pia arachnoid 
+membrane → meninges.
+
+Purulent exudate → clings to meningeal layers → 
+clogs CSF → tissue and vascular congestion and 
+obstruction → cranial nerve dysfunction, 
+hyperemia of meningeal blood vessels, brain 
+tissue edema, ↑ CSF , ↑ ICP , ↑ WBC in 
+subarachnoid space → acute hydrocephalus and 
+seizures. 
+Abnormal stimulation of hypothalamic area → 
+inappropriate ADH production → water retention.
+
+Clinical 
+Presentation
+■ Symptoms of upper respiratory infection possibly preceding 
+meningeal irritation →
+severe and unrelenting headache,
+nausea,
+vomiting,
+fever and chills, nuchal rigidity (stiff neck), 
+irritability, malaise, restlessness, 
+myalgia, and tachycardia
+Photophobia and signs of ↑ ICP
+
+■ Problems with memory; ↓ LOC; disorientation to 
+person, place, and year;
+sleepiness, 
+confusion, 
+irritability,
+abnormal eye movements → coma, delirium, and 
+seizures 
+■ Kernig’s sign: inability to extend the leg at the knee 
+when the thigh is flexed 
+■ Brudzinski’s sign: flexion of the hip and knee when the 
+patient’s neck is flexed
+
+Complications
+■ Septic emboli and septic shock with vascular dysfunction, or DIC
+■ Pericardial effusion 
+■ Fluid and electrolyte imbalances 
+■ Seizures and hemiparesis
+■ Cranial nerve (CN) dysfunction: CN III, IV , VI, VII, VIII 
+■ Cerebral infarction, brain parenchymal damage
+■ Hydrocephalus and cerebral edema 
+■ ↑ ICP → herniation of the brain
+
+Diagnostic Tests 
+■ Lumbar puncture, culture, and assessment of CSF and pressure → ↑ CSF pressure (CSF pressure >180 mm Hg is indicative of 
+bacterial meningitis);
+CSF fluid cloudy with ↑ protein, ↓ glucose, ↑ WBCs and neutrophils 
+■ CBC, especially ↑ WBC 
+■ Blood cultures and cultures from nasopharynx, respiratory secretions, urine 
+■ Serum electrolytes, especially Na (dilutional hyponatremia), BUN, glucose
+■ CXR to determine concomitant pneumonia
+■ CT scan or MRI if ↑ ICP , or brain abscess or hydrocephalus
+
+Medical 
+Management
+Antibiotics and supportive care are critical in all cases of 
+bacterial meningitis.
+Managing the airway, maintaining oxygenation,
+Giving sufficient intravenous fluids while providing fever control 
+are parts of the foundation of meningitis management.
+The type of antibiotic is based on the presumed organism causing 
+the infection.
+The clinician must take into account patient demographics and 
+past medical history in order to provide the best antimicrobial 
+coverage.
+
+Current 
+Empiric 
+Therapy
+Adults (18 to 49 years old)
+Ceftriaxone IV and
+Vancomycin IV
+Adults older than 50 years old and the 
+immunocompromised
+Ceftriaxone IV and
+Vancomycin IV and
+Ampicillin IV
+
+Steroid 
+Therapy
+There is insufficient evidence to 
+support the widespread use of steroids 
+in bacterial meningitis.
+Some studies report a reduction in 
+mortality for Streptococcus 
+pneumoniae meningitis, but not 
+in Haemophilus influenza or Neisseria 
+meningitides meningitis.
+
+Increased 
+Intracranial 
+Pressure
+If the patient develops clinical signs of increased intracranial 
+pressure (altered mental status, neurologic deficits, non-reactive 
+pupils, bradycardia), interventions to maintain cerebral perfusion 
+include:
+Elevating the head of the bed to 30 degrees
+Inducing mild hyperventilation in the intubated patient
+Osmotic diuretics such as 25% mannitol or 3% saline
+
+Nursing 
+Management 
+Monitoring and recording vital signs.
+Assess the Glasgow Coma Scale and pay special attention to the 
+motor response, immediately inform the on-duty doctor if it falls.
+Assess the patient's mental status and provide psychological 
+support if the patient is conscious.
+Elevate the head of the bed to 30 degrees with a straight neck for 
+venous drainage from the brain.
+Ensure the patient has an IV line for fluids and medications.
+Administer antibiotics as prescribed
+
+Nursing 
+Management 
+■ Maintain respiratory isolation until pathogen is not cultured 
+in nasopharynx (usually 24 hr after antibiotic treatment). 
+■ Monitor neurological status, cranial nerve function, and vital 
+signs every 1–2 hr. 
+Check pupils, LOC, and motor activity. 
+■ Assess vascular function for signs of septic emboli.
+■ Ensure ↓ environmental stimuli, quiet environment, and ↓ 
+exposure to lights.
+■ Administer corticosteroids to decrease inflammation: 
+dexamethasone.
+■ Administer anticonvulsants for seizures: phenytoin, 
+phenobarbital, lorazepam.
+
+-Administer antipyretics for fever. 
+-Administer analgesia for headache.
+-Administer hyperosmolar agents for cerebral edema: mannitol and 
+diuretics: Lasix. 
+-Insert surgical shunt if hydrocephalus is present and adjust antibiotic 
+therapy per the causative agent and antibiotic sensitivity.
+-Consider the following antibiotic therapy: 
+-Cefotaxime (Claforan) ■ Ceftazidime (Ceptaz, Fortaz)
+-Ceftriaxone (Rocephin) 
+-Vancomycin 
+-Meropenem (Merrem) Assess CSF analysis, Gram stain, and cultures 
+for antibiotic sensitivity. Seizure Disorder
+
+-Assess hearing power in both ears.
+-Check labs (meningitis may cause SIADH)
+-Check renal and liver function tests.
+-Check cerebrospinal fluid lab results.
+-Change position every 2-hourly to prevent bedsore if the patient 
+is bedridden and apply air mattress and thromboembolic 
+deterrent stockings as needed)
+-Provide limb physio and chest physio to prevent the 
+complications associated with immobility.
+
+Never forget to measure random blood sugarbefore 
+lumbar puncture while sending CSF for a glucose test.
+A proper diet chart to provide adequate calories 
+required for the body.
+Put a nasogastric tube and start feeding for the 
+unconscious patients, as instructed
+Monitor intake and output.
+Provide comfort measures
+
+Nursing 
+Diagnosis
+Ineffective tissue perfusion related to cerebral edema as 
+evidenced by hypercapnia.
+Hyperthermia related to infection as evidenced by body 
+temperature above the normal range.
+Acute pain related to increased intracranial pressure as 
+evidenced by headache.
+Disturbed sensory perception related to decreased loss of 
+consciousness as evidenced by altered sensorium.
+Anxiety-related to change in the health status of a patient as 
+evidenced by expressed concern and worry about actual 
+hospitalization and seriousness of the illness.
+
+Deficient knowledge related to lack of exposure to 
+information as evidenced by request for information about 
+medications, signs and symptoms, and behaviors to report.
+The risk for injury related to the internal factors of altered 
+neurologic regulatory function.
+Impaired physical mobility related to intravenous infusion, 
+nuchal rigidity, and restraining devices.
+Interrupted family processes related to the critical nature of 
+the situation and uncertain prognosis.
+Ineffective airway clearance related to neuromuscular 
+damage as evidenced by difficulty in breathing.
+
+POST TEST 
+Mention causes 
+of bacterial 
+meningitis
+Mention 
+complication of 
+bacterial 
+meningitis

@@ -1,0 +1,258 @@
+Pain Management 
+إدارة الألم 
+ 
+       Learning Outcomes (مخرجات التعلم) 
+At the end of this lecture, the student should be able to: 
+في نهاية المحاضرة يجب أن يكون الطالب قادرًا على : 
+• Define pain. 
+تعريف الألم. 
+• Differentiate between types of pain. 
+التمييز بين أنواع الألم. 
+• Explain how pain happens (physiology). 
+شرح كيفية حدوث الألم (فيسيولوجيا الألم. 
+• Explain how to assess pain. 
+شرح كيفية تقييم الألم. 
+• Discuss how to manage pain. 
+مناقشة طرق إدارة الألم. 
+ 
+      Definition of Pain (تعريف الألم) 
+Pain is an unpleasant feeling — both physical and emotional — that happens because of 
+real or possible tissue damage. 
+الألم هو إحساس غير مريح جسديًا وعاطفيًا يحدث نتيجة تلف فعلي أو محتمل في الأنسجة. 
+       Simplified: Pain is your body’s alarm when something is wrong. 
+       مبسط: الألم هو إنذار من الجسم إن في شيء مش طبيعي.
+
+Types of Pain (أنواع الألم) 
+1. Acute Pain – short-term and sudden. 
+الألم الحاد: قصير المدة ويحدث فجأة. 
+2. Chronic Pain – lasts for a long time. 
+الألم المزمن: يستمر لفترة طويلة. 
+3. Nociceptive Pain – caused by tissue injury. 
+الألم الاستقبالي: ناتج عن تلف في الأنسجة. 
+4. Neuropathic Pain – caused by nerve damage. 
+الألم العصبي: ناتج عن تلف في الأعصاب. 
+ 
+    Acute Pain (الألم الحاد) 
+• Appears suddenly and lasts for a short time. 
+يظهر فجأة ويستمر لفترة قصيرة. 
+• Usually ends with healing (around 30 days, not more than 6 months). 
+غالبًا ينتهي مع الشفاء (حوالي30 يومًا ولا يتجاوز6 أشهر.  
+• Has a clear cause, like injury or surgery. 
+له سبب واضح مثل إصابة أو جراحة. 
+• If untreated, it can cause stress and damage to the nervous system. 
+إذا لم يُعالج، قد يسبب توترًا دائمًا ويؤذي الجهاز العصبي . 
+ 
+    Chronic Pain (الألم المزمن) 
+• Happens when healing doesn’t complete or pain isn’t well managed. 
+يحدث عندما لا يكتمل الشفاء أو لا يتم علاج الألم بشكل جيد.
+
+• Lasts for more than 6 months. 
+يستمر لأكثر من6 أشهر.  
+• May or may not be linked to disease. 
+قد يكون أو لا يكون مرتبطًا بمرض. 
+• Can start as acute pain but continue long-term. 
+قد يبدأ كألم حاد ويستمر لفترة طويلة. 
+ 
+    Nociceptive Pain (الألم الاستقبالي) 
+• Comes from activation of pain receptors in the body. 
+ينتج من تنشيط مستقبلات الألم في الجسم. 
+• Can be somatic (from skin, muscles, bones) or visceral (from organs). 
+يمكن أن يكون جسديًا (من الجلد أو العضلات أو العظام) أو حشويًا (من الأعضاء الداخلية).  
+• Somatic pain is easy to locate. 
+الألم الجسدي يمكن تحديد مكانه بسهولة. 
+• Visceral pain is deep and harder to localize. 
+الألم الحشوي يكون عميقًا وصعب التحديد. 
+ 
+    Neuropathic Pain (الألم العصبي) 
+• Caused by nerve injury or disease in the nervous system. 
+يحدث بسبب تلف أو مرض في الجهاز العصبي. 
+• Can be peripheral (nerves outside the brain/spinal cord) or central (inside the 
+brain/spinal cord). 
+يمكن أن يكون طرفيًا أو مركزيًا.
+
+• Examples: neuralgia, neuropathy, pain after stroke. 
+أمثلة: ألم الأعصاب، الاعتلال العصبي، الألم بعد الجلطات الدماغية. 
+• Often hard to treat, needs combination of drugs and therapies. 
+صعب العلاج عادةً، ويحتاج إلى أدوية وعلاجات متعددة معًا. 
+ 
+         Physiology of Pain (فيسيولوجيا الألم) 
+Pain happens through four main steps in the body. 
+يحدث الألم في الجسم من خلال أربع مراحل رئيسية: 
+1. Transduction – when a harmful stimulus (like injury) turns into electrical signals 
+in nerves. 
+التحويل: عندما يتحول المؤثر الضار مثل الإصابة إلى إشارات كهربائية في الأعصاب. 
+2. Transmission – the pain signals travel from the spinal cord to the brain. 
+النقل: انتقال إشارات الألم من الحبل الشوكي إلى الدماغ. 
+3. Perception – the brain recognizes and feels the pain. 
+الإدراك: الدماغ يفسر الإشارات ويشعر بالألم. 
+4. Modulation – the brain releases chemicals that can block or reduce pain signals. 
+التعديل: الدماغ يفرز مواد تقلل أو توقف إشارات الألم. 
+      Simple meaning: The brain receives, feels, and controls pain through a signal 
+pathway. 
+      المعنى المبسط: الدماغ يستقبل إشارات الألم ويتحكم فيها من خلال مسار محدد. 
+ 
+        Pain Assessment (تقييم الألم) 
+    Basics of Assessment (أساسيات التقييم)
+
+• Pain assessment is a vital part of nursing care. 
+تقييم الألم جزء أساسي من الرعاية التمريضية. 
+• The patient’s own report is the most reliable source. 
+تقرير المريض عن ألمه هو المصدر الأدق. 
+• Some patients (like those on mechanical ventilation) cannot speak, so nurses 
+must use other ways to assess pain. 
+بعض المرضى مثل الموجودين على أجهزة التنفس لا يستطيعون الكلام، لذلك يجب استخدام طرق أخرى
+لتقييم الألم. 
+• Patients may use gestures like nodding, hand movement, or body motion to 
+show pain. 
+قد يستخدم المريض إشارات مثل هز الرأس أو حركة اليد أو الجسم للتعبير عن الألم. 
+ 
+    Major Components of Pain Assessment (مكونات تقييم الألم) 
+1. Subjective (غير قابلة للملاحظة) – patient’s personal feeling of pain. 
+المكون الذاتي: إحساس المريض الشخصي بالألم. 
+2. Objective (قابلة للملاحظة) – nurse’s observation of patient’s behavior. 
+المكون الموضوعي: ملاحظات الممرضة لسلوك المريض. 
+ 
+    Subjective Component (المكون الذاتي) 
+• Pain is subjective — only the patient truly feels it. 
+الألم شعور ذاتي، لا أحد يستطيع الإحساس به سوى المريض. 
+• Even mechanically ventilated patients can report pain using gestures or pain 
+scales. 
+حتى المرضى على أجهزة التنفس يمكنهم التعبير عن الألم باستخدام إشارات أو مقياس الألم. 
+•
+
+• Nurses can ask using the PQRSTU method: 
+o P – Provocation / Palliation  
+o Q – Quality / Quantity  
+o R – Region / Radiation  
+o S – Severity Scale  
+o T – Timing  
+o U – Understanding / You 
+ 
+    Objective Component (المكون الموضوعي) 
+• When a patient can’t report pain, nurses look for behavioral signs. 
+عندما لا يستطيع المريض وصف الألم، تعتمد الممرضة على علامات السلوك. 
+• Signs include facial expressions, body rigidity, or sounds like moaning. 
+من العلامات: تعبيرات الوجه، تصلب العضلات، أو الأصوات كالتأوه. 
+ 
+       Pain Assessment Tools in Critical Care (أدوات تقييم الألم في العناية الحرجة) 
+       Behavioral Pain Scale (BPS) 
+• Used for patients who can’t speak (like on ventilators). 
+تُستخدم مع المرضى غير القادرين على الكلام مثل مرضى أجهزة التنفس. 
+• Total score: 3–12 → if score > 5 = pain present. 
+المجموع الكلي: من3 إلى12، وإذا كانت النتيجة أكثر من5 فهناك ألم.  
+• Measured through 3 categories: 
+تُقاس من خلال3 فئات:
+
+1. Facial Expression: relaxed → grimacing. 
+تعبير الوجه: من مسترخي إلى متألم. 
+2. Upper Limbs: no movement → retracted. 
+الأطراف العلوية: من ثابتة إلى منقبضة. 
+3. Ventilator Compliance: tolerating → fighting ventilator. 
+التوافق مع الجهاز: من متعاون إلى مقاوم للجهاز. 
+⏱ Quick and easy to use (2–5 minutes). 
+⏱ سهلة وسريعة الاستخدام (من دقيقتين إلى خمس دقائق. 
+ 
+       Critical-Care Pain Observation Tool (CPOT) 
+• Used for both verbal and nonverbal patients. 
+تُستخدم للمرضى القادرين وغير القادرين على الكلام. 
+• Includes 5 indicators: 
+تشمل5 مؤشرات:  
+1. Facial Expression (0–2) 
+تعبير الوجه (من0  إلى2 )  
+2. Body Movements (0–2) 
+حركات الجسم (من0 إلى2 )  
+3. Ventilator Compliance / Vocalization (0–2) 
+التوافق مع جهاز التنفس أو الأصوات (من0 إلى2 )  
+4. Muscle Tension (0–2) 
+توتر العضلات (من0 إلى2 )  
+Higher score = stronger pain. 
+كلما زادت الدرجة زادت شدة الألم.
+
+Pain Management (إدارة الألم) 
+Pain management can be: 
+إدارة الألم يمكن أن تكون: 
+• Pharmacological (دوائية) 
+• Non-Pharmacological (غير دوائية) 
+ 
+        1. Pharmacological Methods (الأساليب الدوائية) 
+     Opioid Analgesics (المسكنات الأفيونية) 
+Used for severe pain. Examples: 
+تستخدم للألم الشديد، مثل: 
+Drug Key Info Side Effects 
+Morphine 
+Common in ICU; long duration. Dose: 
+1–4 mg IV. 
+Low blood pressure, 
+respiratory depression, allergy. 
+Fentanyl 
+Fast action, short duration, safer for 
+heart. Dose: 25–100 mcg IV. 
+May cause chest muscle 
+stiffness. 
+Hydromorphone Strong pain relief, dose: 0.2–1 mg IV. Similar to morphine effects. 
+Meperidine Weak; needs high dose. 
+Can cause nervous system 
+toxicity. 
+Codeine For mild–moderate pain. Dizziness, nausea, vomiting.
+
+Drug Key Info Side Effects 
+Methadone 
+Long action, less sedation. Dose: 5–
+10 mg IV. 
+May affect heart rhythm. 
+Opioid Reversal: 
+If overdose → use Naloxone 0.4 mg (antidote). 
+في حالة زيادة الجرعة → يُستخدم نالوكسون 0.4 ملجم لعكس التأثير.  
+ 
+     Non-Opioid Analgesics (المسكنات غير الأفيونية) 
+Drug Function Side Effects 
+Acetaminophen 
+(Paracetamol) 
+Mild–moderate pain; no anti-
+inflammatory effect. 
+Liver toxicity if high dose. 
+NSAIDs (like Ibuprofen, 
+Ketorolac) 
+Reduce inflammation and pain. 
+Can cause ulcers, 
+bleeding, kidney issues. 
+Ketorolac Used after surgery; 15–30 mg IV. 
+Risk of bleeding, kidney 
+issues. 
+ 
+       Adjuvants (الأدوية المساعدة) 
+• Used for complex or nerve-related pain. 
+تُستخدم للألم العصبي أو المعقد. 
+• Include anticonvulsants (Gabapentin, Pregabalin) and local anesthetics 
+(Lidocaine). 
+تشمل أدوية الصرع مثل جابابنتين وبريجابالين، أو مخدرات موضعية مثل الليدوكايين.
+
+• Can be given as IV, bolus, or PCA (patient-controlled analgesia). 
+يمكن إعطاؤها عن طريق الوريد أو بالحقن أو جهاز التحكم الذاتي للألم. 
+ 
+     2. Non-Pharmacological Methods (الأساليب غير الدوائية) 
+         Physical Techniques (الطرق الجسدية) 
+• Use heat or cold to reduce pain. 
+استخدام الحرارة أو البرودة لتقليل الألم.  
+• Massage helps relax muscles and improve comfort. 
+التدليك يساعد على استرخاء العضلات وتخفيف الألم.  
+      Cognitive-Behavioral Techniques (الطرق السلوكية العقلية) 
+• Relaxation: Reduces stress and muscle tension. 
+الاسترخاء: يقلل التوتر وتشنج العضلات. 
+• Guided Imagery: Imagining calm scenes helps control pain. 
+التخيل الموجه: تخيل مشهد مريح يساعد في السيطرة على الألم. 
+• Music Therapy: Listening to music reduces anxiety and discomfort. 
+العلاج بالموسيقى: الاستماع لموسيقى مريحة يخفف القلق والألم. 
+ 
+            Role of the Nurse (دور الممرضة) 
+• Assess pain regularly using correct tools. 
+تقييم الألم بانتظام باستخدام الأدوات المناسبة. 
+• Document findings accurately. 
+توثيق النتائج بدقة. 
+• Give prescribed medications safely. 
+إعطاء الأدوية الموصوفة بأمان.
+
+• Provide non-drug methods like relaxation and comfort. 
+تقديم أساليب غير دوائية مثل الراحة والاسترخاء. 
+• Evaluate the effectiveness of pain management. 
+تقييم مدى فعالية علاج الألم.

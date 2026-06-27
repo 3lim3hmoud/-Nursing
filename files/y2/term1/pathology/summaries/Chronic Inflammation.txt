@@ -1,0 +1,147 @@
+Chronic Inflammation (الالتهاب المزمن) 
+Causes (الأسباب) 
+Chronic inflammation happens due to persistent infection or long-term exposure to 
+harmful agents. 
+يحدث الالتهاب المزمن بسبب استمرار العدوى لفترة طويلة أو التعرض المستمر لمواد ضارة.  
+ 
+Inflammatory Cells (الخلايا الالتهابية) 
+• Acute inflammation: involves Neutrophils. 
+الالتهاب الحاد يحتوي على خلايا العدلات  Neutrophils). 
+• Chronic inflammation: involves Lymphocytes, Plasma cells, and Macrophages. 
+الالتهاب المزمن يحتوي على الخلايا الليمفاوية وخلايا البلازما والماكروفاج.  
+• It may be Chronic non-specific inflammation. 
+وقد يكون من نوع الالتهاب المزمن غير المحدد (بدون سبب خاص واضح.) 
+ 
+           Granuloma (الورم الحبيبي) 
+Definition (التعريف) 
+A granuloma is a chronic specific inflammation where many modified macrophages 
+(epithelioid cells) gather with lymphocytes, plasma cells, giant cells, and fibroblasts, 
+forming a tumor-like mass. 
+الورم الحبيبي هو التهاب مزمن محدد يتجمع فيه عدد كبير من الماكروفاج المعدلة (الخلايا الظهارية) مع الخلايا  
+الليمفاوية والبلازمية والعمالقة والألياف، لتكوين كتلة تشبه الورم.  
+ 
+Aetiology (الأسباب)
+
+Infectious causes (معدية) Examples (أمثلة) 
+Bacteria (بكتيريا) Tuberculosis (الدرنLeprosy (الجذام) 
+Parasitic (طفيليات) Bilharziasis (البلهارسيا) 
+Fungal (فطريات) Histoplasmosis (الهستوبلازما) 
+Non-Infectious causes (غير معدية) Examples (أمثلة) 
+Foreign body (أجسام غريبة) Silicosis (السيليكوزSuture (الخياطة) 
+Autoimmune (مناعية ذاتية) Sarcoidosis (الساركويدCrohn’s disease (مرض كرون) 
+ 
+Pathogenesis (آلية التكوّن) 
+1. The pathogen enters the tissue. 
+العامل المسبب يدخل النسيج. 
+2. Macrophages try to engulf it but fail to kill it. 
+تحاول خلايا الماكروفاج ابتلاعه ولكنها تفشل في قتله. 
+3. They become activated macrophages with help from TH1 lymphocytes. 
+تتحول إلى ماكروفاج نشطة بمساعدة خلايا TH1 اللمفاوية. 
+4. These cells cluster together and form a granuloma. 
+تتجمع هذه الخلايا لتكوّن  الورم الحبيبي.  
+ 
+Histological Features (التركيب النسيجي)
+
+Component 
+(الجزء) 
+Description (الوصف) 
+Epithelioid 
+cells 
+Modified macrophages, main component. (الخلايا الظهارية– ماكروفاج 
+معدلة وهي المكون الرئيسي) 
+Giant cells 
+Fusion of epithelioid cells; may be Langhans or foreign body type. 
+(خلايا كبيرة ناتجة عن اندماج الخلايا الظهارية؛ نوع لانغهانز أو نوع جسم غريب) 
+Lymphocytes Surround the granuloma (تحيط بالورم الحبيبي.) 
+Fibroblasts Form fibrous tissue around granuloma (تكوّن أنسجة ليفية حول الورم الحبيبي .) 
+ 
+         Tuberculosis (TB) – الدرن 
+Definition (التعريف) 
+A chronic infectious granulomatous inflammation caused by Mycobacterium 
+tuberculosis. 
+هو التهاب مزمن مُعدٍ حبيبي تسببه بكتيريا المتفطرة السلية  Mycobacterium tuberculosis). 
+ 
+Aetiology and Characteristics (السبب والخصائص) 
+• The causative agent: Mycobacterium tuberculosis. 
+المسبب :بكتيريا المتفطرة السلية. 
+• It is an acid-fast bacillus, detected by Ziehl–Neelsen stain. 
+هي عصية مقاومة للأحماض، تُكتشف بواسطة صبغة زيل–نيلسن.  
+• Structure: Protein core, polysaccharide layer, and lipid capsule. 
+التركيب :لب بروتيني ، طبقة سكرية، وغلاف دهني.
+
+Predisposing Factors (عوامل الخطورة) 
+• Poor nutrition and bad housing lead to low immunity. 
+سوء التغذية ورداءة السكن يؤديان إلى ضعف المناعة الطبيعية.  
+ 
+Mode of Transmission (طرق العدوى) 
+Type (النوع) Mode (طريقة الانتقال) 
+Human type 
+(النوع البشري) 
+From person to person by inhalation, ingestion, or inoculation (من
+إنسان لآخر عن طريق التنفس أو الأكل أو الجروح) 
+Bovine type 
+(النوع البقري) 
+From infected cows by milk ingestion (من الأبقار المصابة عبر شرب الحليب
+الملوث) 
+ 
+Pathogenesis (الآلية المرضية) 
+• First 3 weeks: Bacilli enter macrophages and multiply → person has no 
+symptoms. 
+خلال أول3 أسابيع: تدخل البكتيريا إلى الماكروفاج وتتضاعف → المريض لا تظهر عليه أعراض.  
+• After 3 weeks: Macrophages become activated, release cytokines, and cause 
+caseous necrosis (cheese-like cell death). 
+بعد3 أسابيع: تُفعّل الماكروفاج وتفرز سيتوكينات  مما يؤدي إلى نخر جبني (موت خلايا يشبه الجبن.) 
+ 
+Morphology (التركيب النسيجي) 
+• Grossly: Many small yellow-white granulomas. 
+شكليًا: تظهر حبيبات صغيرة صفراء بيضاء منتشرة. 
+• Microscopically:
+
+o Epithelioid cells (pale cytoplasm, vesicular nuclei). 
+o Langhans giant cells (nuclei arranged in a circle). 
+o Lymphocytes and fibrosis around the lesion. 
+o Caseous necrosis in the center (cheesy yellow material). 
+مجهريًا: خلايا ظهارية باهتة، خلايا عملاقة بلانغهانز نواتها على شكل دائرة، خلايا ليمفاوية
+وألياف تحيط، ونخر جبني في المنتصف. 
+ 
+      Types of Tuberculosis (أنواع الدرن) 
+1. Primary Tuberculosis (الدرن الأولي) 
+• Occurs in unsensitized (not previously exposed) persons. 
+يحدث في الأشخاص الذين لم يتعرضوا للبكتيريا من قبل.  
+• Common in children or immunocompromised adults. 
+يظهر غالبًا في الأطفال أو البالغين ضعيفي المناعة.  
+• Sites: 
+o Inhalation → Pulmonary TB (الرئة) 
+o Ingestion → Intestinal or Tonsillar TB (الأمعاء أو اللوزتين) 
+o Inoculation → Skin TB (الجلد) 
+ 
+2. Secondary Tuberculosis (الدرن الثانوي) 
+• Occurs in previously sensitized adults. 
+يحدث في البالغين الذين أُصيبوا بالعدوى سابقًا.  
+• Due to Reinfection or Reactivation of dormant bacteria. 
+ينتج عن عدوى جديدة أو تنشيط للبكتيريا الكامنة.
+
+• Triggered by: 
+o Low immunity (AIDS) 
+o Malignant tumors (مثل هودجكن) 
+o Immunosuppressant drugs (الأدوية المثبطة للمناعة.) 
+ 
+          Clinical Picture (الصورة السريرية) 
+• Contact with TB patient. 
+تاريخ مخالطة شخص مصاب بالدرن. 
+• Symptoms: 
+o Malaise, weight loss, night sweats, low fever. 
+تعب عام، فقدان وزن، تعرق ليلي، حمى خفيفة. 
+o Productive cough, chest pain, and haemoptysis (blood in sputum). 
+كحة مصحوبة ببلغم، ألم صدري، وبصاق دموي. 
+ 
+        Diagnosis (التشخيص) 
+1. Tuberculin test (اختبار التيوبركلين:) 
+Intradermal injection of tuberculin → Local induration = positive reaction. 
+حقن تحت الجلد لمستخلص البكتيريا → حدوث تورم موضعي يدل على وجود مناعة أو إصابة سابقة. 
+2. Biopsy (الخزعة:) 
+Shows granuloma but not always specific. 
+تُظهر وجود ورم حبيبي لكنه غير خاص بالدرن دائمًا. 
+3. TB Bacilli Identification (فحص البكتيريا:) 
+Using sputum, culture, or PCR — most accurate method. 
+يتم التعرف عليها في البلغم أو الزرع أو اختبار PCR — وهو الأدق في التشخيص.

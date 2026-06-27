@@ -1,0 +1,207 @@
+Upper Respiratory Tract Obstruction 
+انسداد الجهاز التنفسي العلوي 
+ 
+Definition and Nature of Obstruction 
+Upper respiratory tract obstruction (URTO) refers to a partial or complete blockage of 
+the airway above the vocal cords (larynx). 
+يشير انسداد الجهاز التنفسي العلوي إلى انسداد جزئي أو كامل في مجرى الهواء فوق الأحبال الصوتية. 
+This blockage includes the nose, pharynx, and larynx, and it can interfere with normal 
+breathing. 
+يشمل هذا الانسداد الأنف والبلعوم والحنجرة، ويمكن أن يعطل التنفس الطبيعي. 
+Obstruction can be categorized as: 
+يمكن تصنيف الانسداد إلى: 
+• Acute 
+حاد 
+• Chronic 
+مزمن 
+ 
+Pathophysiology 
+The obstruction is caused by anatomical narrowing or blockage due to swelling, a mass, 
+a foreign body, trauma, or infection. 
+ينتج الانسداد عن ضيق تشريحي أو انسداد بسبب تورم أو كتلة أو جسم غريب أو إصابة أو عدوى. 
+Key physiological consequences include: 
+تشمل النتائج الفسيولوجية الأساسية: 
+• The obstruction increases the resistance to airflow 
+يزيد الانسداد مقاومة تدفق الهواء
+
+• It prevents adequate oxygen from reaching the alveoli → hypoxia 
+يمنع وصول الأكسجين الكافي إلى الحويصلات الهوائية مما يؤدي إلى نقص الأكسجين 
+• Stridor (high-pitched breathing sound) 
+حدوث صوت ستريدور (صوت تنفّس عالي 
+• Prolonged obstruction → fatigue, respiratory failure, cardiac arrest 
+استمرار الانسداد يؤدي إلى إرهاق، فشل تنفسي، وتوقف القلب 
+ 
+Causes of Upper Respiratory Tract Obstruction 
+1. Infections: 
+العدوى: 
+o Tonsillitis 
+التهاب اللوز 
+o Epiglottitis 
+التهاب لسان المزمار 
+o Laryngitis 
+التهاب الحنجرة 
+2. Trauma: 
+الإصابات: 
+o Facial or neck injuries 
+إصابات الوجه أو الرقبة 
+o Inhalation injury 
+إصابات الاستنشاق 
+o Foreign body aspiration 
+استنشاق جسم غريب
+
+3. Congenital abnormalities: 
+العيوب الخلقية: 
+o Choanal atresia 
+انسداد الأنف الخلفي 
+o Laryngomalacia 
+ليونة الحنجرة 
+4. Neoplasms: 
+الأورام: 
+o Tumors (benign or malignant) 
+أورام حميدة أو خبيثة 
+5. Allergic reactions: 
+ردود الفعل التحسسية: 
+o Angioedema 
+وذمة وعائية 
+o Anaphylaxis 
+صدمة تحسسية 
+6. Foreign bodies 
+الأجسام الغريبة 
+7. Obstructive sleep apnea 
+انقطاع النفس أثناء النوم 
+8. Neurological conditions 
+الحالات العصبية: 
+o Vocal cord paralysis 
+شلل الأحبال الصوتية
+
+Types of Obstruction 
+Acute Obstruction: Sudden onset; requires urgent management. 
+الانسداد الحاد: يبدأ فجأة ويحتاج لتدخل عاجل. 
+Chronic Obstruction: Develops over time. 
+الانسداد المزمن: يتطور مع الوقت. 
+Partial Obstruction: Airflow is reduced but still present. 
+انسداد جزئي: يقل فيه الهواء ولكنه موجود. 
+Complete Obstruction: Total blockage → emergency. 
+انسداد كامل: توقف تام للهواء → حالة طارئة. 
+Intrinsic Obstruction: From inside the airway. 
+انسداد داخلي: بسبب شيء داخل المجرى الهوائي. 
+Extrinsic Obstruction: External compression. 
+انسداد خارجي: بسبب ضغط من خارج المجرى الهوائي. 
+ 
+Symptoms and Risk Factors 
+Symptoms: 
+الأعراض: 
+• Stridor — ستريدور 
+• Dyspnea — ضيق تنفس 
+• Cough — كحة 
+• Cyanosis — ازرقاق 
+• Hoarseness — بحة 
+• Difficulty swallowing — صعوبة بلع
+
+• Restlessness — توتر 
+• Tachypnea — تنفس سريع 
+Risk Factors: 
+عوامل الخطورة: 
+• Age — العمر 
+• Neurological disorders — اضطرابات عصبية 
+• Trauma/surgery — إصابة أو جراحة 
+• Medications — أدوية 
+• Irritants — مهيجات 
+• Recent URTI — عدوى حديثة 
+• Allergies/asthma — حساسية أو ربو 
+ 
+Complications 
+• Hypoxia → brain damage 
+نقص الأكسجين → تلف دماغي 
+• Respiratory arrest 
+توقف التنفس 
+• Cardiac arrest 
+توقف القلب 
+• Aspiration pneumonia 
+التهاب رئوي بالشفط 
+• Airway edema 
+تورم بالمجرى
+
+• Death 
+وفاة 
+ 
+Management 
+Medical: 
+علاج طبي: 
+• Oxygen therapy 
+أكسجين 
+• Corticosteroids 
+كورتيزون 
+• Antibiotics 
+مضادات حيوية 
+• Antihistamines 
+مضادات حساسية 
+Surgical/Emergency: 
+جراحي / طارئ: 
+• Endotracheal intubation 
+أنبوب حنجري 
+• Tracheostomy 
+فتح رغامى 
+Nursing Interventions: 
+تدخلات تمريض: 
+• Maintain a patent airway 
+الحفاظ على مجرى مفتوح
+
+• Upright position 
+وضعية جلوس 
+• Give oxygen 
+إعطاء أكسجين 
+• Prepare for emergency airway 
+الاستعداد للطوارئ 
+• Administer medications 
+إعطاء أدوية 
+• Monitor vital signs 
+متابعة العلامات الحيوية 
+• Calm environment 
+بيئة هادئة 
+• Encourage fluids 
+تشجيع السوائل 
+• Suction if needed 
+شفط إذا لزم 
+ 
+Upper Respiratory Tract Infection (URTI) 
+Classification 
+Upper respiratory tract infections affect the nose, sinuses, pharynx, and larynx. 
+تشمل عدوى الجهاز التنفسي العلوي الأنف والجيوب والبلعوم والحنجرة. 
+Lower respiratory infections affect bronchi and lungs. 
+والسفلى تشمل الشعب الهوائية والرئتين. 
+ 
+Causes
+
+• Viruses — فيروسات 
+• Bacteria — بكتيريا 
+• Fungi — فطريات 
+• Allergens — مسببات حساسية 
+• Pollutants — ملوثات 
+ 
+Prevention 
+• Handwashing 
+غسل اليدين 
+• Cover mouth/nose 
+تغطية الفم والأنف 
+• Avoid sick people 
+تجنب المرضى 
+• Mask 
+كمامة 
+• No smoking 
+عدم التدخين 
+• Vaccination 
+تطعيم 
+• Good nutrition & fluids 
+تغذية وسوائل جيدة 
+ 
+Treatment
+
+• Bacterial → antibiotics 
+البكتيرية → مضاد حيوي 
+• Viral → rest, fluids, antipyretics 
+الفيروسية → راحة وسوائل وخافض حرارة 
+• Symptomatic treatment 
+علاج للأعراض 
+• Severe → oxygen, hospitalization 
+الحادة → أكسجين ودخول مستشفى

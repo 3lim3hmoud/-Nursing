@@ -1,0 +1,171 @@
+Introduction
+Respiratory failure is a life-threatening condition 
+in which the respiratory system fails in one or 
+both of its gas-exchange functions:
+• Oxygenation (oxygen delivery to the blood)
+• Ventilation (removal of carbon dioxide)
+It can occur acutely (minutes to hours) or 
+chronically (days to years).
+
+1. Type I — Hypoxemic Respiratory Failure
+
+A. Based on Gas Exchange Abnormalities
+Characterized by:-
+• PaO₂ < 60 mmHg
+• Normal or low PaCO₂
+Caused by:-
+problems primarily with oxygenation.
+Mechanisms:
+• V/Q mismatch
+• Shunt
+• Diffusion impairment
+• Low inspired oxygen
+
+Common causes:
+• Pneumonia
+• Acute respiratory distress syndrome (ARDS)
+• Pulmonary edema
+• Pulmonary embolism
+• Interstitial lung diseases
+
+2. Type II — Hypercapnic Respiratory 
+Failure
+Characterized by:-
+• PaCO₂ > 45 mmHg
+• Often accompanied by acidemia (low pH)
+Caused by:-
+• hypoventilation (insufficient CO₂ removal).
+
+Mechanisms:
+• Decreased respiratory drive
+• Airflow obstruction
+• Neuromuscular weakness
+• Chest wall abnormalities
+
+Common causes:
+• COPD exacerbation
+• Asthma severe attack
+• Drug overdose (opioids, sedatives)
+• Neuromuscular disorders (myasthenia gravis, 
+Guillain-Barré)
+• Obesity hypoventilation syndrome
+
+3. Type III — Perioperative Respiratory 
+Failure
+• Due to atelectasis usually after surgery.
+• Occurs commonly after abdominal or thoracic 
+surgery.
+
+4. Type IV — Shock-related Respiratory 
+Failure
+• Associated with hypoperfusion, usually in 
+shock.
+• Respiratory muscles fatigue due to inadequate 
+oxygen delivery.
+
+A. V/Q Mismatch
+• Most common mechanism.
+• Portions of the lung receive oxygen but not 
+enough blood, or vice versa.
+• Improves with supplemental O₂.
+
+B. Shunt
+• Blood bypasses ventilated alveoli entirely.
+• Does NOT improve significantly with 
+oxygen therapy.
+Causes: 
+• pneumonia, 
+• ARDS, 
+• atelectasis.
+
+C. Diffusion Limitation
+• Thickened alveolar membrane prevents 
+efficient diffusion.
+• Seen in interstitial lung diseases.
+
+D. Hypoventilation
+• CO₂ accumulation → hypercapnia.
+• Causes include sedation, neuromuscular 
+impairment, or chest wall restriction.
+
+Symptoms:
+• Dyspnea
+• Tachypnea
+• Use of accessory muscles
+• Confusion or agitation (hypercapnia or 
+hypoxemia)
+• Cyanosis
+• Fatigue and inability to speak in full sentences
+
+Signs of impending respiratory arrest:
+• Altered mental status
+• Bradypnea or irregular breathing
+• Silent chest (severe airway obstruction)
+• Poor respiratory effort
+
+A. Arterial Blood Gas (ABG)
+• Confirms hypoxemia, hypercapnia, and 
+acid–base balance.
+• Essential for classifying the type of 
+respiratory failure.
+
+B. Chest Imaging
+Chest X-ray or CT to identify pneumonia, edema, 
+pneumothorax, or ARDS.
+C. Pulse Oximetry
+• Quick assessment of oxygen saturation.
+D. Additional Tests
+• CBC, electrolytes
+• ECG (evaluate for cardiac causes)
+• Pulmonary function tests (for chronic cases)
+
+6. Management Principles
+Always address:
+• 1-Airway
+• 2-Breathing
+• 3-Circulation
+A. General Support
+• Oxygen therapy to maintain adequate saturation
+• Treat underlying cause (infection, fluid overload, 
+bronchospasm, PE)
+
+B. Non-Invasive Ventilation (NIV)
+Useful in:
+1-COPD exacerbations
+2-Cardiogenic pulmonary edema
+3-Select neuromuscular patients
+Avoid if:
+1-Severe acidosis
+2-Hemodynamic instability
+3- Inability to protect airw
+
+C. Invasive Mechanical Ventilation
+Indicated when:
+• NIV fails
+• Airway protection is needed
+• Severe hypoxemia or hypercapnia with acidemia
+• Modes could include volume control, pressure support, 
+etc.
+
+D. Treating Underlying Causes
+• Antibiotics for pneumonia
+• Bronchodilators + steroids for COPD/asthma
+• Diuretics for pulmonary edema
+• Anticoagulation for pulmonary embolism
+• Reversal of drug overdose (e.g., naloxone)
+
+7. Complications
+• Barotrauma (pneumothorax)
+• Ventilator-associated pneumonia
+• Hypoxic organ damage
+• Cardiac arrhythmias
+• Respiratory acidosis/alkalosis
+
+8. Prognosis
+Depends on:
+• Cause (e.g., COPD vs ARDS)
+• Timeliness of intervention
+• Presence of multi-organ failure
+• Age and comorbidities
+• ARDS and sepsis-related respiratory failure have the 
+highest mortality.

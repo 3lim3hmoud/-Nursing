@@ -1,0 +1,122 @@
+Hypothyroidism (خمول الغدة الدرقية) 
+ 
+1. Definition and Physiology — التعريف والفيزيولوجيا 
+Hypothyroidism is a condition where the thyroid gland does not produce enough 
+thyroid hormones. 
+خمول الغدة الدرقية هو حالة لا تُنتج فيها الغدة الدرقية كميات كافية من الهرمونات الدرقية. 
+This affects many body functions, especially metabolism and growth. 
+تؤثر هذه الحالة على وظائف عديدة في الجسم، خصوصًا الأيض والنمو.  
+ 
+Thyroid Hormone Regulation (Chain of Command): 
+تنظيم هرمونات الغدة الدرقية (سلسلة الأوامر الهرمونية: 
+1. The Hypothalamus releases TRH (Thyrotropin-Releasing Hormone). 
+يقوم الوِطاء (تحت المهاد) بإفراز هرمون TRH (الهرمون المُطلق للثيروتروبين.) 
+2. TRH stimulates the Pituitary Gland to release TSH (Thyroid-Stimulating 
+Hormone). 
+يقوم TRH بتحفيز الغدة النخامية لإفراز TSH (الهرمون المنبّه للدرق.) 
+3. TSH stimulates the Thyroid Gland to produce T4 and T3. 
+يقوم TSH بتحفيز الغدة الدرقية لإنتاج T4 وT3. 
+4. T4 is converted into the active form T3 in body tissues. 
+يتم تحويل T4 إلى الشكل النشط T3 داخل أنسجة الجسم. 
+5. This process is controlled by a negative feedback loop. 
+وتُحافظ آلية التغذية الراجعة السلبية على توازن مستوى الهرمونات.  
+ 
+2. Prevalence and Causes — الانتشار والأسباب
+
+Hypothyroidism affects 1–4% of the population, and it’s more common in women (up 
+to 10 times more). 
+يُصيب خمول الغدة الدرقية حوالي 1–4٪ من السكان، وهو أكثر شيوعًا عند النساء بمقدار عشرة أضعاف تقريبًا.  
+ 
+Types and Causes by Site of Failure: 
+أنواع الخلل وأسبابه حسب موقع المشكلة: 
+• Primary (95%) — Thyroid Gland Failure: 
+أولي (بنسبة95 )%— فشل في الغدة الدرقية نفسها:  
+Caused by Hashimoto’s thyroiditis, iodine deficiency, or thyroid surgery. 
+سببه التهاب الغدة الدرقية الهاشيموتو، نقص اليود، أو استئصال الغدة جراحيًا.  
+• Secondary — Pituitary Failure: 
+ثانوي— فشل في الغدة النخامية:  
+Leads to decreased TSH secretion. 
+يؤدي إلى انخفاض إفراز  TSH. 
+• Tertiary — Hypothalamic Dysfunction: 
+ثالثي— خلل في الوِطاء (تحت المهاد):  
+Causes reduced TRH release. 
+يؤدي إلى انخفاض إفراز  TRH. 
+ 
+3. Classic Symptoms and Diagnosis — الأعراض والتشخيص 
+Symptoms are often nonspecific and can vary from mild to severe (myxedema coma). 
+الأعراض غالبًا غير محددة وقد تتراوح من بسيطة إلى شديدة  (غيبوبة الوذمة المخاطية.) 
+ 
+Common Symptoms: 
+الأعراض الشائعة:
+
+• Fatigue (tiredness) → الإرهاق والتعب 
+• Weight gain → زيادة الوزن 
+• Cold intolerance → عدم تحمل البرد 
+• Constipation → الإمساك 
+• Dry skin → جفاف الجلد 
+• Depression → الاكتئاب 
+ 
+Physical Signs: 
+العلامات الجسدية: 
+• Bradycardia: Slow heart rate → بطء ضربات القلب 
+• Goiter: Enlarged thyroid → تضخم الغدة الدرقية 
+• Delayed reflexes: Slow response → بطء المنعكسات العصبية 
+• Puffiness: Swelling of face or eyelids → تورم في الوجه أو الجفون 
+ 
+Diagnosis (How it’s confirmed): 
+التشخيص (كيفية التأكيد: 
+• Primary Hypothyroidism: High TSH + Low T4. 
+الخمول الأولي: ارتفاع TSH مع انخفاض T4. 
+• Subclinical Hypothyroidism: High TSH + Normal T4. 
+الخمول تحت السريري: ارتفاع TSH مع T4 طبيعي. 
+• Antibody Tests (TPO): Detect autoimmune causes. 
+اختبار الأجسام المضادة TPO): لتأكيد السبب المناعي الذاتي مثل هاشيموتو.
+
+4. Treatment and Monitoring — العلاج والمتابعة 
+Main Treatment: 
+العلاج الأساسي: 
+• Levothyroxine (synthetic T4) is the standard drug. 
+ليفوثيروكسين T4 الصناعي) هو العلاج الأساسي. 
+• The dose is individualized and adjusted based on TSH results. 
+الجرعة تُحدد لكل مريض على حدة ويتم تعديلها بناءً على نتائج  TSH. 
+ 
+Prognosis and Follow-Up: 
+التوقعات والمتابعة: 
+• Most patients improve and symptoms resolve. 
+أغلب المرضى يتحسنون وتختفي الأعراض. 
+• Regular TSH testing is required to prevent under- or over-treatment. 
+يجب متابعة  TSH بانتظام لتجنب جرعة ناقصة أو زائدة من العلاج.  
+• Untreated hypothyroidism may cause infertility, heart disease, and memory 
+problems. 
+في حال عدم العلاج  قد يؤدي إلى  العقم وأمراض القلب وضعف الذاكرة.  
+ 
+5. Congenital Hypothyroidism — خمول الغدة الدرقية الخِلقي  
+Occurs in newborns and must be detected early by newborn screening. 
+يحدث عند حديثي الولادة ويجب اكتشافه مبكرًا عبر فحص المواليد.  
+Early treatment within weeks prevents mental and physical disability. 
+العلاج المبكر خلال الأسابيع الأولى يمنع الإعاقة العقلية أو الجسدية.  
+Such patients often need lifelong monitoring and hormone replacement. 
+وغالبًا يحتاج هؤلاء المرضى إلى متابعة وعلاج هرموني مدى الحياة .
+
+6. Conclusion — الخلاصة 
+Early diagnosis and hormone replacement ensure good outcomes. 
+التشخيص المبكر وتعويض الهرمون يضمنان نتائج جيدة.  
+Patient education about correct medication use and symptom monitoring is essential. 
+يُعد تثقيف المريض حول استخدام الدواء ومتابعة الأعراض أمرًا ضروريًا . 
+Collaboration between patients and healthcare providers helps maintain thyroid 
+balance. 
+التعاون بين المريض والفريق الطبي ضروري للحفاظ على توازن الغدة الدرقية.  
+ 
+Analogy (Simple Comparison) — تشبيه مبسط 
+Think of the hypothalamus–pituitary–thyroid axis like a home thermostat system: 
+تخيل محور الوطاء–النخامة–الدرقية مثل منظم الحرارة في المنزل:  
+• Hypothalamus = The sensor that feels temperature changes. 
+الوطاء  =الحساس الذي يشعر بتغير الحرارة. 
+• Pituitary = The controller that sends commands. 
+النخامة (الغدة النخامية  =وحدة التحكم التي ترسل الأوامر. 
+• Thyroid = The furnace that produces heat (hormones). 
+الغدة الدرقية  =الفرن الذي ينتج الحرارة (الهرمونات). 
+If the furnace (thyroid) breaks down, the controller (pituitary) keeps sending high signals 
+(↑TSH) — but no heat is produced (↓T3/T4). 
+إذا تعطّل الفرن (الغدة الدرقية)، فإن وحدة التحكم (النخامة) تستمر في إرسال إشارات قوية TSH) — ولكن
+الحرارة T3/T4) لا تُنتَج.

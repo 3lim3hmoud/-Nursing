@@ -1,0 +1,169 @@
+PNEUMONIA – الالتهاب الرئوي (تبسيط كامل 
+1) Definition – التعريف 
+Pneumonia is inflammation of the lung tissue caused by bacteria, viruses, fungi, or 
+mycobacteria. 
+الالتهاب الرئوي هو التهاب يحدث في نسيج الرئة بسبب بكتيريا أو فيروسات أو فطريات أو الميكوبكتيريا. 
+ 
+2) Classification – التصنيف 
+Community-Acquired Pneumonia (CAP) 
+Happens outside the hospital or within the first 48 hours of admission. 
+يحدث خارج المستشفى أو خلال أول٨٤ ساعة من دخول المريض.  
+Hospital-Acquired Pneumonia (HAP) 
+Occurs after 48 hours of being admitted; includes ventilator-associated pneumonia. 
+يحدث بعد مرور٨٤ ساعة في المستشفى، ويشمل الالتهاب الناتج عن أجهزة التنفس الصناعي.  
+Immunocompromised Host Pneumonia 
+Happens in people with weak immune systems. 
+يحدث في الأشخاص الذين يعانون من ضعف في المناعة. 
+Aspiration Pneumonia 
+Happens when food or liquid enters the lungs by mistake. 
+يحدث عندما يدخل الطعام أو السوائل إلى الرئة بالخطأ بدل ما تروح للمعدة. 
+ 
+3) Causes / Risk Factors – عوامل الخطر 
+Conditions like smoking, COPD, cancer, and old age increase the risk. 
+أشياء مثل التدخين ومرض COPD والسرطان وكبر السن تزيد من خطر الإصابة.
+
+Immobility and poor swallowing also increase the risk. 
+قلة الحركة وضعف البلع يزيدان أيضًا من احتمال حدوث المرض. 
+Having NG/OG tubes or being NPO increases risk of aspiration. 
+وجود أنابيب تغذية أو الامتناع عن الأكل يزيد خطر دخول السوائل للرئة. 
+Supine position, anesthesia, alcohol, and weak immunity also contribute. 
+النوم على الظهر، البنج، الكحول، وضعف المناعة تزيد من احتمالية الإصابة. 
+ 
+4) Pathophysiology – آلية المرض 
+The alveoli fill with inflammatory fluid which reduces oxygen exchange. 
+الحويصلات الهوائية تمتلئ بسائل التهابي مما يقلل تبادل الأكسجين. 
+This leads to poor ventilation and sometimes bronchospasm. 
+وهذا يسبب ضعفًا في التهوية وقد يؤدي لتشنج الشعب الهوائية. 
+ 
+5) Clinical Manifestations – الأعراض 
+Fatigue, fast breathing, cough, and thick (purulent) sputum. 
+إجهاد، تنفس سريع، سعال، وبلغم صديدي. 
+Elderly may show confusion, dehydration, or unusual behavior. 
+كبار السن قد يظهر عليهم ارتباك أو جفاف أو سلوك غير طبيعي. 
+ 
+6) Assessment & Diagnosis – التقييم والتشخيص 
+Physical examination and checking symptoms. 
+فحص بدني وملاحظة الأعراض. 
+Chest X-ray, sputum test, and blood culture. 
+أشعة صدر، تحليل بلغم، وزراعة دم.
+
+7) Prevention – الوقاية 
+Vaccination for high-risk groups like elderly and immunocompromised. 
+التطعيم للمسنين والذين يعانون من ضعف المناعة. 
+Encourage coughing and clearing secretions. 
+تشجيع المريض على الكحة وطرد الإفرازات. 
+Suctioning and chest physiotherapy if needed. 
+الشفط والعلاج التنفسي عند الحاجة. 
+Reposition the patient frequently. 
+تغيير وضع المريض باستمرار. 
+Elevate the head of bed at least 30°. 
+رفع رأس السرير٠٣ درجة أو أكثر.  
+Good oral hygiene and stop smoking. 
+نظافة الفم الجيدة والإقلاع عن التدخين. 
+ 
+8) Medical Treatment – العلاج الطبي 
+Antibiotics if there is bacterial infection. 
+مضادات حيوية عند وجود عدوى بكتيرية. 
+Hydration to replace fluid loss. 
+تعويض السوائل بسبب الجفاف. 
+Antipyretics for fever. 
+أدوية خافضة للحرارة. 
+Warm inhalation helps reduce irritation. 
+الاستنشاق الدافئ يساعد على تهدئة الشعب.
+
+Oxygen if hypoxia occurs. 
+أكسجين عند وجود نقص في الأكسجين. 
+ 
+9) Nursing Process – دور التمريض 
+Nursing Diagnoses – تشخيصات التمريض 
+Ineffective airway clearance due to secretions. 
+عدم فعالية تطهير مجرى الهواء بسبب الإفرازات. 
+Activity intolerance due to poor breathing. 
+عدم تحمل النشاط بسبب صعوبة التنفس. 
+Risk of dehydration due to fever and rapid breathing. 
+خطر الجفاف بسبب الحمى والتنفس السريع. 
+Lack of knowledge about treatment. 
+نقص معرفة المريض بخطة العلاج. 
+ 
+Nursing Interventions – التدخلات التمريضية 
+Encourage deep breathing and coughing. 
+تشجيع التنفس العميق والكحة. 
+Use chest physiotherapy and correct positioning. 
+استخدام العلاج التنفسي ووضعية الجسم الصحيحة. 
+Increase fluids (unless contraindicated). 
+زيادة شرب السوائل إذا ما كان هناك مانع. 
+Educate patient and family about disease and care plan. 
+توعية المريض وأسرته عن المرض وخطة العلاج.
+
+Expected Outcomes – النتائج المتوقعة 
+Better airway clearance. 
+تحسن تطهير مجرى الهواء. 
+More energy and less fatigue. 
+زيادة النشاط وتقليل الإجهاد. 
+Adequate hydration. 
+ترطيب جيد للجسم. 
+No complications. 
+عدم حدوث مضاعفات. 
+ 
+    TUBERCULOSIS (TB) – الدرن (تبسيط كامل 
+1) Definition – التعريف 
+TB is an infectious disease caused by Mycobacterium tuberculosis. 
+الدرن مرض معدٍ تسببه بكتيريا الميكوبكتيريوم تيوبركولوزيس. 
+Affects mainly the lungs but can spread to other organs. 
+يؤثر أساسًا على الرئتين ويمكن أن ينتشر لأعضاء أخرى. 
+Spread through airborne droplets from coughing. 
+ينتقل عبر الرذاذ المتطاير أثناء السعال. 
+ 
+2) Stages – المراحل 
+Early infection → Primary TB → Latent TB → Secondary TB. 
+عدوى مبكرة → درن أولي → درن كامن → درن ثانوي. 
+ 
+3) Manifestations – الأعراض
+
+Cough for more than 3 weeks, weight loss, fever, night sweats. 
+كحة لأكثر من3 أسابيع، فقدان وزن، حرارة، عرق ليلي.  
+Chest pain, fatigue, hemoptysis, dyspnea. 
+ألم صدر، إرهاق، بصق دم، ضيق نفس. 
+ 
+4) Diagnosis – التشخيص 
+History & physical exam. 
+تاريخ مرضي وفحص بدني. 
+Sputum culture and chest X-ray. 
+زراعة بلغم وأشعة صدر. 
+Mantoux test: 0.1 ml PPD → read after 48–72 hours; positive if ≥10 mm induration. 
+اختبار مانتو: حقن0.1 مل تحت الجلد ويُقرأ بعد48–72 ساعة؛ يعتبر إيجابي إذا كان التورم10 مم.  
+ 
+5) Treatment – العلاج 
+Treatment is done using the RIPE regimen. 
+العلاج يتم باستخدام نظام RIPE. 
+First 2 months: Rifampicin + Isoniazid + Pyrazinamide + Ethambutol. 
+أول شهرين: ريفامبيسين + أيزونيازيد + بيرازيناميد + إيثامبوتول. 
+Next 4–6 months: Rifampicin + Isoniazid only. 
+بعدها٤–٦ شهور: ريفامبيسين + أيزونيازيد فقط.  
+Some patients may need extra antibiotics (amikacin…etc). 
+بعض المرضى يحتاجون مضادات إضافية مثل أميكاسين. 
+ 
+6) Nursing Interventions – تدخلات التمريض
+
+Give TB medications on time. 
+إعطاء أدوية الدرن في مواعيدها. 
+Apply respiratory isolation and proper ventilation. 
+عزل المريض تنفسيًا مع تهوية جيدة للغرفة. 
+Monitor breathing pattern and symptoms. 
+متابعة التنفس والأعراض. 
+Encourage smoking cessation. 
+تشجيع المريض على الإقلاع عن التدخين. 
+Provide high-protein and high-vitamin diet. 
+توفير غذاء عالي البروتين والفيتامينات. 
+Collect 3 early-morning sputum samples. 
+جمع3 عينات بلغم صباحية.  
+Increase fluid intake to loosen secretions. 
+زيادة السوائل لتخفيف الإفرازات. 
+Perform chest physiotherapy frequently. 
+عمل علاج تنفسي باستمرار. 
+ 
+7) Complications – المضاعفات 
+Pleurisy, meningitis, bone infection, GI or GU infection. 
+التهاب الغشاء المحيط بالرئة، التهاب السحايا، عدوى في العظام، وعدوى جهاز هضمي أو بولي. 
+Bronchiectasis. 
+تمدد الشعب الهوائية.

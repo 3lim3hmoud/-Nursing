@@ -1,0 +1,435 @@
+Outlines:
+Introduction
+Pathophysiology
+Common Causes of ARDS
+Stages of ARDS
+signs and symptoms 
+Assessment:
+Physical examination
+Tests used in the diagnosis of ARDS
+Treatment
+Complications
+Collaborative care for the Patient with (ARDS).
+
+Introduction:
+-Acute respiratory distress syndrome (ARDS): 
+is a life-threatening condition that causes 
+lung swelling and fluid build up in the air sacs. 
+-The fluid buildup also makes the lungs heavy 
+and stiff, and the lungs' ability to expand is 
+severely decreased.
+
+Definition:
+Adult respiratory distress syndrome (ARDS), also called 
+acute respiratory distress syndrome, is a type of lung 
+(pulmonary) failure that may result from any disease 
+that causes large amounts of fluid to collect in the 
+lungs.
+ARDS is not itself a specific disease, but a syndrome, a 
+group of symptoms and signs that make up one of the 
+most important forms of lung or respiratory failure
+
+The basic fault is a breakdown of the 
+barrier, or membrane, that normally 
+keeps fluid from leaking out of the 
+small blood vessels of the lung into the 
+breathing sacs (the alveoli).
+
+Common Causes of ARDS:
+Direct lung injury (pulmonary ARDS):
+1-Breathing in (aspiration) of the stomach 
+contents when regurgitated, or salt water or fresh 
+water from nearly drowning. 
+2-Massive trauma, with severe injury to any part 
+of the body.
+
+3-A blood clotting disorder called disseminated 
+intravascular coagulation, in which blood clots 
+form in vessels throughout the body, including 
+the lungs.
+4-A large amount of fat entering the circulation 
+and traveling to the lungs, where it lodges in 
+small blood vessels, injuring the cells lining 
+the vessel walls.
+
+Indirect injury (nonpulmonary ARDS):
+1-Infection by a virus or bacterium, or sepsis, a 
+widespread infection that gets into the blood. 
+2-An overdose of a narcotic drug, a sedative, or, 
+.rarely, aspirin& alcohol overdose
+3- Inhaling smoke, as in a fire; toxic materials in 
+the air, such as ammonia or hydrocarbons; or 
+too much oxygen, which itself can injure the 
+lungs.
+
+4-Inflammation of the pancreas (pancreatitis), 
+when blood proteins, called enzymes, pass to 
+the lungs and injure lung cells
+5-Severe burn injury.
+6- Shock with persistently low blood pressure 
+may not in itself cause ARDS, but it can be an 
+important factor.
+7-cardiopulmonary bypass.
+
+PATHOPHYSIOLOGY:
+ARDS is a clinical syndrome associated with a 
+variety of pathological findings. the pathology 
+most commonly associated with ARDS is diffuse 
+alveolar damage(DAD).
+DAD is characterized by a diffuse inflammation of 
+lung parenchyma. The triggering insult to the 
+parenchyma usually results in an initial release of 
+cytokines and other inflammatory mediators, 
+secreted by local epithelial and endothelial cells.
+
+Diagnostic Test 
+Results
+Signs and 
+symptoms
+Stage& pathological 
+change
+• ABG: Respiratory 
+alkalosis
+• CXR: No 
+radiographic 
+changes
+• Chemistry: Blood 
+results may vary 
+depending on
+precipitating cause 
+(e.g., elevated white 
+blood cell
+count, changes in 
+hemoglobin)
+• Hemodynamic: 
+Elevated PAP , 
+normal or low PAWP
+• Restlessness, 
+dyspnea, Tachypnea
+• Moderate to 
+extensive use of 
+accessory 
+respiratory
+muscles
+•
+Stage 1 (first 12 
+hr):No evidence 
+of cellular 
+damage.
+
+• ABG: Decreased 
+SaO2 despite 
+supplemental 
+oxygen
+administration
+• CXR: Patchy 
+bilateral infiltrates
+• Chemistry: 
+Increasing acidosis 
+(metabolic) 
+depending
+on severity of onset
+• Hemodynamic: 
+Increasingly 
+elevated PAP , 
+normal
+or low PAWP
+• Severe dyspnea, 
+Tachypnea, 
+cyanosis, 
+tachycardia
+• Coarse bilateral 
+crackles
+• Decreased air 
+entry to dependent 
+lung fields
+• Increased 
+agitation and 
+restlessness
+Stage 2 (24 hr) 
+Exudative stage: 
+neutrophil
+infiltration 
+,vascular 
+congestion & 
+interstitial 
+edema.
+
+• ABG: Worsening 
+hypoxemia
+• CXR: Air 
+bronchograms, 
+decreased lung volumes
+• Chemistry: Signs of 
+other organ 
+involvement:
+decreased platelets and 
+hemoglobin, increased
+white blood cell count, 
+abnormal clotting 
+factors
+• Hemodynamic: 
+Unchanged or becoming 
+increasingly
+worse
+• Decreased air 
+entry bilaterally
+• Impaired 
+responsiveness 
+(may be related to 
+sedation
+necessary to 
+maintain 
+mechanical 
+ventilation)
+• Decreased gut 
+motility
+• Generalized 
+edema
+• Poor skin integrity 
+and breakdown
+Stage 3 (2–10 days) 
+proliferative stage: 
+cell proliferation& 
+increase interstitial 
+and alveolar 
+edema.
+
+• ABG: Worsening 
+hypoxemia and 
+hypercapnia
+• CXR: Air 
+bronchograms, 
+pneumonthoraces
+• Chemistry: Persistent 
+signs of other organ
+involvement: decreased 
+platelets and 
+hemoglobin,
+increased white blood 
+cell count, abnormal
+clotting factors
+• Hemodynamic: 
+Unchanged or becoming 
+increasingly
+worse
+• Symptoms of 
+MODS, including 
+decreased urine
+output, poor gastric 
+motility, symptoms 
+of
+impaired 
+coagulation
+OR
+• Single-system 
+involvement of the 
+respiratory system
+with gradual 
+improvement over 
+time
+Stage 4 (>10 
+days)Fibrotic stage: 
+Thickening of 
+interstitial wall with 
+fibrosis &cyst 
+formation.
+
+Tests used in the diagnosis of ARDS include:
+1- The chest x ray: may be normal in the early 
+stages, but, in a short time, fluid will be seen 
+where it does not belong. The two lungs are 
+about equally affected.
+2- A heart of normal size indicates that the 
+problem actually is ARDS and not heart failure 
+by echocardiogram (heart ultrasound).
+
+3-Arterial blood gas (ABGs): Characterized 
+by refractory hypoxemia (decrease  Pao2
+unresponsive to increase  Fio2). Initially 
+pH >7.45 because of hyperventilation. As 
+ARDS worsens, pH falls to <7.35 
+because of respiratory acidosis.
+
+4-CBC and blood chemistries
+5-Evaluation for possible infections
+6-Cultures and analysis of sputum 
+specimens
+
+Treatment:
+1-General
+Acute respiratory distress syndrome is 
+usually treated with mechanical 
+ventilation in the Intensive Care Unit. 
+Ventilation is usually delivered through 
+oro-tracheal intubation, or tracheostomy
+whenever prolonged ventilation (≥2 
+weeks) is deemed inevitable
+
+Mechanical ventilation:
+Use PEEP to decrease intrapulmonary shunt.
+Lower tidal volume to avoid lung over distension.
+Accept hypercapnia.
+Minimize FiO2 to decrease risk of oxygen toxicity
+PEEP inARDS:
+Improves oxygenation by reducing shunt.
+May protect against ventilator induced lung injury.
+The high pressures and other breathing machine settings required 
+to treat ARDS often require that the patient be deeply sedated 
+with medications.
+
+Prone position
+Distribution of lung infiltrates in acute 
+respiratory distress syndrome is non-
+uniform. Repositioning into the prone 
+position (face down) might improve 
+oxygenation by relieving atelectasis and 
+improving perfusion.
+
+Treatment of the underlying cause is imperative, as 
+it tends to maintain the ARDS picture.
+Appropriate antibiotic therapy must be administered 
+as soon as microbiological culture results are 
+available. Empirical therapy may be appropriate if 
+local microbiological surveillance is efficient. 
+More than 60% ARDS patients experience a 
+(nosocomial) pulmonary infection either before or 
+after the onset of lung injury.
+
+Fluid management
+Several studies have shown that pulmonary 
+function and outcome are better in patients 
+that lost weight or pulmonary wedge pressure
+was lowered by diuresis or fluid restriction.
+
+Corticosteroids
+-study has found significant improvement in   
+ARDS using modest doses of corticosteroids.
+-The initial regimen consists of 
+methylprednisolone 2 mg/kg daily. After 3-5 
+days a response must be apparent
+-In 1-2 weeks the dose can be tapered to 
+methylprednisolone 0.5-1.0 mg daily.
+-Patients with ARDS do not benefit from high-
+dose corticosteroids.
+
+Nitric oxide
+Inhaled nitric oxide (NO) potentially acts as 
+selective pulmonary vasodilator. Rapid binding 
+to hemoglobin prevents systemic effects. It 
+should increase perfusion of better ventilated 
+areas
+
+Complications:
+•Pulmonary: pulmonary embolism (PE), 
+pulmonary fibrosis, ventilator-associated 
+pneumonia (V AP).
+•Gastrointestinal: hemorrhage (ulcer), 
+dysmotility, pneumoperitoneum, bacterial 
+translocation.
+•Cardiac: arrhythmias, myocardial dysfunction.
+
+•Renal: acute renal failure (ARF), positive fluid 
+balance.
+•Mechanical: vascular injury, pneumothorax
+(by placing pulmonary artery catheter), 
+tracheal injury/stenosis (result of intubation 
+and/or irritation by endotracheal tube.
+•Nutritional: malnutrition (catabolic state), 
+electrolyte deficiency
+
+Many people who survive ARDS suffer memory 
+loss or other problems with thinking after they 
+recover. This is related to brain damage caused 
+by reduced access to oxygen while the lungs 
+were malfunctioning
+
+Collaborative care for the Patient with Acute 
+Respiratory Distress Syndrome (ARDS):
+1- Oxygenation/Ventilation:
+1-Auscultate breath sounds every 2 to 4 hours and 
+as required.
+2-Intubate to maintain oxygenation and ventilation 
+and decrease work of breathing.
+3-Suction endotracheal airway when appropriate 
+4-Hyperoxygenate and hyperventilate before and 
+after each suction pass.
+5-Monitor airway pressures every 1 to 2 hours.
+6-Monitor airway pressures after suctioning.
+
+7-Administer bronchodilators and mucolytics.
+8-Obtain a PEEP study to determine optimal 
+oxygen delivery.
+9-Consider a change in ventilator mode to 
+prevent barotrauma and volutrauma.
+10-Turn side-to-side every 2 hours.
+11-Perform chest physiotherapy every 4 hours, if 
+tolerated.
+12-Consider prone positioning.
+13-Take chest x-ray daily.
+
+2- Circulation/Perfusion
+▪ Assess hemodynamic effects of initiation of mechanical 
+ventilation (e.g., decreased venous return and cardiac output).
+▪ Monitor electrocardiogram (ECG) for dysrhythmias related to 
+hypoxemia.
+▪ Assess hemodynamic effects of changes in inspiratory pressure 
+settings, tidal volume, PEEP, and ventilatory modes.
+▪ Assess effects of ventilator setting changes on cardiac output 
+and oxygen delivery.
+▪ Administer intravascular volume to maintain preload.
+▪ Monitor vital signs every 1 to 2 hours.
+
+3- Fluids/Electrolytes
+• Monitor hydration status to reduce viscosity of lung secretions.
+• Monitor intake and output
+•
+• Avoid use of nephrotoxic substances and overuse of diuretics.
+• Administer fluids and diuretics to maintain intravascular 
+volume and renal function
+• Replace electrolytes as ordered.
+• Monitor blood urea nitrogen (BUN), creatinine, serum 
+osmolarity, and urine electrolytes as required.
+
+4- Mobility/Safety
+Initiate deep venous thrombosis (DVT) prophylaxis.
+Reposition frequently.
+Mobilize to chair when acute phase is past, hemodynamic stability and 
+hemostasis achieved.
+Consult physiotherapist.
+Conduct range-of-motion and strengthening exercises when able.
+Monitor mechanical ventilator alarms and settings and patient 
+parameters (e.g., tidal volume) every 1 to 2 hours.
+
+5- Skin Integrity
+Assess skin every 4 hours and each time patient is 
+repositioned.
+Turn every 2 hours.
+Consider pressure relief/reduction mattress, kinetic 
+therapy bed, or prone positioning.
+Use Braden Scale to assess risk of skin breakdown.
+
+6- Nutrition
+• Provide enteral nutrition within 24 hours.
+• Consult dietician or nutritional support 
+service.
+• Monitor lipid intake.
+• Monitor albumin, prealbumin, transferrin, 
+cholesterol, triglycerides, and glucose.
+
+Comfort/Pain Control
+• Objectively assess comfort/pain using a pain 
+scale.
+• Provide analgesia and sedation as indicated by 
+assessment.
+• Monitor patient cardiopulmonary and pain 
+response to medication.
+• Provide continuous or routine (every 1 to 2 
+hours) intravenous sedation and analgesia.
+
+8- Psychosocial care
+• Assess vital signs during treatments, 
+discussions, and the like.
+• Cautiously administer sedatives.
+• Consult social services, clergy, as appropriate.
+• Provide for adequate rest and sleep.

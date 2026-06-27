@@ -1,0 +1,1077 @@
+1. Acid-Base Imbalance and ABG Interpretation 
+Multiple Choice Questions (MCQ): 
+• What is the main function of the buffer system in the body?  
+o A. Increase blood pressure 
+o B. Neutralize bacteria 
+o C. Regulate acid-base balance  
+o D. Produce energy 
+• What is the effect of increased exhalation of CO₂ during metabolic acidosis?  
+o A. Increases the acid level 
+o B. Decreases the acid level 
+o C. Increases blood glucose 
+o D. Has no effect 
+• Which of the following is one way the kidneys help maintain acid-base 
+balance?  
+o A. Excrete bicarbonate into urine 
+o B. Reabsorb bicarbonate from urine 
+o C. Produce hydrogen ions 
+o D. Store carbon dioxide 
+• Which organ compensates more quickly for acid-base imbalance?  
+o A. Kidneys 
+o B. Liver 
+o C. Lungs 
+o D. Pancreas 
+• A patient has the following arterial blood gases: PaCO2 33, HCO3 15, pH 7.23. 
+Which condition below is presenting?  
+o A. Metabolic alkalosis partially compensated 
+o B. Metabolic acidosis partially compensated
+
+o C. Respiratory alkalosis not compensated 
+o D. Metabolic acidosis fully compensated 
+• A patient with COPD has the following blood gases: PCO2 59, pH 7.26, HCO3 42. 
+Which of the following conditions is presenting?  
+o A. Respiratory alkalosis 
+o B. Respiratory acidosis 
+o C. Metabolic alkalosis 
+o D. Metabolic acidosis 
+Short Answer Questions: 
+• Causes of Respiratory Acidosis 
+• Causes Metabolic Acidosis 
+• Steps in Arterial Blood Gas Interpretation 
+ 
+2. Triage 
+Multiple Choice Questions (MCQ): 
+• Which of the following patients should be given the highest priority during 
+triage?  
+o A. Mild abdominal pain 
+o B. A sprained ankle 
+o C. Chest pain and difficulty breathing 
+o D. A patient with a cold 
+• What is the triage category for a patient who needs immediate life-saving 
+intervention?  
+o A. Non-urgent 
+o B. Urgent 
+o C. Emergent 
+o D. Delayed
+
+• Which healthcare professional typically performs triage in the ED?  
+o A. Pharmacist 
+o B. Lab Technician 
+o C. Registered Nurse 
+o D. Radiologist 
+• What is the first and most critical goal of an effective triage system?  
+o A. Minimize documentation 
+o B. Identify life-threatening conditions 
+o C. Discharge stable patients early 
+o D. Perform diagnostic tests 
+• A patient experiencing cardiac arrest falls under which triage category?  
+o A. Nonurgent 
+o B. Urgent 
+o C. Emergent 
+o D. Delayed 
+Short Answer Questions: 
+• Triage priority Levels (methods) 
+ 
+3. Acute Respiratory Distress Syndrome (ARDS) 
+Multiple Choice Questions (MCQ): 
+• How does ARDS affect the lungs?  
+o A) It increases the lungs' ability to exchange gases 
+o B) It prevents proper oxygen and carbon dioxide transfer 
+o C) It causes high blood pressure 
+o D) It leads to swelling in the legs
+
+• Which of the following the immune cells quickly migrate into the inflamed lung 
+parenchyma in ARDS?  
+o A. B-lymphocytes and macrophages 
+o B. Neutrophils and T-lymphocytes 
+o C. Eosinophils and basophils 
+o D. Red blood cells and platelets 
+• What is the main cause of Acute Respiratory Distress Syndrome (ARDS)?  
+o A) Bacterial infection in the brain 
+o B) Severe fluid buildup in the lungs 
+o C) Low blood sugar 
+o D) Joint inflammation 
+• What is the primary treatment for ARDS?  
+o A) Antibiotics only 
+o B) Respiratory support with mechanical ventilation 
+o C) Heart surgery 
+o D) Physical therapy 
+• What clinical consequence results from impaired gas exchange in ARDS?  
+o A) Hyperglycemia 
+o B) Hypoxia 
+o C) Bradycardia 
+o D) Hypercalcemia 
+• What long-term complication can develop as a result of this ongoing lung 
+injury?  
+o A) Pulmonary embolism 
+o B) Lung fibrosis 
+o C) Asthma 
+o D) Pleural effusion
+
+• Why should nurses avoid overexerting ARDS patients during care?  
+o A. It increases risk of bleeding 
+o B. It can cause dehydration 
+o C. It increases oxygen demand and fatigue 
+o D. It raises blood sugar levels 
+Short Answer Questions: 
+• Definition and causes, risk factors for ARDS 
+• Nursing management ARDS 
+ 
+4. Pulmonary Embolism 
+Multiple Choice Questions (MCQ): 
+• Which condition is most likely to cause a fat embolism?  
+o A. Amniotic fluid aspiration 
+o B. IV drug use 
+o C. Long bone fracture 
+o D. Central line insertion 
+• Which of the following medications is used to dissolve clots in PE?  
+o A. Bronchodilators 
+o B. Fibrinolytic therapy 
+o C. Sedatives 
+o D. Analgesics 
+• What is the most common source of thrombotic emboli in pulmonary 
+embolism?  
+o A. Pulmonary veins 
+o B. Deep veins of the legs 
+o C. Left atrium
+
+o D. Coronary arteries 
+• A massive PE typically occludes what percentage of the pulmonary vascular 
+bed?  
+o A. Less than 20% 
+o B. 25–30% 
+o C. More than 40% 
+o D. 100% 
+• Which of the following cardiac chambers is primarily affected by the 
+hemodynamic changes in PE?  
+o A. Left atrium 
+o B. Right ventricle 
+o C. Left ventricle 
+o D. Aorta 
+• What is the major hemodynamic consequence of a significant pulmonary 
+embolism?  
+o A. Pulmonary edema 
+o B. Pulmonary hypertension 
+o C. Aortic dissection 
+o D. Left ventricular hypertrophy 
+• Causes of Venous Stasis 
+• Causes of      Pulmonary Embolism 
+• Nursing Management 
+ 
+5. Mechanical Ventilation 
+Multiple Choice Questions (MCQ): 
+• SIMV is often used for:  
+o A. Initial full ventilatory support
+
+o B. Weaning patients from mechanical ventilation 
+o C. Treating respiratory arrest 
+o D. Sedated, paralyzed patients 
+• Which of the following is a common cause of a low-pressure alarm?  
+o A. Patient coughing 
+o B. Circuit or tubing disconnection 
+o C. Bronchospasm 
+o D. Mucus plugging 
+• 1. Acute ventilatory failure, a primary indication for mechanical ventilation, is 
+generally defined as: 
+A) pH > 7.45 and PaCO₂ < 35 mm Hg 
+B) pH ≤ 7.25 with PaCO₂ ≥ 50 mm Hg 
+C) PaO₂ > 80 mm Hg on room air 
+D) Respiratory rate of 12–20 breaths per minute 
+• 2. The usual Tidal Volume (Vt) selected for a patient on a ventilator is: 
+A) 2–4 ml/kg body weight 
+B) 5–8 ml/kg body weight 
+C) 10–15 ml/kg body weight 
+D) Always 500 ml regardless of weight 
+• 3. What is the primary function of Positive End-Expiratory Pressure (PEEP)? 
+A) To increase the respiratory rate 
+B) To maintain alveolar recruitment at the end of expiration 
+C) To cool the air delivered to the lungs 
+D) To decrease the oxygen concentration 
+• 4. The standard Inspiration to Expiration ratio (I:E Ratio) set on a ventilator is 
+usually: 
+A) 2:1
+
+B) 1:1 
+C) 1:2 
+D) 1:4 
+• 5. Which type of ventilator does NOT require endotracheal intubation? 
+A) Invasive Positive Pressure Ventilator 
+B) Negative Pressure Ventilators (e.g., Iron Lung) 
+C) Controlled Mandatory Ventilation (CMV) 
+D) Volume-cycled ventilators 
+• 6. Synchronized Intermittent Mandatory Ventilation (SIMV) is characterized by: 
+A) Providing all of the patient's minute ventilation without allowing spontaneous 
+breaths 
+B) Synchronizing mandatory breaths with the patient’s own inspirations and 
+allowing spontaneous breaths between them 
+C) Only providing pressure support without a set respiratory rate 
+D) Requiring a negative pressure environment to function 
+• 7. A high-pressure alarm on a ventilator may be triggered by: 
+A) Circuit disconnection 
+B) Leak in the endotracheal tube cuff 
+C) Secretions in the airway or the patient biting the tube 
+D) Hole in the ventilator tubing 
+• 8. Ventilator-Associated Pneumonia (VAP) is defined as pneumonia that 
+develops: 
+A) Within 12 hours of intubation 
+B) 48–72 hours after endotracheal intubation 
+C) Only after the patient is extubated 
+D) Immediately upon arrival in the ICU 
+• 9. To prevent ventilator-associated pneumonia and aspiration, the head of the 
+patient’s bed should be elevated to:
+
+A) 5–10 degrees 
+B) 15–20 degrees 
+C) 30–45 degrees 
+D) 90 degrees 
+10. During a weaning trial, the process should be stopped and the patient 
+returned to rest settings if: 
+A) Oxygen saturation (SaO₂) is 95% 
+B) Heart rate is stable at 80 beats per minute 
+C) Respiratory rate is sustained at greater than 35 breaths per minute 
+D) Systolic blood pressure is 120 mm Hg 
+ 
+6. Shock 
+Multiple Choice Questions (MCQ): 
+• Shock is best defined as:  
+o A. Decrease in blood pressure 
+o B. Inadequate tissue perfusion leading to cellular dysfunction 
+o C. Failure of the heart to pump blood 
+o D. Decrease in blood volume 
+• The main cause of tissue hypoxia in shock is:  
+o A. Increased oxygen consumption 
+o B. Imbalance between oxygen supply and demand  
+o C. Decrease in red blood cell count 
+o D. Excessive vasodilation 
+• The hallmark of all types of shock is:  
+o A. Hypotension 
+o B. Ineffective tissue perfusion
+
+o C. Tachycardia 
+o D. Metabolic acidosis 
+• Hypovolemic shock results from:  
+o A. Myocardial infarction 
+o B. Loss of blood or plasma volume  
+o C. Widespread vasodilation 
+o D. Severe allergic reaction 
+• Cardiogenic shock occurs due to:  
+o A. Loss of sympathetic tone 
+o B. Decreased intravascular volume 
+o C. Inability of the heart to pump effectively  
+o D. Bacterial infection 
+• Septic shock is a type of:  
+o A. Cardiogenic shock 
+o B. Hypovolemic shock 
+o C. Distributive shock  
+o D. Obstructive shock 
+• Neurogenic shock results from:  
+o A. Massive blood loss 
+o B. Loss of sympathetic nervous system tone  
+o C. Hypersensitivity reaction 
+o D. Infection 
+• Which of the following is not a distributive shock?  
+o A. Septic shock 
+o B. Neurogenic shock 
+o C. Anaphylactic shock
+
+o D. Cardiogenic shock  
+• In the initial stage of shock, cells switch from:  
+o A. Aerobic to anaerobic metabolism  
+o B. Anaerobic to aerobic metabolism 
+o C. Protein to fat metabolism 
+o D. Glucose to lipid metabolism 
+• The major byproduct of anaerobic metabolism is:  
+o A. Pyruvic acid 
+o B. Lactic acid  
+o C. Citric acid 
+o D. Amino acids 
+• During the compensatory stage, the sympathetic nervous system causes:  
+o A. Vasodilation 
+o B. Decreased heart rate 
+o C. Vasoconstriction and increased heart rate  
+o D. Increased urine output 
+• Activation of the renin-angiotensin-aldosterone system (RAAS) during shock 
+causes:  
+o A. Vasodilation 
+o B. Sodium and water retention  
+o C. Decreased blood volume 
+o D. Decreased blood pressure 
+• During the progressive stage of shock, failure of the sodium-potassium pump 
+leads to:  
+o A. Cellular dehydration 
+o B. Cellular swelling and dysfunction  
+o C. Increased ATP production
+
+o D. Improved perfusion 
+• The refractory stage of shock is characterized by:  
+o A. Reversible cellular injury 
+o B. Effective compensatory mechanisms 
+o C. Irreversible organ failure and MODS  
+o D. Increased cardiac output 
+• A mean arterial pressure (MAP) less than ____ mmHg indicates inadequate 
+tissue perfusion.  
+o A. 100 
+o B. 80 
+o C. 60  
+o D. 50 
+• A patient in shock has restlessness, confusion, and agitation. These signs 
+indicate:  
+o A. Adequate cerebral perfusion 
+o B. Early cerebral hypoxia  
+o C. Severe dehydration 
+o D. Respiratory alkalosis 
+• Decreased urine output in shock is due to:  
+o A. Decreased renal perfusion 
+o B. Increased ADH 
+o C. Increased renal blood flow 
+o D. Excessive fluid therapy 
+• Which laboratory finding is expected in progressive shock?  
+o A. Decreased lactic acid 
+o B. Increased liver enzymes  
+o C. Increased urine output
+
+o D. Normal BUN and creatinine 
+• Disseminated Intravascular Coagulation (DIC) may develop during:  
+o A. Initial stage 
+o B. Compensatory stage 
+o C. Progressive stage  
+o D. Recovery stage 
+• The first priority in managing shock is:  
+o A. Administer IV fluids 
+o B. Maintain airway and oxygenation  
+o C. Give vasopressors 
+o D. Monitor urine output 
+• Fluid resuscitation in hypovolemic shock is best initiated with:  
+o A. Blood transfusion 
+o B. Colloid solution 
+o C. Crystalloid solution (e.g., normal saline)  
+o D. Dextrose solution 
+• Vasoconstrictor drugs such as norepinephrine are used to:  
+o A. Increase heart rate only 
+o B. Decrease systemic vascular resistance 
+o C. Increase blood pressure and perfusion  
+o D. Decrease cardiac workload 
+• Positive inotropic drugs (e.g., dobutamine) help by:  
+o A. Decreasing contractility 
+o B. Improving cardiac output 
+o C. Decreasing oxygen delivery 
+o D. Reducing venous return
+
+Case-Based Questions: 
+• Case 1 (Hypovolemic Shock): A 45-year-old man presents with severe vomiting 
+and diarrhea for three days. BP: 85/50 mmHg, HR: 120 bpm, cold clammy skin, 
+and urine output < 20 mL/hr.  
+o Type: 
+ Hypovolemic shock. 
+o Pathophysiology: 
+ Loss of extracellular fluid → ↓ venous return → ↓ CO → ↓ tissue 
+perfusion. 
+o Management: 
+ IV crystalloids, oxygen therapy, monitor urine output, treat cause 
+(rehydration). 
+• Case 2 (Septic Shock): A 65-year-old diabetic woman with pneumonia becomes 
+hypotensive (BP 80/45 mmHg), febrile, and tachycardic.  
+o Type:  
+Septic shock (distributive). 
+o Reason for Vasodilation:  
+Due to release of endotoxins and cytokines → loss of vascular tone. 
+o First-line vasopressor:  
+Norepinephrine. 
+• Case 3 (Neurogenic Shock): A patient after a spinal cord injury develops 
+hypotension and bradycardia. Skin is warm and dry.  
+o Type: 
+ Neurogenic shock. 
+o Mechanism of bradycardia: 
+ Loss of sympathetic tone → unopposed vagal stimulation → bradycardia. 
+o Management:  
+Maintain airway, fluids, vasopressors, atropine for bradycardia.
+
+• Case 4 (Anaphylactic Shock): A patient develops sudden hypotension, dyspnea, 
+and wheezing after receiving IV antibiotics.  
+o Type:  
+Anaphylactic shock. 
+o Drug of choice:  
+Epinephrine (IM/IV). 
+o Supportive treatments:  
+Oxygen therapy, IV fluids, antihistamines, corticosteroids. 
+Short Answer/Essay Questions: 
+1. Definition  of shock 
+Shock is a condition where blood and oxygen do not reach the tissues enough, causing 
+organ failure. 
+2. Types of Shock , causes  
+• Hypovolemic Shock: 
+Loss of blood or fluids (bleeding, dehydration). 
+• Cardiogenic Shock: 
+The heart cannot pump blood properly (heart attack). 
+• Distributive Shock: 
+Blood is poorly distributed in the body (septic shock). 
+• Obstructive Shock: 
+Blood flow is blocked (pulmonary embolism). 
+3. Stages of Shock 
+1. Initial: 
+Cellular changes only, no symptoms. 
+2. Compensatory: 
+Body tries to maintain blood flow. 
+3. Progressive: 
+Body fails to compensate.
+
+4. Refractory: 
+Irreversible organ failure. 
+4. Early Compensatory Mechanisms 
+• Increased heart rate. 
+• Vasoconstriction to maintain blood pressure. 
+• Decreased urine output due to fluid retention. 
+5. Cellular Changes (Progressive Stage) 
+• Cells use anaerobic metabolism. 
+• Lactic acid increases. 
+• Acidosis and cell damage occur. 
+6. Laboratory Findings 
+• ↑ Lactic acid → tissue hypoxia 
+• ↑ BUN & creatinine → kidney damage 
+• ↑ Liver enzymes → liver damage 
+• ↓ Blood glucose → liver failure 
+• Bleeding / DIC → clotting disorder 
+7. Management Goals 
+• Maintain tissue perfusion. 
+• Ensure oxygenation. 
+• Keep airway open. 
+ 
+7. Chest Trauma 
+Multiple Choice Questions (MCQ): 
+• Paradoxical chest wall motion is:  
+o A) Outward movement during inspiration 
+o B) Inward movement during inspiration (Answer: B)
+
+o C) Normal chest wall movement 
+o D) Chest expansion is equal 
+• Which ribs are most commonly fractured in chest trauma?  
+o A) 1–3 
+o B) 5–9 (Answer: B) 
+o C) 10–12 
+o D) All ribs equally 
+• Fractures of the first three ribs are dangerous because they may injure:  
+o A) Heart 
+o B) Subclavian artery (Answer: B) 
+o C) Liver 
+o D) Diaphragm 
+• Which nursing intervention is most important for rib fracture management?  
+o A) Strict bed rest 
+o B) Encourage deep breathing and coughing (Answer: B) 
+o C) Avoid analgesics 
+o D) Apply rigid chest binders 
+• Flail chest is defined as:  
+o A) One rib fracture 
+o B) Three or more ribs fractured in two or more places (Answer: B) 
+o C) Any rib fracture with lung contusion 
+o D) Rib fracture with hemothorax 
+• The most appropriate management of flail chest includes:  
+o A) Immediate surgery for all cases 
+o B) Pain control, oxygen therapy, mechanical ventilation if needed 
+(Answer: B)
+
+o C) Only chest binders 
+o D) Restriction of movement 
+• Pneumothorax is:  
+o A) Blood in pleural space 
+o B) Air in pleural space (Answer: B) 
+o C) Fluid in alveoli 
+o D) Collapse of trachea 
+• Which of the following is NOT a type of pneumothorax?  
+o A) Simple 
+o B) Tension 
+o C) Hemothorax (Answer: C) 
+o D) Open 
+• The hallmark sign of tension pneumothorax is:  
+o A) Bradycardia 
+o B) Mediastinal shift (Answer: B) 
+o C) Hemoptysis 
+o D) Cough 
+• Hemothorax is:  
+o A) Air in pleural space 
+o B) Blood in pleural space (Answer: B) 
+o C) Infection in lung 
+o D) Pulmonary edema 
+• Massive hemothorax is defined as:  
+o A) >500 mL blood 
+o B) >1000 mL blood 
+o C) >1500 mL blood (Answer: C)
+
+o D) Any visible blood in pleura 
+• Management of hemothorax includes:  
+o A) Only oxygen 
+o B) Chest tube drainage and fluid resuscitation (Answer: B) 
+o C) Analgesics only 
+o D) Antibiotics only 
+• Cardiac tamponade results in:  
+o A) Accumulation of air around heart 
+o B) Fluid accumulation in pericardial sac compressing the heart (Answer: 
+B) 
+o C) Myocardial infarction 
+o D) Pneumothorax 
+• Beck’s triad includes:  
+o A) Hypertension, bradycardia, muffled heart sounds 
+o B) Hypotension, jugular vein distension, muffled heart sounds (Answer: 
+B) 
+o C) Dyspnea, chest pain, cough 
+o D) Fever, hypotension, tachycardia 
+• Key nursing intervention for chest trauma?  
+o A) Monitor vitals and SpO₂ (Answer: A) 
+o B) Avoid oxygen 
+o C) Restrict fluids 
+o D) Bed rest only 
+• Why are opioids used cautiously in chest trauma?  
+o A) Cause hypotension only 
+o B) Cause respiratory depression, worsening hypoxemia (Answer: B) 
+o C) Reduce pain completely
+
+o D) Increase heart rate 
+• Chest X-ray in chest trauma can detect:  
+o A) Rib fractures 
+o B) Pneumothorax/hemothorax 
+o C) Mediastinal shift 
+o D) All of the above (Answer: D) 
+• Why is ECG important in chest trauma?  
+o A) To detect fractures 
+o B) To detect dysrhythmias (Answer: B) 
+o C) To check for hemothorax 
+o D) Not needed 
+True/False Questions: 
+• Lower rib fractures can injure the spleen or liver. True 
+• Oxygen therapy alone is sufficient for a large tension pneumothorax. False 
+Short Answer Questions: 
+• List common clinical manifestations of rib fractures.  
+(Answer: Pain, tenderness, bruising, crepitus, muscle spasm, shallow breathing) 
+• Name three complications of flail chest.  
+(Answer: Pulmonary contusion, atelectasis, respiratory compromise, hypoxemia, 
+pneumonia) 
+• Emergency management for tension pneumothorax?  
+(Answer: Needle decompression followed by chest tube insertion) 
+• Clinical signs of hemothorax? 
+(Answer: Hypovolemic shock, decreased/absent breath sounds, dull percussion, 
+dyspnea, distended neck veins) 
+• Emergency treatment for cardiac tamponade?  
+(Answer: Pericardiocentesis)
+
+• How should a patient with a chest tube be positioned?  
+(Answer: Comfortable, upright if possible, avoid kinking the tube) 
+• ABG findings in flail chest?  
+(Answer: Hypoxemia, hypercapnia, respiratory acidosis) 
+ 
+8. Code Management 
+Multiple Choice Questions (MCQ): 
+• Which of the following best defines cardiac arrest?  
+o a) Slow heart rate 
+o b) Cessation of effective cardiac activity (Answer: b) 
+o c) Chest pain only 
+o d) Shortness of breath 
+• The first step in one-person CPR is to:  
+o a) Start chest compressions 
+o b) Check responsiveness and call for help (Answer: b) 
+o c) Give 2 breaths 
+o d) Attach AED 
+• The recommended sequence for CPR according to AHA guidelines is:  
+o a) ABC – Airway, Breathing, Compressions 
+o b) CAB – Compressions, Airway, Breathing (Answer: b) 
+o c) BAC – Breathing, Airway, Compressions 
+o d) BCA – Breathing, Compressions, Airway 
+• What is the correct compression rate for adult CPR?  
+o a) 50–60/min 
+o b) 60–80/min 
+o c) 100–120/min (Answer: c)
+
+o d) 140–160/min 
+• Which medication is indicated for pulseless ventricular tachycardia or 
+ventricular fibrillation unresponsive to defibrillation?  
+o a) Atropine 
+o b) Epinephrine 
+o c) Amiodarone (Answer: c) 
+o d) Lidocaine 
+• What is the primary role of the code team leader?  
+o a) Perform chest compressions only 
+o b) Document the event 
+o c) Direct and coordinate the resuscitation efforts (Answer: c) 
+o d) Administer medications 
+• Which of the following statements about defibrillation is true?  
+o a) It is used for asystole 
+o b) It delivers an electrical shock to terminate arrhythmias (Answer: b) 
+o c) It is only used in children 
+o d) It must be repeated every 30 seconds regardless of rhythm 
+• During CPR, the chest should be compressed to a depth of:  
+o a) 1 inch (2.5 cm) 
+o b) 2 inches (5 cm) (Answer: b - for adults) 
+o c) 3 inches (7.5 cm) 
+o d) 4 inches (10 cm) 
+• Which of the following is a key goal of post-resuscitation care?  
+o a) Maintain airway and oxygenation 
+o b) Monitor cardiac rhythm 
+o c) Prevent neurological injury
+
+o d) All of the above (Answer: d) 
+• Therapeutic hypothermia after cardiac arrest is used to:  
+o a) Stop heart function temporarily 
+o b) Reduce neurological injury (Answer: b) 
+o c) Increase blood pressure 
+o d) Replace CPR 
+• Which of the following rhythms is shockable by a defibrillator?  
+o a) Asystole 
+o b) Pulseless electrical activity 
+o c) Ventricular fibrillation (Answer: c) 
+o d) Bradycardia 
+• How many ventilations should be given after 30 compressions in adult CPR?  
+o a) 1 
+o b) 2 (Answer: b) 
+o c) 3 
+o d) 5 
+• What is the recommended hand position for adult chest compressions?  
+o a) Center of the chest, lower half of the sternum (Answer: a) 
+o b) Left side of the chest 
+o c) Right side of the chest 
+o d) Upper chest near the clavicle 
+• Which of the following is an early sign of cardiac arrest?  
+o a) Chest pain 
+o b) Sudden collapse (Answer: b) 
+o c) Fever 
+o d) Nausea
+
+• What is the recommended compression-to-ventilation ratio for two-person CPR 
+in adults?  
+o a) 15:2 
+o b) 30:2 (Answer: b) 
+o c) 50:2 
+o d) 100:2 
+• Which device provides continuous chest compressions without fatigue?  
+o a) AED 
+o b) Manual defibrillator 
+o c) Mechanical chest compression device (e.g., LUCAS) (Answer: c) 
+o d) Oxygen bag 
+• Which of the following is NOT part of the primary survey in CPR?  
+o a) Airway assessment 
+o b) Breathing assessment 
+o c) Circulation assessment 
+o d) Full neurological exam (Answer: d) 
+• What is the recommended depth of chest compressions in children?  
+o a) 1 inch (2.5 cm) 
+o b) 1.5 inches (4 cm) (Answer: b) 
+o c) 2 inches (5 cm) 
+o d) 3 inches (7.5 cm) 
+• Which of the following drugs is first-line for asystole?  
+o a) Epinephrine (Answer: a) 
+o b) Amiodarone 
+o c) Lidocaine 
+o d) Atropine
+
+• During a code, who is responsible for recording all interventions and times?  
+o a) Code team leader 
+o b) CPR provider 
+o c) Recorder/scribe (Answer: c) 
+o d) Pharmacist 
+True/False Questions: 
+• CPR should be initiated within 4–6 minutes of cardiac arrest. True 
+• The compression-to-breath ratio for adult one-person CPR is 30:2. True 
+• Atropine is indicated for asystole as the first-line drug. False 
+ (Answer: Epinephrine is first-line) 
+• Automated external defibrillators (AEDs) can analyze cardiac rhythm and advise 
+whether a shock is needed. True 
+• Endotracheal intubation is considered a BLS measure. False  
+(Answer: it is ALS) 
+• High-quality CPR requires minimal interruptions in chest compressions. True 
+• Children with cardiac arrest usually present with a primary cardiac cause. False 
+(Answer: often respiratory causes) 
+• Epinephrine is contraindicated in ventricular fibrillation. False 
+• Chest compressions should be paused only for defibrillation or rhythm check. 
+True 
+• CPR is ineffective if performed on a firm surface. False  
+(Answer: firm surface is recommended) 
+Short Answer Questions: 
+• Define cardiac arrest and explain why immediate intervention is necessary. 
+(Answer: sudden cessation of effective cardiac activity) 
+• List at least 5 causes of cardiopulmonary arrest. (Answer: MI, arrhythmias, 
+respiratory failure, drowning, trauma)
+
+• Explain the roles of at least three members of the code team.  
+(Answer: Leader, Compressor, Recorder, Airway provider) 
+• Describe the steps to establish an airway and provide ventilations during CPR. 
+• Discuss the rationale for therapeutic hypothermia in post-cardiac arrest 
+patients. (Answer: Cooling reduces metabolic demand) 
+• What are the main differences between defibrillation and cardioversion? 
+• Name three medications used during a code and their indications.  
+(Answer: Epinephrine, Amiodarone, Atropine) 
+• Explain the importance of using a backboard during CPR.  
+(Answer: Provides a firm surface) 
+• Describe how to assess responsiveness in an unresponsive patient. 
+• List the signs of effective chest compressions during CPR. 
+• Explain the steps to operate an AED. 
+• What precautions should be taken when defibrillating a patient with an 
+implanted pacemaker? 
+• Describe the post-resuscitation monitoring process. 
+• Explain the significance of early defibrillation in ventricular fibrillation. 
+• Describe the difference in CPR technique between adults, children, and infants. 
+• Discuss the role of oxygen therapy during and after CPR. 
+• Explain how to manage a choking adult patient before cardiac arrest occurs. 
+• Describe the steps to convert an irregular heart rhythm using synchronized 
+cardioversion. 
+• List complications that can occur during CPR and how to minimize them. 
+• Explain the importance of debriefing and documentation after a code. 
+ 
+9. Respiratory Failure 
+Multiple Choice Questions (MCQ):
+
+• Which of the following drug overdose is commonly associated with extra-
+pulmonary respiratory failure?  
+o A. Antibiotics 
+o B. Opioids (Answer: B) 
+o C. Antihistamines 
+o D. Diuretics 
+• Which of the following is an extra-pulmonary cause of respiratory failure?  
+o A) Pneumonia 
+o B) Pulmonary embolism 
+o C) Myasthenia gravis (Answer: C) 
+o D) ARDS 
+• Respiratory failure is defined as:  
+o A) Inability to produce surfactant 
+o B) Inability to maintain adequate gas exchange (Answer: B) 
+o C) Chronic lung inflammation 
+o D) Excessive alveolar ventilation 
+• Type I respiratory failure is characterized by:  
+o A) Low PaO₂ and high PaCO₂ 
+o B) Low PaO₂ and normal PaCO₂ (Answer: B) 
+o C) High PaO₂ and low PaCO₂ 
+o D) High PaO₂ and high PaCO₂ 
+• Type II respiratory failure is also called:  
+o A) Oxygenation failure 
+o B) Hypercapnic ventilatory failure (Answer: B) 
+o C) Alveolar shunting 
+o D) Perfusion failure
+
+• A patient with PaO₂ 55 mmHg, PaCO₂ 52 mmHg, and pH 7.28 has:  
+o A) Type I respiratory failure 
+o B) Type II respiratory failure (Answer: B) 
+o C) Normal ABG 
+o D) Metabolic alkalosis 
+• Which of the following is an intra-pulmonary cause?  
+o A) Spinal cord trauma 
+o B) COPD (Answer: B) 
+o C) Guillain-Barre syndrome 
+o D) Obesity 
+• Pulmonary embolism primarily affects:  
+o A) Upper airways 
+o B) Pulmonary circulation (Answer: B) 
+o C) Neuromuscular system 
+o D) Pleura 
+• Massive obesity may lead to respiratory failure by:  
+o A) Alveolar-capillary shunting 
+o B) Upper airway obstruction 
+o C) Decreased thoracic compliance (Answer: C) 
+o D) Pulmonary edema 
+• The hallmark of acute respiratory failure is:  
+o A) Hypercapnia 
+o B) Hypoxemia (Answer: B) 
+o C) Respiratory alkalosis 
+o D) Pulmonary hypertension 
+• Alveolar hypoventilation leads to:
+
+o A) Hypoxemia with hypercapnia (Answer: A) 
+o B) Hypoxemia with normal PaCO₂ 
+o C) Hypercapnia only 
+o D) Alkalosis 
+• A V/Q mismatch occurs when:  
+o A) Ventilation exceeds perfusion or vice versa (Answer: A) 
+o B) Alveoli collapse completely 
+o C) Oxygen dissolves in plasma 
+o D) CO₂ is adequately removed 
+• Intrapulmonary shunt is defined as:  
+o A) Blood bypassing non-ventilated alveoli (Answer: A) 
+o B) Reduced oxygen demand 
+o C) Increased cardiac output 
+o D) Alveolar hyperventilation 
+• Pulmonary edema contributes to hypoxemia primarily by:  
+o A) Increasing cardiac output 
+o B) Flooding alveoli, causing shunting (Answer: B) 
+o C) Reducing respiratory rate 
+o D) Increasing V/Q ratio 
+• Which of the following is a CNS manifestation of respiratory failure?  
+o A) Bradycardia 
+o B) Restlessness (Answer: B) 
+o C) Edema 
+o D) Cyanosis 
+• Pulmonary signs of respiratory failure include all except:  
+o A) Dyspnea
+
+o B) Tachypnea 
+o C) Use of accessory muscles 
+o D) Bradycardia (Answer: D) 
+• Skin changes in respiratory failure include:  
+o A) Jaundice 
+o B) Cyanosis and pallor (Answer: B) 
+o C) Petechiae 
+o D) Erythema 
+• A patient with respiratory acidosis may show:  
+o A) Hyperventilation 
+o B) Tachypnea initially 
+o C) CNS depression 
+o D) All of the above (Answer: D) 
+• Which diagnostic test is gold standard for confirming respiratory failure?  
+o A) Chest X-ray 
+o B) Arterial Blood Gas (ABG) (Answer: B) 
+o C) Pulmonary function test 
+o D) Bronchoscopy 
+• Which ABG result indicates Type II respiratory failure?  
+o A) PaO₂ 60 mmHg, PaCO₂ 40 mmHg 
+o B) PaO₂ 55 mmHg, PaCO₂ 52 mmHg (Answer: B) 
+o C) PaO₂ 80 mmHg, PaCO₂ 35 mmHg 
+o D) PaO₂ 90 mmHg, PaCO₂ 30 mmHg 
+• Bronchoscopy in respiratory failure is used for:  
+o A) Measuring PaO₂ 
+o B) Airway surveillance and specimen retrieval (Answer: B)
+
+o C) Nutrition support 
+o D) Ventilation 
+• Thoracic CT scan is useful to:  
+o A) Determine electrolyte levels 
+o B) Detect underlying structural lung disease (Answer: B) 
+o C) Improve oxygenation 
+o D) Measure PaCO₂ 
+• The first priority in acute respiratory failure is:  
+o A) Nutrition support 
+o B) Correcting underlying cause (Answer: B) 
+o C) Administering diuretics 
+o D) Physical therapy 
+• Oxygen therapy should maintain SpO₂ at:  
+o A) 70–80% 
+o B) 88–95% (Answer: B) 
+o C) 60–75% 
+o D) 100% at all times 
+• Non-invasive ventilation (NIV) is indicated for:  
+o A) All patients with Type II failure 
+o B) Patients with mild to moderate hypoxemia without severe acidosis 
+(Answer: B) 
+o C) Patients needing surgery 
+o D) Only patients with pneumonia 
+• Bronchodilators help by:  
+o A) Reducing inflammation 
+o B) Relaxing smooth muscles to improve ventilation (Answer: B)
+
+o C) Increasing cardiac output 
+o D) Correcting acidosis 
+• Corticosteroids are used to:  
+o A) Reduce airway inflammation (Answer: A) 
+o B) Increase CO₂ retention 
+o C) Promote sedation 
+o D) Improve cardiac output 
+• Sodium bicarbonate is indicated in respiratory failure when:  
+o A) pH <7.10 and refractory to other therapy (Answer: A) 
+o B) pH >7.45 
+o C) PaCO₂ <40 mmHg 
+o D) SpO₂ >95% 
+• Patient positioning in unilateral lung disease should be:  
+o A) Healthy lung in dependent position (Answer: A) 
+o B) Diseased lung in dependent position 
+o C) Supine at all times 
+o D) Prone only 
+• Frequent repositioning helps:  
+o A) Prevent hypoxemia and improve V/Q matching (Answer: A) 
+o B) Cause fatigue 
+o C) Increase cardiac workload 
+o D) Reduce secretions 
+• How often should incentive spirometry be performed?  
+o A) Once a day 
+o B) At least 10 deep breaths per hour (Answer: B) 
+o C) Only when patient is hypoxic
+
+o D) Every 4–6 hours 
+• Deep breathing exercises are recommended to:  
+o A) Reduce oxygen consumption 
+o B) Prevent atelectasis (Answer: B) 
+o C) Reduce pulmonary perfusion 
+o D) Increase heart rate 
+• Coughing should be avoided unless:  
+o A) Patient has fever 
+o B) Secretions are present (Answer: B) 
+o C) SpO₂ >95% 
+o D) Patient is on oxygen 
+• Patient education should include all except:  
+o A) Breathing techniques 
+o B) Smoking cessation 
+o C) Energy conservation 
+o D) Only medications without lifestyle changes (Answer: D) 
+• Signs of pulmonary infection the patient should monitor include:  
+o A) Sputum color change, fever, shortness of breath (Answer: A) 
+o B) Headache only 
+o C) Abdominal pain 
+o D) Palpitations 
+• Ischemic anoxic encephalopathy is caused by:  
+o A) Hypercapnia, hypoxemia, acidosis (Answer: A) 
+o B) Hypotension only 
+o C) Infection 
+o D) Electrolyte imbalance
+
+• Venous thromboembolism can be prevented by:  
+o A) Immobility 
+o B) Low molecular weight heparin and pneumatic compression (Answer: 
+B) 
+o C) Diuretics 
+o D) High salt diet 
+• Dysrhythmias in respiratory failure are commonly caused by:  
+o A) Hyperoxemia 
+o B) Hypoxemia, acidosis, electrolyte imbalance (Answer: B) 
+o C) Diuresis 
+o D) Low blood pressure only 
+• Gastrointestinal bleeding risk can be reduced by:  
+o A) Histamine receptor antagonists or proton pump inhibitors (Answer: 
+A) 
+o B) NSAIDs 
+o C) High protein diet 
+o D) Mechanical ventilation 
+• Patients should be taught to use which breathing technique to improve 
+ventilation?  
+o A) Pursed-lip breathing (Answer: A) 
+o B) Shallow chest breathing 
+o C) Breath-holding only 
+o D) Rapid hyperventilation 
+• Energy conservation techniques help by:  
+o A) Increasing oxygen demand 
+o B) Reducing fatigue and oxygen consumption (Answer: B) 
+o C) Preventing infection
+
+o D) Decreasing PaCO₂ only 
+• Pulmonary rehabilitation includes:  
+o A) Exercise, breathing techniques, and patient education (Answer: A) 
+o B) Surgery only 
+o C) Diet changes only 
+o D) Bed rest only 
+• When should enteral nutrition be initiated for malnourished patients on 
+mechanical ventilation?  
+o A) Within 24 hours (Answer: A) 
+o B) After 3 days 
+o C) Only after extubation 
+o D) Not required 
+• What is the goal of oxygen therapy in respiratory failure?  
+o A) PaO₂ 55–80 mmHg, SpO₂ 88–95% (Answer: A) 
+o B) PaO₂ <50 mmHg 
+o C) SpO₂ <80% 
+o D) PaO₂ >100 mmHg always 
+• Patients with alveolar hypoventilation should be positioned:  
+o A) Semirecumbent or sitting (Answer: A) 
+o B) Supine 
+o C) Lying on diseased lung 
+o D) Prone only 
+• Which electrolyte imbalance commonly contributes to dysrhythmias in 
+respiratory failure?  
+o A) Hyperkalemia or hypokalemia (Answer: A) 
+o B) Hypernatremia only 
+o C) Hypocalcemia only
+
+o D) Hypermagnesemia only 
+• Mechanical ventilation tidal volume recommended is:  
+o A) 6 mL/kg (Answer: A) 
+o B) 10 mL/kg 
+o C) 12 mL/kg 
+o D) 15 mL/kg 
+• Frequent monitoring with pulse oximetry helps to:  
+o A) Warn of desaturation early (Answer: A) 
+o B) Replace ABG analysis 
+o C) Prevent infection 
+o D) Increase tidal volume 
+• Neuromuscular blocking agents may be used to:  
+o A) Facilitate ventilation and decrease oxygen consumption (Answer: A) 
+o B) Reduce fever 
+o C) Treat hypoxemia 
+o D) Increase heart rate 
+• The most important preventive intervention for reoccurrence of respiratory 
+failure is:  
+o A) Smoking cessation and management of precipitating factors (Answer: 
+A) 
+o B) Surgery 
+o C) Bed rest 
+o D) High-flow oxygen at home 
+• Short Answer Questions: 
+• Complications respiratory failure 
+• Clinical Manifestations 
+• Causes
+
+10. Pain Management 
+Multiple Choice Questions (MCQ): 
+• Behavior Pain Scale (BPS) assess which of the following:  
+o a- Facial Expression 
+o b- Upper Limbs 
+o c- Compliance with Ventilation 
+o d- All of the above 
+• Types of pain affect nerve ending of the organs include which of the following:  
+o a-Acute pain 
+o b-Chronic pain 
+o c-Neuropathic pain 
+o d- Nociceptive pain 
+• Chronic pain characterized by:  
+o a- Duration less than 6 months 
+o b- Occur with acute onset 
+o c- Duration more than 6 months 
+o d- Need rapid management 
+• Neuropathic Pain characterized by:  
+o Occur with acute onset 
+o Arises from a lesion or disease affecting CNS 
+o Duration more than 6 months 
+o Involves organs such as the heart, stomach, and liver. 
+• Grimacing in the facial expression scale indicate:  
+o Indicate patient in rest 
+o Indicate patient in moderate pain
+
+o Indicate patient in sever pain 
+o Non of the above 
+• 6-Sighing, moaning in Vocalization (non intubated patients) indicate which of 
+the following:  
+o a-Patient is relaxed 
+o b- Patient in mild pain 
+o c-Patient in moderate pain 
+o d-patient in sever pain 
+Short Answer Questions: 
+• Characteristics of acute pain 
+• List four types of pain 
+• Non pharmacological treatment of pain 
+ 
+11. ECG 
+Multiple Choice Questions (MCQ): 
+• PR intervals means which of the following:  
+o Distance between atrial contraction and ventricular relaxation 
+o Distance between atrial contraction and ventricular contraction 
+o Distance between atrial relaxation and ventricular contraction 
+o Distance between atrial relaxation and ventricular relaxation 
+• T wave appear in ECG in which phase:  
+o Atrial depolarization 
+o Ventricular depolarization 
+o Atrial repolarization 
+o Ventricular repolarization 
+• U wave appear in ECG at deficincy of which of the following:
+
+o Na 
+o K 
+o Ca 
+o Mg 
+• Normal sinus rhythm charactrized by:  
+o Present of atrial and ventricular depolarization and repolarization 
+o Present of atrial depolarization only 
+o Present of ventricular depolarization 
+o Present of atrial depolarization and ventricular re-polarization 
+• Calculate the heart rate for the following:  
+o Hr =75 b/m 
+o Hr = 1500/39=38 b/m 
+o Hr =150b/m 
+• During cardiac depolarisation which of the following electrolyte enter the heat 
+muscle:  
+o Na 
+o K 
+o Ca 
+o Ca and Na 
+• Which of the following site is responsible for initiating atrial electrical 
+impulses?  
+o Bundle of His 
+o Purkinje fibers 
+o Sinoatrial (SA) node 
+o Atrioventricular (AV) node 
+• Atrial depolarization indicates which of the following on an electrocardiogram 
+rhythm strip?
+
+o A- U waves 
+o B- QRS complexe 
+o C- T waves 
+o D- P waves 
+•

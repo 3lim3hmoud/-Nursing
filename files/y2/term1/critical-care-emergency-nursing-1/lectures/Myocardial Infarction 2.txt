@@ -1,0 +1,374 @@
+Myocardial Infarction
+Prepared by 
+Dr / Ghada Elsayed
+
+Out line 
+Definition Etiology Pathophysiology Types 
+Risk factors Signs and 
+symptoms Diagnostic test Management of 
+MI
+
+Pre test 
+Mention risk 
+factors of MI
+Mention clinical 
+manifestation 
+of MI
+
+Definition:
+• MI is the term used to describe an
+irreversible cellular loss and
+myocardial necrosis (cell death)
+secondary to an abrupt decrease or
+total cessation of coronary blood flow
+to a specific area of the myocardium.
+
+• Etiology:
+• Atherosclerosis is responsible for majority of MI 
+because it cause luminal narrowing and reduced 
+blood flow, resulting in decreased oxygen delivery 
+to the myocardium.
+• There are three mechanisms that can block the 
+coronary artery and responsible for the acute 
+reduction of oxygen delivery to myocardial:
+• Plaque rupture
+• New coronary artery thrombosis
+• Coronary artery spasms to the rupture plaque
+
+Pathophysiology:
+• Ischemia:
+• The outer region of the infracted myocardial 
+area is the zone of ischemia or It is 
+composed of viable cells.
+• Injury:
+• The infarcted zone is surrounded by injured 
+but still potentially viable tissues in an area 
+known as the zone of injury. 
+• This recorded on ECG as elevation of the (ST 
+segment).
+
+:
+Infarction
+The area of dead and muscle 
+(necrosis) in the myocardium is 
+known as the zone of infarction. 
+On the ECG, evidence of this zone is 
+seen as new pathologic Q waves, 
+which reflect a lack of 
+depolarization from cardiac surface
+
+Classification of infarctions:
+1- A transmural infarctions:
+• Involves all three muscle layers, the endocardium, the 
+myocardium and the epicardium and result in full 
+thickness necrosis, have a higher incidence of LV 
+dysfunction. 
+• ECG demonstrates alteration in both myocardium 
+depolarization and repolarization (ST segment). The 
+change in depolarization is represented a new Q wave
+
+2- Non-transmural infarction:
+Classified into subendocardial (involve the 
+endocardium and myocardium) or subepicardial 
+(involve the myocardium and epicardium). 
+ECG change in subendocardial ischemia is ST 
+depression, abnormal Q wave not seen and R 
+wave progression is normal
+
+Myocardial Infarction Location:
+Anterior Wall Infarction: 
+Anterior wall infarction results from occlusion of the proximal left anterior 
+descending artery.
+ST segment elevation is expected in leads V1 through V4 on the ECG.
+If the left main coronary artery is occluded, the ECG manifestation will involve 
+almost all of the chest leads V1 through V6 and leads I and aVL.
+
+Left Lateral 
+Wall Infarction: 
+• Left lateral wall infarction occurs as a result 
+of occlusion of the circumflex coronary 
+artery.
+• On ECG, new Q waves and ST segment and T 
+wave changes are seen in lead I, aVL, V5 and 
+V6. 
+• Patients present with only lateral wall ECG 
+changes, and some anterior wall leads (V3 
+and V4) may show evidence of injury or 
+infarction.
+
+Inferior Wall Infarction:
+Inferior wall infarction occurs with occlusion of the right coronary 
+artery.
+This infarction manifested by ECG changes in leads II, III and aVF.
+Conduction disturbances are expected with an inferior wall MI and 
+are related to the anatomy of the coronary artery supply.
+
+Right Ventricular infarction: 
+• Infarction in right ventricular occurs when a 
+blockage occurs in a proximal section of the 
+right coronary artery. 
+• 10% to 15% show the hemodynamic 
+abnormalities associated with classic 
+infarction of the right ventricle.
+• It is important to write R on the ECG (V1R 
+and V6R) in the front of the recorder right 
+ventricular chest leads to ensure that the lead 
+location is clear.
+
+Posterior Wall Infarction: 
+Infarction of posterior wall can occur because of a blockage in the right 
+coronary artery or in the circumflex artery. 
+This occurs because both arteries supply this section of the heart, although 
+the right coronary artery is generally the dominant vessel. A posterior wall 
+MI is difficult to detect but may be identified by specific leads V1 and V2.
+
+Non- ST segment Elevation Myocardial Infarction:
+The ECG was considered the gold standard when diagnosis acute MI.
+One reason for the lack of ST segment elevation may be that the infarction 
+and subsequent necrosis are not full –thickness lesions.
+Because some of the muscle in the area can still be depolarized, ST segment 
+elevation may not occur.
+This situation is diagnosed as NSTEMI.
+
+Risk factors
+Age.
+• Men age 45 and older and women age 55 
+and older are more risk to have a heart 
+attack than are younger men and women.
+Tobacco use.
+• This includes smoking and long-term 
+exposure to smoke that lead to 
+atherosclerosis and plunge obstruction.
+High blood pressure.
+• Over time, high blood pressure can damage 
+arteries that lead to atherosclerosis and 
+plunge obstruction.
+
+High cholesterol or triglycerides.
+A high level of low-density lipoprotein (LDL) cholesterol is most 
+likely to narrow arteries also increases heart attack risk.
+Obesity.
+Obesity is linked with high blood pressure, diabetes, high levels of 
+triglycerides and bad cholesterol, and low levels of good cholesterol 
+narrow arteries also increases heart attack risk.
+Diabetes.
+High blood sugar increases the risk of a heart attack.
+Risk factors
+
+Unhealthy diet.
+A diet high in sugars, animal fats, 
+processed foods, trans fats and salt 
+increases the risk of heart attacks.
+Stress.
+Emotional stress, such as 
+extreme anger, may increase 
+the risk of a heart attack.
+Risk factors
+
+Clinical Manifestation 
+of MI
+Chest pain is sever, crushing, tight, squeezing or feeling of 
+pressure
+It can be precordial, substernal, or in the back, radiating to 
+arms, neck or jaw, unrelated to exertion and respiration
+The skin may be cool, clammy, pale and diaphoretic, the 
+colour may be dusky and hyperthermia may be present
+The patient may be short of breath, dyspnoea, and 
+tachypnoea, or feel faint
+Hypotension, dysrhythmia, as PVC, bradycardia or 
+tachycardia or heart blocking with varying degree
+Anxious or restless or nausea and vomiting
+
+Diagnosis of MI
+• ECG Change in MI include:
+• Inverted T waves
+• ST Segment elevation
+• Pathologic Q waves
+
+Cardiac 
+Markers
+• Creatine kinase (CK)
+• Is an enzyme that is found in heart muscle, skeletal 
+muscle, and brain tissue.
+• CK values start rising 4 to 6 hours after the onset of 
+myocardial necrosis, typically peak at 18 to 24 
+hours, and return to baseline at 36 to 40 hours.
+• To rule out an MI, blood samples may be drawn 
+every 8 hours for 24 hours.
+
+CK-MB
+• CK-MB in amounts greater than 5% of total CK generally is considered diagnostic for  
+myocardial damage in the presence of chest pain or other symptoms believed to  
+represent myocardial ischemia.
+• Negative values 10 to 12 hours after the onset of pain indicate the absence of myocardial 
+necrosis.
+• Patients who present more than 24 hours after the onset of symptoms may not benefit from 
+measurement of CK isoenzymes because the levels already may have returned to normal
+• Treponins:
+• Troponins are cardiac proteins that are released into the circulation after necrosis and rupture of 
+myocardial cells. 
+• Three subforms have been identified: cardiac troponin-I (cTnI), troponin-T (cTnT), and 
+troponin-C (cTnC).
+
+Complication of Acute MI: 
+• The complication may result from electrical dysfunction or 
+from a cardiac contractility problem.
+• Electrical dysfunctions include:
+• Bradycardia
+• Bundle branch blocks
+• Varying degree of heart block
+• Pumping complications causes:
+• Congestive Heart failure 
+• Pulmonary edema
+• Cardiogenic shock
+
+Electrical dysfunctions
+• Sinus Bradycardia:
+•  Sinus bradycardia occur in 40% of all 
+patients with acute MI.
+•  It is more prevalent with an Inferior wall 
+MI.
+•  Sinus bradycardia is most frequently 
+seen in the immediate post infraction 
+period.
+•  Symptomatic bradycardia with 
+hypotension and low cardiac output is 
+treated with Atropine
+• 0.5 mg to 1.0 mg IV push, repeated every 
+3 to 5 minutes to a maximum dose of
+• 0.03 mg per kg (2 mg for a person who 
+weight 70 kg).
+
+Sinus Tachycardia: 
+Sinus tachycardia most often occurs with Anterior wall MI. 
+Anterior infarction impairs left ventricular pumping ability thereby reducing 
+ejection fraction and decreasing stroke volume.
+In attempt to maintain Cardiac Output, the heart rate increases. Tachycardia 
+must be corrected because shorten diastolic filling time, thereby decreasing 
+stroke volume, systemic perfusion, and coronary artery filling
+
+Treatment of Sinus Tachycardia:
+• If ventricular rate is greater than 150 BPM , Prepare for immediate cardioversion
+• If ventricular rate is less than 150 BPM, Give Lidocaine 1.0-1.5 mg/kg IV push and repeat 
+every 5-10 min. 
+• Additional doses of 0.5-0.75 mg/kg IV push are given until a maximum total dose of 3 
+mg/kg
+
+•Premature ventricular contractions
+•Within the first few hours after MI almost all 
+patients' ’ill have Premature Ventricular 
+Contractions (PVCs).
+•PVCs and VT occurring early within the few first 
+hours and should be treated if it is frequent (more 
+than 6 per minute, closely coupled or multiform 
+shape)
+•PVCs are controlled by:
+•Administering oxygen to reduce myocardial 
+hypoxia,
+•Correcting acid-base or electrolyte imbalances
+•Administering an IV Lidocaine bolus and 
+infusion
+
+• AV Heart Block during MI:
+•  Av heart block most frequently following an inferior wall MI.
+•  Because the Right Coronary Artery (RCA) perfuses the A V node in 
+90% of the population, occlusion of RCA leads to ischemia and 
+infarction of the A V node cells.
+•  Patients have A V block with hemodynamic compromise is treated by 
+insertion of a transvenous temporary pacemake.
+
+Pumping complications
+Ventricular aneurysm after myocardial infarction: A left ventricular aneurysm is a non 
+contractile, thinned left ventricular wall that results from an acute transmural infarction. 
+This complication occurs in less than 5% of patients after acute MI.
+Ventricular septal rupture after MI: Post-infarction rupture of the septal wall is rare but 
+potentially lethal complication of acute anterior wall MI. 
+This rare complication generally occurs in the first 24 hours after an acute MI.
+
+Acute mitral regurgitation after 
+MI: 
+Papillary muscle rupture can occur when the infarct involve 
+the area around one of the papillary muscles results 
+ineffective mitral valve closure, and blood is forced back 
+into the low pressure left atrium during ventricular systole. 
+Cardiac wall rupture after MI: 
+The incidence of cardiac wall rupture has two peak times. 
+The first occur within the first 24 hours and the second 
+between the third and fifth post-infarction day when 
+scavenger cell are removing necrotic debris, thinning the 
+myocardial wall.
+
+• Pericarditis after MI:
+•  Pericarditis is inflammation of the 
+pericardial sac. 
+• It can occur during or after an acute MI. 
+Pain is the most common symptoms of 
+pericarditis and pericardial friction rub is 
+the most common initial sign.
+• Heart failure after MI: 
+• Many patients with acute STEMI have 
+heart failure on admission.
+
+Management of MI
+• Recanalization of the Coronary Artery
+• Fibrinolytic Therapy
+• Anticoagulantion therapy
+• Prevention of Ventricular Remolding
+• The nurse assesses the patient’s vital signs and mental status frequently.
+• The patient is placed on a cardiac monitor for ischemia and dysrhythmia 
+detection.
+• The patient is placed on bed rest until stabilized to minimize oxygen demands.
+• Supplemental oxygen may be given to unstable patients to increase oxygen 
+supply.
+• A pulse oximeter and arterial blood gases are used to evaluate oxygenation 
+status.
+
+Pain control
+Pain control is a priority because 
+continued pain is a symptom of ongoing 
+ischemia, which increases the risk on 
+non-infarcted myocardial tissue.
+Morphine is the analgesic of choice; it 
+decreases anxiety, restlessness, 
+autonomic nervous system activity, and 
+preload, thereby decreasing myocardial 
+oxygen demands
+
+Administer 
+Nitroglycerin
+Fibrinolytic 
+Therapy 
+ Anticoagulant therapy 
+Streptokinase 
+is given 1.5 
+million U over 
+one hour 
+infusion. 
+The fibrinolytic 
+therapy is used 
+in combination 
+with 
+anticoagulants 
+(Heparin) and 
+antiplatelet 
+agent (aspirin).
+IV heparin and 
+oral aspirin are 
+prescribed 
+during or 
+immediately 
+after 
+thrombolytic 
+therapy.
+
+Criteria for 
+Fibrinolytic 
+Therapy
+• No more than 6 hours from the onset of chest 
+pain
+• ST-Segment elevation on ECG or new-onset of 
+left bundle branch block
+• Ischemic chest pain of 30 minutes duration
+• Chest pain unresponsive to SL Nitroglycerine
+• Must check no conditions that might cause 
+hemorrhage

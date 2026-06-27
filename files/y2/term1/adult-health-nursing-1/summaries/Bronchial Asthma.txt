@@ -1,0 +1,121 @@
+Bronchial Asthma (الربو الشعبي) 
+ 
+     Definition (التعريف) 
+Asthma is a chronic inflammatory disease of the airways causing airway sensitivity, 
+swelling, and mucus production. 
+الربو هو مرض التهابي مزمن في الشعب الهوائية يسبب زيادة الحساسية، وتورم الممرات الهوائية، وإنتاج المخاط. 
+It is the most common chronic disease in children but can occur at any age. 
+يُعد أكثر الأمراض المزمنة شيوعًا بين الأطفال، لكنه يمكن أن يحدث في أي عمر. 
+Asthma affects daily life, including school, work, activity, and quality of life. 
+يؤثر الربو على الحياة اليومية مثل الدراسة، العمل، النشاط البدني، وجودة الحياة. 
+ 
+     Causes (الأسباب) 
+Allergy is the strongest predisposing factor for asthma. 
+الحساسية هي أهم عامل يؤدي للإصابة بالربو. 
+Chronic exposure to irritants or allergens increases asthma risk. 
+التعرض المستمر للمهيجات أو مسببات الحساسية يزيد خطر الإصابة بالربو. 
+Common allergens may be: 
+• Seasonal: grass, tree, and weed pollens. 
+• Perennial: dust, animal dander. 
+مسببات الحساسية الشائعة تشمل: 
+• موسمية: حبوب لقاح الأشجار والأعشاب. 
+• دائمة: الغبار وشعر الحيوانات.
+
+Triggers include air pollution, cold or hot weather, weather changes, strong odors, 
+perfumes, and smoke. 
+من المثيرات الشائعة: تلوث الهواء، البرد أو الحر، تغير الطقس، الروائح القوية، والعطور والدخان. 
+Most people with asthma are sensitive to many triggers. 
+أغلب المصابين بالربو حساسون لعدة مثيرات في نفس الوقت. 
+ 
+       Pathophysiology (الفيزيولوجيا المرضية) 
+Asthma causes reversible airway inflammation leading to airway narrowing. 
+يسبب الربو التهابًا قابلًً للعكس في الشعب الهوائية يؤدي لتضيقها . 
+Mast cells release mediators such as histamine, prostaglandins, and leukotrienes. 
+تفرز الخلًيا البدينة مواد كيميائية مثل الهيستامين والبروستاغلًندين واللوكوترايين. 
+These chemicals increase blood flow, swelling, and cause bronchoconstriction. 
+تؤدي هذه المواد إلى زيادة تدفق الدم، التورم، وتضيق الشعب الهوائية. 
+ 
+         Clinical Manifestations (الأعراض السريرية) 
+1. Cough (especially at night). 
+السعال (خصوصًا أثناء الليل. 
+2. Dyspnea (shortness of breath). 
+ضيق التنفس. 
+3. Wheezing (whistling sound during breathing). 
+صفير في الصدر أثناء التنفس. 
+4. Asthma exacerbation (acute attack). 
+نوبة ربو حادة.
+
+Assessment and Diagnostic Findings (التقييم والتشخيص) 
+Episodic symptoms of airflow obstruction are assessed. 
+يتم تقييم وجود أعراض انسداد متكرر في تدفق الهواء. 
+Family history and environmental exposure (cold air, pollution) are important. 
+تاريخ العائلة والعوامل البيئية مثل الهواء البارد والتلوث مهمة في التشخيص. 
+Comorbid conditions include GERD and drug-induced asthma. 
+قد ترافق الربو أمراض أخرى مثل الارتجاع المريئي أو الربو الناتج عن الأدوية. 
+Sputum and blood tests are performed. 
+يتم إجراء تحاليل البلغم والدم. 
+Serum IgE levels may increase if allergy is present. 
+ترتفع مستويات IgE في الدم في حالة وجود حساسية. 
+Arterial blood gases and pulse oximetry check oxygen levels. 
+تحليل غازات الدم ومقياس الأكسجين لتقييم مستوى الأكسجين. 
+ 
+     Complications (المضاعفات) 
+Respiratory failure — فشل تنفسي. 
+Pneumonia — التهاب رئوي. 
+Atelectasis — انخماص أو انهيار جزء من الرئة. 
+ 
+     Medical Management (العلاج الطبي) 
+Immediate medical help may be needed in severe cases. 
+قد تحتاج الحالات الشديدة إلى تدخل طبي فوري. 
+ 
+      Pharmacologic Therapy (العلاج الدوائي)
+
+1. Quick Relief Medications (أدوية سريعة المفعول:) 
+Short-acting beta2 agonists (Ventolin) are first choice for acute symptoms. 
+منبهات بيتا2 قصيرة المفعول (فنتولين) هي الخيار الأول لتخفيف الأعراض الحادة.  
+Anticholinergics (Atrovent) can be used if beta2 drugs are not tolerated. 
+يمكن استخدام مضادات الكولين (أتروفنت) إذا لم يتحمل المريض أدوية بيتا2 . 
+ 
+2. Long-Acting Control Medications (أدوية طويلة المفعول:) 
+Corticosteroids are the most effective anti-inflammatory drugs. 
+الكورتيكوستيرويدات هي أكثر الأدوية فعالية ضد الالتهاب. 
+Inhaled form is preferred; rinse mouth after use to prevent oral thrush. 
+يُستخدم الشكل المستنشق ويفضل غسل الفم بعد الاستخدام لتجنب الفطريات. 
+Long-acting beta2 agonists (Salmeterol) last up to 12 hours and are used with 
+corticosteroids. 
+منبهات بيتا2 طويلة المفعول (مثل سالميتيرول) تستمر حتى12 ساعة وتُستخدم مع الكورتيكوستيرويدات للتحكم
+الطويل. 
+ 
+🫁 Management of Exacerbations (علاج النوبات الحادة:) 
+Early treatment and patient education are key. 
+العلًج المبكر وتثقيف المريض هما الأساس. 
+Teach self-management for patients with frequent or severe attacks. 
+يجب تعليم المريض كيفية إدارة حالته بنفسه خاصة إذا كانت النوبات متكررة أو شديدة. 
+Oxygen may be needed to relieve low oxygen levels (hypoxemia). 
+قد يحتاج المريض إلى أكسجين لعلًج نقص الأكسجة. 
+Antibiotics are used if infection or fever is present. 
+تُستخدم المضادات الحيوية عند وجود عدوى أو حمى.
+
+Peak Flow Monitoring (مراقبة تدفق الهواء:) 
+Daily peak flow monitoring helps control asthma. 
+المتابعة اليومية لتدفق الهواء تساعد في السيطرة على الربو. 
+Recommended for patients with moderate to severe or worsening symptoms. 
+يُنصح بها للمرضى المصابين بالربو المتوسط أو الشديد أو عند تدهور الأعراض. 
+Patient must learn proper technique and use maximal effort. 
+يجب على المريض تعلم الطريقة الصحيحة وبذل أقصى جهد أثناء القياس. 
+ 
+            Nursing Management (العناية التمريضية) 
+Nursing care depends on symptom severity. 
+تعتمد الرعاية التمريضية على شدة الأعراض. 
+Mild cases may be treated at home; severe cases may require hospitalization. 
+يمكن علًج الحالات الخفيفة في المنزل، أما الحالات الحادة فقد تحتاج للمستشفى. 
+Keep a calm approach to reduce patient anxiety. 
+يجب التعامل بهدوء لطمأنة المريض وتقليل القلق. 
+Assess breathing, breath sounds, oxygen levels, and vital signs. 
+تقييم التنفس، وأصوات الصدر، ومستوى الأكسجين، والعلًمات الحيوية. 
+Check for allergies before giving medications. 
+يجب التأكد من عدم وجود حساسية قبل إعطاء الأدوية. 
+Give fluids if dehydrated. 
+إعطاء سوائل للمريض إذا كان يعاني من الجفاف. 
+Assist in intubation and monitor closely if needed. 
+تساعد الممرضة في التنبيب ومراقبة المريض بدقة عند الحاجة.

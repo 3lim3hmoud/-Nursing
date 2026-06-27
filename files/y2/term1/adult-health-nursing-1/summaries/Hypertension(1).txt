@@ -1,0 +1,164 @@
+HYPERTENSIO 
+Definition 
+Hypertension is a condition where blood pressure stays high most of the time. 
+ارتفاع ضغط الدم هو حالة يظل فيها ضغط الدم مرتفع لفترة طويلة. 
+It is diagnosed when two or more readings on different days are above normal levels. 
+يتم تشخيصه عندما تكون قراءتان أو أكثر في أيام مختلفة أعلى من المستوى الطبيعي. 
+ 
+How to Measure Blood Pressure Correctly 
+BP should be taken after the patient rests for at least 5 minutes. 
+يُقاس الضغط بعد راحة المريض لمدة لا تقل عن5 دقائق.  
+The patient must sit or lie with their back supported. 
+يجب أن يجلس أو يستلقي المريض وظهره مدعوم. 
+Readings should be taken 30 minutes after smoking or drinking coffee. 
+تُؤخذ القراءة بعد30 دقيقة من شرب القهوة أو التدخين.  
+ 
+Hemodynamics 
+Blood pressure is the force of blood pushing against artery walls. 
+ضغط الدم هو قوة دفع الدم لجدران الشرايين. 
+Formula: BP = Cardiac Output × Peripheral Resistance. 
+المعادلة: ضغط الدم = النتاج القلبي. 
+ 
+Systolic & Diastolic 
+Systolic pressure = pressure when the heart contracts. 
+الضغط الانقباضي = الضغط أثناء انقباض القلب.
+
+Diastolic pressure = pressure when the heart relaxes. 
+الضغط الانبساطي = الضغط أثناء ارتخاء القلب. 
+Pulse pressure = difference between systolic and diastolic. 
+ضغط النبضة = الفرق بين الانقباضي والانبساطي. 
+ 
+Blood Pressure Classification 
+Normal: <120 / <80 
+طبيعي: أقل من120/80  
+Prehypertension: 120–139 / 80–89 
+ما قبل ارتفاع الضغط120–139   /80 –89  
+Stage 1: 140–159 / 90–99 
+المرحلة الأولى140 –159   /90–99  
+Stage 2: ≥160 / ≥100 
+المرحلة الثانية160 أو أكثر100 أو أكثر.  
+ 
+Types of Hypertension 
+Primary Hypertension: No known cause. 
+الضغط الأساسي: بدون سبب واضح. 
+Secondary Hypertension: Caused by another disease or drug. 
+الضغط الثانوي: ناتج عن مرض أو دواء آخر. 
+ 
+Causes of Secondary Hypertension 
+Sleep apnea. 
+انقطاع النفس أثناء النوم.
+
+Estrogen use. 
+استخدام الإستروجين. 
+Long-term steroids. 
+الكورتيزون لفترات طويلة. 
+Thyroid disorders. 
+اضطرابات الغدة الدرقية. 
+ 
+Risk Factors 
+Non-modifiable 
+Family history. 
+تاريخ عائلي. 
+Age. 
+السن. 
+Diabetes. 
+السكر. 
+Stress. 
+الضغط النفسي. 
+Modifiable 
+Obesity. 
+السمنة. 
+High sodium & fat intake. 
+أكل الملح والدهون. 
+Lack of exercise. 
+قلة الحركة.
+
+Smoking, alcohol, caffeine. 
+التدخين والكحول والكافيين. 
+ 
+Complications 
+Left ventricular hypertrophy. 
+تضخم البطين الأيسر. 
+Angina. 
+ذبحة صدرية. 
+Myocardial infarction. 
+جلطة قلب. 
+Kidney damage. 
+ضرر بالكلى. 
+Retinopathy. 
+تأثر الشبكية. 
+Stroke or TIA. 
+جلطة أو جلطة بسيطة. 
+ 
+Diagnostic Tests 
+BP measurement. 
+قياس الضغط. 
+Chest X-ray. 
+أشعة صدر. 
+BUN and electrolytes. 
+تحليل وظائف الكلى والأملاح.
+
+Eye examination. 
+فحص قاع العين. 
+Blood glucose test. 
+تحليل السكر. 
+ 
+Treatment 
+Lifestyle change: diet + exercise. 
+تغيير نمط الحياة: أكل صحي + رياضة. 
+Reduce calories and lose weight. 
+تقليل السعرات وخسارة وزن. 
+ 
+Medications (Simplified) 
+Beta Blockers (e.g., propranolol) 
+Decrease heart workload and renin. 
+تقلل مجهود القلب والرينين. 
+Side effects: low BP , slow heart rate, fatigue. 
+آثار جانبية: ضغط منخفض، بطء نبض، إرهاق. 
+Nursing care: 
+الرعاية: 
+Give with meals — don’t stop suddenly — monitor breathing & glucose. 
+تعطى مع الأكل— لا توقف فجأة — راقب التنفس والسكر.  
+ 
+Alpha Blockers (e.g., prazosin)
+
+Relax blood vessels. 
+ترخي الأوعية الدموية. 
+Side effects: dizziness, low BP . 
+دوخة وضغط منخفض. 
+Nursing care: first dose at bedtime — move slowly. 
+الرعاية: الجرعة الأولى قبل النوم— تغيير الوضع ببطء.  
+ 
+Nursing Management 
+Monitor BP in lying, sitting, and standing. 
+قياس الضغط في أوضاع مختلفة. 
+Record intake & output. 
+تسجيل الداخل والخارج من السوائل. 
+Reduce stress and provide a calm environment. 
+تقليل التوتر وتوفير جو هادئ. 
+ 
+Patient Education 
+Stop smoking. 
+التوقف عن التدخين. 
+Low-salt diet. 
+أكل قليل الملح. 
+Reduce fat and cholesterol. 
+تقليل الدهون. 
+Exercise regularly. 
+ممارسة الرياضة.
+
+Take medication on time. 
+الالتزام بالدواء. 
+Avoid hot baths. 
+تجنب الحمامات الساخنة. 
+ 
+Orthostatic Hypotension Safety 
+Stand up slowly. 
+القيام ببطء. 
+Avoid sudden turning. 
+عدم الالتفات فجأة. 
+Call for help if dizzy. 
+طلب المساعدة عند الدوخة. 
+Use bathroom before meals. 
+استخدام الحمام قبل الأكل. 
+.

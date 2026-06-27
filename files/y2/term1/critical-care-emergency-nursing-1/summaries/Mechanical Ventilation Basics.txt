@@ -1,0 +1,165 @@
+Mechanical Ventilation Basics 
+ 
+Introduction 
+المقدمة 
+Mechanical ventilation is a medical process using a ventilator to help a patient breathe 
+when they cannot do so adequately on their own. 
+التهوية الميكانيكية هي عملية طبية يُستخدم فيها جهاز التنفس الصناعي لمساعدة المريض على التنفس عندما
+يستطيع التنفس بشكل كافٍ بمفرده. 
+The machine assists in moving air into and out of the lungs, delivering oxygen, and 
+removing carbon dioxide. 
+يساعد الجهاز في إدخال الهواء إلى الرئتين وإخراجهما، وتوصيل الأكسجين، والتخلص من ثاني أكسيد الكربون. 
+It is used for respiratory failure and can be invasive or noninvasive. 
+تُستخدم في حالات الفشل التنفسي، وقد تكون تدخلية أو غير تدخلية. 
+Invasive ventilation is delivered through a breathing tube, while noninvasive 
+ventilation is delivered through a face mask. 
+التهوية التدخلية تتم من خلال أنبوب تنفسي، بينما غير التدخلية تتم من خلال قناع للوجه. 
+ 
+Definition 
+التعريف 
+A mechanical ventilator is a positive or negative pressure breathing device that 
+maintains ventilation and oxygen delivery for a prolonged period. 
+جهاز التنفس الصناعي هو جهاز يعمل بالضغط الإيجابي أو السلبي ويحافظ على التهوية وتوصيل الأكسجين لفترة
+طويلة. 
+It acts as an artificial lung. 
+ويعمل كرئة صناعية.
+
+Indications for Mechanical Ventilation 
+دواعي استخدام التهوية الميكانيكية 
+Apnea is the absence of breathing due to neuromuscular or cardiopulmonary collapse. 
+انقطاع النفس هو غياب التنفس بسبب انهيار عصبي عضلي أو قلبي رئوي. 
+Acute ventilatory failure is defined as pH ≤ 7.25 with PaCO2 ≥ 50 mm Hg. 
+الفشل التنفسي الحاد يُعرّف بوجود  pH أقل من أو يساوي7.25 مع  PaCO2 أكبر من أو يساوي50 ملم زئبق.  
+Severe hypoxemia is defined as PaO2 ≤ 50 mm Hg on room air. 
+نقص الأكسجة الشديد يُعرّف بوجود  PaO2 أقل من أو يساوي50 ملم زئبق على هواء الغرفة.  
+Respiratory muscle fatigue occurs commonly in chronic lung diseases such as COPD. 
+إجهاد عضلات التنفس يحدث غالبًا في الأمراض الرئوية المزمنة مثل COPD. 
+Mechanical ventilation is also indicated in respiratory arrest, CPR, coma with GCS less 
+than 8, neurological disorders, and during general anesthesia for open-heart surgery. 
+تُستخدم التهوية الميكانيكية أيضًا في توقف التنفس، والإنعاش القلبي الرئوي، والغيبوبة مع GCS أقل من8،
+والاضطرابات العصبية، وخلال التخدير العام لجراحات القلب المفتوح. 
+ 
+Common Ventilator Settings and Parameters 
+إعدادات ومعاملات جهاز التنفس الصناعي 
+Tidal Volume (Vt) is the volume of gas delivered during a single breath. 
+الحجم الجاري هو كمية الهواء التي تُعطى في النفس الواحد. 
+The usual setting is 5 to 8 ml/kg of body weight. 
+الإعداد المعتاد هو5 إلى8 مل لكل كيلوجرام من وزن الجسم.  
+Respiratory Rate (f) is the number of breaths delivered per minute. 
+معدل التنفس هو عدد الأنفاس في الدقيقة.
+
+The usual rate is 12 to 20 breaths per minute. 
+المعدل المعتاد من12 إلى20 نفسًا في الدقيقة.  
+Minute Volume (MV) is the total volume of air delivered in one minute. 
+الحجم الدقيق هو إجمالي كمية الهواء خلال دقيقة واحدة. 
+It is calculated as tidal volume multiplied by respiratory rate. 
+ويُحسب بضرب الحجم الجاري في معدل التنفس. 
+Positive End Expiratory Pressure (PEEP) is pressure applied at the end of expiration to 
+keep alveoli open. 
+الضغط الإيجابي بنهاية الزفير هو ضغط يُطبّق في نهاية الزفير للحفاظ على الحويصلات الهوائية مفتوحة. 
+The usual PEEP setting is 5 to 10 cm H2O. 
+القيمة المعتادة من5 إلى10 سم ماء.  
+Pressure Support (PS) is a preset pressure that assists spontaneous breaths. 
+دعم الضغط هو ضغط محدد مسبقًا يساعد الأنفاس التلقائية. 
+The usual setting is 10 to 15 cm H2O. 
+الإعداد المعتاد من10  إلى15  سم ماء.  
+Fraction of Inspired Oxygen (FiO2) is the concentration of oxygen delivered to the 
+patient. 
+نسبة الأكسجين المستنشق هي تركيز الأكسجين المُعطى للمريض. 
+It ranges from 21% to 100%, with usual settings between 40% and 60%. 
+تتراوح من21% إلى100%، والمعتاد من40% إلى60 %. 
+I:E ratio represents the ratio of inspiration time to expiration time. 
+نسبة الشهيق إلى الزفير تمثل زمن الشهيق مقارنة بزمن الزفير. 
+The usual ratio is 1:2. 
+النسبة المعتادة هي1:2 .
+
+Humidification is essential to maintain airway temperature between 35°C and 37°C. 
+الترطيب ضروري للحفاظ على درجة حرارة المجرى الهوائي بين35 و37 درجة مئوية.  
+Low humidity leads to dried secretions and airway plugging. 
+انخفاض الرطوبة يؤدي إلى جفاف الإفرازات وانسداد المجرى الهوائي. 
+ 
+Classification of Ventilators 
+تصنيف أجهزة التنفس الصناعي 
+Negative Pressure Ventilators 
+These ventilators exert negative pressure on the chest wall to allow air to flow into the 
+lungs. 
+تُحدِث هذه الأجهزة ضغطًا سلبيًا على جدار الصدر للسماح بدخول الهواء إلى الرئتين. 
+They do not require intubation and mimic spontaneous breathing. 
+لا تحتاج إلى أنبوب تنفسي وتشبه التنفس الطبيعي. 
+Examples include the iron lung and chest cuirass. 
+من أمثلتها الرئة الحديدية ودرع الصدر. 
+They are used mainly in chronic respiratory failure such as poliomyelitis and 
+myasthenia gravis. 
+تُستخدم غالبًا في الفشل التنفسي المزمن مثل شلل الأطفال والوهن العضلي الوبيل. 
+Positive Pressure Ventilators (PPV) 
+These ventilators deliver air by pushing it into the lungs during inspiration. 
+تقوم هذه الأجهزة بدفع الهواء إلى داخل الرئتين أثناء الشهيق. 
+Expiration is passive. 
+الزفير يكون سلبيًا. 
+They are classified into volume-controlled and pressure-controlled ventilation. 
+وتُصنّف إلى تهوية بالتحكم الحجمي وتهوية بالتحكم الضغطي.
+
+Ventilation Modes 
+أنماط التهوية 
+Volume Modes 
+Controlled Mandatory Ventilation (CMV) delivers all breaths with preset rate, tidal 
+volume, and PEEP . 
+التهوية الإجبارية المتحكم بها تعطي جميع الأنفاس بمعدل وحجم وضغط محددين. 
+Assist/Control (A/C) delivers a full breath when the patient initiates a breath. 
+وضع المساعدة/التحكم يعطي نفسًا كاملاً عندما يبدأ المريض النفس . 
+Synchronized Intermittent Mandatory Ventilation (SIMV) synchronizes mandatory 
+breaths with spontaneous breathing. 
+وضع SIMV ينسق الأنفاس الإجبارية مع التنفس التلقائي للمريض. 
+Pressure Modes 
+Pressure-controlled ventilation delivers a preset pressure for a specific time. 
+التهوية بالتحكم الضغطي تعطي ضغطًا محددًا لمدة زمنية معينة. 
+Pressure Support Ventilation (PSV) allows the patient to initiate breaths while the 
+ventilator assists. 
+وضع دعم الضغط يسمح للمريض ببدء النفس بينما يدعمه الجهاز. 
+It is commonly used for weaning. 
+ويُستخدم غالبًا في الفطام من جهاز التنفس. 
+BiPAP is a noninvasive mode delivering IPAP and EPAP through a mask. 
+الـ BiPAP هو نمط غير تدخلي يعطي ضغطين (شهيقي وزفيري) عبر قناع. 
+CPAP provides continuous positive pressure throughout the respiratory cycle. 
+الـ CPAP يعطي ضغطًا إيجابيًا مستمرًا طوال دورة التنفس .
+
+Alarms 
+الإنذارات 
+High-pressure alarms may result from secretions, biting the tube, bronchospasm, or 
+kinks. 
+إنذار الضغط المرتفع قد يحدث بسبب إفرازات، عض الأنبوب، تشنج شعبي، أو انثناء الأنابيب. 
+Low-pressure alarms indicate disconnection, leaks, or circuit problems. 
+إنذار الضغط المنخفض يدل على انفصال الدائرة أو وجود تسريب. 
+ 
+Complications of Positive Pressure Ventilation 
+مضاعفات التهوية بالضغط الإيجابي 
+Ventilator-induced lung injury includes volutrauma, barotrauma, and atelectrauma. 
+إصابة الرئة الناتجة عن جهاز التنفس تشمل إصابة الحجم والضغط والانخماص. 
+Biotrauma refers to inflammatory response that may lead to ARDS. 
+البيوتروما تشير إلى الاستجابة الالتهابية التي قد تؤدي إلى ARDS. 
+Positive pressure reduces venous return causing hemodynamic changes. 
+الضغط الإيجابي يقلل العود الوريدي مسببًا تغيرات ديناميكية دموية. 
+GI complications include gastric distention, hypomotility, and vomiting. 
+المضاعفات الهضمية تشمل تمدد المعدة وقلة الحركة والقيء. 
+Immobility leads to muscle wasting, contractures, skin breakdown, and DVT. 
+عدم الحركة يؤدي إلى ضمور العضلات، تيبس المفاصل، تلف الجلد، والجلطات. 
+Ventilator-associated pneumonia occurs 48 to 72 hours after intubation. 
+الالتهاب الرئوي المرتبط بجهاز التنفس يحدث بعد48 إلى72 ساعة من إدخال الأنبوب.  
+ 
+Nursing Care and Weaning
+
+التمريض والفطام 
+The IHI ventilator bundle helps prevent VAP . 
+حزمة IHI تساعد في الوقاية من الالتهاب الرئوي المرتبط بجهاز التنفس. 
+Head of bed should be elevated 30 to 45 degrees. 
+يجب رفع رأس السرير من30 إلى45 درجة.  
+Daily sedation vacation and weaning assessment are required. 
+يجب إيقاف المهدئات يوميًا وتقييم الفطام. 
+Oral care with chlorhexidine should be done every 12 hours. 
+العناية بالفم بالكلورهكسيدين كل12 ساعة.  
+Weaning criteria include hemodynamic stability and SaO2 above 90% on FiO2 ≤ 40%. 
+شروط الفطام تشمل الاستقرار الدوري ونسبة أكسجين أكثر من90% على  FiO2 أقل من أو يساوي40 %. 
+Weaning trials must stop if signs of intolerance appear. 
+يجب إيقاف تجربة الفطام عند ظهور علامات عدم التحمل. 
+Weaning methods include T-piece, SIMV, CPAP , and PSV. 
+طرق الفطام تشمل T-piece وSIMV وCPAP وPSV.

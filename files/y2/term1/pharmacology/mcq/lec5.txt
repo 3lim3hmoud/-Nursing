@@ -1,0 +1,157 @@
+Pharmacology Exam: Combined Effects of Drugs 
+Part I: Multiple Choice Questions (MCQs) 
+Select the most appropriate answer for each question. 
+1. General Concepts & Increased Response 
+1. When the combined effect of two drugs is equal to the sum of their individual 
+effects (1+1=2), it is known as: 
+o A. Synergism 
+o B. Additive effect 
+o C. Potentiation 
+o D. Antagonism 
+2. Which of the following is a classic clinical example of an additive effect? 
+o A. Levodopa and Carbidopa 
+o B. Ibuprofen and Paracetamol 
+o C. Activated charcoal and toxins 
+o D. Adrenaline and Histamine 
+3. Potentiation (supra-additive) occurs when the action of one drug is enhanced by 
+another drug that is: 
+o A. More active 
+o B. Equally active 
+o C. Inactive 
+o D. An antagonist 
+4. In the combination of Levodopa and Carbidopa, Carbidopa enhances the effect of 
+Levodopa by: 
+o A. Binding to the same receptor 
+o B. Inhibiting the breakdown of Levodopa 
+o C. Neutralizing stomach acid
+
+o D. Acting as a competitive agonist 
+5. Synergism is defined as a situation where the combined effect of drugs is: 
+o A. Less than the sum of individual effects 
+o B. Equal to the sum of individual effects 
+o C. Greater than the sum of individual effects (1+1 > 2) 
+o D. Completely abolished 
+6. The combination of Sulphamethoxazole and Trimethoprim (Co-trimoxazole) is an 
+example of: 
+o A. Physical Antagonism 
+o B. Synergism 
+o C. Replacement Therapy 
+o D. Chemical Antagonism 
+ 
+2. Drug Antagonism 
+7. Drug Antagonism is characterized by: 
+o A. An increased response 
+o B. A decreased or abolished response 
+o C. No change in response 
+o D. Supra-additive effects 
+8. Which type of antagonism is based on the physical properties of a drug, such as 
+the use of activated charcoal in poisoning? 
+o A. Physical antagonism 
+o B. Chemical antagonism 
+o C. Receptor antagonism 
+o D. Physiological antagonism 
+9. Antacids treating gastric acid and chelating agents treating heavy metal poisoning 
+are examples of:
+
+o A. Physical antagonism 
+o B. Chemical antagonism 
+o C. Competitive antagonism 
+o D. Synergism 
+10. Physiological (functional) antagonism involves two drugs that: 
+o A. Bind to the exact same receptor site 
+o B. Act at different receptors or mechanisms but produce opposite effects 
+o C. Form a chemical complex in the blood 
+o D. Shift the dose-response curve to the left 
+11. Which pair of drugs demonstrates physiological antagonism regarding bronchial 
+smooth muscle? 
+o A. Insulin and Glucagon 
+o B. Acetylcholine and Atropine 
+o C. Histamine and Adrenaline 
+o D. Morphine and Naloxone 
+12. Adrenaline reverses bronchospasm in anaphylactic shock by acting through: 
+o A. Histamine receptors 
+o B. Adrenergic (β2) receptors 
+o C. Muscarinic receptors 
+o D. Chemical neutralization 
+ 
+3. Receptor Antagonism 
+13. In competitive antagonism, the agonist and antagonist bind to: 
+o A. Different receptors 
+o B. Different sites on the same receptor 
+o C. The same site on the receptor reversibly
+
+o D. The same site on the receptor irreversibly 
+14. A characteristic of the Log Dose-Response Curve (DRC) in competitive 
+antagonism is: 
+o A. A flattening of the curve 
+o B. A rightward parallel shift 
+o C. A leftward parallel shift 
+o D. No change in the curve 
+15. Competitive antagonism can be overcome by: 
+o A. Decreasing the antagonist dose 
+o B. Increasing the concentration of the agonist 
+o C. Changing the route of administration 
+o D. It cannot be overcome 
+16. Which of the following is an example of a competitive antagonist pair? 
+o A. Diazepam and Bicuculline 
+o B. Morphine and Naloxone 
+o C. Insulin and Glucagon 
+o D. Ibuprofen and Paracetamol 
+17. In noncompetitive antagonism, the antagonist binds to: 
+o A. The same site as the agonist 
+o B. A different site on the receptor 
+o C. The agonist drug molecule itself 
+o D. The gastric acid 
+18. The Dose-Response Curve (DRC) in noncompetitive antagonism shows: 
+o A. A parallel shift to the right 
+o B. A flattening of the curve 
+o C. An increase in maximal effect
+
+o D. No change in the agonist's Emax 
+ 
+Part II: Essay & Short Answer Questions 
+Answer the following questions based on the provided material. 
+1. Compare and contrast Additive effect, Potentiation, and Synergism. Provide one 
+example for each. 
+2. Explain the mechanism of Physiological Antagonism and provide two examples 
+from different physiological systems. 
+3. Describe the differences between Competitive and Noncompetitive Receptor 
+Antagonism. In your answer, include details about the binding site, how to 
+overcome the effect, and the impact on the Dose-Response Curve. 
+4. How does Adrenaline act as a physiological antagonist to Histamine during 
+anaphylactic shock? 
+ 
+ 
+Answer Key 
+Part I: MCQs 
+1. B 
+2. B 
+3. C 
+4. B 
+5. C 
+6. B 
+7. B 
+8. A 
+9. B 
+10. B
+
+11. C 
+12. B 
+13. C 
+14. B 
+15. B 
+16. B 
+17. B 
+18. B 
+Part II: Essay Hints 
+1. Additive: 1+1=2 (e.g., Ibuprofen + Paracetamol). Potentiation: 1+0 > 1 (e.g., 
+Levodopa + Carbidopa). Synergism: 1+1 > 2 (e.g., Co-trimoxazole). 
+2. Physiological Antagonism: Two drugs act at different receptors/mechanisms on 
+the same system to produce opposite effects. Examples: Insulin/Glucagon on 
+blood sugar; Adrenaline/Histamine on bronchi. 
+3. Competitive: Binds same site, reversible, overcome by more agonist, rightward 
+parallel shift of DRC. Noncompetitive: Binds different site, not overcome by more 
+agonist, flattening of DRC. 
+4. Adrenaline/Histamine: Histamine causes bronchoconstriction via histamine 
+receptors. Adrenaline causes bronchodilatation via adrenergic β2 receptors, 
+reversing the spasm through a different pathway.

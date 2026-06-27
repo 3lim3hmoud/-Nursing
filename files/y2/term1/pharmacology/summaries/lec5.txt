@@ -1,0 +1,98 @@
+Combined Effects of Drugs 
+التأثيرات المشتركة للأدوية 
+ 
+I. Increased Response (الاستجابة المتزايدة) 
+When two or more drugs are used together, the response may increase. 
+عندما يتم استخدام دواءين أو أكثر معًا، قد تزداد الاستجابة. 
+ 
+1. Additive Effect (التأثير الإضافي) 
+The combined effect of two or more drugs equals the sum of their individual effects. 
+التأثير المشترك لدواءين أو أكثر يساوي مجموع تأثير كل دواء بمفرده. 
+Formula: Effect of drug A + B = Effect of A + Effect of B (1 + 1 = 2) 
+المعادلة: تأثير الدواء A + B) = تأثير A + تأثير B (1 + 1 = 2). 
+Example: Ibuprofen + Paracetamol as analgesics. 
+مثال: الإيبوبروفين والباراسيتامول كمُسكّنين للألم. 
+ 
+2. Potentiation (Supra-additive) (التقوية أو التأثير فوق الإضافي) 
+Enhancement of the action of one drug by another drug that is inactive. 
+هو تعزيز تأثير دواء بواسطة دواء آخر غير فعّال بحد ذاته.
+
+Combined effect is greater than the sum of individual effects. 
+التأثير المشترك يكون أكبر من مجموع التأثيرات الفردية. 
+Formula: Effect of A + B > Effect of A + Effect of B (1 + 1 > 2) 
+المعادلة: تأثير A + B) > تأثير A + تأثير B (1 + 1 > 2). 
+Example: Levodopa + Carbidopa. 
+Carbidopa prevents levodopa breakdown, enhancing its effect. 
+مثال: ليفودوبا مع كاربيدوبا — حيث يمنع الكاربيدوبا تكسير الليفودوبا ويزيد من فعاليته.  
+ 
+3. Synergism (التآزر) 
+When two or more drugs are given together, their combined effect is greater than each 
+alone. 
+عندما يتم إعطاء دواءين أو أكثر معًا، يكون تأثيرهما المشترك أكبر من تأثير كل منهما بمفرده. 
+Example: Sulphamethoxazole + Trimethoprim. 
+مثال: سلفاميثوكسازول مع تريميثوبريم. 
+ 
+II. Decreased Response (Drug Antagonism) 
+الاستجابة المنخفضة (التضاد الدوائي
+
+Drug antagonism occurs when the effect of one drug is decreased or abolished by 
+another. 
+يحدث التضاد الدوائي عندما يقل أو يُلغى تأثير دواء بسبب وجود دواء آخر. 
+هناك أربعة أنواع رئيسية من التضاد: 
+There are four main types of antagonism: 
+ 
+1. Physical Antagonism (التضاد الفيزيائي) 
+The opposing action is due to the physical properties of the drugs. 
+يحدث التضاد بسبب الخصائص الفيزيائية للدواءين. 
+Example: Activated charcoal adsorbs toxic substances in poisoning. 
+مثال: الفحم النشط يمتص المواد السامة في حالات التسمم. 
+ 
+2. Chemical Antagonism (التضاد الكيميائي) 
+The opposing action is due to chemical properties. 
+يحدث التضاد بسبب الخصائص الكيميائية للدواءين. 
+Examples: 
+• Antacids neutralize gastric acid. 
+• Chelating agents bind toxic metals in metal poisoning. 
+أمثلة:
+
+• مضادات الحموضة تعادل حمض المعدة. 
+• العوامل الخالِبة ترتبط بالمعادن السامة وتستخدم في حالات التسمم المعدني. 
+ 
+3. Physiological (Functional) Antagonism (التضاد الفسيولوجي أو الوظيفي) 
+Two drugs act at different receptors or mechanisms but produce opposite effects. 
+يعمل دواءان على مستقبلات مختلفة أو بآليات مختلفة لكن ينتجان تأثيرات متعاكسة. 
+Examples: 
+• Insulin and Glucagon on blood sugar. 
+• Adrenaline and Histamine on bronchial smooth muscle. 
+أمثلة: 
+• الإنسولين والجلوكاجون يؤثران على سكر الدم بشكل متعاكس. 
+• الأدرينالين والهيستامين على العضلات الملساء للشعب الهوائية: 
+o الهيستامين يسبب تضيّق الشعب الهوائية.  
+o الأدرينالين يسبب توسّع الشعب الهوائية ويُستخدم لعلاج التشنج القصبي مثل حالات الصدمة 
+التحسسية Anaphylactic Shock). 
+ 
+4. Receptor Antagonism (التضاد على المستقبلات)
+
+The antagonist binds to the same receptor as the agonist and inhibits its effect. 
+يرتبط الدواء المضاد بنفس المستقبل الذي يرتبط به الدواء المنشّط ويثبط تأثيره. 
+There are two main types: 
+هناك نوعان رئيسيان: 
+ 
+a. Competitive Antagonism (التضاد التنافسي) 
+Both agonist and antagonist bind reversibly to the same site on the receptor. 
+يرتبط كل من المنشط والمضاد بشكل عكسي على نفس موقع المستقبل. 
+This antagonism is reversible — can be overcome by increasing agonist concentration. 
+هذا النوع قابل للعكس ويمكن التغلب عليه بزيادة تركيز الدواء المنشّط.  
+On the dose–response curve, the agonist shows a rightward parallel shift. 
+على منحنى الجرعة– الاستجابة، يظهر انزياح موازٍ نحو اليمين . 
+ 
+b. Non-Competitive Antagonism (التضاد غير التنافسي) 
+The antagonist binds to a different site and prevents the agonist from acting. 
+يرتبط الدواء المضاد بموقع مختلف ويمنع الدواء المنشّط من التفاعل. 
+This effect cannot be reversed by increasing agonist concentration. 
+لا يمكن التغلب على هذا التأثير بزيادة تركيز الدواء المنشّط.
+
+It causes flattening of the dose–response curve (DRC). 
+يؤدي إلى تسطّح منحنى الجرعة–الاستجابة.  
+Example: Diazepam and Bicuculline. 
+مثال: ديازيبام مع بيكوكولين.

@@ -1,0 +1,300 @@
+Definition
+• Shock exists when tissue oxygen delivery fails to meet the metabolic requirements of 
+cells.
+• An imbalance between oxygen delivery (DO2) and oxygen demand can result from a 
+global reduction in oxygen delivery, maldistribution of blood flow, impaired oxygen 
+utilization or an increase in tissue oxygen requirements. 
+• Left unchecked, shock will result in a fall in oxygen consumption (VO2), anaerobic 
+metabolism, tissue acidosis and cellular dysfunction leading to multiple organ 
+dysfunction and ultimately death. 
+• Shock is sometimes considered to be synonymous with hypotension.
+
+Types of Shock
+Hypovolaemic shock
+This is probably the commonest and most readily corrected cause of shock encountered in 
+surgical practice and results from a reduction in intravascular volume secondary to the loss 
+of blood , plasma or water and electrolytes
+Cardiogenic shock
+This occurs when the heart is unable to maintain a cardiac output sufficient to meet the 
+metabolic requirements of the body (pump failure) and can be caused by MI, arrhythmias, 
+valve dysfunction, cardiac tamponade, massive pulmonary embolism, and tension 
+pneumothorax
+Neurogenic shock
+This is caused by a loss of sympathetic tone to vascular smooth muscle. 
+This typically occurs following injury to the (thoracic or cervical) spinal cord and results in profound 
+vasodilation, a fall in systemic vascular resistance and hypotension.
+
+Septic shock
+▪ Septic shock results from complex disturbances in DO2 delivery and VO2  and can be defined as: 
+Sepsis-induced hypotension (systolic BP < 90 mmHg, mean arterial blood pressure [MAP] < 70 mmHg) and/ or tissue 
+hypoperfusion (elevated lactate or oliguria) that persist despite adequate fluid resuscitation (~30 ml/kg).
+▪ Bacteria: Sepsis usually arises from a localized infection, with Gram-ve (38%) and (increasingly) Gram +ve (52%).
+▪ The commonest sites of infection leading to sepsis are the lungs (50–70%), abdomen (20–25%), urinary tract (7–10%) 
+and skin.
+Infection → Cytokine-mediated proinflammatory response → NO SYNTHESIS → Peripheral vasodilation 
+(VD),,,INITIAL RESPONSE,,, → Redistribution of blood flow, endothelial cell activation → Endothelial cell damage → 
+Increased vascular permeability → Capillary leak →  Extravasation of fluid into the interstitial space  → Haemoconcentration within 
+the capillary → Platelet aggregation →  Increase in blood viscosity → Formation of microthrombi within the 
+microcirculation.,,,,2ry RESPONSE,,,,
+
+Anaphylactic shock
+Definition: This is a severe systemic hypersensitivity reaction following exposure to an allergen triggering the release of 
+vasoactive mediators (histamine, kinins and PG) from basophils and mast cells.
+Anaphylaxis may be:
+  1-Immunologically mediated (allergic anaphylaxis), when IgE, IgG or complement activation 
+  2-Non-immunologically mediated (non-allergic anaphylaxis). 
+Common causes of anaphylaxis include:  
+   1-Drugs (e.g. NM blocking drugs, β-lactam antibiotics)
+  2-Colloid solutions (e.g. dextrans)
+  3-Radiological contrast media
+  4-Food stuffs (peanuts, dairy products). 
+Allergen → Vasoactive mediators → VD →  Intravascular volume Redistribution →  
+Capillary leak →  Reduction in cardiac output → Anaphylactic shock
+
+Pathophysiology
+A) Macrocirculation
+• When assessing a patient with shock, it is useful to remember that mean arterial blood 
+pressure (MAP) is equal to the product of cardiac output (CO) and systemic vascular 
+resistance (SVR).
+
+1-Catecholamine release from the adrenal medulla 
+and sympathetic nerve endings.
+2-Generation of  angiotensin-II (AT-II) from the renin–
+angiotensin system.
+1-The resulting tachycardia and increased myocardial contractility act to preserve COP
+2-VC acts to maintain BP and divert the available blood to vital organs (e.g. brain, heart and muscle) and 
+away from non-vital organs (e.g. skin and gut). 
+In Hypovolaemic Shock 
+Hypovolaemic Shock → →
+Tachycardia + Increased 
+myocardial contractility act to 
+preserve COP + VC
+
+In septic shock
+DO2 and VO2 is compromised at the cellular level.
+However, as septic shock progresses endothelial dysfunction results in significant extravasation of fluid and a loss 
+of intravascular volume. 
+Ventricular dysfunction also impairs the compensatory increase in COP.
+ As a result, peripheral perfusion falls and the clinical signs may become indistinguishable from those associated 
+with the low-output state described above
+• The (initial) cardiovascular response is a reflex tachycardia and an increase in SV resulting in an 
+increased COP. 
+• Clinically this manifests as warm, well-perfused peripheries, a low diastolic BP and raised pulse 
+pressure.
+
+In Neurogenic Shock
+Traumatic disruption of 
+sympathetic efferent 
+nerve fibres results in 
+loss of vasomotor tone, 
+peripheral VD and a fall 
+in  SVR.
+Loss of cardiac accelerator 
+fibres (T1–4) and anhidrosis as a 
+result of loss of sweat gland 
+innervation also frequently 
+occur, with patients typically 
+presenting with hypotension, 
+bradycardia and warm, dry 
+peripheries. 
+Typically presents with signs of a low output state although, unlike hypovolaemic shock, circulating 
+volume is typically normal or increased with increased circulating AT-II and aldosterone.
+ If associated with left ventricular failure, there may be pulmonary oedema.
+In Cardiogenic Shock
+
+B) Cellular Function 
+Glycolysis (ATP Synthesis from glucose)
+Aerobic Pathway
+Under normal (aerobic) conditions, 
+glycolysis converts glucose to pyruvate 
+which is converted to acetyl-coenzyme-A 
+(acetyl-CoA) and enters the Krebs cycle.
+Oxidation of acetyl-CoA in the Krebs cycle 
+generates nicotinamide adenine Dinucleotide 
+(NADH) and flavine adenine dinucleotide (FADH2 
+), which enter the electron transport chain and 
+are oxidized to NAD+ in the oxidative 
+phosphorylation of adenosine diphosphate (ADP) to ATP .
+The oxidative metabolism of glucose is 
+energy efficient, yielding up to 38 moles 
+of ATP for each mole of glucose, but 
+requires a continuous supply of oxygen to 
+the cell. 
+38 ATP
+
+Anaerobic Pathway
+Hypoxaemia blocks mitochondrial oxidative phosphorylation, inhibiting ATP 
+synthesis. 
+This leads to a decrease in the intracellular ATP/ADP ratio, an increase in the 
+NADH/ NAD+ ratio and an accumulation of pyruvate that is unable to enter the 
+Krebs cycle. 
+The cytosolic conversion of pyruvate to lactate allows the regeneration of some 
+NAD+, enabling the limited production of ATP by anaerobic glycolysis. However, 
+anaerobic glycolysis is significantly less efficient, generating only 2 moles of ATP 
+per mole of glucose and predisposing cells to ATP depletion
+
+The effect (Complications) of shock on individual
+organ systems
+
+Management
+General principles
+The management of shock is based upon the following 
+principles:
+ 1- Identification and treatment of the underlying cause 
+2- The maintenance of adequate tissue oxygen delivery.
+3-As with most clinical emergencies, treatment and diagnosis 
+should occur simultaneously with the immediate assessment and 
+management following an Airway, Breathing, Circulation (ABC) 
+approach.
+4- The early recognition and treatment of potentially reversible 
+causes (e.g. bleeding, intra-abdominal sepsis, myocardial 
+ischaemia, pulmonary embolus, cardiac tamponade) is essential 
+and may be facilitated thorough clinical examination (Table) and 
+focused investigations.
+5-Most patients with shock will require admission to (ICU).
+
+Airway Management
+OXYGEN:
+Hypoxaemia must be prevented and, if present, rapidly corrected by maintaining a clear airway (e.g. 
+head tilt, chin lift) and administering high flow oxygen.
+ABG Monitoring:
+The adequacy of this therapy can be estimated continuously using pulse-oximetry (SpO2), but 
+frequent arterial blood gas analysis allows a more accurate assessment of oxygenation (Pa.O2), 
+ventilation (Pa.CO2) and indirect measures of tissue perfusion (pH, base excess, HCO3 and lactate). 
+MV:
+In patients with severe hypoxaemia, cardiovascular instability, depressed conscious level or 
+exhaustion, intubation and ventilatory support may be required.
+
+Circulatory Support
+FLUIDS 
+▪ Initial resuscitation should be targeted at arresting haemorrhage and 
+providing fluid (crystalloid or colloid) to restore intravascular volume 
+and optimize cardiac preload. 
+▪ It is common practice to use blood to maintain a haemoglobin 
+concentration > 10 g/dl during the initial resuscitation of shock if there is 
+evidence of low central venous saturations (measured from a central venous 
+catheter). 
+‘Fluid responsiveness’ 
+  Tachycardia,    BP, and improving peripheral perfusion and urine output in 
+response to a series of 250–500 ml fluid challenges indicate ‘fluid 
+responsiveness’ and suggest that further fluid and optimization of preload 
+may be required.
+
+Inotropes and/or Vasopressors
+Once parameters stop improving it is unlikely 
+that further fluid will be beneficial, particularly 
+if there is an associated fall in oxygen 
+saturation and the development of pulmonary 
+oedema. 
+• As more invasive monitoring allows the 
+acid–base status, central venous pressure 
+(CVP), pulmonary artery wedge pressure 
+(PAWP), CO and mixed (SvO2) or central to 
+be used to further assess the response to fluid 
+(Fig).
+• If blood pressure remains low and/or signs of 
+inadequate tissue oxygen delivery persist 
+despite fluid resuscitation and the 
+optimization of preload, then inotropes 
+and/or vasopressors may be required.
+•  Vasopressors (e.g. noradrenaline) cause 
+peripheral vasoconstriction and an increase 
+SVR.
+•  Inotropes (e.g. dobutamine) increase 
+myocardial contractility, stroke volume and 
+cardiac output.
+
+Choice of Inotrope or Vasopressor
+• The initial choice of inotrope or 
+vasopressor therefore depends upon the 
+underlying aetiology of shock and an 
+understanding of the main physiological 
+derangements (Table). 
+• Adrenaline, which has both 
+vasopressor and inotropic effects, is a 
+useful first line drug in the emergency 
+treatment of shock.
+
+Management of Hypovolaemic shock
+• The commonest cause of acute hypovolaemic shock in surgical 
+practice is bleeding due to trauma, ruptured aortic aneurysm, 
+obstetric haemorrhage.
+• Normal adult blood volume is about 7% of body weight, with a 70 kg 
+man having an estimated blood volume (EBV) of around 5000 ml. 
+• The severity of haemorrhagic shock is frequently classified according 
+to percentage of EBV lost where class I (< 15%) represents a 
+compensated state (as may occur following the donation of a unit of 
+blood) and class IV (> 40%) is immediately life threatening (Table).
+• The term ‘
+M
+assive 
+ H
+aemorrhage
+ ’ has a number of 
+definitions including: 
+Loss of EBV in 24 hours; 
+Loss of 50% EBV in 3 hours
+Blood loss at a rate ≥ 150 ml/min.
+• Arrest of haemorrhage and intravascular fluid resuscitation should 
+occur concurrently; there is little role for inotropes or vasopressors 
+in the treatment of a hypotensive hypovolaemic patient.
+
+Types of Fluids
+• The type of fluid used (crystalloid or colloid) is probably less important than the adequate 
+restoration of circulating volume itself. 
+• In the case of life-threatening or continued haemorrhage, blood will be required early in the 
+resuscitation. 
+• Ideally, fully cross-matched packed red blood cells (PRBCs) should be administered, but type-
+specific or O Rhesus-negative blood may be used until it becomes available. 
+• A haemoglobin concentration of 7–9 g/dl may be sufficient to ensure adequate tissue oxygen 
+delivery in stable (non-bleeding) patients, but a haemoglobin target of > 10 g/dl may be more 
+appropriate in actively bleeding patients.
+• Massive transfusion can lead to hypothermia, hypocalcaemia, hyper-or hypokalaemia and 
+coagulopathy.
+
+Coagulopathy
+• The acute coagulopathy of trauma (ACoT) is well recognized 
+and multifactorial: 
+Dilution of  clotting factors and platelets as a result of  fluid 
+resuscitation, combined with their consumption at the point 
+of  bleeding, results in clotting factor deficiency, 
+thrombocytopaenia and coagulopathy.
+•
+ Hypothermia, metabolic acidosis and 
+ hypocalcaemia  also 
+significantly impair normal coagulation.
+• Resuscitation strategies aggressively targeting the ‘lethal triad’ 
+of hypothermia, acidosis and coagulopathy appear to 
+significantly improve outcome.
+
+Correction of 
+Coagulopathy 
+• Where possible, correction of coagulopathy should be guided by 
+laboratory results (platelet count, prothrombin time, activated partial 
+thromboplastin time and fibrinogen concentration). 
+• Clotting factor deficiency is normally treated by the administration of 
+fresh frozen plasma (FFP) (10–15 ml/ kg)
+• Fibrinogen deficiency (< 1.0 g/l) is best treated with fresh frozen 
+plasma or cryoprecipitate (usually one ‘pool’ of 10 single donor units). 
+• Thrombocytopenia or platelet dysfunction by the administration of 
+platelets (usually one ‘pool’ or adult dose containing 2–3 × 1011 
+platelets).
+• The antifibrinolytic, tranexamic acid, can be used to inhibit 
+fibrinolysis and has been shown to reduce mortality from bleeding 
+when used early (< 3 hours) and empirically following major trauma.
+
+Correction of 
+Coagulopathy 
+• In the case of rapid haemorrhage, it is often not possible to use 
+traditional laboratory results to guide the correction of coagulopathy 
+because of the time delay in obtaining these results.
+•  This has lead to a formula-driven approach to the use of P-RBC, 
+FFP and platelets targeting the early empirical treatment of 
+coagulopathy.
+• Administration of warmed PRBC and fresh frozen plasma (FFP) 
+in a 1:1 ratio as soon as possible in the resuscitation of major 
+haemorrhage following trauma in conjunction with platelet 
+transfusions to maintain platelets > 100 × 109.
+• A recombinant form of activated factor VII (rVIIa) is approved for 
+the management of bleeding in haemophiliacs with inhibitory 
+antibodies to factors VIII or IX.

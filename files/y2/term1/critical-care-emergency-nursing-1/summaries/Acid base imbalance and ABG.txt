@@ -1,0 +1,384 @@
+Buffer System 
+The body regulates acid-base balance through the buffer system. 
+ينظم الجسم توازن الأحماض والقواعد من خلال نظام العوازل Buffer System). 
+The buffer system acts to neutralize acids in the body. 
+يعمل نظام العازل على معادلة الأحماض داخل الجسم. 
+It prevents major changes in body pH by removing or releasing hydrogen ions (H+). 
+يمنع حدوث تغيّرات كبيرة في درجة الحموضة pH) من خلال إزالة أو إفراز أيونات الهيدروجين H+). 
+There are three main buffer systems that help maintain acid-base balance: 
+يوجد ثلاثة أنظمة رئيسية تساعد في الحفاظ على توازن الأحماض والقواعد: 
+1. Blood buffer system – نظام الدم. 
+2. Respiratory system – الجهاز التنفسي. 
+3. Renal (kidney) system – الكُلى. 
+ 
+     1. Blood Buffer System 
+It is activated when the hydrogen ion (H+) concentration changes. 
+يُفعّل هذا النظام عندما يتغير تركيز أيونات الهيدروجين H+). 
+If H+ increases, pH decreases → acidosis occurs. 
+عندما تزداد أيونات الهيدروجين، تنخفض قيمة الـpH مما يؤدي إلى الحموضة Acidosis). 
+Bicarbonate (HCO3⁻) combines with H+ to form carbonic acid (H₂CO₃). 
+يتحد البيكربونات HCO₃⁻) مع الهيدروجين لتكوين حمض الكربونيك H₂CO₃). 
+Carbonic acid then breaks down into carbon dioxide (CO₂) and water (H₂O). 
+يتحلل حمض الكربونيك إلى ثاني أكسيد الكربون CO₂) الذي يُطرح عن طريق الرئتين والماء H₂O). 
+ 
+        2. Respiratory Buffer System
+
+The lungs help regulate pH by changing the rate and depth of breathing. 
+تساعد الرئتان في تنظيم درجة الحموضة عن طريق تعديل سرعة وعمق التنفس. 
+In metabolic acidosis: breathing becomes faster to remove CO₂ → reducing acid levels. 
+في الحموضة الأيضية: يزداد معدل التنفس لطرد ثاني أكسيد الكربون → مما يقلل مستوى الأحماض. 
+In metabolic alkalosis: breathing slows down to retain CO₂ → increasing acid levels. 
+في القلوية الأيضية: يقل معدل التنفس للاحتفاظ بثاني أكسيد الكربون → مما يزيد الأحماض. 
+ 
+           3. Renal (Kidney) Buffer System 
+The kidneys regulate blood pH by reabsorbing bicarbonate and excreting hydrogen 
+ions. 
+تنظم الكُلى درجة الحموضة في الدم عن طريق إعادة امتصاص البيكربونات وطرد أيونات الهيدروجين. 
+Kidneys are slower to respond than lungs (may take up to 2 days). 
+الكُلى أبطأ في التعويض من الرئتين، وقد تستغرق يومين لتنظيم التوازن. 
+In respiratory acidosis: kidneys excrete hydrogen ions and retain bicarbonate. 
+في الحموضة التنفسية: تطرد الكُلى أيونات الهيدروجين وتحتفظ بالبيكربونات لتعديل الحموضة. 
+In respiratory alkalosis: kidneys retain hydrogen and excrete bicarbonate. 
+في القلوية التنفسية: تحتفظ الكُلى بالهيدروجين وتطرح البيكربونات لتقليل القلوية. 
+ 
+        Steps in Arterial Blood Gas (ABG) Interpretation 
+خطوات تفسير تحليل غازات الدم الشرياني 
+ABG results must be interpreted step by step. 
+يجب تفسير نتائج غازات الدم خطوة بخطوة. 
+Step 1: Evaluate Oxygenation 
+الخطوة1: تقييم الأكسجة (نسبة الأكسجين في الدم.
+
+Oxygenation is assessed by checking PaO₂ and SaO₂ levels. 
+يتم تقييم الأكسجة من خلال قياس نسبة PaO₂ و SaO₂. 
+If PaO₂ is lower than normal → hypoxemia (low blood oxygen). 
+إذا كانت PaO₂ أقل من المعدل الطبيعي → فذلك يعني نقص الأكسجين في الدم Hypoxemia). 
+ 
+Step 2: Evaluate Acid-Base Status 
+الخطوة2: تقييم حالة الحموضة والقلوية.  
+Check pH level: 
+افحص قيمة الـpH: 
+• pH < 7.35 → Acidemia (blood is acidic). 
+• pH أقل من7.35 → الدم حامضي.  
+• pH > 7.45 → Alkalemia (blood is basic). 
+• pH أعلى من7.45 → الدم قلوي.  
+ 
+Evaluate PaCO₂ (respiratory component): 
+قيّم PaCO₂ (وهو الجزء المرتبط بالجهاز التنفسي:) 
+• PaCO₂ < 35 mmHg → Respiratory Alkalosis (hyperventilation). 
+• PaCO₂ أقل من35 → قلوية تنفسية بسبب فرط التنفس.  
+• PaCO₂ > 45 mmHg → Respiratory Acidosis (hypoventilation). 
+• PaCO₂ أعلى من45 → حموضة تنفسية بسبب قلة التنفس.  
+ 
+Evaluate HCO₃⁻ (metabolic component): 
+قيّم البيكربونات HCO₃⁻ (الجزء المرتبط بالأيض:)
+
+• HCO₃⁻ < 22 mEq/L → Metabolic Acidosis. 
+• HCO₃⁻ أقل من22 → حموضة أيضية.  
+• HCO₃⁻ > 26 mEq/L → Metabolic Alkalosis. 
+• HCO₃⁻ أعلى من26 → قلوية أيضية.  
+ 
+Step 3: Determine the Primary Imbalance 
+الخطوة3: تحديد نوع الاضطراب الأساسي.  
+If pH < 7.35 → Primary Acidosis. 
+إذا كان pH أقل من7.35 → اضطراب حامضي.  
+If pH > 7.45 → Primary Alkalosis. 
+إذا كان pH أعلى من7.45 → اضطراب قلوي.  
+ 
+Step 4: Determine Compensation 
+الخطوة4: تحديد ما إذا كان الجسم يعوض عن الاضطراب أم.  
+The body uses three buffer systems (blood, lungs, kidneys) to restore balance. 
+يستخدم الجسم ثلاثة أنظمة (الدم، الرئتين، الكُلى) لاستعادة التوازن. 
+• If pH is normal → fully compensated. 
+• إذا كانت قيمة pH طبيعية → الجسم عوّض تمامًا. 
+• If pH is abnormal → partially compensated. 
+• إذا كانت قيمة pH غير طبيعية → الجسم عوّض جزئيًا فقط. 
+ 
+          Example:
+
+A 47-year-old dialysis patient with ABG results: pH 7.32, PaCO₂ 34, HCO₃⁻ 18. 
+مريض عمره47 سنة يخضع لغسيل كلوي، ونتائج التحليل هيpH 7.32،PaCO₂ 34،HCO₃⁻ 18. 
+Step 1: pH is low → Acidosis. 
+الخطوة1: الـpH منخفض → حموضة. 
+Step 2: PaCO₂ is low → same direction as pH → metabolic origin. 
+الخطوة2 : PaCO₂ منخفض → يتحرك في نفس اتجاه الـpH → إذًا السبب أيضي. 
+Step 3: HCO₃⁻ is low → confirms metabolic cause. 
+الخطوة3 : HCO₃⁻ منخفض → يؤكد أن السبب أيضي. 
+     Interpretation: Metabolic Acidosis with partial compensation. 
+     التفسير: حموضة أيضية مع تعويض جزئي من الجسم. 
+ 
+       Alterations in Acid-Base Balance 
+التغيرات في توازن الحمض والقاعدة 
+ 
+🫁 1. Respiratory Acidosis 
+الحموضة التنفسية 
+Definition: 
+It occurs when there is a buildup of carbon dioxide (CO₂) in the blood due to poor 
+ventilation. 
+تحدث عندما يتراكم ثاني أكسيد الكربون CO₂) في الدم بسبب ضعف التنفس أو قلة التهوية. 
+Main cause: 
+Hypoventilation → increased CO₂ → low pH. 
+السبب الرئيسي: قلة التنفس → زيادة ثاني أكسيد الكربون → انخفاض الـpH (زيادة الحموضة.)
+
+Normal values reminder: 
+pH: 7.35–7.45, PaCO₂: 35–45 mmHg, HCO₃⁻: 22–26 mEq/L. 
+تذكير بالقيم الطبيعية: 
+pH من7.35 إلى7.45،  
+PaCO₂ من35 إلى45 مم زئبق،  
+HCO₃⁻ من22 إلى26 ملي مكافئ/لتر.  
+ 
+Causes of Respiratory Acidosis: 
+أسباب الحموضة التنفسية: 
+• Chronic obstructive pulmonary disease (COPD). 
+مرض الانسداد الرئوي المزمن. 
+• Asthma attack. 
+نوبة ربو حادة. 
+• Respiratory depression (due to drugs or anesthesia). 
+تثبيط مركز التنفس (بسبب الأدوية أو التخدير. 
+• Chest wall deformities. 
+تشوهات في جدار الصدر. 
+• Airway obstruction. 
+انسداد في مجرى الهواء. 
+ 
+Signs and Symptoms: 
+العلامات والأعراض: 
+• Shortness of breath (dyspnea). 
+ضيق في التنفس.
+
+• Headache and confusion. 
+صداع وتشوش ذهني. 
+• Drowsiness (can lead to coma if severe). 
+ميل للنوم وقد يؤدي إلى غيبوبة في الحالات الشديدة. 
+• Low blood pressure and rapid heart rate. 
+انخفاض ضغط الدم وتسارع ضربات القلب. 
+ 
+ABG Findings: 
+نتائج تحليل غازات الدم: 
+• pH < 7.35 (acidic). 
+الـpH أقل من7.35 (يدل على الحموضة.  
+• PaCO₂ > 45 mmHg (retained CO₂). 
+PaCO₂ أعلى من45 (احتباس ثاني أكسيد الكربون.  
+• HCO₃⁻ normal or slightly increased (if kidneys start compensating). 
+HCO₃⁻ طبيعي أو مرتفع قليلاً (إذا بدأت الكُلى في التعويض . 
+ 
+Compensation: 
+التعويض: 
+The kidneys retain bicarbonate (HCO₃⁻) to neutralize acid and restore balance. 
+تقوم الكُلى بالاحتفاظ بالبيكربونات HCO₃⁻) لمعادلة الحموضة واستعادة التوازن. 
+ 
+Nursing Management: 
+الرعاية التمريضية:
+
+1. Assess airway and breathing. 
+تقييم مجرى الهواء والتنفس. 
+2. Provide oxygen therapy (as ordered). 
+إعطاء الأكسجين حسب أوامر الطبيب. 
+3. Encourage deep breathing and coughing. 
+تشجيع المريض على التنفس العميق والسعال لطرد CO₂. 
+4. Administer bronchodilators if prescribed. 
+إعطاء موسعات الشعب الهوائية إذا تم وصفها. 
+5. Monitor ABG values regularly. 
+مراقبة قيم غازات الدم بشكل منتظم. 
+6. Educate patient on breathing exercises. 
+تعليم المريض تمارين التنفس لتحسين التهوية. 
+ 
+        2. Respiratory Alkalosis 
+القلوية التنفسية 
+ 
+Definition: 
+It occurs when too much carbon dioxide (CO₂) is lost from the body due to rapid 
+breathing (hyperventilation). 
+تحدث عندما يفقد الجسم كمية كبيرة من ثاني أكسيد الكربون بسبب سرعة التنفس (فرط التهوية. 
+Result: 
+Decreased CO₂ → increased pH (becomes more alkaline). 
+النتيجة: انخفاض ثاني أكسيد الكربون → ارتفاع درجة الحموضة pH) مما يؤدي إلى القلوية.
+
+Causes: 
+الأسباب: 
+• Anxiety or panic attack. 
+القلق أو نوبات الهلع. 
+• Fever or pain. 
+الحمى أو الألم الشديد. 
+• Hypoxemia (low oxygen level in blood). 
+نقص الأكسجين في الدم. 
+• Brain injury or stroke. 
+إصابة في الدماغ أو جلطة دماغية. 
+• Mechanical ventilation with high rate. 
+استخدام جهاز التنفس الصناعي بسرعة عالية. 
+ 
+Signs and Symptoms: 
+العلامات والأعراض: 
+• Rapid breathing (tachypnea). 
+تنفس سريع. 
+• Lightheadedness and dizziness. 
+دوخة وشعور بخفة الرأس. 
+• Tingling in fingers or around the mouth. 
+وخز في الأصابع أو حول الفم. 
+• Muscle cramps or tremors. 
+تقلصات أو ارتعاش عضلي.
+
+• Confusion or fainting (in severe cases). 
+تشوش ذهني أو إغماء في الحالات الشديدة. 
+ 
+ABG Findings: 
+نتائج تحليل غازات الدم: 
+• pH > 7.45 (alkalosis). 
+درجة الحموضة أكبر من7.45  (قلوية.  
+• PaCO₂ < 35 mmHg (low CO₂). 
+PaCO₂ أقل من35 مم زئبق (نقص ثاني أكسيد الكربون.  
+• HCO₃⁻ normal or slightly decreased (if kidneys start compensation). 
+HCO₃⁻ طبيعي أو منخفض قليلاً (إذا بدأت الكلى التعويض . 
+ 
+Compensation: 
+التعويض: 
+The kidneys retain hydrogen ions (H⁺) and excrete bicarbonate (HCO₃⁻) to lower the 
+pH. 
+تحتفظ الكُلى بأيونات الهيدروجين وتطرح البيكربونات لتقليل درجة القلوية وإرجاع التوازن. 
+ 
+Nursing Management: 
+الرعاية التمريضية: 
+1. Encourage slow, deep breathing. 
+تشجيع المريض على التنفس ببطء وعمق. 
+2. Have the patient breathe into a paper bag (to retain CO₂). 
+جعل المريض يتنفس داخل كيس ورقي لزيادة مستوى ثاني أكسيد الكربون.
+
+3. Treat underlying cause (pain, fever, anxiety). 
+معالجة السبب الرئيسي مثل الألم أو القلق أو الحمى. 
+4. Monitor ABG values frequently. 
+مراقبة قيم غازات الدم بشكل متكرر. 
+5. Provide reassurance and calm environment. 
+طمأنة المريض وتوفير بيئة هادئة لتقليل القلق. 
+ 
+      3. Metabolic Acidosis 
+الحموضة الأيضية (التمثيلية 
+ 
+Definition: 
+It occurs when the body produces too much acid or when the kidneys cannot remove 
+enough acid from the body. 
+تحدث عندما ينتج الجسم كمية كبيرة من الأحماض أو عندما تفشل الكُلى في التخلص من الأحماض بشكل كاف. 
+Result: 
+Low pH and low bicarbonate (HCO₃⁻) levels. 
+النتيجة: انخفاض في درجة الحموضة pH) وانخفاض في مستوى البيكربونات HCO₃⁻). 
+ 
+Causes: 
+الأسباب: 
+• Diabetic ketoacidosis (DKA). 
+الحماض الكيتوني السكري. 
+• Severe diarrhea (loss of bicarbonate). 
+الإسهال الشديد (فقدان البيكربونات.
+
+• Renal failure (kidneys can’t excrete acid). 
+فشل كلوي (الكُلى لا تستطيع إخراج الأحماض. 
+• Shock or cardiac arrest (lactic acid buildup). 
+الصدمة أو توقف القلب (تراكم حمض اللاكتيك. 
+• Sepsis or severe infection. 
+الإنتان أو العدوى الشديدة. 
+ 
+Signs and Symptoms: 
+العلامات والأعراض: 
+• Deep, rapid breathing (Kussmaul’s respiration). 
+تنفس عميق وسريع يُسمى تنفس كوسماول. 
+• Weakness and fatigue. 
+ضعف وإرهاق عام. 
+• Confusion or drowsiness. 
+تشوش ذهني أو ميل للنوم. 
+• Nausea, vomiting, and abdominal pain. 
+غثيان وقيء وألم في البطن. 
+• Low blood pressure and arrhythmias (in severe cases). 
+انخفاض ضغط الدم واضطراب ضربات القلب في الحالات الشديدة. 
+ 
+ABG Findings: 
+نتائج تحليل غازات الدم: 
+• pH < 7.35 (acidic). 
+درجة الحموضة أقل من7.35 (يدل على الحموضة.
+
+• HCO₃⁻ < 22 mEq/L (low bicarbonate). 
+البيكربونات أقل من22 (منخفضة.  
+• PaCO₂ normal or low (lungs try to compensate by hyperventilation). 
+PaCO₂ طبيعي أو منخفض (لأن الرئتين تحاول التعويض عن طريق التنفس السريع. 
+ 
+Compensation: 
+التعويض: 
+The lungs increase the breathing rate to blow off CO₂ and reduce acid levels. 
+تقوم الرئتان بزيادة سرعة التنفس لطرد ثاني أكسيد الكربون وتقليل مستوى الحموضة. 
+ 
+Nursing Management: 
+الرعاية التمريضية: 
+1. Monitor ABG results and vital signs. 
+مراقبة نتائج تحليل غازات الدم والعلامات الحيوية. 
+2. Administer IV fluids as ordered (e.g., normal saline). 
+إعطاء محاليل وريدية حسب أوامر الطبيب مثل المحلول الملحي. 
+3. If DKA: give insulin as prescribed. 
+في حالة الحماض الكيتوني السكري: إعطاء الإنسولين حسب الوصفة. 
+4. Treat underlying cause (infection, renal failure, diarrhea). 
+علاج السبب الرئيسي مثل العدوى أو الفشل الكلوي أو الإسهال. 
+5. Administer sodium bicarbonate (if severe and ordered). 
+إعطاء بيكربونات الصوديوم في الحالات الشديدة إذا تم وصفها. 
+ 
+         4. Metabolic Alkalosis
+
+القلوية الأيضية (التمثيلية 
+ 
+Definition: 
+It occurs when there is an excess loss of acid or an increase in bicarbonate (HCO₃⁻) in 
+the body. 
+تحدث عندما يفقد الجسم كمية كبيرة من الأحماض أو عندما يزداد مستوى البيكربونات في الدم. 
+Result: 
+High pH and high bicarbonate (HCO₃⁻) levels. 
+النتيجة: ارتفاع في درجة الحموضة pH) وارتفاع في مستوى البيكربونات HCO₃⁻). 
+ 
+Causes: 
+الأسباب: 
+• Prolonged vomiting (loss of stomach acid). 
+القيء المستمر (فقدان أحماض المعدة. 
+• Excessive use of antacids. 
+الاستخدام المفرط لمضادات الحموضة. 
+• Gastric suction (removal of gastric acid). 
+شفط المعدة (إزالة الأحماض المعدية. 
+• Diuretic therapy (loss of hydrogen and potassium ions). 
+استخدام مدرات البول (فقدان أيونات الهيدروجين والبوتاسيوم. 
+• Hypokalemia (low potassium). 
+انخفاض مستوى البوتاسيوم في الدم. 
+ 
+Signs and Symptoms:
+
+العلامات والأعراض: 
+• Slow, shallow breathing (to retain CO₂). 
+تنفس بطيء وسطحي (للاحتفاظ بثاني أكسيد الكربون. 
+• Muscle cramps or twitching. 
+تقلصات أو ارتعاش في العضلات. 
+• Dizziness and weakness. 
+دوخة وضعف عام. 
+• Nausea and vomiting. 
+غثيان وقيء. 
+• Confusion and irritability. 
+تشوش ذهني وتهيّج عصبي. 
+ 
+ABG Findings: 
+نتائج تحليل غازات الدم: 
+• pH > 7.45 (alkalosis). 
+درجة الحموضة أعلى من7.45 (قلوية.  
+• HCO₃⁻ > 26 mEq/L (high bicarbonate). 
+مستوى البيكربونات أعلى من26 (مرتفع.  
+• PaCO₂ normal or increased (lungs compensate by hypoventilation). 
+PaCO₂ طبيعي أو مرتفع (تعوض الرئتان عن طريق تقليل التنفس. 
+ 
+Compensation: 
+التعويض:
+
+The lungs slow down breathing to retain CO₂ and increase acid to balance pH. 
+تقوم الرئتان بإبطاء التنفس للاحتفاظ بثاني أكسيد الكربون وزيادة الأحماض لإعادة توازن درجة الحموضة. 
+ 
+Nursing Management: 
+الرعاية التمريضية: 
+1. Monitor ABG and electrolyte levels (especially potassium). 
+مراقبة نتائج غازات الدم ومستويات الإلكتروليتات خاصة البوتاسيوم. 
+2. Assess for vomiting and gastric suction. 
+تقييم حالة القيء أو استخدام أنبوب شفط المعدة. 
+3. Administer fluids as ordered (normal saline). 
+إعطاء سوائل وريدية مثل المحلول الملحي حسب أوامر الطبيب. 
+4. Stop or adjust diuretics if necessary. 
+إيقاف أو تعديل جرعات مدرات البول إذا لزم الأمر. 
+5. Provide potassium replacement if low. 
+إعطاء مكملات البوتاسيوم في حال انخفاضه. 
+6. Treat underlying cause (vomiting, suction, medication). 
+علاج السبب الأساسي مثل القيء أو الأدوية أو شفط المعدة.

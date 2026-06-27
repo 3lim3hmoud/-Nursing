@@ -1,0 +1,215 @@
+Lecture 2: Technical Writing 
+1. Define technical communication and its primary purpose. 
+Answer: 
+Technical communication is the process of presenting technical information clearly and 
+effectively to specific audiences. 
+Its main purpose is to help people understand information and take action or make 
+decisions. 
+ 
+2. Explain the six factors of accessibility in technical documents. 
+Answer: 
+• Accuracy: Information is correct and error-free. 
+• Clarity: Meaning is clear with no ambiguity. 
+• Completeness: All required information is included. 
+• Diction: Appropriate and suitable language is used. 
+• Organization: Ideas are arranged logically. 
+• Visual effectiveness: Proper layout, design, and graphics. 
+ 
+3. Describe the five stages of the technical writing process. 
+Answer: 
+1. Planning and researching – gathering information. 
+2. Organizing and drafting – arranging ideas and writing the first draft. 
+3. Improving style – making writing clear and effective. 
+4. Designing the document – using visuals and layout. 
+5. Revising and editing – reviewing content and correcting errors. 
+ 
+4. Discuss the rhetorical situation and its main elements. 
+Answer: 
+The rhetorical situation explains why and how a document is written. 
+Its elements include:
+
+• Subject – the topic. 
+• Purpose – the goal of the document. 
+• Readers – the target audience. 
+• Context – where and when the document is used. 
+ 
+5. What are the four levels of revision in technical writing? 
+Answer: 
+• Revising: Reviewing content and purpose. 
+• Substantive editing: Improving organization and design. 
+• Copyediting: Correcting grammar and sentence structure. 
+• Proofreading: Final check for spelling and punctuation. 
+ 
+Lecture 3: Nurses Report Sheets 
+1. What is a nursing report sheet and why is it important? 
+Answer: 
+A nursing report sheet is a document used to record patient data and care information. 
+It is important because it ensures effective communication and continuity of care 
+between shifts. 
+ 
+2. List five benefits of nursing report sheets. 
+Answer: 
+• Improves patient care. 
+• Enhances patient safety. 
+• Reduces medical errors. 
+• Saves time and increases efficiency. 
+• Can be customized for departments.
+
+3. Describe the main components of a patient report sheet. 
+Answer: 
+• Patient identification data. 
+• Diagnosis and medical history. 
+• Medications and treatments. 
+• Vital signs and assessments. 
+• Intake and output records. 
+• Planned procedures and care plan. 
+ 
+4. Give four tips for completing a report sheet effectively. 
+Answer: 
+• Use approved abbreviations. 
+• Focus on critical information. 
+• Update data during the shift. 
+• Review accuracy before handover. 
+ 
+Lecture 4: Practical Application 
+1. How are medical history and allergies documented in the Sarah Johnson case? 
+Answer: 
+Her history includes asthma, seasonal allergies, and previous surgery. 
+Her penicillin allergy is clearly documented to prevent medication errors. 
+ 
+2. What are the care priorities for a patient with Influenza B? 
+Answer: 
+• Apply droplet isolation precautions. 
+• Encourage adequate fluid intake. 
+• Monitor body temperature regularly.
+
+3. Explain the relay runner’s baton analogy in nursing reports. 
+Answer: 
+The report sheet is like a baton passed between nurses. 
+Good handover ensures smooth care, while poor handover risks patient safety. 
+ 
+Lecture 5: Records 
+1. Define records and state their importance in healthcare. 
+Answer: 
+Records are written documents that document actions and events. 
+In healthcare, they provide legal evidence, continuity of care, and patient safety. 
+ 
+2. List the characteristics of good records. 
+Answer: 
+Good records are accurate, complete, updated, organized, confidential, and objective. 
+ 
+3. Compare alphabetical and numerical filing systems. 
+Answer: 
+• Alphabetical filing: Arranged by names and easy to use. 
+• Numerical filing: Arranged by numbers and useful for large systems. 
+ 
+4. Explain the black box analogy of records. 
+Answer: 
+Like an airplane’s black box, records store complete and permanent information for 
+safety and legal accountability. 
+ 
+Lecture 6: The Nursing Process 
+1. Define the nursing process and its characteristics. 
+Answer: 
+The nursing process is a systematic method for planning patient care. 
+It is cyclic, dynamic, patient-centered, and collaborative.
+
+2. Differentiate between subjective and objective data. 
+Answer: 
+• Subjective data: Patient-reported symptoms (e.g., pain). 
+• Objective data: Measurable signs (e.g., temperature). 
+ 
+3. Explain the PES format. 
+Answer: 
+• P: Problem 
+• E: Etiology 
+• S: Signs and symptoms 
+Used to write clear nursing diagnoses. 
+ 
+4. Describe the four types of nursing assessment. 
+Answer: 
+• Initial assessment 
+• Problem-focused assessment 
+• Emergency assessment 
+• Time-lapsed assessment 
+ 
+Lecture 7: Nursing Reports 
+1. Identify the three main types of nursing reports. 
+Answer: 
+• Shift report 
+• Admission report 
+• Discharge report 
+ 
+2. What are the goals of a shift report? 
+Answer:
+
+• Ensure continuity of care. 
+• Reduce errors. 
+• Transfer accurate information. 
+• Provide legal documentation. 
+ 
+3. List components of a shift report. 
+Answer: 
+Patient information, current status, recent changes, care plan, medications, IV access, 
+discharge planning, and handover details. 
+ 
+Lecture 8: SBAR Technique 
+1. What does SBAR stand for and why is it used? 
+Answer: 
+SBAR stands for Situation, Background, Assessment, Recommendation. 
+It is used to communicate critical information clearly and quickly. 
+ 
+2. How does SBAR improve patient safety? 
+Answer: 
+It reduces miscommunication, organizes information, and prevents vague messages. 
+ 
+3. Describe the Recommendation step. 
+Answer: 
+It states what action is needed, the time frame, and confirms orders for accuracy. 
+ 
+4. Explain the mechanic analogy of SBAR. 
+Answer: 
+• Situation: current problem 
+• Background: history 
+• Assessment: suspected cause
+
+• Recommendation: required action 
+ 
+1. Plain Style vs. Persuasive Style 
+Plain Style Persuasive Style 
+Clear and direct writing Aims to convince the reader 
+Focuses on facts Uses logic and emotion 
+Gives information only Motivates action or agreement 
+ 
+2. Subjective Data vs. Objective Data 
+Subjective Data Objective Data 
+Reported by the patient Observed or measured 
+Symptoms Signs 
+Example: pain, itching Example: temperature, BP 
+ 
+3. Nursing Diagnosis vs. Medical Diagnosis 
+Nursing Diagnosis Medical Diagnosis 
+Human response to illness Disease or condition 
+Can change over time Usually remains the same 
+Focuses on patient needs Focuses on pathology 
+ 
+ 
+ 
+ 
+4. Filing Systems Comparison
+
+Alphabetical Numerical Geographical 
+By names By numbers By location 
+Easy and familiar Accurate for large systems Useful for multiple sites 
+Commonly used More organized Location-based 
+ 
+7. Primary vs. Secondary Data Sources 
+Primary Source Secondary Source 
+From the patient From others or records 
+Direct information Indirect information 
+Most reliable Used when patient can’t respond 
+ 
+8. Types of Nursing Interventions 
+Independent Dependent Collaborative 
+Nurse-initiated Doctor-ordered Team-based 
+No order needed Requires order Shared responsibility

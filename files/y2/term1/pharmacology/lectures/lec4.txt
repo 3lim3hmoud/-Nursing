@@ -1,0 +1,86 @@
+Receptor-mediated 
+Mechanisms
+• Receptors are macromolecules present 
+either on the cell surface, cytoplasm, or 
+in the nucleus with which the drug binds 
+and interacts to produce cellular 
+changes.
+
+• For example, adrenergic receptors, 
+and cholinergic receptors.
+
+Affinity: The ability of the drug to get bound to the 
+receptor is known as affinity.
+Intrinsic activity: The ability of the drug to produce 
+pharmacological action after combining with the 
+receptor is known as the intrinsic activity of the drug.
+Agonist: A drug that can produce pharmacological 
+action after binding to the receptor is called an 
+agonist.
+Agonist has high affinity + high intrinsic activity 
+(e.g., adrenaline).
+
+• Competitive Antagonist: 
+➢A drug that binds to receptors but is not 
+capable of producing pharmacological 
+action is called an antagonist.
+➢Antagonist has high affinity without 
+intrinsic activity (e.g., atropine). 
+➢It produces receptor blockade
+
+Partial agonist
+•  A drug that binds to the 
+receptor but produces an 
+effect less than that of an 
+agonist is called a partial 
+agonist.
+It has affinity + less activity
+
+• It has a full affinity towards the 
+receptor but produces an effect 
+opposite to that of an agonist.
+• It has an affinity and intrinsic 
+activity between 0 and −1.
+Inverse agonist
+
+Receptor Families
+1. Ligand-gated ion channels (inotropic receptors).
+2. G-protein-coupled receptors (metabotropic receptors).
+3. Enzymatic receptors.
+4. Receptor regulating gene expression (transcription factors) 
+or the nuclear receptor.
+
+Ligand-gated Ion Channels 
+(Inotropic Receptors)
+• Examples are
+✓ nicotinic (NM) 
+acetylcholine receptors, 
+✓ GABA receptors in the 
+central nervous system.
+
+Nicotinic acetylcholine receptor, a 
+ligand-gated natural ion channel.
+
+G-Protein-Coupled Receptors 
+(Metabotropic Receptors)
+• They are coupled to intracellular 
+effectors through G-proteins.
+•  G-proteins are membrane proteins 
+and have three subunits (α,β,γ) with 
+GDP bound to -subunit.
+
+Enzyme-linked 
+Receptors
+• For example, receptors for insulin (receptor tyrosine kinase)
+
+• Examples are receptors for sex 
+steroids and glucocorticoids.
+Nuclear Receptors
+
+Regulation of 
+Receptors
+• Receptors can be regulated by 
+various mechanisms resulting in 
+either their 
+✓up-regulation or 
+✓downregulation.

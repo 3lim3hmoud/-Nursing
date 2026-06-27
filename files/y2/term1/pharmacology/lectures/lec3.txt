@@ -1,0 +1,144 @@
+• Pharmacodynamics (Gr. Pharmacon: 
+drug; dynamis: power):
+•   it covers all the aspects relating to 
+‘what the drug does to the body’. 
+• It is the study of drugs—
+✓their mechanism of action, 
+✓pharmacological actions, 
+✓ adverse effects.
+
+Types of 
+Drug Action
+1. Stimulation
+2. Depression
+3. Irritation
+4. Replacement
+5. Cytotoxic
+
+Some drugs act by increasing 
+the activity of specialized cells, 
+e.g., adrenaline stimulates the 
+heart increasing heart rate 
+and force of contraction.
+1.Stimulation:
+
+2. Depression: 
+Some drugs act by decreasing the 
+activity of specialized cells,
+ e.g., alcohol, barbiturates, general 
+anesthetics, etc. depress the central 
+nervous system.
+
+3. Irritation:
+Certain agents on topical application 
+can irritate the skin and adjacent 
+tissues. 
+When an agent on application to the 
+skin relieves deep-seated pain, it is 
+known as a counterirritant (e.g., 
+eucalyptus oil, methyl salicylate).
+ They are useful in sprains, joint pain, 
+myalgia, etc.
+
+4. Replacement
+When there is a deficiency of 
+endogenous substances, they can 
+be replaced by drugs,
+ e.g., insulin in diabetes mellitus.
+
+5. Cytotoxic
+Drugs are selectively toxic to the 
+infecting organism/cancer cells,
+ e.g., antibiotics/ anticancer drugs.
+
+Mechanism of Drug Action
+Nonreceptor-
+mediated 
+Mechanisms
+Receptor-
+mediated 
+Mechanisms
+
+Nonreceptor-
+mediated 
+Mechanisms
+1. By physical action
+2. By chemical action
+3. Through enzymes
+4. Through ion channels
+5. Through antibody production
+6. Transporters
+7. Others
+
+1. By physical action:
+a. Osmosis: Some drugs act by exerting an osmotic effect, e.g., 20% 
+mannitol in cerebral edema.
+b. Adsorption: Activated charcoal adsorbs toxins; hence it is used in the 
+treatment of drug poisoning.
+c. Demulcent: Cough syrup produces a soothing effect in pharyngitis by 
+coating the inflamed mucosa.
+d. Radioactivity: Radioactive isotopes emit rays and destroy the tissues, 
+e.g., 131I in hyperthyroidism.
+
+2. By chemical action:
+a. Antacids are weak bases; hence they neutralize acid in the 
+stomach in peptic ulcer.
+b. Metals like iron, copper, and mercury,  are eliminated from the body 
+with the help of chelating agents.
+ They trap the metals in their ring structure and form water-soluble 
+complexes, which are rapidly excreted from the body.
+
+3. Through enzymes: 
+• Almost all biological reactions are carried out under the 
+catalytic influence of enzymes; hence, enzymes are a very 
+important target of drug action. 
+• Drugs can either increase or decrease the rate of enzymatic 
+media
+
+• Drug action via enzyme inhibition:
+•  Xanthine and hypoxanthine are oxidized 
+to uric acid by the enzyme xanthine oxidase, 
+which is inhibited by allopurinol. 
+• Allopurinol is used in the treatment of 
+chronic gout to reduce the synthesis of uric 
+acid.
+
+4. Through ion channels
+• Some drugs directly bind to 
+ion channels and alter the flow 
+of ions, e.g.
+• local anesthetics block 
+sodium channels in the 
+neuronal membrane to 
+produce local anesthesia.
+
+6. Transporters
+Some drugs produce their effect by 
+binding to transporters. 
+Selective serotonin reuptake inhibitors 
+(SSRIs)  bind to 5-HT transporter block 5-
+HT reuptake into neurons antidepressant 
+effect.
+
+5. Through antibody production: 
+Vaccines produce their 
+effect by stimulating the 
+formation of antibodies, 
+e.g., vaccines against 
+tuberculosis (BCG)
+
+7. Others: 
+Anticancer drugs like 
+cyclophosphamide produce 
+their effect by binding to 
+nucleic acids
+
+Receptor-mediated 
+Mechanisms
+• Receptors are macromolecules present 
+either on the cell surface, cytoplasm, or in 
+the nucleus with which the drug binds and 
+interacts to produce cellular changes.
+
+• For example, adrenergic receptors, 
+cholinergic receptors , opioid receptors, etc.

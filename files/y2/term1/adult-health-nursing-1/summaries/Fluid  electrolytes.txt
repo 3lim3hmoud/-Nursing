@@ -1,0 +1,382 @@
+Fluid & Electrolytes Imbalance 
+ 
+Distribution of Body Water 
+توزيع ماء الجسم 
+Body fluids compartment 
+حُجيرات سوائل الجسم 
+The body holds fluid inside the cells intracellular fluid (ICF) – 60% of body fluids 
+يحتوي الجسم على سوائل داخل الخلايا السائل داخل الخلوي  ICF) – ويمثل60% من سوائل الجسم  
+Outside the cells extracellular fluid (ECF) – 40% of body fluids 
+وخارج الخلايا السائل خارج الخلوي  ECF) – ويمثل40% من سوائل الجسم  
+Interstitial fluid (ISF) surrounds the cells 
+السائل الخلالي ISF) يحيط بالخلايا 
+Intravascular fluid (IVF) = plasma 
+السائل داخل الأوعية IVF) = البلازما 
+ 
+Movement of Fluids and Electrolytes in the Body 
+حركة السوائل والكهارل داخل الجسم 
+Osmosis – التناضح 
+The movement of fluid across cell membrane from the less concentrated solution → 
+to the more concentrated solution 
+حركة السوائل عبر غشاء الخلية من المحلول الأقل تركيزًا → إلى المحلول الأكثر تركيزًا  
+Diffusion – الانتشار 
+Movement of solutes (dissolved particles) from higher concentration → to lower 
+concentration 
+انتقال المذاب (الجزيئات) من تركيز أعلى → تركيز أقل  
+ 
+Fluid Types – أنواع المحاليل 
+Isotonic – متساوي التوتر
+
+A solution that has about the same concentration of particles as plasma 
+محلول له نفس تركيز الجزيئات تقريبًا مثل البلازما 
+Hypotonic – منخفض التوتر 
+A solution with less osmolality than plasma 
+محلول تركيزه أقل من تركيز البلازما 
+Hypertonic – عالي التوتر 
+A solution with greater osmolality than plasma 
+محلول تركيزه أعلى من تركيز البلازما 
+ 
+Fluid Imbalances – اختلال توازن السوائل 
+Hypovolemia – نقص حجم الدم 
+Dehydration – الجفاف 
+Fluid volume deficit (FVD) – نقص حجم السوائل 
+Hypervolemia – زيادة حجم الدم 
+Overhydration – زيادة الماء 
+Fluid volume excess (FVE) – زيادة حجم السوائل 
+ 
+Fluid Volume Deficit (FVD) – نقص حجم السوائل 
+Fluid output exceeds fluid intake 
+خروج السوائل أكثر من دخولها للجسم 
+Causes – الأسباب 
+Gastrointestinal losses: vomiting, NG suctioning, diarrhea 
+فقدان من الجهاز الهضمي: قيء، شفط أنفي معدي، إسهال 
+Skin losses: diaphoresis 
+فقدان عبر الجلد: تعرّق شديد 
+Renal losses: diuretics, diabetes insipidus 
+فقدان كلوي: مدرات البول، السكري الكاذب 
+Hemorrhage 
+نزيف
+
+Altered intake: NPO 
+قلة دخول السوائل: منع الأكل والشرب 
+Frequent enemas 
+حقن شرجية متكررة 
+ 
+Clinical Manifestations – العلامات السريرية 
+Vital signs: hyperthermia, thready pulse, hypotension, tachypnea, tachycardia 
+العلامات الحيوية: ارتفاع الحرارة، نبض خيطي، انخفاض ضغط الدم، سرعة التنفس، سرعة ضربات القلب 
+Neuromuscular: dizziness, confusion, fatigue 
+عصبي عضلي: دوخة، ارتباك، إرهاق 
+GI: thirst, dry tongue, nausea, vomiting, anorexia, constipation 
+جهاز هضمي: عطش، لسان جاف، غثيان، قيء، فقدان شهية، إمساك 
+Renal: oliguria 
+كلوي: قلة البول 
+Dry skin & mucous membranes 
+جلد جاف وأغشية مخاطية جافة 
+ 
+Complications – المضاعفات 
+Hypovolemic shock 
+صدمة نقص حجم 
+Death 
+الوفاة 
+ 
+Nursing Management – الرعاية التمريضية 
+Administer oxygen 
+إعطاء أكسجين 
+Provide fluid replacement: oral & IV 
+تعويض السوائل: فموي ووريدي 
+Fluids: whole blood, packed RBCs, plasma, Ringer lactate, normal saline 
+السوائل: دم كامل، خلايا حمراء مركزة، بلازما، رينجر لاكتات، محلول ملحي
+
+Administer vasoconstrictors (dopamine, norepinephrine) 
+إعطاء قابضات أوعية مثل الدوبامين والنورأدرينالين 
+Assess skin, mucous membranes 
+تقييم الجلد والأغشية المخاطية 
+Monitor intake & output 
+متابعة الداخل والخارج 
+Monitor serum electrolytes, BUN, creatinine 
+فحص الأملاح، اليوريا، الكرياتينين 
+Monitor cardiac rhythm 
+مراقبة نظم القلب 
+ 
+Fluid Volume Excess (FVE) – زيادة حجم السوائل 
+Causes – الأسباب 
+Renal failure 
+فشل كلوي 
+Excessive sodium intake 
+تناول مفرط للصوديوم 
+Age-related changes 
+تغيرات مرتبطة بالعمر 
+ 
+Clinical Manifestations – العلامات السريرية 
+Vital signs: hypertension, tachypnea, tachycardia 
+علامات: ارتفاع ضغط، سرعة نفس، سرعة قلب 
+Respiratory: dyspnea, orthopnea, crackles 
+تنفسي: ضيق نفس،orthopnea، خرخرات 
+Edema, distended neck veins 
+وذمة، أوردة رقبة منتفخة 
+Pale, cool skin 
+جلد بارد وشاحب
+
+Nursing Management 
+Monitor intake & output 
+متابعة الداخل والخارج 
+Reduce IV flow rates 
+تقليل معدل المحاليل 
+Administer diuretics 
+إعطاء مدرات 
+Limit fluid & sodium intake 
+تقليل الصوديوم والسوائل 
+Reposition every 2 hours 
+تغيير الوضع كل ساعتين 
+Weigh daily 
+وزن يومي 
+ 
+Electrolytes – الكهارل 
+Intracellular: Potassium, Magnesium, Phosphate 
+داخل الخلايا: بوتاسيوم، ماغنسيوم، فوسفات 
+Extracellular: Sodium, Calcium, Chloride, Bicarbonate 
+خارج الخلايا: صوديوم، كالسيوم، كلوريد، بيكربونات 
+ 
+Sodium Imbalance – اضطراب الصوديوم 
+ 
+Hyponatremia – انخفاض الصوديوم 135 mEq/L) 
+Causes 
+GIT loss (vomiting, diarrhea) 
+فقدان من الجهاز الهضمي 
+Renal loss (diuretics) 
+فقدان عبر الكلى 
+Blood loss 
+نزيف
+
+Hypovolemia & diaphoresis 
+نقص حجم وتعرق 
+Low sodium diet 
+نظام قليل الصوديوم 
+ 
+Clinical Manifestations 
+Hypotension 
+انخفاض ضغط 
+Tachycardia 
+تسارع القلب 
+Tachypnea 
+تسارع التنفس 
+Oliguria 
+قلة البول 
+Dry skin 
+جلد جاف 
+Sunken eyes 
+عيون غائرة 
+Nausea, vomiting, diarrhea 
+غثيان، قيء، إسهال 
+ 
+Nursing Management 
+Monitor I&O 
+متابعة الداخل والخارج 
+Monitor vitals 
+متابعة العلامات الحيوية 
+Increase sodium intake 
+زيادة الصوديوم 
+Daily weight 
+وزن يومي
+
+Hypernatremia – ارتفاع الصوديوم 145 mEq/L) 
+Causes 
+Excessive saline 
+محلول ملحي زائد 
+Aldosterone excess 
+زيادة الألدوستيرون 
+Renal retention 
+احتباس كلوي 
+ 
+Clinical Manifestations 
+Puffiness of face 
+انتفاخ الوجه 
+Edema 
+وذمة 
+Ascites 
+استسقاء 
+Weight gain 
+زيادة وزن 
+Hypertension 
+ارتفاع ضغط 
+Agitation, confusion 
+هياج، ارتباك 
+ 
+Nursing Management 
+Monitor LOC 
+مراقبة الوعي 
+Oral hygiene 
+عناية بالفم 
+Monitor I&O 
+متابعة الداخل والخارج
+
+Daily weight 
+وزن يومي 
+ 
+Potassium Imbalance – اضطراب البوتاسيوم 
+ 
+Hypokalemia – انخفاض البوتاسيوم 3.5 mEq/L) 
+Causes 
+Vomiting, diarrhea 
+قيء وإسهال 
+Diuretics (Lasix) 
+مدرات 
+Hemorrhage 
+نزيف 
+Excessive sweating 
+تعرق شديد 
+ 
+Clinical Manifestations 
+Weakness 
+ضعف 
+Constipation 
+إمساك 
+Muscle cramps 
+تشنجات عضلية 
+Cardiac dysrhythmia 
+اضطراب نظم القلب 
+ECG: ST depression, T inversion 
+تغيرات ECG: انخفاض ST، انقلاب T 
+ 
+Medical Treatment
+
+Oral potassium 
+بوتاسيوم فموي 
+Correct fluids 
+تصحيح السوائل 
+Stop diuretics 
+إيقاف المدرات 
+Potassium-rich foods 
+أطعمة غنية بالبوتاسيوم (موز، طماطم 
+Potassium is NEVER given IV push 
+لا يُعطى البوتاسيوم IV push إطلاقًا 
+ 
+Nursing Management 
+Monitor heart rhythm 
+مراقبة القلب 
+Monitor IV site 
+مراقبة مكان الإبرة 
+Provide oral potassium 
+إعطاء بوتاسيوم فموي 
+ 
+Hyperkalemia – ارتفاع البوتاسيوم 5 mEq/L) 
+Causes 
+Excess potassium intake 
+زيادة البوتاسيوم 
+IV potassium 
+بوتاسيوم وريدي 
+Renal failure 
+فشل كلوي 
+ 
+Clinical Manifestations
+
+Muscle weakness 
+ضعف عضلي 
+Diarrhea 
+إسهال 
+Slow HR 
+بطء قلب 
+Low BP 
+ضغط منخفض 
+ECG: peaked T wave, wide QRS 
+ECG: موجة T عالية،QRS واسع 
+ 
+Medical Treatment 
+IV calcium gluconate 
+كالسيوم غلوكونات وريدي 
+IV sodium bicarbonate 
+بيكربونات 
+Diuretics 
+مدرات 
+Dialysis 
+غسيل كلى 
+ 
+Calcium Imbalance 
+ 
+Hypocalcemia – انخفاض الكالسيوم 4.5 mEq/L) 
+Causes 
+Low calcium intake 
+انخفاض تناول الكالسيوم 
+Vitamin D deficiency 
+نقص فيتامين D
+
+Post-thyroidectomy 
+بعد استئصال الغدة الدرقية 
+ 
+ECG 
+Prolonged QT 
+إطالة QT 
+ 
+Treatment 
+Oral calcium 
+كالسيوم فموي 
+High calcium diet 
+نظام غني بالكالسيوم 
+Vitamin D 
+فيتامين د 
+IV calcium gluconate 
+كالسيوم وريدي 
+ 
+Hypercalcemia – ارتفاع الكالسيوم 5.5 mEq/L) 
+Causes 
+Excess calcium/vitamin D 
+زيادة الكالسيوم/فيتامين D 
+Hyperparathyroidism 
+فرط جارات الدرق 
+Cancer 
+الأورام 
+Diuretics abuse 
+إفراط في المدرات 
+ 
+Treatment
+
+Stop calcium 
+إيقاف الكالسيوم 
+Normal saline 
+محلول ملحي 
+Diuretics 
+مدرات 
+Calcitonin 
+كالسيتونين 
+Dialysis 
+غسيل كلى 
+ 
+Magnesium Imbalance 
+ 
+Hypomagnesemia – انخفاض الماغنسيوم 1.7) 
+Causes 
+Malnutrition 
+سوء تغذية 
+Diarrhea 
+إسهال 
+Alcoholism 
+إدمان كحول 
+Drugs (diuretics) 
+أدوية معينة 
+ 
+Nursing Management 
+IV magnesium 
+ماغنسيوم وريدي 
+Stop magnesium-losing drugs 
+إيقاف الأدوية المسببة لفقد المغنيسيوم
+
+Foods rich in magnesium 
+أطعمة غنية بالمغنيسيوم 
+ 
+Hypermagnesemia – ارتفاع الماغنسيوم 2.5) 
+Causes 
+High intake 
+تناول عالي 
+Renal failure 
+فشل كلوي 
+ 
+Nursing Management 
+Monitor vitals 
+مراقبة العلامات الحيوية 
+Diuretics 
+مدرات 
+Dialysis 
+غسيل كلى 
+Avoid high-magnesium foods 
+تجنب الأطعمة عالية المغنيسيوم

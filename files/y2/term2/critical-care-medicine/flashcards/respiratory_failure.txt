@@ -1,0 +1,141 @@
+Respiratory Failure — ﻲﻟﺘﻨﻔﺴا  زﻟﺠﻬﺎا  ﻓﺸﻞﻣﻠﺨﺺ ﺷﺎﻣﻞ ﻟﻤﺤﺎﺿﺮة ﻓﺸﻞ اﻟﺠﻬﺎز اﻟﺘﻨﻔﺴﻲ 
+Introductionاﻟﻤﻘﺪﻣﺔ
+Acute Respiratory Failure (ARF) is a sudden, life-threatening deterioration in
+pulmonary gas exchange → CO₂ retention + inadequate oxygenation.
+ﻓﺸﻞ اﻟﺠﻬﺎز اﻟﺘﻨﻔﺴﻲ اﻟﺤﺎد ﻫﻮ ﺗﺪﻫﻮر ﻣﻔﺎﺟﺊ وﻣﻬﺪد ﻟﻠﺤﻴﺎة ﻓﻲ ﺗﺒﺎدل اﻟﻐﺎزات ﺑﺎﻟﺮﺋﺔ، ﻳﺆدي إﱃ
+اﺣﺘﺒﺎس ﺛﺎﻧﻲ أﻛﺴﻴﺪ اﻟﻜﺮﺑﻮن وﻧﻘﺺ اﻷﻛﺴﺠﻴﻦ.
+It remains a major cause of morbidity and mortality in the ICU setting.
+ﻳُﻌﺪ ﺳﺒﺒًﺎ رﺋﻴﺴﻴًﺎ ﻟﻠﻤﺮاﺿﺔ واﻟﻮﻓﻴﺎت ﻓﻲ اﻟﻌﻨﺎﻳﺔ اﻟﻤﺮﻛﺰة
+Causes of ARFاﻷﺳﺒﺎب
+Intrinsic Lung/Airway
+Large airway obstruction: foreign bodies
+Bronchial disease: chronic bronchitis, asthma
+Parenchymal: emphysema, severe pneumonia
+Cardiovascular: cardiopulmonary edema
+، أﻣﺮاض( أﺟﺴﺎم ﻏﺮﻳﺒﺔ) أﻣﺮاض اﻟﺮﺋﺔ واﻟﻤﺠﺮى اﻟﻬﻮاﺋﻲ اﻟﺪاﺧﻠﻴﺔ: اﻧﺴﺪاد اﻟﻤﺠﺮى اﻟﻬﻮاﺋﻲ اﻟﻜﺒﻴﺮ 
+اﻧﺘﻔﺎخ اﻟﺮﺋﺔ، اﻻﻟﺘﻬﺎب اﻟﺮﺋﻮي) ، أﻣﺮاض اﻟﻨﺴﻴﺞ اﻟﺮﺋﻮي (اﻟﺘﻬﺎب اﻟﻘﺼﺒﺎت اﻟﻤﺰﻣﻦ، اﻟﺮﺑﻮ )اﻟﻘﺼﺒﺎت  
+، وذﻣﺔ اﻟﻘﻠﺐ اﻟﺮﺋﻮﻳﺔ.( اﻟﺸﺪﻳﺪ
+Extrapulmonary
+Pleura/chest wall: pneumothorax, flail chest, trauma
+Peripheral nerves/spinal cord: polio, Guillain-Barré, spinal trauma
+CNS: sedative/narcotic overdose, head trauma, CVA, sleep apnea
+، اﺿﻄﺮاﺑﺎت( اﺳﺘﺮواح اﻟﺼﺪر، اﻟﺼﺪر اﻟﺮﺿﺤﻲ) اﻷﺳﺒﺎب ﺧﺎرج اﻟﺮﺋﺔ: أﻣﺮاض ﻏﺸﺎء اﻟﺠﻨﺐ واﻟﺼﺪر 
+،( ﺷﻠﻞ اﻷﻃﻔﺎل، ﻏﻴﻼن ﺑﺎرﻳﻪ، رﺿﻮض اﻟﻨﺨﺎع اﻟﺸﻮﻛﻲ) اﻷﻋﺼﺎب اﻟﻤﺤﻴﻄﻴﺔ واﻟﺤﺒﻞ اﻟﺸﻮﻛﻲ 
+ﺟﺮﻋﺔ زاﺋﺪة ﻣﻦ اﻟﻤﻬﺪﺋﺎت، رﺿﻮض اﻟﺮأس، اﻟﺴﻜﺘﺔ اﻟﺪﻣﺎﻏﻴﺔ،) واﺿﻄﺮاﺑﺎت اﻟﺠﻬﺎز اﻟﻌﺼﺒﻲ اﻟﻤﺮﻛﺰي 
+.( اﻧﻘﻄﺎع اﻟﻨﻔﺲ اﻟﻨﻮﻣﻲ
+Pathophysiologyاﻟﻔﻴﺰﻳﻮﻟﻮﺟﻴﺎ اﻟﻤﺮﺿﻴﺔ
+Hypoxemia = hallmark of ARF, caused by 3 mechanisms:
+ آﻟﻴﺎت3ﻧﻘﺺ اﻷﻛﺴﺠﻴﻦ ﻫﻮ اﻟﻌﻼﻣﺔ اﻷﺳﺎﺳﻴﺔ ﻟﻔﺸﻞ اﻟﺘﻨﻔﺲ اﻟﺤﺎد وﻳﻨﺘﺞ ﻋﻦ
+1. Alveolar hypoventilation
+Oxygen delivered to alveoli < metabolic need → hypoxemia + hypercapnia.
+Mostly from extrapulmonary causes.
+ ﻧﻘﺺ→ ﻧﻘﺺ اﻟﺘﻬﻮﻳﺔ اﻟﺴﻨﺨﻴﺔ: ﻛﻤﻴﺔ اﻷﻛﺴﺠﻴﻦ اﻟﻮاﺻﻠﺔ ﻟﻠﺤﻮﻳﺼﻼت أﻗﻞ ﻣﻦ ﺣﺎﺟﺔ اﻟﺠﺴﻢ 
+، وﻏﺎﻟﺒًﺎ ﺳﺒﺒﻪ ﺧﺎرج اﻟﺮﺋﺔ.CO₂أﻛﺴﺠﻴﻦ وزﻳﺎدة
+2. V/Q Mismatching
+Blood passes through under-ventilated alveoli (partially collapsed/fluid-filled) →
+low O₂ in leaving blood.
+→  (ﻣﻨﻬﺎرة ﺟﺰﺋﻴًﺎ أو ﻣﻠﻴﺌﺔ ﺑﺎﻟﺴﻮاﺋﻞ) اﺧﺘﻼل ﻧﺴﺒﺔ اﻟﺘﻬﻮﻳﺔ ﻟﻠﺘﺮوﻳﺔ: ﻳﻤﺮ اﻟﺪم ﺑﺤﻮﻳﺼﻼت ﺳﻴﺌﺔ اﻟﺘﻬﻮﻳﺔ 
+دم ﺧﺎرج ﻗﻠﻴﻞ اﻷﻛﺴﺠﻴﻦ.
+3. Intrapulmonary Shunting
+Blood passes through non-ventilated lung area (atelectasis, pneumonia, mucus
+plugging — chronic bronchitis).
+اﻧﺨﻤﺎص، اﻟﺘﻬﺎب رﺋﻮي، أو اﻧﺴﺪاد ﺑﺎﻟﻤﺨﺎط) اﻟﺘﺤﻮﻳﻠﺔ داﺧﻞ اﻟﺮﺋﺔ: ﻳﻤﺮ اﻟﺪم ﺑﺠﺰء ﻏﻴﺮ ﻣﻬﻮّى ﻣﻦ اﻟﺮﺋﺔ 
+.( ﻛﻤﺎ ﻓﻲ اﻟﺘﻬﺎب اﻟﻘﺼﺒﺎت اﻟﻤﺰﻣﻦ
+Classificationاﻟﺘﺼﻨﻴﻒ
+Type I — Hypoxemic
+Oxygenation failure. PaO₂ < 60 mmHg with normal/low PaCO₂ (≤40).
+ ﻃﺒﻴﻌﻲ أوPaCO₂ ﻣﻊ60 أﻗﻞ ﻣﻦPaO₂: ﻓﺸﻞ ﻓﻲ اﻷﻛﺴﺠﺔ،( ﻧﻘﺺ اﻷﻛﺴﺠﻴﻦ) اﻟﻨﻮع اﻷول 
+ﻣﻨﺨﻔﺾ.
+Type II — Hypercapnic
+Ventilatory failure. PaO₂ < 60 mmHg, PaCO₂ > 50 mmHg, pH ≤ 7.30.
+Inadequate alveolar ventilation with marked CO₂ rise.
+،50 أﻛﺒﺮ ﻣﻦPaCO₂،60 أﻗﻞ ﻣﻦPaO₂: ﻓﺸﻞ ﻓﻲ اﻟﺘﻬﻮﻳﺔ،( ﻓﺮط ﺛﺎﻧﻲ أﻛﺴﻴﺪ اﻟﻜﺮﺑﻮن) اﻟﻨﻮع اﻟﺜﺎﻧﻲ 
+.CO₂، ﻣﻊ ارﺗﻔﺎع واﺿﺢ ﻓﻲ7.30 أﻗﻞ ﻣﻦ أو ﻳﺴﺎويpHو
+Assessment & Clinical Manifestationsاﻟﺘﻘﻴﻴﻢ واﻟﻤﻈﺎﻫﺮ اﻟﺴﺮﻳﺮﻳﺔ
+History
+Complete medical/social history → determine baseline respiratory status.
+Pulmonary symptoms (dyspnea, cough, sputum, wheeze, chest pain) +
+extrapulmonary symptoms (night sweats, headache, fluid retention, fatigue, sleep
+disturbance).
+اﻟﺘﺎرﻳﺦ اﻟﻤﺮﺿﻲ: أﺧﺬ ﺗﺎرﻳﺦ ﻃﺒﻲ واﺟﺘﻤﺎﻋﻲ ﻛﺎﻣﻞ ﻟﺘﺤﺪﻳﺪ اﻟﺤﺎﻟﺔ اﻟﺘﻨﻔﺴﻴﺔ اﻷﺳﺎﺳﻴﺔ، وأﻋﺮاض رﺋﻮﻳﺔ
+ﺗﻌﺮق ﻟﻴﻠﻲ، ﺻﺪاع، اﺣﺘﺒﺎس ﺳﻮاﺋﻞ،)  وأﻋﺮاض ﺧﺎرج رﺋﻮﻳﺔ (ﺿﻴﻖ ﻧﻔﺲ، ﺳﻌﺎل، ﺑﻠﻐﻢ، ﺻﻔﻴﺮ، أﻟﻢ ﺻﺪر )
+.( ﺗﻌﺐ، اﺿﻄﺮاب ﻧﻮم
+Previous History
+Pulmonary problems, treatments, # hospitalizations, medical diagnosis,
+immunization status.
+اﻟﺘﺎرﻳﺦ اﻟﺴﺎﺑﻖ: اﻟﻤﺸﺎﻛﻞ اﻟﺮﺋﻮﻳﺔ، اﻟﻌﻼﺟﺎت، ﻋﺪد ﻣﺮات دﺧﻮل اﻟﻤﺴﺘﺸﻔﻰ، اﻟﺘﺸﺨﻴﺺ اﻟﻄﺒﻲ، ﺣﺎﻟﺔ
+اﻟﺘﺤﺼﻴﻦ.
+Type I (Hypoxemia)
+Respiratory: dyspnea, tachypnea, prolonged expiration, accessory muscle use,
+cyanosis. Cerebral: restlessness, confusion, coma. Cardiac: tachycardia,
+arrhythmia, hyper/hypotension. Fatigue, unable to speak.
+ﺗﺴﺮع) ، ﻗﻠﺒﻲ (ﻫﻴﺎج، ﺗﺸﻮش، ﻏﻴﺒﻮﺑﺔ )، دﻣﺎﻏﻲ  (ﺿﻴﻖ ﻧﻔﺲ، ﺗﺴﺮع ﺗﻨﻔﺲ، زرﻗﺔ )اﻟﻨﻮع اﻷول: ﺗﻨﻔﺴﻲ  
+، ﺗﻌﺐ وﻋﺪم ﻗﺪرة ﻋﲆ اﻟﻜﻼم.( ﻗﻠﺐ، اﺿﻄﺮاب ﻧﻈﻢ، ﺿﻐﻂ ﻣﺮﺗﻔﻊ أو ﻣﻨﺨﻔﺾ
+Type II (Hypercapnia)
+Respiratory: dyspnea. Cerebral: morning headache, disorientation, coma. Cardiac:
+dysrhythmia. Neuromuscular: muscle weakness, tremors. Pursed-lip breathing.
+،( اﺿﻄﺮاب ﻧﻈﻢ) ، ﻗﻠﺒﻲ (ﺻﺪاع ﺻﺒﺎﺣﻲ، ﺗﺸﻮش، ﻏﻴﺒﻮﺑﺔ )، دﻣﺎﻏﻲ  (ﺿﻴﻖ ﻧﻔﺲ )اﻟﻨﻮع اﻟﺜﺎﻧﻲ: ﺗﻨﻔﺴﻲ  
+، واﻟﺘﻨﻔﺲ ﺑﺸﻔﺘﻴﻦ ﻣﺰﻣﻮﻣﺘﻴﻦ.( ﺿﻌﻒ ﻋﻀﻠﻲ، رﻋﺸﺔ) ﻋﺼﺒﻲ ﻋﻀﻠﻲ 
+Diagnostic Studiesاﻟﻔﺤﻮﺻﺎت اﻟﺘﺸﺨﻴﺼﻴﺔ
+Key Test: ABG
+Determines PaO₂, PaCO₂ & pH — only ABG confirms diagnosis of ARF.
+PaCO₂ وPaO₂ﻳﺤﺪد) ﺗﺤﻠﻴﻞ ﻏﺎزات اﻟﺪم اﻟﺸﺮﻳﺎﻧﻲ ﻫﻮ اﻟﻔﺤﺺ اﻟﻮﺣﻴﺪ اﻟﺬي ﻳﺆﻛﺪ اﻟﺘﺸﺨﻴﺺ 
+.( pHو
+Other studies: Chest X-ray, sputum culture, pulmonary function tests,
+angiography, V/Q scan, CT, CBC, serum electrolytes, urine analysis,
+bronchogram, bronchoscopy, ECG, echocardiography.
+، اﻷﺷﻌﺔV/Qﻓﺤﻮﺻﺎت أﺧﺮى: أﺷﻌﺔ اﻟﺼﺪر، ﻣﺰرﻋﺔ اﻟﺒﻠﻐﻢ، وﻇﺎﺋﻒ اﻟﺮﺋﺔ، ﺗﺼﻮﻳﺮ اﻷوﻋﻴﺔ، ﻣﺴﺢ
+اﻟﻤﻘﻄﻌﻴﺔ، ﺻﻮرة دم ﻛﺎﻣﻠﺔ، اﻟﻜﻬﺎرل، ﺗﺤﻠﻴﻞ اﻟﺒﻮل، ﺗﻨﻈﻴﺮ اﻟﻘﺼﺒﺎت، ﺗﺨﻄﻴﻂ اﻟﻘﻠﺐ، إﻳﻜﻮ اﻟﻘﻠﺐ.
+Management of ARFﻋﻼج ﻓﺸﻞ اﻟﺘﻨﻔﺲ اﻟﺤﺎد
+Goals: correct underlying cause • promote gas exchange • correct acidosis •
+nutrition support • prevent complications.
+اﻷﻫﺪاف: ﺗﺼﺤﻴﺢ اﻟﺴﺒﺐ اﻷﺳﺎﺳﻲ، ﺗﺤﺴﻴﻦ ﺗﺒﺎدل اﻟﻐﺎزات، ﺗﺼﺤﻴﺢ اﻟﺤﻤﻮﺿﺔ، اﻟﺪﻋﻢ اﻟﻐﺬاﺋﻲ، وﻣﻨﻊ
+اﻟﻤﻀﺎﻋﻔﺎت.
+1. Oxygenation
+Supplemental O₂ (low/high flow), positive airway pressure to keep SpO₂ > 90%
+without hypercapnia/O₂ toxicity. Positive pressure (invasive/non-invasive MV)
+reopens collapsed alveoli.
+ أوCO₂٪ دون ﻓﺮط90<اﻷﻛﺴﺠﺔ: إﻋﻄﺎء أﻛﺴﺠﻴﻦ ﺗﻜﻤﻴﻠﻲ وﺿﻐﻂ ﻫﻮاﺋﻲ إﻳﺠﺎﺑﻲ ﻟﻠﺤﻔﺎظ ﻋﲆ ﺗﺸﺒﻊ
+ﺗﺴﻤﻢ ﺑﺎﻷﻛﺴﺠﻴﻦ، واﻟﻀﻐﻂ اﻹﻳﺠﺎﺑﻲ ﻳﻌﻴﺪ ﻓﺘﺢ اﻟﺤﻮﻳﺼﻼت اﻟﻤﻨﻬﺎرة.
+2. Ventilation
+Invasive/non-invasive MV per cause & severity. pH < 7.25 → invasive MV, volume-
+controlled, assist/control mode.
+ ﺗﺴﺘﺨﺪم7.25 أﻗﻞ ﻣﻦpHاﻟﺘﻬﻮﻳﺔ: ﺗﻬﻮﻳﺔ آﻟﻴﺔ ﺑﺎﺿﻌﺔ أو ﻏﻴﺮ ﺑﺎﺿﻌﺔ ﺣﺴﺐ اﻟﺴﺒﺐ واﻟﺸﺪة، وإذا ﻛﺎن
+.( assist/control)ﺗﻬﻮﻳﺔ ﺑﺎﺿﻌﺔ ﺑﻨﻈﺎم اﻟﺘﺤﻜﻢ ﺑﺎﻟﺤﺠﻢ
+3. Nutrition Support
+Meet needs without overfeeding, avoid delivery complications, improve outcomes.
+اﻟﺪﻋﻢ اﻟﻐﺬاﺋﻲ: ﺗﻠﺒﻴﺔ اﻻﺣﺘﻴﺎﺟﺎت دون إﻓﺮاط ﻓﻲ اﻟﺘﻐﺬﻳﺔ، وﺗﺠﻨﺐ ﻣﻀﺎﻋﻔﺎت اﻟﺘﻐﺬﻳﺔ، وﺗﺤﺴﻴﻦ اﻟﻨﺘﺎﺋﺞ
+4. Fluid & Electrolyte Balance
+Avoid excessive/poor IV fluids, monitor I&O, daily weight, prevent/treat
+hypokalemia & hypophosphatemia.
+ﺗﻮازن اﻟﺴﻮاﺋﻞ واﻟﻜﻬﺎرل: ﺗﺠﻨﺐ اﻹﻓﺮاط أو اﻟﻨﻘﺺ ﻓﻲ اﻟﺴﻮاﺋﻞ اﻟﻮرﻳﺪﻳﺔ، ﻣﺮاﻗﺒﺔ اﻟﺪاﺧﻞ واﻟﺨﺎرج، اﻟﻮزن
+اﻟﻴﻮﻣﻲ، وﻋﻼج ﻧﻘﺺ اﻟﺒﻮﺗﺎﺳﻴﻮم واﻟﻔﻮﺳﻔﺎت.
+5. Cardiac Function & Underlying Cause
+Maintain adequate cardiac output (pulmonary artery catheter monitoring). Treat
+infections, airway obstruction, CHF, bronchospasm (bronchodilators/steroids),
+assess sedative tolerance, drain pleural air/fluid, prevent abdominal distension
+(NG tube), assess thoracic wall movement & diaphragmatic fatigue.
+، وﻋﻼج( ﺑﻘﺴﻄﺮة اﻟﺸﺮﻳﺎن اﻟﺮﺋﻮي) اﻟﻮﻇﻴﻔﺔ اﻟﻘﻠﺒﻴﺔ واﻟﺴﺒﺐ اﻷﺳﺎﺳﻲ: اﻟﺤﻔﺎظ ﻋﲆ ﻧﺘﺎج ﻗﻠﺒﻲ ﻛﺎفٍ 
+، وﺗﻘﻴﻴﻢ( ﻣﻮﺳﻌﺎت وﻛﻮرﺗﻴﺰون) اﻟﻌﺪوى واﻧﺴﺪاد اﻟﻤﺠﺮى اﻟﻬﻮاﺋﻲ وﻗﺼﻮر اﻟﻘﻠﺐ وﺗﺸﻨﺞ اﻟﻘﺼﺒﺎت 
+،( أﻧﺒﻮب أﻧﻔﻲ ﻣﻌﺪي) ﺗﺤﻤﻞ اﻟﻤﻬﺪﺋﺎت، وﺗﻔﺮﻳﻎ اﻟﻬﻮاء أو اﻟﺴﻮاﺋﻞ ﻣﻦ ﻏﺸﺎء اﻟﺠﻨﺐ، وﻣﻨﻊ اﻧﺘﻔﺎخ اﻟﺒﻄﻦ 
+وﺗﻘﻴﻴﻢ ﺣﺮﻛﺔ ﺟﺪار اﻟﺼﺪر وﺗﻌﺐ اﻟﺤﺠﺎب اﻟﺤﺎﺟﺰ.
+Complicationsاﻟﻤﻀﺎﻋﻔﺎت
+Ischemic anoxic encephalopathy — from hypoxemia, hypercapnia,
+acidosis
+Dysrhythmias — from hypoxemia, acidosis, electrolyte imbalance
+Venous thromboembolism — from immobility; prevent with pneumatic
+compression + heparin (UFH/LMWH)
+GI bleeding — prevent with H₂ blockers, cytoprotective agents, PPIs
+Others — related to artificial airway, MV, enteral/parenteral nutrition, arterial
+cannulation
+، اﺿﻄﺮاﺑﺎت ﻧﻈﻢ اﻟﻘﻠﺐ(  واﻟﺤﻤﻮﺿﺔCO₂ﻣﻦ ﻧﻘﺺ اﻷﻛﺴﺠﻴﻦ وزﻳﺎدة) اﻻﻋﺘﻼل اﻟﺪﻣﺎﻏﻲ اﻹﻗﻔﺎري 
+ﻣﻦ اﻟﺨﻤﻮل، ﻳُﻤﻨﻊ) ، اﻻﻧﺼﻤﺎم اﻟﺨﺜﺎري اﻟﻮرﻳﺪي (ﻣﻦ ﻧﻘﺺ اﻷﻛﺴﺠﻴﻦ واﻟﺤﻤﻮﺿﺔ وﺧﻠﻞ اﻟﻜﻬﺎرل )
+H 2ﻳُﻤﻨﻊ ﺑﻤﻀﺎدات اﻟﻬﻴﺴﺘﺎﻣﻴﻦ) ، ﻧﺰﻳﻒ اﻟﺠﻬﺎز اﻟﻬﻀﻤﻲ (ﺑﺎﻟﻜﻤﺎدات اﻟﻬﻮاﺋﻴﺔ اﻟﻤﺘﻘﻄﻌﺔ واﻟﻬﻴﺒﺎرﻳﻦ 
+، وﻣﻀﺎﻋﻔﺎت أﺧﺮى ﻣﺮﺗﺒﻄﺔ ﺑﺎﻟﻤﺠﺮى اﻟﻬﻮاﺋﻲ اﻟﺼﻨﺎﻋﻲ( واﻟﻌﻮاﻣﻞ اﻟﺤﺎﻣﻴﺔ وﻣﺜﺒﻄﺎت ﻣﻀﺨﺔ اﻟﺒﺮوﺗﻮن
+واﻟﺘﻬﻮﻳﺔ اﻵﻟﻴﺔ واﻟﺘﻐﺬﻳﺔ واﻟﻘﺴﻄﺮة اﻟﺸﺮﻳﺎﻧﻴﺔ.
+Pharmacological
+Bronchodilators (β2-agonists, anticholinergics), steroids (↓inflammation,
+enhance β2-agonists), sedation (↓work of breathing), analgesics for pain.
+ﻟﺘﻘﻠﻴﻞ) ، اﻟﻜﻮرﺗﻴﺰون ( وﻣﻀﺎدات اﻟﻜﻮﻟﻴﻦ 2ﻣﻨﺒﻬﺎت ﺑﻴﺘﺎ) اﻟﻌﻼج اﻟﺪواﺋﻲ: ﻣﻮﺳﻌﺎت اﻟﻘﺼﺒﺎت 
+، وﻣﺴﻜﻨﺎت اﻷﻟﻢ.( ﻟﺘﻘﻠﻴﻞ ﻋﻤﻞ اﻟﺘﻨﻔﺲ) ، اﻟﺘﻬﺪﺋﺔ (اﻻﻟﺘﻬﺎب وﺗﻌﺰﻳﺰ ﻋﻤﻞ ﻣﻮﺳﻌﺎت اﻟﻘﺼﺒﺎت 
+Critical Care Nursing Summary | اﻟﻤﺮﻛﺰة  اﻟﻌﻨﺎﻳﺔ  ﻣﺤﺎﺿﺮة  ﻣﻠﺨﺺ Dr . Ghada Elsayed

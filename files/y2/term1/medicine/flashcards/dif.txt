@@ -1,0 +1,234 @@
+I. Definitions  
+ 
+1. Hypertension 
+Hypertension is a persistent elevation of arterial blood pressure, diagnosed when 
+systolic blood pressure ≥140 mmHg and/or diastolic blood pressure ≥90 mmHg, 
+according to WHO and AHA. 
+ارتفاع ضغط الدم هو ارتفاع مستمر في ضغط الدم الشرياني، ويُشخَّص عند ضغط انقباضي ≥140 مم زئبق و/أو  
+ضغط انبساطي ≥90 مم زئبق حسب منظمة الصحة العالمية وجمعية القلب الأمريكية . 
+ 
+2. Angina Pectoris 
+Angina pectoris is chest discomfort caused by transient myocardial ischemia due to an 
+imbalance between oxygen supply and demand, most commonly caused by coronary 
+artery disease. 
+الذبحة الصدرية هي انزعاج صدري ناتج عن نقص تروية مؤقت في عضلة القلب بسبب عدم التوازن بين إمداد  
+الأكسجين واحتياجه، وغالبًا بسبب مرض الشرايين التاجية.  
+ 
+3. Stable Angina 
+Stable angina is predictable chest pain with exertion that lasts less than 10 minutes, is 
+relieved by rest or nitroglycerin, and is caused by a fixed atherosclerotic plaque with 
+≥70% stenosis. 
+الذبحة الصدرية المستقرة هي ألم صدري متوقع مع المجهود يستمر أقل من 10 دقائق ويزول بالراحة أو 
+النيتروجليسرين، وينتج عن تضيق ثابت بالشريان التاجي70 %. 
+ 
+4. Unstable Angina
+
+Unstable angina is part of acute coronary syndrome and includes new-onset angina, 
+worsening angina, or angina at rest, usually caused by plaque rupture and platelet 
+aggregation, and requires urgent evaluation. 
+الذبحة الصدرية غير المستقرة هي جزء من متلازمة الشريان التاجي الحادة وتشمل الذبحة الجديدة أو المتزايدة  
+أو التي تحدث أثناء الراحة، وغالبًا سببها تمزق اللويحة وتجمع الصفائح الدموية وتحتاج إلى تدخل عاجل.  
+ 
+5. Prinzmetal (Variant) Angina 
+Prinzmetal angina is caused by coronary vasospasm, occurs at rest, often in the early 
+morning, and is associated with transient ST-segment elevation. 
+ذبحة برنزميتال تحدث بسبب تشنج الشريان التاجي، وتظهر أثناء الراحة وغالبًا في الصباح الباكر، وترتبط  
+بارتفاع مؤقت في مقطع ST. 
+ 
+6. Acute Kidney Injury (AKI) 
+Acute kidney injury is a rapid loss of kidney function leading to impaired waste 
+excretion, electrolyte imbalance, and fluid disturbance, diagnosed by creatinine rise 
+≥0.3 mg/dL within 48 hours or ≥1.5 times baseline. 
+الفشل الكلوي الحاد هو فقدان سريع لوظائف الكلى يؤدي إلى اضطراب إخراج الفضلات واختلال الكهارل وتوازن  
+السوائل، ويُشخَّص بارتفاع الكرياتينين ≥0.3 خلال48 ساعة  أو ≥1.5 من القيمة الأساسية. 
+ 
+7. Chronic Kidney Disease (CKD) 
+Chronic kidney disease is a progressive loss of kidney function lasting three months or 
+more, affecting filtration, fluid balance, and hormonal regulation. 
+المرض الكلوي المزمن هو فقدان تدريجي في وظائف الكلى لمدة ثلاثة أشهر أو أكثر، مما يؤثر على الترشيح  
+وتوازن السوائل وتنظيم الهرمونات.
+
+8. Hypertensive Emergency 
+Hypertensive emergency is blood pressure exceeding 180/120 mmHg with acute target 
+organ damage, and requires immediate intervention. 
+أزمة ارتفاع ضغط الدم هي ارتفاع الضغط لأكثر من 180/120  مم زئبق مع وجود تلف حاد في الأعضاء 
+المستهدفة وتحتاج إلى تدخل فوري.  
+ 
+9. Nephrotic Syndrome 
+Nephrotic syndrome is a kidney disorder characterized by proteinuria >3.5 g/day, 
+hypoalbuminemia, hyperlipidemia, and edema due to glomerular damage. 
+المتلازمة النفروزية هي اضطراب كلوي يتميز بفقدان البروتين في البول أكثر من 3.5 جم/يوم مع نقص 
+الألبومين وارتفاع الدهون ووجود وذمة نتيجة تلف الكبيبات. 
+ 
+ 
+II. Mention / Essay  
+ 
+1. Major Criteria of Rheumatic Fever (Jones Criteria) 
+• Carditis — التهاب القلب (يصيب الصمامات، عضلة القلب أو التامور ويسبب نفخات أو فشل قلبي. 
+• Polyarthritis — التهاب مفاصل متعدد متنقل يصيب المفاصل الكبيرة مثل الركبة والكاحل. 
+• Chorea (Sydenham’s chorea) — حركات لا إرادية مفاجئة نتيجة إصابة الجهاز العصبي
+المركزي. 
+• Erythema marginatum — طفح جلدي غير مؤلم ذو حواف واضحة يظهر على الجذع. 
+• Subcutaneous nodules — عقد غير مؤلمة تحت الجلد مرتبطة بالتهاب القلب.
+
+2. Minor Criteria of Rheumatic Fever 
+• Fever — ارتفاع درجة الحرارة نتيجة الالتهاب. 
+• Arthralgia — ألم بالمفاصل بدون علامات التهاب واضحة. 
+• Elevated ESR or CRP — ارتفاع مؤشرات الالتهاب في الدم. 
+• Prolonged PR interval — إطالة فترة PR في رسم القلب نتيجة تأثر التوصيل القلبي. 
+ 
+3. Complications of Hypertension 
+• Heart — Left ventricular hypertrophy, heart failure, myocardial infarction 
+القلب: تضخم البطين الأيسر، فشل القلب، الجلطة القلبية. 
+• Brain — Stroke and transient ischemic attack (TIA) 
+المخ: سكتة دماغية أو نوبة إقفارية مؤقتة. 
+• Kidneys — Chronic kidney disease 
+الكلى: فشل كلوي مزمن. 
+• Eyes — Hypertensive retinopathy 
+العين: اعتلال الشبكية وتهديد البصر. 
+• Blood vessels — Peripheral arterial disease 
+الأوعية الدموية: مرض الشرايين الطرفية. 
+ 
+4. Complications of Angina Pectoris 
+• Progression to unstable angina or myocardial infarction 
+تطور الذبحة إلى ذبحة غير مستقرة أو جلطة قلبية.
+
+• Heart failure 
+فشل القلب نتيجة نقص التروية المزمن. 
+• Arrhythmias 
+اضطرابات نظم القلب. 
+• Sudden cardiac death 
+الموت القلبي المفاجئ. 
+ 
+5. Complications of Peptic Ulcer 
+• Perforation — Rupture of stomach or duodenum causing peritonitis 
+ثقب المعدة أو الاثني عشر مما يؤدي إلى التهاب بريتوني. 
+• Bleeding — Hematemesis or melena 
+نزيف يظهر في صورة قيء دموي أو براز أسود. 
+• Gastric outlet obstruction — Due to edema or scarring 
+انسداد مخرج المعدة بسبب التورم أو التليف. 
+ 
+6. Etiology of Heart Failure 
+• Ischemic heart disease — Most common cause 
+مرض الشرايين التاجية (أشهر سبب. 
+• Hypertension 
+ارتفاع ضغط الدم المزمن. 
+• Valvular heart disease 
+أمراض صمامات القلب. 
+• Cardiomyopathies 
+اعتلال عضلة القلب.
+
+• Arrhythmias 
+اضطرابات نظم القلب. 
+• Congenital heart disease 
+عيوب القلب الخِلقية . 
+ 
+7. Types of Common Arrhythmias 
+• Sinus bradycardia — HR < 60 bpm 
+بطء القلب الجيبي. 
+• Sinus tachycardia — HR > 100 bpm 
+تسارع القلب الجيبي. 
+• Atrial fibrillation — Irregularly irregular rhythm 
+رجفان أذيني غير منتظم. 
+• Atrial flutter — Saw-tooth ECG pattern 
+رفرفة أذينية. 
+• Ventricular tachycardia — Life-threatening 
+تسرع بطيني خطير. 
+• Ventricular fibrillation — Cardiac arrest 
+رجفان بطيني يؤدي لتوقف القلب. 
+• Asystole — No electrical activity 
+توقف النشاط الكهربي للقلب. 
+ 
+8. Types of Myocardial Infarction 
+• STEMI — Complete coronary artery occlusion with ST elevation 
+جلطة بانسداد كامل مع ارتفاع ST.
+
+• NSTEMI — Partial occlusion with raised cardiac enzymes 
+جلطة بانسداد جزئي بدون ارتفاع ST. 
+ 
+9. Complications of Myocardial Infarction 
+• Arrhythmias — VT, VF 
+اضطرابات نظم خطيرة. 
+• Heart failure & cardiogenic shock 
+فشل القلب والصدمة القلبية. 
+• Papillary muscle rupture 
+تمزق العضلة الحليمية. 
+• Ventricular aneurysm 
+تمدد جدار البطين. 
+• Pericarditis 
+التهاب التامور. 
+• Sudden cardiac death 
+الموت المفاجئ. 
+ 
+10. Causes of Secondary Hypertension 
+• Renal causes — Chronic kidney disease 
+أسباب كلوية. 
+• Endocrine causes — Cushing’s syndrome, hyperthyroidism 
+أسباب هرمونية. 
+ 
+11. Causes of Chronic Diarrhea
+
+• Infections — Parasitic, viral, fungal 
+عدوى مزمنة. 
+• IBD and IBS 
+أمراض الأمعاء الالتهابية والقولون العصبي. 
+• Malabsorption or bowel resection 
+سوء الامتصاص أو استئصال الأمعاء. 
+• Colonic tumors 
+أورام القولون. 
+• Endocrine causes 
+أسباب هرمونية. 
+• Drugs and laxative abuse 
+إساءة استخدام الأدوية. 
+ 
+12. Complications of Chronic Liver Disease 
+• Portal hypertension — Ascites, varices 
+ارتفاع ضغط الوريد البابي. 
+• Hepatic encephalopathy 
+اعتلال دماغي كبدي. 
+• Jaundice 
+اليرقان. 
+• Spontaneous bacterial peritonitis 
+التهاب بريتوني بكتيري تلقائي. 
+• Hyperestrogenism 
+زيادة الإستروجين.
+
+• Hepatorenal syndrome 
+متلازمة كبدية كلوية. 
+• Coagulopathy 
+اضطرابات النزف. 
+• Hepatocellular carcinoma 
+سرطان الكبد. 
+ 
+13. Chronic Complications of Diabetes Mellitus 
+• Macrovascular complications — MI, stroke 
+مضاعفات وعائية كبرى. 
+• Neuropathy 
+اعتلال الأعصاب. 
+• Nephropathy 
+اعتلال الكلى. 
+• Retinopathy 
+اعتلال الشبكية. 
+• Diabetic foot 
+القدم السكري. 
+• Infections 
+زيادة القابلية للعدوى. 
+ 
+14. Complications of Hypothyroidism 
+• Infertility 
+العقم.
+
+• Heart disease 
+أمراض القلب. 
+• Cognitive impairment 
+ضعف الإدراك والتركيز. 
+• Myxedema coma 
+غيبوبة الوذمة المخاطية (حالة مميتة. 
+ 
+Complications of Heart Failure 
+• Arrhythmias — اضطرابات نظم القلب مثل الرجفان الأذيني أو التسرّع البطيني. 
+• Thromboembolism — تكون جلطات دموية قد تنتقل إلى المخ أو الرئة. 
+• Renal failure — فشل كلوي نتيجة نقص التروية الكلوية. 
+• Pulmonary edema — وذمة رئوية تؤدي إلى ضيق تنفّس شديد. 
+• Cardiogenic shock — صدمة قلبية بسبب ضعف شديد في ضخ الدم. 
+• Death — الوفاة في الحالات المتقدمة.

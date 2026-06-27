@@ -1,0 +1,644 @@
+1.Acid–Base Imbalance & ABG Interpretation 
+Classification / Types 
+Q1. What are the three body systems that keep acid–base balance? 
+ما الأنظمة الثلاثة في الجسم المسؤولة عن الحفاظ على توازن الحمض والقلوي؟ 
+Answer: Blood buffers, lungs, kidneys. 
+الإجابة: أنظمة الدم، الرئتين، الكلى. 
+ 
+Q2. What are the four main acid–base disorders? 
+ما الاضطرابات الأربعة الأساسية للحمض والقلوي؟ 
+Answer: Respiratory acidosis, respiratory alkalosis, metabolic acidosis, metabolic 
+alkalosis. 
+الإجابة: حماض تنفسي، قلاء تنفسي، حماض أيضي، قلاء أيضي . 
+ 
+Definition / Physiology 
+Q3. How does the body reduce acid in metabolic acidosis through breathing? 
+كيف يقلل الجسم الحموضة في الحماض الأيضي عن طريق التنفس؟ 
+Answer: By increasing breathing to remove more CO₂. 
+الإجابة: بزيادة معدل التنفس لطرد ثاني أكسيد الكربون. 
+ 
+Q4. What happens to bicarbonate level in metabolic alkalosis? 
+ماذا يحدث لمستوى البيكربونات في القلاء الأيضي؟ 
+Answer: It increases above normal (˃ 26 mEq/L). 
+الإجابة: يرتفع عن الطبيعي (أكثر من 26) . 
+ 
+Causes 
+Q5. What two acute causes can stop or slow breathing and cause respiratory acidosis? 
+ما سببين حادين يبطئوا التنفس ويؤدوا لحماض تنفسي؟ 
+Answer: Sedative/anesthetic drugs, cardiac arrest. 
+الإجابة: أدوية مخدرة أو مهدئة، توقف القلب.
+
+Q6. How can bicarbonate be lost causing metabolic acidosis? (two causes) 
+كيف تفقد البيكربونات وتسبب حماض أيضي؟ (سببين 
+Answer: Diarrhea, kidney problems. 
+الإجابة: الإسهال، مشاكل الكلى. 
+ 
+Q7. What two common causes lead to metabolic alkalosis? 
+ما سببين شائعين يؤدوا لقلاء أيضي؟ 
+Answer: Severe vomiting, excessive antacid use. 
+الإجابة: القيء الشديد، الإفراط في مضادات الحموضة. 
+ 
+Clinical Manifestation 
+Q8. What early brain symptoms appear in respiratory acidosis? (three) 
+ما الأعراض العصبية المبكرة في الحماض التنفسي؟ (ثلاثة 
+Answer: Headache, blurred vision, restlessness. 
+الإجابة: صداع، زغللة، قلق أو تململ. 
+ 
+Q9. What heart problems happen when pH is very low in respiratory acidosis? (two) 
+ما المشاكل القلبية عند انخفاض الـ pH بشدة في الحماض التنفسي؟ (اثنين 
+Answer: Arrhythmias, low blood pressure. 
+الإجابة: اضطراب ضربات القلب، انخفاض ضغط الدم. 
+ 
+Q10. What are common symptoms of respiratory alkalosis? (three) 
+ما الأعراض الشائعة للقلاء التنفسي؟ (ثلاثة 
+Answer: Fast breathing, dizziness, tingling of hands or arms. 
+الإجابة: سرعة التنفس، دوخة، تنميل في الأطراف. 
+ 
+Diagnostic Test 
+Q11. What pH value shows acidosis and alkalosis? 
+ما قيمة الـ pH التي تدل على الحموضة والقلوية؟
+
+Answer: < 7.35 = acidosis, > 7.45 = alkalosis. 
+الإجابة: أقل من  7.35 حموضة، أكثر من7.45 قلوية.  
+ 
+Q12. What are the basic steps to read an ABG? (four) 
+ما الخطوات الأساسية لقراءة غازات الدم؟ (أربعة 
+Answer: Check oxygen, check pH, find main problem, check compensation. 
+الإجابة: تقييم الأكسجين، تقييم pH، تحديد المشكلة الأساسية، تقييم التعويض. 
+ 
+Q13. What ABG values indicate respiratory acidosis? 
+ما نتائج ABG التي تدل على حماض تنفسي؟ 
+Answer: Low pH, high CO₂, normal bicarbonate. 
+الإجابة: pH منخفض،CO₂ مرتفع، بيكربونات طبيعية. 
+ 
+Management 
+Q14. What is the first treatment for severe respiratory acidosis? 
+ما أول علاج في الحماض التنفسي الشديد؟ 
+Answer: Open airway and give mechanical ventilation if needed. 
+الإجابة: فتح مجرى الهواء واستخدام جهاز تنفس صناعي عند الحاجة. 
+ 
+Q15. How is respiratory alkalosis from anxiety treated without drugs? 
+كيف يُعالج القلاء التنفسي الناتج عن القلق بدون أدوية؟ 
+Answer: Paper bag breathing and reassurance. 
+الإجابة: التنفس في كيس ورقي وطمأنة المريض. 
+ 
+     Module 3: Acute Respiratory Distress Syndrome (ARDS) 
+Definition 
+Q1. What is ARDS? 
+ما هو ARDS؟
+
+Answer: A severe lung condition with fluid in both lungs causing low oxygen. 
+الإجابة: حالة خطيرة يحدث فيها تجمع سوائل بالرئتين مما يسبب نقص الأكسجين. 
+ 
+Causes 
+Q2. What are direct lung causes of ARDS? (three) 
+ما أسباب ARDS المباشرة من الرئة؟ (ثلاثة 
+Answer: Pneumonia, aspiration, chest trauma. 
+الإجابة: الالتهاب الرئوي، شفط محتويات المعدة، إصابة الصدر. 
+ 
+Q3. What are indirect causes of ARDS? (three) 
+ما الأسباب غير المباشرة لـ ARDS؟ (ثلاثة 
+Answer: Sepsis, severe trauma with shock, acute pancreatitis. 
+الإجابة: تعفن الدم، صدمة شديدة، التهاب البنكرياس الحاد. 
+ 
+Clinical Manifestation 
+Q4. What are common signs of ARDS? (four) 
+ما العلامات الشائعة لـ ARDS؟ (أربعة 
+Answer: Dyspnea, tachypnea, tachycardia, cyanosis. 
+الإجابة: ضيق نفس، سرعة تنفس، سرعة ضربات القلب، زرقة . 
+ 
+Q5. Why can mechanical ventilation cause pneumothorax in ARDS? 
+لماذا قد يسبب جهاز التنفس الصناعي استرواح الصدر في ARDS؟ 
+Answer: High pressure damages stiff lungs causing air leaks. 
+الإجابة: الضغط العالي يسبب تمزق الرئة الصلبة وتسرب الهواء. 
+ 
+Diagnostic Test 
+Q6. What does chest X-ray show in ARDS? 
+ماذا يظهر أشعة الصدر في ARDS؟
+
+Answer: Bilateral lung infiltrates and fluid. 
+الإجابة: ارتشاحات وسوائل في الرئتين. 
+ 
+Q7. What ABG finding is typical in ARDS? 
+ما النتيجة المميزة في ABG؟ 
+Answer: Low oxygen level. 
+الإجابة: نقص الأكسجين في الدم . 
+ 
+Management 
+Q8. What drugs are used in ARDS? (three) 
+ما الأدوية المستخدمة في ARDS؟ (ثلاثة 
+Answer: Diuretics, steroids, H2 blockers/PPIs. 
+الإجابة: مدرات البول، الكورتيزون، أدوية تقليل حموضة المعدة. 
+ 
+Q9. Why are neuromuscular blockers used in ventilated ARDS patients? 
+لماذا تُستخدم مرخيات العضلات؟ 
+Answer: To prevent fighting the ventilator and rest muscles. 
+الإجابة: لمنع مقاومة الجهاز وإراحة عضلات التنفس. 
+ 
+     Module 4: ECG Interpretation 
+Definition / Physiology 
+Q1. What does each ECG wave represent? 
+ماذا تمثل موجات ECG؟ 
+Answer: P: atrial depolarization, QRS: ventricular depolarization, T: ventricular 
+repolarization. 
+الإجابة: 
+P: انقباض الأذين 
+QRS: انقباض البطين 
+T: عودة البطين لوضعه الطبيعي
+
+Q2. What is the isoelectric line? 
+ما هو الخط المتعادل؟ 
+Answer: Flat baseline of ECG. 
+الإجابة: الخط المستقيم الأساسي في التخطيط. 
+ 
+Diagnostic Test 
+Q3. What time does one large ECG box represent? 
+كم يمثل المربع الكبير في ECG؟ 
+Answer: 0.20 second. 
+الإجابة: 0.20 ثانية. 
+ 
+Q4. What is normal PR interval? 
+ما المعدل الطبيعي لـ PR؟ 
+Answer: 0.12 – 0.20 second. 
+الإجابة: من  0.12 إلى0.20 ثانية.  
+ 
+Q5. What is normal QRS duration? 
+ما المعدل الطبيعي لـ QRS؟ 
+Answer: 0.06 – 0.10 second. 
+الإجابة: من  0.06 إلى0.10 ثانية.  
+ 
+Q6. How is heart rate calculated in regular rhythm? 
+كيف نحسب النبض في النظم المنتظم؟ 
+Answer: 300 ÷ number of large boxes. 
+الإجابة: 300 ÷ عدد المربعات الكبيرة. 
+ 
+Q7. How is heart rate calculated in irregular rhythm? 
+كيف نحسب النبض في النظم غير المنتظم؟ 
+Answer: Count R waves in 6 seconds × 10. 
+الإجابة: عدد R في6 ثواني10 .
+
+Module 5: Lung Injury & Chest Trauma 
+Definition 
+Q1. What is flail chest? 
+ما هو Flail chest؟ 
+Answer: Three or more ribs broken in two places. 
+الإجابة: كسر ثلاث ضلوع أو أكثر في مكانين. 
+ 
+Q2. Difference between pneumothorax and hemothorax? 
+ما الفرق بين Pneumothorax و Hemothorax؟ 
+Answer: Air vs blood in pleural space. 
+الإجابة: هواء مقابل دم في التجويف البلوري. 
+ 
+Q3. What is cardiac tamponade? 
+ما هو Cardiac tamponade؟ 
+Answer: Fluid compressing the heart in pericardium. 
+الإجابة: تجمع سوائل يضغط على القلب. 
+ 
+Types 
+Q4. Types of pneumothorax? 
+أنواع Pneumothorax؟ 
+Answer: Simple, traumatic, open, tension. 
+الإجابة: بسيط، إصابي، مفتوح، ضاغط. 
+ 
+Q5. What causes penetrating chest trauma? 
+ما سبب إصابة الصدر النافذة؟ 
+Answer: Penetration by knife or bullet. 
+الإجابة: اختراق الصدر بسكين أو رصاصة.
+
+Clinical Manifestation 
+Q6. Main sign of flail chest? 
+العلامة المميزة لـ Flail chest؟ 
+Answer: Paradoxical chest movement. 
+الإجابة: حركة عكسية للصدر. 
+ 
+Q7. What is Beck’s triad? 
+ما ثلاثية Beck؟ 
+Answer: JVD, muffled heart sounds, hypotension. 
+الإجابة: امتلاء أوردة الرقبة، خفوت صوت القلب، انخفاض الضغط. 
+ 
+Q8. Signs of massive hemothorax? 
+علامات Hemothorax الشديد؟ 
+Answer: Shock, absent breath sounds. 
+الإجابة: صدمة، غياب صوت التنفس. 
+ 
+Diagnostic Test 
+Q9. Chest X-ray findings in chest trauma? 
+ماذا يظهر X-ray الصدر؟ 
+Answer: Air/fluid, fractures. 
+الإجابة: هواء أو سوائل، كسور. 
+ 
+Management / Goals 
+Q10. Goal of pneumothorax/hemothorax treatment? 
+هدف العلاج؟ 
+Answer: Remove air or blood. 
+الإجابة: إخراج الهواء أو الدم.
+
+Q11. Immediate treatment goal of cardiac tamponade? 
+هدف العلاج الفوري؟ 
+Answer: Remove pericardial fluid. 
+الإجابة: سحب السائل من التامور. 
+ 
+ 
+     Module 6: Myocardial Infarction (MI) 
+Definition 
+Q1. What is a myocardial infarction (MI)? 
+ما هو احتشاء عضلة القلب؟ 
+Answer: Death of heart muscle cells due to blocked blood flow. 
+الإجابة: موت خلايا القلب بسبب انسداد الدم. 
+ 
+Causes 
+Q2. Main disease causing most MIs? 
+ما المرض المسؤول عن معظم MI؟ 
+Answer: Atherosclerosis (narrowing arteries). 
+الإجابة: تصلب الشرايين (تضييق الأوعية). 
+ 
+Q3. Three main risk factors for MI? 
+ما ثلاثة عوامل خطر رئيسية؟ 
+Answer: Smoking, high blood pressure, diabetes. 
+الإجابة: التدخين، ارتفاع ضغط الدم، السكري. 
+ 
+Classification / Types 
+Q4. Three zones after MI? 
+ما هي الثلاث مناطق بعد MI؟ 
+Answer: Ischemia, injury, infarction. 
+الإجابة: نقص التروية، الإصابة، الاحتشاء.
+
+Q5. Transmural infarction affects which layers? 
+ما الطبقات المتأثرة في احتشاء كامل الجدار؟ 
+Answer: Endocardium, myocardium, epicardium. 
+الإجابة: بطانة القلب، عضلة القلب، الغشاء الخارجي. 
+ 
+Q6. Artery causing anterior wall MI? 
+أي شريان يسبب احتشاء الجدار الأمامي؟ 
+Answer: Left anterior descending artery. 
+الإجابة: الشريان الأمامي النازل الأيسر. 
+ 
+Clinical Manifestation 
+Q7. Chest pain in MI? 
+كيف يكون ألم الصدر في MI؟ 
+Answer: Severe, crushing, tight, not related to breathing. 
+الإجابة: شديد، ضاغط، غير مرتبط بالتنفس. 
+ 
+Q8. Physical signs in MI? (skin & vitals) 
+ما العلامات الجسدية؟ (الجلد والضغط 
+Answer: Cool, pale, sweaty skin; low blood pressure or arrhythmia. 
+الإجابة: الجلد بارد وشاحب ومتعرق؛ انخفاض الضغط أو اضطراب ضربات القلب. 
+ 
+Diagnostic Test 
+Q9. Classic ECG changes in MI? 
+التغيرات الكلاسيكية في ECG؟ 
+Answer: ST elevation, inverted T wave, pathological Q wave. 
+الإجابة: ارتفاع ST،T معكوسة، موجة Q مرضية. 
+ 
+Q10. Enzyme released after MI? 
+أي إنزيم يُفرز بعد MI؟
+
+Answer: Troponins (cTnI, cTnT). 
+الإجابة: التروبونين cTnI،cTnT). 
+ 
+Management 
+Q11. Pain relief in MI? 
+مسكن ألم في MI؟ 
+Answer: Morphine reduces pain and heart workload. 
+الإجابة: مورفين يقلل الألم ويخفف عمل القلب. 
+ 
+Q12. Criteria for fibrinolytic therapy? 
+متى نبدأ العلاج المذيبي للجلطة؟ 
+Answer: Within 6 hours, ST elevation or new LBBB, chest pain > 30 min not relieved by 
+nitrate. 
+الإجابة: خلال 6 ساعات، ارتفاع  ST أو فرط الحزمة اليسرى، ألم صدر 30 دقيقة لا يزول بالنترات. 
+ 
+     Module 7: Pain Management 
+Definition 
+Q1. What is pain? 
+ما هو الألم؟ 
+Answer: Unpleasant feeling with tissue damage. 
+الإجابة: إحساس غير مريح مع تلف الأنسجة. 
+ 
+Classification / Types 
+Q2. Four types of pain? 
+ما أنواع الألم الأربعة؟ 
+Answer: Acute, chronic, nociceptive, neuropathic. 
+الإجابة: حاد، مزمن، استشعاري، عصبي.
+
+Q3. Difference between acute and chronic pain? 
+الفرق بين الحاد والمزمن؟ 
+Answer: Acute < 6 months; chronic > 6 months. 
+الإجابة: الحاد أقل من  6 أشهر، المزمن أكثر من6 أشهر.  
+ 
+Physiology 
+Q4. Four steps in pain process? 
+أربع خطوات للألم؟ 
+Answer: Transduction, transmission, perception, modulation. 
+الإجابة: التحويل، النقل، الإدراك، التعديل. 
+ 
+Assessment & Diagnosis 
+Q5. Best measure for pain? 
+أفضل طريقة لتقييم الألم؟ 
+Answer: Patient’s report. 
+الإجابة: تقرير المريض نفسه. 
+ 
+Q6. If patient cannot report pain? 
+إذا المريض لا يستطيع التقييم؟ 
+Answer: Observe behavior and subjective signs. 
+الإجابة: الملاحظة والسلوكيات والأعراض. 
+ 
+Q7. BPS score indicating pain? 
+درجة BPS للألم؟ 
+Answer: > 5. 
+الإجابة: أكبر من 5 . 
+ 
+Management 
+Q8. First-line pain drug? 
+أول خيار دوائي؟
+
+Answer: Opioid agonists. 
+الإجابة: أفيونات. 
+ 
+Q9. Preferred opioid in unstable patients? 
+المفضل للمريض غير المستقر؟ 
+Answer: Fentanyl (fast, short-acting). 
+الإجابة: فينتانيل (سريع المفعول وقصير). 
+ 
+Q10. Non-drug techniques? 
+طرق غير دوائية؟ 
+Answer: Ice, massage. 
+الإجابة: كمادات ثلج، تدليك. 
+ 
+     Module 8: Pulmonary Embolism (PE) 
+Definition 
+Q1. What is PE? 
+ما هو PE؟ 
+Answer: Clot blocks blood flow to lungs. 
+الإجابة: جلطة تسد تدفق الدم للرئتين. 
+ 
+Etiology 
+Q2. Virchow’s triad? 
+ثلاثية Virchow؟ 
+Answer: Hypercoagulability, vessel injury, venous stasis. 
+الإجابة: زيادة تجلط، إصابة الأوعية، ركود الدم. 
+ 
+Q3. Non-thrombotic emboli? 
+انسدادات غير الجلطية؟
+
+Answer: Fat, tumor, amniotic fluid. 
+الإجابة: دهون، أورام، سائل أمينوسي. 
+ 
+Pathophysiology 
+Q4. Main heart effect of PE? 
+أثر PE على القلب؟ 
+Answer: Pulmonary hypertension → right heart strain. 
+الإجابة: ارتفاع ضغط الرئة → إرهاق القلب الأيمن. 
+ 
+Q5. Term for ventilated but not perfused lung? 
+مصطلح الرئة المهواة بلا تدفق دم؟ 
+Answer: Wasted ventilation. 
+الإجابة: تهوية مهدورة. 
+ 
+Clinical Manifestation 
+Q6. Common PE symptoms? (four) 
+أعراض PE الشائعة؟ (أربعة 
+Answer: Tachycardia, tachypnea, dyspnea, pleuritic chest pain. 
+الإجابة: سرعة ضربات القلب، سرعة التنفس، ضيق النفس، ألم صدري جانبي. 
+ 
+Diagnostic Test 
+Q7. ECG finding in PE? 
+نتيجة ECG؟ 
+Answer: Sinus tachycardia. 
+الإجابة: تسرع الجيب. 
+ 
+Q8. ABG in PE? 
+نتيجة ABG؟
+
+Answer: Low O₂, high pH. 
+الإجابة: نقص أكسجين، ارتفاع pH. 
+ 
+Q9. Chest X-ray signs in PE? (two) 
+أشعة صدرية؟ (اثنين 
+Answer: Palla’s sign, Hampton’s hump. 
+الإجابة: توسع الشريان الرئوي، كتلة شكل إسفين. 
+ 
+Management / Goals 
+Q10. PE management strategies? 
+استراتيجيات العلاج؟ 
+Answer: Prevention, treatment. 
+الإجابة: الوقاية، العلاج. 
+ 
+Q11. Role of heparin? 
+دور الهيبارين؟ 
+Answer: Prevent new clots. 
+الإجابة: يمنع تكوّن جلطات جديدة . 
+ 
+     Module 9: Respiratory Failure 
+Definition 
+Q1. What is respiratory failure? 
+ما هو فشل التنفس؟ 
+Answer: Lungs cannot exchange gases well. 
+الإجابة: الرئتان لا تضمن تبادل غازات كاف  . 
+ 
+Classification 
+Q2. Type I ABG? 
+النوع الأول ABG؟
+
+Answer: Low O₂, normal CO₂. 
+الإجابة: أكسجين منخفض، CO₂ طبيعي. 
+ 
+Q3. Type II ABG? 
+النوع الثاني ABG؟ 
+Answer: Low O₂, high CO₂, pH ≤ 7.30. 
+الإجابة: أكسجين منخفض، CO₂ مرتفع،pH ≤ 7.30. 
+ 
+Causes / Etiology 
+Q4. Two extra-pulmonary causes? 
+سببان خارج الرئة؟ 
+Answer: Obesity, chest trauma; pleural effusion, pneumothorax. 
+الإجابة: السمنة، إصابة الصدر؛ انصباب بلوري، استرواح الصدر. 
+ 
+Q5. Three main causes of hypoxemia? 
+ثلاثة أسباب نقص الأكسجين؟ 
+Answer: Hypoventilation, V/Q mismatch, shunt. 
+الإجابة: نقص التهوية، اختلال التهوية/التروية، تحويلة دم. 
+ 
+Pathophysiology 
+Q6. Effect of low oxygen on cells? 
+أثر نقص الأكسجين على الخلايا؟ 
+Answer: Tissue damage, lactic acidosis. 
+الإجابة: تلف الأنسجة وحموضة اللاكتات. 
+ 
+Clinical Manifestation 
+Q7. CNS symptoms? (three) 
+أعراض الدماغ؟ (ثلاثة 
+Answer: Restlessness, agitation, confusion. 
+الإجابة: تململ، قلق، ارتباك.
+
+Q8. Pulmonary symptoms? (two) 
+أعراض رئوية؟ (اثنين 
+Answer: Rapid breathing, use of accessory muscles. 
+الإجابة: سرعة التنفس، استخدام عضلات إضافية. 
+ 
+Management / Goals 
+Q9. Goals of ARF management? (three) 
+أهداف إدارة ARF؟ (ثلاثة 
+Answer: Fix cause, improve gas exchange, correct acidosis. 
+الإجابة: علاج السبب، تحسين تبادل الغازات، تصحيح الحماض. 
+ 
+Q10. When is invasive ventilation needed? 
+متى التنفس الصناعي الغير مختصر؟ 
+Answer: pH < 7.25. 
+الإجابة: إذا كان  pH < 7.25. 
+ 
+Q11. Why oxygen + ventilation fixes acidosis? 
+لماذا يصحح الأكسجين + التنفس الحماض؟ 
+Answer: Body compensates once oxygenated and ventilated. 
+الإجابة: الجسم يصحح الحماض بعد تهوية وإكسجة كافية. 
+ 
+ 
+     Module 10: Shock Syndrome 
+Definition 
+Q1. What is shock at tissue level? 
+ما هو الصدمة على مستوى الأنسجة؟ 
+Answer: Poor blood flow to tissues. 
+الإجابة: ضعف تدفق الدم للأنسجة.
+
+Types / Classification 
+Q2. Four main types of shock? 
+ما هي أنواع الصدمة الأربعة؟ 
+Answer: Hypovolemic, Cardiogenic, Distributive, Obstructive. 
+الإجابة: نقص حجم الدم، قلبي المنشأ، توزيعي، انسدادي. 
+ 
+Q3. Three subtypes of distributive shock? 
+ما هي الأنواع الفرعية للصدمة التوزيعية؟ 
+Answer: Septic, anaphylactic, neurogenic. 
+الإجابة: صدمة إنتانية، تحسسية، عصبية المنشأ. 
+ 
+Pathophysiology 
+Q4. What happens in initial stage of shock? 
+ماذا يحدث في المرحلة الأولية؟ 
+Answer: Cells switch to anaerobic → lactic acid. 
+الإجابة: الخلايا تعمل بدون أكسجين → حماض لاكتيكي. 
+ 
+Q5. SNS responses in compensatory stage? 
+استجابات الجهاز العصبي في المرحلة التعويضية؟ 
+Answer: Neural, hormonal, chemical. 
+الإجابة: عصبية، هرمونية، كيميائية. 
+ 
+Clinical Manifestation / Assessment 
+Q6. Signs of poor tissue perfusion? (three) 
+علامات ضعف التروية؟ (ثلاثة 
+Answer: Confusion, rapid breathing/low oxygen, low urine output. 
+الإجابة: ارتباك، تنفس سريع/نقص أكسجين، قلة البول.
+
+Q7. Severe complications of shock? (two) 
+مضاعفات خطيرة؟ (اثنين 
+Answer: ARDS, DIC. 
+الإجابة: متلازمة الضائقة التنفسية الحادة، تخثر منتشر. 
+ 
+Management / Goals 
+Q8. Two key goals in shock treatment? 
+هدفين رئيسيين لعلاج الصدمة؟ 
+Answer: Preserve tissue perfusion, ensure oxygen. 
+الإجابة: الحفاظ على تدفق الدم، ضمان الأكسجين. 
+ 
+Q9. Two vasopressors in distributive shock? 
+مثبطان للأوعية الدموية في الصدمة التوزيعية؟ 
+Answer: Dopamine, Norepinephrine. 
+الإجابة: دوبامين، نورإبينفرين. 
+ 
+     Module 11: Triage 
+Definition 
+Q1. What is triage in ED? 
+ما هو الترياج في الطوارئ؟ 
+Answer: Sorting patients by severity. 
+الإجابة: تصنيف المرضى حسب خطورة الحالة. 
+ 
+Goals 
+Q2. Two main goals of triage? 
+هدفان رئيسيان للترياج؟ 
+Answer: Identify urgent cases, prioritize care. 
+الإجابة: تحديد الحالات العاجلة، ترتيب الأولويات.
+
+Classification / Types 
+Q3. Emergent category examples and timing? 
+أمثلة الفئة الطارئة ووقت العلاج؟ 
+Answer: Cardiac arrest, airway obstruction, severe bleeding; treat immediately or within 
+15–30 min. 
+الإجابة: توقف القلب، انسداد التنفس، نزيف شديد؛ العلاج فورًا أو خلال 15–30 دقيقة.  
+ 
+Q4. Urgent category definition and max wait? 
+تعريف الفئة العاجلة وأقصى وقت انتظار؟ 
+Answer: Serious but not immediately life-threatening; wait up to 2 hours. 
+الإجابة: حالات خطيرة لكنها ليست مهددة للحياة فورًا؛ الانتظار حتى ساعتين . 
+ 
+Q5. Green vs Black tag in mass casualty? 
+الوسم الأخضر مقابل الأسود في الكوارث؟ 
+Answer: Green: minor injuries, wait; Black: deceased/unable to survive. 
+الإجابة: أخضر: إصابات بسيطة، انتظر؛ أسود: متوفى/لا يمكن النجاة. 
+ 
+Q6. Comprehensive triage system differences? 
+ما الفرق في النظام الشامل؟ 
+Answer: More data collected, protocols for procedures. 
+الإجابة: جمع بيانات أكثر، بروتوكولات للإجراءات. 
+ 
+Assessment 
+Q7. Level 2 reassessment frequency? 
+كم مرة يعاد تقييم المستوى2؟  
+Answer: Every 15 minutes. 
+الإجابة: كل  15 دقيقة.  
+ 
+     Module 12: Cardiac Dysrhythmia
+
+Definition 
+Q1. What is ventricular fibrillation (V-fib)? 
+ما هو الرجفان البطيني؟ 
+Answer: Chaotic ventricular activity, no effective heartbeat. 
+الإجابة: نشاط بطيني فوضوي، لا يوجد نبض فعال. 
+ 
+Causes 
+Q2. Cardiac conditions causing atrial flutter? (three) 
+ما الحالات التي تسبب رجفان أذيني؟ (ثلاثة 
+Answer: CAD, cor-pulmonale, rheumatic heart disease. 
+الإجابة: أمراض الشرايين التاجية، cor-pulmonale، أمراض القلب الروماتيزمية. 
+ 
+Q3. Causes of V-fib? (three) 
+أسباب الرجفان البطيني؟ (ثلاثة 
+Answer: MI, untreated VT, electric shock. 
+الإجابة: احتشاء، تسرع بطيني غير معالج، صدمة كهربائية. 
+ 
+Diagnostic Test (ECG) 
+Q4. Sinus tachycardia? 
+تسرع الجيب؟ 
+Answer: >100 bpm, regular rhythm. 
+الإجابة: 100 نبضة/دقيقة، نظم منتظم. 
+ 
+Q5. P wave in atrial flutter? 
+موجة P في رجفان الأذين؟ 
+Answer: Replaced by saw-tooth waves. 
+الإجابة: تتحول لموجات منشارية. 
+ 
+Q6. QRS in ventricular tachycardia? 
+QRS في التسارع البطيني؟
+
+Answer: Wide, bizarre, P wave absent. 
+الإجابة: واسعة وغريبة، موجة P غائبة. 
+ 
+Q7. ECG of V-fib? 
+ECG في الرجفان البطيني؟ 
+Answer: Irregular wavy line, no QRS. 
+الإجابة: خط غير منتظم ومتموج، لا يوجد QRS. 
+ 
+Clinical Manifestation 
+Q8. When is sinus bradycardia treated? 
+متى يعالج بطء الجيب؟ 
+Answer: If symptomatic: low BP , dizziness, chest pain. 
+الإجابة: إذا ظهرت أعراض: انخفاض ضغط، دوار، ألم صدر. 
+ 
+Management 
+Q9. Goals for atrial flutter? 
+هدف العلاج؟ 
+Answer: Convert to sinus rhythm, control rate. 
+الإجابة: تحويل إلى نظم الجيب، التحكم في معدل ضربات القلب. 
+ 
+Q10. Emergency for V-fib? 
+الإجراء الطارئ؟ 
+Answer: CPR and defibrillation. 
+الإجابة: الإنعاش القلبي الرئوي والصدمات الكهربائية.

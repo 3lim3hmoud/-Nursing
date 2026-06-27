@@ -1,0 +1,254 @@
+Intravenous Therapy (IV Infusion) 
+العلاج الوريدي )الحقن الوريدي (  
+Definition: 
+Giving fluids or medicines directly into the vein. 
+إعطاء السوائل أو الأدوية  مباشرة داخل الوريد.  
+ 
+       Purpose (الأهداف:) 
+1. Give fluids and medicines when the patient can’t take them by mouth. 
+إعطاء السوائل والأدوية  عندما لا يستطيع المريض تناولها بالفم . 
+2. Restore fluid and electrolyte balance. 
+تعويض نقص السوائل والأملاح  في الجسم . 
+3. Give blood or blood products if needed. 
+نقل الدم أو مكوناته عند الحاجة.  
+ 
+        Indications (الاستخدامات:) 
+• Dehydration (vomiting, diarrhea, burns). 
+الجفاف بسبب القيء أو الإسهال أو الحروق.  
+• Blood transfusion. 
+نقل الدم.  
+ 
+     Contraindications (موانع الاستخدام:)  
+• Allergy, infection at site, poor veins, bleeding problems. 
+الحساسية، عدوى بالمكان، ضعف الأوردة، اضطرابات نزيف . 
+ 
+     Complications (المضاعفات:) 
+• Pain or swelling at site. 
+ألم أو تورم في  مكان الإبرة.
+
+• Infiltration or extravasation (fluid leakage). 
+تسرب السائل إلى الأنسجة . 
+• Phlebitis (vein inflammation). 
+التهاب الوريد.  
+• Air embolism or overload. 
+دخول هواء أو زيادة سوائل في  الدم.  
+• Infection or bleeding. 
+عدوى أو نزيف.  
+ 
+          Equipment (الأدوات:) 
+• IV tray, catheter, tubing set, IV stand, gloves, prescribed fluid. 
+صينية وريدية، قنية )كانيولا(،  أنبوب التوصيل، حامل المحلول، قفازات، محلول موصوف . 
+ 
+      Types of IV Solutions (أنواع المحاليل:)  
+Type Function Example الوظيفة مثال 
+Isotonic Keeps balance Normal saline, 
+Ringer’s 
+يحافظ على توازن 
+السوائل 
+محلول ملحي عادي، 
+رينجر  
+Hypotonic Moves water into 
+cells 0.45% saline يدخل الماء إلى 
+الخلايا  محلول ملحي مخفف  
+Hypertonic Pulls water out of 
+cells 
+5% dextrose in 
+saline 
+يسحب الماء من  
+الخلايا  
+جلوكوز مع محلول 
+ملحي
+
+IV Therapy Procedure (خطوات إجراء العلاج الوريدي) 
+Step / الخطوة English Explanation / 
+الشرح بالإنجليزية 
+Arabic Explanation / 
+الشرح بالعربية 
+1. Review the medication order 
+and physician’s instructions. 
+Ensure the correct 
+solution, dose, and flow 
+rate are prepared. 
+مراجعة أوامر الطبيب والتأكد
+من نوع المحلول والجرعة  
+ومعدل التدفق. 
+2. Perform hand hygiene and wear 
+gloves. 
+Prevent transmission of 
+infection. 
+غسل اليدين وارتداء القفازات
+لمنع العدوى. 
+3. Prepare the environment and 
+provide privacy. 
+Close the curtain and 
+ensure proper lighting. 
+تجهيز المكان وغلق الستارة
+لتوفير الخصوصية والإضاءة  
+الجيدة. 
+4. Prepare equipment and verify 
+solution (five rights). 
+Check color, clarity, and 
+expiry date of IV 
+solution. 
+تجهيز الأدوات وفحص لون
+ووضوح وتاريخ صلاحية 
+المحلول الوريدي. 
+5. Prime the IV tubing: close clamp 
+→ insert spike into IV bag → fill 
+drip chamber halfway → flush 
+tubing to remove air. 
+To prevent air embolism 
+and ensure fluid flow. 
+تجهيز الأنبوب بإزالة الهواء منه
+لمنع دخول فقاعات الهواء إلى  
+الوريد. 
+6. Identify the patient using at 
+least two identifiers. 
+Ensures correct patient 
+and avoids errors. 
+التأكد من هوية المريض
+باستخدام طريقتين على الأقل  
+(الاسم – رقم الملف).  
+7. Explain the procedure to the 
+patient. 
+Reduces anxiety and 
+gains cooperation. 
+شرح الخطوات للمريض لتقليل
+القلق وكسب التعاون. 
+8. Assist the patient into a 
+comfortable position with arm 
+extended. 
+Allows easy vein access 
+and prevents strain. 
+وضع المريض في وضع مريح
+مع مد الذراع لتسهيل الوصول  
+إلى الوريد. 
+9. Select a suitable vein (non-
+dominant arm preferred). 
+Choose a visible, straight, 
+elastic vein; avoid flexion 
+points. 
+اختيار وريد مستقيم ومرن في
+الذراع غير المهيمنة وتجنب  
+مناطق الثني.
+
+Step / الخطوة English Explanation / 
+الشرح بالإنجليزية 
+Arabic Explanation / 
+الشرح بالعربية 
+10. Apply a tourniquet 10–15 cm 
+above the chosen site. 
+Distends the vein for 
+easier puncture. 
+وضع الرباط الضاغط أعلى
+موقع الحقن بـ 10 إلى15 سم
+لتوسيع الوريد. 
+11. Ask the patient to open and 
+close the fist several times. 
+Promotes venous filling 
+and vein visibility. 
+مطالبة المريض بفتح وغلق يده
+عدة مرات لتوسيع الوريد. 
+12. Clean the insertion site with 
+antiseptic swab (center → 
+outward) and let it dry. 
+Removes microorganisms 
+and prevents infection. 
+تنظيف موقع الإدخال بمسحة
+مطهّرة من المركز إلى الخارج  
+وتركها لتجف لمنع العدوى. 
+13. Stretch the skin taut and 
+stabilize the vein. 
+Prevents vein movement 
+during needle insertion. 
+شد الجلد وتثبيت الوريد لتسهيل
+إدخال الإبرة بدون انزلاق. 
+14. Insert IV catheter bevel up at a 
+20–30° angle, then lower to 10° as 
+you enter the vein. 
+Allows smooth entry and 
+minimizes trauma. 
+إدخال الإبرة بزاوية20–30  
+درجة ثم خفضها إلى10  
+درجات عند دخول الوريد لتقليل
+الأذى. 
+15. Observe for “flashback” of 
+blood in the catheter hub. 
+Confirms entry into the 
+vein. 
+ملاحظة رجوع الدم داخل الإبرة
+للتأكد من الدخول الصحيح في  
+الوريد. 
+16. Release the tourniquet and 
+advance the plastic catheter fully 
+into the vein. 
+Prevents vein rupture 
+and ensures stability. 
+فك الرباط الضاغط ودفع القنية
+البلاستيكية داخل الوريد لتثبيتها . 
+17. Apply gentle pressure above 
+insertion site and remove the 
+needle. 
+Prevents blood leakage. 
+الضغط الخفيف فوق موقع
+الإدخال أثناء سحب الإبرة لمنع  
+تسرب الدم. 
+18. Connect the IV tubing to the 
+catheter hub. 
+Establishes connection 
+for fluid infusion. 
+توصيل أنبوب المحلول بالقنية
+الوريدية لبدء عملية الحقن. 
+19. Open roller clamp slowly and 
+start the flow at the prescribed 
+rate. 
+Prevents sudden fluid 
+overload. 
+فتح منظم التدفق تدريجيًا لبدء
+المحلول بالمعدل الموصوف  
+لتجنب زيادة السوائل المفاجئة.
+
+Step / الخطوة English Explanation / 
+الشرح بالإنجليزية 
+Arabic Explanation / 
+الشرح بالعربية 
+20. Secure the catheter with 
+sterile tape or transparent 
+dressing. 
+Prevents movement and 
+contamination. 
+تثبيت القنية باستخدام شريط
+طبي معقم أو لاصق شفاف 
+لتجنب الحركة أو التلوث. 
+21. Dispose of used sharps and 
+materials safely. 
+Prevents needle-stick 
+injuries and infection. 
+التخلص من الأدوات الحادة
+والمستخدمة بطريقة آمنة لتجنب  
+الإصابة أو العدوى. 
+22. Label the IV site with date, 
+time, and initials. 
+For identification and 
+documentation. 
+وضع ملصق على موقع الحقن
+يوضح التاريخ والوقت والتوقيع 
+لتوثيق الإجراء. 
+23. Observe the IV site and flow 
+every 30–60 minutes. 
+Detect early signs of 
+infiltration, infection, or 
+phlebitis. 
+مراقبة موقع الحقن وتدفق
+المحلول كل 30–60 دقيقة
+لاكتشاف أي تسرب أو التهاب  
+مبكر. 
+24. Document the procedure 
+completely. 
+Records solution type, 
+rate, site, time, and 
+patient response. 
+تدوين جميع تفاصيل الإجراء
+نوع المحلول، معدل الضخ،  
+الموقع، الوقت، واستجابة  
+المريض.

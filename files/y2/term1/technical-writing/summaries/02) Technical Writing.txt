@@ -1,0 +1,200 @@
+Technical Writing (Lecture 2) 
+ 
+Definition / Purpose of the Course 
+Technical communication is the art and science of making complex technical 
+information accessible, usable, and relevant to a variety of audiences in different 
+settings. 
+        التواصل التقني هو فن وعلم جعل المعلومات التقنية المعقدة سهلة الوصول والاستخدام ومفيدة لمختلف أنواع
+الجمهور في بيئات متعددة. 
+It includes writing different types of professional documents. 
+      ويشمل كتابة أنواع مختلفة من الوثائق المهنية. 
+It reviews the processes of planning, drafting, and editing. 
+         ويتناول مراجعة عمليات التخطيط، والكتابة، والتحرير. 
+It also involves interaction with new technologies and work environments. 
+      كما يشمل التفاعل مع التقنيات الحديثة وبيئات العمل الجديدة. 
+ 
+Accessibility (إمكانية الوصول) 
+• Accuracy – no factual or grammatical errors. 
+     الدقة– خالية من الأخطاء في المعلومات أو القواعد.  
+• Clarity – no ambiguity or confusion. 
+    الوضوح– بدون غموض أو التباس.  
+• Completeness – all needed information is included. 
+            الاكتمال– تحتوي على كل المعلومات الضرورية.  
+• Diction – language is appropriate and grammatically correct. 
+      الأسلوب– اللغة مناسبة وصحيحة نحويًا.  
+• Organization – information arranged logically. 
+       التنظيم– ترتيب منطقي للأفكار والمحتوى.  
+• Visual effectiveness – good page or screen design and graphics. 
+                 الجاذبية البصرية– تصميم جيد للصفحة أو الشاشة مع استخدام الرسومات بفعالية.
+
+Usability (سهولة الاستخدام) 
+• Helps the audience perform a task or find needed information. 
+          تساعد الجمهور على أداء مهمة أو إيجاد المعلومات المطلوبة. 
+• Studies the design of table of contents, index, headings, etc. 
+      تشمل دراسة تصميم الفهرس والعناوين والعناوين الفرعية وغيرها. 
+• Keeps the learning process short and simple. 
+       تجعل عملية التعلم قصيرة وسهلة الفهم. 
+ 
+Relevance (الملاءمة) 
+• Focus on what your audience needs to know. 
+        ركّز على ما يحتاج جمهورك إلى معرفته. 
+• Provide only the necessary information. 
+      أعطِ المعلومات الضرورية فقط. 
+• Use language suitable for your readers and the situation. 
+      استخدم لغة تناسب القارئ والموقف وتكون متناسقة. 
+ 
+On-the-Job Writing (الكتابة في بيئة العمل) 
+• Communicate expertise to clients and the public. 
+      إيصال المعرفة والخبرة إلى العملاء والجمهور. 
+• Report technical activities to supervisors. 
+       إعداد تقارير عن الأنشطة التقنية للمديرين والمشرفين. 
+• Write proposals and instructions. 
+           كتابة المقترحات والتعليمات. 
+• Communicate with colleagues and clients. 
+     التواصل مع الزملاء والعملاء. 
+ 
+Technical Communicator’s Skills (مهارات الكاتب التقني) 
+• Strong language skills. 
+      مهارة قوية في استخدام اللغة.
+
+• Critical thinking to solve problems. 
+      استخدام التفكير النقدي لحل المشكلات. 
+• Ability to assess situations and identify main issues. 
+        القدرة على تقييم المواقف وتحديد القضايا الرئيسية والفرعية. 
+• Organizing information clearly. 
+       تنظيم المعلومات بطريقة واضحة وسهلة. 
+• Awareness of persuasive writing. 
+     إدراك أهمية الإقناع في الكتابة. 
+• Writing documents that convince or gain trust. 
+       القدرة على كتابة مستندات تقنع القارئ أو تكسب ثقته. 
+• Ethical writing—truthful and not misleading. 
+       الكتابة الأخلاقية– الصدق وتجنب التضليل أو التزييف.  
+ 
+Communicating in the Technical Workplace (التواصل في بيئة العمل التقنية) 
+Technical communication is used by professionals in many fields to deliver information 
+effectively. 
+         يستخدم التواصل التقني في بيئات العمل المختلفة لتوصيل المعلومات بشكل فعّال بين المتخصصين. 
+ 
+What is Technical Writing? (ما هي الكتابة التقنية؟) 
+It is writing used by professionals (engineers, doctors, nurses, etc.) to communicate 
+information for a specific purpose. 
+         هي الكتابة التي يستخدمها المهنيون (مثل المهندسين والأطباء والممرضين) لنقل المعلومات التقنية بهدف
+محدد. 
+The elements include: 
+        العناصر الأساسية هي: 
+• Sender (Writer) – المرسل (الكاتب 
+• Receiver (Reader) – المستقبل (القارئ 
+• Message – الرسالة 
+• Written Text – النص المكتوب
+
+• Communication – عملية التواصل 
+ 
+Genre and the Technical Writing Process (أنواع الكتابة التقنية وعملية الكتابة) 
+Genres are stable patterns that reflect workplace practices. 
+       الأنواع Genres) هي أنماط ثابتة تعكس ممارسات بيئة العمل. 
+They determine a document’s structure, style, and medium. 
+      تحدد شكل الوثيقة وأسلوبها وطريقة عرضها. 
+They help anticipate readers’ needs. 
+     تساعد الكاتب على توقع احتياجات القارئ. 
+Analytical reports differ from technical specifications. 
+        التقارير التحليلية تختلف عن المواصفات التقنية في الغرض والتنظيم. 
+Each type has its own structure and reader expectations. 
+            لكل نوع تنظيمه الخاص وفئته المستهدفة. 
+ 
+Technical Writing Process (مراحل الكتابة التقنية) 
+     Planning and Researching: collecting data and generating ideas. 
+          التخطيط والبحث: جمع المعلومات وتكوين الأفكار. 
+     Organizing and Drafting: arranging ideas and writing sections. 
+           التنظيم والكتابة: ترتيب الأفكار وكتابة الفقرات. 
+     Improving the Style: writing clearly and persuasively. 
+       تحسين الأسلوب: الكتابة بوضوح وبطريقة مقنعة. 
+     Designing the Document: using visuals and layout effectively. 
+                 تصميم الوثيقة: استخدام الرسوم والتصميم بشكل فعّال. 
+     Revising and Editing: reviewing, rewriting, and proofreading. 
+         المراجعة والتحرير: إعادة الصياغة والتدقيق النهائي. 
+The process is flexible—you may move back and forth between stages. 
+     العملية مرنة ويمكن الانتقال بين المراحل عند الحاجة.
+
+Stage 1: Planning and Researching (المرحلة1: التخطيط والبحث)  
+Includes: 
+A- Define the rhetorical situation. 
+B- State your purpose. 
+C- Research your subject. 
+A. Define the rhetorical situation (الموقف البلاغي:) 
+Ask the “5Ws and How”: 
+    من هم القراء؟ ماذا يحتاجون؟ أين ومتى سيستخدمون المعلومات؟ لماذا يحتاجونها؟ كيف سأحقق الهدف؟ 
+Main elements: 
+      Subject: موضوع الوثيقة. 
+       Purpose: الهدف من الوثيقة. 
+        Readers: من هم القراء؟ وما اهتماماتهم؟ 
+        Context: أين ومتى ستُستخدم الوثيقة؟ 
+ 
+B. State your Purpose (حدد هدفك:) 
+Your purpose is what you want your document to achieve. 
+       الهدف هو ما تريد أن تحققه الوثيقة. 
+It acts as a compass for your writing decisions. 
+             الهدف يعمل كبوصلة لتوجيه القرارات أثناء الكتابة. 
+Use action verbs to clarify your intent (e.g., review, recommend). 
+            استخدم أفعالاً قوية لتوضيح نيتك مثل "مراجعة" أو "توصية ." 
+ 
+C. Research your Subject (ابحث عن موضوعك:) 
+Use online, printed, and empirical sources like surveys or interviews. 
+     استخدم المصادر الإلكترونية والمطبوعة والتجريبية مثل الاستبيانات والمقابلات. 
+ 
+Stage 2: Organizing and Drafting (تنظيم وكتابة المحتوى) 
+Organize ideas using familiar structures for readers. 
+       نظم المعلومات في شكل مألوف وسهل للقراءة.
+
+Include facts, data, and examples. 
+        أضف الحقائق والبيانات والأمثلة. 
+Recognizable formats help readers follow easily. 
+      الشكل الواضح والمألوف يجعل الفهم أسرع وأسهل. 
+ 
+Stage 3: Improving the Style (تحسين الأسلوب) 
+All documents have a style; good style means clarity and persuasion. 
+         كل وثيقة لها أسلوبها، والأسلوب الجيد يعني الوضوح والإقناع. 
+Two main styles: 
+     Plain Style: clear and accurate writing. 
+    الأسلوب البسيط: كتابة واضحة ودقيقة. 
+     Persuasive Style: motivates readers emotionally and logically. 
+    الأسلوب الإقناعي: يشجع القارئ من خلال العاطفة والمنطق. 
+Use similes, metaphors, and tone to make writing lively. 
+         استخدم التشبيهات والاستعارات والنبرة لتجعل النص أكثر حيوية. 
+ 
+Stage 4: Designing the Document (تصميم الوثيقة) 
+Readers expect clear, visual, and organized documents. 
+      يتوقع القراء وثائق منظمة بصريًا مع رسوم ومخططات. 
+Readers are raiders for information” – they search for key points quickly. 
+          القراء يبحثون بسرعة عن المعلومات المهمة، لذا يجب إبرازها بوضوح. 
+Use graphics, charts, and layout to make content attractive. 
+                 استخدم الرسومات والمخططات لجعل المحتوى أكثر وضوحًا وجاذبية. 
+ 
+Stage 5: Revising and Editing (المراجعة والتحرير) 
+After drafting, spend enough time revising and proofreading. 
+         بعد الكتابة، خصص وقتًا كافيًا للمراجعة والتصحيح. 
+Accuracy and clarity are essential. 
+     الدقة والوضوح ضروريان جدًا.
+
+Four levels of revision: 
+     Revising: إعادة التفكير في الهدف والمحتوى. 
+     Substantive editing: مراجعة التنظيم والتصميم. 
+     Copyediting: تصحيح الجمل والفقرات. 
+     Proofreading: تدقيق لغوي وإملائي نهائي. 
+Errors reflect low-quality work, so editing is crucial. 
+     الأخطاء تشير إلى ضعف الجودة، لذا المراجعة ضرورية جدًا. 
+ 
+What is Technical Communication? (ما هو التواصل التقني؟) 
+It is managing technical information so that people can take action. 
+         هو تنظيم المعلومات التقنية بطريقة تمكّن الآخرين من اتخاذ قرارات أو إجراءات. 
+It focuses on information management and action, not just writing. 
+       يركّز على إدارة المعلومات وتنفيذ الأفعال أكثر من مجرد الكتابة. 
+ 
+Importance of Technical Communication (أهمية التواصل التقني) 
+Oral and written communication are vital in technical fields. 
+      التواصل الشفهي والكتابي مهم جدًا في المجالات التقنية. 
+A workplace survey showed: 
+        أظهرت دراسة في مكان العمل أن: 
+• 40% of employers wanted better speaking skills. 
+    40٪ من أصحاب العمل يريدون مهارات تواصل شفهي أفضل. 
+• 25% wanted better writing skills. 
+    25٪ يريدون تحسين مهارات الكتابة.

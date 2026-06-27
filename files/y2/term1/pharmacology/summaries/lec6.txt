@@ -1,0 +1,132 @@
+The Cardiovascular System (CVS) 
+جهاز القلب والأوعية الدموية 
+ 
+The cardiovascular system includes the heart (the pump) and the blood vessels (the 
+transport tubes). 
+يشمل جهاز القلب والأوعية الدموية القلب (الذي يعمل كمضخة) والأوعية الدموية (التي تنقل الدم. 
+ 
+Components and Circulation 
+مكوّنات الجهاز والدورة الدموية 
+The heart works as two separate pumps: 
+القلب يعمل كمضختين منفصلتين: 
+1. Right Side Pump: Pumps deoxygenated blood to the lungs (pulmonary 
+circulation). 
+المضخة اليمنى: تضخ الدم غير المؤكسج إلى الرئتين (الدورة الرئوية. 
+2. Left Side Pump: Pumps oxygenated blood to the rest of the body (systemic 
+circulation). 
+المضخة اليسرى: تضخ الدم المؤكسج إلى باقي أعضاء الجسم (الدورة الجهازية. 
+ 
+Heart Structure and Mechanics 
+تركيب القلب وآلية عمله 
+For the heart to work as a pump, it needs chambers and valves. 
+ليعمل القلب كمضخة، يحتاج إلى غرف وصمامات.
+
+1. Chambers (Rooms of the heart): 
+١ .الغرف (حجرات القلب): 
+• Atria – receiving chambers (right and left). 
+الأذينان– غرف الاستقبال (الأيمن والأيسر).  
+• Ventricles – delivery chambers that receive blood from the atria. 
+البطينان– غرف الدفع التي تستقبل الدم من الأذينين.  
+ 
+2. Valves – ensure one-way flow of blood. 
+٢ .الصمامات  – تضمن مرور الدم في اتجاه واحد.  
+Valve Type Location Specific Valves 
+Atrioventricular (AV) valves Between atria & ventricles Tricuspid, Mitral 
+الصمامات الأذينية البطينية بين الأذينين والبطينين  ثلاثي الشرفات، الميترالي  
+Semilunar valves At the start of arteries Pulmonary, Aortic 
+الصمامات شبه الهلالية بداية الشرايين الخارجة  الرئوي، الأورطي 
+ 
+Heart Sounds 
+أصوات القلب 
+Lub-dub” sounds are caused by valve closure. 
+صوت “لوب– دب” يحدث بسبب انغلاق الصمامات.  
+• First sound (lub): AV valves close. 
+الصوت الأول (لوب): غلق الصمامات الأذينية البطينية.
+
+• Second sound (dub): Semilunar valves close. 
+الصوت الثاني (دب): غلق الصمامات شبه الهلالية. 
+ 
+Layers of the Heart Wall 
+طبقات جدار القلب 
+1. Epicardium – outer layer. 
+التامور الحشوي– الطبقة الخارجية.  
+2. Myocardium – muscular middle layer. 
+عضلة القلب– الطبقة العضلية الوسطى.  
+3. Endocardium – inner thin layer. 
+بطانة القلب– الطبقة الداخلية الرقيقة.  
+ 
+Mechanism of Heart Contraction 
+آلية انقباض القلب 
+Action potential → Ca²⁺ release → Actin & Myosin interact → Contraction. 
+وصول نبضة كهربائية → خروج الكالسيوم → تفاعل الأكتين والميوسين → انقباض القلب. 
+ 
+Electrical Activity (Conducting System) 
+النشاط الكهربائي (نظام التوصيل 
+• SA node (pacemaker) 
+العقدة الجيبية الأذينية–  منظم ضربات القلب  
+• AV node 
+العقدة الأذينية البطينية
+
+• Bundle of His 
+حزمة هيس 
+• Bundle branches 
+فروع الحزمة 
+• Purkinje fibers 
+ألياف بركنجي 
+ 
+Physiological Properties of the Heart 
+الخصائص الفسيولوجية للقلب 
+1. Automaticity – ability to generate electrical impulses. 
+الاستقلالية– قدرة القلب على توليد نبضات كهربائية.  
+2. Rhythmicity – regular beating. 
+الانتظام– قدرة القلب على النبض بإيقاع ثابت.  
+3. Contractility – ability to contract and pump blood. 
+القابلية للانقباض– قدرة القلب على الانقباض وضخ الدم.  
+4. Excitability – ability to respond to stimuli. 
+الاستثارية– استجابة عضلة القلب للمؤثرات الكهربائية.  
+5. Conductivity – ability to conduct electrical signals. 
+التوصيلية– نقل الإشارة الكهربائية داخل القلب.  
+ 
+The Cardiac Cycle 
+الدورة القلبية 
+ 
+A. Diastole (Relaxation phase)
+
+أ. الانبساط (مرحلة الامتلاء 
+• Atria fill with blood. 
+يمتلئ الأذينان بالدم. 
+• SA node fires → atria contract. 
+العقدة الجيبية ترسل إشارة → ينقبض الأذينان. 
+• Blood moves into ventricles. 
+يدخل الدم إلى البطينين. 
+ 
+B. Systole (Pumping phase) 
+ب. الانقباض (مرحلة الضخ 
+• Ventricles are full. 
+البطينان ممتلئان بالدم. 
+• Electrical signal travels through AV node → His bundle → Purkinje fibers. 
+الإشارة تنتقل عبر العقدة الأذينية البطينية → حزمة هيس → ألياف بركنجي. 
+• Ventricles contract → blood pushed through aortic & pulmonary valves. 
+ينقبض البطينان → ضخ الدم عبر الصمام الأورطي والرئوي. 
+ 
+Loads on the Left Ventricle 
+الأحمال على البطين الأيسر 
+Load Definition Timing/Dependence 
+Preload Stretch before contraction End of diastole 
+التحميل المسبق مقدار امتلاء البطين قبل الانقباض نهاية الانبساط
+
+Load Definition Timing/Dependence 
+Afterload Resistance against which the heart pumps Aortic/arterial resistance 
+التحميل اللاحق المقاومة التي يواجهها القلب أثناء الضخ  مقاومة الشرايين 
+ 
+Simple Analogy 
+تشبيه مبسط 
+The heart works like a house water pump: 
+القلب يشبه مضخة المياه في المنزل: 
+• Heart = pump → القلب = المضخة 
+• Blood vessels = pipes → الأوعية = المواسير 
+• Atria = receiving tanks → الأذينان = خزانات استقبال 
+• Ventricles = pressure generators → البطينان = مولدات الضغط 
+• Valves = one-way check valves → الصمامات = صمامات اتجاه واحد 
+• Electrical system = wiring controlling the pump → النظام الكهربائي = الأسلاك التي تنظّم
+عمل المضخة

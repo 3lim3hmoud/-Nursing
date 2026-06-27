@@ -1,0 +1,81 @@
+Technical Writing – Lecture (7) 
+Nursing Reports & Shift Reports 
+ 
+1. Types of Nursing Reports 
+The lecture identifies three main types of nursing reports. 
+تحدد المحاضرة ثلاثة أنواع رئيسية من تقارير التمريض. 
+1. Shift Report: Provided by one nurse to another at the end of a shift to share critical 
+patient information and care needs. 
+تقرير الوردية: يقدمه ممرض لآخر في نهاية الوردية لمشاركة المعلومات الحيوية عن المريض واحتياجات  
+الرعاية. 
+2. Admission Report: Documents a patient's initial status and condition when entering 
+the facility. 
+تقرير الدخول: يوثق الحالة الأولية للمريض عند دخوله المنشأة. 
+3. Discharge Report: Contains instructions given to a patient upon discharge. 
+تقرير الخروج: يحتوي على التعليمات المقدمة للمريض عند خروجه من المستشفى. 
+ 
+2. Shift Nursing Reports: Definition and Goals 
+A shift report is an essential document summarizing a patient’s status, ongoing care 
+plans, recent interventions, and critical observations. 
+تقرير الوردية هو وثيقة أساسية تلخص حالة المريض وخطط الرعاية المستمرة والتدخلات الأخيرة والملاحظات
+الهامة. 
+Primary goals: 
+الأهداف الرئيسية: 
+• Ensuring continuity of care so patient treatment is uninterrupted. 
+• ضمان استمرارية الرعاية بحيث لا تتوقف علاج المريض.
+
+• Minimizing errors and promoting patient safety. 
+• تقليل الأخطاء وتعزيز سلامة المريض. 
+• Serving as a bridge for accurate transfer of vital information between outgoing 
+and incoming teams. 
+• يعمل كجسر لنقل المعلومات الحيوية بدقة بين الفرق المنتهية والدخيلة. 
+• Legal documentation: Acts as a formal record for legal and medical purposes. 
+• التوثيق القانوني: يعد سجلاً رسميًا للأغراض القانونية والطبية. 
+ 
+3. Standard Components of a Shift Report Template 
+A complete nursing shift report has ten key sections. 
+يتكون تقرير الوردية الكامل من عشرة أقسام رئيسية. 
+1. Basic Information: Date, shift times, nurse name, room/bed number. 
+2. المعلومات الأساسية: التاريخ، أوقات الوردية، اسم الممرض، رقم الغرفة/السرير. 
+3. Patient Information: Name, ID, diagnosis, allergies, and code status. 
+4. معلومات المريض: الاسم، رقم الهوية، التشخيص، الحساسية، وحالة الكود Code Status). 
+5. Patient Status Overview: Vital signs, pain level, mental status, mobility. 
+6. ملخص حالة المريض: العلامات الحيوية، مستوى الألم، الحالة العقلية، الحركة. 
+7. Recent Changes and Events: Medications given, treatments performed, new 
+symptoms. 
+8. التغيرات والأحداث الأخيرة: الأدوية المعطاة، العلاجات المنفذة، الأعراض الجديدة. 
+9. Care Plan Updates: Scheduled procedures, diet/nutrition, activity restrictions, 
+goals. 
+10. تحديثات خطة الرعاية: الإجراءات المجدولة، النظام الغذائي/التغذية، القيود على النشاط، الأهداف.
+
+11. IV Access and Medications: IV site status, current or scheduled medications. 
+12. وصول الوريد والأدوية: حالة موقع الوريد، الأدوية الحالية أو المجدولة. 
+13. Patient Care Summary: Details on wound care, respiratory support, special 
+equipment. 
+14. ملخص رعاية المريض: تفاصيل عن العناية بالجروح، دعم الجهاز التنفسي، المعدات الخاصة. 
+15. Discharge Planning: Estimated discharge date, follow-up appointments, family 
+updates. 
+16. تخطيط الخروج: تاريخ الخروج المتوقع، المواعيد القادمة، تحديثات العائلة. 
+17. Handover: Incoming nurse identification, important alerts, pending tasks. 
+18. التسليم: تحديد الممرض القادم، التنبيهات المهمة، المهام المعلقة. 
+19. Sign-Off: Signatures of both nurses and time of completion. 
+20. التوقيع النهائي: توقيعات كلا الممرضين ووقت الإتمام. 
+ 
+4. Case Study: Hassan Mohamed 
+Patient Profile: Hassan Mohamed, 57-year-old male, Room 214B, community-acquired 
+pneumonia, acute hypoxia, penicillin allergy. 
+ملف المريض: حسن محمد، ذكر 57 سنة، الغرفة214 B، التهاب رئوي مكتسب من المجتمع، نقص أكسجين حاد،
+حساسية للبنسلين. 
+Assessment: Temperature 37.8°C, oxygen saturation 92% on 2 L/min oxygen, mild chest 
+pain, productive cough with yellow sputum. 
+التقييم: درجة الحرارة 37.8 °C، تشبع الأكسجين92% على2 لتر/دقيقة، ألم صدري خفيف، سعال مصحوب
+بلون بلغم أصفر. 
+Care & Treatments: Nurse Sarah Ahmed administered antibiotics (Ceftriaxone, 
+Azithromycin), performed chest physiotherapy, encouraged use of incentive spirometer.
+
+الرعاية والعلاجات: الممرضة سارة أحمد أعطت مضادات حيوية (سيفترياكسون، أزيثروميسين)، قامت بالعلاج  
+الطبيعي للصدر، وشجعت على استخدام جهاز التحفيز التنفسي. 
+Handover: Report transferred to Nurse Ali Mostafa at 18:45. Key alerts: monitor fever 
+and ensure oxygen saturation stays above 92%. 
+تسليم التقرير: تم نقل التقرير إلى الممرض علي مصطفى الساعة 18:45. التنبيهات الرئيسية: متابعة الحمى
+والتأكد من أن تشبع الأكسجين يبقى فوق 92 %.

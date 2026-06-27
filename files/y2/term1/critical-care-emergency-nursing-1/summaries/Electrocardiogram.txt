@@ -1,0 +1,165 @@
+Electrocardiogram (ECG) Interpretation 
+      تفسير رسم القلب الكهربائي 
+ 
+II. Introduction and Cardiac Conduction 
+Introduction 
+The ECG records the electrical signals made by special heart cells called pacemaker cells. 
+جهاز رسم القلب يسجل الإشارات الكهربائية الناتجة من خلايا خاصة في القلب تُسمى خلايا المنظم  Pacemaker 
+Cells). 
+These cells have automaticity, meaning they can make electrical signals without outside 
+help. 
+تتميز هذه الخلايا بخاصية الاستثارة الذاتية  Automaticity)، أي أنها تولّد إشارات كهربائية بدون أي تحفيز  
+خارجي. 
+The electrical signal travels through special fibers to muscle cells, causing heart 
+contraction. 
+تنتقل الإشارة الكهربائية عبر ألياف خاصة إلى خلايا العضلات، مما يؤدي إلى انقباض عضلة القلب.  
+ 
+Cardiac Conduction System 
+The main parts of the conduction system are: 
+الأجزاء الرئيسية لنظام توصيل القلب هي: 
+1. SA Node (Sinoatrial Node) – the main pacemaker of the heart. 
+العقدة الجيبية الأذينية، وهي المنظم الأساسي لضربات القلب. 
+2. AV Node (Atrioventricular Node) – slows the impulse before it goes to the 
+ventricles. 
+العقدة الأذينية البطينية، وتعمل على إبطاء الإشارة قبل انتقالها للبطينين.
+
+3. Bundle of His – pathway from AV node to ventricles. 
+حزمة هِس، وهي المسار الذي ينقل الإشارة من العقدة إلى البطينين. 
+4. Purkinje Fibers – spread the impulse through the ventricles. 
+ألياف بوركنجي، تنشر الإشارة داخل البطينين لتحدث الانقباض. 
+ 
+Action Potential Phases (مراحل الإشارة الكهربائية) 
+1. Depolarization → cell becomes electrically active. 
+إزالة الاستقطاب → تصبح الخلية نشطة كهربائيًا. 
+2. Plateau Phase → calcium enters the cell to maintain contraction. 
+مرحلة الثبات → يدخل الكالسيوم إلى الخلية للحفاظ على الانقباض. 
+3. Repolarization → the cell returns to rest; calcium and sodium move out, 
+potassium moves in. 
+إعادة الاستقطاب → تعود الخلية إلى حالتها الطبيعية؛ يخرج الكالسيوم والصوديوم ويدخل البوتاسيوم. 
+ 
+III. Waveforms and Intervals (ECG Paper) 
+The ECG paper shows electrical activity as waves on a grid. 
+ورقة رسم القلب تُظهر النشاط الكهربائي على شكل موجات داخل شبكة. 
+• 1 small box = 0.04 sec           
+المربع الصغير0.04 ثانية  
+• 1 large box = 0.20 sec 
+المربع الكبير0.20 ثانية  
+• Waves start from a flat line called the isoelectric line. 
+الموجات تبدأ من خط مستوٍ يسمى الخط المتعادل الكهربائي.
+
+Main ECG Waves & Intervals 
+Wave/Interval Meaning (English) شرح بالعربي 
+P Wave 
+Atrial depolarization → atrial 
+contraction. 
+إزالة استقطاب الأذين → انقباض الأذين .
+Duration: 0.06–0.12 sec. 
+PR Interval 
+From start of atrial depolarization 
+to start of ventricular 
+depolarization. 
+من بداية موجة P حتى بداية مركب QRS. 
+Normal: 0.12–0.20 sec. 
+QRS Complex 
+Ventricular depolarization → 
+ventricular contraction. 
+إزالة استقطاب البطين → انقباض البطين .
+Normal: 0.06–0.10 sec. 
+ST Segment 
+Time between depolarization & 
+repolarization of ventricles. 
+الوقت بين إزالة وإعادة الاستقطاب للبطينين
+عادة يكون على  الخط المتعادل.  
+T Wave 
+Ventricular repolarization 
+(recovery). 
+إعادة استقطاب البطينين (مرحلة التعافي). عادة
+موجة موجبة. 
+QT Interval 
+Time from start of depolarization 
+to end of repolarization. 
+الوقت الكلي بين بداية وانتهاء النشاط الكهربائي
+للبطين .Normal: 0.36–0.44 sec. 
+U Wave 
+Repolarization of a small part of 
+the ventricles. 
+إعادة استقطاب جزء صغير من البطين، تظهر
+نادرًا، وتزداد في  نقص البوتاسيوم  
+Hypokalemia). 
+        Note: Atrial repolarization exists but isn’t visible because it occurs during QRS. 
+     ملاحظة: إعادة استقطاب الأذينين تحدث ولكن لا تظهر لأنها تتزامن مع مركب QRS. 
+ 
+IV. Analyzing a Rhythm Strip (تحليل شريط الإيقاع) 
+1. Check Rhythm Regularity
+
+• Measure P–P intervals for atrial rhythm. 
+قياس المسافة بين قمم موجات P لمعرفة انتظام الأذين. 
+• Measure R–R intervals for ventricular rhythm. 
+قياس المسافة بين قمم موجات R لمعرفة انتظام البطين. 
+• If the difference ≤ 0.08 sec → rhythm is regular. 
+إذا كان الفرق أقل من0.08 ثانية → الإيقاع منتظم.  
+ 
+2. Calculate Heart Rate (حساب معدل النبض) 
+Method Use How شرح بالعربي 
+Large Box 
+Method 
+Regular 
+rhythm 
+Count large boxes between 
+QRS, divide 300 by that 
+number. 
+احسب عدد المربعات الكبيرة بين مركبي 
+QRS ثم اقسم300  عليه. مثال4 مربعات
+= 75 نبضة/دقيقة.  
+Small Box 
+Method 
+Regular 
+rhythm 
+Count small boxes between 
+QRS, divide 1500 by that 
+number. 
+احسب عدد المربعات الصغيرة بين مركبي 
+QRS ثم اقسم1500 عليه.  
+Six-Second 
+Method 
+Irregular 
+rhythm 
+Count QRS complexes in 6 
+seconds and multiply by 10. 
+احسب عدد مركبات QRS خلال6 ثوانٍ
+واضرب10 . 
+ 
+3. Evaluate the P Wave 
+Are P waves normal, uniform, and followed by QRS? 
+هل موجات P طبيعية وموحدة الشكل وكل واحدة يتبعها QRS؟ 
+ 
+4. Measure the PR Interval
+
+Count small squares from start of P to start of QRS × 0.04 sec. 
+احسب عدد المربعات بين بداية P وبداية QRS واضرب0.04 ثانية.  
+Normal = 0.12–0.20 sec. 
+ 
+5. QRS Complex 
+Count small boxes × 0.04 sec → should be 0.06–0.10 sec. 
+احسب المربعات الصغيرة0.04 ثانية → المدة الطبيعية0.06–0.10 ثانية.  
+Check if every P has a QRS after it. 
+تأكد أن كل موجة P يتبعها مركب QRS. 
+ 
+6. Evaluate the T Wave 
+Check if T waves are present and normally shaped. 
+تحقق من وجود موجات T وأن شكلها طبيعي. 
+ 
+7. QT Interval 
+QT length changes with heart rate (faster heart → shorter QT). 
+طول فترة QT يتغير حسب معدل القلب (كلما زاد المعدل، قصرت الفترة.) 
+ 
+V. Normal Sinus Rhythm (النظم الجيبي الطبيعي - NSR) 
+Electrical impulses start in the SA node and occur regularly (60–100 bpm). 
+الإشارات الكهربائية تبدأ من العقدة الجيبية وتحدث بانتظام بمعدل من60  إلى100 نبضة/دقيقة.  
+Criteria for NSR: 
+     Regular rhythm. → إيقاع منتظم. 
+     Rate 60–100 bpm (same for atria and ventricles). → نفس المعدل للأذينين والبطينين.
+
+P waves same shape, one before each QRS. → موجات P موحدة وكل واحدة تسبق QRS. 
+     PR interval 0.12–0.20 sec. → فترة PR طبيعية. 
+     QRS duration 0.06–0.12 sec. → مدة QRS طبيعية.

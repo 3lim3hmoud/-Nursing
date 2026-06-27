@@ -1,0 +1,438 @@
+Introduction (المقدمة) 
+Surgery is using instruments during an operation to treat injuries, diseases, or 
+deformities. 
+    الجراحة هي استخدام أدوات أثناء العملية لعلاج الإصابات أو الأمراض أو التشوهات. 
+Perioperative nursing means caring for the patient before, during, and after surgery. 
+    التمريض المحيط بالجراحة يعني العناية بالمريض قبل وأثناء وبعد العملية الجراحية.  
+ 
+     Reasons for Surgery (أسباب إجراء الجراحة) 
+ •Preventive surgery: removes tissue before it causes problems (e.g., removing a mole 
+to prevent cancer). 
+    الجراحة الوقائية: إزالة نسيج قبل أن يسبب مشكلة (مثل إزالة شامة لمنع السرطان. 
+ •Diagnostic / Exploratory surgery: takes tissue samples to make a diagnosis. 
+    الجراحة التشخيصية أو الاستكشافية: أخذ عينة نسيج لتحديد نوع المرض. 
+ •Curative surgery: removes diseased tissue (e.g., inflamed appendix). 
+    الجراحة العلاجية: إزالة النسيج المريض (مثل الزائدة الملتهبة. 
+ •Palliative surgery: relieves symptoms when the main disease cannot be cured. 
+    الجراحة التلطيفية: لتخفيف الأعراض عندما لا يمكن علاج المرض الأساسي. 
+ •Cosmetic/Reconstructive surgery: improves appearance. 
+    الجراحة التجميلية أو الترميمية: لتحسين الشكل الخارجي. 
+ 
+          Surgery According to Urgency (حسب درجة الاستعجال) 
+ •Emergent: immediate surgery to save life. 
+    طارئة: عملية فورية لإنقاذ الحياة. 
+ •Urgent: needed within 24–30 hours. 
+    عاجلة: يجب إجراؤها خلال24 إلى30 ساعة.  
+ •Elective: planned and scheduled, not urgent. 
+    اختيارية: مجدولة مسبقًا وليست مستعجلة. 
+ 
+       Surgery According to Risk (حسب درجة الخطورة)
+
+• Minor surgery: small risk, done with local anesthesia. 
+    جراحة بسيطة: خطورتها قليلة وتُجرى عادة بتخدير موضعي. 
+ •Major surgery: higher risk, longer and more complex. 
+    جراحة كبرى: أكثر خطورة وتستغرق وقتًا أطول. 
+ •Bloodless surgery: performed without using donor blood. 
+    جراحة بدون دم: تُجرى دون الحاجة لنقل دم. 
+ 
+        Ambulatory Surgery (الجراحة المتنقلة أو اليوم الواحد) 
+Definition: 
+Surgery done on the same day — no overnight stay. 
+    تُجرى وتُغادر في نفس اليوم دون مبيت في المستشفى. 
+Patient criteria: 
+• Not critically ill. 
+    المريض ليس في حالة حرجة. 
+Procedure doesn’t need long anesthesia. 
+    العملية لا تحتاج لتخدير طويل المدة. 
+Quick recovery expected. 
+    يتوقع شفاء سريع بعد العملية. 
+Family can provide care after surgery. 
+    العائلة قادرة على رعاية المريض بعد العملية. 
+ 
+      Emergency Surgery (الجراحة الطارئة) 
+Happens suddenly with little time to prepare. 
+    تحدث فجأة بدون وقت كافٍ للتحضير. 
+Patient preparation must be fast and focused. 
+    يجب تجهيز المريض بسرعة وبدقة. 
+If patient can’t give info, get consent and medical history from family. 
+    إذا لم يستطع المريض إعطاء المعلومات، يتم أخذ الموافقة والتاريخ الطبي من العائلة.
+
+Perioperative Phases (مراحل التمريض المحيط بالجراحة) 
+ •Perioperative: includes all 3 phases. 
+    تشمل جميع المراحل الثلاث. 
+ •Preoperative: from decision for surgery until transfer to OR. 
+    قبل الجراحة: من وقت اتخاذ قرار العملية حتى دخول غرفة العمليات. 
+ •Intraoperative: from OR entry until transfer to recovery unit (PACU). 
+    أثناء الجراحة: من دخول غرفة العمليات حتى نقله لغرفة الإفاقة. 
+ •Postoperative: from PACU until full recovery. 
+    بعد الجراحة: من غرفة الإفاقة حتى تمام الشفاء. 
+ 
+        1. Preoperative Phase (مرحلة ما قبل الجراحة) 
+Main nursing roles: 
+الأدوار الأساسية للممرضة: 
+Help collect data to plan patient care. 
+    المساعدة في جمع المعلومات لوضع خطة رعاية المريض. 
+Reinforce explanations and instructions to patient and family. 
+    تأكيد وشرح التعليمات للمريض وعائلته. 
+Provide emotional and psychological support. 
+    تقديم الدعم النفسي والعاطفي للمريض. 
+ 
+     Factors Influencing Surgical Outcomes (العوامل التي تؤثر على نتائج الجراحة) 
+ •Hydration & Nutrition: Good nutrition and fluid balance help healing and reduce 
+complications. 
+    التغذية والترطيب الجيد يساعدان على التئام الجروح ويقللان المضاعفات. 
+ •Smoking & Alcohol: Smoking increases lung secretions and breathing problems. 
+    التدخين يزيد من إفرازات الرئة ويسبب مشاكل في التنفس. 
+ •Diseases: Chronic diseases raise surgical risk if not well controlled. 
+    الأمراض المزمنة تزيد خطر العملية إذا لم تكن تحت السيطرة.
+
+Preoperative Teaching (التثقيف قبل الجراحة) 
+All patients should receive information about: 
+    يجب أن يحصل كل مريض على معلومات عن: 
+ •Preoperative procedures: like enemas, skin prep, fasting (NPO), and pre-op meds. 
+    الإجراءات قبل العملية: مثل الحقنة الشرجية، تنظيف الجلد، الصيام، وأدوية ما قبل العملية. 
+ •Technical info: expected procedure, incision site, dressings, tubes, catheters. 
+    المعلومات الفنية: نوع العملية، مكان الجرح، الضمادات، الأنابيب، والقساطر. 
+ •Day of surgery: arrival time, surgery time, duration, effects of anesthesia, where family 
+waits, pain control, and recovery info. 
+    يوم العملية: وقت الحضور، وقت العملية، مدتها، تأثير أدوية التخدير، مكان انتظار العائلة، التحكم في الألم،
+ومعلومات ما بعد العملية. 
+ •PACU (Post-Anesthesia Care Unit): what to expect (noise, lights, equipment, 
+monitoring). 
+    غرفة الإفاقة: ماذا يتوقع المريض (أصوات، أضواء، أجهزة مراقبة. 
+ •SICU (Surgical Intensive Care Unit): if needed, location, stay time, and visiting rules. 
+    العناية المركزة الجراحية: موقعها، مدة البقاء، وقواعد الزيارة. 
+ 
+         Preoperative Instructions (تعليمات ما قبل الجراحة) 
+Stop food and fluids after midnight (NPO). 
+    التوقف عن الأكل والشرب بعد منتصف الليل. 
+If afternoon surgery, may drink clear liquids in early morning. 
+    إذا كانت العملية بعد الظهر، يمكن شرب سوائل صافية في الصباح الباكر. 
+Brush teeth (without swallowing water). 
+    تنظيف الأسنان (بدون بلع الماء. 
+May need enema to empty bowels before surgery. 
+    قد يحتاج المريض إلى حقنة شرجية لتفريغ الأمعاء قبل العملية. 
+Teach how to report pain using a pain scale. 
+    تعليم المريض كيف يبلغ عن شدة الألم باستخدام مقياس الألم.
+
+Postoperative Exercises (تمارين بعد الجراحة) 
+These exercises prevent complications after surgery: 
+    تساعد هذه التمارين على منع المضاعفات بعد العملية: 
+ •Deep breathing: prevents lung collapse (atelectasis). 
+    التنفس العميق: يمنع انكماش الرئة (الأتلكتاسيز. 
+ •Leg exercises: improve blood circulation and prevent clots. 
+    تمارين الساق: تحسن الدورة الدموية وتمنع تجلط الدم. 
+ •Coughing: clears secretions and prevents pneumonia. 
+    السعال: يطرد الإفرازات ويمنع الالتهاب الرئوي. 
+ 
+        Preoperative Data Collection / Nursing Assessment (جمع البيانات وتقييم التمريض قبل
+الجراحة) 
+Includes: 
+    يتضمن: 
+• Health and psychosocial history 
+• Physical assessment 
+• Lab and diagnostic tests 
+    التاريخ الصحي والاجتماعي– الفحص البدني –  الفحوصات والتحاليل.  
+ 
+      Subjective Data (البيانات الذاتية) 
+ •Demographic info: name, age, marital status, job. 
+    المعلومات الشخصية: الاسم، العمر، الحالة الاجتماعية، الوظيفة. 
+ •Reason for surgery: why surgery is needed. 
+    سبب العملية: لماذا ستُجرى الجراحة؟ 
+ •Medical history: allergies, diseases, medications, pain, hospitalizations. 
+    التاريخ الطبي: حساسية، أمراض، أدوية، آلام، دخول سابق للمستشفى. 
+ •Surgical history: any past operations or anesthesia reactions. 
+    التاريخ الجراحي: عمليات سابقة أو مشاكل مع التخدير.
+
+• Tobacco use: how much and how long. 
+    التدخين: الكمية ومدة التدخين. 
+ •Alcohol use: how often and how much. 
+    شرب الكحول: عدد المرات والكمية. 
+ •Coping techniques: how patient deals with stress. 
+    طرق التكيف: كيف يتعامل المريض مع التوتر. 
+ •Family history: diseases like diabetes or heart problems. 
+    التاريخ العائلي: أمراض وراثية مثل السكري أو أمراض القلب. 
+ 
+     Objective Data (البيانات الموضوعية) 
+ •Vital signs: temperature, pulse, BP , oxygen level. 
+    العلامات الحيوية: الحرارة، النبض، الضغط، نسبة الأكسجين. 
+ •Emotional state: calm, anxious, or crying. 
+    الحالة النفسية: هادئ، قلق، أو باكي. 
+ •Neurological: ability to follow instructions. 
+    العصبي: قدرة المريض على اتباع التعليمات. 
+ •Skin: color, warmth, bruises, wounds, dryness. 
+    الجلد: اللون، الدفء، الكدمات، الجروح، الجفاف. 
+ •Respiratory: check for cough, breathing pattern, COPD, chest shape. 
+    الجهاز التنفسي: وجود كحة، نمط التنفس، أمراض تنفسية، شكل الصدر. 
+ •Cardiovascular: chest pain, heart failure, hypertension. 
+    القلب والأوعية: ألم الصدر، فشل القلب، ارتفاع الضغط. 
+ •Gastrointestinal: bowel sounds, last bowel movement, distention. 
+    الجهاز الهضمي: أصوات الأمعاء، آخر مرة تبرز، انتفاخ البطن. 
+ •Musculoskeletal: weakness or deformities. 
+    الجهاز العضلي الهيكلي: ضعف أو تشوهات. 
+ 
+       Immediate Preoperative Care (العناية الفورية قبل العملية)
+
+• Ensure the client is wearing an ID band. 
+    تأكد أن المريض يرتدي سوار التعريف الخاص به. 
+Record vital signs (VS). 
+    سجّل العلامات الحيوية للمريض. 
+Document the client’s fall risk status. 
+    حدد وسجل إذا كان المريض معرضًا للسقوط. 
+Check blood identification bands if blood transfusion may be needed. 
+    تحقق من وجود أساور تحديد فصيلة الدم إذا كان هناك احتمال لنقل دم. 
+Assist with bathing and hygiene. 
+    ساعد المريض في الاستحمام والنظافة الشخصية. 
+Remove prostheses, braces, hairpins, contact lenses, hearing aids, and glasses. 
+    أزل الأطراف الصناعية، والدعامات، والدبابيس، والعدسات، وأجهزة السمع، والنظارات. 
+Remove jewelry and valuables. 
+    أزل المجوهرات والمقتنيات الثمينة. 
+Tie hair back and cover with surgical cap. 
+    اربط الشعر وغطه بغطاء جراحي. 
+Remove partial dentures and store in a denture cup with water. 
+    أزل أطقم الأسنان الجزئية وضعها في كوب مخصص مع ماء. 
+Remove makeup, nail polish, and artificial nails. 
+    أزل المكياج وطلاء الأظافر والأظافر الصناعية. 
+Check that the preoperative checklist is complete and signed. 
+    تأكد من أن قائمة الفحص قبل العملية مكتملة وموقعة. 
+ 
+     Preoperative Medications (أدوية ما قبل العملية) 
+Given to: 
+    تُعطى لـ: 
+1. Reduce anxiety and promote relaxation. 
+    تقليل القلق والمساعدة على الاسترخاء.
+
+2. Decrease mucus and body secretions. 
+    تقليل إفرازات الجسم والمخاط. 
+3. Prevent nausea and vomiting. 
+    منع الغثيان والقيء. 
+4. Enhance anesthetic effects. 
+    تعزيز تأثير التخدير. 
+ 
+           Informed Consent (الموافقة المستنيرة) 
+The patient must decide freely about having surgery. 
+    يجب أن يقرر المريض بنفسه ما إذا كان سيجري العملية. 
+The client must sign a surgical consent form before surgery. 
+    يجب على المريض توقيع نموذج الموافقة قبل العملية. 
+If the client is confused or unconscious, a family member signs. 
+    إذا كان المريض فاقد الوعي أو مشوشًا، يوقع أحد أفراد العائلة. 
+For patients under 18, the parent or guardian signs. 
+    إذا كان المريض أقل من18 سنة، يوقع الوالد أو الوصي القانوني.  
+The surgeon must explain the procedure, benefits, risks, complications, and what to 
+expect after surgery. 
+    الطبيب الجراح هو المسؤول عن شرح تفاصيل العملية، فوائدها، مخاطرها، والمضاعفات المحتملة. 
+ 
+          Preoperative Preparation (التحضير قبل العملية) 
+     Physical Preparation (التحضير الجسدي:) 
+ •Skin preparation: clean and shave area 10 cm around surgical site with antiseptic 
+solution. 
+    تحضير الجلد: تنظيف المنطقة وحلق الشعر حول مكان العملية بمسافة10 سم بمحلول مطهر.  
+ •Elimination: catheter or enema if ordered. 
+    الإخراج: تركيب قسطرة أو حقنة شرجية حسب أوامر الطبيب. 
+ •Fasting: no food or drink based on anesthesia type. 
+    الصيام: الامتناع عن الأكل والشرب حسب نوع التخدير.
+
+• Care of valuables and clothing: remove jewelry and wear hospital gown. 
+    العناية بالممتلكات والملابس: نزع المجوهرات وارتداء ثوب المستشفى. 
+     Psychosocial Preparation (التحضير النفسي:) 
+Proper teaching reduces fear and anxiety. 
+    التثقيف الجيد قبل العملية يقلل القلق والخوف. 
+ 
+     Common Preoperative Problems (المشاكل الشائعة قبل الجراحة) 
+ •Anxiety about surgery and results. 
+    القلق من العملية ونتائجها. 
+ •Fear of death, anesthesia, or complications. 
+    الخوف من الموت أو التخدير أو المضاعفات. 
+ •Lack of knowledge about pre/postoperative care. 
+    قلة المعرفة بالإجراءات قبل وبعد العملية. 
+ •Insomnia due to stress or new environment. 
+    الأرق بسبب التوتر أو البيئة غير المألوفة. 
+ •Limited coping ability from lack of support. 
+    ضعف القدرة على التكيف بسبب نقص الدعم. 
+ 
+       Nursing Goals Before Surgery (الأهداف التمريضية قبل الجراحة) 
+Physically and emotionally prepared for surgery. 
+    أن يكون المريض جاهزًا جسديًا ونفسيًا للعملية . 
+Can perform deep breathing, coughing, and leg exercises. 
+    قادر على أداء تمارين التنفس والسعال وتمارين الساق. 
+Understands the procedure and postoperative expectations. 
+    يفهم تفاصيل العملية وما سيحدث بعدها. 
+Maintain fluid and electrolyte balance. 
+    الحفاظ على توازن السوائل والأملاح.
+
+Intraoperative Phase (مرحلة أثناء الجراحة) 
+            The Surgical Team (الفريق الجراحي:) 
+ •Surgeon: performs surgery, explains risks, gains consent, manages patient after 
+surgery. 
+    الجراح: يجري العملية، يشرح المخاطر، يحصل على الموافقة، ويتابع المريض بعدها. 
+ •Surgeon assistant: helps with bleeding control, tissue handling, and wound closure. 
+    مساعد الجراح: يساعد في السيطرة على النزيف، سحب الأنسجة، وإغلاق الجرح. 
+ •Anesthesiologist: provides anesthesia. 
+    طبيب التخدير: مسؤول عن إعطاء التخدير ومراقبة المريض أثناء العملية. 
+ 
+           Scrub Nurse (الممرضة المعقمة:) 
+Responsible for: 
+    مسؤولة عن: 
+Checking cleanliness, temperature, and air quality in OR. 
+    التأكد من نظافة الغرفة، ودرجة الحرارة، وجودة الهواء. 
+Preparing surgical instruments and equipment. 
+    تجهيز الأدوات والمعدات الجراحية. 
+Washing hands, wearing sterile gown and gloves. 
+    غسل اليدين وارتداء المعطف والقفازات المعقمة. 
+Maintaining sterile field and passing tools to surgeon. 
+    الحفاظ على التعقيم وتمرير الأدوات للجراح. 
+Counting instruments, needles, and sponges. 
+    عد الأدوات والإبر والضمادات. 
+Recording data and cleaning after procedures. 
+    توثيق المعلومات وتنظيف المكان بعد العملية. 
+ 
+            Circulating Nurse (الممرضة الدائرة:) 
+Helps the scrub nurse prepare instruments and gowns. 
+    تساعد الممرضة المعقمة في تجهيز الأدوات والمعاطف.
+
+• Maintains sterile field and opens instrument sets. 
+    تحافظ على التعقيم وتفتح مجموعات الأدوات. 
+Documents all data and assists during surgery. 
+    توثق كل البيانات وتساعد أثناء الجراحة. 
+Checks electrical and safety equipment. 
+    تتأكد من سلامة الأجهزة الكهربائية. 
+Counts all surgical items before and after surgery. 
+    تعد جميع الأدوات قبل وبعد العملية. 
+ 
+        Anesthesia (التخدير) 
+Definition: medicine that prevents pain during surgery. 
+    مادة تُستخدم لمنع الإحساس بالألم أثناء الجراحة. 
+Types of Anesthesia (أنواع التخدير:) 
+Type Description Arabic 
+General Causes total unconsciousness and no pain. تخدير عام: يسبب فقدان الوعي الكامل. 
+Regional Numbs a specific body part (no 
+unconsciousness). تخدير إقليمي: يخدر منطقة معينة فقط. 
+Local Numbs a small area only. تخدير موضعي: يخدر منطقة صغيرة
+فقط. 
+ 
+Stages of General Anesthesia (مراحل التخدير العام:) 
+1. Induction: patient becomes unconscious. 
+    مرحلة الإدخال: فقدان الوعي. 
+2. Maintenance: surgery is performed. 
+    مرحلة التنفيذ: أثناء إجراء العملية. 
+3. Emergence: waking up and reversing anesthesia. 
+    مرحلة الإفاقة: إيقاظ المريض بعد انتهاء العملية.
+
+Operating Room Environment (بيئة غرفة العمليات) 
+OR is isolated, with filtered air and positive pressure to prevent infection. 
+    غرفة العمليات معزولة والهواء فيها مُصفى بضغط إيجابي لتقليل العدوى. 
+All equipment is made of stainless steel for easy cleaning. 
+    الأدوات مصنوعة من الفولاذ المقاوم للصدأ لتسهيل التعقيم. 
+Temperature is kept cool for comfort and to prevent bacterial growth. 
+    تُحافظ درجة الحرارة على البرودة لمنع نمو البكتيريا. 
+ 
+     Prevention of Intraoperative Complications (منع مضاعفات أثناء الجراحة) 
+1. Infection: use strict aseptic techniques. 
+    العدوى: يجب الالتزام بالتعقيم التام. 
+2. Fluid imbalance: circulating nurse tracks IV fluids. 
+    توازن السوائل: تراقب الممرضة السوائل الوريدية. 
+3. Injury from positioning: correct patient positioning. 
+    إصابة بسبب الوضعية: وضع المريض بطريقة صحيحة. 
+4. Hypothermia: prevent drop in body temperature. 
+    انخفاض الحرارة: الحفاظ على حرارة الجسم. 
+5. Malignant hyperthermia: sudden dangerous rise in body temperature from 
+anesthesia. 
+    فرط الحرارة الخبيث: ارتفاع خطير في حرارة الجسم بسبب التخدير. 
+ 
+     Adverse Effects of Anesthesia (الآثار الجانبية للتخدير) 
+Heart rhythm problems or low heart rate. 
+    اضطرابات في نبض القلب أو بطءه. 
+Circulatory collapse. 
+    انهيار في الدورة الدموية. 
+Seizures or agitation. 
+    تشنجات أو تهيج عصبي.
+
+• Over or under sedation. 
+    تخدير زائد أو ناقص. 
+Breathing problems (hypoxemia or hypercarbia). 
+    مشاكل في التنفس (نقص أو زيادة ثاني أكسيد الكربون. 
+Trauma to mouth or throat from intubation. 
+    إصابة في الفم أو الحنجرة بسبب أنبوب التنفس. 
+ 
+        Postoperative Phase (مرحلة ما بعد الجراحة) 
+           Transport to PACU (النقل إلى غرفة الإفاقة:) 
+Patient is taken to PACU (Post-Anesthesia Care Unit). 
+    يُنقل المريض إلى غرفة الإفاقة بعد العملية. 
+Special nurses monitor recovery. 
+    ممرضات متخصصات يراقبن المريض أثناء الإفاقة. 
+Stay 4–6 hours depending on surgery. 
+    يبقى المريض من4 إلى6  ساعات حسب نوع العملية.  
+ 
+       Information Given to PACU Nurse (معلومات تُنقل إلى ممرضة الإفاقة:) 
+Diagnosis and procedure done. 
+    التشخيص ونوع العملية التي أُجريت. 
+Past history, allergies, and age. 
+    التاريخ المرضي، الحساسية، والعمر. 
+Vital signs, anesthesia used, fluids given or lost. 
+    العلامات الحيوية، نوع التخدير، السوائل المعطاة أو المفقودة. 
+Complications or findings. 
+    أي مضاعفات أو نتائج تم اكتشافها. 
+ 
+      Immediate Postoperative Assessment (التقييم الأولي بعد العملية)
+
+Focus on: 
+    التركيز على: 
+• Airway and breathing 
+• Circulation and vital signs 
+• Wound and dressings 
+• Fluids and urine output 
+• Level of consciousness and pain 
+    مجرى التنفس والتنفس– الدورة الدموية والعلامات الحيوية – الجرح والضمادات  – السوائل والإخراج –  
+الوعي والألم. 
+ 
+     Nurse’s Responsibilities in PACU (مسؤوليات الممرضة في غرفة الإفاقة) 
+Keep airway open and monitor breathing. 
+    الحفاظ على مجرى التنفس ومراقبة التنفس. 
+Maintain circulation and prevent shock. 
+    الحفاظ على الدورة الدموية ومنع الصدمة. 
+Check drains, IVs, and wounds. 
+    فحص الأنابيب الوريدية والجرح. 
+Observe for complications. 
+    مراقبة أي مضاعفات. 
+ 
+        Modified Aldrete Scale (مقياس ألدريت لتقييم الإفاقة) 
+Category 0 1 2 
+Activity No movement Move 2 limbs Move all limbs 
+Respiration No breathing Weak breathing Normal deep breathing 
+Circulation BP ±50 BP ±20–49 BP ±20 
+Consciousness Unresponsive Responds to voice Fully awake
+
+Category 0 1 2 
+SpO₂ <90% Needs O₂ >92% room air 
+    يُستخدم هذا المقياس لتقييم جاهزية المريض بعد التخدير. 
+ 
+        Immediate Nursing Interventions (التدخلات التمريضية الفورية بعد العملية) 
+Assess breathing, oxygen, and vital signs. 
+    تقييم التنفس والأكسجين والعلامات الحيوية. 
+Check wound, dressings, and drains. 
+    فحص الجرح والضمادات والأنابيب. 
+Monitor consciousness and pain level. 
+    مراقبة الوعي ومستوى الألم. 
+Give pain meds as prescribed. 
+    إعطاء أدوية الألم حسب الوصفة. 
+Keep IV flowing and check urine output. 
+    التأكد من عمل المحاليل وخروج البول. 
+Place essentials within reach (call light, basin, urinal). 
+    وضع الأدوات الأساسية في متناول يد المريض. 
+Educate patient and family. 
+    توعية المريض وعائلته. 
+ 
+     Criteria for Discharge from PACU (شروط خروج المريض من غرفة الإفاقة) 
+Stable vital signs. 
+    علامات حيوية مستقرة. 
+Fully oriented and awake. 
+    مستيقظ ومدرك للمكان والزمان. 
+Normal breathing and oxygen level. 
+    تنفس طبيعي ومستوى أكسجين جيد.
+
+• Urine output ≥ 30 mL/hour. 
+    إخراج بول لا يقل عن30  مل/ساعة.  
+No nausea or vomiting. 
+    لا يوجد غثيان أو قيء. 
+Minimal pain. 
+    ألم خفيف فقط.

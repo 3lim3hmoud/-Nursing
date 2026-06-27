@@ -1,0 +1,266 @@
+TECHNOLOGIES OF TEACHING
+E-Learning  ·  Virtual Classroom  ·  Blended Learning  ·  Mobile Learning in Nursing
+Prepared by
+Saeed Mohammed Abdelguid, Ph.D , MSc, RN
+College of Nursing – Al Ryada University
+
+LECTURE OVERVIEW
+01 E-Learning
+Definition, modalities, delivery methods, impact & challenges
+02 Virtual Classroom
+Features, benefits and real-world examples (MOOCs, Bootcamps)
+03 Blended Learning
+Types, benefits, hazards and the flipped classroom model
+04 Mobile Learning
+M-Learning devices, advantages, disadvantages & nursing uses
+
+KEY DEFINITIONS
+Technology
+The systematic application of scientific or other organized 
+knowledge to practical tasks.
+Educational Technology
+The use of technology to improve education — a systematic, 
+interactive process for designing instruction or training used to 
+improve performance. Also known as instructional or learning 
+technology.
+Core Purpose
+Educational technology integrates technology into education to promote a more diverse learning environment and empower 
+students to use technology alongside their regular assignments — improving efficiency, motivation, and access to learning.
+
+TRADITIONAL CLASSROOM vs. E-LEARNING
+Traditional Classroom
+Classroom
+Physical — limited size, synchronous only
+Content
+PowerPoint, transparencies, textbooks, library
+Personalization
+One fixed learning path for all students
+Schedule
+Fixed time and location dependent
+E-Learning
+Classroom
+Unlimited — anytime, anywhere access
+Content
+Multimedia, simulation, digital library, on-demand
+Personalization
+Learning path and pace determined by the learner
+Communication
+Synchronous & asynchronous collaboration tools
+
+E-LEARNING — DEFINITION & MODALITIES
+E-Learning: Teaching using modern communication mechanisms — computers, networks, multimedia, and internet portals — to 
+deliver information fast and cost-effectively, while enabling management, setup, measurement, and evaluation of learner 
+performance.
+FOUR MODALITIES OF E -LEARNING
+Self-Paced Online
+Individual learner accesses resources (databases, courses) 
+via Intranet or Internet — e.g., solo online research.
+Self-Paced Offline
+Individual learner uses resources offline — hard drive, CD or 
+DVD — without internet connection.
+Group-Based Sync
+Groups work together in real time via Intranet/Internet —
+includes text chat, audio/videoconferencing.
+Group-Based Async
+Groups work over time with delayed exchanges — e-mail 
+lists, threaded discussions, LMS forums.
+
+E-LEARNING — DELIVERY METHODS
+Print & Text
+e-Text, e-Textbooks delivered digitally via 
+browser or app
+Video
+Streaming video, video tape, satellite 
+transmission, cable TV
+Audio
+Streaming audio and audio tape for lectures 
+and podcasts
+Review & Exams
+Electronic interactive assessments and 
+traditional paper exams
+Async Communication
+Email, threaded discussions, weblogs, and 
+online forums
+Sync Communication
+Live chat, videoconferencing and 
+teleconferencing sessions
+
+IMPACT OF E-LEARNING ON TEACHING & LEARNING
+Improves efficiency in both learning and teaching
+Increases learner motivation and deepens understanding
+Promotes collaborative learning across distances
+Gives new approaches to learning and working
+Provides new ways of interacting and social skill building
+Paves the way for personality development
+Helpful for self-evaluation — wide reach and consistent
+User-convenient, flexible, and rich medium for students
+Addresses different learning and cognitive styles
+Self-pacing for slow and quick learners — reduces stress and 
+increases satisfaction
+
+E-LEARNING — ADVANTAGES & DISADVANTAGES
+ADVANTAGES
+Convenient
+Self-service, on-demand, private, self-paced, flexible
+Cost-Effective
+Virtual environments, shared lessons, reduced material & travel costs
+Consistent
+Central content control — same quality for all learners
+Media-Rich
+Easier to understand, more engaging multimedia content
+Repeatable
+Access lessons as many times as needed
+Easy Monitoring
+Less admin work, more precise progress tracking
+DISADVANTAGES
+Unmotivated learners or those with poor study habits may fall 
+behind
+Lack of familiar structure and routine may take getting used to
+Students may feel isolated or miss social interaction
+The instructor may not always be available on demand
+Slow or unreliable internet connections can be frustrating
+
+E-LEARNING — CHALLENGES & MOTIVATION TIPS
+CHALLENGES TO E -LEARNING
+Organizational Change
+Institutions must restructure processes and administrative systems
+Technical Infrastructure
+Requires expertise, support systems, and reliable technology setup
+Social Interaction
+Loss of face-to-face contact affects engagement and program quality
+Legal & Evaluation Issues
+Data protection, cross -country regulations, and measuring effectiveness
+Institutions must restructure processes 
+and administrative systems
+Requires expertise, support systems, and 
+reliable technology setup
+Loss of face-to-face contact affects 
+engagement and program quality
+Data protection, cross-country 
+regulations, and measuring effectiveness
+TIPS TO ENHANCE MOTIVATION IN E -LEARNING
+1 Grab learners' attention — visual variety, interactivity, multimedia, provocative questions
+2 Improve learners' engagement with interactive and meaningful activities
+3 Boost learners' confidence through achievable milestones and positive feedback
+4 Increase learners' satisfaction with relevant, practical content
+5 Encourage social interaction through forums, chats, and group work
+
+VIRTUAL CLASSROOM — DEFINITION & FEATURES
+A virtual classroom is an online teaching and learning environment where instructors teach remotely in real time using multimedia 
+materials (slides, audio, video). It is the e-learning modality most similar to traditional classroom training — distinguished by its live, 
+synchronous nature.
+INSTRUCTOR CAPABILITIES
+Moderate Participation
+Control and manage student 
+engagement and involvement
+Display Materials
+Share documents, slide decks, and 
+multimedia files
+Screen Sharing
+Virtual whiteboard and real-time 
+screen sharing features
+Breakout Rooms
+Divide participants into small groups 
+for collaboration
+Polls & Quizzes
+Engage participants with interactive 
+assessments
+Record Sessions
+Record, archive and manage session 
+recordings
+
+VIRTUAL CLASSROOM — BENEFITS & EXAMPLES
+Distance Learning for Students
+Enables working professionals, busy learners, and 
+those with fewer financial resources to learn new 
+skills.
+Share & Monetize Training
+Institutions can share and monetize courses without 
+traveling — MOOCs, bootcamps, and online degree 
+programs.
+Grow Brand Presence
+Universities can attract students beyond their 
+geographic area by offering live virtual courses.
+VIRTUAL CLASSROOM EXAMPLES
+MOOCs
+Massive Open Online Courses — Coursera, edX. 
+Open enrollment, some accredited, free or fee-
+based.
+Bootcamps
+Intensive focused training in tech, design, or data 
+— Thinkful, General Assembly, Galvanize.
+Online Degree Programs
+Full university degrees delivered virtually —
+recruiting online students beyond geographic 
+limits.
+
+MOBILE LEARNING (M-LEARNING) — OVERVIEW
+M-Learning is a model of training that blends electronic and distance education with portable mobile devices such as 
+smartphones and handheld computers — enabling anytime, anywhere learning.
+KEY BENEFITS
+Self-directed, individualized and self-paced learning
+Interactive learning with engaging digital content
+Promotes lifelong learning — education moves out of the classroom
+Global delivery of learning materials
+Complements and extends distance, online, and classroom learning
+MOBILE DEVICE TYPES
+PDAs / Pocket PCs
+Palm-Pilots and handheld computers
+Smart Phones
+MP3, video and app-enabled mobile phones
+
+M-LEARNING — ADVANTAGES & DISADVANTAGES
+ADVANTAGES
+Access lessons, video clips, and audio from anywhere — on buses, trains, 
+public places
+Interaction with fellow students and instructors is a great help
+Portability — take your learning wherever you go
+Psychological factor — device ownership increases motivation and 
+commitment
+Colorful, inviting material prompts repeated practice
+More affordably priced; large percentage of population already owns 
+devices
+Flexible 24/7 access from any location
+Each student learns at his or her own pace
+Saves cost of learning materials and commuting expenses
+DISADVANTAGES
+Size Inconvenience
+Small screens limit content display and usability
+Limited Storage
+PDAs have restricted storage capacities
+Battery Life
+Short battery life and frequent changes are a nuisance
+Rapid Obsolescence
+Devices may become outdated quickly
+Limited Bandwidth
+Wireless bandwidth may decrease with more users
+No Printing Capability
+Printing requires a network connection not always available
+
+M-LEARNING — USES IN NURSING EDUCATION
+Drug Database Access
+Quick access to current drug databases and nursing 
+reference books at the point of care
+Procedure Information
+Ability to access step-by-step procedure information 
+instantly during clinical work
+Bedside Data Entry
+Real-time bedside data entry for patient records and 
+clinical documentation
+Research & Teaching
+Data collection for research activities and as a teaching 
+support tool
+Patient Health Management
+Tools to support patient monitoring, health management, 
+and care plans
+Health Team Communication
+Improved communication and coordination across the 
+healthcare team
+
+K E Y  T A K E A W A Y S
+Technology Is Transforming Nursing Education
+E-Learning offers flexible, consistent, cost-effective, and media-rich education that promotes self-paced learning.
+Virtual Classrooms replicate real-time interaction online — enabling MOOCs, bootcamps, and full degree programs.
+M-Learning puts clinical tools, drug references, and patient management in nurses' pockets — anytime, anywhere.
+Technology in nursing education improves health team communication, research, bedside care, and lifelong learning.
+"Educational technology is not about technology — it is about learning."

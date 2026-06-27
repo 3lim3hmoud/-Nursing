@@ -1,0 +1,277 @@
+I. Fundamentals of Blood Pressure and Hypertension 
+الأساسيات: ضغط الدم وارتفاع ضغط الدم 
+ 
+Blood Pressure (BP) is the force applied to artery walls. Hypertension is a sustained 
+increase in BP . 
+ضغط الدم هو القوة المؤثرة على جدران الشرايين. ارتفاع ضغط الدم هو زيادة مستمرة في الضغط. 
+ 
+BP = CO × PR 
+ضغط الدم = النتاج القلبي 
+• BP = Blood Pressure 
+BP = ضغط الدم 
+• CO = Cardiac Output 
+CO = النتاج القلبي 
+• PR = Peripheral Resistance 
+PR = المقاومة الطرفية 
+ 
+Hypertension is diagnosed when SBP > 130 mmHg or DBP > 80 mmHg on at least two 
+readings. 
+يُشخّص ارتفاع ضغط الدم عندما يكون الانقباضي 130 أو الانبساطي 80 في قياسين منفصلين. 
+ 
+1. Systolic Pressure: Pressure when the heart contracts. 
+١ .الضغط الانقباضي: الضغط أثناء انقباض القلب. 
+2. Diastolic Pressure: Pressure when the heart relaxes.
+
+٢ .الضغط الانبساطي: الضغط أثناء ارتخاء القلب. 
+ 
+BP Classification (JNC 7) 
+تصنيف ضغط الدم JNC 7) 
+Category Systolic Diastolic 
+Normal <120 <80 
+الطبيعي أقل من  120  أقل من80  
+Pre-hypertension 120–139 80–89 
+ما قبل ارتفاع الضغط 120–139 80–89 
+Stage 1 HTN 140–159 90–99 
+المرحلة١  140–159 90–99 
+Stage 2 HTN ≥160 ≥100 
+المرحلة٢  160 فأعلى 100 فأعلى 
+ 
+Why Hypertension Must Be Treated 
+لماذا يجب علاج ارتفاع ضغط الدم؟ 
+It is the “silent killer” and increases morbidity & mortality. 
+هو “القاتل الصامت” ويزيد معدلات المرض والوفاة. 
+Complications: 
+المضاعفات:
+
+• Stroke (ischemic or hemorrhagic) 
+السكتة الدماغية 
+• Heart failure & myocardial infarction 
+فشل القلب واحتشاء عضلة القلب 
+• Renal failure 
+الفشل الكلوي 
+• Retinopathy 
+اعتلال الشبكية 
+ 
+II. Etiology and Control Mechanisms 
+الأسباب وآليات التحكم في ضغط الدم 
+ 
+Etiology of Hypertension 
+أسباب ارتفاع ضغط الدم 
+ 
+1. Primary Hypertension (80–90%) – idiopathic 
+١ .ارتفاع ضغط الدم الأولي ( ٠٨–٠٩٪) – مجهول السبب  
+Risk factors: 
+عوامل الخطورة: 
+• Salt intake 
+كثرة الملح 
+• Stress 
+الضغط النفسي
+
+• Smoking 
+التدخين 
+• Overweight 
+زيادة الوزن 
+• Black race 
+العرق الأسود 
+• Middle-aged males 
+الرجال في منتصف العمر 
+ 
+2. Secondary Hypertension (10–20%) – has a known cause 
+٢ .ارتفاع ضغط الدم الثانوي (  ٠١–٠٢٪) – له سبب واضح  
+Causes: 
+الأسباب: 
+• Endocrine diseases: 
+أمراض الغدد: 
+o Pheochromocytoma 
+ورم القواتم 
+o Cushing disease 
+مرض كوشينغ 
+o Hyperthyroidism 
+فرط نشاط الغدة الدرقية 
+• Renal disease 
+أمراض الكلى 
+• Drugs (e.g., contraceptive pills) 
+الأدوية مثل حبوب منع الحمل
+
+Note: Treating the cause cures secondary hypertension. 
+ملاحظة: علاج السبب يؤدي للشفاء في الحالات الثانوية. 
+ 
+Cardiac Output = SV × HR 
+النتاج القلبي = حجم الضربة 
+ 
+Stroke Volume (SV): Amount of blood pumped per beat 
+حجم الضربة: كمية الدم التي يضخها القلب مع كل نبضة 
+SV depends on: 
+يعتمد على: 
+1. Preload – blood volume at end of diastole 
+التحميل المسبق– حجم الدم في نهاية الانبساط  
+2. Afterload – resistance against which the heart pumps (PR) 
+التحميل اللاحق– المقاومة التي يواجهها القلب عند الضخ  
+3. Contractility 
+قابلية الانقباض 
+ 
+Control Mechanisms (CO & PR) 
+آليات التحكم في النتاج القلبي والمقاومة الطرفية 
+ 
+1. Baroreflexes 
+١ .المنعكسات الضاغطة (باروريسبتور)
+
+Increased BP → increased stretch → decreased Sympathetic, increased 
+Parasympathetic 
+ارتفاع الضغط → زيادة التمدد → ↓ السمبثاوي + ↑ الباراسمبثاوي 
+Decreased BP → decreased stretch → increased Sympathetic, decreased 
+Parasympathetic 
+انخفاض الضغط → قلة التمدد → ↑ السمبثاوي + ↓ الباراسمبثاوي 
+ 
+2. RAAS (Renin–Angiotensin–Aldosterone system) 
+٢ .نظام الرينين –أنجيوتنسين–ألدوستيرون  
+ 
+Other BP Control Factors 
+عوامل أخرى تتحكم في ضغط الدم 
+Vascular Endothelium produces: 
+بطانة الأوعية تنتج: 
+• Nitric oxide – vasodilator 
+أكسيد النيتريك– موسّع  
+• Prostacyclin (PGI₂) – vasodilator 
+بروستاسايكلين– موسّع  
+• Bradykinin – vasodilator 
+براديكينين– موسّع  
+• Endothelin – vasoconstrictor 
+إندوثيلين– مضيق للأوعية  
+Hormones: 
+الهرمونات:
+
+• Aldosterone 
+ألدوستيرون 
+• Cortisol 
+كورتيزول 
+• Thyroxin 
+ثيروكسين 
+Bosentan = endothelin receptor antagonist 
+بوسنتان = مضاد لمستقبل الأندوثيلين 
+ 
+III. Antihypertensive Drugs – Sympatholytic Drugs 
+أدوية علاج الضغط المرتفع– الأدوية المثبطة للجهاز السمبثاوي  
+ 
+1. Centrally Acting Drugs: Clonidine & α-Methyldopa 
+١ .الأدوية المركزية: كلونيدين و ألفا -ميثيل دوبا  
+ 
+Clonidine 
+كلونيدين 
+• Mechanism: α2 agonist → ↓ sympathetic outflow → ↓ NE 
+آلية العمل: منبه مستقبلات α2 → ↓ نشاط السمبثاوي → ↓ النورأدرينالين** 
+• Uses: Hypertension with renal disease (no effect on RBF or GFR) 
+الاستخدام: الضغط مع أمراض الكلى 
+• Note: Causes Na/H₂O retention → used with diuretics 
+ملاحظة: يسبب احتباس الصوديوم والماء → يستخدم مع مدرات البول**
+
+• Withdrawal: Rapid withdrawal → rebound hypertension 
+السحب: السحب المفاجئ يسبب عودة ارتفاع الضغط بقوة** 
+• Side effect: Dry nasal mucosa 
+أثر جانبي: جفاف الأنف** 
+ 
+α-Methyldopa 
+ألفا-ميثيل دوبا  
+• Mechanism: Converts to α-methyl NE → less α1 action → less vasoconstriction 
+آلية العمل: يتحول إلى α-methyl NE → تأثير أقل على α1 → توسع الأوعية** 
+• Strong α2 effect → ↓ NE release 
+وتأثير قوي على α2 → ↓ إفراز النورأدرينالين 
+• Uses: Hypertension in pregnancy, renal disease 
+الاستخدام: ضغط الحمل + أمراض الكلى** 
+• Side effect: Hemolysis 
+أثر جانبي: تكسير الدم** 
+• Common SE (both): Sedation, drowsiness, postural hypotension 
+آثار مشتركة: نعاس، دوخة، هبوط وضعي** 
+ 
+2. α-Blockers 
+٢ .حاصرات ألفا  
+Examples: Prazosin – Terazosin – Doxazosin 
+أمثلة: برازوسين– تيرازوسين – دوكسازوسين  
+• Mechanism: α1-block → vasodilation → ↓ PR → ↓ BP 
+الآلية: حظر α1 → توسع أوعية → ↓ المقاومة → ↓ الضغط**
+
+• Uses: Mild/moderate hypertension, often with Propranolol 
+الاستخدام: ضغط بسيط/متوسط، غالبًا مع بروبرانولول** 
+• Side effects: Orthostatic hypotension, reflex tachycardia, first-dose syncope 
+الآثار الجانبية: هبوط وضعي، زيادة نبض ارتجاعية، إغماء الجرعة الأولى** 
+• Tamsulosin: α1A blocker → used in BPH 
+تامسولوسين: خاص بـ α1A → لعلاج تضخم البروستاتا** 
+ 
+3. β-Blockers 
+٣ .حاصرات بيتا  
+Types: 
+الأنواع: 
+• Non-selective: Propranolol 
+غير انتقائي: بروبرانولول  
+• Cardioselective: Atenolol, Bisoprolol 
+انتقائي للقلب: أتينولول، بيسوبرولول 
+• Cardioselective + Vasodilator: Nebivolol 
+انتقائي موسّع للأوعية: نيبفولول  
+ 
+Mechanism: 
+الآلية: 
+• Block β1 → ↓ CO → ↓ BP 
+حظر β1 → ↓ النتاج القلبي → ↓ الضغط 
+• sympathetic outflow 
+يقلل نشاط السمبثاوي
+
+• ↓ renin release → ↓ ANG II + aldosterone 
+↓ إفراز الرينين → ↓ الأنجيوتنسين II والألدوستيرون 
+ 
+Uses: 
+الاستخدامات: 
+1. Hypertension 
+الضغط 
+2. Angina & MI 
+الذبحة واحتشاء عضلة القلب 
+3. Arrhythmias 
+اضطراب نبضات القلب 
+4. Migraine prophylaxis 
+الوقاية من الصداع النصفي 
+5. Glaucoma (Timolol) 
+الجلوكوما (تيمولول 
+6. Hyperthyroidism 
+فرط نشاط الغدة الدرقية 
+7. Anxiety 
+القلق 
+ 
+Withdrawal: 
+السحب: 
+Abrupt stop → angina / MI → taper gradually 
+السحب المفاجئ يسبب ذبحة أو جلطة → يجب تخفيف الجرعة تدريجيًا
+
+Contraindications: 
+موانع الاستخدام: 
+• Heart failure 
+فشل القلب 
+• Asthma (for non-selective) 
+الربو (في غير الانتقائي 
+• Diabetes (especially Propranolol) 
+السكري (خاصة بروبرانولول 
+ 
+Adverse effects: 
+الآثار الجانبية: 
+• CNS depression 
+اكتئاب وتعب 
+• Bronchospasm 
+تشنج قصبي 
+• HDL 
+انخفاض الكوليسترول الجيد 
+• Impotence 
+ضعف جنسي 
+ 
+4. α & β Blockers 
+٤ .حاصرات ألفا وبيتا معًا  
+Examples: Labetalol – Carvedilol
+
+أمثلة: لابيتالول– كارفيديلول  
+Uses: 
+الاستخدامات: 
+• Hypertensive crisis 
+أزمة ارتفاع الضغط 
+• Pheochromocytoma 
+ورم القواتم 
+• Carvedilol for heart failure 
+كارفيديلول لمرضى فشل القلب 
+• Labetalol is safe in pregnancy 
+لابيتالول آمن في الحمل

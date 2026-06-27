@@ -1,0 +1,284 @@
+• The factors are:
+1. Characteristics of the drug.
+2. Emergency/routine use.
+3. Site of action of the drug—local or systemic.
+4. Condition of the patient (unconscious, vomiting, diarrhea).
+5. Age of the patient.
+6. Effect of gastric pH, digestive enzymes, and first-pass metabolism.
+7. Patient’s/doctor’s choice (sometimes).
+Most of the drugs can be administered by different routes. 
+Drug- and patient-related factors determine the selection of routes for 
+drug administration.
+
+Routs 
+SystemicLocal 
+Parenteral
+- Inhalation
+- Injections
+- transdermal 
+Enteral 
+- Oral 
+-sublingual 
+- Rectal
+
+Local Routes
+Systemic side effects are minimal.
+It is the simplest mode of administration of a drug 
+at the site where the desired action is required.
+
+1. Topical: The drug is applied to the skin or mucous membrane at various sites for local action.
+a. Oral cavity: 
+As a suspension, e.g., nystatin; 
+as a troche, e.g., clotrimazole (for oral candidiasis);
+as a cream, e.g., acyclovir (for herpes labialis); 
+as ointment and jelly, e.g., 5% lignocaine hydrochloride (for topical anesthesia); 
+as a spray, e.g., 10% lignocaine hydrochloride (for topical anesthesia).
+
+b. GI tract:
+ As a tablet that is not 
+absorbed, e.g., 
+neomycin (for 
+sterilization of the gut 
+before surgery).
+
+i. As an enema (administration of a drug into the rectum in liquid form):
+– Evacuant enema (for evacuation of the bowel): 
+For example, soap water enema—soap acts as a lubricant and water 
+stimulates the rectum.
+– Retention enema: For example, methylprednisolone in ulcerative colitis.
+ii. As a suppository (administration of the drug in a solid form into the 
+rectum), e.g., bisacodyl— for evacuation of bowels.
+c. Rectum and anal canal:
+
+d. Eye, ear and nose: 
+As drops, ointments, and sprays (for infection, allergic conditions, etc.), e.g., 
+gentamicin eye/ear drops.
+e. Bronchi: As an inhalation, e.g., salbutamol, ipratropium bromide, etc. (for 
+bronchial asthma and chronic obstructive pulmonary disease).
+f. Skin: As ointment, cream, lotion, or powder, e.g., clotrimazole (antifungal) 
+for cutaneous candidiasis.
+
+2. Intra-arterial route: 
+• This route is rarely employed. It is mainly used during 
+diagnostic studies such as coronary angiography and for 
+administering some anticancer drugs, e.g., for treating 
+malignancy involving limbs.
+3. Administration of the drug into some deep tissues by 
+injection, e.g., administration of triamcinolone directly into 
+the joint space in rheumatoid arthritis.
+
+Systemic Routes
+• Drugs administered by this route enter the blood and produce systemic 
+effects.
+• Enteral Routes
+• It includes oral, sublingual, and rectal routes.
+• Oral Route
+• It is the most common and acceptable route for drug administration.
+•  Dosage forms are tablet, capsule, syrup, mixture, etc., e.g., paracetamol 
+tablet for fever, and omeprazole capsule for peptic ulcer are given orally.
+
+• Advantages
+✓Safer.
+✓Cheaper.
+✓Painless.
+✓ Convenient for repeated and prolonged use.
+✓Can be self-administered.
+• Disadvantages
+ Not suitable for emergencies as the onset of 
+action of orally administered drugs is slow.
+
+It is not suitable for/in:
+Unpalatable and highly irritant drugs.
+Unabsorbable drugs (e.g., aminoglycosides).
+Drugs that are destroyed by digestive juices (e.g., insulin).
+Drugs with extensive first-pass metabolism (e.g., lignocaine).
+Unconscious patients.
+Uncooperative and unreliable patients.
+Patients with severe vomiting and diarrhea.
+
+Sublingual Route
+• The preparation is kept under the tongue. 
+• The drug is absorbed through the buccal mucous membrane and enters the systemic 
+circulation directly, e.g., nitroglycerin for acute anginal attack and buprenorphine for 
+myocardial infarction.
+Advantages
+✓ Quick onset of action.
+✓Action can be terminated by spitting out the tablet.
+✓ Bypass first-pass metabolism.
+✓Self-administration is possible.
+
+Disadvantages
+It is not 
+suitable for:
+Irritant and 
+lipid-insoluble 
+drugs.
+Drugs with bad 
+smell and 
+taste.
+
+• Drugs can be given in the form of solid or liquid.
+1. Suppository: It can be used for local (topical) effects as well as systemic 
+effects, e.g., indomethacin for rheumatoid arthritis.
+2. Enema: Retention enema can be used for local effects as well as systemic 
+effects. 
+The drug is absorbed through the rectal mucous membrane and produces a 
+systemic effect, e.g., diazepam for status epilepticus in children.
+Rectal Route
+
+• Routes of administration other than the enteral route are called parenteral routes.
+• Advantages
+ The onset of action of drugs is faster; hence it is suitable for emergencies.
+• Useful in:
+✓Unconscious patient.
+✓Uncooperative and unreliable patients.
+✓Patients with vomiting and diarrhea.
+Parenteral Routes
+
+It is suitable for:
+Irritant drugs.
+Drugs with high first-pass metabolism
+Drugs not absorbed orally.
+Drugs destroyed by digestive juices.
+Disadvantages
+Require aseptic conditions.
+Preparations should be sterile and expensive.
+Requires painful, invasive techniques.
+Cannot be usually self-administered.
+Can cause local tissue injury to nerves, vessels, etc.
+
+• Volatile liquids and gases are given by 
+inhalation for systemic effects, e.g., general 
+anesthetics.
+• Advantages
+✓Quick onset of action.
+✓Dose required is very less, so systemic toxicity 
+is minimized.
+✓Amount of drug administered can be 
+regulated.
+Disadvantages
+ Local irritation may cause increased 
+respiratory secretions and bronchospasm
+Inhalation
+
+• Intradermal route: 
+The drug is injected into the layers of the skin, e.g.  
+(BCG) vaccination and drug sensitivity tests.
+ It is painful and only a small amount of the drug can 
+be administered.
+• Subcutaneous (s.c.) route: 
+The drug is injected into the subcutaneous tissues of 
+the thigh, abdomen, and arm, e.g. adrenaline, insulin, 
+etc.
+Injections
+
+Advantages
+Self-administration is possible (e.g., insulin).
+Depot preparations can be inserted into the subcutaneous tissue, e.g., 
+Norplant for contraception.
+Disadvantages
+It is suitable only for nonirritant drugs.
+Drug absorption is slow; hence it is not suitable for emergencies.
+
+• Intramuscular (i.m.) route: Drugs are injected into large muscles such as 
+the deltoid, gluteus maximus, and vastus lateralis, e.g. paracetamol, diclofenac, etc.
+•  A volume of 5–10 mL can be given at a time.
+• Advantages
+✓Absorption is more rapid as compared to the oral route.
+✓Mild irritants, depot injections, soluble substances, and suspensions can be given by 
+this route.
+• Disadvantages
+➢ Aseptic conditions are needed.
+➢Intramuscular injections are painful and may cause abscess.
+➢Self-administration is not possible.
+➢There may be an injury to the nerves
+
+• Intravenous (i.v.) route: 
+• Drugs are injected directly into the bloodstream through a vein. 
+• Drugs are administered as:
+1. Bolus: A single, relatively large dose of a drug injected rapidly or slowly as 
+a single unit into a vein.
+For example, i.v. ranitidine in bleeding peptic ulcer.
+2. Slow intravenous injection:
+ For example, i.v. morphine in myocardial infarction.
+3. Intravenous infusion: 
+For example, dopamine infusion in cardiogenic shock; mannitol infusion in 
+cerebral edema; and fluids infused intravenously in dehydration.
+
+Advantages
+Bioavailability is 100%.
+Quick onset of action; therefore, it is the route of choice in emergency, e.g., 
+intravenous diazepam to control convulsions in status epilepticus.
+Large volume of fluid can be administered, e.g., intravenous fluids in patients with 
+severe dehydration.
+Highly irritant drugs, e.g., anticancer drugs can be given because they get diluted in 
+blood.
+Hypertonic solution can be infused by the intravenous route, e.g., 20% mannitol in 
+cerebral edema.
+By i.v. infusion, a constant plasma level of the drug can be maintained, e.g., 
+dopamine infusion in cardiogenic shock.
+
+Disadvantages
+Once the drug is injected, its action cannot be halted.
+Local irritation may cause phlebitis.
+Self-medication is not possible.
+Strict aseptic conditions are needed.
+Extravasation of some drugs can cause injury, necrosis, and sloughing of tissues.
+Depot preparations cannot be given by i.v. route.
+Precautions
+Drug should usually be injected slowly.
+Before injecting, make sure that the tip of the needle is in the vein.
+
+• Drug is injected into the subarachnoid 
+space (spinal anesthetics)
+• Intrathecal route:
+
+• Drug is injected directly into the joint space, 
+e.g., hydrocortisone injection for rheumatoid 
+arthritis.
+•  Strict aseptic precautions should be taken.
+•  Repeated administration may cause damage 
+to the articular cartilage.
+Intra-articular route
+
+The drug is administered in the form of a 
+patch or ointment that delivers the drug 
+into the circulation for systemic effect
+• For example, nitroglycerin patch for angina
+• Transdermal route:
+
+• Advantages
+✓Self-administration is possible.
+✓Patient compliance is better.
+✓Duration of action is prolonged.
+✓Systemic side effects are reduced.
+✓Provides a constant plasma concentration of the drug.
+• Disadvantages
+➢Expensive.
+➢Local irritation may cause dermatitis and itching.
+➢Patch may fall off unnoticed.
+
+Special Drug-Delivery System
+1. Intraoral lignocaine patch: 
+Patch containing lignocaine is used to anesthetize the oral 
+mucosa.
+
+2. Jet injection: 
+Small amount of local anesthetic can be 
+administered into the submucosa without 
+the use of a needle to produce surface 
+anesthesia.
+
+They are minute vesicles made of phospholipids into 
+which the drug is incorporated. 
+They help in targeted delivery of drugs, e.g., liposomal 
+formulations of amphotericin B for fungal infections.
+3. Liposomes:
+
+5. Monoclonal antibodies: 
+They are immunoglobulins, produced by cell 
+culture, selected to react with a specific 
+antigen.
+ They are useful for targeted delivery of drugs, 
+e.g., delivery of anticancer drugs using 
+monoclonal antibodies.

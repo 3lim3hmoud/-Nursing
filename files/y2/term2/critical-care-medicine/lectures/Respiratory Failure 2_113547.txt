@@ -1,0 +1,346 @@
+Respiratory failure 
+Prepared by :
+Dr / Ghada Elsayed
+
+outlines
+• Introduction
+• Pathophysiology
+• Causes of Acute 
+Respiratory Failure
+• Classification
+▪ Assessment
+▪ Diagnostic studies
+▪ Complication 
+▪ Managemnt of RF
+
+Introduction
+Acute respiratory failure
+is a sudden and life-
+threatening deterioration in 
+pulmonary gas exchange, 
+resulting in carbon dioxide 
+retention and inadequate 
+oxygenation.
+▪ Acute respiratory failure 
+remains a major cause of 
+morbidity and mortality in 
+the intensive care setting
+
+Causes of 
+Acute 
+Respiratory 
+Failure
+• Intrinsic Lung/Airway 
+Diseases:
+• Large Airway Obstruction:  
+Foreign bodies.
+• Bronchial Diseases: (Chronic 
+bronchitis, Asthma).
+• Parenchymal Diseases: 
+(Pulmonary emphysema, severe 
+pneumonia).
+• Cardiovascular Disease: Cardio 
+pulmonary edema.
+
+Extrapulmonary 
+Disorders
+- Diseases of the Pleura and the 
+Chest Wall: 
+Pneumothorax,, Traumatic injury to the 
+chest wall, flail chest.
+-Disorders of the Peripheral Nerves 
+and Spinal Cord:
+Poliomyelitis, Guillain-Barré 
+syndrome, Spinal cord trauma 
+-Disorders of the Central Nervous 
+System:
+Sedative and narcotic drug 
+overdose, Head trauma, 
+Cerebrovascular accident, Sleep 
+apnea syndrome.
+
+Pathophysiology of Respiratory Failure
+• Hypoxemia is the result of impaired gas 
+exchange and is the hallmark of ARF.
+• The main causes of hypoxemia are:
+• Alveolar hypoventilation
+• Ventilation/perfusion (V/Q) mismatching
+• Intrapulmonary shunting
+
+1. Alveolar hypoventilation
+It occurs when the amount of oxygen being
+brought into the alveoli is insufficient to meet the
+metabolic need of the body. This can be the result
+of increasing metabolic oxygen needs or
+decreasing ventilation. Hypoxemia caused by
+alveolar hypoventilation is associated with
+hypercapnia and commonly results from extra-
+pulmonary disorders.
+
+V/Q 
+mismatching
+• Blood passes through 
+alveoli that
+• are under ventilated for 
+the given amount of 
+perfusion.
+• The blood leaving these 
+areas has a lower than 
+normal amount of 
+oxygen . (Alveoli are 
+partially collapsed or 
+partially filled with fluid)
+
+Intrapulmonary shunting
+Intrapulmonary shunting
+occurs when blood passes
+through a portion of a lung
+that is not ventilated, which
+may be the result of alveolar collapse(e. g,
+atelectasis), 
+alveolar consolidation (e.g., pneumonia), or 
+excessive mucus accumulation (e.g., 
+chronic bronchitis).
+
+Classification
+1-Acute Hypoxemic Respiratory Failure:  type I
+inability to achieve adequate
+oxygenation, PaO2 of 50 mm Hg or less 
+and PaCO2 40 mm Hg or less.
+2-Acute hypercapnic respiratory failure: Type II 
+inadequate alveolar ventilation and is 
+characterized by marked elevation of 
+carbon dioxide with relative preservation
+of oxygenation
+
+Classification 
+of Respiratory 
+Failure
+Type I Respiratory Failure: 
+Hypoxemic normocapnic 
+failure or oxygenation failure,
+the body fails to deliver an 
+adequate supply of oxygen to 
+the arterial blood. The patient 
+presents with a low PaO2 less 
+than 60 mmHg and a normal 
+PaCO2.
+
+Type II Respiratory Failure: 
+Hypoxemic hypercapnic 
+failure or ventilatory failure, 
+the body ineffectively 
+eliminates carbon dioxide 
+(CO2) from the arterial blood. 
+The patient presents with a 
+low PaO2 less than 60 mmHg 
+and PaCO2 is greater than 50 
+mmHg and pH is less than or 
+equal 7.30.
+
+Assessment
+• HISTORY
+• A complete medical and social 
+history should be obtained from the 
+patient or a family member to 
+determine the patient's baseline 
+respiratory status on admission.
+• assessment of adult patients with 
+actual or potential pulmonary 
+dysfunction.
+
+PULMONARY SYMPTOMS*
+-DYSPNEA
+- COUGH, 
+-SPUTUM,
+-WHEEZE, 
+- CHEST PAIN .
+EXTRAPULMONARY SYMPTOMS*
+-NIGHT SWEATS, 
+-HEADACHE ON AWAKENING,  
+-FLUID RETENTION
+-FATIGUE,
+-PAROXYSMAL NOCTURNAL APNEA
+-SLEEP DISTURBANCES, 
+-SINUS PROBLEMS
+History and Symptoms Profile
+
+PULMONARY PROBLEMS
+•TREATMENTS
+•NUMBER OF HOSPITALIZATIONS
+•MEDICAL DIAGNOSIS
+•IMMUNIZATION
+Previous History
+
+-
+TYPE ONE RF (
+Hypoxemia)
+-
+R
+espiratory
+ (dyspnea, tachypnea, prolonged expiration, use 
+accessory respiratory, cyanosis).
+-
+Cerebral
+ (restlessness, confusion, coma)
+-
+Cardiac
+ (tachycardia, arrhythmia, hypertension, hypotension).
+-
+Fatigue, unable to speak. 
+PHYSICAL FINDINGS
+
+Type ll RF . Hypercapnia
+• Respiratory (dyspnea)
+• Cerebral (morning headache, disorientation, coma)
+• Cardiac (dysrrhythmia)
+• Neuromuscular (muscle weakness, tremors)
+• Pursed lip breathing.
+
+Diagnostic studies
+• ABG:
+to determine the exact level of Pa02, PaCO2, and blood pH in 
+cases of suspected (ARF). 
+Only determination of the blood gases and pH can confirm 
+the diagnosis.
+• Chest radiography.             
+• Sputum culture.
+• Pulmonary function tests.
+• Angiography.
+
+• V/Q scanning.
+• CT
+• CBC
+• Serum electrolytes.
+• Urine analysis.
+• Bronchogram.
+• Bronchoscopy.
+• ECG
+• Echcardiography.
+
+Management of Acute Respiratory 
+Failure
+Aimed to:
+➢ Correct underlining cause
+➢ Promoting adequate gas exchange
+➢ Correcting acidosis
+➢ Initiating nutrition support
+➢ Preventing complications
+
+1. Oxygenation
+Improve oxygenation through :
+❖ Supplemental oxygen administration, either with a low flow system or a high
+flow system
+❖ Use of positive airway pressure to correct hypoxemia within the arterial
+hemoglobin oxygen saturation greater than 90% without cause hypercapnia or
+oxygen toxicity.
+❖ Positive pressure is necessary to open collapsed alveoli and facility their
+participation in gas exchange. Positive pressure is delivered by invasive or non
+invasive (by the mask) mechanical ventilation.
+
+2. Ventilation
+• Intervention to improve ventilation includes the use of
+invasive and noninvasive mechanical ventilation depending
+on causes and severity of disease. Patients with a PH less
+than 7.25 need for invasive mechanical ventilation and
+started on volume ventilation in the assist/ control mode.
+
+3- Nutrition Support
+The goal of nutrition support are:
+➢Meet the overall nutrition needs of the patient 
+while avoiding overfeeding. 
+➢Avoid nutrition delivery related complication 
+and
+➢ Improve patient outcomes.
+
+▪ 4-Restoration of fluid and electrolyte balance
+1
+-
+Prevent excessive intravenous fluid or conversely, poor fluid 
+intake.
+2
+-
+Monitor fluid intake and output closely.
+3
+-
+Perform daily body weight measurement.
+4
+-
+Prevent and treat promptly hypokalemia and hypophosphatemia.
+▪ 5-Optimization of cardiac function
+1-Maintain adequate cardiac output.
+2-use of pulmonary artery catheter for accurate hemodynamic 
+monitoring.
+
+treatment of underlying correctable conditions and 
+precipitating causes
+• Prevent or treat respiratory tract infections
+• Prevent potential airway obstruction
+• Identify and treat congestive heart failure appropriately.
+• Recognize bronchospasm with bronchodilators and 
+corticosteroids.
+• Assess tolerance to sedative, hypnotic, and narcotic 
+drugs
+
+• Remove air or fluid in the pleural cavity.
+• Prevent and treat abdominal distension by insertion of a 
+nasogastric tube.
+• assess limitation of the thoracic wall movement,
+ineffective cough, and lack of deep breathing (trauma 
+surgical patients)
+• Assess diaphragmatic fatigue; if present
+
+Periodic 
+assessment 
+of the 
+response to 
+therapy
+• Perform frequent arterial 
+blood gas measurements.
+• Monitor arterial oxygen 
+saturation by pulse 
+oximetry. 
+• Prevention and early 
+detection of potential 
+complications
+
+Complications
+❖Ischemic anoxic encephalopathy: result from 
+hypoxemia, hypercapnia, and acidosis.
+❖Dysrhythmias are precipitated by hypoxemia, 
+acidosis,electrolytes imbalances.
+❖Venous thromboempolism: precipitated by 
+venous stasis resulting from immobility and can 
+be prevented through the use of intermittent 
+pneumatic compression device and low dose of 
+unfractionated heparin or low molecular weight 
+heparin.
+
+Cont, 
+complication
+❖GIT bleeding can be 
+prevented through the use of 
+histamine receptor 
+antagonists, Cytoprotective
+agent or proton pump 
+inhibitors.
+❖Others complication
+associated with an artificial 
+airways, mechanical 
+ventilation, enteral or 
+parenteral nutrition and 
+peripheral arterial 
+cannulation.
+
+Pharmacological intervention 
+Medications to facilitate dilation of the airways. 
+• Bronchodilators, such as beta2- agonists and 
+anticholinergic agents, aid in smooth muscle relaxation 
+and are of particular benefit to patients with airflow 
+limitations. 
+▪ Steroids to decrease airway inflammation and enhance 
+the effects of the beta2-agonists. 
+▪ Sedation is necessary in many patients to assist with 
+maintaining adequate ventilation. It can be used to comfort 
+the patient and decrease the work of breathing, 
+▪ Analgesics should be administered for pain control.

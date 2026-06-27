@@ -1,0 +1,138 @@
+Technical Writing – Lecture (3): Nurses Report Sheet 
+        الكتابة التقنية– المحاضرة الثالثة: ورقة تقرير الممرضة  
+ 
+Introduction 
+Nursing shifts move fast, requiring nurses to manage many patients, track medications, 
+and handle care handoffs. 
+تتحرك نوبات التمريض بسرعة، مما يجعل الممرضات يحتجن إلى إدارة العديد من المرضى، وتتبع الأدوية،
+والتعامل مع تسليم المهام بين النوبات. 
+Clear documentation isn’t just helpful—it’s essential for patient safety and effective 
+communication. 
+التوثيق الواضح ليس مجرد أمر مفيد، بل هو ضروري جدًا لسلامة المريض والتواصل الفعّال. 
+Nurses report sheets make handovers between shifts smooth and help improve 
+patient outcomes. 
+أوراق تقارير الممرضات تجعل تسليم المهام بين النوبات أكثر سلاسة وتُحسّن نتائج رعاية المرضى. 
+These sheets keep nurses organized and prevent missing any key details. 
+هذه الأوراق تساعد الممرضة على التنظيم وعدم نسيان أي تفاصيل مهمة. 
+Even if it looks difficult for new nurses, using a simple template makes it easier. 
+حتى لو بدت صعبة على الممرضات الجدد، فإن استخدام نموذج جاهز يجعلها أسهل بكثير. 
+ 
+What Are Nurses Report Sheets? 
+ما هي ورقة تقرير الممرضة؟ 
+Nursing report sheets are forms used to record the patient’s condition, vital signs, 
+medications, treatments, and observations. 
+ورقة تقرير الممرضة هي نموذج يُستخدم لتسجيل حالة المريض، والعلامات الحيوية، والأدوية، والعلاجات، وأي
+ملاحظات مهمة.
+
+They are a communication tool between nurses to ensure continuity of care. 
+وهي وسيلة تواصل بين الممرضات لضمان استمرارية الرعاية خلال كل نوبة. 
+ 
+Benefits of Using Nursing Report Sheets 
+فوائد استخدام ورقة تقرير الممرضة 
+1. Improved Patient Care: 
+توفر رعاية أفضل للمرضى: 
+التوثيق الواضح والدقيق يساعد على التواصل الجيد بين الفريق الطبي، مما يؤدي إلى رعاية أفضل. 
+2. Enhanced Safety: 
+زيادة السلامة: 
+يساعد التقرير على تحديد المشكلات والمخاطر مبكرًا لتجنبها بسرعة . 
+3. Reduced Errors: 
+تقليل الأخطاء: 
+استخدام نموذج موحد يقلل من الأخطاء التي قد تحدث في الكتابة الحرة. 
+4. Increased Efficiency: 
+زيادة الكفاءة: 
+النموذج الجاهز يوفر الوقت ويسهل تبادل المعلومات أثناء تغيير النوبات. 
+5. Printable & Customizable: 
+قابلة للطباعة والتعديل: 
+يمكن تصميمها وتعديلها حسب احتياجات كل قسم في المستشفى. 
+6. Saves Time: 
+توفر الوقت: 
+تساعد الممرضة في تدوين المعلومات بسرعة ودقة. 
+7. Improves Patient Safety: 
+تحسن سلامة المريض: 
+تضمن عدم نسيان أي تفاصيل مهمة أثناء تسليم النوبات.
+
+What’s Inside the Patient Report Sheet? 
+ما الذي تحتويه ورقة تقرير المريض؟ 
+A nursing report sheet includes all key patient information briefly and clearly. 
+تحتوي ورقة التقرير على أهم معلومات المريض بشكل مختصر وواضح. 
+1. Patient Identification & Room Info: 
+١ .بيانات المريض ومعلومات الغرفة: 
+• Name & Date of Birth (DOB) – الاسم وتاريخ الميلاد. 
+• Room Number – رقم الغرفة. 
+• Date & Shift (AM/PM/Night) – التاريخ والنوبة (صباحية/مسائية/ليلية. 
+2. Diagnosis & Medical History: 
+٢ .التشخيص والتاريخ المرضي : 
+• Main reason for admission – سبب الدخول للمستشفى. 
+• Chronic diseases like diabetes, hypertension, COPD – الأمراض المزمنة مثل السكر
+والضغط. 
+• Past surgeries or medical history – العمليات أو الأمراض السابقة. 
+3. Medications & Treatments: 
+٣ .الأدوية والعلاجات: 
+• Current medications and doses – الأدوية الحالية والجرعات. 
+• Scheduled vs. PRN (as needed) medications – الأدوية المجدولة والمستخدمة عند الحاجة. 
+• IV fluids and infusions – السوائل الوريدية والمحاليل. 
+4. Vital Signs & Assessments: 
+٤ .العلامات الحيوية والتقييم:
+
+• BP , HR, RR, Temp, O₂ Sat, Pain level – ضغط الدم، النبض، التنفس، الحرارة، الأكسجين، الألم. 
+• Neurological status (alert/confused/oriented) – الحالة العصبية (منتبه، مشوش، مدرك. 
+• Heart and lung status – حالة القلب والرئتين. 
+5. Intake & Output Monitoring: 
+٥ .متابعة الداخل والخارج من السوائل: 
+• Fluid intake (oral and IV) – كمية السوائل المتناولة (عن طريق الفم أو الوريد. 
+• Urine output and drainage – كمية البول وأي تصريفات. 
+6. Procedures & Upcoming Tests: 
+٦ .الإجراءات والفحوصات: 
+• Recent or planned tests (X-ray, CT, MRI, labs) – الفحوصات الأخيرة أو القادمة مثل الأشعة
+والتحاليل. 
+7. Plan of Care & Notes for Handoff: 
+٧ .خطة الرعاية وملاحظات التسليم: 
+• Current plan (diet, mobility, instructions) – الخطة الحالية (الحمية، الحركة، التعليمات. 
+• Discharge plan and next steps – خطة الخروج والخطوات القادمة. 
+• Important notes for next shift – ملاحظات هامة للممرضة التالية. 
+ 
+Tips for Filling Out the Nursing Report Sheet Efficiently 
+نصائح لتعبئة ورقة تقرير الممرضة بشكل فعّال 
+1. Use Abbreviations & Symbols: 
+١ .استخدم الاختصارات والرموز: 
+تسهل التوثيق السريع، مثل: 
+• BP = Blood Pressure (ضغط الدم)
+
+• HR = Heart Rate (معدل النبض) 
+• RR = Respiratory Rate (معدل التنفس) 
+• O₂ Sat = Oxygen Saturation (تشبع الأكسجين) 
+2. Focus on What’s Important: 
+٢ .ركز على المعلومات المهمة: 
+اذكر التغيرات أو القيم غير الطبيعية مثل: 
+K⁺ 3.1 (low), monitor for arrhythmias.” 
+(البوتاسيوم منخفض، راقب اضطرابات القلب.) 
+3. Keep It Organized: 
+٣ .اجعلها منظمة: 
+استخدم النقاط بدل الجمل الطويلة. مثال: 
+Vitals: BP 120/80, HR 75, RR 18, O₂ 96%.” 
+4. Update as You Go: 
+٤ .حدّث المعلومات أولاا بأول : 
+اكتب التحديثات خلال النوبة مثل : 
+10 AM: Morphine 2mg IV given. Pain ↓ from 8/10 to 3/10.” 
+(الساعة10: أُعطي المريض مورفين2 ملجم وقلّ الألم من8  إلى3 ). 
+5. Complete the sheet accurately and neatly. 
+٥ .أكمل الورقة بدقة ونظافة. 
+6. Use clear and simple language. 
+٦ .استخدم لغة بسيطة وواضحة . 
+7. Document all relevant observations. 
+٧ .دوّن كل الملاحظات المهمة. 
+8. Review before handoff to next nurse. 
+٨ .راجع الورقة قبل تسليمها للنوبة التالية.
+
+9. Ask if you’re unsure about any detail. 
+٩ .اسأل عن أي معلومة غير واضحة. 
+10. Use hospital-approved abbreviations. 
+٠١ .استخدم الاختصارات المعتمدة في المستشفى فقط. 
+ 
+Conclusion 
+By mastering nursing report sheets, nurses can improve communication, ensure 
+patient safety, and provide high-quality care. 
+من خلال إتقان استخدام ورقة تقرير الممرضة، يمكن للممرضات تحسين التواصل وضمان سلامة المرضى وتقديم
+رعاية عالية الجودة. 
+Accurate and clear reporting is a vital part of nursing care. 
+التوثيق الدقيق والواضح هو جزء أساسي من مهنة التمريض.

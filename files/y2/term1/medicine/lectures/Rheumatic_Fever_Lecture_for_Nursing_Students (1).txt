@@ -1,0 +1,58 @@
+Lecture on Rheumatic Fever 
+Learning Objectives 
+• Define rheumatic fever and its etiology. 
+• Describe the pathophysiology and Jones criteria for diagnosis. 
+• Identify clinical manifestations and complications. 
+• Discuss management, prevention, and nursing care for patients with rheumatic fever. 
+Introduction 
+Rheumatic fever (RF) is an inflammatory disease that may develop after an infection with 
+Group A beta-hemolytic streptococcus (GAS). It primarily affects the heart, joints, skin, and 
+central nervous system. The condition is most common among children aged 5–15 years. 
+Etiology and Pathophysiology 
+Rheumatic fever is a delayed autoimmune response to pharyngeal infection with Group A 
+streptococci. Antibodies produced against streptococcal antigens cross-react with human 
+tissues, leading to inflammation in the heart (pancarditis), joints, brain, and skin. 
+[Insert Diagram: Pathophysiology of Rheumatic Heart Disease] 
+Clinical Features 
+The clinical presentation of rheumatic fever varies, but major manifestations are 
+summarized in the Jones criteria. 
+Major Criteria: 
+• Carditis 
+• Polyarthritis 
+• Chorea (Sydenham’s chorea) 
+• Erythema marginatum 
+• Subcutaneous nodules 
+Minor Criteria: 
+• Fever 
+• Arthralgia 
+• Elevated ESR or CRP 
+• Prolonged PR interval on ECG 
+[Insert Table or Diagram: Jones Criteria for Diagnosis]
+
+Diagnosis 
+Diagnosis of rheumatic fever is based on the revised Jones criteria, which require evidence 
+of a preceding streptococcal infection along with the presence of major and minor criteria. 
+Management 
+Management involves eradication of streptococcal infection, control of inflammation, and 
+prevention of recurrence. 
+1. Antibiotic therapy: Benzathine penicillin G (single intramuscular injection) is the drug of 
+choice. 
+2. Anti-inflammatory therapy: Aspirin or corticosteroids to control inflammation. 
+3. Supportive care: Bed rest, adequate nutrition, and fluid balance. 
+4. Long-term prophylaxis: Monthly benzathine penicillin injections for at least 5–10 years or 
+until adulthood. 
+Nursing Care 
+Nursing management focuses on relieving symptoms, preventing complications, and 
+promoting recovery. Key responsibilities include: 
+• Monitoring vital signs and cardiac function 
+• Administering prescribed medications and antibiotics 
+• Educating the patient and family on adherence to prophylaxis 
+• Encouraging rest during acute phases 
+• Promoting good oral and throat hygiene to prevent infections 
+Prevention 
+Primary prevention involves prompt treatment of streptococcal throat infections. 
+Secondary prevention focuses on long-term antibiotic prophylaxis to prevent recurrence. 
+Summary 
+Rheumatic fever is a serious post-streptococcal autoimmune condition that can lead to 
+chronic rheumatic heart disease if untreated. Early diagnosis, appropriate management, and 
+preventive strategies are essential to reduce morbidity among children and adolescents.

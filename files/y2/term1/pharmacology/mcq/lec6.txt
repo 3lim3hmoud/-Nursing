@@ -1,0 +1,118 @@
+Cardiovascular System  
+Part I: Multiple Choice Questions (MCQs) 
+Section 1: General Anatomy and Circulation 
+1. The cardiovascular system primarily consists of which two components? 
+o A. Lungs and Heart 
+o B. The heart and blood vessels 
+o C. Arteries and Veins only 
+o D. Atria and Ventricles only 
+2. Which side of the heart is responsible for pumping deoxygenated blood to the 
+lungs? 
+o A. The right side pump 
+o B. The left side pump 
+o C. Both sides pump deoxygenated blood 
+o D. Neither side; the lungs pump the blood 
+3. The systemic circulation is powered by the: 
+o A. Right atrium 
+o B. Right ventricle 
+o C. Left side pump 
+o D. Pulmonary valve 
+4. Which chambers are known as the "receiving chambers" of the heart? 
+o A. Ventricles 
+o B. Atria 
+o C. Aorta 
+o D. Pulmonary arteries 
+Section 2: Valves and Heart Sounds 
+5. The Atrioventricular (AV) valves are located between the:
+
+o A. Ventricles and Arteries 
+o B. Atria and Ventricles 
+o C. Left and Right atria 
+o D. Pulmonary and Aortic arteries 
+6. The "Lub" sound of the heart (the first heart sound) is caused by the closure of: 
+o A. Semilunar valves 
+o B. AV valves (Mitral and Tricuspid) 
+o C. The Aorta 
+o D. The S-A node 
+7. The second heart sound ("dub") occurs when the: 
+o A. Atria contract 
+o B. Ventricles relax and semilunar valves close 
+o C. Ventricles contract 
+o D. Mitral valve closes 
+Section 3: Heart Wall and Contraction Mechanism 
+8. The muscular middle layer of the heart wall is called the: 
+o A. Epicardium 
+o B. Endocardium 
+o C. Myocardium 
+o D. Pericardium 
+9. Which ion is released from the sarcoplasmic reticulum to promote the 
+interaction of actin and myosin for contraction? 
+o A. Sodium (Na+) 
+o B. Calcium (Ca2+) 
+o C. Potassium (K+) 
+o D. Magnesium (Mg2+)
+
+Section 4: Electrical Activity and Properties 
+10. Which part of the conducting system is known as the "pacemaker"? 
+o A. AV node 
+o B. Sinoatrial (SA) node 
+o C. Purkinje fibers 
+o D. Bundle of His 
+11. "Automaticity" is defined as the heart's ability to: 
+o A. Respond to electrical stimulus 
+o B. Beat regularly 
+o C. Generate electrical stimulus 
+o D. Conduct impulses from one part to another 
+12. The ability of the heart to beat regularly (average 72 beats/min) is called: 
+o A. Excitability 
+o B. Rhythmicity 
+o C. Conductivity 
+o D. Contractility 
+Section 5: Cardiac Cycle and Loads 
+13. During Diastole, which of the following occurs? 
+o A. Ventricles contract and push blood to the body 
+o B. Blood is collected in the atria and pushed into resting ventricles 
+o C. The aortic valve opens 
+o D. Peripheral resistance is at its peak 
+14. The load that makes the ventricular muscles reach their maximum length at the 
+end of diastole is: 
+o A. Preload 
+o B. Afterload
+
+o C. Peripheral resistance 
+o D. Blood pressure 
+15. Afterload depends primarily on: 
+o A. Venous return 
+o B. Resistance of the arteries (peripheral resistance) 
+o C. The volume of blood in the atrium 
+o D. The SA node signal strength 
+ 
+Part II: Essay Questions 
+1. Describe the flow of blood through the two separate pumps of the heart, 
+specifying the type of blood (oxygenated/deoxygenated) and the circulation 
+involved for each side. 
+2. Explain the mechanism behind the two heart sounds ("lub-dub") and identify 
+which valves are associated with each sound. 
+3. List and briefly define the five physiological properties of the heart. 
+4. Compare and contrast "Preload" and "Afterload." Include what they depend on 
+and when they occur in the cardiac cycle. 
+5. Outline the pathway of the electrical signal in the heart, starting from the 
+pacemaker to the ventricles. 
+ 
+ 
+Answer Key 
+Part I: MCQs 
+1. B | 2. A | 3. C | 4. B | 5. B | 6. B | 7. B | 8. C | 9. B | 10. B | 11. C | 12. B | 13. B | 
+14. A | 15. B 
+Part II: Essay Model Hints 
+1. Right side: Deoxygenated blood to lungs (Pulmonary circulation). Left side: 
+Oxygenated blood to tissues (Systemic circulation).
+
+2. Lub (1st): Ventricles contract, AV valves (Mitral/Tricuspid) close. Dub (2nd): 
+Ventricles relax, Semilunar valves (Aortic/Pulmonary) close. 
+3. Automaticity (Generate stimulus), Rhythmicity (Regular beating), Contractility 
+(Push blood), Excitability (Respond to stimulus), Conductivity (Conduct stimulus). 
+4. Preload: Load at end of diastole; depends on venous return. Afterload: 
+Resistance to open aortic valve; depends on peripheral resistance. 
+5. Pathway: SA node → Atria contract → AV node → AV Bundle (Bundle of His) → 
+Bundle branches → Purkinje fibers → Ventricles contract.

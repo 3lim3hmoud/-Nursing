@@ -1,0 +1,183 @@
+Management of Patient With Blood Disorders 
+    إدارة المريض المصاب باضطرابات الدم 
+ 
+I. Hematology Fundamentals 
+أساسيات علم الدم 
+ 
+A. Definition of Hematology 
+Hematology is the study of blood, its components, and blood-forming tissues. 
+هيماتولوجي هو علم يدرس الدم ومكوناته والأنسجة التي تُنتج الدم. 
+ 
+B. Functions of Blood 
+Blood transports oxygen and nutrients to tissues. 
+الدم ينقل الأكسجين والمواد الغذائية للأنسجة. 
+Blood removes waste products. 
+الدم يزيل فضلات الجسم. 
+Blood regulates body temperature. 
+الدم ينظم درجة حرارة الجسم. 
+Blood protects against infections and injuries through the immune system. 
+الدم يحمي الجسم من العدوى والإصابات عبر المناعة. 
+Blood maintains homeostasis by balancing pH and electrolytes. 
+الدم يحافظ على الاتزان الداخلي من خلال توازن الـ pH والأملاح. 
+ 
+C. Components and Characteristics of Blood
+
+Blood consists of plasma (55%), RBCs (44%), and WBCs + platelets (1%). 
+الدم يتكوّن من البلازما 55%، كرات الدم الحمراء44%، وكريات الدم البيضاء والصفائح1 %. 
+Blood contains RBCs, WBCs, and platelets. 
+الدم يحتوي على كرات دم حمراء وبيضاء وصفائح. 
+Normal blood volume: Female 4–5 L, Male 5–6 L. 
+حجم الدم الطبيعي: النساء4 –5 لتر، الرجال5–6 لتر.  
+Blood temperature is 38°C. 
+درجة حرارة الدم38° . 
+Blood pH is 7.35–7.45. 
+درجة حموضة الدم بين7.35 –7.45 . 
+Viscosity and specific gravity are within normal ranges. 
+اللزوجة والكثافة النوعية تكون ضمن مدى طبيعي. 
+ 
+D. Technique to Control Bleeding 
+Bleeding can be controlled using pressure and elevation. 
+يمكن التحكم في النزيف عن طريق الضغط ورفع الجزء المصاب. 
+ 
+II. Anemia 
+فقر الدم 
+Anemia means low RBCs or low hemoglobin, causing low oxygen supply to tissues. 
+فقر الدم يعني نقص كرات الدم الحمراء أو الهيموجلوبين مما يقلل توصيل الأكسجين للأنسجة. 
+Symptoms include pallor, fatigue, headache, dizziness, and fainting. 
+الأعراض تشمل شحوب، تعب، صداع، دوخة، وإغماء.
+
+1. Iron Deficiency Anemia 
+    فقر الدم بسبب نقص الحديد 
+It happens when iron is not enough to make hemoglobin. 
+يحدث عندما لا يكفي الحديد لتكوين الهيموجلوبين. 
+Predisposing factors include blood loss, poor diet, malabsorption, growth, and 
+pregnancy. 
+العوامل المساعدة: فقدان دم، تغذية ضعيفة، سوء امتصاص، نمو سريع، وحمل. 
+Symptoms: brittle hair, spoon-shaped nails, low CBC, fatigue, palpitations, weak focus. 
+الأعراض: شعر ضعيف، أظافر مقعّرة، انخفاض تحليل الدم، تعب وخفقان وضعف التركيز. 
+Treatment includes oral or injectable iron. 
+العلاج يشمل الحديد بالفم أو بالحقن. 
+Oral iron may cause nausea, abdominal pain, diarrhea, constipation, or black stool. 
+الحديد بالفم قد يسبب غثيان، ألم بطن، إسهال، إمساك، أو براز أسود. 
+Oral iron is given with vitamin C and not with antacids. 
+يُعطى الحديد مع فيتامين C وليس مع مضادات الحموضة. 
+Blood transfusion is used for severe cases. 
+يتم نقل دم في الحالات الشديدة. 
+Nursing care includes monitoring bleeding, increasing dietary iron, avoiding tea/coffee, 
+and patient teaching. 
+الرعاية التمريضية تشمل مراقبة النزيف، زيادة أكل الحديد، تجنب الشاي والقهوة، وتوعية المريض. 
+ 
+    2. Pernicious Anemia 
+    فقر الدم الخبيث (نقص فيتامين B12)
+
+It results from vitamin B12 deficiency. 
+يحدث بسبب نقص فيتامين B12. 
+Causes include hereditary factors, autoimmune disorders, Crohn’s disease, and 
+gastrectomy. 
+الأسباب: عوامل وراثية، أمراض مناعة، كرون، واستئصال المعدة. 
+Symptoms: numbness, tingling, weakness, and a red sore tongue. 
+الأعراض: تنميل، وخز، ضعف، ولسان أحمر مؤلم. 
+Treatment includes vitamin B12 (oral, sublingual, IM, deep SC) and folic acid. 
+العلاج: فيتامين B12 بالفم أو الحقن، وحمض الفوليك. 
+Nursing care: protect from burns due to loss of sensation; monitor neurological status. 
+الرعاية: حماية المريض من الحروق، ومتابعة الحالة العصبية. 
+ 
+    3. Folic Acid Deficiency Anemia 
+    فقر الدم بسبب نقص الفوليك 
+Folic acid is needed for DNA synthesis and RBC production. 
+حمض الفوليك لازم لتكوين DNA وإنتاج كرات الدم الحمراء. 
+Causes include poor diet, malabsorption, medications, and dialysis. 
+الأسباب: تغذية ضعيفة، سوء امتصاص، أدوية، وغسيل الكلى. 
+Treatment is folic acid supplements. 
+العلاج هو مكملات حمض الفوليك. 
+Nursing care: encourage folic-rich foods and teach that urine may turn dark yellow. 
+الرعاية: تشجيع الأطعمة الغنية بالفوليك، والتوعية عن تغيّر لون البول. 
+ 
+    4. Aplastic Anemia
+
+فقر الدم اللاتنسجي 
+It is a stem cell disorder causing bone marrow failure to produce RBCs, WBCs, and 
+platelets. 
+هو اضطراب بالخلايا الجذعية يسبب فشل نخاع العظم في إنتاج كرات الدم والصفائح. 
+Causes include autoimmune disease, congenital disorders, chemotherapy, radiation, 
+and toxins. 
+الأسباب: مناعة ذاتية، أمراض وراثية، كيماوي، إشعاع، ومواد سامة. 
+Symptoms include fatigue, rash, dizziness, irregular heartbeat, and uncontrolled 
+bleeding. 
+الأعراض: تعب، طفح، دوخة، ضربات قلب غير منتظمة، ونزيف لا يتوقف. 
+Management includes steroids, immunosuppressants, erythropoietin, HSCT, and bone 
+marrow transplant. 
+العلاج: ستيرويد، أدوية مناعية، إريثروبويتين، زرع خلايا جذعية أو نخاع عظم. 
+Nursing care (bleeding precautions): soft toothbrush, avoid IM injections, avoid 
+aspirin/NSAIDs, use stool softeners, gentle movement. 
+الرعاية (لتقليل النزيف): فرشاة ناعمة، تجنب الحقن العضلي، تجنب الأسبرين، ملينات، وتحريك لطيف. 
+Nursing care (infection precautions): private room, hand hygiene, avoid flowers, no 
+sick visitors. 
+الرعاية (منع العدوى): غرفة خاصة، غسل أيدي، عدم دخول أي شخص مريض. 
+ 
+    5. Sickle Cell Anemia 
+    فقر الدم المنجلي 
+It is inherited, and RBCs become sickle-shaped and break easily. 
+هو وراثي وتصبح كرات الدم منجلية وسهلة التكسر.
+
+RBCs live 15–20 days instead of 120 days. 
+كرات الدم تعيش15–20 يوم بدل120 يوم.  
+Complications include acute chest syndrome, hand-foot syndrome, and sickle crisis. 
+المضاعفات تشمل متلازمة الصدر الحادة، تورم اليد والقدم، وأزمة المنجلية. 
+Crisis causes severe joint pain, abdominal pain, spleen swelling, and hypoxia. 
+الأزمة تسبب ألم مفاصل شديد، ألم بطن وتضخم الطحال، ونقص أكسجين. 
+Management includes penicillin, blood transfusions, oxygen, vasodilators, and possible 
+spleenectomy or bone marrow transplant. 
+العلاج: بنسلين، نقل دم، أكسجين، موسعات أوعية، وقد تصل لاستئصال الطحال أو زرع نخاع. 
+Nursing care: give O2, avoid tight clothes, provide bed rest, high-calorie diet with folic 
+acid, avoid cold exposure. 
+الرعاية: إعطاء أكسجين، تجنب الملابس الضيقة، راحة في السرير، أكل عالي السعرات مع فوليك، وتجنب البرد. 
+ 
+III. Other Blood Disorders 
+اضطرابات دم أخرى 
+ 
+    Leukemia 
+    سرطان الدم 
+Leukemia is cancer of WBCs causing uncontrolled proliferation of abnormal cells. 
+لوكيميا هو سرطان في كرات الدم البيضاء يؤدي لتكاثر غير طبيعي. 
+Causes include unknown factors, genetics, immunosuppression, or 
+radiation/chemotherapy exposure. 
+الأسباب: غير معروفة، وراثة، ضعف مناعة، أو التعرض للكيماوي/الإشعاع.
+
+Symptoms include infections, enlarged organs, fatigue, renal pain, and headache. 
+الأعراض: عدوى متكررة، تضخم أعضاء، تعب، ألم كلى، وصداع. 
+Nursing care includes preventing infection/bleeding, pain relief, psychological support, 
+and conserving energy. 
+الرعاية: منع عدوى ونزيف، تخفيف الألم، دعم نفسي، وتوفير الراحة والطاقة. 
+ 
+    Thrombocytopenia 
+    نقص الصفائح الدموية 
+Platelets <150,000 indicate thrombocytopenia; <50,000 is severe. 
+الصفائح أقل من150,000 تعتبر نقص، وأقل من50,000 يعتبر شديد.  
+Causes include low production, destruction, infections, and medications. 
+الأسباب: قلة إنتاج، زيادة تكسير، عدوى، وأدوية. 
+Symptoms include skin/mucosal bleeding and prolonged bleeding. 
+الأعراض: نزيف من الجلد والأغشية المخاطية ونزيف مطوّل . 
+Complications include internal bleeding, brain hemorrhage, GI bleeding, and death. 
+المضاعفات: نزيف داخلي، نزيف بالمخ، نزيف معدي، وقد يؤدي للوفاة. 
+Management includes avoiding NSAIDs and giving transfusions. 
+العلاج: تجنب NSAIDs ونقل دم. 
+Nursing care includes monitoring bleeding signs, minimizing trauma, patient 
+education, and checking labs. 
+الرعاية: مراقبة علامات النزيف، تجنب الإصابات، توعية المريض، ومتابعة التحاليل. 
+ 
+    Bleeding Disorders 
+    اضطرابات النزيف
+
+These disorders affect blood clotting due to platelet or clotting factor problems. 
+هذه الاضطرابات تؤثر على تجلط الدم بسبب مشاكل في الصفائح أو عوامل التجلط. 
+Inherited types include Hemophilia A, B, C, and von Willebrand disease. 
+الأنواع الوراثية: هيموفيليا A وB وC وفون ويلبراند. 
+Acquired causes include liver disease, vitamin K deficiency, DIC, and anticoagulants. 
+الأسباب المكتسبة: أمراض الكبد، نقص فيتامين K، الـ DIC، ومضادات التجلط. 
+Symptoms include bleeding, petechiae, nosebleeds, hemarthrosis, hematomas, and 
+heavy menstruation. 
+الأعراض: نزيف، نقط نزيفية، نزيف أنف، نزيف بالمفاصل، تجمع دموي، ودورة غزيرة. 
+Nursing care includes preventing bleeding, applying pressure, using cold packs, and 
+teaching safety. 
+الرعاية: منع النزيف، ضغط على الأماكن المصابة، كمادات باردة، وتعليمات سلامة.

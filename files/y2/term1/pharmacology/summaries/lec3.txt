@@ -1,0 +1,125 @@
+Pharmacodynamics (Gr. Pharmacon: drug; dynamis: power) 
+Pharmacodynamics is the study of what the drug does to the body. 
+علم ديناميكية الدواء هو دراسة ما يفعله الدواء داخل الجسم.  
+It explains how drugs work, their mechanism of action, pharmacological effects, and 
+side effects. 
+يشرح كيف تعمل الأدوية، وآلية عملها، وتأثيراتها الدوائية، وآثارها الجانبية.  
+ 
+Types of Drug Action (أنواع تأثيرات الدواء) 
+1. Stimulation (التحفيز) 
+Some drugs increase the activity of certain cells. 
+بعض الأدوية تزيد من نشاط خلايا معينة. 
+Example: Adrenaline stimulates the heart, increasing heart rate and contraction 
+force. 
+مثال :الأدرينالين  يحفّز القلب، فيزيد معدل ضرباته وقوة انقباضه . 
+ 
+2. Depression (التثبيط) 
+Some drugs decrease the activity of cells. 
+بعض الأدوية تقلل من نشاط الخلايا. 
+Example: Alcohol, barbiturates, and anesthetics depress the central nervous 
+system. 
+مثال :الكحول، والباربيتورات، والمخدرات العامة  تثبط الجهاز العصبي المركزي.  
+ 
+3. Irritation (التهيج) 
+Some agents cause mild irritation when applied to skin or tissues. 
+بعض المواد تسبب تهيجًا بسيطًا عند وضعها على الجلد أو الأنسجة. 
+Counterirritants like eucalyptus oil relieve deeper pain. 
+الملطفات العكسية مثل زيت الأوكالبتوس تخفف الألم العميق.  
+They are used in sprains, joint pain, and muscle pain. 
+تُستخدم في حالات الالتواءات وآلام المفاصل والعضلات.  
+ 
+4. Replacement (التعويض) 
+Drugs can replace substances missing in the body. 
+يمكن أن تعوض الأدوية المواد الناقصة في الجسم.
+
+Example: Insulin is given in diabetes mellitus. 
+مثال: يُستخدم الأنسولين في علاج مرض السكري.  
+ 
+5. Cytotoxic (السامّة للخلايا) 
+Some drugs destroy harmful cells or organisms. 
+بعض الأدوية تقتل الخلايا أو الكائنات الضارة. 
+Example: Antibiotics kill bacteria, and anticancer drugs kill cancer cells. 
+مثال :المضادات الحيوية  تقتل البكتيريا، وأدوية السرطان تقتل الخلايا السرطانية.  
+ 
+Mechanism of Drug Action (آلية عمل الدواء) 
+Drugs act through two main mechanisms: 
+تعمل الأدوية من خلال آليتين رئيسيتين:  
+1. Nonreceptor-mediated mechanisms (غير المعتمدة على المستقبلات) 
+2. Receptor-mediated mechanisms (المعتمدة على المستقبلات) 
+ 
+Nonreceptor-mediated Mechanisms (الآليات غير المعتمدة على المستقبلات) 
+1. By Physical Action (عن طريق الفعل الفيزيائي) 
+a. Osmosis: Some drugs act by osmotic pressure, e.g. Mannitol in brain edema. 
+بعض الأدوية تعمل بالضغط الأسموزي، مثل المانيتول في علاج تورم الدماغ.  
+b. Adsorption: Activated charcoal absorbs toxins and is used in poisoning. 
+الفحم النشط يمتص السموم ويُستخدم في حالات التسمم.  
+c. Demulcent: Cough syrup soothes the throat by coating inflamed mucosa. 
+شراب السعال يخفف التهاب الحلق بتغليف الغشاء المخاطي الملتهب. 
+d. Radioactivity: Radioactive iodine (I-131) destroys thyroid tissue in hyperthyroidism. 
+اليود المشع I-131) يدمر أنسجة الغدة الدرقية في حالات فرط نشاطها. 
+ 
+2. By Chemical Action (عن طريق الفعل الكيميائي) 
+a. Antacids are weak bases that neutralize stomach acid in ulcers. 
+مضادات الحموضة هي قواعد ضعيفة تعادل الحمض في المعدة عند قرحة المعدة.
+
+b. Chelating agents bind toxic metals like iron or mercury and help eliminate them. 
+العوامل المخلبية ترتبط بالمعادن السامة مثل الحديد والزئبق وتساعد على إخراجها من الجسم.  
+ 
+3. Through Enzymes (من خلال الإنزيمات) 
+Almost all biological reactions are controlled by enzymes, so they are important targets 
+for drugs. 
+تقريبًا كل التفاعلات الحيوية في الجسم تتحكم فيها الإنزيمات، لذلك تُعتبر هدفًا مهمًا للأدوية.  
+Drugs can increase or decrease enzyme activity. 
+يمكن أن تزيد الأدوية أو تقلل من نشاط الإنزيمات. 
+Enzyme inhibition example: 
+مثال على تثبيط الإنزيمات: 
+Allopurinol inhibits the enzyme xanthine oxidase, which produces uric acid. 
+دواء الألوبورينول يثبط إنزيم زانثين أوكسيداز المسؤول عن إنتاج حمض اليوريك.  
+It is used to treat chronic gout by reducing uric acid levels in the blood. 
+ويُستخدم لعلاج النقرس المزمن عن طريق خفض مستوى حمض اليوريك في الدم.  
+ 
+4. Through Ion Channels (عن طريق قنوات الأيونات) 
+Some drugs act by binding to ion channels and changing the flow of ions across cell 
+membranes. 
+بعض الأدوية تعمل عن طريق الارتباط بقنوات الأيونات وتغيير حركة الأيونات عبر أغشية الخلايا.  
+Example: Local anesthetics block sodium channels in nerve cells to stop pain signals. 
+مثال :المخدرات الموضعية  تغلق قنوات الصوديوم في الخلايا العصبية لتمنع إشارات الألم.  
+ 
+5. Through Antibody Production (عن طريق إنتاج الأجسام المضادة) 
+Vaccines work by stimulating the body to produce antibodies against infections. 
+اللقاحات تعمل عن طريق تحفيز الجسم لإنتاج أجسام مضادة ضد العدوى.  
+Example: BCG vaccine protects against tuberculosis. 
+مثال :لقاح الـBCG يحمي من مرض السل.  
+ 
+6. Transporters (الناقلات)
+
+Some drugs act by binding to transporters on cell membranes. 
+بعض الأدوية تعمل من خلال الارتباط بالناقلات الموجودة على أغشية الخلايا.  
+Example: Selective Serotonin Reuptake Inhibitors (SSRIs) block the reuptake of 
+serotonin (5-HT) in nerve cells. 
+مثال :مثبطات امتصاص السيروتونين الانتقائية SSRIs) تمنع إعادة امتصاص السيروتونين  5-HT) في الخلايا
+العصبية. 
+This increases serotonin levels and helps treat depression. 
+وهذا يزيد من مستوى السيروتونين ويساعد في علاج  الاكتئاب.  
+ 
+7. Others (آليات أخرى) 
+Some anticancer drugs work by binding to nucleic acids (DNA or RNA) and stopping cell 
+growth. 
+بعض أدوية السرطان تعمل عن طريق الارتباط بالأحماض النووية DNA أو RNA) مما يوقف نمو الخلايا. 
+Example: Cyclophosphamide is used in cancer treatment. 
+مثال :السيكلوفوسفاميد  يُستخدم في علاج السرطان.  
+ 
+Receptor-mediated Mechanisms (الآليات المعتمدة على المستقبلات) 
+Receptors are large molecules (proteins) found on the cell surface, cytoplasm, or 
+nucleus. 
+المستقبلات هي جزيئات كبيرة (بروتينات) توجد على سطح الخلية أو داخل السيتوبلازم أو النواة.  
+A drug binds to a receptor to start or block a biological response. 
+يرتبط الدواء بالمستقبل ليُحدث أو يمنع استجابة حيوية في الجسم.  
+Examples of receptors include: 
+أمثلة على أنواع المستقبلات: 
+• Adrenergic receptors → respond to adrenaline. 
+مستقبلات الأدرينالين  →تستجيب لهرمون الأدرينالين. 
+• Cholinergic receptors → respond to acetylcholine. 
+المستقبلات الكولينية  →تستجيب للأستيل كولين. 
+• Opioid receptors → respond to morphine and similar drugs. 
+مستقبلات الأفيون  →تستجيب للمورفين والأدوية المشابهة له.

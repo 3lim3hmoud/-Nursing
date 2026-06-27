@@ -1,0 +1,198 @@
+Lecture 1: ABG Interpretation & Acid-Base Imbalance 
+المحاضرة الأولى: تفسير غازات الدم وعدم توازن الحمض والقاعدة 
+ 
+Q1. ABG Case Sheet Interpretation (Critical Analysis Question) 
+Interpret the following Arterial Blood Gas (ABG) results using systematic interpretation steps, and state the final diagnosis and 
+compensation status. 
+فسّر نتائج غازات الدم الشريانية التالية باستخدام خطوات تفسير منهجية، واذكر التشخيص النهائي وحالة التعويض. 
+ABG Value Result Reference Range 
+pH 7.32 7.35 – 7.45 
+PaCO₂ 34 mmHg 35 – 45 mmHg 
+HCO₃⁻ 18 mEq/L 22 – 26 mEq/L 
+Step 1 – Evaluate pH: 
+pH is 7.32 (low) → indicates acidemia (acidosis). 
+الـ pH = 7.32 (منخفض)  →يدل على   الحموضة في الدم  Acidemia / Acidosis).
+
+Step 2 – Evaluate HCO₃⁻ (Metabolic): 
+HCO₃⁻ = 18 (low) → indicates metabolic acidosis. 
+الـ HCO₃⁻ = 18 (منخفضة) → يدل على حموضة أيضية  Metabolic Acidosis). 
+Step 3 – Evaluate PaCO₂ (Respiratory): 
+PaCO₂ = 34 (low) → indicates lungs are compensating. 
+الـ PaCO₂ = 34 (منخفضة) → يدل على الرئتان تحاولان التعويض.  
+Step 4 – Primary Imbalance: 
+Primary disorder is Metabolic Acidosis. 
+الاضطراب الأساسي هو حموضة أيضية  Metabolic Acidosis). 
+Step 5 – Compensation: 
+pH is still abnormal → Partially compensated. 
+الـ pH ما زال غير طبيعي → الحالة  متعوضة جزئيًا  Partially Compensated). 
+ 
+       Simple Explanation of Compensation (شرح التعويض) 
+Type pH Primary Value Opposite Value Meaning 
+Uncompensated Abnormal Abnormal Normal Body hasn’t started compensation yet.
+
+Type pH Primary Value Opposite Value Meaning 
+غير متعوضة غير طبيعية  غير طبيعية  طبيعية الجسم لسه ما بدأش التعويض. 
+Partially Compensated Abnormal Abnormal Abnormal (moving opposite) Compensation started but pH still abnormal. 
+متعوضة جزئيًا غير طبيعية  غير طبيعية  غير طبيعية (في الاتجاه العكسي) الجسم بدأ التعويض لكن pH لسه غير طبيعي. 
+Fully Compensated Normal Abnormal Abnormal (opposite) pH returned to normal – full compensation. 
+متعوضة كليًا طبيعية غير طبيعية  غير طبيعية (عكسية) الجسم عوض تمامًا وpH رجع طبيعي. 
+       Tip: 
+• Partial: استخدم لما الجسم بدأ التعويض لكن الـ pH ما زال خارج النطاق الطبيعي. 
+• Full: استخدم لما الجسم نجح في إعادة pH للنطاق الطبيعي تمامًا، رغم أن السبب الأساسي ما زال موجود. 
+ 
+Q2. Buffer Systems 
+List the three buffer systems and explain the renal role. 
+اذكر الأنظمة الثلاثة التي تحافظ على توازن الحمض والقاعدة واشرح دور الكلية الرئيسي.
+
+Three Buffer Systems: Blood, Respiratory system, Kidney. 
+الأنظمة الثلاثة: الدم، الجهاز التنفسي، الكلى. 
+Renal Role: Reabsorbs bicarbonate and excretes hydrogen ions; slower than lungs. 
+دور الكلية: تعيد امتصاص البيكربونات وتطرح أيونات الهيدروجين؛ أبطأ من الرئتين في التعويض. 
+ 
+Q3. Respiratory Acidosis vs. Alkalosis 
+Differentiate between Respiratory Acidosis and Respiratory Alkalosis. 
+فرّق بين الحموضة التنفسية والقلوية التنفسية. 
+Feature Respiratory Acidosis Respiratory Alkalosis 
+Cause ↓ Ventilation → ↑ CO₂ ↑ Ventilation → ↓ CO₂ 
+السبب انخفاض التنفس → زيادة CO₂ زيادة التنفس → نقص CO₂ 
+ABG Findings PaCO₂ > 45 mmHg, pH < 7.35 PaCO₂ < 35 mmHg, pH > 7.45 
+النتائج PaCO₂ > 45 mmHg،pH < 7.35 PaCO₂ < 35 mmHg،pH > 7.45 
+ 
+     Lecture 2: ECG & Cardiac Cycle
+
+المحاضرة الثانية: تخطيط القلب الكهربائي ودورة القلب 
+ 
+Q4. Cardiac Action Potential and Ions 
+Explain the property that allows the heart to generate its own electrical signal. Describe the movement of key ions during 
+repolarization. 
+اشرح الخاصية التي تمكّن القلب من توليد الإشارة الكهربائية الخاصة به ووصف حركة الأيونات أثناء إعادة الاستقطاب. 
+Signal Source: Pacemaker cells with automaticity (generate action potential without external stimulation). 
+مصدر الإشارة: خلايا منظم ضربات القلب تمتلك التنشيط الذاتي (تولد الإشارة بدون تحفيز خارجي.) 
+Repolarization: Calcium and Sodium exit the cell; Potassium enters the cell. 
+إعادة الاستقطاب: يخرج الكالسيوم والصوديوم من الخلية؛ يدخل البوتاسيوم. 
+ 
+Q5. Cardiac Cycle (دورة القلب) 
+Explain the phases of the cardiac cycle: atrial systole, ventricular systole, diastole. 
+اشرح مراحل دورة القلب: انقباض الأذين، انقباض البطين، الانبساط. 
+1. Atrial Systole: Atria contract → push blood into ventricles. 
+انقباض الأذين: الأذينين ينقبضان → يدفعا الدم إلى البطينين.
+
+2. Ventricular Systole: Ventricles contract → push blood into arteries (aorta/pulmonary). 
+انقباض البطين: البطينين ينقبضان → يضخان الدم إلى الشرايين (الأبهر والرئوي. 
+3. Diastole: Heart relaxes → chambers fill with blood. 
+الانبساط: القلب يرتاح → الغرف تمتلئ بالدم. 
+       Tip: 
+• S1 sound = AV valves close (start of ventricular systole) 
+• S2 sound = Semilunar valves close (end of ventricular systole / start of diastole) 
+ 
+Q6. ECG Waveforms and Intervals 
+Identify P wave, QRS complex, T wave, QT interval. 
+حدد موجة P، مجمع QRS، موجة T، وفترة QT. 
+P wave: Atrial depolarization. 
+موجة P: إزالة استقطاب الأذين. 
+QRS complex: Ventricular depolarization. 
+مجمع QRS: إزالة استقطاب البطين.
+
+T wave: Ventricular repolarization. 
+موجة T: إعادة استقطاب البطين. 
+QT interval: Total time from depolarization onset to repolarization completion. 
+فترة QT: الوقت الإجمالي من بداية إزالة الاستقطاب حتى نهاية إعادة الاستقطاب. 
+ 
+     Lecture 3: Pain Management & Types 
+المحاضرة الثالثة: إدارة الألم وأنواعه 
+ 
+Q7. Pain Definition and Types 
+Define pain and list its types. 
+عرّف الألم واذكر أنواعه . 
+Pain: Unpleasant sensory and emotional experience associated with actual or potential tissue damage. 
+الألم: تجربة حسية وعاطفية غير مريحة مرتبطة بتلف الأنسجة الفعلي أو المحتمل. 
+Types of Pain – أنواع الألم: 
+1. Acute Pain: Sudden onset, short duration (≤ 6 months). 
+الألم الحاد: يبدأ فجأة، قصير المدة6 أشهر.
+
+2. Chronic Pain: Long-term (> 6 months), persists after healing or due to poor management of acute pain. 
+الألم المزمن: طويل المدى 6 أشهر)، يستمر بعد الشفاء أو بسبب إدارة سيئة للألم الحاد. 
+3. Neuropathic Pain: Pain caused by nerve damage, burning or shooting sensation. 
+الألم العصبي: ناتج عن تلف الأعصاب، شعور بالحرق أو الطعن. 
+4. Nociceptive Pain: Pain from actual tissue damage (somatic or visceral). 
+الألم الناتج عن المستقبلات النسيجية: ألم بسبب تلف الأنسجة (جسدي أو داخلي. 
+ 
+Q8. Physiology of Pain (Nociception) 
+Four fundamental processes of pain: Transduction, Transmission, Perception, Modulation. 
+أربع عمليات أساسية للألم: التحويل، النقل، الإدراك، التنظيم. 
+1. Transduction: Stimulus triggers pain receptors. 
+التحويل: المؤثر يحفز مستقبلات الألم. 
+2. Transmission: Pain impulse moves to brain. 
+النقل: تنتقل إشارة الألم إلى الدماغ. 
+3. Perception: Brain interprets the pain. 
+الإدراك: الدماغ يفسر الألم.
+
+4. Modulation: Brain sends signals to reduce pain. 
+التنظيم: الدماغ يرسل إشارات لتقليل الألم. 
+ 
+Q9. Opioid Cardiac Hazards 
+Morphine, Fentanyl, Methadone effects on heart. 
+تأثير المورفين، الفنتانيل، الميثادون على القلب. 
+Morphine: Histamine release → cardiac instability. 
+المورفين: إفراز الهيستامين → عدم استقرار قلبي. 
+Fentanyl: Rapid/high dose → bradycardia. 
+الفنتانيل: الجرعات السريعة أو العالية → بطء ضربات القلب. 
+Methadone: Prolonged QT → risk of arrhythmia. 
+الميثادون: إطالة QT → خطر اضطراب النبض. 
+ 
+    Lecture 4: Shock 
+المحاضرة الرابعة: الصدمة
+
+Q10. Shock Definition & Cellular Metabolism 
+Define shock and describe metabolism in Initial Stage. 
+عرّف الصدمة ووضح الأيض في المرحلة الأولية . 
+Shock: Acute, widespread impaired tissue perfusion → cellular, metabolic, hemodynamic changes. 
+الصدمة: نقص تروية الأنسجة بشكل حاد وواسع → تغييرات خلوية وأيضية ودورانية. 
+Initial Stage: Cells switch to anaerobic metabolism → lactic acid produced → cellular damage. 
+المرحلة الأولية: تتحول الخلايا إلى الأيض اللاهوائي → ينتج حمض اللاكتيك → تلف الخلايا. 
+ 
+Q11. Types of Shock 
+Four main types: Hypovolemic, Cardiogenic, Septic, Neurogenic. 
+أربعة أنواع رئيسية من الصدمة: نقص حجم الدم، الصدمة القلبية، الصدمة الإنتانية، الصدمة العصبية. 
+Type Cause 
+Hypovolemic Loss of circulating volume 
+Cardiogenic Heart cannot pump properly
+
+Type Cause 
+Septic Infection in blood 
+Neurogenic Loss of sympathetic tone 
+النوع السبب 
+نقص الحجم  فقدان حجم الدم أو السوائل  
+الصدمة القلبية  ضعف قدرة القلب على الضخ  
+الصدمة الإنتانية  عدوى في الدم  
+الصدمة العصبية  فقدان التحكم العصبي  
+ 
+           Lecture 5: Triage 
+المحاضرة الخامسة: الفرز الطبي 
+ 
+Q12. Triage Definition & Goals
+
+Define triage and list primary goals. 
+عرّف الفرز الطبي واذكر الأهداف الرئيسية . 
+Triage: Sorting patients based on severity. 
+الفرز: تصنيف المرضى حسب درجة الخطورة. 
+Goals: 
+1. Rapidly identify life-threatening patients. 
+تحديد سريع للمرضى المهددين للحياة. 
+2. Prioritize care needs. 
+ترتيب أولويات الرعاية. 
+3. Ensure timely, appropriate treatment. 
+ضمان علاج مناسب وفي الوقت المناسب. 
+4. Regulate patient flow. 
+تنظيم حركة المرضى في الطوارئ. 
+ 
+Q13. Triage Priority Levels (Three-Level System)
+
+Emergent, Urgent, Nonurgent categories. 
+الحالات الحرجة، العاجلة، وغير العاجلة. 
+Emergent (I): Life-threatening → immediate or ≤ 30 min. 
+حرجة I): تهدد الحياة → فورًا أو30 دقيقة.  
+Urgent (II): Serious → treat within 2 hours. 
+عاجلة II): خطيرة → العلاج خلال ساعتين. 
+Nonurgent (III): Stable → can wait > 2 hours. 
+غير عاجلة III): مستقرة → يمكن الانتظار  >ساعتين.

@@ -1,0 +1,497 @@
+1. Intravenous Therapy (العلاج الوريدي) 
+Definition 
+Intravenous therapy is the administration of fluids, medications, or blood products 
+directly into a vein. 
+العلاج الوريدي هو إعطاء السوائل أو الأدوية أو الدم مباشرة داخل الوريد. 
+Purpose 
+To provide rapid delivery of fluids and medications into the bloodstream. 
+لتوصيل السوائل والأدوية بسرعة مباشرة إلى مجرى الدم. 
+Indications 
+• Fluid replacement 
+• Medication administration 
+• Electrolyte imbalance 
+تعويض السوائل– إعطاء الأدوية –  اضطراب الأملاح.  
+Contraindications 
+• Infection at insertion site 
+• Thrombosed vein 
+وجود عدوى في مكان الإدخال– وريد متجلط.  
+Complications 
+• Phlebitis 
+• Infiltration 
+• Infection 
+التهاب الوريد– تسرب المحلول – عدوى.  
+Nursing Considerations 
+• Maintain aseptic technique 
+• Monitor IV site regularly 
+الحفاظ على التعقيم– متابعة مكان الكانيولا باستمرار.  
+ 
+2. Blood Transfusion (نقل الدم)
+
+Definition 
+Blood transfusion is the administration of blood or blood components intravenously. 
+نقل الدم هو إعطاء الدم أو مكوناته عن طريق الوريد. 
+Purpose 
+To replace lost blood or improve oxygen-carrying capacity. 
+تعويض الدم المفقود وتحسين نقل الأكسجين. 
+Indications 
+• Severe anemia 
+• Acute blood loss 
+أنيميا شديدة– نزيف حاد.  
+Contraindications 
+• History of severe transfusion reaction 
+تاريخ سابق لتفاعلات نقل دم شديدة. 
+Complications 
+• Allergic reaction 
+• Hemolytic reaction 
+• Infection 
+حساسية– تكسير الدم –  عدوى.  
+Nursing Considerations 
+• Verify blood compatibility 
+• Monitor vital signs closely 
+التأكد من التوافق–  متابعة العلامات الحيوية.  
+ 
+3. ECG (Electrocardiogram) – رسم القلب 
+Definition 
+ECG is a test that records the electrical activity of the heart. 
+رسم القلب هو فحص يسجل النشاط الكهربي للقلب. 
+Purpose
+
+To assess heart rhythm and detect abnormalities. 
+تقييم نظم القلب واكتشاف الاضطرابات. 
+Indications 
+• Chest pain 
+• Arrhythmias 
+ألم صدري– اضطراب ضربات القلب.  
+Contraindications 
+• None (safe procedure) 
+لا يوجد موانع (إجراء آمن. 
+Complications 
+• Skin irritation from electrodes 
+تهيج الجلد بسبب اللاصق. 
+Nursing Considerations 
+• Proper electrode placement 
+• Patient relaxed 
+وضع الأقطاب صح– المريض يكون مرتاح . 
+ 
+4. Surgical Hand Scrub (الغسيل الجراحي لليدين) 
+Definition 
+A surgical hand scrub is thorough washing of hands to remove microorganisms. 
+الغسيل الجراحي هو تنظيف عميق لليدين لإزالة الميكروبات. 
+Purpose 
+To prevent surgical site infection. 
+منع عدوى الجروح الجراحية. 
+Indications 
+• Before surgical procedures 
+قبل أي إجراء جراحي. 
+Contraindications
+
+• Open cuts on hands 
+وجود جروح مفتوحة باليد. 
+Complications 
+• Skin dryness 
+جفاف الجلد. 
+Nursing Considerations 
+• Follow correct time and technique 
+الالتزام بالمدة والطريقة الصحيحة. 
+ 
+5. Applying a Sterile Gown and Closed Gloving 
+ارتداء الرداء المعقم والقفاز المغلق 
+Definition 
+A method of donning sterile gown and gloves without contaminating them. 
+طريقة لارتداء الرداء والقفازات المعقمة بدون تلوث. 
+Purpose 
+To maintain sterile field. 
+الحفاظ على المجال المعقم. 
+Indications 
+• Surgical procedures 
+الإجراءات الجراحية. 
+Contraindications 
+• Torn gown or gloves 
+وجود قطع في الرداء أو القفازات. 
+Complications 
+• Contamination 
+تلوث. 
+Nursing Considerations 
+• Do not touch non-sterile surfaces 
+عدم لمس أي سطح غير معقم.
+
+6. Deep Breathing & Coughing Exercises 
+تمارين التنفس العميق والكحة 
+Definition 
+Exercises that improve lung expansion and clear secretions. 
+تمارين تساعد على توسع الرئة وطرد الإفرازات. 
+Purpose 
+To prevent atelectasis and pneumonia. 
+منع انخماص الرئة والالتهاب الرئوي. 
+Indications 
+• Postoperative patients 
+مرضى ما بعد الجراحة. 
+Contraindications 
+• Severe chest pain 
+ألم صدري شديد. 
+Complications 
+• Dizziness 
+دوخة. 
+Nursing Considerations 
+• Teach patient proper technique 
+تعليم المريض الطريقة الصحيحة. 
+ 
+7. Chest Physiotherapy (Percussion & Vibration) 
+العلاج الطبيعي للصدر (الطرق والاهتزاز 
+Definition 
+Techniques to loosen and mobilize lung secretions. 
+تقنيات لتفكيك وتحريك إفرازات الرئة. 
+Purpose
+
+To improve airway clearance. 
+تحسين تنظيف مجرى الهواء. 
+Indications 
+• Excessive secretions 
+إفرازات صدرية كثيفة. 
+Contraindications 
+• Rib fracture 
+كسر في الضلوع. 
+Complications 
+• Hypoxia 
+نقص الأكسجين. 
+Nursing Considerations 
+• Assess oxygen saturation 
+متابعة نسبة الأكسجين. 
+ 
+8. Package Preparation (تحضير الباكدج) 
+Definition 
+Preparing sterile equipment for procedures. 
+تحضير الأدوات المعقمة للإجراءات. 
+Purpose 
+To maintain sterility. 
+الحفاظ على التعقيم. 
+Indications 
+• Before sterile procedures 
+قبل الإجراءات المعقمة. 
+Contraindications 
+• Wet or torn package 
+باكدج مبلولة أو مقطوعة. 
+Complications
+
+• Contamination 
+تلوث. 
+Nursing Considerations 
+• Check expiration date 
+التأكد من تاريخ الصلاحية. 
+ 
+9. Opening Sterile Package (فتح الباكدج المعقم) 
+Definition 
+Proper technique for opening sterile items. 
+طريقة صحيحة لفتح الأدوات المعقمة. 
+Purpose 
+To avoid contamination. 
+منع التلوث. 
+Indications 
+• During sterile procedures 
+أثناء الإجراءات المعقمة. 
+Contraindications 
+• Broken sterility 
+كسر التعقيم. 
+Complications 
+• Infection 
+عدوى. 
+Nursing Considerations 
+• Open away from body 
+الفتح بعيدًا عن الجسم. 
+ 
+10. Dry Sterile Dressing for Clean Closed Wound 
+ضماد جاف معقم لجرح نظيف مغلق
+
+Definition 
+Application of a dry sterile dressing to protect the wound. 
+وضع ضماد جاف معقم لحماية الجرح. 
+Purpose 
+To promote healing. 
+تسريع الالتئام. 
+Indications 
+• Clean surgical wounds 
+الجروح الجراحية النظيفة. 
+Contraindications 
+• Infected wound 
+جرح ملتهب. 
+Complications 
+• Infection 
+عدوى. 
+Nursing Considerations 
+• Observe wound for redness 
+ملاحظة أي احمرار أو إفرازات. 
+ 
+11. Saline Moistened Sterile Dressing 
+ضماد معقم مبلل بمحلول ملحي 
+Definition 
+A dressing moistened with normal saline. 
+ضماد معقم مبلل بمحلول ملحي. 
+Purpose 
+To keep wound moist. 
+الحفاظ على رطوبة الجرح. 
+Indications
+
+• Open wounds 
+الجروح المفتوحة. 
+Contraindications 
+• Excessive bleeding 
+نزيف شديد. 
+Complications 
+• Maceration 
+تليّن الجلد. 
+Nursing Considerations 
+• Use sterile saline only 
+استخدام محلول معقم فقط. 
+ 
+12. Administering a Tube Feeding 
+إعطاء التغذية عبر الأنبوب 
+Definition 
+Providing nutrition through a feeding tube. 
+إعطاء الغذاء عن طريق أنبوب تغذية. 
+Purpose 
+To provide adequate nutrition. 
+توفير تغذية كافية. 
+Indications 
+• Patient unable to swallow 
+مريض لا يستطيع البلع. 
+Contraindications 
+• Bowel obstruction 
+انسداد الأمعاء. 
+Complications 
+• Aspiration
+
+• Diarrhea 
+شفط رئوي– إسهال.  
+Nursing Considerations 
+• Check tube placement 
+التأكد من مكان الأنبوب. 
+ 
+13. Gastric Lavage (غسيل المعدة) 
+Definition 
+Washing out the stomach contents. 
+تنظيف محتويات المعدة. 
+Purpose 
+To remove toxins. 
+إزالة السموم. 
+Indications 
+• Poisoning 
+تسمم. 
+Contraindications 
+• Corrosive poisoning 
+تسمم بمواد حارقة. 
+Complications 
+• Aspiration 
+• Electrolyte imbalance 
+شفط رئوي– اضطراب الأملاح.  
+Nursing Considerations 
+• Maintain airway patency 
+تأمين مجرى الهواء. 
+ 
+14. Nasogastric Removal Procedure
+
+إزالة الأنبوب الأنفي المعدي 
+Definition 
+Removal of the nasogastric tube safely. 
+إزالة أنبوب الأنف والمعدة بطريقة آمنة. 
+Purpose 
+To discontinue gastric decompression or feeding. 
+إيقاف التغذية أو التفريغ المعدي. 
+Indications 
+• Condition improved 
+تحسن حالة المريض. 
+Contraindications 
+• None specific 
+لا يوجد موانع محددة. 
+Complications 
+• Nasal irritation 
+تهيج الأنف. 
+Nursing Considerations 
+• Ask patient to take deep breath 
+طلب من المريض أخذ نفس عميق أثناء الإزالة. 
+ 
+8. Package Preparation (تحضير الباكدج المعقم) 
+Definition 
+Package preparation is the process of preparing sterile supplies for a procedure while 
+maintaining sterility. 
+تحضير الباكدج هو تجهيز الأدوات المعقمة للإجراء مع الحفاظ على التعقيم. 
+Purpose 
+• Ensure availability of sterile equipment 
+• Prevent contamination 
+تجهيز الأدوات المعقمة– منع التلوث.
+
+Indications 
+• Before sterile dressing 
+• Before invasive procedures 
+قبل الضمادات المعقمة– قبل الإجراءات التداخلية.  
+Contraindications 
+• Wet, torn, or expired package 
+باكدج مبلولة أو مقطوعة أو منتهية الصلاحية. 
+Complications 
+• Contamination 
+• Infection 
+تلوث– عدوى.  
+Nursing Considerations 
+• Check expiration date and integrity 
+• Perform hand hygiene before preparation 
+التأكد من الصلاحية وسلامة الباكدج– غسل اليدين قبل التحضير.  
+ 
+9. Opening Sterile Package (فتح الباكدج المعقم) 
+Definition 
+Opening a sterile package using proper technique to maintain sterility. 
+فتح الباكدج المعقم بطريقة صحيحة للحفاظ على التعقيم. 
+Purpose 
+• Maintain sterile field 
+الحفاظ على المجال المعقم. 
+Indications 
+• During sterile procedures 
+أثناء الإجراءات المعقمة. 
+Contraindications 
+• Broken sterility
+
+• Package contaminated 
+كسر التعقيم– تلوث الباكدج.  
+Complications 
+• Infection 
+• Delayed wound healing 
+عدوى– تأخر التئام الجرح.  
+Nursing Considerations 
+• Open flaps away from body 
+• Do not reach over sterile field 
+فتح الأجزاء بعيدًا عن الجسم–  عدم مد اليد فوق المجال المعقم.  
+ 
+10. Dry Sterile Dressing for Clean Closed Wound 
+ضماد جاف معقم لجرح نظيف مغلق 
+Definition 
+Application of a dry sterile dressing to a clean, closed wound. 
+وضع ضماد جاف معقم على جرح نظيف ومغلق. 
+Purpose 
+• Protect wound 
+• Absorb minimal drainage 
+حماية الجرح– امتصاص الإفرازات البسيطة.  
+Indications 
+• Clean surgical incisions 
+• Sutured wounds 
+الجروح الجراحية النظيفة–  الجروح المخيطة.  
+Contraindications 
+• Infected or heavily draining wounds 
+جروح ملتهبة أو ذات إفرازات كثيفة. 
+Complications
+
+• Infection 
+• Skin irritation 
+عدوى– تهيج الجلد.  
+Nursing Considerations 
+• Observe wound for redness, swelling, discharge 
+• Change dressing as ordered 
+ملاحظة الاحمرار أو التورم أو الإفرازات– تغيير الضماد حسب التعليمات.  
+ 
+11. Saline Moistened Sterile Dressing 
+ضماد معقم مبلل بمحلول ملحي 
+Definition 
+A sterile dressing moistened with normal saline to keep wound moist. 
+ضماد معقم مبلل بمحلول ملحي للحفاظ على رطوبة الجرح. 
+Purpose 
+• Promote granulation 
+• Prevent tissue drying 
+تحفيز التئام الأنسجة– منع جفاف الجرح.  
+Indications 
+• Open wounds 
+• Infected wounds (as prescribed) 
+الجروح المفتوحة– الجروح الملتهبة حسب التعليمات.  
+Contraindications 
+• Excessive bleeding 
+• Dry necrotic wounds (without order) 
+نزيف شديد– جروح نخرية جافة بدون أمر طبي.  
+Complications 
+• Maceration of surrounding skin
+
+• Infection 
+تليّن الجلد المحيط– عدوى.  
+Nursing Considerations 
+• Use sterile normal saline 
+• Do not oversaturate dressing 
+استخدام محلول معقم فقط– عدم تشبيع الضماد زيادة عن اللازم.  
+ 
+12. Administering a Tube Feeding 
+إعطاء التغذية عبر الأنبوب 
+Definition 
+Providing nutrition through a nasogastric or gastrostomy tube. 
+إعطاء التغذية من خلال أنبوب أنفي معدي أو معدي جلدي. 
+Purpose 
+• Provide adequate nutrition 
+• Maintain body weight 
+توفير تغذية كافية– الحفاظ على وزن الجسم.  
+Indications 
+• Dysphagia 
+• Unconscious patient 
+• Neurological disorders 
+صعوبة البلع–  فقدان الوعي – أمراض عصبية.  
+Contraindications 
+• Intestinal obstruction 
+• Severe vomiting or diarrhea 
+انسداد الأمعاء– قيء أو إسهال شديد.  
+Complications 
+• Aspiration 
+• Diarrhea
+
+• Tube displacement 
+شفط رئوي– إسهال – تحرك الأنبوب.  
+Nursing Considerations 
+• Check tube placement before feeding 
+• Elevate head 30–45° 
+• Flush tube before and after feeding 
+التأكد من مكان الأنبوب– رفع الرأس –  غسل الأنبوب قبل وبعد التغذية.  
+ 
+13. Gastric Lavage (غسيل المعدة) 
+Definition 
+Gastric lavage is the washing of stomach contents using a tube and fluid. 
+غسيل المعدة هو تنظيف محتويات المعدة باستخدام أنبوب وسوائل. 
+Purpose 
+• Remove ingested toxins 
+إزالة المواد السامة المبتلعة. 
+Indications 
+• Acute poisoning 
+• Drug overdose (early) 
+تسمم حاد– جرعات زائدة من الأدوية في وقت مبكر.  
+Contraindications 
+• Corrosive poisoning 
+• Esophageal varices 
+• Unprotected airway 
+تسمم بمواد حارقة– دوالي المريء – عدم تأمين مجرى الهواء.  
+Complications 
+• Aspiration pneumonia 
+• Electrolyte imbalance
+
+• Esophageal perforation 
+التهاب رئوي شفطي– اضطراب الأملاح – ثقب المريء.  
+Nursing Considerations 
+• Ensure airway patency 
+• Monitor vital signs continuously 
+• Use prescribed solution only 
+تأمين مجرى الهواء– متابعة العلامات الحيوية – استخدام المحلول الموصوف فقط.  
+ 
+14. Nasogastric Removal Procedure 
+إجراء إزالة الأنبوب الأنفي المعدي 
+Definition 
+Safe removal of the nasogastric tube when it is no longer needed. 
+إزالة الأنبوب الأنفي المعدي بطريقة آمنة بعد انتهاء الحاجة إليه. 
+Purpose 
+• Discontinue feeding or decompression 
+إيقاف التغذية أو التفريغ المعدي. 
+Indications 
+• Patient condition improved 
+• Oral intake resumed 
+تحسن حالة المريض– عودة التغذية الفموية.  
+Contraindications 
+• Recent gastric or nasal surgery (relative) 
+جراحة حديثة بالمعدة أو الأنف (نسبي. 
+Complications 
+• Nasal mucosal irritation 
+• Nausea or vomiting 
+تهيج مخاطية الأنف– غثيان أو قيء.  
+Nursing Considerations
+
+• Explain procedure to patient 
+• Ask patient to take deep breath and hold 
+• Inspect tube after removal 
+شرح الإجراء– نفس عميق أثناء الإزالة  – فحص الأنبوب بعد الإزالة.

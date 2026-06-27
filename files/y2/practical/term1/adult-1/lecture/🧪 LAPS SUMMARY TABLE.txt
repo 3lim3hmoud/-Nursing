@@ -1,0 +1,84 @@
+LAPS SUMMARY TABLE (مختصر التحاليل والفحوصات) 
+Test Name (اسم التحليل) Includes (بيحتوي على) Normal Range (القيم الطبيعية) Explanation (English + Arabic) 
+CBC (Complete Blood 
+Count) RBCs, WBCs, Hb, HCT, Platelets  Measures overall blood health → يقيس صحة الدم العامة 
+RBCs (Red Blood Cells) – M: 4.7–6.1 ×10¹² /LF: 4.2–5.4 
+×10¹² /L 
+Carry oxygen → ↓ = Anemia (فقر دم = ↑ / )
+Dehydration (جفاف) 
+WBCs (White Blood Cells) – 4,500–11,000 /mm³ Fight infection → ↑ = Infection (عدوىLow 
+immunity (ضعف مناعة) 
+Platelets (PLTs) – 150,000–400,000 /mm³ Blood clotting → ↓ = Bleeding risk (خطر نزيف = ↑ / )
+Infection (عدوى) 
+Hemoglobin (Hb) – M: 14–17 g/dLF: 12–16 
+g/dL Oxygen carrier → ↓ = Anemia / ↑ = Polycythemia 
+Hematocrit (HCT) – M: 42–52%F: 36–48% % of blood cells → ↓ = Anemia / ↑ = Dehydration 
+LFT (Liver Function Test) AST, ALT, ALP , Albumin, Bilirubin, 
+Ammonia  Assesses liver health → يقيم وظائف الكبد 
+AST (Aspartate 
+Transaminase) – 8–20 U/L ↑ = Liver or muscle injury (تلف كبد أو عضلة) 
+ALT (Alanine 
+Transaminase) – 8–40 U/L ↑ = Hepatitis (التهاب كبد) 
+Albumin (ALB) – 3.5–5.5 g/dL Maintains fluid balance → ↓ = Liver disease / ↑ = 
+Dehydration 
+Bilirubin – 0.2–1.0 mg/dL ↑ = Liver or bile duct problem (مشاكل كبد أو مرارة)
+
+Test Name (اسم التحليل) Includes (بيحتوي على) Normal Range (القيم الطبيعية) Explanation (English + Arabic) 
+Ammonia (NH₃) – 15–56 µg/dL ↑ = Liver failure (فشل كبدي) 
+RFT (Renal Function Test) BUN, Creatinine, Uric Acid, 
+Electrolytes  Evaluates kidney function → يقيم وظائف الكلى 
+BUN (Blood Urea 
+Nitrogen) – 7–18 mg/dL ↑ = Kidney problem / ↓ = Malnutrition 
+Creatinine – 0.8–1.2 mg/dL Reflects kidney filtration → ↑ = Renal failure (فشل
+كلوي) 
+Uric Acid – 3.5–7.2 mg/dL ↑ = Gout (نقرسKidney issue (مشكلة كلى) 
+Electrolytes Test Na⁺, K⁺, Cl⁻  Monitors fluid & nerve balance → توازن السوائل
+والأعصاب 
+Sodium (Na⁺) – 135–145 mmol/L ↑ = Dehydration / ↓ = Overhydration 
+Potassium (K⁺) – 3.5–5.1 mEq/L ↑ = Kidney issue / ↓ = Diuretics effect 
+Chloride (Cl⁻) – 95–105 mEq/L Keeps fluid balance (يحافظ على توازن السوائل) 
+Lipid Profile Total Cholesterol, HDL, LDL, 
+Triglycerides  Evaluates fats in blood → يفحص دهون الدم 
+Total Cholesterol – <200 mg/dL ↑ = Risk of heart disease (خطر أمراض القلب) 
+HDL (Good Cholesterol) – >40 mg/dL Protects heart (يحمي القلب) 
+LDL (Bad Cholesterol) – <100 mg/dL ↑ = Plaque & heart disease (تصلب شرايين) 
+Triglycerides – <150 mg/dL ↑ = Poor diet / diabetes (نظام غذائي سيء أو سكري)
+
+Test Name (اسم التحليل) Includes (بيحتوي على) Normal Range (القيم الطبيعية) Explanation (English + Arabic) 
+Blood Glucose Tests FBS, RBS, HbA1c  Measures blood sugar → يقيس مستوى السكر 
+FBS (Fasting Blood Sugar) – 65–99 mg/dL ↑ = Prediabetes / Diabetes 
+HbA1c – <5.7% normal / ≥6.5% 
+diabetes Average 3-month sugar (معدل السكر خلال٣ شهور)  
+Cardiac Markers Troponin, CK-MB, Myoglobin, BNP  Detect heart injury → يكشف تلف القلب 
+Troponin – cTnT <0.2 mcg/LcTnI <0.03 
+mcg/L ↑ = Myocardial infarction (جلطة قلبية) 
+Myoglobin – 1–5.3 nmol/L ↑ = Muscle or heart injury 
+BNP (Brain Natriuretic 
+Peptide) – <100 mcg/L ↑ = Heart failure (فشل القلب) 
+Urinalysis (U/A) Color, pH, Protein, Glucose, Ketone, 
+RBC, WBC pH 4.6–8.0 Detects infection or kidney issue → عدوى أو مشكلة كلى 
+Urine C & S Bacteria identification <10,000 bacteria/ml Detects UTI (عدوى بولية) 
+Urine Toxicology Drugs & metabolites – Detects drug use (كشف تعاطي) 
+ 
+🩻 Diagnostic Procedures (الفحوصات التشخيصية) 
+Procedure (الاختبار) Focus (بيركز على) Purpose / Result (الهدف / النتيجة) شرح مختصر English + Arabic) 
+X-Ray Bones, lungs, heart Detect fracture, infection Uses radiation → تصوير العظام أو الرئة 
+CT Scan Brain, chest, abdomen Detect tumor, bleeding 3D imaging (تصوير مقطعي ثلاثي)
+
+Procedure (الاختبار) Focus (بيركز على) Purpose / Result (الهدف / النتيجة) شرح مختصر English + Arabic) 
+MRI Soft tissues, brain, spine Detect nerve damage No radiation (بدون إشعاع) 
+Ultrasound Abdomen, pelvis Detect stones, cysts Safe sound waves imaging (بالموجات فوق الصوتية) 
+ECG (Electrocardiogram) Heart rhythm Detect arrhythmia, MI Electrical heart record (رسم القلب الكهربائي) 
+ECHO (Echocardiography) Heart chambers & valves Evaluate heart function Sound wave image of heart (صورة صوتية للقلب) 
+Angiography Blood vessels Detect blockage Uses contrast dye (صبغة للأوعية) 
+Endoscopy GI tract View inside stomach Detect ulcers, bleeding (قرح أو نزيف) 
+Bronchoscopy Airways Detect infection, biopsy Tube into lungs (منظار للرئة) 
+Cystoscopy Bladder Detect stones, tumor View inside bladder (فحص المثانة) 
+EEG (Electroencephalogram) Brain activity Detect seizure, coma Records brain waves (يسجل موجات الدماغ) 
+EMG (Electromyography) Muscles & nerves Detect muscle weakness Tests nerve conduction (اختبار العضلات والأعصاب) 
+PFT (Pulmonary Function Test) Lungs Measure capacity Detect asthma, COPD (الربو أو الانسداد) 
+Thallium Scan Heart blood flow Detect poor perfusion Cold areas = Low blood (تدفق دم ضعيف) 
+Myelography Spinal cord Detect herniated disk Contrast spinal test (فحص النخاع بالصبغة) 
+TEE (Transesophageal Echo) Heart via esophagus Evaluate valves Inside view of heart (صورة من المريء) 
+Doppler Study Blood flow Detect clots Sound test for vessels (فحص تدفق الدم) 
+Tilt Table Test BP & pulse response Fainting (Syncope) Check body reaction to standing (اختبار الإغماء)

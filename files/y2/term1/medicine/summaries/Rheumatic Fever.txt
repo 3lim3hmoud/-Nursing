@@ -1,0 +1,100 @@
+Rheumatic Fever – Simplified Bilingual Notes 
+(حمّى الروماتيزم– شرح مبسّط ثنائي اللغة)  
+ 
+Learning Objectives (أهداف التعلم) 
+Define rheumatic fever and its etiology. 
+• تعريف حمى الروماتيزم وسبب حدوثها. 
+Describe the pathophysiology and Jones criteria for diagnosis. 
+• شرح آلية المرض ومعايير جونز للتشخيص. 
+Identify clinical manifestations and complications. 
+• تحديد الأعراض والمضاعفات. 
+Discuss management, prevention, and nursing care. 
+• مناقشة العلاج والوقاية ودور التمريض. 
+ 
+Introduction (المقدمة) 
+Rheumatic fever is an inflammatory disease that occurs after infection with Group A 
+Streptococcus. 
+حمّى الروماتيزم هي مرض التهابي يحدث بعد عدوى بكتيريا المكورات العقدية من المجموعة A. 
+It mainly affects the heart, joints, skin, and central nervous system. 
+تؤثر بشكل أساسي على القلب والمفاصل والجلد والجهاز العصبي المركزي. 
+It commonly affects children between 5–15 years. 
+تظهر غالبًا عند الأطفال من عمر5–15  سنة.  
+If untreated, it may lead to chronic rheumatic heart disease. 
+وإذا لم تُعالج قد تؤدي إلى مرض قلبي روماتيزمي مزمن. 
+ 
+Etiology & Pathophysiology (السبب وآلية المرض) 
+Rheumatic fever is a delayed autoimmune reaction after throat infection with Group A 
+Streptococcus.
+
+حمّى الروماتيزم هي استجابة مناعية متأخرة بعد عدوى حلقية ببكتيريا المجموعة A. 
+The body produces antibodies that mistakenly attack heart, joints, brain, and skin. 
+الجسم ينتج أجسامًا مضادة تهاجم القلب والمفاصل والدماغ والجلد بالخطأ. 
+This causes inflammation called pancarditis (inflammation of all heart layers). 
+يسبب التهابًا عامًا في القلب يسمى التهاب القلب الشامل. 
+ 
+Clinical Features & Diagnosis (الأعراض والتشخيص) 
+Diagnosis is based on the revised Jones criteria plus proof of recent streptococcal 
+infection. 
+يتم التشخيص باستخدام معايير جونز المعدّلة مع وجود دليل على عدوى سابقة بالبكتيريا. 
+ 
+Major Criteria (المعايير الكبرى) 
+Carditis 
+• التهاب القلب 
+Polyarthritis 
+• التهاب مفاصل متعدد 
+Chorea (Sydenham’s chorea) 
+• رقص سيدنهام (حركات لا إرادية 
+Erythema marginatum 
+• طفح جلدي مميّز 
+Subcutaneous nodules 
+• عُقيدات تحت الجلد 
+ 
+Minor Criteria (المعايير الصغرى) 
+Fever 
+• حمى
+
+• Arthralgia 
+• ألم بالمفاصل 
+Elevated ESR or CRP 
+• ارتفاع معدل الالتهاب ESR أو CRP) 
+• Prolonged PR interval on ECG 
+• إطالة فترة PR في تخطيط القلب 
+ 
+Management (العلاج) 
+1. Antibiotic therapy: Benzathine penicillin G (single IM injection). 
+١ .مضاد حيوي: بنزاثين بنسلين G (حقنة عضل واحدة.) 
+2. Anti-inflammatory drugs: aspirin or corticosteroids. 
+٢ .أدوية مضادة للالتهاب: الأسبرين أو الكورتيزون. 
+3. Supportive care: rest, nutrition, fluids. 
+٣ .رعاية داعمة: الراحة والتغذية الجيدة والسوائل. 
+4. Long-term prophylaxis: monthly penicillin injections for 5–10 years or until 
+adulthood. 
+٤ .الوقاية الطويلة: حقنة بنسلين كل شهر لمدة  5–10  سنوات أو حتى سن البلوغ.  
+ 
+Nursing Care (دور التمريض) 
+Monitor vital signs and cardiac function. 
+• مراقبة العلامات الحيوية ووظائف القلب. 
+Give prescribed medications and antibiotics. 
+• إعطاء الأدوية والمضادات الحيوية الموصوفة. 
+Educate family about adherence to prophylaxis. 
+• توعية الأسرة بأهمية الالتزام بالحقن الوقائية. 
+Encourage rest during acute episodes.
+
+• تشجيع المريض على الراحة أثناء المرحلة الحادة. 
+Promote oral and throat hygiene to prevent infections. 
+• تعزيز نظافة الفم والحنجرة لمنع العدوى. 
+ 
+Prevention (الوقاية) 
+Primary prevention: treat throat infections early. 
+• الوقاية الأولية: علاج التهاب الحلق مبكرًا. 
+Secondary prevention: continue long-term monthly penicillin. 
+• الوقاية الثانوية: الالتزام بحقن البنسلين الشهرية لفترات طويلة. 
+ 
+Summary (الخلاصة) 
+Rheumatic fever is a serious autoimmune disease that can cause long-term heart 
+damage. 
+حمّى الروماتيزم مرض مناعي خطير قد يسبب تلف قلب مزمن. 
+Early diagnosis and proper treatment reduce complications. 
+التشخيص المبكر والعلاج الصحيح يقللان من المضاعفات. 
+Prevention and long-term prophylaxis are essential. 
+الوقاية والمتابعة بالحقن الشهرية ضرورية جدًا.

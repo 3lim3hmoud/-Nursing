@@ -1,0 +1,187 @@
+Central Venous Pressure (CVP) Monitoring – Procedure Checklist 
+(مراقبة الضغط الوريدي المركزي) 
+# Step (English) الترجمة بالعربي 
+           Simplified 
+Explanation 
+(تبسيط) 
+A. Preparation 
+Phase    
+1 Verify the physician's order. تحقق من أمر الطبيب. 
+تأكد أن الطبيب 
+طلب الإجراء 
+رسميًا. 
+2 Identify patient using two 
+identifiers. 
+تأكد من هوية المريض
+باستخدام طريقتين. 
+لمنع أي خطأ أو  
+خلط. 
+3 Explain the procedure to the 
+patient. 
+اشرح للمريض
+الإجراء. 
+لتهدئة المريض 
+وتشجيعه على  
+التعاون. 
+4 Perform hand hygiene and don 
+gloves/PPE. 
+اغسل يديك وارتدِ
+القفازات ومعدات 
+الوقاية. 
+منع العدوى داخل  
+المستشفى. 
+5 Gather and inspect all 
+equipment. 
+جهز جميع الأدوات
+وتأكد من صلاحيتها. 
+ضمان أن كل شيء  
+جاهز ومعقم. 
+6 
+Assess insertion site of central 
+line for signs of infection or 
+dislodgement. 
+افحص موقع القسطرة
+المركزية لأي عدوى  
+أو تحرك من مكانه. 
+لتجنب المضاعفات 
+أو قراءة خاطئة. 
+B. Patient 
+Positioning and 
+System Setup 
+   
+7 Position patient supine or semi-
+Fowler’s (0–45°). 
+ضع المريض مستلقيًا
+أو شبه جالس. 
+الوضع يؤثر على  
+القراءة بشكل كبير.
+
+# Step (English) الترجمة بالعربي 
+           Simplified 
+Explanation 
+(تبسيط) 
+8 
+Identify phlebostatic axis (4th 
+intercostal space, mid-axillary 
+line). 
+حدد محور الضغط
+الوريدي (المسافة  
+الوربية الرابعة، الخط  
+الإبطي الأوسط). 
+نقطة مرجعية  
+أساسية للقياس  
+الصحيح. 
+9 
+Secure transducer or manometer 
+at the level of the phlebostatic 
+axis. 
+ثبت الجهاز أو
+المانومتر عند محور  
+الضغط الوريدي. 
+لضمان دقة القراءة. 
+10 Zero the transducer (if using 
+electronic system). 
+صفّر الجهاز إذا كان
+إلكتروني. 
+إزالة تأثير الضغط 
+الجوي من الحساب. 
+11 Prime IV tubing and flush system 
+with saline. 
+املا الأنبوب واغسله
+بمحلول ملحي. 
+منع وجود فقاعات 
+هواء أو انسداد. 
+Manual System 
+Notes 
+إذا تم استخدام المانومتر اليدوي: لا يتم
+تصفير الجهاز، فقط تثبيته عند المحور 
+المرجعي، وتوصيله بخط CVP، وملؤه
+بالمحلول ثم قراءة المستوى عند نهاية 
+الزفير. 
+  
+C. Measuring 
+CVP    
+12 
+Connect CVP line to manometer 
+or transducer system via 
+stopcock. 
+صل خط CVP 
+بالمانومتر أو الجهاز
+عبر الصمام ثلاثي  
+الاتجاه. 
+توصيل آمن بدون  
+تلوث. 
+13 For manometer: Fill column to 
+20–25 cm H₂O using IV bag. 
+املأ عمود المانومتر
+حتى 20–25 سم ماء.  
+لتفادي الرجوع  
+العكسي للسوائل. 
+14 Turn stopcock to open connection 
+between manometer and patient. 
+افتح الصمام بين
+المريض والمانومتر. 
+لبدء قياس الضغط  
+الفعلي.
+
+# Step (English) الترجمة بالعربي 
+           Simplified 
+Explanation 
+(تبسيط) 
+15 Read and record the CVP level at 
+end-expiration. 
+اقرأ وسجل مستوى
+الضغط في نهاية  
+الزفير. 
+أدق نقطة للقراءة. 
+16 Return stopcock to IV fluids or 
+flush line. 
+أعد الصمام إلى وضع
+السوائل أو اغسل  
+الخط. 
+الحفاظ على سالكية  
+الخط. 
+17 Compare readings with baseline 
+and trend over time. 
+قارن القراءة بالقراءات
+السابقة. 
+الاتجاه أهم من 
+القراءة الواحدة. 
+D. Post-
+Procedure Care    
+18 
+Assess for complications: 
+infection, bleeding, air embolism, 
+arrhythmia. 
+افحص وجود
+مضاعفات: عدوى،  
+نزيف، انسداد هوائي،  
+اضطراب نبض. 
+الاكتشاف المبكر  
+يمنع الضرر. 
+19 Change dressings or secure 
+connections if needed. 
+غيّر الضمادات أو ثبّت
+الوصلات إذا لزم. 
+للحفاظ على بيئة 
+معقمة. 
+20 Dispose of used supplies in 
+appropriate containers. 
+تخلص من الأدوات
+المستعملة بشكل آمن. 
+لمنع العدوى أو  
+التلوث. 
+21 Remove gloves, perform hand 
+hygiene. 
+اخلع القفازات واغسل
+يديك. كسر سلسلة العدوى. 
+22 
+Document: CVP reading, patient 
+position, respiratory phase, line 
+status, and any complications. 
+سجل: قراءة CVP،
+وضع المريض، مرحلة  
+التنفس، حالة الخط،  
+وأي مضاعفات. 
+توثيق قانوني ودقيق  
+لرعاية المريض.

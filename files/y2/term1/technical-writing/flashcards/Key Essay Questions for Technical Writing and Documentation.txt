@@ -1,0 +1,101 @@
+Key Essay Questions for Technical Writing and Documentation 
+الأسئلة المقالية الأساسية في الكتابة الفنية والتوثيق 
+ 
+1. Technical Communication: Definition and Core Purpose 
+الاتصال الفني: التعريف والهدف الأساسي 
+Q: Define Technical Communication and state its core purpose. 
+س: عرّف الاتصال الفني واذكر هدفه الأساسي. 
+A: Technical communication is the art and science of making complex technical 
+information accessible, usable, and relevant to a variety of audiences. 
+الاتصال الفني هو فن وعلم جعل المعلومات التقنية المعقدة سهلة الفهم والاستخدام ومناسبة لمختلف الفئات من 
+الجمهور. 
+Its purpose is to manage technical information in ways that allow people to take actions. 
+والهدف منه هو تنظيم المعلومات التقنية بطريقة تمكّن الناس من اتخاذ الإجراءات المناسبة.  
+ 
+2. The Technical Writing Process 
+عملية الكتابة الفنية 
+Q: What are the five main stages involved in the Technical Writing Process? 
+س: ما هي المراحل الخمس الرئيسية في عملية الكتابة الفنية؟ 
+A: The five stages are: 
+المراحل الخمس هي: 
+1. Planning and researching – التخطيط والبحث. 
+2. Organizing and drafting – التنظيم والكتابة الأولية. 
+3. Improving the style – تحسين الأسلوب. 
+4. Designing the document – تصميم المستند.
+
+5. Revising and editing – المراجعة والتحرير. 
+ 
+3. Principles of Accessibility 
+مبادئ سهولة الوصول في المستند الفني 
+Q: List four characteristics that ensure a technical document achieves 'Accessibility'. 
+س: اذكر أربع خصائص تضمن أن المستند الفني يحقق مبدأ "سهولة الوصول." 
+A: Accessibility is achieved through: 
+تتحقق سهولة الوصول من خلال: 
+1. Accuracy – الدقة (خلو المستند من الأخطاء. 
+2. Clarity – الوضوح (عدم وجود غموض. 
+3. Completeness – الاكتمال (تضمين جميع المعلومات الضرورية. 
+4. Organization – التنظيم (ترتيب المحتوى بشكل منطقي. 
+ 
+4. The Role of Genres 
+دور الأنواع النصية Genres) في الكتابة الفنية 
+Q: Briefly explain how 'Genre' shapes a technical document. 
+س: اشرح باختصار كيف يؤثر "النوع النصي" في شكل المستند الفني. 
+A: Genres are relatively stable patterns that reflect workplace activities and practices. 
+الأنواع النصية هي أنماط ثابتة نسبيًا تعكس أنشطة وممارسات بيئة العمل. 
+They shape a document’s content, organization, style, design, and medium. 
+وهي تحدد محتوى المستند وتنظيمه وأسلوبه وتصميمه وطريقته في العرض.  
+Understanding the genre helps anticipate readers’ needs and organize information 
+effectively. 
+وفهم النوع النصي يساعد الكاتب على توقع احتياجات القارئ وتنظيم المعلومات بشكل فعّال.
+
+5. Importance of Nursing Report Sheets 
+أهمية نماذج تقارير التمريض 
+Q: Why are Nursing Report Sheets vital in patient care (mention two benefits)? 
+س: لماذا تعتبر نماذج تقارير التمريض مهمة في رعاية المرضى؟ (اذكر فائدتين 
+A: Nursing report sheets are essential communication tools that: 
+تُعد نماذج تقارير التمريض أدوات تواصل أساسية حيث إنها: 
+1. Improve patient care through better communication and teamwork. 
+تحسّن رعاية المرضى من خلال تعزيز التواصل والتعاون. 
+2. Enhance safety by identifying and preventing potential risks early. 
+تعزز السلامة من خلال تحديد المخاطر المحتملة والتعامل معها بسرعة. 
+3. Reduce errors by using a standardized format instead of unstructured notes. 
+تقلل الأخطاء بفضل استخدام نموذج موحّد بدلاً من الملاحظات غير المنظمة . 
+ 
+6. Efficient Documentation Tips 
+نصائح للتوثيق الفعّال 
+Q: State three key tips for filling out a Nursing Report Sheet efficiently. 
+س: اذكر ثلاث نصائح رئيسية لتعبئة نموذج تقرير التمريض بكفاءة. 
+A: Nurses should: 
+ينبغي للممرضين أن: 
+1. Use abbreviations and symbols (e.g., SOB for shortness of breath). 
+يستخدموا الاختصارات والرموز (مثل SOB = ضيق التنفس.) 
+2. Focus on what’s important (e.g., highlight abnormal lab results). 
+يركزوا على النقاط المهمة (مثل القيم غير الطبيعية في التحاليل.
+
+3. Update as you go (record information immediately). 
+يحدثوا المعلومات أولاً بأول دون تأجيل . 
+ 
+7. Characteristics of Good Records 
+خصائص السجلات الجيدة 
+Q: List three essential characteristics of good recording and reporting. 
+س: اذكر ثلاث خصائص أساسية للتسجيل والتقرير الجيد. 
+A: Good records must be: 
+يجب أن تكون السجلات الجيدة: 
+1. Accurate – دقيقة. 
+2. Thorough – شاملة. 
+3. Confidential – سرّية. 
+Other qualities: Conscious, Up to date, Organized, Objective.) 
+(ومن الخصائص الأخرى: واعية، محدثة، منظمة، موضوعية). 
+ 
+8. Purpose of Keeping Records 
+أهداف حفظ السجلات 
+Q: Mention three purposes for keeping records in a health care organization. 
+س: اذكر ثلاثة أهداف لحفظ السجلات في مؤسسة الرعاية الصحية. 
+A: Records are kept for: 
+تُحفظ السجلات من أجل: 
+1. Communication – التواصل بين الفريق الصحي. 
+2. Legal documentation – التوثيق القانوني.
+
+3. Aid to diagnosis – المساعدة في التشخيص. 
+Also for education, research, and continuity of care.) 
+(وكذلك لأغراض التعليم والبحث واستمرارية الرعاية).

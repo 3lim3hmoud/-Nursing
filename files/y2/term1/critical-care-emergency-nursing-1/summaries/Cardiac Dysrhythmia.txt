@@ -1,0 +1,273 @@
+Cardiac Dysrhythmia – Full Simplified Bilingual Notes 
+اضطرابات نظم القلب– المُلخّص الكامل المبسّط ثنائي اللغة  
+ 
+      Introduction 
+The following is a comprehensive summary of the lecture material on Cardiac 
+Dysrhythmia. 
+التالي هو ملخص شامل لمحتوى المحاضرة الخاصة باضطرابات نظم القلب. 
+This lecture was prepared by Dr Ghada Elsayed. 
+هذه المحاضرة أعدّتها الدكتورة غادة السيد. 
+ 
+      Dysrhythmia Outlines 
+The lecture outlines cover the following topics: 
+تشمل مخططات المحاضرة الموضوعات التالية: 
+• Definition of dysrhythmia. 
+تعريف اضطراب نظم القلب. 
+• Sinus dysrhythmias: Sinus tachycardia and Sinus Bradycardia. 
+اضطرابات الجيب: تسرّع الجيب وبُطء الجيب. 
+• Atrial dysrhythmias: Atrial Flutter and Atrial Fibrillation. 
+اضطرابات أذينية: الرفرفة الأذينية والرجفان الأذيني. 
+• Ventricular dysrhythmia: Ventricular tachycardia and Ventricular fibrillation. 
+اضطرابات بطينية: تسرّع البطين والرجفان البطيني. 
+ 
+      Pre-Test Questions
+
+The pre-test includes questions such as: 
+يشمل الاختبار القبلي أسئلة مثل: 
+• Mention types of dysrhythmia. 
+اذكري أنواع اضطرابات نظم القلب. 
+• Mention management of ventricular fibrillation. 
+اذكري علاج الرجفان البطيني. 
+• Count the rate (A heart rate of 70 beat/m is noted). 
+احسبي المعدّل (تم تسجيل معدل قلب70 نبضة/الدقيقة.  
+ 
+    Sinus Dysrhythmias 
+ 
+1) Sinus Tachycardia – تسرّع الجيب 
+    Definition and Characteristics 
+Sinus tachycardia originates in the SA node and discharges impulses regularly at a rate 
+between 100–160 times/min. 
+يبدأ تسرّع الجيب من عقدة SA ويطلق نبضات بانتظام بمعدل بين100–160 نبضة/الدقيقة.  
+It meets all criteria of normal sinus rhythm except the rate is > 100 bpm. 
+يستوفي كل معايير نظم الجيب الطبيعي ما عدا أن المعدل يزيد عن100 نبضة/الدقيقة.  
+It is a normal response to sympathetic stimulation and in children under 6 years. 
+وهو استجابة طبيعية لتنبيه الجهاز السمبثاوي، وهو طبيعي أيضًا لدى الأطفال أقل من6 سنوات.  
+ 
+    ECG Characteristics of Sinus Tachycardia 
+Rhythm: Atrial and ventricular rhythm are regular. 
+النظم: النظم الأذيني والبطيني منتظمان.
+
+Rate: Atrial and ventricular rate are greater than 100 bpm. 
+المعدل: المعدل الأذيني والبطيني أكبر من100 نبضة/دقيقة.  
+P wave: Normal size and configuration; precedes each QRS. 
+موجة P: طبيعية وتسبق كل مركب QRS. 
+PR interval: Within normal limits (0.12–0.20 sec). 
+فترة PR: ضمن الحد الطبيعي0.12–0.20 ثانية.  
+QRS complex: Normal duration (0.06–0.10 sec). 
+مركب QRS: طبيعي0.06–0.10 ثانية.  
+QT interval: Within normal limit but often shortened. 
+فترة QT: ضمن الطبيعي ولكن غالبًا تكون قصيرة. 
+All ECG characteristics are normal except the high rate. 
+كل خصائص رسم القلب طبيعية ما عدا زيادة معدل ضربات القلب. 
+ 
+    Causes of Sinus Tachycardia 
+Normal sympathetic responses: exercise, pain, stress, fear, anxiety, coffee. 
+استجابات سمبثاوية طبيعية: الرياضة، الألم، التوتر، الخوف، القلق، القهوة. 
+Cardiac conditions: heart failure, cardiogenic shock, pericarditis. 
+أمراض القلب: فشل القلب، الصدمة القلبية، التهاب التامور. 
+Other: shock, anemia, respiratory distress, pulmonary embolism, hyperthyroidism. 
+أخرى: صدمة، أنيميا، ضيق تنفس، جلطة رئوية، فرط نشاط الغدة الدرقية. 
+Drugs: Atropine and dopamine; alcohol & nicotine. 
+أدوية: الأتروبين والدوبامين؛ الكحول والنيكوتين. 
+ 
+    Signs and Symptoms
+
+Pulse >100 bpm with regular rhythm; patient may be asymptomatic. 
+نبض أعلى من100 مع نظم منتظم؛ قد يكون المريض بدون أعراض.  
+It is dangerous in ischemic heart disease because it reduces filling time and cardiac 
+output. 
+يصبح خطيرًا في مرضى نقص التروية لأنه يقلل امتلاء البطين ويخفض النتاج القلبي . 
+It may indicate early LVF, shock, or infarct extension. 
+قد يدل على بداية فشل البطين الأيسر أو صدمة أو امتداد احتشاء. 
+ 
+    Treatment Goals 
+Maintain cardiac output, tissue perfusion, and correct the underlying cause. 
+الحفاظ على النتاج القلبي، وتروية الأنسجة، وعلاج السبب الأساسي. 
+ 
+2) Sinus Bradycardia – بُطء الجيب 
+    Definition 
+Sinus bradycardia occurs when the SA node generates fewer than 60 bpm. 
+يحدث بُطء الجيب عندما تنتج عقدة SA أقل من60 نبضة/الدقيقة.  
+ 
+    Signs and Symptoms 
+Asymptomatic bradycardia: No signs of decreased cardiac output. 
+البطء بدون أعراض: لا تظهر علامات انخفاض النتاج القلبي. 
+Symptomatic bradycardia includes hypotension, cold skin, dizziness, blurred vision, 
+chest pain, syncope, crackles. 
+البطء العرضي: يشمل هبوط ضغط، تعرق وبرودة، دوخة، زغللة، ألم صدر، إغماء، كراكل بالرئتين.
+
+Treatment 
+No treatment unless symptoms appear. 
+لا يُعالَج إلا إذا ظهرت أعراض. 
+Correct underlying causes. 
+علاج السبب الأساسي. 
+Use drugs: Atropine, Dopamine, Epinephrine. 
+استخدام أدوية: أتروبين، دوبامين، إبينفرين. 
+ 
+Comparison: Normal Sinus Rhythm vs Bradycardia vs Tachycardia 
+(الجدول كما هو بدون تغيير) 
+ 
+    Atrial Dysrhythmias 
+ 
+1) Atrial Flutter – الرفرفة الأذينية 
+    Mechanism 
+Abnormal focus in atrium fires rapid regular impulses. 
+بؤرة غير طبيعية بالأذين تطلق نبضات سريعة ومنتظمة. 
+AV node blocks some impulses to protect ventricles. 
+العقدة AV تمنع بعض النبضات لحماية البطين. 
+ 
+    ECG Characteristics 
+Atrial rhythm: Regular; Ventricular rhythm may be regular or irregular. 
+النظم الأذيني منتظم؛ البطيني قد يكون منتظمًا أو غير منتظم.
+
+Atrial rate: 250–350 bpm. 
+المعدل الأذيني250–350 نبضة/دقيقة.  
+P wave replaced by saw-tooth flutter waves. 
+موجة P تستبدل بموجات منشارية الشكل. 
+QRS normal; PR interval not measurable; P:QRS is many:1. 
+مركب QRS طبيعي؛ فترة PR غير قابلة للقياس؛ نسبة P إلى QRS تكون عديدة1 . 
+ 
+    Signs and Symptoms 
+Often asymptomatic unless rapid ventricular response (>100 bpm). 
+غالبًا بدون أعراض إلا إذا كان البطين سريعًا فوق100 نبضة/دقيقة.  
+Rapid response reduces filling and cardiac output → hemodynamic compromise. 
+الاستجابة السريعة تقلل الامتلاء والنتاج القلبي → هبوط ديناميكي دموي. 
+ 
+    Causes 
+CAD, cor pulmonale, rheumatic disease, hypoxemia, alcoholism. 
+مرض الشريان التاجي، القلب الرئوي، الحمى الروماتيزمية، نقص الأكسجين، الكحول. 
+ 
+    Treatment 
+Two goals: rhythm control & rate control. 
+الهدفان: التحكم في النظم + التحكم في المعدل. 
+Medications: Amiodarone, Sotalol for rhythm control. 
+الأدوية: أميودارون وسوتالول للتحكم في النظم. 
+Acute treatment based on stability: 
+العلاج الحاد يعتمد على الاستقرار:
+
+• Rhythm control: synchronized cardioversion, dofetilide, ibutilide. 
+التحكم بالنظم: تقويم نظم متزامن، دوفيتيلايد، إيبوتيلايد. 
+• Rate control: beta blockers, diltiazem, verapamil. 
+التحكم بالمعدل: محصرات بيتا، ديلتيازيم، فيراباميل. 
+• If unstable → synchronized cardioversion. 
+إذا كان المريض غير مستقر → صدمة كهربائية متزامنة. 
+ 
+2) Atrial Fibrillation – الرجفان الأذيني 
+    Definition 
+AF is rapid, irregular atrial activity that may progress from intermittent to permanent. 
+الرجفان الأذيني هو نشاط أذيني سريع وغير منتظم، قد يبدأ متقطعًا ثم يصبح دائمًا. 
+ 
+    ECG Characteristics 
+Heart rate variable. 
+معدل القلب متغير. 
+Rhythm irregular. 
+النظم غير منتظم. 
+P wave wavy/absent; PR not applicable; QRS < 0.12 sec. 
+موجة P مموجة؛ PR غير قابلة للقياس؛ QRS أقل من0.12 ثانية.  
+ 
+    Causes 
+Hypertension, CAD, valve disease, LA enlargement, HCM, pericarditis. 
+ضغط مرتفع،CAD، أمراض صمامات، تضخم الأذين الأيسر، اعتلال عضلة القلب الضخامي، التهاب التامور.
+
+Symptoms 
+Palpitations, fatigue, dyspnea, dizziness, exercise intolerance, chest pain. 
+خفقان، تعب، ضيق تنفس، دوخة، عدم تحمل المجهود، ألم صدري. 
+ 
+    Treatment 
+Three goals: rate control, cardioversion, anticoagulation. 
+ثلاثة أهداف: التحكم في المعدل، تقويم النظم، منع الجلطات. 
+Electrical cardioversion: 
+تقويم كهربائي: 
+• Up to 50% revert spontaneously. 
+حوالي50% يختفي تلقائيًا.  
+• Use DC shock (100–200 J). 
+صدمة كهربائية100–200 جول.  
+Pharmacologic cardioversion (e.g., amiodarone). 
+تقويم دوائي (مثل الأميودارون. 
+ 
+    Ventricular Dysrhythmias 
+ 
+1) PVC – النبضات البطينية المبكرة 
+    Definition 
+PVC is an early ectopic beat from ventricles → no P wave. 
+PVC هي نبضة مبكرة من البطين → بدون موجة P.
+
+ECG Characteristics 
+Rhythm: Irregular. 
+النظم: غير منتظم. 
+P wave: Absent before PVC. 
+موجة P: غائبة قبل PVC. 
+QRS: Wide; T wave opposite direction; compensatory pause. 
+QRS: عريض؛ T معاكسة؛ توقف معاوضي. 
+ 
+    Causes 
+Common in myocardial disease, ischemia, hypokalemia, irritability, catheter irritation. 
+شائعة في أمراض عضلة القلب، نقص بوتاسيوم، تهيج قلبي، قساطر. 
+ 
+    Treatment 
+Isolated PVC → no treatment. 
+PVC منفردة → لا علاج. 
+Multiple PVC → Amiodarone or Lidocaine. 
+PVC متعددة → أميودارون أو ليدوكايين. 
+Correct potassium; stop digitalis if toxic. 
+تصحيح البوتاسيوم؛ وقف الديجوكسين عند التسمم. 
+ 
+2) Ventricular Tachycardia (VT) – تسرّع البطين 
+    Definition & ECG
+
+Rate >100; regular rhythm; wide bizarre QRS; no P waves. 
+معدل 100؛ نظم منتظم؛ QRS واسع وشاذ؛ بدون موجة P. 
+ 
+    Causes 
+Ischemia, MI, cardiomyopathy, MVP , CHF, digitalis toxicity. 
+نقص تروية، احتشاء، اعتلال عضلي، ارتخاء الصمام، فشل قلب، تسمم ديجوكسين. 
+ 
+    Symptoms 
+Chest pain, hypotension, pulmonary edema, unconsciousness. 
+ألم صدر، هبوط ضغط، ارتشاح رئوي، فقدان وعي. 
+ 
+    Treatment 
+If stable → Lidocaine IV. 
+إذا مستقر → ليدوكايين وريد. 
+If unstable → synchronized cardioversion. 
+إذا غير مستقر → صدمة كهربائية متزامنة. 
+Long-term → ICD. 
+على المدى الطويل → جهاز صدمات مزروع. 
+ 
+    Anti-Dysrhythmics 
+Lidocaine: 1–1.5 mg/kg IV bolus; repeat up to 3 mg/kg. 
+ليدوكايين1–1.5 مج/كجم جرعة ابتدائية، تكرر حتى3 مج/كجم.
+
+Amiodarone: 300 mg IV for pulseless VT. 
+أميودارون300 مج للـ  VT بدون نبض. 
+ 
+3) Ventricular Fibrillation – الرجفان البطيني 
+    Definition 
+Chaotic electrical activity → no contraction → no cardiac output → fatal. 
+نشاط كهربائي فوضوي → بدون انقباض → بدون نتاج قلبي → مميت. 
+ 
+    ECG 
+Irregular wavy baseline; no P , PR, or QRS. 
+خط مموج غير منتظم؛ بدون P أو PR أو QRS. 
+ 
+    Causes 
+Ischemia, MI, untreated VT, shock, hypoxia, electrolyte imbalance, hypothermia, 
+electric shock, digoxin toxicity. 
+نقص تروية، احتشاء،VT غير معالج، صدمة كهربائية، نقص أكسجين، خلل إلكتروليتات، تسمم ديجوكسين. 
+ 
+    Treatment (Advanced Life Support) 
+1. Immediate CPR. 
+البدء بالإنعاش فورًا . 
+2. Rapid defibrillation (200–360 J). 
+الصدمة الكهربائية200 –360  جول.
+
+3. CPR 2 min then pulse check. 
+إنعاش دقيقتين ثم فحص نبض. 
+4. Vasopressor: Epinephrine 1 mg every 3–5 min. 
+إبينفرين1 مج كل3–5 دقائق.  
+5. Antiarrhythmics: Amiodarone preferred. 
+مضادات اضطراب النظم: أميودارون هو المفضل. 
+ 
+Amiodarone Dose (General) 
+1000 mg in 24 hours: 150 mg/10 min → 360 mg/6 h → 540 mg/18 h. 
+1000 مج خلال24 ساعة150 مج خلال10 دقائق360  مج خلال6 ساعات540 مج خلال18 ساعة.

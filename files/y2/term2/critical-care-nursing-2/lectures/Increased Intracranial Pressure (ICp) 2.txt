@@ -1,0 +1,406 @@
+Increased 
+Intracranial 
+Pressure (ICp)
+Prepared by / 
+Dr /Ghada elsayed
+
+Outlines 
+❖ Introduction
+❖Definition
+❖ Pathophysiology 
+❖ Causes of Increased Intracranial Pressure 
+❖ Assessment 
+❖ Management
+
+Pre test 
+Mention causes of increase 
+ICP 
+Mention symptoms 
+associated with increase ICP
+
+Increased 
+Intracranial 
+Pressure (ICP)
+Many neurological problems are associated 
+with increased ICP , such as brain injury and 
+stroke. 
+Sustained increases in ICP compound the 
+extent of brain injury and can be life-
+threatening. 
+Therefore, it is important to assess and 
+maintain ICP within normal limits. 
+Normal ICP ranges from 0 to 15 mm Hg.
+
+Definition 
+Increased ICP is a pressure of 20 mm Hg or 
+greater persisting for 5 minutes or longer.
+
+Pathophysiology
+• The rigid cranial vault contains three types of non-
+compressible contents:
+• brain tissue, blood, and CSF .
+• The pressure exerted by the combined volumes of these three 
+components is ICP . 
+• If the volume of any one of these components increases, the 
+volume of one or both of  the other compartments must 
+decrease proportionally or an increase in ICP occurs.
+
+• This compensation is termed compliance with adequate
+compliance; an increase in intracranial volume is
+compensated by displacement of CSF into the spinal
+subarachnoid space, displacement of blood into the venous
+sinuses, or both.
+• The ICP remains normal despite increases in volume.
+
+As compensatory mechanisms are exhausted, a small 
+increase in volume leads to a large increase in ICP .
+As compliance decreases, ICP increases and 
+Cerebral Blood Flow (CBF) decreases.
+When CBF decreases, the brain becomes hypoxic, 
+carbon dioxide levels increase, and acidosis occurs.
+In response to these changes, the cerebral blood 
+vessels dilate to increase CBF .
+
+• This compensatory response further increases intracranial volume, 
+creating a vicious cycle that can be life-threatening.
+• Sustained increases in ICP can lead to herniation, which is caused by 
+shifting of brain tissue from an area of high
+• pressure to one of lower pressure.
+• Along with Mean Arterial Pressure (MAP), the ICP determines Cerebral 
+Perfusion Pressure (CPP), which is the pressure required to perfuse the 
+brain.
+• Cerebral Perfusion Pressure is calculated as the difference between 
+MAP and ICP (CPP = MAP- ICP).
+
+Normal CPP in an adult is between 60 and 100 mm Hg; it must be 
+maintained at 70 mm Hg .
+Any factor that decreases MAP and/or increases ICP decreases the CPP .
+Ischemia or infarction can occur if the CPP is inadequate. 
+Measures to promote adequate CPP include lowering of increased ICP or, if 
+this is not possible, increasing MAP to balance the effects of ICP on CPP .
+
+Causes of 
+Increased 
+Intracranial 
+Pressure 
+cerebral edema It is an increase in water 
+content of brain tissue, if uncorrected; it 
+may lead to increase ICP .
+increased Cerebral Blood Volume 
+(CBV), and increased CSF
+Head injury 
+Hypertension 
+Intracranial hemorrhage
+
+Decreased cerebral oxygenation leads to cerebral vasodilation to improve oxygen 
+delivery. 
+Hypercapnia also causes vasodilation in the brain. 
+Any factor that results in hypoxemia or hypercapnia, such as ineffective ventilation, 
+airway obstruction, or endotracheal suctioning, can contribute to an increase in ICP .
+Cerebral Blood Flow may increase to enhance oxygen supply in response to increased 
+metabolic demands.
+Several factors increase oxygen demands, including fever, physical activity, pain, 
+shivering, and seizures. 
+Grouping nursing activities together (e.g., bathing, suctioning, turning), may also 
+increase metabolic demands.
+
+Increased Cerebrospinal Fluid: Hydrocephalus, an increase 
+in CSF , can increase ICP .
+Hydrocephalus may occur in any condition in which CSF flow 
+or absorption is blocked, such as subarachnoid hemorrhage 
+(SAH) or infection (meningitis, encephalitis), or when excess 
+CSF is produced.
+
+Assessment of Increased Intracranial Pressure Perform a careful 
+neurologic examination 
+• with emphasis on Level Of Consciousness (LOC) and motor and 
+cranial nerve function.
+•  Vital signs are part of the routine assessment.
+•  Hypertension is common early sign with increased ICP and 
+represents a compensatory mechanism to augment Cerebral 
+Perfusion Pressure (CPP).
+•  Increased ICP is manifested by deterioration in all aspects of 
+neurological functioning.
+•  Level of consciousness decreases as ICP rises.
+
+Initially, the patient may present with evidence of restlessness and 
+confusion. 
+This then decompensate into lower levels of consciousness, ranging from 
+lethargy to coma.
+Pupillary reactions begin to diminish, and change in pupillary size.
+Motor function also declines, and the patient begins to show abnormal 
+motor activity (abnormal flexion or extension).
+
+• Gushing Triad is a late sign of increased ICP and consists of
+•  systolic hypertension with a widening pulse pressure, 
+bradycardia, and irregular respirations. 
+• It often signifies irreversible damage. 
+• Monitoring Techniques Invasive monitoring of ICP , cerebral 
+oxygenation, and other physiologic parameters may be used to 
+augment the clinical assessment.
+
+Intracranial Pressure 
+Monitoring: 
+• ICP monitoring is used to correlate objective data 
+with the clinical picture and to determine 
+cerebral perfusion.
+• Cerebral Oxygenation Monitoring: CBF and brain 
+oxygen utilization may be monitored by jugular 
+oxygen saturation (SjO2).
+•  Other Physiologic Monitoring: Hemodynamic 
+monitoring may be used to monitor fluid status 
+and to assist in maintaining adequate cerebral 
+perfusion. 
+• Using pulse Oximetry for continuous monitoring 
+of arterial oxygen saturation Continuous bedside 
+electroencephalographic (EEG) .
+
+Diagnostic Testing 
+Arterial Blood Gases (ABGs), Sp02, end tidal carbon dioxide.
+Complete Blood Count (CBC), with an emphasis on hematocrit, hemoglobin, and platelets.
+Coagulation profile, including prothrombin time, International Normalized Ratio (INR), and 
+activated partial thromboplastin time (a PTT) because brain injury may induce a coagulopathy 
+Electrolytes: Blood Urea Nitrogen, Creatinine, liver function and serum osmolality.
+
+Radiological studies and other diagnostic tests 
+that may be performed on patient with ICP as:
+Computed Tomography (CT); 
+Magnetic Resonance Imaging (MRI); 
+CBF monitoring
+EEG.
+
+Management of 
+Increased 
+Intracranial 
+Pressure 
+Medical and Nursing Interventions (Nonsurgical) 
+The goal of management is to maintain an ICP of 
+less than 20 mm Hg while maintaining the CPP 60 
+to 70 mm Hg.
+If the ICP is elevated, therapy is instituted to 
+decrease ICP and then identify the cause of 
+increased ICP .
+Once the cause is discovered, management is 
+centered on permanently decreasing the high ICP , 
+maintaining CPP , maintaining the airway, providing 
+ventilation and oxygenation, and decreasing the 
+metabolic demands placed on the injured brain.
+
+Nursing Management 
+of Increased 
+Intracranial Pressure 
+• Position the patient to 
+minimize ICP and maximize 
+CPP . 
+• Elevate the head of the 
+bed to 30 degrees and keep 
+the head in a neutral midline 
+position to facilitate venous 
+drainage and decrease the 
+risk of venous obstruction. 
+However, care must be 
+taken to evaluate BP 
+response to head elevation. 
+Raising the head of the bed 
+may decrease MAP , thereby 
+decreasing CPP . 
+• Hemodynamically 
+unstable patients may need 
+to be cared for in a flat 
+position. 
+Patients with increased ICP 
+can be turned from side to 
+side.
+However, during any 
+position change or change 
+in elevation of the head
+
+It is important to monitor and document the patient’s 
+individualized cerebral and hemodynamic response.
+• If the CPP does not return to the baseline value 
+within 5 minutes after the position change, reposition 
+the patient to the position that maximized CPP .
+• Suction the patient only when necessary because 
+endotracheal suctioning is associated with 
+hypoxemia. 
+Preoxygenate the patient with 100% oxygen before, 
+between suction attempts and for 1 minute after the 
+procedure.
+
+Limit each suction pass to less than 10 seconds, with no 
+more than two suction passes. 
+Maintain the head in a neutral position during the 
+suctioning procedure. 
+• Spacing nursing care activities allows for rest between 
+activities because several nursing activities are 
+associated with increases in ICP as (turning, 
+repositioning, and hygiene care). 
+Elevated ICP resulting from nursing care is usually 
+temporary, and the ICP should return to the resting 
+baseline value within a few minutes.
+
+Assess the patient’s physiologic 
+response to visitors; family presence 
+has been shown to decrease ICP .
+However, caution family members to 
+avoid excess stimulation of the patient 
+or unpleasant conversations that may 
+emotionally stimulate the patient.
+
+Medical 
+Management 
+of Increased 
+ICP 
+Medical management of increased ICP
+Corticosteroids
+Adequate oxygenation and ventilation 
+• Osmotic and loop diuretics 
+• Fluid administration 
+• Maintenance of BP
+• Reduction of metabolic demands.
+
+• Corticosteroids are useful for reducing cerebral edema 
+associated with brain tumors and meningitis.
+•  Adequate Oxygenation and ventilation: The goal is to 
+maintain a Pao2 above 80 mm Hg and to ensure that oxygen 
+delivery to the brain exceeds oxygen consumption.
+•  A Pao2 below 50 mm Hg can precipitate increased ICP . 
+• For many patients with increased ICP , short-term 
+management of the airway is accomplished by an end 
+tracheal tube and mechanical ventilation.
+•
+
+Positive end expiratory pressure may be added to 
+facilitate oxygenation; however, it must be used 
+with extreme caution because it may prevent 
+venous outflow and further increase ICP . 
+A tracheostomy tube may be required for long-
+term ventilator management.
+In addition, adequate hematocrit and hemoglobin 
+levels are maintained to promote oxygenation.
+
+Management of Carbon Dioxide: 
+Hyperventilation decreases PaCO2, which causes 
+vasoconstriction of the cerebral arteries and a reduction 
+of CBF .
+Hyperventilation is used to decrease ICP for short 
+periods when acute neurologic deterioration is occurring 
+(i.e., herniation). 
+If the PaCO2 level is lowered to less than 35 mm Hg for 
+an extended period, Oxygen delivery at the cellular level 
+should be evaluated with the use of a jugular bulb or 
+cerebral tissue oxygen monitor.
+
+Osmotic and loop diuretics: Osmotic and loop 
+diuretics are administered to reduce cerebral 
+brain volume by removing fluid from the brain’s 
+extracellular compartment.
+Osmotic diuretics, such as Mannitol or 
+hypertonic saline draw water from the brain to 
+the plasma by creating an osmotic gradient, 
+thereby decreasing ICP . 
+The effects of decreasing ICP and increasing 
+CPP occur within minutes after the infusion.
+
+Mannitol is given at a dose of 0.5-1 g/kg IV 
+over 5-10 min, then 0.25- 2.0 g/kg IV bolus 
+every 4-12 hr as needed depending on ICP 
+Side effects of osmotic diuretics include 
+hypotension, electrolyte disturbances, and 
+rebound increased ICP . 
+If Mannitol is used, the patient must have 
+adequate intravascular volume to prevent 
+hypotension and secondary brain injury.
+
+Mannitol is contraindicated in patients 
+with acute kidney injury because it is not 
+metabolized and is excreted unchanged 
+in the urine.
+Loop diuretics (Furosemide, torsemide, 
+bumetanide, ethacrynic acid) decrease 
+ICP by removing sodium and water from 
+injured brain cells. These agents also 
+decrease CSF formation.
+
+Optimal Fluid Administration: Fluid administration is provided to 
+optimize MAP , maintain intravascular volume, and normalize CPP .
+Normal saline solution (0.9%), an isotonic solution, is recommended 
+for volume resuscitation. 
+Hypotonic solutions are avoided to prevent an increase in cerebral 
+edema.
+Strict measurement of intake and output while monitoring serum 
+sodium, potassium, and osmolarity is required.
+Colloids or blood products are administered if needed, to restore 
+volume and maintain adequate hematocrit and hemoglobin levels. 
+Hemodynamic monitoring may be used to optimize fluid 
+administration.
+
+Blood Pressure Management: BP must be carefully 
+controlled in a patient with increased ICP .
+Usually, the MAP is kept between 70 and 90 mm Hg. 
+However, it is critical to monitor the ICP and MAP 
+collectively to sustain an adequate CPP of at least 70 mm 
+Hg. 
+• Hypotension decreases CBF , which leads to cerebral 
+ischemia.
+ When hypotension occurs or ICP cannot be reduced, 
+manipulating the systolic BP with vasopressor medications 
+and fluids may be needed to achieve an adequate CPP .
+
+• Hypertension (>160 mm Hg 
+systolic) can worsen cerebral 
+edema. 
+If necessary, systolic BP is lowered 
+with antihypertensive medications 
+such as labetalol.
+This Beta Blocker decreases the 
+sympathetic response and 
+catecholamine release associated 
+with neurologic injury.
+
+Nicardipine is a calcium channel blocker medication that does not affect cerebral vasculature; it is 
+very effective in providing faster and tighter control of BP than other antihypertensive medications.
+Reducing Metabolic Demands: Several therapies may be required to reduce metabolic demands.
+These include temperature control, sedation, seizure prophylaxis, neuromuscular blockade, and 
+barbiturate therapy.
+Temperature Control: Lowering body temperature to normal from a hyperthermic state or inducing 
+hypothermia decreases cerebral metabolism, blood flow, and volume, thereby decreasing ICP .
+
+Body temperature may be controlled noninvasively with the use of a cooling 
+blanket or skin pads placed in direct contact with the skin (external cooling) 
+or invasively by using a catheter placed in a large vein intravascular cooling).
+Target temperatures for induced hypothermia range from 34° to 35 C; these 
+temperatures are maintained for 24 to 72 hours, followed by gradual 
+rewarming.
+
+Sedation: Patients are often sedated to lower increased 
+ICP related to agitation, restlessness, or resistance to 
+mechanical ventilation.
+Benzodiazepines are given for sedation and do not 
+affect CBF or ICP . Propofol is a sedative-hypnotic 
+medication that reduces cerebral metabolism and ICP .
+It is a short-acting medication with a rapid onset that is 
+given by continuous infusion. 
+Morphine or fentanyl can be administered for analgesia 
+and sedation in a low- dose continuous infusion or in 
+small frequent intravenous (IV) boluses.
+
+Neuromuscular Blockade and Barbiturate Therapy: 
+Neuromuscular blockade is considered for patients 
+unresponsive to other treatments.
+Barbiturates are given selectively to reduce ICP refractory to 
+other treatments. 
+Pentobarbital is the most common medication used. 
+Patients receiving neuromuscular blockade or barbiturate 
+therapy require hemodynamic monitoring, mechanical 
+ventilation, and intensive nursing management. 
+Surgical Interventions: Surgical intervention may be 
+required to remove a mass or lesion that is causing the 
+increased ICP .
+
+Post test 
+Mention causes of 
+ICP
+Mention diagnostic 
+test for diagnosis 
+increase ICP

@@ -1,0 +1,457 @@
+ICU & Critical Care 
+Practice Examination 
+45 MCQs  |  5 Short Questions  |  2 Hours  |  70 Marks 
+SECTION A — Multiple Choice Questions (MCQ) 
+Choose the single best answer for each question. Correct answers are highlighted.  
+ 
+Part 1: Vital Signs & Monitoring 
+Q1. What is the target oxygen saturation (SpO2) for a COPD patient on supplemental oxygen? 
+A. 94–98% 
+B. 88–92%  ✓ ANSWER 
+C. 98–100% 
+D. 85–88% 
+Explanation: COPD patients rely on hypoxic drive. Targeting 88–92% prevents suppression of respiratory drive while 
+avoiding hypoxia. 
+ 
+Q2. What is the minimum acceptable Mean Arterial Pressure (MAP) in a critically ill patient? 
+A. 55 mmHg 
+B. 60 mmHg 
+C. >65 mmHg  ✓ ANSWER 
+D. >80 mmHg 
+Explanation: A MAP >65 mmHg is the standard target in sepsis and critical illness to ensure adequate organ 
+perfusion. 
+ 
+Q3. A 70 kg patient is admitted to the ICU. What is the expected normal urine output per hour? 
+A. 10–20 ml/hr 
+B. 35–70 ml/hr  ✓ ANSWER 
+C. 100–150 ml/hr 
+D. 5–10 ml/hr 
+Explanation: Normal urine output is 0.5–1 ml/kg/hr. For 70 kg: 0.5×70 = 35 ml/hr minimum, 1×70 = 70 ml/hr 
+maximum.
+
+Q4. A patient opens eyes to voice (3), makes incomprehensible sounds (2), and withdraws from pain 
+(4). What is the GCS score? 
+A. 7 
+B. 8 
+C. 9  ✓ ANSWER 
+D. 10 
+Explanation: GCS = Eye (3) + Verbal (2) + Motor (4) = 9. A score <8 generally indicates need for airway 
+protection/mechanical ventilation. 
+ 
+Q5. At what GCS score is endotracheal intubation and mechanical ventilation typically indicated? 
+A. <10 
+B. <8  ✓ ANSWER 
+C. <12 
+D. <6 
+Explanation: GCS <8 indicates inability to protect the airway. Intubation is required to prevent aspiration and ensure 
+adequate ventilation. 
+ 
+Part 2: Medical Emergencies 
+Q6. A patient with DKA is started on insulin. What is the correct initial insulin infusion rate? 
+A. 0.05 unit/kg/hr 
+B. 0.1 unit/kg/hr  ✓ ANSWER 
+C. 0.2 unit/kg/hr 
+D. 1 unit/kg/hr 
+Explanation: The standard initial insulin infusion in DKA is 0.1 unit/kg/hr as a continuous IV infusion. 
+ 
+Q7. What is the target rate of blood glucose reduction per hour during DKA management? 
+A. 10–20 mg/dL/hr 
+B. 50–80 mg/dL/hr  ✓ ANSWER 
+C. 100–150 mg/dL/hr 
+D. >200 mg/dL/hr 
+Explanation: Glucose should fall by 50–80 mg/dL/hr. Too rapid a drop risks cerebral edema; too slow suggests 
+inadequate treatment. 
+ 
+Q8. Which of the following is the MOST DANGEROUS complication of DKA treatment?
+
+A. Hypernatremia 
+B. Cerebral Edema  ✓ ANSWER 
+C. Pulmonary Embolism 
+D. Hyperkalemia 
+Explanation: Cerebral edema is the most feared and potentially fatal complication, especially in children with DKA. It 
+results from overly rapid fluid/glucose correction. 
+ 
+Q9. A patient with septic shock has warm extremities, bounding pulse, and low BP. What type of 
+shock is this? 
+A. Hypovolemic 
+B. Cardiogenic 
+C. Obstructive 
+D. Distributive  ✓ ANSWER 
+Explanation: Septic shock is distributive — massive vasodilation causes low SVR, warm extremities, and hypotension 
+despite normal or increased cardiac output. 
+ 
+Q10. A patient suddenly develops hypotension, absent breath sounds on the left, tracheal deviation 
+to the right, and jugular venous distension. What is the FIRST action? 
+A. Order a chest X-ray 
+B. Give IV fluids immediately 
+C. Needle decompression of the chest  ✓ ANSWER 
+D. Start norepinephrine 
+Explanation: This is tension pneumothorax (obstructive shock). Immediate needle decompression (2nd intercostal 
+space, midclavicular line) is life-saving — do not wait for imaging. 
+ 
+Q11. What is the FIRST investigation in a patient presenting with acute stroke? 
+A. MRI brain with contrast 
+B. CT brain WITHOUT contrast  ✓ ANSWER 
+C. CT angiography 
+D. Lumbar puncture 
+Explanation: Non-contrast CT brain is the first-line investigation to differentiate ischemic from hemorrhagic stroke — 
+this distinction determines treatment. 
+ 
+Q12. A patient with acute ischemic stroke presents within 48 hours. BP is 185/100 mmHg. What is 
+the correct management? 
+A. Aggressively lower BP to <140/90 immediately
+
+B. Maintain BP around 180/105 — do not lower aggressively  ✓ ANSWER 
+C. Give IV labetalol immediately 
+D. No intervention needed for BP 
+Explanation: In acute ischemic stroke (first 48 hrs), collateral circulation depends on elevated BP. Aggressive 
+lowering extends the infarct. Target ~180/105 unless thrombolytics are used. 
+ 
+Q13. In hemorrhagic stroke, what is the blood pressure target? 
+A. <180/120 
+B. <160/100 
+C. <140/90  ✓ ANSWER 
+D. <120/80 
+Explanation: In hemorrhagic stroke, the target is BP <140/90 to reduce hematoma expansion, unlike ischemic stroke 
+where BP is kept higher. 
+ 
+Q14. Ventricular Fibrillation (V-fib) is identified on the monitor. What is the IMMEDIATE treatment? 
+A. IV Amiodarone 
+B. IV Atropine 
+C. Synchronized DC cardioversion 
+D. Unsynchronized DC shock (defibrillation)  ✓ ANSWER 
+Explanation: V-fib is a shockable rhythm requiring immediate unsynchronized defibrillation. Synchronized 
+cardioversion is used for organized rhythms (e.g., unstable SVT, VT with pulse). 
+ 
+Q15. DIC (Disseminated Intravascular Coagulation) is characterized by: 
+A. Only thrombosis 
+B. Only bleeding 
+C. Thrombosis AND bleeding simultaneously  ✓ ANSWER 
+D. Neither thrombosis nor bleeding 
+Explanation: DIC paradoxically causes both clotting (microthrombi) and bleeding (consumption of clotting factors 
+and platelets) at the same time. 
+ 
+Part 3: Critical Care Conditions 
+Q16. A patient with hepatic encephalopathy has elevated ammonia. Which management approach is 
+correct? 
+A. High protein diet + IV antibiotics 
+B. Low protein diet + Lactulose enemas  ✓ ANSWER
+
+C. High protein diet + Lactulose enemas 
+D. Nothing by mouth + IV mannitol 
+Explanation: Lactulose reduces colonic pH, trapping ammonia as NH4+ and preventing absorption. Low protein diet 
+reduces substrate for ammonia production. 
+ 
+Q17. In hypothyroidism, which lab finding is expected? 
+A. Low TSH, High T4 
+B. High TSH, Low T4  ✓ ANSWER 
+C. Low TSH, Low T4 
+D. High TSH, High T4 
+Explanation: In primary hypothyroidism, the thyroid gland is underactive. The pituitary compensates by secreting 
+more TSH. T3/T4 are low while TSH is high. 
+ 
+Q18. A patient has BP of 195/125 mmHg. She is alert, with no headache, chest pain, or neurological 
+signs. This is classified as: 
+A. Hypertensive Emergency 
+B. Hypertensive Urgency  ✓ ANSWER 
+C. Normal hypertension 
+D. White coat hypertension 
+Explanation: Hypertensive Urgency = BP >180/120 WITHOUT acute target organ damage. Management involves 
+gradual BP reduction over 24–48 hours, usually with oral agents. 
+ 
+Q19. Which of the following represents a Hypertensive Emergency? 
+A. BP 185/110 in a clinic with no symptoms 
+B. BP 190/120 with acute pulmonary edema  ✓ ANSWER 
+C. BP 178/115 with mild headache 
+D. BP 200/100 with anxiety 
+Explanation: Hypertensive Emergency = BP >180/120 WITH acute target organ damage (stroke, MI, aortic dissection, 
+acute pulmonary edema, acute kidney injury). 
+ 
+Q20. What is the Cerebral Perfusion Pressure (CPP) formula? 
+A. CPP = MAP + ICP 
+B. CPP = MAP - ICP  ✓ ANSWER 
+C. CPP = ICP - MAP 
+D. CPP = MAP × ICP
+
+Explanation: CPP = MAP – ICP. Target CPP >70 mmHg in head injury. If MAP falls or ICP rises, cerebral perfusion is 
+compromised. 
+ 
+Q21. What is the correct head-of-bed elevation for a mechanically ventilated patient to prevent 
+VAP? 
+A. 0° (flat) 
+B. 15–20° 
+C. >30–45°  ✓ ANSWER 
+D. >60° 
+Explanation: Elevating the head of bed >30–45° is the cornerstone of VAP bundle — it reduces aspiration of 
+oropharyngeal secretions into the lower respiratory tract. 
+ 
+Q22. A pregnant patient has a BP of 165/108 mmHg with proteinuria and seizures. What is the BP 
+target? 
+A. <180/120 
+B. <160/105  ✓ ANSWER 
+C. <120/80 
+D. <140/90 
+Explanation: In eclampsia, the treatment threshold for antihypertensives is BP >160/105 mmHg. The target is to 
+lower BP below this threshold to prevent cerebral complications. 
+ 
+Q23. A patient with suspected acute MI calls from home. While waiting for the ambulance, what 
+should he do? 
+A. Take metoprolol 50 mg 
+B. Chew 4 aspirin tablets (300 mg total)  ✓ ANSWER 
+C. Drink water and rest 
+D. Take his regular antihypertensive 
+Explanation: Aspirin 300 mg (4 × 75 mg tablets) chewed immediately inhibits platelet aggregation and is the first 
+critical step in ACS management before hospital arrival. 
+ 
+Q24. Which type of shock is characterized by pump failure with low cardiac output? 
+A. Distributive 
+B. Obstructive 
+C. Hypovolemic 
+D. Cardiogenic  ✓ ANSWER 
+Explanation: Cardiogenic shock = heart failure (pump failure). Low CO, high SVR, cold extremities — opposite to 
+distributive shock.
+
+Q25. The diagnosis of DKA requires which combination of lab findings? 
+A. Blood glucose >250, pH <7.3, Bicarbonate <15  ✓ ANSWER 
+B. Blood glucose >180, pH <7.35, Bicarbonate <20 
+C. Blood glucose >200, pH <7.1, Bicarbonate <10 
+D. Blood glucose >300, pH <7.4, Bicarbonate <22 
+Explanation: DKA diagnostic criteria: Blood glucose >250 mg/dL, arterial pH <7.3, and serum bicarbonate <15 mEq/L 
+— plus ketonemia/ketonuria. 
+ 
+Part 4: Additional High-Yield Topics 
+Q26. In hyperthyroidism (thyrotoxicosis), which lab pattern is expected? 
+A. High TSH, High T4 
+B. Low TSH, High T4  ✓ ANSWER 
+C. High TSH, Low T4 
+D. Low TSH, Low T4 
+Explanation: In hyperthyroidism, excess thyroid hormones suppress TSH via negative feedback. Result: Low TSH, 
+High T3/T4. 
+ 
+Q27. What is the most common complication of stroke in the ICU? 
+A. Deep Vein Thrombosis 
+B. Aspiration Pneumonia  ✓ ANSWER 
+C. Urinary Tract Infection 
+D. Pressure sores 
+Explanation: Aspiration pneumonia is the most common and serious complication in stroke patients due to impaired 
+swallowing and depressed consciousness. 
+ 
+Q28. In ICP management, what head position is recommended? 
+A. Flat (0°) 
+B. Trendelenburg (head down) 
+C. 30–45° elevation, head midline  ✓ ANSWER 
+D. Lateral decubitus 
+Explanation: Head at 30–45° promotes cerebral venous drainage. Head must be midline (not rotated) to prevent 
+jugular compression and ICP spikes.
+
+Q29. Anaphylactic shock is classified as which type of shock? 
+A. Hypovolemic 
+B. Cardiogenic 
+C. Obstructive 
+D. Distributive  ✓ ANSWER 
+Explanation: Anaphylaxis causes massive histamine release → systemic vasodilation → distributive shock. 
+Management includes IM epinephrine. 
+ 
+Q30. Which intervention is NOT part of the standard VAP (Ventilator-Associated Pneumonia) 
+prevention bundle? 
+A. Oral care every 4–6 hours 
+B. Daily chest X-ray  ✓ ANSWER 
+C. DVT prophylaxis 
+D. Sedation vacation 
+Explanation: The 5-component VAP bundle: HOB elevation, oral care, sedation vacation/weaning, DVT prophylaxis, 
+GI stress ulcer prophylaxis. Daily chest X-ray is NOT a bundle component. 
+ 
+Q31. Pulmonary Embolism (PE) causes which type of shock? 
+A. Distributive 
+B. Hypovolemic 
+C. Obstructive  ✓ ANSWER 
+D. Cardiogenic 
+Explanation: PE causes mechanical obstruction of the pulmonary vasculature → obstructive shock. Hemodynamic 
+compromise indicates massive PE. 
+ 
+Q32. Normal urine output in an adult is 0.5–1 ml/kg/hr. For a 60 kg patient, this equals: 
+A. 10–20 ml/hr 
+B. 30–60 ml/hr  ✓ ANSWER 
+C. 60–100 ml/hr 
+D. 100–120 ml/hr 
+Explanation: 0.5 × 60 = 30 ml/hr (minimum). 1 × 60 = 60 ml/hr (maximum). Below 30 ml/hr = oliguria in this patient. 
+ 
+Q33. In neurogenic shock (a type of distributive shock), which finding is typical? 
+A. Tachycardia and hypertension 
+B. Bradycardia and hypotension  ✓ ANSWER
+
+C. Tachycardia and hypotension 
+D. Bradycardia and normal BP 
+Explanation: Neurogenic shock (spinal cord injury) causes loss of sympathetic tone → vasodilation (low BP) + 
+unopposed parasympathetic activity → paradoxical bradycardia. 
+ 
+Q34. Which of the following is the BEST indicator of adequate fluid resuscitation in shock? 
+A. Heart rate returning to normal 
+B. Urine output >0.5 ml/kg/hr 
+C. MAP >65 mmHg 
+D. All of the above  ✓ ANSWER 
+Explanation: Adequacy of resuscitation is assessed using multiple endpoints: normalization of heart rate, MAP >65 
+mmHg, UO >0.5 ml/kg/hr, and improving mental status/lactate. 
+ 
+Q35. What is the target Cerebral Perfusion Pressure (CPP) in traumatic brain injury? 
+A. CPP >50 mmHg 
+B. CPP >60 mmHg 
+C. CPP >70 mmHg  ✓ ANSWER 
+D. CPP >80 mmHg 
+Explanation: CPP >70 mmHg is the target to ensure adequate cerebral blood flow. CPP = MAP – ICP, so maintaining 
+high MAP and controlling ICP are both essential. 
+ 
+Q36. A patient in the ICU on a ventilator has fever, new infiltrate on CXR, and purulent tracheal 
+secretions 72 hours after intubation. Diagnosis? 
+A. Community-acquired pneumonia 
+B. Ventilator-Associated Pneumonia (VAP)  ✓ ANSWER 
+C. Pulmonary embolism 
+D. Tuberculosis 
+Explanation: VAP is defined as pneumonia occurring >48 hours after intubation. New infiltrate + fever + purulent 
+secretions in a ventilated patient = VAP until proven otherwise. 
+ 
+Q37. In hypovolemic shock, which set of findings is expected? 
+A. Low BP, High HR, Low CVP, Cold extremities  ✓ ANSWER 
+B. Low BP, Low HR, High CVP, Warm extremities 
+C. High BP, High HR, Low CVP, Cold extremities 
+D. Normal BP, High HR, Normal CVP, Warm extremities
+
+Explanation: Hypovolemic shock: hemorrhage/dehydration → Low intravascular volume → Low BP, reflexive 
+tachycardia, Low CVP (low preload), cold/clammy extremities (vasoconstriction). 
+ 
+Q38. Daily sedation vacation in mechanically ventilated patients is performed to: 
+A. Prevent DVT formation 
+B. Assess neurological status and readiness to wean  ✓ ANSWER 
+C. Reduce oxygen consumption 
+D. Prevent peptic ulcer disease 
+Explanation: Sedation vacation allows daily assessment of neurological function and readiness for 
+weaning/extubation — a core component of the VAP bundle and liberation from mechanical ventilation. 
+ 
+Q39. Which of the following is an indication to start DVT prophylaxis in an ICU patient? 
+A. Only if the patient has a known clot 
+B. Routinely for all mechanically ventilated patients  ✓ ANSWER 
+C. Only if the patient is ambulatory 
+D. Only after surgery 
+Explanation: ICU patients are high-risk for DVT due to immobility, critical illness, and central lines. DVT prophylaxis 
+(LMWH or compression devices) is a routine VAP bundle component. 
+ 
+Q40. Hypertensive urgency differs from hypertensive emergency in that urgency: 
+A. Has higher BP readings 
+B. Occurs only in young patients 
+C. Has NO acute target organ damage  ✓ ANSWER 
+D. Requires IV antihypertensives immediately 
+Explanation: The key distinction: Emergency = BP >180/120 WITH organ damage (brain, heart, kidneys). Urgency = 
+same BP WITHOUT organ damage. Urgency is managed with oral agents over 24–48 hrs. 
+ 
+Q41. Which finding on DKA workup would most indicate the need for potassium supplementation? 
+A. Serum K+ = 5.8 mEq/L 
+B. Serum K+ = 4.2 mEq/L 
+C. Serum K+ = 3.1 mEq/L  ✓ ANSWER 
+D. Serum K+ = 5.2 mEq/L 
+Explanation: Despite total body K+ depletion in DKA, serum K+ appears falsely normal/high initially. Insulin therapy 
+will drive K+ intracellularly, risking life-threatening hypokalemia — supplement if K+ <3.5.
+
+Q42. A patient has BP 200/130 with acute vision changes, confusion, and rising creatinine. This is 
+best described as: 
+A. Hypertensive urgency 
+B. Hypertensive emergency 
+C. Malignant hypertension causing end-organ damage 
+D. Both B and C  ✓ ANSWER 
+Explanation: Malignant hypertension is a severe form of hypertensive emergency with papilledema and multi -organ 
+involvement. It requires immediate IV antihypertensive therapy in ICU. 
+ 
+Q43. Lactulose enemas in hepatic encephalopathy work by: 
+A. Decreasing bilirubin levels 
+B. Acidifying the colon to trap ammonia as NH4+  ✓ ANSWER 
+C. Increasing protein metabolism 
+D. Stimulating the liver to regenerate 
+Explanation: Lactulose lowers colonic pH → converts NH3 (absorbable) to NH4+ (non-absorbable) → trapped and 
+excreted in stool → reduces blood ammonia levels. 
+ 
+Q44. Pulseless Ventricular Tachycardia (pVT) should be treated with: 
+A. IV Amiodarone alone 
+B. CPR only, no electricity 
+C. Immediate unsynchronized DC shock  ✓ ANSWER 
+D. Synchronized cardioversion 
+Explanation: Pulseless VT = shockable rhythm → immediate unsynchronized defibrillation (same as V-fib). 
+Synchronized cardioversion is only for organized rhythms WITH a pulse. 
+ 
+Q45. Which complication is most likely to cause death from DKA in a pediatric patient? 
+A. Hypoglycemia 
+B. Hypokalemia 
+C. Cerebral edema  ✓ ANSWER 
+D. Aspiration pneumonia 
+Explanation: Cerebral edema is the leading cause of DKA-related death in children. It is associated with rapid fluid 
+resuscitation and rapid glucose correction. Risk is lower in adults.
+
+SECTION B — Short Answer Questions 
+Answer ALL 5 questions. Write concise, structured answers. 
+ 
+• SQ1. List ALL 5 components of the VAP (Ventilator-Associated 
+Pneumonia) Prevention Bundle. 
+• Elevation of the head of the bed to >30–45 degrees. 
+• Oral care (with chlorhexidine solution every 4–6 hours). 
+• Daily sedation vacation and assessment for weaning/extubation readiness. 
+• DVT (Deep Vein Thrombosis) prophylaxis — LMWH or pneumatic compression 
+devices. 
+• GIT / Peptic ulcer (stress ulcer) prophylaxis — PPI or H2 blocker. 
+ 
+• SQ2. Describe the key steps in managing a patient with raised 
+Intracranial Pressure (ICP). 
+• Elevate head of bed to 30–45 degrees. 
+• Keep head and neck in a straight, midline position — avoid jugular compression. 
+• Target Cerebral Perfusion Pressure (CPP) >70 mmHg. CPP = MAP – ICP. Maintain 
+MAP and control ICP. 
+• Maintain normothermia — fever significantly increases cerebral metabolic demand 
+and worsens ICP. 
+• Maintain normoglycemia — both hypoglycemia and hyperglycemia worsen 
+neurological outcomes. 
+• Consider hyperosmolar therapy (Mannitol or Hypertonic Saline) for acute ICP spikes. 
+• Avoid hypercapnia — hyperventilation (target PaCO2 35–40 mmHg) can be used 
+short-term to reduce ICP. 
+ 
+• SQ3. Differentiate between the FOUR types of shock with one example 
+of each. 
+• HYPOVOLEMIC — Loss of circulating volume. Cause: hemorrhage (e.g., trauma, GI 
+bleed), severe dehydration. 
+• CARDIOGENIC — Pump failure; the heart cannot maintain adequate output. Cause: 
+massive MI, acute heart failure, cardiomyopathy. 
+• OBSTRUCTIVE — Mechanical blockage of blood flow. Cause: Tension Pneumothorax, 
+Massive Pulmonary Embolism, Cardiac Tamponade.
+
+• DISTRIBUTIVE — Massive vasodilation causing maldistribution of blood flow. Cause: 
+Sepsis (most common), Anaphylaxis, Neurogenic shock. 
+ 
+• SQ4. Outline the management of Diabetic Ketoacidosis (DKA) including 
+diagnosis, insulin dosing, and key complications. 
+• DIAGNOSIS: Random BG >250 mg/dL + pH <7.3 + Bicarbonate <15 mEq/L + 
+ketonemia/ketonuria. 
+• IV FLUIDS: Start with 0.9% Normal Saline — 1 L over the first hour to restore 
+circulating volume. 
+• INSULIN: Start continuous IV insulin infusion at 0.1 unit/kg/hr. Target BG reduction 
+of 50–80 mg/dL/hr. 
+• POTASSIUM: Check serum K+ before starting insulin. Supplement if K+ <3.5 mEq/L. 
+Insulin drives K+ intracellularly — monitor closely to prevent hypokalemia. 
+• SWITCH TO DEXTROSE: When BG drops to ~250 mg/dL, switch IV fluids to D5W + 
+0.45% NaCl to prevent hypoglycemia while continuing insulin to clear ketones. 
+• KEY COMPLICATIONS: Hypoglycemia, Hypokalemia (life-threatening arrhythmias), 
+Cerebral Edema (leading cause of death especially in children — from rapid 
+fluid/glucose correction). 
+ 
+• SQ5. Compare and contrast the blood pressure management in 
+ISCHEMIC vs. HEMORRHAGIC stroke. 
+• FIRST STEP FOR BOTH: Non-contrast CT brain to differentiate hemorrhagic from 
+ischemic stroke. 
+• ISCHEMIC STROKE (first 48 hours): DO NOT lower BP aggressively. Target BP 
+~180/105 mmHg. The elevated BP is compensatory, maintaining collateral flow to 
+the ischemic penumbra. Exception: if IV thrombolytics (tPA) are given, lower BP to 
+<185/110 before administration. 
+• HEMORRHAGIC STROKE: Lower BP more aggressively. Target systolic BP <140 mmHg 
+to reduce hematoma expansion and re-bleeding risk. 
+• MAJOR COMPLICATION of STROKE: Aspiration Pneumonia — due to impaired gag 
+reflex and dysphagia. 
+• ECLAMPSIA (special case): Treat BP >160/105 mmHg with IV labetalol or hydralazine. 
+Magnesium sulfate for seizure prevention. 
+ 
+ 
+Good Luck! — Review the VAP bundle, shock types, DKA management, and stroke BP targets carefully.

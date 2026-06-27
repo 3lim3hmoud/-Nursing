@@ -1,0 +1,309 @@
+Lung Injury
+Prepared by:
+Dr. Naglaa Nassar
+
+Chest trauma
+1. Rib fractures
+The most common type of chest 
+trauma usually involves the fifth 
+through the ninth ribs.
+Common Causes
+• Occurs over 60% of patients 
+admitted with chest trauma.
+
+Manifestations
+• Fractures of the first three ribs are rare but deadly due to 
+laceration of the subclavian artery.
+• Fractures of the lower ribs are associated with injury to the 
+spleen and liver.
+• Severe pain                           
+•  Bruising
+•  Tenderness
+• Muscle spasm over the site of the fracture.
+• A crackling grating sound in the thorax may be detected
+
+Normal breathing cycle
+• Normally the chest expands on 
+inspiration, creating a negative 
+intra thoracic pressure; on 
+expiration the chest wall retracts 
+in response to positive pressure 
+inside the chest
+
+Flail chest
+• A severe complication of blunt chest trauma that 
+occurs when three or more adjacent ribs fracture 
+in two or more places (or the sternum is fractured, 
+along with ribs adjacent to the sternum fracture). The 
+fracture segment is free of the bony thorax and moves 
+independently in response to intra thoracic pressure.
+
+Paradoxic chest wall 
+• Paradoxic chest wall motion is the hallmark 
+symptom in diagnosing flail chest. Because a flail 
+chest segment is no longer attached to the bony 
+thorax, it follows the pressure and retracts on 
+inspiration (negative pressure is a pulling pressure) 
+and bulges on expiration (positive pressure is a 
+pushing pressure).
+
+Manifestations of Flail chest
+➢ During inspiration, as the chest expands, the detached part of the rib segment 
+(flail segment) will move in a paradoxical manner in that it is pulled inward 
+during inspiration reducing the amount of air that can be taken into the lungs.  
+➢ On expiration, the flail segment will bulge outward impairing the patient’s 
+ability to exhale.  Lung contusion and atelectasis often accompany flail chest.
+
+Assessment of chest trauma
+Inspection:    RR >20 breaths min; hyperpnea; ventilatory distress; use of 
+accessory   muscles  of  respiration;  nasal   flaring; decreased  tidal   volume; 
+hemoptysis; asymmetric chest  wall motion;  paradoxic chest wall motion; 
+inability to clear tracheobronchial secretions; splinting; jugular venous 
+distention; cyanosis or pallor of the skin, lips, and nail beds; and ecchymosis, 
+which can signal injury to underlying organs.
+
+Cont, Assessment of chest trauma
+Palpation: 
+❑ Tracheal deviation;     - subcutaneous emphysema of the neck
+❑ pper portion of the chest; tenderness at fracture points;                       - flail chest segment; 
+❑ weak pulse;                                                                                                   - cool, clammy skin;
+❑  protrusion of bony fragments.
+Percussion: 
+❖ Dullness over lung fields, which can signal hemothorax or atelectasis;
+❖  Hyperresonance over lung fields, signaling pneumothorax.
+
+Cont, Assessment of chest trauma
+Auscultation: Diminished or absent breath sounds, respiratory stridor, bony 
+crepitus over fracture sites, muffled heart tones, decreased BP, pericardial 
+friction rub, paradoxic pulse, apical tachycardia. In addition, bowel sounds may 
+be heard in the thorax as a result of rupture or tear of the diaphragm, allowing 
+herniation of abdominal contents into the thorax.
+
+Cont, Chest trauma
+2. Penetrating  injury: Dyspnea, SOB, moderate  chest  pain, restlessness, 
+anxiety.
+3. Potential complications: Hemothorax, pneumothorax, tension pneumothorax, 
+hemorrhage, shock, and infection.
+
+Diagnostic tests
+1. Chest x-ray: Confirms presence of air or fluid in the plcural space; 
+assists in
+• determining extent of hemothorax or pneumothorax; and confirms 
+presence or absence of fractures of the bony thorax, as well as 
+mediastinal shift.
+2. ABG analysis: Evaluates adequacy of oxygenation and presence or 
+absence of acid-base abnormalities. Typical results will reflect hypoxemia 
+(Pao2 <80 mm Hg) and hypercapnia (Paco2 >45 mm Hg) with concomitant 
+respiratory acidosis (pH <7.35).
+
+Cont, diagnosis
+3. Pulse oximetry: May be used for continuous monitoring of oxygen saturation.
+4. ECG: Reveals presence or absence of life-threatening dysrhythmias and provides a more thorough 
+analysis of the heart's electrical activity. Although dysrhythmias are a common complication after chest trauma, 
+this important test often is overlooked.
+5. White blood count: Baseline indicator of an infectious process.
+
+Management of lung injury
+1. Collaborative management: Interventions are directed 
+toward managing acute respiratory compromise while correcting the 
+underlying path physiology or injuries that complicate or aggravate the 
+patient's condition. 
+2. Oxygen therapy: Delivered by mask or cannula, depending on 
+extent of hypoxemia. 
+3. Intubation: Maintains patent airway, decreases airway resistance and 
+respiratory effort, provides route for easy removal of airway secretions, and 
+allows for manual or mechanical ventilation, as necessary.
+
+Cont, managment
+4. Mechanical ventilation: For cases of extreme respiratory distress or 
+ventilator collapse
+5. Blood replacement: Generally, blood loss is replaced with packed RBCs or 
+whole fresh blood, when available. Volume usually is replaced with crystalloid 
+fluids (e.g., normal saline, lactatcd Ringer's solution) rather than colloidal IV fluids 
+(e.g., plasma, albumin) because colloids increase the risk of developing acute 
+respiratory distress syndrome (ARDS) and renal failure. In addition, colloids are 
+more expensive and research has failed to demonstrate a significant benefit.
+
+Cont, managment
+5. Chest tube insertion: To remove accumulation of fluid or air 
+from the chest cavity. Placement depends on the location and extent 
+of the hemothorax or pneumothorax and on principles of gravity 
+drainage. 
+6. Analgesia: Manages pain, which can interfere with work of 
+breathing. Generally, opioid analgesics are avoided or used 
+cautiously because of respiratory depressive side effects. Intercostal 
+nerve block may be performed to provide local pain relief.
+
+7. Stabilization and fixation of flail chest: Most flail chest 
+injuries stabilize within 10-14 days without surgical 
+intervention. 
+8. Thoracotomy: Generally avoided unless complications 
+develop after stabilization. Indications for thoracotomy include
+massive air leak in a functioning drainage system, continued or
+increased bleeding through a chest tube, refractory
+hypotension, acute deterioration, and cardiac tamponade.
+
+Nursing diagnoses and interventions
+Risk for fluid volume deficit related to active loss secondary to excessive 
+bleeding occurring with chest trauma
+▪ Desired outcome: Patient is normovolemic as evidenced by BP and HR 
+within patient's normal limits; stable weight; urine output >O.S ml/kg/h; chest 
+drainage <100ml/h; and RR <20 breaths/min with normal depth and pattern .
+
+Management of fluid volume deficit
+➢Note condition of dressings and closed chest-drainage system at 
+frequent intervals. Report excessive drainage or bleeding. Amounts 
+>100 ml/h usually are considered excessive. 
+➢Record accurate I&O status.
+➢Assess VS at frequent intervals.
+
+Cont, Management of fluid volume deficit
+➢Fluid/Electrolyte Management : Assess patient's hydration status by 
+monitoring daily weight, as well as amounts of fluid intake and urinary 
+output. Monitor patient's Hgb as an indicator of hemostasis.
+➢Airway management and oxygen therapy: For respiratory monitoring
+➢Analgesic Administration: For pain management
+➢ Bleeding Reduction: Blood Products Administration;
+
+Lung injury
+Key Terms
+• Pneumothorax
+• Hemothorax
+• Cardiac Tamponade
+
+1) Pneumothorax is an abnormal collection of air in the pleural space 
+between the lung and the chest wall
+2) Hemothorax is an accumulation of blood within the pleural cavity
+3) Cardiac Tamponade is accumulation of fluid or blood in the 
+pericardium sac around the heart that  resulting in compression of 
+the heart.
+
+Mechanism of Injury
+. Blunt chest trauma results from sudden compression or positive 
+pressure directed to the chest wall often by Motor Vehicle Accident 
+(MV A) or falls.
+• Penetrating trauma occurs when a foreign object penetrates the 
+chest wall such as low-velocity weapons (gun, knife). Stab wounds 
+that involve the anterior chest wall.
+
+Pneumothorax
+Pneumothorax occurs when the parietal or visceral 
+pleura are breached and the pleural space is exposed to
+positive atmospheric pressure. Normally the pressure in 
+the pleural space is negative or sub atmospheric; this 
+negative pressure is required to maintain lung inflation. 
+When pleura are breached, air enters the pleural space, 
+and the lung or a portion of it collapses.
+
+Types of Pneumothorax
+1. A simple or spontaneous pneumothorax: Occurs as air enters the 
+pleural space through the rupture of a bleb or a bronchopleural fistula.
+Causes: It may occur in an apparently healthy person in the absence of 
+trauma due to rupture of an air filled bleb, or blister, on the surface of the 
+lung, allowing air from the airways to enter the pleural cavity. It may be 
+associated with diffuse interstitial lung disease and severe emphysema.
+
+Cont, Types of Pneumothorax
+2. A traumatic pneumothorax: Occurs when air escapes from a laceration 
+in the lung itself and enters the pleural space or from a wound in the chest 
+wall.
+Causes: 
+➢ Blunt trauma as rib fractures, penetrating chest 
+➢ Abdominal trauma as stab wounds or gunshot wounds, or diaphragmatic 
+tears. Traumatic pneumothorax may occur during invasive thoracic
+procedures as thoracentesis and biopsy.
+
+Cont, Types of Pneumothorax
+3. Open pneumothorax is one form of traumatic pneumothorax. It occurs 
+when a wound in the chest wall is large enough to allow air to pass freely 
+in and out of the thoracic cavity with respiration that produces a sucking 
+sound. Results not only the lung collapse, but the heart and great vessels 
+also shift toward the uninjured side with each inspiration and in the 
+opposite direction with expiration. This is termed mediastinal flutter, it 
+produces serious circulatory problems.
+
+Cont,Types of Pneumothorax
+4. A tension pneumothorax: Occurs when air is drawn into the pleural 
+space from a lacerated lung or through a small opening or wound in the 
+chest wall. Air flows into the pleural space with inspiration and becomes 
+trapped, it cannot be expelled during expiration through the air passages or 
+the opening in the chest wall. In effect, a one-way valve mechanism occurs
+where air enters the pleural space but cannot escape.
+
+Tension pneumothorax
+With each breath, tension (positive pressure) is increased within the affected pleural 
+space. This causes the lung to collapse and the heart, the great vessels, and the trachea to 
+shift toward the unaffected side of the chest (mediastinal shift to the opposite side).
+As pressure continues to build, the shift exerts pressure on the heart and thoracic aorta, 
+which results in decreased venous return and decreased cardiac output. Tissue perfusion 
+with oxygenated blood is further impaired because the collapsed lung cannot participate in 
+gas exchange.
+Impairment of peripheral circulation and the pulse may be undetectable this is known as 
+pulseless electrical activity.
+
+Clinical Manifestations
+➢ Pleuritic pain is usually sudden. 
+➢ The patient may have only minimal respiratory distress with slight chest discomfort 
+➢ Tachypnea 
+➢ Small simple or uncomplicated pneumothorax. 
+➢ If the pneumothorax is large and the lung collapses totally, acute respiratory distress 
+occurs. The patient is anxious, has dyspnea and air hunger, has increased use of the 
+accessory muscles, and may develop central cyanosis from severe hypoxemia
+
+Cont, Manifestations
+➢ In simple pneumothorax
+➢  Trachea is midline
+➢  Expansion of the chest is decreased
+➢  Breath sounds may be diminished
+➢  Percussion of the chest may reveal normal sounds or hyperresonance 
+depending on the size of the pneumothorax.
+
+Cont, Manifestations
+➢ In tension pneumothorax 
+➢ Air hunger, agitation, increasing hypoxemia, central cyanosis, 
+hypotension, tachycardia, and profuse diaphoresis.
+➢ The trachea is shifted away from the affected side
+➢  Chest expansion may be decreased or fixed in a hyperexpansion state
+➢ Breath sounds are diminished or absent, and percussion to the affected 
+side is hyperresonant.
+
+Medical Management
+1. The goal of treatment is to evacuate the air or blood from the pleural
+space. 
+2. A small chest tube is inserted near the second intercostal space. 
+3. If a patient also has a hemothorax, a large diameter chest tube is 
+inserted, usually in the fourth or fifth intercostal space at the midaxillary 
+line.
+
+4. Once the chest tube is inserted and suction is applied (usually 
+to 20 mm Hg suction), effective decompression of the pleural 
+cavity (drainage of blood or air) occurs.
+5.The pleural cavity can be decompressed by needle aspiration
+(thoracentesis) or by chest tube drainage of the blood or air.
+
+6. The chest wall is opened surgically (thoracotomy) if more than 1500 
+mL of blood is aspirated initially by thoracentesis or if the initial chest 
+tube output or if chest tube output continues at greater than 200 mL/h.
+
+• The patient with a possible tension pneumothorax 
+1. Should immediately be given a high concentration of supplemental
+oxygen to treat the hypoxemia
+2. Pulse oximetry should be used to monitor oxygen saturation.
+
+In an emergency situation
+ 1. Inserting a large bore needle (14- gauge) at the second intercostal 
+space, midclavicular line on the affected side for converting a tension 
+pneumothorax to a simple pneumothorax.
+2. If the lung re-expands and air leakage from the lung parenchyma 
+stops
+3. If a prolonged air leak continues from chest tube drainage to 
+underwater seal, surgery may be necessary to close the leak.
+
+Guidelines for Chest Tube Drainage Systems
+1. If using a chest drainage system with a water seal, fill the water 
+seal chamber with sterile water to the level specified by the 
+manufacturer.
+2. When using suction in chest drainage systems with a water seal, 
+fill the suction control chamber with sterile water to the 20-
+cm level or as prescribed. In systems without a water seal, set 
+the regulator dial at the appropriate suction level.

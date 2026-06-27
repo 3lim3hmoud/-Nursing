@@ -1,0 +1,264 @@
+1. Arterial Puncture (ABG Sampling) 
+Definition (التعريف) 
+• Arterial puncture is a procedure used to obtain arterial blood, usually from the 
+radial, brachial, or femoral artery, for Arterial Blood Gas (ABG) analysis. 
+• ثقب الشريان   هو إجراء يتم فيه سحب عينة دم شريانية عادة من الشريان  الكعبري أو العضدي أو 
+الفخذي لتحليل   
+غازات الدم الشريان  ABG). 
+• It assesses oxygenation, ventilation, and acid–base balance. 
+• يهدف لتقييم الأكسجة، التهوية، وتوازن الحموضة والقلوية . 
+Purpose (الغرض ) 
+• Evaluate oxygenation (PaO₂). 
+• تقييم مستوى الأكسجي PaO₂. 
+• Assess ventilation (PaCO₂). 
+• تقييم التهوية PaCO₂. 
+• Assess acid–base balance (pH, HCO₃⁻). 
+• تقييم توازن الحموضة/القلوية  pH وHCO₃⁻. 
+• Monitor response to oxygen therapy or ventilator support. 
+• متابعة الاستجابة للعلاج بالأكسجي   أو أجهزة التنفس الصناع . 
+• Monitor critically ill patients. 
+• يُستخدم لمراقبة المرض  ف   الحالات الحرجة . 
+Indications (الدواع) 
+• Respiratory acidosis — الحماض التنفس. 
+• COPD exacerbation — تفاقم مرض الانسداد الرئوي المزمن .
+
+• Respiratory alkalosis — القلاء التنفس. 
+• Anxiety-induced hyperventilation — فرط التهوية بسبب القلق . 
+• Diabetic ketoacidosis — الحماض الكيتون   السكري . 
+Contraindications (موانع الاستخدام) 
+• Negative Allen’s test — اختبار آلن سلب. 
+• Local infection — عدوى موضعية. 
+• Severe peripheral vascular disease — أمراض الأوعية الدموية الطرفية الشديدة . 
+• Coagulopathy or anticoagulant therapy (relative) — اضطرابات التخثر أو استخدام 
+مميعات الدم (نسب  ) . 
+Complications (المضاعفات) 
+• Hematoma — ورم دموي . 
+• Arterial occlusion — انسداد شريان . 
+• Infection — عدوى. 
+• Air embolism — انسداد هوان. 
+• Arterial spasm — تشنج الشريان . 
+• Thrombosis — تجلط دموي. 
+ 
+2. Central Venous Pressure (CVP) Monitoring 
+Definition (التعريف) 
+• CVP is the pressure of blood in the central veins, measured at the level of the 
+right atrium. 
+• الضغط الوريدي المركزي  هو ضغط الدم داخل الأوردة المركزية ويُقاس عند مستوى الأذين الأيمن.
+
+Purpose (الغرض ) 
+• Assess circulating blood volume. 
+• تقييم حجم الدم المتداول. 
+• Evaluate the heart’s pumping ability. 
+• تقييم قدرة القلب على ضخ الدم . 
+Indications (الدواع) 
+• Critically ill / ICU patients — مرض  العناية المركزة . 
+• Fluid resuscitation — تعويض السوائل. 
+• Major surgery — الجراحات الكث ى . 
+• Cardiac dysfunction evaluation — تقييم ضعف القلب. 
+• High-risk IV therapy — إعطاء أدوية وريدية عالية الخطورة . 
+• Postoperative monitoring — المتابعة بعد العمليات. 
+• Central venous access — الحصول على وريد مركزي . 
+Contraindications (موانع الاستخدام) 
+• Not specifically listed —   المادة 
+غث  محددة ف . 
+Complications (المضاعفات) 
+Mechanical (ميكانيكية:) 
+• Arterial puncture — ثقب شريان . 
+• Pneumothorax — اسثرواح صدري . 
+• Cardiac perforation/tamponade — تمزق أو انصباب قلب. 
+• Air embolism — انسداد هوان. 
+• Malposition — وضع خاط  للقسطرة .
+
+• Nerve injury — إصابة عصبية. 
+Infectious (عدوية:) 
+• Catheter-related bloodstream infection/sepsis — عدوى مجرى الدم أو تعفن الدم . 
+Thrombotic (تخبرية :) 
+• Catheter-related thrombosis — تجلط مرتبط بالقسطرة . 
+• Pulmonary embolism — انسداد رئوي . 
+ 
+3. Basic Life Support (BLS) 
+Definition (التعريف) 
+• BLS is care provided to patients with respiratory arrest, cardiac arrest, or airway 
+obstruction. 
+• دعم الحياة الأساس  هو رعاية تُقدم للمرض  الذين يعانون من  توقف التنفس أو القلب أو انسداد 
+مجرى الهواء . 
+Purpose (الغرض ) 
+• Provide oxygen to the brain to prevent irreversible brain damage. 
+• توفث  الأكسجي   للدماغ لمنع تلف دائم . 
+• Use CPR, AED, and airway relief. 
+• باستخدام الإنعاش القلب   الرئوي وجهاز الصدمات وفتح مجرى الهواء . 
+Indications (الدواع) 
+• Respiratory arrest — توقف التنفس. 
+• Cardiac arrest — توقف القلب. 
+• Airway obstruction — انسداد مجرى الهواء .
+
+Contraindications (موانع الاستخدام) 
+• Not explicitly outlined — غث  محددة . 
+Complications (المضاعفات) 
+• Not explicitly outlined — غث  محددة . 
+ 
+4. Defibrillation & Cardioversion 
+Cardioversion – Definition (التعريف) 
+• Procedure to restore normal sinus rhythm using electrical or medical 
+intervention. 
+• إجراء لإعادة النظم الجيب   الطبيع  باستخدام صدمة كهربائية أو أدوية . 
+Defibrillation – Definition (التعريف) 
+• Electrical shock delivered at any point in the cardiac cycle to terminate fatal 
+arrhythmias. 
+•   أي وقت من الدورة القلبية لإنهاء اضطرابات نظم قاتلة 
+صدمة كهربائية تُعطى ف . 
+Purpose (الغرض ) 
+• Cardioversion: restore normal rhythm — إعادة النظم الطبيع. 
+• Defibrillation: terminate life-threatening arrhythmias — إنهاء اضطرابات نظم مهددة 
+للحياة. 
+Indications (الدواع) 
+Cardioversion: 
+• Atrial fibrillation/flutter — رجفان/رفرفة أذينية. 
+• Supraventricular tachycardia — تشع فوق بطيب.
+
+• Atrial tachycardia — تشع أذيب. 
+• Ventricular tachycardia with pulse — تشع بطيب   مع نبض . 
+Defibrillation: 
+• Ventricular fibrillation — رجفان بطيب. 
+• Pulseless ventricular tachycardia — تشع بطيب   بدون نبض . 
+Contraindications (موانع الاستخدام) 
+• Avoid synchronized cardioversion if QRS/T cannot be distinguished. 
+• يُمنع الكارديوفث شن المثر امن عند عدم تميث  QRS وT ويُستخدم الديفيث يليشن . 
+Complications (المضاعفات) 
+• Burns — حروق. 
+• Tissue damage — تلف أنسجة. 
+• Cardiac injury — إصابة القلب. 
+• Pacemaker/ICD malfunction — خلل منظم ض بات القلب . 
+ 
+5. Oropharyngeal Airway (OPA) Insertion and Care 
+Definition (التعريف) 
+• Curved plastic device inserted into the mouth to maintain airway in unconscious 
+patients. 
+• جهاز بلاستيك  منحب   يُدخل ف   الفم للحفاظ على مجرى الهواء لدى فاقدي الوع . 
+Purpose (الغرض ) 
+• Maintain airway patency — الحفاظ على مجرى الهواء مفتوح . 
+• Assist ventilation — تسهيل التهوية.
+
+• Protect ETT — حماية أنبوبة الحنجرة . 
+• Facilitate suctioning — تسهيل الشفط. 
+Indications (الدواع) 
+• Unconscious patients with airway obstruction. 
+• مرض  فاقدو الوع  مع انسداد مجرى الهواء . 
+Contraindications (موانع الاستخدام) 
+• Absolute: conscious patient, gag reflex present — مطلق: مريض واع  أو لديه منعكس 
+فر ء . 
+• Relative: oral trauma, trismus — نسب  : إصابة بالفم أو انقباض الفك . 
+Complications (المضاعفات) 
+• Tooth/tissue damage — تلف الأسنان أو الأنسجة. 
+• Bleeding — نزيف. 
+• Airway obstruction if too long — انسداد إذا كان الطول غث  مناسب . 
+• Tongue pushed back — دفع اللسان للخلف وزيادة الانسداد . 
+ 
+6. Endotracheal Tube (ETT) Insertion and Care 
+Definition (التعريف) 
+• Insertion of a tube through the larynx into the trachea to control airway and 
+provide mechanical ventilation. 
+• إدخال أنبوب عث  الحنجرة إلى القصبة الهوائية للتحكم ف   مجرى الهواء ودعم التنفس الصناع . 
+Purpose (الغرض ) 
+• Keep airway open — الحفاظ على مجرى الهواء .
+
+• Support breathing — دعم التنفس. 
+• Remove blockages — إزالة الانسدادات . 
+• Protect lungs — حماية الرئتي. 
+• Visualize airway — رؤية مجرى الهواء . 
+Indications (الدواع) 
+• Cardiopulmonary arrest — توقف القلب والتنفس. 
+• Airway compromise — صعوبة الحفاظ على مجرى الهواء . 
+• Aspiration risk — خطر الشفط. 
+• Failure to ventilate/oxygenate — فشل التهوية أو الأكسجة. 
+• Epiglottitis — التهاب لسان المزمار . 
+• Surgeries — العمليات الجراحية . 
+• CNS or muscle disorders — اضطرابات عصبية أو عضلية . 
+• Respiratory deficiencies — قصور تنفس. 
+Contraindications (موانع الاستخدام) 
+• Severe airway trauma — إصابة شديدة بمجرى الهواء . 
+• Tracheoesophageal fistula — ناسور قصب   مريب . 
+• Limited mandible movement — محدودية حركة الفك . 
+Nasotracheal specific: 
+• Facial/head trauma — إصابات الوجه أو الرأس . 
+• Basilar skull fracture — كش قاعدة الجمجمة. 
+• Active epistaxis — نزيف أنف   نشط . 
+• Neck hematoma — ورم دموي بالرقبة .
+
+• Oropharyngeal trauma — إصابات الفم والبلعوم. 
+• Apnea — توقف التنفس. 
+Complications (المضاعفات) 
+• Apnea — توقف التنفس. 
+• Bronchospasm — تشنج قصب. 
+• Aspiration — شفط محتويات. 
+• Tooth/lip/mouth/pharynx/vocal cord injury — إصابات الأسنان أو الفم أو الأحبال الصوتية. 
+• Laryngeal/tracheal edema, stenosis, necrosis — وذمة أو تضيق أو نخر بالحنجرة أو 
+القصبة. 
+• Nasal bleeding, sinusitis, otitis media — نزيف أنف  ، التهاب الجيوب، التهاب الأذن الوس . 
+• Ventilator-associated pneumonia — التهاب رئوي مرتبط بجهاز التنفس . 
+ 
+7. Suctioning 
+Definition (التعريف) 
+• Removal of mucus and secretions to maintain airway patency. 
+• إزالة المخاط والإفرازات للحفاظ على مجرى الهواء مفتوح . 
+Purpose (الغرض ) 
+• Keep airway clear — إبقاء مجرى الهواء نظيف . 
+• Prevent respiratory complications — منع المضاعفات التنفسية. 
+Indications (الدواع) 
+• Noisy/gurgling breath — أصوات تنفس غث  طبيعية . 
+• Visible secretions — إفرازات مرئية .
+
+• Low SpO₂ — انخفاض تشبع الأكسجي. 
+• Increased RR/effort — زيادة معدل أو جهد التنفس . 
+• Restlessness, cyanosis — قلق أو زرقة . 
+• Respiratory distress — ضيق تنفس. 
+• Artificial airway — وجود أنبوب صناع. 
+Contraindications (Relative) (موانع نسبية) 
+• Nasal trauma/surgery — إصابة أو جراحة أنف . 
+• Coagulopathy — اضطرابات تخثر. 
+• Basilar skull fracture — كش قاعدة الجمجمة. 
+• Severe bronchospasm — تشنج قصب   شديد . 
+Complications (المضاعفات) 
+• Hypoxia — نقص الأكسجي. 
+• Bradycardia — بطء القلب. 
+• Tissue trauma — إصابة الأنسجة. 
+• Bleeding — نزيف. 
+• Infection — عدوى. 
+• Atelectasis — انخماص رئوي . 
+• Increased ICP — ارتفاع الضغط داخل الجمجمة . 
+• Bronchospasm/laryngospasm — تشنج قصب   أو حنجري . 
+• Anxiety — قلق. 
+• Vomiting/aspiration — تقيؤ أو شفط.
+
+8. Chest Tube Drainage System 
+Definition (التعريف) 
+• Flexible tube inserted into the pleural space to remove air, fluid, or pus and 
+restore negative pressure. 
+• أنبوب مرن يُدخل إلى التجويف الجنب   لإزالة الهواء أو السوائل أو الصديد واستعادة الضغط السلب . 
+Purpose (الغرض ) 
+• Evacuate air/fluid — إزالة الهواء أو السوائل . 
+• Prevent cardiac tamponade post-surgery — منع الانصباب القلب   بعد الجراحة . 
+• Restore normal intrathoracic pressure — استعادة الضغط الطبيع  داخل الصدر . 
+Indications (الدواع) 
+• Pneumothorax — اسثرواح الصدر . 
+• Hemothorax — انصباب دموي. 
+• Pleural effusion — انصباب جنب. 
+• Chylothorax — تجمع سائل لمفاوي. 
+• Empyema — تجمع صديدي. 
+• Hydrothorax — انصباب مان. 
+• Pleurodesis — التصليب الجنب. 
+Contraindications (موانع الاستخدام) 
+• Coagulopathy — اضطرابات التخثر. 
+• Pulmonary bulla — فقاعات رئوية . 
+• Pulmonary/pleural adhesions — التصاقات رئوية أو جنبية . 
+• Skin infection at site — عدوى جلدية بمكان الإدخال.
+
+Complications (المضاعفات) 
+• Pain — ألم. 
+• Failure to enter pleural space — فشل دخول التجويف الجنب. 
+• Infection — عدوى. 
+• Lung laceration — تمزق الرئة . 
+• Hemorrhage — نزيف. 
+• Blocked drains — انسداد أنبوب الصرف . 
+• Pleural sepsis — تعفن جنب. 
+• Subcutaneous emphysema — انتفاخ هوان   تحت الجلد .

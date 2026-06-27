@@ -1,0 +1,375 @@
+B L O O M ' S
+Taxonomy
+A Comprehensive Lecture
+Original vs. Revised Taxonomy
+Three Domains of Learning
+Verbs & Practical Examples
+Formulating Goals & Objectives
+The ABCD Model
+Based on Bloom (1956) · Revised by Anderson & Krathwohl (2001) · Simpson (1972) · Krathwohl, Bloom & Masia (1964)
+
+B A C K G R O U N D
+Benjamin S. Bloom & the Origins
+How a 1948 committee meeting changed educational theory forever
+BSB
+Benjamin S. Bloom
+1913 – 1999
+Psychologist & Educator
+University of Chicago
+1948
+American Psychological Association (APA) conference — Bloom proposes a 
+classification system for educational objectives.
+1956
+Taxonomy of Educational Objectives: Cognitive Domain published — the 
+original 6-level hierarchy revolutionizes curriculum design.
+1964
+Krathwohl, Bloom & Masia publish the Affective Domain taxonomy, 
+addressing attitudes and values.
+2001
+Anderson & Krathwohl revise the taxonomy — renaming levels with verbs, 
+moving Synthesis→Create to the top.
+
+O R I G I N A L  T A X O N O M Y
+The Original Taxonomy — 1956
+Six levels in the Cognitive Domain — arranged from lower to higher order thinking
+1 Knowledge
+Recall of facts, terms, and basic concepts
+e.g. List the 5 stages of cell division
+2 Comprehension
+Explain or interpret meaning from 
+material
+e.g. Explain how photosynthesis works
+3 Application
+Use information in new and concrete 
+situations
+e.g. Solve a chemistry equation
+4 Analysis
+Break material into parts; find patterns
+e.g. Compare the causes of WWI vs 
+WWII
+5 Synthesis
+Combine elements to form a new whole
+e.g. Design an experiment to test a 
+hypothesis
+6 Evaluation
+Judge value; justify decisions or courses 
+of action
+e.g. Assess the validity of a research 
+paper
+
+R E V I S E D  T A X O N O M Y  2 0 0 1
+The Revised Taxonomy — 2001
+Anderson & Krathwohl — nouns replaced by verbs, Synthesis renamed Create & moved to the apex
+1 Remember
+Retrieve relevant knowledge from 
+memory
+e.g. Name the bones of the human hand
+2 Understand
+Construct meaning from instructional 
+messages
+e.g. Summarize a research article in own 
+words
+3 Apply
+Carry out a procedure in a given 
+situation
+e.g. Calculate medication dosage for a 
+patient
+4 Analyze
+Break material into component parts; 
+determine how they interrelate
+e.g. Differentiate between Type 1 and 
+Type 2 diabetes
+5 Evaluate
+Make judgments based on criteria and 
+standards
+e.g. Critique the methodology of a 
+clinical trial
+6 Create
+Put elements together to form a novel 
+whole
+e.g. Design a patient care protocol from 
+scratch
+
+C O M P A R I S O N
+Original vs. Revised: What Changed?
+The 2001 revision transformed nouns into action verbs and restructured the apex
+Original (1956) Revised (2001) Key Change
+Knowledge Remember Shifted focus from noun (content) to verb (action)
+Comprehension Understand More active — learners construct meaning
+Application Apply Verb form clarifies observable behavior
+Analysis Analyze Consistent verb convention
+Synthesis Create Renamed AND moved to top — highest cognitive demand
+Evaluation Evaluate Now Level 5, below Create (swapped order)
+
+T H R E E  D O M A I N S
+Three Domains of Learning
+Bloom identified that all learning occurs across three interconnected dimensions
+T H I N K I N G
+Cognitive
+Bloom, 1956 / Anderson & Krathwohl 2001 · 6 Levels
+F E E L I N G
+Affective
+Krathwohl, Bloom & Masia, 1964 · 5 Levels
+D O I N G
+Psychomotor
+Simpson, 1972 · 5 Levels
+
+C O G N I T I V E  D O M A I N
+Cognitive Domain: Verbs & Examples
+Mental skills — from simple recall to complex creation. Use these verbs when writing learning objectives.
+L1 Remember
+Verbs: Define, List, Recall, Name, Identify, Label, Repeat, State
+Example: List the 4 blood types
+L2 Understand
+Verbs: Explain, Summarize, Paraphrase, Classify, Describe, Interpret, 
+Compare
+Example: Explain the water cycle
+L3 Apply
+Verbs: Solve, Demonstrate, Calculate, Use, Execute, Implement, Operate
+Example: Calculate medication dosage
+L4 Analyze
+Verbs: Compare, Differentiate, Examine, Break down, Distinguish, Organize
+Example: Compare WWI & WWII causes
+L5 Evaluate
+Verbs: Judge, Justify, Critique, Defend, Assess, Argue, Prioritize
+Example: Critique a research methodology
+L6 Create
+Verbs: Design, Construct, Formulate, Develop, Compose, Plan, Produce
+Example: Design a new patient care protocol
+
+P S Y C H O M O T O R  D O M A I N
+Psychomotor Domain: Verbs & Examples
+Physical skills — motor coordination from imitation to mastery (Simpson, 1972)
+L1 Perception
+Verbs: Detect, Choose, Identify, Distinguish
+Ex: Student notices incorrect grip on surgical tool
+L2 Set
+Verbs: Prepare, Position, Display, Begin, React
+Ex: Positions hands correctly before starting IV insertion
+L3 Guided Response
+Verbs: Copy, Follow, Imitate, Attempt, Trace
+Ex: Follows step-by-step guide to suture a wound
+L4 Mechanism
+Verbs: Calibrate, Construct, Operate, Perform
+Ex: Operates ECG machine without supervision
+L5 Complex Response
+Verbs: Execute, Adapt, Coordinate, Refine, Automate
+Ex: Performs laparoscopic procedure with full fluency
+
+A F F E C T I V E  D O M A I N
+Affective Domain: Verbs & Examples
+Attitudes, values & emotions — from passive awareness to internalized belief (Krathwohl et al., 1964)
+L1 Receiving
+Verbs: Listen, Attend, Notice, Accept, Be aware
+Ex: Student listens attentively to a patient's concerns
+L2 Responding
+Verbs: Participate, Comply, Discuss, Contribute, React
+Ex: Actively participates in ethics seminar discussion
+L3 Valuing
+Verbs: Appreciate, Prefer, Justify, Support, Advocate
+Ex: Advocates for patient rights in team meetings
+L4 Organization
+Verbs: Organize, Prioritize, Integrate, Balance, Compare
+Ex: Reconciles personal beliefs with professional ethics
+L5 Characterization
+Verbs: Internalize, Embody, Demonstrate, Revise, Develop
+Ex: Consistently embodies patient-centered care values
+
+G O A L S  &  O B J E C T I V E S
+Formulating Goals & Objectives
+Understanding the critical distinction between broad goals and precise, measurable objectives
+G O A L S
+Broad Intent
+General, long-term statements of educational purpose
+NOT directly measurable or observable
+Express ideals, aspirations, and values
+Apply to a course, program, or institution
+Guide the overall direction of instruction
+Example: "Students will develop an appreciation for evidence-based 
+practice."
+O B J E C T I V E S
+Specific Intent
+Specific, measurable statements of what learners DO
+Observable behaviors — can be seen or evaluated
+Include a clear standard or criterion for success
+Apply at the lesson, unit, or session level
+Drive assessment design and teaching strategies
+Example: "Given a patient case, students will calculate oral 
+medication dose with 90% accuracy."
+
+G O O D  O B J E C T I V E S
+Characteristics of Effective Objectives
+What separates a well-written objective from a vague one?
+S
+Specific
+Clearly states what the 
+learner will DO. Uses 
+action verbs, not vague 
+terms like 'know' or 
+'understand'.
+NOT: 'Understand 
+anatomy'
+YES: 'Label the 12 cranial 
+nerves'
+M
+Measurable
+Can be observed, 
+counted, or evaluated 
+objectively with a defined 
+criterion.
+NOT: 'Improve 
+communication'
+YES: 'Score ≥85% on OSCE 
+station'
+A
+Achievable
+Realistic for the learner's 
+current level, prior 
+knowledge, and available 
+time.
+NOT: Set for first-day 
+students
+YES: Built on prior 
+foundational skills
+R
+Relevant
+Aligned with the course 
+goal, real-world needs, 
+and the learner's future 
+practice.
+NOT: Memorize historical 
+trivia
+YES: Apply evidence-
+based protocols
+T
+Time-bound
+Achievable within a 
+defined instructional 
+period — a session, unit, 
+or semester.
+NOT: 'Eventually be able 
+to...'
+YES: 'By end of Week 3, 
+students will...'
+
+A B C D  M O D E L
+The ABCD Model for Writing Objectives
+Four essential components that make a learning objective complete and unambiguous
+A
+Audience
+WHO are the learners?
+Identify the specific group being 
+taught. The objective describes what 
+THEY will do, not what the teacher 
+will teach. Always make the learner 
+the subject.
+Nursing students
+Medical interns
+Grade 6 pupils
+B
+Behavior
+What will they DO?
+Use an observable ACTION VERB 
+from Bloom's Taxonomy. Must be 
+something that can be seen, heard, 
+or evaluated. Avoid vague verbs like 
+'know', 'understand', or 'appreciate'.
+Identify
+Calculate
+Construct
+C
+Condition
+Under what CIRCUMSTANCES?
+Specify the context, tools, materials, 
+or constraints given to the learner 
+when performing the task.
+Given a patient case study...
+Without reference materials...
+Using a standard calculator...
+D
+Degree
+How WELL must they perform?
+Define the minimum acceptable 
+standard — the criterion that 
+separates success from failure. This 
+makes the objective measurable.
+...with 80% accuracy
+...in 4 out of 5 cases
+...in under 3 minutes
+
+A B C D  E X A M P L E S
+ABCD in Practice: Worked Examples
+Three complete objectives across different disciplines — each component labeled
+Healthcare / Nursing
+A First-year nursing students B will correctly measure and document vital signs
+C given a standardized simulated patient scenario D with 90% accuracy across 5 consecutive assessments
+Science Education
+A Grade 10 biology students B will construct and label a detailed diagram of cell division
+C without the use of textbooks or notes D correctly identifying all 5 phases with ≥80% accuracy
+Pharmacy Training
+A Third-year pharmacy students B will calculate and verify the appropriate drug dosage
+C given a laboratory practical exam with 10 patient scenarios D achieving a passing score of 9 out of 10 cases
+A = Audience B = Behavior C = Condition D = Degree
+
+O B J E C T I V E  Q U A L I T Y
+Weak vs. Strong Objectives
+Spot the difference — and fix it. This is the most practical skill in instructional design.
+WEAK
+"Students will know about infection control." =>
+STRONG
+Psychomotor —
+Mechanism
+"Given a clinical simulation, nursing students will demonstrate correct 
+hand hygiene technique before and after patient contact in 5 out of 5 
+observations."
+WEAK
+"Learners will understand cardiovascular disease." =>
+STRONG Cognitive — Analyze
+"After the cardiology lecture, students will compare the 
+pathophysiology of atherosclerosis vs. hypertension using a Venn 
+diagram with at least 4 correct distinctions."
+WEAK
+"Students will appreciate ethical practice." =>
+STRONG Affective — Valuing
+"Following the bioethics workshop, students will defend their chosen 
+position on a given case study in a written reflection of 300+ words, 
+citing at least 2 ethical principles."
+
+I N T E G R A T I O N
+ABCD + SMART: Two Frameworks, One Objective
+ABCD gives you the structure; SMART gives you the quality check. Use both together.
+C O M P L E T E  O B J E C T I V E :
+A Second-year pharmacy students B will correctly calculate drug dosage
+C given a practical exam with patient scenarios D achieving 9 of 10 correct.
+ABCD Checklist
+A Audience: 'Second-year pharmacy students'
+B Behavior: 'will correctly calculate dosage'
+C Condition: 'given a practical exam...'
+D Degree: 'achieving 9 out of 10'
+SMART Checklist
+S Specific: 'Calculate dosage' — clear action verb
+M Measurable: '9 out of 10' — quantified criterion
+A Achievable: Appropriate for 2nd-year level
+R Relevant: Core pharmacy competency
+T Time-bound: 'Given a practical exam' — defined event
+
+Key Takeaways
+1 Three Domains —
+All learning is Cognitive (thinking), Psychomotor (doing), or Affective (feeling). Effective 
+design addresses all three.
+2 Hierarchy Matters —
+Each domain progresses from lower to higher order. Build foundational objectives before 
+advanced ones.
+3 Verb Choice is Critical —
+Action verbs define the observable behavior and the domain level. 'Design' signals Create 
+(L6); 'List' signals Remember (L1).
+4 Goals ≠ Objectives —
+Goals are broad ideals; objectives are specific, observable, measurable statements of 
+learner behavior.
+5 ABCD Model —
+Every strong objective has: Audience, Behavior, Condition, and Degree. Missing any 
+component weakens it.
+6 SMART + ABCD = Excellence —
+ABCD provides structure; SMART ensures quality. Apply both frameworks to every 
+objective you write.
+Bloom (1956) · Anderson & Krathwohl (2001) · Simpson (1972) · Krathwohl, Bloom & Masia (1964)

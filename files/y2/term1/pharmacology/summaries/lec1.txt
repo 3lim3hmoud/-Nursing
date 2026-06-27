@@ -1,0 +1,479 @@
+Routes of Drug Administration 
+طرق إعطاء الأدوية 
+ 
+The factors are: 
+العوامل هي: 
+1. Characteristics of the drug. 
+١ .خصائص الدواء . 
+2. Emergency/routine use. 
+٢ .استخدام طارئ أو روتيني. 
+3. Site of action of the drug — local or systemic. 
+٣ .مكان عمل الدواء  – موضعي أو جهازي . 
+4. Condition of the patient (unconscious, vomiting, diarrhea). 
+٤ .حالة المريض (فاقد الوعي، قيء، إسهال) . 
+5. Age of the patient. 
+٥ .عمر المريض . 
+6. Effect of gastric pH, digestive enzymes, and first-pass 
+metabolism. 
+٦ .تأثير درجة الحموضة بالمعدة، الإنزيمات الهاضمة، والأيض الأولي .
+
+7. Patient’s/doctor’s choice (sometimes). 
+٧ .اختيار المريض/الطبيب (أحيانًا). 
+ 
+Most of the drugs can be administered by different routes. 
+معظم الأدوية يمكن إعطاؤها بطرق مختلفة. 
+Drug- and patient-related factors determine the selection of 
+routes for drug administration. 
+العوامل المتعلقة بالدواء والمريض تحدد اختيار طريقة إعطاء الدواء. 
+ 
+Routes 
+طرق إعطاء الأدوية 
+• Systemic (جهازي) 
+• Local (موضعي) 
+• Parenteral (حقني/غير فموي) 
+o Inhalation (استنشاق) 
+o Injections (حقن) 
+o Transdermal (عبر الجلد)
+
+• Enteral (عن طريق القناة الهضمية) 
+o Oral (فموي) 
+o Sublingual (تحت اللسان) 
+o Rectal (شرجي) 
+ 
+Local Routes 
+الطرق الموضعية 
+Systemic side effects are minimal. 
+الآثار الجانبية الجهازية تكون قليلة جدًا. 
+It is the simplest mode of administration of a drug at the site 
+where the desired action is required. 
+هي أبسط طريقة لإعطاء الدواء في المكان المطلوب أن يعمل فيه. 
+ 
+1. Topical: 
+١ .موضعي: يوضع الدواء على الجلد أو الأغشية المخاطية لمفعول موضعي . 
+a. Oral cavity (تجويف الفم:)
+
+• As a suspension, e.g., nystatin. 
+كسائل معلق، مثل النيستاتين. 
+• As a troche, e.g., clotrimazole (for oral candidiasis). 
+كأقراص مص، مثل الكلوتريمازول (لفطريات الفم. 
+• As a cream, e.g., acyclovir (for herpes labialis). 
+ككريم، مثل الأسيكلوفير (لحبة السخونة. 
+• As ointment and jelly, e.g., 5% lignocaine hydrochloride (for 
+topical anesthesia). 
+كمرهم أو جيل، مثل٥٪ ليجنوكايين هيدروكلوريد (للتخدير الموضعي) . 
+• As a spray, e.g., 10% lignocaine hydrochloride (for topical 
+anesthesia). 
+كرذاذ، مثل٠١٪ ليجنوكايين هيدروكلوريد (للتخدير الموضعي) . 
+ 
+b. GI tract: 
+ب. القناة الهضمية: 
+• As a tablet that is not absorbed, e.g., neomycin (for sterilization 
+of the gut before surgery). 
+كقرص لا يُمتص، مثل النيومايسين (لتعقيم الأمعاء قبل العملية.
+
+• i. As an enema (administration of a drug into the rectum in 
+liquid form): 
+١ .كحقنة شرجية (إعطاء الدواء في المستقيم على شكل سائل) : 
+o Evacuant enema (for evacuation of the bowel), e.g., soap 
+water enema. 
+حقنة مفرغة للأمعاء، مثل حقنة الصابون والماء. 
+o Retention enema, e.g., methylprednisolone in ulcerative 
+colitis. 
+حقنة احتباس، مثل الميثيل بريدنيزولون في التهاب القولون التقرحي. 
+• ii. As a suppository (solid form into the rectum), e.g., 
+bisacodyl for evacuation of bowels. 
+٢ .كتحميلة (شكل صلب داخل المستقيم)، مثل البيساكوديل لإفراغ الأمعاء. 
+ 
+c. Rectum and anal canal: 
+ج. المستقيم والقناة الشرجية. 
+d. Eye, ear and nose: As drops, ointments, and sprays (e.g., 
+gentamicin). 
+د. العين، الأذن، والأنف: كقطرات أو مراهم أو بخاخات (مثل الجنتاميسين.
+
+e. Bronchi: As an inhalation, e.g., salbutamol, ipratropium bromide. 
+هـ. الشعب الهوائية: عن طريق الاستنشاق، مثل السالبوتامول والإبراتروبيوم. 
+f. Skin: As ointment, cream, lotion, or powder, e.g., clotrimazole 
+(antifungal). 
+و. الجلد: كمرهم، كريم، لوشن، أو بودرة مثل الكلوتريمازول (مضاد فطري. 
+ 
+2. Intra-arterial route: 
+٢ .الحقن داخل الشريان: 
+Rare, used in diagnostic studies (e.g., coronary angiography) and 
+anticancer drugs in limbs. 
+نادر الاستخدام، ويُستخدم في الفحوصات (مثل تصوير الشرايين التاجية) أو لإعطاء أدوية
+السرطان في الأطراف. 
+ 
+3. Administration into deep tissues by injection: 
+٣ .إعطاء الدواء في الأنسجة العميقة بالحقن : 
+E.g., triamcinolone into joints in rheumatoid arthritis. 
+مثل حقن الترايمسينولون داخل المفصل في التهاب المفاصل الروماتويدي.
+
+Systemic Routes 
+الطرق الجهازية 
+Definition: Drugs enter the blood and produce systemic effects. 
+التعريف: الأدوية تدخل الدم وتُحدث تأثيرات جهازية. 
+ 
+Enteral Routes (Oral, Sublingual, Rectal) 
+الطرق المعوية (الفموي، تحت اللسان، الشرجي 
+Oral Route 
+الطريق الفموي 
+• Most common and acceptable. 
+الأكثر شيوعًا وقبولاً. 
+• Dosage forms: tablet, capsule, syrup, mixture. 
+الأشكال: أقراص، كبسولات، شراب، خليط. 
+• Examples: paracetamol tablet (fever), omeprazole capsule 
+(ulcer). 
+أمثلة: باراسيتامول (للحُمّى)، أوميبرازول (للقرح.
+
+Advantages: 
+✓ Safer. 
+✓ أكثر أمانًا. 
+✓ Cheaper. 
+✓ أرخص. 
+✓ Painless. 
+✓ غير مؤلم. 
+✓ Convenient. 
+✓ مناسب للاستخدام المتكرر. 
+✓ Self-administered. 
+✓ يمكن تناوله ذاتيًا. 
+Disadvantages: 
+العيوب: 
+• Not suitable for emergencies (slow onset). 
+غير مناسب للطوارئ (بطيء المفعول. 
+• Not for unpalatable/irritant/unabsorbable drugs. 
+غير مناسب للأدوية الكريهة أو المهيجة أو غير الممتصة.
+
+• Not for drugs destroyed by digestion (e.g., insulin). 
+غير مناسب للأدوية التي تتحطم بالهضم (مثل الأنسولين. 
+• Not for patients: unconscious, vomiting, diarrhea. 
+غير مناسب للمرضى: فاقدي الوعي، عند القيء أو الإسهال. 
+ 
+Sublingual Route 
+الطريق تحت اللسان 
+• Tablet under tongue → absorbed via buccal mucosa → directly 
+to systemic circulation. 
+القرص يوضع تحت اللسان → يُمتص من الغشاء المخاطي → يصل مباشرة إلى الدم. 
+• Examples: nitroglycerin (angina), buprenorphine (MI). 
+أمثلة: نيتروجلسرين (ذبحة صدرية)، بوبري نورفين (احتشاء. 
+Advantages: 
+✓ Quick onset. 
+✓ بداية سريعة. 
+✓ Can spit tablet to stop effect. 
+✓ يمكن إيقاف التأثير ببصق القرص. 
+✓ Bypasses first-pass metabolism.
+
+✓ يتجنب الأيض الأولي. 
+✓ Self-administered. 
+✓ يمكن تناوله ذاتيًا. 
+Disadvantages: 
+• Not for irritant or bad taste drugs. 
+غير مناسب للأدوية المهيجة أو سيئة الطعم/الرائحة. 
+• Not for lipid-insoluble drugs. 
+غير مناسب للأدوية غير القابلة للذوبان في الدهون. 
+ 
+Rectal Route 
+الطريق الشرجي 
+• Suppository: local or systemic (e.g., indomethacin for arthritis). 
+تحميلة: تأثير موضعي أو جهازي (مثل الإندوميثاسين. 
+• Enema: retention → systemic (e.g., diazepam in children). 
+حقنة شرجية احتباس → تأثير جهازي (مثل الديازيبام للأطفال. 
+ 
+Parenteral Routes
+
+الطرق الحقنية (غير الفموية 
+Definition: Routes other than enteral. 
+التعريف: طرق غير القناة الهضمية. 
+Advantages: 
+✓ Faster onset (emergencies). 
+✓ بداية أسرع (مناسب للطوارئ. 
+✓ Useful in unconscious, vomiting, diarrhea. 
+✓ مناسب للمريض فاقد الوعي أو يعاني قيء/إسهال. 
+✓ Good for irritant, poorly absorbed, destroyed drugs. 
+✓ مناسب للأدوية المهيجة أو غير الممتصة أو التي تتحطم بالهضم. 
+Disadvantages: 
+• Require aseptic technique and sterility. 
+تحتاج لتعقيم تام. 
+• Expensive and painful. 
+مكلفة ومؤلمة. 
+• Usually not self-administered. 
+عادة لا تُستخدم ذاتيًا.
+
+Inhalation 
+الاستنشاق 
+• Volatile liquids and gases for systemic effects (e.g., general 
+anesthetics). 
+السوائل المتطايرة والغازات تُعطى بالاستنشاق لتأثير جهازي (مثل المخدرات العامة. 
+Advantages: 
+✓ Quick onset of action. 
+✓ بداية سريعة جدًا. 
+✓ Small dose → less systemic toxicity. 
+✓ جرعة صغيرة → سمية جهازية أقل. 
+✓ Dose can be regulated. 
+✓ يمكن التحكم بالجرعة. 
+Disadvantages: 
+• Local irritation → more secretions and bronchospasm. 
+تهيج موضعي قد يسبب إفرازات أكثر وتشنج قصبي.
+
+Injections 
+الحقن 
+1. Intradermal (داخل الجلد:) 
+• Drug into skin layers, e.g., BCG vaccine, sensitivity tests. 
+يُحقن في طبقات الجلد (مثل تطعيم  BCG واختبارات الحساسية.) 
+• Painful, only small amount given. 
+مؤلم ولا يسمح إلا بكمية قليلة. 
+ 
+2. Subcutaneous (s.c.): تحت الجلد 
+• Into thigh, abdomen, arm. Examples: insulin, adrenaline. 
+في الفخذ، البطن، الذراع. أمثلة: الأنسولين، الأدرينالين. 
+Advantages: 
+✓ Self-administered (e.g., insulin). 
+✓ يمكن أخذه ذاتيًا (مثل الأنسولين. 
+✓ Depot drugs possible (e.g., Norplant). 
+✓ يسمح بإعطاء أدوية ممتدة المفعول (مثل نوربلانت. 
+Disadvantages:
+
+• Only for non-irritant drugs. 
+غير مناسب للأدوية المهيجة. 
+• Absorption is slow → not for emergencies. 
+الامتصاص بطيء → غير مناسب للطوارئ. 
+ 
+3. Intramuscular (i.m.): داخل العضل 
+• Into large muscles (deltoid, gluteus, vastus lateralis). 
+يُحقن في العضلات الكبيرة (الدلتويد، الألوية، الفخذية. 
+• Volume: 5–10 mL. 
+يمكن إعطاء٥–٠١ مل.  
+Advantages: 
+✓ Faster absorption than oral. 
+✓ امتصاص أسرع من الفموي. 
+✓ Mild irritants, depot, suspensions possible. 
+✓ يناسب الأدوية المهيجة قليلاً أو ممتدة المفعول أو المعلقات. 
+Disadvantages: 
+• Needs aseptic conditions. 
+تحتاج لتعقيم.
+
+• Painful, may cause abscess. 
+مؤلمة وقد تسبب خُراج. 
+• Not self-administered. 
+لا يمكن إعطاؤها ذاتيًا. 
+• Risk of nerve injury. 
+خطر إصابة الأعصاب. 
+ 
+4. Intravenous (i.v.): وريدي 
+• Directly into vein. 
+يُعطى مباشرة في الوريد. 
+Methods: 
+1. Bolus → single large dose. (e.g., ranitidine for bleeding ulcer). 
+جرعة واحدة كبيرة (مثل الرانيتيدين لنزيف القرحة. 
+2. Slow injection (e.g., morphine in MI). 
+حقن بطيء (مثل المورفين في الجلطة. 
+3. Infusion (e.g., dopamine in shock, mannitol in edema, IV fluids). 
+تسريب وريدي (مثل الدوبامين في الصدمة، المانيتول في وذمة الدماغ، محاليل للجفاف.
+
+Advantages: 
+✓ 100% bioavailability. 
+✓ توافر حيوي كامل٠٠١٪.  
+✓ Quick onset (emergency use). 
+✓ بداية سريعة للطوارئ. 
+✓ Large volume possible. 
+✓ يمكن إعطاء كميات كبيرة من السوائل. 
+✓ Irritant drugs diluted in blood. 
+✓ الأدوية المهيجة تُخفف في الدم. 
+✓ Maintain constant plasma level. 
+✓ يحافظ على مستوى ثابت بالدم. 
+Disadvantages: 
+• Irreversible once injected. 
+لا يمكن إيقاف تأثير الدواء بعد الحقن. 
+• May cause phlebitis. 
+قد يسبب التهاب الوريد. 
+• Needs strict asepsis. 
+يتطلب تعقيم صارم.
+
+• Extravasation → necrosis, sloughing. 
+تسرب الدواء قد يسبب نخر وموت للأنسجة. 
+• Depot drugs not possible. 
+لا يمكن استخدام أدوية ممتدة المفعول. 
+Precautions: 
+• Inject slowly. 
+الحقن يجب أن يكون ببطء. 
+• Ensure needle tip is in vein. 
+التأكد أن الإبرة داخل الوريد قبل الحقن. 
+ 
+5. Intrathecal route: 
+الحقن في الحيز تحت العنكبوتية (للتخدير النخاعي. 
+6. Intra-articular route: 
+داخل المفصل (مثل الكورتيزون لالتهاب المفاصل. 
+• Needs asepsis. 
+يتطلب تعقيم.
+
+• Repeated use may damage cartilage. 
+الاستخدام المتكرر قد يضر الغضاريف. 
+ 
+Transdermal Route 
+الطريق عبر الجلد 
+• Patch/ointment delivers drug systemically (e.g., nitroglycerin 
+patch for angina). 
+لاصقة/مرهم يعطي تأثيرًا جهازيًا (مثل لاصقة النيتروجلسرين للذبحة . 
+Advantages: 
+✓ Self-administered, good compliance. 
+✓ يمكن استخدامه ذاتيًا، التزام أفضل. 
+✓ Long action. 
+✓ مدة مفعول أطول. 
+✓ Less systemic side effects. 
+✓ آثار جانبية أقل. 
+✓ Constant plasma level. 
+✓ يحافظ على مستوى ثابت للدواء في الدم.
+
+Disadvantages: 
+• Expensive. 
+مكلف. 
+• Local irritation (dermatitis, itching). 
+قد يسبب تهيج جلدي أو حكة. 
+• Patch may fall off unnoticed. 
+اللاصقة قد تسقط بدون ملاحظة. 
+ 
+Special Drug-Delivery Systems 
+أنظمة خاصة لإعطاء الدواء 
+1. Intraoral lignocaine patch: 
+لاصقة تحتوي ليدوكايين لتخدير الفم. 
+2. Jet injection: 
+إعطاء مخدر موضعي بالضغط بدون إبرة. 
+3. Liposomes: 
+حويصلات فوسفوليبيدية تحمل الدواء (مثل أمفوتيريسين B). 
+→ تساعد في توصيل الدواء لمكان محدد.
+
+4. Monoclonal antibodies: 
+أجسام مضادة مصنوعة مخبريًا تستهدف مستضد محدد. 
+ →تستخدم لتوصيل أدوية السرطان. 
+ 
+ 
+Question Bank – Routes of Drug Administration (MCQs only) 
+1. The most common and acceptable route of drug administration 
+is: 
+a) Sublingual 
+b) Oral 
+c) Intravenous 
+d) Inhalation 
+2. Which of the following is NOT a factor affecting the choice of 
+drug administration? 
+a) Patient’s age 
+b) Site of action of drug 
+c) Color of the drug 
+d) Patient’s condition
+
+3. Which route is unsuitable for emergencies? 
+a) Oral 
+b) Intravenous 
+c) Sublingual 
+d) Intramuscular 
+4. Which drug is given sublingually for acute angina? 
+a) Insulin 
+b) Nitroglycerin 
+c) Diazepam 
+d) Paracetamol 
+5. Which route bypasses the first-pass metabolism? 
+a) Oral 
+b) Sublingual 
+c) Rectal 
+d) Both b and c 
+6. Rectal route can be used in the form of: 
+a) Suppository 
+b) Enema
+
+c) Both a and b 
+d) None 
+7. Which route provides 100% bioavailability? 
+a) Oral 
+b) Intramuscular 
+c) Intravenous 
+d) Sublingual 
+8. Depot preparations like Norplant are administered by: 
+a) Oral 
+b) Subcutaneous 
+c) Intravenous 
+d) Inhalation 
+9. Which of the following is a disadvantage of IV route? 
+a) Slow onset of action 
+b) Cannot give large volume 
+c) Irreversible once given 
+d) Cannot give fluids 
+10. Transdermal drug delivery is used in: 
+a) Nitroglycerin patch
+
+b) Diazepam injection 
+c) Gentamicin eye drops 
+d) Paracetamol syrup 
+11. The route useful in vomiting or unconscious patients is: 
+a) Oral 
+b) Rectal 
+c) Inhalation 
+d) Intramuscular 
+12. Which of the following is given subcutaneously? 
+a) Insulin 
+b) Dopamine 
+c) Paracetamol 
+d) Diazepam 
+13. Which injection is given deep into muscle tissue? 
+a) IV 
+b) SC 
+c) IM 
+d) Inhalation
+
+14. Risk of phlebitis occurs in: 
+a) Oral 
+b) Rectal 
+c) Intravenous 
+d) Sublingual 
+15. Which of the following is an example of topical route? 
+a) Acyclovir cream 
+b) Nitroglycerin patch 
+c) Diazepam IV 
+d) Insulin SC 
+16. Which is a disadvantage of sublingual route? 
+a) Rapid absorption 
+b) Cannot be used in unconscious patients 
+c) Bypasses first-pass metabolism 
+d) Used for angina 
+17. Jet injection is used for: 
+a) Local anesthesia 
+b) Chemotherapy
+
+c) Sublingual drug 
+d) Suppository 
+18. Liposomes are used for: 
+a) Rapid oral absorption 
+b) Targeted drug delivery 
+c) Local skin infection 
+d) Pain relief 
+19. Monoclonal antibodies are mainly used in: 
+a) Anemia 
+b) Cancer therapy 
+c) Diabetes 
+d) Hypertension 
+20. Which of the following is NOT a parenteral route? 
+a) Intravenous 
+b) Intramuscular 
+c) Oral 
+d) Subcutaneous
+
+Answer Key 
+1. b) Oral 
+2. c) Color of the drug 
+3. a) Oral 
+4. b) Nitroglycerin 
+5. d) Both b and c 
+6. c) Both a and b 
+7. c) Intravenous 
+8. b) Subcutaneous 
+9. c) Irreversible once given 
+10. a) Nitroglycerin patch 
+11. b) Rectal 
+12. a) Insulin 
+13. c) IM 
+14. c) Intravenous
+
+15. a) Acyclovir cream 
+16. b) Cannot be used in unconscious patients 
+17. a) Local anesthesia 
+18. b) Targeted drug delivery 
+19. b) Cancer therapy 
+20. c) Oral

@@ -1,0 +1,254 @@
+Definitions  
+1. Stable Angina 
+Stable angina is chest pain caused by temporary myocardial ischemia due to fixed 
+coronary artery narrowing, usually precipitated by exertion or emotional stress and 
+relieved by rest or nitroglycerin. 
+الذبحة الصدرية المستقرة هي ألم صدري ناتج عن نقص مؤقت في تروية عضلة القلب بسبب ضيق ثابت في
+الشرايين التاجية، ويحدث غالبًا مع المجهود أو الانفعال ويختفي بالراحة أو النيتروجليسرين. 
+ 
+2. Nephrotic Syndrome 
+Nephrotic syndrome is a renal disorder characterized by massive proteinuria (>3.5 
+g/day), hypoalbuminemia, generalized edema, hyperlipidemia, and lipiduria. 
+المتلازمة الكلوية هي اضطراب كلوي يتميز بفقدان شديد للبروتين في البول، انخفاض الألبومين في الدم، وذمة
+عامة، ارتفاع الدهون في الدم، ووجود دهون في البول. 
+ 
+3. Unstable Angina 
+Unstable angina is chest pain due to myocardial ischemia that occurs at rest or with 
+minimal exertion, is more severe or prolonged, and is not relieved by rest, indicating 
+impending myocardial infarction. 
+الذبحة الصدرية غير المستقرة هي ألم صدري ناتج عن نقص تروية عضلة القلب يحدث أثناء الراحة أو مع مجهود
+بسيط، يكون أشد أو أطول، ولا يستجيب للراحة، ويشير إلى قرب حدوث احتشاء عضلة القلب. 
+ 
+4. Prinzmetal Angina 
+Prinzmetal angina is a type of angina caused by coronary artery spasm leading to 
+transient myocardial ischemia, usually occurring at rest and often associated with ST 
+elevation.
+
+ذبحة برينزميتال هي نوع من الذبحة الصدرية ناتج عن تشنج في الشرايين التاجية يؤدي إلى نقص مؤقت في
+التروية، ويحدث غالبًا أثناء الراحة وقد يصاحبه ارتفاع في مقطع ST. 
+ 
+5. Hypertensive Emergency 
+Hypertensive emergency is a sudden severe elevation of blood pressure (usually 
+>180/120 mmHg) accompanied by acute target organ damage such as brain, heart, 
+kidneys, or eyes. 
+طوارئ ارتفاع ضغط الدم هي ارتفاع مفاجئ وشديد في ضغط الدم غالبًا أكثر من180 /120 ملم زئبق، ويصاحبه
+تلف حاد في الأعضاء الحيوية مثل المخ، القلب، الكلى، أو العين.  
+ 
+6. Hypertension 
+Hypertension is a chronic condition characterized by persistent elevation of arterial 
+blood pressure ≥140/90 mmHg. 
+ارتفاع ضغط الدم هو حالة مزمنة يتميز فيها ضغط الدم بارتفاع مستمر إلى140/90 ملم زئبق أو أكثر.  
+ 
+7. Acute Kidney Injury (AKI) 
+Acute kidney injury is a sudden decline in renal function resulting in decreased 
+glomerular filtration rate, oliguria or anuria, and accumulation of nitrogenous waste 
+products. 
+إصابة الكلى الحادة هي تدهور مفاجئ في وظائف الكلى يؤدي إلى انخفاض معدل الترشيح الكبيبي، قلة أو انعدام
+البول، وتراكم الفضلات النيتروجينية في الدم. 
+ 
+8. Chronic Renal Failure (CRF) 
+Chronic renal failure is a progressive, irreversible loss of kidney function over months 
+or years leading to uremia and systemic complications.
+
+الفشل الكلوي المزمن هو فقدان تدريجي وغير قابل للعكس لوظائف الكلى على مدى أشهر أو سنوات، مما يؤدي
+إلى اليوريميا ومضاعفات عامة بالجسم. 
+ 
+Mention  
+1. Complications of Angina Pectoris 
+• Myocardial infarction 
+احتشاء عضلة القلب 
+• Heart failure 
+فشل القلب 
+• Arrhythmias 
+اضطراب ضربات القلب 
+• Sudden cardiac death 
+الموت القلبي المفاجئ 
+• Reduced quality of life 
+انخفاض جودة الحياة 
+ 
+2. Etiology of Heart Failure 
+• Coronary artery disease 
+مرض الشرايين التاجية 
+• Hypertension 
+ارتفاع ضغط الدم 
+• Valvular heart diseases 
+أمراض صمامات القلب 
+• Cardiomyopathy 
+اعتلال عضلة القلب
+
+• Congenital heart diseases 
+أمراض القلب الخلقية 
+• Arrhythmias 
+اضطرابات النبض 
+• Myocarditis 
+التهاب عضلة القلب 
+ 
+3. Major Criteria of Rheumatic Fever 
+• Carditis 
+التهاب القلب 
+• Migratory polyarthritis 
+التهاب مفاصل مهاجر 
+• Sydenham’s chorea 
+الرقص 
+• Erythema marginatum 
+الطفح الجلدي الحلقي 
+• Subcutaneous nodules 
+عقيدات تحت الجلد 
+ 
+4. Common Arrhythmias 
+• Atrial fibrillation 
+الرجفان الأذيني 
+• Atrial flutter 
+الرفرفة الأذينية
+
+• Ventricular tachycardia 
+تسرع القلب البطيني 
+• Ventricular fibrillation 
+الرجفان البطيني 
+• Heart block 
+الحصار القلبي 
+ 
+5. Complications of Hypertension 
+• Stroke 
+السكتة الدماغية 
+• Ischemic heart disease 
+مرض القلب الإقفاري 
+• Heart failure 
+فشل القلب 
+• Chronic kidney disease 
+مرض الكلى المزمن 
+• Hypertensive retinopathy 
+اعتلال الشبكية 
+• Aortic aneurysm 
+تمدد الشريان الأورطي 
+ 
+6. Complications of Heart Failure 
+• Pulmonary edema 
+وذمة رئوية
+
+• Arrhythmias 
+اضطراب ضربات القلب 
+• Renal failure 
+فشل كلوي 
+• Hepatic congestion 
+احتقان الكبد 
+• Thromboembolism 
+الجلطات الدموية 
+• Sudden cardiac death 
+الموت القلبي المفاجئ 
+ 
+7. Types of Myocardial Infarction 
+• STEMI 
+احتشاء مع ارتفاع ST 
+• NSTEMI 
+احتشاء بدون ارتفاع ST 
+• Silent MI 
+احتشاء صامت 
+• Transmural MI 
+احتشاء كامل الجدار 
+• Subendocardial MI 
+احتشاء تحت الشغاف 
+ 
+8. Complications of Myocardial Infarction
+
+• Arrhythmias 
+اضطراب ضربات القلب 
+• Heart failure 
+فشل القلب 
+• Cardiogenic shock 
+صدمة قلبية 
+• Papillary muscle rupture 
+تمزق العضلات الحليمية 
+• Ventricular septal rupture 
+تمزق الحاجز البطيني 
+• Ventricular aneurysm 
+تمدد البطين 
+• Pericarditis 
+التهاب التامور 
+ 
+9. Causes of Secondary Hypertension 
+• Renal diseases 
+أمراض الكلى 
+• Renal artery stenosis 
+ضيق الشريان الكلوي 
+• Endocrine disorders (Cushing’s, pheochromocytoma) 
+اضطرابات الغدد الصماء 
+• Drugs (steroids, oral contraceptives) 
+الأدوية
+
+10. Causes of Chronic Diarrhea 
+• Inflammatory bowel disease 
+أمراض الأمعاء الالتهابية 
+• Malabsorption syndrome 
+سوء الامتصاص 
+• Chronic infections 
+العدوى المزمنة 
+• Irritable bowel syndrome 
+القولون العصبي 
+• Endocrine disorders 
+اضطرابات الغدد 
+ 
+11. Complications of Chronic Liver Disease 
+• Ascites 
+الاستسقاء 
+• Esophageal varices 
+دوالي المريء 
+• Hepatic encephalopathy 
+الاعتلال الدماغي الكبدي 
+• Coagulopathy 
+اضطرابات التجلط 
+• Hepatorenal syndrome 
+المتلازمة الكبدية الكلوية 
+ 
+12. Chronic Complications of Diabetes Mellitus
+
+• Diabetic neuropathy 
+اعتلال الأعصاب 
+• Diabetic nephropathy 
+اعتلال الكلى 
+• Diabetic retinopathy 
+اعتلال الشبكية 
+• Cardiovascular disease 
+أمراض القلب 
+• Diabetic foot 
+القدم السكري 
+ 
+13. Complications of Hypothyroidism 
+• Myxedema coma 
+غيبوبة الوذمة المخاطية 
+• Cardiovascular disease 
+أمراض القلب 
+• Infertility 
+العقم 
+• Depression 
+الاكتئاب 
+• Hyperlipidemia 
+ارتفاع الدهون 
+1. Angina Pectoris 
+Angina pectoris is chest pain or discomfort caused by temporary myocardial ischemia 
+due to reduced blood flow through the coronary arteries.
+
+الذبحة الصدرية هي ألم أو عدم راحة في الصدر ناتج عن نقص مؤقت في التروية الدموية لعضلة القلب بسبب
+انخفاض تدفق الدم في الشرايين التاجية. 
+ 
+2. Minor Criteria of Rheumatic Fever 
+• Fever 
+ارتفاع درجة الحرارة 
+• Arthralgia 
+آلام المفاصل 
+• Elevated ESR or CRP 
+ارتفاع مؤشرات الالتهاب ESR أو CRP) 
+• Prolonged PR interval on ECG 
+إطالة فترة PR في رسم القلب 
+ 
+3. Complications of Peptic Ulcers 
+• Gastrointestinal bleeding 
+نزيف بالجهاز الهضمي 
+• Perforation 
+ثقب في جدار المعدة أو الاثني عشر 
+• Gastric outlet obstruction 
+انسداد مخرج المعدة 
+• Peritonitis 
+التهاب الغشاء البريتوني 
+• Anemia 
+أنيميا نتيجة النزيف المزمن

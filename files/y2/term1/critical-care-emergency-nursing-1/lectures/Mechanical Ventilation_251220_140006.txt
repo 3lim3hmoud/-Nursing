@@ -1,0 +1,272 @@
+Prepared by
+Assist professor Dr : Afaf Mohamed Mansour
+
+Outlines 
+o Introduction  
+o Definition
+o Indications of Mechanical Ventilation
+o Common ventilator settings/parameters/controls
+o Classification of Ventilators
+o Complications of Positive Pressure Ventilation )PPV(
+
+Introduction 
+• Mechanical ventilation is a medical process
+using a ventilator to help a patient breathe
+when they are unable to do so adequately on
+their own. The machine assists with moving
+air into and out of the lungs, delivering
+oxygen and removing carbon dioxide, It is
+used in cases of respiratory failure and can
+involve invasive methods like a breathing
+tube or noninvasive methods like a face
+mask.
+
+Definition 
+Mechanical Ventilator is a
+positive or negative
+pressure breathing device
+that can maintain
+ventilation and oxygen
+delivery for a prolonged
+period(Artificial lung).
+
+Indications of Mechanical Ventilation
+• Apnea : absence of breathing(e.g., neuromuscular or cardiopulmonary
+collapse)
+• Acute ventilatory failure, which is generally defined as a pH of less
+than or equal to 7.25 with (PaCO2) greater than or equal to 50 mm Hg.
+• Severe hypoxemia: (PaO2) of less than or equal to 50 mm Hg on room
+air indicates a critical level of oxygen in the blood.
+• Respiratory muscle fatigue: The muscles of respiration can become
+fatigued e.g., chronic lung disease are examples COPD.
+
+Common ventilator settings/parameters/controls
+Tidal Volume (Vt): Is the volume of gas delivered to a patient during a 
+ventilator breath? i.e. the amount of air inspired and expired with each 
+breath.
+(Usual volume selected is between 5 to 8 ml/kg body weight)
+Respiratory Rate (f): Is the number of breaths the ventilator will 
+deliver/minute (12-20 b/m). 
+Minute Volume(MV): Is the volume of  the air in one minute (VT x f)
+
+Common ventilator settings/parameters/controls
+Positive end expiratory pressure (PEEP) Positive pressure applied at 
+the end of expiration of ventilator breaths expiration to maintain alveolar 
+recruitment during mandatory breath. Usual setting 5: 10cm H2O 
+Pressure support (PS) preset pressure delivered by ventilator to assess 
+spontaneous breath. Usual setting: 10-15cm H2O
+
+Common ventilator settings/parameters/controls
+Fraction of inspired oxygen (FIO2): The percent of oxygen 
+concentration that the patient is receiving from the ventilator. 
+(Between 21% &100% (usual amount 40-60%.
+I:E Ratio (inspiration to expiration ratio): Is the ratio of 
+inspiratory time to expiratory to expiratory time during breath 
+(Usually (1:2)
+
+Common ventilator settings/parameters/controls
+Humidification and Airway temperature
+Humidifier temperatures should be kept close to body temperature 35°C-37°C.
+Decreased humidity will cause dried secretions and plugging.
+The humidifier should be checked for adequate water levels.
+Humidifier should not be overfilled as this may increase circuit resistance and 
+interfere with spontaneous breathing..
+
+Classification of Ventilators
+Ventilators are categorized as either 
+•Negative pressure
+•Positive pressure.
+
+Negative Pressure Ventilators 
+o Negative-pressure ventilators exert a negative 
+pressure on the external chest. 
+o Decreasing the intrathoracic pressure during 
+inspiration allows air to flow into the lung. 
+Physiologically, this type of assisted ventilation 
+is similar to spontaneous ventilation.
+
+Negative Pressure Ventilators 
+o It is used in chronic respiratory failure associated
+with neuromuscular conditions, such as poliomyelitis,
+muscular dystrophy, and myasthenia gravis.
+o Negative- pressure ventilators do not require
+intubation of the airway.
+o There are several types of negative pressure
+ventilators: iron lungs, and chest cuirass.
+
+Positive Pressure Ventilation
+o Positive-pressure ventilators
+inflate the lungs by exerting
+positive pressure on the
+airway, pushing air in, forcing
+the alveoli to expand during
+inspiration. Expiration occurs
+passively.
+
+Positive Pressure Ventilation
+1- Invasive Mechanical Ventilation:
+Endotracheal intubation or
+tracheostomy is usually necessary for
+Positive-pressure ventilators.
+2- Noninvasive positive-pressure
+ventilation does not require
+intubation.
+
+Positive-pressure modes of ventilation
+have traditionally been categorized into
+o Volume ventilation 
+o Pressure ventilation 
+.
+
+Volume Ventilation 
+o V olumeventilation has traditionally been the most popular form of PPV ,
+largely because Tidal Volume (Vt) and Minute Ventilation (MV) are
+ensured, which is an essential goal in the patient with acute illness.
+o The preset volume of air delivered with each inspiration. Once this preset
+volume is delivered to the patient, the ventilator cycles off and exhalation
+occurs passively.
+o A preset Vt is delivered with each breath regardless of resistance and
+compliance. Tidal V olumeis stable from breath to breath, but airway pressure
+may vary.
+
+Volume Modes
+1. Control Ventilation (CV) or Controlled Mandatory Ventilation
+(CMV)
+2. Assist/Control (A/C) or Assisted Mandatory Ventilation (AMV
+3. Synchronized Intermittent Mandatory Ventilation (SIMV)
+
+Volume Modes 
+o Control Ventilation (CV) or Controlled Mandatory
+Ventilation (CMV)
+With this mode, the ventilator provides all the
+patient’s minute ventilation. The clinician sets the
+respiratory rate, Vt, inspiratory time, and positive
+End Expiratory Pressure (PEEP).
+
+Volume Modes 
+o Assist/Control (A/C) or
+Assisted Mandatory
+Ventilation (AMV) When
+the patient initiates a
+spontaneous breath. The
+ventilator sensitivity also is
+set, and a full-volume breath
+is delivered. This option
+requires that a rate, Vt,
+inspiratory time, and PEEP
+be set for the patient.
+
+Volume Modes 
+o Synchronized Intermittent Mandatory Ventilation (SIMV)
+This mode requires that rate, Vt, inspiratory time, sensitivity,
+and PEEP are set by the clinician. In between mandatory
+breaths, patients can spontaneously breathe at their own rates and
+Vt. With SIMV ,the ventilator synchronizes the mandatory breaths
+with the patient’s own inspirations.
+
+Synchronized Intermittent Mandatory Ventilation (SIMV)
+
+Pressure Ventilation 
+oThe clinician selects the desired pressure
+level and the Vt is determined by the
+selected pressure level, resistance, and
+compliance.
+
+Types Pressure mode
+1. Pressure Support Ventilation (PSV)
+2. Pressure-Controlled/Inverse Ratio Ventilation (PC/IRV)
+3. Non-invasive Bilateral Positive-Pressure Ventilation
+Mode) BiPAP)
+4. Continuous Positive Airway Pressure (CPAP)
+
+Pressure Modes
+1- Pressure-Controlled
+• Which delivers a preset pressure for a set time
+2- Pressure Support Ventilation (PSV)
+• Patient initiates each breath
+• Ventilator assists with a fixed pressure level
+• Patient controls rate, timing, and tidal volume
+It's commonly used for:
+• Weaning from mechanical ventilation
+• Providing comfort while maintaining some ventilatory assistance
+
+Non-invasive Bilateral Positive-Pressure Ventilation Mode 
+• is a noninvasive form of mechanical ventilation provided by
+means of a nasal mask, nasal prongs, or a full face mask.
+• It is used in the treatment of patients with chronic respiratory
+insufficiency to manage acute or chronic respiratory failure
+without intubation.
+• The system allows the clinician to select two levels of
+positive-pressure support: an inspiratory pressure support
+level (referred to as IPAP) and an expiratory pressure called
+EPAP (PEEP/CPAPlevel).
+
+• BiPAP is beneficial in patients with worsening
+hypoventilation, obstructive apneic episodes, or both.
+• It is also useful to prevent intubation in patients with
+respiratory failure and hypercarbia as well as to prevent
+reintubation following extubation in borderline cases.
+• Use of a full face mask may increase the risk for
+aspiration and risk for re-breathing carbon dioxide;
+therefore, ventilation with a full face mask should be
+used cautiously.
+• Thick or profuse secretions and poor cough may be
+relative contraindications for BiPAP.
+
+Continuous Positive Airway Pressure (CPAP)  
+• Continuous positive airway pressure (CPAP) provides
+positive pressure to the airways throughout the
+respiratory cycle.
+• CPAP assists spontaneously breathing patients to
+improve their oxygenation by elevating the end-
+expiratory pressure in the lungs keeping the upper airway
+and trachea open throughout the respiratory cycle.
+• CPAP can be used for intubated and non-intubated
+patients.
+To use CPAP, the patient must be breathing independently.
+
+Ventilator Alarms
+Pressure Alarms
+o High-pressure alarms : causes for alarm activation include secretions,
+condensate in the tubing, biting on the endotracheal tubing, increased
+resistance (i.e., bronchospasm), decreased compliance (e.g., pulmonary
+edema, pneumothorax), and tubing compression.
+o Low-pressure alarms are used to sense disconnection, circuit leaks, and
+changing compliance and resistance.
+
+Alarm silence or pause
+• Options are built in by ventilator manufacturers so that 
+clinicians can temporarily silence alarms for short 
+periods (i.e., 20 seconds) because alarms must stay 
+activated at all times.
+
+Complications of Positive Pressure Ventilation)PPV(
+1. Ventilator induced lung Injury
+Ventilator can cause two types of lung injury:
+A) Air leaks
+B) Biotrauma
+
+Air leaks related to ventilator are the result of
+❑ Volutrauma (excessive volume in the alveoli)
+❑ Barotrauma (excessive pressure in the alveoli)
+❑ Atelectrauma (Shearing of the alveoli due to repeated
+opening and closing of the alveoli
+Ventilator induced lung Injury
+
+▪ Volutrauma, barotrauma, and atelectrauma can lead to excessive 
+alveolar wall stress and damage to the alveolar –capillary membrane, 
+resulting in air leakage into surrounding spaces.  
+▪ The air then travels out through the hilum and into the mediastinum 
+(pneumomediastinum), pleural space (pneumothorax), pericardium 
+(pneumopericardium), peritoneum (pneumoperitoneum), and subcutaneous 
+tissue (subcutaneous emphysema).  
+V olutrauma, barotrauma, and atelectrauma can cause the release of cellular mediators 
+and initiation of inflammatory- immune response which is known as
+
+Biotrauma.  
+▪ Biotrauma can result in to the development of ARDS. 
+▪ ARDS is a life-threatening condition that occurs when there is 
+severe fluid buildup in both lungs. The fluid buildup prevents the 
+lungs from working properly which inhibit the transfer of oxygen 
+from air into the body and carbon dioxide out of the body into the 
+air

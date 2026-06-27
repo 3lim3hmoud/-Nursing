@@ -1,0 +1,266 @@
+Diabetes Mellitus 
+Diabetes is a disease that affects how the body uses sugar. Sugar is a type of energy 
+from food. People with diabetes have too much sugar in their blood. This can make 
+them feel tired and thirsty. 
+Definition: 
+ Diabetes is a disease where the body cannot control the sugar (glucose) in the 
+blood.  
+This happens because the body does not make enough insulin or cannot use insulin 
+properly.  
+Insulin is a hormone that helps sugar enter the cells for energy. 
+Types of Diabetes: 
+There are three main types: 
+• Type 1: The body stops making insulin because the immune system attacks the 
+cells that produce insulin. 
+• Type 2: The body does not use insulin well and may not make enough insulin. 
+• Gestational Diabetes: Happens during pregnancy and usually goes away after 
+birth. 
+Causes: 
+Type 1 diabetes is an autoimmune disease where the body's immune system attacks 
+and destroys insulin-producing cells in the pancreas. As a result, the body makes 
+little or no insulin. This type is usually diagnosed in children and young adults and 
+requires daily insulin injections for survival. It is not caused by lifestyle factors.
+
+Type 2 diabetes occurs when the body's cells do not use insulin properly (insulin 
+resistance), and the pancreas does not produce enough insulin to maintain normal 
+blood sugar levels. It is the most common type and is often linked to risk factors 
+such as being overweight, lack of exercise, and family history. Lifestyle changes can 
+delay or prevent Type 2 diabetes. 
+Gestational diabetes develops during pregnancy due to hormones that block insulin's 
+action. It usually resolves after birth but increases the risk of developing Type 2 
+diabetes later. 
+  
+Diabetes can be caused by genetics, lifestyle, or problems with the pancreas. Type 1 
+is caused by an autoimmune reaction. Type 2 is caused by insulin resistance, often 
+linked to being overweight or inactive. 
+Risk Factors: 
+• Family history of diabetes 
+• Being overweight or obese 
+• Lack of exercise 
+• Older age 
+• Unhealthy eating 
+• Having high blood pressure or cholesterol 
+Clinical Picture 
+• Feeling very thirsty 
+• Going to the toilet often
+
+• Feeling tired 
+• Losing weight without trying 
+• Cuts that heal slowly 
+• Blurred vision 
+Diagnosis: 
+Doctors check blood sugar levels with blood tests.  
+Common tests include  
+fasting blood sugar ≥ 126 
+2 hour postprandial blood glucose level ≥ 200mg/dl  
+HbA1c ≥ 6.5%, which shows average blood sugar over months. 
+Prevention: 
+• Eat healthy foods like fruits and vegetables 
+• Exercise regularly 
+• Maintain a healthy weight 
+• Avoid smoking 
+Complications:  
+If not treated, diabetes can cause heart problems, kidney damage, eye problems, and 
+foot ulcers. 
+Acute complications:-  include diabetic ketoacidosis (DKA), hypoglycaemia, 
+hyperglycaemic hyperosmolar state (HHS) and hyperglycaemia. These 
+complications can be fatal if not diagnosed early and managed appropriately
+
+Chronic complications:-The long-term complications arise from prolonged high 
+blood glucose levels and can be serious, sometimes leading to amputation or even 
+blindness.   
+Cardiovascular Problems  
+Heart Attack and Stroke: High blood sugar, high blood pressure, and abnormal 
+cholesterol levels increase the risk of atherosclerosis (narrowing of blood vessels), 
+which can lead to heart attacks and strokes. 
+Nerve Damage  
+Diabetic Neuropathy: High glucose levels and reduced blood flow can damage 
+nerves, leading to pain, tingling, burning, or loss of feeling in the hands and feet. 
+Nerve damage can also affect autonomic functions, causing issues with digestion, 
+blood pressure regulation, and erectile dysfunction. 
+Kidney Problems  
+Diabetic Nephropathy: Diabetes can damage the small blood vessels in the kidneys, 
+impairing their ability to filter waste. This can progress to kidney disease and, in 
+severe cases, end-stage kidney disease requiring dialysis or a transplant. 
+Eye Damage  
+Diabetic Retinopathy: High blood sugar can damage the blood vessels in the retina 
+of the eye. This can lead to vision problems and even blindness if left untreated. 
+Foot Problems  
+Ulcers and Infections: Nerve damage and poor blood flow to the feet increase the 
+risk of injuries, ulcers, and infections. Severe foot problems may sometimes require 
+amputation.
+
+Other Complications 
+Skin and Mouth Problems: People with diabetes are more prone to skin conditions 
+and gum disease.  
+Infections: A weakened immune system can make people with diabetes more 
+susceptible to common infections.  
+Sexual and Bladder Problems: Nerve damage can affect sexual function and 
+bladder control.  
+Liver Disease: Diabetes can contribute to fatty liver disease and liver fibrosis, which 
+can lead to cirrhosis.  
+Treatment: 
+• Type 1 needs insulin injections 
+• Type 2 can be treated with lifestyle changes, medicine, and sometimes insulin 
+• Regular monitoring of blood sugar is important 
+• Healthy eating and exercise help all types 
+ 
+ 
+ 
+ 
+ 
+ 
+In summary:
+
+Feature Type 1 Diabetes Type 2 Diabetes Gestational 
+Diabetes 
+Cause Autoimmune 
+destruction of 
+insulin cells 
+Insulin resistance 
+and inadequate 
+insulin 
+Insulin-blocking 
+hormones during 
+pregnancy 
+Age of 
+Onset 
+Usually childhood 
+or young adulthood 
+Usually adults, but 
+can occur at any 
+age 
+During pregnancy 
+Insulin 
+Production 
+Little or none Insulin produced, 
+but inadequate or 
+resisted 
+Variable, often 
+normal after 
+pregnancy 
+Treatment Daily insulin 
+injections 
+Lifestyle changes, 
+oral medications, 
+insulin 
+Lifestyle changes, 
+sometimes insulin 
+Prevention Not preventable Can be delayed or 
+prevented by 
+healthy lifestyle 
+Usually not 
+preventable, 
+manage during 
+pregnancy 
+Risk Factors Genetic, 
+environmental 
+unknown 
+Obesity, inactivity, 
+family history 
+Pregnancy-related 
+factors 
+ 
+This comparison provides a clear differentiation between the main diabetes types for 
+better understanding [10][11][12].
+
+Which tests diagnose each type and their threshold values 
+For diagnosing diabetes types, the main tests and their threshold values are as 
+follows: 
+1. Fasting Blood Sugar (FBS) Test 
+o Diabetes is diagnosed if fasting blood sugar is 126 mg/dL (7.0 mmol/L) 
+or higher on two separate occasions. 
+o Prediabetes is diagnosed if fasting glucose is 100-125 mg/dL (5.6-6.9 
+mmol/L). 
+2. HbA1c Test (Glycated Hemoglobin) 
+o Diabetes: HbA1c level of 6.5% or higher. 
+o Prediabetes: HbA1c between 5.7% and 6.4%. 
+o HbA1c reflects average blood sugar over the past 2-3 months. 
+3. Oral Glucose Tolerance Test (OGTT) 
+o Diabetes diagnosed if blood glucose is 200 mg/dL (11.1 mmol/L) or 
+higher 2 hours after drinking a glucose solution. 
+o Prediabetes if 2-hour glucose is 140-199 mg/dL (7.8-11.0 mmol/L). 
+4. Random Blood Sugar Test (used if symptoms are present) 
+o Diabetes if blood sugar is 200 mg/dL (11.1 mmol/L) or higher anytime. 
+These tests apply broadly to diagnosing both Type 1 and Type 2 diabetes. Type 1 is 
+usually diagnosed with symptoms plus elevated blood sugar or specific antibody 
+tests, while Type 2 diagnosis relies on these blood sugar thresholds and clinical 
+presentation. Gestational diabetes uses slightly different OGTT criteria during
+
+pregnancy (e.g., glucose levels at fasting, 1-hour, and 2-hour timings) per clinical 
+guidelines. 
+Summary Table: 
+Test Diabetes Diagnosis 
+Threshold 
+Prediabetes Threshold 
+Fasting Blood 
+Sugar 
+≥ 126 mg/dL (7.0 
+mmol/L) 
+100-125 mg/dL (5.6-6.9 
+mmol/L) 
+HbA1c ≥ 6.5% 5.7% - 6.4% 
+2-Hour OGTT ≥ 200 mg/dL (11.1 
+mmol/L) 
+140-199 mg/dL (7.8-11.0 
+mmol/L) 
+Random Blood 
+Sugar 
+≥ 200 mg/dL (11.1 
+mmol/L) 
+Not typically used 
+ 
+For Gestational Diabetes, the OGTT criteria differ but generally involve: 
+• Fasting glucose ≥ 92 mg/dL (5.1 mmol/L) 
+• 1-hour glucose ≥ 180 mg/dL (10.0 mmol/L) 
+• 2-hour glucose ≥ 153 mg/dL (8.5 mmol/L) 
+These thresholds help guide diagnosis and treatment plans for diabetes [20][21][22]. 
+What treatments and long-term management differ by type 
+The treatments and long-term management of diabetes differ by type primarily 
+based on the body’s insulin production and usage: 
+Type 1 Diabetes:
+
+• Treatment requires daily insulin injections or an insulin pump since the body 
+produces little or no insulin. 
+• Blood sugar levels must be regularly monitored. 
+• Long-term management focuses on balancing insulin doses with food intake 
+and physical activity. 
+• Healthy lifestyle habits help but cannot replace insulin therapy. 
+Type 2 Diabetes: 
+• Initially managed with lifestyle changes such as healthy diet, weight loss, and 
+regular exercise. 
+• Oral medications are commonly prescribed if lifestyle changes alone aren’t 
+enough. 
+• Insulin therapy may be needed if blood sugar remains uncontrolled. 
+• Long-term management includes monitoring blood sugar, blood pressure, and 
+cholesterol to prevent complications. 
+Gestational Diabetes: 
+• Managed with healthy eating and exercise. 
+• Sometimes insulin is required if blood sugar levels are too high. 
+• Monitoring during pregnancy is essential. 
+• Usually resolves after delivery but requires follow-up to monitor for 
+development of Type 2 diabetes. 
+Overall, Type 1 needs lifelong insulin treatment and careful blood sugar monitoring, 
+whereas Type 2 treatment begins with lifestyle changes and medication, possibly 
+progressing to insulin. Prevention and management of complications are critical
+
+parts of long-term care in all types, requiring regular medical check-ups and self-
+care routines. 
+The emphasis in long-term management is on maintaining blood sugar within target 
+ranges to reduce risks of heart disease, kidney damage, vision loss, and nerve 
+problems. Collaborative care with healthcare providers supports ongoing adjustment 
+of treatment plans. 
+This approach highlights the differing medical needs and daily management 
+responsibilities between diabetes types . 
+Pharmacologic Therapy 
+Early initiation of pharmacologic therapy is associated with improved glycemic 
+control and reduced long-term complications in type 2 diabetes. Drug classes used 
+for the treatment of type 2 diabetes include the following: 
+Biguanides 
+GLP-1 agonists 
+Selective sodium-glucose transporter-2 (SGLT-2) inhibitors 
+Dipeptidyl peptidase IV (DPP-4) inhibitors 
+Sulfonylureas 
+Alpha-glucosidase inhibitors 
+Thiazolidinediones (TZDs)  
+Insulins

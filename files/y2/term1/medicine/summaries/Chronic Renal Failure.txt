@@ -1,0 +1,173 @@
+Chronic Renal Failure (CRF): An Overview 
+الفشل الكلوي المزمن: نظرة عامة 
+Chronic Renal Failure (CRF), also called Chronic Kidney Disease (CKD), means a slow 
+and permanent loss of kidney function that lasts for three months or more. 
+يُعرف الفشل الكلوي المزمن CRF) أو مرض الكلى المزمن CKD) بأنه فقدان تدريجي ودائم لوظيفة الكلى  يستمر  
+لمدة ثلاثة أشهر أو أكثر.  
+This condition affects the kidney’s ability to filter waste, balance fluids, and control 
+hormones in the body. 
+تؤثر هذه الحالة على قدرة الكلى على تصفية الفضلات وتوازن السوائل وتنظيم الهرمونات في الجسم.  
+If not managed early, it can lead to the need for dialysis or kidney transplantation. 
+وإذا لم تتم معالجته مبكرًا، فقد يؤدي إلى الحاجة إلى  غسيل الكلى أو زرع الكلى.  
+ 
+Functions of the Kidneys 
+وظائف الكليتين 
+The kidneys perform several important functions that help maintain body balance 
+(homeostasis). 
+تقوم الكليتان بعدة وظائف مهمة تساعد في الحفاظ على توازن الجسم (الاستتباب).  
+Function Description 
+Fluid and Electrolyte 
+Balance 
+Regulate water and electrolytes like sodium, potassium, and 
+calcium. 
+توازن السوائل والأملاح تنظيم الماء والمعادن مثل الصوديوم والبوتاسيوم والكالسيوم. 
+Waste Excretion Remove waste like urea, creatinine, and uric acid. 
+إخراج الفضلات إزالة الفضلات مثل اليوريا والكرياتينين وحمض اليوريك.
+
+Function Description 
+Blood Pressure 
+Regulation 
+Produce renin which helps control blood pressure. 
+تنظيم ضغط الدم إفراز إنزيم الرينين الذي يساعد في التحكم بضغط الدم.  
+Hormone Production 
+Produce erythropoietin (for red blood cells) and activate 
+Vitamin D (for bones). 
+إنتاج الهرمونات 
+إنتاج الإريثروبويتين (لتكوين خلايا الدم الحمراء) وتنشيط  فيتامين د (لصحة  
+العظام.) 
+ 
+Pathophysiology: Nephron Damage 
+الآلية المرضية: تلف النيفرونات 
+Chronic kidney disease happens when nephrons (the kidney’s tiny filters) are damaged 
+over time. 
+يحدث المرض عندما تتعرض النيفرونات (الوحدات الصغيرة المفلترة في الكلى) للتلف تدريجيًا مع الوقت.  
+As damage continues, the Glomerular Filtration Rate (GFR) decreases, meaning the 
+kidneys filter less blood. 
+ومع استمرار التلف، ينخفض معدل الترشيح الكبيبي  GFR) أي أن الكلى ترشح كمية أقل من الدم. 
+Healthy nephrons try to work harder (hypertrophy) but eventually get damaged too. 
+تحاول النيفرونات السليمة أن تعمل بجهد أكبر (تضخم تعويضي )لكنها في النهاية تتلف أيضًا. 
+This leads to uremia, a buildup of waste in the blood causing symptoms like nausea, 
+fatigue, and confusion. 
+وهذا يؤدي إلى تراكم اليوريا في الدم مما يسبب أعراضًا مثل الغثيان والإرهاق والارتباك.  
+ 
+Stages of CKD (based on eGFR)
+
+مراحل مرض الكلى المزمن (حسب معدل eGFR) 
+Stage eGFR (mL/min) Description 
+1 ≥ 90 Normal function but kidney damage present. Control the cause. 
+1 ≥ 90 وظيفة طبيعية لكن يوجد تلف بالكلى، يجب السيطرة على السبب. 
+2 60–89 Mild decrease. Monitor kidney function. 
+2 60–89 انخفاض خفيف، يجب متابعة الوظائف. 
+3a 45–59 Mild to moderate decrease. Some complications start. 
+3a 45–59 انخفاض متوسط، تبدأ بعض المضاعفات بالظهور. 
+3b 30–44 Moderate to severe decrease. Risk of progression increases. 
+3b 30–44 انخفاض واضح، خطر التدهور يزداد. 
+4 15–29 Severe decrease. Prepare for dialysis or transplant. 
+4 15–29 انخفاض شديد، التحضير لغسيل أو زرع كلى. 
+5 < 15 Kidney failure (End-Stage). Dialysis or transplant required. 
+5 < 15 فشل كلوي نهائي، يحتاج لغسيل أو زراعة كلى. 
+ 
+Causes and Risk Factors 
+الأسباب وعوامل الخطورة 
+The main causes of CRF are Diabetes Mellitus and Hypertension. 
+السببان الرئيسيان للفشل الكلوي المزمن هما السكري وارتفاع ضغط الدم.
+
+Other causes include Glomerulonephritis, Polycystic Kidney Disease, and unknown 
+causes. 
+وتشمل الأسباب الأخرى التهاب الكبيبات وتكيس الكلى وأسباب غير معروفة.  
+Modifiable Risk Factors (can be changed): 
+عوامل يمكن تعديلها: 
+• Obesity and lack of exercise. 
+• السمنة وقلة النشاط البدني. 
+• Smoking and alcohol. 
+• التدخين والكحول. 
+• Long-term use of nephrotoxic drugs (like NSAIDs). 
+• الاستخدام الطويل لأدوية تضر الكلى مثل المسكنات. 
+Non-Modifiable Risk Factors (cannot be changed): 
+عوامل لا يمكن تعديلها: 
+• Age above 60. 
+• العمر فوق60 عامًا.  
+• Family history of kidney disease. 
+• تاريخ عائلي لمرض الكلى. 
+• Autoimmune diseases like lupus. 
+• أمراض مناعية مثل الذئبة الحمراء. 
+ 
+Clinical Manifestations (Symptoms) 
+الأعراض والعلامات
+
+Early CKD may have no symptoms, so screening is important. 
+في المراحل المبكرة لا تظهر أعراض، لذا الفحص المبكر مهم جدًا. 
+When GFR < 30 mL/min, symptoms appear due to uremia. 
+عندما ينخفض معدل الترشيح عن30، تبدأ الأعراض بسبب تراكم السموم.  
+Common Symptoms: 
+الأعراض الشائعة: 
+• Fatigue and weakness → التعب والضعف العام. 
+• Loss of appetite → فقدان الشهية. 
+• Itching and metallic taste → الحكة وطعم معدني في الفم. 
+• Nausea and vomiting → غثيان وقيء. 
+• Swelling (edema) and high blood pressure → تورم وارتفاع ضغط الدم. 
+• Confusion or numbness → ارتباك أو تنميل بالأطراف. 
+ 
+Diagnosis and Tests 
+التشخيص والفحوصات 
+1. Blood Tests (eGFR): Measure creatinine to calculate filtration rate. 
+تحاليل الدم eGFR): قياس الكرياتينين لتحديد كفاءة الكلى. 
+2. Urine Tests (ACR): Check for protein in urine (albuminuria). 
+تحليل البول ACR): للكشف عن وجود بروتين بالبول. 
+3. Imaging (Ultrasound/CT): Detect size and structure abnormalities. 
+الأشعة: للكشف عن حجم الكلى وأي تشوهات. 
+4. Kidney Biopsy: To find the exact cause of damage. 
+خزعة من الكلية: لتحديد سبب التلف بدقة.
+
+Management and Treatment 
+العلاج والسيطرة على المرض 
+Goals: Slow down the disease and prevent complications. 
+الأهداف: إبطاء تقدم المرض ومنع المضاعفات. 
+• Control Blood Pressure: Use ACE inhibitors or ARBs. 
+ضبط ضغط الدم: باستخدام مثبطات ACE أو ARBs. 
+• Control Blood Sugar: Especially for diabetics (use SGLT2 inhibitors). 
+ضبط سكر الدم: خصوصًا لمرضى السكري  (أدوية SGLT2). 
+• Diet: Limit salt, potassium, and phosphorus. 
+النظام الغذائي: تقليل الملح والبوتاسيوم والفوسفور. 
+• Avoid Nephrotoxic Drugs: Like NSAIDs. 
+تجنب الأدوية الضارة بالكلى: مثل المسكنات القوية. 
+• Lifestyle: Stop smoking and maintain healthy weight. 
+نمط الحياة: الإقلاع عن التدخين والحفاظ على وزن صحي. 
+ 
+Complications and Nursing Care 
+المضاعفات ورعاية التمريض 
+Major Complications: 
+أهم المضاعفات: 
+• Heart disease: Most common cause of death. 
+أمراض القلب: السبب الرئيسي للوفاة. 
+• Anemia: Due to low erythropoietin. 
+الأنيميا: بسبب نقص هرمون الإريثروبويتين.
+
+• Bone problems (CKD-MBD): From high phosphorus and low vitamin D. 
+مشاكل العظام: بسبب خلل الفوسفور وفيتامين د. 
+• Electrolyte imbalance: Especially high potassium (hyperkalemia). 
+اختلال الأملاح: خصوصًا ارتفاع البوتاسيوم. 
+Nursing Care Priorities: 
+أولويات التمريض: 
+• Monitor vital signs and fluid balance. 
+• مراقبة العلامات الحيوية وتوازن السوائل. 
+• Educate patients about diet and medication. 
+• توعية المريض بالنظام الغذائي والأدوية. 
+• Watch for signs of complications. 
+• متابعة علامات المضاعفات مبكرًا . 
+ 
+End-Stage CKD and Nurse’s Role 
+المرحلة النهائية ودور الممرضة 
+When kidneys fail completely, Renal Replacement Therapy (RRT) is needed. 
+عند فشل الكلى التام، يجب بدء العلاج البديل الكلوي  RRT). 
+Options: 
+الخيارات: 
+1. Kidney Transplant: Best long-term solution. 
+زرع الكلى: هو الأفضل على المدى الطويل. 
+2. Hemodialysis: 3 times a week using a vascular access. 
+غسيل الدم: ثلاث مرات أسبوعيًا باستخدام وصلة دموية.
+
+3. Peritoneal Dialysis: Done daily at home through abdomen. 
+غسيل بريتوني: يتم يوميًا في المنزل عبر البطن. 
+Nurse’s Role: Educate, support, and monitor patients to improve their quality of life. 
+دور الممرضة: التثقيف والدعم والمتابعة لتحسين جودة حياة المريض.

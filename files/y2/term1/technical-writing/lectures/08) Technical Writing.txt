@@ -1,0 +1,373 @@
+Dr. Ahmed Salah Abou Taleb
+Faculty of Engineering 
+-
+ 
+Fayoum University
+Technical Writing
+Lecture (8)
+Technical
+Writing
+By
+1
+st
+ 
+Semester
+2025 
+-
+ 
+2026
+1
+Made with Xodo PDF Reader and Editor
+
+2
+What is SBAR?
+ SBAR technique provides a framework for communication between 
+members of the health care team about a patient's condition.
+ SBAR is a structured method for communicating critical information that 
+requires immediate attention and action. 
+ SBAR  improve communication, effective escalation  and increased 
+safety.
+ SBAR has 4 steps:
+ Situation
+ Background
+ Assessment
+ Recommendation..
+Made with Xodo PDF Reader and Editor
+
+3
+What is SBAR?
+S Situation
+B Background
+A Assessment
+R Recommendation
+Made with Xodo PDF Reader and Editor
+
+4
+Why Use SBAR?
+ To reduce the barrier to effective communication across 
+different disciplines and levels of staff.  
+ SBAR creates a shared mental model around all patient 
+handoffs and situations requiring escalation, or critical 
+exchange of information (handovers)
+ SBAR is memory prompt; easy to remember and encourages 
+prior preparation for communication.
+ SBAR reduces the incidence of missed communications..
+Made with Xodo PDF Reader and Editor
+
+5
+How Can SBAR help me?
+➢ Easy to remember.
+➢ Clarifies what information needs communicating quickly.
+➢ Points to action.
+Prevents “hinting and hoping”..
+Made with Xodo PDF Reader and Editor
+
+6
+Uses & Settings for SBAR
+ Inpatient or outpatient. 
+ Urgent or non urgent communications.
+ Conversations with a physician.
+   - Particularly useful in nurse to doctor communications. 
+   - Also helpful in doctor-to-doctor consultation.
+ Discussions with allied health professionals.
+   - e.g. Respiratory therapy.
+   - e.g. Physiotherapy.
+ Conversations with peers.
+   - e.g. Change of shift report.
+ Escalating a concern .
+ Handover from an ambulance crew to hospital staff ..
+Made with Xodo PDF Reader and Editor
+
+7
+SBAR
+Situation 
+ Identify yourself the site/unit you are calling from. 
+ Identify the patient by name and the reason for your report.
+ Describe your concern.
+ Describe the specific situation about which you are calling, 
+including the patient's name, consultant, patient location, 
+resuscitation status, and vital signs.. 
+Made with Xodo PDF Reader and Editor
+
+8
+SBAR
+"This is Lou, a registered nurse on Nightingale Ward. The 
+reason I'm calling is that Mrs Taylor in room 225 has become 
+suddenly short of breath, her oxygen saturation has dropped to 
+88 per cent on room air, her respiration rate is 24 per minute, her 
+heart rate is 110 and her blood pressure is 85/50.”
+Made with Xodo PDF Reader and Editor
+
+9
+SBAR
+Background 
+ Give the patient's reason for admission.
+ Explain significant medical history.
+ Overview of the patient's background: admitting diagnosis, 
+date of admission, prior procedures, current medications, 
+allergies, pertinent laboratory results and other relevant 
+diagnostic results. 
+ For this, you need to have collected information from the 
+patient's chart, flow sheets and progress notes..
+Made with Xodo PDF Reader and Editor
+
+10
+SBAR
+"Mrs. Taylor is a 69-year-old woman who was admitted from 
+home three days ago with a community acquired chest infection. 
+She has been on intravenous antibiotics and appeared, until 
+now, to be doing well. She is normally fit and well and 
+independent.”
+Made with Xodo PDF Reader and Editor
+
+11
+SBAR
+Assessment 
+ Vital signs.
+ Clinical impressions, concerns.
+ You need to think critically when informing the doctor of your 
+assessment of the situation. 
+ This means that you have considered what might be the 
+underlying reason for your patient's condition.. 
+Made with Xodo PDF Reader and Editor
+
+12
+SBAR
+"Mrs. Taylor’s vital signs have been stable from admission but 
+deteriorated suddenly. She is also complaining of chest pain and 
+there appears to be blood in her sputum. She has not been 
+receiving any venous thromboembolism prophylaxis.” 
+“I’m not sure what the problem is, but I am worried.” 
+Made with Xodo PDF Reader and Editor
+
+13
+SBAR
+Recommendation
+ Explain what you need - be specific about request and time.
+ Make suggestions.
+ Clarify expectations.
+ Finally, 
+✓ what is your recommendation? 
+✓ what would you like to happen by the end of the 
+conversation with the physician? 
+✓ Any order that is given on the phone needs to be repeated 
+back to ensure accuracy..
+Made with Xodo PDF Reader and Editor
+
+14
+SBAR
+"Would you like me get a stat CXR? and ABGs? Start an IV? I 
+would like you to come immediately”
+Made with Xodo PDF Reader and Editor
+
+15
+SBAR
+S
+Situation – patient’s /client’s details, identify reason for this 
+communication, describe your concern
+B
+Background – relating to the patient/ client, significant history, this 
+may include medications, investigations/ treatments
+A
+Assessment – what is your assessment  of the patient/ client or 
+situation, this can include clinical impression/ concerns, vital signs/ 
+early warning score
+R
+Recommendations – be specific, explain what you need, make 
+suggestions, clarify expectations, confirm actions to be taken
+Made with Xodo PDF Reader and Editor
+
+16
+SBAR Case Study # 01
+"This is Lou, a registered nurse on Nightingale Ward. The reason I'm calling is 
+that Mrs Taylor in room 225 has become suddenly short of breath, her oxygen 
+saturation has dropped to 88 per cent on room air, her respiration rate is 24 per 
+minute, her heart rate is 110 and her blood pressure is 85/50.”
+"Mrs. Taylor is a 69-year-old woman who was admitted from home three days 
+ago with a community acquired chest infection. She has been on intravenous 
+antibiotics and appeared, until now, to be doing well. She is normally fit and 
+well and independent.”
+"Mrs. Taylor’s vital signs have been stable from admission but deteriorated 
+suddenly. She is also complaining of chest pain and there appears to be blood in 
+her sputum. She has not been receiving any venous thromboembolism 
+prophylaxis.” 
+"Would you like me get a stat CXR? and ABGs? Start an IV? I would like you 
+to come immediately”..
+Made with Xodo PDF Reader and Editor
+
+17
+SBAR Case Study # 01
+S
+✓ Lou, RN, on Nightingale Ward. 
+✓ Mrs. Taylor in room 225, a 69-year-old woman
+✓ Community acquired chest infection.
+✓ She is normally fit and well and independent.
+B
+✓ She was admitted from home three days ago 
+✓ Short of breath, SpO288%, RR24/min, HR110bpm, 
+BP85/50mmHg.
+✓ She has been on intravenous antibiotics and appeared, until now, 
+to be doing well. 
+A
+✓ deteriorated suddenly in vital sign. 
+✓ Chest pain complained.
+✓ Blood in her sputum. 
+✓ Not receiving any venous thromboembolism prophylaxis.
+R
+I would like to:
+- CXR.    - ABGs.     - Start IV .     Right away..
+Made with Xodo PDF Reader and Editor
+
+18
+SBAR Case Study #
+Nurse to Nurse End-of-Shift Report
+S
+Mr. James is a 72-year-old male admitted yesterday with pneumonia. He’s 
+currently on 2L nasal cannula and remains hemodynamically stable.
+B
+He has a history of COPD, hypertension, and type 2 diabetes. He was started 
+on IV antibiotics and steroids upon admission. High finger stick checks are 
+every 4 hours. He’s been on oxygen since arrival, and his SpO2 has ranged 
+from 92–95%.
+A
+Lungs have scattered crackles bilaterally, and he has a productive cough. No 
+fever, and his vital signs have been stable. He had some shortness of breath 
+earlier but it improved with breathing treatments. His glucose has been 
+elevated. I’ve given him three units most recently per his sliding scale.
+R
+Continue monitoring his respiratory status, encourage incentive spirometry, 
+and administer scheduled albuterol nebulizers. His next antibiotic dose and 
+finger stick are due at 2200. Call the provider if his SpO2 drops below 90% 
+or if he shows signs of worsening respiratory distress.
+Made with Xodo PDF Reader and Editor
+
+19
+SBAR Case Study #
+Nursing Communication With Family
+S
+Candice is doing better today. She has been tolerating fluids and is 
+showing signs of improvement
+B
+She had been vomiting frequently at home and wasn’t able to keep 
+liquids down, so we admitted her and started IV fluids overnight
+A
+She is more alert and has had no vomiting since early this morning. 
+She’s started drinking small sips of water and apple juice without 
+any issues. Her urine output has also improved.
+R
+We will keep monitoring her hydration and encouraging more oral 
+fluids. If Candice keeps fluids down and maintains good energy 
+levels, the doctor may consider discharging her later today or 
+tomorrow. Let me know if you have any concerns, and I can update 
+the provider for you.
+Made with Xodo PDF Reader and Editor
+
+20
+SBAR Case Study #
+Nursing Assessment Changes Communicated to a Provider
+S
+Mrs. Carter is a 58-year-old female with a history of CHF admitted 
+for pneumonia. She is now experiencing increased shortness of 
+breath and worsening bilateral leg swelling.
+B
+She was admitted three days ago and treated with IV antibiotics and 
+diuretics. She has a history of hypertension and CHF with a reduced 
+ejection fraction. Her last BNP was elevated at 900.
+A
+Her respiratory rate is 24, SpO2 is 89% on room air, and she has +3 
+pitting edema to bilateral lower extremities. Lungs have new 
+crackles at the bases, and she reports feeling more fatigued.
+R
+Can we get a STAT chest X-ray to assess for fluid overload? And 
+would you like me to put her on a nasal cannula for oxygen delivery 
+in the meantime?
+Made with Xodo PDF Reader and Editor
+
+21
+SBAR Case Study #
+Nursing Interview Questions
+S
+I had a post-op patient who suddenly became hypotensive after a 
+routine knee replacement.
+B
+He was a 65-year-old male with a history of hypertension and 
+diabetes. He had been stable but started feeling dizzy, and his blood 
+pressure dropped to 85/50
+A
+I checked his vitals and found his heart rate was elevated, and he had 
+cool, clammy skin. His surgical site was intact, but his urine output 
+had decreased.
+R
+I called the provider and suggested a fluid bolus and additional 
+monitoring. The provider ordered a rapid response, and we identified 
+internal bleeding as the cause. My report helped us move quickly to 
+care for the patient.
+Made with Xodo PDF Reader and Editor
+
+22
+SBAR Case Study # 02
+Chest Pain
+S
+Mr. Jones is having increased dyspnea and complaining of chest pain 
+on the left of chest.
+B
+He had her left hip replaced yesterday. He started complaining of 
+chest pain about three hours ago. His pulse is 155, blood pressure 
+134 over 57, is restless and short of breath.
+A
+He may be having a pulmonary embolism, coronary artery disease, 
+precordial chest pain, or a cardiac event.
+R
+I recommend you see him immediately and start him on O2.
+Made with Xodo PDF Reader and Editor
+
+23
+SBAR Case Study # 03
+Transfusion Reaction
+S
+Mrs. Smith is a day case patient in hematology who is breathless and 
+heart rate is at 130. She may be having a transfusion reaction.
+B
+Mrs. Smith came in at 6 AM this morning for a transfusion of 2 units 
+of red blood cells. The first unit was given over 90 minutes and the 
+second one started half an hour ago and is over halfway through. She 
+developed dyspnea within the last 20 minutes, has an increased heart 
+rate and elevated blood pressure.
+A
+Temperature is 37.1 degrees Celsius. Pulse is 130. Blood Pressure is 
+150/96. She’s showing signs of circulatory overload. I have stopped 
+the transfusion and started administering oxygen.
+R
+I recommend you come see the patient immediately.
+Made with Xodo PDF Reader and Editor
+
+24
+SBAR Case Study # 04
+Collecting Urine Specimens for Bacterial Culture
+S
+Mr. Williams’s nurse is calling about the urine culture order.
+B
+Mr. Williams came in for an ordered urine culture for volvulus.
+A
+The patient is hypotensive and complaining of abdominal pain. He 
+denies symptoms of a UTI, is afebrile and on heparin for his PICC-
+related DVT.
+R
+I recommend there’s no need to collect urine for culture at this time 
+or in the near future.
+Made with Xodo PDF Reader and Editor
+
+25
+SBAR Case Study # 05
+Elevated Creatinine
+S
+Mrs. Johnson has an order form her doctor for a PE study.
+B
+Mrs. Johnson came in with difficulty breathing and right-side chest 
+pain.
+A
+Mrs. Johnson’s creatinine level is 3.1, which is far above the cutoff 
+level for a PE study.
+R
+I recommend we change the PE study order to a VQ scan order.
+Made with Xodo PDF Reader and Editor

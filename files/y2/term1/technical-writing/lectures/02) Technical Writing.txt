@@ -1,0 +1,319 @@
+Dr. Ahmed Salah Abou 
+Taleb
+Faculty of Engineering 
+-
+ 
+Fayoum University
+Technical Writing
+Lecture (
+2
+)
+Technical
+Writing
+By
+1
+st
+ 
+Semester
+2025 
+-
+ 
+2026
+1
+
+2
+Course Reference:
+Johnson-Sheehan, R., “Technical Communication Strategies for 
+Today”, 2nd ed., Pearson, 2014.
+
+3
+Definition/Purpose of Course?
+ Technical communication is the “art and science of making 
+complex technical information accessible, usable, and relevant 
+to a variety of audiences in a variety of settings.”
+ Composition of the types of documents technical professionals 
+write.
+ Review of the planning, drafting, and editing processes.
+ Interaction with new technologies and new environments..
+
+4
+Accessibility
+ Accuracy– no errors of fact or grammar.
+ Clarity– no ambiguity.
+ Completeness– all necessary information is present.
+ Diction—appropriate and grammatically correct language.
+ Organization—logical arrangement of parts.
+ Visual effectiveness– page/screen design, graphics..
+
+5
+Usability
+ Allows audience to perform the task or retrieve the information 
+they need.
+ Studies design of table of contents, index, headings, etc.
+ Keeps learning curve short..
+
+6
+Relevance
+ Focus on your audience’s need for information.
+ Give only what’s needed.
+ Use language that fits your audience and situation and is 
+consistent..
+
+7
+On-the-job Writing
+ Communicate expertise to clients, customers, and the public.
+ Report tech activities to supervisors and others.
+ Write proposals.
+ Instruct lay people.
+ Correspond with colleagues and clients..
+
+8
+Tech Communicator’s Skills
+ Facility with language.
+ Use of critical thinking skills to solve problems.
+ Ability to assess situations, determine what the most important 
+issues  and the subsidiary ones.
+ Ability to organize a document that presents the information 
+clearly.
+ Awareness of the persuasive nature of writing.
+ Ability to compose  documents that convince your reader(s) to 
+act as you suggest or to trust your point of view.
+ Ethical behavior shown by avoiding deceptive graphics, 
+presenting information truthfully, 
+ Balancing ethical and moral beliefs with the demands of the job..
+
+9
+Communicating in the 
+Technical Workplace
+
+10
+What is Technical Writing?
+It is written communication for engineer, scientist, doctor, nurse, 
+psychologist, social worker, anthropologist, architect, technical writer, 
+or any other professional in a technical field to deliver information 
+with the intent of achieving a desired purpose.
+Sender
+(Writer)
+Receiver
+(Reader)
+Message
+Written Text
+Communication
+
+11
+Genre and the Technical Writing Process
+Genres: 
+ Relatively stable patterns that reflect the activities and 
+practices of the workplace. 
+ Shape a document’s content, organization, style, design, and 
+medium
+ Help you anticipate the needs of your readers and their 
+situations..
+
+12
+Genre and the Technical Writing Process
+Genres: 
+ Analytical reports follow a different 
+genre than technical specifications.
+ They are written for different kinds 
+of readers for different workplace 
+situations. 
+ They include different kinds of 
+information and follow their own 
+organizational patterns. 
+ The style and design of these two 
+genres are distinctly different..
+
+13
+Genre and the Technical Writing Process
+Technical writing is a process that includes the stages such as:
+1- Planning and researching: planning the project, using research 
+to collect information, and developing your own ideas.
+2- Organizing and drafting: deciding how to arrange your 
+information and then turning those ideas into sentences, 
+paragraphs, and sections.
+3- Improving the style: Writing clearly and persuasively for your 
+readers.
+4- Designing the document: developing an appropriate page design 
+that improves the usability and attractiveness of your document.
+5- Revising and editing: Improving the quality of your work by 
+revisioning, rewriting, and proofreading your writing..
+
+14
+Genre and the Technical Writing Process
+The technical writing process involves moving 
+back and forth among several stages.
+Each stage is shaped by the genre of the document.
+
+15
+Genre and the Technical Writing Process
+ While drafting, you may discover that you need to do more 
+research on your topic. 
+ While editing, you may decide that you need to draft an 
+additional section for the document.
+ Overall, these stages will lead you from the beginning of a 
+project to the end..
+
+16
+Stage 1: Planning and Researching
+When planning and researching, you should spend some time 
+doing three activities:
+A- Define the rhetorical situation: Identify your document’s 
+subject, purpose, readers, and context of use.
+B- State your purpose: Sharpen your purpose into a one-sentence 
+statement that will guide your research and drafting of the 
+document.
+C- Research your subject: Use electronic, print, and empirical 
+sources to collect information on your subject.
+
+17
+Stage 1: Planning and Researching
+A- Define the rhetorical situation:
+The five W and How questions give you a sense of your rhetorical 
+situation.
+ Who are my readers, and who else is involved with the project?
+ What do the readers want and need, and what do I want and need?
+ Where do they need the information, and where will they use it?
+ When will the information be used, and when is it needed?
+ Why do the readers need the information in this document?
+ How should I achieve my purpose and goals?..
+
+18
+Stage 1: Planning and Researching
+A- Define the rhetorical situation: 
+Four elements of the rhetorical situation:
+• Subject – what is document about?  What is the scope of the project?
+• Purpose – what is the document trying to achieve? Why do the readers 
+need it? What do they need to know?
+• Readers – who are the readers? What are their needs and interests? 
+What are they looking for?
+• Context of Use – where and when will the document be used? What 
+constraints are there?
+
+19
+Stage 1: Planning and Researching
+B- State your purpose:
+It is what you want to do and what you want the document to 
+achieve.
+ Your purpose statement is like a compass for the document. 
+Once you have clearly defined your purpose for yourself and 
+your readers, you can use that purpose statement to guide your 
+decisions about the content, organization, style, and design of 
+your document.
+ When defining your purpose, try to express exactly what you 
+want your document to achieve..
+
+20
+Stage 1: Planning and Researching
+B- State your purpose:
+ Sometimes it helps to find an appropriate action verb and then build 
+your purpose statement around it. Here are some useful action verbs that 
+you might use:
+ The purpose of my report is to review  …….. 
+ The purpose of my proposal is to recommend ……...
+
+21
+Stage 1: Planning and Researching
+C- Research your subject:
+It is your next step. 
+ You need to gather information from a variety of sources, 
+including the Internet, print documents, and empirical 
+methods(e.g., experiments, surveys, observations, interviews).
+
+22
+Stage 2: Organizing and Drafting the Contents
+Two things are done at the same time:
+1- Organizing the content: Using common genres to shape your 
+ideas into documents that will be familiar to readers.
+2- Drafting the content: Generating the content of your document 
+by including facts, data, reasoning, and examples.
+If you understand the genre, you will understand how to organize 
+the information you’ve collected in away that achieves your purpose.
+
+23
+Stage 2: Organizing and Drafting the Contents
+ A genre follows a pattern that readers will find familiar.
+ Readers would immediately recognize this document as a set of 
+instructions and be able to use it.
+
+24
+Stage 3: Improving the Style
+All documents have a style, effective or not. 
+Good style is a choice you can and should make. 
+Two kinds of style widely used in technical documents:
+1- Plain style: This style stresses clarity and accuracy. By paying 
+attention to your sentences and paragraphs, you can make your 
+ideas clearer and easier to understand.
+2- Persuasive style: You can use it to motivate readers by appealing 
+to their values and emotions. You can use similes and analogies to 
+add a visual quality to your work. You can use metaphors to 
+change your readers’ perspective on issues. Meanwhile, you can 
+use tone and pace to add energy and color to your work..
+
+25
+Stage 4: Designing the Document
+ Your readers will expect your technical documents to be well 
+designed with graphs, figures and charts.
+ It can be easily designed by computer.
+ As you think about the design of your document, keep this saying 
+in mind: Readers are “raiders” for information. 
+ Your readers want the important parts highlighted for them. 
+ They prefer documents that use effective graphics and layout to 
+make the information more accessible, interesting, and attractive.
+
+26
+Stage 4: Designing the Document
+Because readers are raiders of information, you want the design of 
+your document to be visually accessible.
+
+27
+Stage 5: Revising and Editing
+ When you have finished drafting and designing the document, 
+you are only a little over halfway finished. 
+ In technical communication, it is crucial to leave plenty of time 
+for revising, editing, and proof reading. 
+ Clarity and accuracy are essential if your readers are going to 
+understand what you are trying to tell them.
+ There are four levels of revising and editing:
+• Level 1:  Revising,
+• Level 2:  Substantive editing.
+• Level 3:  Copyediting.
+• Level 4:  Proofreading..
+
+28
+Stage 5: Revising and Editing
+level 1: Revising: Re-examine your subject and purpose while 
+thinking again, about the information your readers need to 
+know.
+level 2: Substantive editing: Look closely at the content, 
+organization, and design of the document to make sure 
+your readers can find the information they need.
+level 3: copyediting: Pay close attention to the document’s 
+sentences, paragraphs, and graphics to make sure they are 
+clear, accurate, and efficient.
+level 4: Proofreading: Carefully proofread your document to 
+eliminate grammar problems, typos, spelling errors, and 
+usage mistakes..
+
+29
+Stage 5: Revising and Editing
+ In workplace documents, errors are a signal of low-quality work.
+ Revising and editing is a crucial step in the technical workplace, 
+where clarity and accuracy are essential.
+ Your supervisors will ask you to do much more revising and 
+editing than your college professors..
+
+30
+What Is Technical Communication?
+Technical Communication is a process of managing technical 
+information in ways that allow people to take actions.
+Technical communication puts much more emphasis on managing 
+information and taking action than most other forms of writing.
+
+31
+How Important Is Technical Communication?
+Oral and Written Communication Skills are among the most 
+important in the technical workplace.
+A survey in a certain workplace shows that:
+❑ 40% of employers wanted new hires to have better speaking skills; 
+❑ 25% wanted new hires to have better writing skills…………

@@ -1,0 +1,159 @@
+Bowel Habit Disorders 
+      اضطرابات حركة الأمعاء 
+ 
+    1. Diarrhea (الإسهال) 
+           Definition (التعريف:) 
+• Frequent loose stool > 300 gm/day. 
+     براز رخو متكرر أكثر من 300 جم يوميًا.  
+• False diarrhea: frequent stool < 300 gm/day. 
+     إسهال كاذب: تكرار في التبرز أقل من 300 جم يوميًا.  
+• Usually due to ↑ intestinal motility. 
+     غالبًا بسبب زيادة حركة الأمعاء.  
+ 
+       Mechanisms (الآليات:) 
+1. Osmotic diarrhea: 
+o Large non-absorbed hypertonic substances in GIT lumen ⇒ ↑ fluid 
+accumulation. 
+     وجود مواد عالية التركيز غير ممتصة داخل تجويف الجهاز الهضمي يؤدي إلى تراكم  
+السوائل. 
+2. Secretory diarrhea: 
+o Active secretion of intestinal fluid and electrolytes + ↓ absorption. 
+     زيادة إفراز السوائل والشوارد من الأمعاء مع قلة الامتصاص. 
+Causes:
+
+o Enterotoxins → cholera, E. coli 
+     ذيفانات معوية مثل الكوليرا و E. coli 
+o Hormones → VIPomas, gastrin, glucagon. 
+     هرمونات مثل VIPomas، الجاسترين، والجلوكاجون. 
+3. Inflammatory diarrhea: 
+o Damage of intestinal mucosa → fluid & blood loss + ↓ absorption. 
+     تلف بطانة الأمعاء يؤدي إلى فقدان السوائل والدم وانخفاض الامتصاص. 
+Examples: 
+o IBD (Crohn's, ulcerative colitis) 
+o Infection (shigellosis). 
+4. Abnormal intestinal motility: 
+o False diarrhea (↑ frequency, no ↑ in volume). 
+     إسهال كاذب (زيادة في عدد المرات بدون زيادة في الكمية. 
+Examples: DM, Hyperthyroidism, Post-vagotomy. 
+ 
+      Aetiology (الأسباب:) 
+       Acute diarrhea (إسهال حاد:) 
+• Dietary indiscretions & unripe fruits. 
+     تناول أطعمة غير مناسبة أو فواكه غير ناضجة. 
+• Infections: food poisoning, viral GE, cholera. 
+     التسمم الغذائي، فيروسات، الكوليرا. 
+• Traveller’s diarrhea: E. coli, shigella, E. histolytica. 
+     إسهال المسافرين.
+
+Chronic diarrhea (إسهال مزمن:) 
+• Parasitic, viral, fungal infections. 
+     عدوى طفيلية أو فيروسية أو فطرية. 
+• IBD, IBS. 
+     أمراض الأمعاء الالتهابية أو القولون العصبي. 
+• Malabsorption, gut resection. 
+     سوء امتصاص أو استئصال الأمعاء. 
+• Drugs. 
+     أدوية. 
+• Colonic tumors. 
+     أورام القولون. 
+• Endocrinal causes: 
+o VIPomas → ↑ VIP (>3 L/day). (Pancreatic cholera). 
+     VIPomas يسبب إفراز سوائل غزير جدًا. 
+o Gastrinoma → ↑ gastrin (ZE syndrome). 
+o Glucagonoma → ↑ glucagon & ↑ blood glucose. 
+o Carcinoid syndrome → ↑ urinary 5-HIAA. 
+o Medullary thyroid carcinoma → ↑ calcitonin. 
+• Purgative abuse. 
+     إساءة استخدام الملينات. 
+• Chronic idiopathic. (pseudo-pancreatic cholera). 
+ 
+        Clinical picture (الصورة الإكلينيكية:)
+
+• Acute diarrhea: 
+o Fever, abdominal pain, vomiting. 
+     حمى، ألم بطني، قيء. 
+o Severe cases → dehydration. 
+     جفاف في الحالات الشديدة. 
+• Chronic diarrhea: 
+o Depends on cause. 
+     تعتمد الأعراض على السبب. 
+ 
+      Investigations (الفحوصات:) 
+• Acute diarrhea: (if > 1 week) 
+o Stool exam (ova, cysts, pus, parasites). 
+o Sigmoidoscopy, rectal biopsy (rare). 
+• Chronic diarrhea: 
+o Identify cause. 
+o Sigmoidoscopy, rectal biopsy. 
+ 
+     Treatment (العلاج:) 
+• Acute diarrhea: 
+o Fluid replacement (oral or IV). 
+     تعويض السوائل بالفم أو بالوريد.
+
+o Antibiotics (if bacterial). 
+     مضادات حيوية إذا كان السبب بكتيريًا. 
+o Antidiarrheal drugs (e.g. loperamide, codeine). (Use cautiously) 
+     أدوية مضادة للإسهال (تُستخدم بحذر. 
+• Chronic diarrhea: 
+o Treat the cause. 
+     علاج السبب الأساسي. 
+ 
+🪨 2. Constipation (الإمساك) 
+           Definition (التعريف:) 
+• Defecation twice a week or less. 
+     التبرز مرتين أسبوعيًا أو أقل. 
+• Normal habit: 2-3 times/day → once every 2-3 days. 
+     الطبيعي من مرتين إلى ثلاث مرات يوميًا إلى مرة كل2-3 أيام.  
+ 
+      Aetiology (الأسباب:) 
+• Physiological: immobility, elderly, pregnancy, ↓ fiber. 
+     قلة الحركة، كبار السن، الحمل، قلة الألياف. 
+• Intestinal obstruction: tumors, hernias, volvulus. 
+     انسداد بالأمعاء. 
+• Colonic disorders: IBS, megacolon. 
+     اضطرابات القولون.
+
+• Pain: anal fissure, thrombosed hemorrhoids. 
+     ألم في فتحة الشرج. 
+• Drugs: anticholinergics, iron, opiates, CCB, diuretics. 
+     أدوية مسببة للإمساك. 
+• Immobility. 
+• Endocrine/metabolic: DM, hypothyroidism, porphyria, hypercalcemia. 
+     أمراض هرمونية/استقلابية. 
+ 
+      Investigations (الفحوصات:) 
+• To find the cause. 
+     لتحديد السبب. 
+• Sigmoidoscopy / colonoscopy + biopsy. 
+     منظار شرجي أو قولوني مع خزعة. 
+• Anorectal manometry. 
+     قياس ضغط فتحة الشرج والمستقيم. 
+ 
+     Treatment (العلاج:) 
+• Treat the cause. 
+     علاج السبب. 
+• Bulk forming laxatives: 
+o High fiber diet (fruits, vegetables, methylcellulose). 
+     ملينات حجمية (نظام غني بالألياف.
+
+• Stimulant laxatives: bisacodyl, docusate sodium. 
+     ملينات منبهة. 
+• Osmotic laxatives: lactulose, magnesium sulphate. 
+     ملينات أسموزية. 
+• Enema: docusate sodium, sodium citrate. 
+     حقنة شرجية. 
+• Suppositories: glycerol, bisacodyl. 
+     لبوس شرجي. 
+• Prokinetic agents: mosapride, itopride, domperidone, metoclopramide. 
+     أدوية محفزة لحركة الجهاز الهضمي. 
+ 
+      Recent Treatment (العلاج الحديث:) 
+• Prucalopride: 
+o Stimulates serotonin 5-HT4 receptor ⇒ colonic mass movements ⇒ 
+defecation. 
+     ينشط مستقبلات السيروتونين5 -HT4 مما يزيد من حركة القولون ويسهل التبرز. 
+• Lubiprostone: 
+o Activates chloride channels in GIT ⇒ chloride-rich secretion ⇒ soften 
+stool, ↑ motility. 
+     ينشط قنوات الكلوريد مما يزيد إفراز السوائل ويُلين البراز ويزيد الحركة.

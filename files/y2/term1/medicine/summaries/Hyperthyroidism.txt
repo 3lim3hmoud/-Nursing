@@ -1,0 +1,97 @@
+Hyperthyroidism (فرط نشاط الغدة الدرقية) 
+ 
+1. Definition and Physiology — التعريف والفيزيولوجيا 
+Hyperthyroidism is a condition where the thyroid gland produces too much thyroid 
+hormone (T3 & T4). 
+فرط نشاط الغدة الدرقية هو حالة تُفرز فيها الغدة الدرقية كميات زائدة من هرموني T3 وT4. 
+This causes a hypermetabolic state, meaning the body’s metabolism speeds up. 
+وهذا يؤدي إلى حالة نشاط أيضي مفرط أي زيادة سرعة عمليات الأيض في الجسم.  
+It affects 1–2% of people, and is 5–10 times more common in women. 
+يؤثر على حوالي 1–2٪ من الناس، وهو أكثر شيوعًا بخمس إلى عشر مرات لدى النساء مقارنة بالرجال.  
+ 
+Thyroid Hormone Regulation (Feedback Loop): 
+تنظيم هرمونات الغدة الدرقية (حلقة التغذية الراجعة: 
+1. The hypothalamus releases TRH (Thyrotropin-Releasing Hormone). 
+الوِطاء (تحت المهاد) يفرز هرمون TRH (الهرمون المُطلق للثيروتروبين.) 
+2. TRH stimulates the pituitary gland to secrete TSH. 
+يقوم TRH بتحفيز الغدة النخامية لإفراز TSH (الهرمون المنبّه للدرق.) 
+3. TSH then stimulates the thyroid gland to produce T3 and T4. 
+بعد ذلك يقوم TSH بتحفيز الغدة الدرقية لإنتاج T3 وT4. 
+4. When T3 and T4 levels are high, they suppress TRH and TSH secretion. 
+وعندما ترتفع مستويات T3 وT4، فإنها تثبط إفراز  TRH وTSH (تغذية راجعة سلبية.) 
+Thyroid hormones regulate metabolism, growth, heart rate, and body temperature. 
+تتحكم هرمونات الغدة الدرقية في الأيض والنمو ومعدل ضربات القلب ودرجة حرارة الجسم .
+
+2. Causes and Clinical Presentation — الأسباب والأعراض السريرية 
+Main Causes of Hyperthyroidism: 
+الأسباب الرئيسية لفرط نشاط الغدة الدرقية: 
+• Graves’ Disease: Autoimmune disorder where antibodies stimulate TSH 
+receptors. 
+مرض جريفز: اضطراب مناعي ذاتي حيث تحفز الأجسام المضادة مستقبلات الـ TSH. 
+• Toxic Multinodular Goiter: Several nodules produce hormones independently. 
+تضخم درقي عُقَيدي سام متعدد: وجود عُقيدات تنتج الهرمونات بدون تحكم. 
+• Toxic Adenoma: A single overactive thyroid nodule. 
+الورم الحميد السام: عُقيدة واحدة نشطة تفرز الهرمونات. 
+• Other Causes: Thyroiditis, excess iodine, or certain drugs (e.g., amiodarone). 
+أسباب أخرى: التهاب الغدة الدرقية، تناول اليود بكثرة، أو أدوية مثل الأميودارون. 
+ 
+Common Symptoms: 
+الأعراض الشائعة: 
+• Weight loss despite good appetite. 
+فقدان الوزن رغم الشهية الجيدة. 
+• Palpitations and anxiety. 
+خفقان القلب والقلق. 
+• Heat intolerance and sweating. 
+عدم تحمل الحرارة والتعرق الزائد. 
+• Tremors (hand shaking). 
+رعشة في اليدين.
+
+Physical Signs: 
+العلامات الجسدية: 
+• Tachycardia: Fast heart rate. 
+تسرع القلب: زيادة معدل ضربات القلب. 
+• Goiter: Enlarged thyroid gland. 
+تضخم الغدة الدرقية. 
+• Exophthalmos: Bulging eyes (specific to Graves’ disease). 
+جحوظ العينين: خاص بمرض جريفز. 
+• Pretibial Myxedema: Swelling of the lower legs. 
+الوذمة أمام الظنبوب: تورم في الساقين. 
+ 
+3. Diagnosis and Treatment — التشخيص والعلاج 
+Diagnostic Tests: 
+الاختبارات التشخيصية: 
+• Blood Tests: Low TSH and high T3/T4 confirm hyperthyroidism. 
+تحاليل الدم: انخفاض TSH وارتفاع T3/T4 يؤكد الإصابة. 
+• Antibody Tests: Detect TSH receptor antibodies (Graves’ disease). 
+اختبار الأجسام المضادة: لتأكيد مرض جريفز. 
+• Imaging: Thyroid ultrasound or radioactive iodine scan. 
+الفحوص التصويرية: موجات فوق صوتية أو مسح باليود المشع. 
+ 
+Treatment Options: 
+خيارات العلاج: 
+• Antithyroid Drugs: Methimazole or Propylthiouracil reduce hormone synthesis. 
+الأدوية المضادة للغدة الدرقية: مثل الميثيمازول والبروبيل ثيوراسيل تقللان إنتاج الهرمون.
+
+• Radioactive Iodine Therapy (RAI): Destroys overactive thyroid tissue. 
+العلاج باليود المشع: يدمر أنسجة الغدة النشطة الزائدة. 
+• Surgery (Thyroidectomy): Removal of part or all of the thyroid gland. 
+الجراحة (استئصال الغدة الدرقية: إزالة الغدة كليًا أو جزئيًا. 
+• Beta-blockers: Control symptoms like fast heartbeat and tremors. 
+حاصرات بيتا: تُستخدم لتقليل الأعراض مثل تسارع القلب والرعشة. 
+ 
+4. Special Considerations — اعتبارات خاصة 
+Thyroid Storm: A medical emergency with fever, delirium, and tachycardia. 
+عاصفة درقية: حالة طبية طارئة تسبب حمى، هذيان، وتسارع القلب. 
+Pregnancy: Some drugs are avoided; careful monitoring is required. 
+الحمل: بعض الأدوية لا تُستخدم أثناء الحمل ويجب متابعة الحالة بعناية. 
+Post-Treatment Monitoring: Patients must be checked for hypothyroidism. 
+بعد العلاج: يجب متابعة المرضى لاحتمال تطور خمول الغدة الدرقية. 
+ 
+Graves’ Disease (Detailed) 
+مرض جريفز (بتفصيل أكثر: 
+• Mechanism: Antibodies act like TSH → overproduction of hormones. 
+الآلية: الأجسام المضادة تحاكي عمل TSH → زيادة إفراز الهرمونات. 
+• Eye Involvement: Causes bulging eyes and discomfort (ophthalmopathy). 
+تأثير على العين: يسبب جحوظ العينين وعدم الراحة (اعتلال العين الدرقي). 
+• Management: Needs both endocrinologist and ophthalmologist care. 
+العلاج: يتطلب متابعة مشتركة من طبيب الغدد وطبيب العيون.

@@ -1,0 +1,140 @@
+Acute Renal Failure (ARF): Essential Nursing Guide 
+الفشل الكلوي الحاد (دليل تمريضي أساسي 
+ 
+Definition and Incidence 
+أولاً: التعريف ومدى الانتشار 
+Acute Renal Failure (ARF) is a sudden loss of kidney function that leads to poor 
+removal of waste, imbalance of electrolytes, and fluid disturbances. 
+الفشل الكلوي الحاد هو فقدان مفاجئ في وظيفة الكلى يؤدي إلى ضعف إخراج الفضلات واضطراب توازن
+الأملاح والسوائل. 
+It is also called Acute Kidney Injury (AKI). 
+ويُعرف أيضًا باسم إصابة الكلى الحادة  AKI). 
+Incidence: ARF affects about 5% of hospitalized patients, and it is more common in 
+intensive care units. 
+الانتشار: يصيب الفشل الكلوي الحاد حوالي  5% من المرضى داخل المستشفى، ويظهر أكثر في العناية 
+المركزة. 
+Prognosis: The death rate varies from 7% to 80%, depending on severity and how 
+quickly treatment begins. 
+التوقعات: معدل الوفاة يتراوح بين 7% و80 % حسب شدة الحالة وسرعة التدخل العلاجي. 
+ 
+Causes of ARF — The Three Categories 
+ثانيًا: أسباب الفشل الكلوي الحاد— ثلاث فئات رئيسية  
+Prerenal (60–70%) – caused by low blood flow to the kidneys. 
+قبل الكلوية 60–70%) – ناتجة عن نقص تدفق الدم إلى الكلى.  
+Examples: dehydration, bleeding, heart failure, sepsis, shock, or drugs causing blood 
+vessel dilation. 
+أمثلة: الجفاف، النزيف، فشل القلب، الإنتان، الصدمة، أو أدوية توسع الأوعية. 
+Intrarenal (25–40%) – caused by direct damage to the kidney tissue. 
+داخل الكلوية 25–40%) – ناتجة عن تلف مباشر في أنسجة الكلى.  
+Examples: acute tubular necrosis, nephrotoxic drugs (like aminoglycosides or 
+contrast dyes), glomerulonephritis, and rhabdomyolysis. 
+أمثلة: تنخر الأنابيب الكلوية الحاد، الأدوية السامة للكلى، التهاب الكبيبات، والانحلال العضلي الشديد.
+
+Postrenal (5–10%) – caused by urine flow obstruction. 
+بعد الكلوية 5–10%) – ناتجة عن انسداد مجرى البول.  
+Examples: kidney stones, prostate enlargement (BPH), strictures, or tumors. 
+أمثلة: حصوات الحالب، تضخم البروستاتا، الضيق، أو الأورام. 
+     Usually reversible if treated early. 
+     وغالبًا يمكن علاجها إذا تم التدخل مبكرًا . 
+ 
+Pathophysiology Overview 
+ثالثًا: لمحة عن الآلية المرضية 
+Prerenal: Low blood flow decreases filtration (GFR). Reversible if corrected early. 
+قبل الكلوية: نقص تدفق الدم يقلل من معدل الترشيح GFR)، ويمكن عكسه إذا تم العلاج مبكرًا . 
+Intrarenal: Damage to tubules causes poor filtration and electrolyte imbalance 
+(especially K+ and H+). 
+داخل الكلوية: تلف الأنابيب يسبب خللاً في الترشيح واختلالاً في توازن الأملاح (خصوصًا البوتاسيوم 
+والهيدروجين). 
+Postrenal: Obstruction increases pressure inside tubules, decreasing GFR and 
+possibly damaging kidney tissue. 
+بعد الكلوية: الانسداد يزيد الضغط داخل الأنابيب ويقلل الترشيح، مما قد يسبب تلفًا في أنسجة الكلى. 
+     Note: Untreated prerenal ARF can turn into intrarenal injury — early detection is 
+vital. 
+     ملاحظة: إذا لم يُعالج النوع قبل الكلوي، قد يتحول إلى تلف داخل الكلى — لذا الاكتشاف المبكر 
+ضروري. 
+ 
+The Four Phases of ARF 
+رابعًا: المراحل الأربع للفشل الكلوي الحاد 
+Initiation Phase: The beginning of kidney injury — symptoms are mild; goal: find and 
+stop the cause. 
+مرحلة البداية: بداية الإصابة بالكلى، الأعراض تكون خفيفة، والهدف تحديد السبب ومنع التدهور. 
+Oliguric Phase: Urine output <400 mL/day. Risk of high waste, high potassium, and 
+fluid overload.
+
+مرحلة قلة البول: إخراج البول أقل من 400 مل/اليوم، مع خطر تراكم الفضلات، ارتفاع البوتاسيوم، 
+واحتباس السوائل. 
+Diuretic Phase: Urine output increases; risk of dehydration and electrolyte loss. 
+مرحلة إدرار البول: زيادة في إخراج البول، مع خطر الجفاف وفقدان الأملاح. 
+Recovery Phase: Gradual improvement in kidney function; may take weeks to 
+months. 
+مرحلة الشفاء: تتحسن وظيفة الكلى تدريجيًا، وقد يستغرق الشفاء الكامل أسابيع أو أشهر. 
+ 
+Clinical Manifestations Nurses Must Recognize 
+خامسًا: العلامات السريرية التي يجب على الممرض ملاحظتها 
+Urine Changes: Oliguria or no urine (anuria). 
+تغيرات البول: قلة البول أو انعدامه. 
+Fluid Overload: Swelling, lung congestion, and high blood pressure. 
+زيادة السوائل: تورم، احتقان رئوي، وارتفاع ضغط الدم. 
+Electrolyte Imbalance: High potassium (risk of arrhythmia) and acidosis. 
+اختلال الأملاح: ارتفاع البوتاسيوم (خطر اضطراب نبض القلب) وحدوث الحموضة. 
+Systemic Symptoms: Fatigue, confusion, nausea, bad uremic breath, bleeding. 
+أعراض عامة: تعب، ارتباك، غثيان، رائحة فم يوريمية، قابلية للنزيف. 
+ 
+Key Laboratory Findings 
+سادسًا: النتائج المخبرية المهمة 
+Creatinine: Rise of ≥0.3 mg/dL in 48h or 1.5× baseline confirms ARF. 
+الكرياتينين: زيادته بمقدار 0.3 ملجم/ديسيلتر خلال48 ساعة أو 1.5 مرة عن الطبيعي تؤكد الحالة.  
+BUN: Elevated due to waste retention (azotemia). 
+اليوريا BUN): ترتفع بسبب تراكم الفضلات (الأزوتيميا. 
+Electrolytes: High K+, high phosphate, low calcium, metabolic acidosis. 
+الأملاح: ارتفاع البوتاسيوم والفوسفات، انخفاض الكالسيوم، وحموضة الدم.
+
+Urinalysis: May show muddy brown casts, protein, or blood in urine. 
+تحليل البول: قد يظهر رواسب بنية طينية، أو بروتين، أو دم في البول.  
+ 
+Nursing Assessment & Monitoring 
+سابعًا: التقييم والرقابة التمريضية 
+Urine Monitoring: Measure hourly; report if <0.5 mL/kg/hr for 6 hours. 
+مراقبة البول: يُقاس كل ساعة، ويُبلّغ الطبيب إذا قلّ عن 0.5 مل/كجم/ساعة لمدة6 ساعات.  
+Vital Signs & Weight: Check BP , pulse, respiration, and daily weight. 
+العلامات الحيوية والوزن: متابعة الضغط والنبض والتنفس والوزن يوميًا. 
+Lab Tests: Monitor BUN, creatinine, electrolytes, and ECG for K+ changes. 
+التحاليل: فحص دوري لليوريا والكرياتينين والأملاح وتخطيط القلب عند ارتفاع البوتاسيوم. 
+Medication Review: Identify nephrotoxic drugs (NSAIDs, ACEIs, antibiotics, contrast). 
+مراجعة الأدوية: تحديد الأدوية السامة للكلى مثل مضادات الالتهاب، مثبطات ACE، بعض المضادات الحيوية،
+وصبغات الأشعة. 
+ 
+Nursing Management Priorities 
+ثامنًا: الأولويات التمريضية في الإدارة 
+Fluid Management: Balance fluids — give IV fluids for dehydration, diuretics for 
+overload. 
+إدارة السوائل: توازن السوائل مهم — يُعطى محلول في حالة الجفاف ومدرات بول في حالة احتباس السوائل.  
+Medication Safety: Avoid nephrotoxic drugs or adjust doses. 
+سلامة الأدوية: تجنب الأدوية السامة للكلى أو تعديل جرعاتها. 
+Nutrition: Restrict potassium, sodium; moderate protein intake. 
+التغذية: تقليل البوتاسيوم والصوديوم، وتناول بروتين معتدل حسب الحالة. 
+Patient Education & Dialysis Prep: Teach fluid limits, symptom reporting, and 
+prepare for dialysis if needed.
+
+تثقيف المريض وتحضير الغسيل الكلوي: توعية المريض بتقليل السوائل، الإبلاغ عن الأعراض، وتجهيز  
+المريض للغسيل إذا لزم الأمر. 
+ 
+Summary & Critical Takeaways for Nurses 
+تاسعًا: الملخص والنقاط الحرجة للممرضين 
+Early Detection: Spot low urine, rising creatinine, or hyperkalemia early. 
+الاكتشاف المبكر: ملاحظة قلة البول أو ارتفاع الكرياتينين أو البوتاسيوم مبكرًا . 
+Prompt Interventions: Restore perfusion, remove toxins, correct electrolytes. 
+التدخل السريع: تحسين تدفق الدم، إزالة السموم، وتصحيح الأملاح. 
+Teamwork: Work with doctors, pharmacists, and dietitians for best results. 
+العمل الجماعي: التعاون مع الطبيب والصيدلي وأخصائي التغذية. 
+Patient-Centered Care: Monitor, educate, and advocate for patient safety. 
+رعاية تركز على المريض: المراقبة المستمرة وتثقيف المريض لضمان سلامته. 
+ 
+Immediate Reporting Criteria (Quick Reference) 
+عاشرًا: الحالات التي يجب إبلاغ الطبيب عنها فورًا 
+Urine output <0.5 mL/kg/hr for 6 hours. 
+كمية البول أقل من 0.5 مل/كجم/ساعة لمدة6 ساعات.  
+Potassium >5.5 mEq/L with ECG changes. 
+ارتفاع البوتاسيوم أكثر من5.5 مع تغير في تخطيط القلب.  
+Rapid rise in serum creatinine. 
+زيادة سريعة في مستوى الكرياتينين بالدم.

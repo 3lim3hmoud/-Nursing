@@ -1,0 +1,213 @@
+Lung Injury and Chest Trauma 
+إصابات الرئة وإصابات الصدر 
+ 
+I. Chest Trauma: Rib Fractures 
+1. Rib Fractures 
+Rib fractures are the most common type of chest trauma and usually involve ribs 5–9. 
+كسور الضلوع هي أكثر إصابات الصدر شيوعًا وغالبًا تصيب الضلوع من5 إلى9 . 
+More than 60% of chest-trauma patients have rib fractures. 
+أكثر من60% من مرضى إصابات الصدر يعانون من كسور بالضلوع.  
+Manifestations: 
+العلامات: 
+Severe pain. 
+ألم شديد. 
+Bruising and tenderness over the injury. 
+كدمات وحساسية شديدة على مكان الإصابة. 
+Muscle spasm over the fracture site. 
+تشنج عضلي فوق مكان الكسر. 
+Crackling or grating sound (crepitus) in the chest. 
+صوت تكسّر أو احتكاك داخل الصدر. 
+Fractures of the first 3 ribs are rare but dangerous due to subclavian artery injury. 
+كسور الضلوع الثلاثة الأولى نادرة لكنها خطيرة بسبب احتمال إصابة الشريان تحت الترقوة. 
+Lower rib fractures may injure the spleen or liver. 
+الضلوع السفلية عند كسرها قد تؤدي لإصابة الكبد أو الطحال.
+
+II. Flail Chest 
+Flail chest is a severe complication of blunt chest trauma. 
+الصدر المتردد هو مضاعفة خطيرة لإصابات الصدر الرضّية. 
+It occurs when 3 or more adjacent ribs fracture in 2 or more places. 
+يحدث عندما ينكسر3 ضلوع متجاورة أو أكثر في موقعين أو أكثر.  
+The flail segment becomes detached and moves independently. 
+الجزء المكسور يصبح منفصلاً ويتحرك بشكل عكسي عن باقي الصدر . 
+Paradoxical Movement (Hallmark Sign): 
+الحركة العكسية (العلامة المميزة: 
+The flail segment is pulled inward during inspiration (negative pressure). 
+الجزء المكسور يدخل للداخل أثناء الشهيق بسبب الضغط السلبي. 
+It bulges outward during expiration (positive pressure). 
+ويخرج للخارج أثناء الزفير بسبب الضغط الإيجابي. 
+Flail chest is often accompanied by lung contusion and atelectasis. 
+يصاحب الصدر المتردد غالبًا كدمة رئوية وانخماص الرئة. 
+ 
+III. Normal Breathing Cycle 
+During inspiration, the chest expands creating negative pressure. 
+في الشهيق، يتمدّد الصدر ويولد ضغطًا سلبيًا. 
+During expiration, the chest wall recoils due to positive pressure. 
+في الزفير، ينكمش جدار الصدر بسبب الضغط الإيجابي. 
+ 
+IV. Assessment of Chest Trauma 
+تقييم إصابات الصدر
+
+Inspection findings may include: 
+قد تظهر عند الفحص بالنظر: 
+• Respiratory rate > 20 
+• معدل تنفس أكثر من20  
+• Use of accessory muscles 
+• استخدام عضلات مساعدة في التنفس 
+• Nasal flaring 
+• اتساع فتحات الأنف 
+• Asymmetric chest expansion 
+• عدم تماثل حركة الصدر 
+• Paradoxical movement 
+• حركة صدر عكسية 
+• Cyanosis or pallor 
+• زرقة أو شحوب الجلد 
+Palpation may reveal tracheal deviation and subcutaneous emphysema. 
+الفحص باليد قد يظهر انحراف القصبة ووجود هواء تحت الجلد. 
+Percussion: dullness over lungs → hemothorax/atelectasis. 
+الطرق: صوت مكتوم فوق الرئة يدل على وجود دم أو انخماص. 
+Auscultation: diminished/absent breath sounds, stridor, crepitus. 
+السمع: نقص أو غياب أصوات التنفس، صوت صفير، أو احتكاك عظمي. 
+ 
+V. Potential Complications 
+المضاعفات المحتملة
+
+Hemothorax, pneumothorax, tension pneumothorax, shock, infection. 
+نزيف جنبي، استرواح صدر، استرواح تحت ضغط، صدمة، عدوى. 
+Penetrating injury may cause dyspnea, chest pain, restlessness, anxiety. 
+الإصابات النافذة تسبب ضيق تنفس، ألم صدري، توتر وقلق. 
+ 
+VI. Diagnostic Tests 
+الفحوصات 
+Chest X-ray identifies air/fluid, fractures, mediastinal shift. 
+الأشعة تظهر وجود هواء/سوائل، الكسور، وانحراف المنصف. 
+Pulse oximetry monitors oxygen saturation. 
+قياس التأكسج لمتابعة نسبة الأكسجين. 
+ECG detects dysrhythmias. 
+تخطيط القلب يكشف اضطرابات النبض. 
+WBC count screens for infection. 
+عدّ كرات الدم البيضاء للكشف عن العدوى. 
+ 
+VII. Management of Lung Injury 
+علاج إصابات الرئة 
+Oxygen therapy improves oxygenation. 
+العلاج بالأكسجين لرفع مستوى الأكسجين. 
+Intubation maintains airway and decreases work of breathing. 
+الأنبوب الحنجري للمحافظة على مجرى الهواء وتقليل جهد التنفس. 
+Mechanical ventilation for severe respiratory distress. 
+التهوية الميكانيكية للحالات الشديدة.
+
+Blood replacement using crystalloids before colloids. 
+تعويض الدم بالسوايل الكريستالية قبل المحاليل الغروية. 
+Chest tube removes air/fluids. 
+أنبوب الصدر لإزالة الهواء أو السوائل. 
+Analgesia for pain control (opioids used cautiously). 
+مسكنات الألم بحذر لتجنب تثبيط التنفس. 
+Flail chest stabilizes within 10–14 days. 
+الصدر المتردد عادة يستقر خلال10 –14 يوم.  
+Thoracotomy only for major complications. 
+فتح الصدر يتم فقط عند حدوث مضاعفات خطيرة. 
+ 
+VIII. Nursing Diagnosis: Fluid Volume Deficit 
+تشخيص تمريضي: نقص حجم السوائل 
+Goal: normal BP/HR, urine >0.5 ml/kg/h, drainage <100 ml/h. 
+الهدف: ضغط ونبض طبيعي، بول فوق0.5 مل/كجم/ساعة، تصريف أقل من100 مل/ساعة.  
+Monitor dressings and drainage; >100 ml/h is excessive. 
+مراقبة الضمادات والتصريف؛ أكثر من100 مل/ساعة يُعتبر زيادة.  
+Record I&O accurately. 
+تسجيل الداخل والخارج بدقة. 
+Vital signs frequently. 
+قياس العلامات الحيوية باستمرار. 
+Monitor daily weight and urine output. 
+متابعة الوزن اليومي وإخراج البول.
+
+Key Terms & Specific Conditions 
+ 
+A. Mechanisms of Injury 
+آليات الإصابة 
+Blunt trauma = compression force (MVA, falls). 
+الإصابة الرضّية نتيجة ضغط قوي مثل حوادث السيارات والسقوط. 
+Penetrating trauma = entry of foreign object. 
+الإصابة النافذة بسبب دخول جسم غريب كالطلقات والطعنات. 
+ 
+B. Pneumothorax 
+استرواح الصدر 
+Pneumothorax = air in the pleural space causing lung collapse. 
+استرواح الصدر هو دخول هواء داخل الغشاء البلّوري مما يسبب انكماش الرئة. 
+Types: 
+1. Simple/Spontaneous: rupture of bleb. 
+البسيط: يحدث بسبب انفجار فقاعات هوائية صغيرة بدون إصابة. 
+2. Traumatic: chest injury. 
+الرضّي: نتيجة إصابة مباشرة أو اختراق للصدر. 
+3. Open Pneumothorax: sucking chest wound + mediastinal flutter. 
+المفتوح: جرح كبير يسمح بدخول الهواء وخروجه ويسبب حركة المنصف. 
+4. Tension Pneumothorax: trapped air → mediastinal shift → shock. 
+تحت ضغط: الهواء يدخل ولا يخرج، يزحزح القلب والأوعية وقد يسبب صدمة. 
+ 
+Clinical Manifestations
+
+Small pneumothorax: 
+الاسترواح البسيط: 
+• Sudden pleuritic pain 
+• ألم مفاجئ جنبي 
+• Tachypnea 
+• سرعة التنفس 
+• Trachea midline 
+• القصبة بالمنتصف 
+Tension pneumothorax: 
+الاسترواح الضاغط: 
+• Air hunger, agitation 
+• جوع هوائي، قلق 
+• Cyanosis, hypotension 
+• زرقة، انخفاض ضغط 
+• Trachea shifted away 
+• انحراف القصبة بعيدًا عن الجهة المصابة 
+ 
+Management 
+Chest tube at 2nd ICS for air; 4th–5th ICS for blood. 
+أنبوب صدر بالمسافة الوربية الثانية للهواء، الرابعة/الخامسة للدم. 
+Needle decompression for tension pneumothorax. 
+تفريغ الهواء بإبرة كبيرة عند الحالات الطارئة.
+
+Thoracotomy if >200 ml/h drainage or >1500 ml initially. 
+فتح الصدر إذا التصريف أكثر من200 مل/ساعة أو1500 مل أول مرة.  
+ 
+Chest Tube Guidelines 
+Water seal system must be filled to correct level. 
+يجب ملء غرفة مانع الماء للمستوى المطلوب. 
+Ensure tubing is not kinked or looped. 
+التأكد من عدم التواء أو انسداد الأنبوب. 
+Reposition every 1.5–2 h. 
+تغيير وضعية المريض كل1.5–2 ساعة.  
+Milking tubing if needed. 
+سحب الأنبوب برفق عند الحاجة. 
+Tidaling stops when lung re-expands or tube is blocked. 
+توقف حركة الماء يعني توسع الرئة أو انسداد الأنبوب. 
+Continuous bubbling = air leak. 
+فقاعات مستمرة تعني وجود تسريب هوائي. 
+ 
+C. Hemothorax 
+الدم داخل الغشاء البلّوري 
+Blood in pleural cavity; massive if >1500 ml. 
+وجود دم داخل الغشاء، ويُعتبر شديد إذا تجاوز1500 مل.  
+Manifestations: shock signs, absent breath sounds, collapsed neck veins. 
+علاماته: صدمة، غياب أصوات التنفس، أوردة الرقبة منسدلة.
+
+Management: IV fluids + chest tube; thoracotomy if heavy bleeding. 
+العلاج: سوائل وريدية + أنبوب صدر؛ وقد يحتاج لفتح صدر إذا النزيف كبير. 
+ 
+D. Cardiac Tamponade 
+اندحاس القلب 
+Fluid/blood accumulates in pericardial sac. 
+تجمع دم/سوائل داخل غشاء القلب. 
+This increases pressure, decreases venous return, causes shock. 
+يزيد الضغط ويقلل الرجوع الوريدي ويسبب صدمة. 
+Beck’s Triad: 
+ثالوث بيك: 
+• Distended neck veins 
+• احتقان أوردة الرقبة 
+• Muffled heart sounds 
+• أصوات قلب منخفضة 
+• Hypotension 
+• انخفاض ضغط الدم 
+Management: urgent pericardiocentesis. 
+العلاج: بزل التامور بشكل عاجل.

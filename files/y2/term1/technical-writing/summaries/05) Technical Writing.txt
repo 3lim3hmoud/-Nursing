@@ -1,0 +1,158 @@
+Technical Writing – Lecture (5) 
+Records 
+ 
+1. Definition of Records 
+Records are documents that document the internal and external transactions of an 
+organization. 
+السجلات هي مستندات تُستخدم لتوثيق المعاملات الداخلية والخارجية داخل المؤسسة. 
+They provide written evidence of activities through letters, reports, contracts, invoices, 
+and meeting minutes. 
+توفر السجلات دليلاا كتابياا على الأنشطة من خلال الخطابات، التقارير، العقود، الفواتير، ومحاضر الاجتماعات . 
+In healthcare, records are permanent documents related to patient care and provide a 
+continuous account of patient needs. 
+في المجال الصحي، تُعد السجلات وثائق دائمة تتعلق برعاية المريض وتوفر سجلاا مستمراا لاحتياجاته الصحية . 
+ 
+2. Principles of Maintaining Records 
+Every record must have a clear and specific purpose. 
+يجب أن يكون لكل سجل هدف واضح ومحدد. 
+Records should be easy to use, with information grouped logically. 
+يجب أن تكون السجلات سهلة الاستخدام مع تجميع المعلومات بشكل منطقي. 
+The language used in records should be simple and clear. 
+يجب أن تكون اللغة المستخدمة في السجلات بسيطة وواضحة. 
+Records should allow some freedom of expression when appropriate. 
+يجب أن تسمح السجلات بقدر من حرية التعبير عند الحاجة. 
+Guidelines should be provided to help interpret the recorded information. 
+يجب توفير إرشادات تساعد على تفسير المعلومات المسجلة. 
+Records must be easily accessible to authorized staff. 
+يجب أن تكون السجلات سهلة الوصول للعاملين المصرح لهم. 
+Records should be reviewed periodically to meet changing needs. 
+يجب مراجعة السجلات دورياا لمواكبة الاحتياجات المتغيرة.
+
+Staff must understand their responsibility to keep records accurate and updated. 
+يجب أن يدرك العاملون مسؤوليتهم في الحفاظ على دقة السجلات وتحديثها. 
+Adequate stationery and filing equipment must be available. 
+يجب توفير أدوات مكتبية ووسائل حفظ كافية. 
+Safe filing systems such as fireproof cabinets should be used. 
+يجب استخدام أنظمة حفظ آمنة مثل الخزائن المقاومة للحريق. 
+ 
+3. Characteristics of Good Records 
+Good records are accurate. 
+السجلات الجيدة تكون دقيقة. 
+They are complete and thorough. 
+تكون شاملة وكاملة. 
+They are up to date. 
+تكون محدثة باستمرار. 
+They are well organized. 
+تكون منظمة بشكل جيد. 
+They maintain confidentiality. 
+تحافظ على سرية المعلومات. 
+They are objective and free from personal opinions. 
+تكون موضوعية وخالية من الآراء الشخصية. 
+ 
+4. Purpose and Uses of Records 
+Records serve as a communication tool among healthcare professionals. 
+تُستخدم السجلات كوسيلة تواصل بين أفراد الفريق الصحي. 
+They assist in diagnosis and treatment planning. 
+تساعد في التشخيص ووضع خطة العلاج. 
+They support education and research activities. 
+تدعم العملية التعليمية والبحث العلمي. 
+They provide legal documentation and protection. 
+توفر توثيقاا قانونياا وحماية قانونية.
+
+Records ensure continuity of patient care. 
+تضمن السجلات استمرارية رعاية المريض. 
+They help prevent duplication of services. 
+تساعد في منع تكرار الخدمات غير الضرورية. 
+They help nurses evaluate the care and teaching provided. 
+تساعد الممرضين في تقييم الرعاية والتثقيف الصحي المقدم. 
+ 
+5. Types of Records 
+1. Patient Clinical Records 
+Patient clinical records document illness, treatment, and recovery. 
+السجلات السريرية للمريض توثق المرض، العلاج، والتعافي. 
+They provide scientific and legal evidence of proper patient care. 
+توفر دليلاا علمياا وقانونياا على تقديم رعاية صحيحة للمريض . 
+ 
+2. Individual Staff Records 
+Individual staff records include sickness and absence details. 
+سجلات العاملين الفردية تشمل بيانات المرض والغياب. 
+They also include career development and personal notes. 
+كما تشمل التطور الوظيفي والملاحظات الشخصية. 
+ 
+3. Ward Records 
+Ward records document bed numbers and availability. 
+سجلات الأقسام توثق عدد الأسرة وتوفرها. 
+They record changes in medical and non-nursing staff. 
+تسجل التغيرات في الطاقم الطبي وغير الطبي. 
+They show patterns of staff support and allocation. 
+توضح أنماط توزيع ودعم العاملين. 
+ 
+4. Administrative Records with Educational Value
+
+These records include data related to admissions and discharges. 
+تشمل هذه السجلات بيانات الدخول والخروج. 
+They include information about treatments and procedures. 
+تتضمن معلومات عن العلاجات والإجراءات. 
+They document equipment loss, replacement, and usage. 
+توثق فقدان المعدات واستبدالها واستخدامها. 
+They record staff performance and evaluation. 
+تسجل أداء العاملين وتقييمهم. 
+ 
+6. Filing and Arranging Records 
+Alphabetical Filing 
+Alphabetical filing arranges records by names. 
+الترتيب الأبجدي ينظم السجلات حسب الأسماء. 
+It is commonly used for patient records. 
+يُستخدم غالباا في ملفات المرضى. 
+It is easy and familiar to most staff members. 
+يتميز بالسهولة وهو مألوف لمعظم العاملين. 
+ 
+Numerical Filing 
+Numerical filing arranges records using numbers. 
+الترتيب الرقمي ينظم السجلات باستخدام الأرقام. 
+It can be done in ascending or descending order. 
+يمكن أن يكون الترتيب تصاعدياا أو تنازلياا. 
+Methods include straight numeric and terminal digit filing. 
+تشمل طرقه الترتيب الرقمي المباشر أو باستخدام الأرقام النهائية. 
+ 
+Geographical Filing 
+Geographical filing organizes records by location. 
+الترتيب الجغرافي ينظم السجلات حسب الموقع.
+
+It is useful for organizations with multiple locations. 
+يفيد المؤسسات التي تعمل في أكثر من موقع. 
+ 
+Index Cards 
+Index cards store small amounts of specific information. 
+بطاقات الفهرسة تُستخدم لحفظ كميات صغيرة من معلومات محددة. 
+They are useful for cumulative or family records. 
+تُستخدم في السجلات التراكمية أو العائلية. 
+ 
+7. Guidelines for Documentation 
+Documentation should be factual and objective. 
+يجب أن يكون التوثيق قائماا على الحقائق وموضوعياا. 
+Records should be written as soon as possible after an event. 
+يجب كتابة السجلات فور حدوث الحدث. 
+Writing should be clear and not erasable. 
+يجب أن تكون الكتابة واضحة وغير قابلة للمحو. 
+Each entry must include the correct date and time. 
+يجب أن يتضمن كل تسجيل التاريخ والوقت الصحيحين. 
+Each entry must be signed by the person who made it. 
+يجب توقيع كل تسجيل من الشخص الذي كتبه. 
+Any additional notes must also be signed and timed. 
+يجب توقيع وتوقيت أي إضافة جديدة. 
+Original entries must remain clear and readable. 
+يجب أن يظل التسجيل الأصلي واضحاا ومقروءاا. 
+Records should avoid abbreviations, jargon, or unclear phrases. 
+يجب تجنب الاختصارات غير الواضحة أو المصطلحات الغامضة. 
+Records must not include offensive or subjective statements. 
+يجب ألا تحتوي السجلات على عبارات مسيئة أو شخصية. 
+ 
+Analogy for Understanding
+
+Records are like the black box of an airplane. 
+السجلات تشبه الصندوق الأسود للطائرة. 
+They permanently record all actions and conditions. 
+تسجل جميع الأحداث والظروف بشكل دائم. 
+They ensure safety, continuity, and legal accountability. 
+تضمن السلامة، استمرارية الرعاية، والمساءلة القانونية.

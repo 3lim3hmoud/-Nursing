@@ -1,0 +1,149 @@
+preencoded.png
+Acute Renal Failure (ARF): 
+Essential Nursing Guide
+A concise, clinical primer for nursing students covering causes, pathophysiology, 
+assessment, labs, and practical nursing management of acute renal failure (also called 
+acute kidney injury).
+
+preencoded.png
+What is Acute Renal 
+Failure?
+Acute Renal Failure is a rapid loss of kidney function causing impaired 
+waste excretion, electrolyte dysregulation, and disturbed fluid 
+balance. Also called Acute Kidney Injury (AKI).
+Incidence
+Occurs in ~5% of hospitalized patients—more common in ICU 
+settings.
+Prognosis
+Mortality 7 %–80% depending on severity, comorbidities, and 
+timeliness of care.
+
+preencoded.png
+Causes of ARF — The Three Categories
+Prerenal (60–70 %)
+Due to reduced renal perfusion: 
+dehydration, hemorrhage, heart 
+failure, sepsis, shock, medication-
+induced vasodilation.
+Intrarenal (25 –40%)
+Direct kidney damage: acute tubular 
+necrosis (ischemia), nephrotoxins 
+(aminoglycosides, contrast), 
+glomerulonephritis, severe 
+rhabdomyolysis.
+Postrenal (5–10 %)
+Obstruction of urine flow: ureteral 
+stones, benign prostatic hypertrophy 
+(BPH), strictures, tumors—often 
+reversible if relieved early.
+
+preencoded.png
+Pathophysiology Overview
+01
+Prerenal Mechanism
+Hypoperfusion → decreased 
+glomerular filtration rate (GFR). 
+Reversible if perfusion restored 
+promptly.
+02
+Intrarenal Mechanism
+Tubular cell injury → loss of 
+concentrating ability, back-leak 
+of filtrate, electrolyte imbalance 
+(K+, H+).
+03
+Postrenal Mechanism
+Obstruction → increased tubular pressure → decreased GFR; 
+prolonged obstruction causes parenchymal damage.
+Note: Untreated prerenal AKI often progresses to intrarenal injury—early detection is 
+essential.
+
+preencoded.png
+The Four Phases of ARF
+Initiation
+Initial insult — often subtle signs. Goal: identify cause and prevent progression.
+Oliguria
+Urine output <400 mL/day. Watch for azotemia, hyperkalemia, fluid overload.
+Diuresis
+Urine output increases; risk of electrolyte loss and dehydration—monitor 
+closely.
+Recovery
+GFR improves gradually; full recovery may take weeks–months; 
+residual impairment possible.
+
+preencoded.png
+Clinical Manifestations Nurses Must Recognize
+• Oliguria or anuria; measurable decrease in urine output.
+• Fluid overload: peripheral edema, pulmonary congestion, elevated BP.
+• Electrolyte disturbances: hyperkalemia (arrhythmia risk), metabolic acidosis.
+• Systemic signs: fatigue, confusion, nausea, uremic breath, bleeding tendencies.
+
+preencoded.png
+Key Laboratory Findings
+• Serum creatinine rise: ≥0.3 mg/dL in 48 hours or ≥1 .5× baseline —
+diagnostic criterion.
+• Elevated BUN (azotemia) and BUN:Cr ratio shifts depending on cause.
+• Electrolytes: hyperkalemia, hyperphosphatemia, hypocalcemia, 
+metabolic acidosis.
+• Urinalysis: muddy brown casts (ATN), proteinuria, hematuria, low 
+specific gravity if tubular damage.
+Nursing implication: rapid reporting of rising K+ or ECG changes is critical.
+
+preencoded.png
+Nursing Assessment & 
+Monitoring
+Hourly Urine Monitoring
+Record volume, color, clarity; note trends and report <0.5 mL/kg/hr over 6 hours.
+Vital Signs & Weights
+Daily weights, BP, HR, respiratory status—track fluid balance and overload.
+Lab Surveillance
+Frequent BUN, creatinine, electrolytes, and serial ECGs if K+ elevated.
+Medication Review
+Identify nephrotoxins (NSAIDs, ACE inhibitors with caution, aminoglycosides, 
+contrast) and communicate with prescriber.
+
+preencoded.png
+Nursing Management Priorities
+Fluid Management
+Balance perfusion vs. 
+overload: judicious IV fluids 
+for hypovolemia; diuretics 
+for volume overload as 
+ordered.
+Medication Safety
+Avoid or dose-adjust 
+nephrotoxic agents; 
+coordinate with pharmacy 
+for alternatives and renal 
+dosing.
+Nutritional Support
+Restrict potassium and 
+sodium; moderate protein 
+based on stage and dialysis 
+status—consult dietitian.
+Education & Dialysis 
+Prep
+Teach symptom reporting, 
+fluid restrictions, and 
+prepare patients/teams for 
+possible renal replacement 
+therapy (indications: 
+refractory hyperkalemia, 
+volume overload, uremia).
+
+preencoded.png
+Summary & Takeaways for Nurses
+Early Recognition
+Timely detection of oliguria, rising creatinine, or hyperkalemia alters outcomes—
+monitor closely.
+Targeted Interventions
+Restore perfusion, remove nephrotoxins, correct electrolytes, and support with 
+dialysis when indicated.
+Collaborative Care
+Work with interdisciplinary team—physicians, pharmacists, dietitians—to 
+personalize care and prevent complications.
+Patient-Centered Role
+Nurses are pivotal in monitoring, educating, and advocating—your vigilance 
+improves recovery odds.
+For quick reference: report urine output <0.5 mL/kg/hr for 6 hours, any K+ >5.5 
+mEq/L with ECG changes, or rapid creatinine rise immediately.

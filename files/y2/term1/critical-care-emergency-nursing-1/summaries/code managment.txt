@@ -1,0 +1,225 @@
+Cardiopulmonary Resuscitation (CPR) & Code Management 
+ 
+Introduction and Definitions 
+Codes 
+Codes are called when a patient experiences cardiac arrest, respiratory arrest, or a life-
+threatening heart rhythm that causes loss of consciousness. 
+يتم استدعاء الكود عندما يحدث للمريض توقف في القلب، أو توقف في التنفس، أو اضطراب خطير في ضربات
+القلب يؤدي إلى فقدان الوعي. 
+ 
+Code Management 
+Code management means starting the code and performing all lifesaving actions when a 
+patient arrests. 
+إدارة الكود تعني بدء الكود وتنفيذ جميع الإجراءات المنقذة للحياة عند حدوث التوقف. 
+ 
+Cardiac Arrest 
+Cardiac arrest is the sudden stop of effective heart pumping, which stops blood 
+circulation. If no action is taken within 4–6 minutes, permanent brain injury will occur. 
+توقف القلب هو التوقف المفاجئ لضخ القلب بشكل فعّال، مما يؤدي إلى توقف الدورة الدموية. إذا لم يتم التدخل
+خلال 4–6 دقائق يحدث تلف دائم في المخ.  
+ 
+Resuscitation 
+Resuscitation is the restoration of vital signs using mechanical, physiological, and 
+pharmacological methods. 
+الإنعاش هو إعادة العلامات الحيوية باستخدام وسائل ميكانيكية، فسيولوجية، ودوائية. 
+ 
+Causes of Cardiopulmonary Arrest 
+Cardiac Causes
+
+Cardiac causes include myocardial infarction, heart failure, abnormal heart rhythms, 
+coronary artery spasm, and cardiac tamponade. 
+الأسباب القلبية تشمل الجلطة القلبية، فشل القلب، اضطرابات ضربات القلب، تشنج الشرايين التاجية، والانصباب
+التأموري. 
+ 
+Pulmonary Causes 
+Pulmonary causes include respiratory failure, airway obstruction, Acute Respiratory 
+Distress Syndrome (ARDS), and poor ventilation such as pneumothorax. 
+الأسباب التنفسية تشمل فشل الجهاز التنفسي، انسداد مجرى الهواء، متلازمة الضائقة التنفسية الحادة، وضعف
+التهوية مثل الاسترواح الصدري . 
+ 
+Electrolyte Imbalances 
+Electrolyte causes include hyperkalemia, hypomagnesemia, and abnormal calcium levels 
+(high or low). 
+اضطرابات الكهارل تشمل زيادة البوتاسيوم، نقص الماغنسيوم، وارتفاع أو انخفاض الكالسيوم. 
+ 
+Procedural Causes 
+Procedural causes include pulmonary artery catheterization, cardiac catheterization, and 
+surgical procedures. 
+الأسباب الإجرائية تشمل قسطرة الشريان الرئوي، القسطرة القلبية، والعمليات الجراحية. 
+ 
+Rapid Response Teams (RRTs) 
+Rapid Response Teams are used to manage patient deterioration before cardiac or 
+respiratory arrest occurs. Their goal is early intervention to prevent arrest. 
+فرق الاستجابة السريعة يتم استخدامها للتدخل عند تدهور حالة المريض قبل حدوث توقف القلب أو التنفس، بهدف
+منع حدوث التوقف. 
+ 
+Basic Life Support (BLS) 
+The American Heart Association follows the
+
+C-A-B sequence: Circulation, Airway, Breathing. 
+تتبع جمعية القلب الأمريكية تسلسل C-A-B: الدورة الدموية، مجرى الهواء، التنفس. 
+ 
+Check Responsiveness 
+The nurse taps the patient and asks, “Are you all right?” 
+تقوم الممرضة بربت المريض وتسأله: “هل أنت بخير؟” 
+ 
+Assessment 
+The nurse checks breathing and pulse for no more than 10 seconds. 
+تقوم الممرضة بفحص التنفس والنبض لمدة لا تزيد عن 10 ثوان ٍ. 
+ 
+Initiation 
+The nurse calls for help, activates the code, and starts BLS immediately. 
+تطلب الممرضة المساعدة، تفعّل الكود، وتبدأ الإنعاش الأساسي فورًا . 
+ 
+Circulation 
+Chest compressions are done at a rate of at least 100 per minute with a depth of at least 
+2 inches, using a firm surface and allowing full chest recoil. 
+يتم عمل ضغطات صدرية بمعدل لا يقل عن  100 ضغطةٍفيٍالدقيقة وبعمق لا يقل عن 2 بوصة، مع استخدام  
+سطح صلب والسماح بارتداد الصدر الكامل. 
+ 
+Airway 
+The airway is opened using the head tilt-chin lift method, or jaw thrust if there is a 
+cervical spine injury. 
+يتم فتح مجرى الهواء باستخدام طريقة إمالة الرأس ورفع الذقن، أو دفع الفك في حالة إصابة الفقرات العنقية. 
+ 
+Breathing
+
+Breaths are given using an Ambu bag with 100% oxygen at 15 L/min, with a 
+compression-to-breath ratio of 30:2. 
+ 
+Advanced Cardiac Life Support (ACLS) 
+Airway and Breathing 
+Advanced airway management includes endotracheal intubation to secure the airway. 
+Correct tube placement is confirmed by equal breath sounds on both sides, visible chest 
+movement, and later by chest X-ray. 
+إدارة مجرى الهواء المتقدمة تشمل إدخال أنبوب داخل القصبة الهوائية لتأمين مجرى الهواء. يتم التأكد من الوضع
+الصحيح للأنبوب بسماع أصوات التنفس في الجانبين، وملاحظة حركة الصدر، ثم التأكد لاحقًا بواسطة أشعة  
+الصدر. 
+ 
+Circulation 
+Circulation management includes attaching the ECG monitor, identifying the cardiac 
+rhythm, and establishing intravenous access to give fluids and medications. 
+إدارة الدورة الدموية تشمل توصيل جهاز رسم القلب، تحديد نوع اضطراب النظم القلبي، وإنشاء مدخل وريدي
+لإعطاء السوائل والأدوية. 
+ 
+Defibrillation 
+Defibrillation is used for ventricular fibrillation or pulseless ventricular tachycardia. High-
+energy shocks are given immediately, followed by two minutes of CPR. 
+إزالة الرجفان تُستخدم في حالة الرجفان البطيني أو تسرّع البطين بدون نبض، حيث يتم إعطاء صدمات كهربائية
+عالية الطاقة فورًا، يليها دقيقتان من الإ نعاش القلبي الرئوي.  
+ 
+Resuscitation Team Roles 
+Code Leader (Physician / Nurse Practitioner) 
+The code leader directs the resuscitation, gives orders, and makes all treatment 
+decisions. 
+قائد الكود يوجّه عملية الإنعاش، يعطي الأوامر، ويتخذ جميع القرارات العلاجية.
+
+Primary Nurse 
+The primary nurse provides patient information, administers medications, and assists 
+during the code. 
+الممرضة الأساسية توفر معلومات عن المريض، تعطي الأدوية، وتساعد أثناء الكود. 
+ 
+Second Nurse 
+The second nurse manages the crash cart and prepares needed equipment and supplies. 
+الممرضة الثانية تتولى تجهيز عربة الطوارئ وتحضير الأدوات والمستلزمات المطلوبة. 
+ 
+Nursing Supervisor 
+The nursing supervisor controls the environment, limits crowding, and coordinates ICU 
+bed availability if needed. 
+مشرف التمريض ينظم المكان، يمنع التزاحم، ويُنسّق توفير سرير في العناية المركزة عند الحاجة. 
+ 
+Recorder 
+The recorder documents all events, medications, times, and patient responses during 
+the code. 
+المُسجِّّل يقوم بتوثيق جميع الأحداث، الأدوية، التوقيتات، واستجابة المريض أثناء الكود . 
+ 
+Anesthesiologist / CRNA 
+The anesthesiologist or CRNA performs intubation and manages oxygenation and 
+ventilation. 
+طبيب التخدير أو أخصائي التخدير يقوم بعملية إدخال الأنبوب ويتحكم في الأكسجة والتهوية. 
+ 
+Respiratory Therapist
+
+The respiratory therapist assists with ventilation, oxygen delivery, and arterial blood gas 
+analysis. 
+أخصائي العلاج التنفسي يساعد في التهوية، توصيل الأكسجين، وتحليل غازات الدم الشريانية. 
+ 
+Equipment and the Crash Cart 
+The crash cart must be checked and inventoried daily to ensure all equipment is 
+available and functional. 
+يجب فحص وتجهيز عربة الطوارئ يوميًا للتأكد من توفر جميع المعدات وصلاحيتها للاستخدام. 
+ 
+Top of the Crash Cart 
+The top contains the monitor-defibrillator, ECG cables, and code documentation forms. 
+يحتوي الجزء العلوي على جهاز المونيتور وإزالة الرجفان، أسلاك رسم القلب، ونماذج تسجيل الكود. 
+ 
+Side and Back of the Crash Cart 
+These areas include a cardiac board, suction machine, and oxygen tank. 
+تشمل الجوانب والخلف لوح الإنعاش، جهاز الشفط، وأسطوانة الأكسجين. 
+ 
+Crash Cart Drawers 
+The drawers contain airway equipment such as endotracheal tubes and laryngoscopes, 
+IV supplies, fluids, and emergency medications. 
+تحتوي الأدراج على أدوات مجرى الهواء مثل أنابيب القصبة الهوائية والمنظار، مستلزمات الوريد، السوائل،
+وأدوية الطوارئ. 
+ 
+Medications Used in Cardiac Arrest 
+Epinephrine 
+Epinephrine is a strong vasoconstrictor that increases heart rate and blood pressure. The 
+dose is 1 mg IV every 3–5 minutes.
+
+الإبينفرين دواء قابض قوي للأوعية الدموية يزيد من معدل ضربات القلب وضغط الدم. الجرعة  1 ملغٍوريديٍكلٍ
+3–5ٍدقائق.  
+ 
+Vasopressin 
+Vasopressin may be used instead of epinephrine in ventricular fibrillation not responding 
+to defibrillation. It is given as a single 40-unit IV dose. 
+الفازوبريسين يمكن استخدامه بديلاً للإبينفرين في الرجفان البطيني غير المستجيب للصدمات الكهربائية، ويُعطى 
+كجرعة واحدة  40 وحدةٍوريديًا. 
+ 
+Atropine 
+Atropine is used for symptomatic bradycardia to increase heart rate. The dose is 0.5 mg 
+IV every 3–5 minutes, with a maximum of 3 mg. 
+الأتروبين يُستخدم في بطء القلب المصحوب بأعراض لزيادة معدل ضربات القلب. الجرعة 0.5 ملغٍوريديٍكلٍ3–
+5ٍدقائق بحد أقصى 3 ملغ. 
+ 
+Amiodarone 
+Amiodarone is an antiarrhythmic used for ventricular fibrillation or unstable ventricular 
+tachycardia. The dose is 300 mg IV push, followed by 150 mg if needed. 
+الأميودارون دواء مضاد لاضطرابات النظم يُستخدم في الرجفان البطيني أو تسرّع البطين غير المستقر. الجرعة  
+300 ملغٍدفعةٍوريدية ثم 150 ملغ إذا لزم الأمر.  
+ 
+Sodium Bicarbonate 
+Sodium bicarbonate is used to correct metabolic acidosis caused by poor blood flow. The 
+initial dose is 1 mEq/kg IV push. 
+بيكربونات الصوديوم تُستخدم لتصحيح الحموضة الناتجة عن ضعف تدفق الدم. الجرعة المبدئية 1 مليٍمكافئ/كغٍٍ 
+وريدياًٍ. 
+ 
+Dopamine
+
+Dopamine is used for symptomatic hypotension or as a second-line drug for bradycardia, 
+given as a continuous IV infusion adjusted to patient response. 
+الدوبامين يُستخدم في انخفاض ضغط الدم المصحوب بأعراض أو كخط ثانٍ لعلاج بطء القلب، ويُعطى عن طريق
+التسريب الوريدي المستمر حسب استجابة المريض. 
+ 
+Post-Resuscitation Care 
+Management 
+After resuscitation, blood pressure should be maintained with systolic pressure above 90 
+mmHg using IV fluids or vasoactive medications such as dopamine or epinephrine. 
+بعد الإنعاش يجب الحفاظ على ضغط الدم الانقباضي أعلى من  90 ممٍزئبق باستخدام السوائل الوريدية أو الأدوية  
+القابضة للأوعية مثل الدوبامين أو الإبينفرين. 
+ 
+Monitoring 
+Continuous ECG monitoring and repeated neurological assessments, including pupil 
+reaction and reflexes, are required. 
+يجب متابعة رسم القلب باستمرار وإجراء فحوصات عصبية متكررة تشمل استجابة حدقة العين والمنعكسات. 
+ 
+Glucose Control 
+Blood glucose levels should be maintained between 144–180 mg/dL to manage post-
+arrest hyperglycemia. 
+يجب الحفاظ على مستوى السكر في الدم بين 144–180 ملغ/دل للسيطرة على ارتفاع السكر بعد التوقف.  
+ 
+Psychological Support 
+Emotional and psychological support should be provided to the patient and family after 
+resuscitation. 
+يجب تقديم الدعم النفسي والمعنوي للمريض وأسرته بعد الإنعاش.

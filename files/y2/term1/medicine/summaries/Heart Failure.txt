@@ -1,0 +1,163 @@
+Heart Failure – Simplified Bilingual Notes 
+(فشل القلب– شرح مبسّط ثنائي اللغة)  
+ 
+1. Definition and Classification (التعريف والتصنيف) 
+Heart failure is a condition where the heart cannot pump enough blood to meet the 
+body’s needs. 
+فشل القلب هو حالة يعجز فيها القلب عن ضخ كمية كافية من الدم لتلبية احتياجات الجسم. 
+ 
+Classification (طرق تصنيف فشل القلب) 
+By Time Course: 
+• حسب مدة المرض: 
+– Acute HF: Sudden onset (e.g., MI, acute valve failure). 
+– فشل قلب حاد: يبدأ فجأة مثل الجلطة أو فشل صمام مفاجئ. 
+– Chronic HF: Long-standing and progressive. 
+– فشل قلب مزمن: طويل المدى ويتطور تدريجيًا. 
+ 
+By Side of Heart Involved: 
+• حسب الجهة المصابة من القلب: 
+– Left-sided HF: Causes pulmonary congestion. 
+– فشل الجانب الأيسر: يسبب احتقانًا في الرئتين. 
+– Right-sided HF: Causes systemic venous congestion. 
+– فشل الجانب الأيمن: يسبب احتقانًا في الأوردة الطرفية. 
+ 
+By Ejection Fraction (EF): 
+• حسب كسر القذف القلبي EF): 
+– HFrEF (EF ≤ 40%): Systolic dysfunction.
+
+– فشل انقباضي للقلب: كسر قذف40% أو أقل.  
+– HFpEF (EF ≥ 50%): Diastolic dysfunction. 
+– فشل انبساطي للقلب: كسر قذف50% أو أعلى.  
+– HFmrEF (EF 41–49%): Mildly reduced EF. 
+– فشل بكسر قذف منخفض قليلًً: من 41–49 %. 
+ 
+2. Etiology (الأسباب الشائعة) 
+The most common cause is ischemic heart disease. 
+أكثر سبب شائع هو مرض انسداد الشرايين التاجية. 
+Other causes include hypertension, valve diseases, cardiomyopathies, arrhythmias, 
+and congenital heart disease. 
+وتشمل أسباب أخرى: ارتفاع الضغط، أمراض الصمامات، اعتلًل عضلة القلب، اضطرابات النظم، وأمراض القلب
+الخِلقية . 
+ 
+3. Pathophysiology (آلية المرض) 
+1. Decreased cardiac output → reduced blood supply to tissues. 
+١ .انخفاض قدرة القلب على الضخ → نقص تغذية الأنسجة بالدم. 
+2. Neurohormonal activation: 
+٢ .تنشيط آليات هرمونية عصبية: 
+Increased Sympathetic activity → vasoconstriction + tachycardia. 
+• زيادة نشاط الأعصاب الودية → انقباض الأوعية + زيادة ضربات القلب. 
+Increased RAAS → sodium and water retention. 
+• تفعيل نظام الرينين-أنجيوتنسين-ألدوستيرون → احتباس ملح وماء.  
+Increased ADH → more fluid retention. 
+• زيادة هرمون ADH → احتباس سوائل إضافي. 
+3. Myocardial remodeling → dilation, hypertrophy, worsening HF. 
+٣ .تغيّرات في عضلة القلب → تضخم، توسع، وزيادة سوء الفشل القلبي.
+
+4. Clinical Features (الأعراض) 
+Left-Sided Heart Failure (فشل الجانب الأيسر للقلب) 
+Dyspnea (especially on exertion) 
+• ضيق تنفس (خصوصًا مع المجهود 
+Orthopnea 
+• ضيق تنفس عند الاستلقاء 
+Paroxysmal nocturnal dyspnea 
+• نوبات ضيق تنفس مفاجئة أثناء النوم 
+Fatigue and weakness 
+• تعب وضعف عام 
+Cough with frothy sputum 
+• كحة مع بلغم رغوي 
+Crepitations in lungs 
+• خرخرات في الرئتين 
+ 
+Right-Sided Heart Failure (فشل الجانب الأيمن للقلب) 
+Peripheral edema 
+• تورّم الأطراف 
+Hepatomegaly 
+• تضخم الكبد 
+Ascites 
+• استسقاء البطن 
+Jugular venous distension (JVD) 
+• احتقان أوردة العنق 
+Weight gain
+
+• زيادة الوزن بسبب احتباس السوائل 
+ 
+5. Investigations (الفحوصات) 
+ECG: looks for LVH, ischemia, or arrhythmias. 
+• تخطيط القلب: يكتشف تضخم البطين، نقص التروية أو اضطراب النبض. 
+Chest X-ray: detects cardiomegaly and lung congestion. 
+• أشعة صدر: تُظهر تضخم القلب واحتقان الرئتين. 
+ 
+Crucial Tests (فحوصات مهمة:) 
+Echocardiography: measures EF and structural problems. 
+• الإيكو: يحدد كسر القذف ويكشف مشاكل بنية القلب. 
+BNP / NT-proBNP: elevated in HF. 
+• هرمون BNP: يرتفع في حالات الفشل القلبي. 
+Blood tests: kidneys, electrolytes, thyroid. 
+• تحاليل دم: وظائف الكلى والأملًح والغدة الدرقية. 
+Cardiac MRI if needed. 
+• رنين القلب عند الحاجة. 
+ 
+6. Management and Prognosis (العلًج والتوقعات) 
+Lifestyle Measures (تعديلًت نمط الحياة) 
+Reduce salt (<2 g/day) 
+• تقليل الملح لأقل من2 جم يوميًا  
+Fluid restriction in severe cases 
+• تقليل السوائل في الحالات الشديدة 
+Daily weight monitoring 
+• متابعة الوزن يوميًا
+
+• Stop smoking and alcohol 
+• الامتناع عن التدخين والكحول 
+Exercise as tolerated 
+• ممارسة الرياضة حسب القدرة 
+ 
+Medications (الأدوية) 
+ACE inhibitors / ARBs 
+• مثبطات ACE أو ARBs 
+تقلل الضغط وتحمي القلب من التدهور. 
+Beta-blockers 
+• حاصرات بيتا 
+تقلل نشاط الأعصاب الودية وتحسّن أداء القلب. 
+Diuretics (e.g., Furosemide) 
+• مدرات البول (مثل لازيكس 
+تخفف الاحتقان وتقلل السوائل. 
+Aldosterone antagonists (e.g., Spironolactone) 
+• مضادات الألدوستيرون (سبيرونولاكتون 
+تقلل الوفيات. 
+SGLT2 inhibitors 
+• أدوية SGLT2 
+تحسن النتائج وتقلل الدخول للمستشفى. 
+Digoxin (in selected cases) 
+• ديجوكسين (في حالات معينة 
+يزيد قوة انقباض القلب. 
+ 
+Complications (المضاعفات) 
+Arrhythmias (AF, VT) 
+• اضطرابات النبض مثل الرجفان الأذيني أو تسرع البطين
+
+• Thromboembolism 
+• جلطات وانتقالها 
+Renal failure 
+• فشل كلوي 
+Cardiogenic shock 
+• صدمة قلبية 
+Death if untreated 
+• الوفاة عند عدم العلًج أو تقدم الحالة 
+ 
+Prognosis & Nursing Care (التوقعات ودور التمريض) 
+Untreated HF has a 50% 5-year mortality rate. 
+عدم علًج فشل القلب يؤدي لوفاة حوالي50% خلًل5 سنوات.  
+Treatment improves survival significantly. 
+العلًج المناسب يحسن فرص الحياة بشكل كبير.  
+ 
+Nursing Care (دور التمريض) 
+Monitor daily weight and intake/output (I/O). 
+• متابعة الوزن يوميًا وتسجيل الداخل والخارج من السوائل. 
+Check for edema and lung sounds. 
+• فحص التورّم وسماع صوت الرئتين. 
+Administer medications as prescribed. 
+• إعطاء الأدوية كما وُصفت. 
+Educate patient on diet and warning signs. 
+• تثقيف المريض عن الغذاء والعلًمات الخطيرة. 
+Encourage adherence to follow-up and medications. 
+• تشجيع الالتزام بالأدوية والمتابعة.

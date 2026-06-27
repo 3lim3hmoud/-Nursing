@@ -1,0 +1,154 @@
+Triage Lecture  
+Definition — التعريف 
+Triage is the process of sorting patients based on the severity of illness or injury. 
+الفرز هو عملية تصنيف المرضى حسب شدة المرض أو الإصابة. 
+ 
+Goals of Triage — أهداف الفرز 
+Rapid identification of life-threatening conditions. 
+التعرف السريع على الحالات المهددة للحياة. 
+Prioritizing care for all patients. 
+تحديد أولويات الرعاية لكل المرضى. 
+Ensuring timely and appropriate treatment. 
+ضمان تقديم العلاج المناسب في الوقت المناسب. 
+Regulating patient flow through the ED. 
+تنظيم حركة المرضى داخل قسم الطوارئ. 
+Avoiding unnecessary congestion. 
+تجنب الازدحام غير الضروري. 
+ 
+Advantages of Triage — فوائد الفرز 
+     For Patients — للمرضى
+
+Decreases patient waiting time. 
+يقلل وقت انتظار المريض. 
+Decreases treatment time. 
+يقلل وقت بدء العلاج. 
+Patients feel they receive quick attention. 
+يشعر المرضى أنهم حصلوا على الاهتمام سريعًا. 
+     For Health Care Team — للفريق الطبي 
+Ensures quality of health care. 
+يضمن جودة الرعاية الصحية. 
+Provides safety and a supportive work environment. 
+يوفر الأمان وبيئة عمل مناسبة. 
+ 
+Location & Structure of the Triage Area — مكان وهيكل منطقة الفرز 
+The triage area should be near the front door. 
+يجب أن تكون منطقة الفرز بالقرب من الباب الأمامي. 
+It must allow privacy for interview while still letting the nurse observe patients. 
+يجب أن توفر خصوصية للمقابلة مع قدرة الممرضة على رؤية المرضى. 
+A telephone should be available for consultation and referrals. 
+يجب توفر هاتف للاستشارات والتحويلات.
+
+A stretcher and wheelchair must be available in or near the triage area. 
+يجب توفر سرير نقال وكرسي متحرك داخل أو بجوار منطقة الفرز. 
+Emergency equipment (airway, bag, mask) should be available. 
+يجب توفر معدات الطوارئ مثل مجرى الهواء، وحقائب الإنعاش، والكمامات. 
+A sink for handwashing must be present. 
+يجب وجود حوض لغسل اليدين. 
+ 
+General Considerations — اعتبارات عامة للفرز 
+Greet patients, identify yourself, and explain what you are doing. 
+تحية المريض وتعريف نفسك وشرح ما تقوم به. 
+Maintain patient confidentiality. 
+الحفاظ على سرية المريض. 
+Try to visualize all incoming patients, even while interviewing others. 
+محاولة رؤية جميع المرضى الداخلين حتى أثناء مقابلة آخرين. 
+Maintain information flow between triage staff and waiting patients. 
+الحفاظ على تدفق المعلومات بين فريق الفرز والمرضى في الانتظار. 
+Excellent communication is essential. 
+التواصل الجيد ضروري.
+
+Know the institution’s system and limitations. 
+معرفة نظام المؤسسة وحدود إمكانياتها. 
+Remember the main goals of triage. 
+تذكر الأهداف الأساسية للفرز. 
+Triage includes immediate assessment and continuous reassessment. 
+الفرز يشمل تقييمًا فوريًا وإعادة تقييم مستمرة. 
+Patients are classified based on severity. 
+يتم تصنيف المرضى حسب شدة حالتهم. 
+ 
+Factors Affecting Triage — العوامل المؤثرة على الفرز 
+Number of ED visits per day. 
+عدد زيارات قسم الطوارئ يوميًا. 
+Peak activity times. 
+أوقات الذروة. 
+Number of qualified triage staff. 
+عدد موظفي الفرز المؤهلين. 
+Availability of walk-in clinics. 
+توفر عيادات الفحص السريع.
+
+Logistic and administrative issues. 
+العوامل الإدارية واللوجستية. 
+ 
+Triage Priority Levels — مستويات أولوية الفرز 
+     Three-Level Triage — الفرز ثلاثي المستويات 
+Emergent: immediate or within 15–30 minutes. 
+طارئ: العلاج فورًا أو خلال 15–30 دقيقة.  
+Life-threatening conditions (cardiac arrest, airway obstruction). 
+حالات مهددة للحياة (توقف قلب، انسداد مجرى الهواء. 
+Urgent: up to 2 hours. 
+عاجل: حتى ساعتين. 
+Serious but may deteriorate (fractures, controlled bleeding). 
+حالات خطيرة وقد تتدهور (كسور، نزيف مسيطر عليه. 
+Non-urgent: more than 2 hours. 
+غير عاجل: أكثر من ساعتين. 
+Minor issues (small cuts, minor trauma). 
+مشاكل بسيطة (جروح صغيرة، كدمات بسيطة. 
+ 
+     Four-Level Disaster Triage — فرز الكوارث رباعي المستويات
+
+Red: life-threatening but treatable. 
+أحمر: مهدد للحياة لكن قابل للعلاج. 
+Yellow: serious but not life-threatening. 
+أصفر: خطير لكن غير مهدد للحياة. 
+Green: minor injuries. 
+أخضر: إصابات بسيطة. 
+Black: dead or non-survivable injuries. 
+أسود: متوفى أو إصابات غير قابلة للنجاة. 
+ 
+     Five-Level Triage — الفرز خماسي المستويات 
+Level 1: Immediate (resuscitation). 
+المستوى1: فوري (إنعاش.  
+Level 2: Minutes (severe cases). 
+المستوى2: خلال دقائق (حالات شديدة.  
+Level 3: Within 30–60 minutes. 
+المستوى3: خلال30–60 دقيقة.  
+Level 4: Within 1 hour. 
+المستوى4: خلال ساعة.
+
+Level 5: Can wait (non-urgent). 
+المستوى5: يمكنه الانتظار (غير عاجل.  
+ 
+ESI System — نظام الفرز ESI 
+ESI rates patients from 1 to 5 based on acuity and needed resources. 
+نظام ESI يصنف المرضى من1 إلى5 حسب شدة الحالة والموارد المطلوبة.  
+Are they dying? → Level 1 
+هل المريض يحتضر؟ → مستوى1  
+Can the patient wait? → If no: Level 2 
+هل يمكنه الانتظار؟ → إذا لا: مستوى2  
+How many resources needed? → Levels 3–5 
+كم عدد الموارد المطلوبة؟ → مستوى3–5  
+ 
+Types of Triage — أنواع الفرز 
+Simple Triage: for mass-casualty incidents with limited resources. 
+الفرز البسيط: لحوادث الإصابات الجماعية عند قلة الموارد. 
+Advanced Triage: directs care to those most likely to survive. 
+الفرز المتقدم: توجيه الرعاية لمن لديهم فرصة أكبر للنجاة.
+
+Reverse Triage: treats less injured first (battlefields). 
+الفرز العكسي: علاج الأقل إصابة أولاً (في ساحات القتال . 
+Telephone Triage: giving advice by phone using protocols. 
+الفرز الهاتفي: تقديم نصائح عبر الهاتف باستخدام بروتوكولات. 
+ 
+Triage Systems — أنظمة الفرز 
+Traffic Director: nonprofessionals classify patients as sick/not sick. 
+نظام التوجيه: غير متخصصين يصنفون المرضى (مريض/غير  مريض.)  
+Spot Checker: nurse/physician assigns urgency. 
+نظام الفحص: ممرض/طبيب يحدد درجة الإلحاح. 
+Comprehensive System: full database, vital signs, reassessment schedule. 
+النظام الشامل: قاعدة بيانات كاملة، علامات حيوية، وجدول لإعادة التقييم. 
+ 
+Triage Staffing — طاقم الفرز 
+A registered nurse is recommended to perform triage. 
+يفضل أن تقوم ممرضة قانونية بعملية الفرز. 
+Effective triage nurse qualities: experience, judgment, calmness, leadership. 
+صفات ممرضة الفرز الجيدة: الخبرة، الحكم السليم، الهدوء، القيادة.

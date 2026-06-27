@@ -1,0 +1,72 @@
+What is Hyperthyroidism? 
+• A condition where the thyroid gland produces excess thyroid 
+hormones (T3 and T4). 
+• Leads to a hypermetabolic state affecting multiple body 
+systems. 
+• Affects about 1-2% of the population, more common in 
+women (5-10x). 
+Thyroid Physiology: The Hormonal Feedback Loop 
+• Hypothalamus releases TRH → stimulates pituitary to 
+release TSH. 
+• TSH stimulates thyroid gland to produce T3 (active) and T4 
+hormones. 
+• Negative feedback: high T3/T4 suppress TRH and TSH 
+release. 
+• Thyroid hormones regulate metabolism, growth, heart rate, 
+and temperature. 
+Major Causes of Hyperthyroidism 
+Graves’ Disease (60-80% of cases): Autoimmune stimulation of 
+TSH receptors by antibodies. 
+Toxic Multinodular Goiter: Multiple thyroid nodules 
+autonomously producing hormones. 
+Toxic Adenoma: Single overactive thyroid nodule. 
+Other causes: Thyroiditis, iodine excess, medication-induced 
+(e.g., amiodarone). 
+Clinical Symptoms and Signs 
+Common symptoms: weight loss despite appetite, heat 
+intolerance, sweating, palpitations, anxiety, tremors. 
+Physical signs: diffuse goiter, tachycardia, exophthalmos 
+(bulging eyes in Graves’), pretibial myxedema. 
+Variable presentation: some patients may have subtle or no 
+symptoms initially. 
+Diagnostic Approach
+
+Blood tests: suppressed TSH with elevated free T4 and/or T3 
+confirms hyperthyroidism. 
+Antibody testing: TSH receptor antibodies confirm Graves’ 
+disease. 
+Imaging: thyroid ultrasound and radioactive iodine uptake scan 
+to identify nodules or inflammation. 
+Treatment Options 
+Antithyroid medications (methimazole, propylthiouracil) to block 
+hormone synthesis. 
+Radioactive iodine therapy to ablate overactive thyroid tissue 
+(most common in the US). 
+Surgery (thyroidectomy) for large goiters, nodules, or when 
+other treatments fail. 
+Beta-blockers to control symptoms like rapid heart rate and 
+tremors. 
+Special Considerations 
+Thyroid storm: life-threatening exacerbation with fever, 
+tachycardia, delirium; requires emergency care. 
+Pregnancy: careful management needed; some antithyroid 
+drugs are preferred. 
+Monitoring for hypothyroidism after treatment is essential. 
+Case Highlight: Graves’ Disease 
+Autoimmune disorder causing diffuse thyroid enlargement and 
+eye disease. 
+TSH receptor antibodies mimic TSH → excessive hormone 
+production. 
+Up to 30% develop Graves’ ophthalmopathy with eye bulging 
+and discomfort.
+
+Requires multidisciplinary care including endocrinology and 
+ophthalmology. 
+Summary & Takeaway 
+Hyperthyroidism is a common, treatable endocrine disorder with 
+systemic effects. 
+Early diagnosis and tailored treatment prevent complications. 
+Understanding causes and symptoms helps improve patient 
+outcomes. 
+Stay vigilant for thyroid storm and special populations like 
+pregnant women.

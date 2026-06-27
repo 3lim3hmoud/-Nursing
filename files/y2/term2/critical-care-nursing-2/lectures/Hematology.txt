@@ -1,0 +1,478 @@
+Hematology disorder
+• Disseminated 
+Intravascular 
+Coagulation (DIC)
+Prepared by 
+Dr / Ghada Elsayed
+
+Disseminated 
+Intravascular 
+Coagulation 
+(DIC) .
+Outline
+Definition of DIC
+Factors Accelerating DIC 
+Causes DIC
+Pathophysiology DIC 
+Symptoms of DIC 
+Diagnosis DIC 
+Treatment DIC 
+Nursing Care Plans & Management
+
+Pre test 
+Mention 
+couses of DIC 
+Mention signs 
+and symptoms 
+of DIC
+
+Disseminated 
+intravascular 
+coagulation
+Introduction
+is a life-threatening condition that requires 
+immediate medical attention. 
+The formation of micro clots affects tissue 
+perfusion in the major organs, causing 
+hypoxia, ischemia, and tissue damage.
+Coagulation occurs in two different 
+pathways: intrinsic and extrinsic.
+
+In the intrinsic pathway, endothelial cell 
+damage commonly occurs because of 
+sepsis or infection.
+The extrinsic pathway is initiated by 
+tissue injuries such as from malignancy, 
+trauma, or obstetrical complications.
+DIC may present as an acute or chronic 
+condition.
+These pathways
+ 
+for the formation
+ 
+of fibrin clots
+ 
+and blood clotting.
+
+Definition
+• Disseminated intravascular 
+coagulation is a condition in 
+which blood clots form 
+throughout the body, blocking 
+small blood vessels.
+
+❑ Shock
+❑ Acidosis 
+❑ Hypoxemia 
+❑ Stasis 
+❑ Dehydration
+❑ Hyperthermia
+Factors 
+Accelerating 
+DIC
+
+❑ Chronic renal insufficiency
+❑ Chronic hepatic insufficiency
+❑ Malnutrition 
+❑ Impaired anti-coagulation activity
+❑ Impaired fibrinolytic activity 
+❑ Phagocytic dysfunction
+
+Causes 
+DIC
+Cancer (particularly acute promyelocytic leukemia)
+Complications of pregnancy: abruptio placentae, 
+preeclampsia or eclampsia, postpartum hemorrhage
+Massive tissue injury: trauma, burn, hyperthermia, 
+rhabdomyolysis, surgery.
+Infection: bacterial (Gram-negative or Gram-
+positive), viral, fungal, or protozoan
+Transfusion reaction: ABO incompatibility
+
+• Aortic aneurysm
+• Liver disease , HELLP 
+syndrome, thrombotic thrombocytopenic 
+purpura, hemolytic uremic syndrome, 
+and malignant hypertension may mimic 
+DIC but originate via other pathways.
+• It is not the same as conditions where the 
+blood vessels leak, such as capillary leak 
+syndrome
+
+• The fibrinolytic system then functions to break down fibrinogen 
+and fibrin. 
+• Activation of the fibrinolytic system generates plasmin (in the 
+presence of thrombin), which is responsible for the lysis of fibrin 
+clots. 
+• The breakdown of fibrinogen and fibrin results in polypeptides 
+called fibrin degradation products (FDPs) or fibrin split products 
+(FSPs). 
+• In DIC, the processes of coagulation and fibrinolysis are 
+dysregulated, and the result is widespread clotting with resultant 
+bleeding.
+
+• Excess circulating thrombin results from the excess 
+activation of the coagulation cascade. 
+• The excess thrombin cleaves fibrinogen, which 
+ultimately leaves behind multiple fibrin clots in the 
+circulation. 
+• These excess clots trap platelets to become larger 
+clots, which leads to microvascular and 
+macrovascular thrombosis.
+•  This lodging of clots in the microcirculation, in the 
+large vessels, and in the organs is what leads to the 
+ischemia, impaired organ perfusion, and end-organ 
+damage that occurs with DIC.
+
+Symptoms 
+of DIC
+Blood clots
+Bruising
+Bleeding, from many sites in the body
+Blood clots
+Bruising
+Drop in blood pressure
+Shortness of breath
+Confusion, memory loss or change of behavior
+Fever
+
+• Diagnosis and diagnostic test 
+• Prolongation of the prothrombin time (PT) and the activated partial 
+thromboplastin time (aPTT) reflect the underlying consumption and impaired 
+synthesis of the coagulation cascade.
+• Fibrinogen level was initially thought to be useful in the diagnosis of DIC but 
+because it is an acute phase reactant, it will be elevated due to the underlying 
+inflammatory condition. 
+• Therefore, a normal (or even elevated) level can occur in over 57% of cases
+• . A low level, however, is more consistent with the consumptive process of DIC.
+
+• A rapidly declining platelet count
+   High levels of fibrin degradation  
+products.
+•  including D-dimer, are found owing 
+to the intense fibrinolytic activity 
+stimulated by the presence of fibrin 
+in the circulation.
+• The peripheral blood smear may 
+show fragmented red blood 
+cells (known as schistocytes) due 
+to shear stress from thrombin. 
+However, this finding is neither 
+sensitive nor specific for DIC
+
+A diagnostic algorithm has been proposed by the 
+International Society of Thrombosis and Haemostasias. 
+This algorithm appears to be 91% sensitive and 97% specific 
+for the diagnosis of overt DIC. 
+A score of 5 or higher is compatible with DIC and it is 
+recommended that the score is repeated daily, while a score 
+below 5 is suggestive but not affirmative for DIC and it is 
+recommended that it is repeated only occasionally.
+
+Presence of an underlying disorder 
+known to be associated with DIC 
+(no=0, yes=2)
+Global coagulation results
+Platelet count (> 100k = 0, < 100k = 1, < 50k 
+= 2)
+Fibrin degradation products
+such as D-Dimer (no increase = 0, 
+moderate increase = 2, strong increase = 3)
+Prolonged prothrombin time
+(< 3 sec = 0, > 3 sec = 1, > 6 sec = 2)
+Fibrinogen level (> 1.0g/L = 0; < 1.0g/L = 1)
+
+Treatment
+General 
+Treatment
+Treatment of 
+underlying 
+disorder
+Antibiotic 
+treatment of 
+infections
+Surgical 
+debridement and 
+drainage of 
+infected foci
+Immobilization of 
+fractures
+Evacuation of 
+uterus in obstetric 
+DIC
+
+Supportive 
+Treatment
+Supportive treatment of MODS
+Shock :  fluids, catecholamines
+Hypoxemia : oxygen, mechanical ventilation
+Renal failure : diuretics, renal replacement therapy
+Severe anemia : blood transfusion 
+Hemostatic Therapy
+Antithrombotic treatment 
+AT concentrate. 
+Concurrent treatment with heparin should be avoided, 
+heparin worsens thrombocytopenia
+
+Fresh frozen plasma (FFP) When bleeding; 
+administer after antithrombin
+Platelets : severe thrombocytopenia + bleeding
+Antifibrinolytic treatment Should  be avoided
+A quality antithrombin (AT)concentrate
+Avoid heparin therapy with antithrombin concentration 
+treatment
+
+Nursing Care Plans & 
+Management
+• Nursing Assessment
+• Assess for the following subjective 
+and objective data:
+• Abnormal arterial blood gases (ABGs)
+• Abnormal breathing (rate, depth, and 
+rhythm)
+• Confusion
+• Dyspnea
+• Hypercapnia
+• Hypoxemia
+• Hypoxia
+• Irritability
+• Restlessness
+• Somnolence
+• Abnormal blood profile
+
+• Capillary refill >3 seconds
+• Changes in the level of 
+consciousness
+• Chest pain
+• Cyanosis
+• Hematuria
+• Oliguria
+
+Assess for factors 
+related to the cause of 
+disseminated 
+intravascular
+coagulation:
+coagulation
+heparin
+learning
+The altered oxygen-carrying capacity of the blood
+Blood circulation disruption
+Microthrombi
+Abnormal blood profile (depleted coagulation factors)
+Drug therapy (adverse effects of heparin)
+Complexity of treatment
+Emotional state affecting learning
+New condition and/or treatment
+Unfamiliar environment
+
+Nursing Diagnosis
+disseminated
+intravascular coagulation
+bleeding risk
+Patient education
+The following are the nursing priorities 
+for patients with disseminated 
+intravascular coagulation DIC:
+Minimizing bleeding risk
+Respiratory support
+Patient education
+
+Nursing Interventions 
+confusion
+breathing gas exchange
+cough
+impaired gas exchange
+Promoting Effective Gas Exchange
+1. Assess for changes in the level of consciousness.
+Early signs of cerebral hypoxia are restlessness and irritability; later signs 
+are confusion and somnolence.
+2. Assess the respiratory depth, rate, and rhythm.
+The client will adapt breathing patterns over time to facilitate gas exchange
+3. Assess the client’s breath sounds. Assesscough for signs of bloody sputum.
+Changes in breath sounds may reveal the cause of impaired gas exchange. 
+Hemoptysis is an indication of bleeding in the respiratory tract.
+
+tachycardia
+breathing
+oxygen saturation
+Pulse
+oxygen saturation
+Oxygen
+PaCo2
+PaO2
+respiratory acidosis
+4. Assess for tachycardia, shortness of 
+breath, and use of accessory muscles.
+These signify an increased work 
+of breathing. With initial hypoxia, HR 
+increases. 
+5. Monitor oxygen saturation and assess 
+arterial blood gases (ABGs).
+Pulse oximetry is a useful tool to detect 
+early changes in oxygen saturation.
+Oxygen saturation should be kept at 90% 
+or greater. IncreasingPaCo2 and 
+decreasing PaO2 are signs of hypoxemia 
+and respiratory acidosis.
+
+anxiety
+Anxiety dyspnea
+breathing respiratory rate
+chest
+physiotherapy
+movement
+secretions
+6. Provide reassurance and 
+allay anxiety by staying with the 
+client during the acute episodes of 
+respiratory distress.
+Anxiety increases dyspnea, the work 
+of breathing, and the respiratory rate.
+7. Change the client’s positioning 
+every 2 hours, and perform chest 
+physiotherapy.
+These maneuvers facilitate 
+the movement and drainage 
+of secretions.
+
+• 8. Position the client in a high-Fowler’s position 
+as indicated.
+An upright position allows for adequate 
+diaphragmatic and lung excursion and promotes 
+optimal lung expansion.
+• 9. Assist with coughing or suction as indicated
+• Productive coughing is the most effective way to 
+remove moist secretions. 
+• If the client is unable to perform 
+independently, suctioning may be needed to 
+promote airway patency and reduce the work 
+of breathing.
+
+oxygen saturation
+intubation mechanical ventilation
+intubation mechanical ventilation
+Mechanical
+ventilation supportive care
+oxygenation
+10. Maintain an oxygen administration device 
+as ordered.
+The appropriate amount of oxygen must be 
+delivered continuously so that the client 
+maintains an oxygen saturation of 90% or 
+greater.
+11. Anticipate the need 
+for intubation and mechanical ventilation.
+Early intubation and mechanical ventilation are 
+recommended to prevent full decompensation of 
+the client. Mechanical 
+ventilation provides supportive care to maintain 
+adequate oxygenation and ventilation for the client.
+
+2. Enhancing Tissue Perfusion
+• 1. Assess for contributing factors:
+When the proteins used in the normal clotting process become overly 
+active, it can cause DIC.
+•  Infection, severe trauma, inflammation, surgery, Obstetrical 
+complications (such as abruptio placenta, and intrauterine fetal death), 
+and cancer are all known to contribute to DIC.
+
+• 2. Assess for the signs and symptoms of DIC.
+Bleeding, from mucous membranes, 
+venipunctures sites, and areas from the 
+gastrointestinal and urinary tracts.
+• 3. Assess for chest pain and shortness of 
+breath.
+Blood clots may form in the blood vessels of 
+the lungs and heart, therefore, blocking the blood 
+flow that can cause these symptoms.
+• 4. Assess the amount and color of urine.
+Hematuria and oliguria occur (urine output less 
+than 30 ml/hour) due to decreased perfusion to 
+the kidneys as a result of tissue injury and clotted 
+capillary beds.
+
+5. Assess the client’s level of consciousness.
+A decreased level of consciousness can be precipitated by 
+hemorrhagic changes or insufficient oxygenation of the brain.
+6. Assess arterial blood gases (ABGs).
+Arterial blood gases may reveal a compensatory respiratory 
+alkalosis in an attempt to decrease hydrogen ion concentration from 
+hypoxia striking at the tissue level.
+7. Monitor platelet count.
+Thrombocytopenia (a common cause of abnormal bleeding, can 
+occur as a result of insufficient platelet production by 
+the bone marrow, or due to increased platelet destruction).
+
+• 8. Monitor PT (prothrombin time) and PTT (partial 
+thromboplastin time).
+These laboratory values are typically prolonged 
+as coagulation factors are consumed.
+• 9. Monitor D-dimer levels.
+This is a test that detects a protein that results from clot 
+breakdown; it is often markedly elevated with DIC.
+• 10. Position the client in a semi-Fowler’s to high-Fowler’s 
+as tolerated.
+Upright positioning promotes improved alveolar gas exchange.
+
+• 11. Provide oxygen therapy as necessary.
+This saturates circulating hemoglobin and 
+augments the efficiency of blood that is 
+reaching the ischemic tissues.
+• 12. Administer parenteral fluids as 
+prescribed.
+The maintenance of an adequate blood 
+volume is vital for maintaining cardiac 
+output and systemic perfusion.
+• 13. Administer heparin as prescribed.
+Treatment with anticoagulant is used 
+primarily to prevent the formation of new 
+clots by decreasing the normal activity of the 
+clotting mechanism.
+
+3-Preventing 
+Bleeding Risk and 
+Injury
+• 1. Assess for the underlying cause of DIC.
+DIC is not a primary disease but occurs in 
+response to a precipitating factor such as an 
+infection or tumor. 
+• Successful treatment of DIC includes the 
+management of the underlying disorder
+• Assess the client’s heart rate and blood 
+pressure.
+•  Observe for signs of 
+orthostatic hypotension.
+Tachycardia and hypotension are signs 
+of decreased cardiac output. 
+• Orthostasis (a drop of more than 15 mm Hg 
+when changing from a supine to a sitting 
+position) indicates reduced circulating fluids.
+
+pain
+skin
+suctioning
+Observe for signs of internal bleeding, such 
+as pain or changes in the level of consciousness. 
+Institute a neurological checklist.
+4. Observe for signs of external bleeding from the 
+gastrointestinal (GI) and genitourinary (GU) tracts.
+For example, the client may have 
+increased skin bruising, hemoptysis, and hematuria.
+5. Note any hemoptysis or blood obtained 
+during suctioning.
+These are the common manifestation of acute DIC.
+
+skin
+IV
+. Examine the skin surface for signs of bleeding. 
+Note petechiae; purpura; hematomas; oozing of 
+blood from IV sites, drains, and wounds; and 
+bleeding from the mucous membranes.
+Prolonged oozing of blood from injection sites or 
+venipuncture sites could be the first indication of 
+DIC.
+7. Monitor hemoglobin and hematocrit 
+levels.
+Decreased hemoglobin and hematocrit levels are 
+associated with bleeding from DIC.

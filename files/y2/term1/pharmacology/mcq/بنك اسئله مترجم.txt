@@ -1,0 +1,807 @@
+1. Which factor least affects the choice of drug administration route? 
+أي عامل من العوامل التالية أقل تأثيرًا في اختيار طريقة إعطاء الدواء؟  
+A. Patient’s condition — حالة المريض 
+B. Site of drug action — موقع تأثير الدواء 
+C. Drug solubility — ذوبانية الدواء 
+D. Route length — طول المسار 
+     Answer: D. Route length 
+الإجابةD. طول المسار 
+(طول المسار لا يؤثر على اختيار طريقة إعطاء الدواء.) 
+ 
+2. The main advantage of the local route of administration is: 
+الميزة الأساسية لطريقة الإعطاء الموضعي هي: 
+A. Rapid effect — تأثير سريع 
+B. Systemic effect — تأثير شامل على الجسم 
+C. Direct effect at the site of application — تأثير مباشر في مكان الاستخدام 
+D. Easy to administer — سهل الإعطاء 
+     Answer: C. Direct effect at the site of application 
+الإجابةC. تأثير مباشر في مكان الاستخدام 
+(الدواء يعمل مباشرة في المنطقة المطلوبة.) 
+ 
+3. Which of the following routes gives the fastest drug action? 
+أي من الطرق التالية يعطي أسرع تأثير للدواء؟ 
+A. Oral — عن طريق الفم 
+B. Intramuscular (IM) — عن طريق العضلة 
+C. Intravenous (IV) — عن طريق الوريد 
+D. Subcutaneous (SC) — تحت الجلد 
+     Answer: C. Intravenous (IV) 
+الإجابةC. عن طريق الوريد 
+(لأن الدواء يدخل مباشرة إلى مجرى الدم.) 
+ 
+4. What is the safest route of drug administration?
+
+ما هو الطريق الأكثر أمانًا لإعطاء الدواء؟ 
+A. Intravenous — عن طريق الوريد 
+B. Oral — عن طريق الفم 
+C. Intramuscular — عن طريق العضلة 
+D. Subcutaneous — تحت الجلد 
+     Answer: B. Oral 
+الإجابةB. عن طريق الفم 
+(لأن المريض يمكنه تناوله بنفسه وسهل التحكم في الجرعة.) 
+ 
+5. The route of drug administration mainly depends on: 
+يعتمد اختيار طريق إعطاء الدواء أساسًا على: 
+A. Patient’s condition and drug properties — حالة المريض وخصائص الدواء 
+B. Nurse’s preference — تفضيل الممرضة 
+C. Hospital rules — قوانين المستشفى 
+D. Cost of the drug — تكلفة الدواء 
+     Answer: A. Patient’s condition and drug properties 
+الإجابةA. حالة المريض وخصائص الدواء 
+(يتم تحديد الطريق بناءً على نوع الدواء وحالة المريض.) 
+ 
+6. The sublingual route means the drug is placed: 
+طريق الإعطاء تحت اللسان يعني أن الدواء يوضع: 
+A. Under the tongue — تحت اللسان 
+B. On the skin — على الجلد 
+C. Inside the cheek — داخل الخد 
+D. In the nose — داخل الأنف 
+     Answer: A. Under the tongue 
+الإجابةA. تحت اللسان 
+(لأن الامتصاص يكون سريع من خلال الأغشية تحت اللسان.) 
+ 
+7. The parenteral route refers to: 
+الطريق الحقني Parenteral) يشير إلى:
+
+A. Giving drug by mouth — إعطاء الدواء عن طريق الفم 
+B. Giving drug through skin or injection — إعطاء الدواء عن طريق الجلد أو الحقن 
+C. Applying drug on skin — وضع الدواء على الجلد 
+D. Inhaling the drug — استنشاق الدواء 
+     Answer: B. Giving drug through skin or injection 
+الإجابةB. إعطاء الدواء عن طريق الجلد أو الحقن 
+(مثل الحقن الوريدي أو العضلي أو تحت الجلد.) 
+ 
+8. Which route avoids the first-pass effect? 
+أي طريق يتجنب مرور الدواء بالكبد First-pass effect)؟ 
+A. Oral — عن طريق الفم 
+B. Rectal — عن طريق المستقيم 
+C. Sublingual — تحت اللسان 
+D. Intramuscular — عن طريق العضلة 
+     Answer: C. Sublingual 
+الإجابةC. تحت اللسان 
+(لأن الدواء يمتص مباشرة إلى الدم بدون المرور بالكبد.) 
+ 
+9. Which of the following is NOT a parenteral route? 
+أي من التالي ليس طريقًا حقنيًا؟  
+A. Intravenous — عن طريق الوريد 
+B. Intramuscular — عن طريق العضلة 
+C. Subcutaneous — تحت الجلد 
+D. Oral — عن طريق الفم 
+     Answer: D. Oral 
+الإجابةD. عن طريق الفم 
+(الطريق الفموي ليس من طرق الحقن.) 
+ 
+10. The rectal route of drug administration is used when: 
+يُستخدم طريق الإعطاء عن طريق المستقيم عندما:
+
+A. The patient is unconscious — المريض فاقد الوعي 
+B. The patient can swallow — المريض يستطيع البلع 
+C. The drug tastes good — طعم الدواء جيد 
+D. The patient refuses injection — المريض يرفض الحقن 
+     Answer: A. The patient is unconscious 
+الإجابةA. المريض فاقد الوعي 
+(لأن المريض لا يستطيع أخذ الدواء عن طريق الفم.) 
+ 
+11. Which route is preferred for rapid systemic effect? 
+أي طريق يُفضَّل للحصول على تأثير سريع على الجسم؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous (IV) — عن طريق الوريد 
+C. Subcutaneous — تحت الجلد 
+D. Topical — على الجلد 
+     Answer: B. Intravenous (IV) 
+الإجابةB. عن طريق الوريد 
+(لأن الدواء يصل مباشرة إلى الدم ويبدأ تأثيره فورًا .) 
+ 
+12. Topical administration is used for: 
+يُستخدم الإعطاء الموضعي من أجل: 
+A. Local effect — تأثير موضعي 
+B. Systemic effect — تأثير شامل 
+C. Rapid absorption — امتصاص سريع 
+D. Avoiding first-pass metabolism — تجنب مرور الدواء بالكبد 
+     Answer: A. Local effect 
+الإجابةA. تأثير موضعي 
+(الدواء يعمل مباشرة في مكان التطبيق.) 
+ 
+13. Which of the following affects drug absorption? 
+أي مما يلي يؤثر على امتصاص الدواء؟
+
+A. Route of administration — طريقة الإعطاء 
+B. Drug solubility — ذوبانية الدواء 
+C. Blood flow at site — تدفق الدم في الموقع 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+(جميعها تؤثر على سرعة وكمية امتصاص الدواء.) 
+ 
+14. The first-pass effect occurs in: 
+يحدث تأثير المرور الأول First-pass effect) في: 
+A. Kidney — الكلى 
+B. Liver — الكبد 
+C. Lungs — الرئتين 
+D. Heart — القلب 
+     Answer: B. Liver 
+الإجابةB. الكبد 
+(لأن الدواء المأخوذ عن طريق الفم يمر أولاً بالكبد قبل وصوله إلى الدم .) 
+ 
+15. Drugs administered subcutaneously are absorbed: 
+يتم امتصاص الأدوية التي تُعطى تحت الجلد: 
+A. Slowly — ببطء 
+B. Rapidly — بسرعة 
+C. Instantly — فورًا  
+D. Not absorbed — لا تمتص 
+     Answer: A. Slowly 
+الإجابةA. ببطء 
+(لأن تحت الجلد يوجد تدفق دم أقل مقارنة بالعضلة أو الوريد.) 
+ 
+16. Which route avoids gastrointestinal irritation? 
+أي طريق يتجنب تهيج المعدة والأمعاء؟
+
+A. Oral — عن طريق الفم 
+B. Sublingual — تحت اللسان 
+C. Rectal — عن طريق المستقيم 
+D. Intramuscular — عن طريق العضلة 
+     Answer: D. Intramuscular 
+الإجابةD. عن طريق العضلة 
+(لأن الدواء لا يمر عبر المعدة أو الأمعاء.) 
+ 
+17. Inhalation route is mainly used for: 
+يُستخدم طريق الاستنشاق أساسًا من أجل: 
+A. Systemic effect — تأثير شامل 
+B. Local effect in lungs — تأثير موضعي في الرئتين 
+C. Slow absorption — امتصاص بطيء 
+D. Avoiding liver metabolism — تجنب مرور الكبد 
+     Answer: B. Local effect in lungs 
+الإجابةB. تأثير موضعي في الرئتين 
+(مثل أدوية الربو التي تعمل مباشرة على الشعب الهوائية.) 
+ 
+18. Which route is suitable for unconscious patients? 
+أي طريق مناسب للمرضى فاقدي الوعي؟ 
+A. Oral — عن طريق الفم 
+B. Rectal — عن طريق المستقيم 
+C. Sublingual — تحت اللسان 
+D. Topical — على الجلد 
+     Answer: B. Rectal 
+الإجابةB. عن طريق المستقيم 
+(لأن المريض لا يستطيع البلع.) 
+ 
+19. Advantages of oral route include: 
+تشمل مميزات طريق الإعطاء عن طريق الفم:
+
+A. Convenience — سهولة الاستخدام 
+B. Safety — الأمان 
+C. Economical — اقتصادي 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+(سهل وآمن ورخيص.) 
+ 
+20. Which route has slowest onset of action? 
+أي طريق له أبطأ بداية تأثير للدواء؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Sublingual — تحت اللسان 
+D. Inhalation — الاستنشاق 
+     Answer: A. Oral 
+الإجابةA. عن طريق الفم 
+(لأن الدواء يحتاج للمرور عبر المعدة والأمعاء ثم الكبد.) 
+ 
+21. The intramuscular route is preferred when: 
+يُفضل الطريق العضلي عندما: 
+A. Rapid effect is needed — مطلوب تأثير سريع 
+B. Oral route is not feasible — لا يمكن إعطاء الدواء عن طريق الفم 
+C. Large volume needs administration — يحتاج لإعطاء حجم كبير 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+(العضلة تسمح بسرعة امتصاص جيدة وحجم أكبر إذا لزم.) 
+ 
+22. Which route gives direct systemic absorption bypassing the liver? 
+أي طريق يعطي امتصاص مباشر إلى الدم متجنبًا الكبد؟
+
+A. Oral — عن طريق الفم 
+B. Sublingual — تحت اللسان 
+C. Rectal — عن طريق المستقيم 
+D. Intramuscular — عن طريق العضلة 
+     Answer: B. Sublingual 
+الإجابةB. تحت اللسان 
+(يتم الامتصاص مباشرة في الوريد دون المرور بالكبد.) 
+ 
+23. Topical drugs are mainly used for: 
+تُستخدم الأدوية الموضعية أساسًا من أجل: 
+A. Systemic effect — تأثير شامل 
+B. Local effect — تأثير موضعي 
+C. Rapid absorption — امتصاص سريع 
+D. Bypass liver metabolism — تجنب الكبد 
+     Answer: B. Local effect 
+الإجابةB. تأثير موضعي 
+(مثل كريمات الجلد أو قطرات العين.) 
+ 
+24. The rectal route is beneficial in: 
+طريق المستقيم مفيد في: 
+A. Nausea and vomiting — الغثيان والقيء 
+B. Patient unconscious — المريض فاقد الوعي 
+C. Difficulty swallowing — صعوبة البلع 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+(لأن الدواء يصل بدون الحاجة للبلع.) 
+ 
+25. Drugs administered intravenously have: 
+الأدوية التي تُعطى عن طريق الوريد لها:
+
+A. Slow onset — بداية تأثير بطيئة 
+B. Immediate onset — بداية تأثير فورية 
+C. Moderate absorption — امتصاص متوسط 
+D. Local effect only — تأثير موضعي فقط 
+     Answer: B. Immediate onset 
+الإجابةB. بداية تأثير فورية 
+(لأن الدواء يدخل الدم مباشرة.) 
+ 
+26. Advantages of intravenous route include: 
+مميزات طريق الوريد تشمل: 
+A. Rapid effect — تأثير سريع 
+B. Precise control of dose — التحكم الدقيق بالجرعة 
+C. Suitable for large volumes — مناسب لإعطاء أحجام كبيرة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+27. Sublingual administration is: 
+الإعطاء تحت اللسان هو: 
+A. Swallowed — يُبلع 
+B. Absorbed directly into blood — يُمتص مباشرة في الدم 
+C. Slow onset — بطيء التأثير 
+D. Only for tablets — فقط للأقراص 
+     Answer: B. Absorbed directly into blood 
+الإجابةB. يُمتص مباشرة في الدم 
+ 
+28. Which route bypasses the first-pass metabolism? 
+أي طريق يتجنب تأثير المرور الأول بالكبد؟ 
+A. Oral — عن طريق الفم 
+B. Sublingual — تحت اللسان
+
+C. Gastrointestinal — الجهاز الهضمي 
+D. All oral routes — جميع طرق الفم 
+     Answer: B. Sublingual 
+الإجابةB. تحت اللسان 
+ 
+29. Which route is suitable for pediatric patients? 
+أي طريق مناسب للأطفال؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Rectal — عن طريق المستقيم 
+D. All of the above depending on condition — كل ما سبق حسب الحالة 
+     Answer: D. All of the above depending on condition 
+الإجابةD. كل ما سبق حسب الحالة 
+ 
+30. Drugs applied to skin are absorbed: 
+الأدوية المطبقة على الجلد يتم امتصاصها: 
+A. Slowly — ببطء 
+B. Rapidly — بسرعة 
+C. Instantly — فورًا  
+D. Not absorbed — لا تمتص 
+     Answer: A. Slowly 
+الإجابةA. ببطء 
+ 
+31. Inhalation route is preferred for: 
+يُفضل طريق الاستنشاق من أجل: 
+A. Local respiratory effect — تأثير موضعي على الجهاز التنفسي 
+B. Rapid systemic effect — تأثير شامل سريع 
+C. Skin disorders — مشاكل الجلد 
+D. Gastrointestinal problems — مشاكل الجهاز الهضمي
+
+Answer: A. Local respiratory effect 
+الإجابةA. تأثير موضعي على الجهاز التنفسي 
+ 
+32. Advantages of rectal route include: 
+مميزات طريق المستقيم تشمل: 
+A. Useful in vomiting — مفيد في حالات القيء 
+B. Can be used in unconscious patients — يمكن استخدامه للمرضى فاقدي الوعي 
+C. Bypasses liver partially — يتجنب الكبد جزئيًا 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+33. Subcutaneous injections are absorbed: 
+يتم امتصاص الحقن تحت الجلد: 
+A. Slowly — ببطء 
+B. Rapidly — بسرعة 
+C. Instantly — فورًا  
+D. Not absorbed — لا تمتص 
+     Answer: A. Slowly 
+الإجابةA. ببطء 
+ 
+34. Which route is painful but fast-absorbing? 
+أي طريق مؤلم لكنه سريع الامتصاص؟ 
+A. Oral — عن طريق الفم 
+B. Intramuscular — عن طريق العضلة 
+C. Subcutaneous — تحت الجلد 
+D. Topical — على الجلد 
+     Answer: B. Intramuscular 
+الإجابةB. عن طريق العضلة
+
+35. Oral route is not suitable for: 
+طريق الفم غير مناسب لـ: 
+A. Unconscious patients — المرضى فاقدي الوعي 
+B. Vomiting — القيء 
+C. Non-compliant patients — المرضى غير المتعاونين 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+36. Which route is preferred for emergency drugs? 
+أي طريق يُفضل للأدوية الطارئة؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Subcutaneous — تحت الجلد 
+D. Topical — على الجلد 
+     Answer: B. Intravenous 
+الإجابةB. عن طريق الوريد 
+ 
+37. Which route is used for long-term sustained effect? 
+أي طريق يُستخدم لتأثير طويل الأمد؟ 
+A. Oral — عن طريق الفم 
+B. Transdermal — عبر الجلد 
+C. Intravenous — عن طريق الوريد 
+D. Inhalation — الاستنشاق 
+     Answer: B. Transdermal 
+الإجابةB. عبر الجلد 
+ 
+38. Advantages of transdermal route include: 
+مميزات الطريق عبر الجلد تشمل:
+
+A. Sustained effect — تأثير مستمر 
+B. Avoids gastrointestinal irritation — تجنب تهيج المعدة 
+C. Convenient — سهولة الاستخدام 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+39. Which route is rapid and convenient for self-administration? 
+أي طريق سريع ومناسب للإعطاء الذاتي؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Sublingual — تحت اللسان 
+D. Topical — على الجلد 
+     Answer: A. Oral 
+الإجابةA. عن طريق الفم 
+ 
+40. Sublingual drugs should not be: 
+لا يجب على الأدوية تحت اللسان أن تكون: 
+A. Swallowed — تُبلع 
+B. Absorbed — تُمتص 
+C. Placed under tongue — توضع تحت اللسان 
+D. Dissolved in mouth — تُذاب في الفم 
+     Answer: A. Swallowed 
+الإجابةA. تُبلع 
+ 
+41. Which route is preferred for drugs that irritate the stomach? 
+أي طريق يُفضل للأدوية التي تُهيج المعدة؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Rectal — عن طريق المستقيم 
+D. Sublingual — تحت اللسان
+
+Answer: C. Rectal 
+الإجابةC. عن طريق المستقيم 
+ 
+42. Advantages of intramuscular route include: 
+مميزات طريق العضلة تشمل: 
+A. Faster absorption than subcutaneous — امتصاص أسرع من تحت الجلد 
+B. Can inject oily or irritating drugs — يمكن حقن الأدوية الزيتية أو المهيجة 
+C. Suitable for moderate volumes — مناسب للحجوم المتوسطة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+43. Which route allows direct effect on lungs? 
+أي طريق يسمح بتأثير مباشر على الرئتين؟ 
+A. Oral — عن طريق الفم 
+B. Inhalation — الاستنشاق 
+C. Subcutaneous — تحت الجلد 
+D. Rectal — عن طريق المستقيم 
+     Answer: B. Inhalation 
+الإجابةB. الاستنشاق 
+ 
+44. Intravenous injections are absorbed: 
+الحقن الوريدي يتم امتصاصه: 
+A. Slowly — ببطء 
+B. Instantly — فورًا  
+C. Over several hours — على مدار عدة ساعات 
+D. Not absorbed — لا تمتص 
+     Answer: B. Instantly 
+الإجابةB. فورًا
+
+45. Which route avoids first-pass metabolism completely? 
+أي طريق يتجنب المرور الأول بالكبد بالكامل؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Rectal — عن طريق المستقيم 
+D. All of the above — كل ما سبق 
+     Answer: B. Intravenous 
+الإجابةB. عن طريق الوريد 
+ 
+46. Advantages of subcutaneous injections include: 
+مميزات الحقن تحت الجلد تشمل: 
+A. Can be self-administered — يمكن إعطاؤه ذاتيًا 
+B. Slow absorption — امتصاص بطيء 
+C. Suitable for small volumes — مناسب للحجوم الصغيرة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+47. Which route is most convenient for chronic therapy? 
+أي طريق هو الأنسب للعلاج المزمن؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Intramuscular — عن طريق العضلة 
+D. Sublingual — تحت اللسان 
+     Answer: A. Oral 
+الإجابةA. عن طريق الفم 
+ 
+48. Drugs administered via inhalation are mostly: 
+الأدوية المعطاة عن طريق الاستنشاق غالبًا ما تكون:
+
+A. Liquids — سوائل 
+B. Gases or aerosols — غازات أو رذاذ 
+C. Solids — صلبات 
+D. Tablets — أقراص 
+     Answer: B. Gases or aerosols 
+الإجابةB. غازات أو رذاذ 
+ 
+49. Which route is preferred in unconscious patients? 
+أي طريق يُفضل للمرضى فاقدي الوعي؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Sublingual — تحت اللسان 
+D. Topical — على الجلد 
+     Answer: B. Intravenous 
+الإجابةB. عن طريق الوريد 
+ 
+50. Advantages of topical drugs include: 
+مميزات الأدوية الموضعية تشمل: 
+A. Local effect — تأثير موضعي 
+B. Minimal systemic absorption — امتصاص جهازي قليل 
+C. Avoids gastrointestinal irritation — تجنب تهيج المعدة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+51. Drugs absorbed slowly are suitable for: 
+الأدوية التي تمتص ببطء مناسبة لـ: 
+A. Rapid relief — تأثير سريع 
+B. Sustained effect — تأثير مستمر 
+C. Emergency use — حالات الطوارئ 
+D. None of the above — لا شيء مما سبق
+
+Answer: B. Sustained effect 
+الإجابةB. تأثير مستمر 
+ 
+52. Which route is used for insulin administration? 
+أي طريق يُستخدم لإعطاء الإنسولين؟ 
+A. Oral — عن طريق الفم 
+B. Subcutaneous — تحت الجلد 
+C. Intravenous — عن طريق الوريد 
+D. Topical — على الجلد 
+     Answer: B. Subcutaneous 
+الإجابةB. تحت الجلد 
+ 
+53. Advantage of intravenous route over intramuscular is: 
+ميزة الطريق الوريدي مقارنة بالعضلي هي: 
+A. Faster onset — بداية أسرع 
+B. Suitable for oily solutions — مناسب للزيوت 
+C. Can be self-administered — يمكن إعطاؤه ذاتيًا 
+D. Slow absorption — امتصاص بطيء 
+     Answer: A. Faster onset 
+الإجابةA. بداية أسرع 
+ 
+54. Drugs that undergo extensive first-pass metabolism are given: 
+الأدوية التي تخضع لتمثيل كبدي أولي كبير تُعطى عن طريق: 
+A. Oral — عن طريق الفم 
+B. Sublingual or intravenous — تحت اللسان أو وريدي 
+C. Rectal only — عن طريق المستقيم فقط 
+D. Topical only — موضعي فقط 
+     Answer: B. Sublingual or intravenous 
+الإجابةB. تحت اللسان أو وريدي
+
+55. Advantages of oral route include: 
+مميزات طريق الفم تشمل: 
+A. Convenient — سهل الاستخدام 
+B. Economical — اقتصادي 
+C. Safe — آمن 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+56. Disadvantages of oral route include: 
+عيوب طريق الفم تشمل: 
+A. Slow onset — بداية بطيئة 
+B. Not suitable in vomiting — غير مناسب للقيء 
+C. May irritate stomach — قد يهيج المعدة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+57. Advantage of intramuscular route over subcutaneous is: 
+ميزة طريق العضلة مقارنة بالحقن تحت الجلد هي: 
+A. Faster absorption — امتصاص أسرع 
+B. Suitable for small volumes — مناسب للحجوم الصغيرة 
+C. Can be self-administered — يمكن إعطاؤه ذاتيًا 
+D. Minimal irritation — أقل تهيج 
+     Answer: A. Faster absorption 
+الإجابةA. امتصاص أسرع 
+ 
+58. Disadvantage of intravenous route includes: 
+عيب الطريق الوريدي يشمل:
+
+A. Painful — مؤلم 
+B. Infection risk — خطر العدوى 
+C. Requires skill — يحتاج مهارة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+59. Which route is used for rapid drug effect in emergencies? 
+أي طريق يُستخدم لتأثير سريع في حالات الطوارئ؟ 
+A. Oral — عن طريق الفم 
+B. Intravenous — عن طريق الوريد 
+C. Subcutaneous — تحت الجلد 
+D. Topical — موضعي 
+     Answer: B. Intravenous 
+الإجابةB. عن طريق الوريد 
+ 
+60. Drugs applied to mucous membranes are absorbed: 
+الأدوية المطبقة على الأغشية المخاطية يتم امتصاصها: 
+A. Slowly — ببطء 
+B. Rapidly — بسرعة 
+C. Not absorbed — لا تمتص 
+D. Only locally — موضعيًا فقط 
+     Answer: B. Rapidly 
+الإجابةB. بسرعة 
+ 
+61. Advantages of sublingual route include: 
+مميزات طريق تحت اللسان تشمل: 
+A. Rapid absorption — امتصاص سريع 
+B. Avoids first-pass metabolism — تجنب المرور الكبدي الأول 
+C. Convenient — سهل الاستخدام 
+D. All of the above — كل ما سبق
+
+Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+62. Drugs given via rectal route may produce: 
+الأدوية المعطاة عن طريق المستقيم قد تعطي: 
+A. Local effect — تأثير موضعي 
+B. Systemic effect — تأثير جهازي 
+C. Both — كلاهما 
+D. None — لا شيء 
+     Answer: C. Both 
+الإجابةC. كلاهما 
+ 
+63. Advantage of intradermal injections include: 
+ميزة الحقن داخل الجلد تشمل: 
+A. Local effect — تأثير موضعي 
+B. Diagnostic use — للاستخدام التشخيصي 
+C. Allergy testing — اختبار الحساسية 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+64. Which route is painful and unsuitable for self-administration? 
+أي طريق مؤلم وغير مناسب للإعطاء الذاتي؟ 
+A. Oral — عن طريق الفم 
+B. Intramuscular — عن طريق العضلة 
+C. Subcutaneous — تحت الجلد 
+D. Topical — موضعي 
+     Answer: B. Intramuscular 
+الإجابةB. عن طريق العضلة
+
+65. Advantage of inhalation route includes: 
+ميزة طريق الاستنشاق تشمل: 
+A. Rapid effect on lungs — تأثير سريع على الرئتين 
+B. Local or systemic effect — تأثير موضعي أو جهازي 
+C. Convenient for asthma patients — مناسب لمرضى الربو 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+66. Drugs applied to eye are absorbed: 
+الأدوية المطبقة على العين يتم امتصاصها: 
+A. Slowly — ببطء 
+B. Rapidly — بسرعة 
+C. Only locally — موضعيًا فقط 
+D. Systemically — جهازيًا 
+     Answer: C. Only locally 
+الإجابةC. موضعيًا فقط 
+ 
+67. Which route is preferred in patients unable to swallow? 
+أي طريق يُفضل للمرضى غير القادرين على البلع؟ 
+A. Oral — عن طريق الفم 
+B. Sublingual — تحت اللسان 
+C. Rectal — عن طريق المستقيم 
+D. Topical — موضعي 
+     Answer: C. Rectal 
+الإجابةC. عن طريق المستقيم 
+ 
+68. Advantage of transdermal patches include: 
+ميزة لصقات الجلد تشمل:
+
+A. Sustained drug release — إطلاق مستمر للدواء 
+B. Avoids gastrointestinal irritation — تجنب تهيج المعدة 
+C. Convenient for chronic therapy — مناسب للعلاج المزمن 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+69. Disadvantages of sublingual route include: 
+عيوب الطريق تحت اللسان تشمل: 
+A. Limited types of drugs — أنواع محدودة من الأدوية 
+B. Irritation of mouth — تهيج الفم 
+C. Unpleasant taste — طعم غير مستحب 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+70. Drugs given via inhalation may act: 
+الأدوية المعطاة عن طريق الاستنشاق قد تؤثر: 
+A. Locally — موضعيًا 
+B. Systemically — جهازيًا 
+C. Both — كلاهما 
+D. None — لا شيء 
+     Answer: C. Both 
+الإجابةC. كلاهما 
+ 
+71. Disadvantage of rectal route include: 
+عيب طريق المستقيم يشمل: 
+A. Erratic absorption — امتصاص غير منتظم 
+B. Patient discomfort — إزعاج للمريض 
+C. Unsuitable for large volumes — غير مناسب للحجوم الكبيرة 
+D. All of the above — كل ما سبق
+
+Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+72. Advantage of topical route over oral route is: 
+ميزة الطريق الموضعي مقارنة بالفم هي: 
+A. Local effect — تأثير موضعي 
+B. Minimal systemic effect — تأثير جهازي قليل 
+C. Avoids gastrointestinal irritation — تجنب تهيج المعدة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+73. Intravenous route is suitable for: 
+الطريق الوريدي مناسب لـ: 
+A. Rapid drug effect — تأثير سريع 
+B. Large volume infusion — حقن أحجام كبيرة 
+C. Irritating solutions — المحاليل المهيجة 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+74. Advantage of intramuscular route over intravenous is: 
+ميزة الطريق العضلي مقارنة بالوريدي هي: 
+A. Can give oily solutions — يمكن إعطاء المحاليل الزيتية 
+B. Rapid onset — بداية سريعة 
+C. Suitable for emergency — مناسب للطوارئ 
+D. Instant absorption — امتصاص فوري 
+     Answer: A. Can give oily solutions 
+الإجابةA. يمكن إعطاء المحاليل الزيتية
+
+75. Drugs given via subcutaneous route are suitable for: 
+الأدوية المعطاة تحت الجلد مناسبة لـ: 
+A. Small volume injection — حقن حجم صغير 
+B. Slow absorption — امتصاص بطيء 
+C. Self-administration — إعطاء ذاتي 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+76. Advantage of intradermal route is: 
+ميزة الطريق داخل الجلد هي: 
+A. Local effect — تأثير موضعي 
+B. Diagnostic use — للاستخدام التشخيصي 
+C. Allergy testing — اختبار الحساسية 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+77. Which route bypasses first-pass metabolism partially? 
+أي طريق يتجنب المرور الكبدي الأول جزئيًا؟ 
+A. Oral — عن طريق الفم 
+B. Rectal — عن طريق المستقيم 
+C. Sublingual — تحت اللسان 
+D. Both B and C — كلاهما 
+     Answer: D. Both B and C 
+الإجابةD. كلاهما 
+ 
+78. Which route is used for systemic effect via skin? 
+أي طريق يُستخدم للتأثير الجهازي عبر الجلد؟
+
+A. Topical cream — كريم موضعي 
+B. Transdermal patch — لصقة عبر الجلد 
+C. Ointment — مرهم 
+D. Lotion — لوشن 
+     Answer: B. Transdermal patch 
+الإجابةB. لصقة عبر الجلد 
+ 
+79. Which route is rapid and convenient for self-administration? 
+أي طريق سريع وسهل للإعطاء الذاتي؟ 
+A. Oral — عن طريق الفم 
+B. Intramuscular — عن طريق العضلة 
+C. Subcutaneous — تحت الجلد 
+D. Topical — موضعي 
+     Answer: A. Oral 
+الإجابةA. عن طريق الفم 
+ 
+80. Advantage of inhalation route in respiratory disease is: 
+ميزة طريق الاستنشاق في أمراض الجهاز التنفسي هي: 
+A. Direct local effect — تأثير موضعي مباشر 
+B. Rapid onset — بداية سريعة 
+C. Reduced systemic side effects — تقليل الآثار الجانبية الجهازية 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+81. Disadvantage of intravenous route include: 
+عيب الطريق الوريدي يشمل: 
+A. Requires skill — يحتاج مهارة 
+B. Infection risk — خطر العدوى 
+C. Painful — مؤلم 
+D. All of the above — كل ما سبق
+
+Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+82. Advantage of sublingual route include: 
+ميزة طريق تحت اللسان تشمل: 
+A. Rapid absorption — امتصاص سريع 
+B. Avoids first-pass metabolism — تجنب المرور الكبدي الأول 
+C. Convenient — سهل الاستخدام 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+83. Disadvantage of sublingual route include: 
+عيب طريق تحت اللسان يشمل: 
+A. Limited drug type — أنواع محدودة من الأدوية 
+B. Unpleasant taste — طعم غير مستحب 
+C. Oral irritation — تهيج الفم 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق 
+ 
+84. Advantage of rectal route include: 
+ميزة طريق المستقيم تشمل: 
+A. Useful in vomiting — مفيد في حالات القيء 
+B. Can be used in unconscious — يمكن استخدامه للمرضى فاقدي الوعي 
+C. Partial avoidance of liver metabolism — تجنب جزئي للتمثيل الكبدي 
+D. All of the above — كل ما سبق 
+     Answer: D. All of the above 
+الإجابةD. كل ما سبق
+
+85. Disadvantage of rectal route include: 
+عيب طريق المستقيم يشمل: 
+A. Erratic absorption — امتصاص غير منتظم 
+B. Patient discomfort — إزعاج للمريض 
+C. Not suitable for large volumes — غير مناسب للحجوم الكبيرة 
+D. All of the above — كل ما سبق

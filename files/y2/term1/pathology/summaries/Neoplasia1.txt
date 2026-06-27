@@ -1,0 +1,133 @@
+Neoplasia 
+Neoplasia (Lecture Summary) 
+الورم/النيوبيزيا (ملخص المحاضرة 
+ 
+Growth Disturbance (اضطرابات النمو) 
+Hypertrophy 
+Hypertrophy is an increase in the size of cells causing enlargement of the organ. 
+فرط النمو هو زيادة في حجم الخلايا مما يؤدي لزيادة حجم العضو. 
+It also increases the functional capacity of the organ. 
+كما يزيد من القدرة الوظيفية للعضو. 
+Types: Physiological, Adaptive, Compensatory 
+الأنواع: فسيولوجي، تكيفي، تعويضي  
+Examples: 
+Uterus in pregnancy. 
+الرحم أثناء الحمل. 
+Muscle hypertrophy. 
+تضخم عضلات الجسم. 
+Left ventricular hypertrophy in hypertension or heart failure. 
+تضخم البطين الأيسر في الضغط العالي أو فشل القلب. 
+Renal hypertrophy after removal of the other kidney. 
+تضخم الكلية بعد استئصال الكلية المقابلة. 
+ 
+Hyperplasia
+
+Hyperplasia is an increase in the number of cells leading to enlargement of the organ. 
+فرط التنسّج هو زيادة عدد الخلايا مما يؤدي لزيادة حجم العضو. 
+It may occur with hypertrophy. 
+وقد يحدث مع فرط النمو. 
+Types: Physiological & Pathological 
+الأنواع: فسيولوجي ومرضي 
+Examples: 
+Breast hyperplasia during puberty (physiological). 
+تضخم الثدي في سن البلوغ (فسيولوجي. 
+Breast proliferative lesions (pathological). 
+الآفات التكاثرية بالثدي (مرضي. 
+Endometrial hyperplasia due to excess estrogen causing vaginal bleeding. 
+تضخم بطانة الرحم بسبب زيادة الإستروجين، مما يسبب نزيفًا مهبليًا. 
+ 
+Metaplasia 
+Metaplasia is the transformation of one differentiated cell type into another 
+differentiated type. 
+التحوّر النوعي هو تحول نوع خلية متمايزة إلى نوع آخر متمايز. 
+Examples: 
+Squamous metaplasia in bronchi → from columnar to squamous epithelium. 
+التحول الحرشفي في الشعب الهوائية → من عمودي مخاطي إلى حرشفي. 
+Squamous metaplasia in urinary bladder → from transitional to squamous. 
+تحول حرشفي في المثانة → من انتقالية إلى حرشفية. 
+Barrett’s esophagus → from squamous to intestinal epithelium. 
+مريء باريت → من حرشفي إلى ظهارة معوية.
+
+Dysplasia 
+Dysplasia is disordered epithelial cell proliferation and is a precancerous condition. 
+سوء التنسّج هو نمو غير منظم لخلايا الظهارة ويُعد مرحلة ما قبل السرطان. 
+Microscopic features: 
+الصفات الميكروسكوبية: 
+Loss of orientation. 
+فقدان الانتظام. 
+Pleomorphism (variation in size & shape). 
+تعدد الأشكال (اختلاف الحجم والشكل. 
+Hyperchromasia. 
+فرط التصبغ النووي. 
+Grades: Mild – Moderate – Severe 
+الدرجات: خفيف – متوسط – شديد  
+ 
+Carcinoma in Situ (CIS) 
+CIS is a pre-invasive carcinoma with no invasion of the basement membrane. 
+السرطان الموضعي هو سرطان غير غازي بدون اختراق الغشاء القاعدي. 
+Grossly: Hard thick patch (may be hard to detect). 
+صورياً: رقعة سميكة وصلبة (وقد يصعب اكتشافها)**. 
+Microscopically: 
+ميكروسكوبيًا: 
+Atypia: pleomorphism, hyperchromasia, abnormal mitosis. 
+لانمطية: تعدد أشكال، فرط تصبغ، انقسام غير طبيعي.
+
+Fate: Can progress to invasive carcinoma. 
+المصير: قد يتحول إلى سرطان غازي. 
+Examples: DCIS – PIN – CIN 
+أمثلة: سرطان القنوات الموضعي بالثدي – التغيرات البروستاتية –  التغيرات بعنق الرحم.  
+ 
+Classification of Tumors (تصنيف الأورام) 
+1. According to behavior: 
+Benign – Malignant – Locally malignant 
+حميد– خبيث – خبيث موضعيًا  
+2. According to differentiation: 
+Well – Moderate – Poorly differentiated 
+متمايز جيدًا– متوسط – ضعيف التمايز  
+3. According to tissue of origin: 
+Epithelial – Mesenchymal 
+طلائي– ليفي/ضام  
+ 
+Tumor Nomenclature (أسماء الأورام حسب النسيج) 
+Mesenchymal Tissues (Connective) 
+Fibroma → Fibrosarcoma 
+ليفومي → ليفوساركوما 
+Lipoma → Liposarcoma 
+ليبومي → ليبوساركوما 
+Chondroma → Chondrosarcoma 
+كوندرومي → كوندرواساركوما
+
+Osteoma → Osteosarcoma 
+أوستيومي → أوستيوساركوما 
+Rhabdomyoma → Rhabdomyosarcoma 
+رابدوميوما → رابدوميوساركوما 
+Leiomyoma → Leiomyosarcoma 
+ليوميوما → ليوميوساركوما 
+Haemangioma → Angiosarcoma 
+هيمانجيوما → أنجيوساركوما 
+Lymphangioma → Lymphangiosarcoma 
+ليمفانجيوما → ليمفانجيوساركوما 
+ 
+Parenchymal Tissue 
+Squamous cell papilloma → Squamous cell carcinoma 
+ورم حليمي حرشفي → سرطان حرشفي. 
+Basal cell papilloma → Basal cell carcinoma 
+ورم حليمي قاعدي → سرطان الخلايا القاعدية. 
+Adenoma → Adenocarcinoma 
+أدينوما → أدينوكارسينوما. 
+ 
+Benign vs Malignant (الحميد مقابل الخبيث) 
+Benign tumors: 
+Slow-growing, non-spreading. 
+تنمو ببطء ولا تنتشر. 
+Examples: Lipoma, Fibroid. 
+أمثلة: ليبوما، فيبرويد.
+
+Malignant tumors: 
+Aggressive and can spread (metastasis). 
+عدوانية وقد تنتشر (انتقالات. 
+Treatment: surgery, chemo, radiotherapy. 
+العلاج: جراحة، كيماوي، إشعاع. 
+Diagnosis: 
+CT – MRI – Endoscopy – Biopsy 
+الأشعة– المنظار – الخزعة.

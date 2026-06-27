@@ -1,0 +1,111 @@
+Technical Writing – Lecture (6) 
+The Nursing Process 
+ 
+1. Definition of the Nursing Process 
+The nursing process is a tool for critical thinking used by nurses to apply evidence and 
+help patients. 
+عملية التمريض هي أداة تفكير نقدي يستخدمها الممرضون لتطبيق الأدلة ومساعدة المرضى. 
+It is a systematic way to plan and give individualized nursing care. 
+هي طريقة منظمة لتخطيط وتقديم رعاية تمريضية مخصصة لكل مريض. 
+ 
+2. Purposes and Characteristics 
+Main Purposes: Identify patient’s health status, actual or potential needs, plan to meet 
+those needs, and deliver care. 
+الأغراض الرئيسية: تحديد حالة المريض، احتياجاته الحالية أو المحتملة، وضع خطة لتلبية هذه الاحتياجات، وتقديم  
+الرعاية. 
+Characteristics: The process is cyclic (repeats), dynamic (changes), patient-centered, 
+problem-solving, collaborative, and universal. 
+الخصائص: العملية دورية (تتكرر)، ديناميكية (قابلة للتغيير)، تركز على المريض، لحل المشكلات، تعاونية، وقابلة  
+للتطبيق في كل الحالات. 
+ 
+3. Five Steps of the Nursing Process 
+The nursing process has five connected steps. 
+عملية التمريض لها خمس خطوات مترابطة. 
+ 
+I. Assessment (Collecting Data) 
+Assessment is collecting, organizing, checking, and documenting patient information. 
+التقييم هو جمع وتنظيم والتحقق من وتوثيق معلومات المريض. 
+Types of Assessment: 
+أنواع التقييم: 
+1. Initial: Done soon after admission to create a database.
+
+2. أولي: يتم بعد الدخول مباشرة لإنشاء قاعدة بيانات. 
+3. Problem-focused: Focus on a specific issue (e.g., hourly vitals for fever). 
+4. موجه للمشكلة: التركيز على مشكلة معينة (مثل العلامات الحيوية كل ساعة عند الحمى. 
+5. Emergency: Quickly find life-threatening problems (e.g., airway check during 
+cardiac arrest). 
+6. طارئ: اكتشاف سريع للمشاكل المهددة للحياة (مثل فحص مجرى الهواء أثناء توقف القلب. 
+7. Time-lapsed: Compare current status with previous data from months ago. 
+8. متأخر الوقت: مقارنة الحالة الحالية بالبيانات السابقة من عدة أشهر. 
+Types of Data: 
+أنواع البيانات: 
+• Subjective (Symptoms): Only the patient can describe (e.g., pain, itching). 
+• ذاتية (الأعراض): يصفها المريض فقط (مثل الألم والحكة. 
+• Objective (Signs): Measurable or observable by others (e.g., temperature, heart 
+rate). 
+• موضوعية (العلامات): قابلة للقياس أو الملاحظة من الآخرين (مثل درجة الحرارة، معدل ضربات
+القلب). 
+Sources & Methods: 
+المصادر والأساليب: 
+• Primary: From the patient. 
+• أساسية: من المريض. 
+• Secondary: From family, reports, or lab tests. 
+• ثانوية: من الأسرة، التقارير، أو التحاليل المخبرية. 
+Methods: Observation, interviewing, and examination (inspection, palpation, 
+percussion, auscultation). 
+طرق الجمع: الملاحظة، المقابلة، والفحص السريري (التفقد، الجس، الطرق، الاستماع). 
+Final Steps: Organize data using standard forms, validate for accuracy, and document. 
+الخطوات النهائية: تنظيم البيانات بالنماذج القياسية، التحقق من دقتها، وتوثيقها.
+
+II. Diagnosing 
+Diagnosing is interpreting assessment data to find patient problems. 
+التشخيص هو تفسير بيانات التقييم لتحديد مشاكل المريض. 
+Nursing Diagnosis: Describes human response to illness; can change. 
+التشخيص التمريضي: يصف استجابة الإنسان للمرض؛ يمكن أن يتغير . 
+Medical Diagnosis: Refers to disease; remains same while disease exists. 
+التشخيص الطبي: يشير إلى المرض؛ يبقى ثابتًا طالما المرض موجود. 
+Components (PES): Problem, Etiology/Cause, Signs/Symptoms. 
+المكونات PES): المشكلة، السبب، العلامات/الأعراض. 
+Example: "Acute pain (P) related to abdominal surgery (E) as shown by patient 
+discomfort (S)". 
+مثال: "ألم حاد (مشكلة) مرتبط بجراحة البطن (سبب) كما يظهر من انزعاج المريض (أعراض) ." 
+ 
+III. Planning 
+Planning is making goals and deciding nursing interventions. 
+التخطيط هو وضع الأهداف وتحديد التدخلات التمريضية. 
+Process: Set priorities (using Maslow’s needs), short-term/long-term goals, and select 
+interventions. 
+العملية: تحديد الأولويات (باستخدام هرم ماسلو)، وضع أهداف قصيرة وطويلة المدى، واختيار التدخلات. 
+Types of Interventions: 
+• Independent: Nurse-initiated. 
+• مستقلة: يبدأها الممرض. 
+• Dependent: Doctor-ordered. 
+• معتمدة: بأمر الطبيب. 
+• Collaborative: Team-based. 
+• تعاونية: ضمن فريق. 
+Output: Written or computerized Nursing Care Plan. 
+الناتج: خطة رعاية تمريضية مكتوبة أو محوسبة.
+
+IV. Implementation 
+Implementation is doing and documenting the nursing care. 
+التنفيذ هو القيام بتقديم الرعاية التمريضية وتوثيقها. 
+ 
+V. Evaluation 
+Evaluation checks patient progress and care effectiveness. 
+التقييم هو فحص تقدم المريض وفعالية الرعاية. 
+Outcome: Decide to continue, modify, or end the care plan based on data. 
+النتيجة: تحديد ما إذا كانت الرعاية ستستمر، تُعدل، أو تُنهى بناءً على البيانات. 
+ 
+Analogy for Understanding 
+The nursing process is like a GPS navigation system. 
+عملية التمريض تشبه نظام تحديد المواقع GPS). 
+• Assessment = find current location and status. 
+• التقييم = معرفة الموقع الحالي وحالة السيارة. 
+• Diagnosis = identify roadblock (problem). 
+• التشخيص = تحديد المشكلة أو العقبة. 
+• Planning = calculate best route. 
+• التخطيط = حساب أفضل طريق للوصول. 
+• Implementation = drive along route. 
+• التنفيذ = القيادة على الطريق المخطط. 
+• Evaluation = check arrival or recalculate due to traffic. 
+• التقييم = التحقق من الوصول أو إعادة الحساب بسبب ازدحام.

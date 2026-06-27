@@ -1,0 +1,127 @@
+Acute Viral Hepatitis
+ILOs
+By the end of lecture, the students should be aware about:
+•Definition of acute viral hepatitis and epidemiology
+•How do you test for and diagnose acute hepatitis?
+•How to prevent and which vaccine is given for viral hepatitis?
+•What is the best treatment for viral hepatitis? 
+Definition: Acute hepatitis is a term used to describe a wide variety of conditions 
+characterized by acute inflammation of the hepatic parenchyma or injury to 
+hepatocytes resulting in elevated liver function indices. 
+In general, hepatitis is classified as acute or chronic based on the duration of the 
+inflammation and insult to the hepatic parenchyma. If the period of inflammation or 
+hepatocellular injury lasts for less than six months, characterized by normalization of 
+the liver function tests, it is called acute hepatitis. 
+Epidemiology
+Generally, the rates of viral hepatitis are low in high-income regions and high in 
+resource-poor areas. The past five years have seen a small increase in cases mostly 
+from isolated food-related outbreaks, persons who use drugs, and the homeless 
+population. In high endemic areas, HAV has affected more than 90% of children by 
+age 10. 
+Causes of Acute Viral Hepatitis
+Acute viral hepatitis can be caused by five major hepatotropic hepatitis viruses(A, 
+B, C, D, E):
+
+Symptoms of Acute Viral Hepatitis
+•Acute viral hepatitis can cause anything from a minor flu-like illness to 
+fatal liver failure . Sometimes there are no symptoms. The severity of 
+symptoms and speed of recovery vary considerably, depending on the virus 
+and the person's response to the infection. 
+•Hepatitis A and C often cause very mild symptoms or none at all and may be 
+unnoticed. Hepatitis B and E are more likely to produce severe symptoms. 
+Symptoms of acute viral hepatitis usually begin suddenly. They include a 
+poor appetite, malaise, nausea and vomiting, fever…etc.
+•Sometimes, after 3 to 10 days, the urine becomes dark, and stool becomes 
+pale. Jaundice (a yellowish discoloration of the skin and whites of the eyes) 
+may develop. It is sometimes accompanied by itching. The liver may be 
+enlarged and tender.
+•Most of the initial symptoms usually disappear within a week, and people 
+feel better even though the jaundice may worsen. 
+•Rarely, fulminant hepatitis develops. Fulminant hepatitis is severe hepatitis 
+with signs of liver failure . Fulminant hepatitis can occur in people with 
+hepatitis A, but it is more likely to develop in people with hepatitis B, 
+particularly if they also have hepatitis D. 
+•People with acute viral hepatitis usually recover in 4 to 8 weeks, even 
+without treatment. However, some people infected with hepatitis B or C 
+develop chronic infections.
+Diagnosis of Acute Viral Hepatitis
+Blood tests
+Liver tests involving measuring the levels of liver enzymes and other substances 
+produced by the liver. These blood tests can detect parts of specific viruses or 
+specific antibodies produced by the body to fight the viruses. Specific laboratory 
+tests include:
+ HAV:
+▪HAV: IgM anti-HAV: positive at the time of onset of symptoms; results remain 
+positive for 3-6 months after the primary infection
+▪Anti-HAV IgG appears soon after IgM and generally persists for many years.
+HBV:  
+▪Serology: HBsAg, HBCc Ab IgM
+▪HBV Viral DNA: Most accurate marker of viral DNA and detected by PCR 
+HCV: 
+▪HCV: Anti-HCV; cannot distinguish acute from chronic infection
+
+▪PCR: used to detect viral RNA  HCV (the most accurate)
+Hepatitis E: 
+▪Anti-HEV antibodies:  IgM (acute), IgG (chronic)
+▪Polymerase chain detection assay (PCR)
+Prevention of Acute Viral Hepatitis
+Because treatments for viral hepatitis are only partially effective, preventing viral 
+hepatitis is very important. Prevention of Acute Viral Hepatitis include: Vaccines 
+and immune globulin
+1-Vaccines 
+•Vaccines to prevent hepatitis A and hepatitis B are available. A vaccine for 
+hepatitis E is currently available only in China. No vaccines against hepatitis 
+C or D virus are available. However, vaccination against hepatitis B virus 
+also reduces the risk of infection with hepatitis D virus. Hepatitis vaccines 
+are given by injection into muscle.
+•Routine vaccination with the hepatitis A vaccine and hepatitis B vaccine is 
+recommended for all children and for adults at high risk of getting hepatitis.
+•As with most vaccines, protection requires allowing several weeks for the 
+vaccine to reach its full effect as the immune system gradually creates 
+antibodies against the virus.
+2-Immune globulin
+If people who have not been vaccinated are exposed to hepatitis B virus, they are 
+given hepatitis B immune globulin and are vaccinated. It is given by injection. 
+Babies born to mothers with hepatitis B are given hepatitis B immune 
+globulin (injected into a muscle) and hepatitis B vaccine.
+Other preventive measures against infection with the hepatitis viruses can be 
+taken:
+▪Washing hands thoroughly before handling food
+▪Not sharing needles to inject drugs
+▪Not sharing toothbrushes, razors, or other items that could get blood on them
+▪Practicing safe sex—for example, using barrier protection such as a condom, 
+Limiting the number of sex partners
+Donated blood is unlikely to be contaminated because it is screened. Nonetheless, 
+doctors help to reduce the risk of hepatitis by ordering blood transfusions only when 
+essential. Before surgery, people can also sometimes prevent the need for 
+transfusion of blood from an unknown donor by donating their own blood weeks 
+before the operation.
+Treatment of Acute Viral Hepatitis
+
+•Supportive care
+For most people with acute viral hepatitis, special treatment is not necessary. 
+However, people with severe acute hepatitis may require hospitalization so that 
+symptoms can be treated. If doctors suspect that fulminant hepatitis is developing, 
+the person is hospitalized so that mental status can be monitored, liver tests can be 
+done, and doctors can determine whether liver transplantation is needed.
+After the first several days, appetite usually returns, and people do not need to stay 
+in bed. Severe restrictions of diet or activity are unnecessary, and vitamin 
+supplements are not required. Most people can safely return to work after the 
+jaundice clears, even if their liver test results are not quite normal.
+People with hepatitis should not drink alcohol until they have fully recovered.
+The infected liver may not process (metabolize) drugs normally. So a doctor may 
+need to stop a drug or reduce the dosage of a drug that could accumulate to harmful 
+levels in the body (such as warfarin or theophylline). Thus, people with hepatitis 
+should tell their doctor all the drugs they are taking (both prescription and 
+nonprescription, including any medicinal herbs), so that the dosage of the drug can 
+be adjusted if necessary.
+If itching occurs, cholestyramine, taken by mouth, is often effective.
+If hepatitis B causes fulminant hepatitis, people are usually treated in an intensive 
+care unit. Antiviral drugs may help. However, liver transplantation is the most 
+effective treatment and is the best hope of survival, particularly for adults.
+Questions:
+What is definition of acute viral hepatitis?
+How do you test for and diagnose acute hepatitis?
+How to prevent and which vaccine is given for viral hepatitis?
+What is the treatment for viral hepatitis? 
+What are the sequlae of acute viral hepatitis?

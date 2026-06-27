@@ -1,0 +1,144 @@
+Shock — اﻟﺼﺪﻣﺔﻣﻠﺨﺺ ﺷﺎﻣﻞ ﻟﻤﺤﺎﺿﺮة اﻟﺼﺪﻣﺔ 
+Definition & Typesاﻟﺘﻌﺮﻳﻒ واﻷﻧﻮاع
+Shock = life-threatening condition: inadequate tissue perfusion & O₂ delivery
+to meet cellular metabolic needs → cellular & organ dysfunction.
+اﻟﺼﺪﻣﺔ: ﺣﺎﻟﺔ ﻣﻬﺪدة ﻟﻠﺤﻴﺎة ﻳﺤﺪث ﻓﻴﻬﺎ ﻧﻘﺺ ﻓﻲ ﺗﺮوﻳﺔ اﻷﻧﺴﺠﺔ وﺗﻮﺻﻴﻞ اﻷﻛﺴﺠﻴﻦ ﻟﺘﻠﺒﻴﺔ
+اﺣﺘﻴﺎﺟﺎت اﻟﺨﻼﻳﺎ اﻷﻳﻀﻴﺔ، ﻣﻤﺎ ﻳﺆدي إﱃ ﺧﻠﻞ ﺧﻠﻮي وﻋﻀﻮي.
+4 Types
+1) Hypovolemic Shock
+2) Cardiogenic Shock
+3) Distributive Shock (Septic, Anaphylactic, Neurogenic)
+4) Obstructive Shock
+،(إﻧﺘﺎﻧﻴﺔ، ﺗﺄﻗﻴﺔ، ﻋﺼﺒﻴﺔ ) ﺻﺪﻣﺔ ﺗﻮزﻳﻌﻴﺔ  (3 ﺻﺪﻣﺔ ﻗﻠﺒﻴﺔ،( 2 ﺻﺪﻣﺔ ﻧﻘﺺ اﻟﺤﺠﻢ،( 1اﻷﻧﻮاع اﻷرﺑﻌﺔ
+ ﺻﺪﻣﺔ اﻧﺴﺪادﻳﺔ.( 4
+1) Hypovolemic Shockﺻﺪﻣﺔ ﻧﻘﺺ اﻟﺤﺠﻢ
+Cause: Loss of blood/plasma volume (hemorrhage, dehydration, burns).
+.(ﻧﺰﻳﻒ، ﺟﻔﺎف، ﺣﺮوق) اﻟﺴﺒﺐ: ﻓﻘﺪان ﺣﺠﻢ اﻟﺪم أو اﻟﺒﻼزﻣﺎ 
+Compensation: Tachycardia, vasoconstriction, RAAS & ADH activation.
+.ADH وRAASآﻟﻴﺎت اﻟﺘﻌﻮﻳﺾ: ﺗﺴﺮع اﻟﻘﻠﺐ، ﺗﻀﻴﻖ اﻷوﻋﻴﺔ، ﺗﻨﺸﻴﻂ
+Decreased intravascular volume ↓
+preload (↓) ↓
+stroke volume (↓) ↓
+cardiac output (↓) ↓
+tissue perfusion (↓)
+ اﻧﺨﻔﺎض←  اﻧﺨﻔﺎض ﺣﺠﻢ اﻟﻀﺮﺑﺔ ← اﻧﺨﻔﺎض اﻟﺤﻤﻞ اﻟﻘﺒﻠﻲ  ←اﻧﺨﻔﺎض اﻟﺤﺠﻢ داﺧﻞ اﻷوﻋﻴﺔ  
+ اﻧﺨﻔﺎض ﺗﺮوﻳﺔ اﻷﻧﺴﺠﺔ.← اﻟﻨﺘﺎج اﻟﻘﻠﺒﻲ 
+2) Cardiogenic Shockﺻﺪﻣﺔ ﻗﻠﺒﻴﺔ
+Cause: Cardiac pump failure (MI, arrhythmias, cardiomyopathy).
+.(اﺣﺘﺸﺎء ﻋﻀﻠﺔ اﻟﻘﻠﺐ، اﺿﻄﺮاب ﻧﻈﻢ، اﻋﺘﻼل ﻋﻀﻠﺔ اﻟﻘﻠﺐ) اﻟﺴﺒﺐ: ﻓﺸﻞ ﻓﻲ ﺿﺦ اﻟﻘﻠﺐ 
+Elevated preload & afterload from compensatory vasoconstriction worsen
+cardiac workload.
+ارﺗﻔﺎع اﻟﺤﻤﻞ اﻟﻘﺒﻠﻲ واﻟﺒﻌﺪي ﺑﺴﺒﺐ ﺗﻀﻴﻖ اﻷوﻋﻴﺔ اﻟﺘﻌﻮﻳﻀﻲ ﻳﺰﻳﺪ ﻣﻦ ﻋﻤﻞ اﻟﻘﻠﺐ
+Impaired myocardial contractility ↓
+stroke volume (↓) ↓
+cardiac output (↓) ↓
+perfusion despite adequate volume (↓)
+ اﻧﺨﻔﺎض←  اﻧﺨﻔﺎض اﻟﻨﺘﺎج اﻟﻘﻠﺒﻲ ← اﻧﺨﻔﺎض ﺣﺠﻢ اﻟﻀﺮﺑﺔ  ←ﺿﻌﻒ اﻧﻘﺒﺎض ﻋﻀﻠﺔ اﻟﻘﻠﺐ  
+اﻟﺘﺮوﻳﺔ رﻏﻢ وﺟﻮد ﺣﺠﻢ دم ﻛﺎفٍ. 
+4) Obstructive Shockﺻﺪﻣﺔ اﻧﺴﺪادﻳﺔ
+Cause: Physical obstruction to blood flow (pulmonary embolism, cardiac
+tamponade, tension pneumothorax).
+.(اﻧﺴﺪاد رﺋﻮي، اﻧﺪﺣﺎس ﻗﻠﺒﻲ، اﺳﺘﺮواح ﺻﺪري ﺿﺎﻏﻂ) اﻟﺴﺒﺐ: اﻧﺴﺪاد ﻓﻌﻠﻲ ﻟﺘﺪﻓﻖ اﻟﺪم 
+Despite normal myocardial function, the obstruction prevents effective
+circulation.
+رﻏﻢ ﺳﻼﻣﺔ وﻇﻴﻔﺔ ﻋﻀﻠﺔ اﻟﻘﻠﺐ، ﻳﻤﻨﻊ اﻻﻧﺴﺪاد اﻟﺪوران اﻟﻔﻌﺎل
+Impaired venous return / cardiac filling or output ↓
+stroke volume (↓) ↓
+cardiac output (↓) ↓
+tissue perfusion (↓)
+← اﻧﺨﻔﺎض اﻟﻨﺘﺎج اﻟﻘﻠﺒﻲ←  اﻧﺨﻔﺎض ﺣﺠﻢ اﻟﻀﺮﺑﺔ ←ﻧﺘﺎج اﻟﻘﻠﺐ  /ﺿﻌﻒ اﻟﻌﻮد اﻟﻮرﻳﺪي أو اﻣﺘﻼء 
+اﻧﺨﻔﺎض ﺗﺮوﻳﺔ اﻷﻧﺴﺠﺔ.
+3a) Septic Shockﺻﺪﻣﺔ إﻧﺘﺎﻧﻴﺔ
+Distributive shock — widespread vasodilation → ↓SVR → ↓BP & perfusion,
+often with ↑capillary permeability & fluid leakage.
+ اﻧﺨﻔﺎض←  اﻧﺨﻔﺎض اﻟﻤﻘﺎوﻣﺔ اﻟﻮﻋﺎﺋﻴﺔ اﻟﺠﻬﺎزﻳﺔ ←اﻟﺼﺪﻣﺔ اﻟﺘﻮزﻳﻌﻴﺔ: ﺗﻮﺳﻊ واﺳﻊ ﻓﻲ اﻷوﻋﻴﺔ  
+اﻟﻀﻐﻂ واﻟﺘﺮوﻳﺔ، وﻏﺎﻟﺒًﺎ ﻣﻊ زﻳﺎدة ﻧﻔﺎذﻳﺔ اﻟﺸﻌﻴﺮات وﺗﺴﺮب اﻟﺴﻮاﺋﻞ.
+Triggered by severe infection ↓
+systemic inflammatory response ↓
+vasodilation, capillary leak, myocardial depression
+ ﺗﻮﺳﻊ اﻷوﻋﻴﺔ وﺗﺴﺮب اﻟﺸﻌﻴﺮات وﺗﺜﺒﻴﻂ←  اﺳﺘﺠﺎﺑﺔ اﻟﺘﻬﺎﺑﻴﺔ ﺟﻬﺎزﻳﺔ ←ﺗُﺤﺪﺛﻬﺎ ﻋﺪوى ﺷﺪﻳﺪة  
+ﻋﻀﻠﺔ اﻟﻘﻠﺐ.
+3b) Anaphylactic Shockﺻﺪﻣﺔ ﺗﺄﻗﻴﺔ
+Allergic reaction ↓
+histamine release ↓
+vasodilation and increased permeability
+ ﺗﻮﺳﻊ اﻷوﻋﻴﺔ وزﻳﺎدة ﻧﻔﺎذﻳﺘﻬﺎ←  إﻓﺮاز اﻟﻬﻴﺴﺘﺎﻣﻴﻦ ←ﺗﻔﺎﻋﻞ ﺣﺴﺎﺳﻴﺔ  
+Rapid onset distributive shock from severe allergic/immune reaction (drugs,
+food, insect stings).
+أدوﻳﺔ، ﻃﻌﺎم، ﻟﺪﻏﺎت) ﺻﺪﻣﺔ ﺗﻮزﻳﻌﻴﺔ ﺳﺮﻳﻌﺔ اﻟﺤﺪوث ﻧﺎﺗﺠﺔ ﻋﻦ ﺗﻔﺎﻋﻞ ﺣﺴﺎﺳﻴﺔ أو ﻣﻨﺎﻋﻲ ﺷﺪﻳﺪ 
+.(ﺣﺸﺮات 
+3c) Neurogenic Shockﺻﺪﻣﺔ ﻋﺼﺒﻴﺔ
+Spinal cord injury ↓
+loss of sympathetic tone ↓
+unopposed vagal activity ↓
+vasodilation and bradycardia
+ ﺗﻮﺳﻊ اﻷوﻋﻴﺔ وﺑﻂء←  ﻧﺸﺎط ﻣﺒﻬﻤﻲ ﻏﻴﺮ ﻣﺘﻌﺎدل ← ﻓﻘﺪان اﻟﺘﻮﺗﺮ اﻟﻮدي  ←إﺻﺎﺑﺔ اﻟﺤﺒﻞ اﻟﺸﻮﻛﻲ  
+اﻟﻘﻠﺐ.
+Hallmark: vasodilation + bradycardia (unlike other distributive shocks which
+show tachycardia).
+ﺑﻌﻜﺲ ﺑﺎﻗﻲ اﻟﺼﺪﻣﺎت اﻟﺘﻮزﻳﻌﻴﺔ اﻟﺘﻲ ﺗﻈﻬﺮ ﺗﺴﺮﻋًﺎ) اﻟﺴﻤﺔ اﻟﻤﻤﻴﺰة: ﺗﻮﺳﻊ اﻷوﻋﻴﺔ ﻣﻊ ﺑﻂء اﻟﻘﻠﺐ 
+.(ﻓﻲ اﻟﻘﻠﺐ 
+Normal Vital Signsاﻟﻌﻼﻣﺎت اﻟﺤﻴﻮﻳﺔ اﻟﻄﺒﻴﻌﻴﺔ
+GCS 15 (Eye 4, Verbal 5, Motor 6)
+RBS (Random Blood Sugar)Fasting 70–120, post-prandial <180
+Blood Pressure ~120/80 mmHg
+Heart Rate 60–100 bpm (ECG)
+Temperature ~37°C
+Respiratory Rate 14–20/min
+O₂ Saturation >96%
+Capnogram (EtCO₂) 35–45 mmHg
+CVP 6–8 mmHg
+Fluid Balance Intake − Output
+،180 وﺑﻌﺪ اﻷﻛﻞ أﻗﻞ ﻣﻦ120-70، ﺳﻜﺮ اﻟﺪم اﻟﺼﺎﺋﻢ( 6، ﺣﺮﻛﺔ5، ﻛﻼم4ﻋﻴﻦ)  15ﻣﻘﻴﺎس ﻏﻼﺳﻜﻮ
+، ﺗﺸﺒﻊ اﻷﻛﺴﺠﻴﻦ20-14، اﻟﺘﻨﻔﺲ37، اﻟﺤﺮارة ﺣﻮاﻟﻲ100-60، اﻟﻨﺒﺾ120 / 80ﺿﻐﻂ اﻟﺪم ﺣﻮاﻟﻲ
+ اﻟﺪاﺧﻞ -= ، وﺗﻮازن اﻟﺴﻮاﺋﻞ 8-6، اﻟﻀﻐﻂ اﻟﻮرﻳﺪي اﻟﻤﺮﻛﺰي45-35 ﺑﺎﻟﺰﻓﻴﺮCO₂٪،96أﻛﺒﺮ ﻣﻦ
+اﻟﺨﺎرج.
+Stages of Shockﻣﺮاﺣﻞ اﻟﺼﺪﻣﺔ
+1. Initial Stage
+O₂ delivery (↓) ↓ shift to anaerobic metabolism ↓ lactic acidosis
+Subtle or no clinical signs.
+ ﺣﻤﻮﺿﺔ ﻻﻛﺘﻴﻜﻴﺔ، ﻣﻊ←  اﻟﺘﺤﻮل إﱃ اﻟﺘﻤﺜﻴﻞ اﻟﻼﻫﻮاﺋﻲ ←اﻟﻤﺮﺣﻠﺔ اﻷوﱃ: اﻧﺨﻔﺎض ﺗﻮﺻﻴﻞ اﻷﻛﺴﺠﻴﻦ  
+ﻋﻼﻣﺎت ﺳﺮﻳﺮﻳﺔ ﺧﻔﻴﻔﺔ أو ﻏﺎﺋﺒﺔ.
+2. Compensatory Stage
+Activation of SNS ↓ tachycardia, vasoconstriction, ↑RR
+Blood shunted to vital organs (brain, heart).
+ ﺗﺴﺮع اﻟﻘﻠﺐ وﺗﻀﻴﻖ اﻷوﻋﻴﺔ وزﻳﺎدة ﻣﻌﺪل← اﻟﻤﺮﺣﻠﺔ اﻟﺘﻌﻮﻳﻀﻴﺔ: ﺗﻨﺸﻴﻂ اﻟﺠﻬﺎز اﻟﻌﺼﺒﻲ اﻟﻮدي 
+.(اﻟﻤﺦ واﻟﻘﻠﺐ )اﻟﺘﻨﻔﺲ، ﻣﻊ ﺗﻮﺟﻴﻪ اﻟﺪم ﻟﻸﻋﻀﺎء اﻟﺤﻴﻮﻳﺔ  
+3. Progressive Stage
+Persistent hypoperfusion ↓ worsening acidosis
+End-organ dysfunction begins (e.g., oliguria, confusion).
+ﻣﺜﻞ ﻗﻠﺔ)  ﺗﻔﺎﻗﻢ اﻟﺤﻤﻮﺿﺔ، وﺑﺪاﻳﺔ ﺧﻠﻞ وﻇﺎﺋﻒ اﻷﻋﻀﺎء ←اﻟﻤﺮﺣﻠﺔ اﻟﺘﻘﺪﻣﻴﺔ: اﺳﺘﻤﺮار ﻧﻘﺺ اﻟﺘﺮوﻳﺔ  
+.(اﻟﺒﻮل واﻟﺘﺸﻮش 
+4. Irreversible Stage
+Severe cellular & organ damage ↓ multi-organ failure
+Death inevitable without intervention.
+ ﻓﺸﻞ أﻋﻀﺎء ﻣﺘﻌﺪد، واﻟﻮﻓﺎة ﻣﺤﺘﻮﻣﺔ دون ﺗﺪﺧﻞ← اﻟﻤﺮﺣﻠﺔ اﻟﻼرﺟﻌﻴﺔ: ﺗﻠﻒ ﺧﻠﻮي وﻋﻀﻮي ﺷﺪﻳﺪ 
+Management of Shockﻋﻼج اﻟﺼﺪﻣﺔ
+General Approach (All Types)
+Airway, Breathing, Circulation (ABCs)
+Oxygen therapy
+IV fluid resuscitation
+Monitor vitals, urine output, lactate levels
+، إﻋﻄﺎء اﻷﻛﺴﺠﻴﻦ،( ABC)اﻷﺳﻠﻮب اﻟﻌﺎم ﻟﻜﻞ اﻷﻧﻮاع: ﺗﺄﻣﻴﻦ ﻣﺠﺮى اﻟﻬﻮاء واﻟﺘﻨﻔﺲ واﻟﺪورة اﻟﺪﻣﻮﻳﺔ
+اﻹﻧﻌﺎش ﺑﺎﻟﺴﻮاﺋﻞ اﻟﻮرﻳﺪﻳﺔ، وﻣﺮاﻗﺒﺔ اﻟﻌﻼﻣﺎت اﻟﺤﻴﻮﻳﺔ وﻛﻤﻴﺔ اﻟﺒﻮل وﻣﺴﺘﻮى اﻟﻼﻛﺘﺎت.
+1. Hypovolemic
+Rapid fluid replacement (crystalloids/blood) + control bleeding.
+ واﻟﺘﺤﻜﻢ ﻓﻲ اﻟﻨﺰﻳﻒ( ﻣﺤﺎﻟﻴﻞ أو دم) ﺻﺪﻣﺔ ﻧﻘﺺ اﻟﺤﺠﻢ: ﺗﻌﻮﻳﺾ ﺳﺮﻳﻊ ﻟﻠﺴﻮاﺋﻞ 
+2. Cardiogenic
+Inotropes (e.g., dobutamine), diuretics, revascularization (if MI), manage
+arrhythmias.
+، وﻋﻼج( ﻓﻲ اﻻﺣﺘﺸﺎء) ، ﻣﺪرات اﻟﺒﻮل، إﻋﺎدة اﻟﺘﺮوﻳﺔ (ﻣﺜﻞ اﻟﺪوﺑﻮﺗﺎﻣﻴﻦ )اﻟﺼﺪﻣﺔ اﻟﻘﻠﺒﻴﺔ: ﻣﻘﻮﻳﺎت اﻟﻘﻠﺐ  
+اﺿﻄﺮاﺑﺎت اﻟﻨﻈﻢ.
+3. Distributive — Septic
+Broad-spectrum antibiotics + vasopressors (e.g., norepinephrine).
+.(ﻣﺜﻞ اﻟﻨﻮرإﺑﻴﻨﻔﺮﻳﻦ) اﻟﺼﺪﻣﺔ اﻹﻧﺘﺎﻧﻴﺔ: ﻣﻀﺎدات ﺣﻴﻮﻳﺔ واﺳﻌﺔ اﻟﻤﺪى وأدوﻳﺔ راﻓﻌﺔ ﻟﻠﻀﻐﻂ 
+Anaphylactic
+Epinephrine IM, antihistamines, corticosteroids.
+اﻟﺼﺪﻣﺔ اﻟﺘﺄﻗﻴﺔ: ﺣﻘﻦ اﻹﺑﻴﻨﻔﺮﻳﻦ ﺑﺎﻟﻌﻀﻞ، ﻣﻀﺎدات اﻟﻬﻴﺴﺘﺎﻣﻴﻦ، اﻟﻜﻮرﺗﻴﺰون
+Neurogenic
+Fluids, vasopressors, atropine (if bradycardia).
+اﻟﺼﺪﻣﺔ اﻟﻌﺼﺒﻴﺔ: ﺳﻮاﺋﻞ، أدوﻳﺔ راﻓﻌﺔ ﻟﻠﻀﻐﻂ، واﻷﺗﺮوﺑﻴﻦ ﻓﻲ ﺣﺎﻟﺔ ﺑﻂء اﻟﻘﻠﺐ
+4. Obstructive
+Relieve obstruction (e.g., thrombolysis, pericardiocentesis, chest tube).
+.(ﻣﺜﻞ إذاﺑﺔ اﻟﺠﻠﻄﺔ، ﺑﺰل اﻟﺘﺎﻣﻮر، أو أﻧﺒﻮب اﻟﺼﺪر) اﻟﺼﺪﻣﺔ اﻻﻧﺴﺪادﻳﺔ: إزاﻟﺔ ﺳﺒﺐ اﻻﻧﺴﺪاد 
+Critical Care Nursing Summary | اﻟﻤﺮﻛﺰة  اﻟﻌﻨﺎﻳﺔ  ﻣﺤﺎﺿﺮة  ﻣﻠﺨﺺ Dr . Abdelrahman Elzefzaf

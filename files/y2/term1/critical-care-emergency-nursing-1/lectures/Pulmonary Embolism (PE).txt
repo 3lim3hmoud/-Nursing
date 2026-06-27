@@ -1,0 +1,347 @@
+Pulmonary Embolism (PE)
+Prepared by
+Assist professor Dr/Afaf Mohamed Mansour
+
+Outlines
+❖ Anatomy of pulmonary arteries
+❖ Description
+❖ Etiology
+❖ Pathophysiology
+❖ Assessment and Diagnosis
+❖ Medical Management
+❖ Nursing Intervention
+
+•Main pulmonary artery (Pulmonary trunk): A short, 
+wide vessel that originates from the right ventricle of the 
+heart. It is one of the "great vessels" of the heart, along 
+with the aorta.
+•Right and left pulmonary arteries: The main pulmonary 
+artery divides into these two branches beneath the aortic 
+arch. The right pulmonary artery carries blood to the right 
+lung, and the left pulmonary artery carries blood to the left 
+lung.
+Anatomy of pulmonary arteries
+
+Anatomy of pulmonary arteries
+•Smaller branches: Upon entering the 
+lungs, the main arteries split further into 
+lobar arteries, then into segmental, 
+subsegmental, and finally, into tiny 
+arterioles.
+•Capillary network: The arterioles 
+terminate in capillary beds that surround the 
+alveoli, which is where gas exchange takes 
+place.
+
+Description
+A pulmonary embolism (PE) occurs when a clot 
+(thrombotic embolus) or other matter (non thrombotic 
+embolus) lodges in the pulmonary arterial system, 
+disrupting the blood flow to the lungs. The majority of 
+thrombotic emboli arise from the deep leg veins, 
+particularly the iliac, femoral, and popliteal veins . 
+Other sources include the right ventricle, the upper 
+extremities, and the pelvic veins. Non-thrombotic 
+emboli arise from fat, tumors, amniotic fluid, air, and 
+foreign bodies.
+
+Etiology
+A number of predisposing factors 
+and precipitating conditions put a patient 
+at risk for developing a pulmonary 
+embolism. 
+Three main predisposing factors 
+❑ Hypercoagulability, 
+❑ Injury to vascular endothelium
+❑  Venous stasis (Virchow's triad)
+
+• Causes of the venous stasis.
+• Atrial fibrillation
+• Immobility
+• Injury to vascular endothelium
+• Local vessel injury
+• Atherosclerosis
+• Hypercoagulability
+• Polycythemia
+
+Precipitating Conditions
+• Previous pulmonary embolus
+• Cardiovascular disease
+• Heart failure
+• Cardiomyopathy
+• Cor pulmonale
+• Surgery
+➢Orthopedic 
+➢Vascular 
+➢Abdominal
+
+Precipitating Conditions
+Cancer
+❖ Ovarian
+❖ Pancreatic
+❖ Stomach
+
+Precipitating Conditions
+• Extrahepatic bile duct system
+• Trauma (injury or burns)
+▪ Lower extremities 
+▪ Pelvis
+▪ Hip
+• Gynecologic status 
+• Pregnancy
+•  Postpartum
+• Birth control pills
+
+Pathophysiology
+ A massive PE occurs with the blockage of a 
+lobar or larger artery, resulting in occlusion of 
+more than 40% of the pulmonary vascular bed. 
+Blockage of the pulmonary arterial system has 
+both pulmonary and hemodynamic 
+consequences.
+
+The effects on the pulmonary system are
+❑ Increased alveolar dead space
+❑ Bronchoconstriction, 
+❑ Compensatory shunting.
+❑ The hemodynamic effects include
+❑  An increase in pulmonary vascular resistance 
+❑ Right ventricular workload
+
+Increased Dead Space
+1. An increase in alveolar dead space occurs 
+because an area of the lung is receiving 
+ventilation without being perfused .
+2.  The ventilation to this area is known as wasted 
+ventilation, because it does not participate in gas 
+exchange. 
+3. This effect leads to alveolar dead space 
+ventilation and an increase in the work of 
+breathing to limit the amount of dead space 
+ventilation, localized bronchoconstriction occurs.
+
+Bronchoconstriction
+Bronchoconstriction develops as a result of alveolar 
+hypocarbia, hypoxia, and the release of mediators. 
+1. Alveolar hypocarbia occurs as a consequence of 
+➢ Decreased carbon dioxide in the affected area 
+and leads to constriction of the local airways
+➢ Increased airway resistance
+➢ Redistribution of ventilation to perfused areas of 
+the lungs. 
+2- A variety of mediators are released from the site of 
+the injury, either from the clot or the surrounding lung 
+tissue, which further causes constriction of the 
+airways. Bronchoconstriction promotes the 
+development of atelectasis.
+
+Compensatory Shunting
+1. Compensatory shunting occurs as a result of the 
+unaffected areas of the lungs having to 
+accommodate the entire Cardiac Output. 
+2. This creates a situation in which perfusion exceeds 
+ventilation and blood is returned to the left side of 
+the heart without participating in gas exchange. This 
+leads to the development of hypoxemia
+
+Hemodynamic Consequences
+The major hemodynamic consequence of a PE is the development of 
+pulmonary hypertension, which is part of the effect of a mechanical obstruction 
+when more than 50% of the vascular bed is occluded. 
+➢ In addition, the mediators released at the injury site and the development of 
+hypoxia cause pulmonary vasoconstriction, which further exacerbates 
+pulmonary hypertension.
+➢  As the pulmonary vascular resistance increases, so does the workload of the 
+right ventricle as reflected by a rise in pulmonary artery (PA) pressures. 
+➢ Consequently, right ventricular failure occurs, which can lead to decreases in 
+left ventricular preload, CO, and blood pressure, and shock.
+
+Assessment and Diagnosis
+The patient with a PE may have any number of presenting 
+signs and symptoms
+-Tachycardia and tachypnea 
+- Dyspnea                              - Apprehension
+-Fever                                   -Crackles
+-Pleuritic chest pain             - Cough
+-Hemoptysis       -Syncope and hemodynamic instability can occur as a result 
+of right ventricular failure.
+
+Initial laboratory studies and diagnostic procedures:
+oABG analysis 
+oD-dimer
+• Fibrinogen  breakdown in 
+the blood
+oElectrocardiogram (EGG)
+oChest radiography, and Echocardiography (ECHO)
+
+ABGs may show
+•A low Pao2, indicating hypoxemia  
+• A low Paco2, indicating hypocarbia
+•  A high pH, indicating a respiratory alkalosis
+•  The hypocarbia with resulting respiratory 
+alkalosis is caused by tachypnea.
+
+EGG interpretation PE 
+The most frequent EGG finding seen in 
+the patient with a PE is sinus tachycardia. 
+The classic ECG pattern associated with a 
+PE :inverted T wave
+Other ECG findings associated with a PE 
+include right bundle branch block, new-
+onset atrial fibrillation.
+
+Assessment and Diagnosis
+-Chest x-Ray findingsAbnormal findings include 
+❖ Cardiomegaly
+❖ Pleural effusion
+❖ Elevated hemidiaphragm
+❖ Enlargement of the right descending pulmonary artery 
+(Palla's sign) a wedge-shaped density above the 
+diaphragm (Hampton's hump) and the presence of 
+atelectasis.
+-
+
+Assessment and Diagnosis
+An ECHO, either transthoracic or 
+transesophageal, is also useful in the 
+identification of a PE, because it can 
+provide visualization of any emboli 
+in the central pulmonary arteries
+
+Medical Management
+Medical management of the patient with PE 
+involves 
+➢Prevention strategies.
+➢ Treatment strategies.
+
+Medical Management
+Preventive strategies include: 
+❖  Use of prophylactic anticoagulation 
+with low-dose or adjusted-dose heparin, 
+LMWH, or oral anticoagulants.
+❖ Use of pneumatic compression has also 
+been demonstrated as effective methods 
+of prophylaxis in low-risk patients.
+
+Medical Management
+Treatment strategies Include
+❑Preventing the recurrence of PE
+❑Facilitating clot dissolution
+❑Reversing the effects of pulmonary hypertension
+❑ Promoting gas exchange 
+❑ Preventing complications.
+
+Prevention of Recurrence
+1. Administration of unfractionated or LMWH 
+and warfarin (Coumadin). 
+• Warfarin should be started at the same time 
+and when the international normalized ratio 
+(INR) reaches 3.0, the heparin should be 
+discontinued.
+• The patient should remain on warfarin for 3 to 
+12 months, depending on his or her risk for 
+thromboemobolic disease.
+
+Prevention of Recurrence
+1. Heparin is administered to prevent further clots from 
+forming and has no effect on the existing clot. 
+2. The INR should be maintained between 2.0 and 3.0 .
+3.  Interruption of the inferior vena cava is reserved for 
+patients in whom anticoagulation is contraindicated. 
+The procedure involves placement of a 
+percutaneous venous filter (e.g., Green-field filter) 
+into the vena cava, usually below the renal 
+arteries. The filter prevents further thrombotic emboli 
+from migrating into the lungs
+
+Clot Dissolution
+1. The administration of fibrinolytic agents in the 
+treatment of PE has had limited success.
+2.  Currently, fibrinolytic therapy is reserved for the 
+patient with a massive PE and concomitant 
+hemodynamic instability. Either recombinant 
+tissue –type plasminogen activator (rt-PA) or 
+streptokinase may be used. 
+3. If the fibrinolytic therapy is contraindicated, 
+pulmonary embolectomy may be performed to 
+remove clot.
+
+Reversal of Pulmonary Hypertension
+1. Administration of inotropic agents and fluid, fluids should 
+be administered to increase right ventricular preload, which 
+would stretch the right ventricle and increase contractility, 
+2. Thus overcoming the elevated pulmonary arterial pressure. 
+Inotropic agents also can be used to increase contractility to 
+facilitate an increase in CO.
+
+Nursing Management
+Nursing actions are aimed 
+❖ preventing the development of DVT which is a major complication of 
+immobility and a leading cause of PE. These measures include
+➢ Active/passive range-of-motion exercises involving foot extension
+➢ Use of pneumatic compression devices
+➢ Adequate hydration
+➢ Progressive ambulation.
+
+Nursing interventions
+✓ Optimizing oxygenation and ventilation, 
+✓ Monitoring for bleeding
+✓ Providing comfort 
+✓ Emotional support
+✓ Maintaining surveillance for complications
+✓ Educating the patient and family.
+
+Optimizing Oxygenation and Ventilation
+❖  Positioning
+❖ Preventing desaturation
+❖ Promoting secretion clearance.
+
+Monitoring for Bleeding
+o The patient receiving anticoagulant or fibrinolytic 
+therapy should be observed for signs of bleeding. 
+o The patient's gums, skin, urine, stool, and emesis 
+should be screened for signs of overt or covert bleeding.
+o In addition, monitoring the patient’s INR or a PTT is 
+critical to managing the anticoagulation therapy
+
+Educating the Patient and Family
+❑ Early in the patient's hospital stay, the patient and family should be 
+taught about pulmonary embolus, its etiologies, and its treatment.As the 
+patient moves toward discharge
+❑ Teaching should focus on the interventions necessary for preventing 
+the reoccurrence of DVT and subsequent emboli; signs and symptoms 
+of DVT and anticoagulant complications and measures to prevent 
+bleeding. 
+❑ If the patient smokes, he or she should be encouraged to stop smoking 
+and be referred to smoking cessation program
+
+Measures to prevent deep vein thrombosis (DVT)
+- Avoid tight-fitting clothes, crossing legs, and 
+prolonged sitting or standing, elevate legs when 
+sitting, exercise.
+- Signs and symptoms of DVT (e.g., redness, swelling, 
+sharp or deep leg pain)
+- importance of taking medications
+- Signs and symptoms: of anticoagulant complications 
+(e.g , excessive bruising: discoloration of the skin, 
+changes in color of urine or stools
+- Measurement to prevent bleeding (e.g., use soft bristle 
+toothbrush, caution when shaving.
+
+Collaborative Management
+1. Administer oxygen therapy .
+2. Intubate patient .
+3. Initiate mechanical ventilation.
+4. Administer medications :
+▪ Fibrinolytic therapy Anticoagulants 
+▪ Bronchodilators 
+▪ Inotropic agents 
+▪ Sedatives Analgesics
+
+Collaborative Management
+5- Administer fluids
+6-Position patient to optimize ventilation/perfusion matching
+8-Maintain surveillance for complications : 
+➢ Bleeding
+➢ Acute respiratory distress syndrome
+9- Provide comfort and emotional support

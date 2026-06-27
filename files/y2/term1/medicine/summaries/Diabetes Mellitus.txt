@@ -1,0 +1,193 @@
+Diabetes Mellitus (داء السكري) 
+ 
+1. Definition and Mechanism — التعريف والآلية 
+Diabetes is a disease that affects how the body uses sugar (glucose). 
+السكري هو مرض يؤثر على طريقة استخدام الجسم للسكر (الجلوكوز. 
+Glucose is the main source of energy for the body’s cells and comes from food. 
+يُعد الجلوكوز المصدر الأساسي للطاقة لخلايا الجسم ويأتي من الطعام.  
+In diabetes, there is too much sugar in the blood (hyperglycemia). 
+في حالة السكري، يكون هناك ارتفاع في مستوى السكر في الدم (فرط سكر الدم).  
+Definition: Diabetes occurs when the body cannot control blood sugar levels because it 
+either does not make enough insulin or cannot use it properly. 
+التعريف: يحدث داء السكري عندما يفشل الجسم في التحكم في مستوى السكر بالدم بسبب نقص إنتاج الإنسولين أو 
+ضعف استخدامه. 
+Insulin is a hormone that helps sugar enter the cells for energy. 
+الإنسولين هو هرمون يساعد الجلوكوز على الدخول إلى الخلايا للحصول على الطاقة. 
+ 
+2. Clinical Picture (Symptoms) — الصورة السريرية (الأعراض 
+Diabetes can cause several noticeable symptoms, including: 
+يمكن أن يسبب مرض السكري عدة أعراض واضحة، منها:
+
+• Feeling very thirsty → العطش الشديد 
+• Frequent urination → كثرة التبول 
+• Feeling tired → الإرهاق والتعب 
+• Unexplained weight loss → فقدان الوزن دون سبب واضح 
+• Slow-healing wounds → بطء التئام الجروح 
+• Blurred vision → تشوش الرؤية 
+ 
+3. Types of Diabetes and Causes — أنواع السكري وأسبابه 
+There are three main types of diabetes: Type 1, Type 2, and Gestational Diabetes. 
+هناك ثلاثة أنواع رئيسية من السكري : النوع الأول، النوع الثاني، والسكري الحملي. 
+Feature Type 1 Diabetes Type 2 Diabetes Gestational Diabetes 
+Cause 
+Autoimmune destruction of 
+insulin-producing cells. The 
+immune system attacks the 
+pancreas. 
+Insulin resistance 
+and insufficient 
+insulin production. 
+Hormones produced 
+during pregnancy 
+block insulin action. 
+السبب 
+تدمير مناعي ذاتي لخلايا البنكرياس 
+المنتجة للإنسولين. 
+مقاومة الإنسولين مع  
+نقص في إنتاجه. 
+الهرمونات أثناء الحمل تمنع  
+عمل الإنسولين.
+
+Feature Type 1 Diabetes Type 2 Diabetes Gestational Diabetes 
+Onset 
+Usually childhood or 
+adolescence. 
+Usually in adults, 
+but can appear at 
+any age. 
+Occurs during 
+pregnancy. 
+الظهور عادة في الطفولة أو المراهقة. 
+عادة في البالغين لكن قد  
+يظهر بأي عمر. 
+يحدث أثناء الحمل. 
+Insulin 
+Production 
+Very little or none. 
+Present but not 
+effective enough. 
+Variable; returns to 
+normal after delivery. 
+إنتاج الإنسولين قليل جدًا أو منعدم. 
+موجود لكنه غير كافٍ أو 
+غير فعّال. 
+متغير، وغالبًا يعود طبيعيًا  
+بعد الولادة. 
+Preventable Not preventable. 
+Can be prevented 
+or delayed by a 
+healthy lifestyle. 
+Usually not 
+preventable but 
+controlled during 
+pregnancy. 
+قابل للوقاية غير قابل للوقاية. 
+يمكن الوقاية منه أو  
+تأخيره بنمط حياة صحي. 
+غالبًا غير قابل للوقاية لكن  
+يُتحكم به أثناء الحمل. 
+ 
+Risk Factors for Type 2 Diabetes: 
+عوامل خطر الإصابة بالسكري من النوع الثاني:
+
+• Overweight or obesity → زيادة الوزن أو السمنة 
+• Lack of exercise → قلة النشاط البدني 
+• Family history of diabetes → وجود تاريخ عائلي للمرض 
+• Older age → التقدم في العمر 
+• Unhealthy eating → نظام غذائي غير صحي 
+• High blood pressure or cholesterol → ارتفاع ضغط الدم أو الكوليسترول 
+ 
+4. Diagnosis and Threshold Values — التشخيص والقيم الحدّية 
+Doctors diagnose diabetes by measuring blood glucose levels using several tests. 
+يُشخّص الأطباء السكري عن طريق قياس مستوى الجلوكوز في الدم باستخدام عدة اختبارات.  
+Test Diabetes Diagnosis Prediabetes 
+Fasting Blood Sugar (FBS) ≥ 126 mg/dL (on two occasions) 100–125 mg/dL 
+سكر الدم الصائم 
+≥ 126 ملجم/ديسيلتر (في اختبارين
+منفصلين)  
+100–125 
+ملجم/ديسيلتر 
+HbA1c (Glycated Hemoglobin) ≥ 6.5% (average of 2–3 months) 5.7–6.4% 
+الهيموغلوبين السكري HbA1c) 
+≥ 6.5٪ (يعكس معدل السكر خلال  2 –3  
+أشهر) 
+5.7–6.4٪
+
+Test Diabetes Diagnosis Prediabetes 
+2-Hour OGTT ≥ 200 mg/dL 140–199 mg/dL 
+اختبار تحمل الجلوكوز الفموي بعد
+ساعتين  
+≥ 200 ملجم/ديسيلتر 
+140–199 
+ملجم/ديسيلتر 
+Random Blood Sugar (RBS) ≥ 200 mg/dL (if symptoms present) Not typically used 
+سكر الدم العشوائي ≥ 200 ملجم/ديسيلتر (مع الأعراض لا يُستخدم عادةً  
+ 
+5. Treatment and Long-Term Management — العلاج والإدارة طويلة المدى 
+Treatment differs depending on the type of diabetes. 
+يختلف العلاج حسب نوع السكري. 
+All patients benefit from healthy eating, regular exercise, and blood sugar monitoring. 
+جميع المرضى يستفيدون من نظام غذائي صحي، وتمارين منتظمة، ومتابعة مستمرة لمستوى السكر.  
+ 
+Type 1 Diabetes: 
+السكري من النوع الأول: 
+Requires daily insulin injections or an insulin pump because the body makes little or no 
+insulin. 
+يتطلب حقن إنسولين يومية أو مضخة إنسولين لأن الجسم لا يُنتج ما يكفي من الإنسولين.
+
+Type 2 Diabetes: 
+السكري من النوع الثاني: 
+Begins with lifestyle changes (diet, weight loss, exercise). 
+يبدأ بـ تغيير نمط الحياة (الحمية، فقدان الوزن، التمارين.) 
+If blood sugar remains high, oral medications are added, and sometimes insulin therapy 
+is needed. 
+إذا بقي السكر مرتفعًا، تُضاف أدوية فموية، وأحيانًا يُستخدم الإنسولين.  
+Common drug classes include: 
+تشمل فئات الأدوية الشائعة: 
+Biguanides, GLP-1 agonists, SGLT-2 inhibitors, DPP-4 inhibitors, Sulfonylureas, 
+Thiazolidinediones (TZDs), and Insulins. 
+البيغوانيدات، ناهضات GLP-1، مثبطات SGLT-2، مثبطات DPP-4، السلفونيل يوريا، الثيازوليدينديونات 
+TZDs)، والإنسولين. 
+ 
+Gestational Diabetes: 
+السكري الحملي: 
+Managed by healthy diet and exercise, sometimes requires insulin during pregnancy. 
+يُدار عن طريق نظام غذائي صحي وممارسة الرياضة، وقد يتطلب استخدام الإنسولين أثناء الحمل.
+
+It usually resolves after delivery, but follow-up is necessary. 
+عادة يختفي بعد الولادة، لكن يلزم المتابعة لاحقًا لاحتمال الإصابة بالسكري من النوع الثاني. 
+ 
+6. Complications — المضاعفات 
+If diabetes is untreated or poorly controlled, it may lead to acute and chronic 
+complications. 
+إذا لم يُعالج السكري أو لم يُضبط جيدًا فقد يؤدي إلى  مضاعفات حادة ومزمنة.  
+ 
+Acute (Short-term) Complications: 
+المضاعفات الحادة: 
+• Diabetic Ketoacidosis (DKA): Acid build-up due to lack of insulin. → الحماض
+الكيتوني السكري  
+• Hypoglycemia: Low blood sugar from excess insulin or skipped meals. → انخفاض
+السكر في الدم 
+• Hyperosmolar Hyperglycemic State (HHS): Severe dehydration with very high 
+sugar levels. → حالة فرط سكر الدم مفرط الأسمولية 
+ 
+Chronic (Long-term) Complications: 
+المضاعفات المزمنة (طويلة المدى:
+
+1. Cardiovascular Disease: Increases risk of heart attack and stroke due to 
+atherosclerosis. 
+أمراض القلب والأوعية: تزداد مخاطر الجلطات والنوبات القلبية بسبب تصلب الشرايين. 
+2. Diabetic Neuropathy: Nerve damage causing pain, numbness, or tingling, usually 
+in hands and feet. 
+اعتلال الأعصاب السكري: تلف الأعصاب يسبب ألمًا أو تنميلاً في اليدين والقدمين . 
+3. Diabetic Nephropathy: Kidney damage that may lead to kidney failure. 
+اعتلال الكلية السكري: تلف الكلى وقد يؤدي إلى الفشل الكلوي. 
+4. Diabetic Retinopathy: Eye damage that can cause blindness if untreated. 
+اعتلال الشبكية السكري: تلف العين وقد يؤدي إلى العمى إن لم يُعالج. 
+5. Foot Problems: Poor blood flow and nerve damage increase the risk of ulcers 
+and infections; sometimes amputation may be required. 
+مشاكل القدم: ضعف الدورة الدموية وتلف الأعصاب يزيد خطر القرح والالتهابات؛ وقد يتطلب البتر في 
+الحالات الشديدة. 
+6. Other Complications: Skin, mouth, and liver problems, plus higher risk of 
+infections. 
+مضاعفات أخرى: مشاكل جلدية وفموية وكبدية، وزيادة القابلية للعدوى بسبب ضعف المناعة.

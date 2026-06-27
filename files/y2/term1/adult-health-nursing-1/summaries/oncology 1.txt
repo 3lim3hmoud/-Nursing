@@ -1,0 +1,403 @@
+Physiology of Cancer 
+        فسيولوجيا السرطان 
+ 
+    1. Mitosis (الانقسام الخلوي) 
+• Mitosis is the process by which a cell reproduces itself. 
+الانقسام الخلوي هو العملية اللي بتتكاثر فيها الخلية علشان تنتج خلية جديدة. 
+• It is important for growth, repair, and replacement of damaged cells. 
+مهم للنمو، ولإصلاح الخلايا التالفة، وتعويض الخلايا اللي بتتلف أو تموت. 
+ 
+    2. From Normal Cell to Cancer Cell (تحوّل الخلايا الطبيعية إلى سرطانية) 
+• Normal cells can change into cancer cells due to mutation. 
+الخلايا الطبيعية ممكن تتحول لسرطانية بسبب حدوث طفرات في الجينات. 
+• These cells grow abnormally and divide without control. 
+الخلايا دي بتنمو بشكل غير طبيعي وبتنقسم بدون أي سيطرة. 
+• They also lose normal communication with other cells. 
+وكمان بتفقد قدرتها على التواصل الطبيعي مع باقي الخلايا. 
+ 
+    3. Oncology (علم الأورام) 
+• Oncology is the medical branch that studies and treats tumors. 
+علم الأورام هو فرع الطب اللي بيدرس ويعالج الأورام. 
+• Oncology nurses care for patients with cancer. 
+ممرضو الأورام بيقدموا رعاية خاصة لمرضى السرطان.
+
+4. Neoplasm (الورم أو النمو الجديد) 
+• Neoplasm means “new growth” (neo = new, plasia = growth). 
+الورم معناه "نمو جديد" (نيو = جديد، بلازيا = نمو. 
+• It refers to abnormal tissue growth that is not useful to the body. 
+وهو نمو غير طبيعي للأنسجة ومالوش فائدة للجسم. 
+• It causes the formation of a lump or mass. 
+وبيؤدي لتكوين كتلة أو كتلة نسيجية غير طبيعية. 
+ 
+    5. Types of Tumors (أنواع الأورام) 
+A. Benign Tumor (الورم الحميد) 
+• Grows slowly. 
+ينمو ببطء. 
+• Usually covered by a capsule. 
+عادة بيكون مغلف بغلاف. 
+• Does not spread to other parts of the body. 
+ما بينتشرش لأماكن تانية. 
+• Usually harmless. 
+غالبًا غير ضار. 
+B. Malignant Tumor (الورم الخبيث) 
+• Grows quickly and without control. 
+ينمو بسرعة ومن غير سيطرة. 
+• Can spread to other organs (metastasis). 
+ممكن ينتشر لأعضاء تانية (انتشار سرطاني.
+
+• Can be dangerous and may cause death. 
+ممكن يكون خطير ويسبب الوفاة. 
+• Cells are called cancer cells. 
+الخلايا دي بتُعرف باسم خلايا سرطانية. 
+ 
+    6. Comparison Between Benign and Malignant Tumors (الفرق بين الورم الحميد والخبيث) 
+Feature Benign (حميد) Malignant (خبيث) 
+Growth speed Slow – بطيء Fast – سريع جدًا 
+Spread Localized – موضعي Metastasizes – بينتشر 
+Shape Smooth and movable – ناعم ومتحرك Irregular and fixed – غير منتظم وثابت 
+Recurrence Rare – نادرًا ما يرجع Common – ممكن يرجع 
+Resemblance Similar to normal cells – يشبه الطبيعي Very different – مختلف تمامًا 
+ 
+    7. Classification of Tumor Cells (تصنيف خلايا الأورام) 
+• Cancer is classified by tissue type, cell speed, and location. 
+السرطان بيتصنف حسب نوع النسيج، وسرعة نمو الخلايا، والمكان اللي بدأ فيه. 
+• Tumors are named after the organ they start in. 
+الورم بيتسمى على حسب العضو اللي بدأ فيه. 
+• The suffix “-oma” means tumor (e.g., lymphoma, hematoma). 
+اللاحقة-أوما" معناها ورم (زي لمفوما أو هيماتوما).  
+• Carcinoma: starts in epithelial tissue (skin, lungs, stomach, uterus). 
+الكارسينوما: تبدأ في الأنسجة السطحية زي الجلد والرئة والمعدة والرحم.
+
+• Sarcoma: starts in connective tissues (bone, muscles). 
+الساركوما: بتبدأ في الأنسجة الضامة زي العظام والعضلات. 
+• Leukemia & Lymphoma: cancers of the blood system. 
+اللوكيميا واللمفوما: سرطانات بتأثر على الجهاز الدموي. 
+• Melanoma: cancer of skin pigment cells. 
+الميلانوما: نوع من السرطان بيصيب خلايا لون الجلد. 
+ 
+    8. Metastasis (الانتشار السرطاني) 
+• Metastasis means the spread of cancer cells to other parts of the body. 
+الانتشار معناه انتقال الخلايا السرطانية من مكانها الأصلي إلى أماكن أخرى. 
+• Cancer cells travel through blood or lymph vessels. 
+الخلايا السرطانية بتنتقل عن طريق الدم أو الأوعية اللمفاوية. 
+• Primary tumor: the original site of cancer. 
+الورم الأولي: المكان اللي بدأ فيه السرطان. 
+• Secondary tumor: new site where cancer spreads. 
+الورم الثانوي: المكان الجديد اللي انتشر فيه السرطان. 
+• Common sites of spread: lymph nodes, liver, lungs, bones, brain. 
+الأماكن الشائعة للانتشار: الغدد اللمفاوية، الكبد، الرئة، العظام، المخ. 
+      Causative Factors of Cancer (العوامل المسببة للسرطان) 
+ 
+    1. DNA Defects (عيوب في الـDNA) 
+• All cancers result from defects in the DNA of genes. 
+كل أنواع السرطان سببها خلل أو تلف في الحمض النووي DNA).
+
+• These defects may be inherited or caused by mutation. 
+الخلل ممكن يكون وراثي أو ناتج عن طفرة في الجينات. 
+• Mutations cause cells to grow and divide abnormally. 
+الطفرات بتخلي الخلايا تنمو وتنقسم بشكل غير طبيعي. 
+ 
+    2. Body Resistance (مقاومة الجسم) 
+• Each person’s body reacts differently to carcinogens (cancer-causing 
+substances). 
+كل جسم بيختلف في قدرته على مقاومة المواد المسببة للسرطان (المسرطنات. 
+ 
+     Chemical Carcinogens (المواد الكيميائية المسببة للسرطان) 
+• Some pesticides. 
+بعض المبيدات الحشرية. 
+• Chewing tobacco. 
+مضغ التبغ. 
+• Cigarette smoking. 
+تدخين السجائر. 
+• Immunosuppressive drugs. 
+الأدوية التي تضعف جهاز المناعة. 
+    All of these chemicals can damage DNA and cause cancer. 
+كل المواد دي ممكن تضر الحمض النووي وتسبب السرطان. 
+ 
+       Physical Carcinogens (العوامل الفيزيائية المسببة للسرطان)
+
+• Radiation from X-rays, radioactive materials, or sunlight (UV rays). 
+الإشعاع الناتج من الأشعة السينية أو المواد المشعة أو أشعة الشمس فوق البنفسجية ممكن يسبب سرطان
+الجلد. 
+• Viruses like Hepatitis B and C can cause liver cancer. 
+بعض الفيروسات زي فيروس التهاب الكبد B و C ممكن تسبب سرطان الكبد. 
+• Only 5% to 10% of cancers are directly inherited. 
+حوالي5  إلى10٪ فقط من السرطانات بتكون وراثية مباشرة.  
+ 
+       Contributing Factors (العوامل المساعدة على الإصابة بالسرطان) 
+ 
+    1. Intrinsic Factors (العوامل الداخلية) 
+• Age and sex. 
+العمر والجنس من العوامل اللي بتأثر على احتمالية الإصابة. 
+ 
+    2. Stress (الضغط النفسي) 
+• Long-term stress weakens the immune system. 
+الضغط النفسي الطويل بيضعف مناعة الجسم وبيخليه أكثر عرضة للسرطان. 
+ 
+    3. Obesity (السمنة) 
+• Linked to cancers of the breast, colon, liver, and kidney. 
+السمنة مرتبطة بسرطانات الثدي والقولون والكبد والكلى. 
+• Excess body fat affects hormone levels and cell growth. 
+زيادة الدهون بتأثر على الهرمونات ونمو الخلايا.
+
+4. Diet (النظام الغذائي) 
+• High-fat and smoked foods increase cancer risk. 
+الأطعمة الدهنية أو المدخنة بتزيد خطر الإصابة بالسرطان. 
+• Low intake of vitamins A, C, and E increases risk. 
+نقص فيتامينات A و C و E ممكن يضعف مناعة الجسم ويزيد الخطر. 
+ 
+    5. Hormones (الهرمونات) 
+• Long-term use of estrogen may increase cancer risk. 
+استخدام هرمون الإستروجين لفترات طويلة ممكن يسبب أنواع معينة من السرطان. 
+ 
+      Measures to Prevent Cancer (إجراءات الوقاية من السرطان) 
+ 
+     Healthy Lifestyle (نمط حياة صحي) 
+• Eat a varied and balanced diet with regular exercise. 
+كلّ أكل متنوع ومتوازن، ومارس الرياضة بانتظام. 
+• Limit red and processed meat intake. 
+قلل من تناول اللحوم الحمراء والمصنعة. 
+• Eat fatty fish twice a week (omega-3 helps prevent cancer). 
+كل الأسماك الدهنية مرتين أسبوعيًا لأن أوميجا3 تحمي من السرطان.  
+• Avoid smoked and salt-cured foods. 
+تجنب الأطعمة المدخنة أو المملحة بشدة. 
+• Don’t smoke or use tobacco products. 
+امتنع تمامًا عن التدخين أو التبغ.
+
+• Avoid too much sun exposure. 
+ما تتعرضش لأشعة الشمس لفترات طويلة. 
+• Maintain a healthy weight. 
+حافظ على وزن صحي ومناسب. 
+• Do regular self-examinations (like breast self-checks). 
+اعمل فحوصات ذاتية دورية لاكتشاف أي تغييرات مبكرًا . 
+ 
+     Effects of Cancer (آثار السرطان على الجسم) 
+ 
+• Anoxia and necrosis of organs (tissue death). 
+نقص الأكسجين وموت الأنسجة في الأعضاء. 
+• Loss of organ function (like bowel or bladder obstruction). 
+فقدان وظيفة عضو معين (زي انسداد الأمعاء أو المثانة. 
+• Respiratory problems in lung cancer. 
+صعوبات في التنفس في حالة سرطان الرئة. 
+• Liver damage and fluid buildup (ascites). 
+تلف الكبد وتراكم السوائل في البطن (الاستسقاء. 
+• Nerve compression causes movement or sensation problems. 
+ضغط الورم على الأعصاب يسبب مشاكل في الحركة أو الإحساس. 
+• Low white blood cells = weak immunity. 
+انخفاض كريات الدم البيضاء يضعف المناعة. 
+• Low red blood cells and platelets = anemia and bleeding. 
+انخفاض كريات الدم الحمراء والصفائح يسبب أنيميا ونزيف.
+
+• Severe weight loss and fatigue. 
+فقدان وزن سريع وشعور دائم بالتعب. 
+ 
+           Diagnostic Tests (الفحوصات التشخيصية) 
+ 
+    Non-Invasive Tests (غير جراحية) 
+• X-ray. 
+الأشعة السينية. 
+• MRI & CT scan. 
+التصوير بالرنين المغناطيسي والأشعة المقطعية. 
+• Mammography. 
+تصوير الثدي بالأشعة. 
+• Barium enema. 
+حقنة الباريوم (لتصوير الجهاز الهضمي. 
+• Stool tests. 
+تحليل البراز. 
+• Complete blood count (CBC). 
+تحليل صورة الدم الكاملة. 
+ 
+    Invasive Tests (جراحية أو تدخلية) 
+• Endoscopy. 
+المنظار. 
+• Endoscopy with ultrasound. 
+منظار مزود بالموجات فوق الصوتية.
+
+• Biopsy. 
+خزعة (أخذ عينة من النسيج للفحص. 
+• Tumor markers. 
+تحليل علامات الورم في الدم. 
+ 
+         TNM Staging System 
+The TNM system shows how far the cancer has spread in the body. 
+نظام TNM يوضح مدى انتشار السرطان داخل الجسم. 
+T = Tumor (the main cancer size or place). 
+T يعني الورم نفسه (حجمه أو مكانه الأصلي. 
+N = Nodes (if it reached lymph nodes). 
+N يعني الغدد الليمفاوية (لو السرطان وصلها. 
+M = Metastasis (if cancer spread to other parts). 
+M يعني الانتشار (لو انتقل السرطان لأجزاء أخرى من الجسم. 
+ 
+        Common Nursing Problems for Cancer Patients 
+مشاكل التمريض الشائعة عند مرضى السرطان      
+ •Altered nutrition: Patient may lose appetite and weight. 
+اضطراب في التغذية: المريض ممكن يفقد الشهية والوزن. 
+ •Risk of infection: Weak immunity makes infection easy. 
+خطر العدوى: المناعة الضعيفة تسهّل حدوث العدوى. 
+ •Pain: May be sharp or long-lasting. 
+ألم: ممكن يكون حاد أو مزمن.
+
+• Skin problems: Skin becomes weak or sore. 
+مشاكل في الجلد: الجلد ممكن يضعف أو يحصل فيه التهابات. 
+ •Body image change: Patient feels bad about appearance. 
+تغيّر في شكل الجسم: المريض ممكن يحس بعدم الرضا عن شكله. 
+ •Limited movement: Weakness or tiredness reduces activity. 
+قلة الحركة: التعب أو الضعف يقلل من نشاط المريض. 
+ •Diarrhea or dehydration: From treatment effects. 
+إسهال أو جفاف: بسبب العلاج الكيميائي أو الإشعاعي. 
+ •Constipation: Due to less activity or medicine. 
+إمساك: بسبب قلة الحركة أو الأدوية. 
+ •Urine problems: Changes in urination. 
+مشاكل في التبول: تغيّرات في كمية أو شكل البول. 
+ •Fatigue: Always feeling tired. 
+إرهاق دائم: إحساس مستمر بالتعب. 
+ •Lack of drug knowledge: Not knowing how medicine works. 
+قلة معرفة بالأدوية: المريض مش فاهم تأثيرها أو أعراضها الجانبية. 
+ •Low self-care: Needs help with daily needs. 
+قلة العناية الذاتية: المريض محتاج مساعدة في الأمور اليومية. 
+ •Fear of dying: Anxiety and emotional stress. 
+الخوف من الموت: شعور بالقلق والتوتر النفسي. 
+ 
+     Cancer Treatment 
+علاج السرطان يشمل الطرق التالية
+
+• Surgery: Removing the tumor by operation. 
+الجراحة: إزالة الورم عن طريق عملية. 
+ •Radiation therapy: Using radiation to kill cancer cells. 
+العلاج الإشعاعي: تدمير الخلايا السرطانية بالأشعة. 
+ •Chemotherapy: Using strong drugs to stop cancer growth. 
+العلاج الكيميائي: استخدام أدوية قوية لتوقّف نمو السرطان. 
+ •Hormone therapy: Slows cancer that depends on hormones. 
+العلاج الهرموني: يبطئ السرطان الذي يعتمد على الهرمونات. 
+ •Hyperthermia: Using high heat to damage cancer cells. 
+العلاج بالحرارة: استخدام الحرارة العالية لقتل الخلايا السرطانية. 
+ •Acupuncture: To relieve pain and stress. 
+الوخز بالإبر: لتخفيف الألم والقلق. 
+ •Gene therapy: Fixing or adding genes to stop cancer. 
+العلاج الجيني: تصليح أو إضافة جينات لتوقف السرطان. 
+ •Bone marrow / Stem cell transplant: Replacing damaged cells. 
+زرع نخاع العظم أو الخلايا الجذعية: استبدال الخلايا التالفة بخلايا جديدة. 
+ 
+      Surgery 
+Surgery removes cancer completely when possible. 
+الجراحة تزيل الورم بالكامل إذا أمكن. 
+Types of Surgeries / أنواع الجراحات: 
+ •Diagnostic surgery: Example: biopsy to check if it’s cancer. 
+الجراحة التشخيصية: زي أخذ عينة لمعرفة إذا الورم سرطاني.
+
+• Curative surgery: Removes all cancer tissue. 
+الجراحة العلاجية: إزالة الورم والأنسجة المصابة كلها. 
+ •Prophylactic surgery: Removes tissues before cancer starts. 
+الجراحة الوقائية: إزالة أنسجة ممكن تصاب بالسرطان مستقبلاً. 
+ •Palliative surgery: Reduces pain or relieves blockage. 
+الجراحة التخفيفية: لتخفيف الألم أو إزالة انسداد. 
+ 
+     Radiation Therapy 
+Radiation kills cancer cells without hurting healthy ones. 
+العلاج الإشعاعي يقتل الخلايا السرطانية دون إتلاف السليمة. 
+Types of Radiation / أنواع الإشعاع: 
+1. Electromagnetic radiation: Like UV and infrared rays. 
+إشعاع كهرومغناطيسي مثل الأشعة فوق البنفسجية وتحت الحمراء. 
+2. Particulate radiation: From alpha and beta particles. 
+إشعاع جسيمي ناتج من جسيمات ألفا وبيتا. 
+3. Atomic/nuclear radiation: From radioactive materials. 
+إشعاع ذري أو نووي ناتج من عناصر مشعة. 
+ 
+     Effects of Radiation (آثار العلاج الإشعاعي) 
+Local Effects (الآثار الموضعية:) 
+ •Radiation sickness: causes nausea, vomiting, and tiredness. 
+مرض الإشعاع يسبب غثيان، قيء، وإرهاق. 
+ •Radiation cachexia: loss of appetite, weight loss, and anemia. 
+الهزال الإشعاعي يسبب فقدان الشهية، ونقص الوزن، وفقر الدم.
+
+• Anemia and leucopenia: fewer red and white blood cells. 
+يؤدي إلى نقص كريات الدم الحمراء والبيضاء. 
+ 
+Systemic Effects (الآثار العامة على الجسم:) 
+ •Skin: redness, swelling, ulcers, and hair loss. 
+الجلد: احمرار، تورم، تقرحات، وتساقط الشعر. 
+ •Bones and cartilage: bone damage or fractures. 
+العظام والغضاريف: تلف بالعظام أو كسور. 
+ •Digestive system (GIT): ulcers, bleeding, and poor digestion. 
+الجهاز الهضمي: قرح، نزيف، وضعف في الهضم. 
+ •Kidneys: inflammation and kidney failure. 
+الكلى: التهابات أو فشل كلوي مزمن. 
+ •Reproductive organs: infertility in males or females. 
+الأعضاء التناسلية: قد تسبب العقم للرجال أو النساء. 
+ •Bone marrow: leads to anemia and weak immunity. 
+نخاع العظم: يسبب فقر دم وضعف مناعة. 
+ 
+            Nursing Management in Radiation Therapy 
+إدارة التمريض أثناء العلاج الإشعاعي      
+Protection from radiation (الوقاية من الإشعاع:) 
+Limit time near the patient. 
+قلّل وقت التواجد بجانب المريض. 
+Use protective shields. 
+استخدم أدوات وقاية مثل الحواجز الواقية.
+
+• Stay more than 1 meter away unless necessary. 
+ابقَ على بعد متر واحد على الأقل إلا للضرورة. 
+Report if an implant moves out of place. 
+أخبر الطبيب لو تحركت مادة الإشعاع المزروعة. 
+Do not throw away dressings or linens. 
+لا تتخلص من الشاش أو الأغطية لأنها قد تكون مشعة. 
+After discharge, a radiologist checks the room. 
+بعد خروج المريض، الطبيب الإشعاعي يفحص الغرفة بجهاز خاص. 
+ 
+Instructions for the patient (إرشادات للمريض:) 
+Protect your skin from the sun. 
+احمِ جلدك من أشعة الشمس. 
+Get enough rest and sleep. 
+احصل على قسط كافٍ من الراحة والنوم. 
+ 
+     Common Side Effects of Radiation (الآثار الجانبية حسب المكان:) 
+ •Head and neck: mouth sores, sore throat, nausea. 
+الرأس والرقبة: تقرحات بالفم، التهاب بالحلق، غثيان. 
+ •Chest, abdomen, pelvis: nausea, vomiting, diarrhea, or lung inflammation. 
+الصدر والبطن والحوض: غثيان، قيء، إسهال، أو التهاب بالرئة. 
+ 
+        Chemotherapy (العلاج الكيميائي) 
+Chemotherapy uses strong drugs to stop cancer cells from growing. 
+العلاج الكيميائي يستخدم أدوية قوية لوقف نمو الخلايا السرطانية.
+
+It works by damaging the cancer cells’ DNA or stopping them from dividing. 
+يعمل عن طريق تدمير الحمض النووي للخلايا السرطانية أو منعها من الانقسام. 
+ 
+Goals of Chemotherapy (أهداف العلاج الكيميائي:) 
+ •Cure: remove all cancer cells. 
+الشفاء التام: القضاء على جميع الخلايا السرطانية. 
+ •Control: keep cancer from spreading. 
+التحكم: منع السرطان من الانتشار. 
+ •Palliation: relieve pain and improve comfort. 
+التخفيف: تقليل الألم وتحسين راحة المريض. 
+ 
+Side Effects of Chemotherapy (الآثار الجانبية:) 
+Red blood cells → anemia (fatigue, weakness). 
+نقص كريات الدم الحمراء → فقر دم وإرهاق. 
+White blood cells → weak immunity. 
+نقص كريات الدم البيضاء → ضعف المناعة. 
+Platelets → easy bleeding. 
+نقص الصفائح الدموية → سهولة حدوث نزيف. 
+Nausea and vomiting. 
+غثيان وقيء. 
+Diarrhea. 
+إسهال. 
+Hair loss (alopecia). 
+تساقط الشعر.
+
+Other Therapies (علاجات أخرى) 
+ •Hormonal therapy: slows cancers that depend on hormones (like breast cancer). 
+العلاج الهرموني: يبطئ السرطانات التي تعتمد على الهرمونات مثل سرطان الثدي. 
+ •Gene therapy: fixes or adds new genes to correct cell function. 
+العلاج الجيني: يصلح أو يضيف جينات جديدة لتصحيح عمل الخلايا. 
+ •Bone marrow & stem cell transplant: replaces damaged bone marrow. 
+زرع نخاع العظم والخلايا الجذعية: يستبدل النخاع المتضرر بخلايا سليمة. 
+Types of Transplants (أنواع الزرع:) 
+1. Allogeneic: from another donor. 
+من متبرع آخر. 
+2. Syngeneic: from an identical twin. 
+من توأم متماثل. 
+3. Autologous: from the same patient. 
+من المريض نفسه. 
+ •Acupuncture: helps reduce pain, stress, nausea, and other symptoms. 
+الوخز بالإبر: يخفف الألم، التوتر، الغثيان، وأعراض العلاج الأخرى.

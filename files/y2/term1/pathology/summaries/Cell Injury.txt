@@ -1,0 +1,154 @@
+Cell Injury (إصابة الخلايا) 
+MSc, MD 
+ 
+ILOs (Intended Learning Outcomes) 
+1 . Identify causes and mechanisms of cell injury. 
+ يتعرف على أسباب وآليات إصابة الخلايا. 
+2 . Know different types of cell injury. 
+ يتعرف على الأنواع المختلفة لإصابة الخلايا. 
+3 . Identify gross and microscopic picture of reversible cell injury. 
+ يحدد المظاهر الكبيرة والمجهرية للإصابة العكسية (القابلة للرجوع. 
+4 . Identify types of irreversible cell injury. 
+ يتعرف على أنواع الإصابة غير القابلة للرجوع. 
+5 . Identify gross and microscopic picture of irreversible cell injury. 
+ يحدد المظاهر الكبيرة والمجهرية للإصابة غير القابلة للرجوع. 
+6 . Determine morphological features of necrosis. 
+ يحدد الخصائص المورفولوجية (الشكلية) للنخر. 
+ 
+Causes of Cell Injury (أسباب إصابة الخلايا) 
+1. Hypoxia (نقص الأكسجين:) 
+ Decrease oxygen supply due to: 
+ نقص إمداد الأكسجين بسبب: 
+ a. Ischemia (نقص التروية )– arterial occlusion, atherosclerosis. 
+  انسداد الشريان أو تصلب الشرايين. 
+ b. Inadequate oxygenation – cardiac/pulmonary disease. 
+  نقص الأكسجة بسبب أمراض القلب أو الرئة.
+
+c. Decreased oxygen-carrying capacity – anemia, CO poisoning. 
+  انخفاض قدرة الدم على حمل الأكسجين مثل الأنيميا أو تسمم أول أكسيد الكربون. 
+2 . Infectious agents: viruses, bacteria, fungi, parasites. 
+ العوامل المعدية مثل الفيروسات، البكتيريا، الفطريات، والطفيليات. 
+3 . Physical agents: trauma, heat, cold, irradiation, electric shock. 
+ العوامل الفيزيائية مثل الصدمات، الحرارة، البرودة، الإشعاع، والصدمة الكهربائية. 
+4 . Chemical agents & drugs: acids, alkalis, poisons, certain drugs. 
+ العوامل الكيميائية والأدوية مثل الأحماض، القلويات، السموم وبعض الأدوية العلاجية. 
+5 . Immunological reactions: autoimmune diseases. 
+ التفاعلات المناعية مثل أمراض المناعة الذاتية. 
+6 . Nutritional disturbances. 
+ الاضطرابات الغذائية. 
+7 . Genetic & enzymatic disorders. 
+ الاضطرابات الوراثية والإنزيمية. 
+ 
+Mechanisms of Cell Injury (آليات إصابة الخلايا) 
+1 . ATP depletion: mainly caused by hypoxia. 
+ نقص الطاقة الخلوية ATP) ويحدث أساسًا بسبب نقص الأكسجين. 
+2 . Defects in membrane permeability. 
+ خلل في نفاذية الغشاء الخلوي. 
+3. Formation of oxygen-derived free radicals: 
+ تكوين الجذور الحرة للأكسجين مثلsuperoxide, hydrogen peroxide, hydroxyl radicals. 
+ (سوبر أكسيد، بيروكسيد الهيدروجين، الجذر الهيدروكسيل.) 
+4 . Increased intracellular calcium: 
+ زيادة الكالسيوم داخل الخلية.
+
+Sources: influx from membrane or release from mitochondria/ER. 
+ مصدر الكالسيوم: دخول من الغشاء أو إطلاق من الميتوكوندريا والشبكة الإندوبلازمية. 
+ This activates enzymes: 
+ يزيد من نشاط إنزيمات: 
+ A. Phospholipases → degrade membrane lipids. 
+  تحطم الدهون المكونة لغشاء الخلية. 
+ B. Proteases → break down membrane & cytoskeleton proteins. 
+  تحطم بروتينات الغشاء والهيكل الخلوي. 
+ C. Endonucleases → cause DNA fragmentation. 
+  تسبب تفتت الحمض النووي DNA. 
+ D. ATPases → accelerate ATP depletion. 
+  تزيد من استهلاك الطاقة الخلوية. 
+ 
+ATP Depletion Pathogenesis (آلية نقص الطاقة) 
+• Injurious agent (hypoxia/ischemia) → يقلل الأكسدة في الميتوكوندريا. 
+ العوامل الضارة (نقص الأكسجين أو التروية) تقلل عملية الفسفرة في الميتوكوندريا . 
+• ATP → Na⁺/K⁺ pump fails → Na⁺ & H₂O enter cell → swelling. 
+ نقص الـ ATP يؤدي إلى فشل مضخة الصوديوم والبوتاسيوم، فيدخل الماء والصوديوم إلى الخلية
+فتنتفخ. 
+ 
+Results of Cell Injury (نتائج إصابة الخلايا) 
+• Type of injured cells. 
+ نوع الخلايا المصابة. 
+• Duration of injury. 
+ مدة استمرار الإصابة.
+
+• Severity of irritant. 
+ شدة العامل المسبب. 
+ 
+I) Reversible Cell Injury (الإصابة القابلة للرجوع) 
+1. Cloudy Swelling (التورم الغائم) 
+Definition: 
+Pathological accumulation of water in cells. 
+ تراكم مرضي للماء داخل الخلايا. 
+It is a reversible cell injury showing cell swelling and granular cytoplasm. 
+ إصابة قابلة للعكس تُظهر تورم الخلايا وتحبب السيتوبلازم. 
+Gross Picture (المظهر العياني:) 
+Liver, kidney, heart → enlarged, pale, tense capsule, bulging section. 
+ في الكبد والكلى والقلب: يكون العضو متضخم، شاحب، غلافه مشدود، والمقطع الداخلي بارز. 
+Microscopic Picture (المظهر المجهري:) 
+Cells swollen, cytoplasm granular, nucleus normal, capillaries compressed. 
+ الخلايا منتفخة، السيتوبلازم حبيبي، النواة طبيعية، الشعيرات مضغوطة. 
+Fate (المصير:) 
+If injury stops → reversible (returns to normal). 
+ إذا توقفت الإصابة → الخلية تعود لطبيعتها. 
+If continues → hydropic swelling. 
+ إذا استمرت → يحدث تورم مائي. 
+ 
+2. Fatty Change (التغير الدهني) 
+Definition: 
+Abnormal accumulation of fat in parenchymal cells. 
+ تراكم غير طبيعي للدهون في خلايا الأعضاء.
+
+Mechanism (الآلية:) 
+Occurs due to: 
+ يحدث بسبب: 
+a) Excess fat reaching liver (excess diet or starvation). 
+ زيادة الدهون الواصلة للكبد نتيجة الأكل الزائد أو الجوع. 
+b) Liver disease (e.g. viral hepatitis) → impaired fat metabolism. 
+ أمراض الكبد مثل الالتهاب الكبدي الفيروسي تقلل قدرة الكبد على تمثيل الدهون. 
+c) Lack of lipotropic factors (choline, methionine). 
+ نقص العوامل المساعدة على نقل الدهون مثل الكولين والمثيونين. 
+Gross Picture: 
+Liver, kidney, heart → enlarged, yellow, heavy, tense capsule, bulging cut section. 
+ الكبد والكلى والقلب يكونوا متضخمين، ثقيلين، صفراء اللون، وغلافهم مشدود. 
+Signet ring appearance (fat pushes nucleus to side). 
+ شكل "الخاتم" حيث تُزاح النواة إلى طرف الخلية بفعل الدهون. 
+ 
+II) Irreversible Cell Injury (الإصابة غير القابلة للرجوع) 
+Necrosis (النخر) 
+Definition: 
+Local death of cells or tissue in a living body, either directly or after reversible injury. 
+ موت موضعي لمجموعة من الخلايا أو الأنسجة داخل الجسم الحي، يحدث مباشرة أو بعد إصابة قابلة للعكس. 
+Causes: 
+No physiological cause – only pathological. 
+ لا يوجد سبب فسيولوجي، كلها أسباب مرضية. 
+Morphologic (Microscopic) Changes (التغيرات الشكلية المجهرية:) 
+Nuclear Changes (تغيرات النواة:)
+
+• Pyknosis: nucleus shrinks, chromatin dense, basophilia ↑. 
+ انكماش النواة وتكاثف الكروماتين وازدياد تلونها بالصبغة. 
+• Karyorrhexis: nucleus fragments into small pieces. 
+ تفتت النواة إلى قطع صغيرة. 
+• Karyolysis: nucleus dissolves, no stain (chromatin hydrolysis). 
+ ذوبان النواة واختفاء تلونها نتيجة تحلل الكروماتين. 
+Cytoplasmic Changes (تغيرات السيتوبلازم:) 
+• Cells swollen (cytomegaly). 
+ الخلايا منتفخة. 
+• Cytoplasmic eosinophilia ↑ due to loss of RNA/protein denaturation. 
+ ازدياد تلون السيتوبلازم بالأحمر بسبب فقدان RNA وتخثر البروتينات. 
+• Glassy homogeneous appearance due to loss of glycogen. 
+ مظهر زجاجي متجانس نتيجة فقدان الجليكوجين. 
+• Indistinct cell membrane. 
+ غشاء الخلية غير واضح. 
+• Ca²⁺ deposition. 
+ ترسب الكالسيوم. 
+Architectural Changes (التغيرات التركيبية:) 
+Eosinophilic, homogenous, structureless tissue. 
+ الأنسجة تصبح متجانسة، وردية، وفاقدة للتركيب الطبيعي. 
+Gross Picture (المظهر العياني:) 
+Opaque, white/yellow area surrounded by red inflamed zone. 
+ منطقة بيضاء أو صفراء مع منطقة حمراء حولها نتيجة الالتهاب.

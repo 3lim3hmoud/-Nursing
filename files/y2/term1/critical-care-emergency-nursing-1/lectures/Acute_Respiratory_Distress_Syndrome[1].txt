@@ -1,0 +1,229 @@
+Acute Respiratory Distress 
+Syndrome
+Prepared by 
+Assist professor Dr/Afaf Mohamed Mansour
+
+outline
+•Definition of ARDS
+•Causes and risk factors for ARDS
+•Pathophysiology
+•Clinical diagnosis
+•Medical management 
+•Nursing managment
+
+Definition of ARDS:
+Acute respiratory distress syndrome (ARDS)
+is a life-threatening condition that occurs
+when there is severe fluid buildup in both
+lungs. The fluid buildup prevents the lungs
+from working properly which inhibit the
+transfer of oxygen from air into the body and
+carbon dioxide out of the body into the air.
+
+Causes and risk factors for ARDS:
+Lung injury leading to ARDS can 
+occur through
+❑A direct injury to the lungs
+❑ Indirectly when a person is very 
+sick or has a serious bodily injury.
+
+Direct Lung Injury
+A direct injury to the lungs may result from breathing in 
+harmful substances or an infection in the lungs. include: 
+• Severe viral , bacterial pneumonia and near 
+drowning. 
+• Coronavirus disease 2019 (COVID-19).
+• Breathing in or aspiration of gastric contents. 
+• Breathing in harmful fumes or smoke and toxic 
+inhalations.
+
+Direct Lung Injury
+• A severe blow or injury to the 
+chest from trauma (such as a car 
+accident) or other accidents that 
+causes bruising of the lungs.
+
+Indirect Lung Injury 
+Most cases of ARDS happen in people who are very ill or who have been in a 
+major accident. 
+➢Severe injury or trauma with shock from a car crash, fire, or other cause.
+➢Severe and widespread bacterial infection in the body (sepsis) 
+➢Severe bleeding requiring blood transfusions 
+➢Drug reaction and drug overdose.
+
+Indirect Lung Injury
+• Acute pancreatitis.
+• Systemic illnesses
+• Long bone fracture. 
+• General risk factors including advanced age, female sex (noted 
+only in trauma cases), cigarette smoking, and alcohol use and any 
+severe illness can increase the risk of development of ARDS.
+
+Pathophysiology
+• Acute respiratory distress syndrome (ARDS) is associated with 
+diffuse alveolar damage (DAD) and lung capillary endothelial 
+injury. DAD is characterized by a diffuse inflammation of lung 
+parenchyma. 
+usually results in an initial release of cytokines and other inflammatory 
+mediators, secreted by local epithelial and endothelial cells
+
+Pathophysiology
+• Neutrophils and some T-lymphocytes quickly 
+migrate into the inflamed lung parynchema
+and contribute in the amplification of the 
+phenomenon.
+• Typical histological presentation involves 
+diffuse alveolar damage and hyaline
+membrane formation in alveolar walls.
+
+Pathophysiology
+✓ The early phase is described as being exudative, 
+✓ The later phase is fibroproliferative in character. 
+• Early ARDS is characterized by an increase in the 
+permeability of the alveolar -capillary barrier leading to an 
+influx of fluid into the alveoli because of Inflammation alone, 
+as in sepsis, causes endothelial dysfunction , fluid extravasation 
+from the capillaries and impaired drainage of fluid from the 
+lungs.
+
+Pathophysiology
+• In a secondary phase , endothelial dysfunction 
+causes cells and inflammatory exudate to enter 
+the alveoli. This pulmonary edema increases the 
+thickness of the alveolo -capillary space, 
+increasing the distance the oxygen must diffuse 
+to reach blood. This impairs gas exchange 
+leading to hypoxia, increases the work of 
+breathing, eventually induces fibrosis of the 
+airspace.
+
+Clinical diagnosis
+❖History
+❖Physical examination:
+❖A Plain chest x ray
+❖Blood tests
+
+Physical examination:
+Include the major signs and symptoms of 
+acute respiratory distress syndrome (ARDS) 
+which are: 
+• Shortness of breath
+• Fast, labored breathing
+
+Physical examination:
+• Tachypnea, tachycardia, and the need for high inspired oxygen 
+concentrations to maintain oxygen saturation. 
+• Because acute respiratory distress syndrome (ARDS) often occurs because of 
+sepsis, the patient may be febrile or hypothermic associated with 
+hypotension and peripheral vasoconstriction with cold extremities may be 
+present. 
+• Cyanosis of the lips , nail beds and bluish skin color (due to a low level of 
+oxygen in the blood).
+
+Clinical diagnosis
+• A Plain chest x ray shows fluid in the air sacs of 
+both lungs and bilateral alveolar infiltrates. 
+• Because cardiogenic pulmonary edema must be 
+distinguished from ARDS, carefully look for signs of 
+congestive heart failure or intravascular volume 
+overload, including jugular venous distension, 
+cardiac murmurs and gallops, hepatomegaly, and 
+edema.
+
+Blood tests
+• (ABG) Show a low level of oxygen in the blood
+• Carefully examine sites of intravascular lines, surgical wounds, drain sites, 
+and bed sores for evidence of infection. 
+• Check for subcutaneous air, a manifestation of infection or barotrauma.
+
+Complications of ARDS:
+• Bacterial infections The lungs or other parts of the body
+may become infected. These infections are usually
+treated with antibiotics after a culture and sensitivity test
+to detect the exact kind of bacteria is causing the
+infection
+
+Air leaks.
+▪ Leaks of air through holes in the lungs are caused by pressure from the
+breathing machine that is needed to be sure the patient gets enough air, and
+from the very stiff lungs.
+▪ Air from the injured lungs may enter the pleura (the space between the lungs
+and the lining around the lungs) and cause a pneumothorax (collapsed
+lung). Treatment using a chest tube and suction to remove the air and help the
+lungs reinflate. Air may also enter the space between the membranes that line the
+abdomen (pneumoperitoneum) or the soft tissue under the skin (subcutaneous
+emphysema). These are not usually treated.
+
+Other complications to be considered are: 
+• Pulmonary:
+• Barotrauma (volutrauma)
+▪ Pulmonary embolism (PE)
+▪ Pulmonary fibrosis
+▪ Ventilator-associated pneumonia (VAP)
+• Gastrointestinal:
+• Hemorrhage (ulcer) - Dysmotility
+• Pneumoperitoneum - Bacterial translocation.
+
+Other complications to be considered are: 
+• Cardiac: arrhythmias, myocardial dysfunction.
+• Renal: acute renal failure (ARF), positive fluid balance.
+• Mechanical: vascular injury, pneumothorax (by placing pulmonary artery catheter),
+tracheal injury/stenosis (result of intubation and/or irritation by endotracheal tube.
+• Nutritional: malnutrition (catabolic state), electrolyte deficiency.
+
+Medical management 
+• Bed rest
+• Endotracheal intubation.
+• Mechanical ventilation with positive end-expiratory pressure (PEEP) or continuous
+positive airway pressure (CPAP).
+• Administer anesthetic to ease comfort during insertion of endotracheal tube:propofol
+• Administer neuromuscular blocking agent—used when patients are on mechanical
+ventilation to avoid patient working against the action of the ventilator. These drugs allow
+respiratory muscles to rest: e.g. pancuronium, vecuronium
+•
+
+Medical management 
+• Administer diuretics to help decrease excess fluid in lungs: furosemide, ethacrynic
+acid, & bumetanide
+• Administer H2 blocker or proton pump inhibitor to decrease gastric acid.
+• This will decrease likelihood of a stress ulcer in the stomach or aspiration of gastric
+acid into the lung: e.g. ranitidine, famotidine, nizatidine, omeprazole
+• Administer anticoagulant—clotting may have been causative in disease; immobility
+contributory to clot formation: • heparin
+
+Medical management 
+• Administer analgesic for comfort and decrease myocardial oxygen
+demand: morphine
+• Administer steroids to decrease inflammatory response in the lung
+tissue: hydrocortisone, methylprednisolone
+• Administer exogenous surfactant: beractant
+• Administer antibiotics for respiratory or systemic infections. Ideally
+selected based on results of culture and sensitivity (C&S) of sputum.
+
+Nursing management
+• Monitor WBC count:
+o Elevation of WBC with infection, inflammation.
+o Decrease in WBC in a patient who is immune-compromised or who
+has a viral infection.
+• Monitor hemoglobin (Hgb) and hematocrit (Hct) for anemias.
+• Monitor PT, PTT, and INR for coagulation abnormalities; monitor
+heparin dosing.
+
+Nursing management 
+• Record intake and output of fluid:
+• Monitor for signs of renal insufficiency or failure (decrease in urinary output less
+than 30 ml/h) and monitor BUN and Creatinine.
+• Monitor for possible fluid overload—more fluid going in than coming out. Patient
+may end up in heart failure, compounding the fluid building up in the lungs.
+• Weight the patient daily—inability to handle excess fluids, causing third spacing
+of fluids into interstitial spaces, increasing weight and causing edema.
+
+Nursing management 
+• Change position every 2 hours to prevent pressure build-up, causing skin
+breakdown.
+• Avoid overexerting the patient during treatment—patient will tire easily and
+will have problems with increased oxygen demands. Also provide rest
+periods during activities.
+• Explain to the patient : The importance of doing coughing and deep-
+breathing exercises—after coming off the ventilator the patient needs to
+move adequate air in and out of the lungs. Coughing helps to rid

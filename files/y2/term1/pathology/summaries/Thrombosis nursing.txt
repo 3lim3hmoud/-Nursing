@@ -1,0 +1,133 @@
+HEMODYNAMIC DISTURBANCES 
+ 
+I. Ischemia 
+Ischemia is defined as a reduction of arterial blood supply to a tissue. 
+الإسـكيميا تُعرَّف بأنها نقص في الإمداد الشرياني للدم إلى نسيج معيّن. 
+ 
+Acute ischemia is sudden and complete. 
+الإسـكيميا الحادة تكون مفاجئة وكاملة. 
+Chronic ischemia is gradual and incomplete. 
+الإسـكيميا المزمنة تحدث تدريجيًا وتكون غير كاملة. 
+ 
+Effects of ischemia depend on collateral circulation. 
+تأثيرات الإسـكيميا تعتمد على وجود أو غياب الأوعية الجانبية collaterals). 
+With efficient collaterals → minimal or no effects. 
+عند وجود تروية جانبية جيدة → لا يحدث تأثير أو يكون بسيطًا جدًا. 
+With poor collaterals → ischemic necrosis (infarction), significant effects, effort pain, or 
+patchy damage. 
+عند غياب التروية الجانبية → يحدث نخر إسكيـمي (احتشاء)، وتأثيرات شديدة، وألم مع الجهد، أو تلف
+موضعي. 
+ 
+II. THROMBOSIS 
+Thrombosis is the formation of a thrombus.
+
+التخثر هو عملية تكوين جلطة Thrombus). 
+A thrombus is a compact mass of blood elements formed inside the cardiovascular 
+system during life. 
+الجلطة هي كتلة مدمجة من مكوّنات الدم تتكون داخل الجهاز القلبي الوعائي أثناء الحياة. 
+ 
+Virchow’s Triad – Causes of Thrombosis 
+ 
+1. Endothelial Cell Injury 
+١ .إصابة الخلايا البطانية 
+Caused by trauma, inflammation, or atherosclerosis. 
+تحدث بسبب إصابة، التهاب، أو تصلّب الشرايين. 
+Dysfunctional endothelium produces more procoagulants and fewer anticoagulants → 
+thrombosis. 
+الخلايا البطانية التالفة تنتج عوامل تزيد التخثر وتقلل العوامل المضادة → يؤدي لحدوث جلطة. 
+Process: Subendothelial exposure → platelet adhesion → fibrin deposition → trapping 
+RBCs/WBCs → turbulence → layered thrombus. 
+العملية: انكشاف تحت البطانة → التصاق الصفائح → ترسب الفايبرين → احتجاز كرات الدم → اضطراب
+جريان الدم → تكوّن جلطة طبقية. 
+ 
+2. Abnormal Blood Flow (Stasis or Turbulence) 
+٢ .اضطراب جريان الدم (ركود أو اضطراب). 
+Turbulence causes endothelial injury and enhances procoagulants. 
+الاضطراب يسبب إصابة بطانية ويزيد العوامل المؤيدة للتخثر.
+
+Stasis (due to immobility) promotes thrombosis by preventing dilution of coagulation 
+factors. 
+الركود (بسبب قلة الحركة) يعزز الجلطة لأنه يمنع تخفيف عوامل التخثر. 
+ 
+3. Hypercoagulability (Genetic or Acquired) 
+٣ .زيادة القابلية للتخثر (وراثية أو مكتسبة). 
+Genetic causes include Factor V Leiden, Prothrombin mutation, sticky platelet 
+syndrome, ↑ Factor VIII/IX/XI. 
+الأسباب الوراثية: طفرة عامل V Leiden، طفرة البروثرومبين، متلازمة الصفائح اللزجة، ارتفاع عوامل التخثر 
+VIII و IX و XI. 
+Acquired causes: immobilization, surgery, fractures, MI, cancer, DIC, HIT, 
+antiphospholipid syndrome. 
+الأسباب المكتسبة: الراحة الطويلة، الجراحة، الكسور، الجلطة القلبية، السرطان، الـ DIC، نقص الصفائح الناتج
+عن الهيبارين، متلازمة الأجسام المضادة للفوسفوليبيد. 
+ 
+Classification of Thrombi 
+ 
+A. According to Site 
+Arterial thrombi: seen in atherosclerosis, aneurysm, arteritis. 
+جلطات الشرايين: موجودة في تصلب الشرايين، التمدد الوعائي، التهابات الشرايين. 
+Cardiac thrombi: valvular vegetations, atrial thrombi (e.g., Mitral Stenosis), ventricular 
+thrombi. 
+جلطات القلب: زوائد على الصمامات، جلطات بالأذين (مثل تضيق الميترال)، جلطات بالبطين.
+
+Venous thrombi: Phlebothrombosis (non-inflamed veins), Thrombophlebitis (inflamed 
+veins). 
+جلطات الأوردة: تخثر الأوردة غير الملتهبة، أو الأوردة الملتهبة Thrombophlebitis). 
+Capillary thrombi: rare, seen in frostbite. 
+جلطات الشعيرات: نادرة وتظهر في قضمة الصقيع. 
+ 
+B. According to Color 
+Pale thrombus → Platelets > fibrin. 
+جلطة باهتة → الصفائح أكثر من الفايبرين. 
+Red thrombus → Fibrin > platelets (common in venous stasis). 
+جلطة حمراء → الفايبرين أكثر (تظهر في ركود الدم الوريدي. 
+Mixed thrombus → alternating layers (Lines of Zahn). 
+جلطة مختلطة → طبقات متبادلة (خطوط زان. 
+ 
+C. According to Bacteria 
+Aseptic (sterile) thrombus: no bacteria. 
+جلطة عقيمة: بدون بكتيريا. 
+Septic thrombus: contains bacteria. 
+جلطة إنتانية: تحتوي بكتيريا. 
+ 
+D. Occlusive vs Non-Occlusive 
+Occlusive: blocks the entire lumen.
+
+انسدادية: تسد اللمعة بالكامل. 
+Non-occlusive: partial blockage. 
+غير انسدادية: انسداد جزئي. 
+ 
+Fate of Thrombus 
+ 
+A. Septic thrombus → fragments → septic emboli → pyemic abscess. 
+الجلطة الإنتانية → تتفتت → تسبب صمّات إنتانية → خراج تقيّحي. 
+ 
+B. Aseptic thrombus may undergo: 
+1. Lysis – thrombus dissolves and blood flow returns. 
+١ .التحلل: الجلطة تذوب ويعود جريان الدم. 
+2. Organization – granulation tissue invades the thrombus. 
+٢ .التنظيم: نسيج حبيبي يغزو الجلطة. 
+3. Recanalization – new small channels form inside the thrombus. 
+٣ .إعادة القنونة: تتكون قنوات صغيرة تسمح بمرور الدم. 
+4. Embolization – part of the thrombus detaches. 
+٤ .الصمّة: جزء من الجلطة ينفصل وينتقل. 
+5. Calcification. 
+٥ .التكلس. 
+6. Occlusion → artery: ischemia / vein: congestion & edema.
+
+٦ .انسداد: في الشريان → إسـكيميا 
+في الوريد → احتقان + وذمة. 
+7. Infection. 
+٧ .العدوى. 
+ 
+III. EMBOLISM 
+ 
+An embolus is a detached intravascular mass that travels in blood. 
+الصمّة هي كتلة منفصلة داخل الأوعية تنتقل مع الدم. 
+Embolism is the lodgment of an embolus in a blood vessel. 
+الانصمام هو استقرار الصمّة داخل الوعاء الدموي وسدّه. 
+ 
+Difference Between Thrombus and Clot 
+A thrombus forms during life, adherent to vessel wall, layered (Lines of Zahn). 
+الجلطة Thrombus) تتكون أثناء الحياة، ملتصقة بجدار الوعاء، ولها طبقات واضحة. 
+A clot forms after death or outside vessels, not attached, and uniform. 
+الكتلة الدموية Clot) تتكون بعد الموت أو خارج الأوعية، غير ملتصقة، ومتجانسة.

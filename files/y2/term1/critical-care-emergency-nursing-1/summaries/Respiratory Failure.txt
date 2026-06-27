@@ -1,0 +1,193 @@
+Respiratory Failure 
+ 
+1. Introduction and Overview 
+المقدمة ونظرة عامة 
+Respiratory failure, also known as acute lung failure, is the inability of the respiratory 
+system to maintain adequate gas exchange. 
+الفشل التنفسي، المعروف أيضًا بالفشل الرئوي الحاد، هو عدم قدرة الجهاز التنفسي على الحفاظ على تبادل الغازات
+بشكل كاف  . 
+The lecture covers description, classification, etiology, pathophysiology, clinical 
+manifestations, diagnostic tests, and management of acute respiratory failure. 
+تغطي المحاضرة الوصف، التصنيف، المسببات، الفيزيولوجيا المرضية، الأعراض السريرية، الاختبارات
+التشخيصية، وإدارة الفشل التنفسي الحاد. 
+ 
+2. Classification of Respiratory Failure 
+تصنيف الفشل التنفسي 
+2.1 Type I Respiratory Failure (Hypoxemic/Normocapnic): 
+الفشل التنفسي من النوع الأول (نقص الأكسجة/بكربونات طبيعية: 
+Also called oxygenation failure. The body fails to deliver adequate oxygen to arterial 
+blood. 
+يسمى أيضًا فشل التأكسج. يفشل الجسم في إيصال كمية كافية من الأكسجين إلى الدم الشرياني. 
+Characteristic: PaO2 < 60 mmHg with normal PaCO2. 
+الخصائصPaO2 أقل من60  ملم زئبق مع  PaCO2 طبيعي. 
+2.2 Type II Respiratory Failure (Hypoxemic/Hypercapnic): 
+الفشل التنفسي من النوع الثاني (نقص الأكسجة/زيادة ثاني أكسيد الكربون:
+
+Also called ventilatory failure. The body ineffectively eliminates CO2 from arterial 
+blood. 
+يسمى أيضًا فشل التهوية. يفشل الجسم في التخلص من ثاني أكسيد الكربون بشكل فعال من الدم الشرياني. 
+Characteristics: PaO2 < 60 mmHg, PaCO2 > 50 mmHg, pH ≤ 7.30. 
+الخصائصPaO2 أقل من60  ملم زئبق،PaCO2 أكثر من50 ملم زئبق،pH أقل من أو يساوي7.30 . 
+ 
+3. Etiology (Causes) 
+الأسباب 
+3.1 Extra-pulmonary causes: 
+الأسباب خارج الرئة: 
+• Brain: Drug overdose (opioids, sedatives), brain trauma/lesions, postoperative 
+anesthesia depression. 
+الدماغ: جرعة زائدة من الأدوية (أفيونات، مهدئات)، إصابة أو آفات دماغية، كبت بعد التخدير الجراحي. 
+• Spinal cord: Guillain-Barre syndrome, Poliomyelitis, ALS, spinal cord trauma. 
+الحبل الشوكي: متلازمة غيلان باريه، شلل الأطفال، التصلب الجانبي الضموري، إصابة الحبل الشوكي. 
+• Neuromuscular system: Myasthenia Gravis, neuromuscular-blocking agents, 
+organophosphate poisoning, muscular dystrophy. 
+الجهاز العصبي العضلي: الوهن العضلي الوبيل، أدوية حاصرات العضلات، تسمم بالعضويات
+الفوسفورية، ضمور العضلات. 
+• Thorax/Pleura: Massive obesity, chest trauma, pleural effusion, pneumothorax, 
+malignancy. 
+الصدر/الغشاء الجنبي: السمنة المفرطة، إصابة الصدر، انصباب جنبي، استرواح صدر، أورام خبيثة. 
+• Upper airways: Trachea obstruction, epiglottitis. 
+المجاري الهوائية العليا: انسداد القصبة الهوائية، التهاب لسان المزمار.
+
+3.2 Intra-pulmonary causes: 
+الأسباب داخل الرئة: 
+• Lower airways/alveoli: COPD, Asthma, Bronchiolitis, Cystic fibrosis, Pneumonia. 
+المجاري الهوائية السفلى/الحويصلاتCOPD، الربو، التهاب القصيبات، التليف الكيسي، الالتهاب
+الرئوي. 
+• Pulmonary circulation: Pulmonary Emboli, ARDS. 
+الدورة الدموية الرئوية: الانصمام الرئوي، متلازمة الضائقة التنفسية الحادة. 
+• Alveolar-capillary membrane: Inhalation of toxic gases, near-drowning. 
+غشاء الحويصلات والشعيرات: استنشاق غازات سامة، الغرق شبه الكامل. 
+ 
+4. Pathophysiology 
+الفيزيولوجيا المرضية 
+Hypoxemia is the hallmark of acute respiratory failure, resulting from impaired gas 
+exchange. 
+نقص الأكسجة هو العلامة المميزة للفشل التنفسي الحاد، نتيجة ضعف تبادل الغازات. 
+Main Causes of Hypoxemia: 
+الأسباب الرئيسية لنقص الأكسجة: 
+1. Alveolar hypoventilation: Oxygen intake is insufficient for metabolic needs. 
+Associated with hypercapnia, usually from extra-pulmonary disorders. 
+نقص التهوية الحويصلية: كمية الأكسجين غير كافية لاحتياجات الجسم، يرتبط بارتفاع CO2، عادة من
+أسباب خارج الرئة. 
+2. Ventilation/Perfusion (V/Q) Mismatching: Blood flow and ventilation not 
+matched. 
+اختلال التهوية/التروية: عدم تطابق تدفق الدم والتهوية.
+
+• V < Q: Alveoli flooded/collapsed (e.g., pneumonia). 
+V < Q: الحويصلات ممتلئة أو منهارة (مثل الالتهاب الرئوي. 
+• V > Q: Alveoli ventilated but not perfused (e.g., pulmonary embolism). 
+V > Q: الحويصلات مهواة لكن غير مزودة بالدم (مثل الانصمام الرئوي. 
+3. Intrapulmonary shunting: Normal perfusion, but alveolar ventilation lacking. 
+Unoxygenated blood enters arterial system without gas exchange. Due to 
+alveolar collapse (atelectasis) or flooding (pus/fluid). 
+التحويلة داخل الرئة: التروية طبيعية لكن التهوية الحويصلية ناقصة، الدم غير المؤكسج يصل للشرايين
+دون تبادل غازي، بسبب انهيار الحويصلات أو امتلائها بالصديد/السائل.  
+Consequences: Tissue hypoxia, lactic acidosis, multiple organ dysfunction if hypoxia 
+progresses. 
+العواقب: نقص أكسجة الأنسجة، حماض لاكتيكي، فشل متعدد للأعضاء إذا تفاقم نقص الأكسجة. 
+ 
+5. Clinical Manifestations 
+الأعراض السريرية 
+CNS: Restlessness, agitation, confusion. 
+الجهاز العصبي المركزي: قلق، تهيج، ارتباك. 
+Cardiovascular: Tachycardia, dysrhythmias. 
+القلب والأوعية الدموية: تسرع القلب، اضطرابات النظم. 
+Pulmonary: Tachypnea, dyspnea, use of accessory muscles. 
+الجهاز التنفسي: تسرع التنفس، ضيق النفس، استخدام عضلات مساعدة. 
+Renal: Decreased urine output, edema. 
+الكلى: انخفاض إخراج البول، وذمة. 
+Gastro-intestinal: Decreased bowel sounds, nausea, vomiting, anorexia. 
+الجهاز الهضمي: انخفاض أصوات الأمعاء، غثيان، قيء، فقدان الشهية.
+
+Skin: Pallor, cyanosis. 
+الجلد: شحوب، زرقة. 
+ 
+6. Diagnostic Tests 
+الاختبارات التشخيصية 
+ABG analysis: Confirms PaCO2 ≥ 50 mmHg, PaO2 < 60 mmHg, pH < 7.30. 
+تحليل غازات الدم الشرياني: يؤكد PaCO2 ≥ 50 ملم زئبق،PaO2 < 60 ملم زئبق،pH < 7.30. 
+Imaging: Chest X-ray, thoracic ultrasound, CT scan. 
+التصوير: أشعة صدر، تصوير بالأمواج فوق الصوتية للصدر، الأشعة المقطعية. 
+Other tests: Bronchoscopy (for surveillance/specimen retrieval), selected lung function 
+studies. 
+اختبارات أخرى: تنظير قصبي، ودراسات مختارة لوظائف الرئة. 
+ 
+7. Management and Interventions 
+الإدارة والتدخلات 
+Goals: Correct underlying cause, promote gas exchange, correct acidosis, initiate 
+nutrition, prevent complications. 
+الأهداف: تصحيح السبب الأساسي، تعزيز تبادل الغازات، تصحيح الحماض، بدء التغذية، ومنع المضاعفات. 
+7.1 Oxygenation: Maintain SaO2 > 90% using supplemental oxygen or positive airway 
+pressure (invasive/noninvasive). 
+الأكسجة: الحفاظ على SaO2 > 90% باستخدام الأكسجين التكميلي أو ضغط مجرى الهواء الإيجابي (تدخلي/غير
+تدخلي). 
+7.2 Ventilation: pH < 7.25 requires invasive mechanical ventilation (usually volume 
+ventilation in assist/control mode). 
+التهويةpH < 7.25 يتطلب تهوية ميكانيكية تدخلية (عادة تهوية حجمية بوضع المساعدة/التحكم.
+
+7.3 Pharmacology: 
+العلاج الدوائي: 
+• Bronchodilators: B2 agonists, anticholinergics. 
+موسعات الشعب الهوائية: منبهات B2، مضادات الكولين. 
+• Steroids: To reduce inflammation. 
+الستيرويدات: لتقليل الالتهاب. 
+• Sedation/Analgesics: For comfort, reduce work of breathing. 
+المهدئات ومسكنات الألم: للراحة وتقليل جهد التنفس. 
+• Neuromuscular paralysis: In severe cases to facilitate ventilation and reduce 
+oxygen consumption. 
+شلل عضلي: في الحالات الشديدة لتسهيل التهوية وتقليل استهلاك الأكسجين. 
+7.4 Acidosis management: Treat respiratory acidosis with oxygen and ventilation. 
+Sodium bicarbonate only if pH < 7.10 or hemodynamic instability. 
+إدارة الحماض: علاج الحماض التنفسي بالأكسجين والتهوية، بيكربونات الصوديوم فقط إذا كان pH < 7.10 أو
+وجود عدم استقرار ديناميكي دموي. 
+7.5 Nutrition support: Prefer enteral route. Start before 3rd day in well-nourished 
+patients or within 24 hours for malnourished patients. 
+دعم التغذية: تفضيل المسار المعوي. يبدأ قبل اليوم الثالث للمرضى المغذّين جيدًا أو خلال24 ساعة للمرضى
+ناقصي التغذية. 
+ 
+8. Complications 
+المضاعفات 
+Ischemic anoxic encephalopathy, dysrhythmias, venous thromboembolism (VTE). 
+اعتلال دماغي نقصي إقفاري، اضطرابات النظم، الخثار الوريدي العميق.
+
+VTE prevention: Pneumatic compression, heparin. 
+الوقاية من VTE: الضغط الهوائي، الهيبارين. 
+GIT bleeding: Prevented with H2 blockers or PPIs. 
+نزيف الجهاز الهضمي: يُمنع باستخدام مثبطات H2 أو مثبطات مضخة البروتون. 
+Artificial airway or mechanical ventilation complications. 
+مضاعفات الطرق الهوائية الصناعية أو التهوية الميكانيكية. 
+ 
+9. Nursing Care and Diagnoses 
+التمريض والتشخيصات 
+Nursing diagnoses: Impaired Gas Exchange, Ineffective Breathing Pattern, Risk for 
+Aspiration, Imbalanced Nutrition, Risk for Infection. 
+تشخيصات التمريض: اضطراب تبادل الغازات، نمط تنفسي غير فعال، خطر الاستنشاق، تغذية غير متوازنة،
+خطر العدوى. 
+Positioning: 
+الوضعية: 
+• Unilateral lung disease: Healthy lung down. 
+أمراض رئة وحيدة الجانب: الرئة السليمة للأسفل. 
+• Diffuse lung disease: Right lung down. 
+أمراض رئة منتشرة: الرئة اليمنى للأسفل. 
+• Alveolar hypoventilation: Nonrecumbent positions (sitting/semi-sitting). 
+نقص التهوية الحويصلية: أوضاع غير مستلقية (جلوس/نصف جلوس. 
+• Reposition every 2 hours. 
+تغيير الوضعية كل ساعتين. 
+Preventing desaturation: Limit physical activity, hyperoxygenate before suctioning, 
+provide rest between procedures, monitor pulse oximetry.
+
+منع نقص التأكسج: تقليل النشاط البدني، زيادة الأكسجين قبل الشفط، توفير الراحة بين الإجراءات، ومراقبة التأكسج
+النبضي. 
+Secretion clearance: Systemic hydration, humidification, HOB 30-45 degrees, 
+suctioning/postural drainage. 
+إزالة الإفرازات: الترطيب النظامي، الترطيب الرئوي، رفع رأس السرير30-45 درجة، الشفط/التصريف
+الموضعي. 
+Post-extubation: Incentive spirometry (≥10 breaths/hour) to prevent atelectasis. Avoid 
+coughing unless secretions present. 
+بعد إزالة الأنبوب: استخدام جهاز التنفس التحفيزي10 نفس/ساعة) لمنع الانخماص. تجنب السعال إلا عند وجود
+إفرازات. 
+ 
+10. Education 
+التعليم الصحي 
+Focus on preventing recurrence, smoking cessation, and pulmonary rehabilitation. 
+التركيز على منع تكرار الحالة، الإقلاع عن التدخين، وأهمية إعادة التأهيل الرئوي.

@@ -1,0 +1,363 @@
+Total Parenteral Nutrition (TPN) 
+ 
+1. Definition 
+Total Parenteral Nutrition (TPN) is the intravenous administration of complete 
+nutrition to patients who cannot eat or absorb nutrients through the gastrointestinal 
+(GI) tract. 
+التغذية الوريدية الكاملة هي إعطاء جميع احتياجات الجسم الغذائية عن طريق الوريد للمريض الذي لا يستطيع تناول
+الطعام أو لا يستطيع امتصاصه من الجهاز الهضمي. 
+It provides all macronutrients (carbohydrates, protein, fat) and micronutrients 
+(electrolytes, vitamins, trace elements). 
+توفر كل العناصر الغذائية الكبرى مثل الكربوهيدرات والبروتينات والدهون، وكذلك العناصر الدقيقة مثل الأملاح
+والفيتامينات والعناصر النادرة. 
+TPN bypasses the GI tract completely and is typically administered through a central 
+venous catheter. 
+تتجاوز الجهاز الهضمي تمامًا ويتم إعطاؤها غالبًا عن طريق قسطرة وريدية مركزية لضمان وصول المحلول
+بأمان إلى الدورة الدموية. 
+Used long-term or short-term, depending on the condition. 
+يمكن استخدامها لفترة قصيرة أو طويلة حسب حالة المريض واحتياجاته. 
+ 
+2. Indications 
+TPN is indicated when the GI tract is non-functional or unsafe to use. Examples 
+include: 
+يتم استخدام TPN عندما يكون الجهاز الهضمي غير قادر على أداء وظيفته أو غير آمن للاستخدام. ومن الأمثلة: 
+Severe malnutrition. 
+سوء التغذية الشديد.
+
+Bowel obstruction. 
+انسداد الأمعاء. 
+Short bowel syndrome. 
+متلازمة الأمعاء القصيرة وضعف الامتصاص. 
+Severe pancreatitis. 
+التهاب البنكرياس الحاد. 
+Crohn’s disease flare-up. 
+نوبات حادة من مرض كرون. 
+Peritonitis. 
+التهاب الغشاء البريتوني. 
+Severe burns or trauma. 
+الحروق أو الإصابات الشديدة. 
+Postoperative conditions where enteral feeding is not possible. 
+حالات ما بعد الجراحة التي لا يمكن فيها استخدام التغذية المعوية. 
+Cancer patients undergoing chemotherapy or surgery. 
+مرضى السرطان أثناء العلاج الكيماوي أو بعد العمليات الجراحية. 
+Coma or unconscious states. 
+حالات الغيبوبة أو فقدان الوعي. 
+ 
+3. Components of TPN 
+TPN solutions are customized to meet individual patient needs: 
+يتم تحضير محلول TPN خصيصًا حسب احتياجات كل مريض. 
+Macronutrients 
+Carbohydrates: Usually as dextrose; main energy source. 
+الكربوهيدرات تكون غالبًا في صورة ديكستروز وهي المصدر الأساسي للطاقة.
+
+Proteins: As amino acids for tissue repair and maintenance. 
+البروتينات تُعطى كأحماض أمينية لبناء وإصلاح الأنسجة. 
+Fats: As lipid emulsions, providing essential fatty acids and calories. 
+الدهون تُعطى في صورة مستحلبات لتوفير الأحماض الدهنية والسعرات الحرارية. 
+Micronutrients 
+Electrolytes: Sodium, potassium, calcium, magnesium, phosphate, chloride. 
+الأملاح مثل الصوديوم والبوتاسيوم والكالسيوم للحفاظ على توازن السوائل ووظائف الجسم. 
+Vitamins: Water-soluble (e.g., B-complex, C) and fat-soluble (A, D, E, K). 
+الفيتامينات منها الذائبة في الماء والذائبة في الدهون لدعم العمليات الحيوية. 
+Trace elements: Zinc, copper, selenium, manganese, chromium, etc. 
+العناصر النادرة يحتاجها الجسم بكميات صغيرة لكنها مهمة جدًا. 
+Fluids: TPN also provides fluid for hydration and volume replacement. 
+يوفر أيضًا سوائل للحفاظ على الترطيب وتعويض الفاقد. 
+ 
+4. Routes of Administration 
+Central venous catheter (CVC) is most common (e.g., subclavian, internal jugular). 
+القسطرة الوريدية المركزية هي الأكثر استخدامًا مثل تحت الترقوة أو الوريد الوداجي. 
+Necessary because high dextrose concentration is irritating to peripheral veins. 
+لأن تركيز الجلوكوز العالي قد يسبب تهيجًا شديدًا للأوردة الطرفية. 
+Peripheral Parenteral Nutrition (PPN) is used for short-term or partial nutrition 
+support. 
+التغذية الوريدية الطرفية تُستخدم لفترة قصيرة أو دعم جزئي. 
+Lower concentration to prevent vein irritation. 
+تكون بتركيز أقل لتقليل تهيج الأوردة.
+
+5. Administration Guidelines 
+Use aseptic technique when handling TPN to reduce infection risk. 
+يجب استخدام التعقيم الصارم أثناء التعامل مع TPN لتقليل خطر العدوى. 
+TPN should be infused via a dedicated lumen—not shared with other IV medications. 
+يجب إعطاؤه من خلال مسار مخصص فقط وعدم استخدامه مع أدوية أخرى. 
+Start infusion slowly and monitor reactions (especially during first administration). 
+يبدأ التسريب ببطء مع مراقبة المريض خاصة أول مرة. 
+Tubing must be changed every 24 hours. 
+يجب تغيير أنبوبة التسريب كل24 ساعة.  
+Never stop TPN abruptly—can cause hypoglycemia. 
+لا يتم إيقافه فجأة حتى لا يحدث هبوط في سكر الدم. 
+Refrigerate TPN until use, then allow it to reach room temperature. 
+يحفظ في الثلاجة ثم يُترك ليصل إلى درجة حرارة الغرفة قبل الاستخدام. 
+ 
+6. Monitoring Parameters 
+Daily or frequent monitoring is essential to prevent complications: 
+المتابعة اليومية أو المتكررة ضرورية لمنع المضاعفات. 
+Vital signs (especially temperature for infection). 
+مراقبة العلامات الحيوية وخاصة درجة الحرارة لاكتشاف العدوى. 
+Blood glucose (risk of hyperglycemia). 
+متابعة سكر الدم لاحتمال حدوث ارتفاع. 
+Electrolytes: Na+, K+, Ca++, Mg++, PO4–. 
+متابعة مستوى الأملاح في الدم. 
+Renal function: BUN, creatinine. 
+تقييم وظائف الكلى.
+
+Liver function tests: ALT, AST, ALP , bilirubin. 
+متابعة وظائف الكبد. 
+Intake/output and daily weight. 
+تسجيل السوائل الداخلة والخارجة والوزن يوميًا. 
+Signs of infection (catheter site and systemic). 
+ملاحظة أي علامات عدوى موضعية أو عامة. 
+ 
+7. Complications 
+Infectious: Central line-associated bloodstream infection (CLABSI). 
+عدوى في الدم مرتبطة بالقسطرة المركزية. 
+Metabolic: 
+مضاعفات في التمثيل الغذائي. 
+Hyperglycemia or hypoglycemia. 
+ارتفاع أو انخفاض سكر الدم. 
+Electrolyte imbalances (e.g., hypophosphatemia). 
+اختلال في مستوى الأملاح. 
+Refeeding syndrome: A potentially life-threatening metabolic and electrolyte 
+disturbance that occurs when nutritional support is initiated too quickly in 
+malnourished patients. It results from profound shifts in fluids and electrolytes during 
+the transition from a catabolic to an anabolic metabolism. 
+متلازمة إعادة التغذية حالة خطيرة قد تهدد الحياة وتحدث عند بدء التغذية بسرعة في مريض يعاني من سوء تغذية
+شديد. 
+Liver dysfunction (fatty liver, cholestasis). 
+مشاكل في وظائف الكبد.
+
+Mechanical: Catheter blockage, displacement, thrombosis, or air embolism. 
+مضاعفات ميكانيكية مثل انسداد القسطرة أو الجلطات أو دخول هواء. 
+ 
+8. Nursing Responsibilities 
+(نظري كما هو بالترتيب) 
+Check TPN order with pharmacy label—verify patient name, rate, contents. 
+مراجعة أمر الطبيب والتأكد من اسم المريض والمعدل والمكونات. 
+Inspect TPN bag for cloudiness, separation, or particles. 
+فحص كيس المحلول جيدًا. 
+Prime tubing carefully—avoid air bubbles. 
+طرد الهواء من الأنبوبة. 
+Monitor blood glucose and administer insulin if ordered. 
+متابعة السكر وإعطاء إنسولين إذا لزم. 
+Keep central line dressing clean and dry; change per protocol. 
+الحفاظ على نظافة مكان القسطرة. 
+Educate patient/family on TPN purpose and care. 
+تثقيف المريض وأسرته. 
+Document infusion rate, patient tolerance, and any adverse reactions. 
+توثيق كل الإجراءات والاستجابات. 
+ 
+9. Weaning Off TPN 
+Gradually reduce TPN rate while reintroducing oral or enteral feeding. 
+تقليل المعدل تدريجيًا مع إعادة إدخال التغذية الطبيعية.
+
+Sudden stoppage can cause hypoglycemia. 
+الإيقاف المفاجئ قد يسبب هبوط السكر. 
+Monitor labs closely during the transition phase. 
+متابعة التحاليل بدقة أثناء التحول. 
+Once the patient meets nutritional needs through the GI tract, TPN can be stopped. 
+عند قدرة المريض على تلبية احتياجاته عبر الجهاز الهضمي يتم إيقافه. 
+ 
+10. Equipment Required 
+TPN solution bag (custom-made in pharmacy). 
+كيس محلول TPN. 
+Infusion pump (to control rate accurately). 
+مضخة للتحكم الدقيق في المعدل. 
+Central venous access device (e.g., PICC line, tunneled catheter). 
+وسيلة وصول وريدي مركزي. 
+IV tubing with in-line filter (to remove air and particles). 
+أنبوبة وريدية بفلتر. 
+Dressing supplies (for catheter site care). 
+أدوات تغيير الضمادة. 
+Blood sampling supplies (for lab monitoring). 
+أدوات سحب عينات الدم. 
+ 
+     TPN Procedure Checklist 
+ 
+A. Nursing Preparation (Before TPN Administration)
+
+Step Rationale الشرح بالعربي 
+1. Verify the physician’s TPN 
+order. 
+Ensures the correct formulation is 
+given based on patient’s daily 
+needs. 
+التأكد من أمر الطبيب
+لضمان أن التركيبة  
+مناسبة لاحتياجات  
+المريض اليومية. 
+2. Perform hand hygiene and 
+don PPE. 
+Prevents infection during sterile 
+procedures. 
+غسل اليدين وارتداء
+وسائل الحماية لمنع 
+العدوى. 
+3. Assess patient’s nutritional 
+status and indication for TPN. 
+To confirm that the gastrointestinal 
+tract cannot be used and that TPN 
+is clinically indicated. 
+تقييم الحالة الغذائية
+والتأكد أن الجهاز  
+الهضمي لا يمكن 
+استخدامه. 
+4. Review baseline laboratory 
+investigations (CBC, 
+electrolytes, RFT , LFT, blood 
+glucose). 
+Provides baseline values and helps 
+identify electrolyte imbalances or 
+organ dysfunction before initiating 
+TPN. 
+مراجعة التحاليل الأساسية
+قبل البدء لاكتشاف أي  
+خلل. 
+5. Inspect the TPN bag for: 
+integrity, clarity, label 
+accuracy, expiration. 
+Prevents administration of 
+contaminated or expired solution. 
+فحص كيس المحلول
+للتأكد من سلامته 
+وصلاحيته. 
+6. Allow the TPN solution to 
+warm to room temperature 
+(if refrigerated). 
+Reduces discomfort and risk of vein 
+irritation. 
+ترك المحلول يصل
+لدرجة حرارة الغرفة  
+لتقليل التهيج. 
+7. Assess the central line site 
+and patency. 
+Ensure the line is functional and 
+safe for hypertonic solution. 
+التأكد من سلامة القسطرة
+وعدم وجود انسداد.
+
+Step Rationale الشرح بالعربي 
+8. Label a dedicated lumen 
+for TPN use only. Use a 
+dedicated lumen for TPN 
+infusion. 
+Prevents incompatibility reactions 
+and contamination. 
+تخصيص مسار واحد فقط
+لـ TPN لمنع التداخل أو
+التلوث. 
+9. Gather equipment needed: 
+infusion pump, IV tubing, 
+inline filter, alcohol wipes. 
+Prepares for efficient and sterile 
+procedure. 
+تجهيز كل الأدوات قبل
+البدء لضمان إجراء منظم 
+ومعقم. 
+10. Prime the tubing with the 
+TPN solution using aseptic 
+technique. 
+Prevents air embolism and 
+maintains sterility. 
+ملء الأنبوبة بالمحلول
+بطريقة معقمة لطرد  
+الهواء. 
+ 
+B. Nursing Interventions (During and After TPN Administration) 
+Step Rationale الشرح بالعربي 
+1. Connect tubing to central line 
+using sterile technique. 
+Ensures safe and infection-
+free administration. 
+توصيل الأنبوبة بالقسطرة
+بطريقة معقمة. 
+2. Start the infusion at the 
+prescribed rate using an infusion 
+pump. 
+Delivers nutrients at a 
+controlled and safe rate. 
+تشغيل المضخة بالمعدل
+المحدد لضمان أمان  
+المريض. 
+3. If discontinuing TPN, taper 
+gradually. 
+Prevents rebound 
+hypoglycemia. 
+تقليل المعدل تدريجيًا قبل
+الإيقاف لمنع هبوط 
+السكر.
+
+Step Rationale الشرح بالعربي 
+4. Stop the infusion pump and clamp 
+the line. 
+Prevents air entry and blood 
+reflux into the catheter. 
+إيقاف المضخة وغلق
+الخط لمنع دخول الهواء. 
+5. Disconnect the TPN tubing using 
+sterile technique. 
+Maintains catheter sterility. 
+فصل الأنبوبة بطريقة
+معقمة للحفاظ على  
+التعقيم. 
+6. Flush the catheter with normal 
+saline (usually 10–20 mL, per 
+protocol). 
+Clears residual TPN from the 
+line and maintains catheter 
+patency. 
+غسل القسطرة بالمحلول
+الملحي للحفاظ على عدم  
+انسدادها. 
+7. Monitor blood glucose after 
+stopping TPN then monitor blood 
+glucose every 4–6 hours. 
+TPN can cause 
+hyperglycemia or 
+hypoglycemia. 
+متابعة مستوى السكر
+بانتظام بعد الإيقاف. 
+8. Monitor for complications: 
+infection, fluid overload, electrolyte 
+imbalance, refeeding syndrome. 
+Early detection reduces risk 
+of life-threatening events. 
+مراقبة أي مضاعفات
+مبكرًا لتقليل الخطر . 
+9. Assess and document central line 
+site every shift. 
+Prevents and detects 
+catheter-related 
+bloodstream infections. 
+فحص وتسجيل حالة
+موقع القسطرة كل وردية. 
+10. Check and record intake/output 
+and daily weight. 
+Monitors fluid balance and 
+effectiveness of nutrition. 
+تسجيل السوائل الداخلة
+والخارجة والوزن يوميًا. 
+11. Review daily labs: electrolytes, 
+liver/renal function, glucose, 
+triglycerides. 
+Guides adjustments to TPN 
+content and prevents 
+complications. 
+مراجعة التحاليل يوميًا
+لتعديل الجرعة عند  
+الحاجة.
+
+Step Rationale الشرح بالعربي 
+12. Document all interventions, 
+assessments, and patient responses. 
+Ensures accurate 
+communication and legal 
+accountability. 
+توثيق كل الإجراءات
+والملاحظات. 
+13. Provide patient/family education 
+(if applicable). 
+Promote understanding and 
+cooperation with therapy. 
+توعية المريض وأسرته
+لتعزيز التعاون مع 
+العلاج.

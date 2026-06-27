@@ -1,0 +1,141 @@
+Pharmacology Exam: Routes of Drug Administration 
+Part I: Multiple Choice Questions (MCQs) 
+Section 1: Factors and Classification 
+1. Which of the following is NOT a factor determining the selection of a drug 
+administration route? 
+o A. Characteristics of the drug. 
+o B. Age of the patient. 
+o C. The cost of the pharmaceutical company's marketing. 
+o D. Condition of the patient (e.g., unconsciousness). 
+2. Routes of administration are broadly classified into: 
+o A. Local and Topical. 
+o B. Local and Systemic. 
+o C. Enteral and Oral. 
+o D. Parenteral and Inhalation. 
+Section 2: Local Routes 
+3. Which route is defined as applying a drug to the skin or mucous membrane for 
+local action? 
+o A. Topical. 
+o B. Sublingual. 
+o C. Intravenous. 
+o D. Transdermal. 
+4. Which drug is administered as a tablet but is not absorbed, acting locally for gut 
+sterilization before surgery? 
+o A. Paracetamol. 
+o B. Neomycin. 
+o C. Insulin. 
+o D. Nitroglycerin.
+
+5. The intra-arterial route is primarily used for: 
+o A. Routine vaccinations. 
+o B. Diagnostic studies like coronary angiography. 
+o C. Treatment of dehydration. 
+o D. Managing status epilepticus. 
+Section 3: Systemic Routes (Enteral) 
+6. The most common and acceptable route for drug administration is: 
+o A. Intramuscular. 
+o B. Intravenous. 
+o C. Oral. 
+o D. Inhalation. 
+7. A major disadvantage of the oral route is that it is: 
+o A. Painful. 
+o B. Not suitable for emergencies due to slow onset. 
+o C. Extremely expensive. 
+o D. Likely to cause 100% bioavailability. 
+8. Which drug is kept under the tongue to bypass first-pass metabolism during an 
+acute anginal attack? 
+o A. Morphine. 
+o B. Nitroglycerin. 
+o C. Diclofenac. 
+o D. Bisacodyl. 
+9. Which route is used for status epilepticus in children when the drug must be 
+absorbed through the rectal mucosa? 
+o A. Rectal (Enema). 
+o B. Subcutaneous. 
+o C. Oral.
+
+o D. Intrathecal. 
+Section 4: Systemic Routes (Parenteral - Injections & Inhalation) 
+10. The bioavailability of a drug administered via the intravenous (i.v.) route is: 
+o A. 50%. 
+o B. 75%. 
+o C. 100%. 
+o D. Variable depending on gastric pH. 
+11. Which injection route is used specifically for BCG vaccination and drug sensitivity 
+tests? 
+o A. Subcutaneous. 
+o B. Intradermal. 
+o C. Intramuscular. 
+o D. Intra-arterial. 
+12. A "depot preparation" for contraception, such as Norplant, is typically inserted 
+into the: 
+o A. Muscle. 
+o B. Vein. 
+o C. Subcutaneous tissue. 
+o D. Subarachnoid space. 
+13. Inhalation of drugs like Salbutamol is advantageous because it: 
+o A. Has a slow onset of action. 
+o B. Minimizes systemic toxicity. 
+o C. Is suitable for unconscious patients. 
+o D. Bypasses the lungs entirely. 
+14. Which of the following is a disadvantage of the Intramuscular (i.m.) route? 
+o A. It may cause an abscess or nerve injury. 
+o B. Absorption is slower than the oral route.
+
+o C. It cannot be used for mild irritants. 
+o D. It provides 100% bioavailability. 
+15. What is the correct term for a single, large dose of a drug injected rapidly into a 
+vein? 
+o A. Infusion. 
+o B. Bolus. 
+o C. Depot. 
+o D. Enema. 
+Section 5: Transdermal and Special Delivery Systems 
+16. The transdermal route is beneficial because it: 
+o A. Is the cheapest route available. 
+o B. Provides a constant plasma concentration of the drug. 
+o C. Never causes local irritation. 
+o D. Has a very short duration of action. 
+17. Which special delivery system uses minute vesicles made of phospholipids to 
+target drug delivery? 
+o A. Jet injection. 
+o B. Liposomes. 
+o C. Monoclonal antibodies. 
+o D. Intraoral patches. 
+ 
+Part II: Essay Questions 
+1. List and explain four factors that influence the choice of a drug administration 
+route. 
+2. Compare the advantages and disadvantages of the Oral route versus the 
+Intravenous (i.v.) route.
+
+3. Describe the clinical importance of the Sublingual route and provide two 
+examples of drugs administered this way. 
+4. Explain the difference between an Evacuant enema and a Retention enema, 
+providing an example for each. 
+5. Discuss the precautions that must be taken when administering drugs via the 
+Intravenous (i.v.) route. 
+6. Define "Monoclonal Antibodies" and "Liposomes" as special drug-delivery 
+systems and explain their primary benefit. 
+ 
+ 
+Answer Key 
+Part I: MCQs 
+1. C | 2. B | 3. A | 4. B | 5. B | 6. C | 7. B | 8. B | 9. A | 10. C | 11. B | 12. C | 13. B | 
+14. A | 15. B | 16. B | 17. B 
+Part II: Essay Model Answers (Summary) 
+1. Factors: Drug characteristics, emergency vs. routine use, site of action 
+(local/systemic), patient condition (unconscious/vomiting), age, and first-pass 
+metabolism. 
+2. Comparison: Oral is safer, cheaper, and painless but slow and subject to first-
+pass. IV has 100% bioavailability and quick onset for emergencies, but is invasive, 
+requires asepsis, and cannot be reversed once injected. 
+3. Sublingual: Quick onset, bypasses first-pass metabolism, and can be terminated 
+by spitting. Examples: Nitroglycerin (angina), Buprenorphine (MI). 
+4. Enemas: Evacuant enemas (e.g., soap water) are for bowel evacuation. Retention 
+enemas (e.g., methylprednisolone for colitis) are for local or systemic absorption. 
+5. IV Precautions: Inject slowly, ensure the needle is correctly in the vein, and 
+maintain strict aseptic conditions to avoid phlebitis or tissue necrosis. 
+6. Special Systems: Liposomes are phospholipid vesicles for targeted delivery. 
+Monoclonal antibodies are cultured immunoglobulins that react with specific 
+antigens. Both are used for targeted delivery, especially for anticancer drugs.

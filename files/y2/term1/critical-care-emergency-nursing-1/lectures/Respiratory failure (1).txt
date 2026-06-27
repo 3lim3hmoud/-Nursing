@@ -1,0 +1,333 @@
+Respiratory Failure
+prepared by 
+Dr/ Naglaa Nassar
+
+Respiratory FailureOutlines
+• Description
+• Classification of Respiratory Failure
+• Etiology of Respiratory Failure
+• Pathophysiology of Respiratory Failure
+• Clinical Manifestation of Respiratory Failure
+• Diagnostic tests
+• Management of Acute Respiratory Failure
+
+Respiratory Failure
+Definition: Known as acute lung failure, is the 
+inability of the respiratory system to maintain 
+adequate gas exchange.
+
+Classification of Respiratory Failure
+Type I Respiratory Failure: Hypoxemic
+normocapnic failure or oxygenation failure, the body
+fails to deliver an adequate supply of oxygen to the
+arterial blood. The patient presents with a low PaO2
+less than 60 mmHg and a normal PaCO2.
+
+Type II Respiratory Failure: Hypoxemic
+hypercapnic failure or ventilatory failure, the body
+ineffectively eliminates carbon dioxide (CO2) from
+the arterial blood. The patient presents with a low
+PaO2 less than 60 mmHg and PaCO2 is greater
+than 50 mmHg and pH is less than or equal 7.30.
+
+Etiology of Respiratory Failure
+• Extra-pulmonary causes include disorders that affect the brain, the 
+spinal cord, the neuromuscular system, the thorax, the pleura, and 
+the upper airways.
+• Intra-pulmonary causes include disorders that affect the lower 
+airways and alveoli, the pulmonary circulation, and the alveolar-
+capillary membrane.
+
+Etiology of Acute Lung Failure
+Extra-pulmonary
+Brain
+➢ Drug overdose (opioids, sedatives)
+➢ Brain trauma or lesion
+➢ Postoperative general anesthesia depression
+Spinal cord ➢ Guillain-Barre syndrome Poliomyelitis
+➢ Amyotrophic lateral sclerosis
+➢ Spinal cord trauma or lesion
+Neuromuscular system
+➢ Myasthenia Gravis 
+➢ Neuromuscular-blocking agents
+➢ Organophosphate poisoning 
+➢ Muscular dystrophy
+
+Cont, Etiology of Acute Lung Failure
+Extra pulmonary
+Thorax ➢ Massive obesity
+➢ Chest trauma
+Pleura ➢ Pleural effusion 
+Pneumothorax
+➢ Malignancy
+Upper airways ➢ Trachea obstruction 
+➢ Epiglottitis
+➢ Vocal cord paralysis
+
+Cont, Etiology of Acute Lung Failure
+IntrapulmonaryLower airways and alveoli
+➢ Chronic Obstructive Pulmonary Disease
+➢ Asthma
+➢ Bronchiolitis
+➢ Cystic fibrosis
+➢ Pneumonia
+Pulmonary circulation
+➢ Pulmonary Emboli
+➢ ARDS
+Alveolar-capillary membrane ➢ Inhalation of toxic gases 
+➢ Near-drowning
+
+Pathophysiology of Respiratory Failure
+• Hypoxemia is the result of impaired gas 
+exchange and is the hallmark of ARF.
+• The main causes of hypoxemia are:
+• Alveolar hypoventilation
+• Ventilation/perfusion (V/Q) mismatching
+• Intrapulmonary shunting
+
+1. Alveolar hypoventilation
+It occurs when the amount of oxygen being
+brought into the alveoli is insufficient to meet the
+metabolic need of the body. This can be the result
+of increasing metabolic oxygen needs or
+decreasing ventilation. Hypoxemia caused by
+alveolar hypoventilation is associated with
+hypercapnia and commonly results from extra-
+pulmonary disorders.
+
+2. Ventilation/ Perfusion (V/Q) 
+Mismatching
+• Occurs when ventilation and blood flow are 
+mismatched in various regions of the lung in excess 
+of what is normal. V/ Q mismatch occurs when 
+some perfused alveoli are flooded or collapsed as 
+occurs with pneumonia and pulmonary edema 
+(V<Q)
+
+• some alveoli are ventilated but not perfused
+because of capillary thrombosis as occurs in
+pulmonary embolism (V>Q).
+
+3. Intrapulmonary shunting
+• Shunt refer to the state in which pulmonary capillary
+perfusion is normal, but alveolar ventilation is lacking.
+Intrapulmonary shunt occurs when pulmonary capillary
+blood passes a nonfunctioning alveoli unit cannot pick
+up oxygen from the alveoli or reaches the arterial
+system without participating in gas exchange.
+
+• The mixing of unoxygenated (shunted) blood and
+oxygenated blood lowers the average level of
+oxygen present in the blood. This may be the
+result of
+• Alveolar collapse secondary to atelectasis or
+• Alveolar flooding with pus, blood or fluid.
+
+• If hypoxia progress can result in a decrease of oxygen at
+the cellular level. As the tissue demands for continue and
+the supply diminishes, oxygen supply/demand imbalance
+occurs and tissue hypoxia develops. Decreased oxygen to
+the cells contributes to impaired tissue perfusion and the
+development of lactic acidosis and multiple organ
+dysfunction syndrome.
+
+Manifestation of Respiratory failure
+• are usually related to development of hypoxemia, hypercapnia and acidosis.
+1. Central Nervous System Manifestations include: Restlessness, agitation and 
+confusion.
+2. Cardiovascular Manifestations: Tachycardia and dysrhythmias.
+3. Pulmonary Manifestations: Tachypnea, dyspnea, shortness of breath and use of 
+accessory muscles.
+4. Renal Manifestations: Decrease urine output and edema.
+
+Cont, Manifestation of Respiratory 
+failure
+5. Gastro-intestinal Manifestations: Decrease 
+bowel sounds, nausea and vomiting and 
+anorexia.
+6. Skin Manifestation: Pallor and cyanosis.
+
+Diagnostic tests
+1. ABG analysis conform the level of PaCO2 of 50 
+mmHg or greater, the Pao2 less than 60 mmHg 
+and blood PH less than 7.30.
+2. Bronchoscopy for airway surveillance or Specimen 
+retrieval
+3. Chest radiography
+4. Thoracic ultrasound
+5. Thoracic computed tomography (CT)
+6. Selected lung function studies
+
+Management of Acute Respiratory 
+Failure
+Aimed to:
+➢ Correct underlining cause
+➢ Promoting adequate gas exchange
+➢ Correcting acidosis
+➢ Initiating nutrition support
+➢ Preventing complications
+
+1. Oxygenation
+Improve oxygenation through :
+❖ Supplemental oxygen administration, either with a low flow system or a high
+flow system
+❖ Use of positive airway pressure to correct hypoxemia within the arterial
+hemoglobin oxygen saturation greater than 90% without cause hypercapnia or
+oxygen toxicity.
+❖ Positive pressure is necessary to open collapsed alveoli and facility their
+participation in gas exchange. Positive pressure is delivered by invasive or non
+invasive (by the mask) mechanical ventilation.
+
+2. Ventilation
+• Intervention to improve ventilation includes the use of
+invasive and noninvasive mechanical ventilation depending
+on causes and severity of disease. Patients with a PH less
+than 7.25 need for invasive mechanical ventilation and
+started on volume ventilation in the assist/ control mode.
+
+3- Pharmacology
+• Medication to facilitate dilation of the airway and may be also
+beneficial in the treatment of patients with ARF.
+❖ Bronchodilators such as B2 agonists and anticholinergic agents
+aid in smooth muscle relaxation.
+❖ Steroids administer to decrease airway inflammation and
+enhance the effect of B2 agonists.
+❖Sedation used to assist with maintaining adequate ventilation. It
+can be used to comfort the patients and decrease work of
+breathing, if the patient is fighting the ventilator.
+
+❖Analgesics should be administered for control
+pain.
+❖Neuromuscular paralysis may be necessary to
+facilitate optimal ventilation and decrease
+oxygen consumption in the severe
+compromised patient.
+
+4. Acidosis
+➢Acidosis may occur due to hypoxemia, and impaired
+ventilation causes impaired tissue perfusion which leads
+to the production of lactic acid and the development of
+metabolic acidosis. Impaired ventilation leads to
+accumulation of carbon dioxide and development of
+respiratory acidosis.
+
+➢To treat respiratory acidosis administer oxygen
+because once the patient is adequately oxygenated
+and ventilated, the acidosis should correct itself.
+➢Intubation and mechanical ventilation will be
+necessary for management of respiratory acidosis,
+sever hypoxemia and depression of respiratory
+center.
+
+❖ Sodium bicarbonate therapy shifts the oxygen –
+hemoglobin dissociation curve to the left and can 
+worsen tissue hypoxia.
+❖ Sodium bicarbonate may be used if the acidosis is 
+sever (PH less than 7.10), refractory to therapy, and 
+causing dysrhythmias or hemodynamic instability.
+
+5- Nutrition Support
+The goal of nutrition support are:
+➢Meet the overall nutrition needs of the patient while
+avoiding overfeeding.
+➢Avoid nutrition delivery related complication and
+➢ Improve patient outcomes.
+
+➢The enteral route is preferred method of
+nutrition administration. If the patients cannot
+tolerate enteral feeding, the parenteral route will
+be started.
+➢Nutrition support should be initiated before the
+third day of MV for the well nourished patient
+and within 24h for the malnourished.
+
+Complications
+❖Ischemic anoxic encephalopathy: result from hypoxemia, 
+hypercapnia, and acidosis.
+❖Dysrhythmias are precipitated by hypoxemia, acidosis,electrolytes 
+imbalances.
+❖Venous thromboempolism: precipitated by venous stasis resulting
+from immobility and can be prevented through the use of
+intermittent pneumatic compression device and low dose of
+unfractionated heparin or low molecular weight heparin.
+
+Cont, complication
+❖GIT bleeding can be prevented through the use of 
+histamine receptor antagonists, Cytoprotective agent 
+or proton pump inhibitors.
+❖Others complication associated with an artificial 
+airways, mechanical ventilation, enteral or parenteral 
+nutrition and peripheral arterial cannulation.
+
+NURSING DIAGNOSES
+Acute Lung Failure
+1. Impaired Gas Exchange related to alveolar hypoventilation.
+2. Impaired Gas Exchange related to ventilation-perfusion
+mismatching or intrapulmonary shunting.
+3. Ineffective Breathing Pattern related to musculoskeletal fatigue or neuro-muscular
+impairment.
+4. Risk for Aspiration.
+5. Imbalanced Nutrition: Less Than Body Requirements related to lack of exogenous
+nutrients and increased metabolic demand.
+6. Risk for Infection.
+
+Optimizing Oxygenation and Ventilation through
+1. Positioning
+2. Preventing desaturation 
+3. Promoting secretion clearance.
+
+1. Positioning
+1. Patients with V/Q mismatching, positioning is
+used to facilitate better matching of ventilation
+with perfusion to optimize gas exchange.
+2. The goal of positioning is to place the least
+affected area of the lungs in the most dependent
+position.
+
+3. Patient with unilateral lung disease should be positioned with the healthy 
+lung in a dependent position. 
+4. Patients with diffuse lungs disease should be positioned with the right lung 
+down, because it is larger and more vascular than the left lung.
+5. Patients with alveolar hypoventilation to facilitate ventilation, place in 
+nonrecumbent position such as sitting or semisitting position.
+6. Frequent repositioning every 2h is beneficial on patient’s ventilatory
+pattern and V/Q.
+
+2. Prevention of Desaturation
+Intervention to minimizing oxygen consumption includes:
+1. Limiting the patient’s physical activity through
+➢ Performing procedures only as needed, hyperoxyorgenating before
+suction.
+➢ Providing adequate rest and recovery time between procedures.
+➢ Administering sedation to control anxiety
+➢ Providing measure to control fever
+➢ Continuous monitoring of plus oximeter to warn of signs of
+desaturation
+
+Promoting Secretion Clearance
+✓ Provide adequate systemic hydration and humidifying
+supplemental oxygen.
+✓ Coughing and suction and postural drainage and chest
+percussion and vibration.
+✓ The patient’s thorax should be maintained in alignment and
+the head of the bed elevated 30 to 45 degree.
+✓ This position best accommodates diaphragmatic descent and
+intercostals muscles action.
+
+✓ Once the patient’s is extubated: Deep breathing and incentive
+spirometry should be stared as possible.
+✓ Incentive spirometry involves having the patient’s take at least 10 deep
+effective breaths per hour using incentive spirometry. This action help
+prevent atelectasis and re expand any collapsed lung tissue.
+✓ The chest should be auscultated during inflation to ensure that all
+dependant parts of lung are well ventilated.
+✓ Coughing should be avoided unless secretions are present because it
+promotes collapse of smaller airways.
+
+Education of the Patient and Family
+• At discharge, teaching should focus on the intervention necessary
+for preventing the reoccurrence of the precipitating disorders
+• If patient’s smokes, he/she should be encouraged to stop smoking
+and referred to a smoking cessation.
+• Stress the importance of precipitating in a pulmonary
+rehabilitation.

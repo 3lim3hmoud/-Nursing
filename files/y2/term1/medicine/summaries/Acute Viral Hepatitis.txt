@@ -1,0 +1,142 @@
+Acute Viral Hepatitis (التهاب الكبد الفيروسي الحاد) 
+ 
+    Definition (التعريف) 
+Acute hepatitis means short-term inflammation or damage in liver cells. 
+التهاب الكبد الحاد يعني التهابًا أو ضررًا مؤقتًا في خلايا الكبد . 
+It causes an increase in liver enzymes in blood tests. 
+يسبب ارتفاع إنزيمات الكبد في تحاليل الدم. 
+If it lasts less than six months and liver returns to normal, it’s called acute hepatitis. 
+إذا استمر أقل من ستة أشهر وعاد الكبد طبيعيًا، يُسمى التهاب كبد حاد.  
+If it lasts more than six months, it becomes chronic hepatitis. 
+أما إذا استمر أكثر من ستة أشهر، فيُعتبر التهاب كبد مزمن.  
+ 
+     Epidemiology (الوبائيات) 
+Viral hepatitis is more common in poor areas and less common in rich countries. 
+التهاب الكبد الفيروسي شائع في المناطق الفقيرة ونادر في الدول الغنية. 
+Recently, cases increased because of contaminated food, drug use, and homelessness. 
+في السنوات الأخيرة زادت الحالات بسبب الطعام الملوث، وتعاطي المخدرات، والتشرد. 
+In high-risk areas, over 90% of children get Hepatitis A before age 10. 
+في المناطق عالية الخطورة، يُصاب أكثر من90٪ من الأطفال بـ التهاب الكبد  A قبل سن العاشرة. 
+ 
+     Causes (الأسباب) 
+Acute viral hepatitis is mainly caused by five viruses: A, B, C, D, and E. 
+يحدث التهاب الكبد الحاد بسبب خمسة فيروسات رئيسية :A وB وC وD وE.
+
+Symptoms (الأعراض) 
+Symptoms can range from mild flu-like illness to severe liver failure. 
+الأعراض قد تتراوح من تعب بسيط مثل الإنفلونزا إلى فشل كبدي خطير . 
+Sometimes there are no symptoms at all. 
+أحيانًا لا تظهر أي أعراض. 
+Severity and recovery depend on the type of virus and body response. 
+شدة المرض وسرعة الشفاء تعتمد على نوع الفيروس واستجابة الجسم. 
+Hepatitis A and C usually cause mild or no symptoms. 
+التهاب الكبد A وC غالبًا يسببان أعراضًا خفيفة أو لا يسببان أعراضًا. 
+Hepatitis B and E may cause stronger symptoms. 
+التهاب الكبد B وE قد يسببان أعراضًا أشد. 
+Symptoms often start suddenly. 
+تبدأ الأعراض غالبًا بشكل مفاجئ. 
+They include loss of appetite, tiredness, nausea, vomiting, and fever. 
+تشمل الأعراض فقدان الشهية، التعب، الغثيان، القيء، والحمى. 
+After a few days, urine becomes dark and stool becomes pale. 
+بعد عدة أيام يصبح البول داكنًا والبراز فاتح اللون. 
+Jaundice (yellowing of skin and eyes) may appear with itching. 
+قد يظهر اليرقان  (اصفرار الجلد والعينين) مع حكة أحيانًا.  
+The liver may become enlarged and painful. 
+قد يتضخم الكبد ويصبح مؤلمًا. 
+Usually, early symptoms disappear within a week, even if jaundice increases. 
+عادة تختفي الأعراض الأولى خلال أسبوع حتى لو زاد الاصفرار.
+
+Rarely, it may turn into fulminant hepatitis, which causes liver failure and may need 
+transplant. 
+نادرا ما يتطور المرض إلى التهاب كبدي خبيث يؤدي إلى فشل الكبد وقد يحتاج إلى زراعة كبد.  
+Most people recover in 4–8 weeks without treatment. 
+يتعافى معظم المرضى خلال4 إلى8 أسابيع بدون علاج.  
+But some with Hepatitis B or C develop chronic infection. 
+لكن بعض المصابين بـ B أو C قد يصابون بعدوى مزمنة. 
+ 
+      Diagnosis (التشخيص) 
+Diagnosis is done by blood tests. 
+يتم التشخيص عن طريق تحاليل الدم.  
+These tests measure liver enzymes and detect virus parts or antibodies. 
+تقيس هذه التحاليل إنزيمات الكبد وتكشف وجود الفيروس أو الأجسام المضادة له. 
+    Hepatitis A: 
+IgM anti-HAV appears at the start and stays positive for 3–6 months. 
+تظهر الأجسام المضادة  IgM لفيروس A في بداية العدوى وتظل إيجابية من3 إلى6 أشهر.  
+IgG anti-HAV appears later and stays for life, giving long protection. 
+تظهر IgG لاحقًا وتبقى لسنوات طويلة، مما يمنح مناعة دائمة. 
+    Hepatitis B: 
+Tests include HBsAg and HBc Ab IgM. 
+تُستخدم تحاليل HBsAg وHBc Ab IgM لتشخيص العدوى. 
+HBV DNA (PCR) is the most accurate test. 
+تحليل HBV DNA بتقنية PCR هو الأدق للكشف عن الفيروس. 
+    Hepatitis C:
+
+Test for Anti-HCV, but it cannot show if it’s acute or chronic. 
+تحليل Anti-HCV لا يميز بين العدوى الحديثة والمزمنة. 
+PCR test detects viral RNA and is most accurate. 
+تحليل PCR يكشف عن الحمض النووي للفيروس وهو الأدق. 
+    Hepatitis E: 
+Tests for Anti-HEV IgM (acute) and IgG (chronic). 
+تحليل Anti-HEV IgM يدل على العدوى الحديثة وIgG على المزمنة. 
+PCR can also detect the virus. 
+كما يمكن لـ PCR اكتشاف الفيروس مباشرة. 
+ 
+      Prevention (الوقاية) 
+Because treatment is only partly effective, prevention is very important. 
+لأن العلاج ليس فعالاً تمامًا، فالوقاية مهمة جدًا . 
+         1. Vaccines (اللقاحات) 
+There are vaccines for Hepatitis A and B. 
+تتوفر لقاحات لـ التهاب الكبد  A وB. 
+A vaccine for Hepatitis E exists only in China. 
+لقاح التهاب الكبد  E متوفر فقط في الصين. 
+There are no vaccines for Hepatitis C or D, 
+لا يوجد لقاح لـ C أو D، 
+but vaccination against B also protects from D. 
+لكن لقاح B يحمي أيضًا من D. 
+Vaccines are given by injection and need time to become effective. 
+تُعطى اللقاحات بالحقن وتحتاج وقتًا لتكوين المناعة.
+
+Children and people at high risk should be vaccinated. 
+يجب تطعيم الأطفال والأشخاص الأكثر عرضة للعدوى. 
+        2. Immune globulin (الغلوبولين المناعي) 
+If someone is exposed to Hepatitis B and not vaccinated, 
+إذا تعرّض شخص لفيروس  B ولم يكن مطعمًا، 
+they receive hepatitis B immune globulin and the vaccine. 
+يُعطى غلوبولين مناعي لفيروس  B مع اللقاح. 
+Babies born to infected mothers also get both at birth. 
+الرضّع المولودون لأمهات مصابات يحصلون على الاثنين بعد الولادة. 
+     Other preventive measures (إجراءات أخرى للوقاية) 
+• Wash hands before eating or cooking. 
+• غسل اليدين جيدًا قبل الأكل أو إعداد الطعام. 
+• Do not share needles, toothbrushes, or razors. 
+• عدم مشاركة الإبر أو فرشاة الأسنان أو شفرات الحلاقة. 
+• Practice safe sex and use condoms. 
+• ممارسة الجنس الآمن واستخدام الواقي الذكري. 
+• Donated blood is screened, but transfusions should be limited to need. 
+• الدم المتبرع به يتم فحصه، ومع ذلك يجب إعطاء نقل الدم فقط عند الضرورة. 
+• People can donate their own blood before surgery to avoid infection. 
+• يمكن للشخص التبرع بدمه قبل العملية لتجنّب نقل دم من مصدر خارجي. 
+ 
+     Treatment (العلاج)
+
+Most cases need only supportive care (rest and fluids). 
+معظم الحالات تحتاج فقط إلى رعاية داعمة مثل الراحة والسوائل.  
+Severe cases may need hospitalization. 
+الحالات الشديدة قد تحتاج إلى دخول المستشفى. 
+If fulminant hepatitis is suspected, doctors monitor the patient closely. 
+إذا اشتبه الأطباء بوجود التهاب كبدي خبيث، تتم مراقبة المريض بدقة.  
+Sometimes liver transplant is needed if failure develops. 
+في بعض الأحيان تُجرى زراعة كبد عند حدوث فشل كبدي.  
+Patients can return to work after jaundice improves. 
+يمكن للمريض العودة لعمله بعد تحسن الاصفرار. 
+No need for strict diets or vitamin supplements. 
+لا حاجة لحمية صارمة أو مكملات فيتامين. 
+Avoid alcohol completely until full recovery. 
+يجب تجنب الكحول تمامًا حتى الشفاء الكامل. 
+Doctors may stop or reduce some medicines because the liver can’t process them well. 
+قد يوقف الطبيب بعض الأدوية لأن الكبد لا يستطيع التعامل معها جيدًا أثناء المرض. 
+If there is itching, cholestyramine can help. 
+في حالة الحكة، يمكن استخدام دواء كوليسترامين.  
+If Hepatitis B causes severe liver failure, antivirals may help but liver transplant is the 
+best option. 
+إذا سبب فيروس B فشلاً كبديًا شديدًا، قد تساعد الأدوية المضادة للفيروسات، لكن  زراعة الكبد تظل الحل الأفضل.

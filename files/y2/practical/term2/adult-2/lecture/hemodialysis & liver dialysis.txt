@@ -1,0 +1,272 @@
+Module 
+Module Unit: - Gastro Intestinal Tract 
+                  Module Title: - liver dialysis 
+       Liver dialysis : is a temporary, artificial, extracorporeal detoxification 
+treatment for severe liver failure that cleans the blood of toxic, protein -bound 
+substances (such as bile acids and ammonia) when the liver can no longer do 
+so. It acts as a "bridge" to support the patient, allowing the liver to recover until 
+a transplant can occur.  It operates as a continuous therapy in the ICU for 6 –8 
+hours, using a specialized machine to filter blood through an albumin -rich 
+dialysate, which is then regenerated, allowing the body to recover while 
+awaiting a transplant.  
+Unlike kidney dialysis which removes water and small solutes, Liver 
+Dialysis must remove protein-bound toxins (like bilirubin and bile acids) 
+and ammonia. 
+• Purpose:  
+• To support the liver by "cleaning" the blood to improve neurological status 
+(Hepatic Encephalopathy) and allow the liver time to regenerate or bridge the 
+patient to a transplant. 
+• Types of Liver Dialysis 
+1- The Molecular Adsorbent Recirculating System (MARS) : the best 
+extracorporeal liver dialysis system in the medical world. Two separate 
+dialysis circuits are used in the MARS blood purification system. MARS is 
+a widely used liver dialysis technique but rarely used in developing countries 
+due to its complicated technique and high cost.
+
+2-  Single Pass Albumin Dialysis (SPAD): a simple albumin dialysis technique 
+as it uses standard renal replacement therapy machines without the 
+interruption of additional perfusion pump systems like MARS.
+
+Nursing Action Rationale 
+Pre-Procedure 
+Assessment  
+Neurological Baseline: use the Glasgow Coma Scale 
+(GCS). 
+Liver failure causes 
+ammonia buildup, 
+leading to confusion or 
+coma 
+Coagulation Profile: check INR, PT, and platelets. Patients with liver failure 
+have a high risk of 
+bleeding  
+Vascular Access: Ensure a large-bore double-lumen 
+catheter (usually internal jugular) is patent. 
+Observe for any 
+inflammation signs as 
+swelling, tenderness. 
+Prepare and check the main c ircuits (blood or patient, 
+albumin, and dialysis) and explain the procedure to the 
+patient if conscious or to his family 
+ 
+During session   
+        Continuous Monitoring for  
+• Blood pressure (hypotension is common) 
+• Heart rate 
+• Oxygen saturation 
+• Level of consciousness 
+Observe for complications as bleeding: 
+• Catheter site, gums , nose 
+• Bruising 
+Machine-related problems: 
+• Air bubbles 
+• Clotting 
+• Alarms
+
+Monitor anticoagulation therapy and document 
+all medications given during dialysis. 
+Post- dialysis nursing care  
+Reassess:  
+• Vital signs (specially, blood pressure and 
+temperature ) 
+• Mental status improvement 
+    Inspecting catheter site 
+    Follow up post-dialysis lab results 
+  Documentation: 
+• Duration of session 
+• Complications 
+• Patient response 
+Liver dialysis can cause 
+heat loss, leading to 
+shivering, which 
+increases metabolic 
+demand on an already 
+stressed liver.
+
+Module 
+Module Unit: - Renal Procedures 
+ 
+Module Title: - Renal dialysis  
+ 
+ 
+Definition: a life-sustaining treatment for end -stage kidney failure that removes 
+waste, toxins, and excess fluid from the blood when kidneys can no longer function  
+ 
+Types of Dialysis: 
+• Hemodialysis: Blood is pumped out of the body, filtered through a dialyzer 
+(artificial kidney) machine, and returned. Usually done 3 times a week for 
+3–5 hours per session. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+•  Peritoneal Dialysis: A cleaning solution (dialysate) is instilled into 
+the abdomen via a catheter, allowing waste to be filtered directly inside the 
+body.
+
+Indications of hemodialysis:  
+• Acute kidney injury 
+• Uremic encephalopathy 
+• Pericarditis 
+• Life-threatening hyperkalemia 
+• Hypervolemia causing end-organ complications (e.g., pulmonary edema) 
+Contraindications of hemodialysis: 
+Absolute contraindication to hemodialysis is the inability to secure vascular access, and relative 
+contraindications include: 
+• Difficult vascular access 
+• Needle phobia 
+• Cardiac failure 
+• Coagulopathy 
+ 
+Complications 
+The most common complications associated with hemodialysis are: 
+• Intradialytic hypotension 
+• Dialysis disequilibrium syndrome: This is more common in patients during or soon after 
+their first treatment. It is a clinical syndrome characterized by neurologic deterioration, 
+restlessness, mental confusion, headache, occasional muscle twitching, and coma.  
+• Hemolysis 
+• Air embolism 
+Nursing action Rationale 
+  
+Pre hemodialysis session 
+Assess vital signs  To establish a "hemodynamic baseline" and ensure the 
+patient is stable enough to tolerate the stress of fluid 
+removal  
+Auscultate lung sounds To detect pulmonary congestion and guide fluid 
+removal (ultrafiltration)  
+Monitor lab investigations as blood 
+urea, creatinine,  sodium,  potassium, 
+calcium, albumin and hemoglobin.  
+to evaluate the severity of uremic toxicity and 
+electrolyte imbalances, albumin marker for 
+nutritional status and "oncotic pressure , hemoglobin
+
+to assess for anemia which is common in renal 
+patients. 
+Check for holding any antihypertensive 
+medications  
+To prevent severe intradialytic hypotension 
+  Observe any inflammation signs as: 
+✓ Localized erythema 
+✓ Swelling  
+✓ Tenderness  
+✓ Pain in the access arm 
+To detect early signs of infection or thrombosis to 
+prevent systemic sepsis and preserve the life-sustaining 
+vascular access  
+   Observe site of access for any 
+abnormalities as: 
+✓ Vascular swelling  
+✓ Redness around puncture site  
+✓ Aneurysm 
+To ensure the integrity and patency of the vascular 
+access to prevent life -threatening complications and 
+ensure a successful treatment 
+  Prepare hemodialysis machine, dialyzer, 
+dialysate and supplies 
+ 
+   During hemodialysis session   
+Following aseptic technique during 
+cannulation procedure as 
+➢ Perform hand hygiene 
+➢ Wearing PPE  
+➢ Appling skin antiseptic solution 
+appropriately 
+➢ Allow skin antiseptic solution to dry  
+➢ No contact with fistula/ graft’s site 
+(after disinfection) 
+➢ Perform cannulation aseptically by 
+avoiding touch needle  
+➢ Cover puncture site with sterile 
+dressing  
+➢ Insert needles in vascular access  
+➢ Remove gloves 
+➢ Perform hand hygiene
+
+Assess vital signs especially blood 
+pressure every 30 minutes  
+  To detect and manage intradialytic hypotension early, 
+and ensuring patient safety during rapid fluid shifts 
+Observe any hemodialysis complications 
+as: 
+➢ Hypotension  
+➢ Hypertension 
+➢ Hypoglycemia 
+➢ Hyperglycemia 
+➢  Leg cramps  
+➢ Febrile reaction  
+➢ Dysrhythmia  
+➢ Bleeding at the access site 
+➢ Monitor patient for disequilibrium 
+syndrome: 
+✓ Nausea  
+✓ Vomiting   
+✓ Restlessness  
+✓ Headache   
+✓ Seizures 
+ 
+ Observe Vascular access patency  
+➢ Uncovered during hemodialysis 
+session  
+➢ Don’t sleep on access arm  
+➢ Avoid using the patient’s dialysis 
+access arm for administering I.V. 
+   
+     To ensure continuous blood flow and prevent 
+clotting
+
+medications, taking BP, or blood 
+sample 
+  Post- dialysis nursing care  
+ Following aseptic technique during 
+decannulation procedure as: 
+➢ Hand hygiene  
+➢ Wearing PPE 
+➢ Remove needles aseptically and 
+compress the site of insertion by 
+sterile dressing  
+➢ Disinfect site of puncture  
+➢ Cover the site of puncture with 
+sterile gauze or dressing  
+➢ Removing gloves  
+➢ Perform hand hygiene 
+  
+Assess vital signs 
+Auscultate lung sounds  To confirm that the lungs are clear and the fluid 
+removal was successful. And to ensure that patient is 
+leaving the session without any remaining fluid 
+congestion. 
+Monitor lab investigations as blood urea, 
+creatinine,  sodium,  potassium, calcium, 
+albumin and hemoglobin. 
+ To confirm the treatment was effective and ensure 
+that waste products and electrolytes have reached safe, 
+stable levels 
+Instructions given to patients for 
+vascular access maintenance as: 
+✓ Avoid wearing tight clothes at 
+vascular access arm. 
+✓ Avoid carrying heavy weight at 
+vascular access arm. 
+✓ Avoid measuring blood pressure 
+from vascular access arm. 
+✓ Avoid laying on vascular access 
+arm. 
+✓ Others 
+ 
+Discard all equipment and supplies in 
+special places

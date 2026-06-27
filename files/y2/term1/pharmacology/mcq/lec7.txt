@@ -1,0 +1,133 @@
+Antihypertensive Pharmacology: Lecture 1 Examination 
+Part I: Multiple Choice Questions (MCQs) 
+Section 1: Basics and Classification of Hypertension 
+1. The physiological formula for Blood Pressure (BP) is: 
+o A. BP = SV x HR 
+o B. BP = CO x PR 
+o C. BP = EDV x PR 
+o D. BP = CO / PR 
+2. According to JNC 7, "Stage 1 Hypertension" is defined as a Systolic BP of: 
+o A. 120 – 139 mm Hg 
+o B. 140 – 159 mm Hg 
+o C. 160 mm Hg or higher 
+o D. Less than 120 mm Hg 
+3. Which of the following is considered a "receiving" phase where the heart muscle 
+is resting and refilling with blood? 
+o A. Systolic pressure 
+o B. Diastolic pressure 
+o C. Preload pressure 
+o D. Afterload resistance 
+Section 2: Etiology and Complications 
+4. Approximately what percentage of hypertension cases are classified as "Primary 
+(Essential)" or idiopathic? 
+o A. 10-20% 
+o B. 50% 
+o C. 80-90% 
+o D. 100%
+
+5. Which of the following is a secondary cause of hypertension related to an 
+endocrine disease? 
+o A. Pheochromocytoma 
+o B. High salt intake 
+o C. Smoking 
+o D. Middle age 
+6. Chronic hypertension is often called a "silent killer" because it can lead to: 
+o A. Myocardial Infarction 
+o B. Brain strokes (ischemic or hemorrhagic) 
+o C. Retinopathy 
+o D. All of the above 
+Section 3: Physiological Control Mechanisms 
+7. The amount of blood pumped by the left ventricle in one single beat is called: 
+o A. Cardiac Output 
+o B. Stroke Volume (SV) 
+o C. End Diastolic Volume 
+o D. Peripheral Resistance 
+8. Which of the following substances acts as a natural vasoconstrictor produced by 
+the vascular endothelium? 
+o A. Nitric oxide 
+o B. Prostacycline (PGI2) 
+o C. Endothelin 
+o D. Bradykinin 
+9. Which drug acts specifically as an endothelin receptor antagonist? 
+o A. Clonidine 
+o B. Bosentan 
+o C. Prazosin
+
+o D. Atenolol 
+Section 4: Sympatholytic Drugs (Centrally Acting & Alpha Blockers) 
+10. The mechanism of action for Clonidine is: 
+o A. $α1$ receptor blockade 
+o B. Presynaptic $α2$ agonism 
+o C. $β1$ receptor blockade 
+o D. Ganglion blockade 
+11. Which drug is preferred for treating hypertension during pregnancy? 
+o A. Clonidine 
+o B. $α$-Methyl dopa 
+o C. Propranolol 
+o D. Guanethidine 
+12. A common side effect of Prazosin, often requiring combination with Propranolol, 
+is: 
+o A. Hemolysis 
+o B. Dry nasal mucosa 
+o C. Orthostatic hypotension with reflex tachycardia 
+o D. Rebound hypertension 
+Section 5: Beta-Blockers and Combined Blockers 
+13. Which beta-blocker is classified as "Cardioselective" but also produces a 
+vasodilating effect via Nitric Oxide (NO)? 
+o A. Propranolol 
+o B. Atenolol 
+o C. Nebivolol 
+o D. Timolol 
+14. Beta-blockers are generally considered more effective in: 
+o A. Black patients and elderly patients
+
+o B. White patients and young patients 
+o C. Diabetic patients with asthma 
+o D. Acute heart failure patients 
+15. Abrupt withdrawal of beta-blockers in patients with ischemic heart disease can 
+induce: 
+o A. Hallucinations 
+o B. Impotence 
+o C. Angina or Myocardial Infarction 
+o D. Hemolysis 
+16. Which drug is a combined $α$ and $β$ blocker used in hypertensive crises and 
+pheochromocytoma? 
+o A. Labetalol 
+o B. Bisoprolol 
+o C. Terazosin 
+o D. Clonidine 
+ 
+Part II: Essay & Short Answer Questions 
+1. Define Hypertension and provide the classification table for Blood Pressure 
+categories based on JNC 7. 
+2. List four potential complications of untreated chronic hypertension. 
+3. Compare Primary (Essential) and Secondary Hypertension in terms of etiology 
+and percentage of occurrence. 
+4. Explain the mechanism of the Baroreflex control of blood pressure when BP 
+increases. 
+5. Briefly describe the mechanism of action and the specific clinical use for $α$-
+Methyl dopa. 
+6. List five therapeutic uses for $β$-blockers other than hypertension. 
+7. Identify the contraindications for using $β$-blockers.
+
+Answer Key 
+Part I: MCQs 
+1. B | 2. B | 3. B | 4. C | 5. A | 6. D | 7. B | 8. C | 9. B | 10. B | 11. B | 12. C | 13. C | 
+14. B | 15. C | 16. A 
+Part II: Essay Hints 
+1. Definition: Sustained increase in BP (>130/80). Table: Normal (<120/80), Pre-HTN 
+(120-139/80-89), Stage 1 (140-159/90-99), Stage 2 (≥160/100). 
+2. Complications: Brain stroke, Heart failure, Myocardial Infarction, Renal failure, 
+and Retinopathy. 
+3. Primary: 80-90%, Idiopathic (salt, stress, smoking). Secondary: 10-20%, caused by 
+endocrine disease, renal disease, or drugs. 
+4. Baroreflex: Increase in BP → distension of aorta/carotid → stimulates 
+baroreceptors → impulses to vasomotor center → decreased Sympathetic and 
+increased Parasympathetic stimulation. 
+5. $\alpha$-Methyl dopa: Converted to $\alpha$-methyl NE, displaces NE from 
+vesicles (less $\alpha1$ effect) and stimulates $\alpha2$ receptors (decreased 
+release). Used in pregnancy and renal-complicated hypertension. 
+6. Uses: Angina/MI, Supraventricular arrhythmias, Migraine prophylaxis, Glaucoma, 
+Hyperthyroidism, and Anxiety. 
+7. Contraindications: Congestive heart failure (-ve inotropic), Bronchial asthma 
+(non-selective), and Diabetes (especially Propranolol).

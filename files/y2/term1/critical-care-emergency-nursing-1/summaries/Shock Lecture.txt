@@ -1,0 +1,134 @@
+Shock Lecture  
+ 
+I. Definition and Core Mechanism — التعريف والآلية الأساسية 
+Shock is defined as an acute, widespread process of impaired tissue perfusion. 
+تعرف الصدمة بأنها عملية حادة وواسعة لضعف تروية الأنسجة. 
+This leads to cellular, metabolic, and hemodynamic alterations. 
+وهذا يؤدي إلى تغيّرات خلوية وأيضية وديناميكية دموية. 
+The core problem in all types of shock is ineffective tissue perfusion. 
+المشكلة الأساسية في جميع أنواع الصدمة هي ضعف تروية الأنسجة. 
+Shock develops due to an imbalance between oxygen supply and demand. 
+تحدث الصدمة بسبب عدم التوازن بين مقدار الأكسجين الذي يصل للخلايا واحتياجها. 
+This imbalance results in acute circulatory failure (shock syndrome). 
+وهذا الخلل يؤدي إلى فشل حاد في الدورة الدموية (متلازمة الصدمة. 
+ 
+II. Types and Classification of Shock — أنواع الصدمة وتصنيفها 
+Hypovolemic Shock: results from loss of circulating blood volume. 
+الصدمة نقص الحجم: تحدث بسبب فقدان حجم الدم المتداول. 
+Cardiogenic Shock: results from impaired ability of the heart to pump. 
+الصدمة القلبية: تحدث بسبب عدم قدرة القلب على الضخ بشكل فعّال.
+
+Most common cause is myocardial infarction. 
+السبب الأكثر شيوعًا هو احتشاء عضلة القلب. 
+Distributive Shock: results from maldistribution of blood volume. 
+الصدمة التوزيعية: تحدث بسبب سوء توزيع الدم داخل الجسم. 
+Subtypes: Septic, Anaphylactic, Neurogenic shock. 
+تشمل: الصدمة الإنتانية، التحسسية، العصبية. 
+Septic Shock: caused by microorganisms entering the body. 
+الصدمة الإنتانية: تحدث نتيجة دخول الك microorganisms إلى الجسم. 
+Anaphylactic Shock: caused by a severe antigen-antibody reaction. 
+الصدمة التحسسية: تحدث بسبب تفاعل شديد بين الأجسام المضادة والمستضدات. 
+Neurogenic Shock: results from loss of sympathetic tone. 
+الصدمة العصبية: تحدث نتيجة فقدان التون العصبي الودي. 
+ 
+III. Stages & Pathophysiology — مراحل الصدمة والفيزيولوجيا 
+Shock progresses through four stages: Initial, Compensatory, Progressive, Refractory. 
+تتطور الصدمة عبر أربع مراحل: المرحلة الأولية، التعويضية، التقدمية، المقاومة. 
+ 
+     Initial Stage — المرحلة الأولية
+
+Decreased cardiac output and poor perfusion cause cells to switch to anaerobic 
+metabolism. 
+انخفاض النتاج القلبي وضعف التروية يجبر الخلايا على التحول للأيض اللاهوائي. 
+Anaerobic metabolism produces large amounts of lactic acid. 
+الأيض اللاهوائي ينتج كمية كبيرة من حمض اللاكتيك. 
+Lactic acidosis leads to cellular damage. 
+تراكم حمض اللاكتيك يسبب تلف الخلايا. 
+ 
+     Compensatory Stage — المرحلة التعويضية 
+Compensatory mechanisms are mediated by the sympathetic nervous system (SNS). 
+تحدث آليات التعويض عن طريق الجهاز العصبي الودي. 
+These mechanisms include neural, hormonal, and chemical responses. 
+وتشمل استجابات عصبية، هرمونية، وكيميائية. 
+ 
+IV. Assessment & Diagnosis — تقييم وتشخيص الصدمة 
+Assessment focuses on vital sign changes and hemodynamic instability. 
+يركز التقييم على تغيّرات العلامات الحيوية وعدم استقرار الدورة الدموية. 
+ 
+     Key Assessment Findings — أهم العلامات في التقييم
+
+MAP < 60 mmHg and systolic BP < 90 mmHg are indicators of shock. 
+انخفاض الضغط المتوسط تحت60 والضغط الانقباضي تحت90 يشيران للصدمة.  
+Tachycardia or bradycardia may occur. 
+قد يحدث تسرع أو تباطؤ في القلب. 
+Altered mental status is a hallmark of shock. 
+تغير مستوى الوعي علامة رئيسية للصدمة. 
+Patients may be restless → agitated → confused → lethargic. 
+قد يصير المريض قلق → هائج → مشوش → خامل. 
+Respiratory changes include tachypnea and hypoxemia. 
+التغيرات التنفسية تشمل تسرع النفس ونقص الأكسجة. 
+Chest X-ray may worsen, indicating ARDS. 
+قد يسوء أشعة الصدر، مما يشير إلى متلازمة الضائقة التنفسية. 
+Renal findings: decreased urine output, increased BUN and creatinine. 
+علامات الكلى: قلة البول، ارتفاع اليوريا والكرياتينين. 
+Hematologic signs include DIC: petechiae, bruising, bleeding. 
+علامات الدم تشمل التخثر المنتشر: نقط نزفية، كدمات، نزيف. 
+Hypoglycemia and high liver enzymes indicate liver dysfunction. 
+انخفاض السكر وارتفاع إنزيمات الكبد يدل على فشل كبدي. 
+Skin shows decreased turgor and dehydration in hypovolemia. 
+الجلد يظهر نقص المرونة وجفاف في حالات نقص الحجم.
+
+V. Complications — مضاعفات الصدمة 
+Cardiovascular: ventricular failure and microvascular thrombosis. 
+القلب: فشل البطين وتجلطات صغيرة في الأوعية. 
+Neurologic: coma, SNS dysfunction, cardiac/respiratory depression. 
+العصبي: غيبوبة، خلل بالجهاز الودي، تثبيط التنفس والقلب. 
+Pulmonary: acute lung failure and ARDS. 
+الرئتين: فشل حاد ومتلازمة الضائقة التنفسية. 
+Renal: acute kidney injury. 
+الكلى: فشل كلوي حاد. 
+Hematologic: DIC. 
+الدم: التخثر المنتشر داخل الأوعية. 
+GI: failure of GI tract, liver, and pancreas. 
+الجهاز الهضمي: فشل الأمعاء والكبد والبنكرياس. 
+ 
+VI. Management of Shock — علاج الصدمة 
+The main goal is to preserve tissue perfusion. 
+الهدف الأساسي هو الحفاظ على تروية الأنسجة.
+
+1. Pulmonary Gas Exchange — تبادل الغازات الرئوي 
+First priority is establishing and maintaining an airway. 
+أول أولوية هي فتح وتأمين مجرى الهواء. 
+Then improve ventilation and oxygenation using oxygen or mechanical ventilation. 
+ثم تحسين التنفس والأكسجة بالأكسجين أو أجهزة التنفس الصناعي. 
+ 
+     2. Cardiac Output & Fluids — النتاج القلبي والسوائل 
+Adequate cardiac output and hemoglobin are essential for oxygen transport. 
+النتاج القلبي الجيد والهيموغلوبين ضروريان لنقل الأكسجين. 
+CO depends on heart rate, preload, afterload, and contractility. 
+يعتمد النتاج القلبي على النبض، التحميل المسبق، التحميل البعدي، والقدرة الانقباضية. 
+Fluids restore volume and improve hemodynamic stability. 
+تعمل السوائل على استعادة الحجم وتحسين استقرار الدورة الدموية. 
+Types of fluids: crystalloids, colloids, blood products. 
+أنواع السوائل: كريستالويد، كولويد، مشتقات الدم. 
+ 
+     3. Medications — الأدوية 
+Dobutamine:
+
+Stimulates beta1 → increases HR & contractility → vasodilation. 
+يحفّز مستقبلات بيتا1 → يزيد النبض والانقباض → يسبب توسع الأوعية.  
+Dopamine: 
+Restores vascular tone in low CO or distributive shock. 
+يعيد نغمة الأوعية في الصدمة التوزيعية أو انخفاض النتاج القلبي. 
+Epinephrine: 
+Causes vasoconstriction and bronchodilation → used in anaphylaxis. 
+يسبب انقباض الأوعية وتوسيع الشعب → يستخدم في الصدمة التحسسية. 
+Norepinephrine: 
+Alpha stimulation = vasoconstriction; Beta = ↑contractility. 
+تنشيط ألفا = انقباض الأوعية؛ بيتا = زيادة الانقباض. 
+Nitroglycerin: 
+Venous vasodilation → reduces preload (used in cardiogenic shock). 
+يوسع الأوردة → يقلل التحميل المسبق (يستخدم في الصدمة القلبية. 
+Nitroprusside: 
+Arterial vasodilation → decreases afterload. 
+يوسع الشرايين → يقلل التحميل البعدي.

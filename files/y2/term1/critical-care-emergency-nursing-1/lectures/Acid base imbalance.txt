@@ -1,0 +1,329 @@
+ABG interpretation &Acid base imbalance
+Prepared by :
+Assist professor Dr:Afaf Mohamed Mansour
+
+Outline
+1. components of buffering systems 
+2. ABG interpretation 
+3. Alteration in acid base
+1. Respiratory acidosis
+1. Physiological Respiratory acidosis 
+2. Causes 
+3. Clinical assessment findings for patients with 
+Respiratory acidosis 
+4. Management for Respiratory acidosis 
+2. Respiratory Alkalosis
+1. Physiological Respiratory Alkalosis
+2. Causes 
+3. Clinical assessment findings for patients with 
+Respiratory Alkalosis
+4. Management for Respiratory Alkalosis
+
+Outline
+1. Alteration in acid base
+1. Metabolic acidosis
+1. Physiological Metabolic acidosis 
+2. Causes 
+3. Clinical assessment findings for patients with Metabolic acidosis 
+4. Management for Metabolic acidosis 
+2. Metabolic Alkalosis
+1. Physiological Metabolic Alkalosis
+2. Causes 
+3. Clinical assessment findings for patients with Metabolic Alkalosis
+4. Management for Metabolic Alkalosis
+
+Buffer System
+The body regulates acid-base 
+balance through the buffer 
+system. The buffer system can be 
+described as a mechanism for the 
+neutralization of acids.  
+ Buffer system prevent major 
+changes in the pH of body fluids 
+by removing or releasing H+; 
+they can act quickly to prevent 
+excessive changes in H+ 
+concentration.
+
+Three buffer systems exist for maintaining 
+acid-base status:  
+*Blood  
+*Respiratory 
+system  
+*Kidney
+
+The Blood Buffer System  
+• Activated as the H+ concentration changes. 
+As H+ level increases, the pH falls, resulting 
+in acidosis.  
+•  Bicarbonate (HCO3) then combines with H+ 
+to form carbonic acid (H2CO3).  
+•  Carbonic acid then breaks down into carbon 
+dioxide (which is excreted through the lungs) 
+and water (H2O).
+
+The Respiratory Buffer System  
+The lungs react to correct imbalance by 
+altering the rate and depth of respiration.  
+➢In metabolic acidosis: the respiratory rate increase, 
+resulting in a greater amount exhaled carbon dioxide which 
+results in decrease acidic level by excreting excess carbon 
+dioxide from the lungs (to reduce the acid load).  
+➢In metabolic alkalosis: the respiratory rate decreases, 
+causing CO2 to be retained (to increase the acid load)
+
+The Renal Buffer System  
+• The kidneys also play an important role 
+in maintaining acid-base homeostasis 
+by regulating the pH of the blood 
+plasma.  
+• The kidneys have two very important 
+roles in maintaining the acid-base 
+balance:
+1. Reabsorb bicarbonate from urine
+2. Excrete hydrogen ions into urine.
+
+The Renal Buffer System
+• The kidneys are slower to compensate than 
+the lungs; may take up to 2 days to regulate 
+acid base balance.  
+• In respiratory acidosis: kidneys excrete 
+hydrogen ions and conserve bicarbonate ions 
+to help restore balance.  
+• In respiratory alkalosis: kidneys retain 
+hydrogen ions and excrete bicarbonate ions 
+to help restore balance.
+
+Steps in Arterial Blood Gas Interpretation
+Arterial blood gas results should be interpreted 
+systematically.
+The oxygenation is evaluated first.  
+Second, the acid-base status is determined.  
+Third, the primary imbalance is identified.
+Last, compensation is identified
+
+Step 1: Evaluate Oxygenation 
+Oxygenation is analyzed by evaluation of the PaO2 and the SaO2. If the 
+PaO2 is less than the expected normal range, hypoxemia exists
+
+Step 2: Evaluate Acid-Base Status 
+Evaluate the pH.  A pH of less than 7.35 indicates the presence of 
+acidemia; a pH of greater than 7.45 indicates presence of alkalemia.
+
+Evaluate the PaCO2.
+❖ A PaCO2 of less than 35 mmHg indicates the presence of  
+respiratory alkalosis or hyperventilation; 
+❖ a PaCO2 of greater than 45 mm Hg indicates the presence of 
+respiratory acidosis or hypoventilation.
+
+Evaluate the HCO3
+❖ An HCO3 value of less than 22 Meq\L indicates the presence  of 
+metabolic acidosis; 
+❖ a HCO3 of greater than 26 Meq\L indicates the presence of 
+metabolic alkalosis.
+
+Step 3: Determine the primary acid-base 
+Imbalance
+The primary cause of the acid-base imbalance is determined by 
+evaluation of the pH. If the pH is less than 7.35, the primary disorder is 
+acidosis. If the pH is greater than 7.45, the primary disorder is alkalosis
+
+Step 4: Determine Compensation 
+The body has three buffer systems that maintain a constant acid-base balance. 
+▪ Normal pH is fully compensated. 
+▪ Abnormal pH is partially compensated.
+ Example 1 :  a 47-year-old kidney dialysis patient is admitted to the hospital. 
+He has missed his last 2 dialysis treatments. His blood gas results are as follows: 
+What the interpretation of this result?  pH 7.32, PaCO2 34,  HCO3 18
+
+Example 1: Steps in Arterial Blood Gas Interpretation
+Step 1: Examine the pH level. It is low, therefore it is acidosis.  
+Step 2: Examine the PaCO2 level. It is low. The pH and PaCO2 aremoving in the 
+same direction; therefore this is a metabolic disorder. In this case, the lungs are now 
+attempting to compensate by “blowing off” excessive CO2, and therefore increasing the 
+pH.  
+Step 3: Examine the HCO3 level. It is low. This confirms that it is a metabolic issue. 
+ Interpretation = metabolic acidosis  with partially compensated
+
+Alteration in acid base
+• Respiratory Acidosis
+• Respiratory alkalosis 
+• Metabolic Acidosis
+• Metabolic alkalosis
+
+Respiratory Acidosis 
+• is a medical emergency in which decreased ventilation 
+(hypoventilation) increases the concentration of carbon dioxide in 
+the blood and decreases the blood's pH (a condition generally 
+called acidosis). 
+• Alveolar hypoventilation thus leads to an increased PaCO2 (a 
+condition called hypercapnia). The increase in PaCO2 in turn 
+decreases the HCO3−/PaCO2 ratio and decreases pH
+
+Types of Respiratory Acidosis 
+Acute Respiratory Acidosis
+  The PaCO2 is elevated above the upper limit of the reference range 
+(over 45 mmHg) with an accompanying acidemia (pH <7.35). 
+• Chronic Respiratory Acidosis, 
+ The PaCO2 is elevated above the upper limit of the reference range, with 
+a normal blood pH (7.35 to 7.45) or near-normal pH secondary to renal 
+compensation and an elevated serum bicarbonate (HCO3 >30 mEq\l). 
+Respiratory Acidosis                     Metabolic alkalosis
+                                                    Compensate
+
+Causes of Respiratory Acidosis
+1- Inhibition of the Medullary Respiratory Center
+A.  Acute causes:  
+ -Drugs: anesthetics, sedatives                                                  - Oxygen in chronic hypercapnia  
+ - Cardiac arrest                                                                          - Central sleep apnea
+B . Chronic causes: 
+ -Extreme obesity (pickwickian syndrome)         - Central nervous system disease (rare) 
+ -Metabolic alkalosis 
+2- Disorders of the Respiratory Muscles and Chest Wall 
+A- A cute causes:
+ -Muscle weakness: myasthenia gravis, periodic paralysis,      -Guillain-Barré syndrome                                  
+-Severe hypokalemia                    -Hypophosphatemia 
+B. Chronic cause : 
+ -Muscle weakness: spinal cord injury, poliomyelitis, multiple  sclerosis, and myxedema                   
+-Kyphoscoliosis         -Extreme obesity
+
+Causes of Respiratory Acidosis 
+3-Upper Airway obstruction 
+-Aspiration -Obstructive sleep apnea         -laryngospasm                   Mechanical Ventilation
+Permissive hypercapnia                                               Reversal of hyperventilation
+4- Disorders affecting Gas Exchange Across the   Pulmonary Capillary
+A.  A cute
+ - Acute respiratory distress syndrome
+ -Acute cardiogenic pulmonary edema
+ - Severe asthma or pneumonia
+ -Pneumothorax /Pulmonary hemorrhage
+B. Chronic: 
+ COPD, bronchitis, emphysema and extreme obesity
+
+Symptoms of Respiratory Acidosis 
+• The initial symptoms include:  
+1. Headache, blurred vision,  
+2. Restlessness, and anxiety, which can progress to tremors, 
+asterixis, delirium, and somnolence (called CO2 narcosis). 
+3. The cerebrospinal fluid pressure is often elevated  
+4. Papilledema may be seen. 
+5. Arrhythmias and peripheral vasodilatation can produce 
+hypotension if the systemic pH falls below 7.10.  
+6. Rapid shallow respiration, muscle weakness.
+
+Symptoms of Respiratory Acidosis 
+Chronic respiratory acidosis is also associated with: 
+1. Corpulmonale and peripheral edema.  
+2. The cardiac output and glomerular filtration rate 
+are usually normal in this disorder 
+3. Memory loss, sleep disturbances, and personality 
+changes
+
+Management of Respiratory Acidosis 
+Treating acute acidosis usually means addressing the underlying cause.
+• The criteria for admission to the intensive care unit (ICU) 
+include 
+1. Patient confusion, 
+2. Lethargy
+3. Respiratory muscle fatigue, and a low pH (< 7.25). For example airway may 
+need to be cleared. This must be done as soon as possible. 
+Artificial ventilation may also be needed.
+
+Management of Respiratory Acidosis 
+•Infusion of sodium bicarbonate is rarely indicated. This measure may be considered 
+after cardiopulmonary arrest with an extremely low pH (< 7.0 - 7.10). In most other 
+situations, sodium bicarbonate has no role in the treatment of respiratory acidosis 
+Chronic Respiratory Acidosis 
+The goal is to improve airway function. Some strategies include: 
+ Antibiotics to treat infection 
+ Diuretics to reduce excess fluid affecting the heart and lungs 
+ Bronchodilators to expand the airways 
+ Corticosteroids to reduce inflammation 
+ Mechanical ventilation in severe cases
+
+Respiratory Alkalosis 
+•Is a medical condition in which increased 
+respiration elevates the blood pH beyond the 
+normal range (7.35–7.45) with a concurrent 
+reduction in arterial levels of carbon dioxide.
+
+Types of Respiratory Alkalosis 
+There are two types of respiratory alkalosis: chronic and acute as 
+a result of the 3-5 day delay in kidney compensation of the 
+abnormality. 
+✓ Acute respiratory alkalosis occurs rapidly, have a high pH because 
+the response of the kidneys is slow. 
+✓ Chronic respiratory alkalosis is a more long-standing condition; 
+the kidneys have time to decrease the bicarbonate level
+
+Causes of Respiratory Alkalosis 
+• Heart attack                    - Pain 
+• Anxiety 
+• Asthma                            - Chronic Obstructive Pulmonary Disease 
+• Infection                          - Pulmonary Embolism 
+• Pregnancy Stress              - Pulmonary disorder 
+• Fever                               - Liver disease 
+• Heart disorder or other, including improper mechanical ventilation. 
+• V ocal cord paralysis (compensation for loss of vocal volume results in 
+overbreathing/breathlessness). 
+• Salicylate poisoning (aspirin overdose)
+
+Symptoms of Respiratory Alkalosis 
+• Tachypnea  
+• Dizziness 
+• Hypokalemia  
+• Lethargy & Confusion 
+• Dry mouth 
+• Tingling in the arms 
+• Heart palpitations 
+• Impaired neuromuscular function (e.g., paresthesias, tetany, tremor) 
+• Nausea & vomiting
+
+Management of  Respiratory Alkalosis 
+The treatment for respiratory alkalosis depends on the 
+underlying cause. 
+1-Panic and anxiety-related causes 
+• Treating the condition is a matter of raising carbon dioxide levels in 
+the blood.  
+• The following strategies and tips are useful for respiratory alkalosis 
+caused by over breathing due to panic and anxiety.
+
+Management of  Respiratory Alkalosis 
+2. Breathe into a paper bag 
+▪ Fill the paper bag with carbon dioxide by exhaling into it. 
+▪ Breathe the exhaled air from the bag back into the lungs. 
+▪ Repeat this several times. 
+3- Reassurance 
+• The symptoms of respiratory alkalosis can be frightening. This often 
+causes faster and deeper breathing, making things worse.  
+• Having a calm loved one provide reassurance could help get breathing 
+under control.
+
+Management of  Respiratory Alkalosis 
+Restrict oxygen intake into the lungs 
+• To do this, try breathing while pursing the lips or breathing 
+through one nostril.  
+• For the second approach to be useful, the mouth and the other 
+nostril need to be covered.
+
+Metabolic Acidosis
+ Bicarbonate deficit  - blood concentrations of bicarb drop below 22mEq/L
+• Causes Metabolic Acidosis
+– Accumulation of acids (lactic acid or ketones)(Diabetes ketoacidosis (DKA)
+– Loss of bicarbonate through diarrhea or renal dysfunction
+– Kidney disease is one of the most common causes of metabolic acidosis. Because 
+kidneys are not able to remove enough acid from blood, causing a build-up in body.
+– CKD(chronic kidney disease
+–  Acute kidney injury (AKI). Healthy kidneys remove natural waste products from 
+blood, including acids.
+– Hyperkalemia (high potassium levels)   -Albuminuria   
+– -Smoking      - Anemia (low red blood cell level
+
+Symptoms of Metabolic Acidosis
+• Headache, lethargy
+• Nausea, vomiting, diarrhea
+• Coma     -Death
+• Compensation for Metabolic Acidosis
+• Increased ventilation
+• Renal excretion of hydrogen ions if possible
+• K+ exchanges  with excess H+ in ECF ,( H+ into cells, K+ out of cells)

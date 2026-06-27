@@ -1,0 +1,66 @@
+Pathology Examination 
+Hemodynamic Disturbances 
+Thrombosis & Embolism 
+ 
+Part I: Multiple Choice Questions (MCQs) 
+1. According to Virchow’s triad, a primary cause of thrombus formation is: 
+A) Efficient collateral circulation 
+✔ B) Endothelial cell injury 
+C) Patchy ischemic necrosis 
+D) Minimal reduction in blood supply 
+ 
+2. In Virchow’s triad, abnormal blood flow includes stasis and: 
+A) Atherosclerosis 
+✔ B) Turbulence (unsteady blood flow) 
+C) Neoplasia 
+D) Hypercoagulability 
+ 
+3. A thrombus occurring in a non-inflamed vein (e.g. in heart failure or varicose veins) 
+is called: 
+A) Thrombophlebitis 
+✔ B) Phlebothrombosis 
+C) Arteritis 
+D) Agonal thrombus
+
+4. The thrombus characterized by “Lines of Zahn” (alternating pale and dark layers) is: 
+A) Pale thrombus 
+B) Red thrombus 
+✔ C) Mixed thrombus 
+D) Capillary thrombus 
+ 
+5. A pale (white) thrombus is mainly composed of: 
+A) Fibrin with trapped RBCs 
+✔ B) Platelets and fibrin (platelets > fibrin) 
+C) Bacteria and necrotic debris 
+D) Yellow fibrin only 
+ 
+6. The usual fate of a septic thrombus is fragmentation leading to: 
+A) Recanalization 
+✔ B) Septic emboli and pyemic abscesses 
+C) Complete lysis 
+D) Calcification 
+ 
+7. An embolus is best defined as: 
+A) A mass formed during life 
+B) Impaction of a mass in a vessel 
+✔ C) A detached intravascular mass circulating to a site distant from its origin 
+D) Granulation tissue invading a thrombus
+
+Part III: Essay & Short Answer Questions 
+Q1. Fate of an Aseptic Thrombus 
+An aseptic thrombus (free of bacteria) may undergo the following fates: 
+• Lysis: Fibrinolytic activity dissolves the thrombus and restores blood flow 
+• Organization: Granulation tissue invades the thrombus from the vessel wall 
+• Recanalization: Formation of wide anastomosing channels through the thrombus 
+• Embolization: Detachment of the thrombus forming an embolus 
+• Other outcomes: Calcification, permanent vascular occlusion, or secondary 
+infection
+
+Q2. Factors Causing Hypercoagulability (Virchow’s Triad) 
+• Genetic (Primary): 
+o Factor V Leiden mutation 
+o Prothrombin gene mutation 
+• Acquired (Secondary): 
+o Prolonged immobilization (bed rest) 
+o Surgery or fractures 
+o Pregnancy

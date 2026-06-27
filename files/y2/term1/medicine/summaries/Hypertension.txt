@@ -1,0 +1,158 @@
+**Hypertension – Simplified Bilingual Lecture 
+(ارتفاع ضغط الدم– المحاضرة مبسطة ثنائية اللغة**)  
+ 
+I. Definition and Diagnosis 
+تعريف المرض وتشخيصه** 
+Hypertension is a persistent elevation of arterial blood pressure. 
+ارتفاع ضغط الدم هو ارتفاع مستمر في ضغط الدم داخل الشرايين. 
+It is diagnosed when: 
+يتم تشخيصه عندما يكون: 
+• SBP ≥ 140 mmHg 
+الضغط الانقباضي140  أو أعلى  
+• DBP ≥ 90 mmHg 
+الضغط الانبساطي90 أو أعلى  
+ 
+II. Classification of Blood Pressure 
+تصنيف ضغط الدم** 
+Category Systolic Diastolic 
+Normal <120 <80 
+Prehypertension (High Normal) 120–129 <80 
+Stage 1 Hypertension 130–139 80–89 
+Stage 2 Hypertension ≥140 ≥90 
+Hypertensive Crisis >180 >120 
+Blood pressure is classified based on SBP and DBP levels. 
+يتم تصنيف ضغط الدم بناءً على مستوى الانقباضي والانبساطي. 
+ 
+III. Pathophysiology 
+الفيزيولوجيا المرضية**
+
+Blood pressure depends on two factors: 
+يعتمد ضغط الدم على عاملين رئيسيين: 
+1. Cardiac output (amount of blood pumped) 
+النتاج القلبي (كمية الدم التي يضخها القلب 
+2. Peripheral vascular resistance 
+مقاومة الأوعية الدموية 
+Hypertension happens when cardiac output or resistance increases. 
+يحدث ارتفاع ضغط الدم عند زيادة النتاج القلبي أو المقاومة الوعائية أو كلاهما. 
+Key mechanisms include: 
+تشمل الآليات الأساسية: 
+• Overactivation of the sympathetic nervous system 
+زيادة نشاط الجهاز العصبي السمبثاوي 
+• Stimulation of RAAS 
+تنشيط نظام الرينين–أنجيوتنسين –ألدوستيرون  
+• Endothelial dysfunction 
+خلل في وظيفة بطانة الأوعية الدموية 
+ 
+IV. Types & Risk Factors 
+أنواع ارتفاع الضغط وعوامل الخطورة** 
+1. Types of Hypertension 
+أنواع ارتفاع الضغط** 
+Primary hypertension (90–95%) – no single clear cause 
+الضغط الأولي (الأكثر شيوعًا) ولا يوجد سبب واحد محدد. 
+Secondary hypertension – due to a known cause 
+الضغط الثانوي– نتيجة مرض واضح مثل:  
+• أمراض الكلى  
+• اضطرابات الغدد مثل كوشينغ و فرط نشاط الغدة الدرقية  
+ 
+2. Risk Factors
+
+عوامل الخطورة** 
+Non-modifiable (cannot change): 
+غير قابلة للتغيير: 
+• العمر 
+• العوامل الوراثية  
+• الجنس 
+• العِرق 
+Modifiable (can be improved): 
+قابلة للتغيير: 
+• السمنة 
+• زيادة الملح  
+• التدخين 
+• الكحول 
+• قلة الحركة  
+• التوتر 
+ 
+V. Clinical Manifestations & Complications 
+الأعراض والمضاعفات** 
+1. Clinical Manifestations 
+الأعراض** 
+Hypertension is called the “silent killer.” 
+يسمى "القاتل الصامت" لأنه غالباً بدون أعراض. 
+الأعراض التي قد تظهر عند ارتفاع الضغط الشديد: 
+• Headache صداع 
+• Dizziness دوخة 
+• Blurred vision تشوش الرؤية 
+• Chest pain ألم في الصدر
+
+• Shortness of breath ضيق تنفس 
+• Nosebleed نزيف من الأنف 
+ 
+2. Complications (Target Organ Damage) 
+المضاعفات (تأثيره على الأعضاء** 
+• Heart: LVH, heart failure, MI 
+القلب: تضخم البطين، فشل قلبي، جلطة 
+• Brain: Stroke 
+الدماغ: جلطة دماغية 
+• Kidneys: Chronic kidney disease 
+الكلى: فشل كلوي 
+• Eyes: Retinopathy 
+العين: اعتلال شبكي 
+• Blood vessels: Peripheral arterial disease 
+الأوعية: مرض الشرايين الطرفية 
+ 
+VI. Diagnosis and Management 
+التشخيص والعلاج** 
+Diagnosis 
+التشخيص** 
+• Accurate BP measurement قياس ضغط صحيح 
+• Repeated readings قراءات متعددة 
+• Blood tests & urinalysis تحاليل دم وبول 
+• Assess organ damage تقييم أي تلف بالأعضاء 
+ 
+Management Goals 
+هدف العلاج**
+
+Reduce BP below 140/90 mmHg 
+خفض الضغط لأقل من140/90  
+(وأقل لمرضى السكر والكلى) 
+ 
+1. Lifestyle Modifications 
+تغيير نمط الحياة** 
+• Reduce salt → تقليل الملح 
+• Healthy weight → وزن صحي 
+• Exercise → رياضة منتظمة 
+• Stop smoking → إيقاف التدخين 
+• Limit alcohol → تقليل الكحول 
+• Stress control → التحكم في التوتر 
+• Healthy diet → أكل صحي 
+ 
+2. Pharmacologic Therapy 
+العلاج الدوائي** 
+• Diuretics مدرات البول 
+• ACE inhibitors 
+• ARBs 
+• Calcium channel blockers 
+• Beta blockers (for selected cases) 
+ 
+**VII. Hypertensive Emergency & Nursing Role 
+أزمة ارتفاع الضغط ودور التمريض** 
+Hypertensive Emergency 
+أزمة ارتفاع الضغط**
+
+BP >180/120 + organ damage 
+ضغط أعلى من180/120 مع تلف بالأعضاء.  
+يحتاج لتدخل فوري. 
+ 
+Nursing Management 
+دور التمريض** 
+• Accurate BP monitoring قياس الضغط بدقة 
+• Follow medications متابعة الالتزام بالدواء 
+• Teach lifestyle changes تعليم المريض 
+• Recognize crisis symptoms التعرف على علامات الأزمة 
+ 
+VIII. Conclusion 
+الخلاصة** 
+Hypertension is a chronic but manageable condition. 
+ارتفاع الضغط مرض مزمن لكنه قابل للسيطرة. 
+Early diagnosis + lifestyle changes = fewer complications. 
+التشخيص المبكر وتعديل نمط الحياة يقللان من حدوث المضاعفات.

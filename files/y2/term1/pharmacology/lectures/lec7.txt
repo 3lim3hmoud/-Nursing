@@ -1,0 +1,182 @@
+-Hypertension is defined as sustained increase in BP.
+-Hypertension occurs when systolic BP ˃ 130 mm Hg
+or diastolic BP ˃ 80 mm Hg on at least two occasions.
+-Systolic: The top number , measures the pressure in the 
+arteries when the heart beats (when the heart muscle 
+contracts).
+-Diastolic: The bottom number, measures the pressure in the 
+arteries between heartbeats (when the heart muscle is resting 
+between beats and refilling with blood).
+Hypertension
+
+Blood Pressure Category:
+Category Systolic Diastolic
+Normal less than 120 less than 80
+Pre-hypertension 120 – 139 80 – 89
+(Hypertension) Stage 1 140 – 159 90 – 99
+(Hypertension) Stage 2 160 or higher 100 or higher
+Classification of BP, based on report of the seventh report of the Joint National Committee (JNC 7).
+
+Why hypertension should be treated?
+"silent killer" increases the rate of morbidity and mortality.
+-Renal failure & retinopathy .
+Chronic hypertension leads to:
+- Brain strokes 
+(ischemic or hemorrhagic).
+-Heart failure & Myocardial Infarction
+
+Etiology of hypertension:
+Note: In case of secondary hypertension, you must treat the cause of 
+hypertension (curative treatment).
+Primary (essential) hypertension Secondary hypertension
+About   80-90 %  (Idiopathic) About  10-20%
+Risk factors:
+-↑ salt intake, stress and smoking.
+- Overweight.
+- Black people & middle age male 
+with high risk.                                      
+Causes:
+1-Endocrine disease as:
+- Pheochromocytoma
+-Cushing disease
+- Hyperthyroidism.
+2- drugs: Oral contraceptive
+3- Renal disease.
+
+A-Stroke volume (SV): The amount of blood pumped by the left ventricle of the heart 
+in one beat.
+-Stroke volume depends on→ preload and afterload and contractility
+1-Preload: how much volume of the blood in the ventricle at the end of diastole (EDV).
+2-Afterload: also known as the peripheral resistance (PR), is the amount of resistance 
+the heart must overcome to open the aortic valve and push the blood volume out into 
+the systemic circulation.
+Factors & parameters affecting blood pressure:
+•CO = SV x HR
+•BP= CO x PR
+3- Contractility
+
+-Cardiac output and peripheral resistance, in turn, are controlled 
+mainly by two overlapping control mechanisms:
+1-Baroreflexes→ Baroreceptors
+2- Renin-angiotensin-aldosterone system
+BP= CO x PR
+
+1-Baroreceptors and the sympathetic nervous system
+- ↑↑ BP → distension of the aorta and the carotid 
+arteries → stimulates baroreceptors→  impulses 
+vasomotor center→↓↓Sympathetic stimulation and 
+↑↑ Parasympathetic stimulation
+-↓↓BP  →less distension or stretch of the aorta 
+and the carotid arteries →↓↓
+baroreceptor stimulation→↓↓ impulses 
+vasomotor center → ↑↑ Sympathetic 
+stimulation and ↓↓ Parasympathetic 
+stimulation
+
+2- Renin-angiotensin-aldosterone system (RAAS).
+
+Vascular endothelium Hormones
+-Nitric oxide → vasodilator
+-Prostacycline (PGI2) → vasodilator
+-Bradykinine→ vasodilator
+-Endothelin→ vasoconstrictor
+-Aldosterone and cortisol
+Thyroxin -
+Other factors controlling blood pressure :
+Bosentan is a endothelin 
+receptor antagonis
+
+B1
+α2 agonist Centrally acting)
+clonidine & alpha methyldopa.
+Ganglion blockers
+trimethaphan.
+Adrenergic neuron
+blockers
+guanethidine, reserpine,
+methyldopa.
+α+β blockers (labetalol).
+α blocker
+β blockers
+A-Sympatholytic 
+drugs
+BP= CO x PR
+
+1- Centrally acting drugs:
+Clonidine & α- Methyl dopa
+i) Clonidine:
+Mechanism:
+-Presynaptic α2 agonist→↓↓ release sympathetic outflow →↓↓ NE.
+Uses:
+-Hypertension complicated with renal disease → not ↓ RBF or GFR
+.
+NOTE: causes Na/H2O retention so used in combination with diuretics
+-Rebound hypertension occurs following abrupt withdrawal of clonidine. 
+The drug should, therefore, be withdrawn slowly.
+
+ii) α-Methyl dopa :
+Mechanism:
+-It enters sympathetic nerve ending → converted into α-methyl NE 
+which displace NE  from synaptic vesicle & when exocytose  less effect 
+on α1 receptors  less V.C. 
+-Strong effect on α2 →↓NE release.
+Uses:
+-Used in hypertension in pregnancy.
+-Hypertension complicated with renal disease → not ↓ RBF or GFR.
+Side effects of Clonidine & α-methlyIdopa: 
+-Sedation, Drowsiness and postural hypotension.
+-Clonidine → dry of nasal mucosa           α methyl-dopa→ hemolysis.
+
+Mech : competitive α1-blocker→ V.D →↓PR → ↓ BP 
+Uses:
+for mild or moderate hypertension.
+-In combination with proporanolol
+Side effects:
+1-Orthostatic hypotension with reflex tachycardia and first-dose syncope 
+(so used in combination with proporanolol)   
+2-Sexual and bladder dysfunctions
+-Tamsulosin: is α1A receptor used for patients with prostatic 
+hyperplasia
+.
+2) α-Blockers:
+Prazosin & Terazosin & Doxazosin
+
+•Non selective → Propranolol (block β1 in heart  and β2 bronchi)
+•Cardioselective → Atenolol & Bisoprolol
+• Cardioselective with VD effect (↑↑NO) → Nebivolol
+3) β -Blockers:
+Mechanism:
+-Block β1 in heart →↓  cardiac output →↓ B.P.
+-Decrease release central sympathetic outflow.
+-Decrease renin release from the kidney (Block β1 in kidney) →↓ angiotensin 
+II & aldosterone.
+
+Therapeutic uses:
+1- Hypertension                                   2- Angina & myocardial infarction 
+3- Supraventricular arrhythmias 4- Migraine (prophylaxis)
+5- Glaucoma (esp: Timolol) 6- Hyperthroidism     7- Anxiety
+N.B : β -blockers are more effective in white than black patients & in 
+young than old patients. (web search activity)
+Drug withdrawal: Abrupt withdrawal may induce angina, myocardial 
+infarction.
+Therefore, the dose of these drugs must be tapered over 2 to 3 weeks 
+in patients with hypertension and ischemic heart disease.
+
+Contraindications:
+-Congestive heart failure (-ve inotropic)
+-Bronchial asthma (if non-selective)
+-Diabetes (esp.propranolol).
+Note : Nebivolol can be used with chronic heart failure not for acute 
+heart failure.
+Adverse effects:
+-CNS side effects (depression, fatigue hallucinations & night mares).
+-Decrease HDL (risk for atherosclerosis).
+-Bronchospasm .
+-Impotence.
+
+4) α & β -Blockers:
+Labetalol & Carvedilol
+Uses: 
+-Hypertensive crisis & pheochromocytoma.
+-Carvedilol: is effective as antihypertensive in heart failure.
+-Labetalol: can be used in pregnancy.

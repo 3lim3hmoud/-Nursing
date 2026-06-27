@@ -1,0 +1,186 @@
+1. Myocardial Infarction (MI) – Heart Attack 
+ 
+2. Definitions and Etiology 
+1. Definition: MI is irreversible cellular loss and myocardial necrosis caused by an 
+abrupt decrease or cessation of coronary blood flow to a specific area of the 
+heart. 
+التعريف: احتشاء عضلة القلب هو فقدان خلوي لا رجعة فيه وموت عضلة القلب بسبب انخفاض مفاجئ 
+أو توقف تدفق الدم التاجي لمنطقة محددة من عضلة القلب. 
+2. Etiology: Atherosclerosis is responsible for most MI cases, as it narrows arteries 
+and reduces blood/oxygen delivery to the myocardium. 
+الأسباب: تصلب الشرايين هو المسؤول عن معظم حالات  MI لأنه يضيق الشرايين ويقلل من توصيل الدم
+والأكسجين لعضلة القلب. 
+3. Mechanisms of Blockage: 
+o Plaque rupture. 
+تمزق اللويحة. 
+o New coronary artery thrombosis. 
+تخثر جديد في الشريان التاجي. 
+o Coronary artery spasms related to the ruptured plaque. 
+تشنجات الشريان التاجي المرتبطة باللويحة الممزقة. 
+ 
+3. Pathophysiology: Zones of Damage 
+1. Zone of Ischemia: Outer region of infarcted area, composed of viable cells. 
+منطقة نقص التروية: المنطقة الخارجية من منطقة الاحتشاء، تحتوي على خلايا حية.
+
+2. Zone of Injury: Surrounded by injured but potentially viable tissue; shows ST 
+elevation on ECG. 
+منطقة الإصابة: محاطة بأنسجة مصابة لكنها قد تكون حية؛ تظهر ارتفاع  ST على ECG. 
+3. Zone of Infarction: Area of necrotic muscle; shows new pathological Q waves on 
+ECG. 
+منطقة الاحتشاء: منطقة العضلة الميتة؛ تظهر موجات  Q مرضية جديدة على  ECG. 
+ 
+4. Classification of Infarctions 
+1. Transmural Infarction: Involves all three muscle layers (endocardium, 
+myocardium, epicardium) → full-thickness necrosis; ECG shows new Q wave + ST 
+changes. 
+الاحتشاء العميق Transmural): يشمل جميع طبقات العضلة الثلاث (البطانة الداخلية، العضلة القلبية،
+الغشاء الخارجي)  →نخر كامل السمك ؛  ECG يظهر موجة Q جديدة وتغيرات ST. 
+2. Non-transmural Infarction: Subendocardial (endocardium + myocardium) or 
+subepicardial (myocardium + epicardium); ST depression on ECG; R wave normal. 
+الاحتشاء غير العميق Non-transmural): تحت البطانة أو تحت الغشاء الخارجي؛ يظهر انخفاض ST 
+على ECG؛ موجة R طبيعية. 
+3. NSTEMI: Not full-thickness lesion; some muscle depolarized, prevents ST 
+elevation. 
+NSTEMI: ليس كل سمك العضلة مصاب؛ بعض العضلة لا زالت مشحونة كهربائياً، لذلك لا يظهر
+ارتفاع ST. 
+ 
+5. MI Locations and ECG Changes 
+1. Anterior Wall Infarction: Occlusion of proximal LAD artery; ST elevation in V1-
+V4; Left main artery → V1-V6, I, aVL.
+
+احتشاء الجدار الأمامي: انسداد الشريان الأمامي النازل القريب؛ ارتفاع ST في V1-V4؛ إذا انسد الشريان
+التاجي الرئيسي  →V1-V6, I, aVL. 
+2. Left Lateral Wall Infarction: Circumflex artery occlusion; new Q waves + ST/T 
+changes in I, aVL, V5, V6. 
+احتشاء الجدار الجانبي الأيسر: انسداد الشريان المحيطي؛ موجات Q جديدة + تغيرات ST/T في I, aVL, 
+V5, V6. 
+3. Inferior Wall Infarction: RCA occlusion; changes in II, III, aVF; conduction 
+disturbances common. 
+احتشاء الجدار السفلي: انسداد الشريان التاجي الأيمن؛ التغيرات في II, III, aVF؛ اضطرابات التوصيل
+شائعة. 
+4. Right Ventricular Infarction: Proximal RCA blockage; ECG leads V1R-V6R; 10-15% 
+show classic hemodynamic abnormalities. 
+احتشاء البطين الأيمن: انسداد proximal RCA؛ ECG V1R-V6R؛10-15% من المرضى يظهرون
+اضطرابات دموية نموذجية. 
+5. Posterior Wall Infarction: Blockage in RCA or circumflex; hard to detect; may see 
+in V1-V2. 
+احتشاء الجدار الخلفي: انسداد في RCA أو circumflex؛ صعب الاكتشاف؛ يظهر أحياناً في V1-V2. 
+ 
+6. Risk Factors 
+• Age: Men ≥ 45; Women ≥ 55. 
+العمر: الرجال45، النساء55 . 
+• Tobacco use: Smoking → atherosclerosis & plaque obstruction. 
+التدخين: يسبب تصلب الشرايين و انسداد اللويحات. 
+• High Blood Pressure: Damages arteries over time. 
+ارتفاع ضغط الدم: يضر الشرايين مع الوقت.
+
+• High Cholesterol/Triglycerides: High LDL narrows arteries. 
+ارتفاع الكوليسترول/الدهون الثلاثية: LDL مرتفع → تضيق الشرايين. 
+• Obesity: Linked to high BP , diabetes, poor cholesterol. 
+السمنة: مرتبطة بارتفاع ضغط الدم، السكري، والكوليسترول السيء. 
+• Diabetes: High blood sugar increases risk. 
+السكري: ارتفاع السكر يزيد الخطر. 
+• Unhealthy Diet: High in sugars, trans fats, processed foods, salt. 
+النظام الغذائي غير الصحي: غني بالسكريات، الدهون المهدرجة، الأطعمة المصنعة، والملح. 
+• Stress: Emotional stress or extreme anger. 
+التوتر: ضغط نفسي أو غضب شديد. 
+ 
+7. Clinical Manifestations 
+• Chest Pain: Severe, crushing, tight; may radiate to arms, neck, jaw. 
+ألم الصدر: شديد، ضاغط، مشدود؛ قد يمتد للذراعين، الرقبة، أو الفك. 
+• Skin: Cool, clammy, pale, diaphoretic, dusky, or hyperthermia. 
+الجلد: بارد، رطب، شاحب، متعرق، داكن اللون، أو حرارة مرتفعة. 
+• Respiratory: Shortness of breath, dyspnea, tachypnea. 
+الجهاز التنفسي: ضيق نفس، صعوبة في التنفس، تنفس سريع . 
+• Cardiovascular: Hypotension, faintness, dysrhythmias (PVCs, brady/tachycardia, 
+heart block). 
+القلب والأوعية الدموية: انخفاض ضغط الدم، إغماء، اضطرابات نظم PVCs، بطء/سّرعة ضربات
+القلب، انسداد قلب.) 
+• Psychological/Other: Anxiety, restlessness, nausea, vomiting. 
+نفسي/أخرى: قلق، توتر، غثيان، قيء.
+
+8. Diagnosis and Cardiac Markers 
+• ECG Changes: Inverted T waves, ST elevation, pathologic Q waves. 
+تغيرات ECG: T مقلوبة، ارتفاع ST، موجات Q مرضية. 
+• Creatine Kinase (CK): Heart, skeletal muscle, brain; rises 4–6h, peaks 18–24h, 
+baseline 36–40h. 
+الكرياتين كيناز CK): القلب، العضلات الهيكلية، الدماغ؛ يرتفع بعد4-6 ساعات، يصل للذروة18-24  
+ساعة، يعود للخط الأساسي36 -40 ساعة.  
+• CK-MB: >5% diagnostic; negative 10–12h → no necrosis. 
+CK-MB: >5% تشخيصي؛ سلبي بعد10-12 ساعة → لا يوجد نخر.  
+• Troponins (cTnI, cTnT, cTnC): Released after necrosis. 
+التروبونينات: تفرز بعد موت الخلايا. 
+• Biomarker Timeline: CK-MB → 24h; cTnI → 24h; cTnT → 12h–2d. 
+خط الزمن للعلامات: CK-MB → 24 ساعة؛ cTnI → 24 ساعة؛ cTnT → 12 ساعة–يومين.  
+ 
+9. Complications of Acute MI 
+Electrical Dysfunctions: 
+• Sinus Bradycardia: 40%, Inferior MI; treat with Atropine 0.5–1 mg IV if 
+symptomatic. 
+بطء الجيب: 40%،MI سفلي؛ يعالج بـ أتروبين 0.5–1 مج IV إذا ظهرت أعراض. 
+• Sinus Tachycardia: Anterior MI; reduces EF & stroke volume; treat Cardioversion 
+(>150 BPM) or Lidocaine (<150 BPM). 
+تسرع الجيب: MI أمامي؛ يقلل EF وSV؛ يعالج بـ Cardioversion (>150) أو ليدوكين 150). 
+• PVCs: Almost all patients; treat with oxygen + IV Lidocaine. 
+PVCs: تقريباً كل المرضى؛ يعالج بالأكسجين + ليدوكين IV.
+
+• AV Block: Common in Inferior MI (RCA); treat with temporary pacemaker. 
+انسداد AV: شائع في MI سفلي؛ يعالج بـ جهاز مؤقت.  
+Pumping Complications: 
+• Ventricular Aneurysm: <5%. 
+تمدد البطين: 5%. 
+• Ventricular Septal Rupture: Rare, lethal, within 24h. 
+تمزق الحاجز البطيني: نادر، قاتل، خلال  24 ساعة.  
+• Acute Mitral Regurgitation: Papillary muscle rupture. 
+قصور صمام ميتري حاد: تمزق العضلات الحليمية. 
+• Cardiac Wall Rupture: Peaks 24h, again days 3–5. 
+تمزق جدار القلب: الذروة بعد 24 ساعة، ثم يوم3 –5 . 
+• Pericarditis: Pain + pericardial friction rub. 
+التهاب التامور: ألم + صوت احتكاك التامور. 
+• Heart Failure: Common on admission for STEMI. 
+فشل القلب: شائع عند دخول مرضى STEMI. 
+ 
+10. Medical and Nursing Management 
+Immediate Care: 
+• Pain control: Morphine to reduce oxygen demand & anxiety. 
+التحكم بالألم: مورفين لتقليل استهلاك الأكسجين والقلق.  
+• Oxygen: Prevent hypoxia. 
+الأكسجين: لمنع نقص الأكسجة. 
+• Bed rest until stabilized. 
+الراحة في الفراش حتى الاستقرار.
+
+Drug Therapies: 
+• Fibrinolytics (e.g., Streptokinase): Within 6h; avoid if bleeding, recent 
+surgery/stroke. 
+العلاج المذيّب للجلطات: ضمن 6 ساعات؛ يمنع إذا نزيف أو جراحة/سكتة حديثة.  
+• Anticoagulation: IV Heparin + oral Aspirin; Heparin 60 units/kg → drip to 
+maintain PTT 50–70s. 
+مضادات التخثر: هبارين IV + أسبرين فموي؛ هبارين60 وحدة/كجم → تسريب للحفاظ على  PTT 50–
+70 ث. 
+• Nitroglycerin: For ischemia. 
+النيتروجلسرين: لعلاج نقص التروية. 
+• Dysrhythmia prevention: Amiodarone or Beta-blockers. 
+الوقاية من اضطراب النظم: أميودارون أو Beta-blockers. 
+• Ventricular remodeling prevention: ACEIs/ARBs. 
+منع إعادة تشكيل البطين: ACEIs/ARBs. 
+Nursing Specifics: 
+• Early mobilization & elevate bed 30° to reduce preload & prevent 
+pneumonia/DVT. 
+التمارين المبكرة ورفع الرأس30°  Preload ومنع الالتهاب الرئوي/DVT. 
+• Monitor hypotension & bleeding; diet advanced after 24h. 
+مراقبة انخفاض ضغط الدم والنزيف؛ تقدم النظام الغذائي بعد24 ساعة.  
+• Identify depression (fatigue, appetite, sleep changes). 
+تحديد الاكتئاب (إرهاق، تغيرات الشهية والنوم.) 
+ 
+11. Nursing Diagnoses
+
+• Acute Pain, Decreased Cardiac Output, Activity Intolerance, Risk for Decreased 
+Cardiac Tissue Perfusion, Disturbed Sleep, Anxiety. 
+تشخيصات التمريض: ألم حاد، انخفاض النتاج القلبي، عدم تحمل النشاط، خطر انخفاض تروية النسيج 
+القلبي، اضطراب النوم، القلق. 
+ 
+12. Post-test Questions 
+• Mention classification of MI according to location. 
+اذكر تصنيف MI حسب الموقع. 
+• Mention complication of MI. 
+اذكر مضاعفات MI.

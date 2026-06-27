@@ -1,0 +1,165 @@
+Receptor-mediated Mechanisms 
+آلية عمل المستقبلات بوساطة الدواء 
+ 
+    Receptors 
+Receptors are macromolecules found on the cell surface, inside the cytoplasm, or in 
+the nucleus. 
+المستقبلات هي جزيئات كبيرة توجد على سطح الخلية أو داخل السيتوبلازم أو داخل النواة. 
+Drugs bind to these receptors to cause changes inside the cell. 
+الأدوية ترتبط بهذه المستقبلات لتُحدث تغيّرات داخل الخلية. 
+Examples: adrenergic receptors, cholinergic receptors. 
+أمثلة: مستقبلات الأدرينالين، مستقبلات الأسيتيل كولين. 
+ 
+    Affinity 
+Affinity means how strongly a drug can bind to a receptor. 
+الأفينيتي تعني مدى قوة ارتباط الدواء بالمستقبل. 
+ 
+    Intrinsic Activity 
+Intrinsic activity means how well a drug can activate the receptor and produce a 
+response. 
+النشاط الداخلي يعني مدى قدرة الدواء على تنشيط المستقبل وإحداث استجابة. 
+ 
+    Agonist 
+An agonist is a drug that binds and activates the receptor to produce an effect. 
+الأجونست هو دواء يرتبط بالمستقبل ويفعّله ليُحدث تأثيرًا . 
+It has high affinity and high intrinsic activity. 
+لديه ارتباط قوي affinity عالية )ونشاط داخلي مرتفع. 
+Example: Adrenaline. 
+مثال: الأدرينالين.
+
+Competitive Antagonist 
+An antagonist binds to the receptor but does not activate it. 
+الأنتاجونست يرتبط بالمستقبل لكنه لا يفعّله. 
+It blocks the receptor so other drugs (agonists) cannot bind. 
+يمنع المستقبل من التفاعل مع الأدوية الأخرى (الأجونست. 
+It has high affinity but no intrinsic activity. 
+لديه ارتباط قوي لكنه بلا نشاط داخلي. 
+Example: Atropine. 
+مثال: الأتروبين. 
+ 
+    Partial Agonist 
+A partial agonist binds to the receptor but produces a weaker effect than a full agonist. 
+الـ Partial agonist يرتبط بالمستقبل لكنه يعطي تأثيرًا أضعف من الأجونست الكامل . 
+It has affinity but less intrinsic activity. 
+يمتلك ارتباط قوي ولكن نشاطه الداخلي ضعيف. 
+ 
+    Inverse Agonist 
+An inverse agonist binds to the same receptor but causes the opposite effect of an 
+agonist. 
+الـ Inverse agonist يرتبط بنفس المستقبل لكنه يُحدث تأثيرًا معاكسًا لتأثير الأجونست . 
+It has intrinsic activity between 0 and −1. 
+يمتلك نشاطًا داخليًا بين0 وناقص1. 
+ 
+         Receptor Families (Types of Receptors) 
+أنواع المستقبلات 
+1 . Ligand-gated ion channels (Inotropic receptors) → المستقبلات الأيونية التي تفتح أو تُغلق
+عند ارتباط مادة معينة. 
+ →مستقبلات القنوات الأيونية التي تُفتح عند ارتباط مادة ligand).
+
+2 . G-protein-coupled receptors (Metabotropic receptors) → المستقبلات المقترنة
+بالبروتين G. 
+3 . Enzymatic receptors → مستقبلات تعمل كإنزيمات. 
+4 . Receptors that regulate gene expression (Nuclear receptors) → مستقبلات تنظم
+الجينات داخل النواة. 
+ 
+    Ligand-Gated Ion Channels 
+These receptors open ion channels when a ligand (like acetylcholine) binds to them. 
+هذه المستقبلات تفتح قنوات الأيونات عندما ترتبط بها مادة مثل الأسيتيل كولين. 
+Examples: 
+• Nicotinic acetylcholine receptor (NM type). 
+• GABA receptors in the brain. 
+أمثلة: 
+• مستقبل الأسيتيل كولين النيكوتيني. 
+• مستقبلات GABA في الجهاز العصبي المركزي. 
+ 
+    G-Protein-Coupled Receptors (GPCRs) 
+These receptors work through G-proteins inside the cell membrane. 
+هذه المستقبلات تعمل من خلال بروتينات G داخل غشاء الخلية. 
+G-protein has three parts: α (alpha), β (beta), γ (gamma). 
+يتكوّن بروتين  G من ثلاث وحدات فرعية: ألفا، بيتا، غاما. 
+GDP binds to the alpha subunit when inactive. 
+يرتبط مركب GDP بالوحدة ألفا عندما يكون البروتين غير نشط. 
+ 
+    Enzyme-Linked Receptors 
+These receptors activate enzymes inside the cell when a drug binds to them. 
+هذه المستقبلات تنشّط إنزيمات داخل الخلية عندما يرتبط بها الدواء. 
+Example: Insulin receptor (a type of receptor tyrosine kinase). 
+مثال: مستقبل الإنسولين (من نوع مستقبلات التيروزين كيناز.
+
+Nuclear Receptors 
+These receptors are inside the nucleus and control gene expression. 
+هذه المستقبلات توجد داخل النواة وتتحكم في عمل الجينات. 
+Examples: receptors for sex hormones and glucocorticoids. 
+أمثلة: مستقبلات الهرمونات الجنسية والكورتيزون. 
+ 
+     Regulation of Receptors 
+تنظيم عمل المستقبلات 
+Receptors can increase (up-regulation) or decrease (down-regulation) in number or 
+sensitivity. 
+يمكن أن يزيد عدد أو حساسية المستقبلات up-regulation) أو يقلّ down-regulation) حسب حاجة الجسم. 
+ 
+     Regulation of Receptors 
+تنظيم عمل المستقبلات 
+ 
+    1. Up-Regulation 
+Up-regulation means the number or sensitivity of receptors increases. 
+الـ Up-regulation يعني زيادة عدد أو حساسية المستقبلات. 
+This happens when a drug or hormone is not available for a long time. 
+يحدث ذلك عندما لا يتواجد الدواء أو الهرمون لفترة طويلة. 
+So, the cell makes more receptors to become more sensitive. 
+فتقوم الخلية بإنتاج مستقبلات أكثر لتصبح أكثر حساسية. 
+        Example: 
+If a person takes a beta-blocker (which blocks adrenergic receptors) for a long time, the 
+body increases the number of adrenergic receptors. 
+مثال: عند تناول دواء يحجب مستقبلات الأدرينالين (مثل الـ Beta-blockers) لفترة طويلة، يزيد الجسم عدد هذه
+المستقبلات لتعويض النقص.
+
+2. Down-Regulation 
+Down-regulation means the number or sensitivity of receptors decreases. 
+الـ Down-regulation يعني أن عدد أو حساسية المستقبلات تقلّ. 
+This happens when a receptor is continuously stimulated by a drug or hormone. 
+يحدث عندما يتم تنشيط المستقبل بشكل مستمر بواسطة دواء أو هرمون. 
+The cell reduces the number of receptors to prevent overstimulation. 
+تقلل الخلية عدد المستقبلات لتمنع فرط التنشيط. 
+        Example: 
+If a person takes too much insulin, insulin receptors may decrease in number — leading 
+to insulin resistance. 
+مثال: عند تناول كميات كبيرة من الإنسولين، قد يقل عدد مستقبلات الإنسولين، مما يؤدي إلى مقاومة الإنسولين. 
+ 
+       Summary of Receptor Mechanisms (ملخص آلية عمل المستقبلات) 
+Concept Simple Meaning المعنى بالعربي 
+Receptor A molecule where a drug binds to cause 
+an effect. جزيء يرتبط به الدواء ليُحدث تأثيرًا . 
+Affinity Strength of binding between drug and 
+receptor. قوة ارتباط الدواء بالمستقبل. 
+Intrinsic 
+activity Ability of drug to produce an effect. قدرة الدواء على إحداث تأثير. 
+Agonist Activates receptor → causes full effect. يفعّل المستقبل ويسبب تأثيرًا كاملاً . 
+Antagonist Binds but blocks receptor (no effect). يرتبط بالمستقبل ويمنع تأثير الأدوية
+الأخرى. 
+Partial agonist Produces weaker effect than full agonist. يُحدث تأثيرًا أضعف من الأجونست 
+الكامل. 
+Inverse agonist Produces opposite effect to agonist. يُحدث تأثيرًا معاكسًا للأجونست . 
+Up-regulation Increase in number or sensitivity of 
+receptors. زيادة عدد أو حساسية المستقبلات.
+
+Concept Simple Meaning المعنى بالعربي 
+Down-
+regulation 
+Decrease in number or sensitivity of 
+receptors. نقصان عدد أو حساسية المستقبلات. 
+ 
+      Receptor Families Quick Review 
+مراجعة سريعة لأنواع المستقبلات 
+Type Function Example بالعربي 
+Ligand-gated ion 
+channel Opens ion channels Nicotinic receptor قناة أيونية تُفتح بالمادة 
+G-protein-coupled 
+receptor Activates G-protein β-adrenergic 
+receptor مستقبل مرتبط ببروتين G 
+Enzyme-linked 
+receptor Activates enzymes Insulin receptor مستقبل إنزيمي
+(الإنسولين)  
+Nuclear receptor Controls gene 
+transcription Steroid receptor مستقبل داخل النواة ينظم
+الجينات

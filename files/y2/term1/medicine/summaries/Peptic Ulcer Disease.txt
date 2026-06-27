@@ -1,0 +1,358 @@
+Peptic Ulcer Disease 
+مرض القرحة الهضمية 
+ 
+Peptic ulcer disease (PUD) remain the most common cause of 
+upper gastrointestinal bleeding worldwide. 
+القرحة الهضمية PUD) تظل السبب الأكثر شيوعًا للنزيف في الجزء العلوي من الجهاز
+الهضمي عالميًا . 
+ 
+Definition: 
+Peptic ulcer can be defined as discontinuity in the mucosa that 
+extend through the muscularis mucosa. 
+القرحة الهضمية تُعرف بأنها انقطاع في الغشاء المخاطي يمتد حتى طبقة العضلات المخاطية. 
+ 
+Sites: 
+◼ Duodenum [especially proximal part] 
+الاثني عشر (خصوصًا الجزء القريب. 
+◼ Stomach [especially lesser curvature] 
+المعدة (خصوصًا الانحناء الصغير.
+
+◼ Jejunum [after gastrojejunostomy or in Z.E syndrome] 
+الصائم (بعد جراحة توصيل المعدة بالصائم أو في متلازمة زولينجر إليسون. 
+◼ Meckel's diverticulum [contain ectopic gastric mucosa] 
+رتج ميكل (يحتوي على أنسجة معدية في غير مكانها الطبيعي. 
+ 
+Pathophysiology: 
+Epithelial cells of the stomach and duodenum secrete mucus in 
+response to irritation and cholinergic stimulation. 
+الخلايا المبطنة للمعدة والاثني عشر تفرز المخاط عند تهيجها وبفعل التحفيز الكوليني. 
+The mucus layer forms a gel impermeable to acid and pepsin. 
+طبقة المخاط تكون على شكل جل يمنع مرور الحمض والببسين. 
+Other cells secrete bicarbonate to buffer the acid near mucosa. 
+خلايا أخرى تفرز البيكربونات لمعادلة الحمض القريب من الغشاء المخاطي. 
+Prostaglandins protect by decreasing acid (PGI2) and increasing 
+mucus and bicarbonate (PGE2 & PGF2α). 
+البروستاجلاندينات لها دور وقائيPGI2 يقلل إفراز الحمض، بينما PGE2 و PGF2α 
+يزيدان من إفراز المخاط والبيكربونات.
+
+Normally, there is a balance between aggressive factors and 
+mucosal defense. Ulcer occurs when balance is disrupted. 
+في الوضع الطبيعي يوجد توازن بين العوامل المهاجمة وآليات الدفاع المخاطي. القرحة تحدث عند
+اختلال هذا التوازن. 
+Aggressive factors include: NSAIDs, H. pylori, alcohol, bile salts, 
+acid, pepsin. 
+العوامل المهاجمة: مضادات الالتهاب NSAIDs)، بكتيريا H. pylori، الكحول، أملاح
+الصفراء، الحمض، الببسين . 
+Defensive mechanisms include: tight junctions, mucus, 
+bicarbonate, blood flow, cell repair, epithelial renewal. 
+آليات الدفاع: الترابط بين الخلايا، المخاط، البيكربونات، تدفق الدم، ترميم الخلايا وتجديد البطانة. 
+ 
+Etiology: 
+Peptic ulcer disease may be due to: 
+أسباب القرحة الهضمية قد تكون: 
+◼ H. pylori infection (spiral gram-negative bacterium). 
+عدوى بكتيريا H. pylori.
+
+◼ Long-term NSAID use (second most common cause). 
+الاستخدام الطويل لمضادات الالتهاب (ثاني أكثر سبب شائع. 
+NSAIDs inhibit prostaglandins → ↑ acid & ↓ mucus. 
+الـ NSAIDs تمنع تكوين البروستاجلاندينات مما يؤدي إلى زيادة الحمض وتقليل المخاط. 
+◼ Hypersecretory states e.g. Zollinger-Ellison syndrome 
+(gastrin-producing tumors). 
+حالات فرط الإفراز مثل متلازمة زولينجر إليسون (أورام تفرز هرمون الجاسترين. 
+ 
+Risk Factors: 
+◼ Genetic predisposition (20% have family history). 
+عوامل وراثية20% لديهم تاريخ عائلي.  
+◼ Chronic pain → NSAID use (arthritis, back pain). 
+الألم المزمن مثل التهاب المفاصل أو آلام الظهر يؤدي لاستخدام NSAIDs. 
+◼ Diabetes & poor sanitation → risk of H. pylori. 
+السكري أو سوء النظافة يزيد خطر الإصابة بـ H. pylori. 
+◼ Increasing age, alcohol, smoking, stress, coffee. 
+تقدم العمر، الكحول، التدخين، التوتر، القهوة.
+
+◼ Stressful conditions (burns, CNS trauma, surgery). 
+الظروف المجهدة مثل الحروق، إصابات المخ، العمليات. 
+◼ Severe illnesses (cirrhosis, COPD, autoimmune diseases). 
+أمراض شديدة مثل تليف الكبد، الانسداد الرئوي المزمن، أمراض مناعية. 
+◼ Infections (TB, CMV, EBV, HIV, herpes, fungi). 
+العدوى مثل السل،CMV،EBV،HIV، الهربس، الفطريات. 
+◼ Chemotherapy (5-FU, methotrexate, cyclophosphamide). 
+العلاج الكيميائي 5-FU، ميثوتريكسات، سيكلوفوسفاميد.) 
+ 
+Prognosis & Complications: 
+Most ulcers heal in 6–8 weeks with treatment, but may recur. 
+مع العلاج معظم القرح تلتئم خلال6 –8 أسابيع، لكن قد تعود مرة أخرى.  
+Complications include: 
+المضاعفات تشمل: 
+1. Perforation → peritonitis. 
+انثقاب يؤدي إلى التهاب بريتوني. 
+2. Bleeding (hematemesis, melena) in 15% of cases. 
+نزيف (قيء دموي أو براز أسود) في15% من الحالات.
+
+3. Obstruction at stomach-duodenum junction → blockage. 
+انسداد عند وصلة المعدة مع الاثني عشر يسبب توقف مرور الطعام. 
+ 
+Diagnosis: 
+History includes: 
+أخذ التاريخ المرضي يشمل: 
+• Duration & severity of symptoms. 
+مدة وشدة الأعراض. 
+• Weight loss. 
+فقدان الوزن. 
+• Medications taken. 
+الأدوية المستخدمة. 
+• Smoking & alcohol habits. 
+عادات التدخين والكحول. 
+• Family history of ulcers. 
+تاريخ عائلي للقرحة. 
+• Epigastric pain (burning, nocturnal, radiating to back). 
+ألم شرسوفي (حارق، يوقظ المريض ليلاً، قد يمتد للظهر.
+
+• Nausea, vomiting, hematemesis, melena, anemia 
+symptoms. 
+غثيان، قيء، قيء دموي، براز أسود، أعراض أنيميا (إرهاق، ضيق نفس. 
+ 
+Investigations: 
+According to ACG 2017 guidelines: 
+طبقًا لإرشادات الكلية الأمريكية لأمراض الجهاز الهضمي2017 : 
+• Test all patients with current or past peptic ulcers (unless 
+H. pylori cure proven). 
+يجب فحص كل المرضى الذين لديهم قرحة حالية أو سابقة (ما لم يثبت علاج  H. 
+pylori). 
+• MALT lymphoma, early gastric cancer resection history. 
+لمرضى الأورام الليمفاوية MALT) أو استئصال سرطان المعدة المبكر. 
+• Dyspepsia patients undergoing endoscopy. 
+مرضى عسر الهضم الذين يخضعون لمنظار. 
+• Long-term aspirin or NSAID users. 
+مستخدمي الأسبرين أو الـ NSAIDs لفترات طويلة.
+
+• Unexplained iron deficiency anemia. 
+الأنيميا مجهولة السبب. 
+• Idiopathic thrombocytopenic purpura. 
+قلة الصفائح الدموية مجهولة السبب. 
+ 
+Tests for H. pylori: 
+I - Non-invasive tests: 
+الفحوصات غير التدخلية: 
+• Serum IgG antibodies (less sensitive). 
+الأجسام المضادة IgG (أقل حساسية.) 
+• Urea breath test (detects active infection). 
+اختبار التنفس باليوريا (يكشف العدوى النشطة. 
+• Fecal antigen test (accurate, cheaper). 
+اختبار مستضد البراز (أكثر دقة وأرخص. 
+II - Invasive tests (endoscopy): 
+الفحوصات التدخلية (بالمنظار: 
+• Rapid urease test (gold standard during endoscopy). 
+اختبار اليورياز السريع (أفضل اختبار بالمنظار.
+
+• Histopathology if urease test negative. 
+فحص الأنسجة إذا كان اختبار اليورياز سلبي مع وجود شك. 
+III - Special studies: 
+دراسات خاصة: 
+• Fasting serum gastrin → Zollinger-Ellison suspicion. 
+قياس هرمون الجاسترين للصيام في حالة الشك بمتلازمة زولينجر إليسون. 
+ 
+Treatment: 
+Preventive Care: 
+الرعاية الوقائية: 
+• Avoid NSAIDs or use safer drugs (COX-2 inhibitors, 
+acetaminophen). 
+تجنب NSAIDs أو استخدام بدائل أكثر أمانًا مثل COX-2 أو الباراسيتامول. 
+• If NSAID needed → add misoprostol, H2 blocker, or PPI. 
+إذا كان لابد من استخدام NSAIDs يجب إضافة ميزوبروستول أو مضاد H2 أو PPI. 
+• Lifestyle: bland diet, high fiber, quit smoking, avoid alcohol 
+& coffee, stress reduction.
+
+نمط حياة صحي: أطعمة خفيفة، غنية بالألياف، التوقف عن التدخين، تجنب الكحول
+والقهوة، تقليل التوتر. 
+ 
+Medical Care: 
+PPI-based triple therapy (first-line, 85–90% cure): 
+العلاج الثلاثي المرتكز على PPI (الخط الأول، نسبة شفاء85 –90 %): 
+• PPI + Amoxicillin + Clarithromycin (2 weeks). 
+PPI + أموكسيسيلين + كلاريثروميسين (لمدة أسبوعين. 
+• If penicillin allergy → replace Amoxicillin with 
+Metronidazole or Tinidazole. 
+إذا كان المريض عنده حساسية من البنسلين → يستبدل الأموكسيسيلين بالميترونيدازول أو
+التينيدازول. 
+• Continue PPI until ulcer heals. 
+الاستمرار في الـ PPI حتى شفاء القرحة. 
+Quadruple therapy (for resistant cases, 14 days): 
+العلاج الرباعي (للحالات المقاومة، لمدة14 يومًا:  
+• PPI + Bismuth + Tetracycline + Metronidazole. 
+PPI + بيزموت + تتراسيكلين + ميترونيدازول.
+
+Other Drugs: 
+• Antacids: relieve symptoms only. 
+مضادات الحموضة: لتخفيف الأعراض فقط. 
+• H2 blockers (cimetidine, ranitidine, famotidine). 
+مضادات H2 تقلل إفراز الحمض. 
+• Sucralfate: protective coating. 
+السوكرالفات: يعمل كطبقة واقية للقرحة. 
+• Misoprostol: preventive with NSAID use. 
+الميزوبروستول: وقائي عند استخدام NSAIDs. 
+ 
+Endoscopic Therapy: 
+Advances reduced need for surgery. Used in bleeding ulcers. 
+التطور في المناظير قلل الحاجة للجراحة، ويُستخدم لعلاج نزيف القرح. 
+ 
+Arterial Embolization:
+
+Used after failed endoscopy → high success, low risk. 
+يُستخدم إذا فشل المنظار → نسبة نجاح عالية ومضاعفات قليلة. 
+ 
+Surgical Care: 
+Now limited role, but indicated in: 
+الجراحة دورها محدود حاليًا، لكن تُستخدم في: 
+• Perforation (emergency repair). 
+الانثقاب (إصلاح طارئ. 
+• Obstruction resistant to medical/endoscopic therapy. 
+الانسداد المقاوم للعلاج أو التوسيع بالمنظار. 
+• Severe bleeding not controlled by endoscopy. 
+النزيف الشديد غير المستجيب للمنظار 
+ 
+•  
+Question Bank (MCQs) – Peptic Ulcer Disease 
+Definition & Sites
+
+1. Peptic ulcer is defined as: 
+a) Superficial inflammation of gastric mucosa 
+b) Discontinuity in mucosa extending through muscularis 
+mucosa 
+c) Hypersecretion of gastric acid without mucosal damage 
+d) Infection of gastric mucosa only 
+2. Which of the following is the most common site of peptic ulcer? 
+a) Jejunum 
+b) Lesser curvature of stomach 
+c) Proximal duodenum 
+d) Meckel’s diverticulum 
+ 
+Pathophysiology 
+3. Which cells secrete bicarbonate to buffer gastric acid? 
+a) Parietal cells 
+b) Chief cells 
+c) Epithelial cells of stomach and duodenum 
+d) G cells
+
+4. Which prostaglandin decreases gastric acid secretion? 
+a) PGE2 
+b) PGF2α 
+c) PGI2 
+d) Thromboxane 
+5. Ulcer occurs when: 
+a) Gastric acid production stops 
+b) Balance between aggressive factors and defenses is 
+disrupted 
+c) Only mucosal defenses increase 
+d) Only acid secretion decreases 
+ 
+Etiology & Risk Factors 
+6. The second most common cause of peptic ulcer is: 
+a) Stress 
+b) NSAID use 
+c) Alcohol 
+d) Diabetes
+
+7. Zollinger-Ellison syndrome causes ulcer due to: 
+a) Tumors producing pepsin 
+b) Tumors producing gastrin 
+c) Tumors producing mucus 
+d) Deficiency of prostaglandins 
+8. Which of the following increases the risk of H. pylori infection? 
+a) Living in clean environment 
+b) Diabetes and crowded, unsanitary conditions 
+c) Using antibiotics regularly 
+d) Drinking milk daily 
+ 
+Complications 
+9. The most dangerous complication of peptic ulcer is: 
+a) Constipation 
+b) Perforation leading to peritonitis 
+c) Mild abdominal pain 
+d) Flatulence 
+10. Hematemesis and melena in peptic ulcer occur due to: 
+a) Obstruction
+
+b) Bleeding 
+c) Perforation 
+d) Gastric atrophy 
+ 
+Diagnosis & Investigations 
+11. The most common symptom of peptic ulcer is: 
+a) Severe diarrhea 
+b) Epigastric burning pain 
+c) Jaundice 
+d) Constipation 
+12. Which of the following is the most accurate non-invasive 
+test for H. pylori? 
+a) Serum IgG antibody 
+b) Urea breath test 
+c) Fecal antigen test 
+d) Histopathology 
+13. Which test is the endoscopic gold standard for H. pylori? 
+a) Rapid urease test 
+b) Fecal antigen test
+
+c) Urea breath test 
+d) Serum antibody test 
+ 
+Treatment & Prevention 
+14. First-line therapy for H. pylori includes: 
+a) PPI + Amoxicillin + Clarithromycin (2 weeks) 
+b) PPI + Sucralfate + Misoprostol 
+c) PPI + Metronidazole + Antacids 
+d) PPI + Famotidine + NSAIDs 
+15. Quadruple therapy for resistant H. pylori includes: 
+a) PPI + Amoxicillin + Clarithromycin 
+b) PPI + Bismuth + Tetracycline + Metronidazole 
+c) PPI + H2 blocker + Antacids 
+d) PPI + Misoprostol + Sucralfate 
+16. Which drug provides only symptomatic relief but does not 
+heal ulcer? 
+a) Antacids 
+b) H2 blockers
+
+c) PPI 
+d) Sucralfate 
+17. Misoprostol is used in peptic ulcer because: 
+a) It kills H. pylori directly 
+b) It protects stomach from NSAID damage 
+c) It reduces stress 
+d) It acts as an antacid 
+ 
+Surgical & Endoscopic Management 
+18. Which of the following decreased the need for surgery in 
+peptic ulcer? 
+a) Herbal medicine 
+b) Endoscopic therapy advances 
+c) Stress management 
+d) High-fiber diet 
+19. Surgical intervention is indicated in: 
+a) Mild dyspepsia 
+b) Controlled bleeding
+
+c) Perforation, obstruction, uncontrolled bleeding 
+d) Epigastric burning only 
+ 
+Answer Key 
+1. b 
+2. c 
+3. c 
+4. c 
+5. b 
+6. b 
+7. b 
+8. b 
+9. b 
+10. b 
+11. b 
+12. c
+
+13. a 
+14. a 
+15. b 
+16. a 
+17. b 
+18. b 
+19. c

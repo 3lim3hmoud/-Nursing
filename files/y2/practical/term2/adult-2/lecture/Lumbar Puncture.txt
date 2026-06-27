@@ -1,0 +1,209 @@
+Lumbar Puncture 
+البزل القطني 
+ 
+Definition 
+التعريف 
+Lumbar puncture (LP), also known as a spinal tap, is a medical invasive procedure in 
+which a hollow needle is inserted into the lumbar subarachnoid space (usually between 
+L3–L4) to withdraw cerebrospinal fluid (CSF) for diagnostic and therapeutic purposes. 
+البزل القطني هو إجراء طبي تدخلي يتم فيه إدخال إبرة مجوفة في الحيز تحت العنكبوتية القطني (غالبًا بين الفقرة 
+القطنية الثالثة والرابعة) لسحب السائل الدماغي الشوكي لأغراض تشخيصية وعلاجية. 
+ 
+Purpose 
+الهدف 
+1. Obtaining CSF for examination. 
+الحصول على السائل الدماغي الشوكي للفحص. 
+2. Measuring CSF pressure and detecting obstruction in CSF circulation. 
+قياس ضغط السائل الدماغي الشوكي واكتشاف أي انسداد في دورانه. 
+3. Determining the presence or absence of blood in CSF. 
+تحديد وجود أو عدم وجود دم في السائل الشوكي. 
+4. Administering antibiotics and chemotherapy intrathecally. 
+إعطاء المضادات الحيوية أو العلاج الكيماوي داخل الحيز تحت العنكبوتية. 
+5. Assisting in diagnosis of meningitis, hemorrhage, tumors, and brain abscesses. 
+المساعدة في تشخيص التهاب السحايا، النزيف، الأورام، وخراج المخ. 
+ 
+Indications 
+الدواعي 
+• Fever, malaise, and signs of central nervous system irritation. 
+الحمى، التعب العام، وأعراض تهيج الجهاز العصبي المركزي.
+
+Contraindications 
+موانع الإجراء 
+1. Lumbar skin infection. 
+وجود عدوى جلدية في منطقة أسفل الظهر. 
+2. Raised intracranial pressure. 
+ارتفاع ضغط داخل الجمجمة. 
+3. Suspected spinal cord or intracranial mass. 
+الاشتباه بوجود ورم في الحبل الشوكي أو داخل الجمجمة. 
+4. Platelet count < 50,000/μL. 
+عدد الصفائح الدموية أقل من50,000/ميكرولتر.  
+5. Spinal deformities. 
+تشوهات العمود الفقري. 
+6. Lack of patient cooperation. 
+عدم تعاون المريض. 
+ 
+Equipment 
+الأدوات 
+• Sterile lumbar puncture set 
+طقم بزل قطني معقم 
+Or includes: 
+أو يشمل: 
+• Spinal needle (20–22 gauge) 
+إبرة شوكية مقاس20–22  
+• Manometer + Three-way stopcock 
+مقياس ضغط + محبس ثلاثي الاتجاهات 
+• Sterile drapes, gloves, mask 
+شراشف معقمة، قفازات، كمامة 
+• Xylocaine 1–2%, antiseptic, sponges 
+زيلوكايين1–2%، مطهر، شاش
+
+• Adhesive dressing & CSF bottles 
+لاصق طبي وزجاجات جمع العينة 
+ 
+Procedure of Lumbar Puncture 
+خطوات البزل القطني 
+ 
+Preparatory Phase 
+المرحلة التحضيرية 
+Nursing Action (الإجراء التمريضي) Rationale (السبب) 
+Ask patient to empty bladder and bowel. اطلب من
+المريض إفراغ المثانة والأمعاء. 
+To enhance comfort. لزيادة راحة
+المريض. 
+Explain the procedure. شرح الإجراء للمريض. 
+Reassures patient and gains 
+cooperation. لطمأنة المريض وضمان
+تعاونه. 
+If signs of increased ICP → do CT scan. في حال
+وجود علامات ارتفاع الضغط داخل الجمجمة يتم عمل أشعة  
+مقطعية. 
+Prevents brain herniation. لمنع حدوث
+فتق دماغي. 
+Position patient laterally with pillow under head 
+and between legs. وضع المريض على جانبه مع وسادة
+تحت الرأس وبين الساقين. 
+Maintains horizontal spine 
+alignment. للحفاظ على استقامة العمود
+الفقري. 
+Ask patient to flex knees to abdomen and chin to 
+chest. ثني الركبتين نحو البطن والذقن نحو الصدر. 
+Widens interspinous spaces. يوسع
+المسافات بين الفقرات. 
+Support knees and neck. دعم الركبتين والرقبة. Prevents sudden movement. يمنع
+الحركة المفاجئة. 
+Sitting position alternative. يمكن الوضع الجالس كبديل. 
+Easier landmark identification in 
+obese patients. أسهل لتحديد الفقرات عند
+مرضى السمنة.
+
+Performance Phase 
+مرحلة التنفيذ 
+Nursing Action (الإجراء التمريضي) Rationale (السبب) 
+Prepare skin with antiseptic and inject local 
+anesthetic. تعقيم الجلد وحقن مخدر موضعي. 
+Prevent infection and reduce pain. 
+لمنع العدوى وتقليل الألم. 
+Insert needle at L3–L4. إدخال الإبرة بين L3–L4. Area contains adequate CSF. تحتوي
+على كمية كافية من السائل الشوكي. 
+Help patient straighten legs slowly. مساعدة المريض
+على فرد الساقين ببطء. 
+Prevent false pressure increase. منع
+زيادة كاذبة في الضغط. 
+Instruct patient to breathe quietly and not talk. 
+توجيه المريض للتنفس بهدوء وعدم الكلام. 
+Prevents pressure changes. يمنع
+تغيرات الضغط. 
+Measure opening pressure. قياس ضغط الفتح. Detect increased ICP . لاكتشاف ارتفاع
+الضغط. 
+Collect 2–3 ml in 3 tubes. جمع2–3 مل في ثلاث
+أنابيب. For lab analysis. للتحليل المعملي. 
+Measure closing pressure. قياس ضغط الإغلاق. Should be within normal range. يجب
+أن يكون ضمن المعدل الطبيعي. 
+ 
+Follow-up Phase 
+مرحلة ما بعد الإجراء 
+Nursing Action (الإجراء التمريضي) Rationale (السبب) 
+Keep patient prone without pillow for 2 hours. 
+إبقاء المريض مستلقيًا على بطنه بدون وسادة لمدة ساعتين. 
+Prevent CSF leakage. لمنع تسرب السائل
+الشوكي. 
+Encourage hydration. تشجيع تناول السوائل. Replace CSF and prevent headache. 
+لتعويض السائل ومنع الصداع. 
+Monitor for spinal headache and leakage. مراقبة
+الصداع وتسرب السائل. 
+Detect complications early. لاكتشاف
+المضاعفات مبكرًا .
+
+Complications 
+المضاعفات 
+1. Severe headache. 
+صداع شديد. 
+2. Brain herniation. 
+فتق دماغي. 
+3. Accidental spinal cord puncture. 
+إصابة الحبل الشوكي. 
+4. Meningitis. 
+التهاب السحايا. 
+5. Temporary urinary problems or mild fever. 
+مشاكل مؤقتة في التبول أو ارتفاع بسيط في الحرارة. 
+6. Back or leg pain. 
+ألم في الظهر أو الساقين. 
+ 
+Prevention of Post-Lumbar Headache 
+الوقاية من صداع ما بعد البزل 
+• Use small gauge needle. 
+استخدام إبرة صغيرة المقاس. 
+• Keep patient prone after procedure. 
+إبقاء المريض مستلقيًا على بطنه بعد الإجراء. 
+• If >20 ml removed → prone 2 hrs, side-lying 2–3 hrs, then prone/supine 6 hrs. 
+إذا تم سحب أكثر من20 مل → بطنه ساعتين، ثم على الجانب2–3 ساعات، ثم بطنه أو ظهره6  
+ساعات. 
+ 
+Signs of Increased Intracranial Pressure 
+علامات ارتفاع الضغط داخل الجمجمة 
+Early Signs
+
+العلامات المبكرة 
+• Disorientation 
+اضطراب في الإدراك 
+• Restlessness 
+قلق وتململ 
+• Confusion 
+تشوش ذهني 
+• Increased respiratory effort 
+زيادة مجهود التنفس 
+• Pupillary changes 
+تغيرات في حدقة العين 
+• Weakness on one side 
+ضعف في أحد الجانبين 
+• Headache 
+صداع 
+ 
+Late Signs 
+العلامات المتأخرة 
+• Decreased level of consciousness → coma 
+انخفاض مستوى الوعي حتى الغيبوبة 
+• Decreased pulse and respiration 
+انخفاض النبض والتنفس 
+• Increased BP and temperature 
+ارتفاع ضغط الدم والحرارة 
+• Projectile vomiting 
+قيء اندفاعي 
+• Hemiplegia 
+شلل نصفي 
+ 
+Normal CSF Characteristics
+
+خصائص السائل الدماغي الشوكي الطبيعي 
+1. Pressure: 50–175 mm H₂O 
+الضغط50–175 ملم ماء  
+2. Appearance: Clear & colorless 
+المظهر: شفاف وعديم اللون 
+3. pH: 7.30–7.40 
+درجة الحموضة7.30 –7.40  
+4. Glucose: 40–80 mg/dl 
+الجلوكوز40–80 مجم/دل  
+5. WBC: 0–5 lymphocytes/mm³ 
+كريات الدم البيضاء0–5 خلايا ليمفاوية/مم³  
+6. Bloody CSF → subarachnoid hemorrhage or traumatic tap 
+وجود دم → نزيف تحت العنكبوتية أو وخز رضحي

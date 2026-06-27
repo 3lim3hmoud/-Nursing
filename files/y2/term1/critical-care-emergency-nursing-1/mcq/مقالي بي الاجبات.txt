@@ -1,0 +1,331 @@
+Acid–Base Imbalance & ABG Interpretation 
+Respiratory Acidosis – Causes 
+Definition: Happens due to ↓ ventilation → ↑ CO₂ 
+التعريف: بيحصل بسبب قلة التهوية → زيادة ثاني أكسيد الكربون 
+Acute causes: 
+• Sedatives & anesthetics 
+→ المهدئات وأدوية التخدير 
+• Cardiac arrest 
+→ توقف القلب 
+• Airway obstruction (aspiration, laryngospasm) 
+→ انسداد مجرى الهواء 
+• Lung diseases (ARDS, severe asthma, pneumonia) 
+→ أمراض رئوية حادة 
+Chronic causes: 
+• COPD 
+→ الانسداد الرئوي المزمن 
+• Extreme obesity (Pickwickian syndrome) 
+→ السمنة المفرطة 
+ 
+Metabolic Acidosis – Causes 
+Definition: ↓ HCO₃⁻ or ↑ acids 
+التعريف: نقص البيكربونات أو زيادة الأحماض  
+• Diabetic ketoacidosis (DKA) 
+→ الحموضة الكيتونية
+
+• Lactic acidosis 
+→ زيادة حمض اللاكتيك 
+• Diarrhea (loss of HCO₃⁻) 
+→ الإسهال 
+• Kidney failure (AKI / CKD) 
+→ الفشل الكلوي 
+ 
+Steps of ABG Interpretation 
+1. Check oxygenation (PaO₂, SaO₂) 
+→ تقييم الأكسجة 
+2. Check pH 
+o < 7.35 = Acidosis 
+o 7.45 = Alkalosis 
+→ تحديد الحموضة أو القلوية 
+3. Find primary problem 
+o PaCO₂ = respiratory 
+o HCO₃⁻ = metabolic 
+→ نحدد السبب الأساسي 
+4. Check compensation 
+o Normal pH = full compensation 
+o Abnormal pH = partial compensation 
+→ تعويض كامل أو جزئي
+
+Triage 
+Priority Levels 
+3 Levels: 
+• Emergent → Immediate 
+→ طوارئ فورية 
+• Urgent → Can wait ≤ 2 hours 
+→ عاجل 
+• Nonurgent → Stable 
+→ غير عاجل 
+4 Levels (Disaster): 
+• Red → Immediate 
+• Yellow → Urgent 
+• Green → Walking wounded 
+• Black → Dead / Expectant 
+5 Levels: 
+• Level 1: Resuscitation 
+• Level 2: Emergency 
+• Level 3: Urgent 
+• Level 4: Acute 
+• Level 5: Nonurgent 
+ 
+Types of Triage
+
+• Simple triage → Mass casualties 
+→ فرز بسيط 
+• Advanced triage → Limited resources 
+→ فرز متقدم 
+• Reverse triage → Less injured first 
+→ العكس (حروب 
+• Telephone triage 
+→ فرز تليفوني 
+ 
+Triage Systems 
+• Traffic director (Type I) 
+→ فحص سريع بواسطة غير متخصص 
+• Spot checker (Type II) 
+→ RN أو طبيب 
+• Comprehensive (Type III) 
+→ تقييم كامل مع إعادة تقييم 
+ 
+     ARDS 
+Definition 
+Severe lung injury with fluid in alveoli → ↓ oxygen exchange 
+→ متلازمة ضيق التنفس الحاد مع امتلاء الحويصلات بالسوائل 
+Causes 
+Direct: 
+• Pneumonia, COVID-19
+
+• Aspiration 
+• Chest trauma 
+Indirect: 
+• Sepsis 
+• Shock 
+• Pancreatitis 
+• Drug overdose 
+ 
+Nursing Management 
+• Monitor intake & output 
+→ متابعة السوائل 
+• Daily weight 
+→ وزن يومي 
+• Observe renal failure signs 
+→ متابعة الكلى 
+• Turn patient every 2 hours 
+→ تغيير الوضعية 
+• Provide rest 
+→ تقليل استهلاك الأكسجين 
+ 
+     Pulmonary Embolism (PE) 
+Venous Stasis Causes 
+• Immobility
+
+• Atrial fibrillation 
+• Vessel injury 
+ 
+Causes of PE 
+• Thrombus from DVT 
+→ جلطة من الساق 
+• Fat, air, tumor, amniotic fluid 
+→ مواد غير دموية 
+ 
+Nursing Management 
+• Prevent DVT 
+→ تمارين + أجهزة ضغط 
+• Monitor bleeding (anticoagulants) 
+→ متابعة النزيف 
+• Improve oxygenation 
+→ وضعية وأكسجين 
+ 
+     Shock 
+Definition 
+Failure of tissue perfusion → cellular hypoxia 
+→ فشل وصول الدم للخلايا 
+ 
+Types
+
+• Hypovolemic → ↓ volume 
+• Cardiogenic → pump failure 
+• Distributive → septic / anaphylactic / neurogenic 
+• Obstructive → mechanical block 
+ 
+Stages 
+1. Initial 
+2. Compensatory 
+3. Progressive 
+4. Refractory (irreversible) 
+ 
+Compensatory Stage 
+• Tachycardia 
+• Vasoconstriction 
+• ↑ contractility 
+ 
+Progressive Stage 
+• Tissue hypoxia 
+• Anaerobic metabolism 
+• Metabolic acidosis 
+ 
+Lab Findings
+
+• ↑ Lactic acid 
+• ↑ BUN & Creatinine 
+ 
+Management Goals 
+• Maintain tissue perfusion 
+• Secure airway 
+• Restore cardiac output 
+ 
+     Chest Trauma 
+Rib Fracture Manifestations 
+• Severe pain 
+• Bruising 
+• Tenderness 
+• Crepitus 
+ 
+Flail Chest Complications 
+• Lung contusion 
+• Atelectasis 
+• Paradoxical breathing 
+ 
+Tension Pneumothorax 
+• High-flow O₂
+
+• Needle decompression (14G, 2nd ICS) 
+ 
+Hemothorax Signs 
+• Hypotension 
+• ↓ breath sounds 
+• Dull percussion 
+ 
+Cardiac Tamponade 
+• Pericardiocentesis 
+• Thoracotomy 
+ 
+Chest Tube Position 
+• Comfortable alignment 
+• No tubing kinks 
+ 
+ABG in Flail Chest 
+• ↓ PaO₂ 
+• ↑ PaCO₂ 
+ 
+     Respiratory Failure 
+Complications 
+• Brain hypoxia
+
+• Dysrhythmias 
+• DVT / PE 
+ 
+Clinical Manifestations 
+• Restlessness 
+• Confusion 
+• Tachypnea 
+• Cyanosis 
+• Accessory muscles 
+ 
+Causes 
+Extra-pulmonary: 
+• Brain injury, drugs, obesity 
+Intra-pulmonary: 
+• COPD, asthma, ARDS, PE 
+ 
+     Pain Management 
+Acute Pain 
+• Sudden 
+• Short duration 
+• Identifiable cause
+
+Types of Pain 
+• Acute 
+• Chronic 
+• Nociceptive 
+• Neuropathic 
+ 
+Non-Pharmacological 
+• Massage 
+• Heat / cold 
+• Relaxation 
+• Guided imagery 
+• Music therapy 
+ 
+     Cardiac Dysrhythmias 
+Ventricular Tachycardia 
+• Rate > 100 bpm 
+• Regular 
+• No P waves 
+• Wide QRS 
+ 
+Ventricular Fibrillation 
+• CPR immediately
+
+• Defibrillation (200–360 J) 
+ 
+Sinus Tachycardia Causes 
+• Exercise 
+• Pain 
+• Anxiety 
+• HF 
+• Dopamine / Atropine 
+ 
+Atrial Flutter Causes 
+• CAD 
+• Rheumatic disease 
+• Cor-pulmonale 
+• Alcoholism 
+ 
+Atrial Fibrillation 
+Causes: 
+• HTN 
+• Valve disease 
+• CAD 
+• Pericarditis 
+Treatment:
+
+• Rate control 
+• Cardioversion 
+• Anticoagulation 
+ 
+     Myocardial Infarction (MI) 
+Nursing Diagnoses 
+• Acute pain 
+• ↓ Cardiac output 
+• Activity intolerance 
+• Anxiety 
+ 
+Causes 
+• Atherosclerosis 
+• Plaque rupture 
+• Thrombosis 
+• Coronary spasm 
+ 
+Complications 
+• Dysrhythmias 
+• Heart failure 
+• Pulmonary edema 
+• Cardiogenic shock
+
+Medical Management 
+• Morphine 
+• Nitroglycerin 
+• Streptokinase 
+ 
+         Cardiac Surgery 
+Heart-Lung Machine 
+Takes over heart & lungs during surgery 
+→ يسمح بالجراحة والقلب ثابت 
+ 
+Pre-operative Care 
+• Stop anticoagulants 
+• NPO after midnight 
+• Chest shaving 
+• Antiseptic scrub 
+ 
+Post-operative Complications 
+• Bleeding 
+• Dysrhythmias 
+• Clots 
+• Stroke
+
+• Cardiac tamponade 
+ 
+Nursing Diagnosis 
+• Prevent complications 
+• Maximize comfort

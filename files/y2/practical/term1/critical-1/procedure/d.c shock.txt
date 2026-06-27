@@ -1,0 +1,82 @@
+🫀 أولًاCardioversion 
+ 
+    Cardioversion Checklist – بالشرحاالمبسّطا 
+Step (English) الترجمة الشرحابالعربيا(بنعملاإيها
+وليه)ا  
+Perform hand hygiene نظافة اليدين بنغسل إيدينا علشان نقلل العدوى  
+Connect monitoring lead wires توصيل أسلاك المراقبة بنوصل ECG علشان نشوف
+النظم القلبي  
+Select lead with clear R wave اختيار مسار فيه موجة R واضحة لازم نشوف R wave بوضوح
+عشان المزامنة 
+Activate sync mode, confirm 
+QRS markers 
+تفعيل وضع المزامنة والتأكد من
+علامات QRS 
+دهاأهمافرق :الصدمة لازم  
+تيجي مع R wave 
+If QRS/T unclear, use 
+unsynchronized shock 
+لو الموجات مش واضحة استخدم
+صدمة غير متزامنة  
+لو المزامنة مش ممكنة، نتحول  
+لصدمة عادية  
+Apply pads or prepare paddles وضع اللصقات أو تجهيز المجاذيف علشان توصيل الكهرباء للقلب 
+Avoid pad/paddle over ICD تجنب مكان ICD علشان ما نبوظش الجهاز 
+Position cables for access ترتيب الكابلات علشان نتحرك بسهولة 
+Turn on ECG recorder تشغيل ECG متابعة النظم أثناء الإجراء 
+Charge defibrillator 
+appropriately شحن الجهاز حسب الطبيب  
+Disconnect oxygen source فصل الأكسجين علشان ما يحصلش حريق 
+Say “all clear” x3 الجميع بعيد3  أمان للكل 
+Reconfirm sync mode & QRS 
+markers تأكيد المزامنة تاني نتأكد إن الصدمة هتيجي صح  
+Press discharge button (pads) الضغط على زر التفريغ توصيل الصدمة
+
+Step (English) الترجمة الشرحابالعربيا(بنعملاإيها
+وليه)ا  
+Apply pressure & press paddle 
+buttons الضغط على المجاذيف لو مستخدمين paddles 
+Observe rhythm & check pulse مراقبة النظم والنبض نشوف نجحت ولا لأ  
+Clean paddles & remove gel تنظيف المجاذيف بعد الانتهاء  
+Check pad placement فحص اللصقات نتأكد مفيش ضرر 
+Discard supplies التخلص من الأدوات بطريقة آمنة 
+ 
+    ثانيًاDefibrillation 
+ 
+    Defibrillation Checklist – بالشرحاالمبسّط 
+Step (English) الترجمة الشرحابالعربيا  
+Perform hand hygiene نظافة اليدين تقليل العدوى 
+Apply pads or paddles with 
+gel 
+وضع اللصقات أو
+المجاذيف توصيل الكهرباء  
+Position defibrillator cables ترتيب الكابلات سهولة الوصول  
+Turn on ECG recorder تشغيل ECG نشوف الرجفان 
+Place pads correctly وضع اللصقات صح Apex–Sternum أو Anterior–
+Posterior 
+Charge defibrillator شحن الجهاز حسب AHA 
+Disconnect oxygen فصل الأكسجين أمان 
+Say “all clear” x3 الجميع بعيد3  أمان 
+Press discharge button الضغط على التفريغ إعطاء الصدمة
+
+Step (English) الترجمة الشرحابالعربيا  
+Press both paddle buttons الضغط على المجاذيف لو مستخدم paddles 
+Administer CPR 2 minutes CPR دقيقتين فرقامهم 
+If rhythm converts, check 
+pulse فحص النبض والوعي نشوف القلب رجع 
+If V-Fib persists, repeat shock تكرار الصدمة مع CPR 
+Continue CPR & repeat استمر حسب البروتوكول  
+Proceed with ACLS ACLS لو فشل 
+Obtain vital signs العلامات الحيوية متابعة 
+Transfer to ICU نقل للعناية استقرار 
+Clean defibrillator تنظيف الجهاز بعد الطوارئ 
+Check pads فحص اللصقات سلامة الجلد  
+Discard supplies التخلص من الأدوات أمان 
+ 
+      الفرقابينهمافياكلمتينا(احفظهم): 
+Cardioversion Defibrillation 
+عنده نبض  مفيشانبض 
+Sync mode ON Sync mode OFF 
+صدمة مع R wave صدمة فورًا  
+مفيش CPR فيه CPR 
+مش طوارئ قاتلة إنقاذ حياة

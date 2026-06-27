@@ -1,0 +1,209 @@
+Inflammation (الالتهاب) 
+ 
+Definition (التعريف) 
+Inflammation is a local vascular and cellular response of living tissue against an 
+injurious agent. 
+الالتهاب هو استجابة موضعية من الأوعية الدموية والخلايا الحية ضد عامل مسبب للضرر. 
+ 
+Terminology (المصطلحات) 
+Inflammation of a tissue = name of tissue + “itis” 
+عندما يُصاب نسيج بالالتهاب نضيف له لاحقة itis". 
+Examples: 
+• Gastritis → التهاب المعدة 
+• Colitis → التهاب القولون 
+• Tonsillitis → التهاب اللوزتين 
+• Appendicitis → التهاب الزائدة الدودية 
+ 
+Aims of Inflammation (أهداف الالتهاب) 
+• Fighting bacteria → محاربة البكتيريا 
+• Localizing infection → حصر العدوى في مكانها 
+• Removal of damaged tissue → إزالة الأنسجة التالفة 
+ 
+Inflammatory Cells (الخلايا الالتهابية) 
+Cell Type (نوع الخلية) Function (الوظيفة) الوظيفة بالعربي  
+Neutrophils Phagocytosis, form pus البلعمة وتكوين الصديد 
+Lymphocytes Chronic inflammation الالتهاب المزمن 
+Plasma cells Chronic inflammation الالتهاب المزمن
+
+Cell Type (نوع الخلية) Function (الوظيفة) الوظيفة بالعربي  
+Histiocytes 
+(Monocytes) Chronic phagocytosis بلعمة مزمنة 
+Eosinophils Allergy and parasitic infection الحساسية والطفيليات 
+Mast cells Allergy (release histamine, 
+serotonin) 
+الحساسية (تفرز الهيستامين
+والسيروتونين)  
+Giant cells Phagocytosis البلعمة 
+ 
+Types of Inflammation (أنواع الالتهاب) 
+1. Acute (حاد) 
+2. Chronic (مزمن) 
+ 
+Comparison Between Acute and Chronic Inflammation (مقارنة بين الالتهاب الحاد والمزمن) 
+Feature (الصفة) Acute (حاد) Chronic (مزمن) 
+Onset (البدء) Fast: minutes to hours Slow: days 
+Cellular infiltrate (الخلايا
+المهاجرة) Mainly neutrophils Monocytes/macrophages & 
+lymphocytes 
+Tissue injury (تلف الأنسجة) Usually mild and self-
+limited Often severe and progressive 
+Signs (الأعراض) Prominent (واضحة) Less prominent (أقل وضوحًا) 
+ 
+Main Events of Inflammation (الأحداث الرئيسية في الالتهاب) 
+1. Vascular response (الاستجابة الوعائية) 
+2. Inflammatory fluid exudate (الرشْح السائلي) 
+3. Inflammatory cellular exudate (الرشْح الخلوي)
+
+1. Vascular Response (الاستجابة الوعائية) 
+1. Changes in vascular flow and caliber 
+تغيرات في تدفق الدم وحجم الأوعية 
+• Vasodilation (histamine) → توسع الأوعية بسبب الهيستامين 
+• Stasis (↑ viscosity, open capillaries) → بطء الدم وزيادة لزوجته مع فتح الشعيرات 
+2. Increased permeability and fluid exudate 
+زيادة نفاذية الأوعية وتكوّن الرشْح  
+• Caused by histamine and kinins → بسبب الهيستامين والكينينات 
+• Formation of endothelial gaps → تكوّن فجوات بين خلايا الأوعية  
+• Result: leakage of plasma → يؤدي لتسرب البلازما 
+ 
+2. Inflammatory Fluid Exudate (الرشْح السائلي الالتهابي) 
+Formation (التكوّن:) 
+1. Vasodilation & increased permeability → توسع الأوعية وزيادة النفاذية 
+2. Increased osmotic pressure → زيادة الضغط الأسموزي 
+3. Decreased hydrostatic pressure → انخفاض الضغط الهيدروستاتيكي 
+Function (الوظيفة:) 
+• Dilutes toxins → يخفف السموم 
+• Brings antibodies → يجلب الأجسام المضادة 
+• Supplies nutrients → يمد الخلايا بالغذاء 
+• Removes toxins → يزيل السموم 
+• Supplies fibrinogen → يكوّن شبكة ألياف لتثبيت الخلايا  
+ 
+3. Cellular Exudate (الرشْح الخلوي) 
+Extravasation of neutrophils (خروج كريات الدم البيضاء من الأوعية:) 
+1. Margination: PMNs move toward vessel wall → تقترب الخلايا من جدار الوعاء
+
+2. Rolling: cells tumble along endothelium → تتحرك بشكل متدحرج 
+3. Adhesion: cells stick to wall → تلتصق بالجدار 
+4. Transmigration (Diapedesis): cells pass through wall → تعبر الجدار إلى النسيج 
+ 
+Chemotaxis (الانجذاب الكيميائي) 
+Definition: Directed movement of neutrophils and macrophages toward the irritant. 
+التحرك الموجّه للخلايا البيضاء نحو مصدر التهيج. 
+Types: 
+1. Exogenous: e.g. bacterial products → من الخارج مثل نواتج البكتيريا 
+2. Endogenous: e.g. mediators like complement, arachidonic acid → من داخل الجسم
+مثل المواد المنشطة  
+ 
+Phagocytosis (البلعمة) 
+Definition: Ingestion and destruction of bacteria and debris by phagocytic cells. 
+هي عملية ابتلاع وتدمير البكتيريا وبقايا الخلايا بواسطة خلايا البلعمة. 
+Steps: 
+1. Recognition (with opsonin like Ig or complement) → التعرف على الجسم الغريب 
+2. Engulfment → ابتلاع الجسم 
+3. Killing and degradation (oxidative & non-oxidative) → القتل والتحليل 
+ 
+Outcomes of Acute Inflammation (نتائج الالتهاب الحاد) 
+• Resolution → الشفاء التام 
+• Healing → الالتئام 
+• Chronicity → التحول إلى مزمن 
+• Spread → الانتشار 
+ 
+Summary of Events (ملخص الأحداث)
+
+Vasodilation → ↑ permeability → leakage → margination → rolling → adhesion → 
+diapedesis → chemotaxis → phagocytosis → termination → resolution/scar/chronic 
+inflammation. 
+ 
+Types of Acute Inflammation (أنواع الالتهاب الحاد) 
+1. Suppurative Inflammation (الالتهاب الصديدي) 
+Definition: Inflammation characterized by pus (purulent exudate). 
+هو الالتهاب الذي يتميز بتكوّن صديد (رشح صديدي . 
+Caused by: Pyogenic bacteria like Staphylococcus and Streptococcus. 
+تسببه بكتيريا مولّدة للصديد مثل المكورات العنقودية والعقدية. 
+ 
+Types of Suppurative Inflammation (أنواع الالتهاب الصديدي) 
+1. Localized suppuration (موضعي) 
+o Caused by Staphylococcus → produces coagulating enzyme → forms fibrin 
+barrier. 
+o تسببه بكتيريا المكورات العنقودية → تنتج إنزيم يكوّن حاجز من الفيبرين . 
+2. Diffuse suppuration (منتشر) 
+o Caused by Streptococcus → produces hyaluronidase and streptokinase → 
+dissolves fibrin. 
+o تسببه بكتيريا المكورات العقدية → تنتج إنزيمات تذيب الفيبرين وتساعد على الانتشار. 
+Examples: 
+• Abscess (خُراج) 
+• Furuncle (دُمَّل) 
+• Carbuncle (جمرة) 
+• Cellulitis (التهاب النسيج الخلوي) 
+ 
+Abscess (الخُراج)
+
+Definition: Localized collection of pus in tissue due to acute inflammation. 
+هو تجمع موضعي للصديد داخل نسيج بسبب التهاب حاد. 
+Cause: Staphylococcus → due to excess fibrin formation. 
+السبب: بكتيريا المكورات العنقودية نتيجة لتكوين زائد من الفيبرين. 
+Sites: Skin, subcutaneous tissue, or internal organs. 
+أماكن الحدوث: الجلد، الأنسجة تحت الجلد، أو الأعضاء الداخلية. 
+Clinical signs: Redness, heat, swelling, and pus formation. 
+الأعراض: احمرار، سخونة، تورم، وتكوّن صديد . 
+Pus (الصديد:) 
+A thick yellow fluid made of dead neutrophils, bacteria, and tissue debris. 
+سائل سميك أصفر اللون يحتوي على خلايا دم بيضاء ميتة وبكتيريا وأنسجة متحللة. 
+ 
+Carbuncle (الجمرة) 
+Definition: Multiple connected abscesses under the skin, often at the back of the neck. 
+هي عدة خُراجات متصلة تحت الجلد، غالبًا في مؤخرة الرقبة. 
+Risk group: Diabetics (due to low immunity). 
+الأشخاص الأكثر عرضة: مرضى السكري بسبب ضعف المناعة. 
+Reason: Thick, tough skin with fibrous septa dividing the tissue. 
+السبب: سماكة الجلد ووجود حواجز ليفية تقسم النسيج. 
+ 
+Boil / Furuncle (الدُمَّل) 
+Definition: Small abscess involving a hair follicle or sebaceous gland. 
+هو خُراج صغير يصيب جُريب الشعر أو الغدة الدهنية. 
+ 
+Diffuse Suppurative Inflammation (الالتهاب الصديدي المنتشر) 
+Causative organism: Streptococcus haemolyticus 
+المسبب: بكتيريا المكورات العقدية الحالة للدم. 
+Produces enzymes: 
+1. Fibrinolysin and hyaluronidase → dissolve fibrin.
+
+2. Spreading factor → helps infection spread. 
+تنتج إنزيمات مثل الفيبرينوليزين والهيالورونيداز مما يذيب الفيبرين ويساعد في انتشار العدوى. 
+Examples: 
+• Cellulitis (التهاب النسيج الخلوي) 
+• Appendicitis (التهاب الزائدة الدودية) 
+ 
+Comparison: Abscess vs Cellulitis (مقارنة بين الخُراج والتهاب النسيج الخلوي) 
+Feature (الصفة) Abscess (الخُراج) Cellulitis (التهاب النسيج الخلوي) 
+Definition (التعريف) Localized pus 
+formation Diffuse spread of pus 
+Causative organism 
+(المسبب) Staphylococcus Streptococcus 
+Mechanism (الآلية) Excess fibrin forms wall Enzymes dissolve fibrin and 
+spread 
+Site (المكان) Any tissue Loose connective tissue 
+Pus (الصديد) Thick and yellow Thin and bloody (sanguinous) 
+Spread (الانتشار) Limited Rapid and wide 
+ 
+2. Non-Suppurative Inflammation (الالتهاب غير الصديدي) 
+Definition: Inflammation without pus formation. 
+هو نوع من الالتهاب لا يصاحبه تكوّن صديد . 
+Types: 
+1. Serous inflammation → Watery fluid, e.g., blisters in burns. 
+الالتهاب المصلي → إفراز سائل مائي مثل الفقاعات في الحروق. 
+2. Haemorrhagic inflammation → RBCs leak into exudate, e.g., chickenpox. 
+الالتهاب النزفي → تسرب كريات دم حمراء إلى السائل مثل الجديري.
+
+3. Allergic inflammation → Due to hypersensitivity, many eosinophils, e.g., 
+urticaria. 
+الالتهاب التحسسي → بسبب الحساسية، يحتوي على خلايا إيزينوفيلية كثيرة، مثل الأرتيكاريا. 
+4. Catarrhal inflammation → Mucous overproduction in respiratory tract, e.g., 
+rhinitis. 
+الالتهاب المخاطي → زيادة إفراز المخاط في الجهاز التنفسي مثل التهاب الأنف. 
+5. Pseudomembranous inflammation → Bacterial toxins cause necrosis and fibrin 
+membrane, e.g., diphtheria. 
+الالتهاب الغشائي الكاذب → سموم البكتيريا تسبب موت الخلايا وتكوّن غشاء ليفي كاذب مثل الدفتيريا . 
+6. Fibrinous inflammation → Fibrin deposits on serous surfaces, e.g., pericarditis. 
+الالتهاب الليفي → ترسب ألياف الفيبرين على الأسطح المصلية مثل التهاب غشاء القلب. 
+7. Necrotizing inflammation → Severe tissue destruction. 
+الالتهاب النخري → تدمير شديد للأنسجة.

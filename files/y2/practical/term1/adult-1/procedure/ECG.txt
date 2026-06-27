@@ -1,0 +1,135 @@
+🫀 ELECTROCARDIOGRAM (ECG / EKG) – تخطيط القلب الكهربائي 
+القسم  /
+Section الشرح بالإنجليزية الترجمة بالعربية  
+Definition 
+ECG is a non-invasive test that 
+records the electrical activity of the 
+heart using electrodes placed on 
+the chest and limbs. The result 
+appears as waves labeled P , QRS, T, 
+and U. 
+تخطيط القلب الكهربائي هو اختبار غير
+جراحي يسجل النشاط الكهربائي للقلب  
+باستخدام أقطاب توضع على الصدر  
+والأطراف. وتظهر النتيجة على شكل موجات  
+تحمل الحروف P،QRS،T، وU. 
+Purpose / 
+Indications 
+1. Detect causes of chest pain (heart 
+attack, angina).2. Detect 
+arrhythmias or conduction issues.3. 
+Screen for heart disease.4. Monitor 
+previous heart problems.5. Check 
+effects of medications or 
+pacemakers.6. Assess general 
+health in hypertension, diabetes, or 
+before surgery. 
+1. تحديد أسباب ألم الصدر (النوبة القلبية أو
+الذبحة الصدرية).2. اكتشاف اضطرابات
+نبض القلب أو التوصيل الكهربائي.3. فحص
+القلب دوريًا للكشف المبكر عن الأمراض.4  .
+متابعة أمراض القلب السابقة5. تقييم فعالية
+الأدوية أو أجهزة تنظيم ضربات القلب.6. تقييم
+الصحة العامة في حالات الضغط أو السكر أو  
+قبل العمليات. 
+Equipment / 
+الأدوات 
+- ECG machine- Electrodes 
+(sensors)- ECG paper- Conductive 
+gel or pads- Alcohol swabs / gauze 
+- جهاز تخطيط القلب- أقطاب كهربائية 
+(حساسات)- ورق التخطيط- جل موصل  
+للكهرباء أو لاصقات جاهزة- شاش وكحول 
+للتنظيف  
+Types of ECG 
+Monitoring 
+- 12-lead ECG: standard and 
+detailed.- Continuous ECG: simple 
+monitoring.- Holter monitor: 
+portable 1–7 days.- Exercise ECG: 
+during stress or exercise. 
+- تخطيط بـ12 قطب: القياسي والمفصل- 
+تخطيط مستمر: لمراقبة النبض العام.- جهاز 
+هولتر: جهاز متنقل لمدة 1–7 أيام- تخطيط  
+الجهد: أثناء التمارين أو المجهود . 
+Lead 
+Placement / 
+أماكن تثبيت
+الأقطاب  
+Limb Leads:Right arm (red), Left 
+arm (yellow), Left leg (green), Right 
+leg (black).Chest Leads:V1: 4th 
+space right of sternum.V2: 4th 
+space left of sternum.V3: Between 
+V2 and V4.V4: 5th space mid-
+أقطاب الأطراف:الذراع اليمنى (أحمر)، 
+الذراع اليسرى (أصفر)، الساق اليسرى 
+(أخضر)، الساق اليمنى (أسود).أقطاب  
+الصدر:V1: في المسافة الوربية الرابعة يمين
+القصV2: في المسافة الوربية الرابعة يسار
+القصV3: بين V2 وV4.V4: في المسافة
+الوربية الخامسة على الخط الترقوي
+
+القسم  /
+Section الشرح بالإنجليزية الترجمة بالعربية  
+clavicular line.V5: Between V4 and 
+V6.V6: 5th space mid-axillary line. 
+الأوسطV5: بين V4 وV6.V6: في المسافة
+الوربية الخامسة على الخط الإبطي المتوسط. 
+ 
+        ECG Procedure Steps – خطوات الإجراء التمريضي 
+Step / الخطوة English Explanation الترجمة العربية 
+1. Preparation Wash hands and prepare all equipment. اغسل يديك وجهّز الأدوات اللازمة. 
+ Explain the procedure to the patient to 
+reduce anxiety. 
+اشرح الإجراء للمريض لتهدئته
+وتقليل القلق. 
+ 
+Position the patient in a supine position 
+(flat on the back) with the bed head 
+≤30°. 
+ضع المريض مستلقيًا على ظهره مع
+رفع الرأس بزاوية لا تتجاوز 30  
+درجة. 
+ Remove jewelry or metal objects. أزل أي مجوهرات أو أشياء معدنية. 
+2. Site 
+Preparation 
+Clean skin on arms, legs, and chest with 
+alcohol swabs; shave if necessary. 
+نظّف الجلد في الذراعين والساقين
+والصدر بالكحول واحلق الشعر إذا  
+لزم الأمر. 
+3. Electrode 
+Placement 
+Apply electrodes with conductive gel to 
+arms, legs, and chest (in correct 
+positions). 
+ضع الأقطاب مع الجل على الذراعين
+والساقين والصدر في أماكنها 
+الصحيحة. 
+ Connect electrodes to the ECG 
+machine. صِل الأقطاب بجهاز تخطيط القلب . 
+4. Recording Ensure the patient is calm and still 
+during recording. 
+تأكد أن المريض هادئ ولا يتحرك
+أثناء التسجيل. 
+ Start the ECG machine to record all 12 
+leads. 
+شغّل الجهاز لتسجيل جميع الأقطاب
+الاثني عشر.
+
+Step / الخطوة English Explanation الترجمة العربية 
+ Inform the patient the test takes 5–10 
+minutes. 
+أخبر المريض أن الفحص يستغرق
+من 5 إلى10 دقائق تقريبًا.  
+5. Post-
+Procedure Care Remove electrodes gently. انزع الأقطاب برفق بعد الانتهاء. 
+ Clean off remaining gel from the skin. امسح الجل المتبقي من الجلد. 
+ 
+Place ECG results on the chart and note 
+time and condition. 
+ضع نتيجة التخطيط في ملف المريض
+مع تسجيل الوقت والحالة. 
+ Document all nursing care provided. دوّن كل الرعاية التمريضية التي 
+تمت.

@@ -1,0 +1,184 @@
+**Arrhythmia – Simplified Bilingual Lecture 
+اضطراب نظم القلب– محاضرة مبسطة ثنائية اللغة**  
+ 
+I. Learning Objectives 
+أهداف التعلم** 
+Students will be able to: 
+سيكون الطالب قادرًا على : 
+• Define arrhythmia 
+تعريف اضطراب نظم القلب 
+• Describe normal conduction 
+شرح التوصيل الكهربائي الطبيعي للقلب 
+• Identify common arrhythmias 
+التعرف على الأنواع الشائعة لاضطرابات النظم 
+• Recognize symptoms and risk factors 
+التعرف على الأعراض وعوامل الخطورة 
+• Discuss nursing assessment and management 
+مناقشة دور التمريض في التقييم والعلاج 
+ 
+II. Definition 
+التعريف** 
+Arrhythmia = abnormal rate, rhythm, or sequence of electrical impulses. 
+اضطراب النظم يعني خلل في سرعة أو انتظام أو تسلسل الإشارات الكهربائية في القلب. 
+Normal HR = 60–100 bpm 
+النبض الطبيعي60–100 ض/د.  
+Normal rhythm = Sinus rhythm from the SA node 
+النظم الطبيعي هو النظم الجيبي من العقدة الجيبية. 
+ 
+III. Normal Cardiac Conduction System 
+النظام الكهربائي للقلب**
+
+Pathway: 
+المسار: 
+SA node → AV node → Bundle of His → R/L Bundle Branches → Purkinje fibers 
+العقدة الجيبية → العقدة الأذينية البطينية → حزمة هيس → الفروع اليمنى واليسرى → ألياف بركنجي 
+Electricity → causes contraction 
+الكهرباء → تسبب انقباض عضلة القلب 
+Any disturbance = arrhythmia 
+أي خلل يؤدي لاضطراب النظم. 
+ 
+IV. Classification of Arrhythmias 
+تصنيف اضطرابات النظم** 
+Type Heart Rate Description 
+Bradyarrhythmias <60 bpm Slow rhythm 
+Tachyarrhythmias >100 bpm Fast rhythm 
+Irregular rhythms Variable Irregular beats 
+الترجمة: 
+• البطئية: أقل من 60  
+• السريعة: أكثر من 100  
+• غير المنتظمة: إيقاع غير ثابت 
+ 
+V. Common Arrhythmias & ECG Features 
+الأنواع الشائعة وملامحها في تخطيط القلب** 
+ 
+A. Sinus Bradycardia 
+بطء القلب الجيبي** 
+HR < 60, regular rhythm 
+النبض أقل من60 مع انتظام.
+
+Causes: vagal stimulation, beta-blockers, digoxin 
+الأسباب: تحفيز العصب المبهم– أدوية مثل البيتا بلوكر والديجوكسين.  
+Treatment (if symptomatic): Atropine, O₂, IV fluids 
+العلاج إن وُجدت أعراض: أتروبين – أكسجين – محاليل.  
+ 
+B. Sinus Tachycardia 
+تسرّع القلب الجيبي** 
+HR > 100, regular 
+النبض أعلى من100 مع انتظام.  
+Causes: fever, pain, anxiety, dehydration 
+الأسباب: حمى– ألم  – قلق  – جفاف.  
+Tx: Treat the cause 
+العلاج: معالجة السبب. 
+ 
+C. Atrial Fibrillation (AFib) 
+الرجفان الأذيني** 
+Irregularly irregular + No P waves 
+غير منتظم تمامًا + بدون موجة P. 
+Risk: Stroke 
+الخطورة: جلطة دماغية. 
+Symptoms: palpitations, fatigue, SOB 
+الأعراض: خفقان– تعب – ضيق نفس.  
+Management: 
+• Rate control: Beta-blockers, CCBs 
+التحكم بالمعدل: بيتا بلوكر– محصرات الكالسيوم  
+• Anticoagulation: Warfarin, DOACs 
+مميعات الدم 
+• Cardioversion if needed 
+تقويم نظم إن لزم.
+
+**D. Atrial Flutter 
+الرفرفة الأذينية** 
+Sawtooth pattern 
+شكل "المنشار" في التخطيط. 
+Atrial rate 250–350 bpm 
+معدل أذيني مرتفع250–350 . 
+Management similar to AFib 
+العلاج مشابه للرجفان الأذيني. 
+ 
+E. Ventricular Tachycardia (VT) 
+تسرّع بطيني** 
+Wide QRS + HR >100 
+مركبات QRS واسعة + معدل أكبر من100 . 
+Life-threatening 
+خطر على الحياة. 
+Causes: MI, electrolyte imbalance 
+الأسباب: جلطة– اضطراب أملاح.  
+Treatment: 
+العلاج: 
+• With pulse: Amiodarone, synchronized cardioversion 
+مع وجود نبض: أميودارون– تقويم نظم متزامن  
+• No pulse: CPR + Defibrillation 
+بدون نبض: إنعاش + صدمة كهربائية 
+ 
+F. Ventricular Fibrillation (VF) 
+الرجفان البطيني** 
+Chaotic, no cardiac output 
+نشاط كهربائي فوضوي بدون ضخ دم.
+
+Emergency! 
+حالة طارئة. 
+Tx: CPR + Defibrillation 
+إنعاش + صدمة فورية. 
+ 
+G. Asystole 
+السكتة القلبية (خط مستقيم** 
+Flat line – no activity 
+خط مستقيم… لا كهرباء. 
+Tx: CPR, Epinephrine, fix H’s & T’s 
+إنعاش– إبينفرين – علاج الأسباب العكسية.  
+ 
+VI. Nursing Assessment 
+تقييم التمريض** 
+Nurses must: 
+على التمريض: 
+• Monitor ECG & vital signs 
+مراقبة التخطيط والعلامات الحيوية 
+• Check signs of ↓ cardiac output: 
+فحص علامات انخفاض النتاج القلبي: 
+o انخفاض الضغط 
+o دوخة 
+o ألم صدر 
+o ضيق نفس 
+o تغير الوعي 
+• Check medications & electrolytes 
+مراجعة الأدوية والأملاح 
+ 
+VII. Nursing Management
+
+إدارة وتمريض الحالات** 
+1. Maintain ABCs 
+الحفاظ على مجرى الهواء والتنفس والدورة الدموية 
+2. Give oxygen 
+إعطاء أكسجين 
+3. Continuous ECG 
+مراقبة تخطيط مستمرة 
+4. Administer antiarrhythmics 
+إعطاء أدوية مضادة لاضطراب النظم 
+5. Prepare for: 
+التحضير لـ: 
+o تقويم النظم 
+o صدمة كهربائية 
+o ناظمة قلب مؤقتة Temporary pacing) 
+ 
+**VIII. Complications 
+المضاعفات** 
+• Cardiac output 
+انخفاض ضخ القلب 
+• Thromboembolism (AFib) 
+جلطات– خاصة في الرجفان الأذيني  
+• Sudden cardiac arrest 
+توقف قلب مفاجئ 
+• Heart failure 
+فشل قلبي 
+ 
+IX. Summary 
+الخلاصة**
+
+• Arrhythmia = abnormal heart rhythm 
+اضطراب النظم = نبض غير طبيعي 
+• ECG is essential 
+تخطيط القلب ضروري 
+• Early recognition saves lives 
+التعرف المبكر ينقذ حياة 
+• Nursing role is critical 
+دور التمريض أساسي في العلاج والمتابعة

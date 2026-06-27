@@ -1,0 +1,418 @@
+Definition 
+Chronic liver disease (CLD) means the liver stays damaged for more 
+than six months. 
+مرض الكبد المزمن يعني إن الكبد يفضل تالف لأكثر من ستة أشهر. 
+The damaged liver tissue is slowly replaced by scar tissue. 
+الأنسجة التالفة في الكبد تُستبدل تدريجيًا بأنسجة ندبية. 
+This makes the liver work less — it can’t make proteins, clean toxins, 
+or release bile properly. 
+ده يخلي الكبد يشتغل أقل، ومش يقدر ينتج بروتينات أو ينقي السموم أو يفرز العصارة الصفراوية
+كويس . 
+With time, scarring becomes worse and turns into cirrhosis, the last 
+stage of liver disease. 
+مع الوقت، التليف بيزيد وبيتحول إلى تشمّع الكبد، وهي آخر مرحلة من المرض . 
+Cirrhosis changes the liver’s shape and makes small hard lumps 
+inside it. 
+تشمّع الكبد يغير شكل الكبد وبيعمل كتل صغيرة وصلبة جواه. 
+ 
+Etiology (Causes of Chronic Liver Disease) 
+أسباب مرض الكبد المزمن 
+Chronic liver disease has many causes such as alcohol, viruses, fat 
+buildup, immune problems, and some drugs or toxins. 
+مرض الكبد المزمن له أسباب كثيرة مثل الكحول، والفيروسات، وتراكم الدهون، ومشاكل المناعة،
+وبعض الأدوية أو السموم .
+
+1. Alcoholic Liver Disease 
+مرض الكبد الكحولي 
+Drinking too much alcohol for a long time damages the liver. 
+شرب الكحول بكثرة ولفترة طويلة يسبب تلف الكبد. 
+It can start with fatty liver, then inflammation, and finally cirrhosis. 
+يبدأ عادةً بكبد دهني، ثم التهاب، وفي النهاية تشمّع الكبد. 
+ 
+2. Non-Alcoholic Fatty Liver Disease (NAFLD / NASH) 
+الكبد الدهني غير الكحولي 
+This happens in people who are overweight, have high cholesterol, or 
+diabetes. 
+يحدث هذا عند الأشخاص الذين يعانون من السمنة أو ارتفاع الدهون أو مرض السكري. 
+Fat collects inside liver cells and may cause inflammation and 
+fibrosis. 
+الدهون تتجمع داخل خلايا الكبد وقد تسبب التهابًا وتليفًا. 
+If the inflammation continues, it can turn into cirrhosis. 
+إذا استمر الالتهاب، قد يتحول إلى تشمّع الكبد. 
+ 
+3. Chronic Viral Hepatitis (B, C, D) 
+التهاب الكبد الفيروسي المزمن B،C،D)
+
+These viruses attack the liver for a long time and cause continuous 
+damage. 
+هذه الفيروسات تهاجم الكبد لفترة طويلة وتسبب تلفًا مستمرًا . 
+Hepatitis C is one of the most common causes of chronic liver 
+disease. 
+فيروس C هو من أكثر أسباب مرض الكبد المزمن شيوعًا. 
+If not treated, it can cause liver cancer. 
+إذا لم يُعالج، قد يؤدي إلى سرطان الكبد. 
+In Egypt, genotype 4a of Hepatitis C is very common. 
+في مصر، النوع الجيني4 a من فيروس C هو الأكثر شيوعًا. 
+ 
+4. Genetic Causes 
+الأسباب الوراثية 
+Alpha-1 antitrypsin deficiency: a genetic disease that causes liver 
+damage in children. 
+نقص ألفا-1 أنتيتريبسين: مرض وراثي يسبب تلف الكبد عند الأطفال.  
+Hemochromatosis: too much iron builds up in the body, causing 
+liver scarring. 
+داء ترسّب الأصبغة الدموية: تراكم الحديد الزائد في الجسم يسبب تليف الكبد. 
+Wilson’s disease: too much copper collects in the liver, brain, and 
+eyes, causing liver and nerve problems. 
+مرض ويلسون: تراكم النحاس الزائد في الكبد والدماغ والعينين مما يسبب مشاكل في الكبد
+والأعصاب .
+
+Autoimmune Causes 
+الأسباب المناعية الذاتية 
+Autoimmune hepatitis: 
+The body’s immune system attacks its own liver cells. 
+جهاز المناعة يهاجم خلايا الكبد نفسها. 
+It mostly affects women and often causes cirrhosis. 
+يؤثر غالبًا على النساء وغالبًا يسبب تشمع الكبد. 
+Primary Biliary Cirrhosis (PBC): 
+This is a disease where the bile ducts inside the liver are destroyed. 
+هو مرض يتم فيه تدمير القنوات الصفراوية داخل الكبد. 
+It causes bile buildup, jaundice, and fibrosis. 
+يسبب تراكم الصفراء واليرقان (اصفرار الجلد) والتليف. 
+It is more common in middle-aged women. 
+يحدث غالبًا في النساء في منتصف العمر. 
+Primary Sclerosing Cholangitis (PSC): 
+This disease narrows the bile ducts due to inflammation and scarring. 
+هذا المرض يضيق القنوات الصفراوية بسبب الالتهاب والتليف. 
+It is often seen with ulcerative colitis (a bowel disease). 
+يحدث غالبًا مع التهاب القولون التقرحي.  
+ 
+Other Causes of Chronic Liver Disease 
+أسباب أخرى لمرض الكبد المزمن
+
+Some drugs can damage the liver such as amiodarone, isoniazid, 
+methotrexate, and phenytoin. 
+بعض الأدوية يمكن أن تسبب تلف الكبد مثل أميودارون، أيزونيازيد، ميثوتريكسات، وفينيتوين. 
+Budd-Chiari syndrome: blockage of hepatic veins. 
+متلازمة بود كياري: انسداد في أوردة الكبد . 
+In about 15% of cases, the cause is unknown (idiopathic). 
+في حوالي15٪ من الحالات، السبب غير معروف.  
+ 
+Epidemiology 
+علم انتشار المرض 
+Chronic liver disease is one of the main causes of death in many 
+developing countries. 
+مرض الكبد المزمن هو من الأسباب الرئيسية للوفاة في الدول النامية. 
+The most common types are alcoholic liver disease, viral hepatitis (B 
+and C), fatty liver disease, and hemochromatosis. 
+أكثر الأنواع شيوعًا هي الكبد الكحولي، التهاب الكبد الفيروسي B و C)، الكبد الدهني، وداء
+ترسّب الأصبغة الدموية. 
+ 
+Pathophysiology 
+الآلية المرضية 
+When the liver is injured for a long time, it produces fibrous tissue 
+instead of normal cells. 
+عند تلف الكبد لفترة طويلة، يبدأ في إنتاج نسيج ليفي بدل الخلايا الطبيعية.
+
+This process is called fibrosis. 
+وتُسمى هذه العملية التليف . 
+Special cells in the liver called stellate cells become active and 
+create scar tissue. 
+خلايا خاصة في الكبد تُسمى الخلايا النجمية  تنشط وتنتج أنسجة ندبية . 
+These cells also release chemicals that cause inflammation and 
+attract immune cells. 
+تُفرز هذه الخلايا مواد كيميائية تسبب الالتهاب وتجذب خلايا المناعة. 
+As fibrosis continues, the liver becomes hard, blood flow changes, 
+and cirrhosis develops. 
+مع استمرار التليف، يصبح الكبد صلبًا، ويتغير تدفق الدم، ويتطور تشمّع الكبد. 
+ 
+Clinical Manifestations 
+الأعراض والعلامات السريرية 
+Chronic liver disease develops slowly, and early symptoms may be 
+mild or unnoticed. 
+مرض الكبد المزمن يتطور ببطء، وقد تكون الأعراض الأولى خفيفة أو غير ملحوظة. 
+General Symptoms 
+الأعراض العامة 
+• Fatigue and weakness 
+التعب والضعف 
+• Loss of appetite and weight loss 
+فقدان الشهية ونقص الوزن
+
+• Nausea and vomiting 
+الغثيان والقيء 
+• Abdominal pain or discomfort (especially in the right upper side) 
+ألم أو انزعاج في البطن (خصوصًا في الجهة اليمنى العلوية 
+ 
+Specific Signs Related to Liver Dysfunction 
+علامات خاصة بخلل وظائف الكبد 
+• Jaundice: yellow skin and eyes due to high bilirubin. 
+اليرقان: اصفرار الجلد والعينين بسبب ارتفاع البيليروبين. 
+• Spider angiomas: small red spots on the skin with visible 
+blood vessels. 
+الورم الوعائي العنكبوتي: بقع حمراء صغيرة على الجلد تحتوي على أوعية دموية ظاهرة. 
+• Palmar erythema: redness of the palms. 
+احمرار راحة اليدين. 
+• Ascites: fluid buildup in the abdomen. 
+الاستسقاء: تجمع سوائل في البطن . 
+• Edema: swelling in the legs or feet. 
+الوذمة: تورم في الساقين أو القدمين . 
+• Gynecomastia: enlargement of breasts in males. 
+تضخم الثدي عند الرجال. 
+• Caput medusae: enlarged veins around the belly button. 
+رأس الميدوسا: أوردة منتفخة حول السرة .
+
+• Asterixis: flapping tremor of hands in advanced disease. 
+الرعشة الرفرافة: اهتزاز اليدين في الحالات المتقدمة . 
+ 
+Complications of Cirrhosis 
+مضاعفات تليف الكبد 
+1. Portal Hypertension: increased pressure in the portal vein. 
+2. ارتفاع ضغط الوريد البابي: زيادة الضغط في الوريد الذي ينقل الدم إلى الكبد . 
+o Causes enlarged spleen (splenomegaly) and varices 
+(dilated veins in the esophagus). 
+o يسبب تضخم الطحال ودوالي المريء. 
+3. Ascites: fluid in the abdomen due to pressure and low albumin. 
+4. الاستسقاء: تجمع السوائل بالبطن بسبب الضغط ونقص الألبومين . 
+5. Hepatic Encephalopathy: brain damage from toxins (like 
+ammonia). 
+6. الاعتلال الدماغي الكبدي: تلف في الدماغ بسبب تراكم السموم مثل الأمونيا . 
+o Symptoms: confusion, behavior change, sleep 
+disturbance, coma. 
+o الأعراض: ارتباك، تغيّر في السلوك، اضطراب في النوم، غيبوبة. 
+7. Hepatorenal Syndrome: kidney failure in advanced liver 
+disease. 
+8. متلازمة الكبد الكلوي: فشل الكلى في الحالات المتقدمة من المرض الكبدي.
+
+9. Hepatocellular Carcinoma: liver cancer in chronic cases. 
+10. سرطان الكبد الأولي: يحدث في الحالات المزمنة. 
+ 
+Laboratory Findings 
+الفحوصات المعملية 
+• Liver Function Tests (LFTs): 
+o ↑ ALT and AST (liver enzymes) indicate liver cell damage. 
+o ↑ ارتفاع إنزيمات ALT وAST يدل على تلف خلايا الكبد. 
+o ↑ Bilirubin → jaundice. 
+o ↑ البيليروبين → يسبب اليرقان. 
+o ↓ Albumin → causes edema and ascites. 
+o ↓ انخفاض الألبومين → يسبب وذمة واستسقاء. 
+o ↑ Prothrombin time (PT) → bleeding tendency. 
+o ↑ زيادة زمن البروثرومبين → ميل للنزيف. 
+• CBC: 
+o May show anemia, low white cells, and low platelets (due 
+to splenomegaly). 
+o قد يظهر فقر دم، ونقص في كريات الدم البيضاء والصفائح (بسبب تضخم
+الطحال). 
+• Serologic tests: used to detect viral hepatitis or autoimmune 
+diseases.
+
+• الاختبارات المصلية: تُستخدم لاكتشاف الفيروسات أو الأمراض المناعية. 
+• Ultrasound: shows liver size, fibrosis, or ascites. 
+• الأشعة الصوتية: تُظهر حجم الكبد، أو التليف، أو وجود سوائل بالبطن . 
+• Liver biopsy: confirms fibrosis or cirrhosis. 
+• خزعة الكبد: تؤكد وجود التليف أو التشمع. 
+ 
+Child-Pugh Score: 
+The Child-Pugh score uses ascites, bilirubin, albumin, 
+prothrombin time (PT), and encephalopathy. 
+     مقياس تشايلد بوغ يعتمد على وجود الاستسقاء، ونسبة البيليروبين، والألبومين، ووقت
+البروثرومبين، وحالة الاعتلال الدماغي . 
+• Class A (score 5–6): well-compensated disease. 
+     الفئة A (النتيجة5–6): مرض في مرحلة تعويضية، أي أن الكبد ما زال يؤدي
+وظائفه جيدًا. 
+• Class B (score 7–9): functional compromise. 
+     الفئة B (النتيجة7–9): ضعف جزئي في وظيفة الكبد.  
+• Class C (score 10–15): decompensated disease. 
+     الفئة C (النتيجة10 –15): مرض غير معوض، أي أن الكبد لا يستطيع أداء
+وظائفه . 
+ 
+MELD Score:
+
+The MELD (Model of End-Stage Liver Disease) score uses 
+bilirubin, serum creatinine, and INR. 
+     مقياس MELD يستخدم قيم البيليروبين والكرياتينين في الدم ونسبة INR. 
+It was first used to predict death within 3 months after the TIPS 
+procedure, 
+and now it helps decide which patients need a liver transplant most 
+urgently. 
+     في البداية استُخدم لتوقع خطر الوفاة خلال3 أشهر بعد إجراء تحويلة  TIPS، 
+وحاليًا يُستخدم لتحديد أولوية المرضى في زراعة الكبد . 
+ 
+Complications of Chronic Liver Disease: 
+• Variceal bleeding 
+     نزيف دوالي المريء 
+• Ascites and Spontaneous Bacterial Peritonitis (SBP) 
+     الاستسقاء والالتهاب البكتيري التلقائي للغشاء البريتوني 
+• Hepatic encephalopathy 
+     الاعتلال الدماغي الكبدي 
+• Hepatorenal syndrome 
+     متلازمة الكبد والكلى 
+• Hepatopulmonary syndrome 
+     متلازمة الكبد والرئة
+
+• Hepatocellular carcinoma 
+     سرطان الخلايا الكبدية 
+ 
+Prophylaxis (Prevention): 
+Recommendations for Preventive Care: 
+     التوصيات للوقاية والعناية المستمرة: 
+• Avoid all types of alcohol. 
+     تجنّب جميع أنواع الكحول. 
+• Regular screening for Hepatitis B and C. 
+     الفحص الدوري للكشف عن فيروسي الكبد B و C. 
+• Vaccination against Hepatitis A and B. 
+     التطعيم ضد فيروسي الكبد A و B. 
+• Avoid iron supplements unless there is real iron deficiency. 
+     تجنّب مكملات الحديد إلا في حالة وجود نقص فعلي في الحديد. 
+• Avoid hepatotoxic drugs. 
+     تجنّب الأدوية التي تضر الكبد. 
+• Maintain a healthy lipid profile to prevent metabolic syndrome 
+and fatty liver disease. 
+     حافظ على نسبة دهون طبيعية في الدم لتجنب متلازمة التمثيل الغذائي والكبد الدهني. 
+ 
+Patient Surveillance (Monitoring):
+
+Patients with chronic liver disease need regular monitoring to 
+prevent complications. 
+     مرضى الكبد المزمن يحتاجون متابعة منتظمة لتجنب المضاعفات. 
+They should have CBC and prothrombin time checked 3–4 times 
+per year. 
+     يجب فحص صورة الدم الكاملة ووقت البروثرومبين من3 إلى4  مرات في السنة.  
+ 
+Endoscopy: 
+Routine diagnostic endoscopy should be done to detect esophageal 
+varices, 
+even if the patient has no symptoms. 
+     يجب عمل منظار تشخيصي دوري لاكتشاف دوالي المريء حتى لو لم تظهر أعراض. 
+If no varices are found, repeat the endoscopy after 2 years. 
+     إذا لم توجد دوالي، يُعاد المنظار بعد سنتين. 
+For patients with esophageal varices, nonselective beta-blockers 
+are used to reduce heart rate by 25% to prevent bleeding. 
+     للمرضى الذين لديهم دوالي مريء، تُستخدم حاصرات بيتا غير الانتقائية لتقليل ضربات
+القلب بنسبة 25٪ والوقاية من النزيف.  
+Large varices should be treated with prophylactic endoscopic 
+banding to prevent rupture and bleeding. 
+     أما الدوالي الكبيرة فيجب ربطها وقائيًا بالمنظار لتجنب انفجارها وحدوث نزيف. 
+ 
+HCC (Hepatocellular Carcinoma) Surveillance:
+
+Patients with cirrhosis should have ultrasound every 6 months to 
+check for liver cancer. 
+     مرضى تليف الكبد يجب أن يُجرى لهم فحص بالموجات فوق الصوتية كل6  أشهر للكشف
+عن سرطان الكبد . 
+If a liver nodule is found, do a triphasic CT scan or dynamic MRI 
+to confirm the diagnosis. 
+     إذا وُجدت كتلة في الكبد، يجب عمل أشعة مقطعية ثلاثية المراحل أو رنين مغناطيسي 
+ديناميكي للتأكد من التشخيص . 
+ 
+Treatment: 
+General treatment: 
+The goal of treatment is to stop the disease from getting worse, treat 
+its main cause, and control complications such as portal 
+hypertension. 
+     الهدف من العلاج هو إيقاف تطور المرض، وعلاج السبب الرئيسي، والتحكم في المضاعفات
+مثل ارتفاع ضغط الدم البابي. 
+Bleeding from esophageal varices is treated by giving fluids quickly, 
+using vasopressors like octreotide or terlipressin, and doing 
+endoscopy. 
+     نزيف دوالي المريء يُعالج بإعطاء سوائل بسرعة، واستخدام أدوية قابضة للأوعية مثل
+الأوكتريوتيد أو التيرليبرسين، وعمل منظار. 
+Endoscopic band ligation and sclerotherapy are used in emergency 
+bleeding. 
+     ربط الدوالي أو حقنها بمادة توقف النزيف يتم في الحالات الطارئة.
+
+Some patients may need TIPS (Transjugular Intrahepatic 
+Portosystemic Shunt) to improve survival. 
+     بعض المرضى قد يحتاجون إلى عملية TIPS لتحسين فرصة البقاء. 
+Propranolol is used to prevent variceal bleeding (first or recurrent). 
+     يُستخدم البروبرانولول للوقاية من نزيف الدوالي لأول مرة أو عند تكراره. 
+ 
+Ascites: 
+It is treated with diuretics (furosemide, spironolactone) and low salt 
+diet. 
+     يُعالج الاستسقاء بمدرات البول (فوروسيميد وسبيرونولاكتون) وتقليل الملح في الطعام. 
+In severe cases, paracentesis (removal of abdominal fluid) is done. 
+     في الحالات الشديدة يتم سحب السائل من البطن (بزل. 
+Albumin infusion may be used to prevent complications. 
+     يمكن إعطاء الألبومين لتجنب المضاعفات. 
+ 
+Spontaneous Bacterial Peritonitis (SBP): 
+Start with broad-spectrum antibiotics, then give specific ones after 
+culture results. 
+     يُبدأ العلاج بمضادات حيوية واسعة المدى، ثم تُستخدم مضادات محددة بعد ظهور نتائج
+الزرع.
+
+Hepatic Encephalopathy: 
+The main step is to treat the cause (infection, bleeding, constipation). 
+     الخطوة الأساسية هي علاج السبب مثل العدوى أو النزيف أو الإمساك. 
+Lactulose helps by converting ammonia to ammonium and reducing 
+its absorption. 
+     اللاكتيلوز يحول الأمونيا إلى أمونيوم ويقلل امتصاصها. 
+It also relieves constipation and improves brain function. 
+     كما يعالج الإمساك ويحسن حالة المريض الذهنية. 
+Rifaximin decreases ammonia production by gut bacteria. 
+     الريفاكسمين يقلل إنتاج الأمونيا من البكتيريا المعوية. 
+ 
+Hepatorenal Syndrome (HRS): 
+There are two types: Type 1 (severe) and Type 2 (less severe). 
+     يوجد نوعان: النوع الأول شديد، والنوع الثاني أقل شدة. 
+The goal is to fix the cause and improve kidney function. 
+     الهدف هو علاج السبب وتحسين وظيفة الكلى. 
+Treatment includes norepinephrine or terlipressin with albumin, or 
+midodrine + octreotide + albumin. 
+     العلاج يشمل نورإبينفرين أو تيرليبرسين مع الألبومين، أو ميدودرين مع أوكتريوتيد وألبومين. 
+TIPS may help some patients, and liver transplant is the only 
+curative treatment. 
+     عملية TIPS قد تفيد بعض المرضى، وزراعة الكبد هي العلاج الشافي الوحيد.
+
+Hepatocellular Carcinoma (HCC): 
+Treatment depends on stage: 
+     يعتمد العلاج على مرحلة الورم: 
+• Initial stage: Liver transplant, surgery, or radiofrequency 
+ablation. 
+     المرحلة الأولى: زراعة كبد أو جراحة أو كي حراري. 
+• Intermediate stage: Transarterial chemoembolization or radio-
+embolization. 
+     المرحلة المتوسطة: علاج كيماوي أو إشعاعي عبر الشريان الكبدي. 
+• Metastatic disease: Sorafenib. 
+     المرحلة المنتشرة: علاج دوائي بسورافينيب. 
+ 
+Specific Treatment: 
+Viral Hepatitis: Continuous antiviral therapy (nucleoside/nucleotide 
+analogs or direct-acting antivirals for HCV). 
+     التهاب الكبد الفيروسي: علاج مستمر بمضادات الفيروسات للقضاء على الفيروس. 
+Alcoholic Liver Disease: Stop alcohol completely. 
+     مرض الكبد الكحولي: الامتناع التام عن الكحول. 
+Non-Alcoholic Fatty Liver Disease: Treat obesity, diabetes, and 
+high lipids. 
+     الكبد الدهني غير الكحولي: علاج السمنة والسكري وارتفاع الدهون.
+
+Autoimmune Hepatitis: Corticosteroids and immunosuppressive 
+drugs. 
+     التهاب الكبد المناعي: علاج بالكورتيزون وأدوية تثبيط المناعة. 
+Hereditary Hemochromatosis: Phlebotomy and iron chelating 
+drugs. 
+     ترسّب الحديد الوراثي: إزالة دم واستخدام أدوية تقلل الحديد. 
+Wilson Disease: Copper chelators. 
+     مرض ويلسون: أدوية تقلل النحاس. 
+Alpha-1 Antitrypsin Deficiency: Liver transplant. 
+     نقص ألفا-1 أنتي تربسين: زراعة كبد.  
+Drug or Toxin Induced: Stop the harmful drug. 
+     تلف الكبد بسبب الأدوية: إيقاف الدواء المسبب فورًا . 
+Primary Biliary Cholangitis (PBC): Ursodeoxycholic acid (UDCA). 
+     تليف القنوات الصفراوية الأولي: علاج بحمض الأورسوديوكسيكوليك. 
+Primary Sclerosing Cholangitis (PSC): Liver transplant. 
+     التصلب الصفراوي الأولي: زراعة كبد. 
+Budd-Chiari Syndrome: Anticoagulants, thrombolysis, angioplasty, 
+TIPS, or liver transplant. 
+     متلازمة بود كياري: تُعالج بمسيلات الدم أو توسيع الأوعية أو زراعة كبد. 
+ 
+Prognosis:
+
+Compensated chronic liver disease (no major complications) has a 
+good prognosis. 
+     الكبد المزمن المعوض (بدون مضاعفات) حالته جيدة. 
+Decompensated liver disease (with complications) has a poor 
+prognosis. 
+     الكبد غير المعوض (مع مضاعفات) حالته سيئة. 
+Average survival is about 6 months if Child-Pugh ≥12 or MELD ≥21. 
+     متوسط البقاء حوالي6 أشهر إذا كانت درجة تشايلد بوغ12 أو ميلد21 .

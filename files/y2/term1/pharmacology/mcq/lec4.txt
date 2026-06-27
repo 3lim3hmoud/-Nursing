@@ -1,0 +1,138 @@
+Pharmacology 1: Receptor Mechanisms Examination 
+Part I: Multiple Choice Questions (MCQs) 
+Section 1: Basic Definitions (Receptors, Affinity, Activity) 
+1. What are macromolecules located on the cell surface, cytoplasm, or nucleus that 
+bind with drugs to produce cellular changes? 
+o A. Enzymes 
+o B. Receptors 
+o C. Transporters 
+o D. Hormones 
+2. The ability of a drug to bind specifically to a receptor is known as: 
+o A. Intrinsic activity 
+o B. Efficacy 
+o C. Affinity 
+o D. Potency 
+3. "Intrinsic activity" is best defined as the ability of a drug to: 
+o A. Bind to the receptor 
+o B. Produce pharmacological action after binding 
+o C. Be excreted from the body 
+o D. Cross the cell membrane 
+Section 2: Agonists, Antagonists, and Other Ligands 
+4. A drug that possesses both high affinity and high intrinsic activity is called a/an: 
+o A. Antagonist 
+o B. Partial Agonist 
+o C. Agonist 
+o D. Inverse Agonist 
+5. Which of the following is a classic example of an agonist mentioned in the 
+sources?
+
+o A. Atropine 
+o B. Adrenaline 
+o C. Propranolol 
+o D. Salbutamol 
+6. An antagonist is a drug that: 
+o A. Has high affinity and high intrinsic activity. 
+o B. Has high affinity but NO intrinsic activity. 
+o C. Produces the opposite effect of the natural ligand. 
+o D. Has low affinity and low activity. 
+7. A drug like Atropine, which binds to a receptor but produces no pharmacological 
+action (only a blockade), is a: 
+o A. Full Agonist 
+o B. Competitive Antagonist 
+o C. Partial Agonist 
+o D. Inverse Agonist 
+8. A "Partial Agonist" is characterized by: 
+o A. High affinity and no activity. 
+o B. Affinity and an effect less than that of a full agonist. 
+o C. Producing the opposite effect of an agonist. 
+o D. Binding irreversibly to the receptor. 
+9. Which type of drug has an intrinsic activity between 0 and -1? 
+o A. Agonist 
+o B. Antagonist 
+o C. Partial Agonist 
+o D. Inverse Agonist 
+Section 3: Receptor Families
+
+10. Receptors that are directly coupled to ion channels and respond in milliseconds 
+are: 
+o A. G-protein-coupled receptors 
+o B. Ligand-gated ion channels (Inotropic) 
+o C. Enzymatic receptors 
+o D. Nuclear receptors 
+11. G-protein-coupled receptors (metabotropic) are linked to effectors through G-
+proteins, which consist of how many subunits? 
+o A. Two (α, β) 
+o B. Three (α, β, γ) 
+o C. Four (α, β, γ, δ) 
+o D. One (α) 
+12. The insulin receptor is an example of which receptor family? 
+o A. Ligand-gated ion channel 
+o B. G-protein-coupled receptor 
+o C. Enzymatic receptor (Tyrosine kinase) 
+o D. Transcription factor 
+13. Which receptor family is located intracellularly and regulates gene expression? 
+o A. GABA receptors 
+o B. Muscarinic receptors 
+o C. Adrenergic receptors 
+o D. Nuclear receptors (e.g., Steroids) 
+14. How long does it typically take for Nuclear receptors to produce a response? 
+o A. Milliseconds 
+o B. Seconds 
+o C. Hours 
+o D. Minutes
+
+Section 4: Regulation of Receptors 
+15. Prolonged use of an agonist (like Salbutamol) often leads to: 
+o A. Down-regulation (decreased receptor number and sensitivity) 
+o B. Up-regulation (increased receptor number) 
+o C. No change in receptors 
+o D. Supersensitivity 
+16. Sudden stoppage of an antagonist (like Propranolol) after prolonged use can 
+cause: 
+o A. Down-regulation 
+o B. Up-regulation/Supersensitivity (withdrawal symptoms) 
+o C. Permanent receptor blockade 
+o D. Decreased response to catecholamines 
+ 
+Part II: Essay Questions 
+1. Compare Agonists, Antagonists, Partial Agonists, and Inverse Agonists based on 
+their affinity and intrinsic activity. 
+2. Tabulate the four receptor families, including their location, coupling mechanism, 
+and one example for each. 
+3. Discuss the clinical significance of "Up-regulation" of receptors, using Propranolol 
+as an example. 
+4. Explain the mechanism of "Down-regulation" and how it affects the treatment of 
+asthmatic patients using Salbutamol. 
+ 
+ 
+Answer Key 
+Part I: MCQs 
+1. B
+
+2. C 
+3. B 
+4. C 
+5. B 
+6. B 
+7. B 
+8. B 
+9. D 
+10. B 
+11. B 
+12. C 
+13. D 
+14. C 
+15. A 
+16. B 
+Part II: Essay Hints 
+1. Agonist: High affinity + High intrinsic activity (+1). Antagonist: High affinity + Zero 
+activity (0). Partial Agonist: Affinity + Less activity (<1). Inverse Agonist: Affinity + 
+Opposite activity (0 to -1). 
+2. Ion Channels: Membrane, Direct coupling, e.g., Nicotinic. G-Protein: Membrane, 
+G-proteins, e.g., Adrenergic. Enzymatic: Membrane, Direct enzyme, e.g., Insulin. 
+Nuclear: Intracellular, DNA/Gene, e.g., Steroids. 
+3. Up-regulation: Chronic antagonist use increases receptor number/sensitivity. 
+Sudden stoppage leads to a massive response to natural agonists (e.g., 
+catecholamines), causing tachycardia or angina in patients stopping Propranolol. 
+4. Down-regulation: Chronic agonist use (Salbutamol) decreases receptor 
+number/sensitivity, leading to a decreased drug effect in asthmatic patients.

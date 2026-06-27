@@ -1,0 +1,232 @@
+INTERACTIVE
+TEACHING STRATEGIES
+Nursing Education Applications
+Prepared by
+Dr. Saeed Mohammad
+
+Outlines
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+01 Introduction to Interactive Teaching
+02 Think-Pair-Share (TPS)
+03 Case-Based Learning (CBL)
+04 Simulation & Role-Play
+05 Flipped Classroom
+06 Gamification & Interactive Quizzing
+07 Socratic Questioning
+08 Key Takeaways & Conclusions
+
+Objectives
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+By the end of this lecture, students will be able to:
+1 Define Interactive teaching strategies and distinguish them from traditional methods.
+2 Identify At least 6 evidence-based interactive strategies in health professions education.
+3 Apply Selected strategies within nursing curricula.
+4 Evaluate Student engagement using formative assessment tools aligned to each strategy.
+5 Adapt Strategies to clinical, simulation lab, bedside, and online teaching environments.
+
+What Is Interactive Teaching?
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+An approach where learners are active participants — not passive recipients. It involves
+two-way communication, collaborative inquiry, and learner-centered activities that
+deepen understanding and critical thinking.
+1 Active
+Engagement
+Students construct 
+knowledge through 
+doing
+2 Feedback
+& Dialogue
+Real-time interaction 
+guides understanding
+3 Collaborative
+Learning
+Peer interaction 
+enriches perspectives
+4 Critical
+Thinking
+Open questions 
+demand analysis & 
+synthesis
+
+Strategy 01  |  Think-Pair-Share (TPS)
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+Students think individually, discuss
+with a partner, then share with the
+class.
+• Pose an open clinical question
+• Think silently (1–3 min)
+• Discuss in pairs (3–5 min)
+• Share with the whole class
+• Instructor consolidates answers
+LIVE CLASSROOM APPLICATION
+المحاض ر 
+"مريض يتلق ى مورفي  ى وريدي —معدل تنفسهأصبح8/دقيقة
+وهونائم . ماهوتدخّلك التمريض  ى الأول؟فكّروا بمفردكم 
+دقيقتي  ى ".
+الطالب( يكتبالطالب : إيقافالإعطاء— تقييمالوع ى —تقييم 
+المسالكالهوائية— استدعاءالطبيب) 
+المحاض ر "الآن ناقشواإجابتكممعزميلكم المجاورلمدة3 دقائق—قارنوا 
+الأولويات".
+الطالب" أناكتبتنالوكسان أولاى،أنت؟ " —" لا،أناقلتتقييمالمسالك
+الهوائيةأولاى"! 
+المحاض ر "من يشارك؟  "ى→يصححABC أولاىثمنالوكسان حسب
+بروتوكول OPIOID OVERDOSE"
+
+Strategy 02  |  Case-Based Learning (CBL)
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+Students analyze a real patient case to
+apply knowledge and make clinical
+decisions.
+• Present a realistic patient case
+• Identify nursing problems & gaps
+• Groups discuss care plan
+• Present reasoning to class
+• Debrief & link to evidence
+LIVE CLASSROOM APPLICATION
+المحاض ر 
+"اقرأوا هذا : السيدأحمد،65 سنة،مصاببالسكر— ضغطه
+80/50،نبضه120،يشكومنألمصدروتعرق بارد  .ما 
+تشخيصكمالتمريض  ى الأول؟" 
+الطالب
+المجموعةالأولى" : نقصالنتاجالقلب  ى  "—المجموعة الثانية : 
+"خطر صدمةقلبية " —المجموعة الثالثة" : ألمحادمرتبط 
+بنقصالت وية "
+المحاض ر "ممتاز —الآن ضعواخطةتمريضية كاملة : تقييم،تدخل،
+توثيقSBAR. عندكم10 دقائق".
+الطالب
+"نعط ى Oىبقناع 10L —نفتحخطوريدي —نأخذ ECG —
+نوثّق S: ألمصدرB: مريض سكري A: احتمالMI / R: 
+أخت ى الطبيبفورا ى" 
+ملاحظةالطلاب يطبّقون NANDA + NIC + NOC  ى 
+ف سياقواقع ى —
+يُقيَّمون علىجودةالتفكت ى السريري لاالحفظ
+
+Strategy 03  |  Simulation & Role-Play
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+Learners practice clinical skills in
+realistic, safe environments with full
+role assignments.
+• Assign roles: nurse, patient, family
+• Brief on scenario context
+• Enact the clinical scenario
+• Pause at decision points
+• Debrief: Describe ىAnalyze ى
+Apply
+LIVE CLASSROOM APPLICATION
+المحاض ر 
+"الطالبة سارة أنت ى الممرضة المسؤولة . المريضة أمامك ىوضعت
+منذساعتي  ى —فجأة ضيقتنفس،نبض130،SpOى88%. 
+ابدأي".
+الطالب
+"أقيّم المريضة  :تستجيب —أضع قناع Oى10L —أنادي :
+code call —أفتحخطوريدي —أسحب D-Dimer وأجهّز 
+LMWH"
+المحاض ر (يوقف السيناريو " )جيد جدا ى— لكنهلأبلغت ى الطبيببـ
+SBAR؟وهلوثّقت ى الوقت؟أكملى ى ".
+الطالبS: مريضة 2 ساعةبعدالولادةB: لاجلطاتسابقةA: 
+أشك ى 
+ف PE / R: أحتاجأمرهيبارين ونقللـICU"
+ملاحظةبعد السيناريو  :المجموعة تناقش— ماذاأحسنتسارة؟ ماذا
+كانتستغت ّ؟ —التغذية الراجعة منالأقران
+
+Strategy 04  |  Flipped Classroom
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+Content is studied at home; class time
+is for application and problem-solving.
+• Pre-class: video + quiz on LMS
+• In-class: brief clarification (5–10
+min)
+• Group application tasks
+• Instructor coaches thinking
+• Consolidation & Q&A
+LIVE CLASSROOM APPLICATION
+ملاحظة( قبلالمحاض ة  )الطالب شاهدفيديو15 دقيقةعناختلال
+الشوارد  +أجاب 10 أسئلةعلىMoodle
+المحاض ر "عندكم اليوممريض SpOى88%،Naى118 mEq/L،Kى6.5 
+mEq/L. صمّموا خطةتمريضية كاملةللمجموعة". 
+الطالب
+"نبدأ بـOى—نراقب القلبلارتفاع Kى—نعط ى Normal 
+Saline 0.9% ببطءلـNaى—نمنع الكالسيوموالأطعمةالغنية
+بالبوتاسيوم"
+المحاض ر (يتجول بي  ى المجموعات" ) لماذا0.9% وليس3%؟ماخطر
+رفع Naىبسرعة؟  "—يوجّه التفكت ى النقدي
+ملاحظةالطالب جاءمستعدا ىى→ الوقتكلهللتطبيقوالتفكت ى العميق،لا
+لسماع المعلومة
+
+Strategy 05  |  Gamification & Interactive 
+Quizzing
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+Game-design elements boost
+motivation and provide instant
+feedback on learning.
+• Design multi-level Bloom's 
+questions
+• Launch Kahoot! / Mentimeter
+• Team-based competitive rounds
+• Pause on wrong answers to discuss
+• Award points — celebrate learning
+LIVE CLASSROOM APPLICATION
+المحاض ر "افتحوا Kahoot! عهواتفكم— عندنا10 أسئلةعن
+المضاداتالحيوية— الفريق الفائزيعلنأمامالقسم"! 
+الطالبالسؤال " :مريضة حساسةمنPenicillin تحتاجعلاج
+Streptococcal —ماالبديل؟ " —30 ثانيةللإجابة 
+المحاض ر (بعد الإجابات" ) 58% اختارواAzithromycin —صح !لكن 
+30% اختارواAmoxicillin —هذاخطر،دعونانفهملماذا" 
+الطالبAmoxicillin مننفسعائلةPenicillin — cross-reaction 
+—ممنوع  "!—" آه !الآن فهمت" 
+ملاحظةالخطأ  ى 
+ف اللعبة = لحظةتعلّم حقيقية— الطالبيتذكرلأنه
+شعربالمنافسةوالتصحيحالفوري
+
+Strategy 06  |  Socratic Questioning
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+HOW IT WORKS
+The instructor guides students to
+discover knowledge through structured
+probing dialogue.
+• Start with an observable clinical
+finding
+• Ask: "Why?", "What evidence?"
+• Invite peer challenge
+• Clarify assumptions & implications
+• Guide to self-correction
+LIVE CLASSROOM APPLICATION
+الطالب(  ى 
+ف الجولةعلىالمرض ى " )دكتور ،الجرح يبدوملتهبا ى" 
+المحاض ر "ما الذيجعلك ى تقولي  ى ملتهب؟ماالعلاماتالب  ى رأيت ها 
+بالضبط؟"
+الطالب" فيهاحمرار ،دفء،وإفراز أصفر،والمريض يشكومنألمعند
+اللمس"
+المحاض ر "ممتاز —هذه علاماتالـREEDA scale. الآن :هل كلإفراز 
+أصفريعب  ى التهابا ؟ماذاتعتقدون؟" 
+ملاحظةالطالب توصّل للمعيارالعلم ى بنفسه— أعمقبكثت ى منقراءته 
+ ى 
+ف الكتاب— يُطبَّق بسهولة ى 
+ف جولاتىالصباح
+
+Strategies at a Glance — Comparison Summary
+Dr. Saeed Mohammad  |  Interactive Teaching Strategies
+Strategy Group Size Time Best Use in Nursing Bloom's Level Technology
+Think-Pair-Share 2–3 5–15 min Clinical decisions, pharmacology Comprehension–
+Analysis Polling tools
+Case-Based Learning 3–5 30–60 min Patient scenarios, care planning Analysis–Evaluation LMS / printed
+Simulation 3–6 30–90 min Skills lab, ACLS, patient safety Application–Synthesis SimMan / SP
+Flipped Classroom Whole 60–90 min Pathophysiology, pharmacology All levels Video / LMS
+Gamification Indiv/Team 15–30 min NCLEX prep, drug calculations Knowledge–Application Kahoot / Quizlet
+Socratic Questioning Whole 10–30 min Clinical reasoning, ward teaching Analysis–Evaluation None required
+
+Key Takeaways
+1 Match strategy to objective  — Select based on Bloom's level — not habit.
+2 Nursing context is non-negotiable  — Every strategy must be grounded in real clinical 
+scenarios.
+3 Feedback is the engine  — Interactive strategies only work with immediate, specific 
+feedback.
+4 Start small, scale up  — Introduce one strategy per course; refine before adding another.
+5 Create psychological safety  — Wrong answers must be learning opportunities — not 
+sources of shame.
+"The great teacher inspires." — William A. Ward

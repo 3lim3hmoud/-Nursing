@@ -1,0 +1,194 @@
+Cardiac Surgery 
+جراحة القلب 
+ 
+Definition of Open Heart Surgery 
+تعريف جراحة القلب المفتوح 
+Open heart surgery is a type of heart surgery that requires the heart to be opened to 
+perform the cardiac intervention. 
+جراحة القلب المفتوح هي نوع من جراحات القلب يتطلب فتح القلب لإجراء تدخل علاجي. 
+The sternum (breast bone) is cut in half vertically to open the chest and make the 
+heart visible. 
+يتم شق عظمة القص بالطول إلى نصفين لفتح الصدر وجعل القلب ظاهرًا . 
+The pericardium is then pulled away to give the surgeon direct access to the heart. 
+بعد ذلك يتم إبعاد غشاء التامور ليتمكن الجراح من الوصول المباشر إلى القلب. 
+ 
+Indications of Cardiac Surgery 
+دواعي جراحة القلب 
+Cardiac surgery is performed to treat complications of ischemic heart disease such as 
+CABG. 
+تُجرى جراحة القلب لعلاج مضاعفات مرض نقص التروية القلبية مثل جراحة ترقيع الشرايين التاجية. 
+It is used to correct congenital heart disease, which includes structural defects in the 
+heart and great vessels present at birth. 
+تُستخدم الجراحة لتصحيح أمراض القلب الخَلقية، وهي عيوب تركيبية في القلب أو الأوعية الدموية الكبيرة موجودة
+منذ الولادة. 
+Valvular heart disease involving the aortic and mitral valves on the left side or 
+pulmonary and tricuspid valves on the right side is an indication for surgery.
+
+تُعد أمراض صمامات القلب التي تصيب الصمام الأورطي والميترالي في الجهة اليسرى أو الصمام الرئوي وثلاثي
+الشرفات في الجهة اليمنى من دواعي الجراحة. 
+Heart transplantation is indicated for end-stage heart failure or severe coronary artery 
+disease. 
+زراعة القلب تُجرى في حالات الفشل القلبي النهائي أو مرض الشرايين التاجية الشديد. 
+ 
+Surgical Techniques 
+التقنيات الجراحية 
+Recent Techniques 
+التقنيات الحديثة 
+Recent techniques use smaller cuts ranging from 2 to 5 inches. 
+التقنيات الحديثة تستخدم شقوقًا جراحية صغيرة يتراوح طولها من2 إلى5 بوصات.  
+Muscles are divided for access, allowing valve repair or bypass surgery. 
+يتم فصل العضلات للوصول إلى القلب مما يسمح بإصلاح الصمامات أو إجراء جراحة تحويل مسار الشرايين. 
+Endoscopic surgery uses one to four small holes with special instruments and a 
+camera. 
+الجراحة بالمنظار تستخدم من فتحة إلى أربع فتحات صغيرة مع أدوات خاصة وكاميرا. 
+ 
+Heart-Lung Machine (Cardiopulmonary Bypass) 
+جهاز القلب والرئة الصناعي 
+The heart-lung machine takes over the pumping action of the heart and adds oxygen 
+to the blood. 
+يقوم جهاز القلب والرئة بوظيفة ضخ الدم بدلاً من القلب وإضافة الأكسجين إلى الدم .
+
+It allows the heart to be still and bloodless during the operation. 
+يسمح للجراح بأن يكون القلب ثابتًا وخاليًا من الدم أثناء العملية. 
+Blood is carried from the right atrium to an oxygenator. 
+يتم نقل الدم من الأذين الأيمن إلى جهاز الأكسجة. 
+Oxygen enters the red blood cells, turning the blood bright red. 
+يدخل الأكسجين إلى كرات الدم الحمراء فيتحول لون الدم إلى الأحمر الفاتح. 
+A filter removes air bubbles before the blood returns to the body through the aorta. 
+يقوم الفلتر بإزالة فقاعات الهواء قبل عودة الدم إلى الجسم عبر الشريان الأورطي. 
+The machine is operated by perfusion technologists. 
+يقوم بتشغيل الجهاز أخصائيو التروية الدموية. 
+ 
+Off-Pump Surgery (OPCAB) 
+الجراحة بدون مضخة (القلب النابض 
+Off-pump surgery is also called beating heart surgery. 
+الجراحة بدون مضخة تُعرف أيضًا بجراحة القلب النابض. 
+It is performed without using the heart-lung machine. 
+تُجرى هذه الجراحة بدون استخدام جهاز القلب والرئة. 
+Benefits include reduced need for blood transfusions. 
+من فوائدها تقليل الحاجة إلى نقل الدم. 
+It reduces the risk of bleeding, stroke, and kidney failure. 
+تقلل من خطر النزيف والسكتة الدماغية والفشل الكلوي. 
+It may reduce cognitive problems and is beneficial for high-risk patients with lung or 
+kidney disease. 
+قد تقلل من المشكلات الإدراكية وتُعد مناسبة للمرضى ذوي الخطورة العالية المصابين بأمراض الرئة أو الكلى.
+
+Cooling Techniques 
+تقنيات التبريد 
+Cooling techniques reduce the oxygen needs of the heart. 
+تقنيات التبريد تقلل احتياج القلب للأكسجين. 
+They allow the heart to be stopped for long periods without tissue damage. 
+تسمح بإيقاف القلب لفترات طويلة دون تلف الأنسجة. 
+Cooling may be done by cooling the blood through the heart-lung machine. 
+يمكن إجراء التبريد عن طريق تبريد الدم باستخدام جهاز القلب والرئة. 
+Cold saline may be poured directly over the heart. 
+يمكن سكب محلول ملحي بارد مباشرة على القلب. 
+A potassium solution may be injected to stop the heart completely for 2 to 4 hours 
+safely. 
+قد يتم حقن محلول البوتاسيوم لإيقاف القلب تمامًا بأمان لمدة من2 إلى4 ساعات.  
+ 
+Complications of Cardiac Surgery 
+مضاعفات جراحة القلب 
+Major complications include bleeding at the incision or heart. 
+تشمل المضاعفات الكبرى النزيف من مكان الجرح أو من القلب. 
+Abnormal heart rhythm may occur and may require a temporary or permanent 
+pacemaker. 
+قد يحدث اضطراب في ضربات القلب وقد يحتاج المريض إلى منظم ضربات مؤقت أو دائم. 
+Other serious complications include ischemic heart damage and death. 
+تشمل المضاعفات الخطيرة الأخرى تلف عضلة القلب والوفاة. 
+Blood clots may form and travel in the bloodstream. 
+قد تتكوّن جلطات دموية وتنتقل في مجرى الدم .
+
+Stroke may occur due to clots restricting oxygen to the brain. 
+قد تحدث سكتة دماغية نتيجة الجلطات التي تقلل وصول الأكسجين إلى المخ. 
+Cardiac tamponade is a life-threatening accumulation of blood in the pericardium. 
+الاندحاس القلبي هو تجمع دم مهدد للحياة داخل غشاء التامور. 
+Lung and minor complications include respiratory infections, lung failure, nausea, 
+vomiting, bruising, scar formation, skin numbness, or allergic reactions. 
+تشمل المضاعفات الرئوية والبسيطة التهابات الجهاز التنفسي، الفشل الرئوي، الغثيان، القيء، الكدمات، تكون
+الندبات، تنميل الجلد أو تفاعلات تحسسية. 
+ 
+Pre-operative Preparation 
+التحضير قبل العملية 
+Patients meet the surgeon to review tests such as angiography and discuss risks and 
+benefits. 
+يقابل المريض الجراح لمراجعة الفحوصات مثل القسطرة ومناقشة الفوائد والمخاطر. 
+Two weeks prior, medications affecting clotting such as aspirin and warfarin are 
+stopped. 
+قبل العملية بأسبوعين يتم إيقاف الأدوية التي تؤثر على التجلط مثل الأسبرين والوارفارين. 
+Beta-blockers, calcium antagonists, and nitrates are continued. 
+يتم الاستمرار على حاصرات البيتا ومضادات الكالسيوم والنترات. 
+The day or night before surgery, patients are admitted for X-ray, ECG, blood tests, and 
+urinalysis. 
+في اليوم أو الليلة السابقة يتم دخول المستشفى لإجراء الأشعة ورسم القلب وتحاليل الدم والبول. 
+Patients shower, scrub and shave the chest, and fast after midnight. 
+يستحم المريض ويتم تنظيف وحلاقة الصدر ويمنع الأكل بعد منتصف الليل.
+
+On the morning of surgery, a mild tranquilizer is given. 
+في صباح العملية يُعطى مهدئ خفيف. 
+ECG electrodes, IV lines, and a Foley catheter are inserted. 
+يتم تركيب أقطاب رسم القلب، محاليل وريدية، وقسطرة بولية. 
+During anesthesia, an endotracheal tube and NG tube are inserted, and heparin is 
+administered. 
+أثناء التخدير يتم تركيب أنبوب تنفس وأنبوب أنفي معدي ويُعطى الهيبارين لمنع الجلطات. 
+ 
+Post-operative Nursing Care 
+الرعاية التمريضية بعد العملية 
+Patients are admitted to the ICU and closely monitored. 
+يتم إدخال المرضى إلى العناية المركزة ومراقبتهم بدقة. 
+The goal is minimal complications and maximum comfort. 
+الهدف هو تقليل المضاعفات وتحقيق أقصى راحة للمريض. 
+Initial Assessment (within 15 minutes) 
+التقييم الأولي (خلال15 دقيقة  
+Cardiovascular assessment includes vital signs, EKG rhythm, chest tube drainage, and 
+peripheral pulses. 
+يشمل تقييم القلب العلامات الحيوية، نظم القلب، تصريف أنبوب الصدر، والنبضات الطرفية. 
+Respiratory assessment includes ETT position, breath sounds, oxygen saturation, and 
+ABG. 
+يشمل تقييم التنفس وضع أنبوب التنفس، أصوات الرئة، تشبع الأكسجين، وتحليل غازات الدم. 
+Neuromuscular assessment includes LOC, pupil reaction, and motor response. 
+يشمل التقييم العصبي مستوى الوعي، استجابة الحدقة، والاستجابة الحركية.
+
+Genitourinary and integumentary assessment includes urine output, wound condition, 
+and pressure points. 
+يشمل تقييم الجهاز البولي والجلد كمية البول، حالة الجرح، ونقاط الضغط. 
+ 
+Ongoing Monitoring and Care 
+المتابعة والرعاية المستمرة 
+Vital signs are checked every 15 minutes for 4 hours then hourly. 
+تُقاس العلامات الحيوية كل15 دقيقة لمدة4 ساعات ثم كل ساعة.  
+Chest tube drainage should decrease to less than 30 cc per hour. 
+يجب أن يقل تصريف أنبوب الصدر إلى أقل من30 مل في الساعة.  
+Drainage over 100 cc per hour, BP changes, EKG changes, or neuro changes must be 
+reported immediately. 
+يجب إبلاغ الطبيب فورًا في حالة زيادة التصريف عن 100 مل/ساعة أو حدوث تغيّرات في الضغط أو رسم القلب
+أو الحالة العصبية. 
+Patients are turned and encouraged to deep breathe every 2 hours. 
+يتم تغيير وضعية المريض وتشجيعه على التنفس العميق كل ساعتين. 
+Patients remain NPO until extubated and are assisted to dangle at the bedside when 
+stable. 
+يبقى المريض صائمًا حتى إزالة أنبوب التنفس ويتم مساعدته على الجلوس على طرف السرير عند الاستقرار. 
+ 
+Pain and Wound Care 
+العناية بالألم والجرح 
+Pain is assessed every 1–2 hours using a 0–10 scale. 
+يتم تقييم الألم كل ساعة إلى ساعتين باستخدام مقياس من0 إلى10 .
+
+Positioning, pillows, and guided imagery are used for comfort. 
+تُستخدم الوضعيات المناسبة والوسائد وتقنيات التخيل لتخفيف الألم. 
+Wounds are redressed aseptically and monitored for signs of infection. 
+يتم تغيير الضمادات بطريقة معقمة ومراقبة علامات العدوى. 
+ 
+Cardiac Rehabilitation 
+التأهيل القلبي 
+Cardiac rehabilitation is a supervised program to stabilize or reverse cardiovascular 
+disease. 
+التأهيل القلبي برنامج علاجي تحت إشراف طبي لتثبيت أو تحسين أمراض القلب. 
+It includes exercise programs, nutrition counseling, risk factor modification, vocational 
+guidance, and emotional support. 
+يشمل برامج رياضية، إرشادات غذائية، تعديل عوامل الخطورة، تأهيل مهني، ودعم نفسي. 
+ 
+Post-test 
+أسئلة بعد المحاضرة 
+Mention complications post-cardiac surgery and nursing care after open heart surgery. 
+اذكر مضاعفات ما بعد جراحة القلب والرعاية التمريضية بعد جراحة القلب المفتوح.

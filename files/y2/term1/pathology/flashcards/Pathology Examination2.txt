@@ -1,0 +1,52 @@
+Pathology Examination 
+Third Lecture: Chronic Inflammation & Tuberculosis (TB) 
+ 
+Part I: Multiple Choice Questions (MCQs) 
+1. A granuloma is a type of chronic specific inflammation characterized by focal 
+accumulation of: 
+A) Neutrophils and fibrin 
+B) Basophils and mast cells 
+✔ C) Modified macrophages (epithelioid cells), lymphocytes, giant cells, and 
+fibroblasts 
+D) Red blood cells and platelets 
+ 
+2. Grossly, tuberculous granulomas appear as: 
+A) Large black masses 
+✔ B) Scattered tan-yellow granulomas 
+C) Small blue vesicles 
+D) Diffuse red streaks 
+ 
+3. Microscopically, the center of a tuberculous granuloma shows caseation necrosis in 
+the form of: 
+A) Fluid-filled cavities 
+✔ B) Cheesy grayish-yellow, structureless homogeneous eosinophilic material 
+C) Aggregates of neutrophils 
+D) Calcified bone 
+ 
+4. The most accurate method for diagnosing tuberculosis (TB) is: 
+A) Tuberculin skin test 
+B) History of contact 
+C) Tissue biopsy alone 
+✔ D) Detection of TB bacilli by sputum examination, culture, or PCR 
+ 
+Part II: Essay & Short Answer Questions
+
+Q1. Discuss the Etiology of Granuloma 
+Answer: 
+The causes of granuloma are classified into: 
+1. Infectious Causes: 
+• Bacterial: Tuberculosis, Leprosy 
+• Parasitic: Bilharziasis 
+• Fungal: Histoplasmosis 
+2. Non-Infectious Causes: 
+• Foreign body: Silicosis, surgical sutures 
+• Autoimmune diseases: Sarcoidosis, Crohn’s disease 
+ 
+Q2. Compare between Primary and Secondary Tuberculosis (TB) 
+Feature Primary TB Secondary TB 
+Exposure Unsensitized (usually children) Previously sensitized (usually adults) 
+Cause First infection Re-infection or reactivation 
+Organs Lung, intestine, tonsil, skin Any organ 
+Lymphadenitis Prominent Minimal 
+Tissue destruction Mild Marked 
+Tissue reaction Slow Accelerated (hypersensitivity)

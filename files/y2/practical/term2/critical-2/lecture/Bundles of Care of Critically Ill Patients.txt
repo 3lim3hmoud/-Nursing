@@ -1,0 +1,270 @@
+Bundles of Care of Critically Ill Patients 
+حزم الرعاية للمرضى ذوي الحالات الحرجة 
+The bundles included are: 
+تشمل حزم الرعاية ما يلي: 
+• Ventilator associated pneumonia (VAP) bundles 
+حزمة الوقاية من الالتهاب الرئوي المرتبط بجهاز التنفس الصناعي 
+• Catheter associated urinary tract infection (CAUTI) bundles 
+حزمة الوقاية من عدوى المسالك البولية المرتبطة بالقسطرة 
+• Center line associated blood stream infection CLABSI Bundles 
+حزمة الوقاية من عدوى مجرى الدم المرتبطة بالقسطرة الوريدية المركزية 
+ 
+1. VAP Bundle (Ventilator-Associated Pneumonia) 
+حزمة الوقاية من الالتهاب الرئوي المرتبط بجهاز التنفس الصناعي 
+Daily Assessment Schedule 
+جدول التقييم اليومي 
+Time Intervention Rationale 
+Every Shift 
+كل نوبة 
+Assess readiness for extubation تقييم
+جاهزية المريض لإزالة أنبوبة التنفس  
+Early liberation reduces VAP risk 
+إزالة الأنبوبة مبكراً تقلل خطر حدوث
+الالتهاب الرئوي 
+Every Shift 
+كل نوبة 
+Elevate head of bed 30-45° رفع رأس
+السرير بزاوية 30–45  درجة  
+Prevents aspiration of secretions 
+يمنع شفط الإفرازات إلى الرئة 
+Every Shift 
+كل نوبة 
+Assess sedation level & daily sedation 
+vacation تقييم مستوى المهدئ وإعطاء راحة
+يومية من المهدئات  
+Reduces ventilator days يقلل عدد
+أيام استخدام جهاز التنفس  
+Every 2-4 
+Hours كل2 –
+4 ساعات  
+Oral care with chlorhexidine 0.12% 
+العناية بالفم باستخدام كلورهيكسيدين0.12 % 
+Reduces bacterial colonization 
+يقلل نمو البكتيريا في الفم
+
+Time Intervention Rationale 
+Every 4 
+Hours كل4  
+ساعات 
+Suction only when needed (not 
+routine) الشفط عند الحاجة فقط وليس بشكل
+روتيني  
+Prevents trauma and colonization 
+يمنع إصابة الأنسجة ونمو البكتيريا 
+Every Shift 
+كل نوبة 
+Check ET tube cuff pressure (20-30 cm 
+H₂O) فحص ضغط بالون أنبوبة التنفس20–
+30 سم ماء  
+Prevents aspiration يمنع دخول
+الإفرازات إلى الرئة  
+Daily يومياً 
+Spontaneous breathing trial (if 
+appropriate) تجربة التنفس التلقائي إذا كان
+المريض مناسب  
+Assesses extubation readiness 
+لتقييم جاهزية إزالة الأنبوبة 
+Every Shift 
+كل نوبة 
+DVT prophylaxis الوقاية من الجلطات
+الوريدية العميقة 
+Prevents complications يمنع حدوث
+مضاعفات 
+Every Shift 
+كل نوبة 
+Peptic ulcer prophylaxis الوقاية من قرحة
+المعدة 
+Prevents stress ulcers يمنع قرح
+الإجهاد 
+ 
+VAP Bundle Checklist 
+قائمة التحقق لحزمة VAP 
+• HOB elevated 30-45° 
+رفع رأس السرير30–45  درجة  
+• Daily sedation vacation/assessment 
+راحة يومية من المهدئات مع التقييم 
+• Daily extubation assessment 
+تقييم يومي لإزالة أنبوبة التنفس 
+• Oral care with antiseptic 
+العناية بالفم بمطهر 
+• DVT prophylaxis 
+الوقاية من الجلطات 
+• Peptic ulcer prophylaxis 
+الوقاية من قرحة المعدة
+
+• Verify ET tube position and cuff pressure 
+التأكد من مكان الأنبوبة وضغط البالون 
+ 
+2. CAUTI Bundle (Catheter-Associated Urinary Tract Infection) 
+حزمة الوقاية من عدوى المسالك البولية المرتبطة بالقسطرة 
+Daily Assessment Schedule 
+جدول التقييم اليومي 
+Time Intervention Rationale 
+At Insertion 
+عند التركيب 
+Use sterile technique for insertion 
+استخدام تقنية معقمة أثناء التركيب 
+Prevents initial contamination 
+يمنع التلوث من البداية 
+At Insertion 
+عند التركيب 
+Use smallest appropriate catheter size 
+استخدام أصغر مقاس مناسب من القسطرة 
+Reduces urethral trauma يقلل
+إصابة مجرى البول 
+Every Shift 
+كل نوبة 
+Assess continued need for catheter 
+تقييم الحاجة المستمرة للقسطرة 
+Early removal reduces infection 
+risk الإزالة المبكرة تقلل خطر العدوى 
+Every Shift 
+كل نوبة 
+Maintain closed drainage system الحفاظ
+على نظام تصريف مغلق 
+Prevents bacterial entry يمنع
+دخول البكتيريا  
+Every Shift 
+كل نوبة 
+Keep drainage bag below bladder level 
+إبقاء كيس البول أسفل مستوى المثانة 
+Prevents backflow of urine يمنع
+رجوع البول 
+Every Shift 
+كل نوبة 
+Secure catheter to prevent movement 
+تثبيت القسطرة لمنع الحركة 
+Reduces urethral trauma يقلل
+إصابة مجرى البول 
+Every Shift 
+كل نوبة 
+Perform perineal hygiene العناية بنظافة
+منطقة العجان 
+Maintains cleanliness يحافظ على
+النظافة  
+Every Shift 
+كل نوبة 
+Empty drainage bag regularly (do not 
+touch spout) تفريغ كيس البول بانتظام دون
+لمس الفتحة 
+Prevents bacterial growth يمنع
+نمو البكتيريا  
+Daily يومياً Document indication for catheter توثيق
+سبب استخدام القسطرة 
+Ensures appropriate use يضمن
+الاستخدام الصحيح
+
+CAUTI Bundle Checklist 
+قائمة التحقق لحزمة CAUTI 
+• Catheter only if indicated (appropriate use) 
+استخدام القسطرة عند وجود داعٍ طبي فقط 
+• Sterile insertion technique used 
+استخدام تقنية معقمة أثناء التركيب 
+• Maintain closed drainage system 
+الحفاظ على نظام مغلق 
+• Bag below bladder level always 
+الكيس دائماً أسفل مستوى المثانة 
+• Catheter secured properly 
+تثبيت القسطرة جيداً 
+• Perineal care performed 
+إجراء العناية بمنطقة العجان 
+• Daily assessment for removal 
+تقييم يومي لإمكانية إزالة القسطرة 
+ 
+3. CLABSI Bundle (Central Line-Associated Bloodstream Infection) 
+حزمة الوقاية من عدوى مجرى الدم المرتبطة بالقسطرة الوريدية المركزية 
+Daily Assessment Schedule 
+جدول التقييم اليومي 
+Time Intervention Rationale 
+At Insertion عند
+التركيب  
+Use maximal sterile barrier 
+precautions استخدام أقصى احتياطات
+التعقيم  
+Prevents contamination during 
+placement يمنع التلوث أثناء التركيب 
+At Insertion عند
+التركيب  
+Use chlorhexidine skin antisepsis 
+تطهير الجلد بالكلورهيكسيدين 
+Superior antiseptic for skin 
+prep أفضل مطهر لتحضير الجلد
+
+Time Intervention Rationale 
+At Insertion عند
+التركيب  
+Select optimal catheter site (avoid 
+femoral) اختيار أفضل مكان للقسطرة
+(تجنب الفخذي)  
+Subclavian preferred, then IJ 
+يفضل تحت الترقوة ثم الوداجي 
+Every Shift كل نوبة Assess continued need for central 
+line تقييم الحاجة المستمرة للقسطرة المركزية 
+Early removal reduces infection 
+risk الإزالة المبكرة تقلل خطر العدوى 
+Every Shift كل نوبة 
+Perform hand hygiene before 
+accessing line غسل اليدين قبل التعامل مع
+القسطرة 
+Prevents pathogen 
+transmission يمنع انتقال الميكروبات 
+Every Shift كل نوبة Inspect insertion site فحص مكان
+الإدخال  
+Early detection of 
+complications اكتشاف المضاعفات
+مبكراً  
+Every Shift كل نوبة 
+Scrub the hub 15 seconds before 
+access فرك مدخل القسطرة لمدة15 ثانية
+قبل الاستخدام  
+Reduces microbial 
+contamination يقلل التلوث
+الميكروبي  
+Every 5-7 Days 
+كل5–7  أيام  
+Change transparent dressing تغيير
+الضمادة الشفافة  
+Maintains sterile environment 
+يحافظ على بيئة معقمة 
+Every 24 Hours 
+كل24 ساعة  Change gauze dressing تغيير الشاش If used instead of transparent 
+إذا كان مستخدم بدلاً من الشفاف 
+Every Shift كل نوبة 
+Change needleless connectors per 
+protocol تغيير الوصلات بدون إبرة حسب
+البروتوكول  
+Reduces biofilm formation يقلل
+تكوّن الغشاء البكتيري  
+Every 24-96 
+Hours كل24–96  
+ساعة 
+Change IV tubing per protocol تغيير
+أنابيب المحاليل حسب البروتوكول 
+Prevents bacterial growth يمنع
+نمو البكتيريا  
+Daily يومياً Review labs for signs of infection 
+مراجعة التحاليل لعلامات العدوى 
+Early detection of CLABSI 
+الاكتشاف المبكر للعدوى 
+ 
+CLABSI Bundle Checklist
+
+قائمة التحقق لحزمة CLABSI 
+• Hand hygiene performed 
+تم غسل اليدين 
+• Maximal sterile barriers during insertion 
+استخدام أقصى احتياطات التعقيم أثناء التركيب 
+• Chlorhexidine skin prep used (>0.5%) 
+استخدام كلورهيكسيدين بتركيز أكبر من0.5 % 
+• Optimal site selection (avoid femoral) 
+اختيار المكان المناسب وتجنب الفخذي 
+• Daily review of line necessity 
+مراجعة يومية للحاجة للقسطرة 
+• Dressing clean, dry, and intact 
+الضمادة نظيفة وجافة وسليمة 
+• Hub scrubbed 15 seconds before access 
+فرك المدخل15 ثانية قبل الاستخدام  
+• Needleless connectors changed per policy 
+تغيير الوصلات حسب السياسة 
+• No signs of infection at site 
+لا توجد علامات عدوى في مكان الإدخال

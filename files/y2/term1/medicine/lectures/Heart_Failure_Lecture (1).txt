@@ -1,0 +1,86 @@
+Heart Failure 
+1. Definition 
+Heart failure (HF) is a clinical syndrome in which the heart is unable to pump sufficient 
+blood to meet the metabolic needs of the body. 
+2. Classification 
+A. By Time Course 
+- Acute Heart Failure: Sudden onset (e.g., due to MI, acute valve failure). 
+- Chronic Heart Failure: Long-standing, progressive. 
+ 
+B. By Side of Heart Involved 
+- Left-sided HF: Pulmonary congestion predominates. 
+- Right-sided HF: Systemic venous congestion predominates. 
+ 
+C. By Ejection Fraction 
+- HFrEF (EF ≤ 40%): Systolic dysfunction (impaired contraction) 
+- HFpEF (EF ≥ 50%): Diastolic dysfunction (impaired relaxation) 
+- HFmrEF (EF 41–49%): Mildly reduced EF 
+3. Etiology 
+Common Causes: 
+- Ischemic heart disease (most common) 
+- Hypertension 
+- Valvular heart disease 
+- Cardiomyopathies (dilated, hypertrophic, restrictive) 
+- Arrhythmias (AF, tachycardia-induced) 
+- Congenital heart disease 
+4. Pathophysiology 
+1. Decreased cardiac output → reduced tissue perfusion 
+2. Neurohormonal activation: 
+   - ↑ Sympathetic activity → vasoconstriction, tachycardia 
+   - ↑ RAAS → sodium & water retention 
+   - ↑ ADH → further fluid retention 
+3. Myocardial remodeling → hypertrophy, dilation, worsening HF 
+5. Clinical Features 
+A. Left-Sided Failure: 
+- Dyspnea (especially on exertion) 
+- Orthopnea 
+- Paroxysmal nocturnal dyspnea
+
+- Fatigue, weakness 
+- Cough, frothy sputum 
+- Basal lung crepitations 
+ 
+B. Right-Sided Failure: 
+- Peripheral edema 
+- Hepatomegaly 
+- Ascites 
+- Jugular venous distension (JVD) 
+- Weight gain 
+6. Investigations 
+ECG: LVH, ischemia, arrhythmia 
+Chest X-ray: Cardiomegaly, pulmonary congestion 
+Echocardiography: EF measurement, structural abnormalities 
+BNP / NT-proBNP: Elevated in HF 
+Blood tests: Renal function, electrolytes, thyroid function 
+Cardiac MRI: Myocardial fibrosis, infiltration (if indicated) 
+7. Management 
+A. General / Lifestyle: 
+- Sodium restriction (<2 g/day) 
+- Fluid restriction (in severe cases) 
+- Weight monitoring 
+- Stop smoking, alcohol 
+- Exercise as tolerated 
+ 
+B. Pharmacological: 
+ACE inhibitors / ARBs (Enalapril, Losartan): ↓ Afterload, prevent remodeling 
+Beta-blockers (Carvedilol, Metoprolol): ↓ Sympathetic drive 
+Diuretics (Furosemide): Relieve congestion 
+Aldosterone antagonists (Spironolactone): ↓ Mortality 
+SGLT2 inhibitors (Dapagliflozin, Empagliflozin): Improve outcomes 
+Digoxin (in select cases): ↑ Contractility 
+ 
+8. Complications 
+- Arrhythmias (AF, VT) 
+- Thromboembolism 
+- Renal failure 
+- Cardiogenic shock 
+- Death (if untreated or advanced)
+
+9. Prognosis 
+Poor if untreated — 5-year mortality ~50% 
+Improved survival with guideline-directed therapy 
+10. Nursing Considerations 
+- Monitor daily weight and I/O 
+- Check for edema, lung sounds 
+- Administer medications as prescribed 
+- Educate patient on diet, adherence, and signs of worsening HF

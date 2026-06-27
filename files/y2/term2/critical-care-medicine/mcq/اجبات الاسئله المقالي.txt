@@ -1,0 +1,184 @@
+ICU Critical Care — Quick Reference  |  Page 1 of 2 
+1. Types of Shock 
+• Hypovolemic Shock 
+• Cardiogenic Shock 
+• Distributive Shock: Septic, Anaphylactic, Neurogenic 
+• Obstructive Shock 
+ 
+ 2. 5 ICU Vital Signs (besides BP, Pulse, RR, Temp, Pain) 
+• Glasgow Coma Scale (GCS): Normal = 15 
+• Random Blood Sugar (RBS): Fasting 70–120 mg/dL, Postprandial (PP) < 180 mg/dL 
+• O2 Saturation: Normal > 96% 
+• End-Tidal CO2 (EtCO2): Normal 35–45 mmHg 
+• Central Venous Pressure (CVP): Normal 6–8 mmHg 
+ 
+ 
+3. VAP Bundle 
+• Head of bed (HOB) elevation 30–45° 
+• Daily sedation vacations + readiness to wean assessment 
+• Peptic ulcer disease (PUD) prophylaxis 
+• Deep venous thrombosis (DVT) prophylaxis 
+• Daily oral care with chlorhexidine 
+ 
+ 4. Indications for Mechanical Ventilation (MV) 
+• Apnea or absence of breathing 
+• Acute ventilatory failure: pH ≤ 7.25 with PaCO2 ≥ 50 mmHg 
+• Severe hypoxemia: PaO2 ≤ 50 mmHg on room air 
+• Respiratory muscle fatigue 
+ 
+ 
+5. Causes of Respiratory Failure 
+• Airway obstruction 
+• Central nervous system (CNS) depression 
+• Neuromuscular diseases: Myasthenia gravis (MG), Guillain-Barré syndrome (GBS) 
+• Chest wall and pleural deformities 
+• Pulmonary diseases: Pneumonia, Chronic obstructive pulmonary disease (COPD), Pulmonary 
+edema, Acute respiratory distress syndrome (ARDS) 
+ 
+ 6. Glasgow Coma Scale (GCS) 
+• Eye Opening (E): Spontaneous (4), To speech (3), To pain (2), None (1) 
+• Verbal Response (V): Oriented (5), Confused (4), Inappropriate words (3), Incomprehensible (2), 
+None (1) 
+• Motor Response (M): Obeys (6), Localizes (5), Withdrawal (4), Abnormal flexion (3), Extension (2), 
+None (1) 
+• Total Score: 3 (Deep Coma) → 15 (Normal) 
+ 
+ 
+7. Acute Coronary Syndrome (ACS) Types by Occlusion 
+• ST-elevation myocardial infarction (STEMI): Complete occlusion 
+• Non-ST-elevation myocardial infarction (NSTEMI): Partial occlusion with myocardial damage 
+• Unstable Angina (UA): Partial occlusion without myocardial damage 
+ 
+ 8. Vagotonic Maneuvers to Decrease Heart Rate (HR) 
+• Carotid sinus massage 
+• Valsalva maneuver 
+• Facial immersion in cold water 
+• Ocular pressure 
+• Self-induced vomiting 
+• Breath holding 
+• Head lowered between the knees 
+ 
+ 
+9. Nursing Interventions to Decrease Intracranial Pressure (ICP) 
+• Keep head midline and elevate head of bed (HOB) to 30° 
+• Avoid hip flexion and neck rotation 
+• Space out nursing activities 
+• Minimize suctioning (pre-oxygenate if needed) 
+• Maintain a quiet and calm environment 
+ 
+ 10. Complications of Diabetic Ketoacidosis (DKA) 
+• Cerebral edema 
+• Hypoglycemia (treatment-related) 
+• Hypokalemia (treatment-related) 
+• Aspiration 
+• Acute respiratory distress syndrome (ARDS)
+
+11. Treatment of Diabetic Ketoacidosis (DKA) 
+• Fluid replacement: Normal saline (NS) 
+• Electrolyte replacement: Potassium (K+) monitoring and replacement 
+• Insulin therapy: Continuous IV insulin infusion 
+• Correct acidosis: Sodium bicarbonate (NaHCO3) only if pH < 7.0 
+ 
+ 12. Symptoms and Signs of DKA 
+• Symptoms: Polyuria, polydipsia, polyphagia, nausea, vomiting, abdominal pain 
+• Signs: Kussmaul respirations, fruity (acetone) breath odor 
+• Signs: Dehydration — hypotension, tachycardia 
+• Signs: Altered mental status (AMS) 
+ 
+ 
+13. Stroke Types and Target Blood Pressure (BP) 
+• Ischemic stroke: Treat only if BP > 220/120 mmHg 
+• Ischemic (thrombolysis candidate): Target BP < 185/110 mmHg before treatment 
+• Hemorrhagic stroke: Target systolic blood pressure (SBP) 140–160 mmHg 
+ 
+ 14. Disseminated Intravascular Coagulation (DIC) Diagnosis 
+• Clinical: Bleeding from multiple sites (petechiae, ecchymosis, IV sites) 
+• Clinical: Signs of microvascular thrombosis leading to organ failure 
+• Labs: Prolonged prothrombin time (PT) / partial thromboplastin time (PTT) 
+• Labs: Decreased platelets, decreased fibrinogen, elevated D-dimer
+
+ICU Critical Care — Quick Reference  |  Page 2 of 2 
+15. Causes of Upper Gastrointestinal (GI) Bleeding 
+• Peptic ulceration 
+• Erosion / mucosal inflammation: Esophagitis, gastritis 
+• Esophageal or gastric varices 
+• Mallory-Weiss tear 
+• Tumors 
+ 
+ 16. Precipitants of Hepatic Encephalopathy (HE) 
+• Gastrointestinal (GI) bleeding 
+• Infections: Spontaneous bacterial peritonitis (SBP) 
+• Constipation 
+• Dehydration or electrolyte imbalance 
+• High protein intake 
+• Use of sedatives 
+ 
+ 
+17. Nursing Interventions for Hepatic Encephalopathy (HE) 
+• Administer lactulose to promote ammonia excretion 
+• Administer antibiotics: Rifaximin 
+• Maintain low-protein diet during acute phases 
+• Monitor neurological status frequently 
+ 
+ 18. Target Organ Damage in Hypertensive Emergency 
+• Central nervous system (CNS): Encephalopathy or intracranial hemorrhage (ICH) 
+• Eyes: Grade 3–4 retinopathy or papilledema 
+• Heart: Congestive heart failure (CHF), myocardial infarction (MI) 
+• Kidneys: Acute kidney injury (AKI) or hematuria 
+• Vasculature: Aortic dissection 
+ 
+ 
+19. Causes of Acute Respiratory Distress Syndrome (ARDS) 
+• Direct lung injury: Pneumonia, gastric aspiration, lung contusion, drowning 
+• Indirect lung injury: Sepsis, severe trauma, massive blood transfusion, acute pancreatitis 
+ 
+ 20. Complications of Mechanical Ventilation (MV) 
+• Ventilator-associated pneumonia (VAP) 
+• Barotrauma / volutrauma (e.g., pneumothorax) 
+• Decreased cardiac output (CO) from high intrathoracic pressure 
+• Stress ulcers in the gastrointestinal (GI) tract 
+ 
+ 
+21. Mechanical Ventilation (MV) Alarms 
+• High pressure: Coughing, secretions, or biting the tube 
+• Low pressure: Disconnection or leaks 
+• Low exhaled volume 
+• Apnea alarm 
+ 
+ 22. Eclampsia 
+• Definition: Severe hypertension during pregnancy with seizures 
+• Treatment: Volume expansion 
+• Treatment: Magnesium sulfate (MgSO4) for seizure prophylaxis and treatment 
+• Treatment: Antihypertensives — Hydralazine 
+ 
+ 
+23. Management of Acute Respiratory Failure 
+• Treat the underlying cause 
+• Provide oxygen (O2) therapy and maintain airway 
+• Restore fluid and electrolyte balance 
+• Optimize cardiac function and cardiac output (CO) 
+ 
+ 24. Complications of Acute Respiratory Failure 
+• Ischemic anoxic encephalopathy 
+• Cardiac dysrhythmias 
+• Venous thromboembolism (VTE) 
+• Gastrointestinal (GI) bleeding 
+ 
+ 
+25. Differential Diagnosis of Stroke 
+• Hypoglycemia 
+• Seizures / Post-ictal state 
+• Brain tumor or abscess 
+ 26. Prevention of Stroke 
+• Control hypertension (HTN), diabetes mellitus (DM), and hyperlipidemia 
+• Lifestyle: Smoking cessation, healthy diet, regular exercise 
+• Medication: Antiplatelets or anticoagulants for high-risk patients
+
+• Meningitis or encephalitis 
+ 
+ 
+27. Management of Stroke 
+• Ischemic: Thrombolytics — recombinant tissue plasminogen activator (rtPA) if within time window 
+• Ischemic: Antiplatelets — Aspirin; supportive blood pressure (BP) and glucose control 
+• Hemorrhagic: Blood pressure (BP) control and intracranial pressure (ICP) management 
+• Hemorrhagic: Potential surgical evacuation

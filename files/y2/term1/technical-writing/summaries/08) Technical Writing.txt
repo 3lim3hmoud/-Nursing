@@ -1,0 +1,115 @@
+Technical Writing – Lecture (8) 
+SBAR Technique 
+ 
+1. What is SBAR? 
+SBAR is a structured method for communicating critical information that requires 
+immediate attention and action. 
+تقنية SBAR هي طريقة منظمة للتواصل بشأن المعلومات الحرجة التي تتطلب اهتمامًا فوريًا واتخاذ إجراءات. 
+It provides a framework for healthcare team members to discuss a patient's condition 
+effectively, ensuring increased safety and proper escalation of concerns. 
+توفر إطارًا لأعضاء الفريق الطبي لمناقشة حالة المريض بشكل فعال، مما يضمن زيادة السلامة والتصعيد المناسب 
+للمخاوف. 
+SBAR consists of four steps: 
+تتكون SBAR من أربع خطوات: 
+• S: Situation 
+• S: الحالة 
+• B: Background 
+• B: الخلفية 
+• A: Assessment 
+• A: التقييم 
+• R: Recommendation 
+• R: التوصية 
+ 
+2. Why Use SBAR?
+
+SBAR reduces communication barriers between different staff levels and disciplines. 
+تقلل SBAR من حواجز التواصل بين مستويات الموظفين المختلفة والتخصصات. 
+It creates a shared mental model for all patient handoffs or critical information 
+exchanges. 
+تخلق نموذجًا ذهنيًا مشتركًا لجميع تسليمات المرضى أو تبادل المعلومات الحرجة. 
+As a memory prompt, SBAR encourages staff to prepare information before 
+communicating, reducing missed communications. 
+كونها تذكيرًا، تشجع  SBAR الموظفين على تجهيز المعلومات قبل التواصل، مما يقلل من الأخطاء في التواصل. 
+It prevents vague communication by directing staff to necessary actions. 
+تمنع SBAR التواصل الغامض من خلال توجيه الموظفين مباشرة إلى الإجراءات اللازمة. 
+ 
+3. Uses and Settings 
+SBAR is versatile and can be used in both inpatient and outpatient settings for urgent or 
+non-urgent communication. 
+SBAR متعددة الاستخدامات ويمكن استخدامها في كل من حالات المرضى الداخليين والخارجيين للتواصل العاجل
+أو غير العاجل. 
+Common scenarios include: 
+تشمل السيناريوهات الشائعة: 
+• Nurse-to-doctor or doctor-to-doctor communications. 
+• التواصل بين الممرض والطبيب أو بين الأطباء. 
+• Discussions with allied health professionals (e.g., physiotherapy, respiratory 
+therapy). 
+• المناقشات مع المتخصصين الصحيين الآخرين (مثل العلاج الطبيعي أو العلاج التنفسي. 
+• Conversations with peers, such as end-of-shift reports. 
+• المحادثات مع الزملاء، مثل تقارير نهاية الوردية.
+
+• Escalating concerns or handovers from ambulance crews to hospital staff. 
+• تصعيد المخاوف أو تسليم الحالات من طاقم الإسعاف إلى موظفي المستشفى. 
+ 
+4. Detailed Steps of SBAR 
+Situation (S): Identify yourself, location, and patient. State reason for report, diagnosis, 
+concerns, including vital signs. 
+الحالة S): عرف نفسك، موقعك، والمريض. اذكر سبب التقرير، التشخيص، المخاوف، بما في ذلك العلامات
+الحيوية. 
+Background (B): Give admission date and reason, medical/surgical history, medications, 
+allergies, lab or diagnostic results. 
+الخلفية B): قدم تاريخ الدخول والسبب، التاريخ الطبي/الجراحي، الأدوية، الحساسية، نتائج التحاليل أو التشخيص. 
+Assessment (A): Share clinical impressions and patient condition severity using critical 
+thinking to identify potential underlying reasons. 
+التقييم A): شارك الانطباعات السريرية وشدة حالة المريض باستخدام التفكير النقدي لتحديد الأسباب المحتملة
+للحالة. 
+Recommendation (R): Specify what is needed and timeline. Make suggestions, clarify 
+expectations, and repeat phone orders for accuracy. 
+التوصية R): كن محددًا بما هو مطلوب والمدة الزمنية. قدم اقتراحات، وضح التوقعات، وكرر أي أوامر هاتفية
+لضمان الدقة. 
+ 
+5. Practical Case Studies 
+Case Study #01 – Acute Distress: Nurse Lou reports Mrs. Taylor (69) has sudden 
+shortness of breath, low oxygen (88%), and low BP . Recommends chest X-ray, ABGs, and 
+immediate physician visit. 
+دراسة حالة01  – ضيق تنفس حاد:  الممرضة لو تبلغ أن السيدة تايلور (69) تعاني من ضيق مفاجئ في
+
+التنفس، انخفاض الأكسجين88%) وانخفاض ضغط الدم. توصي بإجراء أشعة صدر، تحليل غازات دم، وزيارة
+الطبيب فورًا . 
+End-of-Shift Report: Nurse hands over 72-year-old pneumonia patient (Mr. James) with 
+COPD and diabetes, recommends continued respiratory monitoring and albuterol 
+nebulizers. 
+تقرير نهاية الوردية: تسليم المريض المصاب بالتهاب رئوي (72 سنة) السيد جيمس مع مرض الانسداد الرئوي
+المزمن والسكري، توصي بالاستمرار في المراقبة التنفسية واستخدام أجهزة بخاخ ألبوتيرول.  
+Communication with Family: Update family that patient (Candice) tolerates fluids better 
+and may be discharged soon if stable. 
+التواصل مع الأسرة: تحديث الأسرة أن المريض (كانديس) يتحمل السوائل بشكل أفضل وقد يخرج قريبًا إذا  
+استقرت حالتها. 
+Assessment Changes: CHF patient (Mrs. Carter) has worsening leg swelling and 
+shortness of breath, recommends STAT chest X-ray for fluid overload. 
+تغيرات التقييم: المريضة المصابة بفشل القلب (السيدة كارتر) لديها تورم متزايد في الساق وضيق في التنفس،  
+توصي بإجراء أشعة صدر عاجلة بسبب احتباس السوائل. 
+Transfusion Reaction: Patient (Mrs. Smith) shows signs of circulatory overload during 
+transfusion, recommends immediate physician review. 
+رد فعل نقل الدم: المريضة (السيدة سميث) تظهر علامات فرط حجم الدورة الدموية أثناء نقل الدم، توصي بمراجعة  
+الطبيب فورًا . 
+Diagnostic Adjustments: Recommend change from PE study to VQ scan for patient (Mrs. 
+Johnson) due to high creatinine. 
+تعديلات تشخيصية: توصي بتغيير دراسة الانصمام الرئوي إلى مسح VQ للمريضة (السيدة جونسون) بسبب
+ارتفاع الكرياتينين. 
+ 
+Analogy for Understanding
+
+SBAR is like a structured emergency call to a mechanic. 
+تقنية SBAR تشبه مكالمة طوارئ منظمة إلى ميكانيكي. 
+• Situation = “My car won’t start in the driveway.” 
+• الحالة = "سيارتي لا تعمل في الممر". 
+• Background = “It’s a 2010 model; battery replaced last week.” 
+• الخلفية = "إنها موديل2010؛ تم تغيير البطارية الأسبوع الماضي".  
+• Assessment = “I hear a clicking sound; starter may be dead.” 
+• التقييم = "أسمع صوت نقرة؛ قد يكون المبدئ معطلاً". 
+• Recommendation = “Send a tow truck within the hour.” 
+• التوصية = "أرسل شاحنة سحب خلال ساعة". 
+This ensures the mechanic gets all details to act quickly without asking unnecessary 
+questions. 
+هذا يضمن أن يحصل الميكانيكي على جميع التفاصيل للتصرف بسرعة دون الحاجة لطرح أسئلة غير ضرورية.

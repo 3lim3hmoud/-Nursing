@@ -1,0 +1,224 @@
+Acute Respiratory Distress Syndrome (ARDS) 
+متلازمة الضائقة التنفسية الحادة 
+ 
+Outline of the Lecture 
+خطة المحاضرة 
+The lecture covers the following key topics: 
+المحاضرة تغطي الموضوعات الأساسية التالية: 
+1. Definition of ARDS. 
+تعريف متلازمة الضائقة التنفسية الحادة. 
+2. Causes and risk factors for ARDS. 
+الأسباب وعوامل الخطر لحدوث ARDS. 
+3. Pathophysiology. 
+الفيزيولوجيا المرضية. 
+4. Clinical diagnosis. 
+التشخيص السريري. 
+5. Medical management. 
+العلاج الطبي. 
+6. Nursing management. 
+الرعاية التمريضية. 
+ 
+1. Definition of ARDS 
+تعريف ARDS 
+Acute respiratory distress syndrome (ARDS) is a life-threatening condition. 
+متلازمة الضائقة التنفسية الحادة هي حالة تهدد الحياة.
+
+It occurs due to severe fluid buildup in both lungs. 
+تحدث بسبب تراكم شديد للسوائل في كلا الرئتين. 
+The fluid buildup prevents the lungs from working properly, inhibiting oxygen transfer. 
+هذا التراكم يمنع الرئتين من العمل بشكل طبيعي ويعيق انتقال الأكسجين. 
+ARDS is characterized by Non-cardiogenic pulmonary edema. 
+تتميز ARDS بوذمة رئوية غير ناتجة عن القلب. 
+Diagnosis requires bilateral pulmonary infiltrates on radiography. 
+التشخيص يتطلب وجود ارتشاحات رئوية ثنائية في الأشعة. 
+It results in hypoxia. 
+وتؤدي لنقص الأكسجين في الدم. 
+ARDS is diagnosed in the absence of heart failure (PCWP < 17 mmHg). 
+يُشخَّص ARDS عند غياب فشل القلب (قياس ضغط الإسفين أقل من17 مم زئبق.  
+ 
+2. Causes and Risk Factors for ARDS 
+الأسباب وعوامل الخطر 
+Lung injury leading to ARDS can be direct or indirect. 
+إصابة الرئة المؤدية لـ ARDS قد تكون مباشرة أو غير مباشرة. 
+ 
+Direct Lung Injury 
+إصابة الرئة المباشرة 
+A direct injury may result from breathing harmful substances or lung infection. 
+الإصابة المباشرة تحدث بسبب استنشاق مواد ضارة أو عدوى في الرئة. 
+Severe viral or bacterial pneumonia. 
+الالتهاب الرئوي الفيروسي أو البكتيري الشديد.
+
+Near drowning. 
+الغرق شبه الكامل. 
+COVID-19 infection. 
+عدوى فيروس كورونا. 
+Aspiration of gastric contents. 
+شفط محتويات المعدة إلى الرئة. 
+Inhalation of toxic fumes or smoke. 
+استنشاق الأدخنة أو المواد السامة. 
+Severe chest trauma causing lung bruising. 
+إصابة شديدة في الصدر تسبب كدمات الرئة. 
+ 
+Indirect Lung Injury 
+إصابة الرئة غير المباشرة 
+Most cases occur in very ill or injured patients. 
+معظم الحالات تحدث لدى مرضى شديدي المرض أو بعد إصابات خطيرة. 
+Severe trauma with shock. 
+صدمة نتيجة إصابة شديدة. 
+Sepsis (widespread infection). 
+تعفن الدم (عدوى منتشرة. 
+Severe bleeding requiring transfusion. 
+نزيف شديد يستلزم نقل دم. 
+Drug reaction or overdose. 
+تفاعل دوائي أو جرعة زائدة. 
+Acute pancreatitis. 
+التهاب البنكرياس الحاد.
+
+Systemic illnesses. 
+أمراض جهازية. 
+Long bone fracture. 
+كسور العظام الطويلة. 
+ 
+General Risk Factors 
+عوامل الخطر العامة 
+Advanced age. 
+التقدم في العمر. 
+Female sex (in trauma cases). 
+الإناث (في حالات الصدمات. 
+Smoking. 
+التدخين. 
+Alcohol use. 
+تناول الكحول. 
+Any severe illness increases risk. 
+أي مرض شديد يزيد احتمالية حدوث ARDS. 
+ 
+3. Pathophysiology 
+الفيزيولوجيا المرضية 
+ARDS is associated with diffuse alveolar damage (DAD). 
+ترتبط ARDS بضرر منتشر في الحويصلات الهوائية. 
+DAD involves diffuse inflammation of lung tissue. 
+الضرر يشمل التهابًا منتشرًا في نسيج الرئة .
+
+Cytokines and inflammatory mediators are released early. 
+يتم إفراز السيتوكينات والمواد الالتهابية مبكرًا . 
+Neutrophils and T-lymphocytes migrate to lung tissue. 
+تتحرك الخلايا المتعادلة وخلايا T للرئة مما يزيد الالتهاب. 
+Histology shows diffuse damage and hyaline membrane formation. 
+الفحص النسيجي يظهر ضررًا منتشرًا وتكوين غشاء زجاجي بالحويصلات . 
+Early phase is exudative; later phase is fibroproliferative. 
+المرحلة المبكرة رشحية، والمرحلة اللاحقة ليفية تكاثرية. 
+Alveolar-capillary permeability increases → fluid enters alveoli. 
+يزداد نفاذية الحاجز الحويصلي الشعيري → تتسرب السوائل للحويصلات. 
+Gas exchange becomes impaired → hypoxia. 
+يختل تبادل الغازات → يحدث نقص أكسجة. 
+Work of breathing increases and fibrosis develops. 
+يزداد جهد التنفس وتتطور التليفات. 
+May lead to increased RV afterload and acute cor pulmonale. 
+قد يؤدي لزيادة العبء على البطين الأيمن مسببًا القلب الرئوي الحاد. 
+ 
+4. Clinical Diagnosis 
+التشخيص السريري 
+Diagnosis involves history, physical exam, X-ray, and blood tests. 
+يشمل التشخيص: التاريخ المرضي، الفحص السريري، الأشعة، وتحليل الدم. 
+ 
+Physical Examination 
+الفحص السريري
+
+Shortness of breath. 
+ضيق في التنفس. 
+Fast, labored breathing. 
+تنفس سريع ومجهد. 
+Tachypnea, tachycardia, and high oxygen needs. 
+تسرع النفس، تسرع القلب، وحاجة إلى أكسجين عال. 
+Fever or hypothermia (in sepsis). 
+ارتفاع أو انخفاض الحرارة (في العدوى الشديدة. 
+Hypotension and cool extremities. 
+انخفاض ضغط الدم وبرودة الأطراف. 
+Cyanosis (bluish skin). 
+زرقة في الجلد بسبب نقص الأكسجين. 
+ 
+Diagnostic Procedures 
+إجراءات التشخيص 
+Chest X-ray shows bilateral infiltrates. 
+الأشعة تظهر ارتشاحات ثنائية في الرئتين. 
+ABG shows low oxygen level. 
+تحليل غازات الدم يظهر نقص الأكسجين. 
+Must differentiate ARDS from cardiogenic edema. 
+من الضروري التفريق بين ARDS والوذمة القلبية. 
+Examine for infection at wound and line sites. 
+فحص أماكن الجروح والقساطر بحثًا عن العدوى. 
+Check for subcutaneous air (possible barotrauma). 
+التحقق من وجود هواء تحت الجلد (علامة لإصابة ضغطية.
+
+5. Complications of ARDS 
+مضاعفات ARDS 
+Bacterial infections (lungs or body). 
+العدوى البكتيرية في الرئة أو الجسم. 
+Air leaks (pneumothorax, pneumo-peritoneum, subcutaneous air). 
+تسرب الهواء مثل استرواح الصدر أو الهواء تحت الجلد. 
+Pulmonary issues: barotrauma, PE, fibrosis, VAP . 
+مشاكل رئوية: إصابة ضغطية، جلطة رئوية، تليف، التهاب رئوي مرتبط بجهاز التنفس. 
+Gastrointestinal: bleeding or dysmotility. 
+الجهاز الهضمي: نزيف أو ضعف حركة الأمعاء. 
+Cardiac: arrhythmias and dysfunction. 
+القلب: اضطراب نبض وضعف عضلة القلب. 
+Renal: acute renal failure, fluid overload. 
+الكلى: فشل كلوي حاد وزيادة السوائل. 
+Mechanical: catheter injury, tracheal injury. 
+ميكانيكيًا: إصابات القساطر والقصبة الهوائية. 
+Nutritional: malnutrition, electrolyte imbalance. 
+سوء تغذية، واختلال الأملاح. 
+ 
+6. Medical Management 
+العلاج الطبي 
+Bed rest. 
+راحة تامة.
+
+Endotracheal intubation. 
+تنبيب الرغامى. 
+Mechanical ventilation with PEEP or CPAP . 
+جهاز تنفس صناعي مع ضغط نهاية زفير إيجابي. 
+ 
+Pharmacological Interventions 
+العلاج الدوائي 
+Anesthetic (propofol) → for comfort during intubation. 
+مخدر مثل بروبوفول لتسهيل إدخال الأنبوب. 
+Neuromuscular blockers (pancuronium, vecuronium) → reduce respiratory effort. 
+مرخيات عضلات لتقليل جهد التنفس. 
+Diuretics → reduce lung fluid. 
+مدرات البول لتقليل السوائل في الرئتين. 
+H2 blockers / PPIs → reduce gastric acid. 
+أدوية تقلل الحموضة لمنع القرح. 
+Anticoagulants (heparin). 
+مضادات تخثر لمنع الجلطات. 
+Analgesics (morphine). 
+مسكنات مثل المورفين للراحة وتقليل جهد القلب. 
+Steroids → reduce inflammation. 
+ستيرويدات لتقليل الالتهاب. 
+Surfactant therapy. 
+العلاج بالمواد الفاعلة سطحيًا. 
+Antibiotics (based on culture). 
+مضادات حيوية حسب نتائج المزرعة.
+
+7. Nursing Management 
+الرعاية التمريضية 
+Monitor WBC count. 
+مراقبة عدد كريات الدم البيضاء. 
+Monitor hemoglobin and hematocrit. 
+مراقبة الهيموجلوبين والهيماتوكريت. 
+Monitor PT, PTT, INR. 
+مراقبة زمن التجلط. 
+Record intake and output. 
+تسجيل كمية السوائل الداخلة والخارجة. 
+Check for renal failure (urine < 30 ml/h). 
+التحقق من الفشل الكلوي عند قلة البول. 
+Monitor for fluid overload. 
+مراقبة زيادة السوائل. 
+Daily weight. 
+قياس الوزن يوميًا. 
+Reposition every 2 hours. 
+تغيير وضع المريض كل ساعتين. 
+Avoid overexertion and provide rest. 
+تجنب إجهاد المريض وتقديم فترات راحة. 
+Teach coughing and deep-breathing exercises. 
+تعليم تمارين السعال والتنفس العميق بعد إيقاف التهوية.

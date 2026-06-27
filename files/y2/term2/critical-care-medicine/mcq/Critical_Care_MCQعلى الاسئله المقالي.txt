@@ -1,0 +1,714 @@
+Comprehensive Critical Care MCQ Question Bank 
+1. Types of Shock 
+1. Which hemodynamic monitoring tool is specifically noted in the source for providing 
+accurate assessment of cardiac function and output in critically ill patients? 
+    A. Pulmonary artery catheter 
+    B. Pulse oximetry 
+    C. Nasogastric tube 
+    D. Arterial Blood Gas (ABG) analysis 
+Answer: A 
+2. In the context of intrinsic lung and airway diseases, which condition is identified as a 
+cardiovascular cause of Acute Respiratory Failure (ARF)? 
+    A. Pulmonary emphysema 
+    B. Chronic bronchitis 
+    C. Cardio pulmonary edema 
+    D. Large airway obstruction 
+Answer: C 
+3. According to the management principles of critically ill patients, what is the primary 
+goal of optimizing cardiac function? 
+    A. To decrease metabolic oxygen requirements 
+    B. To maintain adequate cardiac output 
+    C. To prevent alveolar consolidation 
+    D. To induce respiratory alkalosis 
+Answer: B 
+2. ICU Monitoring: Vital Signs and Ranges 
+4. To ensure adequate tissue oxygenation while avoiding toxicity, what is the targeted 
+arterial hemoglobin oxygen saturation (SaO2) goal? 
+    A. Greater than 85% 
+    B. Exactly 100% 
+    C. Greater than 90% 
+    D. Between 60% and 80% 
+Answer: C 
+5. Type I Acute Hypoxemic Respiratory Failure is clinically defined by which of the 
+following arterial blood gas values? 
+    A. PaO2 of 80 mmHg or more 
+    B. PaO2 of 50 mmHg or less 
+    C. PaCO2 of 60 mmHg or more
+
+D. pH of 7.50 or more 
+Answer: B 
+6. Which diagnostic study is described as the only method capable of confirming a 
+diagnosis of ARF by determining exact gas levels and pH? 
+    A. Chest radiography 
+    B. Sputum culture 
+    C. Pulmonary function tests (PFT) 
+    D. Arterial Blood Gas (ABG) 
+Answer: D 
+7. In the periodic assessment of therapy response, which non-invasive tool is used for 
+the continuous monitoring of arterial oxygen saturation? 
+    A. Pulmonary artery catheter 
+    B. Pulse oximetry 
+    C. Capnography (EtCO2) 
+    D. Bronchoscopy 
+Answer: B 
+3. VAP Bundle 
+8. Based on the strategies for treating underlying causes, which intervention is a priority 
+for preventing infectious complications in ventilated patients? 
+    A. Administration of high-dose corticosteroids 
+    B. Prevention and treatment of respiratory tract infections 
+    C. Routine use of sedative and narcotic drugs 
+    D. Maintaining a state of alveolar hypoventilation 
+Answer: B 
+9. To prevent mechanical complications related to the airway, clinicians should focus on 
+identifying and treating which of the following? 
+    A. Night sweats 
+    B. Potential airway obstruction 
+    C. Morning headache 
+    D. Peripheral nerve disorders 
+Answer: B 
+10. Which management step is essential for clearing foreign bodies or secretions to 
+maintain airway patency? 
+    A. Pursed lip breathing 
+    B. Clearing foreign bodies and secretions 
+    C. Reducing positive airway pressure 
+    D. Increasing sedative dosages
+
+Answer: B 
+11. Management aimed at preventing complications of ARF includes the assessment and 
+treatment of which cardiac-related trigger? 
+    A. Chronic bronchitis 
+    B. Congestive heart failure 
+    C. Sleep apnea syndrome 
+    D. Pleural effusion 
+Answer: B 
+4. Indications for Mechanical Ventilation 
+12. At what physiological threshold does the source indicate a patient typically requires 
+the initiation of invasive mechanical ventilation? 
+    A. Blood pH less than 7.25 
+    B. Blood pH greater than 7.45 
+    C. PaCO2 less than 35 mmHg 
+    D. PaO2 greater than 95 mmHg 
+Answer: A 
+13. For patients requiring volume ventilation due to severe respiratory distress, which 
+specific ventilator mode is recommended? 
+    A. Pressure Support 
+    B. Assist/Control mode 
+    C. Continuous Positive Airway Pressure (CPAP) 
+    D. Pursed lip breathing 
+Answer: B 
+14. Type II (Ventilatory) Respiratory Failure is characterized by which of the following 
+profiles? 
+    A. PaO2 > 60 mmHg and pH > 7.40 
+    B. PaCO2 > 50 mmHg and pH ≤ 7.30 
+    C. PaCO2 < 40 mmHg and pH > 7.45 
+    D. Normal PaCO2 with low SaO2 
+Answer: B 
+5. Causes of Respiratory Failure 
+15. Which of the following is categorized as a "Parenchymal Disease" leading to intrinsic 
+respiratory failure? 
+    A. Asthma 
+    B. Severe pneumonia 
+    C. Foreign body obstruction
+
+D. Chronic bronchitis 
+Answer: B 
+16. Flail chest and traumatic injury to the chest wall are classified under which category 
+of respiratory failure causes? 
+    A. Central Nervous System disorders 
+    B. Diseases of the Pleura and the Chest Wall 
+    C. Peripheral nerve disorders 
+    D. Bronchial diseases 
+Answer: B 
+17. Which of the following is an "Extrapulmonary Disorder" caused by Central Nervous 
+System dysfunction? 
+    A. Guillain-Barré syndrome 
+    B. Cerebrovascular accident (Stroke) 
+    C. Poliomyelitis 
+    D. Spinal cord trauma 
+Answer: B 
+18. Intrapulmonary shunting, a major cause of hypoxemia, is often the result of which 
+underlying condition? 
+    A. Sleep apnea syndrome 
+    B. Alveolar collapse (atelectasis) 
+    C. Chest wall trauma 
+    D. Sedative overdose 
+Answer: B 
+6. Glasgow Coma Scale (GCS) Scoring 
+19. While the GCS is a standard tool, clinical assessment of "Cerebral physical findings" 
+in Type I RF focuses on identifying which symptoms? 
+    A. Muscle tremors and tremors 
+    B. Restlessness, confusion, and coma 
+    C. Pursed lip breathing and cyanosis 
+    D. Hypotension and arrhythmia 
+Answer: B 
+20. In Type II Hypercapnic failure, which specific cerebral finding is noted as a result of 
+carbon dioxide retention? 
+    A. Cyanosis 
+    B. Morning headache and disorientation 
+    C. Prolonged expiration 
+    D. Tachycardia
+
+Answer: B 
+21. A patient presenting in a "coma" during a respiratory crisis may be experiencing 
+which of the following? 
+    A. Successful gas exchange 
+    B. Severe hypoxemia or hypercapnia 
+    C. Effective compensation 
+    D. Resolution of underlying cause 
+Answer: B 
+7. Acute Coronary Syndrome (ACS) Occlusion Types 
+22. According to the list of intrinsic causes, which cardiovascular emergency can lead 
+directly to acute respiratory failure? 
+    A. Pulmonary emphysema 
+    B. Cardio pulmonary edema 
+    C. Pneumothorax 
+    D. Spinal cord trauma 
+Answer: B 
+23. Hemodynamic monitoring in patients with suspected cardiac-induced respiratory 
+failure involves the use of which diagnostic tool to evaluate heart function? 
+    A. Sputum culture 
+    B. ECG and Echocardiography 
+    C. Pulmonary function tests 
+    D. Chest radiography 
+Answer: B 
+24. Maintaining adequate cardiac output is a pillar of management for patients whose 
+respiratory failure is triggered by: 
+    A. Large airway obstruction 
+    B. Cardiovascular disease 
+    C. Pleural effusion 
+    D. Chronic bronchitis 
+Answer: B 
+8. Vagotonic Maneuvers 
+25. Patients with Hypoxemia (Type I RF) frequently manifest which of the following 
+cardiac physical findings? 
+    A. Bradycardia 
+    B. Tachycardia and arrhythmia 
+    C. Normal sinus rhythm
+
+D. Absence of pulse 
+Answer: B 
+26. To manage dysrhythmias in the critical care setting, the clinician must first address 
+which of the following precipitating factors? 
+    A. Overfeeding 
+    B. Hypoxemia, acidosis, and electrolyte imbalances 
+    C. Immobility 
+    D. Daily weight measurements 
+Answer: B 
+27. Which clinical sign is an indicator of fatigue and impending respiratory arrest in the 
+hypoxemic patient? 
+    A. Cyanosis 
+    B. Inability to speak 
+    C. Hypertension 
+    D. Use of accessory muscles 
+Answer: B 
+9. Nursing Interventions for Intracranial Pressure (ICP) 
+28. Head trauma and sedative overdose are examples of disorders affecting which 
+system? 
+    A. Peripheral nervous system 
+    B. Central Nervous System (CNS) 
+    C. Pleural cavity 
+    D. Bronchial tree 
+Answer: B 
+29. Which complication of ARF specifically affects the brain due to inadequate oxygen 
+delivery and acidosis? 
+    A. Venous thromboembolism 
+    B. Ischemic anoxic encephalopathy 
+    C. Abdominal distension 
+    D. Alveolar consolidation 
+Answer: B 
+30. In patients with CNS-induced respiratory failure, what must the nurse assess 
+regarding thoracic movement? 
+    A. Sputum color 
+    B. Limitation of thoracic wall movement and cough effectiveness 
+    C. Fluid retention in the extremities 
+    D. Presence of sinus problems
+
+Answer: B 
+10. Complications of DKA 
+31. Life-threatening dysrhythmias in the critically ill can be precipitated by which 
+metabolic state? 
+    A. Respiratory alkalosis 
+    B. Acidosis and electrolyte imbalances 
+    C. Hypernatremia 
+    D. Normal blood pH 
+Answer: B 
+32. Ischemic anoxic encephalopathy is a severe complication resulting from a 
+combination of: 
+    A. Hyperkalemia and nutrition 
+    B. Hypoxemia, hypercapnia, and acidosis 
+    C. Normal PaO2 and PaCO2 
+    D. Low protein intake 
+Answer: B 
+33. Which systemic complication is associated with venous stasis and immobility in the 
+ICU? 
+    A. Ischemic encephalopathy 
+    B. Venous thromboembolism (VTE) 
+    C. Alveolar hypoventilation 
+    D. Bronchospasm 
+Answer: B 
+11. Treatment of DKA 
+34. What is a primary goal of fluid restoration in the management of the critically ill? 
+    A. To induce rapid weight gain 
+    B. To prevent excessive intravenous fluid or poor intake 
+    C. To maximize pulmonary artery pressure 
+    D. To eliminate the need for ABG monitoring 
+Answer: B 
+35. Which specific electrolyte imbalances must be prevented and treated promptly to 
+maintain stability? 
+    A. Hypercalcemia and hypernatremia 
+    B. Hypokalemia and hypophosphatemia 
+    C. Hypomagnesemia and hyperchloremia 
+    D. Normal electrolyte levels
+
+Answer: B 
+36. To monitor fluid and electrolyte balance effectively, which nursing action is required 
+daily? 
+    A. Sputum volume measurement 
+    B. Daily body weight measurement 
+    C. Assessment of night sweats 
+    D. Chest radiography 
+Answer: B 
+37. Nutrition support in the intensive care setting should be initiated while strictly 
+avoiding which of the following? 
+    A. Supplemental oxygen 
+    B. Overfeeding 
+    C. Bronchodilators 
+    D. Enteral routes 
+Answer: B 
+12. Cerebral Stroke: Types and Target Blood Pressure 
+38. A cerebrovascular accident (stroke) is classified as which type of cause for 
+respiratory failure? 
+    A. Intrinsic airway disease 
+    B. Extrapulmonary CNS disorder 
+    C. Disease of the pleura 
+    D. Parenchymal disease 
+Answer: B 
+39. Physical findings of cerebral distress in a patient with acute hypoxemia (Type I) 
+include: 
+    A. Muscle tremors 
+    B. Restlessness, confusion, and coma 
+    C. Pursed lip breathing 
+    D. Fatigue 
+Answer: B 
+40. Patients with Type II (Hypercapnic) failure often present with which specific 
+neurological symptom upon awakening? 
+    A. Blurred vision 
+    B. Headache on awakening 
+    C. Sudden hearing loss 
+    D. Hyper-reflexia 
+Answer: B
+
+41. Which hemodynamic finding is associated with the cardiovascular response to 
+hypoxemia? 
+    A. Hypotension only 
+    B. Hypertension or hypotension 
+    C. Bradycardia 
+    D. Normal blood pressure 
+Answer: B 
+13. Symptoms and Signs of DKA 
+42. Severe metabolic and respiratory acidosis may manifest physically as: 
+    A. Bradycardia 
+    B. Tachypnea and use of accessory muscles 
+    C. Pursed lip breathing 
+    D. Normal respiratory rate 
+Answer: B 
+43. Which of the following is a classic "Cerebral" sign of Type II (Hypercapnic) failure? 
+    A. Cyanosis 
+    B. Disorientation and coma 
+    C. Hypotension 
+    D. Prolonged expiration 
+Answer: B 
+44. Fatigue and the inability to speak are indicators of which clinical state? 
+    A. Effective compensation 
+    B. Severe respiratory distress/Hypoxemia 
+    C. Normal lung function 
+    D. Minor airway obstruction 
+Answer: B 
+14. DIC Diagnosis: Clinical Picture and Investigations 
+45. Which laboratory investigation is listed as a diagnostic study to evaluate systemic 
+response in ARF? 
+    A. Sputum culture 
+    B. CBC (Complete Blood Count) 
+    C. Pulmonary function tests 
+    D. Bronchogram 
+Answer: B 
+46. Serum electrolytes are monitored in the critically ill primarily to prevent:
+
+A. Bronchospasm 
+    B. Dysrhythmias 
+    C. Alveolar collapse 
+    D. Chest pain 
+Answer: B 
+47. Urine analysis in the diagnostic workup of the critically ill patient is used to assess: 
+    A. Lung volumes 
+    B. Systemic organ function and fluid status 
+    C. Airway resistance 
+    D. Oxygen saturation 
+Answer: B 
+48. Which diagnostic study is described as essential to confirm the diagnosis of Acute 
+Respiratory Failure? 
+    A. Chest radiography 
+    B. Arterial Blood Gas (ABG) 
+    C. Sputum culture 
+    D. ECG 
+Answer: B 
+15. Causes of Upper GIT Bleeding 
+49. To prevent or treat abdominal distension, which can impair respiratory effort, which 
+intervention is indicated? 
+    A. Pulmonary artery catheterization 
+    B. Insertion of a nasogastric (NG) tube 
+    C. Artificial airway insertion 
+    D. Pulse oximetry 
+Answer: B 
+50. Management of the critically ill patient involves preventing delivery-related 
+complications of: 
+    A. Only oxygen 
+    B. Enteral or parenteral nutrition 
+    C. Bronchodilators 
+    D. Sedatives 
+Answer: B 
+51. Which symptom is classified as an "Extrapulmonary Symptom" in the patient's 
+history? 
+    A. Cough 
+    B. Fluid retention
+
+C. Wheeze 
+    D. Dyspnea 
+Answer: B 
+16. Precipitants of Hepatic Encephalopathy 
+52. Encephalopathy in the critical care setting is often precipitated by which 
+physiological disturbances? 
+    A. Hypernatremia and dehydration 
+    B. Hypoxemia, hypercapnia, and acidosis 
+    C. Overfeeding and weight gain 
+    D. Normal blood gas levels 
+Answer: B 
+53. When managing patients at risk for encephalopathy, clinicians must carefully assess 
+tolerance to which class of drugs? 
+    A. Beta2-agonists 
+    B. Sedative, hypnotic, and narcotic drugs 
+    C. Corticosteroids 
+    D. Anticholinergic agents 
+Answer: B 
+54. Which underlying condition should be identified and treated to prevent further 
+respiratory and neurological decline? 
+    A. Sinus problems 
+    B. Congestive heart failure 
+    C. Sleep apnea 
+    D. Pursed lip breathing 
+Answer: B 
+17. Nursing Interventions for Hepatic Encephalopathy 
+55. In patients requiring assistance with ventilation or work of breathing, which 
+pharmacological intervention is often necessary? 
+    A. Bronchodilators 
+    B. Sedation 
+    C. Antibiotics 
+    D. Heparin 
+Answer: B 
+56. For pain control in the ICU, which class of medications should be administered? 
+    A. Corticosteroids 
+    B. Analgesics
+
+C. Beta-blockers 
+    D. Bronchodilators 
+Answer: B 
+57. Periodic assessment of a patient with neurological or respiratory distress must 
+include: 
+    A. Only pulse oximetry 
+    B. Frequent Arterial Blood Gas (ABG) measurements 
+    C. Sputum culture results 
+    D. Daily chest radiographs 
+Answer: B 
+18. Target Organ Damage in Hypertensive Emergencies 
+58. Hypertensive physical findings in a respiratory patient are often secondary to: 
+    A. Alveolar consolidation 
+    B. Hypoxemia (Type I RF) 
+    C. Enteral nutrition 
+    D. Venous stasis 
+Answer: B 
+59. Which organ's distress is indicated by "Cerebral" findings like restlessness, 
+confusion, and coma? 
+    A. Heart 
+    B. Brain 
+    C. Lungs 
+    D. Kidneys 
+Answer: B 
+60. Systemic organ function in the critically ill is monitored via which diagnostic study? 
+    A. Sputum culture 
+    B. Urine analysis and serum electrolytes 
+    C. Pulmonary function tests 
+    D. Chest radiography 
+Answer: B 
+19. Causes of ARDS 
+61. Acute Respiratory Distress Syndrome (ARDS) is a manifestation of which cause of 
+respiratory failure? 
+    A. Extrapulmonary disorders 
+    B. Parenchymal Diseases 
+    C. CNS disorders
+
+D. Chest wall diseases 
+Answer: B 
+62. Severe pneumonia, a cause of ARDS, leads to hypoxemia primarily through which 
+mechanism? 
+    A. Alveolar hypoventilation 
+    B. Intrapulmonary shunting 
+    C. Decreased metabolic needs 
+    D. Sleep apnea 
+Answer: B 
+63. Intrapulmonary shunting in ARDS occurs when blood passes through lung tissue that 
+is: 
+    A. Hyperventilated 
+    B. Not ventilated (e.g., due to consolidation) 
+    C. Over-perfused 
+    D. Fully expanded 
+Answer: B 
+64. Alveolar consolidation, a key feature of ARDS-associated pneumonia, is a primary 
+cause of: 
+    A. Respiratory alkalosis 
+    B. Intrapulmonary shunting 
+    C. Hypernatremia 
+    D. Bradycardia 
+Answer: B 
+20. Complications of Mechanical Ventilation 
+65. Venous thromboembolism (VTE) in ventilated patients is primarily precipitated by: 
+    A. Overfeeding 
+    B. Venous stasis resulting from immobility 
+    C. Positive pressure ventilation 
+    D. Beta2-agonist use 
+Answer: B 
+66. Which mechanical device is used to prevent VTE in the immobilized ICU patient? 
+    A. Pulse oximeter 
+    B. Intermittent pneumatic compression device 
+    C. Nasogastric tube 
+    D. Pulmonary artery catheter 
+Answer: B
+
+67. Pharmacological prophylaxis for VTE in the ICU involves the use of: 
+    A. Beta2-agonists 
+    B. Unfractionated or low molecular weight heparin 
+    C. Corticosteroids 
+    D. Analgesics 
+Answer: B 
+68. Besides VTE, what is another category of complications mentioned in the source? 
+    A. Complications associated with artificial airways 
+    B. Complications associated with mechanical ventilation 
+    C. Complications associated with enteral or parenteral nutrition 
+    D. All of the above 
+Answer: D 
+21. Alarms of Mechanical Ventilation 
+69. Positive pressure is necessary in mechanical ventilation to achieve which goal? 
+    A. To decrease cardiac output 
+    B. To open collapsed alveoli 
+    C. To induce hypercapnia 
+    D. To reduce oxygen saturation 
+Answer: B 
+70. A "High Pressure" alarm on a ventilator could be triggered by which intrinsic airway 
+cause? 
+    A. Pulmonary emphysema 
+    B. Large airway obstruction (e.g., foreign bodies) 
+    C. Sleep apnea syndrome 
+    D. Chronic bronchitis 
+Answer: B 
+71. "Positive pressure" can be delivered to a patient via which two methods? 
+    A. NG tube or pulmonary catheter 
+    B. Invasive artificial airway or non-invasive mask 
+    C. Sputum culture or ABG 
+    D. Pulse oximetry or ECG 
+Answer: B 
+72. What is a risk of delivering excessive positive airway pressure? 
+    A. Hypokalemia 
+    B. Oxygen toxicity or hypercapnia 
+    C. Abdominal distension
+
+D. Venous stasis 
+Answer: B 
+22. Eclampsia: Definition and Treatment 
+73. Eclampsia-related neurological dysfunction would be categorized as a cause of 
+respiratory failure originating in the: 
+    A. Bronchial tree 
+    B. Central Nervous System (CNS) 
+    C. Pleural cavity 
+    D. Lung parenchyma 
+Answer: B 
+74. Neuromuscular findings such as muscle weakness and tremors are characteristic of 
+which type of failure? 
+    A. Type I RF 
+    B. Type II RF (Hypercapnic) 
+    C. Normal gas exchange 
+    D. Acute Asthma 
+Answer: B 
+75. Management of a patient with CNS-related failure includes the assessment of: 
+    A. Sputum fatigue 
+    B. Diaphragmatic fatigue 
+    C. Sinus problems 
+    D. Night sweats 
+Answer: B 
+23. Management of Acute Respiratory Failure 
+76. The primary aims of ARF management include which of the following? 
+    A. Promoting adequate gas exchange and correcting the underlying cause 
+    B. Increasing PaCO2 to 60 mmHg 
+    C. Decreasing nutritional intake 
+    D. Maintaining a pH of 7.15 
+Answer: A 
+77. Oxygenation is improved by administering supplemental oxygen through: 
+    A. Only high-flow systems 
+    B. Low-flow or high-flow systems 
+    C. PFT systems 
+    D. Bronchograms
+
+Answer: B 
+78. What is the minimum targeted arterial hemoglobin oxygen saturation (SaO2) 
+mentioned? 
+    A. 80% 
+    B. 90% 
+    C. 95% 
+    D. 99% 
+Answer: B 
+79. If a patient's pH is less than 7.25, which intervention is specifically indicated? 
+    A. Pursed lip breathing 
+    B. Invasive mechanical ventilation 
+    C. Nasogastric tube only 
+    D. Decreasing oxygen flow 
+Answer: B 
+80. For severe respiratory failure, volume ventilation should be started in which mode? 
+    A. Pressure Support 
+    B. Assist/Control mode 
+    C. CPAP 
+    D. BiPAP 
+Answer: B 
+81. Nutrition support goals include meeting overall needs while specifically avoiding: 
+    A. Fluids 
+    B. Overfeeding 
+    C. Oxygen 
+    D. Sedation 
+Answer: B 
+82. Restoration of electrolyte balance requires prompt treatment of which two 
+deficiencies? 
+    A. Hypernatremia and hypercalcemia 
+    B. Hypokalemia and hypophosphatemia 
+    C. Hypocalcemia and hypermagnesemia 
+    D. Normal levels 
+Answer: B 
+83. Bronchospasm in the critically ill patient should be recognized and treated with: 
+    A. Narcotics 
+    B. Bronchodilators and corticosteroids 
+    C. Heparin
+
+D. NG tubes 
+Answer: B 
+84. Which bronchodilators are mentioned as benefiting patients with airflow limitations? 
+    A. Beta2-agonists and anticholinergic agents 
+    B. Aspirin and Ibuprofen 
+    C. Insulin and Glucagon 
+    D. Heparin and Warfarin 
+Answer: A 
+85. Steroids are used in ARF management to: 
+    A. Increase airway inflammation 
+    B. Decrease airway inflammation and enhance beta2-agonists 
+    C. Induce sedation 
+    D. Prevent VTE 
+Answer: B 
+24. Complications of Acute Respiratory Failure 
+86. Ischemic anoxic encephalopathy is a complication resulting from: 
+    A. Overfeeding 
+    B. Hypoxemia, hypercapnia, and acidosis 
+    C. High cardiac output 
+    D. NG tube insertion 
+Answer: B 
+87. Dysrhythmias in the critically ill are precipitated by: 
+    A. PFTs 
+    B. Hypoxemia, acidosis, and electrolyte imbalances 
+    C. Pursed lip breathing 
+    D. Normal SaO2 
+Answer: B 
+88. Prevention of VTE in the ICU involves which combination of interventions? 
+    A. Sputum culture and chest X-ray 
+    B. Intermittent pneumatic compression and low-dose heparin 
+    C. NG tube and pulse oximetry 
+    D. High-flow oxygen and sedation 
+Answer: B 
+89. To prevent abdominal distension, the nurse should perform which action? 
+    A. Increase sedation 
+    B. Insert a nasogastric (NG) tube
+
+C. Administer bronchodilators 
+    D. Monitor CVP 
+Answer: B 
+90. How is the patient's response to therapy periodically assessed? 
+    A. Frequent ABG measurements and pulse oximetry 
+    B. Sputum color assessment 
+    C. Assessing for night sweats 
+    D. Checking for sinus problems 
+Answer: A 
+25. Differential Diagnosis of Stroke 
+91. Conditions that are categorized alongside "Cerebrovascular accident" as CNS causes 
+of RF include: 
+    A. Asthma 
+    B. Head trauma and sedative overdose 
+    C. Chronic bronchitis 
+    D. Pneumothorax 
+Answer: B 
+92. Cerebral symptoms in a patient history that may suggest a CNS-driven failure 
+include: 
+    A. Dyspnea and cough 
+    B. Restlessness, confusion, and disorientation 
+    C. Wheeze and chest pain 
+    D. Sputum and night sweats 
+Answer: B 
+93. Which physical finding is a "Neuromuscular" indicator of Type II (Hypercapnic) 
+failure? 
+    A. Cyanosis 
+    B. Muscle weakness and tremors 
+    C. Hypertension 
+    D. Prolonged expiration 
+Answer: B 
+26. Prevention of Stroke 
+94. A complete medical and social history is obtained to determine the patient's: 
+    A. Future income 
+    B. Baseline respiratory status on admission 
+    C. Sputum volume
+
+D. Cardiac output 
+Answer: B 
+95. Which extrapulmonary symptoms should be profiled in the history to assess the risk 
+of respiratory decline? 
+    A. Dyspnea and cough 
+    B. Night sweats, headache on awakening, and fatigue 
+    C. Wheeze and chest pain 
+    D. Sputum color and consistency 
+Answer: B 
+96. The "Previous History" assessment includes which of the following? 
+    A. Pulse oximetry values 
+    B. Medical diagnosis, treatments, and immunization 
+    C. Arterial blood pH 
+    D. Current PaCO2 levels 
+Answer: B 
+27. Management of Ischemic and Hemorrhagic Stroke 
+97. The primary goal of managing ARF caused by CNS disorders like stroke is to: 
+    A. Increase CO2 levels 
+    B. Correct the underlying cause and promote gas exchange 
+    C. Decrease oxygen delivery 
+    D. Induce metabolic acidosis 
+Answer: B 
+98. When managing a patient with a CNS disorder, why is it critical to assess tolerance to 
+sedative and narcotic drugs? 
+    A. Because they increase airway inflammation 
+    B. Because they can further depress respiratory drive 
+    C. Because they cause hypokalemia 
+    D. Because they lead to VTE 
+Answer: B 
+99. If diaphragmatic fatigue is identified in a patient with a CNS injury, what is the 
+appropriate action? 
+    A. Decrease nutrition 
+    B. Initiate/maintain mechanical ventilation support 
+    C. Administer only bronchodilators 
+    D. Perform a bronchogram 
+Answer: B
+
+100. Which intervention is indicated for the specific complication of pleural effusion or 
+pneumothorax? 
+    A. Insertion of a nasogastric tube 
+    B. Removal of air or fluid in the pleural cavity 
+    C. Administration of beta2-agonists 
+    D. Increasing sedative dosages 
+Answer: B

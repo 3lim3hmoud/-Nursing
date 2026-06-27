@@ -1,0 +1,1214 @@
+1. Bacterial Meningitis 
+  Definition 
+Inflammation of the arachnoid, pia mater, 
+subarachnoid space, and CSF. A life-threatening 
+disorder most often caused by bacteria or 
+viruses. Bacteria enter the CNS via the 
+bloodstream, penetrating trauma, invasive 
+procedures, or ruptured abscess. 
+  Causes 
+• Bacteria — most serious (N. meningitidis, S. 
+pneumoniae, H. influenzae) 
+• Viruses, Fungi, Parasites (less common) 
+• Risk factors: immunosuppression, extremes 
+of age, crowded living, VP shunt, alcohol 
+abuse, under-vaccination 
+  Clinical Manifestations 
+• Severe headache, high fever & chills 
+• Nuchal rigidity (stiff neck) 
+• Nausea / vomiting, photophobia, irritability 
+• Positive Kernig's sign & Brudzinski's sign 
+• Signs of increased ICP, altered mental status 
+• Purpuric rash (meningococcal), seizures 
+  Complications 
+• SIADH (syndrome of inappropriate ADH) 
+• DIC — disseminated intravascular coagulation 
+• Septic shock, Waterhouse-Friderichsen 
+syndrome 
+• Hydrocephalus, hearing loss 
+• Permanent neurological deficits 
+  Nursing Diagnoses 
+• Risk for Ineffective Cerebral Tissue Perfusion 
+r/t cerebral edema and increased ICP 
+• Hyperthermia r/t infectious process 
+• Acute Pain r/t meningeal irritation and 
+photophobia 
+• Risk for Injury r/t seizure activity and altered 
+LOC 
+• Disturbed Sensory Perception r/t 
+neurological dysfunction 
+  Nursing Interventions 
+• Neurological assessment every 1–2 hours 
+(LOC, pupils, motor) 
+• Maintain quiet, dark environment — reduce 
+stimulation 
+• HOB elevated 30°, neutral head position 
+• IV antibiotics STAT — empirical coverage 
+while awaiting CSF results 
+• Dexamethasone to reduce cerebral 
+inflammation 
+• Fever management: acetaminophen, cooling 
+blanket 
+• Droplet isolation precautions for first 24 hrs 
+of antibiotics 
+• Seizure precautions: padded rails, O₂ at 
+bedside 
+• Accurate I&O — monitor for SIADH (fluid 
+restriction) vs DI 
+• Monitor for Cushing's triad: widening pulse 
+pressure, bradycardia, irregular respirations 
+• ICP monitoring if indicated 
+• Lumbar puncture findings: ↑ WBC, ↑ 
+protein, ↓ glucose, cloudy CSF
+
+2. Craniotomy 
+  Indications 
+• Tumor resection (primary or metastatic) 
+• Cerebral decompression — relieve ICP 
+• Evacuation of hematoma or abscess 
+• Clipping or removal of aneurysm 
+• AVM (arteriovenous malformation) 
+treatment 
+  Complications 
+• Cerebral edema — peaks 48–72 hrs postop 
+• Hemorrhage — watch for new neuro deficits 
+• CSF leak — clear drainage from wound/nose 
+(glucose ≥30 mg/dL) 
+• Diabetes Insipidus — polyuria >200 mL/hr, SG 
+≤1.005 
+• Infection / meningitis — sterile technique 
+essential 
+• DVT — from prolonged immobility 
+• SIADH — fluid & sodium imbalance 
+  Nursing Diagnoses 
+• Decreased Intracranial Adaptive Capacity r/t 
+failure of normal intracranial compensatory 
+mechanisms 
+• Ineffective Cerebral Tissue Perfusion r/t 
+cerebral edema and increased ICP 
+• Acute Pain r/t surgical incision and ICP 
+elevation 
+• Risk for Infection r/t surgical wound and 
+invasive monitoring devices 
+• Disturbed Body Image r/t change in body 
+structure and appearance 
+  Patient Teaching 
+• Avoid bending, lifting, straining, Valsalva 
+maneuver 
+• No coughing, sneezing, or nose-blowing 
+postoperatively 
+• Report clear drainage from wound — may 
+indicate CSF leak 
+• Report vision changes, seizures, weakness 
+immediately 
+• Activity restrictions — gradual return to 
+normal 
+• Wound care and dressing changes 
+• Address fear of permanent neurological 
+impairment 
+  Nursing Interventions 
+• HOB 30–45° at all times — facilitates venous 
+drainage 
+• Maintain neutral head position — avoid 
+neck/hip flexion 
+• Hourly neurological assessment (LOC, pupils, 
+motor strength) 
+• Hourly I&O — identify fluid imbalance early 
+• Measure urine specific gravity if DI suspected 
+• Pain: small IV morphine (ICU) → 
+acetaminophen + codeine (oral) 
+• Stool softeners — prevent straining which 
+raises ICP & BP 
+• Pulmonary care — space activities to prevent 
+ICP spikes 
+• Sterile technique for incision and drainage 
+device care 
+• Corneal protection: saline drops Q2h, cover 
+eyes if comatose 
+• Pad side rails — injury prevention during 
+altered mentation 
+• Fluid restriction if ordered (cerebral edema or 
+SIADH) 
+• Monitor for signs of meningitis — fever, 
+nuchal rigidity
+
+3. Diabetic Ketoacidosis (DKA) 
+  Definition 
+Life-threatening hyperglycemic crisis in DM. 
+Absent insulin → cells use fat for energy → 
+ketone production → metabolic acidosis. The 
+body converts glycogen (glycogenolysis) and 
+protein to glucose, worsening hyperglycemia. 
+  Causes 
+• Infection — most common precipitating 
+factor 
+• Omission or inadequate insulin dose 
+• New-onset undiagnosed Type 1 DM 
+• Surgery, trauma, or major physical stress 
+• Psychological stress + eating disorders in 
+young DM patients 
+• Increased metabolic demand (changes in 
+insulin type/dosage) 
+  Clinical Manifestations 
+• Polyuria, polydipsia, polyphagia, malaise, 
+headache 
+• Kussmaul respirations — deep and rapid (air 
+hunger) 
+• Fruity/acetone breath odor 
+• Dehydration: dry skin, sunken eyes, 
+hypotension, tachycardia 
+• Nausea/vomiting, extreme fatigue, weight 
+loss 
+• CNS depression → confusion → coma if 
+untreated 
+  Investigations 
+• Blood glucose > 250 mg/dL 
+• Urine ketones — strongly positive 
+• ABG: pH < 7.3, ↓ bicarbonate → metabolic 
+acidosis 
+• Low serum sodium (water shift from ICF to 
+ECF) 
+• Elevated serum potassium initially (acidosis 
+drives K⁺ out of cells) 
+• Elevated BUN / creatinine 
+• CBC, electrolytes, renal/hepatic function 
+  Nursing Diagnoses 
+• Deficient Fluid Volume r/t osmotic diuresis 
+and vomiting 
+• Imbalanced Nutrition: Less than Body 
+Requirements r/t insulin deficiency and 
+cellular starvation 
+• Decreased Cardiac Output r/t alterations in 
+preload from fluid deficit 
+• Risk for Electrolyte Imbalance r/t osmotic 
+diuresis and insulin therapy 
+• Anxiety r/t threat to biologic, psychologic, 
+and social integrity 
+  Nursing Management 
+• IV fluids: 0.9% NaCl (isotonic) first → 0.45% 
+NaCl if hypernatremia 
+• Add dextrose when glucose reaches 200 
+mg/dL to prevent hypoglycemia 
+• Regular insulin: IV bolus 0.1 unit/kg → 
+infusion 0.1 unit/kg/hr 
+• Target glucose drop: 50–70 mg/dL/hour 
+• Monitor blood glucose EVERY HOUR 
+• Potassium replacement: must be ≥3.3 mEq 
+BEFORE starting insulin 
+• Add 20–40 mEq/L K⁺ to IV fluids based on 
+serum level 
+• Bicarbonate: only if pH < 7.10 — give by slow 
+IV infusion 
+• NG tube if gastric distention, ileus, or 
+vomiting 
+• NPO during acute phase — advance diet as 
+tolerated 
+• Monitor for complications: fluid overload, 
+hypoglycemia, cerebral edema 
+• Transition to SC insulin when glucose 200 
+mg/dL + acidosis corrected 
+• Patient education: sick-day rules, insulin 
+management, glucose monitoring
+
+4. Disseminated Intravascular Coagulation (DIC) 
+  Definition 
+Condition where blood clots form throughout 
+the body, blocking small blood vessels. Micro-
+clots impair tissue perfusion in major organs → 
+hypoxia, ischemia, tissue damage. Clotting 
+factors are consumed → simultaneous 
+bleeding. Always secondary to an underlying 
+disorder. 
+  Causes 
+• Infection — bacterial (Gram+/−), viral, fungal, 
+protozoan 
+• Cancer — especially acute promyelocytic 
+leukemia (APL) 
+• Obstetric — abruptio placentae, eclampsia, 
+postpartum hemorrhage 
+• Massive tissue injury — trauma, burns, 
+hyperthermia, surgery 
+• Transfusion reaction — ABO blood group 
+incompatibility 
+• Septic shock (most common ICU trigger) 
+  Clinical Manifestations 
+• Bleeding from multiple body sites 
+simultaneously 
+• Purpura, petechiae, hematomas, ecchymosis 
+• Prolonged oozing from IV sites — FIRST sign 
+• Hypotension, tachycardia, signs of shock 
+• Hematuria, hemoptysis, GI bleeding 
+• Blood clots: DVT, pulmonary embolism 
+• Confusion, fever, oliguria, cyanosis 
+  Investigations 
+• PT > 15 seconds (prolonged) 
+• PTT > 60–90 seconds (prolonged) 
+• Fibrinogen — low (consumed) 
+• D-dimer / FSPs — HIGH (fibrin split products) 
+• Platelet count — falling / thrombocytopenia 
+• ISTH score ≥ 5 = DIC confirmed 
+  Nursing Diagnoses 
+• Ineffective Tissue Perfusion r/t microthrombi 
+formation and hemorrhage 
+• Risk for Bleeding r/t depletion of clotting 
+factors and platelets 
+• Impaired Gas Exchange r/t hemorrhage and 
+microemboli in pulmonary vasculature 
+• Acute Pain r/t tissue ischemia from 
+microthrombi 
+• Fear r/t life-threatening condition and 
+intensive interventions 
+  Nursing Interventions 
+• Treat underlying cause FIRST (antibiotics for 
+infection, evacuate uterus in obstetric DIC) 
+• Assess LOC every 1–2 hrs — 
+restlessness/irritability = early cerebral 
+hypoxia 
+• Monitor O₂ saturation — keep ≥ 90%; 
+monitor ABGs 
+• Position: high-Fowler's — promotes lung 
+expansion 
+• Reposition every 2 hrs + chest physiotherapy 
+• Monitor HR and BP — tachycardia + 
+hypotension = ↓ cardiac output 
+• Inspect skin for petechiae, purpura, oozing 
+from IV sites 
+• Administer blood products: RBCs, FFP, 
+platelets, cryoprecipitate 
+• Monitor coagulation labs: PT, PTT, fibrinogen, 
+D-dimer 
+  Bleeding Precautions 
+• Avoid IM injections and unnecessary 
+venipunctures 
+• Use oral or SC medication routes instead 
+• Gentle oral care — saline rinses instead of 
+toothbrushes 
+• Apply firm pressure ≥ 5 min to all 
+venipuncture sites 
+• Prevent falls — padded side rails, non-slip 
+footwear 
+• Avoid medications that impair platelet 
+function (NSAIDs, aspirin)
+
+5. Hepatic Encephalopathy 
+  Definition 
+Life-threatening complication of liver failure. 
+The neuropsychiatric manifestation of hepatic 
+failure associated with portal hypertension and 
+shunting of portal blood (containing ammonia) 
+directly into systemic circulation — bypassing 
+liver detoxification. 
+  Causes 
+• Hepatic insufficiency — liver cannot detoxify 
+metabolic byproducts 
+• Portal-systemic shunting — collateral vessels 
+bypass liver 
+• GI bleeding — esophageal varices, chronic GI 
+bleed 
+• High-protein diet → excess ammonia 
+production 
+• Bacterial infection / uremia 
+• Alkalosis or hypokalemia — increases 
+ammonia absorption 
+• Medications: sedatives, tranquilizers, 
+analgesics, diuretics 
+• Excessive diuresis, dehydration, surgery, 
+fever 
+  Stages 
+• Stage 1: Slight confusion, mood/sleep 
+changes, sleep during day (insomnia at night) 
+• Stage 2: Drowsy, asterixis (hand flapping), 
+disorientation to time 
+• Stage 3: Difficult to awaken, complete 
+disorientation, marked confusion 
+• Stage 4: Coma, possible seizures, no response 
+to stimuli 
+  Clinical Manifestations 
+• Mental status changes — from mild 
+confusion to coma 
+• Sleep-wake cycle reversal 
+• Asterixis — flapping tremor of outstretched 
+hands 
+• Progressive disorientation, seizures 
+• EEG: generalized slowing, triphasic waves 
+• ↑ Serum ammonia level 
+• Deteriorating handwriting and arithmetic 
+scores 
+  Nursing Interventions 
+• Lactulose: decreases colonic pH → reduces 
+ammonia absorption 
+• Neomycin / Rifaximin: destroy bowel bacteria 
+→ reduce ammonia production 
+• Diet: protein 1.0–1.5 g/kg/day (do NOT over-
+restrict) 
+• Neurological assessment frequently — record 
+handwriting & arithmetic daily 
+• Monitor mental status (LOC, behavior, 
+orientation) 
+• Accurate daily I&O, body weight, vital signs 
+Q4h 
+• Safe environment: prevent injury, bleeding, 
+infection 
+• Encourage deep breathing + position changes 
+— prevent pneumonia 
+• Assess for potential infection sites 
+(peritoneum, lungs) — report promptly 
+  Patient Teaching 
+• Family: watch for subtle early signs of 
+recurrence after discharge — mild confusion, 
+personality changes, sleep disturbance 
+• Diet: moderate-protein, high-calorie (protein 
+1.0–1.5 g/kg) 
+• In acute phase: reduce protein to 0.8 g/kg 
+briefly 
+• Add protein back gradually: 10 g increments 
+every 3–5 days if mental status stable 
+• Never abruptly restrict protein long-term — 
+causes muscle wasting 
+• Avoid alcohol and all hepatotoxic 
+drugs/supplements 
+• Take lactulose as prescribed (target: 2–4 soft 
+stools/day) 
+• Regular follow-up appointments and lab 
+monitoring 
+• Report confusion, personality changes, 
+increased drowsiness immediately
+
+6. Hypertensive Crisis 
+  Definition 
+Severe elevation of BP > 180/110 mmHg that 
+can lead to stroke and end-organ damage. 
+Classified into two types based on presence or 
+absence of acute target organ damage. 
+  Types: Urgency vs Emergency 
+• URGENCY: Severe BP elevation — NO acute 
+organ damage. Treated with oral 
+antihypertensives. Can be managed in 
+outpatient or ED setting. 
+• EMERGENCY: Severe BP elevation + acute 
+end-organ damage (brain, heart, kidneys). 
+Requires IV treatment in ICU. Life-
+threatening. 
+  Causes 
+• Primary (essential) hypertension — most 
+common 
+• Abrupt withdrawal of antihypertensive drugs 
+• Pheochromocytoma (catecholamine surge) 
+• Eclampsia / pregnancy-induced hypertension 
+• Renal artery stenosis / renovascular disease 
+• Myocardial ischemia, aortic dissection 
+• Stimulant drugs (cocaine, amphetamines) 
+  Clinical Manifestations 
+Emergency: 
+• Severe headache, altered LOC, papilledema 
+• Chest pain / angina, pulmonary edema, 
+dyspnea 
+• Oliguria, hematuria — renal involvement 
+• Neurological deficits, visual changes 
+Urgency: 
+• Severe headache, epistaxis (nosebleeds) 
+• Severe anxiety, shortness of breath — NO 
+organ damage 
+  Complications 
+• Stroke, hypertensive encephalopathy 
+• Myocardial infarction (MI), aortic dissection 
+• Acute renal failure, pulmonary edema 
+• Retinal damage, blindness 
+  Nursing Diagnoses 
+• Decreased Cardiac Output r/t increased 
+systemic vascular resistance 
+• Risk for Ineffective Cerebral Tissue Perfusion 
+r/t hypertensive encephalopathy and CVA 
+• Excess Fluid Volume r/t sodium and water 
+retention 
+• Anxiety r/t change in health status and threat 
+to biologic integrity 
+• Deficient Knowledge r/t disease process and 
+antihypertensive regimen 
+  Nursing Interventions 
+• Continuous hemodynamic monitoring — 
+arterial line preferred 
+• IV antihypertensives: nitroprusside, labetalol, 
+nicardipine 
+• BP reduction target: ↓25% in first hour → 
+160/100 over next 6 hrs → gradual over days 
+• Exception — aortic dissection: target systolic 
+< 100 mmHg if tolerated 
+• Neurological assessment Q1h — monitor for 
+stroke signs 
+• Urinary catheter — monitor output Q1h 
+(renal perfusion) 
+• Continuous cardiac monitoring (ECG) 
+• Seizure precautions, bed rest in quiet 
+environment 
+• CBC, electrolytes, BUN, creatinine, urinalysis, 
+chest X-ray, ECG 
+  Patient Education 
+• Take antihypertensive medications DAILY — 
+never stop abruptly 
+• Low-sodium diet (avoid canned foods, 
+processed meats, soy sauce) 
+• Weight loss + regular physical activity 30 
+min/day 
+• Limit alcohol, stop smoking 
+• Regular home BP monitoring — know target 
+values 
+• Stress management: yoga, relaxation 
+techniques 
+• Report severe headache, visual changes, or 
+chest pain immediately
+
+• Follow-up: Q1–2 weeks until target achieved, 
+then Q6 months
+
+7. Increased Intracranial Pressure (ICP) 
+  Definition 
+Sustained increase in pressure within the rigid 
+cranial vault > 20 mmHg. The vault contains 3 
+non-compressible components: brain tissue, 
+blood, and CSF. If one increases, others must 
+decrease (Monro-Kellie doctrine) or ICP rises. 
+Normal ICP: 0–15 mmHg. CPP = MAP − ICP. 
+Goal: CPP 60–70 mmHg. 
+  Causes 
+• Traumatic brain injury (TBI) 
+• Stroke (ischemic or hemorrhagic) 
+• Brain tumor or abscess 
+• Hydrocephalus 
+• Cerebral edema (post-surgery, infection) 
+• Subarachnoid or intracerebral hemorrhage 
+• Meningitis / encephalitis 
+  Clinical Manifestations — Cushing's 
+Triad 
+• Widening pulse pressure (systolic ↑, diastolic 
+↓) 
+• Bradycardia 
+• Irregular respirations (Cheyne-Stokes) 
+Other signs: 
+• ↓ LOC — EARLIEST and most sensitive sign 
+• Pupillary changes: unequal, sluggish, or fixed 
+& dilated 
+• Vomiting without nausea (projectile) 
+• Papilledema (blurred disc margins on 
+fundoscopy) 
+• Morning headache (worse lying down) 
+• Decorticate → decerebrate posturing (late, 
+severe) 
+  Investigations 
+• CT scan — first-line (identify blood, edema, 
+tumor) 
+• MRI — more detailed structural imaging 
+• ICP monitoring: EVD (gold standard), 
+fiberoptic probe 
+• ABGs — monitor for hypoxia (PaO₂) and CO₂ 
+(ventilation) 
+• Lumbar puncture — CONTRAINDICATED if ICP 
+is elevated 
+  Nursing Precautions 
+• HOB at 30° — neutral head position at all 
+times 
+• Avoid neck/hip flexion — impairs venous 
+drainage 
+• Space ALL nursing activities — allow rest 
+between turns/hygiene 
+• Avoid Valsalva maneuver: no straining, give 
+stool softeners 
+• Minimize sensory stimulation — noise, 
+painful stimuli, bright light 
+• Seizure precautions — padded rails, suction 
+at bedside 
+• Accurate hourly I&O — monitor for DI 
+(polyuria) vs SIADH 
+• Assess physiologic response to visitors — 
+limit if ICP rises 
+  Medical Management 
+• Osmotic diuretics: 25% Mannitol or 3% 
+Hypertonic Saline 
+• Corticosteroids (dexamethasone) — for 
+tumor/abscess-related edema 
+• Controlled hyperventilation (intubated): PCO₂ 
+target 30–35 mmHg 
+• CSF drainage via EVD — reduces ICP rapidly 
+• Sedation and paralysis — reduce metabolic 
+demands 
+• Temperature management — prevent 
+hyperthermia (worsens edema) 
+• Decompressive craniectomy — last resort for 
+refractory ICP
+
+• Antipyretics, maintain normoglycemia, 
+correct hyponatremia
+
+8. Liver Dialysis 
+  Definition 
+A system designed to remove toxins not cleared 
+by the failing liver. Targets lipophilic and 
+albumin-bound substances (bilirubin, bile 
+acids), metabolites of aromatic amino acids, 
+and medium-sized molecules that accumulate 
+in liver failure and cause organ dysfunction. 
+  Types of Systems 
+• BIOLOGICAL systems: contain functioning 
+liver cells → provide BOTH detoxifying AND 
+synthetic liver functions. More complex and 
+expensive. 
+• NON-BIOLOGICAL systems: no living cells → 
+provide detoxification ONLY (no synthetic 
+function). Examples: MARS (Molecular 
+Adsorbent Recirculating System), 
+Prometheus. Simpler and cheaper. 
+  Settings Used In 
+• Transplantation centers 
+• Intensive Care Units (ICU) 
+• Specialized dialysis units 
+  Indications 
+• Acute hepatic encephalopathy from 
+worsening chronic liver disease (acute-on-
+chronic) or fulminant hepatic failure 
+• Severe drug overdose — acetaminophen 
+toxicity, tricyclic antidepressants 
+• Acute decompensation of chronic liver 
+disease 
+• Acute liver failure awaiting transplantation 
+(bridge to transplant) 
+• Liver dysfunction following transplantation 
+(primary graft non-function) 
+  Complications 
+• Thrombocytopenia — platelet destruction 
+during circuit 
+• Coagulopathy — clotting factor loss 
+• Hypotension — hemodynamic instability 
+during sessions 
+• Electrolyte imbalances — monitor Na⁺, K⁺, 
+Ca²⁺, Mg²⁺ 
+• Infection risk — from extracorporeal circuit 
+• Long-term side effects — patients must be 
+counseled before treatment 
+  Clinical Efficiency / Benefits 
+• Complete recovery of liver function following 
+recompensation (acute-on-chronic failure) 
+• Bridge short-term or long-term waiting times 
+until liver transplantation 
+• Increasing the survival rate of liver 
+transplants — better patient condition at time 
+of transplant 
+• Improving quality of life during liver failure — 
+reduces encephalopathy, pruritus, fatigue 
+• Reduction in bilirubin, bile acids, ammonia, 
+and other toxin levels 
+• May improve hemodynamic stability in 
+hepatorenal syndrome 
+  Key Nursing Points 
+• Monitor vital signs and hemodynamics 
+throughout session 
+• Assess neurological status — improvement in 
+encephalopathy 
+• Monitor coagulation labs: PT, PTT, platelet 
+count before and after 
+• Ensure IV access is adequate — large-bore or 
+central line 
+• Document fluid balance accurately during 
+treatment 
+• Patient/family education: purpose, 
+procedure, expected outcomes
+
+9. Liver Transplantation 
+  Definition 
+Partial or total removal of the diseased liver and 
+its replacement with a healthy donor liver in the 
+same anatomic location (orthotopic). Used to 
+treat life-threatening, end-stage liver disease 
+for which no other treatment is available. 
+  Indications 
+• End-stage liver disease (cirrhosis) from any 
+cause 
+• Fulminant hepatic failure — acute liver failure 
+• Hepatocellular carcinoma (within Milan 
+criteria) 
+• Biliary atresia (common indication in 
+children) 
+• Metabolic liver diseases (Wilson's disease, α₁-
+antitrypsin deficiency) 
+• Primary sclerosing cholangitis, primary biliary 
+cirrhosis 
+  Contraindications 
+• Sepsis — active systemic infection 
+• Malignancies outside the liver 
+• Active substance abuse (alcohol, drugs) 
+• Irreversible brain damage 
+• Inability to comply with post-transplant 
+immunosuppression 
+• AIDS (active), active cardiopulmonary disease 
+  Types of Rejection 
+• HYPERACUTE: Within minutes to hours 
+(extremely rare in liver). Antibody-mediated. 
+Usually leads to immediate graft loss. 
+• ACUTE (most common): Days to weeks post-
+transplant. Cell-mediated. Treated with high-
+dose IV corticosteroids. Most cases respond 
+well. 
+• CHRONIC: Months to years post-transplant. 
+Progressive bile duct damage. Leads to graft 
+failure. May require re-transplantation. 
+  Nursing Diagnoses 
+• Risk for Infection r/t immunosuppressive 
+therapy and surgical wound 
+• Risk for Bleeding r/t coagulopathy and 
+surgical trauma 
+• Impaired Fluid Volume r/t third spacing, 
+hemorrhage, and low oncotic pressure 
+• Anxiety r/t uncertainty of graft function and 
+complex postoperative care 
+• Deficient Knowledge r/t immunosuppression 
+regimen and rejection signs 
+  Nursing Care 
+• Hemodynamic monitoring: watch for 
+hypotension during warming phase, 
+hypertension from pain/stress 
+• Fluid resuscitation: crystalloids (NS 0.9%), 
+albumin, blood products as ordered 
+• Monitor renal function closely — nephrotoxic 
+immunosuppressants: cyclosporine, 
+tacrolimus 
+• Watch for infection signs — 
+immunosuppression increases risk 
+significantly 
+• Wound care — sterile technique; inspect 
+incision for dehiscence or infection 
+• Accurate I&O — monitor for oliguria 
+(hepatorenal syndrome may persist) 
+• Administer immunosuppressants on time — 
+tacrolimus, mycophenolate, steroids 
+• Assess for rejection: fever, jaundice, right 
+upper quadrant pain, elevated LFTs 
+• Manage ascites: sodium restriction, diuretics 
+(spironolactone + furosemide) 
+• Monitor coagulation: PT, PTT — correct with 
+FFP, Vitamin K 
+• Patient education: rejection signs, infection 
+prevention, medication compliance
+
+10. Nutritional Support in Critical Care 
+  Enteral Nutrition (EN) — Definition 
+Nutrition delivered via the GI tract (tube 
+feeding). Routes: nasogastric (NGT), 
+nasoduodenal, jejunostomy (PEG/PEJ). 
+Preferred over TPN when GI tract is functional. 
+  EN — Indications 
+• Functioning GI tract with inability to eat orally 
+• Burns, trauma, head injury, sepsis 
+• Post-surgery when GI function returns 
+• Neurological impairment affecting swallowing 
+  EN — Complications 
+• Aspiration pneumonia — most dangerous 
+(keep HOB 30–45°) 
+• Diarrhea — most common complication in 
+ICU 
+• Tube displacement or blockage 
+• Abdominal distension, constipation 
+• Refeeding syndrome — hypophosphatemia, 
+hypokalemia 
+• Sinusitis (nasogastric route) 
+  TPN — Definition 
+Delivery of ALL nutrients by IV infusion, 
+completely bypassing the GI tract. 
+Recommended when oral or tube feeding is 
+contraindicated or inadequate for more than 5–
+7 days. 
+  TPN — Indications 
+• Non-functioning GI tract / prolonged ileus 
+• Short bowel syndrome, severe malabsorption 
+• GI fistula, bowel obstruction 
+• Severe acute pancreatitis (initially) 
+• Severe inflammatory bowel disease 
+  TPN — Complications 
+• Sepsis / infection — most serious (strict 
+asepsis required) 
+• Hyperglycemia — most common metabolic 
+complication 
+• Hypoglycemia if stopped abruptly 
+• Electrolyte imbalances — Na⁺, K⁺, Mg²⁺, 
+Phosphate 
+• Refeeding syndrome 
+• Liver dysfunction (cholestasis) with long-term 
+use 
+• Pneumothorax — from central line insertion 
+• Thrombosis at catheter site 
+  Nursing Care 
+• Accurately record all food and fluids 
+consumed (type + amount) 
+• Calculate daily protein and calorie intake 
+• Anthropometric measurements: height, 
+weight, BMI, triceps skinfold, mid-arm 
+circumference 
+Enteral Feeding Nursing Care: 
+• Verify tube placement before each feeding 
+(X-ray for initial; pH / aspiration for ongoing) 
+• Keep HOB elevated 30–45° continuously 
+during feeding 
+• Check gastric residual volume every 4–6 hrs 
+— hold if >250 mL 
+• Monitor bowel sounds and abdominal 
+distension 
+TPN Nursing Care: 
+• Use volumetric infusion pump — precise rate 
+control 
+• Change TPN bag and tubing every 24 hours 
+(strict aseptic technique) 
+• Monitor blood glucose every 4–6 hrs — treat 
+hyperglycemia with insulin 
+• Monitor electrolytes, albumin, pre-albumin 
+daily initially 
+• Inspect central line insertion site for signs of 
+infection 
+• NEVER stop TPN abruptly — taper slowly to 
+prevent rebound hypoglycemia 
+• Nursing diagnoses: Imbalanced Nutrition r/t 
+malabsorption; Risk for Infection r/t IV access
+
+11. Renal Transplantation 
+  Contraindications 
+ABSOLUTE: 
+• Age < 18 years (living donor) 
+• Uncontrolled hypertension 
+• Diabetes mellitus (for living donor) 
+• Proteinuria > 300 mg / 24 hours 
+• Abnormal GFR for age 
+• Microscopic hematuria 
+• High risk of thromboembolism 
+• Significant chronic illness: lung disease, 
+recent malignancy, heart disease 
+• History of bilateral kidney stones 
+• HIV positive 
+RELATIVE: 
+• Anatomical anomalies of the graft 
+• Active chronic infection (TB, Hepatitis B/C, 
+parasites) 
+• Obesity, psychiatric disorders 
+  Nursing Care 
+Immediate Postoperative: 
+• Maintain fluid & electrolyte balance — strict 
+I&O 
+• Wound care — sterile dressing changes 
+• Pain management around the clock 
+• Pulmonary hygiene: incentive spirometry + 
+early ambulation 
+• Restore normal bowel function (ileus risk 
+from steroids) 
+Long-term: 
+• Lifelong follow-up by transplant specialist 
+Q6–12 months 
+• Renal function + immunosuppression 
+monitoring Q4–8 weeks 
+• Annual dermatological exam, tumor 
+screening, chest X-ray 
+• Monitor proteinuria, BP, lipids, glucose, bone 
+density 
+  Complications 
+• Infection — leading cause of morbidity 
+(immunosuppressed) 
+• CHF — most common cause of hospitalization 
+• Rejection (hyperacute, acute, chronic) 
+• Hypertension, renal failure 
+• Metabolic complications: hyperglycemia, 
+dyslipidemia 
+  Patient Teaching 
+Call your doctor immediately if: 
+• Fever > 38°C (100°F) 
+• Flu-like symptoms: chills, aches, dizziness, 
+nausea/vomiting 
+• New pain or tenderness around transplanted 
+kidney 
+• Fluid retention / swelling 
+• Weight gain > 1–2 kg within 24 hours 
+• Significant decrease in urine output 
+Lifestyle: 
+• Exercise: 20–30 min, 3–4 times/week 
+• Wait 1.5 hrs after eating before exercising 
+• Avoid heavy lifting, pushing, or strenuous 
+exercise initially 
+• Wear protective footwear, dress 
+appropriately 
+Medication: 
+• Take immunosuppressants EXACTLY as 
+prescribed — NEVER skip doses 
+• Avoid NSAIDs and nephrotoxic agents 
+• Take beta-blockers as prescribed — do NOT 
+stop abruptly 
+• Sun protection — increased skin cancer risk 
+• Follow recommended diet: low sodium, low 
+fat if needed
+
+12. Seizures 
+  Definition 
+Repetitive depolarization of hyperactive and 
+hypersensitive brain cells → abnormal electrical 
+activity throughout the brain. Uncontrolled 
+discharge propagates through neural pathways, 
+producing clinical manifestations (motor, 
+sensory, autonomic, behavioral). 
+  Causes 
+• Epilepsy — most common chronic cause 
+• Drug or alcohol abuse / withdrawal 
+• Drug toxicity — aminophylline, lidocaine, 
+isoniazid 
+• Recent head injury / TBI 
+• CNS infection — meningitis, encephalitis 
+• CNS tumor, abscess 
+• Acute metabolic disturbances: hypoglycemia, 
+hyponatremia, hypocalcemia, renal failure 
+• Cerebrovascular accident (CVA) 
+• Hypoxemia, high fever 
+  Nursing Care DURING Seizure 
+• PRIMARY goal: Protect airway and prevent 
+injury 
+• Position: side-lying — facilitates airway 
+clearance 
+• Do NOT restrain the patient — guide 
+movements gently 
+• Do NOT force an airway into the mouth — 
+risk of dental/jaw injury 
+• Clear area of hard/sharp objects 
+• Observe and document: seizure type, point of 
+origin, spread, duration 
+• Note: automatisms (lip smacking, repeated 
+swallowing), bowel/bladder incontinence, 
+tongue biting 
+• Assess LOC before, during, and after 
+• Administer O₂ via mask + suction as needed 
+Medications: 
+• Lorazepam (Ativan): 0.1 mg/kg IV — up to 4 
+mg; max 2 mg/min; may repeat in 5–10 min 
+• Midazolam: 0.2 mg/kg IM — up to 10 mg max 
+• Diazepam (Valium): 0.15 mg/kg IV — max 10 
+mg; max 5 mg/min 
+• Phenytoin (Dilantin): 20 mg/kg IV — max 50 
+mg/min (long-acting) 
+  Nursing Care POSTICTAL 
+• Assess vital signs closely — provide ECG 
+monitoring 
+• Monitor oxygenation: ABGs, SpO₂, breath 
+sounds 
+• Maintain side-lying position — aspiration risk 
+• Check orientation, ability to speak (patient 
+usually sleeps afterward) 
+• Note: headache, myalgia, fatigue, confusion 
+(normal postictal features) 
+• Document seizure characteristics completely: 
+onset, duration, type, spread, recovery time 
+• Obtain: EEG, CT/MRI, serum drug screen, 
+electrolytes (BUN, Ca²⁺, Mg²⁺, glucose), CBC 
+• Provide emotional support — seizures are 
+frightening and disorienting 
+• Reorient patient calmly as consciousness 
+returns 
+• Continue seizure precautions: padded rails, 
+O₂ at bedside, suction available 
+  Key Assessment Questions 
+• Identify precipitating factors and preceding 
+aura 
+• What was patient doing at the time of 
+seizure? 
+• Were there unusual symptoms before 
+(movements, sensations, smells)? 
+• Did patient know a seizure was coming? 
+• History of prior seizures, medications, 
+compliance?
+
+13. Stroke ⭐⭐⭐ 
+  Definition & Types 
+Sudden onset of acute neurological deficit 
+persisting > 24 hours, caused by interruption of 
+blood flow to the brain. TIA: same but resolves 
+in < 24 hrs (usually < 1 hr). 
+• ISCHEMIC — 87%: Thrombotic (75%) | 
+Embolic (25%) 
+• HEMORRHAGIC — 13%: Intracerebral (10%) | 
+Subarachnoid (3%) 
+  Causes 
+• Ischemic: vascular obstruction (thrombus or 
+embolus), small penetrating artery 
+thrombosis, cardiac embolism (atrial 
+fibrillation) 
+• Hemorrhagic: hypertensive vascular disease, 
+ruptured aneurysm (weakness in artery wall), 
+ruptured AVM (common in young people) 
+  Risk Factors 
+• Hypertension — most important modifiable 
+risk factor 
+• Atrial fibrillation, DM, hyperlipidemia, 
+obesity, smoking 
+• Age, family history, prior TIA or stroke 
+  Clinical Manifestations 
+• Numbness/weakness of face, arm, or leg (one 
+side) 
+• Confusion, trouble speaking (dysarthria) or 
+understanding (aphasia) 
+• Visual: diplopia, homonymous hemianopsia, 
+loss of peripheral vision 
+• Hemiparesis/hemiplegia, ataxia, dysphagia 
+  Investigations 
+• CT without contrast — FIRST-LINE: 
+differentiates hemorrhagic from ischemic 
+• MRI — detects infarction earlier; determines 
+type, size, location 
+• CT/MRI Angiography — confirms aneurysm or 
+AVM 
+• 12-lead ECG + continuous cardiac monitoring 
+• Echocardiography (for cardioembolic source) 
+• CBC, electrolytes, glucose, renal/hepatic 
+function, coagulation 
+• ABGs if hypoxia suspected, Transcranial 
+Doppler 
+  rtPA (Thrombolytic Therapy) 
+For ISCHEMIC stroke ONLY: 
+• Dose: 0.9 mg/kg (max 90 mg) 
+• 10% as IV bolus over 1–2 min; 90% infusion 
+over 60 min 
+• Window: ≤ 4.5 hours from symptom onset 
+• No antithrombotic therapy for 24 hours after 
+rtPA 
+• Risk: intracerebral hemorrhage ~6.4% 
+• Inclusion: ischemic diagnosis confirmed, SBP 
+≤185 mmHg, DBP ≤110 mmHg, not minor or 
+rapidly resolving stroke 
+  Nursing Diagnoses 
+• Ineffective Cerebral Tissue Perfusion r/t 
+interruption of cerebral blood flow 
+• Impaired Physical Mobility r/t hemiplegia and 
+neuromuscular impairment 
+• Impaired Verbal Communication r/t aphasia 
+from cerebral damage 
+  Nursing Interventions 
+• Neurological assessment Q1–2h: LOC, pupils, 
+motor strength, speech, facial droop 
+• Airway management — priority; O₂ therapy 
+for SpO₂ > 94% 
+• HOB at 30° — reduces ICP and aspiration risk 
+• Monitor BP — for ischemic: allow permissive 
+hypertension (do NOT aggressively lower 
+unless >220/120 or before rtPA); for 
+hemorrhagic: target SBP <140 mmHg 
+• Dysphagia screening before ANY oral intake 
+— bedside swallowing test 
+• NPO if dysphagia confirmed — consult 
+speech therapy 
+• Aspiration precautions: HOB up, thickened 
+liquids if ordered 
+• DVT prophylaxis: compression stockings, 
+sequential compression devices 
+• Bladder care: intermittent catheterization 
+preferred over indwelling 
+• Skin integrity: reposition Q2h, pressure injury 
+prevention 
+• Emotional support: explain aphasia/paralysis 
+to patient AND family 
+• Early rehabilitation: physiotherapy, OT, 
+speech therapy from day 1 
+• Anticoagulation for embolic stroke (heparin 
+→ warfarin) 
+• Antiplatelet therapy: aspirin or clopidogrel for 
+thrombotic stroke 
+• Monitor glucose — maintain normoglycemia 
+(hyperglycemia worsens outcomes)
+
+• Hemorrhagic: 'exploding headache,' 
+decreased LOC, nuchal rigidity 
+• Emotional lability, loss of self-control 
+• Risk for Aspiration r/t dysphagia and reduced 
+LOC
+
+14. Thyroid Storm (Thyrotoxic Crisis) 
+  Definition 
+Severe, life-threatening form of 
+hyperthyroidism with abrupt sudden onset. 
+Represents extreme hypermetabolic state from 
+excessive thyroid hormone. Almost always fatal 
+if untreated. Requires ICU-level care. 
+  Causes (Precipitating Triggers) 
+In a patient with pre-existing hyperthyroidism: 
+• Infection — most common trigger 
+• Surgery or trauma — any major surgical 
+procedure 
+• Pregnancy or delivery 
+• Abrupt withdrawal of antithyroid medications 
+• Amiodarone — causes thyroid dysfunction in 
+10–20% of patients 
+• Major physical or psychological stress 
+  Clinical Manifestations 
+Cardiac: 
+• Tachycardia, atrial fibrillation/PVCs, 
+palpitations 
+• Hypertension, chest pain, acute heart failure, 
+pulmonary edema 
+Neurological: 
+• Hyperkinesis, nervousness, muscle weakness 
+• Confusion, convulsions, fine tremor, 
+psychosis, diaphoresis 
+GI: 
+• N/V, diarrhea, hepatomegaly, abdominal 
+pain, weight loss 
+Thermoregulatory: 
+• High fever (hyperthermia), profuse sweating 
+  Investigations 
+• Free T3 and T4 — significantly elevated 
+• TSH — suppressed or undetectable 
+• CBC, liver enzymes, glucose, electrolytes 
+• Cortisol level (stress response) 
+• ECG — tachyarrhythmias, atrial fibrillation 
+  Nursing Interventions 
+Medication Sequence (critical order): 
+• 1. Beta-blockers (propranolol): FIRST — 
+blocks cardiovascular effects of excess 
+hormone 
+• 2. PTU (propylthiouracil): SECOND — blocks 
+NEW hormone synthesis 
+• 3. Iodine (Lugol's): 1–2 hrs AFTER PTU — 
+blocks hormone RELEASE (if given before PTU, 
+used to make more hormone) 
+• Acetaminophen for fever — NOT aspirin 
+(aspirin displaces T3/T4 from protein binding 
+→ worsens crisis) 
+• Cooling blanket, ice packs to axilla/groin, 
+tepid sponge bath 
+• IV fluids: large volumes glucose + isotonic 
+sodium to replace losses 
+• Insulin for hyperglycemia; antibiotics if 
+infection present 
+• Calm environment for agitated patient — 
+reassure patient/family 
+• Monitor heart rate closely — should decrease 
+with beta-blockade 
+• Frequent temperature monitoring until 
+normal 
+• Monitor for hyponatremia 
+  Patient Teaching 
+• Take antithyroid medications EXACTLY as 
+prescribed — NEVER stop suddenly 
+• Avoid iodine-rich foods: seafood, iodized salt, 
+kelp 
+• Avoid stimulants: caffeine, decongestants, 
+OTC cold medications 
+• Report immediately: palpitations, fever, 
+tremor, worsening symptoms 
+• Regular thyroid function tests (T3, T4, TSH) as 
+scheduled 
+• Stress management techniques — stress 
+triggers thyroid storm 
+• For patients on antithyroid drugs: report 
+signs of agranulocytosis — sudden sore 
+throat, fever, cough (stop medication, call 
+doctor) 
+• For beta-blocker patients: report bradycardia, 
+unexplained fatigue, orthostatic hypotension 
+• Wear medical alert bracelet identifying 
+thyroid condition 
+• Regular follow-up appointments — do not 
+miss 
+  Nursing Diagnoses 
+• Decreased Cardiac Output r/t 
+tachyarrhythmias and increased metabolic 
+demands 
+• Hyperthermia r/t hypermetabolic state and 
+excessive heat production 
+• Deficient Fluid Volume r/t profuse 
+diaphoresis, vomiting, and diarrhea
+
+• Anxiety / Acute Confusion r/t excess thyroid 
+hormone affecting CNS 
+• Deficient Knowledge r/t disease process and 
+long-term medication management
+
+15. Myasthenia Gravis (MG) 
+  Definition 
+Chronic autoimmune neuromuscular disorder 
+producing sporadic but progressive weakness 
+and abnormal fatigue in skeletal muscles. 
+Antibodies block, destroy, or weaken ACh 
+receptor sites at the neuromuscular junction → 
+muscles cannot contract properly. 
+Weakness WORSENS with exercise/repeated 
+movement, IMPROVES with rest. 
+  Clinical Manifestations 
+• Gradual progressive skeletal muscle 
+weakness worsening throughout the day 
+• Ptosis — drooping of one or both eyelids 
+(hallmark early sign) 
+• Diplopia — double vision (extraocular muscle 
+weakness) 
+• Blank/mask-like facial expression (facial 
+muscle weakness) 
+• Dysphagia — difficulty swallowing 
+• Dysarthria — slurred speech, difficulty 
+chewing 
+• Difficulty with lateral head motion 
+• Respiratory failure if respiratory muscles 
+involved — MEDICAL EMERGENCY 
+  Investigations 
+• Tensilon Test (neostigmine IV): temporary 
+improvement = positive = MG confirmed. 
+Long-standing ocular dysfunction may not 
+respond. 
+• EMG — electromyography: differentiates 
+nerve disorders from muscle disorders 
+• Nerve conduction studies: test for ACh 
+receptor antibodies 
+• CT chest: detect thymoma (associated in 
+many MG patients) 
+• Serum anti-AChR antibodies — positive in 
+85% of MG 
+  Myasthenic Crisis 
+Emergency: sudden severe respiratory distress 
+due to undermedication or triggers (infection, 
+stress, surgery, extreme temperature). 
+• Signs: acute respiratory distress, increased 
+muscle weakness, difficulty talking/chewing, 
+tachycardia, tachypnea 
+• Tx: Tracheotomy, positive-pressure 
+ventilation, vigorous suctioning 
+• IV neostigmine or pyridostigmine; 
+plasmapheresis to remove antibodies; IVIG 
+• ⚠️ Anticholinesterases NOT effective during 
+crisis — HOLD until respiratory function 
+improves 
+  Nursing Interventions 
+• Establish neurologic and respiratory BASELINE 
+— before each shift 
+• Help remove secretions as they accumulate 
+— suction if needed 
+• Be ALERT for signs of impending crisis: 
+increasing weakness, respiratory distress, 
+difficulty talking 
+• Administer anticholinesterase drugs at 
+EVENLY SPACED INTERVALS on time as 
+ordered — timing is critical 
+• Be prepared to give ATROPINE for 
+anticholinesterase overdose or toxicity 
+• Plan exercise, meals, and activities at PEAKS 
+in patient's energy level 
+• Provide soft, solid foods (NOT liquids) — 
+reduces choking risk 
+• Always sit patient upright to eat 
+• Respiratory monitoring: SpO₂, breath sounds, 
+respiratory rate 
+• Encourage patient to take active role in care 
+decisions 
+  Patient Teaching 
+• Recognize adverse effects of 
+anticholinesterase drugs: headaches, 
+weakness, sweating, abdominal cramps, 
+N/V/D, excessive salivation, bronchospasm — 
+cholinergic crisis (opposite of MG: too much 
+medication) 
+• Take medications on time EVERY DAY — 
+timing is critical
+
+• Plan daily activities at energy peaks; frequent 
+rest periods throughout the day 
+• Avoid: strenuous exercise, stress, infection, 
+extreme temperature, sun exposure 
+• Avoid new medications without consulting 
+physician first 
+• Carry medical alert ID at all times 
+• Report worsening symptoms immediately — 
+do not wait

@@ -1,0 +1,195 @@
+Liver Dialysis
+Prepared by
+Assist prof Dr\ Afaf Mohamed Mansour
+
+Outlines
+• Introduction
+• Liver dialysis Definition
+• Liver dialysis hypothesis
+• Indications for liver dialysis
+• General goals for liver dialysis
+• Dialysis Therapy places
+• liver dialysis machines
+• Liver dialysis devices
+• The operating princibles (procedure)
+• Clinical effeciency of liver dialysis
+• Side effects of liver transplantation
+
+Introduction 
+The lack of liver detoxification as well as the loss of metabolic and
+regulatory functions of the liver leads to life-threatening complications,
+During the acute phase of their disease, a substantial number of patients
+are treated using extracorporeal blood purification devices. Besides
+regular hemodialysis, the Molecular Adsorbent Recycling System
+(MARS) is used with increasing frequency. In that time, liver dialysis is
+utilized in the appropriate cases to support the patient through his/her
+liver failure until transplantation can be performed.
+
+Definition of Liver dialysis
+is a detoxification treatment for liver failure and
+has shown promise for patients with hepatorenal
+syndrome. It is similar to hemodialysis and
+based on the same principles. Like a
+bioartificial liver device, it is a form of artificial
+extracorporeal liver support.
+
+Liver dialysis hypothesis
+❑A critical issue of the clinical syndrome in liver failure is the
+accumulation of toxins not cleared by the failing liver. Based
+on this hypothesis, the removal of
+❖Lipophilic
+❖Albumin-bound substances such as bilirubin, bile acids,
+❖Metabolites of aromatic amino acids, medium-chain fatty
+acids and cytokines should be beneficial to the clinical
+course of a patient in liver failure.
+❑Hemodialysis is used for renal failure and primarily removes
+water soluble toxins, however it does not remove toxins bound
+to albumin that accumulate in liver failure.
+
+Indications for liver dialysis
+• Acute hepatic encephalopathy, due to worsening of chronic liver disease (acute-on-
+chronic) or sudden-onset liver failure (fulminant hepatic failure) .
+• Severe drug overdose, as with acetaminophen, tricyclic antidepressants,
+•Acute decompensation of chronic liver diseases
+• Acute liver failure and liver dysfunction
+• Poisoning of various types including drug overdose
+• Liver transplant failure
+•Multiple organ failure
+
+The goal of the liver dialysis
+• Complete recovery of liver function following recompensation
+• Bridging short-term or long-term waiting times until liver
+transplantation.
+• Increasing the survival rate of liver transplants.
+• Improving the quality of the patient’s life.
+
+Dialysis Therapy can be performed in
+• Transplantation centers
+• Intensive care units
+• In dialysis units.
+
+liver dialysis machines
+There are broadly two categories of liver
+dialysis machines:
+1. One that contains liver cells (biological)
+2. One without any living cells (non-
+biological).
+The non-biological version is simpler and
+cheaper, but it merely provides detoxifying
+functions without any contribution of the
+normal liver synthetic function.
+
+Liver dialysis devices
+Artificial detoxification devices currently under clinical evaluation
+include the
+1. Molecular Adsorbent Recirculating System (MARS)
+2. Single Pass Albumin Dialysis (SPAD)
+3. Prometheus system.
+
+Molecular Adsorbents Recirculation System (MARS)
+The MARS is the best known extracorporal liver
+dialysis system and has existed for approximately ten
+years.
+It consists of two separate dialysis circuits.
+❑The first circuit consists of human serum
+albumin, is in contact with the patient's blood
+through a semipermeable membrane .
+❑Two special filters to clean the albumin after it
+has absorbed toxins from the patient's
+
+The operating principles (procedure)
+The MARS Liver Support Therapy is based on the principle of Dialysis.
+o The patients blood flows through a catheter into an extracorporeal circuit equipped with a MARS flux
+Dialyzer made of special hollow fibres, guaranteeing a high selectivity for liver toxins.
+o The blood does not get dialysed against normal dialysate but against a 20% albumin solution, albumin being
+a transport molecule playing an important role in human detoxification.
+o The albumin dialysate will bind the toxins from the blood albumin through the membrane without
+exchanging any albumin molecules.
+o The albumin dialysate is regenerated in a closed circuit through a second dialyser and special adsorber for
+repeated toxin transport.
+
+Figure 1: The MARS Circuit: Removal of Water-soluble and Albumin-bound 
+Toxins
+
+Single Pass Albumin Dialysis (SPAD)
+SPAD is a simple method of albumin dialysis using 
+standard renal replacement therapy machines without an 
+additional perfusion pump system: The patient’s blood 
+flows through a circuit with a high-flux hollow fiber 
+hemodiafilter, identical to that used in the MARS 
+system. The other side of this membrane is cleansed with 
+an albumin solution in counter-directional flow, which is 
+discarded after passing the filter. Hemodialysis can be 
+performed in the first circuit via the same high-flux 
+hollow fibers.
+
+Prometheus
+The Prometheus system  is a new device based on the combination of 
+albumin adsorption with high-flux hemodialysis after selective filtration of 
+the albumin fraction through a specific polysulfon filter (AlbuFlow). It has 
+been studied in a group of eleven patients with hepatorenal syndrome 
+(acute-on-chronic liver failure and accompanying renal failure). The 
+treatment for two consecutive days for more than four hours significantly 
+improved serum levels of conjugated bilirubin, bile acids, ammonia, 
+cholinesterase, creatinine, urea and blood pH. Prometheus was proven to be 
+a safe supportive therapy for patients with liver failure.
+
+Clinical efficiency of liver dialysis 
+• Hyperbilirubinemia: Clinically, bilirubin, which is strongly bound 
+to albumin, is considered to be an indicator for the accumulation of 
+albumin-bound substances in the case of 
+Intrahepatic cholestasias. For the first time, both bilirubin and 
+other albumin-bound substances can be removed selectively with direct 
+effect on hepatic cholestasis.
+
+Clinical efficiency of liver dialysis 
+Hepatic Encephalopathy/Brain Edema: Ammonia is considered to 
+be the main cause of hepatic encephalopathy (hepatic coma) and brain 
+edema that develops as complications in liver failure. using dialysis 
+therapy. As a result, the patients wake up, and the degree of 
+encephalopathy is reduced.
+
+Clinical efficiency of liver dialysis 
+An increased intracranial pressure causes brain stem damage; it 
+is also one of the most frequent causes of death in cases of acute liver 
+failure. Glutamine accumulates as a metabolic product of increased 
+utilisation of ammonia, causing astrocytes or other cells to swell. This in 
+turn results in brain edema. dialysis is able to stop this process and/or to 
+reduce the intracranial pressure.
+
+Clinical efficiency of liver dialysis 
+Hemodynamics: Various vasoactive substances, such as plasma nitric 
+oxide (NO) are thought to be responsible for the characteristic hemodynamic 
+situation in cases of liver failure. dialysis removes NO from the blood and 
+reduces its production. This is considered to be the cause of significant 
+increases in systemic vascular resistance (SVRI) and mean arterial pressure 
+(MAP) following dialysis. At the same time, the heart returns to normal with 
+a decrease in cardiac index and the local supply of blood to the liver, brain 
+and kidneys is improved; with a reduction in pressure in the portal vein.
+
+Clinical efficiency of liver dialysis 
+Renal Function: If the liver failure is accompanied by a deteriorating 
+renal function, the prognosis is poor, with the failure of an additional organ 
+system being a further step towards the development of multiple organ 
+failure. Various studies have shown that this development can be reversed 
+and even avoided using dialysis. This may be attributed to an improvement in 
+the systemic and the local hemodynamic situation, but also perhaps to a direct 
+effect of dialysis Therapy.
+
+Clinical efficiency of liver dialysis 
+Protein Synthesis: Both the detoxification and the synthesis functions of the 
+liver begin to improve on removal of albumin bound toxins in the presence of an 
+adequate regenerative capacity  in the damaged liver.
+There is positive effect on patient neurologic status and physiologic status. 
+Clinical experience suggests that use of the Liver Dialysis Unit early in the disease 
+process may avert respirator use, avoid or decrease days in the ICU, shorten length 
+of stay, and obviate or postpone the need for transplant or improve the likelihood of 
+successful transplant by stabilizing the patient’s health prior to surgery.
+
+During treatment, a small amount of blood is drawn from the patient 
+and passed across the dialyser membrane in the Liver Dialysis Unit. On 
+the other side of the membrane, the sorbent suspension serves as a 
+"sink" that draws toxins from the blood. The treated blood is then 
+returned to the patient. 
+Treatment is usually done for 2-5 consecutive days lasting 4-6 
+hours.

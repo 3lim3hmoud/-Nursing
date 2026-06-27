@@ -1,0 +1,246 @@
+cardiovascular dysfunction 
+ 
+🫀 Management of Patient with Rheumatic Fever 
+(إدارة المريض المصاب بالحمى الروماتيزمية) 
+ 
+    Definition (التعريف) 
+Rheumatic fever is an inflammatory disease that can develop as a complication of 
+inadequately treated strep throat caused by group A streptococcus bacteria. 
+→ الحمى الروماتيزمية هي مرض التهابي يمكن أن يحدث كمضاعفة لالتهاب الحلق غير المعالج جيدًا، الناتج
+عن بكتيريا العقدية من النوع A. 
+ 
+    Incidence (حدوث المرض) 
+Occurs as an autoimmune reaction to a throat infection. 
+→ تحدث كرد فعل مناعي ذاتي بعد التهاب الحلق. 
+Appears 2–4 weeks after the streptococcal infection. 
+→ تظهر بعد2 إلى4 أسابيع من العدوى البكتيرية.  
+Common in recurrent sore throat or tonsillitis. 
+→ شائعة في حالات التهاب الحلق أو اللوز المتكرر. 
+Mostly affects children between 5–15 years. 
+→ تصيب الأطفال عادة بين عمر5 إلى15 سنة.  
+Linked to malnutrition, overcrowding, and low socioeconomic status. 
+→ ترتبط بسوء التغذية، والاكتظاظ، وانخفاض المستوى المعيشي.
+
+Jones Criteria (معايير جونز للتشخيص) 
+Diagnosis requires: 2 major OR 1 major + 2 minor criteria. 
+→ التشخيص يحتاج إلى معيارين رئيسيين أو معيار رئيسي واحد + معيارين ثانويين. 
+Major Criteria (رئيسية) Minor Criteria (ثانوية) 
+Carditis (التهاب القلب) Fever (الحمى) 
+Arthritis (التهاب المفاصل) Joint pain (ألم المفاصل) 
+Chorea (حركات لا إرادية) Abnormal ECG (تخطيط قلب غير طبيعي) 
+Subcutaneous nodules (عُقيدات تحت
+الجلد) 
+Certain proteins in blood (بروتينات محددة
+بالدم) 
+Erythema marginatum (طفح جلدي مميز) — 
+ 
+    Diagnostic Assessment (التقييم التشخيصي) 
+Positive throat culture for streptococci. 
+→ مزرعة حلق إيجابية للميكروب العقدي. 
+Elevated cardiac enzymes. 
+→ ارتفاع إنزيمات القلب. 
+High CRP and ESR (inflammation markers). 
+→ ارتفاع بروتين CRP ومعدل ESR (علامات الالتهاب.) 
+Increased WBC count. 
+→ زيادة عدد كريات الدم البيضاء. 
+Echocardiogram to check valve damage. 
+→ فحص الإيكو لتقييم تلف صمامات القلب.
+
+Treatment (العلاج) 
+NSAIDs (e.g., Aspirin) for inflammation. 
+→ مضادات الالتهاب (مثل الأسبرين) لتقليل الالتهاب. 
+Antibiotics (Penicillin or Erythromycin). 
+→ مضادات حيوية (بنسلين أو إريثروميسين. 
+Valve replacement if severe damage occurs. 
+→ استبدال الصمام إذا حدث تلف شديد. 
+Anticoagulants if atrial fibrillation present. 
+→ مميعات الدم في حالة وجود رجفان أذيني. 
+ 
+    Nursing Interventions (تدخلات التمريض) 
+Monitor for dyspnea and cough → signs of heart failure. 
+→ راقب ضيق التنفس والسعال الجاف كعلامات فشل القلب. 
+Check for allergy to penicillin. 
+→ التأكد من عدم وجود حساسية تجاه البنسلين. 
+Monitor for signs of infection recurrence: 
+Red sore throat and pain when swallowing. 
+→ التهاب الحلق واحمراره مع ألم عند البلع. 
+Swollen neck lymph nodes. 
+→ تضخم الغدد الليمفاوية بالرقبة. 
+Headache and fever above 37.8°C. 
+→ صداع وارتفاع درجة الحرارة فوق37.8 م°.
+
+Patient Teaching (تثقيف المريض) 
+Explain anticoagulant use and need for regular blood tests. 
+→ شرح أهمية استخدام مميعات الدم ومتابعة التحاليل بانتظام. 
+Avoid contact with people having respiratory infections. 
+→ تجنب الاختلاط بالأشخاص المصابين بعدوى تنفسية. 
+Maintain good dental hygiene. 
+→ الحفاظ على نظافة الفم والأسنان. 
+Report signs of heart failure (shortness of breath, weight gain, cough). 
+→ إبلاغ الطبيب عند ظهور أعراض فشل القلب مثل ضيق النفس أو زيادة الوزن أو السعال. 
+Return to normal activities gradually. 
+→ العودة للنشاطات اليومية بشكل تدريجي. 
+ 
+🫀 Management of Patient with Valvular Heart Disease 
+(إدارة المريض المصاب بأمراض صمامات القلب) 
+ 
+    Definition (التعريف) 
+Valvular heart disease is any dysfunction or abnormality of one or more heart 
+valves — they may become stenotic or regurgitant. 
+→ أمراض صمامات القلب هي أي خلل أو اضطراب في واحد أو أكثر من صمامات القلب، وقد تصبح
+الصمامات ضيقة stenotic) أو غير منغلقة تمامًا regurgitant). 
+Symptoms depend on which valve is affected and how severe the problem is. 
+→ الأعراض تعتمد على الصمام المصاب وشدة الحالة. 
+ 
+    General Symptoms (الأعراض العامة)
+
+Shortness of breath, especially during exertion or lying flat (orthopnea). 
+→ ضيق التنفس خصوصًا أثناء الجهد أو عند الاستلقاء (أورثوبنيا. 
+Fatigue and weakness. 
+→ التعب والضعف العام. 
+Palpitations. 
+→ خفقان القلب. 
+Chest pain or discomfort. 
+→ ألم أو انزعاج في الصدر. 
+Dizziness or fainting (syncope). 
+→ دوخة أو إغماء. 
+Swelling in ankles or abdomen (edema). 
+→ تورم في الكاحلين أو البطن (وذمة. 
+Rapid weight gain due to fluid retention. 
+→ زيادة سريعة في الوزن بسبب احتباس السوائل. 
+ 
+    Risk Factors (عوامل الخطورة) 
+Age > 65 years. → العمر أكبر من65 سنة.  
+History of rheumatic fever. → وجود تاريخ مرضي للحمى الروماتيزمية. 
+Infective endocarditis. → التهاب شغاف القلب البكتيري. 
+High blood pressure. → ارتفاع ضغط الدم. 
+Coronary artery disease. → أمراض الشرايين التاجية. 
+Congenital heart defects. → عيوب خلقية في القلب. 
+Autoimmune disorders. → أمراض مناعية ذاتية.
+
+Radiation to the chest. → التعرض للعلاج الإشعاعي على الصدر. 
+IV drug use (risk of endocarditis). → تعاطي المخدرات عن طريق الوريد. 
+Hyperlipidemia, diabetes, smoking. → ارتفاع الدهون، السكري، التدخين. 
+ 
+    Causes (الأسباب) 
+Congenital causes (since birth). 
+→ أسباب خلقية منذ الولادة. 
+Acquired causes (مكتسبة:) 
+Rheumatic fever (especially mitral valve). 
+→ الحمى الروماتيزمية (خصوصًا الصمام الميترالي. 
+Age-related calcification. 
+→ تكلس ناتج عن التقدم في العمر. 
+Endocarditis (bacterial infection damaging valves). 
+→ التهاب شغاف القلب البكتيري يسبب تلف الصمامات. 
+Ischemic heart disease (IHD). 
+→ مرض القلب الإقفاري. 
+Radiation therapy to chest. 
+→ العلاج الإشعاعي للصدر. 
+Autoimmune diseases (e.g., lupus). 
+→ أمراض مناعية ذاتية مثل الذئبة. 
+Cardiomyopathy. 
+→ اعتلال عضلة القلب. 
+Malformed valves at birth. 
+→ تشوه الصمامات منذ الولادة.
+
+Diagnosis (التشخيص) 
+Physical Examination (الفحص السريري:) 
+Presence of symptoms. → وجود الأعراض. 
+Heart murmurs heard during auscultation. → سماع لغط في القلب عند الفحص بالسماعة. 
+Signs of heart failure or fluid overload. → علامات فشل القلب أو احتباس السوائل. 
+Diagnostic Studies (الفحوصات التشخيصية:) 
+Echocardiogram. → فحص الإيكو لتقييم الصمامات. 
+Electrocardiogram (ECG). → تخطيط القلب الكهربائي. 
+Chest X-ray. → أشعة سينية على الصدر. 
+Cardiac catheterization. → قسطرة القلب لتقييم الضغط والدوران. 
+Cardiac MRI or CT scan. → تصوير القلب بالرنين أو الأشعة المقطعية. 
+ 
+    Prevention (الوقاية) 
+Treat strep throat early. → علاج التهاب الحلق البكتيري مبكرًا . 
+Maintain good dental hygiene. → الحفاظ على نظافة الفم والأسنان (لتقليل خطر التهاب الشغاف. 
+Use prophylactic antibiotics before certain procedures. → استخدام مضادات حيوية وقائية
+قبل بعض الإجراءات (في الحالات عالية الخطورة). 
+Adopt a healthy lifestyle (exercise, diet, no smoking or alcohol). → اتباع أسلوب حياة
+صحي (رياضة، تغذية سليمة، بدون تدخين أو كحول). 
+Control hypertension, diabetes, and cholesterol. → السيطرة على الضغط والسكري
+والكوليسترول.
+
+Regular cardiac checkups. → إجراء فحوصات دورية للقلب خاصة عند وجود تاريخ مرضي. 
+ 
+    Treatment (العلاج) 
+Medical Treatment (العلاج الدوائي:) 
+Diuretics → مدرات البول لتقليل احتباس السوائل. 
+Beta-blockers → أدوية تبطئ نبض القلب وتقلل الحمل عليه. 
+Anticoagulants → مميعات الدم لتقليل خطر الجلطات. 
+Surgical Treatment (العلاج الجراحي:) 
+Valve repair. → إصلاح الصمام. 
+Balloon valvuloplasty. → توسيع الصمام بالبالون. 
+Transcatheter Aortic Valve Replacement (TAVR). → استبدال الصمام الأبهري بالقسطرة. 
+ 
+     Management of Patient with Arteriosclerosis & Atherosclerosis 
+(إدارة المريض المصاب بتصلب أو تضيّق الشرايين) 
+ 
+    Definition (التعريف) 
+Atherosclerosis is a chronic condition characterized by the buildup of fatty deposits 
+(plaques) inside arterial walls. 
+→ تصلب الشرايين هو حالة مزمنة تتصف بتراكم الدهون (اللويحات) داخل جدران الشرايين. 
+This leads to thickening, hardening, and loss of elasticity of arteries — narrowing 
+blood flow and increasing risk of heart disease or stroke. 
+→ مما يؤدي إلى زيادة سماكة الشريان وفقدان مرونته وضيق مجرى الدم، فيسبب أمراض القلب والسكتة الدماغية.
+
+Causes (الأسباب) 
+Modifiable (قابلة للتغيير) Non-modifiable (غير قابلة للتغيير) 
+High cholesterol levels → ارتفاع الكوليسترول Genetic → الوراثة 
+Smoking → التدخين Age → العمر 
+Obesity → السمنة — 
+Sedentary lifestyle → قلة الحركة — 
+Unhealthy diet → النظام الغذائي غير الصحي — 
+Stress → التوتر — 
+Hypertension (HTN) → ارتفاع ضغط الدم — 
+Diabetes mellitus (DM) → السكري — 
+ 
+    Clinical Symptoms (الأعراض الإكلينيكية) 
+• Chest pain (angina) → ألم في الصدر (ذبحة صدرية. 
+• Shortness of breath → ضيق تنفس. 
+• Fatigue and weakness → تعب وضعف عام. 
+• Leg pain during walking (claudication) → ألم في الساقين عند المشي. 
+• Cold or pale extremities → أطراف باردة أو شاحبة. 
+• Delayed wound healing → بطء التئام الجروح. 
+• Possible heart attack or stroke → احتمال حدوث جلطة قلبية أو سكتة دماغية.
+
+Prevention (الوقاية) 
+• Healthy diet (low fat, low cholesterol). 
+→ اتباع نظام غذائي صحي منخفض الدهون والكوليسترول. 
+• Regular exercise (at least 30 min daily). 
+→ ممارسة الرياضة بانتظام لمدة30 دقيقة يوميًا.  
+• Quit smoking. 
+→ الإقلاع عن التدخين. 
+• Maintain healthy weight. 
+→ الحفاظ على وزن صحي. 
+• Control blood pressure & blood glucose. 
+→ ضبط ضغط الدم وسكر الدم. 
+• Manage stress effectively. 
+→ التحكم في التوتر والضغوط النفسية. 
+ 
+    Treatment (العلاج) 
+Medical Treatment (العلاج الدوائي:) 
+• Antihypertensives → أدوية خافضة للضغط. 
+• Antiplatelet agents (e.g., aspirin) → أدوية مانعة لتجلط الدم مثل الأسبرين. 
+• Lipid-lowering drugs (statins) → أدوية لخفض الدهون. 
+• Diabetes management drugs → أدوية تنظيم مستوى السكر في الدم. 
+Surgical Treatment (العلاج الجراحي:)
+
+• Angioplasty with stent placement. 
+→ توسيع الشريان وتركيب دعامة. 
+• Coronary Artery Bypass Grafting (CABG). 
+→ عملية جراحية لتجاوز الانسداد في الشريان التاجي. 
+ 
+    Nursing Diagnosis (تشخيصات التمريض) 
+• Ineffective Tissue Perfusion related to arterial occlusion. 
+→ ضعف تروية الأنسجة نتيجة انسداد الشرايين. 
+• Activity Intolerance related to decreased oxygen supply. 
+→ عدم تحمل النشاط بسبب نقص الأوكسجين في الأنسجة. 
+• Imbalanced Nutrition related to unhealthy eating habits. 
+→ سوء تغذية مرتبط بعادات غذائية غير صحية. 
+• Risk for Ineffective Health Management related to lack of knowledge. 
+→ خطر ضعف إدارة الحالة الصحية بسبب نقص الوعي.

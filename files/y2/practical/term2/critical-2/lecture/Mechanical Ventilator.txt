@@ -1,0 +1,398 @@
+Mechanical Ventilator 
+     Definition 
+     التعريف 
+Mechanical Ventilator is a positive or negative pressure breathing device that can 
+maintain ventilation and oxygen delivery for a prolonged period. 
+جهاز التنفس الصناعي هو جهاز يعمل بضغط موجب أو سالب يساعد على الحفاظ على التهوية وتوصيل الأكسجين
+لفترة طويلة. 
+ 
+Types of Ventilation 
+أنواع التهوية 
+Type Description 
+Invasive Tube inserted into airway (endotracheal or tracheostomy) 
+Non-invasive Mask over nose/mouth (BiPAP , CPAP) 
+النوع الوصف 
+تدخلّي إدخال أنبوب في مجرى الهواء (أنبوب حنجري أو شق حنجري)  
+غير تدخلّي  قناع على الأنف أو الفم  BiPAP , CPAP) 
+ 
+PURPOSES OF MECHANICAL VENTILATION 
+أهداف التنفس الصناعي 
+1. To maintain adequate oxygenation 
+الحفاظ على أكسجة كافية 
+2. To maintain adequate ventilation 
+الحفاظ على تهوية رئوية كافية 
+3. To remove carbon dioxide (CO2) 
+إزالة ثاني أكسيد الكربون 
+4. To prevent respiratory muscle fatigue 
+منع إجهاد عضلات التنفس
+
+5. To support gas exchange 
+دعم تبادل الغازات 
+6. To allow sedation when needed 
+السماح بإعطاء مهدئات عند الحاجة 
+7. To permit lung healing 
+إعطاء فرصة لالتئام الرئة 
+8. To maintain airway patency 
+الحفاظ على مجرى الهواء مفتوحًا 
+9. To prevent aspiration 
+منع الشفط الرئوي 
+ 
+     INDICATIONS (When to Use Mechanical Ventilation) 
+     دواعي الاستخدام 
+Respiratory Failure 
+الفشل التنفسي 
+Hypoxemic Failure: Low oxygen (PaO₂ <60 mmHg on room air) 
+فشل نقص الأكسجين: انخفاض PaO₂ أقل من60 ملم زئبق على هواء الغرفة  
+Hypercapnic Failure: High CO₂ (PaCO₂ >50 mmHg with acidosis) 
+فشل زيادة ثاني أكسيد الكربونPaCO₂ أكبر من50 مع وجود حموضة  
+ 
+Specific Clinical Situations 
+حالات سريرية محددة 
+• Acute respiratory distress syndrome (ARDS) 
+متلازمة الضائقة التنفسية الحادة 
+• Severe pneumonia 
+الالتهاب الرئوي الشديد 
+• Chronic obstructive pulmonary disease (COPD) exacerbation 
+تفاقم مرض الانسداد الرئوي المزمن 
+• Asthma attack (severe) 
+نوبة ربو شديدة
+
+• Pulmonary edema 
+الوذمة الرئوية 
+• Acute lung injury 
+إصابة رئوية حادة 
+ 
+Other Indications 
+أسباب أخرى 
+• Airway Protection: Decreased level of consciousness (GCS <8) 
+حماية مجرى الهواء: انخفاض مستوى الوعي 
+• Trauma: Chest trauma, head injury 
+الإصابات: إصابة صدر أو رأس 
+• Post-Operative: After major surgery requiring sedation 
+بعد العمليات الكبرى 
+• Neuromuscular Disorders: Guillain-Barré syndrome, myasthenia gravis 
+أمراض عصبية عضلية 
+• Cardiac Arrest: Post-resuscitation 
+بعد الإنعاش القلبي 
+• Shock: Severe sepsis or cardiogenic shock 
+الصدمة الشديدة 
+ 
+     MODES OF MECHANICAL VENTILATION 
+     أنماط التنفس الصناعي 
+Volume modes 
+أنماط الحجم 
+Ventilator delivers a SET VOLUME of air with each breath 
+الجهاز يعطي حجم هواء محدد مع كل نفس 
+Volume is guaranteed 
+الحجم مضمون 
+Pressure varies depending on lung resistance 
+الضغط يتغير حسب مقاومة الرئة
+
+Common Volume Modes: 
+• Volume Control (VC) 
+• Assist-Control Volume (AC-VC) 
+• SIMV-Volume 
+ 
+Assist-Control (A/C) or CMV 
+Ventilator delivers a set number of breaths per minute. If patient tries to breathe, 
+ventilator assists with full breath. Every breath receives full tidal volume. 
+يعطي الجهاز عدد أنفاس محدد، وإذا حاول المريض التنفس يدعمه بنفس كامل. 
+When used: Critically ill patients, patients who cannot breathe on their own, 
+immediate post-intubation. 
+يستخدم في المرضى الحرجين أو بعد تركيب الأنبوبة مباشرة. 
+ 
+SIMV 
+Ventilator delivers set number of breaths. Patients can take additional breaths on their 
+own. Synchronizes with patient's breathing. 
+يعطي عدد أنفاس محدد مع السماح بأنفاس إضافية من المريض. 
+When used: Weaning, patients with partial breathing ability. 
+يستخدم في الفطام. 
+ 
+Pressure modes 
+أنماط الضغط 
+Ventilator delivers air at a SET PRESSURE 
+يعطي ضغط ثابت 
+Pressure is guaranteed 
+الضغط مضمون 
+Volume varies depending on lung compliance 
+الحجم يتغير حسب مرونة الرئة
+
+Pressure Control Ventilation 
+Delivers breaths at a SET PRESSURE. Volume varies. 
+يعطي نفس بضغط ثابت والحجم متغير. 
+Used to prevent high airway pressures and protect injured lungs. 
+يستخدم لحماية الرئة من الضغط العالي. 
+ 
+Pressure Support (PS) 
+Patient initiates breaths, ventilator assists. 
+المريض يبدأ النفس والجهاز يساعده. 
+ 
+CPAP 
+Constant positive pressure throughout breathing cycle. 
+ضغط موجب مستمر طوال الدورة التنفسية. 
+ 
+BiPAP 
+Two pressure levels: IPAP (inspiration) and EPAP (expiration). 
+ضغطين: للشهيق وللزفير. 
+ 
+     VENTILATOR PARAMETERS 
+     إعدادات الجهاز 
+Parameter Definition Normal 
+Range Rationale 
+Tidal Volume (VT) Amount of air delivered per 
+breath 6-8 mL/kg Prevent lung injury 
+Respiratory Rate 
+(RR) Number of breaths per minute 12-20 Maintain ventilation 
+FiO₂ Fraction of inspired oxygen 21%-100% Oxygenation
+
+Parameter Definition Normal 
+Range Rationale 
+PEEP Positive pressure end 
+expiration 5-20 cmH₂O Prevent alveolar 
+collapse 
+I:E Ratio Inspiratory/Expiratory ratio 1:2 Normal pattern 
+Pressure Support Extra assist pressure 5-20 cmH₂O Reduce work of 
+breathing 
+PIP Peak inspiratory pressure <35 cmH₂O Prevent barotrauma 
+Sensitivity Trigger sensitivity -1 to -2 Reduce work of 
+breathing 
+ 
+        ETT CARE PROCEDURE 
+        إجراء العناية بأنبوب الحنجرة 
+(كما ورد بالكامل) 
+Step Procedure الترجمة العربية 
+1 Hand Washing غسل اليدين 
+2 Gather Equipment تجهيز المعدات 
+3 Explain Procedure شرح الإجراء 
+4 Position Patient (semi-Fowler's 30-45°) وضع نصف جلوس 
+5 PPE ارتداء معدات الوقاية 
+6 Assess Patient تقييم المريض 
+7 Pre-oxygenate (100% FiO2 for 30-60 sec) إعطاء أكسجين100% لمدة30-60 ثانية  
+8 Suctioning (limit to 10-15 sec) شفط لمدة10-15 ثانية  
+9 Assess Breath Sounds تقييم أصوات التنفس
+
+Step Procedure الترجمة العربية 
+10 Check ETT Position marking فحص علامة الأنبوبة 
+11 Check Cuff Pressure (20-30 cmH2O) قياس ضغط الكفة 
+12 Secure ETT تثبيت الأنبوبة 
+13 Provide Oral Care (chlorhexidine) عناية فموية بالكلورهيكسيدين 
+14 Inspect Skin فحص الجلد 
+15 Reposition ETT to opposite side تغيير موضع الأنبوبة للجانب الآخر 
+16 Reassess Patient إعادة تقييم المريض 
+17 Return FiO2 to Baseline إعادة الأكسجين للوضع الأساسي 
+18 Ensure Comfort التأكد من راحة المريض 
+19 Dispose Equipment التخلص من الأدوات 
+20 Hand Hygiene نظافة اليدين 
+21 Documentation التوثيق 
+ 
+     VENTILATOR ALARMS 
+     إنذارات جهاز التنفس الصناعي 
+ 
+HIGH PRESSURE ALARM (Most Common) 
+إنذار الضغط العالي (الأكثر شيوعًا 
+Causes: Patient coughing or biting tube, secretions in airway, kinked tubing, 
+bronchospasm, decreased lung compliance, water in tubing. 
+الأسباب: كحة المريض أو عض الأنبوبة، إفرازات في مجرى الهواء، التواء في الأنابيب، تشنج شعبي، نقص
+مرونة الرئة، وجود ماء في الأنابيب. 
+Nursing Actions:
+
+1. Assess patient (ABC). 
+قيّم المريض (مجرى الهواء– التنفس – الدورة الدموية).  
+2. Check tube position and patency. 
+افحص مكان الأنبوبة وسلامتها. 
+3. Suction if needed. 
+قم بالشفط إذا لزم الأمر. 
+4. Check tubing for kinks. 
+افحص وجود التواءات. 
+5. Empty water. 
+أفرغ الماء من الدائرة. 
+6. Auscultate lung sounds. 
+استمع لأصوات التنفس. 
+7. Notify provider. 
+أبلغ الطبيب. 
+ 
+LOW PRESSURE ALARM 
+إنذار الضغط المنخفض 
+Causes: Disconnection, cuff leak in ET tube, tubing disconnects. 
+الأسباب: انفصال الدائرة، تسريب في كفة الأنبوبة، فصل الأنابيب. 
+Nursing Actions: 
+1. Check all connections immediately! 
+افحص جميع التوصيلات فورًا ! 
+2. Reconnect tubing. 
+أعد توصيل الأنابيب. 
+3. Check cuff pressure. 
+افحص ضغط الكفة. 
+4. Manually ventilate if needed. 
+قم بالتهوية اليدوية إذا لزم. 
+5. Call for help. 
+اطلب المساعدة.
+
+LOW TIDAL VOLUME ALARM 
+إنذار انخفاض حجم النفس 
+Causes: Air leak, cuff leak, patient not triggering breaths. 
+الأسباب: تسريب هواء، تسريب بالكفة، المريض لا يبدأ النفس. 
+Nursing Actions: 
+Check for disconnections, assess cuff pressure, evaluate respiratory effort. 
+افحص وجود فصل، قيّم ضغط الكفة، قيّم مجهود التنفس. 
+ 
+HIGH RESPIRATORY RATE ALARM 
+إنذار ارتفاع معدل التنفس 
+Causes: Pain or anxiety, hypoxemia, fever, metabolic acidosis, inadequate sedation. 
+الأسباب: ألم أو قلق، نقص أكسجين، حرارة، حموضة أيضية، تهدئة غير كافية. 
+Nursing Actions: 
+Assess patient comfort and oxygenation, check vital signs, address pain, review ABG. 
+قيّم الراحة والأكسجة، افحص العلامات الحيوية، عالج الألم، راجع غازات الدم. 
+ 
+APNEA ALARM 
+إنذار توقف التنفس 
+Causes: Over-sedation, neurological deterioration, ventilator malfunction. 
+الأسباب: تهدئة زائدة، تدهور عصبي، عطل بالجهاز. 
+Nursing Actions: 
+Assess patient immediately!, stimulate patient, manually ventilate if needed, check 
+settings. 
+قيّم المريض فورًا، حفّزه، قم بالتهوية اليدوية إذا لزم، افحص الإعدادات . 
+ 
+FiO₂ ALARM 
+إنذار الأكسجين 
+Causes: Oxygen supply disconnected, oxygen tank empty. 
+الأسباب: فصل مصدر الأكسجين، انتهاء الأسطوانة.
+
+Nursing Actions: 
+Check source, verify connections, replace tank. 
+افحص المصدر، تأكد من التوصيلات، غيّر الأسطوانة. 
+ 
+AIRWAY MANAGEMENT (Ongoing) 
+إدارة مجرى الهواء (مستمرة 
+Verify ET tube position. 
+التأكد من مكان الأنبوبة. 
+Check tube marking at lip/teeth. 
+فحص العلامة عند الشفة أو الأسنان. 
+Secure ET tube properly. 
+تثبيت الأنبوبة جيدًا. 
+Check cuff pressure (20–30 cm H₂O). 
+قياس ضغط الكفة 20–30). 
+Oral care with chlorhexidine. 
+عناية فموية بالكلورهيكسيدين. 
+Suction only when needed. 
+الشفط عند الحاجة فقط. 
+Reposition ET tube daily. 
+تغيير موضع الأنبوبة يوميًا. 
+ 
+EMERGENCY PREPAREDNESS (Always Ready) 
+الاستعداد للطوارئ 
+Emergency Immediate Nursing Action الترجمة العربية 
+Accidental 
+extubation 
+Call for help, manually ventilate, 
+prepare for re-intubation 
+اطلب المساعدة، تهوية يدوية،
+التحضير لإعادة تركيب الأنبوبة  
+Ventilator 
+malfunction 
+Disconnect, manually ventilate, call 
+for backup 
+افصل الجهاز، تهوية يدوية، اطلب
+دعم
+
+Emergency Immediate Nursing Action الترجمة العربية 
+Cardiac arrest Disconnect, begin CPR, manually 
+ventilate 
+افصل الجهاز، ابدأ الإنعاش، تهوية
+يدوية 
+Severe 
+desaturation 
+Increase FiO₂ to 100%, suction, 
+assess tube position 
+ارفع الأكسجين100%، شفط، قيّم
+مكان الأنبوبة 
+Tension 
+pneumothorax 
+Notify provider STAT, prepare for 
+chest tube 
+أبلغ الطبيب فورًا، حضّر لأنبوبة 
+صدر  
+ 
+WEANING ASSESSMENT (Daily) 
+تقييم الفطام يوميًا 
+Underlying cause improved. 
+تحسن السبب الأساسي. 
+SpO₂ >90% on FiO₂ ≤40% and PEEP ≤5–8. 
+أكسجة جيدة على إعدادات منخفضة. 
+Hemodynamically stable. 
+استقرار الدورة الدموية. 
+Able to protect airway. 
+قادر على حماية مجرى الهواء. 
+Alert and cooperative. 
+واعي ومتعاون. 
+Negative inspiratory force > -20 cm H₂O. 
+قوة شهيق مناسبة. 
+Successful spontaneous breathing trial. 
+نجاح اختبار التنفس التلقائي. 
+ 
+Weaning Failure – STOP WEANING If You See: 
+فشل الفطام– أوقف الفطام إذا لاحظت:  
+RR >35 or <8 
+معدل تنفس غير طبيعي
+
+SpO₂ <90% 
+نقص أكسجين 
+HR >140 or BP abnormal 
+اضطراب نبض أو ضغط 
+Confusion or agitation 
+ارتباك أو هياج 
+ 
+Complications of Mechanical Ventilation 
+مضاعفات التنفس الصناعي 
+VAP: HOB elevation, oral care. 
+التهاب رئوي مرتبط بالجهاز: رفع الرأس + عناية فموية. 
+Pressure ulcers: Turn every 2 hours. 
+قرح ضغط: تقليب كل ساعتين. 
+DVT/PE: Sequential compression devices, anticoagulation. 
+جلطات: أجهزة ضغط + مضادات تخثر. 
+Stress ulcers: H2 blockers, PPIs. 
+قرحة إجهاد: أدوية واقية للمعدة. 
+Muscle weakness: Early mobility. 
+ضعف عضلي: تحريك مبكر. 
+Barotrauma: Monitor airway pressures. 
+إصابة ضغطية: مراقبة ضغط مجرى الهواء. 
+ 
+Equipment 
+المعدات 
+1. Mechanical Ventilator – جهاز التنفس 
+2. Endotracheal Tube – أنبوب حنجري 
+3. Tracheostomy Tube – أنبوب شق حنجري 
+4. Laryngoscope – منظار حنجري 
+5. Stylet – سلك داعم
+
+6. Water Trap – حجرة تجميع الماء 
+7. Filter – فلتر بكتيري 
+8. Oxygen Supply – مصدر أكسجين 
+9. Medical Air – هواء مضغوط 
+10. Flowmeter – منظم تدفق 
+11. Heated Humidifier – جهاز ترطيب 
+12. Sterile Water – ماء معقم 
+13. Pulse Oximeter – جهاز قياس الأكسجين 
+14. Ambu Bag – كيس إنعاش يدوي 
+15. Syringe – حقنة لنفخ الكفة 
+ 
+Routine Nursing Care & Daily Checks 
+الرعاية التمريضية اليومية 
+Auscultate lung sounds. 
+استمع لأصوات الرئة. 
+Monitor vital signs. 
+راقب العلامات الحيوية. 
+Assess consciousness. 
+قيّم مستوى الوعي. 
+Monitor SpO₂ continuously. 
+راقب الأكسجين باستمرار. 
+Verify ventilator settings daily. 
+تأكد من إعدادات الجهاز يوميًا. 
+Inspect circuit for leaks or kinks. 
+افحص الدائرة لوجود تسريب أو التواء. 
+Change circuit every 7 days. 
+تغيير الدائرة كل7  أيام.
+
+Use sterile water only in humidifier. 
+استخدم ماء معقم فقط. 
+   
+Mechanical ventilation

@@ -1,0 +1,208 @@
+Management of Patient with Deep Venous Thrombosis (DVT) 
+إدارة مريض الجلطة الوريدية العميقة 
+Outlines 
+Introduction – المقدمة 
+Pathophysiology – آلية المرض 
+Risk factors – عوامل الخطورة 
+Clinical manifestation – الأعراض 
+Complications – المضاعفات 
+Diagnosis – التشخيص 
+Medical management – العلاج الطبي 
+Surgical management – العلاج الجراحي 
+Nursing management – التمريض 
+ 
+Introduction 
+Deep vein thrombosis (DVT) is an obstructive disease hindering venous reflux 
+mechanism. 
+الجلطة الوريدية العميقة مرض انسدادي يعيق رجوع الدم الوريدي. 
+It usually affects the lower limb venous system. 
+غالبًا تصيب أوردة الأطراف السفلية. 
+Clot formation starts in deep calf veins and propagates proximally. 
+تبدأ الجلطة في أوردة الساق العميقة وتمتد لأعلى. 
+ 
+Definition 
+DVT is the development of thrombosis within deep veins of the pelvis or lower 
+limbs. 
+الجلطة الوريدية العميقة هي تكوّن جلطة داخل الأوردة العميقة بالحوض أو الساقين . 
+Thrombophlebitis: inflammation of vein wall. 
+التهاب الوريد المصحوب بجلطة. 
+Phlebothrombosis: clot formation without inflammation. 
+تكوّن جلطة بدون التهاب بالوريد .
+
+Risk Factors (Virchow’s Triad) 
+1. Endothelial Damage 
+Trauma 
+إصابة 
+Surgery 
+جراحة 
+Pacing wires 
+أسلاك تنظيم ضربات القلب 
+Central venous catheter 
+قسطرة وريدية مركزية 
+Dialysis access catheter 
+قسطرة غسيل كلوي 
+Local vein damage 
+تلف موضعي بالوريد 
+Repetitive motion injury 
+حركات متكررة 
+ 
+2. Venous Stasis 
+Bed rest or immobilization 
+راحة طويلة أو عدم حركة 
+Obesity 
+السمنة 
+History of varicosities 
+تاريخ مرضي للدوالي 
+Spinal cord injury 
+إصابة الحبل الشوكي 
+Age > 65 years 
+كبار السن 
+ 
+3. Altered Coagulation
+
+Cancer 
+السرطان 
+Pregnancy 
+الحمل 
+Oral contraceptives 
+حبوب منع الحمل 
+Hyperhomocysteinemia 
+ارتفاع الهوموسيستين 
+Elevated clotting factors 
+زيادة عوامل التجلط 
+Antithrombin III deficiency 
+نقص مضاد الثرومبين 
+Polycythemia 
+كثرة كرات الدم 
+Septicemia 
+تسمم دم 
+ 
+Clinical Manifestations 
+Symptoms vary and may be symptomatic or asymptomatic. 
+الأعراض قد تكون ظاهرة أو بدون أعراض. 
+Edema of the affected extremity is a common symptom. 
+تورم الطرف المصاب عرض شائع. 
+Pain: aching discomfort aggravated by exercise. 
+ألم بالساق يزيد مع الحركة. 
+Dilated superficial veins 
+توسع الأوردة السطحية 
+Redness or bluish discoloration 
+احمرار أو تغير لون الجلد 
+Warmth of the area 
+سخونة بالمنطقة
+
+Calf tenderness (important sign) 
+ألم عند الضغط على الساق 
+Feeling of tightness or heaviness 
+إحساس بالشد أو الثقل 
+Functional impairment 
+صعوبة الحركة 
+ 
+Complications 
+1. Pulmonary Embolism (PE) 
+أخطر وأهم مضاعفات الجلطة الوريدية. 
+Chest pain, dyspnea, cough 
+ألم صدر، ضيق نفس، كحة 
+May cause shock and death 
+قد يؤدي لصدمة ووفاة 
+May occur without DVT symptoms 
+قد يحدث بدون أعراض سابقة 
+Nurse must assess cardiopulmonary and neurological signs continuously. 
+يجب على الممرضة متابعة العلامات العصبية والقلبية باستمرار. 
+ 
+2. Recurrent DVT 
+تكرار الجلطة خلال سنة بسبب تلف الأوعية. 
+3. Post-thrombotic syndrome 
+ألم–  تورم – دوالي –  قرح.  
+4. Chronic venous insufficiency 
+فشل وريدي مزمن بسبب تلف صمامات الأوردة. 
+ 
+Diagnosis 
+Coagulation profile (PT, APTT) 
+تحاليل التجلط
+
+D-dimer 
+تحليل دي دايمر 
+Venous ultrasonography 
+موجات صوتية 
+Duplex Doppler 
+دوبلر 
+MRI 
+رنين مغناطيسي 
+Venography 
+صبغة وريدية 
+CT venography 
+أشعة مقطعية 
+ 
+Prevention 
+Elastic compression stockings 
+شرابات ضاغطة 
+Pneumatic compression devices 
+أجهزة ضغط هوائي 
+Positioning & exercises 
+وضعيات وتمارين 
+Heparin (UFH / LMWH) 
+الهيبارين 
+ 
+Goals of DVT Management 
+Prevent clot growth 
+منع زيادة حجم الجلطة 
+Prevent embolization 
+منع انتقالها للرئة 
+Prevent long-term complications 
+منع المضاعفات
+
+Prevent recurrence 
+منع التكرار 
+ 
+Medical Management 
+Anticoagulants (Blood thinners) 
+مضادات التجلط. 
+Heparin 
+الهيبارين 
+Warfarin (Coumadin) 
+الوارفارين 
+Thrombolytic therapy 
+إذابة الجلطة في الحالات الشديدة. 
+ 
+Surgical Management 
+Venous thrombectomy 
+إزالة الجلطة جراحيًا 
+Catheter-directed thrombolysis 
+إذابة الجلطة بالقسطرة 
+Inferior vena cava filter 
+فلتر الوريد الأجوف السفلي 
+ 
+Nursing Management 
+Elevation and Compression 
+رفع الطرف المصاب + شرابات ضاغطة. 
+Anticoagulant Therapy 
+متابعة PT, PTT, Hb, Platelets, Fibrinogen. 
+Observe for Bleeding 
+ملاحظة أي نزيف وإبلاغ الطبيب فورًا . 
+Providing Comfort
+
+Bed rest 
+راحة 
+Elevation 
+رفع الطرف 
+Analgesics 
+مسكنات 
+Warm moist packs 
+كمادات دافئة 
+Mobility 
+Walking preferred 
+المشي أفضل 
+Avoid long standing or sitting 
+تجنب الجلوس أو الوقوف الطويل 
+ 
+Monitoring Complications 
+Bleeding 
+نزيف. 
+Thrombocytopenia 
+نقص الصفائح بسبب الهيبارين. 
+Drug interactions 
+Increase effect: aspirin, vitamin E, green tea 
+تزيد تأثير الوارفارين 
+Decrease effect: vitamin C, estrogen 
+تقلل التأثير

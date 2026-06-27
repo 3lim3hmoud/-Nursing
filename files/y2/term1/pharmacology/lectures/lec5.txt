@@ -1,0 +1,87 @@
+Combined Effects of Drugs
+• A combination of two or more drugs can result in an increase
+or a decrease in response.
+• Increased response:
+1. Additive effect
+2. Potentiation (supra-additive)
+3. Synergism
+
+1. Additive Effect 
+The combined effect of two or more drugs is equal to the sum
+of their individual effect.
+Effect of drugs A + B = Effect of drug A + Effect of drug B 
+(1+1=2)
+For example, ibuprofen and paracetamol as analgesic.
+
+2. Potentiation (supra-additive)
+The enhancement of action of one drug by another drug that is inactive
+is called potentiation.
+Effect of drugs A + B > Effect of drug A + Effect of drug B 
+(1+1 > 2)
+For example, levodopa + carbidopa
+Carbidopa inhibits the breakdown of levodopa; thus, enhancing its
+effects.
+
+• When two or more drugs are administered 
+simultaneously, their combined effect is greater than that 
+elicited by either drug alone.
+• For example, 
+sulphamethoxazole + trimethoprim
+3. Synergism
+
+Decreased response (Drug Antagonism)
+• In antagonism, the effect of one drug is decreased or 
+abolished in the presence of another drug.
+1. Physical antagonism: 
+The opposing action of the two drugs is due to their physical 
+property, e.g., activated charcoal adsorbs toxic substances in 
+poisoning.
+
+2. Chemical antagonism:
+The opposing action of the two drugs is due to their chemical 
+property,
+ e.g., antacids are weak bases that neutralize gastric acid; 
+Chelating agents are complex metals and are useful in heavy 
+metal poisoning.
+
+3. Physiological (functional) antagonism: 
+• Here, two drugs act at different receptors or by different mechanisms on 
+the same physiological system and produce opposite effects.
+•  For example,
+✓ insulin and glucagon on blood sugar, 
+✓adrenaline, and histamine on bronchial smooth muscle.
+✓histamine produces bronchoconstriction (via histamine receptors), 
+whereas adrenaline produces bronchodilatation by acting through 
+adrenergic
+ (2) receptors—hence adrenaline helps to reverse bronchospasm in 
+anaphylactic shock.
+
+4. Receptor Antagonism 
+The antagonist binds to the same receptor as the agonist and 
+inhibits its effects. 
+It can be competitive or non-competitive
+
+a. Competitive Antagonism (equilibrium type):
+• In competitive antagonism, both agonist and 
+the antagonist bind reversibly to the same site 
+on the receptor. 
+• This type of antagonism can be overcome 
+(reversible) by increasing the concentration of 
+agonist. 
+• The log dose-response curve of the agonist 
+shows a rightward parallel shift in the presence 
+of a competitive antagonist
+
+Competitive antagonism
+• The log dose-response curve of the 
+agonist shows a rightward parallel 
+shift in the presence of a competitive 
+antagonist
+
+b. Noncompetitive antagonism:
+• The antagonist binds to a different site on the receptor and prevents 
+the agonist from interacting with the receptor.
+•  In this type, the antagonistic effect cannot be overcome by 
+increasing the concentration of the agonist. 
+• There is a flattening of the dose-response curve (DRC) in 
+noncompetitive antagonism, e.g. diazepam and bicuculline

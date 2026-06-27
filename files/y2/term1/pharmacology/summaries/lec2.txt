@@ -1,0 +1,110 @@
+Pharmacodynamics and Drug Interactions – Simplified Essay Questions 
+الديناميكية الدوائية وتفاعلات الأدوية– أسئلة مقالية مبسطة  
+ 
+1. Define Pharmacodynamics and Types of Drug Action 
+1. تعريف علم الديناميكية الدوائية وأنواع عمل الدواء 
+Pharmacodynamics means what the drug does to the body. 
+علم الديناميكية الدوائية يعني ما يفعله الدواء بالجسم. 
+Main types: 
+الأنواع الرئيسية: 
+• Stimulation: e.g., Adrenaline stimulates the heart. 
+التحفيز: مثل الأدرينالين الذي يحفز القلب. 
+• Depression: e.g., Barbiturates depress the brain. 
+التثبيط: مثل الباربيتورات التي تثبط الدماغ. 
+• Irritation: e.g., Skin irritants increase blood flow. 
+التهيج: مثل المهيجات الجلدية التي تزيد تدفق الدم. 
+• Replacement: e.g., Insulin replaces the missing hormone. 
+التعويض: مثل الإنسولين الذي يعوض الهرمون المفقود. 
+• Cytotoxic: e.g., Antibiotics kill bacteria. 
+العمل السام للخلايا: مثل المضادات الحيوية التي تقتل البكتيريا. 
+ 
+2. Nonreceptor-Mediated Mechanisms 
+2. الآليات غير المرتبطة بالمستقبلات 
+Drugs can act without binding to receptors. 
+يمكن أن تعمل الأدوية دون ارتباط بالمستقبلات. 
+Types: 
+الأنواع: 
+• Physical action: e.g., Activated charcoal adsorbs toxins. 
+العمل الفيزيائي: مثل الفحم النشط الذي يمتص السموم. 
+• Chemical action: e.g., Antacids neutralize stomach acid. 
+العمل الكيميائي: مثل مضادات الحموضة التي تعادل حمض المعدة.
+
+• Enzyme action: e.g., Allopurinol inhibits xanthine oxidase. 
+عن طريق الإنزيمات: مثل الألوبورينول الذي يثبط إنزيم الزانثين أوكسيداز. 
+ 
+3. Drugs Acting on Receptors 
+3. الأدوية التي تعمل على المستقبلات 
+• Agonist: Binds and activates the receptor. 
+المنشط: يرتبط بالمستقبل ويُفعّله. 
+• Partial agonist: Produces weaker response. 
+المنشط الجزئي: ينتج استجابة أضعف. 
+• Antagonist: Binds but blocks the receptor. 
+المضاد: يرتبط بالمستقبل ويمنع تنشيطه. 
+• Inverse agonist: Produces the opposite effect. 
+المنشط العكسي: يُحدث تأثيرًا معاكسًا للمنشط . 
+ 
+4. Four Main Receptor Types 
+4. الأنواع الأربعة الرئيسية للمستقبلات 
+1. Ion channel receptors: e.g., GABA receptor. 
+قنوات الأيونات: مثل مستقبل GABA. 
+2. G-protein coupled receptors: e.g., Adrenaline receptor. 
+المستقبلات المقترنة بالبروتين G: مثل مستقبل الأدرينالين. 
+3. Enzyme-linked receptors: e.g., Insulin receptor. 
+المستقبلات المرتبطة بالإنزيمات: مثل مستقبل الإنسولين. 
+4. Nuclear receptors: Control gene expression. 
+المستقبلات النووية: تتحكم في التعبير الجيني. 
+ 
+5. Receptor Regulation 
+5. تنظيم المستقبلات 
+• Up-regulation: Receptor number increases after less stimulation. 
+الزيادة في التنظيم: يزداد عدد المستقبلات عند قلة التحفيز.
+
+Example: After long use of beta-blockers. 
+مثال: بعد الاستخدام الطويل لحاصرات بيتا. 
+• Down-regulation: Receptors decrease after continuous stimulation. 
+النقص في التنظيم: يقل عدد المستقبلات عند التحفيز المستمر. 
+Example: Insulin resistance. 
+مثال: مقاومة الإنسولين. 
+ 
+6. Increased Drug Response 
+6. زيادة استجابة الأدوية 
+• Additive effect (1+1=2): Both drugs add together. 
+التأثير الإضافي: مجموع التأثيرين يساوي الناتج 1+1=2). 
+Example: Paracetamol + Ibuprofen. 
+مثال: الباراسيتامول مع الإيبوبروفين. 
+• Potentiation (1+1>2): One drug enhances another. 
+التعزيز: دواء يقوي تأثير الآخر (1+1 >2). 
+Example: Levodopa + Carbidopa. 
+مثال: الليفودوبا مع الكاربيدوبا. 
+• Synergism: Both drugs give stronger combined effect. 
+التآزر: الدواءان يعطيان تأثيرًا أقوى معًا . 
+ 
+7. Drug Antagonism (Opposite Effect) 
+7. تضاد الأدوية (تأثير معاكس 
+• Physical: Activated charcoal removes toxins. 
+الفيزيائي: الفحم النشط يزيل السموم. 
+• Chemical: Antacids neutralize acid. 
+الكيميائي: مضادات الحموضة تعادل الحمض. 
+• Physiological: Insulin lowers glucose; glucagon raises it. 
+الفسيولوجي: الإنسولين يقلل الجلوكوز، والجلوكاجون يرفعه. 
+• Receptor: One drug blocks another at receptor site. 
+المستقبلي: دواء يمنع تأثير الآخر عند المستقبل.
+
+8. Competitive vs. Non-Competitive Antagonism 
+8. التضاد التنافسي وغير التنافسي 
+Competitive: 
+التنافسي: 
+• Same site as agonist. 
+نفس موقع المنشط. 
+• Reversible; overcome by more agonist. 
+قابل للعكس ويمكن التغلب عليه بزيادة المنشط. 
+• Shifts curve right. 
+يحرك منحنى الاستجابة إلى اليمين. 
+Non-Competitive: 
+غير التنافسي: 
+• Different site. 
+موقع مختلف. 
+• Irreversible; cannot be overcome. 
+غير قابل للعكس ولا يمكن التغلب عليه. 
+• Lowers maximum response. 
+يقلل أقصى استجابة ممكنة.

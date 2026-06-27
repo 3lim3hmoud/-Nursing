@@ -1,0 +1,141 @@
+Healing and Repair (الالتئام والإصلاح) 
+ 
+       Objectives (الأهداف) 
+1. Define repair or healing. 
+تحديد معنى الالتئام أو الإصلاح. 
+2. Differentiate between regeneration and scar formation. 
+التمييز بين التجدد وتكوّن الندبة . 
+3. Identify the types of tissue. 
+التعرف على أنواع الأنسجة. 
+4. Explain the mechanisms of tissue repair. 
+شرح آليات إصلاح الأنسجة. 
+ 
+         Definitions (التعاريف) 
+Repair (Healing): Restoration of tissue structure and function after injury. 
+الإصلاح أو الالتئام هو استعادة تركيب ووظيفة النسيج بعد الإصابة. 
+Regeneration: Replacement of damaged cells with new identical cells (if cells can 
+divide). 
+التجدد هو استبدال الخلايا التالفة بخلايا جديدة من نفس النوع (إذا كانت قادرة على الانقسام. 
+Scarring: Formation of fibrous tissue when cells cannot regenerate or injury is severe. 
+تكوين نسيج ليفي (ندبة) عندما لا تستطيع الخلايا الانقسام أو تكون الإصابة شديدة. 
+ 
+     Repair and Regeneration (الإصلاح والتجدد) 
+Classification of Cells by Regenerative Power (تصنيف الخلايا حسب قدرتها على التجدد) 
+1. Labile cells (الخلايا المتغيرة:)
+
+• Continuously divide and replace old cells. 
+تنقسم باستمرار لتجديد الخلايا القديمة. 
+• Rapid regeneration. 
+تتجدد بسرعة. 
+• Example: Skin (epidermis) and mucous membranes. 
+مثال: الجلد والأغشية المخاطية. 
+2. Stable cells (الخلايا الثابتة:) 
+• Do not divide normally, but can regenerate when needed. 
+لا تنقسم عادة إلا عند الحاجة. 
+• Small injury → regeneration, Large injury → fibrosis (scar). 
+إصابة بسيطة → تجدد، إصابة كبيرة → تليف أو ندبة. 
+• Example: Liver, kidney. 
+مثال: الكبد والكلى. 
+3. Permanent cells (الخلايا الدائمة:) 
+• Cannot divide or regenerate. 
+لا يمكنها الانقسام أو التجدد. 
+• Example: Neurons, cardiac muscle cells. 
+مثال: الخلايا العصبية وخلايا عضلة القلب. 
+ 
+     Epithelial Regeneration (تجدد النسيج الطلائي) 
+Epithelial cells at the wound edges grow toward the center and cover the defect, 
+forming a new basement membrane. 
+الخلايا الطلائية على حواف الجرح تنمو نحو المركز لتغطي المنطقة التالفة، وتكوّن غشاءً قاعديًا جديدًا .
+
+Fibrous Repair (الإصلاح الليفي) 
+Definition: Formation of fibrous tissue (scar) to replace damaged tissue. 
+هو تكوين نسيج ليفي (ندبة) ليحل محل النسيج المتضرر. 
+Mechanisms of Fibrous Repair (آليات الإصلاح الليفي:) 
+1. Angiogenesis: Formation of new blood vessels. 
+تكوين أوعية دموية جديدة. 
+2. Fibrogenesis: Fibroblasts multiply and secrete collagen. 
+تكاثر الأرومات الليفية وإفراز الكولاجين. 
+3. Maturation and Remodeling: Collagen strengthens and tissue shrinks. 
+نضوج وإعادة تشكيل الأنسجة ليزداد صلابتها وتنكمش. 
+Steps of Fibrous Tissue Repair (خطوات الإصلاح الليفي:) 
+1. Blood clot forms. 
+يتكوّن جلطة دموية . 
+2. Neutrophils clean debris. 
+العدلات تنظف بقايا الأنسجة. 
+3. Macrophages and lymphocytes arrive. 
+تصل البلاعم والخلايا اللمفاوية. 
+4. New vessels and fibroblasts form. 
+تتكون أوعية جديدة وأرومات ليفية. 
+5. Collagen synthesis increases; inflammation decreases. 
+يزداد إنتاج الكولاجين ويقل الالتهاب. 
+6. Scar matures and remodels. 
+تنضج الندبة وتُعاد هيكلتها.
+
+Skin Wounds (جروح الجلد) 
+Healing by Primary Intention (الالتئام بالنية الأولى:) 
+Occurs in clean, small wounds with close edges (like surgical wounds). 
+يحدث في الجروح الصغيرة والنظيفة ذات الحواف المتقاربة (مثل الجروح الجراحية. 
+Healing by Secondary Intention (الالتئام بالنية الثانية:) 
+Occurs in large or infected wounds, healing is slower with scar formation. 
+يحدث في الجروح الكبيرة أو الملوثة ويكون الالتئام أبطأ مع تكوين ندبة. 
+ 
+       Factors Influencing Wound Healing (العوامل المؤثرة في التئام الجروح) 
+Local Factors (عوامل موضعية:) 
+• Type, size, and site of wound. 
+نوع وحجم ومكان الجرح. 
+• Movement or poor alignment. 
+الحركة الزائدة أو سوء التحام الحواف. 
+• Infection (e.g., gangrene, tetanus). 
+العدوى (مثل الغرغرينا والتيتانوس. 
+• Bleeding (secondary hemorrhage). 
+النزيف الثانوي. 
+• Poor blood supply. 
+ضعف التروية الدموية. 
+• Foreign bodies (dirt, glass, sutures). 
+وجود أجسام غريبة مثل الأوساخ أو الخيوط. 
+• Radiation injury. 
+تلف ناتج عن الإشعاع.
+
+General Factors (عوامل عامة:) 
+• Age and general health. 
+العمر والحالة الصحية العامة. 
+• Chronic diseases (e.g., diabetes, rheumatoid arthritis). 
+الأمراض المزمنة مثل السكري والتهاب المفاصل. 
+• Drugs (especially steroids). 
+الأدوية وخاصة الكورتيزون. 
+• Cardiovascular condition. 
+حالة القلب والدورة الدموية. 
+• Poor nutrition (lack of protein, vitamin C, amino acids). 
+سوء التغذية (نقص البروتين، فيتامين C، والأحماض الأمينية الكبريتية.) 
+ 
+     Complications of Repair (مضاعفات الالتئام) 
+1. Insufficient Fibrosis (نقص التليف:) 
+• Ulcer formation (قرحة.) 
+تكوّن قرحة . 
+• Sinus or fistula formation. 
+تكوّن قناة أو ناسور . 
+2. Excessive Fibrosis (زيادة التليف:) 
+• Keloid or hypertrophic scar (تشوه تجميلي.) 
+تكوّن ندبة بارزة أو كيلودية . 
+3. Excessive Contraction (انكماش مفرط:) 
+• Limits joint movement (contracture). 
+يقلل حركة المفاصل (تقلص.
+
+• Causes narrowing in tubes (strictures). 
+يسبب ضيقًا في القنوات. 
+ 
+      Specific Complications (مضاعفات خاصة) 
+Chronic Ulcer (قرحة مزمنة:) 
+Poor healing due to persistent infection or excess collagen at edges. 
+تلتئم بشكل غير كامل بسبب العدوى المستمرة أو تراكم الكولاجين الزائد. 
+Keloid (الندبة المتضخمة:) 
+Overgrowth of fibrous tissue forming a raised scar, common in dark skin. 
+نمو زائد للأنسجة الليفية مسببًا ندبة مرتفعة، شائع لدى ذوي البشرة السمراء. 
+May recur after surgery; treated with radiation. 
+قد تعود بعد الجراحة وتُعالج بالإشعاع. 
+Contracture (تقلص:) 
+Occurs after major burns; limits movement. 
+يحدث بعد الحروق الكبيرة ويحد من الحركة. 
+Epidermal (Implantation) Cyst (كيس البشرة:) 
+A cyst filled with keratin, formed from trapped epithelial cells during healing. 
+كيس مملوء بالكيراتين ناتج عن انحصار خلايا البشرة أثناء الالتئام.

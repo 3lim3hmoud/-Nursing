@@ -1,0 +1,216 @@
+Pulmonary Embolism (PE) 
+ 
+Outlines 
+Anatomy of pulmonary arteries 
+تشريح الشرايين الرئوية 
+Description 
+التعريف 
+Etiology 
+الأسباب 
+Pathophysiology 
+الفيزيولوجيا المرضية 
+Assessment and Diagnosis 
+التقييم والتشخيص 
+Medical Management 
+العلاج الطبي 
+Nursing Intervention 
+التدخلات التمريضية 
+ 
+Anatomy of Pulmonary Arteries 
+تشريح الشرايين الرئوية 
+Main pulmonary artery (Pulmonary trunk): 
+A short, wide vessel that originates from the right ventricle of the heart. 
+شريان قصير وعريض يخرج من البطين الأيمن للقلب. 
+It is one of the great vessels of the heart. 
+ويُعد من الأوعية الدموية الكبرى في القلب. 
+ 
+Right and left pulmonary arteries: 
+The main pulmonary artery divides into right and left branches. 
+ينقسم الشريان الرئوي الرئيسي إلى فرعين: أيمن وأيسر.
+
+Each branch carries blood to its corresponding lung. 
+كل فرع ينقل الدم إلى الرئة الخاصة به. 
+ 
+Smaller branches: 
+Inside the lungs, arteries divide into lobar, segmental, and subsegmental branches. 
+داخل الرئتين تنقسم الشرايين إلى فروع فصّية ثم قطعية ثم فروع أصغر. 
+ 
+Capillary network: 
+Arterioles end in capillaries surrounding the alveoli where gas exchange occurs. 
+تنتهي الشُرينات بشعيرات دموية تحيط بالحويصلات الهوائية حيث يتم تبادل الغازات. 
+ 
+Description 
+التعريف 
+Pulmonary embolism occurs when a clot or other material blocks a pulmonary artery. 
+الانصمام الرئوي يحدث عندما تسد جلطة أو مادة أخرى أحد الشرايين الرئوية. 
+Most thrombotic emboli originate from deep veins of the legs. 
+أغلب الجلطات تأتي من الأوردة العميقة في الساقين. 
+Non-thrombotic emboli may include fat, air, tumors, or amniotic fluid. 
+الانصمامات غير الجلطية قد تكون دهون أو هواء أو أورام أو سائل أمنيوسي. 
+ 
+Etiology 
+الأسباب 
+Pulmonary embolism develops due to predisposing factors and triggering conditions. 
+يحدث الانصمام الرئوي نتيجة عوامل مهيئة وظروف مُحفِّّزة. 
+ 
+Virchow’s Triad 
+Hypercoagulability 
+زيادة قابلية الدم للتجلط 
+Endothelial injury 
+إصابة بطانة الأوعية الدموية
+
+Venous stasis 
+ركود الدم في الأوردة 
+ 
+Causes of Venous Stasis 
+Atrial fibrillation – Immobility – Atherosclerosis – Polycythemia 
+الرجفان الأذيني–  عدم الحركة  – تصلب الشرايين – زيادة كرات الدم  
+ 
+Precipitating Conditions 
+Cardiovascular disease: heart failure, cardiomyopathy 
+أمراض القلب: فشل القلب، اعتلال عضلة القلب 
+Surgery: orthopedic, vascular, abdominal 
+الجراحات: العظام، الأوعية الدموية، البطن 
+Cancer: ovarian, pancreatic, gastric 
+السرطانات: المبيض، البنكرياس، المعدة 
+Trauma: pelvis, hip, lower limbs 
+الإصابات: الحوض، الفخذ، الأطراف السفلية 
+Gynecologic status: pregnancy, postpartum, OCPs 
+الحالة النسائية: الحمل، ما بعد الولادة، حبوب منع الحمل 
+ 
+Pathophysiology 
+الفيزيولوجيا المرضية 
+Massive PE blocks more than 40% of pulmonary circulation. 
+الانصمام الرئوي الضخم يسد أكثر من40% من الدورة الدموية الرئوية.  
+This causes pulmonary and hemodynamic effects. 
+وينتج عنه تأثيرات رئوية ودورانية. 
+ 
+Pulmonary Effects 
+Increased dead space 
+زيادة المساحة الميتة
+
+Bronchoconstriction 
+تضيق الشعب الهوائية 
+Compensatory shunting 
+تحويل دم تعويضي 
+ 
+Increased Dead Space 
+Ventilation occurs without perfusion, causing wasted ventilation. 
+يصل الهواء بدون دم، فيحدث تهوية غير فعالة. 
+This increases work of breathing. 
+ويزيد من مجهود التنفس. 
+ 
+Bronchoconstriction 
+Occurs due to hypoxia, hypocarbia, and chemical mediators. 
+يحدث بسبب نقص الأكسجين ونقص ثاني أكسيد الكربون ومواد كيميائية. 
+It increases airway resistance. 
+ويزيد مقاومة مجرى الهواء. 
+ 
+Compensatory Shunting 
+Blood bypasses gas exchange areas leading to hypoxemia. 
+يمر الدم بدون تبادل غازات مما يؤدي إلى نقص الأكسجين. 
+ 
+Hemodynamic Consequences 
+Pulmonary hypertension develops due to obstruction. 
+يحدث ارتفاع ضغط الشريان الرئوي بسبب الانسداد. 
+Right ventricular failure may occur, reducing cardiac output. 
+قد يحدث فشل البطين الأيمن ويقل النتاج القلبي. 
+ 
+Assessment and Diagnosis 
+التقييم والتشخيص
+
+Signs and Symptoms: 
+Tachycardia, tachypnea, dyspnea, chest pain, hemoptysis 
+تسرع القلب والتنفس، ضيق التنفس، ألم الصدر، سعال دموي 
+Syncope and shock may occur. 
+قد يحدث إغماء أو صدمة. 
+ 
+Diagnostic Tests 
+ABG – D-dimer – ECG – Chest X-ray – ECHO 
+تحليل غازات الدم–  دي دايمر – رسم القلب – أشعة الصدر  –  الإيكو  
+ 
+ABG Findings 
+Low PaO₂ → hypoxemia 
+نقص الأكسجين 
+Low PaCO₂ + high pH → respiratory alkalosis 
+نقص CO₂ مع قلوية تنفسية 
+ 
+ECG Findings 
+Most common: sinus tachycardia 
+الأكثر شيوعًا: تسارع جيبي 
+Classic sign: inverted T wave 
+علامة مميزة: انقلاب موجة T 
+ 
+Chest X-ray 
+Cardiomegaly – pleural effusion – Hampton’s hump 
+تضخم القلب–  ارتشاح جنبي –  حدبة هامبتون  
+ 
+Medical Management 
+العلاج الطبي
+
+Preventive Strategies 
+Prophylactic anticoagulants 
+مضادات التجلط الوقائية 
+Pneumatic compression devices 
+أجهزة الضغط الهوائي 
+ 
+Treatment Goals 
+Prevent recurrence 
+منع التكرار 
+Dissolve clot 
+إذابة الجلطة 
+Improve gas exchange 
+تحسين تبادل الغازات 
+ 
+Prevention of Recurrence 
+Heparin + Warfarin therapy 
+الهيبارين مع الوارفارين 
+INR maintained between 2–3 
+الحفاظ على INR بين2 و3  
+IVC filter if anticoagulants contraindicated 
+فلتر الوريد الأجوف عند تعذر مضادات التجلط 
+ 
+Clot Dissolution 
+Fibrinolytics for massive PE only 
+مذيبات الجلطات للحالات الشديدة فقط 
+Pulmonary embolectomy if contraindicated 
+استئصال الجلطة عند وجود مانع 
+ 
+Reversal of Pulmonary Hypertension
+
+Fluids + inotropes to support RV 
+سوائل وأدوية مقوية لدعم البطين الأيمن 
+ 
+Nursing Management 
+التمريض 
+Prevent DVT through mobility and hydration. 
+الوقاية من الجلطات بالحركة والسوائل. 
+ 
+Nursing Interventions 
+Oxygenation – bleeding monitoring – comfort – education 
+الأكسجة– مراقبة النزيف – الراحة –  التثقيف  
+ 
+Monitoring for Bleeding 
+Check gums, urine, stool, INR/PTT 
+فحص اللثة والبول والبراز ومتابعة التحاليل 
+ 
+Patient & Family Education 
+Disease explanation 
+شرح المرض 
+Medication adherence 
+الالتزام بالأدوية 
+Smoking cessation 
+الإقلاع عن التدخين 
+ 
+DVT Prevention Measures 
+Avoid tight clothes 
+تجنب الملابس الضيقة 
+Leg elevation & exercise 
+رفع الساقين والتمرين
+
+Recognize DVT signs 
+معرفة أعراض الجلطة 
+ 
+Collaborative Management 
+Oxygen – ventilation – medications – monitoring complications 
+الأكسجين– التنفس الصناعي  –  الأدوية – متابعة المضاعفات

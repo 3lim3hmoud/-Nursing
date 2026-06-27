@@ -1,0 +1,196 @@
+Heart Failure (CHF) 
+ 
+Agenda 
+The lecture covers the following topics: 
+تعريف– أسباب – آلية المرض – الأعراض –  التشخيص – المضاعفات – العلاج –  التمريض  
+• Definition 
+التعريف 
+• Causes 
+الأسباب 
+• Pathophysiology 
+آلية حدوث المرض 
+• Clinical manifestation 
+الأعراض الإكلينيكية 
+• Diagnostic tests 
+الفحوصات التشخيصية 
+• Complications 
+المضاعفات 
+• Medical management 
+العلاج الطبي 
+• Nursing management 
+التمريض 
+ 
+Definition of Congestive Heart Failure (CHF) 
+Congestive heart failure is a clinical syndrome in which the heart cannot pump enough 
+blood to meet the body’s metabolic needs. 
+فشل القلب الاحتقاني هو متلازمة مرضية لا يستطيع فيها القلب ضخ كمية كافية من الدم لتلبية احتياجات الجسم من
+الأكسجين والغذاء. 
+ 
+Causes of Heart Failure
+
+• Coronary artery disease 
+مرض الشرايين التاجية 
+• Cardiomyopathy 
+اعتلال عضلة القلب 
+• Valvular disorders (Rheumatic heart disease) 
+أمراض صمامات القلب (الحمى الروماتيزمية 
+• Myocardial infarction 
+الجلطة القلبية 
+• Arrhythmia 
+اضطراب ضربات القلب 
+• Uncontrolled hypertension 
+ارتفاع ضغط الدم غير المسيطر عليه 
+• Pulmonary embolism 
+الجلطة الرئوية 
+• Diabetes mellitus 
+مرض السكري 
+• Excess water and salt intake 
+الإفراط في تناول السوائل والملح 
+• Anemia 
+الأنيميا 
+• Infection 
+العدوى 
+ 
+Types / Classification 
+Left-sided heart failure 
+• Systolic dysfunction 
+خلل انقباضي (ضعف ضخ الدم 
+• Diastolic dysfunction 
+خلل انبساطي (صعوبة امتلاء القلب 
+Right-sided heart failure 
+• فشل الجانب الأيمن من القلب
+
+Pathophysiology of Heart Failure 
+Compensatory mechanisms increase workload and worsen heart failure. 
+آليات التعويض تزود الحمل على القلب مما يؤدي لتدهور الحالة. 
+Sympathetic Nervous System Activation 
+Reduced cardiac output stimulates SNS → release of epinephrine & norepinephrine → 
+heart muscle damage. 
+انخفاض كمية الدم الخارجة من القلب ينشط الجهاز العصبي السمبثاوي → إفراز الأدرينالين والنورأدرينالين
+تلف عضلة القلب. 
+RAAS System 
+Decreased renal perfusion activates RAAS → increased angiotensin & aldosterone → 
+fluid retention and increased heart load. 
+نقص تدفق الدم للكلى ينشط نظام الرينين أنجيوتنسين ألدوستيرون → احتباس السوائل وزيادة الحمل على القلب. 
+ 
+Clinical Manifestations 
+Includes manifestations of left-sided and right-sided heart failure. 
+تشمل أعراض فشل القلب الأيسر وفشل القلب الأيمن. 
+ 
+Diagnosis 
+• Echocardiography 
+الموجات الصوتية على القلب 
+• Chest X-ray 
+أشعة على الصدر 
+• Angiography 
+قسطرة / تصوير الأوعية 
+• Blood tests 
+تحاليل الدم 
+ 
+Complications
+
+• Acute pulmonary edema 
+وذمة رئوية حادة 
+• Cardiogenic shock 
+صدمة قلبية 
+• Refractory heart failure 
+فشل قلبي غير مستجيب للعلاج 
+ 
+Medical Management 
+Aims to relieve symptoms, maintain fluid balance, slow disease progression, and 
+reduce cardiovascular risk. 
+يهدف العلاج إلى تخفيف الأعراض، ضبط السوائل، إبطاء تطور المرض، وتقليل المخاطر القلبية. 
+Pharmacological Treatment 
+• Oxygen therapy 
+العلاج بالأكسجين 
+• ACE inhibitors (e.g., Captopril) 
+مثبطات الإنزيم المحول للأنجيوتنسين 
+• Beta-blockers (e.g., Inderal) 
+حاصرات البيتا لتقليل الضغط وتنظيم النبض 
+• Diuretics 
+مدرات البول لإخراج السوائل الزائدة 
+o Thiazide diuretics 
+مدرات خفيفة للحالات البسيطة 
+o Loop diuretics (Lasix) 
+للحالات الشديدة أو ضعف الكلى 
+o Potassium sparing diuretics (Aldactone) 
+تحفظ البوتاسيوم 
+• Digitalis (Digoxin) 
+يزيد قوة انقباض القلب ويقلل الوذمة 
+ 
+Digitalis Toxicity
+
+Occurs when digoxin level increases. 
+تحدث عند ارتفاع مستوى الديجوكسين. 
+Early Signs 
+• Fatigue, nausea, vomiting, AV block 
+إرهاق، غثيان، قيء، اضطراب التوصيل القلبي 
+Management 
+• Hold the drug 
+إيقاف الدواء 
+• Digibind if severe 
+إعطاء ديجوبيند في الحالات الشديدة 
+ 
+Diet & Lifestyle 
+• Daily weight monitoring 
+متابعة الوزن يوميًا 
+• Moderate activity 
+نشاط بدني معتدل 
+• Low sodium diet 
+تقليل الملح 
+• Fluid restriction 
+تقليل السوائل 
+• Correct underlying causes 
+علاج السبب الأساسي 
+ 
+Nursing Management 
+Assessment 
+• Monitor therapy effectiveness 
+متابعة فعالية العلاج 
+• Assess fluid overload 
+تقييم احتباس السوائل
+
+• Daily weight & I/O 
+وزن يومي + داخل وخارج السوائل 
+• Lung sounds & edema 
+أصوات الرئة والتورم 
+• Monitor hypotension & dehydration 
+متابعة انخفاض الضغط والجفاف 
+ 
+Nursing Diagnosis 
+1. Activity intolerance 
+عدم تحمل النشاط 
+2. Excess fluid volume 
+زيادة حجم السوائل 
+3. Anxiety 
+القلق 
+ 
+Implementation 
+• Avoid extreme weather 
+تجنب الجو الحار أو البارد 
+• Slow activities 
+أداء الأنشطة ببطء 
+• Stop activity if dyspnea 
+إيقاف النشاط عند ضيق النفس 
+• Give diuretics in morning 
+إعطاء المدرات صباحًا 
+• Low sodium diet 
+الالتزام بقلة الملح 
+ 
+Patient Teaching 
+• Adequate rest 
+راحة كافية
+
+• Daily pulse check 
+فحص النبض يوميًا 
+• Regular follow-up 
+متابعة طبية منتظمة 
+Report Immediately 
+• Weight gain 
+زيادة الوزن 
+• Dyspnea 
+ضيق النفس 
+• Edema 
+التورم 
+• Persistent cough 
+كحة مستمرة

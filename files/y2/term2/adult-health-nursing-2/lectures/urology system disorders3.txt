@@ -1,0 +1,229 @@
+Chronic renal failure, or ESRD, is a 
+progressive, irreversible deterioration in renal 
+function in which the body’s ability to maintain 
+metabolic and fluid and electrolyte balance fails, 
+resulting in uremia or azotemia (retention of urea 
+and other nitrogenous wastes in the blood).
+
+Pathophysiology 
+As renal function declines, the end products of protein 
+metabolism (which are normally excreted in urine) 
+accumulate in the blood. Uremia develops and adversely 
+affects every system in the body. The greater the buildup of 
+waste products, the more severe the symptoms
+
+Preventing Infection
+Patients with ESRD commonly have low 
+white blood cell counts, these pose a high risk 
+for infection. Preventing and controlling 
+infection are essential because the incidence of 
+infection is high. Infection of the vascular access 
+site and pneumonia are common.
+
+Caring For The Catheter Site
+Patients receiving CAPD usually know how to care for the catheter site. 
+Recommended daily or three-or-four-times-weekly routine. catheter site care is 
+typically performed during showering or bathing. The exit site should not be 
+submerged in bath water. The most common cleaning method is soap and water; 
+liquid soap is recommended. During care, the nurse and patient need to make sure 
+that the catheter remains secure to avoid tension and trauma.
+
+Administering Medications
+The medications prescribed for any dialysis 
+patient must be closely monitored to avoid those 
+that are toxic to the kidneys and may threaten 
+remaining renal function.
+
+Providing psychological support
+Patients undergoing dialysis for a while 
+may begin to re-evaluate their status, the 
+treatment modality, and the impact of these 
+factors on their families and support systems. 
+Nurses must provide opportunities for these 
+patients to express their feelings and reactions 
+and to explore options.
+
+Renal stones, also known as 
+nephrolithiasis or urolithiasis, 
+refer to the formation of solid 
+crystalline mineral materials 
+within the kidneys
+
+Etiology and Risk Factors
+A. General Risk Factors
+• Dehydration (low urine volume)
+• Dietary factors (high sodium, or animal protein)
+• Genetic predisposition
+• Urinary obstruction
+• Metabolic disorders
+
+B. Specific Conditions
+• Hypercalciuria
+• Hyperoxaluria
+• Hyperuricosuria
+• Cystinuria (genetic)
+• Chronic urinary tract infections
+
+Types of Renal Stones
+Type Composition Common 
+Causes Radiopacity
+Calcium oxalate Calcium + 
+oxalate
+Hypercalciuria, 
+hyperoxaluria Radiopaque
+Calcium 
+phosphate
+Calcium + 
+phosphate Alkaline urine Radiopaque
+Struvite
+Magnesium 
+ammonium 
+phosphate
+Urease-
+producing 
+bacteria
+Radiopaque
+Uric acid Uric acid Gout, acidic 
+urine Radiolucent
+Cystine Cystine Cystinuria Faintly 
+radiopaque
+
+Pathophysiology
+Stone formation occurs due to supersaturation of 
+solutes in urine, leading to crystal growth, and 
+aggregation. Normally, urine contains inhibitors 
+(like citrate, magnesium) that prevent stone 
+formation, but when these are deficient, stones may 
+form.
+
+Differential Diagnosis
+•Pyelonephritis
+•Appendicitis
+•Ectopic pregnancy
+•Musculoskeletal pain
+
+Complications
+• Obstructive uropathy
+• Pyelonephritis or urosepsis
+• Chronic kidney disease (CKD)
+• Recurrent stones
+
+Nursing Diagnoses
+Acute pain related to obstruction of urinary tract by 
+kidney stones.
+Impaired urinary elimination related to obstruction.
+Risk for infection related to urinary stasis.
+Deficient knowledge related to prevention of 
+recurrence.
+Risk for fluid volume deficit related to nausea, 
+vomiting, and decreased intake.
+
+Planning
+Examples:
+• Patient will report pain relief within 30 minutes of 
+analgesic administration.
+• Patient will maintain urine output ≥30 mL/hr.
+• Patient will verbalize understanding of dietary and 
+fluid changes to prevent recurrence before 
+discharge.
+
+Implementation
+Administer 
+prescribed 
+analgesics
+Apply heat 
+to flank area
+Encourage 
+oral fluid 
+intake 
+Monitor 
+I&O
+Monitor 
+temperature
+
+Administer 
+antibiotics if 
+prescribed
+Encourage 
+perineal hygiene
+Diet 
+modification 
+(e.g., low oxalate, 
+reduced sodium)
+Importance of 
+follow-up 
+appointments
+
+Evaluation
+Reassess the patient to determine if goals were 
+met:
+• Was the patient’s pain relieved?
+• Is urinary output adequate?
+• Is the patient free from infection signs?
+• Does the patient understand preventive 
+measures?
+
+Glomerulonephritis is an inflammation of the 
+glomeruli—the tiny filters in the kidneys responsible for 
+removing excess waste and fluids from the blood.
+It can be acute or chronic, and may lead to kidney failure 
+if untreated.
+
+Causes
+Post-
+streptococcal 
+infection 
+Autoimmune 
+diseases
+Vasculitis
+Diabetic 
+nephropathy
+
+Treatment
+• Control BP: ACE inhibitors or ARBs
+• Diuretics: for edema
+• Corticosteroids : in autoimmune forms
+• Antibiotics: if caused by bacterial infection
+• Dialysis: in severe renal failure
+• Diet: low sodium, low protein, and fluid restriction
+
+Nursing 
+Diagnoses
+Excess fluid volume related to decreased 
+glomerular filtration.
+Impaired urinary elimination related to 
+inflammation of glomeruli.
+Risk for infection related to 
+immunosuppressive therapy.
+Fatigue related to anemia.
+Knowledge deficit related to disease 
+management.
+
+Planning / Goals
+• Patient will maintain normal fluid balance.
+• Patient will demonstrate controlled blood 
+pressure.
+• Patient will have adequate urine output (>30 
+mL/hr).
+• Patient will verbalize understanding of disease, 
+and treatment.
+
+Evaluation
+• Patient maintains normal urine output and 
+fluid balance.
+• BP within target range
+• Edema reduced
+• Patient understands and adheres to 
+treatment plan.
+
+Pyelonephritis
+Pyelonephritis is a bacterial infection of the 
+kidneys and renal pelvis, usually caused by 
+ascending infection from the bladder.
+It can be acute or chronic, with the latter 
+potentially leading to permanent kidney damage.
+
+Causes
+Urinary tract infection 
+Urinary obstruction (e.g., renal 
+stones, enlarged prostate)

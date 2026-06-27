@@ -1,0 +1,339 @@
+ Introduction.
+ Definition.
+ Indications.
+ Type of mechanical ventilatos.
+ Ventilator parameters.
+ Modes of ventilation.
+ Ventilator Settings.
+ Weaning.
+ Complications of Mechanical Ventilation.
+
+ Mechanical ventilation is the 
+use of a mechanical device 
+(machine) to inflate and deflate
+the lungs.
+ A mechanical ventilator is 
+simply a machine used to 
+replace or supplement the 
+natural function of breathing
+7200
+Drager Evita 4
+Siemens Servo 900C
+Siemens Servo 
+300
+
+• Apnea : absence of breathing(e.g., neuromuscular or 
+cardiopulmonary collapse) 
+• Acute ventilatory failure, which is generally defined as 
+a pH of less than or equal to 7.25 with (PaCO2) greater 
+than or equal to 50 mm Hg. 
+• Severe hypoxemia: (PaO2) of less than or equal to 50 
+mm Hg on room air indicates a critical level of oxygen 
+in the blood.  
+• Respiratory muscle fatigue:e.g., chronic lung disease 
+are examples COPD.
+
+Negative pressure ventilator 
+:
+iron lung. 
+Positive pressure ventilator 
+:
+modern ventilator
+
+ Improve pulmonary gas exchange 
+ Reverse hypoxemia 
+ Reverse acute respiratory acidosis 
+ Relieve respiratory distress 
+ Reverse respiratory muscle fatigue 
+ Prevent and reverse atelectasis 
+ Improve lung compliance
+
+Parameters Ventilation indicated Normal range
+Pulmonary function 
+studies:
+Respiratory rate 
+(breaths/min).
+Tidal volume (ml/kg 
+body wt)
+Vital capacity (ml/kg 
+body wt)
+Maximum Inspiratory 
+Force (cm HO2)
+> 35
+< 5
+< 15
+<-20
+10-20
+5-7
+65-75
+75-100
+Arterial blood Gases
+PH
+PaO2 (mmHg)
+PaCO2 (mmHg)
+< 7.25
+< 60
+> 50
+7.35-7.45
+75-100
+35-45
+
+❑Power input
+❑ Power transmission or 
+conversion
+❑ Control scheme
+
+❑Electric
+◦ AC
+◦ DC (battery)
+ internal
+ External
+❑ Pneumatic
+ Oxygen (tanks or wall)
+ Compressed air
+ Internal air compressor
+ External air compressor
+ Internal turbine
+
+❑Control variables & waveform selection: 
+◦ Pressure 
+◦ Volume
+◦ Flow 
+◦ Time
+
+❑  Phase variables:
+◦Trigger variable
+◦Limit variable
+◦Cycle variable
+◦Baseline variable
+
+ Is the interface between the 
+ventilator and the patient.
+ It has three major components, 
+the inspiratory limb, the patient 
+way and the expiratory limb.
+
+ The inspiratory limb provides a 
+passage for blended gas to be 
+delivered to the patient from the 
+ventilator. 
+ There are three components 
+associated with this limb of 
+patient circuit. The inhalation 
+filter, the humidifier and the 
+nebulizer.
+
+
+This provides filtration of 
+blended gas inspired by the 
+patient from the ventilator. 
+It also protects the machine 
+from infectious materials when 
+the patient exhales.
+
+Humidifiers are employed in respiratory 
+therapy to:
+1) supply enough water vapor to the inspired 
+gas to make it comfortable for the patient 
+2) heating the gas to provide 100% relative 
+humidity at body temperature.
+ To accomplish humidification three factors 
+are important.
+1) Time of contact between the gas and 
+water.
+2) Surface area involved in gas/water contact.
+3) Temperature.
+
+Ventilators are categorized as either 
+ Negative pressure 
+ Positive pressure.
+
+o Negative-pressure ventilators exert a 
+negative pressure on the external 
+chest. 
+o Decreasing the intrathoracic pressure 
+during inspiration allows air to flow 
+into the lung. Physiologically, this 
+type of assisted ventilation is similar 
+to spontaneous ventilation.
+
+o It is used in chronic respiratory failure associated 
+with neuromuscular conditions, such as 
+poliomyelitis, muscular dystrophy, and myasthenia 
+gravis. 
+o Negative- pressure ventilators do not require 
+intubation of the airway. 
+o There are several types of negative pressure 
+ventilators: iron lungs, and chest cuirass.
+
+o Positive-pressure ventilators 
+inflate the lungs by exerting 
+positive pressure on the 
+airway, pushing air in, forcing 
+the alveoli to expand during 
+inspiration. Expiration occurs 
+passively.
+
+1- Invasive Mechanical 
+Ventilation: Endotracheal 
+intubation or tracheostomy is 
+usually necessary for 
+Positive-pressure ventilators. 
+2- Noninvasive positive-
+pressure ventilation does 
+not require intubation.
+
+have traditionally been categorized into 
+o Volume ventilation 
+o  Pressure ventilation 
+.
+
+o V olume ventilation has traditionally been the most popular form of PPV , 
+largely because Tidal Volume (Vt) and Minute Ventilation (MV) are 
+ensured, which is an essential goal in the patient with acute illness. 
+o The preset volume of air delivered with each inspiration. Once this preset 
+volume is delivered to the patient, the ventilator cycles off and exhalation 
+occurs passively.  
+o A preset Vt is delivered with each breath regardless of resistance and 
+compliance. Tidal V olume is stable from breath to breath, but airway 
+pressure may vary.
+
+1. Control Ventilation (CV) or Controlled Mandatory Ventilation (CMV) 
+2. Assist/Control (A/C) or Assisted Mandatory Ventilation (AMV
+3. Synchronized Intermittent Mandatory Ventilation (SIMV)
+
+o Control Ventilation (CV) or Controlled Mandatory 
+Ventilation (CMV) 
+With this mode, the ventilator provides all the 
+patient’s minute ventilation. The clinician sets the 
+respiratory rate, Vt, inspiratory time, and positive 
+End Expiratory Pressure (PEEP).
+
+o Assist/Control (A/C) or 
+Assisted Mandatory 
+Ventilation (AMV) When 
+the patient initiates a 
+spontaneous breath. The 
+ventilator sensitivity also 
+is set, and a full-volume 
+breath is delivered. This 
+option requires that a 
+rate, Vt, inspiratory time, 
+and PEEP be set for the 
+patient.
+
+o Synchronized Intermittent Mandatory Ventilation (SIMV) 
+This mode requires that rate, Vt, inspiratory time, sensitivity, 
+and PEEP are set by the clinician. In between mandatory 
+breaths, patients can spontaneously breathe at their own rates 
+and Vt. With SIMV , the ventilator synchronizes the 
+mandatory breaths with the patient’s own inspirations.
+
+o The clinician selects the desired pressure 
+level and the Vt is determined by the 
+selected pressure level, resistance, and 
+compliance.
+
+1. Pressure Support Ventilation (PSV) 
+2. Pressure-Controlled/Inverse Ratio Ventilation (PC/IRV) 
+3. Non-invasive Bilateral Positive-Pressure Ventilation 
+Mode) BiPAP)
+4. Continuous Positive Airway Pressure (CPAP)
+
+1- Pressure-Controlled
+• Which delivers a preset pressure for a set time
+2- Pressure Support Ventilation (PSV) 
+• Patient initiates each breath
+• Ventilator assists with a fixed pressure level
+• Patient controls rate, timing, and tidal volume
+It's commonly used for:
+• Weaning from mechanical ventilation
+• Providing comfort while maintaining some ventilatory 
+assistance
+
+• BiPAP is beneficial in patients with worsening 
+hypoventilation, obstructive apneic episodes, or both.  
+• It is also useful to prevent intubation in patients with 
+respiratory failure and hypercarbia as well as to 
+prevent reintubation following extubation in borderline 
+cases.  
+• Use of a full face mask may increase the risk for 
+aspiration and risk for re-breathing carbon dioxide; 
+therefore, ventilation with a full face mask should be 
+used cautiously.  
+• Thick or profuse secretions and poor cough may be 
+relative contraindications for BiPAP.
+
+• Continuous positive airway pressure (CPAP) provides 
+positive pressure to the airways throughout the 
+respiratory cycle.  
+• CPAP assists spontaneously breathing patients to 
+improve their oxygenation by elevating the end-
+expiratory pressure in the lungs keeping the upper 
+airway and trachea open throughout the respiratory 
+cycle.  
+• CPAP can be used for intubated and non-intubated 
+patients. 
+To use CPAP, the patient must be breathing independently.
+
+❑ Tidal Volume (VT)
+▪ amount of gas delivered with each preset breath
+▪ in mechanically ventilated patients it’s usually set at 6 - 8 
+ml/kg
+❑ Respiratory Rate (RR)
+▪ the frequency of breaths delivered by the 
+ventilator
+❑ Fraction of Inspired Oxygen (FIO2)
+▪ the fraction of inspired oxygen delivered to the 
+patient by the ventilator
+▪ change by ABG and O2 saturation
+
+❑ Inspiratory : Expiratory Ratio (I : E Ratio)
+◦ usually set at 1 : 2,  may be manipulated 
+to facilitate gas exchange 
+❑ Peak Inspiratory Pressure (PIP)
+   Measured in cmH2O, this parameter 
+controls the maximum inspiratory pressure 
+to be delivered to the patient during a 
+pressure controlled machine breath.
+❑ Adjuncts to Mechanical Ventilation
+◦ PEEP, CPAP, PSV
+
+❑ Pressure Limits
+◦ high pressure limit is the maximum pressure the 
+ventilator can generate to deliver the preset VT
+◦ usually set 10 - 20 cm H2O above the PIP
+ Apnea:
+       Apnea ventilation is initiated when the preset 
+apnea alarm is triggered. The Ventilator will begin 
+to deliver controlled breaths at the operator 
+selected settings.
+ Apnea ventilation is terminated when the patient 
+begins to breathe spontaneously or a manual 
+breath is delivered to the patient.
+
+
+Minute Volume:
+ Represents the patient’s exhaled tidal 
+volume (mechanical and spontaneous) 
+over time.
+Peak Pressure
+     Indicates the peak inspiratory 
+pressure achieved during the last 
+delivered breath.
+
+ Loss of Power
+ ELECTRICAL FAILURE ALARMS ARE A MUST 
+FOR ALL VENTILATORS
+◦ Most ICU ventilators do not have battery back up 
+like at home
+◦ Know back up system (special emergency outlets)
+◦ Check that power cord plug not accidentally 
+disconnected
+
+ Frequency
+◦ Alarms if RR goes above or below set levels
+ Volume
+◦ Volumes go above or below preset levels (ie. VT 
+or minute volume)
+

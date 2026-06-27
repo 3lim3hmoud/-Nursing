@@ -1,0 +1,106 @@
+Nephrotic Syndrome – Simplified Bilingual Notes 
+متلازمة النفروتك– شرح مبسّط ثنائي اللغة  
+ 
+Overview (نظرة عامة) 
+Nephrotic syndrome is a kidney disorder caused by damage to the glomeruli, leading 
+to massive protein loss (>3.5 g/day). 
+متلازمة النفروتك هي اضطراب كلوي يحدث بسبب تلف في الكبيبات، مما يسبب فقدانًا كبيرًا للبروتين في البول
+(أكثر من 3.5 جم/يوم.  
+It causes hypoalbuminemia, edema, hyperlipidemia, and increased infection risk. 
+تؤدي إلى انخفاض الألبومين في الدم، وظهور وذمات، وارتفاع الدهون، وزيادة خطر العدوى. 
+Minimal change disease is the most common cause, especially in children. 
+أكثر سبب شائع هو مرض التغيرات البسيطة، خصوصًا عند الأطفال. 
+ 
+Pathophysiology – How It Happens (آلية حدوث المرض) 
+1. Proteinuria: Proteins leak through the damaged glomerular barrier. 
+١ .بروتينية: تسرّب البروتينات إلى البول بسبب زيادة نفاذية الكبيبات. 
+2. Edema: Low albumin decreases oncotic pressure, causing fluid to shift into tissues. 
+٢ .وذمة: انخفاض الألبومين يقلل الضغط الأسموزي في الأوعية، فيتجمع السائل في الأنسجة. 
+3. Hyperlipidemia: The liver increases lipid production to compensate for protein loss. 
+٣ .ارتفاع الدهون: الكبد يزيد تصنيع الدهون لتعويض فقدان البروتين. 
+ 
+Clinical Signs & Symptoms (العلامات والأعراض) 
+Frothy, dark urine due to heavy proteinuria. 
+• بول رغوي وغامق بسبب البروتينية الشديدة. 
+Periorbital and dependent edema, especially in the morning. 
+• تورّم حول العينين وفي الأطراف، ويظهر بشدة في الصباح. 
+Weight gain from fluid retention.
+
+• زيادة الوزن نتيجة احتباس السوائل. 
+Hypoalbuminemia seen in blood tests. 
+• انخفاض الألبومين في اختبارات الدم. 
+Possible hypertension and reduced urine output. 
+• قد يحدث ارتفاع ضغط الدم وقلة التبول. 
+ 
+Causes (الأسباب) 
+1. Primary Kidney Diseases (أمراض الكلى الأولية) 
+Minimal Change Disease (most common in children). 
+• مرض التغيرات البسيطة (الأكثر شيوعًا عند الأطفال. 
+Focal Segmental Glomerulosclerosis. 
+• التصلب الكبيبي البؤري القطاعي. 
+Membranous Nephropathy. 
+• الاعتلال الكلوي الغشائي. 
+ 
+2. Secondary Causes (الأسباب الثانوية) 
+Diabetes Mellitus. 
+• داء السكري. 
+Systemic Lupus Erythematosus. 
+• الذئبة الحمراء. 
+Infections (Hepatitis B/C). 
+• عدوى مثل التهاب الكبد B و C. 
+• Amyloidosis. 
+• الداء النشواني. 
+ 
+Diagnostic Workup (التشخيص)
+
+• Urinalysis: Shows heavy proteinuria (3+ or more). 
+• تحليل البول: يظهر بروتينuria شديدة٣+ أو أكثر).  
+24-hour urine test confirms >3.5 g/day protein loss. 
+• قياس بروتين البول٤٢ ساعة يؤكد فقدان أكثر من ٥.٣ جم/يوم.  
+Blood tests: Low albumin & high cholesterol. 
+• تحليل الدم: انخفاض الألبومين وارتفاع الكوليسترول. 
+Kidney biopsy: Used when diagnosis is unclear. 
+• خزعة الكلى: تُستخدم عند عدم وضوح التشخيص. 
+ 
+Treatment (العلاج) 
+Corticosteroids (prednisone) are first-line to reduce inflammation. 
+• الكورتيكوستيرويدات (بريدنيزون) هي العلاج الأول لخفض الالتهاب. 
+Diuretics help control edema. 
+• المدرّات تُستخدم لتقليل الوذمات. 
+Antihypertensives for blood pressure control. 
+• أدوية الضغط للسيطرة على ارتفاع الضغط. 
+Lipid-lowering drugs reduce hyperlipidemia. 
+• أدوية خفض الدهون لعلاج ارتفاع الدهون. 
+Infection prevention is essential due to immunosuppression. 
+• الوقاية من العدوى ضرورية بسبب ضعف المناعة. 
+ 
+Nursing Care Priorities (أولويات الرعاية التمريضية) 
+Monitor daily weights & strict I/O. 
+• متابعة الوزن يوميًا وتسجيل الداخل والخارج بدقة. 
+Watch for infection signs (fever, lethargy, abdominal pain). 
+• مراقبة علامات العدوى مثل الحمى والخمول وألم البطن.
+
+• Assess breathing for respiratory distress from fluid overload. 
+• تقييم التنفس لاكتشاف ضيق التنفس الناتج عن احتباس السوائل. 
+Educate patient & family on medication adherence. 
+• توعية المريض وأسرته بالالتزام بالأدوية. 
+Support nutrition and monitor appetite changes. 
+• دعم التغذية ومراقبة الشهية. 
+ 
+Complications (المضاعفات) 
+Severe infections (respiratory, peritonitis). 
+• عدوى خطيرة مثل عدوى الصدر والتهاب الصفاق. 
+Thromboembolism due to loss of anticoagulant proteins. 
+• جلطات دموية بسبب فقدان بروتينات منع التجلّط. 
+Frequent relapses requiring long-term steroids. 
+• نوبات متكررة تتطلب علاجًا طويلاً بالكورتيزون . 
+Possible progression to chronic kidney disease. 
+• احتمال تطور المرض إلى فشل كلوي مزمن. 
+ 
+Summary (الخلاصة) 
+Nephrotic syndrome is characterized by heavy proteinuria and edema. 
+متلازمة النفروتك تتميز ببروتينية شديدة ووذمات. 
+Early diagnosis and treatment improve outcomes. 
+التشخيص والعلاج المبكران يحسّنان النتائج. 
+Nurses play a key role in monitoring, education, and preventing complications. 
+التمريض يلعب دورًا أساسيًا في المتابعة والتوعية ومنع المضاعفات.

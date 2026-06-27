@@ -2183,6 +2183,230 @@
   .conv-list-item.unread .conv-list-name { color: var(--ink); }
   .conv-list-item.unread .conv-list-last { color: var(--ink-soft); font-weight: 600; }
 
+  /* ─── AI CHAT FAB ─── */
+  .ai-fab {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 999;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1D9E75 0%, #378ADD 100%);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(29,158,117,0.45), 0 2px 8px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ai-fab:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(29,158,117,0.55); }
+  .ai-fab.open { transform: scale(0.9) rotate(10deg); }
+  .ai-fab svg { width: 26px; height: 26px; color: #fff; flex-shrink: 0; }
+  .ai-fab::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.22);
+    animation: aiFabPulse 2.4s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes aiFabPulse {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    70%  { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  .ai-fab-badge {
+    position: absolute;
+    top: -3px; right: -3px;
+    width: 16px; height: 16px;
+    background: #e74c3c;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: none;
+  }
+  .ai-fab-badge.show { display: block; }
+
+  /* ─── AI CHAT PANEL ─── */
+  .ai-chat-panel {
+    position: fixed;
+    bottom: 94px;
+    left: 24px;
+    z-index: 998;
+    width: min(380px, calc(100vw - 48px));
+    height: min(560px, calc(100vh - 120px));
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(6,14,11,0.22), 0 4px 16px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.28s cubic-bezier(.34,1.2,.64,1);
+    transform-origin: bottom left;
+  }
+  .ai-chat-panel.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .ai-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #1D9E75 0%, #1a8a9a 100%);
+    flex-shrink: 0;
+  }
+  .ai-chat-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.35);
+  }
+  .ai-chat-title { flex: 1; }
+  .ai-chat-title h4 { font-size: 14px; font-weight: 700; color: #fff; margin: 0; line-height: 1.2; }
+  .ai-chat-title p  { font-size: 10px; color: rgba(255,255,255,0.75); margin: 0; }
+  .ai-online-dot {
+    width: 7px; height: 7px;
+    background: #6CE3B4; border-radius: 50%; flex-shrink: 0;
+    animation: onlinePulse 2s ease-in-out infinite;
+  }
+  @keyframes onlinePulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .ai-chat-close {
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.8); padding: 4px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ai-chat-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  .ai-chat-close svg { width: 16px; height: 16px; }
+  .ai-context-bar {
+    padding: 7px 14px;
+    background: rgba(29,158,117,0.07);
+    border-bottom: 1px solid rgba(29,158,117,0.12);
+    font-size: 11px; color: #0F6E56; font-weight: 600;
+    display: none; align-items: center; gap: 6px; flex-shrink: 0;
+  }
+  .ai-context-bar.show { display: flex; }
+  .ai-context-bar span { opacity: 0.6; font-weight: 400; }
+  .ai-messages {
+    flex: 1; overflow-y: auto;
+    padding: 14px 14px 6px;
+    display: flex; flex-direction: column; gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .ai-messages::-webkit-scrollbar { width: 4px; }
+  .ai-messages::-webkit-scrollbar-thumb { background: rgba(29,158,117,0.25); border-radius: 100px; }
+  .ai-msg {
+    max-width: 88%; font-size: 13.5px; line-height: 1.55;
+    word-break: break-word;
+    animation: msgIn 0.2s ease;
+  }
+  @keyframes msgIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  .ai-msg.bot {
+    align-self: flex-start;
+    background: #F0FAF5;
+    border: 1px solid rgba(29,158,117,0.15);
+    color: #0E1C16;
+    border-radius: 4px 16px 16px 16px;
+    padding: 10px 13px;
+  }
+  .ai-msg.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #1D9E75, #16896A);
+    color: #fff;
+    border-radius: 16px 16px 4px 16px;
+    padding: 10px 13px;
+  }
+  .ai-msg.bot p { margin: 0 0 6px; }
+  .ai-msg.bot p:last-child { margin-bottom: 0; }
+  .ai-msg.bot strong { color: #0F6E56; }
+  .ai-msg.bot ul { padding-left: 16px; margin: 4px 0; }
+  .ai-msg.bot li { margin-bottom: 3px; }
+  .ai-typing {
+    align-self: flex-start;
+    background: #F0FAF5;
+    border: 1px solid rgba(29,158,117,0.15);
+    border-radius: 4px 16px 16px 16px;
+    padding: 12px 16px;
+    display: none; gap: 5px;
+  }
+  .ai-typing.show { display: flex; }
+  .ai-typing span {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #1D9E75;
+    animation: typingBounce 1.1s ease-in-out infinite;
+  }
+  .ai-typing span:nth-child(2) { animation-delay: 0.18s; }
+  .ai-typing span:nth-child(3) { animation-delay: 0.36s; }
+  @keyframes typingBounce {
+    0%,80%,100%{transform:translateY(0);opacity:0.5}
+    40%{transform:translateY(-7px);opacity:1}
+  }
+  .ai-quick-prompts {
+    padding: 6px 12px 4px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    flex-shrink: 0;
+    border-top: 1px solid rgba(28,43,37,0.07);
+  }
+  .ai-quick-btn {
+    font-size: 11px; font-family: 'Inter', sans-serif;
+    background: rgba(29,158,117,0.08);
+    border: 1px solid rgba(29,158,117,0.2);
+    color: #0F6E56; border-radius: 100px;
+    padding: 5px 11px; cursor: pointer;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+  }
+  .ai-quick-btn:hover { background: rgba(29,158,117,0.16); border-color: rgba(29,158,117,0.4); }
+  .ai-input-area {
+    padding: 10px 12px 12px;
+    border-top: 1px solid rgba(28,43,37,0.08);
+    display: flex; gap: 8px; align-items: flex-end;
+    flex-shrink: 0; background: #fff;
+  }
+  .ai-input {
+    flex: 1;
+    border: 1.5px solid rgba(28,43,37,0.15);
+    border-radius: 14px; padding: 9px 13px;
+    font-family: 'Inter', sans-serif; font-size: 13px; color: #0E1C16;
+    outline: none; resize: none; max-height: 100px; min-height: 38px;
+    line-height: 1.45; transition: border-color 0.15s;
+  }
+  .ai-input:focus { border-color: #1D9E75; }
+  .ai-input::placeholder { color: rgba(14,28,22,0.4); }
+  .ai-send-btn {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, #1D9E75, #378ADD);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform 0.15s, opacity 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ai-send-btn:hover { transform: scale(1.08); }
+  .ai-send-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+  .ai-send-btn svg { width: 16px; height: 16px; color: #fff; }
+  .ai-clear-btn {
+    background: none; border: none; cursor: pointer;
+    color: rgba(14,28,22,0.35); padding: 2px;
+    font-size: 11px; font-family: 'Inter', sans-serif;
+    transition: color 0.15s; -webkit-tap-highlight-color: transparent;
+    display: flex; align-items: center; gap: 3px;
+    flex-shrink: 0; align-self: center;
+  }
+  .ai-clear-btn:hover { color: #c0392b; }
+  .ai-clear-btn svg { width: 12px; height: 12px; }
+
 </style>
 </head>
 <body>
@@ -5563,6 +5787,348 @@ window._deleteAdminMessage = async function(uid, msgId) {
   await deleteDoc(doc(db, 'conversations', uid, 'messages', msgId));
   await _refreshConversationPreview(uid);
 };
+</script>
+
+<!-- ══════════════════════ AI NURSING CHAT ══════════════════════ -->
+
+<!-- FAB -->
+<button class="ai-fab" id="aiFab" onclick="toggleAIChat()" title="AI Nursing Assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+  </svg>
+  <div class="ai-fab-badge" id="aiFabBadge"></div>
+</button>
+
+<!-- Chat Panel -->
+<div class="ai-chat-panel" id="aiChatPanel">
+  <div class="ai-chat-header">
+    <div class="ai-chat-avatar">🩺</div>
+    <div class="ai-chat-title">
+      <h4>Nursing AI Assistant</h4>
+      <p>بيجاوب من المحاضرات — يرد بنفس لغتك</p>
+    </div>
+    <div class="ai-online-dot"></div>
+    <button class="ai-chat-close" onclick="toggleAIChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="ai-context-bar" id="aiContextBar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>سياق المادة:</span>
+    <strong id="aiContextLabel"></strong>
+  </div>
+  <div class="ai-messages" id="aiMessages"></div>
+  <div class="ai-typing" id="aiTyping">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="ai-quick-prompts" id="aiQuickPrompts">
+    <button class="ai-quick-btn" onclick="aiSendQuick('اشرح لي الموضوع ده بشكل مبسط')">📖 شرح مبسط</button>
+    <button class="ai-quick-btn" onclick="aiSendQuick('امتحني بسؤال MCQ')">❓ سؤال MCQ</button>
+    <button class="ai-quick-btn" onclick="aiSendQuick('ايه أهم النقط اللي أذاكرها؟')">⭐ أهم النقط</button>
+    <button class="ai-quick-btn" onclick="aiSendQuick('اعمل ملخص للموضوع')">📋 ملخص</button>
+  </div>
+  <div class="ai-input-area">
+    <textarea class="ai-input" id="aiInput"
+      placeholder="اسألني أي سؤال في التمريض..."
+      rows="1"
+      onkeydown="aiHandleKey(event)"
+      oninput="aiAutoResize(this)"
+    ></textarea>
+    <button class="ai-clear-btn" onclick="aiClearChat()" title="مسح المحادثة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M9 6V4h6v2"/></svg>
+    </button>
+    <button class="ai-send-btn" id="aiSendBtn" onclick="aiSendMessage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   AI NURSING CHAT — Gemini + Subject Context
+   ════════════════════════════════════════════ */
+(function () {
+
+  /* ⚠️  ضع الـ API Key هنا على جهازك — لا ترفعه على GitHub */
+  const GEMINI_KEY = 'AQ.Ab8RN6LKFdWVYb7sV2EfkdvwHSpX3NOgIKbPBx972gh76qZ85A';
+  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
+
+  let aiOpen    = false;
+  let aiLoading = false;
+  let aiHistory = [];   /* { role:'user'|'model', parts:[{text}] }[] */
+
+  /* ── DOM helpers ── */
+  const $  = id => document.getElementById(id);
+  const el = (tag, cls, html) => { const d = document.createElement(tag); if(cls) d.className=cls; if(html) d.innerHTML=html; return d; };
+
+  /* ── Get current subject / year context from page state ── */
+  function getPageContext() {
+    try {
+      const subjectView = document.getElementById('subjectView');
+      if (subjectView && subjectView.classList.contains('active')) {
+        const title = document.getElementById('subjectTitle');
+        const desc  = document.getElementById('subjectDesc');
+        if (title && title.textContent) {
+          return {
+            type: 'subject',
+            name: title.textContent.trim(),
+            desc: desc ? desc.textContent.trim() : '',
+          };
+        }
+      }
+      if (typeof currentYear !== 'undefined' && typeof years !== 'undefined') {
+        const y = years[currentYear];
+        const yearView = document.getElementById('yearView');
+        if (y && yearView && yearView.classList.contains('active')) {
+          return { type: 'year', name: y.title, desc: y.desc || '' };
+        }
+      }
+    } catch(e) {}
+    return null;
+  }
+
+  /* ── Get lecture titles from current open subject ── */
+  function getLectureTitles() {
+    try {
+      if (typeof currentYear === 'undefined' || typeof currentTerm === 'undefined' || typeof years === 'undefined') return [];
+      const subjectView = document.getElementById('subjectView');
+      if (!subjectView || !subjectView.classList.contains('active')) return [];
+      const subjectTitle = document.getElementById('subjectTitle');
+      if (!subjectTitle) return [];
+      const name = subjectTitle.textContent.trim();
+      const subjects = years[currentYear]?.terms[currentTerm] || [];
+      const s = subjects.find(x => x.name === name);
+      if (!s) return [];
+      const lectures   = (s.files?.lectures   || []).map(f => f.title);
+      const summaries  = (s.files?.summaries  || []).map(f => f.title);
+      const mcq        = (s.files?.mcq        || []).map(f => f.title);
+      const flashcards = (s.files?.flashcards || []).map(f => f.title);
+      return { lectures, summaries, mcq, flashcards };
+    } catch(e) { return {}; }
+  }
+
+  /* ── Update context bar ── */
+  function updateContextBar() {
+    const ctx = getPageContext();
+    if (ctx) {
+      $('aiContextLabel').textContent = ctx.name;
+      $('aiContextBar').classList.add('show');
+    } else {
+      $('aiContextBar').classList.remove('show');
+    }
+    return ctx;
+  }
+
+  /* ── Build system prompt ── */
+  function buildSystemPrompt() {
+    const ctx    = getPageContext();
+    const files  = getLectureTitles();
+
+    let contextBlock = '';
+    if (ctx && ctx.type === 'subject') {
+      contextBlock = `
+الطالب دلوقتي بيدرس مادة: "${ctx.name}"
+وصف المادة: ${ctx.desc}
+`;
+      if (files.lectures && files.lectures.length) {
+        contextBlock += `\nالمحاضرات المتاحة في المادة:\n- ${files.lectures.join('\n- ')}`;
+      }
+      if (files.summaries && files.summaries.length) {
+        contextBlock += `\n\nالملخصات المتاحة:\n- ${files.summaries.join('\n- ')}`;
+      }
+      if (files.mcq && files.mcq.length) {
+        contextBlock += `\n\nأسئلة MCQ المتاحة:\n- ${files.mcq.join('\n- ')}`;
+      }
+      contextBlock += `\n\nلما الطالب يسأل سؤال عام، افترض إنه عن المادة دي وعن موضوعاتها. لو سألك عن موضوع من المحاضرات دي، اشرحه بالتفصيل.`;
+    } else if (ctx && ctx.type === 'year') {
+      contextBlock = `\nالطالب في ${ctx.name}. ساعده في مواد السنة دي.`;
+    }
+
+    return `أنت مساعد تمريض ذكي اسمك "Nurse AI" مخصص لطلبة كلية التمريض في مصر.
+
+قواعدك الأساسية:
+- رد دايماً بنفس لغة السؤال: عربي مع عربي، إنجليزي مع إنجليزي.
+- لو السؤال خليط، رد بالعربي.
+- ركز على المحتوى الطبي والتمريضي العلمي الدقيق.
+- استخدم نقاط مرتبة وبولد للعناوين المهمة.
+- لو طلب MCQ: اعمل سؤال واضح مع 4 خيارات (A-D) واكشف الإجابة الصح بعد ما تحددها.
+- لو طلب شرح محاضرة: اشرح محتواها بالتفصيل بناءً على اسمها وموضوعها.
+- لو طلب ملخص: لخص الموضوع في نقاط واضحة.
+- كن ودود وشجع الطالب دايماً.
+- لا تخرج عن نطاق التمريض والطب والعلوم الصحية.
+${contextBlock}`;
+  }
+
+  /* ── Render markdown-ish text to HTML ── */
+  function mdToHtml(text) {
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    const lines = text.split('\n');
+    let out = '', inList = false;
+    lines.forEach(line => {
+      const bullet = line.match(/^[\-\*•]\s+(.*)/);
+      const num    = line.match(/^\d+\.\s+(.*)/);
+      if (bullet || num) {
+        if (!inList) { out += '<ul>'; inList = true; }
+        out += `<li>${(bullet||num)[1]}</li>`;
+      } else {
+        if (inList) { out += '</ul>'; inList = false; }
+        if (line.trim()) out += `<p>${line}</p>`;
+      }
+    });
+    if (inList) out += '</ul>';
+    return out || `<p>${text}</p>`;
+  }
+
+  /* ── Append a message bubble ── */
+  function appendMsg(role, html) {
+    const msgs = $('aiMessages');
+    const div  = el('div', `ai-msg ${role === 'model' ? 'bot' : 'user'}`, html);
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  /* ── Call Gemini API ── */
+  async function callGemini(userText) {
+    aiHistory.push({ role: 'user', parts: [{ text: userText }] });
+
+    const body = {
+      system_instruction: { parts: [{ text: buildSystemPrompt() }] },
+      contents: aiHistory.slice(-16),
+      generationConfig: { maxOutputTokens: 1024, temperature: 0.7 },
+    };
+
+    const res = await fetch(GEMINI_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.error?.message || `HTTP ${res.status}`);
+    }
+
+    const data  = await res.json();
+    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || '...';
+    aiHistory.push({ role: 'model', parts: [{ text: reply }] });
+    return reply;
+  }
+
+  /* ── Send message ── */
+  window.aiSendMessage = async function(override) {
+    if (aiLoading) return;
+    const input = $('aiInput');
+    const text  = (override || input.value).trim();
+    if (!text) return;
+
+    input.value = '';
+    aiAutoResize(input);
+    $('aiSendBtn').disabled = true;
+    aiLoading = true;
+    $('aiQuickPrompts').style.display = 'none';
+
+    appendMsg('user', `<p>${text.replace(/</g,'&lt;')}</p>`);
+    updateContextBar();
+
+    const typing = $('aiTyping');
+    typing.classList.add('show');
+    $('aiMessages').scrollTop = $('aiMessages').scrollHeight;
+
+    try {
+      const reply = await callGemini(text);
+      typing.classList.remove('show');
+      appendMsg('model', mdToHtml(reply));
+      if (!aiOpen) $('aiFabBadge').classList.add('show');
+    } catch(e) {
+      typing.classList.remove('show');
+      const msg = e.message.includes('API_KEY_INVALID') || e.message.includes('400')
+        ? '⚠️ الـ API Key مش صح. اتأكد إنك حطيت الـ Key الصح في الكود.'
+        : `⚠️ حصل خطأ: ${e.message}`;
+      appendMsg('model', `<p>${msg}</p>`);
+    } finally {
+      aiLoading = false;
+      $('aiSendBtn').disabled = false;
+      input.focus();
+    }
+  };
+
+  window.aiSendQuick = txt => window.aiSendMessage(txt);
+
+  /* ── Toggle panel ── */
+  window.toggleAIChat = function() {
+    aiOpen = !aiOpen;
+    $('aiChatPanel').classList.toggle('open', aiOpen);
+    $('aiFab').classList.toggle('open', aiOpen);
+    if (aiOpen) {
+      $('aiFabBadge').classList.remove('show');
+      updateContextBar();
+      setTimeout(() => $('aiInput').focus(), 300);
+    }
+  };
+
+  /* ── Clear chat ── */
+  window.aiClearChat = function() {
+    aiHistory = [];
+    $('aiMessages').innerHTML = '';
+    $('aiQuickPrompts').style.display = 'flex';
+    showWelcome();
+  };
+
+  /* ── Auto-resize textarea ── */
+  window.aiAutoResize = function(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+  };
+
+  /* ── Enter = send, Shift+Enter = newline ── */
+  window.aiHandleKey = function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); window.aiSendMessage(); }
+  };
+
+  /* ── Welcome message ── */
+  function showWelcome() {
+    const ctx = getPageContext();
+    const subjectLine = ctx
+      ? `<br><span style="font-size:12px;color:#0F6E56;font-weight:600;">📚 شايف إنك بتدرس: ${ctx.name}</span>`
+      : '';
+    appendMsg('model',
+      `<p>👋 أهلاً! أنا مساعدك في التمريض.</p>
+       <p>اسألني أي سؤال، اطلب شرح محاضرة، MCQ، أو ملخص.${subjectLine}</p>
+       <p style="font-size:11.5px;color:rgba(14,28,22,0.5);margin-top:6px;">I also answer in English — just ask!</p>`
+    );
+  }
+
+  /* ── Hook into page navigation to update context ── */
+  const _origOpenSubject = window.openSubject;
+  if (typeof _origOpenSubject === 'function') {
+    window.openSubject = function(...args) {
+      _origOpenSubject.apply(this, args);
+      setTimeout(updateContextBar, 150);
+    };
+  }
+  const _origGoHome = window.goHome;
+  if (typeof _origGoHome === 'function') {
+    window.goHome = function(...args) {
+      _origGoHome.apply(this, args);
+      setTimeout(updateContextBar, 150);
+    };
+  }
+  const _origOpenYear = window.openYear;
+  if (typeof _origOpenYear === 'function') {
+    window.openYear = function(...args) {
+      _origOpenYear.apply(this, args);
+      setTimeout(updateContextBar, 150);
+    };
+  }
+
+  /* ── Init ── */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showWelcome);
+  } else {
+    showWelcome();
+  }
+
+})();
 </script>
 
 </body>

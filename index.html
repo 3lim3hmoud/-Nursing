@@ -4538,7 +4538,7 @@ window.trackRecent = trackRecent;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, orderBy, onSnapshot, limit, getDocs }
+import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, where, orderBy, onSnapshot, limit, getDocs }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 import { getMessaging, getToken, onMessage }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging.js";
@@ -4828,26 +4828,30 @@ window._authUpdateStats = updateStats;
 const ADMIN_EMAIL = 'kimoali426@gmail.com';
 window.ADMIN_EMAIL_REF = ADMIN_EMAIL;
 
-/* Listen for new notifications — shows global ones + ones targeted to this user */
+/* Listen for new notifications — shows global ones + ones targeted to this user.
+   Split into two queries (instead of one unfiltered query + client-side filtering)
+   so Firestore rules can actually enforce, on the server, that a user only ever
+   receives notifications meant for everyone or for them specifically. */
 function startNotifListener(uid) {
-  const q = query(collection(db, 'notifications'), orderBy('ts', 'desc'), limit(50));
-  onSnapshot(q, (snap) => {
+  function handleSnap(snap) {
     snap.docChanges().forEach(change => {
       if (change.type === 'added') {
         const data = change.doc.data();
-        if (!data.targetUid || data.targetUid === uid) {
-          const notif = {
-            id: change.doc.id,
-            title: data.title || '',
-            body: data.body || '',
-            type: data.type || 'info',
-            ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
-          };
-          if (window.pushNotification) window.pushNotification(notif);
-        }
+        const notif = {
+          id: change.doc.id,
+          title: data.title || '',
+          body: data.body || '',
+          type: data.type || 'info',
+          ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
+        };
+        if (window.pushNotification) window.pushNotification(notif);
       }
     });
-  });
+  }
+  const qGlobal = query(collection(db, 'notifications'), where('targetUid', '==', null), orderBy('ts', 'desc'), limit(50));
+  const qMine = query(collection(db, 'notifications'), where('targetUid', '==', uid), orderBy('ts', 'desc'), limit(50));
+  onSnapshot(qGlobal, handleSnap);
+  onSnapshot(qMine, handleSnap);
 }
 
 /* Admin: send notification — targetUid=null means send to everyone */

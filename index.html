@@ -103,6 +103,7 @@
     --card-hover: rgba(29,158,117,0.12);
     --shadow-card: 0 2px 12px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
     --shadow-float: 0 20px 60px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
+    --ink: #d8f0e6;
     color-scheme: dark;
   }
 
@@ -118,12 +119,13 @@
   }
 
   /* Dark mode video + overlay */
-  [data-theme="dark"] #bg-video { opacity: 0.18; filter: brightness(0.35) saturate(0.5); }
-  [data-theme="dark"] .home-overlay {
+  [data-theme="dark"] #bg-video { opacity: 0.55; filter: brightness(0.7) saturate(0.8); }
+  [data-theme="dark"] .hero-overlay {
     background: linear-gradient(to bottom,
-      rgba(0,6,3,0.75) 0%,
-      rgba(0,8,4,0.5) 40%,
-      rgba(0,10,5,0.82) 100%) !important;
+      rgba(4,12,8,0.55) 0%,
+      rgba(6,14,11,0.32) 28%,
+      rgba(8,16,13,0.28) 55%,
+      rgba(10,20,16,0.55) 100%) !important;
   }
 
   /* ─── AUTH BUTTON (top-right corner) ─── */
@@ -819,9 +821,21 @@
     line-height: 1.4;
   }
 
+  [data-theme="dark"] .hero-sub {
+    color: rgba(216,240,230,0.65);
+  }
+
   .hero-sub strong {
     color: rgba(28,43,37,0.85);
     font-weight: 500;
+  }
+
+  [data-theme="dark"] .hero-sub strong {
+    color: rgba(216,240,230,0.9);
+  }
+
+  [data-theme="dark"] .profile-tagline {
+    color: rgba(216,240,230,0.55) !important;
   }
 
   .divider-dot {
@@ -3151,7 +3165,7 @@
       <br>Faculty of Nursing
       <br>Al-Riyadah University of Science and Technology
     </p>
-    <p class="hero-sub" style="margin-top:0.6rem; font-size: 11px; color: rgba(28,43,37,0.55);">
+    <p class="hero-sub profile-tagline" style="margin-top:0.6rem; font-size: 11px; color: rgba(28,43,37,0.55);">
       A study hub built for nursing students — organized by year, subject, and resource type
     </p>
   </div>

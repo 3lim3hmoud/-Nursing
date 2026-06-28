@@ -5,7 +5,7 @@ importScripts('https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js
 importScripts('https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging-compat.js');
 
 // ─── Cache (غيّر VERSION كل ما ترفع تحديث جديد) ───
-const VERSION = 'v66';   // ← رفّعها عن v50 عشان يُجبر المتصفح يتحدث
+const VERSION = 'v67';   // ← رفّعها عن v50 عشان يُجبر المتصفح يتحدث
 const CACHE   = 'nursing-hub-' + VERSION;
 const ASSETS  = ['./', './index.html', './manifest.json'];
 

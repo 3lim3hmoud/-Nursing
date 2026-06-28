@@ -45,13 +45,85 @@
     --gray-800: #444441;
     --ink: #0E1C16;
     --ink-soft: #1c2b25;
+
+    /* ─── Semantic tokens (light mode defaults) ─── */
+    --bg-page: transparent;
+    --bg-card: #ffffff;
+    --bg-card-soft: rgba(255,255,255,0.92);
+    --bg-surface: #F1EFE8;
+    --bg-surface-2: rgba(241,239,232,0.7);
+    --bg-overlay: rgba(6,14,11,0.55);
+    --text-main: #0E1C16;
+    --text-soft: #1c2b25;
+    --text-muted: #5F5E5A;
+    --text-hint: #888780;
+    --border-color: rgba(28,43,37,0.12);
+    --border-strong: rgba(28,43,37,0.22);
+    --input-bg: #fff;
+    --input-border: rgba(28,43,37,0.18);
+    --popover-bg: #fff;
+    --popover-shadow: 0 12px 32px rgba(20,40,35,0.22);
+    --ai-panel-bg: #fff;
+    --ai-msg-bot-bg: #F1EFE8;
+    --ai-msg-bot-color: #0E1C16;
+    --ai-input-bg: #F8F7F3;
+    --ai-input-border: rgba(28,43,37,0.14);
+    --dash-bg: #fff;
+    --progress-bar-bg: rgba(28,43,37,0.1);
+    --card-hover: rgba(29,158,117,0.06);
+    --shadow-card: 0 2px 12px rgba(14,28,22,0.08), 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-float: 0 20px 60px rgba(6,14,11,0.22), 0 4px 16px rgba(0,0,0,0.12);
   }
+
+  /* ─── Dark Mode ─── */
+  [data-theme="dark"] {
+    --bg-page: #0d1a14;
+    --bg-card: #152019;
+    --bg-card-soft: rgba(21,32,25,0.95);
+    --bg-surface: #1a2b21;
+    --bg-surface-2: rgba(26,43,33,0.8);
+    --bg-overlay: rgba(0,0,0,0.72);
+    --text-main: #d8f0e6;
+    --text-soft: #a8c9b8;
+    --text-muted: #6b9a82;
+    --text-hint: #4d7060;
+    --border-color: rgba(110,200,150,0.1);
+    --border-strong: rgba(110,200,150,0.2);
+    --input-bg: #1a2b21;
+    --input-border: rgba(110,200,150,0.18);
+    --popover-bg: #1e2e24;
+    --popover-shadow: 0 12px 40px rgba(0,0,0,0.55);
+    --ai-panel-bg: #152019;
+    --ai-msg-bot-bg: #1a2b21;
+    --ai-msg-bot-color: #d8f0e6;
+    --ai-input-bg: #1a2b21;
+    --ai-input-border: rgba(110,200,150,0.15);
+    --dash-bg: #152019;
+    --progress-bar-bg: rgba(110,200,150,0.1);
+    --card-hover: rgba(29,158,117,0.12);
+    --shadow-card: 0 2px 12px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-float: 0 20px 60px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  [data-theme="dark"] html,
+  [data-theme="dark"] body { color: var(--text-main); }
 
   html, body {
     font-family: 'Inter', sans-serif;
-    color: var(--ink);
+    color: var(--text-main, var(--ink));
     min-height: 100vh;
-    background: transparent;
+    background: var(--bg-page, transparent);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode video + overlay */
+  [data-theme="dark"] #bg-video { opacity: 0.18; filter: brightness(0.35) saturate(0.5); }
+  [data-theme="dark"] .home-overlay {
+    background: linear-gradient(to bottom,
+      rgba(0,6,3,0.75) 0%,
+      rgba(0,8,4,0.5) 40%,
+      rgba(0,10,5,0.82) 100%) !important;
   }
 
   /* ─── AUTH BUTTON (top-right corner) ─── */
@@ -63,6 +135,38 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  /* ─── Dark Mode Toggle Button ─── */
+  .dark-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.38);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: all 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+  }
+  .dark-toggle-btn:hover {
+    background: rgba(255,255,255,0.32);
+    transform: scale(1.08);
+  }
+  [data-theme="dark"] .dark-toggle-btn {
+    background: rgba(29,158,117,0.22);
+    border-color: rgba(110,200,150,0.4);
+    color: #6CE3B4;
+  }
+  [data-theme="dark"] .dark-toggle-btn:hover {
+    background: rgba(29,158,117,0.36);
   }
 
   .auth-btn {
@@ -136,12 +240,12 @@
     position: absolute;
     top: 52px;
     right: 0;
-    background: rgba(255,255,255,1);
-    border: 1px solid rgba(220,225,222,0.9);
+    background: var(--popover-bg, rgba(255,255,255,1));
+    border: 1px solid var(--border-color, rgba(220,225,222,0.9));
     border-radius: 14px;
     padding: 0;
     width: 220px;
-    box-shadow: 0 12px 32px rgba(20,40,35,0.22);
+    box-shadow: var(--popover-shadow, 0 12px 32px rgba(20,40,35,0.22));
     opacity: 0;
     transform: translateY(-8px) scale(0.96);
     pointer-events: none;
@@ -283,7 +387,7 @@
   }
   .dashboard-panel.open { opacity: 1; pointer-events: auto; }
   .dashboard-drawer {
-    background: #fff;
+    background: var(--dash-bg, #fff);
     width: min(380px, 100vw);
     height: 100vh;
     overflow-y: auto;
@@ -826,6 +930,15 @@
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
     box-shadow: 0 8px 32px rgba(20,40,35,0.12);
+  }
+  [data-theme="dark"] .year-card {
+    background: rgba(21,40,30,0.55);
+    border-color: rgba(110,200,150,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  [data-theme="dark"] .year-card:hover {
+    background: rgba(29,60,44,0.7) !important;
+    border-color: rgba(110,200,150,0.4) !important;
   }
 
   .year-card::before {
@@ -2284,9 +2397,9 @@
     z-index: 998;
     width: min(380px, calc(100vw - 48px));
     height: min(560px, calc(100vh - 120px));
-    background: #fff;
+    background: var(--ai-panel-bg, #fff);
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(6,14,11,0.22), 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: var(--shadow-float);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -2295,6 +2408,7 @@
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.28s cubic-bezier(.34,1.2,.64,1);
     transform-origin: bottom left;
+    border: 0.5px solid var(--border-color);
   }
   .ai-chat-panel.open {
     opacity: 1;
@@ -2349,6 +2463,7 @@
     padding: 14px 14px 6px;
     display: flex; flex-direction: column; gap: 10px;
     scroll-behavior: smooth;
+    background: var(--ai-panel-bg, #fff);
   }
   .ai-messages::-webkit-scrollbar { width: 4px; }
   .ai-messages::-webkit-scrollbar-thumb { background: rgba(29,158,117,0.25); border-radius: 100px; }
@@ -2356,15 +2471,16 @@
     max-width: 88%; font-size: 13.5px; line-height: 1.55;
     word-break: break-word;
     animation: msgIn 0.2s ease;
+    position: relative;
   }
   @keyframes msgIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
   .ai-msg.bot {
     align-self: flex-start;
-    background: #F0FAF5;
+    background: var(--ai-msg-bot-bg, #F0FAF5);
     border: 1px solid rgba(29,158,117,0.15);
-    color: #0E1C16;
+    color: var(--ai-msg-bot-color, #0E1C16);
     border-radius: 4px 16px 16px 16px;
-    padding: 10px 13px;
+    padding: 10px 13px 22px;
   }
   .ai-msg.user {
     align-self: flex-end;
@@ -2376,11 +2492,33 @@
   .ai-msg.bot p { margin: 0 0 6px; }
   .ai-msg.bot p:last-child { margin-bottom: 0; }
   .ai-msg.bot strong { color: #0F6E56; }
+  [data-theme="dark"] .ai-msg.bot strong { color: #6CE3B4; }
   .ai-msg.bot ul { padding-left: 16px; margin: 4px 0; }
   .ai-msg.bot li { margin-bottom: 3px; }
+
+  /* Streaming cursor */
+  .ai-msg.bot.streaming .ai-msg-content::after {
+    content: '▋'; color: #1D9E75; animation: blink 0.7s step-end infinite;
+    font-size: 11px; vertical-align: middle;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* Copy button */
+  .ai-msg-copy {
+    position: absolute; bottom: 5px; right: 8px;
+    background: none; border: none; cursor: pointer;
+    color: rgba(14,28,22,0.3); padding: 3px;
+    font-size: 12px; font-family: 'Inter', sans-serif;
+    transition: color 0.15s; -webkit-tap-highlight-color: transparent;
+    display: flex; align-items: center;
+  }
+  .ai-msg-copy:hover { color: #1D9E75; }
+  [data-theme="dark"] .ai-msg-copy { color: rgba(110,200,150,0.3); }
+  [data-theme="dark"] .ai-msg-copy:hover { color: #6CE3B4; }
+
   .ai-typing {
     align-self: flex-start;
-    background: #F0FAF5;
+    background: var(--ai-msg-bot-bg, #F0FAF5);
     border: 1px solid rgba(29,158,117,0.15);
     border-radius: 4px 16px 16px 16px;
     padding: 12px 16px;
@@ -2402,7 +2540,8 @@
     padding: 6px 12px 4px;
     display: flex; flex-wrap: wrap; gap: 6px;
     flex-shrink: 0;
-    border-top: 1px solid rgba(28,43,37,0.07);
+    border-top: 1px solid var(--border-color, rgba(28,43,37,0.07));
+    background: var(--ai-panel-bg, #fff);
   }
   .ai-quick-btn {
     font-size: 11px; font-family: 'Inter', sans-serif;
@@ -2415,22 +2554,25 @@
     white-space: nowrap;
   }
   .ai-quick-btn:hover { background: rgba(29,158,117,0.16); border-color: rgba(29,158,117,0.4); }
+  [data-theme="dark"] .ai-quick-btn { color: #6CE3B4; background: rgba(29,158,117,0.12); border-color: rgba(29,158,117,0.25); }
   .ai-input-area {
     padding: 10px 12px 12px;
-    border-top: 1px solid rgba(28,43,37,0.08);
+    border-top: 1px solid var(--border-color, rgba(28,43,37,0.08));
     display: flex; gap: 8px; align-items: flex-end;
-    flex-shrink: 0; background: #fff;
+    flex-shrink: 0; background: var(--ai-panel-bg, #fff);
   }
   .ai-input {
     flex: 1;
-    border: 1.5px solid rgba(28,43,37,0.15);
+    border: 1.5px solid var(--ai-input-border, rgba(28,43,37,0.15));
     border-radius: 14px; padding: 9px 13px;
-    font-family: 'Inter', sans-serif; font-size: 13px; color: #0E1C16;
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    color: var(--text-main, #0E1C16);
+    background: var(--ai-input-bg, #fff);
     outline: none; resize: none; max-height: 100px; min-height: 38px;
     line-height: 1.45; transition: border-color 0.15s;
   }
   .ai-input:focus { border-color: #1D9E75; }
-  .ai-input::placeholder { color: rgba(14,28,22,0.4); }
+  .ai-input::placeholder { color: var(--text-hint, rgba(14,28,22,0.4)); }
   .ai-send-btn {
     width: 38px; height: 38px; border-radius: 50%;
     background: linear-gradient(135deg, #1D9E75, #378ADD);
@@ -2444,7 +2586,7 @@
   .ai-send-btn svg { width: 16px; height: 16px; color: #fff; }
   .ai-clear-btn {
     background: none; border: none; cursor: pointer;
-    color: rgba(14,28,22,0.35); padding: 2px;
+    color: var(--text-hint, rgba(14,28,22,0.35)); padding: 2px;
     font-size: 11px; font-family: 'Inter', sans-serif;
     transition: color 0.15s; -webkit-tap-highlight-color: transparent;
     display: flex; align-items: center; gap: 3px;
@@ -2452,6 +2594,17 @@
   }
   .ai-clear-btn:hover { color: #c0392b; }
   .ai-clear-btn svg { width: 12px; height: 12px; }
+
+  /* ─── Mobile: AI panel full-screen on small screens ─── */
+  @media (max-width: 480px) {
+    .ai-chat-panel {
+      bottom: 0 !important; left: 0 !important;
+      width: 100vw !important; height: 92vh !important;
+      border-radius: 20px 20px 0 0 !important;
+      transform-origin: bottom center !important;
+    }
+    .ai-fab { bottom: 16px; left: 16px; width: 52px; height: 52px; }
+  }
 
 </style>
 </head>
@@ -2537,6 +2690,11 @@
 
 <!-- ══════════════════════ AUTH CORNER (top-right) ══════════════════════ -->
 <div class="auth-corner" id="authCorner">
+  <!-- 🌙 Dark Mode Toggle -->
+  <button class="dark-toggle-btn" id="darkToggleBtn" onclick="toggleDarkMode()" title="تبديل الوضع الليلي" aria-label="Dark mode toggle">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
   <!-- 🔔 Notification Bell -->
   <div style="position:relative;" id="notifWrap">
     <button class="notif-bell-btn" id="notifBellBtn" onclick="toggleNotifPanel()" title="Notifications">
@@ -5221,6 +5379,78 @@ window.trackRecent = trackRecent;
 
 </script>
 
+<!-- ══════════════════════ DARK MODE + PERF UTILS ══════════════════════ -->
+<script>
+/* ─── Dark Mode ─── */
+(function() {
+  const saved = localStorage.getItem('nurseverse_theme') || 'light';
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.style.background = '#0d1a14';
+  }
+})();
+
+window.toggleDarkMode = function() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  document.documentElement.style.background = next === 'dark' ? '#0d1a14' : '';
+  localStorage.setItem('nurseverse_theme', next);
+  const btn = document.getElementById('darkToggleBtn');
+  if (btn) {
+    btn.querySelector('.icon-sun').style.display  = next === 'dark'  ? 'none'  : '';
+    btn.querySelector('.icon-moon').style.display = next === 'dark'  ? ''      : 'none';
+  }
+};
+
+/* init icon state on load */
+document.addEventListener('DOMContentLoaded', function() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const btn = document.getElementById('darkToggleBtn');
+  if (btn && isDark) {
+    btn.querySelector('.icon-sun').style.display  = 'none';
+    btn.querySelector('.icon-moon').style.display = '';
+  }
+});
+
+/* ─── Firestore Student Cache (5-min TTL) ─── */
+window._studentCache = null;
+window._studentCacheTs = 0;
+const STUDENT_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+window._getCachedStudent = async function(getDocFn, docRef) {
+  const now = Date.now();
+  if (window._studentCache && (now - window._studentCacheTs) < STUDENT_CACHE_TTL) {
+    return window._studentCache;
+  }
+  const snap = await getDocFn(docRef);
+  window._studentCache = snap;
+  window._studentCacheTs = now;
+  return snap;
+};
+
+window._invalidateStudentCache = function() {
+  window._studentCache = null;
+  window._studentCacheTs = 0;
+};
+
+/* Admin full-collection cache (3-min TTL) */
+window._studentsListCache = null;
+window._studentsListCacheTs = 0;
+const STUDENTS_LIST_TTL = 3 * 60 * 1000;
+
+window._getCachedStudentsList = async function(getDocsFn, collRef) {
+  const now = Date.now();
+  if (window._studentsListCache && (now - window._studentsListCacheTs) < STUDENTS_LIST_TTL) {
+    return window._studentsListCache;
+  }
+  const snap = await getDocsFn(collRef);
+  window._studentsListCache = snap;
+  window._studentsListCacheTs = now;
+  return snap;
+};
+</script>
+
 <script type="module">
 /* ══════════════════════ FIREBASE AUTH ══════════════════════ */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
@@ -5333,7 +5563,9 @@ async function syncProgress(uid) {
   const localRecents = window.getRecentList ? window.getRecentList() : [];
   const ref = doc(db, 'students', uid);
   try {
-    const snap = await getDoc(ref);
+    const snap = await (window._getCachedStudent
+      ? window._getCachedStudent(getDoc, ref)
+      : getDoc(ref));
     if (snap.exists()) {
       const data = snap.data();
       const remote = new Set(data.viewedFiles || []);
@@ -5370,6 +5602,7 @@ async function syncProgress(uid) {
         displayName: auth.currentUser.displayName || '',
         email: auth.currentUser.email || '',
       });
+      if (window._invalidateStudentCache) window._invalidateStudentCache();
       localStorage.setItem('nurseverse_viewed_files_v1', JSON.stringify([...merged]));
       if (window.saveFavoritesMap) window.saveFavoritesMap(mergedFavorites);
       if (window.saveRecentList) window.saveRecentList(mergedRecents);
@@ -5603,7 +5836,9 @@ window._sendAdminNotifToFirestore = async function({ title, body, type, targetUi
 /* Admin: load all registered students */
 window._loadStudentsList = async function() {
   try {
-    const snap = await getDocs(collection(db, 'students'));
+    const snap = await (window._getCachedStudentsList
+      ? window._getCachedStudentsList(getDocs, collection(db, 'students'))
+      : getDocs(collection(db, 'students')));
     const students = [];
     snap.forEach(d => {
       const data = d.data();
@@ -5874,7 +6109,9 @@ function _slugFromFileUrl(url) {
 
 window._loadAdminStats = async function() {
   try {
-    const snap = await getDocs(collection(db, 'students'));
+    const snap = await (window._getCachedStudentsList
+      ? window._getCachedStudentsList(getDocs, collection(db, 'students'))
+      : getDocs(collection(db, 'students')));
     const totalFiles = _getTotalFilesCount();
     const subjectLookup = _buildSubjectLookup();
     const subjectOpenCounts = {}; // slug -> count of (student, file) opens
@@ -6559,7 +6796,7 @@ ${contextBlock}`;
     msgs.scrollTop = msgs.scrollHeight;
   }
 
-  /* ── Call Groq API ── */
+  /* ── Call Groq API — with streaming ── */
   async function callGemini(userText) {
     aiHistory.push({ role: 'user', content: userText });
 
@@ -6570,6 +6807,7 @@ ${contextBlock}`;
       ],
       max_tokens: 1024,
       temperature: 0.7,
+      stream: true,
     };
 
     const res = await fetch(GROQ_URL, {
@@ -6583,10 +6821,63 @@ ${contextBlock}`;
       throw new Error(err?.error?.message || `HTTP ${res.status}`);
     }
 
-    const data  = await res.json();
-    const reply = data.choices?.[0]?.message?.content || '...';
-    aiHistory.push({ role: 'assistant', content: reply });
-    return reply;
+    /* ── Streaming render ── */
+    const msgs = $('aiMessages');
+    const bubble = el('div', 'ai-msg bot streaming');
+    const content = el('div', 'ai-msg-content');
+    bubble.appendChild(content);
+    msgs.appendChild(bubble);
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let fullText = '';
+
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split('\n');
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const data = line.slice(6).trim();
+          if (data === '[DONE]') break;
+          try {
+            const json = JSON.parse(data);
+            const delta = json.choices?.[0]?.delta?.content || '';
+            if (delta) {
+              fullText += delta;
+              content.innerHTML = mdToHtml(fullText);
+              msgs.scrollTop = msgs.scrollHeight;
+            }
+          } catch(e) { /* partial chunk */ }
+        }
+      }
+    } catch(streamErr) {
+      /* stream ended or network issue — use what we got */
+    }
+
+    /* If streaming didn't work (non-streaming worker), fall back */
+    if (!fullText) {
+      const fallback = await res.json().catch(() => ({}));
+      fullText = fallback.choices?.[0]?.message?.content || '...';
+      content.innerHTML = mdToHtml(fullText);
+    }
+
+    /* Add copy button to finished bubble */
+    bubble.classList.remove('streaming');
+    const copyBtn = el('button', 'ai-msg-copy', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>');
+    copyBtn.title = 'نسخ';
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(fullText).then(() => {
+        copyBtn.innerHTML = '✓';
+        setTimeout(() => { copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'; }, 1500);
+      });
+    };
+    bubble.appendChild(copyBtn);
+
+    aiHistory.push({ role: 'assistant', content: fullText });
+    return fullText;
   }
 
   /* ── Send message ── */
@@ -6624,11 +6915,10 @@ ${contextBlock}`;
     $('aiMessages').scrollTop = $('aiMessages').scrollHeight;
 
     try {
-      const reply = await callGemini(text);
+      await callGemini(text); /* streaming: bubble appended inside callGemini */
       typing.classList.remove('show');
-      appendMsg('model', mdToHtml(reply));
       if (!aiOpen) $('aiFabBadge').classList.add('show');
-      if (window._recordAIUsage) window._recordAIUsage(); // fire-and-forget, doesn't block the UI
+      if (window._recordAIUsage) window._recordAIUsage();
     } catch(e) {
       typing.classList.remove('show');
       const msg = e.message.includes('Invalid API Key') || e.message.includes('401')

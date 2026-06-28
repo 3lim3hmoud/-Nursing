@@ -6998,12 +6998,14 @@ ${contextBlock}`;
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let fullText = '';
+    let rawAccumulated = '';
 
     try {
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value, { stream: true });
+        rawAccumulated += chunk;
         const lines = chunk.split('\n');
         for (const line of lines) {
           if (!line.startsWith('data: ')) continue;
@@ -7024,10 +7026,26 @@ ${contextBlock}`;
       /* stream ended or network issue — use what we got */
     }
 
-    /* If streaming didn't work (non-streaming worker), fall back */
+    /* If SSE parsing produced nothing, the worker likely returned a plain
+       (non-streaming) JSON body instead of SSE. Parse the raw text we
+       already accumulated — do NOT call res.json() again, the body
+       stream has already been consumed by the reader above. */
+    if (!fullText && rawAccumulated) {
+      try {
+        const fallback = JSON.parse(rawAccumulated);
+        fullText = fallback.choices?.[0]?.message?.content
+                || fallback.choices?.[0]?.delta?.content
+                || fallback.content
+                || '';
+      } catch(e) {
+        /* not JSON either — last resort: show raw text if it looks like content */
+        fullText = rawAccumulated.trim();
+      }
+      if (fullText) content.innerHTML = mdToHtml(fullText);
+    }
+
     if (!fullText) {
-      const fallback = await res.json().catch(() => ({}));
-      fullText = fallback.choices?.[0]?.message?.content || '...';
+      fullText = 'حصل خطأ في الاتصال بالمساعد الذكي، حاول تاني بعد لحظات. 🙏';
       content.innerHTML = mdToHtml(fullText);
     }
 

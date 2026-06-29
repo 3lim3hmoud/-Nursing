@@ -2777,7 +2777,7 @@
   .group-status-active { background: var(--teal-50); color: var(--teal-600); }
   .group-status-rejected, .group-status-closed { background: #fdecea; color: #c0392b; }
   .group-modal-overlay {
-    position: fixed; inset: 0; z-index: 220;
+    position: fixed; inset: 0; z-index: 500;
     background: rgba(6,14,11,0.65); backdrop-filter: blur(6px);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
@@ -3197,7 +3197,7 @@
 <div class="chat-view" id="groupChatView">
   <div class="chat-header">
     <button class="chat-back-btn" onclick="closeGroupChat()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     </button>
     <div class="chat-header-avatar" id="groupChatAvatar">👥</div>
     <div class="chat-header-info">

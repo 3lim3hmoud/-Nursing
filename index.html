@@ -6964,20 +6964,21 @@ window._listenMyConversation = function(callback) {
 };
 
 /* Student: send a message — creates the conversation doc if it doesn't exist yet */
-window._sendMyMessage = async function(text) {
+window._sendMyMessage = async function(text, fileInfo) {
   const user = auth.currentUser;
   if (!user) return;
   const ref = doc(db, 'conversations', user.uid);
   await setDoc(ref, {
     studentName: user.displayName || user.email || '?',
     studentEmail: user.email || '',
-    lastMessage: text,
+    lastMessage: fileInfo ? (fileInfo.fileName || '📎 ملف') : text,
     lastTs: serverTimestamp(),
     unreadByAdmin: true,
     unreadByStudent: false,
   }, { merge: true });
   await addDoc(collection(db, 'conversations', user.uid, 'messages'), {
     text, sender: 'student', ts: serverTimestamp(),
+    ...(fileInfo ? { type: fileInfo.type, fileUrl: fileInfo.fileUrl, fileName: fileInfo.fileName } : {}),
   });
 };
 

@@ -7002,12 +7002,21 @@ window._listenMyConversation = function(callback) {
   if (!uid) return;
   if (_myConvUnsub) _myConvUnsub();
   const q = query(collection(db, 'conversations', uid, 'messages'), orderBy('ts', 'asc'), limit(200));
+  let _myPrevCount = 0;
   _myConvUnsub = onSnapshot(q, (snap) => {
     const messages = [];
     snap.forEach(d => {
       const m = d.data();
-      messages.push({ id: d.id, text: m.text, sender: m.sender, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+      messages.push({ id: d.id, text: m.text, sender: m.sender, type: m.type, fileUrl: m.fileUrl, fileName: m.fileName, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
     });
+    const chatOpen = document.getElementById('myChatView')?.classList.contains('open');
+    if (messages.length > _myPrevCount && !chatOpen) {
+      const last = messages[messages.length - 1];
+      if (last && last.sender !== 'student' && window.showInappNotif) {
+        window.showInappNotif({ icon: '💬', from: 'علي محمود', text: last.text || last.fileName || '📎 ملف', onClick: () => { if (window.openMyChat) window.openMyChat(); } });
+      }
+    }
+    _myPrevCount = messages.length;
     callback(messages);
   });
 };
@@ -7468,6 +7477,7 @@ function openGroupChat(groupId) {
 
   if (_groupChatUnsub) _groupChatUnsub();
   const q = query(collection(db, 'groups', groupId, 'messages'), orderBy('ts', 'asc'), limit(300));
+  let _grpPrevCount = 0;
   _groupChatUnsub = onSnapshot(q, (snap) => {
     const messages = [];
     snap.forEach(d => {
@@ -7479,6 +7489,14 @@ function openGroupChat(groupId) {
         ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now(),
       });
     });
+    const grpOpen = document.getElementById('groupChatView')?.classList.contains('open');
+    if (messages.length > _grpPrevCount && !grpOpen) {
+      const last = messages[messages.length - 1];
+      if (last && last.senderUid !== user.uid && window.showInappNotif) {
+        window.showInappNotif({ icon: '👥', from: `جروب: ${g.name || ''}`, text: last.text || last.fileName || '📎 ملف', onClick: () => {} });
+      }
+    }
+    _grpPrevCount = messages.length;
     msgsEl.innerHTML = groupChatBubbleHtml(messages, user.uid, canModerate);
     msgsEl.scrollTop = msgsEl.scrollHeight;
   });

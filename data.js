@@ -1,5 +1,5 @@
 
-document.getElementById('profileImg').src = 'data:image/jpeg;base64,' + ALI_IMG;
+document.getElementById('profileImg').src = './ali.jpg';
 
 function toggleProfile() {
   document.getElementById('profilePopover').classList.toggle('open');

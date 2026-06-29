@@ -5925,7 +5925,7 @@ window._getCachedStudentsList = async function(getDocsFn, collRef) {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, where, orderBy, onSnapshot, limit, getDocs }
+import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, where, orderBy, onSnapshot, limit, getDocs, arrayUnion }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 import { getMessaging, getToken, onMessage }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging.js";
@@ -7217,13 +7217,13 @@ window.respondToInvite = async function(inviteId, accept) {
     if (!invSnap.exists()) return;
     const inv = invSnap.data();
     if (accept) {
-      const gSnap = await getDoc(doc(db, 'groups', inv.groupId));
-      if (gSnap.exists()) {
-        const currentMembers = gSnap.data().members || [];
-        await updateDoc(doc(db, 'groups', inv.groupId), {
-          members: [...new Set([...currentMembers, inv.invitedEmail])]
-        });
-      }
+      // مهم: ما نعمل getDoc على groups هنا، لأن المدعو لسه مش عضو
+      // ولا صاحب الجروب ولا أدمن، يعني الـ read rule هترفضه فورًا.
+      // arrayUnion بيسمح بالتعديل من غير ما نحتاج نقرا الداتا الحالية،
+      // وده اللي بيطابق شرط update rule بتاعت groups (إضافة إيميل واحد بس).
+      await updateDoc(doc(db, 'groups', inv.groupId), {
+        members: arrayUnion(inv.invitedEmail)
+      });
       await updateDoc(doc(db, 'groupInvites', inviteId), { status: 'accepted' });
     } else {
       await updateDoc(doc(db, 'groupInvites', inviteId), { status: 'declined' });

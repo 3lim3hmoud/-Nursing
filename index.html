@@ -5662,10 +5662,20 @@ function chatBubbleHtml(messages, opts) {
     const delBtn = (canDelete && m.id)
       ? `<button class="chat-bubble-del-btn" title="حذف الرسالة" onclick="event.stopPropagation(); ${opts.deleteFn}('${m.id}')">🗑</button>`
       : '';
+    let bubbleContent = '';
+    if (m.type === 'image' && m.fileUrl) {
+      bubbleContent = `<a href="${m.fileUrl}" target="_blank"><img src="${m.fileUrl}" style="max-width:200px;max-height:200px;border-radius:8px;display:block;margin-bottom:4px;"></a>`;
+      if (m.text) bubbleContent += `<div>${escChat(m.text)}</div>`;
+    } else if (m.type === 'file' && m.fileUrl) {
+      bubbleContent = `<a href="${m.fileUrl}" target="_blank" style="display:flex;align-items:center;gap:6px;color:inherit;text-decoration:none;">📎 <span style="text-decoration:underline;">${escChat(m.fileName || 'ملف')}</span></a>`;
+      if (m.text) bubbleContent += `<div style="margin-top:4px;">${escChat(m.text)}</div>`;
+    } else {
+      bubbleContent = escChat(m.text);
+    }
     return `<div class="chat-bubble-row ${fromMe ? 'from-me' : 'from-them'}">
       <div class="chat-bubble-wrap">
         ${delBtn}
-        <div class="chat-bubble">${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+        <div class="chat-bubble">${bubbleContent}<div class="chat-bubble-time">${time}</div></div>
       </div>
     </div>`;
   }).join('');

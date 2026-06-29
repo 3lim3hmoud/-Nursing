@@ -2814,6 +2814,59 @@
   .group-admin-reject, .group-admin-close { background: #fdecea; color: #c0392b; }
   [data-theme="dark"] .group-admin-card { border-color: rgba(216,240,230,0.12); }
   [data-theme="dark"] .group-admin-card-meta { color: rgba(216,240,230,0.5); }
+
+  /* invites */
+  .group-invite-item {
+    display: flex; align-items: center; gap: 10px; padding: 10px 8px; border-radius: 10px;
+    background: var(--teal-50); margin-bottom: 6px;
+  }
+  [data-theme="dark"] .group-invite-item { background: rgba(29,158,117,0.12); }
+  .group-invite-info { flex: 1; min-width: 0; }
+  .group-invite-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .group-invite-meta { font-size: 11px; color: rgba(28,43,37,0.55); margin-top: 2px; }
+  .group-invite-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .group-invite-btn {
+    width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 14px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .group-invite-accept { background: var(--teal-400); color: #fff; }
+  .group-invite-decline { background: #fdecea; color: #c0392b; }
+  .group-list-item-row { display: flex; align-items: center; width: 100%; gap: 6px; }
+  .group-invite-fab-badge {
+    position: absolute; top: -4px; right: -4px; background: #c0392b; color: #fff;
+    font-size: 9px; font-weight: 700; min-width: 16px; height: 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; padding: 0 3px;
+  }
+
+  /* file upload in group chat */
+  .group-upload-preview {
+    display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: var(--teal-50);
+    border-top: 1px solid rgba(28,43,37,0.08);
+  }
+  [data-theme="dark"] .group-upload-preview { background: rgba(29,158,117,0.1); }
+  .group-upload-preview-thumb {
+    width: 38px; height: 38px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: rgba(28,43,37,0.08);
+  }
+  .group-upload-preview-name { flex: 1; min-width: 0; font-size: 12px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .group-upload-preview-cancel { background: none; border: none; cursor: pointer; color: #c0392b; font-size: 16px; flex-shrink: 0; }
+  .group-upload-progress { font-size: 11px; color: var(--teal-600); flex-shrink: 0; }
+
+  /* file/image/video message bubbles */
+  .chat-bubble-media-img { max-width: 220px; max-height: 220px; border-radius: 10px; display: block; cursor: pointer; margin-bottom: 4px; }
+  .chat-bubble-media-video { max-width: 240px; max-height: 240px; border-radius: 10px; display: block; margin-bottom: 4px; }
+  .chat-bubble-file-link {
+    display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px;
+    background: rgba(28,43,37,0.06); text-decoration: none; color: var(--ink); margin-bottom: 4px;
+    font-size: 12.5px; font-weight: 600;
+  }
+  [data-theme="dark"] .chat-bubble-file-link { background: rgba(216,240,230,0.1); }
+  .chat-bubble-file-icon { font-size: 18px; flex-shrink: 0; }
+  .chat-bubble-file-meta { font-size: 10px; color: rgba(28,43,37,0.5); font-weight: 400; }
+  .chat-bubble-delete-btn {
+    background: none; border: none; cursor: pointer; color: rgba(28,43,37,0.35); font-size: 11px;
+    padding: 2px 4px; margin-top: 2px;
+  }
 </style>
 </head>
 <body>
@@ -3084,6 +3137,10 @@
     <div class="dashboard-section">
       <button class="group-create-btn" onclick="openCreateGroupModal()">➕ اعمل جروب جديد</button>
     </div>
+    <div class="dashboard-section" id="myInvitesSection" style="display:none;">
+      <div class="dashboard-section-title">دعوات منتظرة ردك 📨</div>
+      <div id="myInvitesList"></div>
+    </div>
     <div class="dashboard-section">
       <div class="dashboard-section-title">جروباتي</div>
       <div id="myGroupsList">
@@ -3101,7 +3158,7 @@
     </button>
     <h2 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:0.3rem;clear:both;">جروب مذاكرة جديد</h2>
     <p style="font-size:12.5px;color:rgba(28,43,37,0.55);margin-bottom:1.2rem;line-height:1.5;">
-      هيتبعت طلب للأدمن للموافقة على تشغيل الجروب. لما يوافق، الجروب يبقى شغال للأعضاء كلهم.
+      هيتبعت طلب للأدمن للموافقة على تشغيل الجروب. لما يوافق، تقدر تدعي زمايلك بإيميلاتهم من جوه الجروب.
     </p>
     <div class="group-field">
       <label>اسم الجروب</label>
@@ -3111,13 +3168,27 @@
       <label>وصف مختصر (اختياري)</label>
       <textarea id="newGroupDesc" rows="2" placeholder="عن إيه الجروب ده؟"></textarea>
     </div>
-    <div class="group-field">
-      <label>إيميلات الأعضاء</label>
-      <textarea id="newGroupMembers" rows="3" placeholder="ايميل في كل سطر أو مفصول بفاصلة"></textarea>
-      <small>هيتضافوا للجروب لما يسجّلوا دخول بنفس الإيميل ده.</small>
-    </div>
     <button class="group-create-btn" id="submitGroupBtn" onclick="submitCreateGroup()">إرسال الطلب للأدمن 🚀</button>
     <div class="contact-status" id="createGroupStatus" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ INVITE MEMBER MODAL ══════════════════════ -->
+<div class="group-modal-overlay" id="inviteMemberOverlay" onclick="if(event.target===this) closeInviteMemberModal()">
+  <div class="group-modal">
+    <button class="group-modal-close" onclick="closeInviteMemberModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:0.3rem;clear:both;">ادعي زميل للجروب</h2>
+    <p style="font-size:12.5px;color:rgba(28,43,37,0.55);margin-bottom:1.2rem;line-height:1.5;">
+      هيتبعتله إشعار وإيميل بالدعوة، وهينضم للجروب لما يوافق بس.
+    </p>
+    <div class="group-field">
+      <label>إيميل الزميل</label>
+      <input type="email" id="inviteMemberEmail" placeholder="example@gmail.com">
+    </div>
+    <button class="group-create-btn" id="submitInviteBtn" onclick="submitInviteMember()">ابعت الدعوة 📨</button>
+    <div class="contact-status" id="inviteMemberStatus" style="margin-top:10px;"></div>
   </div>
 </div>
 
@@ -3132,20 +3203,47 @@
       <div class="chat-header-name" id="groupChatName">—</div>
       <div class="chat-header-sub" id="groupChatSub">—</div>
     </div>
+    <!-- ادعي زميل (creator + admin فقط) -->
+    <button class="dashboard-close" id="groupChatInviteBtn" onclick="openInviteMemberModal()" title="ادعي زميل" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+    </button>
+    <!-- اسيب الجروب (أعضاء عاديين فقط — مش الكريتور ومش الأدمن) -->
+    <button class="dashboard-close" id="groupChatLeaveBtn" onclick="leaveGroup()" title="اسيب الجروب" style="display:none;color:#c0392b;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    </button>
+    <!-- قفل الجروب (creator + admin فقط) -->
     <button class="dashboard-close" id="groupChatCloseBtn" onclick="closeGroupAsCreator()" title="قفل الجروب" style="display:none;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </button>
   </div>
   <div class="chat-messages" id="groupChatMessages"></div>
+  <div class="group-upload-preview" id="groupUploadPreview" style="display:none;"></div>
   <div class="chat-input-row" id="groupChatInputRow">
-    <input type="text" class="chat-input" id="groupChatInput" placeholder="اكتب رسالتك للجروب..." onkeydown="if(event.key==='Enter') sendGroupChatMessage()">
+    <input type="file" id="groupChatFileInput" accept="image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx" style="display:none;" onchange="handleGroupFileSelect(event)">
+    <button class="chat-send-btn" id="groupChatAttachBtn" onclick="document.getElementById('groupChatFileInput').click()" title="إرفاق ملف" style="background:rgba(28,43,37,0.08);color:var(--ink);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+    </button>
+    <input type="text" class="chat-input" id="groupChatInput" placeholder="اكتب رسالتك للجروب..." maxlength="2000" onkeydown="if(event.key==='Enter') sendGroupChatMessage()">
     <button class="chat-send-btn" id="groupChatSendBtn" onclick="sendGroupChatMessage()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
 </div>
 
-<!-- ══════════════════════ NOTIFICATIONS PANEL ══════════════════════ -->
+<!-- ══════════════════════ ADMIN — VIEW GROUP CHAT (read-only monitoring) ══════════════════════ -->
+<div class="chat-view" id="adminGroupChatOverlay">
+  <div class="chat-header">
+    <button class="chat-back-btn" onclick="closeAdminGroupChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="chat-header-avatar">👁️</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name" id="adminGroupChatTitle">—</div>
+      <div class="chat-header-sub">مراقبة الأدمن (للقراءة والحذف فقط)</div>
+    </div>
+  </div>
+  <div class="chat-messages" id="adminGroupChatMessages"></div>
+</div>
 <div class="notif-panel-overlay" id="notifPanelOverlay" onclick="if(event.target===this) closeNotifPanel()">
   <div class="notif-panel" id="notifPanel">
     <div class="notif-panel-header">
@@ -5167,6 +5265,7 @@ function handleDashboardOverlayClick(e) {
 function openGroupsPanel() {
   document.getElementById('groupsPanel').classList.add('open');
   if (window._loadMyGroups) window._loadMyGroups();
+  if (window._loadMyInvites) window._loadMyInvites();
 }
 function closeGroupsPanel() {
   document.getElementById('groupsPanel').classList.remove('open');
@@ -5848,6 +5947,9 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestam
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 import { getMessaging, getToken, onMessage }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-messaging.js";
+/* Firebase Storage تم استبداله بـ Cloudinary (مجاني بدون خطة Blaze) —
+   شوف CLOUDINARY_CLOUD_NAME / CLOUDINARY_UPLOAD_PRESET وuploadToCloudinary()
+   في قسم STUDY GROUPS تحت. */
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJGf-9KbQF-aCi3iH9rDxmF4xxgrpc_UI",
@@ -6941,19 +7043,108 @@ window._deleteAdminMessage = async function(uid, msgId) {
 
 /* ══════════════════════ STUDY GROUPS (Firestore) ══════════════════════ */
 /* Data model:
-   groups/{groupId} -> { name, description, createdByUid, createdByName, createdByEmail,
-                          members: [email,...], status: 'pending'|'active'|'rejected'|'closed',
-                          createdAt }
-   groups/{groupId}/messages/{id} -> { text, senderUid, senderName, ts }          */
+   groups/{groupId} -> {
+     name, description,
+     createdByUid, createdByName, createdByEmail,
+     members: [email,...],             // active members (lowercased emails)
+     status: 'pending'|'active'|'rejected'|'closed',
+     createdAt
+   }
+   groups/{groupId}/messages/{id} -> {
+     type: 'text'|'image'|'video'|'file',
+     text,                              // for type='text', or caption for media
+     fileUrl, fileName, fileSize,       // for type='image'|'video'|'file'
+                                         // fileUrl is a Cloudinary secure_url
+                                         // (uploaded client-side via an
+                                         // UNSIGNED upload preset — see
+                                         // uploadToCloudinary() above)
+     senderUid, senderName, ts
+   }
+   groupInvites/{inviteId} -> {
+     groupId, groupName,
+     invitedEmail,                      // lowercased
+     invitedByUid, invitedByName,
+     status: 'pending'|'accepted'|'declined',
+     createdAt
+   }
+   NOTE (admin visibility): the admin is intentionally never added to a
+   group's `members` array, so admin never appears in chat/member lists.
+   Admin access to all groups/messages happens via the separate admin
+   panel queries below (admin reads via its own UI, not as a member). */
+
+const ADMIN_EMAIL_LC = () => (window.ADMIN_EMAIL_REF || '').toLowerCase();
+
+/* ─── Cloudinary (رفع الملفات — مجاني، بدون الحاجة لخطة Blaze) ─── */
+const CLOUDINARY_CLOUD_NAME = 'dju33knsd';
+const CLOUDINARY_UPLOAD_PRESET = 'group_chat_uploads';
+
+/* رفع ملف لـ Cloudinary، وبيرجع { url, bytes } أو يرمي error.
+   resourceType: 'image' | 'video' | 'raw' (raw = أي مستند زي pdf/word/ppt) */
+async function uploadToCloudinary(file, resourceType) {
+  const endpoint = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`;
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+  const res = await fetch(endpoint, { method: 'POST', body: formData });
+  if (!res.ok) {
+    let msg = 'فشل رفع الملف';
+    try { const j = await res.json(); if (j?.error?.message) msg = j.error.message; } catch {}
+    throw new Error(msg);
+  }
+  const data = await res.json();
+  return { url: data.secure_url, bytes: data.bytes || file.size };
+}
 
 let _myGroupsUnsub = null;
+let _myInvitesUnsub = null;
 let _groupChatUnsub = null;
 let _currentGroupId = null;
+let _pendingGroupFile = null; // { file, kind: 'image'|'video'|'file' }
+
+const GROUP_FILE_MAX_BYTES = 15 * 1024 * 1024; // 15MB cap per file
+
+function _groupFileKind(file) {
+  if (file.type.startsWith('image/')) return 'image';
+  if (file.type.startsWith('video/')) return 'video';
+  return 'file';
+}
+
+window.handleGroupFileSelect = function(event) {
+  const file = event.target.files && event.target.files[0];
+  event.target.value = ''; // allow re-selecting same file later
+  if (!file) return;
+  const previewEl = document.getElementById('groupUploadPreview');
+  if (file.size > GROUP_FILE_MAX_BYTES) {
+    alert('الملف ده أكبر من 15 ميجا، اختار ملف أصغر 🙏');
+    return;
+  }
+  const kind = _groupFileKind(file);
+  _pendingGroupFile = { file, kind };
+
+  let thumbHtml;
+  if (kind === 'image') {
+    const url = URL.createObjectURL(file);
+    thumbHtml = `<img src="${url}" class="group-upload-preview-thumb" alt="">`;
+  } else if (kind === 'video') {
+    thumbHtml = `<span class="group-upload-preview-thumb" style="display:flex;align-items:center;justify-content:center;background:rgba(28,43,37,0.08);">🎬</span>`;
+  } else {
+    thumbHtml = `<span class="group-upload-preview-thumb" style="display:flex;align-items:center;justify-content:center;background:rgba(28,43,37,0.08);">📄</span>`;
+  }
+  previewEl.innerHTML = `${thumbHtml}<span class="group-upload-preview-name">${escChat(file.name)}</span><button class="group-upload-preview-cancel" onclick="cancelGroupFileSelect()" title="إلغاء">✕</button>`;
+  previewEl.style.display = 'flex';
+};
+
+window.cancelGroupFileSelect = function() {
+  _pendingGroupFile = null;
+  const previewEl = document.getElementById('groupUploadPreview');
+  previewEl.innerHTML = '';
+  previewEl.style.display = 'none';
+};
 
 function parseMemberEmails(raw) {
   const parts = (raw || '').split(/[\n,]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
   const valid = parts.filter(e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));
-  return [...new Set(valid)];
+  return [...new Set(valid)].filter(e => e !== ADMIN_EMAIL_LC());
 }
 
 function openCreateGroupModal() {
@@ -6964,7 +7155,6 @@ function openCreateGroupModal() {
   }
   document.getElementById('newGroupName').value = '';
   document.getElementById('newGroupDesc').value = '';
-  document.getElementById('newGroupMembers').value = '';
   document.getElementById('createGroupStatus').textContent = '';
   document.getElementById('createGroupOverlay').classList.add('open');
 }
@@ -6974,17 +7164,17 @@ function closeCreateGroupModal() {
 window.openCreateGroupModal = openCreateGroupModal;
 window.closeCreateGroupModal = closeCreateGroupModal;
 
+/* Group creation no longer accepts a member list directly — members are
+   added only through the real invite+accept flow below. The creator is
+   the sole member at creation time. */
 async function submitCreateGroup() {
   const user = auth.currentUser;
   if (!user) { document.getElementById('signInBtn').click(); return; }
   const name = document.getElementById('newGroupName').value.trim();
   const desc = document.getElementById('newGroupDesc').value.trim();
-  const membersRaw = document.getElementById('newGroupMembers').value;
   const statusEl = document.getElementById('createGroupStatus');
   if (!name) { statusEl.style.color = '#c0392b'; statusEl.textContent = 'لازم تكتب اسم للجروب'; return; }
-  const members = parseMemberEmails(membersRaw);
   const creatorEmail = (user.email || '').toLowerCase();
-  if (!members.includes(creatorEmail)) members.push(creatorEmail);
 
   const btn = document.getElementById('submitGroupBtn');
   btn.disabled = true;
@@ -6996,7 +7186,7 @@ async function submitCreateGroup() {
       createdByUid: user.uid,
       createdByName: user.displayName || user.email || '?',
       createdByEmail: creatorEmail,
-      members,
+      members: [creatorEmail],
       status: 'pending',
       createdAt: serverTimestamp(),
     });
@@ -7047,16 +7237,137 @@ window._loadMyGroups = function() {
       const initial = (g.name || '?').trim()[0] || '?';
       const memberCount = (g.members || []).length;
       return `<div class="group-list-item" onclick="${g.status === 'active' ? `openGroupChat('${g.id}')` : ''}">
-        <div class="group-list-icon">${escChat(initial.toUpperCase())}</div>
-        <div class="group-list-info">
-          <div class="group-list-name">${escChat(g.name)}</div>
-          <div class="group-list-sub">${memberCount} عضو</div>
+        <div class="group-list-row">
+          <div class="group-list-icon">${escChat(initial.toUpperCase())}</div>
+          <div class="group-list-info">
+            <div class="group-list-name">${escChat(g.name)}</div>
+            <div class="group-list-sub">${memberCount} عضو</div>
+          </div>
+          <span class="group-status-badge ${st.cls}">${st.text}</span>
         </div>
-        <span class="group-status-badge ${st.cls}">${st.text}</span>
       </div>`;
     }).join('');
   });
 };
+
+/* Student: live list of invites sent to my email, awaiting my response */
+window._loadMyInvites = function() {
+  const user = auth.currentUser;
+  const sectionEl = document.getElementById('myInvitesSection');
+  const listEl = document.getElementById('myInvitesList');
+  if (!listEl || !sectionEl) return;
+  if (_myInvitesUnsub) _myInvitesUnsub();
+  if (!user) { sectionEl.style.display = 'none'; return; }
+  const email = (user.email || '').toLowerCase();
+  const q = query(collection(db, 'groupInvites'), where('invitedEmail', '==', email), where('status', '==', 'pending'));
+  _myInvitesUnsub = onSnapshot(q, (snap) => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    if (!list.length) { sectionEl.style.display = 'none'; return; }
+    sectionEl.style.display = '';
+    listEl.innerHTML = list.map(inv => `
+      <div class="group-invite-item">
+        <div class="group-invite-info">
+          <div class="group-invite-name">${escChat(inv.groupName)}</div>
+          <div class="group-invite-meta">دعوة من ${escChat(inv.invitedByName || '?')}</div>
+        </div>
+        <div class="group-invite-actions">
+          <button class="group-invite-btn group-invite-accept" onclick="respondToInvite('${inv.id}', true)" title="قبول">✓</button>
+          <button class="group-invite-btn group-invite-decline" onclick="respondToInvite('${inv.id}', false)" title="رفض">✕</button>
+        </div>
+      </div>`).join('');
+  });
+};
+
+window.respondToInvite = async function(inviteId, accept) {
+  const user = auth.currentUser;
+  if (!user) return;
+  try {
+    const invSnap = await getDoc(doc(db, 'groupInvites', inviteId));
+    if (!invSnap.exists()) return;
+    const inv = invSnap.data();
+    if (accept) {
+      const gSnap = await getDoc(doc(db, 'groups', inv.groupId));
+      if (gSnap.exists()) {
+        const currentMembers = gSnap.data().members || [];
+        await updateDoc(doc(db, 'groups', inv.groupId), {
+          members: [...new Set([...currentMembers, inv.invitedEmail])]
+        });
+      }
+      await updateDoc(doc(db, 'groupInvites', inviteId), { status: 'accepted' });
+    } else {
+      await updateDoc(doc(db, 'groupInvites', inviteId), { status: 'declined' });
+    }
+    if (window._loadMyGroups) window._loadMyGroups();
+  } catch (e) {
+    alert('حصل خطأ: ' + (e && e.message ? e.message : e));
+  }
+};
+
+/* Invite member modal (opened from inside an active group's chat) */
+function openInviteMemberModal() {
+  if (!_currentGroupId) return;
+  document.getElementById('inviteMemberEmail').value = '';
+  document.getElementById('inviteMemberStatus').textContent = '';
+  document.getElementById('inviteMemberOverlay').classList.add('open');
+}
+function closeInviteMemberModal() {
+  document.getElementById('inviteMemberOverlay').classList.remove('open');
+}
+window.openInviteMemberModal = openInviteMemberModal;
+window.closeInviteMemberModal = closeInviteMemberModal;
+
+async function submitInviteMember() {
+  const user = auth.currentUser;
+  if (!user || !_currentGroupId) return;
+  const emailRaw = document.getElementById('inviteMemberEmail').value.trim().toLowerCase();
+  const statusEl = document.getElementById('inviteMemberStatus');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailRaw)) {
+    statusEl.style.color = '#c0392b'; statusEl.textContent = 'اكتب إيميل صحيح'; return;
+  }
+  if (emailRaw === ADMIN_EMAIL_LC()) {
+    statusEl.style.color = '#c0392b'; statusEl.textContent = 'الإيميل ده غير متاح للدعوة'; return;
+  }
+  const btn = document.getElementById('submitInviteBtn');
+  btn.disabled = true;
+  statusEl.style.color = '';
+  statusEl.textContent = 'جاري الإرسال...';
+  try {
+    const gSnap = await getDoc(doc(db, 'groups', _currentGroupId));
+    if (!gSnap.exists()) throw new Error('الجروب ده مش موجود');
+    const g = gSnap.data();
+    if ((g.members || []).includes(emailRaw)) {
+      statusEl.style.color = '#c0392b'; statusEl.textContent = 'الزميل ده عضو في الجروب خلاص';
+      btn.disabled = false; return;
+    }
+    // avoid duplicate pending invites
+    const existingQ = query(collection(db, 'groupInvites'),
+      where('groupId', '==', _currentGroupId), where('invitedEmail', '==', emailRaw), where('status', '==', 'pending'));
+    const existingSnap = await getDocs(existingQ);
+    if (!existingSnap.empty) {
+      statusEl.style.color = '#c0392b'; statusEl.textContent = 'فيه دعوة منتظرة رد منه خلاص';
+      btn.disabled = false; return;
+    }
+    await addDoc(collection(db, 'groupInvites'), {
+      groupId: _currentGroupId, groupName: g.name,
+      invitedEmail: emailRaw,
+      invitedByUid: user.uid, invitedByName: user.displayName || user.email || '?',
+      status: 'pending', createdAt: serverTimestamp(),
+    });
+    /* TODO: trigger an actual email to emailRaw via the existing Apps
+       Script notification endpoint once its URL is provided — the invite
+       still shows up inside the app's notifications regardless. */
+    statusEl.style.color = '#1D9E75';
+    statusEl.textContent = '✓ تم إرسال الدعوة!';
+    setTimeout(closeInviteMemberModal, 1400);
+  } catch (e) {
+    statusEl.style.color = '#c0392b';
+    statusEl.textContent = 'حصل خطأ: ' + (e && e.message ? e.message : e);
+  } finally {
+    btn.disabled = false;
+  }
+}
+window.submitInviteMember = submitInviteMember;
 
 /* Group chat */
 function groupChatBubbleHtml(messages, myUid) {
@@ -7065,9 +7376,21 @@ function groupChatBubbleHtml(messages, myUid) {
     const fromMe = m.senderUid === myUid;
     const time = new Date(m.ts || Date.now()).toLocaleString('ar-EG', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
     const nameLine = !fromMe ? `<div style="font-size:10.5px;font-weight:700;color:var(--teal-600);margin-bottom:2px;">${escChat(m.senderName || '')}</div>` : '';
+    let mediaHtml = '';
+    if (m.type === 'image' && m.fileUrl) {
+      mediaHtml = `<a href="${m.fileUrl}" target="_blank" rel="noopener"><img src="${m.fileUrl}" alt="${escChat(m.fileName || '')}" style="max-width:200px;max-height:200px;border-radius:10px;display:block;margin-bottom:${m.text ? '6px' : '0'};"></a>`;
+    } else if (m.type === 'video' && m.fileUrl) {
+      mediaHtml = `<video src="${m.fileUrl}" controls style="max-width:220px;max-height:220px;border-radius:10px;display:block;margin-bottom:${m.text ? '6px' : '0'};"></video>`;
+    } else if (m.type === 'file' && m.fileUrl) {
+      const sizeKb = m.fileSize ? Math.round(m.fileSize / 1024) : null;
+      mediaHtml = `<a href="${m.fileUrl}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:rgba(28,43,37,0.06);border-radius:10px;padding:8px 10px;margin-bottom:${m.text ? '6px' : '0'};text-decoration:none;color:inherit;">
+        <span style="font-size:20px;">📄</span>
+        <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:12.5px;">${escChat(m.fileName || 'ملف')}${sizeKb ? ` <span style="opacity:0.6;">(${sizeKb}KB)</span>` : ''}</span>
+      </a>`;
+    }
     return `<div class="chat-bubble-row ${fromMe ? 'from-me' : 'from-them'}">
       <div class="chat-bubble-wrap">
-        <div class="chat-bubble">${nameLine}${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+        <div class="chat-bubble">${nameLine}${mediaHtml}${m.text ? escChat(m.text) : ''}<div class="chat-bubble-time">${time}</div></div>
       </div>
     </div>`;
   }).join('');
@@ -7087,8 +7410,13 @@ function openGroupChat(groupId) {
     const g = snap.data();
     document.getElementById('groupChatName').textContent = g.name || '—';
     document.getElementById('groupChatSub').textContent = `${(g.members || []).length} عضو`;
-    const closeBtn = document.getElementById('groupChatCloseBtn');
-    closeBtn.style.display = (g.createdByUid === user.uid || user.email === window.ADMIN_EMAIL_REF) ? 'flex' : 'none';
+    const isCreatorOrAdmin = g.createdByUid === user.uid || (user.email || '').toLowerCase() === ADMIN_EMAIL_LC();
+    const isRegularMember = !isCreatorOrAdmin && (g.members || []).includes((user.email || '').toLowerCase());
+    // قفل + دعوة: للكريتور والأدمن فقط
+    document.getElementById('groupChatCloseBtn').style.display = isCreatorOrAdmin ? 'flex' : 'none';
+    document.getElementById('groupChatInviteBtn').style.display = isCreatorOrAdmin ? 'flex' : 'none';
+    // اسيب الجروب: للأعضاء العاديين فقط
+    document.getElementById('groupChatLeaveBtn').style.display = isRegularMember ? 'flex' : 'none';
   });
 
   if (_groupChatUnsub) _groupChatUnsub();
@@ -7097,7 +7425,12 @@ function openGroupChat(groupId) {
     const messages = [];
     snap.forEach(d => {
       const m = d.data();
-      messages.push({ id: d.id, text: m.text, senderUid: m.senderUid, senderName: m.senderName, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+      messages.push({
+        id: d.id, type: m.type || 'text', text: m.text,
+        fileUrl: m.fileUrl, fileName: m.fileName, fileSize: m.fileSize,
+        senderUid: m.senderUid, senderName: m.senderName,
+        ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now(),
+      });
     });
     msgsEl.innerHTML = groupChatBubbleHtml(messages, user.uid);
     msgsEl.scrollTop = msgsEl.scrollHeight;
@@ -7107,26 +7440,66 @@ function closeGroupChat() {
   document.getElementById('groupChatView').classList.remove('open');
   if (_groupChatUnsub) { _groupChatUnsub(); _groupChatUnsub = null; }
   _currentGroupId = null;
+  cancelGroupFileSelect();
 }
 window.openGroupChat = openGroupChat;
 window.closeGroupChat = closeGroupChat;
 
+const GROUP_MSG_MAX_CHARS = 2000;
+const GROUP_RATE_LIMIT_COUNT = 8;     // max messages
+const GROUP_RATE_LIMIT_WINDOW_MS = 10000; // per 10 seconds
+let _groupMsgTimestamps = [];
+
+function _groupRateLimited() {
+  const now = Date.now();
+  _groupMsgTimestamps = _groupMsgTimestamps.filter(t => now - t < GROUP_RATE_LIMIT_WINDOW_MS);
+  if (_groupMsgTimestamps.length >= GROUP_RATE_LIMIT_COUNT) return true;
+  _groupMsgTimestamps.push(now);
+  return false;
+}
+
 async function sendGroupChatMessage() {
   const user = auth.currentUser;
   const input = document.getElementById('groupChatInput');
-  const text = input.value.trim();
-  if (!text || !user || !_currentGroupId) return;
+  let text = input.value.trim();
+  if (!user || !_currentGroupId) return;
+  if (!text && !_pendingGroupFile) return;
+  if (text.length > GROUP_MSG_MAX_CHARS) {
+    alert(`الرسالة طويلة أكتر من اللازم (الحد الأقصى ${GROUP_MSG_MAX_CHARS} حرف)`);
+    return;
+  }
+  if (_groupRateLimited()) {
+    alert('بتبعت رسايل بسرعة كبيرة، استريح ثانية وحاول تاني 🙏');
+    return;
+  }
   const btn = document.getElementById('groupChatSendBtn');
-  input.disabled = true; btn.disabled = true;
+  const attachBtn = document.getElementById('groupChatAttachBtn');
+  input.disabled = true; btn.disabled = true; attachBtn.disabled = true;
   try {
-    await addDoc(collection(db, 'groups', _currentGroupId, 'messages'), {
-      text, senderUid: user.uid, senderName: user.displayName || user.email || '?', ts: serverTimestamp(),
-    });
+    if (_pendingGroupFile) {
+      const { file, kind } = _pendingGroupFile;
+      // image/video بترفع بنوعها، وأي مستند تاني (pdf/word/ppt) بيترفع raw
+      const resourceType = kind === 'image' ? 'image' : kind === 'video' ? 'video' : 'raw';
+      const { url: fileUrl } = await uploadToCloudinary(file, resourceType);
+      await addDoc(collection(db, 'groups', _currentGroupId, 'messages'), {
+        type: kind,
+        text: text || '',
+        fileUrl, fileName: file.name, fileSize: file.size,
+        senderUid: user.uid, senderName: user.displayName || user.email || '?',
+        ts: serverTimestamp(),
+      });
+      cancelGroupFileSelect();
+    } else {
+      await addDoc(collection(db, 'groups', _currentGroupId, 'messages'), {
+        type: 'text', text,
+        senderUid: user.uid, senderName: user.displayName || user.email || '?', ts: serverTimestamp(),
+      });
+    }
     input.value = '';
   } catch (e) {
     alert('مش قادر أبعت الرسالة دلوقتي: ' + (e && e.message ? e.message : e));
   } finally {
-    input.disabled = false; btn.disabled = false; input.focus();
+    input.disabled = false; btn.disabled = false; attachBtn.disabled = false; input.focus();
   }
 }
 window.sendGroupChatMessage = sendGroupChatMessage;
@@ -7144,6 +7517,27 @@ async function closeGroupAsCreator() {
 }
 window.closeGroupAsCreator = closeGroupAsCreator;
 
+/* عضو يسيب الجروب (مش الكريتور) */
+async function leaveGroup() {
+  const user = auth.currentUser;
+  if (!user || !_currentGroupId) return;
+  if (!confirm('تسيب الجروب ده؟ هتتشال من قايمة الأعضاء ومش هتقدر تشوف رسايله تاني إلا لو حد دعاك تاني.')) return;
+  try {
+    const gRef = doc(db, 'groups', _currentGroupId);
+    const gSnap = await getDoc(gRef);
+    if (!gSnap.exists()) return;
+    const currentMembers = gSnap.data().members || [];
+    const myEmail = (user.email || '').toLowerCase();
+    const newMembers = currentMembers.filter(e => e !== myEmail);
+    await updateDoc(gRef, { members: newMembers });
+    closeGroupChat();
+    if (window._loadMyGroups) window._loadMyGroups();
+  } catch (e) {
+    alert('حصل خطأ: ' + (e && e.message ? e.message : e));
+  }
+}
+window.leaveGroup = leaveGroup;
+
 /* Admin: pending-groups badge count */
 function listenPendingGroupsCount() {
   const q = query(collection(db, 'groups'), where('status', '==', 'pending'));
@@ -7154,67 +7548,156 @@ function listenPendingGroupsCount() {
   });
 }
 
-/* Admin: groups approval panel */
+/* Admin: حذف جروب بالكامل مع كل رسايله */
+window.adminDeleteGroup = async function(id) {
+  if (!confirm('حذف الجروب ده نهائيًا مع كل رسايله؟ الإجراء ده مش قابل للتراجع.')) return;
+  try {
+    const msgsSnap = await getDocs(collection(db, 'groups', id, 'messages'));
+    await Promise.all(msgsSnap.docs.map(d => deleteDoc(d.ref)));
+    // حذف الدعوات المرتبطة بالجروب ده
+    const invSnap = await getDocs(query(collection(db, 'groupInvites'), where('groupId', '==', id)));
+    await Promise.all(invSnap.docs.map(d => deleteDoc(d.ref)));
+    await deleteDoc(doc(db, 'groups', id));
+    if (window._loadAdminGroups) window._loadAdminGroups();
+  } catch (e) {
+    alert('حصل خطأ: ' + (e && e.message ? e.message : e));
+  }
+};
+
+/* Admin: موافقة / رفض / قفل جروب */
+window.adminSetGroupStatus = async function(id, status) {
+  const labels = { active: 'تفعيل', rejected: 'رفض', closed: 'قفل' };
+  const label = labels[status] || status;
+  if (!confirm(`تأكيد: ${label} الجروب ده؟`)) return;
+  try {
+    await updateDoc(doc(db, 'groups', id), { status });
+    if (window._loadAdminGroups) window._loadAdminGroups();
+  } catch (e) {
+    alert('حصل خطأ: ' + (e && e.message ? e.message : e));
+  }
+};
+
+/* Admin: تحميل قايمة الجروبات (pending + active) */
 window._loadAdminGroups = function() {
-  const pendingEl = document.getElementById('adminPendingGroupsList');
-  const activeEl = document.getElementById('adminActiveGroupsList');
+  const pendingEl  = document.getElementById('adminPendingGroupsList');
+  const activeEl   = document.getElementById('adminActiveGroupsList');
+  if (!pendingEl || !activeEl) return;
 
-  const pendingQ = query(collection(db, 'groups'), where('status', '==', 'pending'));
-  onSnapshot(pendingQ, (snap) => {
+  pendingEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
+  activeEl.innerHTML  = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
+
+  // pending groups
+  getDocs(query(collection(db, 'groups'), where('status', '==', 'pending'))).then(snap => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    list.sort((a, b) => (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0) - (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0));
+    if (!list.length) {
+      pendingEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">مفيش طلبات في الانتظار ✅</p>';
+      return;
+    }
+    pendingEl.innerHTML = list.map(g => {
+      const memberCount = (g.members || []).length;
+      const createdAt = g.createdAt?.toDate ? g.createdAt.toDate().toLocaleDateString('ar-EG') : '';
+      return `<div class="group-admin-card">
+        <div class="group-admin-card-name">${escChat(g.name)}</div>
+        <div class="group-admin-card-meta">
+          👤 ${escChat(g.createdByName || g.createdByEmail || '?')}<br>
+          👥 ${memberCount} عضو ${createdAt ? `· 📅 ${createdAt}` : ''}<br>
+          ${g.description ? `📝 ${escChat(g.description)}` : ''}
+        </div>
+        <div class="group-admin-card-actions">
+          <button class="group-admin-btn group-admin-approve" onclick="adminSetGroupStatus('${g.id}','active')">✓ وافق</button>
+          <button class="group-admin-btn group-admin-reject"  onclick="adminSetGroupStatus('${g.id}','rejected')">✕ ارفض</button>
+          <button class="group-admin-btn group-admin-close"   onclick="adminDeleteGroup('${g.id}')">🗑️ احذف</button>
+        </div>
+      </div>`;
+    }).join('');
+  }).catch(e => {
+    pendingEl.innerHTML = `<p style="font-size:12px;color:#c0392b;padding:0.6rem;">خطأ في التحميل: ${escChat(e.message)}</p>`;
+  });
+
+  // active + closed + rejected groups
+  getDocs(query(collection(db, 'groups'), where('status', 'in', ['active', 'closed', 'rejected']))).then(snap => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    list.sort((a, b) => (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0) - (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0));
+    if (!list.length) {
+      activeEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">مفيش جروبات شغالة لحد دلوقتي.</p>';
+      return;
+    }
+    activeEl.innerHTML = list.map(g => {
+      const st = groupStatusLabel(g.status);
+      const memberCount = (g.members || []).length;
+      return `<div class="group-admin-card">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <div class="group-admin-card-name" style="flex:1;">${escChat(g.name)}</div>
+          <span class="group-status-badge ${st.cls}">${st.text}</span>
+        </div>
+        <div class="group-admin-card-meta">
+          👤 ${escChat(g.createdByName || g.createdByEmail || '?')} · 👥 ${memberCount} عضو
+        </div>
+        <div class="group-admin-card-actions">
+          <button class="group-admin-btn group-admin-approve" onclick="adminViewGroupChat('${g.id}')">👁️ شوف الشات</button>
+          ${g.status === 'active' ? `<button class="group-admin-btn group-admin-close" onclick="adminSetGroupStatus('${g.id}','closed')">🔒 قفل</button>` : ''}
+          ${g.status === 'closed' ? `<button class="group-admin-btn group-admin-approve" onclick="adminSetGroupStatus('${g.id}','active')">🔓 إعادة فتح</button>` : ''}
+          <button class="group-admin-btn group-admin-reject" onclick="adminDeleteGroup('${g.id}')">🗑️ احذف نهائياً</button>
+        </div>
+      </div>`;
+    }).join('');
+  }).catch(e => {
+    activeEl.innerHTML = `<p style="font-size:12px;color:#c0392b;padding:0.6rem;">خطأ في التحميل: ${escChat(e.message)}</p>`;
+  });
+};
+
+/* Admin: read-only view of any group's chat, with per-message delete */
+let _adminGroupChatUnsub = null;
+window.adminViewGroupChat = function(groupId) {
+  const overlay = document.getElementById('adminGroupChatOverlay');
+  const titleEl = document.getElementById('adminGroupChatTitle');
+  const msgsEl = document.getElementById('adminGroupChatMessages');
+  overlay.classList.add('open');
+  msgsEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
+
+  getDoc(doc(db, 'groups', groupId)).then(snap => {
+    titleEl.textContent = snap.exists() ? (snap.data().name || '—') : '—';
+  });
+
+  if (_adminGroupChatUnsub) _adminGroupChatUnsub();
+  const q = query(collection(db, 'groups', groupId, 'messages'), orderBy('ts', 'asc'), limit(300));
+  _adminGroupChatUnsub = onSnapshot(q, (snap) => {
     const list = [];
     snap.forEach(d => list.push({ id: d.id, ...d.data() }));
     if (!list.length) {
-      pendingEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">لا يوجد طلبات حالياً</p>';
+      msgsEl.innerHTML = '<p class="chat-empty">لسه مفيش رسايل في الجروب ده.</p>';
       return;
     }
-    pendingEl.innerHTML = list.map(g => `
-      <div class="group-admin-card">
-        <div class="group-admin-card-name">${escChat(g.name)}</div>
-        <div class="group-admin-card-meta">
-          بواسطة: ${escChat(g.createdByName || g.createdByEmail || '?')}<br>
-          الأعضاء: ${escChat((g.members || []).join('، '))}
-          ${g.description ? `<br>${escChat(g.description)}` : ''}
+    msgsEl.innerHTML = list.map(m => {
+      const time = m.ts?.toDate ? m.ts.toDate().toLocaleString('ar-EG', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }) : '';
+      let mediaHtml = '';
+      if (m.type === 'image' && m.fileUrl) mediaHtml = `<a href="${m.fileUrl}" target="_blank"><img src="${m.fileUrl}" style="max-width:160px;max-height:160px;border-radius:8px;display:block;margin-bottom:4px;"></a>`;
+      else if (m.type === 'video' && m.fileUrl) mediaHtml = `<video src="${m.fileUrl}" controls style="max-width:160px;max-height:160px;border-radius:8px;display:block;margin-bottom:4px;"></video>`;
+      else if (m.type === 'file' && m.fileUrl) mediaHtml = `<a href="${m.fileUrl}" target="_blank" style="font-size:12px;">📄 ${escChat(m.fileName || 'ملف')}</a>`;
+      return `<div class="chat-bubble-row from-them">
+        <div class="chat-bubble-wrap">
+          <div class="chat-bubble">
+            <div style="font-size:10.5px;font-weight:700;color:var(--teal-600);margin-bottom:2px;">${escChat(m.senderName || '')}</div>
+            ${mediaHtml}${m.text ? escChat(m.text) : ''}
+            <div class="chat-bubble-time">${time}</div>
+            <button onclick="adminDeleteGroupMessage('${groupId}','${m.id}')" style="background:none;border:none;color:#c0392b;font-size:11px;cursor:pointer;margin-top:4px;">🗑️ حذف الرسالة</button>
+          </div>
         </div>
-        <div class="group-admin-card-actions">
-          <button class="group-admin-btn group-admin-approve" onclick="approveGroupRequest('${g.id}')">✓ موافقة</button>
-          <button class="group-admin-btn group-admin-reject" onclick="rejectGroupRequest('${g.id}')">✕ رفض</button>
-        </div>
-      </div>`).join('');
-  });
-
-  const activeQ = query(collection(db, 'groups'), where('status', '==', 'active'));
-  onSnapshot(activeQ, (snap) => {
-    const list = [];
-    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
-    if (!list.length) {
-      activeEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">لا يوجد جروبات شغالة حالياً</p>';
-      return;
-    }
-    activeEl.innerHTML = list.map(g => `
-      <div class="group-admin-card">
-        <div class="group-admin-card-name">${escChat(g.name)}</div>
-        <div class="group-admin-card-meta">
-          بواسطة: ${escChat(g.createdByName || g.createdByEmail || '?')} · ${(g.members || []).length} عضو
-        </div>
-        <div class="group-admin-card-actions">
-          <button class="group-admin-btn group-admin-close" onclick="adminCloseGroup('${g.id}')">🔒 قفل الجروب</button>
-        </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
+    msgsEl.scrollTop = msgsEl.scrollHeight;
   });
 };
-
-window.approveGroupRequest = async function(id) {
-  try { await updateDoc(doc(db, 'groups', id), { status: 'active' }); }
-  catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
+window.closeAdminGroupChat = function() {
+  document.getElementById('adminGroupChatOverlay').classList.remove('open');
+  if (_adminGroupChatUnsub) { _adminGroupChatUnsub(); _adminGroupChatUnsub = null; }
 };
-window.rejectGroupRequest = async function(id) {
-  if (!confirm('ترفض الطلب ده؟')) return;
-  try { await updateDoc(doc(db, 'groups', id), { status: 'rejected' }); }
-  catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
-};
-window.adminCloseGroup = async function(id) {
-  if (!confirm('تقفل الجروب ده؟')) return;
-  try { await updateDoc(doc(db, 'groups', id), { status: 'closed' }); }
+window.adminDeleteGroupMessage = async function(groupId, msgId) {
+  if (!confirm('تحذف الرسالة دي؟')) return;
+  try { await deleteDoc(doc(db, 'groups', groupId, 'messages', msgId)); }
   catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
 };
 

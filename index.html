@@ -2776,7 +2776,7 @@
   .group-status-active { background: var(--teal-50); color: var(--teal-600); }
   .group-status-rejected, .group-status-closed { background: #fdecea; color: #c0392b; }
   .group-modal-overlay {
-    position: fixed; inset: 0; z-index: 220;
+    position: fixed; inset: 0; z-index: 260;
     background: rgba(6,14,11,0.65); backdrop-filter: blur(6px);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
@@ -5688,6 +5688,7 @@ function openMyChat() {
   closeNotifPanel();
   closeContact();
   document.getElementById('myChatView').classList.add('open');
+  _updateFabVisibility();
   const inputRow = document.getElementById('myChatInputRow');
   const msgsEl = document.getElementById('myChatMessages');
   if (!window._currentUserUid) {
@@ -5718,6 +5719,7 @@ window.deleteMyMessage = deleteMyMessage;
 
 function closeMyChat() {
   document.getElementById('myChatView').classList.remove('open');
+  _updateFabVisibility();
 }
 
 function sendMyChatMessage() {
@@ -5801,6 +5803,7 @@ function openAdminConversation(uid, name, email) {
   document.getElementById('adminChatEmail').textContent = email;
   document.getElementById('adminChatAvatar').textContent = (name||'?').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
   document.getElementById('adminChatView').classList.add('open');
+  _updateFabVisibility();
   const msgsEl = document.getElementById('adminChatMessages');
   msgsEl.innerHTML = '<p class="chat-empty">جاري تحميل المحادثة...</p>';
   if (window._listenAdminConversation) {
@@ -5826,6 +5829,7 @@ function closeAdminChat() {
   document.getElementById('adminChatView').classList.remove('open');
   if (window._stopAdminConversationListener) window._stopAdminConversationListener();
   _adminChatUid = null;
+  _updateFabVisibility();
 }
 
 function sendAdminChatMessage() {
@@ -7101,6 +7105,14 @@ let _groupChatUnsub = null;
 let _currentGroupId = null;
 let _pendingGroupFile = null; // { file, kind: 'image'|'video'|'file' }
 
+// ── خبّي/أظهر الـ AI FAB لما أي chat-view مفتوح ──
+function _updateFabVisibility() {
+  const fab = document.getElementById('aiFab');
+  if (!fab) return;
+  const anyChatOpen = document.querySelector('.chat-view.open') !== null;
+  fab.style.display = anyChatOpen ? 'none' : '';
+}
+
 const GROUP_FILE_MAX_BYTES = 15 * 1024 * 1024; // 15MB cap per file
 
 function _groupFileKind(file) {
@@ -7402,6 +7414,7 @@ function openGroupChat(groupId) {
   closeGroupsPanel();
   _currentGroupId = groupId;
   document.getElementById('groupChatView').classList.add('open');
+  _updateFabVisibility();
   const msgsEl = document.getElementById('groupChatMessages');
   msgsEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
 
@@ -7441,6 +7454,9 @@ function closeGroupChat() {
   if (_groupChatUnsub) { _groupChatUnsub(); _groupChatUnsub = null; }
   _currentGroupId = null;
   cancelGroupFileSelect();
+  // رجّع لـ groupsPanel
+  document.getElementById('groupsPanel').classList.add('open');
+  _updateFabVisibility();
 }
 window.openGroupChat = openGroupChat;
 window.closeGroupChat = closeGroupChat;
@@ -7694,6 +7710,7 @@ window.adminViewGroupChat = function(groupId) {
 window.closeAdminGroupChat = function() {
   document.getElementById('adminGroupChatOverlay').classList.remove('open');
   if (_adminGroupChatUnsub) { _adminGroupChatUnsub(); _adminGroupChatUnsub = null; }
+  _updateFabVisibility();
 };
 window.adminDeleteGroupMessage = async function(groupId, msgId) {
   if (!confirm('تحذف الرسالة دي؟')) return;

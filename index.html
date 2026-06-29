@@ -2746,6 +2746,74 @@
   [data-theme="dark"] .ai-quick-prompts { border-top: 1px solid var(--border-color, rgba(216,240,230,0.07)); }
   [data-theme="dark"] .ai-input-area { border-top: 1px solid var(--border-color, rgba(216,240,230,0.08)); }
   [data-theme="dark"] .ai-input { border: 1.5px solid var(--ai-input-border, rgba(216,240,230,0.15)); }
+
+  /* ─── GROUPS FEATURE ─── */
+  .group-create-btn {
+    width: 100%; padding: 12px 16px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #1D9E75, #378ADD); color: #fff;
+    font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 600;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .group-create-btn:hover { opacity: 0.92; }
+  .group-list-item {
+    display: flex; align-items: center; gap: 10px; padding: 10px 8px; border-radius: 10px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .group-list-item:hover { background: var(--teal-50); }
+  .group-list-icon {
+    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, #378ADD, #1D9E75); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;
+  }
+  .group-list-info { flex: 1; min-width: 0; }
+  .group-list-name { font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .group-list-sub { font-size: 11px; color: rgba(28,43,37,0.5); margin-top: 2px; }
+  .group-status-badge {
+    font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 100px; flex-shrink: 0;
+  }
+  .group-status-pending { background: #FCEFD8; color: #BA7517; }
+  .group-status-active { background: var(--teal-50); color: var(--teal-600); }
+  .group-status-rejected, .group-status-closed { background: #fdecea; color: #c0392b; }
+  .group-modal-overlay {
+    position: fixed; inset: 0; z-index: 220;
+    background: rgba(6,14,11,0.65); backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+  }
+  .group-modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .group-modal {
+    background: #fff; border-radius: 18px; padding: 1.8rem; width: min(440px, 92vw);
+    max-height: 88vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(6,14,11,0.3);
+    transform: translateY(16px) scale(0.97); transition: transform 0.25s ease;
+  }
+  [data-theme="dark"] .group-modal { background: var(--bg-card); }
+  .group-modal-overlay.open .group-modal { transform: translateY(0) scale(1); }
+  .group-field { margin-bottom: 1rem; text-align: right; }
+  .group-field label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .group-field input, .group-field textarea {
+    width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(28,43,37,0.18);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--ink); outline: none;
+    box-sizing: border-box; resize: vertical; background: var(--bg-card, #fff);
+  }
+  .group-field input:focus, .group-field textarea:focus { border-color: var(--teal-400); }
+  .group-field small { display: block; font-size: 11px; color: rgba(28,43,37,0.45); margin-top: 5px; }
+  .group-modal-close { background: none; border: none; cursor: pointer; color: rgba(28,43,37,0.4); float: left; }
+  .group-modal-close svg { width: 20px; height: 20px; display: block; }
+  .group-admin-card {
+    border: 1px solid rgba(28,43,37,0.1); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .group-admin-card-name { font-size: 13.5px; font-weight: 700; color: var(--ink); }
+  .group-admin-card-meta { font-size: 11.5px; color: rgba(28,43,37,0.55); margin-top: 3px; line-height: 1.5; }
+  .group-admin-card-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .group-admin-btn {
+    flex: 1; padding: 7px 10px; border-radius: 8px; border: none; font-size: 12px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent;
+  }
+  .group-admin-approve { background: var(--teal-400); color: #fff; }
+  .group-admin-reject, .group-admin-close { background: #fdecea; color: #c0392b; }
+  [data-theme="dark"] .group-admin-card { border-color: rgba(216,240,230,0.12); }
+  [data-theme="dark"] .group-admin-card-meta { color: rgba(216,240,230,0.5); }
 </style>
 </head>
 <body>
@@ -2789,12 +2857,6 @@
   <source src="bg.mp4" type="video/mp4">
 </video>
 
-<!-- ══════════════════════ CONTACT / FEEDBACK ══════════════════════ -->
-<button class="contact-fab" onclick="openMyChat()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-  <span>Message Ali</span>
-</button>
-
 <div class="contact-overlay" id="contactOverlay">
   <div class="contact-modal">
     <button class="contact-close" onclick="closeContact()">✕</button>
@@ -2830,11 +2892,6 @@
 
 <!-- ══════════════════════ AUTH CORNER (top-right) ══════════════════════ -->
 <div class="auth-corner" id="authCorner">
-  <!-- 🌙 Dark Mode Toggle -->
-  <button class="dark-toggle-btn" id="darkToggleBtn" onclick="toggleDarkMode()" title="تبديل الوضع الليلي" aria-label="Dark mode toggle">
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
   <!-- 🔔 Notification Bell -->
   <div style="position:relative;" id="notifWrap">
     <button class="notif-bell-btn" id="notifBellBtn" onclick="toggleNotifPanel()" title="Notifications">
@@ -2846,26 +2903,48 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
     Sign In
   </button>
-  <div style="position:relative; display:none;" id="userAvatarWrap">
+  <!-- 🧰 Unified menu trigger — visible for guests AND signed-in students -->
+  <div style="position:relative;" id="userAvatarWrap">
     <button class="user-avatar-btn" id="userAvatarBtn" onclick="toggleUserPopover()" style="position:relative;">
       <div class="user-initials" id="userInitials">?</div>
       <span id="adminAvatarBadge" class="avatar-msg-badge">0</span>
     </button>
     <div class="user-popover" id="userPopover">
-      <div class="user-popover-header">
-        <div class="user-popover-name" id="popoverName">—</div>
-        <div class="user-popover-email" id="popoverEmail">—</div>
-      </div>
-      <div class="user-popover-stats">
-        <div class="user-stat">
-          <span class="user-stat-num" id="popoverFilesCount">0</span>
-          <span class="user-stat-label">FILES OPENED</span>
+      <!-- Signed-in identity block (hidden for guests) -->
+      <div id="popoverIdentityBlock">
+        <div class="user-popover-header">
+          <div class="user-popover-name" id="popoverName">—</div>
+          <div class="user-popover-email" id="popoverEmail">—</div>
         </div>
-        <div class="user-stat">
-          <span class="user-stat-num" id="popoverPctCount">0%</span>
-          <span class="user-stat-label">OVERALL</span>
+        <div class="user-popover-stats">
+          <div class="user-stat">
+            <span class="user-stat-num" id="popoverFilesCount">0</span>
+            <span class="user-stat-label">FILES OPENED</span>
+          </div>
+          <div class="user-stat">
+            <span class="user-stat-num" id="popoverPctCount">0%</span>
+            <span class="user-stat-label">OVERALL</span>
+          </div>
         </div>
       </div>
+
+      <!-- 🧰 Tools — same group for everyone: Dark Mode + Groups + Message Ali -->
+      <div class="user-popover-actions">
+        <button class="user-action-btn" id="darkToggleBtn" onclick="toggleDarkMode()">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          الوضع الليلي
+        </button>
+        <button class="user-action-btn" onclick="toggleUserPopover(); openGroupsPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          الجروبات
+        </button>
+        <button class="user-action-btn" onclick="toggleUserPopover(); openMyChat();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          تواصل مع علي
+        </button>
+      </div>
+
       <!-- Admin-only: conversations + send notification (hidden for regular students) -->
       <div id="adminPopoverSection" class="admin-popover-section" style="display:none;">
         <div class="admin-popover-label">⚙️ أدوات الأدمن</div>
@@ -2873,6 +2952,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           المحادثات
           <span id="adminConvBadge" class="chat-entry-badge" style="display:none;">0</span>
+        </button>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminGroupsPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          طلبات الجروبات
+          <span id="adminGroupsBadge" class="chat-entry-badge" style="display:none;">0</span>
         </button>
         <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminPanel();">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
@@ -2887,7 +2971,9 @@
           🤖 التحكم في الـ AI
         </button>
       </div>
-      <div class="user-popover-actions">
+
+      <!-- Signed-in only: dashboard + sign out -->
+      <div class="user-popover-actions" id="popoverAccountSection">
         <button class="user-action-btn" onclick="openDashboard(); toggleUserPopover();">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           My Dashboard
@@ -2895,6 +2981,14 @@
         <button class="user-action-btn danger" onclick="signOutUser()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
           Sign Out
+        </button>
+      </div>
+
+      <!-- Guest-only: prompt to sign in -->
+      <div class="user-popover-actions" id="popoverGuestSection">
+        <button class="user-action-btn" onclick="toggleUserPopover(); document.getElementById('signInBtn').click();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          سجّل دخولك لفتح حسابك
         </button>
       </div>
     </div>
@@ -2970,6 +3064,83 @@
     <button class="dash-signout-btn" onclick="signOutUser()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Sign Out
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════ GROUPS PANEL (study groups) ══════════════════════ -->
+<div class="dashboard-panel" id="groupsPanel" onclick="handleGroupsOverlayClick(event)">
+  <div class="dashboard-drawer">
+    <div class="dashboard-header">
+      <div class="dashboard-avatar" style="background:linear-gradient(135deg,#378ADD,#1D9E75);">👥</div>
+      <div>
+        <div class="dashboard-name">جروبات المذاكرة</div>
+        <div class="dashboard-email">اعمل جروب مع زمايلك وذاكروا سوا</div>
+      </div>
+      <button class="dashboard-close" onclick="closeGroupsPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dashboard-section">
+      <button class="group-create-btn" onclick="openCreateGroupModal()">➕ اعمل جروب جديد</button>
+    </div>
+    <div class="dashboard-section">
+      <div class="dashboard-section-title">جروباتي</div>
+      <div id="myGroupsList">
+        <p class="dash-fav-empty" style="color:rgba(28,43,37,0.5);">سجّل دخولك الأول عشان تعمل جروب أو تنضم لجروب.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ CREATE GROUP MODAL ══════════════════════ -->
+<div class="group-modal-overlay" id="createGroupOverlay" onclick="if(event.target===this) closeCreateGroupModal()">
+  <div class="group-modal">
+    <button class="group-modal-close" onclick="closeCreateGroupModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:0.3rem;clear:both;">جروب مذاكرة جديد</h2>
+    <p style="font-size:12.5px;color:rgba(28,43,37,0.55);margin-bottom:1.2rem;line-height:1.5;">
+      هيتبعت طلب للأدمن للموافقة على تشغيل الجروب. لما يوافق، الجروب يبقى شغال للأعضاء كلهم.
+    </p>
+    <div class="group-field">
+      <label>اسم الجروب</label>
+      <input type="text" id="newGroupName" placeholder="مثلاً: مذاكرة فاينال فارما">
+    </div>
+    <div class="group-field">
+      <label>وصف مختصر (اختياري)</label>
+      <textarea id="newGroupDesc" rows="2" placeholder="عن إيه الجروب ده؟"></textarea>
+    </div>
+    <div class="group-field">
+      <label>إيميلات الأعضاء</label>
+      <textarea id="newGroupMembers" rows="3" placeholder="ايميل في كل سطر أو مفصول بفاصلة"></textarea>
+      <small>هيتضافوا للجروب لما يسجّلوا دخول بنفس الإيميل ده.</small>
+    </div>
+    <button class="group-create-btn" id="submitGroupBtn" onclick="submitCreateGroup()">إرسال الطلب للأدمن 🚀</button>
+    <div class="contact-status" id="createGroupStatus" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ GROUP CHAT (members) ══════════════════════ -->
+<div class="chat-view" id="groupChatView">
+  <div class="chat-header">
+    <button class="chat-back-btn" onclick="closeGroupChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="chat-header-avatar" id="groupChatAvatar">👥</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name" id="groupChatName">—</div>
+      <div class="chat-header-sub" id="groupChatSub">—</div>
+    </div>
+    <button class="dashboard-close" id="groupChatCloseBtn" onclick="closeGroupAsCreator()" title="قفل الجروب" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="groupChatMessages"></div>
+  <div class="chat-input-row" id="groupChatInputRow">
+    <input type="text" class="chat-input" id="groupChatInput" placeholder="اكتب رسالتك للجروب..." onkeydown="if(event.key==='Enter') sendGroupChatMessage()">
+    <button class="chat-send-btn" id="groupChatSendBtn" onclick="sendGroupChatMessage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
 </div>
@@ -3107,6 +3278,28 @@
     </div>
     <div style="padding:1.2rem;">
       <div id="adminConversationsList" style="max-height:70vh;overflow-y:auto;">
+        <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN PANEL — GROUP REQUESTS ══════════════════════ -->
+<div class="admin-overlay" id="adminGroupsOverlay" onclick="if(event.target===this) closeAdminGroupsPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">👥 طلبات الجروبات</span>
+      <button class="notif-close-btn" onclick="closeAdminGroupsPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+      <div class="dashboard-section-title" style="margin-bottom:0.6rem;">⏳ طلبات في الانتظار</div>
+      <div id="adminPendingGroupsList" style="margin-bottom:1.4rem;">
+        <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
+      </div>
+      <div class="dashboard-section-title" style="margin-bottom:0.6rem;">✅ الجروبات الشغالة</div>
+      <div id="adminActiveGroupsList">
         <p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>
       </div>
     </div>
@@ -4969,6 +5162,22 @@ function closeDashboard() {
 function handleDashboardOverlayClick(e) {
   if (e.target === document.getElementById('dashboardPanel')) closeDashboard();
 }
+
+/* Groups panel (study groups list) */
+function openGroupsPanel() {
+  document.getElementById('groupsPanel').classList.add('open');
+  if (window._loadMyGroups) window._loadMyGroups();
+}
+function closeGroupsPanel() {
+  document.getElementById('groupsPanel').classList.remove('open');
+}
+function handleGroupsOverlayClick(e) {
+  if (e.target === document.getElementById('groupsPanel')) closeGroupsPanel();
+}
+window.openGroupsPanel = openGroupsPanel;
+window.closeGroupsPanel = closeGroupsPanel;
+window.handleGroupsOverlayClick = handleGroupsOverlayClick;
+
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#userAvatarWrap'))
     document.getElementById('userPopover').classList.remove('open');
@@ -5161,6 +5370,18 @@ function closeAdminConversationsPanel() {
 }
 window.openAdminConversationsPanel = openAdminConversationsPanel;
 window.closeAdminConversationsPanel = closeAdminConversationsPanel;
+
+/* Admin: group requests panel */
+function openAdminGroupsPanel() {
+  document.getElementById('adminGroupsOverlay').classList.add('open');
+  if (window._loadAdminGroups) window._loadAdminGroups();
+}
+function closeAdminGroupsPanel() {
+  document.getElementById('adminGroupsOverlay').classList.remove('open');
+}
+window.openAdminGroupsPanel = openAdminGroupsPanel;
+window.closeAdminGroupsPanel = closeAdminGroupsPanel;
+
 
 /* Stats dashboard panel (kept apart from "send notification" and "conversations") */
 function openAdminStatsPanel() {
@@ -5704,9 +5925,14 @@ window.signOutUser = async function() {
 /* ─── Auth State ─── */
 onAuthStateChanged(auth, async (user) => {
   currentUser = user;
+  const identityBlock = document.getElementById('popoverIdentityBlock');
+  const accountSection = document.getElementById('popoverAccountSection');
+  const guestSection = document.getElementById('popoverGuestSection');
   if (user) {
     document.getElementById('signInBtn').style.display = 'none';
-    document.getElementById('userAvatarWrap').style.display = 'block';
+    if (identityBlock) identityBlock.style.display = '';
+    if (accountSection) accountSection.style.display = '';
+    if (guestSection) guestSection.style.display = 'none';
     const name = user.displayName || user.email || '?';
     const initials = name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
     document.getElementById('userInitials').textContent = initials;
@@ -5719,7 +5945,10 @@ onAuthStateChanged(auth, async (user) => {
     requestFCMToken(user.uid);
   } else {
     document.getElementById('signInBtn').style.display = '';
-    document.getElementById('userAvatarWrap').style.display = 'none';
+    document.getElementById('userInitials').textContent = '?';
+    if (identityBlock) identityBlock.style.display = 'none';
+    if (accountSection) accountSection.style.display = 'none';
+    if (guestSection) guestSection.style.display = '';
   }
 });
 
@@ -6553,7 +6782,7 @@ onAuthStateChanged(auth, (user) => {
     window._currentUserEmail = user.email || '';
     startNotifListener(user.uid);
     listenForMyConversationPreview(user.uid);
-    if (user.email === ADMIN_EMAIL) listenAllConversations();
+    if (user.email === ADMIN_EMAIL) { listenAllConversations(); listenPendingGroupsCount(); }
   } else {
     window._currentUserEmail = '';
     window._unreadChatCount = 0;
@@ -6709,6 +6938,286 @@ window._deleteAdminMessage = async function(uid, msgId) {
   await deleteDoc(doc(db, 'conversations', uid, 'messages', msgId));
   await _refreshConversationPreview(uid);
 };
+
+/* ══════════════════════ STUDY GROUPS (Firestore) ══════════════════════ */
+/* Data model:
+   groups/{groupId} -> { name, description, createdByUid, createdByName, createdByEmail,
+                          members: [email,...], status: 'pending'|'active'|'rejected'|'closed',
+                          createdAt }
+   groups/{groupId}/messages/{id} -> { text, senderUid, senderName, ts }          */
+
+let _myGroupsUnsub = null;
+let _groupChatUnsub = null;
+let _currentGroupId = null;
+
+function parseMemberEmails(raw) {
+  const parts = (raw || '').split(/[\n,]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
+  const valid = parts.filter(e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));
+  return [...new Set(valid)];
+}
+
+function openCreateGroupModal() {
+  if (!auth.currentUser) {
+    closeGroupsPanel();
+    document.getElementById('signInBtn').click();
+    return;
+  }
+  document.getElementById('newGroupName').value = '';
+  document.getElementById('newGroupDesc').value = '';
+  document.getElementById('newGroupMembers').value = '';
+  document.getElementById('createGroupStatus').textContent = '';
+  document.getElementById('createGroupOverlay').classList.add('open');
+}
+function closeCreateGroupModal() {
+  document.getElementById('createGroupOverlay').classList.remove('open');
+}
+window.openCreateGroupModal = openCreateGroupModal;
+window.closeCreateGroupModal = closeCreateGroupModal;
+
+async function submitCreateGroup() {
+  const user = auth.currentUser;
+  if (!user) { document.getElementById('signInBtn').click(); return; }
+  const name = document.getElementById('newGroupName').value.trim();
+  const desc = document.getElementById('newGroupDesc').value.trim();
+  const membersRaw = document.getElementById('newGroupMembers').value;
+  const statusEl = document.getElementById('createGroupStatus');
+  if (!name) { statusEl.style.color = '#c0392b'; statusEl.textContent = 'لازم تكتب اسم للجروب'; return; }
+  const members = parseMemberEmails(membersRaw);
+  const creatorEmail = (user.email || '').toLowerCase();
+  if (!members.includes(creatorEmail)) members.push(creatorEmail);
+
+  const btn = document.getElementById('submitGroupBtn');
+  btn.disabled = true;
+  statusEl.style.color = '';
+  statusEl.textContent = 'جاري الإرسال...';
+  try {
+    await addDoc(collection(db, 'groups'), {
+      name, description: desc,
+      createdByUid: user.uid,
+      createdByName: user.displayName || user.email || '?',
+      createdByEmail: creatorEmail,
+      members,
+      status: 'pending',
+      createdAt: serverTimestamp(),
+    });
+    statusEl.style.color = '#1D9E75';
+    statusEl.textContent = '✓ تم إرسال الطلب! هيشتغل الجروب لما الأدمن يوافق.';
+    if (window._loadMyGroups) window._loadMyGroups();
+    setTimeout(closeCreateGroupModal, 1600);
+  } catch (e) {
+    statusEl.style.color = '#c0392b';
+    statusEl.textContent = 'حصل خطأ: ' + (e && e.message ? e.message : e);
+  } finally {
+    btn.disabled = false;
+  }
+}
+window.submitCreateGroup = submitCreateGroup;
+
+function groupStatusLabel(status) {
+  if (status === 'pending') return { text: 'قيد المراجعة', cls: 'group-status-pending' };
+  if (status === 'active') return { text: 'نشط', cls: 'group-status-active' };
+  if (status === 'closed') return { text: 'مقفول', cls: 'group-status-closed' };
+  if (status === 'rejected') return { text: 'مرفوض', cls: 'group-status-rejected' };
+  return { text: status, cls: '' };
+}
+
+/* Student: live list of groups I'm a member of */
+window._loadMyGroups = function() {
+  const user = auth.currentUser;
+  const listEl = document.getElementById('myGroupsList');
+  if (!listEl) return;
+  if (!user) {
+    listEl.innerHTML = '<p class="dash-fav-empty" style="color:rgba(28,43,37,0.5);">سجّل دخولك الأول عشان تعمل جروب أو تنضم لجروب.</p>';
+    return;
+  }
+  const email = (user.email || '').toLowerCase();
+  if (_myGroupsUnsub) _myGroupsUnsub();
+  listEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
+  const q = query(collection(db, 'groups'), where('members', 'array-contains', email));
+  _myGroupsUnsub = onSnapshot(q, (snap) => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    list.sort((a, b) => (b.createdAt?.toMillis ? b.createdAt.toMillis() : 0) - (a.createdAt?.toMillis ? a.createdAt.toMillis() : 0));
+    if (!list.length) {
+      listEl.innerHTML = '<p class="dash-fav-empty" style="color:rgba(28,43,37,0.5);">لسه معملتش أو اتضفت لأي جروب. دوس "اعمل جروب جديد"!</p>';
+      return;
+    }
+    listEl.innerHTML = list.map(g => {
+      const st = groupStatusLabel(g.status);
+      const initial = (g.name || '?').trim()[0] || '?';
+      const memberCount = (g.members || []).length;
+      return `<div class="group-list-item" onclick="${g.status === 'active' ? `openGroupChat('${g.id}')` : ''}">
+        <div class="group-list-icon">${escChat(initial.toUpperCase())}</div>
+        <div class="group-list-info">
+          <div class="group-list-name">${escChat(g.name)}</div>
+          <div class="group-list-sub">${memberCount} عضو</div>
+        </div>
+        <span class="group-status-badge ${st.cls}">${st.text}</span>
+      </div>`;
+    }).join('');
+  });
+};
+
+/* Group chat */
+function groupChatBubbleHtml(messages, myUid) {
+  if (!messages.length) return '<p class="chat-empty">لسه مفيش رسايل. ابعت أول رسالة! 👋</p>';
+  return messages.map(m => {
+    const fromMe = m.senderUid === myUid;
+    const time = new Date(m.ts || Date.now()).toLocaleString('ar-EG', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
+    const nameLine = !fromMe ? `<div style="font-size:10.5px;font-weight:700;color:var(--teal-600);margin-bottom:2px;">${escChat(m.senderName || '')}</div>` : '';
+    return `<div class="chat-bubble-row ${fromMe ? 'from-me' : 'from-them'}">
+      <div class="chat-bubble-wrap">
+        <div class="chat-bubble">${nameLine}${escChat(m.text)}<div class="chat-bubble-time">${time}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openGroupChat(groupId) {
+  const user = auth.currentUser;
+  if (!user) { document.getElementById('signInBtn').click(); return; }
+  closeGroupsPanel();
+  _currentGroupId = groupId;
+  document.getElementById('groupChatView').classList.add('open');
+  const msgsEl = document.getElementById('groupChatMessages');
+  msgsEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:1rem;">جاري التحميل...</p>';
+
+  getDoc(doc(db, 'groups', groupId)).then((snap) => {
+    if (!snap.exists()) return;
+    const g = snap.data();
+    document.getElementById('groupChatName').textContent = g.name || '—';
+    document.getElementById('groupChatSub').textContent = `${(g.members || []).length} عضو`;
+    const closeBtn = document.getElementById('groupChatCloseBtn');
+    closeBtn.style.display = (g.createdByUid === user.uid || user.email === window.ADMIN_EMAIL_REF) ? 'flex' : 'none';
+  });
+
+  if (_groupChatUnsub) _groupChatUnsub();
+  const q = query(collection(db, 'groups', groupId, 'messages'), orderBy('ts', 'asc'), limit(300));
+  _groupChatUnsub = onSnapshot(q, (snap) => {
+    const messages = [];
+    snap.forEach(d => {
+      const m = d.data();
+      messages.push({ id: d.id, text: m.text, senderUid: m.senderUid, senderName: m.senderName, ts: m.ts?.toMillis ? m.ts.toMillis() : Date.now() });
+    });
+    msgsEl.innerHTML = groupChatBubbleHtml(messages, user.uid);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+  });
+}
+function closeGroupChat() {
+  document.getElementById('groupChatView').classList.remove('open');
+  if (_groupChatUnsub) { _groupChatUnsub(); _groupChatUnsub = null; }
+  _currentGroupId = null;
+}
+window.openGroupChat = openGroupChat;
+window.closeGroupChat = closeGroupChat;
+
+async function sendGroupChatMessage() {
+  const user = auth.currentUser;
+  const input = document.getElementById('groupChatInput');
+  const text = input.value.trim();
+  if (!text || !user || !_currentGroupId) return;
+  const btn = document.getElementById('groupChatSendBtn');
+  input.disabled = true; btn.disabled = true;
+  try {
+    await addDoc(collection(db, 'groups', _currentGroupId, 'messages'), {
+      text, senderUid: user.uid, senderName: user.displayName || user.email || '?', ts: serverTimestamp(),
+    });
+    input.value = '';
+  } catch (e) {
+    alert('مش قادر أبعت الرسالة دلوقتي: ' + (e && e.message ? e.message : e));
+  } finally {
+    input.disabled = false; btn.disabled = false; input.focus();
+  }
+}
+window.sendGroupChatMessage = sendGroupChatMessage;
+
+async function closeGroupAsCreator() {
+  if (!_currentGroupId) return;
+  if (!confirm('تقفل الجروب ده؟ مش هيتقدر يبعت فيه رسايل تاني.')) return;
+  try {
+    await updateDoc(doc(db, 'groups', _currentGroupId), { status: 'closed' });
+    closeGroupChat();
+    if (window._loadMyGroups) window._loadMyGroups();
+  } catch (e) {
+    alert('حصل خطأ: ' + (e && e.message ? e.message : e));
+  }
+}
+window.closeGroupAsCreator = closeGroupAsCreator;
+
+/* Admin: pending-groups badge count */
+function listenPendingGroupsCount() {
+  const q = query(collection(db, 'groups'), where('status', '==', 'pending'));
+  onSnapshot(q, (snap) => {
+    const n = snap.size;
+    const badge = document.getElementById('adminGroupsBadge');
+    if (badge) { badge.style.display = n > 0 ? 'flex' : 'none'; badge.textContent = n > 9 ? '9+' : n; }
+  });
+}
+
+/* Admin: groups approval panel */
+window._loadAdminGroups = function() {
+  const pendingEl = document.getElementById('adminPendingGroupsList');
+  const activeEl = document.getElementById('adminActiveGroupsList');
+
+  const pendingQ = query(collection(db, 'groups'), where('status', '==', 'pending'));
+  onSnapshot(pendingQ, (snap) => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    if (!list.length) {
+      pendingEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">لا يوجد طلبات حالياً</p>';
+      return;
+    }
+    pendingEl.innerHTML = list.map(g => `
+      <div class="group-admin-card">
+        <div class="group-admin-card-name">${escChat(g.name)}</div>
+        <div class="group-admin-card-meta">
+          بواسطة: ${escChat(g.createdByName || g.createdByEmail || '?')}<br>
+          الأعضاء: ${escChat((g.members || []).join('، '))}
+          ${g.description ? `<br>${escChat(g.description)}` : ''}
+        </div>
+        <div class="group-admin-card-actions">
+          <button class="group-admin-btn group-admin-approve" onclick="approveGroupRequest('${g.id}')">✓ موافقة</button>
+          <button class="group-admin-btn group-admin-reject" onclick="rejectGroupRequest('${g.id}')">✕ رفض</button>
+        </div>
+      </div>`).join('');
+  });
+
+  const activeQ = query(collection(db, 'groups'), where('status', '==', 'active'));
+  onSnapshot(activeQ, (snap) => {
+    const list = [];
+    snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+    if (!list.length) {
+      activeEl.innerHTML = '<p style="font-size:12px;color:rgba(28,43,37,0.4);text-align:center;padding:0.6rem;">لا يوجد جروبات شغالة حالياً</p>';
+      return;
+    }
+    activeEl.innerHTML = list.map(g => `
+      <div class="group-admin-card">
+        <div class="group-admin-card-name">${escChat(g.name)}</div>
+        <div class="group-admin-card-meta">
+          بواسطة: ${escChat(g.createdByName || g.createdByEmail || '?')} · ${(g.members || []).length} عضو
+        </div>
+        <div class="group-admin-card-actions">
+          <button class="group-admin-btn group-admin-close" onclick="adminCloseGroup('${g.id}')">🔒 قفل الجروب</button>
+        </div>
+      </div>`).join('');
+  });
+};
+
+window.approveGroupRequest = async function(id) {
+  try { await updateDoc(doc(db, 'groups', id), { status: 'active' }); }
+  catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
+};
+window.rejectGroupRequest = async function(id) {
+  if (!confirm('ترفض الطلب ده؟')) return;
+  try { await updateDoc(doc(db, 'groups', id), { status: 'rejected' }); }
+  catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
+};
+window.adminCloseGroup = async function(id) {
+  if (!confirm('تقفل الجروب ده؟')) return;
+  try { await updateDoc(doc(db, 'groups', id), { status: 'closed' }); }
+  catch (e) { alert('حصل خطأ: ' + (e && e.message ? e.message : e)); }
+};
+
 </script>
 
 <!-- ══════════════════════ AI NURSING CHAT ══════════════════════ -->

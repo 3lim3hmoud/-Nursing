@@ -6014,6 +6014,37 @@ window._getCachedStudentsList = async function(getDocsFn, collRef) {
 };
 </script>
 
+
+<!-- ══ In-app notification banner ══ -->
+<div class="inapp-notif-banner" id="inappNotifBanner">
+  <span class="inapp-notif-banner-icon" id="inappNotifIcon">💬</span>
+  <div class="inapp-notif-banner-body">
+    <div class="inapp-notif-banner-from" id="inappNotifFrom">رسالة جديدة</div>
+    <div class="inapp-notif-banner-text" id="inappNotifText">...</div>
+  </div>
+  <button class="inapp-notif-banner-close" onclick="hideInappNotif()">✕</button>
+</div>
+
+<script>
+let _inappNotifTimer = null;
+function showInappNotif({ icon, from, text, onClick }) {
+  const banner = document.getElementById('inappNotifBanner');
+  document.getElementById('inappNotifIcon').textContent = icon || '💬';
+  document.getElementById('inappNotifFrom').textContent = from || 'رسالة جديدة';
+  document.getElementById('inappNotifText').textContent = text || '';
+  banner.onclick = (e) => { if (e.target.classList.contains('inapp-notif-banner-close')) return; hideInappNotif(); if (onClick) onClick(); };
+  banner.classList.add('show');
+  if (_inappNotifTimer) clearTimeout(_inappNotifTimer);
+  _inappNotifTimer = setTimeout(hideInappNotif, 5000);
+}
+function hideInappNotif() {
+  document.getElementById('inappNotifBanner').classList.remove('show');
+  if (_inappNotifTimer) { clearTimeout(_inappNotifTimer); _inappNotifTimer = null; }
+}
+window.showInappNotif = showInappNotif;
+window.hideInappNotif = hideInappNotif;
+</script>
+
 <script type="module">
 /* ══════════════════════ FIREBASE AUTH ══════════════════════ */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
@@ -8238,35 +8269,5 @@ ${contextBlock}`;
 })();
 </script>
 
-
-<!-- ══ In-app notification banner ══ -->
-<div class="inapp-notif-banner" id="inappNotifBanner">
-  <span class="inapp-notif-banner-icon" id="inappNotifIcon">💬</span>
-  <div class="inapp-notif-banner-body">
-    <div class="inapp-notif-banner-from" id="inappNotifFrom">رسالة جديدة</div>
-    <div class="inapp-notif-banner-text" id="inappNotifText">...</div>
-  </div>
-  <button class="inapp-notif-banner-close" onclick="hideInappNotif()">✕</button>
-</div>
-
-<script>
-let _inappNotifTimer = null;
-function showInappNotif({ icon, from, text, onClick }) {
-  const banner = document.getElementById('inappNotifBanner');
-  document.getElementById('inappNotifIcon').textContent = icon || '💬';
-  document.getElementById('inappNotifFrom').textContent = from || 'رسالة جديدة';
-  document.getElementById('inappNotifText').textContent = text || '';
-  banner.onclick = (e) => { if (e.target.classList.contains('inapp-notif-banner-close')) return; hideInappNotif(); if (onClick) onClick(); };
-  banner.classList.add('show');
-  if (_inappNotifTimer) clearTimeout(_inappNotifTimer);
-  _inappNotifTimer = setTimeout(hideInappNotif, 5000);
-}
-function hideInappNotif() {
-  document.getElementById('inappNotifBanner').classList.remove('show');
-  if (_inappNotifTimer) { clearTimeout(_inappNotifTimer); _inappNotifTimer = null; }
-}
-window.showInappNotif = showInappNotif;
-window.hideInappNotif = hideInappNotif;
-</script>
 </body>
 </html>

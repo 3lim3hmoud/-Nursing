@@ -2868,6 +2868,41 @@
     background: none; border: none; cursor: pointer; color: rgba(28,43,37,0.35); font-size: 11px;
     padding: 2px 4px; margin-top: 2px;
   }
+
+  /* ─── In-app message notification banner ─── */
+  .inapp-notif-banner {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: var(--bg-card, #fff);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--teal-400, #1D9E75);
+    border-radius: 12px;
+    padding: 10px 16px 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+    z-index: 9990;
+    min-width: 240px;
+    max-width: 340px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-family: 'Inter', sans-serif;
+  }
+  .inapp-notif-banner.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .inapp-notif-banner-icon { font-size: 20px; flex-shrink: 0; }
+  .inapp-notif-banner-body { flex: 1; overflow: hidden; }
+  .inapp-notif-banner-from { font-size: 11px; font-weight: 600; color: var(--teal-600, #0F6E56); margin-bottom: 2px; }
+  .inapp-notif-banner-text { font-size: 13px; color: var(--text-main, #0E1C16); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inapp-notif-banner-close { background: none; border: none; cursor: pointer; font-size: 16px; color: var(--text-muted); padding: 0 0 0 6px; flex-shrink: 0; }
+  [data-theme="dark"] .inapp-notif-banner { background: var(--bg-card); }
 </style>
 </head>
 <body>
@@ -5685,6 +5720,8 @@ function openMyChat() {
   closeNotifPanel();
   closeContact();
   document.getElementById('myChatView').classList.add('open');
+  const aiFab = document.getElementById('aiFab');
+  if (aiFab) aiFab.style.display = 'none';
   const inputRow = document.getElementById('myChatInputRow');
   const msgsEl = document.getElementById('myChatMessages');
   if (!window._currentUserUid) {
@@ -5715,6 +5752,8 @@ window.deleteMyMessage = deleteMyMessage;
 
 function closeMyChat() {
   document.getElementById('myChatView').classList.remove('open');
+  const aiFab = document.getElementById('aiFab');
+  if (aiFab) aiFab.style.display = '';
 }
 
 let _pendingMyChatFile = null;
@@ -8181,5 +8220,35 @@ ${contextBlock}`;
 })();
 </script>
 
+
+<!-- ══ In-app notification banner ══ -->
+<div class="inapp-notif-banner" id="inappNotifBanner">
+  <span class="inapp-notif-banner-icon" id="inappNotifIcon">💬</span>
+  <div class="inapp-notif-banner-body">
+    <div class="inapp-notif-banner-from" id="inappNotifFrom">رسالة جديدة</div>
+    <div class="inapp-notif-banner-text" id="inappNotifText">...</div>
+  </div>
+  <button class="inapp-notif-banner-close" onclick="hideInappNotif()">✕</button>
+</div>
+
+<script>
+let _inappNotifTimer = null;
+function showInappNotif({ icon, from, text, onClick }) {
+  const banner = document.getElementById('inappNotifBanner');
+  document.getElementById('inappNotifIcon').textContent = icon || '💬';
+  document.getElementById('inappNotifFrom').textContent = from || 'رسالة جديدة';
+  document.getElementById('inappNotifText').textContent = text || '';
+  banner.onclick = (e) => { if (e.target.classList.contains('inapp-notif-banner-close')) return; hideInappNotif(); if (onClick) onClick(); };
+  banner.classList.add('show');
+  if (_inappNotifTimer) clearTimeout(_inappNotifTimer);
+  _inappNotifTimer = setTimeout(hideInappNotif, 5000);
+}
+function hideInappNotif() {
+  document.getElementById('inappNotifBanner').classList.remove('show');
+  if (_inappNotifTimer) { clearTimeout(_inappNotifTimer); _inappNotifTimer = null; }
+}
+window.showInappNotif = showInappNotif;
+window.hideInappNotif = hideInappNotif;
+</script>
 </body>
 </html>

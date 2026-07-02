@@ -5632,6 +5632,22 @@ function clearSelectedStudent() {
   filterStudentsList(document.getElementById('adminStudentSearch').value);
 }
 
+// ابعت طلب للـ Worker يبعت Push حقيقي (يوصل حتى لو التطبيق مقفول)
+async function sendRealPushNotification({ title, body, url, targetUid }) {
+  if (!auth.currentUser) return;
+  const idToken = await auth.currentUser.getIdToken();
+  const res = await fetch(NOTIFY_WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, title, msgBody: body, url, targetUid: targetUid || null }),
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error('Worker error: ' + errText);
+  }
+  return res.json();
+}
+
 function sendAdminNotif() {
   const title = document.getElementById('adminNotifTitle').value.trim();
   const body = document.getElementById('adminNotifBody').value.trim();
@@ -5644,7 +5660,10 @@ function sendAdminNotif() {
     const btn = document.getElementById('adminSendBtn');
     btn.disabled = true; btn.textContent = 'جاري الإرسال...';
     const targetUid = adminTarget === 'one' ? selectedStudentUid : null;
-    window._sendAdminNotifToFirestore({ title, body, type, targetUid }).then(() => {
+    window._sendAdminNotifToFirestore({ title, body, type, targetUid }).then(async () => {
+      // ابعت Push حقيقي كمان عشان يوصل حتى لو التطبيق مقفول
+      sendRealPushNotification({ title, body, url: '/', targetUid }).catch(e => console.warn('Real push failed:', e));
+
       status.textContent = targetUid ? `✅ وصلت لـ ${selectedStudentName}!` : '✅ وصلت للجميع!';
       status.style.color = '#0F6E56';
       document.getElementById('adminNotifTitle').value = '';
@@ -6074,6 +6093,8 @@ const provider = new GoogleAuthProvider();
 
 /* ─── FCM Messaging ─── */
 const VAPID_KEY = 'BGXT7Av6C-wndzNt_C7cbz5uCc_rd-o96WMYsfiVNH46GvajdNHKw3OliVd0JeBrpgylIZa6u_HYAUmOfPxqe0c';
+// رابط الـ Worker المسؤول عن إرسال إشعارات Push حقيقية (تصل حتى لو التطبيق مقفول)
+const NOTIFY_WORKER_URL = 'https://nurseverse-notify.kimoali426.workers.dev';
 let messaging = null;
 try { messaging = getMessaging(fbApp); } catch(e) {}
 

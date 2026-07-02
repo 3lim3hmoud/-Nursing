@@ -5634,8 +5634,8 @@ function clearSelectedStudent() {
 
 // ابعت طلب للـ Worker يبعت Push حقيقي (يوصل حتى لو التطبيق مقفول)
 async function sendRealPushNotification({ title, body, url, targetUid }) {
-  if (!auth.currentUser) return;
-  const idToken = await auth.currentUser.getIdToken();
+  if (!window._auth || !window._auth.currentUser) return;
+  const idToken = await window._auth.currentUser.getIdToken();
   const res = await fetch(NOTIFY_WORKER_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -6089,6 +6089,7 @@ const firebaseConfig = {
 
 const fbApp = initializeApp(firebaseConfig);
 const auth  = getAuth(fbApp);
+window._auth = auth; // متاح للسكريبتات العادية اللي مش module (زي sendRealPushNotification)
 const db    = getFirestore(fbApp);
 const storage = getStorage(fbApp);
 const provider = new GoogleAuthProvider();

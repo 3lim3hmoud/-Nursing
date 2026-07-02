@@ -6106,7 +6106,7 @@ async function requestFCMToken(uid) {
   if (!messaging) return;
   try {
     // Register the FCM service worker first
-    const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: '/' });
+    const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: './' });
     const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
     if (token) {
       // Save token to Firestore under students/{uid}

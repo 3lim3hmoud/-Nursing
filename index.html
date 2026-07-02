@@ -5643,7 +5643,7 @@ async function sendRealPushNotification({ title, body, url, targetUid }) {
   });
   if (!res.ok) {
     const errText = await res.text().catch(() => '');
-    throw new Error('Worker error: ' + errText);
+    throw new Error('HTTP ' + res.status + ' — ' + errText);
   }
   return res.json();
 }
@@ -5662,7 +5662,9 @@ function sendAdminNotif() {
     const targetUid = adminTarget === 'one' ? selectedStudentUid : null;
     window._sendAdminNotifToFirestore({ title, body, type, targetUid }).then(async () => {
       // ابعت Push حقيقي كمان عشان يوصل حتى لو التطبيق مقفول
-      sendRealPushNotification({ title, body, url: '/', targetUid }).catch(e => console.warn('Real push failed:', e));
+      sendRealPushNotification({ title, body, url: '/', targetUid })
+        .then(r => { alert('نتيجة الـ Push: ' + JSON.stringify(r)); })
+        .catch(e => { alert('فشل إرسال الـ Push الحقيقي: ' + e.message); });
 
       status.textContent = targetUid ? `✅ وصلت لـ ${selectedStudentName}!` : '✅ وصلت للجميع!';
       status.style.color = '#0F6E56';

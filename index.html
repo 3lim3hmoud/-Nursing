@@ -5636,7 +5636,7 @@ function clearSelectedStudent() {
 async function sendRealPushNotification({ title, body, url, targetUid }) {
   if (!window._auth || !window._auth.currentUser) return;
   const idToken = await window._auth.currentUser.getIdToken();
-  const res = await fetch(NOTIFY_WORKER_URL, {
+  const res = await fetch(window._notifyWorkerUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ idToken, title, msgBody: body, url, targetUid: targetUid || null }),
@@ -6098,6 +6098,7 @@ const provider = new GoogleAuthProvider();
 const VAPID_KEY = 'BGXT7Av6C-wndzNt_C7cbz5uCc_rd-o96WMYsfiVNH46GvajdNHKw3OliVd0JeBrpgylIZa6u_HYAUmOfPxqe0c';
 // رابط الـ Worker المسؤول عن إرسال إشعارات Push حقيقية (تصل حتى لو التطبيق مقفول)
 const NOTIFY_WORKER_URL = 'https://nurseverse-notify.kimoali426.workers.dev';
+window._notifyWorkerUrl = NOTIFY_WORKER_URL; // متاح للسكريبتات العادية
 let messaging = null;
 try { messaging = getMessaging(fbApp); } catch(e) {}
 

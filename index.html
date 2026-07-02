@@ -6103,16 +6103,26 @@ let messaging = null;
 try { messaging = getMessaging(fbApp); } catch(e) {}
 
 async function requestFCMToken(uid) {
-  if (!messaging) return;
+  if (!messaging) { alert('FCM مش مدعوم في المتصفح ده'); return; }
   try {
+    // لازم نطلب إذن الإشعارات صراحة قبل ما نجيب التوكين
+    if (Notification.permission === 'default') {
+      const perm = await Notification.requestPermission();
+      if (perm !== 'granted') { alert('رفضت إذن الإشعارات، مش هينفع نبعتلك إشعارات'); return; }
+    } else if (Notification.permission === 'denied') {
+      alert('الإشعارات متبلوكة من إعدادات المتصفح. لازم تشغلها يدوي من إعدادات الموقع في المتصفح.');
+      return;
+    }
     // Register the FCM service worker first
     const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: './' });
     const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
     if (token) {
       // Save token to Firestore under students/{uid}
       await setDoc(doc(db, 'students', uid), { fcmToken: token }, { merge: true });
+    } else {
+      alert('مقدرناش نجيب توكين الإشعارات، جرب تاني');
     }
-  } catch(e) { console.warn('FCM token error:', e); }
+  } catch(e) { alert('خطأ في تسجيل الإشعارات: ' + e.message); }
 }
 
 // Handle foreground messages (app is open)

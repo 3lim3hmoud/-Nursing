@@ -6113,8 +6113,19 @@ async function requestFCMToken(uid) {
       alert('الإشعارات متبلوكة من إعدادات المتصفح. لازم تشغلها يدوي من إعدادات الموقع في المتصفح.');
       return;
     }
-    // Register the FCM service worker first
-    const reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: './' });
+    // Register the FCM service worker first, and wait until it's fully active
+    let reg = await navigator.serviceWorker.register('./firebase-messaging-sw.js', { scope: './' });
+    reg = await navigator.serviceWorker.ready; // يستنى لحد ما يبقى active فعلاً
+    if (!reg.active) {
+      // fallback: استنى الـ statechange لو لسه installing/waiting
+      await new Promise((resolve) => {
+        const sw = reg.installing || reg.waiting;
+        if (!sw) return resolve();
+        sw.addEventListener('statechange', () => {
+          if (sw.state === 'activated') resolve();
+        });
+      });
+    }
     const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: reg });
     if (token) {
       // Save token to Firestore under students/{uid}

@@ -75,6 +75,68 @@
     --shadow-float: 0 20px 60px rgba(6,11,14,0.22), 0 4px 16px rgba(0,0,0,0.12);
   }
 
+  /* ─── PWA Install Banner ─── */
+  .install-banner {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%) translateY(140%);
+    width: min(94vw, 420px);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: var(--shadow-float, 0 20px 60px rgba(6,14,11,0.22));
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  .install-banner.show { transform: translateX(-50%) translateY(0); }
+  .install-banner-icon {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    object-fit: cover;
+  }
+  .install-banner-text { flex: 1; min-width: 0; }
+  .install-banner-text strong { display: block; font-size: 14px; color: var(--text-main); }
+  .install-banner-text span { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+  .install-banner-actions { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+  .install-banner-btn {
+    background: linear-gradient(135deg, var(--teal-400), var(--blue-400));
+    color: #fff; border: none; border-radius: 10px;
+    padding: 8px 14px; font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap;
+  }
+  .install-banner-dismiss {
+    background: none; border: none; color: var(--text-hint);
+    font-size: 12px; cursor: pointer; padding: 4px;
+  }
+  .install-ios-sheet {
+    position: fixed; inset: 0; background: var(--bg-overlay);
+    z-index: 10000; display: flex; align-items: flex-end; justify-content: center;
+  }
+  .install-ios-sheet-card {
+    background: var(--bg-card); width: 100%; max-width: 480px;
+    border-radius: 20px 20px 0 0; padding: 22px 20px 26px;
+  }
+  .install-ios-sheet-card h3 { color: var(--text-main); font-size: 16px; margin-bottom: 14px; }
+  .install-ios-step { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-soft); font-size: 14px; }
+  .install-ios-step-num {
+    width: 24px; height: 24px; border-radius: 50%; background: var(--teal-50);
+    color: var(--teal-600); display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  [data-theme="dark"] .install-ios-step-num { background: rgba(29,158,117,0.18); color: var(--teal-100); }
+  .install-ios-close-btn {
+    width: 100%; margin-top: 8px; padding: 10px; border-radius: 10px; border: none;
+    background: var(--bg-surface); color: var(--text-main); font-size: 14px; cursor: pointer;
+  }
+  @media (max-width: 420px) {
+    .install-banner { padding: 12px; gap: 10px; }
+    .install-banner-text span { display: none; }
+  }
+
   /* ─── Dark Mode ─── */
   [data-theme="dark"] {
     --bg-page: #0d1622;
@@ -2807,6 +2869,109 @@
 </style>
 </head>
 <body>
+
+<!-- ══════════════════════ PWA INSTALL BANNER ══════════════════════ -->
+<div id="installBanner" class="install-banner">
+  <img src="./icon-192.png" class="install-banner-icon" alt="">
+  <div class="install-banner-text">
+    <strong>ثبّت Study Hub على شاشتك</strong>
+    <span>وصول أسرع + استقبال الإشعارات بشكل صحيح</span>
+  </div>
+  <div class="install-banner-actions">
+    <button class="install-banner-btn" onclick="handleInstallClick()">تثبيت</button>
+    <button class="install-banner-dismiss" onclick="dismissInstallBanner()">مش دلوقتي</button>
+  </div>
+</div>
+
+<!-- iOS manual install instructions sheet -->
+<div id="installIosSheet" class="install-ios-sheet" style="display:none;" onclick="if(event.target===this) closeIosSheet();">
+  <div class="install-ios-sheet-card">
+    <h3>لتثبيت التطبيق على آيفون</h3>
+    <div class="install-ios-step"><span class="install-ios-step-num">1</span><span>افتح الصفحة دي من متصفح Safari (مش Chrome)</span></div>
+    <div class="install-ios-step"><span class="install-ios-step-num">2</span><span>دوس على زرار المشاركة ⬆️ في شريط الأدوات تحت</span></div>
+    <div class="install-ios-step"><span class="install-ios-step-num">3</span><span>اختار "Add to Home Screen" من القائمة</span></div>
+    <button class="install-ios-close-btn" onclick="closeIosSheet()">تمام، فهمت</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════ PWA INSTALL BANNER LOGIC ══════════════════════ */
+(function () {
+  var INSTALL_DISMISS_KEY = 'installBannerDismissedAt';
+  var DISMISS_DAYS = 7; // لو الطالب دوس "مش دلوقتي" منستناش تاني إلا بعد أسبوع
+  var deferredPrompt = null;
+
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true; // iOS Safari flag
+  }
+
+  function isIos() {
+    return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+  }
+
+  function wasDismissedRecently() {
+    var raw = localStorage.getItem(INSTALL_DISMISS_KEY);
+    if (!raw) return false;
+    var diffDays = (Date.now() - parseInt(raw, 10)) / (1000 * 60 * 60 * 24);
+    return diffDays < DISMISS_DAYS;
+  }
+
+  // Capture the native install prompt event as early as possible (Chrome/Android/Edge)
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    maybeShowBanner();
+  });
+
+  function maybeShowBanner() {
+    if (isStandalone() || wasDismissedRecently()) return;
+    // على أندرويد ننتظر beforeinstallprompt، على آيفون نظهر البانر على طول (مفيش الحدث ده أصلاً)
+    if (!isIos() && !deferredPrompt) return;
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.add('show');
+  }
+
+  window.handleInstallClick = async function () {
+    var banner = document.getElementById('installBanner');
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      var choice = await deferredPrompt.userChoice.catch(function () { return null; });
+      deferredPrompt = null;
+      if (banner) banner.classList.remove('show');
+      if (choice && choice.outcome === 'dismissed') {
+        localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+      }
+    } else if (isIos()) {
+      if (banner) banner.classList.remove('show');
+      var sheet = document.getElementById('installIosSheet');
+      if (sheet) sheet.style.display = 'flex';
+    }
+  };
+
+  window.dismissInstallBanner = function () {
+    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.remove('show');
+  };
+
+  window.closeIosSheet = function () {
+    var sheet = document.getElementById('installIosSheet');
+    if (sheet) sheet.style.display = 'none';
+    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+  };
+
+  window.addEventListener('appinstalled', function () {
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.remove('show');
+  });
+
+  // Show banner after a short delay so it doesn't collide with the splash screen animation
+  window.addEventListener('load', function () {
+    setTimeout(maybeShowBanner, 3500);
+  });
+})();
+</script>
 
 <!-- ══════════════════════ SPLASH SCREEN ══════════════════════ -->
 <div id="splash">

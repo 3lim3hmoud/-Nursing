@@ -2389,61 +2389,67 @@
   .conv-list-item.unread .conv-list-name { color: var(--ink); }
   .conv-list-item.unread .conv-list-last { color: var(--ink-soft); font-weight: 600; }
 
-  /* ─── AI CHAT FAB ─── */
+  /* ─── AI CHAT TAB (edge handle) ─── */
   .ai-fab {
     position: fixed;
-    bottom: 24px;
-    left: 24px;
-    z-index: 999;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1D9E75 0%, #378ADD 100%);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 55;
+    width: 34px;
+    height: 96px;
+    border-radius: 0 16px 16px 0;
+    background: linear-gradient(180deg, #1D9E75 0%, #378ADD 100%);
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 24px rgba(29,158,117,0.45), 0 2px 8px rgba(0,0,0,0.18);
-    display: flex;
+    box-shadow: 4px 0 18px rgba(29,158,117,0.35), 2px 0 6px rgba(0,0,0,0.12);
+    display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
+    gap: 8px;
+    padding: 10px 0;
+    transition: width 0.2s ease, box-shadow 0.2s ease, transform 0.25s cubic-bezier(.34,1.56,.64,1);
     -webkit-tap-highlight-color: transparent;
   }
-  .ai-fab:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(29,158,117,0.55); }
-  .ai-fab.open { transform: scale(0.9) rotate(10deg); }
-  .ai-fab svg { width: 26px; height: 26px; color: #fff; flex-shrink: 0; }
-  .ai-fab::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(29,158,117,0.22);
-    animation: aiFabPulse 2.4s ease-out infinite;
-    pointer-events: none;
-  }
-  @keyframes aiFabPulse {
-    0%   { transform: scale(1);   opacity: 0.7; }
-    70%  { transform: scale(1.5); opacity: 0; }
-    100% { transform: scale(1.5); opacity: 0; }
+  .ai-fab.signed-in { display: flex; }
+  .ai-fab:hover { width: 40px; box-shadow: 6px 0 24px rgba(29,158,117,0.45), 2px 0 8px rgba(0,0,0,0.16); }
+  .ai-fab.open { transform: translateY(-50%) translateX(-2px); }
+  .ai-fab svg { width: 16px; height: 16px; color: #fff; flex-shrink: 0; transition: transform 0.25s ease; }
+  .ai-fab.open svg { transform: rotate(180deg); }
+  .ai-fab-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
   }
   .ai-fab-badge {
     position: absolute;
-    top: -3px; right: -3px;
-    width: 16px; height: 16px;
+    top: 8px; right: 4px;
+    width: 14px; height: 14px;
     background: #e74c3c;
     border-radius: 50%;
     border: 2px solid #fff;
     display: none;
   }
   .ai-fab-badge.show { display: block; }
+  .ai-fab:has(.ai-fab-badge.show) { animation: aiFabAttention 1.8s ease-in-out infinite; }
+  @keyframes aiFabAttention {
+    0%, 100% { box-shadow: 4px 0 18px rgba(29,158,117,0.35), 2px 0 6px rgba(0,0,0,0.12); }
+    50% { box-shadow: 4px 0 26px rgba(29,158,117,0.65), 2px 0 10px rgba(0,0,0,0.16); }
+  }
 
   /* ─── AI CHAT PANEL ─── */
   .ai-chat-panel {
     position: fixed;
-    bottom: 94px;
-    left: 24px;
-    z-index: 998;
-    width: min(380px, calc(100vw - 48px));
-    height: min(560px, calc(100vh - 120px));
+    top: 50%;
+    left: 44px;
+    z-index: 175;
+    width: min(380px, calc(100vw - 68px));
+    height: min(560px, calc(100vh - 48px));
     background: var(--ai-panel-bg, #fff);
     border-radius: 20px;
     box-shadow: var(--shadow-float);
@@ -2451,15 +2457,15 @@
     flex-direction: column;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
+    transform: translateY(-50%) scale(0.95);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.28s cubic-bezier(.34,1.2,.64,1);
-    transform-origin: bottom left;
+    transform-origin: left center;
     border: 0.5px solid var(--border-color);
   }
   .ai-chat-panel.open {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(-50%) scale(1);
     pointer-events: auto;
   }
   .ai-chat-header {
@@ -2650,7 +2656,8 @@
       border-radius: 20px 20px 0 0 !important;
       transform-origin: bottom center !important;
     }
-    .ai-fab { bottom: 16px; left: 16px; width: 52px; height: 52px; }
+    .ai-fab { width: 28px; height: 78px; }
+    .ai-chat-panel { left: 38px; }
   }
 
 
@@ -2805,33 +2812,36 @@
 <div id="splash">
   <div class="splash-inner">
     <div class="splash-icon">
+      <span class="splash-ring"></span>
+      <span class="splash-ring" style="animation-delay:.5s;"></span>
+      <span class="splash-ring" style="animation-delay:1s;"></span>
       <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="30" cy="30" r="28" stroke="url(#sg)" stroke-width="2.5"/>
-        <path d="M30 18v12l7 4" stroke="#6CE3B4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M22 38c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        <defs><linearGradient id="sg" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#1D9E75"/><stop offset="1" stop-color="#378ADD"/></linearGradient></defs>
+        <path d="M30 18v12l7 4" stroke="#1D6FC9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 38c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#0B3E7A" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <defs><linearGradient id="sg" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#5AB2FF"/><stop offset="1" stop-color="#1D6FC9"/></linearGradient></defs>
       </svg>
     </div>
-    <div class="splash-title">Faculty of Nursing</div>
-    <div class="splash-sub">Study Hub</div>
-    <div class="splash-bar"><div class="splash-fill"></div></div>
+    <div class="splash-title">Nursing</div>
   </div>
 </div>
 <style>
-  #splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0a1f18 0%,#0d2235 100%);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease;}
+  #splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#EAF5FF 0%,#CFE7FF 100%);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease;}
   #splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
   .splash-inner{display:flex;flex-direction:column;align-items:center;gap:0.6rem;animation:splashFadeIn 0.7s ease forwards;}
   @keyframes splashFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-  .splash-icon svg{width:72px;height:72px;filter:drop-shadow(0 0 18px rgba(29,158,117,.45));animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{filter:drop-shadow(0 0 14px rgba(29,158,117,.4))}50%{filter:drop-shadow(0 0 28px rgba(55,138,221,.6))}}
-  .splash-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:.02em;margin-top:.4rem;}
-  .splash-sub{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#6CE3B4;}
-  .splash-bar{margin-top:1.6rem;width:140px;height:3px;background:rgba(255,255,255,.1);border-radius:100px;overflow:hidden;}
-  .splash-fill{height:100%;width:0%;background:linear-gradient(90deg,#1D9E75,#378ADD);border-radius:100px;animation:fillBar 1.6s ease forwards;animation-delay:.3s;}
-  @keyframes fillBar{from{width:0%}to{width:100%}}
+  .splash-icon{position:relative;width:72px;height:72px;display:flex;align-items:center;justify-content:center;}
+  .splash-icon svg{position:relative;z-index:1;width:72px;height:72px;filter:drop-shadow(0 0 16px rgba(29,111,201,.35));}
+  .splash-ring{position:absolute;top:50%;left:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;border:2px solid #3E9CF2;opacity:0;animation:splashWave 2.2s ease-out infinite;}
+  @keyframes splashWave{
+    0%{transform:scale(0.55);opacity:0.55;}
+    70%{opacity:0.08;}
+    100%{transform:scale(2.4);opacity:0;}
+  }
+  .splash-title{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:#0B3E7A;letter-spacing:.02em;margin-top:.4rem;}
 </style>
 <script>
-  window.addEventListener("load",function(){setTimeout(function(){document.getElementById("splash").classList.add("hide");},2100);});
+  window.addEventListener("load",function(){setTimeout(function(){document.getElementById("splash").classList.add("hide");},1900);});
 </script>
 
 
@@ -6772,6 +6782,13 @@ onAuthStateChanged(auth, (user) => {
   if (adminWrap) {
     adminWrap.style.display = (user && user.email === ADMIN_EMAIL) ? 'block' : 'none';
   }
+  const aiFabEl = document.getElementById('aiFab');
+  if (aiFabEl) {
+    aiFabEl.classList.toggle('signed-in', !!user);
+    if (!user && window.toggleAIChat && document.getElementById('aiChatPanel')?.classList.contains('open')) {
+      window.toggleAIChat();
+    }
+  }
   if (user) {
     window._currentUserUid = user.uid;
     window._currentUserName = user.displayName || user.email || '?';
@@ -6949,11 +6966,10 @@ window._deleteAdminMessage = async function(uid, msgId) {
 
 <!-- ══════════════════════ AI NURSING CHAT ══════════════════════ -->
 
-<!-- FAB -->
+<!-- Edge tab -->
 <button class="ai-fab" id="aiFab" onclick="toggleAIChat()" title="AI Nursing Assistant">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-    <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-  </svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+  <span class="ai-fab-label">AI</span>
   <div class="ai-fab-badge" id="aiFabBadge"></div>
 </button>
 
@@ -7208,7 +7224,7 @@ ${contextBlock}`;
         { role: 'system', content: await buildSystemPrompt() },
         ...aiHistory.slice(-16)
       ],
-      max_tokens: 1024,
+      max_tokens: 4096,
       temperature: 0.7,
       stream: true,
     };

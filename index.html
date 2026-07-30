@@ -6364,7 +6364,21 @@ window.ADMIN_EMAIL_REF = ADMIN_EMAIL;
    that index the query silently fails (no error visible without DevTools open,
    notifications simply never arrive). We sort client-side instead, which needs
    no index at all. */
-function startNotifListener(uid) {
+async function startNotifListener(uid) {
+  // نقطة الفصل الصحيحة: تاريخ انضمام الطالب الفعلي (joinedAt) المحفوظ في حسابه على Firestore،
+  // مش تاريخ فتح التطبيق على الجهاز — عشان لو دخل من جهاز جديد يفضل معاه نفس المعيار.
+  // أي إشعار اتبعت قبل ما ينضم، بيتجاهل. لو الحساب لسه بيتعمل (سباق مع أول كتابة)، منستخدمش تاريخ قديم افتراضي.
+  let sinceMs = Date.now();
+  try {
+    const studentSnap = await (window._getCachedStudent
+      ? window._getCachedStudent(getDoc, doc(db, 'students', uid))
+      : getDoc(doc(db, 'students', uid)));
+    if (studentSnap.exists()) {
+      const data = studentSnap.data();
+      if (data.joinedAt?.toMillis) sinceMs = data.joinedAt.toMillis();
+    }
+  } catch (e) { /* fallback لتاريخ اللحظة الحالية لو حصل خطأ */ }
+
   function handleSnap(snap) {
     const docs = snap.docChanges().filter(c => c.type === 'added').map(c => c.doc);
     docs.sort((a, b) => {
@@ -6374,12 +6388,14 @@ function startNotifListener(uid) {
     });
     docs.forEach(d => {
       const data = d.data();
+      const tsMillis = data.ts?.toMillis ? data.ts.toMillis() : 0;
+      if (tsMillis && tsMillis <= sinceMs) return; // إشعار قديم من قبل ما الطالب ينضم
       const notif = {
         id: d.id,
         title: data.title || '',
         body: data.body || '',
         type: data.type || 'info',
-        ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
+        ts: tsMillis || Date.now(),
       };
       if (window.pushNotification) window.pushNotification(notif);
     });

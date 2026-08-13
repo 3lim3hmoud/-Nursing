@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email.lower() == 'kimoali426@gmail.com';
+    }
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    match /conversations/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create, update: if isOwner(uid) || isAdmin();
+      allow delete: if isAdmin();
+      match /messages/{msgId} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create: if isOwner(uid) || isAdmin();
+        allow delete: if (isOwner(uid) && resource.data.sender == 'student') || isAdmin();
+        allow update: if false;
+      }
+    }
+
+    match /students/{uid} {
+      allow read, write: if isOwner(uid) || isAdmin();
+    }
+
+    match /notifications/{notifId} {
+      allow read: if isAdmin()
+                   || resource.data.targetUid == null
+                   || resource.data.targetUid == request.auth.uid;
+      allow create: if isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // ── AI control settings: enabled/disabled, daily limit, maintenance message ──
+    // كل الطلبة المسجلين يقدروا "يقرو" الإعدادات عشان يعرفوا هل الـ AI شغال
+    // ولا متوقف، بس الأدمن بس هو اللي يقدر يعدّل/يكتب فيها.
+    match /config/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // ── Daily AI usage tracking per student (doc id: {uid}_{YYYY-MM-DD}) ──
+    // الطالب يقدر يقرا ويكتب على الـ usage doc بتاعه بس (اللي فيه uid بتاعه
+    // مخزن جواه)، مينفعش يلمس بتاع طالب تاني. الأدمن يقدر يقرا الكل عشان
+    // لوحة "مين خطّى الليميت"، بس مش هو اللي بيكتب فيها (الكتابة بتتم
+    // من جانب الطالب نفسه وقت ما يبعت رسالة).
+    match /ai_usage/{usageId} {
+      allow read: if isAdmin() || (isSignedIn() && resource.data.uid == request.auth.uid);
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if isSignedIn() && resource.data.uid == request.auth.uid
+                     && request.resource.data.uid == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+  }
+}

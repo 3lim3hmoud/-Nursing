@@ -75,68 +75,6 @@
     --shadow-float: 0 20px 60px rgba(6,11,14,0.22), 0 4px 16px rgba(0,0,0,0.12);
   }
 
-  /* ─── PWA Install Banner ─── */
-  .install-banner {
-    position: fixed;
-    left: 50%;
-    bottom: 18px;
-    transform: translateX(-50%) translateY(140%);
-    width: min(94vw, 420px);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    box-shadow: var(--shadow-float, 0 20px 60px rgba(6,14,11,0.22));
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 9999;
-    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-  }
-  .install-banner.show { transform: translateX(-50%) translateY(0); }
-  .install-banner-icon {
-    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
-    object-fit: cover;
-  }
-  .install-banner-text { flex: 1; min-width: 0; }
-  .install-banner-text strong { display: block; font-size: 14px; color: var(--text-main); }
-  .install-banner-text span { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
-  .install-banner-actions { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
-  .install-banner-btn {
-    background: linear-gradient(135deg, var(--teal-400), var(--blue-400));
-    color: #fff; border: none; border-radius: 10px;
-    padding: 8px 14px; font-size: 13px; font-weight: 600;
-    cursor: pointer; white-space: nowrap;
-  }
-  .install-banner-dismiss {
-    background: none; border: none; color: var(--text-hint);
-    font-size: 12px; cursor: pointer; padding: 4px;
-  }
-  .install-ios-sheet {
-    position: fixed; inset: 0; background: var(--bg-overlay);
-    z-index: 10000; display: flex; align-items: flex-end; justify-content: center;
-  }
-  .install-ios-sheet-card {
-    background: var(--bg-card); width: 100%; max-width: 480px;
-    border-radius: 20px 20px 0 0; padding: 22px 20px 26px;
-  }
-  .install-ios-sheet-card h3 { color: var(--text-main); font-size: 16px; margin-bottom: 14px; }
-  .install-ios-step { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-soft); font-size: 14px; }
-  .install-ios-step-num {
-    width: 24px; height: 24px; border-radius: 50%; background: var(--teal-50);
-    color: var(--teal-600); display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700; flex-shrink: 0;
-  }
-  [data-theme="dark"] .install-ios-step-num { background: rgba(29,158,117,0.18); color: var(--teal-100); }
-  .install-ios-close-btn {
-    width: 100%; margin-top: 8px; padding: 10px; border-radius: 10px; border: none;
-    background: var(--bg-surface); color: var(--text-main); font-size: 14px; cursor: pointer;
-  }
-  @media (max-width: 420px) {
-    .install-banner { padding: 12px; gap: 10px; }
-    .install-banner-text span { display: none; }
-  }
-
   /* ─── Dark Mode ─── */
   [data-theme="dark"] {
     --bg-page: #0d1622;
@@ -2870,109 +2808,6 @@
 </head>
 <body>
 
-<!-- ══════════════════════ PWA INSTALL BANNER ══════════════════════ -->
-<div id="installBanner" class="install-banner">
-  <img src="./icon-192.png" class="install-banner-icon" alt="">
-  <div class="install-banner-text">
-    <strong>ثبّت Study Hub على شاشتك</strong>
-    <span>وصول أسرع + استقبال الإشعارات بشكل صحيح</span>
-  </div>
-  <div class="install-banner-actions">
-    <button class="install-banner-btn" onclick="handleInstallClick()">تثبيت</button>
-    <button class="install-banner-dismiss" onclick="dismissInstallBanner()">مش دلوقتي</button>
-  </div>
-</div>
-
-<!-- iOS manual install instructions sheet -->
-<div id="installIosSheet" class="install-ios-sheet" style="display:none;" onclick="if(event.target===this) closeIosSheet();">
-  <div class="install-ios-sheet-card">
-    <h3>لتثبيت التطبيق على آيفون</h3>
-    <div class="install-ios-step"><span class="install-ios-step-num">1</span><span>افتح الصفحة دي من متصفح Safari (مش Chrome)</span></div>
-    <div class="install-ios-step"><span class="install-ios-step-num">2</span><span>دوس على زرار المشاركة ⬆️ في شريط الأدوات تحت</span></div>
-    <div class="install-ios-step"><span class="install-ios-step-num">3</span><span>اختار "Add to Home Screen" من القائمة</span></div>
-    <button class="install-ios-close-btn" onclick="closeIosSheet()">تمام، فهمت</button>
-  </div>
-</div>
-
-<script>
-/* ══════════════════════ PWA INSTALL BANNER LOGIC ══════════════════════ */
-(function () {
-  var INSTALL_DISMISS_KEY = 'installBannerDismissedAt';
-  var DISMISS_DAYS = 7; // لو الطالب دوس "مش دلوقتي" منستناش تاني إلا بعد أسبوع
-  var deferredPrompt = null;
-
-  function isStandalone() {
-    return window.matchMedia('(display-mode: standalone)').matches ||
-           window.navigator.standalone === true; // iOS Safari flag
-  }
-
-  function isIos() {
-    return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
-  }
-
-  function wasDismissedRecently() {
-    var raw = localStorage.getItem(INSTALL_DISMISS_KEY);
-    if (!raw) return false;
-    var diffDays = (Date.now() - parseInt(raw, 10)) / (1000 * 60 * 60 * 24);
-    return diffDays < DISMISS_DAYS;
-  }
-
-  // Capture the native install prompt event as early as possible (Chrome/Android/Edge)
-  window.addEventListener('beforeinstallprompt', function (e) {
-    e.preventDefault();
-    deferredPrompt = e;
-    maybeShowBanner();
-  });
-
-  function maybeShowBanner() {
-    if (isStandalone() || wasDismissedRecently()) return;
-    // على أندرويد ننتظر beforeinstallprompt، على آيفون نظهر البانر على طول (مفيش الحدث ده أصلاً)
-    if (!isIos() && !deferredPrompt) return;
-    var banner = document.getElementById('installBanner');
-    if (banner) banner.classList.add('show');
-  }
-
-  window.handleInstallClick = async function () {
-    var banner = document.getElementById('installBanner');
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      var choice = await deferredPrompt.userChoice.catch(function () { return null; });
-      deferredPrompt = null;
-      if (banner) banner.classList.remove('show');
-      if (choice && choice.outcome === 'dismissed') {
-        localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
-      }
-    } else if (isIos()) {
-      if (banner) banner.classList.remove('show');
-      var sheet = document.getElementById('installIosSheet');
-      if (sheet) sheet.style.display = 'flex';
-    }
-  };
-
-  window.dismissInstallBanner = function () {
-    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
-    var banner = document.getElementById('installBanner');
-    if (banner) banner.classList.remove('show');
-  };
-
-  window.closeIosSheet = function () {
-    var sheet = document.getElementById('installIosSheet');
-    if (sheet) sheet.style.display = 'none';
-    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
-  };
-
-  window.addEventListener('appinstalled', function () {
-    var banner = document.getElementById('installBanner');
-    if (banner) banner.classList.remove('show');
-  });
-
-  // Show banner after a short delay so it doesn't collide with the splash screen animation
-  window.addEventListener('load', function () {
-    setTimeout(maybeShowBanner, 3500);
-  });
-})();
-</script>
-
 <!-- ══════════════════════ SPLASH SCREEN ══════════════════════ -->
 <div id="splash">
   <div class="splash-inner">
@@ -3145,11 +2980,11 @@
 </div>
 
 <!-- ══════════════════════ AUTH MODAL ══════════════════════ -->
-<div class="auth-modal-overlay" id="authModalOverlay" onclick="handleAuthOverlayClick(event)">
+<div class="auth-modal-overlay open" id="authModalOverlay" onclick="handleAuthOverlayClick(event)">
   <div class="auth-modal">
     <div class="auth-modal-logo">🎓</div>
     <h2>Welcome to the Hub</h2>
-    <p>Sign in to track your progress, sync across devices, and unlock your personal study dashboard.</p>
+    <p>Sign in with your Google account to access the Faculty of Nursing Study Hub.</p>
     <button class="google-btn" id="googleSignInBtn" onclick="signInWithGoogle()">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -3159,9 +2994,7 @@
       </svg>
       Continue with Google
     </button>
-    <div class="auth-divider">or</div>
-    <p style="font-size:12px; color:rgba(28,37,43,0.45); margin-bottom:0.4rem;">The hub works perfectly without an account.<br>Sign in only adds personal progress tracking.</p>
-    <button class="auth-skip" onclick="closeAuthModal()">Continue without signing in</button>
+    <p style="font-size:12px; color:rgba(28,37,43,0.45); margin-top:0.9rem;">Sign-in is required to access the study materials.</p>
   </div>
 </div>
 
@@ -5172,12 +5005,14 @@ refreshProgressUI();
 /* ── Auth UI Controls ── */
 function openAuthModal() {
   document.getElementById('authModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 function closeAuthModal() {
   document.getElementById('authModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 function handleAuthOverlayClick(e) {
-  if (e.target === document.getElementById('authModalOverlay')) closeAuthModal();
+  /* Sign-in is mandatory — the gate can't be dismissed without an account. */
 }
 function toggleUserPopover() {
   document.getElementById('userPopover').classList.toggle('open');
@@ -6091,6 +5926,7 @@ onAuthStateChanged(auth, async (user) => {
   const accountSection = document.getElementById('popoverAccountSection');
   const guestSection = document.getElementById('popoverGuestSection');
   if (user) {
+    window.closeAuthModal();
     document.getElementById('signInBtn').style.display = 'none';
     if (identityBlock) identityBlock.style.display = '';
     if (accountSection) accountSection.style.display = '';
@@ -6106,6 +5942,7 @@ onAuthStateChanged(auth, async (user) => {
     // Request FCM push token and save it
     requestFCMToken(user.uid);
   } else {
+    window.openAuthModal();
     document.getElementById('signInBtn').style.display = '';
     document.getElementById('userInitials').textContent = '?';
     if (identityBlock) identityBlock.style.display = 'none';
@@ -6364,21 +6201,7 @@ window.ADMIN_EMAIL_REF = ADMIN_EMAIL;
    that index the query silently fails (no error visible without DevTools open,
    notifications simply never arrive). We sort client-side instead, which needs
    no index at all. */
-async function startNotifListener(uid) {
-  // نقطة الفصل الصحيحة: تاريخ انضمام الطالب الفعلي (joinedAt) المحفوظ في حسابه على Firestore،
-  // مش تاريخ فتح التطبيق على الجهاز — عشان لو دخل من جهاز جديد يفضل معاه نفس المعيار.
-  // أي إشعار اتبعت قبل ما ينضم، بيتجاهل. لو الحساب لسه بيتعمل (سباق مع أول كتابة)، منستخدمش تاريخ قديم افتراضي.
-  let sinceMs = Date.now();
-  try {
-    const studentSnap = await (window._getCachedStudent
-      ? window._getCachedStudent(getDoc, doc(db, 'students', uid))
-      : getDoc(doc(db, 'students', uid)));
-    if (studentSnap.exists()) {
-      const data = studentSnap.data();
-      if (data.joinedAt?.toMillis) sinceMs = data.joinedAt.toMillis();
-    }
-  } catch (e) { /* fallback لتاريخ اللحظة الحالية لو حصل خطأ */ }
-
+function startNotifListener(uid) {
   function handleSnap(snap) {
     const docs = snap.docChanges().filter(c => c.type === 'added').map(c => c.doc);
     docs.sort((a, b) => {
@@ -6388,14 +6211,12 @@ async function startNotifListener(uid) {
     });
     docs.forEach(d => {
       const data = d.data();
-      const tsMillis = data.ts?.toMillis ? data.ts.toMillis() : 0;
-      if (tsMillis && tsMillis <= sinceMs) return; // إشعار قديم من قبل ما الطالب ينضم
       const notif = {
         id: d.id,
         title: data.title || '',
         body: data.body || '',
         type: data.type || 'info',
-        ts: tsMillis || Date.now(),
+        ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
       };
       if (window.pushNotification) window.pushNotification(notif);
     });
@@ -7629,6 +7450,5 @@ ${contextBlock}`;
 })();
 </script>
 
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

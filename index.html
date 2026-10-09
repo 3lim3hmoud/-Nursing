@@ -75,6 +75,92 @@
     --shadow-float: 0 20px 60px rgba(6,11,14,0.22), 0 4px 16px rgba(0,0,0,0.12);
   }
 
+  /* ─── PWA Install Banner ─── */
+  .install-banner {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%) translateY(140%);
+    width: min(94vw, 420px);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: var(--shadow-float, 0 20px 60px rgba(6,14,11,0.22));
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  .install-banner.show { transform: translateX(-50%) translateY(0); }
+  .install-banner-icon {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    object-fit: cover;
+  }
+  .install-banner-text { flex: 1; min-width: 0; }
+  .install-banner-text strong { display: block; font-size: 14px; color: var(--text-main); }
+  .install-banner-text span { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+  .install-banner-actions { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+  .install-banner-btn {
+    background: linear-gradient(135deg, var(--teal-400), var(--blue-400));
+    color: #fff; border: none; border-radius: 10px;
+    padding: 8px 14px; font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap;
+  }
+  .install-banner-dismiss {
+    background: none; border: none; color: var(--text-hint);
+    font-size: 12px; cursor: pointer; padding: 4px;
+  }
+  .install-ios-sheet {
+    position: fixed; inset: 0; background: var(--bg-overlay);
+    z-index: 10000; display: flex; align-items: flex-end; justify-content: center;
+  }
+  .install-ios-sheet-card {
+    background: var(--bg-card); width: 100%; max-width: 480px;
+    border-radius: 20px 20px 0 0; padding: 22px 20px 26px;
+  }
+  .install-ios-sheet-card h3 { color: var(--text-main); font-size: 16px; margin-bottom: 14px; }
+  .install-ios-step { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-soft); font-size: 14px; }
+  .install-ios-step-num {
+    width: 24px; height: 24px; border-radius: 50%; background: var(--teal-50);
+    color: var(--teal-600); display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  [data-theme="dark"] .install-ios-step-num { background: rgba(29,158,117,0.18); color: var(--teal-100); }
+  .install-ios-close-btn {
+    width: 100%; margin-top: 8px; padding: 10px; border-radius: 10px; border: none;
+    background: var(--bg-surface); color: var(--text-main); font-size: 14px; cursor: pointer;
+  }
+  @media (max-width: 420px) {
+    .install-banner { padding: 12px; gap: 10px; }
+    .install-banner-text span { display: none; }
+  }
+
+  /* ─── Access control / year picker ─── */
+  .year-card.locked, .subject-card.locked { opacity: 0.55; position: relative; }
+  .year-card.locked::after { content: '🔒'; position: absolute; top: 12px; right: 14px; font-size: 20px; }
+  .resource-card.locked { opacity: 0.6; cursor: not-allowed; }
+  .lock-toast { position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(20px); background: #1c252b; color: #fff; padding: 10px 18px; border-radius: 12px; font-size: 13px; z-index: 10100; opacity: 0; pointer-events: none; transition: all .3s; max-width: 90vw; text-align: center; }
+  .lock-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .year-pick-overlay { position: fixed; inset: 0; background: rgba(8,18,15,0.78); z-index: 10050; display: none; align-items: center; justify-content: center; padding: 1rem; }
+  .year-pick-overlay.open { display: flex; }
+  .year-pick-card { background: var(--bg-card); color: var(--text-main); border-radius: 20px; padding: 1.5rem; width: min(94vw, 400px); box-shadow: 0 20px 60px rgba(6,14,11,0.35); text-align: center; }
+  .year-pick-card h3 { font-size: 18px; margin-bottom: .4rem; }
+  .year-pick-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; }
+  .year-pick-btn { display: block; width: 100%; margin-bottom: .55rem; padding: 12px; border-radius: 12px; border: 1.5px solid var(--border-color); background: transparent; color: var(--text-main); font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .year-pick-btn:hover:not(:disabled) { border-color: #378ADD; }
+  .year-pick-btn:disabled { opacity: .5; cursor: wait; }
+  .access-year-block { border: 1px solid rgba(28,37,43,0.12); border-radius: 14px; padding: .8rem; margin-bottom: .8rem; }
+  .access-row { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 4px 0; cursor: pointer; }
+  .access-row input, .access-chip input { width: auto; margin: 0; }
+  .access-sub-title { font-size: 11px; font-weight: 700; color: rgba(28,37,43,0.5); margin: .6rem 0 .3rem; }
+  .access-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .access-chip { display: flex; align-items: center; gap: 5px; font-size: 12px; padding: 5px 9px; border-radius: 100px; background: rgba(29,111,201,0.1); cursor: pointer; }
+  .access-student-row { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid rgba(28,37,43,0.07); font-size: 12.5px; }
+  .access-student-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .access-student-row select { width: auto; padding: 5px 8px; font-size: 12px; }
+
   /* ─── Dark Mode ─── */
   [data-theme="dark"] {
     --bg-page: #0d1622;
@@ -2808,6 +2894,120 @@
 </head>
 <body>
 
+<!-- ══════════════════════ PWA INSTALL BANNER ══════════════════════ -->
+<div id="installBanner" class="install-banner">
+  <img src="./icon-192.png" class="install-banner-icon" alt="">
+  <div class="install-banner-text">
+    <strong>ثبّت Study Hub على شاشتك</strong>
+    <span>وصول أسرع + استقبال الإشعارات بشكل صحيح</span>
+  </div>
+  <div class="install-banner-actions">
+    <button class="install-banner-btn" onclick="handleInstallClick()">تثبيت</button>
+    <button class="install-banner-dismiss" onclick="dismissInstallBanner()">مش دلوقتي</button>
+  </div>
+</div>
+
+<!-- iOS manual install instructions sheet -->
+<div id="installIosSheet" class="install-ios-sheet" style="display:none;" onclick="if(event.target===this) closeIosSheet();">
+  <div class="install-ios-sheet-card">
+    <h3>لتثبيت التطبيق على آيفون</h3>
+    <div class="install-ios-step"><span class="install-ios-step-num">1</span><span>افتح الصفحة دي من متصفح Safari (مش Chrome)</span></div>
+    <div class="install-ios-step"><span class="install-ios-step-num">2</span><span>دوس على زرار المشاركة ⬆️ في شريط الأدوات تحت</span></div>
+    <div class="install-ios-step"><span class="install-ios-step-num">3</span><span>اختار "Add to Home Screen" من القائمة</span></div>
+    <button class="install-ios-close-btn" onclick="closeIosSheet()">تمام، فهمت</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════ PWA INSTALL BANNER LOGIC ══════════════════════ */
+(function () {
+  var INSTALL_DISMISS_KEY = 'installBannerDismissedAt';
+  var DISMISS_DAYS = 7; // لو الطالب دوس "مش دلوقتي" منستناش تاني إلا بعد أسبوع
+  var deferredPrompt = null;
+
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true; // iOS Safari flag
+  }
+
+  function isIos() {
+    return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+  }
+
+  function wasDismissedRecently() {
+    var raw = localStorage.getItem(INSTALL_DISMISS_KEY);
+    if (!raw) return false;
+    var diffDays = (Date.now() - parseInt(raw, 10)) / (1000 * 60 * 60 * 24);
+    return diffDays < DISMISS_DAYS;
+  }
+
+  // Capture the native install prompt event as early as possible (Chrome/Android/Edge)
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    maybeShowBanner();
+  });
+
+  function maybeShowBanner() {
+    if (isStandalone() || wasDismissedRecently()) return;
+    // على أندرويد ننتظر beforeinstallprompt، على آيفون نظهر البانر على طول (مفيش الحدث ده أصلاً)
+    if (!isIos() && !deferredPrompt) return;
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.add('show');
+  }
+
+  window.handleInstallClick = async function () {
+    var banner = document.getElementById('installBanner');
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      var choice = await deferredPrompt.userChoice.catch(function () { return null; });
+      deferredPrompt = null;
+      if (banner) banner.classList.remove('show');
+      if (choice && choice.outcome === 'dismissed') {
+        localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+      }
+    } else if (isIos()) {
+      if (banner) banner.classList.remove('show');
+      var sheet = document.getElementById('installIosSheet');
+      if (sheet) sheet.style.display = 'flex';
+    }
+  };
+
+  window.dismissInstallBanner = function () {
+    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.remove('show');
+  };
+
+  window.closeIosSheet = function () {
+    var sheet = document.getElementById('installIosSheet');
+    if (sheet) sheet.style.display = 'none';
+    localStorage.setItem(INSTALL_DISMISS_KEY, String(Date.now()));
+  };
+
+  window.addEventListener('appinstalled', function () {
+    var banner = document.getElementById('installBanner');
+    if (banner) banner.classList.remove('show');
+  });
+
+  // Show banner after a short delay so it doesn't collide with the splash screen animation
+  window.addEventListener('load', function () {
+    setTimeout(maybeShowBanner, 3500);
+  });
+})();
+</script>
+
+<!-- ══════════════════════ YEAR PICKER (first login) ══════════════════════ -->
+<div class="year-pick-overlay" id="yearPickOverlay">
+  <div class="year-pick-card">
+    <h3>إنت في سنة كام؟ 🎓</h3>
+    <p>اختار دفعتك عشان نفتحلك المحتوى المناسب ليك.<br>الاختيار ده مرة واحدة بس، ولو غلطت كلّم الأدمن يعدّلهالك.</p>
+    <div id="yearPickOptions"></div>
+    <div id="yearPickStatus" style="font-size:13px;margin-top:.4rem;"></div>
+  </div>
+</div>
+<div class="lock-toast" id="lockToast"></div>
+
 <!-- ══════════════════════ SPLASH SCREEN ══════════════════════ -->
 <div id="splash">
   <div class="splash-inner">
@@ -2953,6 +3153,14 @@
         <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminAIPanel();">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
           🤖 التحكم في الـ AI
+        </button>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminFilesPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          📁 إدارة الملفات
+        </button>
+        <button class="user-action-btn admin-action" onclick="toggleUserPopover(); openAdminAccessPanel();">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          🔒 التحكم في الوصول
         </button>
       </div>
 
@@ -3332,6 +3540,99 @@
         </div>
 
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN PANEL — ACCESS CONTROL ══════════════════════ -->
+<div class="admin-overlay" id="adminAccessOverlay" onclick="if(event.target===this) closeAdminAccessPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">🔒 التحكم في الوصول</span>
+      <button class="notif-close-btn" onclick="closeAdminAccessPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+      <div class="admin-field">
+        <label>اختار الدفعة اللي هتتحكم في اللي بتشوفه</label>
+        <select id="accessGroupSelect" onchange="renderAccessMatrix()"></select>
+      </div>
+      <div style="font-size:12px;color:rgba(28,37,43,0.55);margin-bottom:.8rem;line-height:1.6;">علّم على اللي عايز تقفله على الدفعة دي. أي حاجة مش معلّم عليها بتفضل مفتوحة. الأدمن بيشوف كل حاجة دايمًا.</div>
+      <div id="accessMatrix"></div>
+      <button class="admin-send-btn" id="accessSaveBtn" onclick="saveAccessRules()">حفظ القفل 💾</button>
+      <div id="accessSaveStatus" style="margin-top:.6rem;font-size:13px;text-align:center;"></div>
+
+      <div style="margin-top:1.4rem; border-top:1px solid rgba(28,37,43,0.08); padding-top:1rem;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,37,43,0.4);margin-bottom:.5rem;">👥 سنة كل طالب</div>
+        <div id="accessStudentsSummary" style="font-size:12px;color:rgba(28,37,43,0.6);margin-bottom:.6rem;line-height:1.7;"></div>
+        <div class="admin-field" style="margin-bottom:.5rem;">
+          <input type="text" id="accessStudentSearch" placeholder="ابحث بالاسم أو الإيميل..." oninput="renderAccessStudents()">
+        </div>
+        <div id="accessStudentsList" style="max-height:300px;overflow-y:auto;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ADMIN PANEL — MANAGE FILES ══════════════════════ -->
+<div class="admin-overlay" id="adminFilesOverlay" onclick="if(event.target===this) closeAdminFilesPanel()">
+  <div class="admin-panel" style="max-height:92vh; overflow-y:auto;">
+    <div class="notif-panel-header" style="position:sticky;top:0;background:#fff;z-index:1;">
+      <span class="notif-panel-title">📁 إدارة الملفات</span>
+      <button class="notif-close-btn" onclick="closeAdminFilesPanel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.2rem;">
+
+      <div class="admin-field">
+        <label>السنة الدراسية</label>
+        <select id="filesYearSelect" onchange="onFilesYearChange()"></select>
+      </div>
+      <div class="admin-field">
+        <label>الترم</label>
+        <select id="filesTermSelect" onchange="onFilesTermChange()">
+          <option value="term1">Term 1</option>
+          <option value="term2">Term 2</option>
+        </select>
+      </div>
+      <div class="admin-field">
+        <label>المادة</label>
+        <select id="filesSubjectSelect" onchange="onFilesSubjectChange()"></select>
+      </div>
+      <div class="admin-field">
+        <label>نوع الملف</label>
+        <select id="filesCategorySelect" onchange="loadAdminFilesList()">
+          <option value="lectures">Lectures</option>
+          <option value="summaries">Summaries</option>
+          <option value="flashcards">Flashcards</option>
+          <option value="mcq">MCQ Bank</option>
+        </select>
+      </div>
+      <div class="admin-field">
+        <label>عنوان الملف</label>
+        <input type="text" id="adminFileTitle" placeholder="مثال: محاضرة 1 - مقدمة">
+      </div>
+      <div class="admin-field">
+        <label>الملف (PDF أو صورة)</label>
+        <input type="file" id="adminFilePicker" accept=".pdf,image/*" onchange="handleAdminFileSelect(event)">
+        <div id="adminFilePickerPreview" style="font-size:12px;color:rgba(28,37,43,0.55);margin-top:6px;"></div>
+      </div>
+
+      <button class="admin-send-btn" id="adminFileUploadBtn" onclick="submitAdminFile()">إضافة الملف 📤</button>
+      <div id="adminFileUploadStatus" style="margin-top:0.6rem;font-size:13px;text-align:center;"></div>
+      <input type="hidden" id="adminFileEditId" value="">
+
+      <div style="margin-top:1.4rem; border-top:1px solid rgba(28,37,43,0.08); padding-top:1rem;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(28,37,43,0.4);margin-bottom:0.6rem;">
+          الملفات المضافة من التطبيق (لهذا القسم)
+        </div>
+        <div id="adminFilesList">
+          <p style="font-size:12px;color:rgba(28,37,43,0.4);text-align:center;padding:0.8rem;">جاري التحميل...</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -4291,7 +4592,7 @@ function handleSearch(query) {
     return;
   }
 
-  const matches = getSearchIndex().filter(item => item.name.toLowerCase().includes(q)).slice(0, 8);
+  const matches = getSearchIndex().filter(item => item.name.toLowerCase().includes(q) && !isLockedContent(item.yearKey, item.slug)).slice(0, 8);
 
   if (!matches.length) {
     const safeQuery = query.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -4312,6 +4613,7 @@ function handleSearch(query) {
 
 function goToSearchResult(yearKey, term, type, slug) {
   clearSearch();
+  if (isLockedContent(yearKey, slug)) { showLockedMessage(); return; }
   openYear(yearKey, term);
   // wait a tick so renderSubjects() / practical grid have rendered
   setTimeout(() => {
@@ -4354,9 +4656,9 @@ function openPractical() {
   document.getElementById('practicalGrid').innerHTML = list.map((s, i) => {
     const prog = subjectProgress(s, `files/${currentYear}/practical/${currentTerm}/${s.slug}`);
     return `
-    <div class="subject-card" onclick="openPracticalSubject(${i})">
+    <div class="subject-card ${isLockedContent(currentYear, s.slug) ? 'locked' : ''}" onclick="openPracticalSubject(${i})">
       <div class="subject-icon" style="background:rgba(255,255,255,0.5); font-size:20px;">${s.icon}</div>
-      <h3>${s.name}</h3>
+      <h3>${isLockedContent(currentYear, s.slug) ? '🔒 ' : ''}${s.name}</h3>
       <p>${s.desc}</p>
       <div class="resource-types">
         <span class="res-tag lectures">Lecture</span>
@@ -4392,6 +4694,7 @@ function openPracticalSubject(idx) {
   const yearPractical = practicalSubjects[currentYear] || {};
   const list = yearPractical[currentTerm] || [];
   const s = list[idx];
+  if (isLockedContent(currentYear, s.slug)) { showLockedMessage(); return; }
 
   document.getElementById('practicalView').classList.remove('active');
   document.getElementById('subjectTitle').textContent = s.name;
@@ -4423,6 +4726,7 @@ function openPracticalSubject(idx) {
 }
 
 function openYear(yearKey, term) {
+  if (isLockedContent(yearKey)) { showLockedMessage(); return; }
   currentYear = yearKey;
   currentTerm = term || 'term1';
   const y = years[yearKey];
@@ -4472,9 +4776,9 @@ function renderSubjects() {
   let html = subjects.map((s, i) => {
     const prog = subjectProgress(s, `files/${currentYear}/${currentTerm}/${s.slug}`);
     return `
-    <div class="subject-card" onclick="openSubject(${i})">
+    <div class="subject-card ${isLockedContent(currentYear, s.slug) ? 'locked' : ''}" onclick="openSubject(${i})">
       <div class="subject-icon" style="background:${y.color}; font-size:20px;">${s.icon}</div>
-      <h3>${s.name}</h3>
+      <h3>${isLockedContent(currentYear, s.slug) ? '🔒 ' : ''}${s.name}</h3>
       <p>${s.desc}</p>
       <div class="resource-types">
         <span class="res-tag lectures">Lectures</span>
@@ -4513,9 +4817,10 @@ function renderSubjects() {
   grid.innerHTML = html;
 }
 
-function openSubject(idx) {
+async function openSubject(idx) {
   const y = years[currentYear];
   const s = y.terms[currentTerm][idx];
+  if (isLockedContent(currentYear, s.slug)) { showLockedMessage(); return; }
 
   document.getElementById('yearView').classList.remove('active');
   document.getElementById('subjectTitle').textContent = s.name;
@@ -4540,26 +4845,68 @@ function openSubject(idx) {
   ];
 
   const basePath = `files/${currentYear}/${currentTerm}/${s.slug}`;
-  renderResourceGrid(resources, s, basePath, true);
 
+  // Render the static (GitHub-committed) files immediately, then merge in any
+  // files the admin added from inside the app (stored in Firestore) once they load.
+  renderResourceGrid(resources, s, basePath, true);
   document.getElementById('subjectView').classList.add('active');
   window.scrollTo({ top: document.querySelector('.main').offsetTop - 20, behavior: 'smooth' });
+
+  try {
+    const dynamicFiles = await fetchDynamicMaterials(currentYear, currentTerm, s.slug);
+    if (Object.keys(dynamicFiles).length) {
+      const merged = { ...s, files: {} };
+      resources.forEach(r => {
+        merged.files[r.key] = [...((s.files && s.files[r.key]) || []), ...(dynamicFiles[r.key] || [])];
+      });
+      renderResourceGrid(resources, merged, basePath, true);
+    }
+  } catch (e) {
+    console.error('fetchDynamicMaterials failed:', e);
+  }
+}
+
+/* Files the admin added from inside the app (Manage Files panel), stored in Firestore. */
+async function fetchDynamicMaterials(yearKey, term, subjectSlug) {
+  const q = query(
+    collection(db, 'materials'),
+    where('year', '==', yearKey), where('term', '==', term), where('subjectSlug', '==', subjectSlug)
+  );
+  const snap = await getDocs(q);
+  const byCategory = {};
+  snap.forEach(d => {
+    const data = d.data();
+    if (!data.fileUrl) return;
+    if (!byCategory[data.category]) byCategory[data.category] = [];
+    byCategory[data.category].push({ title: data.title, url: data.fileUrl, dynamic: true });
+  });
+  return byCategory;
 }
 
 function renderResourceGrid(resources, s, basePath, withTypeClass) {
+  window._lastGridArgs = [resources, s, basePath, withTypeClass];
   document.getElementById('resourceGrid').innerHTML = resources.map(r => {
+    if (isLockedContent(currentYear, s.slug, r.key)) {
+      return `
+    <div class="resource-card ${withTypeClass ? r.key : ''} locked">
+      <div class="resource-icon" style="background:${r.color}22;">🔒</div>
+      <h3>${r.label}</h3>
+      <p>${r.desc}</p>
+      <span class="coming-soon">🔒 مقفول حاليًا لدفعتك</span>
+    </div>`;
+    }
     const list = (s.files && s.files[r.key]) ? s.files[r.key] : [];
     const seenCount = list.filter(f => isFileViewed(`${basePath}/${r.key}/${f.file}`)).length;
     const filesHtml = list.length
       ? `<ul class="file-list">${list.map(f => {
-          const url = `${basePath}/${r.key}/${f.file}`;
+          const url = f.dynamic ? f.url : `${basePath}/${r.key}/${f.file}`;
           const visited = isFileViewed(url);
           const favorited = isFavorited(url);
           const title = f.title || f.file;
-          const meta = escapeForJs(JSON.stringify({ url, title, subject: s.name, resource: r.label }));
+          const meta = escapeForJs(JSON.stringify({ url, title, subject: s.name, resource: r.label, yk: currentYear, slug: s.slug, cat: r.key }));
           return `
           <li class="file-list-item">
-            <a href="${basePath}/${r.key}/${encodeURIComponent(f.file)}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(url)}', this); trackRecent('${meta}')">
+            <a href="${f.dynamic ? url : basePath + '/' + r.key + '/' + encodeURIComponent(f.file)}" target="_blank" rel="noopener" class="${visited ? 'visited' : ''}" onclick="markFileViewed('${escapeForJs(url)}', this); trackRecent('${meta}')">
               <svg class="f-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               <span class="f-title">${title}</span>
             </a>
@@ -5272,6 +5619,417 @@ function closeAdminAIPanel() {
 window.openAdminAIPanel = openAdminAIPanel;
 window.closeAdminAIPanel = closeAdminAIPanel;
 
+/* ══════════════════════ ACCESS CONTROL (student year + content locks) ══════════════════════
+   - Every student picks their year (دفعة) once, on first login → students/{uid}.studentYear
+   - Admin decides, per student-year group, what is locked: a whole content year, a content type
+     (lectures/summaries/...) across a year, or specific subjects. Stored in config/access → { locks }.
+   - NOTE: this is a UI-level lock. Files are still plain public URLs, so it stops normal students
+     from reaching content through the app, not someone who already knows a file's direct link. */
+window.STUDENT_GROUPS = [
+  { key: 'y1', label: 'الفرقة الأولى' },
+  { key: 'y2', label: 'الفرقة التانية' },
+  { key: 'y3', label: 'الفرقة التالتة' },
+  { key: 'y4', label: 'الفرقة الرابعة' },
+  { key: 'other', label: 'خريج / تانية' },
+];
+window._accessRules = window._accessRules || {};
+window._studentYear = null;
+window._studentYearLoaded = false;
+window._isAdminUser = false;
+window._userSignedIn = false;
+
+function accessGroup() {
+  if (window._isAdminUser) return null;           // admin sees everything
+  if (!window._userSignedIn) return 'guest';
+  return window._studentYear || 'guest';
+}
+function isLockedContent(yearKey, slug, catKey) {
+  const g = accessGroup();
+  if (!g) return false;
+  const r = ((window._accessRules || {})[g] || {})[yearKey];
+  if (!r) return false;
+  if (r.all) return true;
+  if (slug && r.subjects && r.subjects[slug]) return true;
+  if (catKey && r.cats && r.cats[catKey]) return true;
+  return false;
+}
+function showLockedMessage(msg) {
+  const t = document.getElementById('lockToast');
+  if (!t) return;
+  t.textContent = msg || '🔒 المحتوى ده مقفول حاليًا لدفعتك';
+  t.classList.add('show');
+  clearTimeout(window._lockToastT);
+  window._lockToastT = setTimeout(() => t.classList.remove('show'), 2600);
+}
+window.isLockedContent = isLockedContent;
+window.showLockedMessage = showLockedMessage;
+
+/* Work out which year/subject/type a file URL belongs to (static path, or saved favorite/recent meta) */
+function lockInfoForUrl(href) {
+  if (!href) return null;
+  let u = href;
+  try { u = decodeURIComponent(href); } catch (e) {}
+  const m = u.match(/files\/(y\d+)\/(?:practical\/)?term\d\/([^\/]+)\/([^\/]+)\//);
+  if (m) return { yk: m[1], slug: m[2], cat: m[3] };
+  try {
+    const fav = getFavoritesMap();
+    for (const k of Object.keys(fav)) { if (fav[k] && fav[k].url === href && fav[k].yk) return fav[k]; }
+    const rec = getRecentList();
+    for (const r of rec) { if (r && r.url === href && r.yk) return r; }
+  } catch (e) {}
+  return null;
+}
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('.file-list a[href]');
+  if (!a) return;
+  const info = lockInfoForUrl(a.getAttribute('href'));
+  if (info && isLockedContent(info.yk, info.slug, info.cat)) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    showLockedMessage();
+  }
+}, true);
+
+window.refreshAccessUI = function () {
+  Object.keys(years).forEach(yk => {
+    const card = document.querySelector('.year-card.' + yk);
+    if (card) card.classList.toggle('locked', isLockedContent(yk));
+  });
+  if (currentYear && isLockedContent(currentYear)) { goHome(); showLockedMessage(); return; }
+  if (document.getElementById('yearView').classList.contains('active')) renderSubjects();
+  if (document.getElementById('practicalView').classList.contains('active')) openPractical();
+  if (document.getElementById('subjectView').classList.contains('active') && window._lastGridArgs) {
+    renderResourceGrid(...window._lastGridArgs);
+  }
+};
+
+/* ── First-login year picker ── */
+function renderYearPickOptions() {
+  document.getElementById('yearPickOptions').innerHTML = STUDENT_GROUPS.map(g =>
+    `<button class="year-pick-btn" onclick="pickStudentYear('${g.key}')">${g.label}</button>`).join('');
+  document.getElementById('yearPickStatus').textContent = '';
+}
+window.ensureStudentYear = function () {
+  const ov = document.getElementById('yearPickOverlay');
+  if (!ov) return;
+  if (window._userSignedIn && !window._isAdminUser && window._studentYearLoaded && !window._studentYear) {
+    renderYearPickOptions();
+    ov.classList.add('open');
+  } else {
+    ov.classList.remove('open');
+  }
+};
+async function pickStudentYear(key) {
+  const g = STUDENT_GROUPS.find(x => x.key === key);
+  if (!confirm('متأكد إنك في ' + (g ? g.label : key) + '؟ مش هتقدر تغيّرها بعد كده.')) return;
+  const st = document.getElementById('yearPickStatus');
+  const btns = document.querySelectorAll('.year-pick-btn');
+  btns.forEach(b => b.disabled = true);
+  st.textContent = '⏳ بيتحفظ...';
+  try {
+    await window._saveStudentYear(key);
+    document.getElementById('yearPickOverlay').classList.remove('open');
+    st.textContent = '';
+    window.refreshAccessUI();
+  } catch (e) {
+    st.textContent = '❌ حصل خطأ، جرب تاني';
+    btns.forEach(b => b.disabled = false);
+  }
+}
+window.pickStudentYear = pickStudentYear;
+
+/* ── Admin: access control panel ── */
+let _accessDraft = {};
+let _accessStudents = [];
+const ACCESS_CAT_LABELS = {
+  lectures: 'Lectures', summaries: 'Summaries', flashcards: 'Flashcards', mcq: 'MCQ Bank',
+  lecture: 'عملي: Lecture', procedure: 'عملي: Procedure', video: 'عملي: Video',
+};
+function openAdminAccessPanel() {
+  const sel = document.getElementById('accessGroupSelect');
+  sel.innerHTML = STUDENT_GROUPS.map(g => `<option value="${g.key}">${g.label}</option>`).join('')
+    + '<option value="guest">زائر / لسه ماختارش سنة</option>';
+  _accessDraft = JSON.parse(JSON.stringify(window._accessRules || {}));
+  document.getElementById('accessSaveStatus').textContent = '';
+  renderAccessMatrix();
+  document.getElementById('adminAccessOverlay').classList.add('open');
+  loadAccessStudents();
+}
+function closeAdminAccessPanel() {
+  document.getElementById('adminAccessOverlay').classList.remove('open');
+}
+function renderAccessMatrix() {
+  const g = document.getElementById('accessGroupSelect').value;
+  const grp = _accessDraft[g] || {};
+  document.getElementById('accessMatrix').innerHTML = Object.keys(years).map(yk => {
+    const r = grp[yk] || {};
+    const subjects = [];
+    ['term1', 'term2'].forEach(t => (years[yk].terms[t] || []).forEach(s => subjects.push({ slug: s.slug, name: s.name })));
+    const yp = practicalSubjects[yk] || {};
+    ['term1', 'term2'].forEach(t => (yp[t] || []).forEach(s => subjects.push({ slug: s.slug, name: s.name + ' (عملي)' })));
+    const lockedCount = Object.keys(r.subjects || {}).length;
+    return `
+    <div class="access-year-block">
+      <label class="access-row"><input type="checkbox" ${r.all ? 'checked' : ''} onchange="setAccessLock('${yk}','all',null,this.checked)"> <b>${years[yk].title}</b> — قفل السنة كلها 🔒</label>
+      <div class="access-sub-title">أنواع المحتوى المقفولة في السنة دي</div>
+      <div class="access-chips">${Object.keys(ACCESS_CAT_LABELS).map(cat => `
+        <label class="access-chip"><input type="checkbox" ${(r.cats && r.cats[cat]) ? 'checked' : ''} onchange="setAccessLock('${yk}','cats','${cat}',this.checked)"> ${ACCESS_CAT_LABELS[cat]}</label>`).join('')}
+      </div>
+      <details style="margin-top:.6rem;">
+        <summary style="font-size:12px;cursor:pointer;">مواد مقفولة بعينها${lockedCount ? ' (' + lockedCount + ')' : ''}</summary>
+        ${subjects.map(s => `<label class="access-row"><input type="checkbox" ${(r.subjects && r.subjects[s.slug]) ? 'checked' : ''} onchange="setAccessLock('${yk}','subjects','${s.slug}',this.checked)"> ${s.name}</label>`).join('')}
+      </details>
+    </div>`;
+  }).join('');
+}
+function setAccessLock(yk, kind, key, val) {
+  const g = document.getElementById('accessGroupSelect').value;
+  const grp = (_accessDraft[g] = _accessDraft[g] || {});
+  const r = (grp[yk] = grp[yk] || {});
+  if (kind === 'all') { r.all = !!val; return; }
+  r[kind] = r[kind] || {};
+  if (val) r[kind][key] = true; else delete r[kind][key];
+}
+function pruneAccessLocks(d) {
+  const out = {};
+  Object.keys(d).forEach(g => {
+    Object.keys(d[g] || {}).forEach(yk => {
+      const r = d[g][yk] || {};
+      const o = {};
+      if (r.all) o.all = true;
+      ['cats', 'subjects'].forEach(k => {
+        const keys = Object.keys(r[k] || {}).filter(x => r[k][x]);
+        if (keys.length) { o[k] = {}; keys.forEach(x => { o[k][x] = true; }); }
+      });
+      if (Object.keys(o).length) { (out[g] = out[g] || {})[yk] = o; }
+    });
+  });
+  return out;
+}
+async function saveAccessRules() {
+  const btn = document.getElementById('accessSaveBtn');
+  const st = document.getElementById('accessSaveStatus');
+  btn.disabled = true; st.textContent = '⏳ بيتحفظ...';
+  try {
+    const locks = pruneAccessLocks(_accessDraft);
+    await window._saveAccessRules(locks);
+    _accessDraft = JSON.parse(JSON.stringify(locks));
+    st.textContent = '✅ اتحفظ — الطلبة هيشوفوه فورًا';
+  } catch (e) {
+    st.textContent = '❌ حصل خطأ: ' + (e && e.message ? e.message : e);
+  } finally { btn.disabled = false; }
+}
+async function loadAccessStudents() {
+  const listEl = document.getElementById('accessStudentsList');
+  listEl.innerHTML = '<p style="font-size:12px;color:rgba(28,37,43,0.4);text-align:center;padding:.8rem;">جاري التحميل...</p>';
+  try {
+    _accessStudents = await window._loadStudentsForAccess();
+    renderAccessStudents();
+  } catch (e) {
+    listEl.innerHTML = `<p style="font-size:12px;color:#c0392b;text-align:center;padding:.8rem;">تعذر التحميل: ${e && e.message ? e.message : e}</p>`;
+  }
+}
+function renderAccessStudents() {
+  const q = (document.getElementById('accessStudentSearch').value || '').trim().toLowerCase();
+  const counts = {};
+  _accessStudents.forEach(s => { const k = s.year || 'none'; counts[k] = (counts[k] || 0) + 1; });
+  document.getElementById('accessStudentsSummary').innerHTML =
+    STUDENT_GROUPS.map(g => `${g.label}: <b>${counts[g.key] || 0}</b>`).join(' · ') + ` · لسه ماختارش: <b>${counts.none || 0}</b>`;
+  const rows = _accessStudents.filter(s => !q || (s.name + ' ' + s.email).toLowerCase().includes(q));
+  document.getElementById('accessStudentsList').innerHTML = rows.length ? rows.map(s => `
+    <div class="access-student-row">
+      <span class="nm" title="${s.email}">${s.name || s.email || s.uid}</span>
+      <select onchange="changeStudentYear('${s.uid}', this.value)">
+        <option value="">— لسه —</option>
+        ${STUDENT_GROUPS.map(g => `<option value="${g.key}" ${s.year === g.key ? 'selected' : ''}>${g.label}</option>`).join('')}
+      </select>
+    </div>`).join('') : '<p style="font-size:12px;color:rgba(28,37,43,0.4);text-align:center;padding:.8rem;">مفيش نتايج</p>';
+}
+async function changeStudentYear(uid, key) {
+  try {
+    await window._setStudentYearAdmin(uid, key || null);
+    const s = _accessStudents.find(x => x.uid === uid);
+    if (s) s.year = key || null;
+    renderAccessStudents();
+  } catch (e) {
+    alert('مش قادر أغيّر السنة: ' + (e && e.message ? e.message : e));
+    loadAccessStudents();
+  }
+}
+window.openAdminAccessPanel = openAdminAccessPanel;
+window.closeAdminAccessPanel = closeAdminAccessPanel;
+window.renderAccessMatrix = renderAccessMatrix;
+window.setAccessLock = setAccessLock;
+window.saveAccessRules = saveAccessRules;
+window.renderAccessStudents = renderAccessStudents;
+window.changeStudentYear = changeStudentYear;
+
+/* Manage Files panel — lets the admin add/edit/delete study materials from inside the app,
+   without touching GitHub. Files are uploaded to Cloudinary (same as chat uploads) and their
+   metadata is stored in the 'materials' Firestore collection, keyed by year/term/subjectSlug/category. */
+function openAdminFilesPanel() {
+  populateFilesYearSelect();
+  populateFilesSubjectSelect();
+  resetAdminFileForm();
+  document.getElementById('adminFilesOverlay').classList.add('open');
+  loadAdminFilesList();
+}
+function closeAdminFilesPanel() {
+  document.getElementById('adminFilesOverlay').classList.remove('open');
+}
+window.openAdminFilesPanel = openAdminFilesPanel;
+window.closeAdminFilesPanel = closeAdminFilesPanel;
+
+function populateFilesYearSelect() {
+  const sel = document.getElementById('filesYearSelect');
+  sel.innerHTML = Object.keys(years).map(yk => `<option value="${yk}">${years[yk].title}</option>`).join('');
+  sel.value = currentYear in years ? currentYear : Object.keys(years)[0];
+}
+function populateFilesSubjectSelect() {
+  const yk = document.getElementById('filesYearSelect').value;
+  const term = document.getElementById('filesTermSelect').value;
+  const subjects = (years[yk] && years[yk].terms[term]) || [];
+  document.getElementById('filesSubjectSelect').innerHTML = subjects.map(s => `<option value="${s.slug}">${s.name}</option>`).join('');
+}
+function onFilesYearChange() { populateFilesSubjectSelect(); loadAdminFilesList(); }
+function onFilesTermChange() { populateFilesSubjectSelect(); loadAdminFilesList(); }
+function onFilesSubjectChange() { loadAdminFilesList(); }
+
+let _pendingAdminFile = null;
+function handleAdminFileSelect(e) {
+  const file = e.target.files[0];
+  _pendingAdminFile = file || null;
+  const preview = document.getElementById('adminFilePickerPreview');
+  preview.textContent = file ? `📎 ${file.name}` : '';
+}
+window.handleAdminFileSelect = handleAdminFileSelect;
+
+function resetAdminFileForm() {
+  document.getElementById('adminFileEditId').value = '';
+  document.getElementById('adminFileTitle').value = '';
+  document.getElementById('adminFilePicker').value = '';
+  document.getElementById('adminFilePickerPreview').textContent = '';
+  _pendingAdminFile = null;
+  document.getElementById('adminFileUploadBtn').textContent = 'إضافة الملف 📤';
+  document.getElementById('adminFileUploadStatus').textContent = '';
+}
+window.resetAdminFileForm = resetAdminFileForm;
+
+async function submitAdminFile() {
+  const title = document.getElementById('adminFileTitle').value.trim();
+  const editId = document.getElementById('adminFileEditId').value;
+  const statusEl = document.getElementById('adminFileUploadStatus');
+  const btn = document.getElementById('adminFileUploadBtn');
+
+  if (!title) { statusEl.textContent = 'لازم تكتب عنوان للملف'; return; }
+  if (!editId && !_pendingAdminFile) { statusEl.textContent = 'لازم تختار ملف'; return; }
+
+  btn.disabled = true;
+  statusEl.textContent = _pendingAdminFile ? '⏳ بيترفع الملف...' : '⏳ بيتحفظ...';
+
+  try {
+    const yk = document.getElementById('filesYearSelect').value;
+    const term = document.getElementById('filesTermSelect').value;
+    const subjectSlug = document.getElementById('filesSubjectSelect').value;
+    const category = document.getElementById('filesCategorySelect').value;
+
+    let fileUrl = null, fileName = null;
+    if (_pendingAdminFile) {
+      const fd = new FormData();
+      fd.append('file', _pendingAdminFile);
+      fd.append('upload_preset', 'group_chat_uploads');
+      fd.append('folder', 'courseMaterials');
+      const res = await fetch('https://api.cloudinary.com/v1_1/dju33knsd/auto/upload', { method: 'POST', body: fd });
+      if (!res.ok) throw new Error('فشل رفع الملف');
+      const data = await res.json();
+      fileUrl = data.secure_url;
+      fileName = _pendingAdminFile.name;
+    }
+
+    if (editId) {
+      const updateData = { title };
+      if (fileUrl) { updateData.fileUrl = fileUrl; updateData.fileName = fileName; }
+      await updateDoc(doc(db, 'materials', editId), updateData);
+      statusEl.textContent = '✅ اتحدّث';
+    } else {
+      await addDoc(collection(db, 'materials'), {
+        year: yk, term, subjectSlug, category,
+        title, fileUrl, fileName,
+        ts: serverTimestamp(),
+      });
+      statusEl.textContent = '✅ اتضاف';
+    }
+
+    resetAdminFileForm();
+    statusEl.textContent = editId ? '✅ اتحدّث' : '✅ اتضاف بنجاح';
+    loadAdminFilesList();
+  } catch (e) {
+    statusEl.textContent = '❌ حصل خطأ: ' + (e && e.message ? e.message : e);
+  } finally {
+    btn.disabled = false;
+  }
+}
+window.submitAdminFile = submitAdminFile;
+
+function editAdminFile(id, title) {
+  document.getElementById('adminFileEditId').value = id;
+  document.getElementById('adminFileTitle').value = title;
+  document.getElementById('adminFilePicker').value = '';
+  document.getElementById('adminFilePickerPreview').textContent = '(سيب الملف فاضي لو مش عايز تستبدله)';
+  _pendingAdminFile = null;
+  document.getElementById('adminFileUploadBtn').textContent = 'تحديث الملف 💾';
+  document.getElementById('adminFileUploadStatus').textContent = '';
+}
+window.editAdminFile = editAdminFile;
+
+async function deleteAdminFile(id) {
+  if (!confirm('متأكد عايز تمسح الملف ده؟')) return;
+  try {
+    await deleteDoc(doc(db, 'materials', id));
+    loadAdminFilesList();
+  } catch (e) {
+    alert('مش قادر أمسح الملف دلوقتي: ' + (e && e.message ? e.message : e));
+  }
+}
+window.deleteAdminFile = deleteAdminFile;
+
+async function loadAdminFilesList() {
+  const listEl = document.getElementById('adminFilesList');
+  listEl.innerHTML = '<p style="font-size:12px;color:rgba(28,37,43,0.4);text-align:center;padding:0.8rem;">جاري التحميل...</p>';
+  try {
+    const yk = document.getElementById('filesYearSelect').value;
+    const term = document.getElementById('filesTermSelect').value;
+    const subjectSlug = document.getElementById('filesSubjectSelect').value;
+    const category = document.getElementById('filesCategorySelect').value;
+    if (!yk || !term || !subjectSlug) { listEl.innerHTML = ''; return; }
+
+    const q = query(
+      collection(db, 'materials'),
+      where('year', '==', yk), where('term', '==', term),
+      where('subjectSlug', '==', subjectSlug), where('category', '==', category)
+    );
+    const snap = await getDocs(q);
+    const items = [];
+    snap.forEach(d => items.push({ id: d.id, ...d.data() }));
+    items.sort((a, b) => {
+      const ta = a.ts && a.ts.toMillis ? a.ts.toMillis() : 0;
+      const tb = b.ts && b.ts.toMillis ? b.ts.toMillis() : 0;
+      return ta - tb;
+    });
+
+    listEl.innerHTML = items.length ? items.map(it => `
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(28,37,43,0.06);">
+        <span style="flex:1;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${it.title || it.fileName || '—'}</span>
+        <button onclick="editAdminFile('${it.id}', ${JSON.stringify(it.title || '').replace(/"/g, '&quot;')})" style="background:rgba(29,111,201,0.1);color:#0B3E7A;border:none;border-radius:8px;padding:5px 9px;font-size:11px;cursor:pointer;">تعديل</button>
+        <button onclick="deleteAdminFile('${it.id}')" style="background:rgba(192,57,43,0.1);color:#c0392b;border:none;border-radius:8px;padding:5px 9px;font-size:11px;cursor:pointer;">مسح</button>
+      </div>
+    `).join('') : '<p style="font-size:12px;color:rgba(28,37,43,0.4);text-align:center;padding:0.8rem;">مفيش ملفات متضافة من التطبيق هنا لسه</p>';
+  } catch (e) {
+    listEl.innerHTML = `<p style="font-size:12px;color:#c0392b;text-align:center;padding:0.8rem;">تعذر التحميل: ${e && e.message ? e.message : e}</p>`;
+  }
+}
+window.loadAdminFilesList = loadAdminFilesList;
+
 function switchAdminTab(tab) {
   adminTarget = tab;
   document.getElementById('tabAll').classList.toggle('active', tab === 'all');
@@ -5936,8 +6694,13 @@ onAuthStateChanged(auth, async (user) => {
     document.getElementById('userInitials').textContent = initials;
     document.getElementById('popoverName').textContent = name;
     document.getElementById('popoverEmail').textContent = user.email || '';
+    window._userSignedIn = true;
+    window._isAdminUser = (user.email === window.ADMIN_EMAIL_REF);
     await syncProgress(user.uid);
     flushPendingSyncs(user.uid);
+    if (window._startAccessRulesListener) window._startAccessRulesListener();
+    if (window.refreshAccessUI) window.refreshAccessUI();
+    if (window.ensureStudentYear) window.ensureStudentYear();
     updateStats();
     // Request FCM push token and save it
     requestFCMToken(user.uid);
@@ -5948,6 +6711,12 @@ onAuthStateChanged(auth, async (user) => {
     if (identityBlock) identityBlock.style.display = 'none';
     if (accountSection) accountSection.style.display = 'none';
     if (guestSection) guestSection.style.display = '';
+    window._userSignedIn = false; window._isAdminUser = false;
+    window._studentYear = null; window._studentYearLoaded = false;
+    if (window._startAccessRulesListener) window._startAccessRulesListener();
+    if (window.refreshAccessUI) window.refreshAccessUI();
+    const ypo = document.getElementById('yearPickOverlay');
+    if (ypo) ypo.classList.remove('open');
   }
 });
 
@@ -5961,6 +6730,8 @@ async function syncProgress(uid) {
     const snap = await (window._getCachedStudent
       ? window._getCachedStudent(getDoc, ref)
       : getDoc(ref));
+    window._studentYear = snap.exists() ? (snap.data().studentYear || null) : null;
+    window._studentYearLoaded = true;
     if (snap.exists()) {
       const data = snap.data();
       const remote = new Set(data.viewedFiles || []);
@@ -6201,7 +6972,21 @@ window.ADMIN_EMAIL_REF = ADMIN_EMAIL;
    that index the query silently fails (no error visible without DevTools open,
    notifications simply never arrive). We sort client-side instead, which needs
    no index at all. */
-function startNotifListener(uid) {
+async function startNotifListener(uid) {
+  // نقطة الفصل الصحيحة: تاريخ انضمام الطالب الفعلي (joinedAt) المحفوظ في حسابه على Firestore،
+  // مش تاريخ فتح التطبيق على الجهاز — عشان لو دخل من جهاز جديد يفضل معاه نفس المعيار.
+  // أي إشعار اتبعت قبل ما ينضم، بيتجاهل. لو الحساب لسه بيتعمل (سباق مع أول كتابة)، منستخدمش تاريخ قديم افتراضي.
+  let sinceMs = Date.now();
+  try {
+    const studentSnap = await (window._getCachedStudent
+      ? window._getCachedStudent(getDoc, doc(db, 'students', uid))
+      : getDoc(doc(db, 'students', uid)));
+    if (studentSnap.exists()) {
+      const data = studentSnap.data();
+      if (data.joinedAt?.toMillis) sinceMs = data.joinedAt.toMillis();
+    }
+  } catch (e) { /* fallback لتاريخ اللحظة الحالية لو حصل خطأ */ }
+
   function handleSnap(snap) {
     const docs = snap.docChanges().filter(c => c.type === 'added').map(c => c.doc);
     docs.sort((a, b) => {
@@ -6211,12 +6996,14 @@ function startNotifListener(uid) {
     });
     docs.forEach(d => {
       const data = d.data();
+      const tsMillis = data.ts?.toMillis ? data.ts.toMillis() : 0;
+      if (tsMillis && tsMillis <= sinceMs) return; // إشعار قديم من قبل ما الطالب ينضم
       const notif = {
         id: d.id,
         title: data.title || '',
         body: data.body || '',
         type: data.type || 'info',
-        ts: data.ts?.toMillis ? data.ts.toMillis() : Date.now(),
+        ts: tsMillis || Date.now(),
       };
       if (window.pushNotification) window.pushNotification(notif);
     });
@@ -6776,6 +7563,47 @@ window._exportDetailedStatsToExcel = async function() {
 };
 function exportDetailedStatsToExcel() { window._exportDetailedStatsToExcel(); }
 window.exportDetailedStatsToExcel = exportDetailedStatsToExcel;
+
+/* ══════════════════════ ACCESS CONTROL — Firestore side ══════════════════════ */
+let _accessUnsub = null;
+window._startAccessRulesListener = function () {
+  if (_accessUnsub) { try { _accessUnsub(); } catch (e) {} _accessUnsub = null; }
+  _accessUnsub = onSnapshot(doc(db, 'config', 'access'), (snap) => {
+    window._accessRules = snap.exists() ? (snap.data().locks || {}) : {};
+    if (window.refreshAccessUI) window.refreshAccessUI();
+  }, (err) => {
+    console.warn('access rules listener failed:', err && err.code);
+    _accessUnsub = null;
+  });
+};
+window._startAccessRulesListener();
+
+window._saveStudentYear = async function (yearKey) {
+  const uid = auth.currentUser && auth.currentUser.uid;
+  if (!uid) throw new Error('not signed in');
+  await setDoc(doc(db, 'students', uid), { studentYear: yearKey, studentYearSetAt: serverTimestamp() }, { merge: true });
+  if (window._invalidateStudentCache) window._invalidateStudentCache();
+  window._studentYear = yearKey;
+};
+window._saveAccessRules = async function (locks) {
+  await setDoc(doc(db, 'config', 'access'), { locks, updatedAt: serverTimestamp(), updatedBy: (auth.currentUser && auth.currentUser.email) || '' });
+};
+window._loadStudentsForAccess = async function () {
+  const snap = await (window._getCachedStudentsList
+    ? window._getCachedStudentsList(getDocs, collection(db, 'students'))
+    : getDocs(collection(db, 'students')));
+  const out = [];
+  snap.forEach(d => {
+    const x = d.data();
+    out.push({ uid: d.id, name: x.displayName || '', email: x.email || '', year: x.studentYear || null });
+  });
+  out.sort((a, b) => (a.name || a.email).localeCompare(b.name || b.email));
+  return out;
+};
+window._setStudentYearAdmin = async function (uid, yearKey) {
+  await updateDoc(doc(db, 'students', uid), { studentYear: yearKey || null });
+  window._studentsListCache = null;
+};
 
 /* Show admin tools only to the admin user */
 let _myConvUnsub = null;
@@ -7450,5 +8278,6 @@ ${contextBlock}`;
 })();
 </script>
 
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

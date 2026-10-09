@@ -4868,6 +4868,8 @@ async function openSubject(idx) {
 
 /* Files the admin added from inside the app (Manage Files panel), stored in Firestore. */
 async function fetchDynamicMaterials(yearKey, term, subjectSlug) {
+  const { db, doc, collection, addDoc, updateDoc, deleteDoc, getDocs, query, where, serverTimestamp } = window._fs || {};
+  if (!db) throw new Error('Firebase لسه بيحمّل، جرّب تاني بعد ثانيتين');
   const q = query(
     collection(db, 'materials'),
     where('year', '==', yearKey), where('term', '==', term), where('subjectSlug', '==', subjectSlug)
@@ -5928,10 +5930,13 @@ async function submitAdminFile() {
   statusEl.textContent = _pendingAdminFile ? '⏳ بيترفع الملف...' : '⏳ بيتحفظ...';
 
   try {
+  const { db, doc, collection, addDoc, updateDoc, deleteDoc, getDocs, query, where, serverTimestamp } = window._fs || {};
+  if (!db) throw new Error('Firebase لسه بيحمّل، جرّب تاني بعد ثانيتين');
     const yk = document.getElementById('filesYearSelect').value;
     const term = document.getElementById('filesTermSelect').value;
     const subjectSlug = document.getElementById('filesSubjectSelect').value;
     const category = document.getElementById('filesCategorySelect').value;
+    if (!yk || !term || !subjectSlug) throw new Error('اختار السنة والترم والمادة الأول');
 
     let fileUrl = null, fileName = null;
     if (_pendingAdminFile) {
@@ -5939,9 +5944,10 @@ async function submitAdminFile() {
       fd.append('file', _pendingAdminFile);
       fd.append('upload_preset', 'group_chat_uploads');
       fd.append('folder', 'courseMaterials');
+      if (_pendingAdminFile.size > 10 * 1024 * 1024) throw new Error('الملف أكبر من 10MB (حد Cloudinary المجاني)');
       const res = await fetch('https://api.cloudinary.com/v1_1/dju33knsd/auto/upload', { method: 'POST', body: fd });
-      if (!res.ok) throw new Error('فشل رفع الملف');
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error('فشل رفع الملف: ' + ((data && data.error && data.error.message) || res.status));
       fileUrl = data.secure_url;
       fileName = _pendingAdminFile.name;
     }
@@ -5985,6 +5991,8 @@ window.editAdminFile = editAdminFile;
 async function deleteAdminFile(id) {
   if (!confirm('متأكد عايز تمسح الملف ده؟')) return;
   try {
+  const { db, doc, collection, addDoc, updateDoc, deleteDoc, getDocs, query, where, serverTimestamp } = window._fs || {};
+  if (!db) throw new Error('Firebase لسه بيحمّل، جرّب تاني بعد ثانيتين');
     await deleteDoc(doc(db, 'materials', id));
     loadAdminFilesList();
   } catch (e) {
@@ -6002,6 +6010,8 @@ async function loadAdminFilesList() {
     const subjectSlug = document.getElementById('filesSubjectSelect').value;
     const category = document.getElementById('filesCategorySelect').value;
     if (!yk || !term || !subjectSlug) { listEl.innerHTML = ''; return; }
+  const { db, doc, collection, addDoc, updateDoc, deleteDoc, getDocs, query, where, serverTimestamp } = window._fs || {};
+  if (!db) throw new Error('Firebase لسه بيحمّل، جرّب تاني بعد ثانيتين');
 
     const q = query(
       collection(db, 'materials'),
@@ -6592,6 +6602,8 @@ const auth  = getAuth(fbApp);
 window._auth = auth; // متاح للسكريبتات العادية اللي مش module (زي sendRealPushNotification)
 const db    = getFirestore(fbApp);
 const storage = getStorage(fbApp);
+// جسر للسكريبتات العادية (مش module): بيعرّض دوال Firestore عشان إدارة الملفات تشتغل
+window._fs = { db, doc, collection, addDoc, updateDoc, deleteDoc, getDocs, query, where, serverTimestamp };
 const provider = new GoogleAuthProvider();
 
 /* ─── FCM Messaging ─── */

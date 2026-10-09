@@ -33,6 +33,10 @@ self.addEventListener('fetch', e => {
     /\.(mp4|webm|mov|mp3|wav)$/i.test(e.request.url)
   ) return;
 
+  // ما نتدخلش في الرفع (POST) ولا في الطلبات الخارجية (Cloudinary / Firebase / Workers...)
+  // لأن الـ Service Worker كان بيحوّل أي فشل شبكة فيها لـ "Failed to fetch"
+  if (e.request.method !== 'GET' || new URL(e.request.url).origin !== self.location.origin) return;
+
   e.respondWith(
     fetch(e.request)
       .then(res => {

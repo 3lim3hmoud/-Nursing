@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Female Reproductive System — Mock Exam</title>
+<style>
+:root{--bg:#f3f6f5;--card:#fff;--ink:#17302c;--mute:#5d726e;--line:#d5e0dd;--accent:#0f6b5e;--ok:#1f7a45;--okbg:#e4f4ea;--no:#b3261e;--nobg:#fbe9e7}
+@media(prefers-color-scheme:dark){:root{--bg:#10191a;--card:#192526;--ink:#e6f0ee;--mute:#92aaa5;--line:#2c3f40;--accent:#5fc9b5;--ok:#6fd49a;--okbg:#17352500;--nobg:#3a1c1a00;--no:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,"Times New Roman",serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+header h1{font-size:1.5rem;margin:8px 0 4px}
+header p{margin:0;color:var(--mute);font-family:system-ui,sans-serif;font-size:.9rem}
+.bar{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;font-family:system-ui,sans-serif;font-size:.85rem;color:var(--mute)}
+.track{height:6px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .25s}
+.sec{font-family:system-ui,sans-serif;font-weight:600;color:var(--accent);margin:28px 0 8px;font-size:.95rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.q h3{margin:0 0 10px;font-size:1.02rem;font-weight:600}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:.97rem;color:inherit;background:transparent;border:1px solid var(--line);border-radius:7px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--okbg);color:var(--ok);font-weight:600}
+.opt.no{border-color:var(--no);background:var(--nobg);color:var(--no)}
+.ex{display:none;margin-top:8px;font:.88rem/1.5 system-ui,sans-serif;color:var(--mute);border-left:3px solid var(--accent);padding-left:10px}
+.q.done .ex{display:block}
+#res{display:none;background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:20px;margin:24px 0;text-align:center;font-family:system-ui,sans-serif}
+#res b{font-size:2.2rem;display:block}
+button.main{font:600 .95rem system-ui,sans-serif;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 20px;cursor:pointer;margin-top:10px}
+@media(prefers-color-scheme:dark){button.main{color:#0b1a18}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>Female Reproductive System — Exam-Style MCQs</h1><p>Mock Exam • 40 Questions • Choose ONE best answer</p></header>
+<div class="bar"><span id="stat">0 / 40 answered • Score 0</span><div class="track"><div class="fill" id="fill"></div></div></div>
+<div id="list"></div>
+<div id="res"><b id="pct"></b><span id="msg"></span><br><button class="main" onclick="restart()">إعادة الاختبار</button></div>
+</div>
+<script>
+const S=["Section 1 — Anatomy & Relations","Section 2 — Vagina & Uterus","Section 3 — Fallopian Tubes & Ovaries","Section 4 — Breast","Section 5 — Bony Pelvis & Obstetrics","Section 6 — Numbers & Clinical-Style Questions"];
+const B=[0,8,18,26,32,37];
+// [question, options, correctIndex, explanation]
+const Q=[
+["The mons pubis is situated anterior to the:",["Coccyx","Symphysis pubis","Sacrum","Ischial tuberosity"],1,"The mons pubis is a fatty pad lying in front of the symphysis pubis."],
+["Which of the following structures is located between the labia majora?",["Labia minora","Ovarian cortex","Cervix","Uterine fundus"],0,"The labia minora lie within the labia majora. The others are internal organs."],
+["The posterior union of the labia minora forms the:",["Clitoral hood","Fourchette","Vestibule","Mons pubis"],1,"The fourchette is the posterior junction of the labia minora."],
+["Which glands open on either side of the urethral opening?",["Bartholin glands","Skene glands","Mammary glands","Ovarian glands"],1,"Skene (paraurethral) glands open beside the urethral meatus. Bartholin glands open near the vaginal opening."],
+["The Bartholin glands are mainly concerned with:",["Ovum production","Vaginal opening lubrication","Menstrual shedding","Milk production"],1,"Bartholin glands secrete mucus that lubricates the vaginal opening."],
+["The perineum is the region between the:",["Urethra and cervix","Vulva and anus","Bladder and uterus","Ovary and fallopian tube"],1,"The perineum lies between the vulva and the anus."],
+["An episiotomy involves an incision in the:",["Endometrium","Cervix","Perineum","Fallopian tube"],2,"Episiotomy is a surgical cut in the perineum to enlarge the vaginal opening during delivery."],
+["Which of the following is a function of the vagina?",["Production of ova","Production of estrogen","Passage for menstrual flow","Secretion of prolactin"],2,"The vagina is the passage for menstrual flow, the organ of copulation and the birth canal. Ova and estrogen come from the ovaries."],
+["The vaginal lining is composed of:",["Simple columnar epithelium","Stratified squamous epithelium","Transitional epithelium","Simple cuboidal epithelium"],1,"Stratified squamous epithelium protects against friction."],
+["The acidic environment of the vagina is associated with the production of:",["Lactic acid","Hydrochloric acid","Bile","Uric acid"],0,"Döderlein's lactobacilli convert glycogen to lactic acid, keeping the vaginal pH acidic."],
+["The upper rounded portion of the uterus above the openings of the fallopian tubes is the:",["Cervix","Isthmus","Fundus","External os"],2,"The fundus is the dome-shaped top of the uterus above the tubal openings."],
+["The body of the uterus is also called the:",["Corpus","Cervix","Vestibule","Infundibulum"],0,"Corpus uteri = body of the uterus."],
+["The uterine layer responsible for powerful contractions during labour is the:",["Endometrium","Myometrium","Perimetrium","Vaginal mucosa"],1,"The myometrium is the thick smooth muscle layer."],
+["Which uterine layer undergoes cyclic changes during the menstrual cycle?",["Myometrium","Perimetrium","Endometrium","Pelvic fascia"],2,"The endometrium proliferates, becomes secretory, then sheds under hormonal control."],
+["The outer covering of the uterus is the:",["Endometrium","Myometrium","Perimetrium","Mucosa"],2,"The perimetrium is the outer serous layer (peritoneum)."],
+["The internal os is associated with the junction between the:",["Vagina and external environment","Uterine isthmus and cervix","Ovary and infundibulum","Bladder and urethra"],1,"The internal os is where the uterine cavity (isthmus) meets the cervical canal."],
+["The uterus normally lies posterior to the:",["Rectum","Urinary bladder","Sacrum","Coccyx"],1,"The uterus lies behind the bladder and in front of the rectum."],
+["Which term describes forward tilting of the uterus?",["Retroversion","Anteversion","Retroflexion","Prolapse"],1,"Anteversion = the uterus tilts forward over the bladder (the normal position)."],
+["The part of the fallopian tube most commonly associated with fertilization is the:",["Isthmus","Ampulla","Interstitial part","Infundibulum"],1,"Fertilization usually happens in the ampulla, the widest part of the tube."],
+["The finger-like projections at the end of the fallopian tube are called:",["Rugae","Fimbriae","Alveoli","Cornua"],1,"Fimbriae sweep the ovulated ovum into the tube."],
+["Which part of the fallopian tube passes through the uterine wall?",["Ampulla","Infundibulum","Interstitial part","Fimbriae"],2,"The interstitial (intramural) part runs through the myometrium."],
+["The narrow part of the fallopian tube with a relatively thick muscular wall is the:",["Ampulla","Isthmus","Infundibulum","Fimbrial end"],1,"The isthmus is the narrowest, thick-walled segment next to the uterus."],
+["The ovarian cortex contains mainly:",["Ovarian follicles","Mammary alveoli","Uterine glands","Vaginal rugae"],0,"The cortex is the outer part and holds the follicles at different stages."],
+["Which structures are found in the ovarian medulla?",["Ovarian follicles only","Blood vessels, lymphatics, nerves and connective tissue","Endometrial glands","Lactiferous ducts"],1,"The medulla is the inner vascular and connective tissue core."],
+["The ovaries produce:",["Estrogen and progesterone","Prolactin and oxytocin","Insulin and glucagon","Lactic acid and glycogen"],0,"Ovaries make ova plus estrogen and progesterone. Prolactin and oxytocin come from the pituitary."],
+["Movement of the ovum through the fallopian tube is aided by:",["Peristalsis and ciliary action","Skeletal muscle contraction only","Uterine endometrial shedding","Mammary gland secretion"],0,"Smooth muscle peristalsis and ciliated epithelium move the ovum toward the uterus."],
+["The muscle lying deep to much of the breast is the:",["Pectoralis major","Rectus abdominis","Trapezius","External oblique"],0,"The breast lies on the pectoralis major."],
+["The pigmented area surrounding the nipple is called the:",["Lobule","Areola","Alveolus","Lactiferous sinus"],1,"The areola is the dark circular area around the nipple."],
+["Milk is produced in the secretory units of the breast called:",["Fimbriae","Alveoli","Rugae","Follicles"],1,"Alveoli (clustered into lobules) secrete milk."],
+["The hormone primarily responsible for milk production is:",["Progesterone","Prolactin","Estrogen","Testosterone"],1,"Prolactin stimulates milk production. Oxytocin causes milk ejection (let-down)."],
+["The first secretion produced by the breast after delivery is:",["Sebum","Colostrum","Lymph","Amniotic fluid"],1,"Colostrum is the thick, antibody-rich first milk."],
+["Which statement about colostrum matches the lecture?",["It contains no protein","It is the first milk produced after birth","It is secreted by the ovaries","It is produced by the endometrium"],1,"Colostrum is produced by the breast and is the first milk after birth. It is rich in protein."],
+["The pelvic brim divides the pelvis into the:",["Anterior and posterior pelvis","False and true pelvis","Right and left pelvis","Upper and lower limbs"],1,"Above the brim is the false pelvis, below it is the true pelvis."],
+["Which part of the pelvis is directly important in the passage of the fetus during childbirth?",["False pelvis","True pelvis","Abdominal cavity","Thoracic cavity"],1,"The true pelvis forms the bony birth canal."],
+["The bony pelvis forms which part of the birth canal?",["Soft tissue portion","Rigid portion","Muscular portion only","Glandular portion"],1,"The bony pelvis is the rigid part. The soft tissues (cervix, vagina, pelvic floor) are the soft part."],
+["Which of the following is a bone contributing to the bony pelvis?",["Scapula","Ischium","Humerus","Sternum"],1,"The hip bone consists of the ilium, ischium and pubis."],
+["The pelvic floor helps support the:",["Pelvic organs","Lungs","Thyroid gland","Mammary glands"],0,"The pelvic floor muscles support the bladder, uterus and rectum."],
+["According to the lecture, the approximate length of the posterior vaginal wall is:",["4 cm","6 cm","8 cm","12 cm"],2,"Per the lecture, the posterior wall is about 8 cm (longer than the anterior wall)."],
+["According to the lecture, the approximate weight of the non-pregnant uterus is:",["10–20 g","30–40 g","60–70 g","150–200 g"],2,"The non-pregnant uterus weighs about 60–70 g."],
+["A question asks for the uterine layer that is shed during menstruation. The best answer is:",["Myometrium","Perimetrium","Endometrium","Serosa of the ovary"],2,"The functional layer of the endometrium is shed during menstruation."]
+];
+const L="ABCD";let score=0,done=0;
+const list=document.getElementById("list");
+function build(){
+  list.innerHTML="";score=0;done=0;
+  Q.forEach((q,i)=>{
+    const si=B.indexOf(i);
+    if(si>-1){const h=document.createElement("div");h.className="sec";h.textContent=S[si];list.appendChild(h)}
+    const d=document.createElement("div");d.className="q";
+    d.innerHTML="<h3>Q"+(i+1)+". "+q[0]+"</h3>";
+    q[1].forEach((t,j)=>{
+      const b=document.createElement("button");b.className="opt";b.textContent=L[j]+". "+t;
+      b.onclick=()=>pick(d,q,j);d.appendChild(b);
+    });
+    const e=document.createElement("div");e.className="ex";e.textContent=q[3];d.appendChild(e);
+    list.appendChild(d);
+  });
+  upd();document.getElementById("res").style.display="none";
+}
+function pick(d,q,j){
+  if(d.classList.contains("done"))return;
+  d.classList.add("done");done++;
+  const bs=d.querySelectorAll(".opt");
+  bs.forEach((b,k)=>{b.disabled=true;if(k===q[2])b.classList.add("ok")});
+  if(j===q[2])score++;else bs[j].classList.add("no");
+  upd();
+  if(done===Q.length)finish();
+}
+function upd(){
+  document.getElementById("stat").textContent=done+" / "+Q.length+" answered • Score "+score;
+  document.getElementById("fill").style.width=(done/Q.length*100)+"%";
+}
+function finish(){
+  const p=Math.round(score/Q.length*100);
+  document.getElementById("pct").textContent=score+" / "+Q.length+" ("+p+"%)";
+  document.getElementById("msg").textContent=p>=85?"ممتاز! جاهزة للامتحان.":p>=65?"كويس، راجعي الأسئلة الغلط وهتبقي تمام.":"محتاجة مراجعة تانية للمحاضرة، حاولي تاني.";
+  const r=document.getElementById("res");r.style.display="block";r.scrollIntoView({behavior:"smooth"});
+}
+function restart(){build();window.scrollTo({top:0,behavior:"smooth"})}
+build();
+</script>
+</body>
+</html>

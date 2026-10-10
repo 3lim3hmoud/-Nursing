@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethics in Maternity — 30 MCQs</title>
+<style>
+:root{--bg:#f3f6f5;--card:#fff;--ink:#17302c;--mute:#5d726e;--line:#d5e0dd;--accent:#0f6b5e;--ok:#1f7a45;--okbg:#e4f4ea;--no:#b3261e;--nobg:#fbe9e7}
+@media(prefers-color-scheme:dark){:root{--bg:#10191a;--card:#192526;--ink:#e6f0ee;--mute:#92aaa5;--line:#2c3f40;--accent:#5fc9b5;--ok:#6fd49a;--okbg:#17352500;--nobg:#3a1c1a00;--no:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,"Times New Roman",serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+header h1{font-size:1.5rem;margin:8px 0 4px}
+header p{margin:0;color:var(--mute);font-family:system-ui,sans-serif;font-size:.9rem}
+.bar{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;font-family:system-ui,sans-serif;font-size:.85rem;color:var(--mute)}
+.track{height:6px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .25s}
+.sec{font-family:system-ui,sans-serif;font-weight:600;color:var(--accent);margin:28px 0 8px;font-size:.95rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.q h3{margin:0 0 10px;font-size:1.02rem;font-weight:600}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:.97rem;color:inherit;background:transparent;border:1px solid var(--line);border-radius:7px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--okbg);color:var(--ok);font-weight:600}
+.opt.no{border-color:var(--no);background:var(--nobg);color:var(--no)}
+.ex{display:none;margin-top:8px;font:.88rem/1.5 system-ui,sans-serif;color:var(--mute);border-left:3px solid var(--accent);padding-left:10px}
+.q.done .ex{display:block}
+#res{display:none;background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:20px;margin:24px 0;text-align:center;font-family:system-ui,sans-serif}
+#res b{font-size:2.2rem;display:block}
+button.main{font:600 .95rem system-ui,sans-serif;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 20px;cursor:pointer;margin-top:10px}
+@media(prefers-color-scheme:dark){button.main{color:#0b1a18}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>Ethics in Maternity — 30 MCQs</h1><p>Practice • 30 Questions • Choose ONE best answer</p></header>
+<div class="bar"><span id="stat">0 / 30 answered • Score 0</span><div class="track"><div class="fill" id="fill"></div></div></div>
+<div id="list"></div>
+<div id="res"><b id="pct"></b><span id="msg"></span><br><button class="main" onclick="restart()">إعادة الاختبار</button></div>
+</div>
+<script>
+const S=["Part 1: Ethical Principles", "Part 2: Code of Ethics", "Part 3: Professional Standards", "Part 4: Legal and Ethical Issues", "Part 5: Case Scenarios"];
+const B=[0, 9, 18, 22, 25];
+// [question, options, correctIndex, explanation]
+const Q=[["Ethics is best described as:",["A surgical procedure","Moral philosophy applied to everyday situations","A legal punishment","A type of research"],1,"Ethics = moral philosophy applied to everyday situations."],["Which principle means respecting a woman's right to make her own decisions?",["Fidelity","Autonomy","Justice","Paternalism"],1,"Autonomy = the right to self-determination."],["Doing good for the patient is called:",["Beneficence","Veracity","Fidelity","Confidentiality"],0,"Beneficence = acting for the patient's benefit."],["“Do no harm” refers to:",["Justice","Autonomy","Non-maleficence","Paternalism"],2,"Non-maleficence = avoiding harm."],["Telling the truth is the principle of:",["Veracity","Fidelity","Beneficence","Justice"],0,"Veracity = truthfulness."],["Treating clients fairly and equally is:",["Autonomy","Justice/Fairness","Paternalism","Veracity"],1,"Justice = fair and equal treatment."],["Keeping promises and being loyal to care commitments refers to:",["Fidelity","Justice","Beneficence","Autonomy"],0,"Fidelity = faithfulness to commitments."],["Making a decision for a patient “for her own good” is:",["Veracity","Paternalism","Fidelity","Justice"],1,"Paternalism overrides the patient's choice, claiming to act in her best interest."],["How many ethical principles are listed in the lecture?",["6","8","10","12"],1,"The lecture lists 8 principles."],["Which is Value 3 in the Code of Ethics?",["Privacy and dignity","Confidentiality","Competency","Public trust"],1,"Value 3 = Confidentiality (per the lecture)."],["A nurse shares a client's private information without permission and without legal obligation. This violates:",["Confidentiality","Competency","Quality management","Cord blood banking"],0,"Sharing private data without consent or legal duty breaches confidentiality."],["Which value emphasizes privacy and dignity?",["Value 1","Value 2","Value 4","Value 8"],2,"Value 4 = Privacy and dignity."],["Safeguarding the well-being of women and newborns is:",["Value 3","Value 5","Value 7","Value 10"],1,"Value 5 = Safeguarding the well-being of women and newborns."],["A nurse practicing under the influence of alcohol violates which value?",["Value 2","Value 4","Value 6","Value 9"],2,"Value 6 = the nurse's own health and fitness to practice safely."],["Continuing education and evidence-based practice relate to:",["Value 1","Value 5","Value 7","Value 10"],2,"Value 7 = Competency (education and evidence-based practice)."],["A research participant's informed and voluntary consent, including the right to withdraw, is emphasized in:",["Value 2","Value 4","Value 6","Value 8"],3,"Value 8 = Research ethics (informed, voluntary consent)."],["Collaboration, mutual trust, and support among colleagues describe:",["Value 3","Value 6","Value 9","Value 10"],2,"Value 9 = Collaboration and mutual support among colleagues."],["Preserving the public's trust in maternity care is:",["Value 1","Value 5","Value 8","Value 10"],3,"Value 10 = Public trust."],["Care provided by qualified nurse practitioners is:",["Standard 1","Standard 3","Standard 6","Standard 8"],0,"Standard 1 = Qualified practitioners (per the lecture)."],["A safe environment within the family, community, and health-care system is:",["Standard 2","Standard 4","Standard 5","Standard 7"],0,"Standard 2 = Safe environment."],["Complete and accessible documentation is:",["Standard 2","Standard 4","Standard 6","Standard 8"],2,"Standard 6 = Documentation."],["A quality management program that identifies and resolves problems is:",["Standard 1","Standard 3","Standard 5","Standard 7"],3,"Standard 7 = Quality management."],["The lecture's abortion section includes a condition that pregnancy has not exceeded the:",["12th week","18th week","24th week","36th week"],2,"Per the lecture, the limit is the 24th week."],["Cord blood is collected from the newborn's umbilical cord:",["At birth","At puberty","At the first birthday","Before conception"],0,"It is collected at birth, from the umbilical cord."],["Cord blood contains:",["Hematopoietic stem cells","Ovarian follicles","Endometrial glands","Lactiferous ducts"],0,"Cord blood is a source of hematopoietic stem cells."],["In the Down syndrome case, the ethically preferred response is to:",["Say “yes” without evidence","Tell the truth and explain that tests are needed","Avoid answering forever","Disclose a confirmed diagnosis before testing"],1,"Be honest (veracity): explain that tests are needed to confirm."],["The key ethical principle in the suspected Down syndrome case is:",["Veracity","Paternalism","Fidelity","Justice"],0,"Truthfulness without making unconfirmed claims."],["A moral dilemma occurs when:",["One option is clearly ideal","Two or more options exist and none is morally ideal","No decision is required","There is no conflict between principles"],1,"A dilemma = several options, none morally ideal."],["Refusal of episiotomy may create a conflict between autonomy and:",["Veracity only","Beneficence/non-maleficence","Fidelity only","Confidentiality only"],1,"The woman's choice (autonomy) may clash with the nurse's duty to benefit and avoid harm."],["According to the lecture's general ethical rule, when a competent woman refuses episiotomy, the nurse should:",["Perform it without consent","Ignore the refusal","Respect the refusal, inform senior/physician, and document","Disclose the case publicly"],2,"Respect autonomy, escalate to the senior/physician, and document."]];
+const L="ABCD";let score=0,done=0;
+const list=document.getElementById("list");
+function build(){
+  list.innerHTML="";score=0;done=0;
+  Q.forEach((q,i)=>{
+    const si=B.indexOf(i);
+    if(si>-1){const h=document.createElement("div");h.className="sec";h.textContent=S[si];list.appendChild(h)}
+    const d=document.createElement("div");d.className="q";
+    d.innerHTML="<h3>Q"+(i+1)+". "+q[0]+"</h3>";
+    q[1].forEach((t,j)=>{
+      const b=document.createElement("button");b.className="opt";b.textContent=L[j]+". "+t;
+      b.onclick=()=>pick(d,q,j);d.appendChild(b);
+    });
+    const e=document.createElement("div");e.className="ex";e.textContent=q[3];d.appendChild(e);
+    list.appendChild(d);
+  });
+  upd();document.getElementById("res").style.display="none";
+}
+function pick(d,q,j){
+  if(d.classList.contains("done"))return;
+  d.classList.add("done");done++;
+  const bs=d.querySelectorAll(".opt");
+  bs.forEach((b,k)=>{b.disabled=true;if(k===q[2])b.classList.add("ok")});
+  if(j===q[2])score++;else bs[j].classList.add("no");
+  upd();
+  if(done===Q.length)finish();
+}
+function upd(){
+  document.getElementById("stat").textContent=done+" / "+Q.length+" answered • Score "+score;
+  document.getElementById("fill").style.width=(done/Q.length*100)+"%";
+}
+function finish(){
+  const p=Math.round(score/Q.length*100);
+  document.getElementById("pct").textContent=score+" / "+Q.length+" ("+p+"%)";
+  document.getElementById("msg").textContent=p>=85?"ممتاز! جاهزة للامتحان.":p>=65?"كويس، راجعي الأسئلة الغلط وهتبقي تمام.":"محتاجة مراجعة تانية للمحاضرة، حاولي تاني.";
+  const r=document.getElementById("res");r.style.display="block";r.scrollIntoView({behavior:"smooth"});
+}
+function restart(){build();window.scrollTo({top:0,behavior:"smooth"})}
+build();
+</script>
+</body>
+</html>

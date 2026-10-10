@@ -137,6 +137,28 @@
     .install-banner-text span { display: none; }
   }
 
+  /* ─── Email / password sign-in ─── */
+  .auth-modal { max-height: 92vh; overflow-y: auto; }
+  .auth-tabs { display: flex; gap: 6px; background: rgba(28,37,43,0.06); border-radius: 100px; padding: 4px; margin-bottom: 1rem; }
+  .auth-tab { flex: 1; border: none; background: transparent; padding: 9px 10px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: rgba(28,37,43,0.55); cursor: pointer; transition: all .2s; }
+  .auth-tab.active { background: #fff; color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .auth-input { width: 100%; padding: 12px 16px; margin-bottom: 0.65rem; border-radius: 14px; border: 1.5px solid rgba(28,37,43,0.15); background: #fff; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color .2s; box-sizing: border-box; }
+  .auth-input:focus { border-color: #378ADD; }
+  .auth-pass-wrap { position: relative; }
+  .auth-pass-wrap .auth-input { padding-right: 46px; }
+  .auth-eye { position: absolute; right: 10px; top: 7px; width: 34px; height: 34px; border: none; background: none; cursor: pointer; font-size: 16px; opacity: .6; }
+  .auth-submit { width: 100%; padding: 13px 20px; border-radius: 100px; border: none; cursor: pointer; background: linear-gradient(135deg, #1D6FC9, #378ADD); color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; margin-top: .2rem; transition: all .2s; }
+  .auth-submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(29,111,201,0.3); }
+  .auth-submit:disabled { opacity: .6; cursor: wait; }
+  .auth-link { background: none; border: none; color: #1D6FC9; font-size: 12.5px; cursor: pointer; padding: 6px; font-family: inherit; }
+  .auth-msg { min-height: 18px; margin-top: .5rem; font-size: 12.5px; line-height: 1.5; }
+  .auth-msg.err { color: #c0392b; }
+  .auth-msg.ok { color: #1a8a5a; }
+  [data-theme="dark"] .auth-tabs { background: rgba(216,230,240,0.08); }
+  [data-theme="dark"] .auth-tab { color: rgba(216,230,240,0.6); }
+  [data-theme="dark"] .auth-tab.active { background: rgba(216,230,240,0.14); color: #fff; }
+  [data-theme="dark"] .auth-input { background: rgba(216,230,240,0.06); border-color: rgba(216,230,240,0.2); color: #fff; }
+
   /* ─── Access control / year picker ─── */
   .year-card.locked, .subject-card.locked { opacity: 0.55; position: relative; }
   .year-card.locked::after { content: '🔒'; position: absolute; top: 12px; right: 14px; font-size: 20px; }
@@ -3192,7 +3214,7 @@
   <div class="auth-modal">
     <div class="auth-modal-logo">🎓</div>
     <h2>Welcome to the Hub</h2>
-    <p>Sign in with your Google account to access the Faculty of Nursing Study Hub.</p>
+    <p style="margin-bottom:1.2rem;">Sign in with Google or with your email to access the Faculty of Nursing Study Hub.</p>
     <button class="google-btn" id="googleSignInBtn" onclick="signInWithGoogle()">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -3202,6 +3224,22 @@
       </svg>
       Continue with Google
     </button>
+    <div class="auth-divider"><span>أو بالإيميل · or use email</span></div>
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" id="authTabLogin" onclick="setAuthMode('login')">تسجيل دخول</button>
+      <button type="button" class="auth-tab" id="authTabSignup" onclick="setAuthMode('signup')">حساب جديد</button>
+    </div>
+    <form id="emailAuthForm" onsubmit="submitEmailAuth(event)" novalidate>
+      <input class="auth-input" type="text" id="authName" placeholder="الاسم بالكامل" autocomplete="name" dir="auto" style="display:none;">
+      <input class="auth-input" type="email" id="authEmail" placeholder="البريد الإلكتروني" autocomplete="email" dir="ltr" inputmode="email">
+      <div class="auth-pass-wrap">
+        <input class="auth-input" type="password" id="authPassword" placeholder="كلمة المرور" autocomplete="current-password" dir="ltr">
+        <button type="button" class="auth-eye" onclick="toggleAuthPassword()" aria-label="Show password">👁</button>
+      </div>
+      <button type="submit" class="auth-submit" id="emailAuthBtn">تسجيل الدخول</button>
+    </form>
+    <button type="button" class="auth-link" id="authForgotBtn" onclick="resetAuthPassword()">نسيت كلمة المرور؟</button>
+    <div class="auth-msg" id="authMsg"></div>
     <p style="font-size:12px; color:rgba(28,37,43,0.45); margin-top:0.9rem;">Sign-in is required to access the study materials.</p>
   </div>
 </div>
@@ -6618,7 +6656,7 @@ window.hideInappNotif = hideInappNotif;
 <script type="module">
 /* ══════════════════════ FIREBASE AUTH ══════════════════════ */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendPasswordResetEmail }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, collection, addDoc, query, where, orderBy, onSnapshot, limit, getDocs, arrayUnion }
   from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
@@ -6711,13 +6749,109 @@ let pendingViewedSync = false;
 /* ─── Sign In ─── */
 window.signInWithGoogle = async function() {
   const btn = document.getElementById('googleSignInBtn');
+  const originalHtml = btn.innerHTML;
   btn.disabled = true; btn.textContent = 'Signing in…';
   try {
     await signInWithPopup(auth, provider);
     window.closeAuthModal();
   } catch(e) {
+    const code = e && e.code;
+    if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') {
+      setAuthMsg('', '');
+    } else if (code === 'auth/popup-blocked') {
+      setAuthMsg('المتصفح قفل نافذة جوجل. اسمح بالـ popups وجرّب تاني.', 'err');
+    } else if (code === 'auth/network-request-failed') {
+      setAuthMsg('مفيش اتصال بالإنترنت. جرّب تاني.', 'err');
+    } else {
+      setAuthMsg('تعذّر الدخول بجوجل. جرّب تاني.', 'err');
+    }
+  } finally {
+    // always restore the button (it used to stay stuck on "Signing in…" after sign-out)
     btn.disabled = false;
-    btn.textContent = 'Try again — popup was blocked';
+    btn.innerHTML = originalHtml;
+  }
+};
+
+/* ─── Email / password sign-in ─── */
+let _authMode = 'login';
+function setAuthMsg(text, kind) {
+  const el = document.getElementById('authMsg');
+  if (!el) return;
+  el.textContent = text || '';
+  el.className = 'auth-msg' + (kind ? ' ' + kind : '');
+}
+window.setAuthMode = function(mode) {
+  _authMode = mode;
+  const signup = mode === 'signup';
+  document.getElementById('authTabLogin').classList.toggle('active', !signup);
+  document.getElementById('authTabSignup').classList.toggle('active', signup);
+  document.getElementById('authName').style.display = signup ? '' : 'none';
+  document.getElementById('authPassword').setAttribute('autocomplete', signup ? 'new-password' : 'current-password');
+  document.getElementById('emailAuthBtn').textContent = signup ? 'إنشاء الحساب' : 'تسجيل الدخول';
+  document.getElementById('authForgotBtn').style.display = signup ? 'none' : '';
+  setAuthMsg('', '');
+};
+window.toggleAuthPassword = function() {
+  const inp = document.getElementById('authPassword');
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+};
+function authErrorMessage(e) {
+  switch (e && e.code) {
+    case 'auth/invalid-email': return 'صيغة الإيميل غلط.';
+    case 'auth/missing-password': return 'اكتب كلمة المرور.';
+    case 'auth/weak-password': return 'كلمة المرور ضعيفة. لازم 6 حروف أو أرقام على الأقل.';
+    case 'auth/email-already-in-use': return 'الإيميل ده مسجّل قبل كده. جرّب تسجيل الدخول، أو "نسيت كلمة المرور؟". لو كنت داخل بجوجل بنفس الإيميل استخدم زرار جوجل.';
+    case 'auth/invalid-credential':
+    case 'auth/wrong-password':
+    case 'auth/user-not-found': return 'الإيميل أو كلمة المرور غلط. لو سجّلت قبل كده بجوجل استخدم زرار جوجل.';
+    case 'auth/too-many-requests': return 'محاولات كتير. استنى شوية وجرّب تاني.';
+    case 'auth/network-request-failed': return 'مفيش اتصال بالإنترنت. جرّب تاني.';
+    case 'auth/user-disabled': return 'الحساب ده متوقف. كلّم الأدمن.';
+    default: return 'حصل خطأ. جرّب تاني.';
+  }
+}
+window.submitEmailAuth = async function(ev) {
+  if (ev) ev.preventDefault();
+  const signup = _authMode === 'signup';
+  const name = document.getElementById('authName').value.trim().replace(/\s+/g, ' ');
+  const email = document.getElementById('authEmail').value.trim();
+  const pass = document.getElementById('authPassword').value;
+  const btn = document.getElementById('emailAuthBtn');
+
+  if (signup && name.length < 3) { setAuthMsg('اكتب اسمك بالكامل.', 'err'); return; }
+  if (!email) { setAuthMsg('اكتب الإيميل.', 'err'); return; }
+  if (!pass) { setAuthMsg('اكتب كلمة المرور.', 'err'); return; }
+
+  btn.disabled = true;
+  setAuthMsg(signup ? '⏳ بيتعمل الحساب...' : '⏳ بيتم الدخول...', '');
+  let finishSignup = null;
+  try {
+    if (signup) {
+      // onAuthStateChanged fires as soon as the account exists — make it wait until the name is saved
+      window._signupPromise = new Promise(r => { finishSignup = r; });
+      const cred = await createUserWithEmailAndPassword(auth, email, pass);
+      await updateProfile(cred.user, { displayName: name });
+    } else {
+      await signInWithEmailAndPassword(auth, email, pass);
+    }
+    document.getElementById('authPassword').value = '';
+    setAuthMsg('', '');
+    window.closeAuthModal();
+  } catch (e) {
+    setAuthMsg(authErrorMessage(e), 'err');
+  } finally {
+    if (finishSignup) { finishSignup(); window._signupPromise = null; }
+    btn.disabled = false;
+  }
+};
+window.resetAuthPassword = async function() {
+  const email = document.getElementById('authEmail').value.trim();
+  if (!email) { setAuthMsg('اكتب إيميلك فوق الأول وبعدين دوس "نسيت كلمة المرور؟".', 'err'); return; }
+  try {
+    await sendPasswordResetEmail(auth, email);
+    setAuthMsg('✅ لو الإيميل ده مسجّل عندنا، هيوصله لينك لتغيير كلمة المرور. راجع الـ Inbox والـ Spam.', 'ok');
+  } catch (e) {
+    setAuthMsg(authErrorMessage(e), 'err');
   }
 };
 
@@ -6730,6 +6864,7 @@ window.signOutUser = async function() {
 
 /* ─── Auth State ─── */
 onAuthStateChanged(auth, async (user) => {
+  if (user && window._signupPromise) await window._signupPromise;
   currentUser = user;
   const identityBlock = document.getElementById('popoverIdentityBlock');
   const accountSection = document.getElementById('popoverAccountSection');

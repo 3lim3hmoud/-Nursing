@@ -1459,6 +1459,7 @@
   .res-tag.mcq { background: rgba(212,83,126,0.18); color: #A23961; }
   .res-tag.procedure { background: rgba(186,117,23,0.22); color: #95650F; }
   .res-tag.video { background: rgba(212,83,126,0.18); color: #A23961; }
+  .res-tag.equipment { background: rgba(29,158,117,0.2); color: #0F6E56; }
 
   /* ─── PRACTICAL (dark/glass) CARD ─── */
   .subject-card.practical-card {
@@ -1474,6 +1475,7 @@
   .subject-card.practical-card .subject-icon { background: rgba(255,255,255,0.14) !important; }
   .subject-card.practical-card .res-tag.lectures,
   .subject-card.practical-card .res-tag.procedure,
+  .subject-card.practical-card .res-tag.equipment,
   .subject-card.practical-card .res-tag.video {
     background: rgba(255,255,255,0.14);
     color: #eef3f1;
@@ -4493,12 +4495,6 @@ const years = {
             { title: 'Female Reproductive System - Mock Exam (40 MCQs)', file: 'female-reproductive-quiz.html' },
             { title: 'Ethics in Maternity (30 MCQs)', file: 'ethics-in-maternity-quiz.html' },
           ] } },
-        { name: 'Maternal Health Nursing 1 (Practical)', slug: 'maternal-health-nursing-1-practical', desc: 'Practical sessions for maternal and antenatal nursing care', icon: '🩺', files: { lectures: [], summaries: [
-            { title: 'Evidence-Based Nursing in PICU', file: 'Evidence_Based_Nursing_PICU11.pdf' },
-            { title: 'First Stage of Labor & Perineal Care', file: 'First_Stage_of_Labor_and_Perineal_Care.pdf' },
-            { title: 'Anatomy & Physiology of the Female Reproductive System', file: 'Anatomy_and_Physiology_Female_Reproductive_System.pdf' },
-            { title: 'Antenatal Assessment', file: 'Antenatal_Assessment_Bilingual.pdf' },
-          ], flashcards: [], mcq: [] } },
         { name: 'Obstetric Medicine and Midwifery', slug: 'obstetric-medicine-and-midwifery', desc: 'Medical and midwifery aspects of pregnancy and childbirth', icon: '👶', files: { lectures: [], summaries: [
             { title: 'Puberty', file: 'Puberty_Notes.pdf' },
             { title: 'Menstrual Cycle', file: 'Menstrual_Cycle_Notes.pdf' },
@@ -4516,13 +4512,6 @@ const years = {
             { title: 'Pediatric Nursing: Growth & Development (Summary)', file: 'Pediatric_Growth_Development_Summary.pdf' },
             { title: 'Growth & Development - Part 2 (Detailed)', file: 'Growth_Development_Part2_Detailed.pdf' },
           ], mcq: [] } },
-        { name: 'Pediatric Nursing (Practical)', slug: 'pediatric-nursing-practical', desc: 'Practical sessions for pediatric nursing care', icon: '🩹', files: { lectures: [], summaries: [
-            { title: 'Incubator Care', file: 'Incubator_Care.pdf' },
-            { title: 'Phototherapy Care', file: 'Phototherapy_Care.pdf' },
-            { title: 'Physical Examination', file: 'Physical_Examination_Bilingual.pdf' },
-            { title: 'Restraints', file: 'Restraints_Bilingual.pdf' },
-            { title: 'Drug Administration', file: 'Drug_Administration.pdf' },
-          ], flashcards: [], mcq: [] } },
         { name: 'Pediatric Medicine', slug: 'pediatric-medicine', desc: 'Medical management of pediatric patients', icon: '💉', files: { lectures: [], summaries: [], flashcards: [], mcq: [] } },
         { name: 'Pediatric Surgery', slug: 'pediatric-surgery', desc: 'Surgical conditions and care in pediatric patients', icon: '🔪', files: { lectures: [], summaries: [
             { title: 'Esophageal Atresia & TEF', file: 'Esophageal_Atresia_TEF_Bilingual.pdf' },
@@ -4611,7 +4600,30 @@ const practicalSubjects = {
           { title: 'Critical 2 Checklist', file: 'critical 2 checklist.pdf' },
         ], video: [] } },
     ]
-  }
+  },
+  y3: {
+    term1: [
+      { name: 'Maternal Health Nursing 1 (Practical)', slug: 'maternal-health-nursing-1-practical', desc: 'Practical sessions for maternal and antenatal nursing care', icon: '🩺', files: { lecture: [
+          { title: 'Evidence-Based Nursing in PICU', file: 'Evidence_Based_Nursing_PICU11.pdf' },
+          { title: 'First Stage of Labor & Perineal Care', file: 'First_Stage_of_Labor_and_Perineal_Care.pdf' },
+          { title: 'Anatomy & Physiology of the Female Reproductive System', file: 'Anatomy_and_Physiology_Female_Reproductive_System.pdf' },
+          { title: 'Antenatal Assessment', file: 'Antenatal_Assessment_Bilingual.pdf' },
+        ], procedure: [], equipment: [], video: [] } },
+    ],
+    term2: [
+      { name: 'Pediatric Nursing (Practical)', slug: 'pediatric-nursing-practical', desc: 'Practical sessions for pediatric nursing care', icon: '🩹', files: { lecture: [
+          { title: 'Incubator Care', file: 'Incubator_Care.pdf' },
+          { title: 'Phototherapy Care', file: 'Phototherapy_Care.pdf' },
+          { title: 'Physical Examination', file: 'Physical_Examination_Bilingual.pdf' },
+          { title: 'Restraints', file: 'Restraints_Bilingual.pdf' },
+          { title: 'Drug Administration', file: 'Drug_Administration.pdf' },
+        ], procedure: [
+          { title: 'Nursing Procedures (Step by Step)', file: 'Nursing-Procedures.pdf' },
+        ], equipment: [
+          { title: 'Nursing Equipment (Equipment List)', file: 'Nursing-Equipment.pdf' },
+        ], video: [] } },
+    ],
+  },
 };
 
 /* ══════════════════════ GLOBAL SEARCH ══════════════════════ */
@@ -4733,6 +4745,7 @@ function openPractical() {
       <div class="resource-types">
         <span class="res-tag lectures">Lecture</span>
         <span class="res-tag procedure">Procedure</span>
+        ${(s.files && s.files.equipment) ? '<span class="res-tag equipment">Equipment</span>' : ''}
         <span class="res-tag video">Video</span>
       </div>
       ${progressBarHtml(prog)}
@@ -4785,6 +4798,7 @@ function openPracticalSubject(idx) {
   const resources = [
     { key: 'lecture', icon: '📖', label: 'Lecture', desc: 'Explanatory lecture for the practical topic', color: '#1D6FC9' },
     { key: 'procedure', icon: '🛠️', label: 'Procedure', desc: 'Step-by-step procedure / skill checklist', color: '#BA7517' },
+    ...((s.files && s.files.equipment) ? [{ key: 'equipment', icon: '🧰', label: 'Equipment', desc: 'Equipment and supplies needed for each procedure', color: '#1D9E75' }] : []),
     { key: 'video', icon: '🎥', label: 'Video', desc: 'Instructional video for the procedure', color: '#D4537E' },
   ];
 
@@ -4873,10 +4887,11 @@ function renderSubjects() {
       <div class="subject-card practical-card" onclick="openPractical()">
         <div class="subject-icon" style="font-size:20px;">🧪</div>
         <h3>Practical Subjects</h3>
-        <p>${currentTerm === 'term1' ? 'Adult 1 & Critical 1' : 'Adult 2 & Critical 2'} practical sessions</p>
+        <p>${termPractical.map(x => x.name.replace(' (Practical)', '')).join(' & ')} practical sessions</p>
         <div class="resource-types">
           <span class="res-tag lectures">Lecture</span>
           <span class="res-tag procedure">Procedure</span>
+          ${termPractical.some(x => x.files && x.files.equipment) ? '<span class="res-tag equipment">Equipment</span>' : ''}
           <span class="res-tag video">Video</span>
         </div>
         ${progressBarHtml({ seen: practicalSeen, total: practicalTotal })}
@@ -5815,7 +5830,7 @@ let _accessDraft = {};
 let _accessStudents = [];
 const ACCESS_CAT_LABELS = {
   lectures: 'Lectures', summaries: 'Summaries', flashcards: 'Flashcards', mcq: 'MCQ Bank',
-  lecture: 'عملي: Lecture', procedure: 'عملي: Procedure', video: 'عملي: Video',
+  lecture: 'عملي: Lecture', procedure: 'عملي: Procedure', equipment: 'عملي: Equipment', video: 'عملي: Video',
 };
 function openAdminAccessPanel() {
   const sel = document.getElementById('accessGroupSelect');
